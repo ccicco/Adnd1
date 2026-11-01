@@ -32026,6 +32026,30 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     per-book pass one DRG round
     from complete.
     WAIT FOR GO.
+  - R1025 LANDED 2026-11-01 at adaae6be - the DRG
+    normalization batch (census 948), THE REGISTRY
+    CLOSES. Landed verification at the fresh tarball:
+    spec md5 c6a0cbf8f37ebc6d70908b160b0c89c6
+    unchanged, engine all-already 40 twice, dq1.h
+    at regtest 729 after wt1.h at 728, r1025_batch.h
+    at 4839 above r1024_batch.h at 4840, the R1024
+    LANDED record seated in the seed, and the census
+    1338 defs - DRG 5, MM1 408, MM2 332, DDG 338,
+    FF 185, OA 47, WSG 15, MOP 8 - every one of the
+    57 keys present in all 1338, the landed
+    normalize_registry.py rewrite changing ZERO
+    files: THE REGISTRY CLOSES 1338 of 1338.
+    The comma-site lesson landed: the 5 whole-line
+    rewrites (each DRG text field lacked the
+    Lua-optional trailing comma, merged with the
+    end-of-body insert in one window) - the first
+    comma-site round of the arc; InsSites 30,
+    CommaSites 5, ReorderDefs 0, PatchEntries 35.
+    THE PER-BOOK NORMALIZATION ARC IS COMPLETE:
+    MM1 R1009-R1014, OA R1016, MM2 R1017-R1020,
+    FF R1021-R1023, WSG+MOP R1024, DRG R1025.
+    Next in the queue: the deity seam.
+    WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

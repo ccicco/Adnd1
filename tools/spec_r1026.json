@@ -1,0 +1,194 @@
+{
+ "round": 1026,
+ "prefix": "ll1",
+ "inline_count": 12,
+ "census_before": 948,
+ "title": "The deity seam close (census 949)",
+ "banner": {
+  "title": "The deity seam close - the Legends & Lore 1984 parity voice adjudicated in full, the seam leaves the queue with NO divergence round",
+  "provenance": "The seam close (the R1025 registry close leaves the deity seam as the one standing queue item, the arc plan's at-go check now run): the L&L parity inventory swept the pin headers in full - 130 parity notes across the mythos grids (cqc through cqc8, nrs, smr, nhg, nhw, tpl, pln, dga, deities, elysiumbeasts, dpy, dpz) and every one falls into an adjudicated class - pinned by print over the L&L read, the print garbles restored from the L&L voice, the eyeball flags deliberate pin-internal, the tesseract-geometry cells verified, ZERO open divergences; the collation voice throughout was the 1eonline L&L per-deity chart rows, so NO archive.org derivative tesseract pass is needed - the primary ink (the ddg.pdf second printing, the 310 extract/ddg voices on disk) plus the chart rows carried the whole arc; the at-most-one divergence round is NOT needed and L&L stands as a parity voice, not a second book. The DDG gap report holds 24 boxes closed, zero open; the 338 DDG defs ride canonical full-field since R1025 - the registry 1338 of 1338. THE DEITY SEAM CLOSES."
+ },
+ "header_file": "rules/ll1.h",
+ "audit_file": "rules/audits/r1026_batch.h",
+ "audit_label": "R1026 deity seam close audit",
+ "audit_comment": "THE DEITY SEAM CLOSES - the L&L parity inventory: 130 parity notes across the pin headers, every one adjudicated (pinned by print, restored from the L&L voice, the eyeball flags pin-internal, the geometry verified), ZERO open divergences, ZERO derivative tesseract voices needed, the at-most-one divergence round not needed, L&L a parity voice not a second book; the DDG arc complete - 24 boxes closed, 338 defs canonical, the registry 1338 of 1338.",
+ "audit_anchor": "#include \"rules/audits/r1025_batch.h\"  // R1025: R1025 DRG normalization audit",
+ "include_after": "#include \"rules/dq1.h\"  // R1025: the DRG normalization batch",
+ "include_comment": "the deity seam close",
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R1025 LANDED 2026-11-01 at adaae6be",
+ "prev_record": [
+  "  - R1025 LANDED 2026-11-01 at adaae6be - the DRG",
+  "    normalization batch (census 948), THE REGISTRY",
+  "    CLOSES. Landed verification at the fresh tarball:",
+  "    spec md5 c6a0cbf8f37ebc6d70908b160b0c89c6",
+  "    unchanged, engine all-already 40 twice, dq1.h",
+  "    at regtest 729 after wt1.h at 728, r1025_batch.h",
+  "    at 4839 above r1024_batch.h at 4840, the R1024",
+  "    LANDED record seated in the seed, and the census",
+  "    1338 defs - DRG 5, MM1 408, MM2 332, DDG 338,",
+  "    FF 185, OA 47, WSG 15, MOP 8 - every one of the",
+  "    57 keys present in all 1338, the landed",
+  "    normalize_registry.py rewrite changing ZERO",
+  "    files: THE REGISTRY CLOSES 1338 of 1338.",
+  "    The comma-site lesson landed: the 5 whole-line",
+  "    rewrites (each DRG text field lacked the",
+  "    Lua-optional trailing comma, merged with the",
+  "    end-of-body insert in one window) - the first",
+  "    comma-site round of the arc; InsSites 30,",
+  "    CommaSites 5, ReorderDefs 0, PatchEntries 35.",
+  "    THE PER-BOOK NORMALIZATION ARC IS COMPLETE:",
+  "    MM1 R1009-R1014, OA R1016, MM2 R1017-R1020,",
+  "    FF R1021-R1023, WSG+MOP R1024, DRG R1025.",
+  "    Next in the queue: the deity seam.",
+  "    WAIT FOR GO."
+ ],
+ "gap_report": "tools/ddg_gap_report.md",
+ "gap_flips": [],
+ "gap_census": {
+  "closed": 24,
+  "open": 0
+ },
+ "data_files": [],
+ "consts": [
+  {
+   "name": "ll1Round",
+   "value": 1026,
+   "comment": "the deity seam close - the queue's one standing item after the R1025 registry close"
+  },
+  {
+   "name": "ll1DdgDefsCanonical",
+   "value": 338,
+   "comment": "the DDG defs riding canonical full-field since R1025 - the whole 17-mythoi promotion"
+  },
+  {
+   "name": "ll1RegistryCanonical",
+   "value": 1338,
+   "comment": "the registry canonical at the seam close - every def of the census carries the full-field emission"
+  },
+  {
+   "name": "ll1ParityNotes",
+   "value": 130,
+   "comment": "the L&L parity notes across the pin headers - the 1eonline chart-row voice cited per adjudication"
+  },
+  {
+   "name": "ll1PrintRestores",
+   "value": 8,
+   "comment": "the print garbles restored from the L&L voice - the jade green, the laurel wreath, the kilt, the name glyph restorations"
+  },
+  {
+   "name": "ll1EyeballFlags",
+   "value": 3,
+   "comment": "the eyeball flags - deliberate pin-internal flags, adjudicated in place (the Seker row duplicate, the bare-cell reads)"
+  },
+  {
+   "name": "ll1ParityAdjudicated",
+   "value": 130,
+   "comment": "the parity notes adjudicated - every note pinned by print, restored, flagged or geometry-verified, NONE left open"
+  },
+  {
+   "name": "ll1OpenDivergences",
+   "value": 0,
+   "comment": "the open divergences - NONE, the at-most-one divergence round NOT needed"
+  },
+  {
+   "name": "ll1DerivativeVoices",
+   "value": 0,
+   "comment": "the archive.org derivative tesseract voices needed - ZERO, the primary ink plus the 1eonline chart rows carried the arc"
+  }
+ ],
+ "bools": [
+  {
+   "name": "ll1SeamClosed",
+   "value": true,
+   "comment": "THE DEITY SEAM CLOSES - L&L a parity voice, not a second book; the queue stands empty"
+  },
+  {
+   "name": "ll1NoDivergenceRound",
+   "value": true,
+   "comment": "the divergence round not needed - zero open divergences in the full 130-note inventory"
+  },
+  {
+   "name": "ll1PrimaryInkIntact",
+   "value": true,
+   "comment": "the D&DG second-printing primary ink intact - the 310 extract/ddg voices on disk, the 24 gap boxes closed, the census verified at HEAD"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "table_checks": [],
+ "header_sections": {
+  "the seam frame": [
+   {
+    "kind": "const",
+    "name": "ll1Round"
+   },
+   {
+    "kind": "const",
+    "name": "ll1DdgDefsCanonical"
+   },
+   {
+    "kind": "const",
+    "name": "ll1RegistryCanonical"
+   }
+  ],
+  "the parity census": [
+   {
+    "kind": "const",
+    "name": "ll1ParityNotes"
+   },
+   {
+    "kind": "const",
+    "name": "ll1PrintRestores"
+   },
+   {
+    "kind": "const",
+    "name": "ll1EyeballFlags"
+   },
+   {
+    "kind": "const",
+    "name": "ll1ParityAdjudicated"
+   },
+   {
+    "kind": "const",
+    "name": "ll1OpenDivergences"
+   },
+   {
+    "kind": "const",
+    "name": "ll1DerivativeVoices"
+   }
+  ],
+  "the seam close": [
+   {
+    "kind": "bool",
+    "name": "ll1SeamClosed"
+   },
+   {
+    "kind": "bool",
+    "name": "ll1NoDivergenceRound"
+   },
+   {
+    "kind": "bool",
+    "name": "ll1PrimaryInkIntact"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "expr": "m['ll1Round']() != 1026 or m['ll1ParityNotes']() != 130 or m['ll1DdgDefsCanonical']() != 338 or m['ll1RegistryCanonical']() != 1338"
+  },
+  {
+   "expr": "m['ll1ParityAdjudicated']() != m['ll1ParityNotes']() - m['ll1OpenDivergences']()"
+  },
+  {
+   "expr": "m['ll1OpenDivergences']() != 0 or m['ll1DerivativeVoices']() != 0"
+  },
+  {
+   "expr": "m['ll1PrintRestores']() + m['ll1EyeballFlags']() > m['ll1ParityNotes']()"
+  }
+ ],
+ "file_patches": []
+}
