@@ -31779,6 +31779,70 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     WSG+MOP 23, DRG 5, the
     deity seam.
     WAIT FOR GO.
+  - R1020 LANDED 2026-11-01 at
+    38bea084: THE MM2
+    NORMALIZATION BATCH FOUR,
+    THE BOOK CLOSER (census
+    943) - the last 83 of 332
+    rewritten to the
+    full-field 57-key
+    emission. THE MM2 BOOK
+    CLOSES COMPLETE: 332/332
+    canonical. The pin
+    repairs: the monster
+    zombie (the kWXYZ walk
+    index 14) carried its
+    hitDiceNum 0 and
+    mm2_print xp 0/0/0 cells
+    but never
+    hitDiceBonus, avgHp or
+    lairPct - the canonical
+    emission writes the -1
+    sentinel and the repair
+    rode in TRIPLE-GRID
+    form (the live walk,
+    the R815 fragment
+    hardcoded CWXYZStats
+    row 14, AND the
+    fragment direct
+    per-cell pins), a
+    third copy shape
+    beyond the R1018
+    double-grid lesson.
+    LANDED VERIFICATION at
+    38bea084 (fresh
+    tarball): spec md5
+    e886df782e3d3d8f7dc085bcf
+    2188f3c unchanged (the
+    canvas body identical),
+    engine all-already 594
+    twice, census 942 to
+    943 live, MM2 332/332
+    canonical, the zombie
+    cells and all fragment
+    mirrors -1 (grid row
+    {6,0,-1,-1,1,0,0,-1,0,0}
+    and the direct
+    HdBonus/AvgHp/LairPct(14)
+    pins), the neighbors
+    (juju zombie 13, zorbo
+    15) intact, mq4.h after
+    mq3.h, r1020_batch.h
+    above r1019_batch.h in
+    regtest.cpp, the R1019
+    LANDED record seated
+    verbatim in the seed
+    before the last
+    Knowledge maintenance.
+    All alignment gates ran
+    green BEFORE the
+    handoff this round -
+    the R1019 lesson
+    institutionalized. THE
+    QUEUE: FF 185, WSG+MOP
+    23, DRG 5, the deity
+    seam.
+    WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
