@@ -713,6 +713,7 @@
 #include "rules/mn1.h"  // R1009: the MM1 normalization batch one
 #include "rules/mn2.h"  // R1010: the MM1 normalization batch two
 #include "rules/mn3.h"  // R1011: the MM1 normalization batch three
+#include "rules/mn4.h"  // R1012: the MM1 normalization batch four
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4822,6 +4823,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r1012_batch.h"  // R1012: R1012 MM1 normalization batch four audit
 #include "rules/audits/r1011_batch.h"  // R1011: R1011 MM1 normalization batch three audit
 #include "rules/audits/r1010_batch.h"  // R1010: R1010 MM1 normalization batch two audit
 #include "rules/audits/r1009_batch.h"  // R1009: R1009 MM1 normalization batch one audit
