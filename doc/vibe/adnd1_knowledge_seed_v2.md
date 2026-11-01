@@ -31504,6 +31504,48 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     OA 47, WSG+MOP 23. The next
     rounds are Curtiss's call.
     WAIT FOR GO.
+  - R1015 LANDED 2026-11-01 at
+    d68d8109: THE OA TABLE
+    PROMOTION BATCH NINE (census
+    938), the promotions doctrine
+    continued - the 139 table
+    grids the R981-R988 promotion
+    left behind in the C++ pins,
+    promoted from the R614-R773
+    specs into the 94 OA Lua
+    records, parse-back equal
+    key-for-key. 298072 Lua bytes,
+    the 66 table-less records
+    untouched; the pins stay the
+    firewall. 94 file patches,
+    prefix oa9. LESSON: a const
+    and a bool may never share a
+    name - duplicate C++ symbols;
+    caught by the engine parser
+    gate pre-run. LANDED
+    VERIFICATION at d68d8109:
+    spec md5
+    6b1b4a38acee886710b356c05bb66
+    cd2 unchanged, every to
+    present, engine all-already
+    99, rverify GREEN at the
+    base sha (7 mutants 0
+    missed), oa9.h after mn6.h,
+    r1015_batch.h above
+    r1014_batch.h, the R1014
+    LANDED record seated verbatim
+    in the seed before the last
+    Knowledge maintenance, 94/94
+    records on disk byte-matching
+    the spec, 66 empty-tables
+    records intact. THE QUEUE: the
+    promotions continue per
+    Curtiss's call - the OA tables
+    gap is CLOSED (139 of 139);
+    the MM2 332, FF 185, WSG+MOP
+    23 normalization queue and the
+    deity seam stand.
+    WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
