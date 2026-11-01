@@ -1,0 +1,155 @@
+-- oa703: promoted from rules/oa74terrain.h (the OA CHAPTER 11, printed capture pp. 251-252 - the terrain encounter tables);
+-- DO NOT hand-edit; the pin header stays the adjudicated record.
+return {
+  "round" = 703,
+  "prefix" = "oa703",
+  "banner" = {
+      "title" = "OA CHAPTER 11, printed capture pp. 251-252 - the terrain encounter tables",
+      "provenance" = "round census 625 -> 626.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift. THE GRID: the sixteen terrain columns of the encounter tables, each column the nineteen rolls 2-20, one roll per band - the City/Town, the Tropical/Sub-tropical Mountains, the Tropical/Sub-tropical Ocean, the Temperate Swamp, the Rural, the Tropical/Sub-tropical Forest, the Temperate Mountain, the Temperate Freshwater, the Steppes, the Tropical/Sub-tropical Swamp, the Temperate Forest, the Temperate Ocean, the Aerial, the Tropical/Sub-tropical Freshwater, the Temperate Plain, the Cold Regions (the all-terrain-types column). THE 164 NAMES by ordinal: Afanc the 1; Bajang the 2; Bakemono the 3; Baku or lycanthrope, weretiger the 4; Bandits the 5; Bat, giant the 6; Bear, black the 7; Bear, northern the 8; Bee, giant bumble bee or crane, giant the 9; Bee, giant soldier or vulture, giant the 10; Beetle, giant water the 11; Behemoth the 12; Bisan the 13; Brigands the 14; Brigands or merchant the 15; Buffalo the 16; Buso, tagamaling the 17; Buso, tigbauna the 18; Carp, giant the 19; Cat lord the 20; Catfish, giant the 21; Centipede, giant the 22; Centipede, huge the 23; Centipede, megalo- the 24; Crab, giant the 25; Crane, giant the 26; Crayfish, giant the 27; Crocodile, normal the 28; Doc cu'o'c the 29; Dragon horse the 30; Dragon turtle the 31; Dragon, chiang lung the 32; Dragon, cloud or dragon, gold the 33; Dragon, gold the 34; Dragon, li lung the 35; Dragon, lung wang the 36; Dragon, mist the 37; Dragon, pan lung the 38; Dragon, shen lung the 39; Dragon, tun mi lung the 40; Dragon, tun mi lung or elemental, air the 41; Dragon, turtle the 42; Dragon, yu lung the 43; Dragonfly, giant the 44; Dragonfly, giant or dragon horse the 45; Eagle the 46; Eagle or bee, giant worker the 47; Eblis the 48; Elemental, water the 49; Falcon, large the 50; Falcon, small the 51; Falcon, small or owl, giant the 52; Falcon, small or vulture, ordinary the 53; Frog, giant the 54; Gaijin character party the 55; Gaijin NPC party the 56; Game animals the 57; Gargantua, humanoid the 58; Gargantua, insectoid the 59; Gargantua, insectoid or owl, giant the 60; Gargantua, reptilian the 61; Ghost the 62; Giant, hill the 63; Giant, mountain the 64; Goblin rat the 65; Goblin spider the 66; Hai nu the 67; Hengeyokai the 68; Herd animal the 69; Hippopotamus the 70; Hoarfox the 71; Horse, wild the 72; Hsing-sing the 73; Hu hsien the 74; Hu hsien or ogre the 75; Ikiryo the 76; Jiki-ketsu-gaki the 77; Jiki-niku-gaki the 78; Jinki-niku-gaki the 79; Jishin mushi the 80; Jishin mushi or doc cu'o'c the 81; Kala, cave the 82; Kala, earth the 83; Kech the 84; Kenku the 85; Ki-rin the 86; Ki-rin or phoenix the 87; Kuei the 88; Leech, giant the 89; Lycanthrope, foxwoman the 90; Lycanthrope, wereshark the 91; Lycanthrope, weretiger the 92; Mantis, giant the 93; Men, gajin buccaneers the 94; Men, wako the 95; Merchant the 96; Merman the 97; Naga, water the 98; Nat, hkum yeng the 99; Nat, lu the 100; Nature spirit, greater the 101; Nature spirit, lesser the 102; Ningyo the 103; Noble the 104; Nomads the 105; Octopus, giant the 106; Ogre the 107; Ogre mage the 108; Ogre magi the 109; Ogre, aquatic the 110; Oni the 111; Oriental character party the 112; Oriental NPC party the 113; Oriental NPC party or brigands the 114; Owl the 115; Owl, giant the 116; P'oh the 117; Phantom the 118; Phoenix the 119; Pilgrim the 120; Pilgrims the 121; Quicksand the 122; Rakshasa the 123; Ram the 124; Rat, giant the 125; Rat, ordinary the 126; Raven, giant the 127; Raven, huge or raven, giant the 128; Raven, ordinary the 129; School of fish the 130; Scorpion, giant the 131; Scorpion, huge the 132; Scorpion, large the 133; Seawolf the 134; Shan sao the 135; Shikko-gaki the 136; Shinen-gaki the 137; Skeleton the 138; Snake, constrictor the 139; Snake, giant constrictor the 140; Snake, giant poisonous the 141; Snake, giant spitting the 142; Snake, poisonous the 143; Snake, sea the 144; Spider, giant the 145; Spider, giant marine the 146; Spider, giant water the 147; Spider, huge the 148; Spirits of the air or dragon, t'ien lung the 149; Squid, giant the 150; Stag the 151; Stag, giant the 152; Tasloi the 153; Tengu the 154; Termite, giant harvester the 155; Tribesmen the 156; Troll, marine the 157; Turtle, giant sea the 158; Utoyasukata the 159; Verme the 160; Vulture, giant the 161; Weasel the 162; Yellow musk creeper the 163; Yuan ti the 164. THE OCR REPAIRS: the City/Town 15 Busho read as the Buso, tigbauna (the monster of the T/S Forest 7 and the Temperate Mountain 8); the Temperate Mountain 9 Giang read as the Giant, hill (the Giant, mountain at 19 the sibling); the hai nu capitalization normalized at both ocean 16s. AS PRINTED: the Temperate Ocean School of fish at both 10 and 12, the Men, wako at both 7 and 14. The grid codifies per the R431 calculus  the gap census after this round: 156 closed, 79 open - the terrain encounter tables box flips (census 625 -> 626); NEXT - R704: the Climate Groupings with Creatures from Previous Books (capture p. 252), prefix djr (verify free at the landing), audit \"R704 OA climate groupings audit\", include after rules/oa74terrain.h",
+    },
+  "consts" = { {
+      "name" = "djqOA74RollMin",
+      "value" = 2,
+      "comment" = "the terrain grid minimum roll - the 2 of the 2-20 roll (print capture pp. 251-252)",
+    }, {
+      "name" = "djqOA74RollMax",
+      "value" = 20,
+      "comment" = "the terrain grid maximum roll - the 20 of the 2-20 roll (print capture pp. 251-252)",
+    }, {
+      "name" = "djqOA74RowCount",
+      "value" = 19,
+      "comment" = "the terrain grid row count - the nineteen rolls 2-20, one band per roll (print capture pp. 251-252)",
+    }, {
+      "name" = "djqOA74ColumnCount",
+      "value" = 16,
+      "comment" = "the Chapter 11 terrain column count - the sixteen columns of the terrain encounter grid (print capture pp. 251-252)",
+    }, {
+      "name" = "djqOA74NameCount",
+      "value" = 164,
+      "comment" = "the terrain grid encounter name count - the 164 distinct names across the sixteen columns (print capture pp. 251-252)",
+    } },
+  "bools" = { {
+      "name" = "djqOA74ColdRegionsAllTerrains",
+      "value" = true,
+      "comment" = "the Cold Regions column - the one column that applies to all terrain types (print capture pp. 251-252)",
+    }, {
+      "name" = "djqOA74ColumnByTerrainType",
+      "value" = true,
+      "comment" = "the Chapter 11 doctrine - the encounter table chosen by terrain type, the sixteen columns (print capture p. 251)",
+    } },
+  "switches" = { {
+      "name" = "djqOA74CityTown",
+      "values" = { 109, 77, 79, 88, 65, 3, 136, 96, 120, 104, 102, 113, 137, 18, 68, 74, 20, 56, 76 },
+      "default" = 0,
+      "comment" = "the City/Town column - the nineteen encounter names by ordinal for the rolls 2-20 (print capture pp. 251-252): 109, 77, 79, 88, 65, 3, 136, 96, 120, 104, 102, 113, 137, 18, 68, 74, 20, 56, 76",
+    }, {
+      "name" = "djqOA74TSMountains",
+      "values" = { 34, 164, 92, 153, 155, 143, 139, 156, 16, 125, 57, 6, 5, 140, 61, 24, 35, 123, 163 },
+      "default" = 0,
+      "comment" = "the Tropical/Sub-tropical Mountains column - the nineteen encounter names by ordinal for the rolls 2-20 (print capture pp. 251-252): 34, 164, 92, 153, 155, 143, 139, 156, 16, 125, 57, 6, 5, 140, 61, 24, 35, 123, 163",
+    }, {
+      "name" = "djqOA74TSOcean",
+      "values" = { 42, 94, 1, 25, 106, 91, 146, 110, 158, 95, 130, 144, 103, 157, 67, 160, 40, 36, 49 },
+      "default" = 0,
+      "comment" = "the Tropical/Sub-tropical Ocean column - the nineteen encounter names by ordinal for the rolls 2-20 (print capture pp. 251-252): 42, 94, 1, 25, 106, 91, 146, 110, 158, 95, 130, 144, 103, 157, 67, 160, 40, 36, 49",
+    }, {
+      "name" = "djqOA74TempSwamp",
+      "values" = { 118, 62, 59, 38, 101, 137, 145, 122, 102, 148, 147, 107, 3, 162, 65, 66, 159, 78, 90 },
+      "default" = 0,
+      "comment" = "the Temperate Swamp column - the nineteen encounter names by ordinal for the rolls 2-20 (print capture pp. 251-252): 118, 62, 59, 38, 101, 137, 145, 122, 102, 148, 147, 107, 3, 162, 65, 66, 159, 78, 90",
+    }, {
+      "name" = "djqOA74Rural",
+      "values" = { 77, 58, 2, 154, 65, 16, 113, 23, 14, 121, 75, 22, 81, 85, 35, 66, 117, 76, 99 },
+      "default" = 0,
+      "comment" = "the Rural column - the nineteen encounter names by ordinal for the rolls 2-20 (print capture pp. 251-252): 77, 58, 2, 154, 65, 16, 113, 23, 14, 121, 75, 22, 81, 85, 35, 66, 117, 76, 99",
+    }, {
+      "name" = "djqOA74TSForest",
+      "values" = { 99, 13, 46, 153, 12, 18, 17, 156, 5, 84, 102, 23, 14, 4, 73, 100, 101, 29, 2 },
+      "default" = 0,
+      "comment" = "the Tropical/Sub-tropical Forest column - the nineteen encounter names by ordinal for the rolls 2-20 (print capture pp. 251-252): 99, 13, 46, 153, 12, 18, 17, 156, 5, 84, 102, 23, 14, 4, 73, 100, 101, 29, 2",
+    }, {
+      "name" = "djqOA74TempMountain",
+      "values" = { 80, 58, 35, 51, 152, 3, 18, 63, 151, 107, 102, 129, 115, 143, 101, 154, 111, 64, 92 },
+      "default" = 0,
+      "comment" = "the Temperate Mountain column - the nineteen encounter names by ordinal for the rolls 2-20 (print capture pp. 251-252): 80, 58, 35, 51, 152, 3, 18, 63, 151, 107, 102, 129, 115, 143, 101, 154, 111, 64, 92",
+    }, {
+      "name" = "djqOA74TempFreshwater",
+      "values" = { 21, 95, 39, 43, 98, 27, 54, 28, 147, 102, 11, 96, 19, 89, 32, 101, 37, 30, 160 },
+      "default" = 0,
+      "comment" = "the Temperate Freshwater column - the nineteen encounter names by ordinal for the rolls 2-20 (print capture pp. 251-252): 21, 95, 39, 43, 98, 27, 54, 28, 147, 102, 11, 96, 19, 89, 32, 101, 37, 30, 160",
+    }, {
+      "name" = "djqOA74Steppes",
+      "values" = { 101, 74, 46, 124, 152, 72, 131, 16, 105, 133, 151, 107, 5, 132, 102, 161, 112, 117, 55 },
+      "default" = 0,
+      "comment" = "the Steppes column - the nineteen encounter names by ordinal for the rolls 2-20 (print capture pp. 251-252): 101, 74, 46, 124, 152, 72, 131, 16, 105, 133, 151, 107, 5, 132, 102, 161, 112, 117, 55",
+    }, {
+      "name" = "djqOA74TSSwamp",
+      "values" = { 164, 111, 100, 12, 26, 139, 143, 126, 102, 125, 156, 107, 140, 141, 38, 142, 138, 108, 48 },
+      "default" = 0,
+      "comment" = "the Tropical/Sub-tropical Swamp column - the nineteen encounter names by ordinal for the rolls 2-20 (print capture pp. 251-252): 164, 111, 100, 12, 26, 139, 143, 126, 102, 125, 156, 107, 140, 141, 38, 142, 138, 108, 48",
+    }, {
+      "name" = "djqOA74TempForest",
+      "values" = { 80, 24, 154, 84, 93, 135, 137, 107, 52, 102, 112, 15, 3, 162, 66, 74, 101, 90, 92 },
+      "default" = 0,
+      "comment" = "the Temperate Forest column - the nineteen encounter names by ordinal for the rolls 2-20 (print capture pp. 251-252): 80, 24, 154, 84, 93, 135, 137, 107, 52, 102, 112, 15, 3, 162, 66, 74, 101, 90, 92",
+    }, {
+      "name" = "djqOA74TempOcean",
+      "values" = { 31, 94, 1, 25, 150, 95, 158, 110, 130, 103, 130, 97, 95, 157, 67, 134, 40, 36, 49 },
+      "default" = 0,
+      "comment" = "the Temperate Ocean column - the nineteen encounter names by ordinal for the rolls 2-20 (print capture pp. 251-252): 31, 94, 1, 25, 150, 95, 158, 110, 130, 103, 130, 97, 95, 157, 67, 134, 40, 36, 49",
+    }, {
+      "name" = "djqOA74Aerial",
+      "values" = { 149, 87, 41, 32, 35, 85, 6, 47, 9, 128, 53, 45, 50, 60, 39, 38, 37, 10, 33 },
+      "default" = 0,
+      "comment" = "the Aerial column - the nineteen encounter names by ordinal for the rolls 2-20 (print capture pp. 251-252): 149, 87, 41, 32, 35, 85, 6, 47, 9, 128, 53, 45, 50, 60, 39, 38, 37, 10, 33",
+    }, {
+      "name" = "djqOA74TSFreshwater",
+      "values" = { 21, 44, 25, 12, 101, 19, 95, 54, 102, 11, 28, 156, 96, 70, 32, 39, 43, 48, 160 },
+      "default" = 0,
+      "comment" = "the Tropical/Sub-tropical Freshwater column - the nineteen encounter names by ordinal for the rolls 2-20 (print capture pp. 251-252): 21, 44, 25, 12, 101, 19, 95, 54, 102, 11, 28, 156, 96, 70, 32, 39, 43, 48, 160",
+    }, {
+      "name" = "djqOA74TempPlain",
+      "values" = { 77, 111, 108, 137, 26, 72, 16, 107, 133, 69, 102, 114, 3, 143, 152, 61, 86, 119, 118 },
+      "default" = 0,
+      "comment" = "the Temperate Plain column - the nineteen encounter names by ordinal for the rolls 2-20 (print capture pp. 251-252): 77, 111, 108, 137, 26, 72, 16, 107, 133, 69, 102, 114, 3, 143, 152, 61, 86, 119, 118",
+    }, {
+      "name" = "djqOA74ColdRegions",
+      "values" = { 127, 116, 71, 82, 83, 129, 50, 107, 7, 63, 151, 162, 8, 135, 152, 51, 74, 74, 3 },
+      "default" = 0,
+      "comment" = "the Cold Regions (All terrain types) column - the nineteen encounter names by ordinal for the rolls 2-20 (print capture pp. 251-252): 127, 116, 71, 82, 83, 129, 50, 107, 7, 63, 151, 162, 8, 135, 152, 51, 74, 74, 3",
+    } },
+  "tables" = {},
+  "chains" = {},
+  "examples" = { {
+      "expr" = "m['djqOA74ColumnCount']() != 16  or m['djqOA74RowCount']() != 19  or m['djqOA74RollMin']() != 2  or m['djqOA74RollMax']() != 20  or m['djqOA74NameCount']() != 164  or  m['djqOA74ColdRegionsAllTerrains']() != 1  or  m['djqOA74ColumnByTerrainType']() != 1",
+      "note" = "",
+    }, {
+      "expr" = "m['djqOA74CityTown'](0) != 109  or m['djqOA74TSMountains'](0) != 34  or m['djqOA74TSOcean'](0) != 42  or m['djqOA74TempSwamp'](0) != 118  or m['djqOA74Rural'](0) != 77  or m['djqOA74TSForest'](0) != 99  or m['djqOA74TempMountain'](0) != 80  or m['djqOA74TempFreshwater'](0) != 21  or m['djqOA74Steppes'](0) != 101  or m['djqOA74TSSwamp'](0) != 164  or m['djqOA74TempForest'](0) != 80  or m['djqOA74TempOcean'](0) != 31  or m['djqOA74Aerial'](0) != 149  or m['djqOA74TSFreshwater'](0) != 21  or m['djqOA74TempPlain'](0) != 77  or m['djqOA74ColdRegions'](0) != 127",
+      "note" = "the open - the roll 2 of all sixteen columns, the first band of the grid",
+    }, {
+      "expr" = "m['djqOA74CityTown'](18) != 76  or m['djqOA74TSMountains'](18) != 163  or m['djqOA74TSOcean'](18) != 49  or m['djqOA74TempSwamp'](18) != 90  or m['djqOA74Rural'](18) != 99  or m['djqOA74TSForest'](18) != 2  or m['djqOA74TempMountain'](18) != 92  or m['djqOA74TempFreshwater'](18) != 160  or m['djqOA74Steppes'](18) != 55  or m['djqOA74TSSwamp'](18) != 48  or m['djqOA74TempForest'](18) != 92  or m['djqOA74TempOcean'](18) != 49  or m['djqOA74Aerial'](18) != 33  or m['djqOA74TSFreshwater'](18) != 160  or m['djqOA74TempPlain'](18) != 118  or m['djqOA74ColdRegions'](18) != 3",
+      "note" = "the close - the roll 20 of all sixteen columns, the last band of the grid",
+    }, {
+      "expr" = "m['djqOA74CityTown'](1) != 77  or m['djqOA74CityTown'](3) != 88  or m['djqOA74CityTown'](7) != 96  or m['djqOA74CityTown'](9) != 104  or m['djqOA74CityTown'](11) != 113  or m['djqOA74CityTown'](17) != 56",
+      "note" = "the City/Town ladder - Jiki-ketsu-gaki the 3, Kuei the 5, Merchant the 9, Noble the 11, Oriental NPC party the 13, Gaijin NPC party the 19",
+    }, {
+      "expr" = "m['djqOA74Aerial'](0) != 149  or m['djqOA74Aerial'](2) != 41  or m['djqOA74Aerial'](3) != 32  or m['djqOA74Aerial'](4) != 35  or m['djqOA74Aerial'](14) != 39  or m['djqOA74Aerial'](15) != 38  or m['djqOA74Aerial'](16) != 37  or m['djqOA74Aerial'](18) != 33",
+      "note" = "the Aerial dragon ladder - Spirits of the air or dragon, t'ien lung the 2, Dragon, tun mi lung or elemental, air the 4, Dragon, chiang lung the 5, Dragon, li lung the 6, Dragon, shen lung the 16, Dragon, pan lung the 17, Dragon, mist the 18, Dragon, cloud or dragon, gold the 20",
+    }, {
+      "expr" = "m['djqOA74ColdRegions'](2) != 71  or m['djqOA74ColdRegions'](8) != 7  or m['djqOA74ColdRegions'](9) != 63  or m['djqOA74ColdRegions'](12) != 8  or m['djqOA74ColdRegions'](16) != 74  or m['djqOA74ColdRegions'](17) != 74",
+      "note" = "the Cold Regions ladder - Hoarfox the 4, Bear, black the 10, Giant, hill the 11, Bear, northern the 14, the Hu hsien twice at 18 and 19",
+    }, {
+      "expr" = "m['djqOA74CityTown'](13) != 18  or m['djqOA74TempMountain'](7) != 63  or m['djqOA74TSOcean'](14) != 67  or m['djqOA74TempOcean'](14) != 67",
+      "note" = "the OCR repairs - the Buso, tigbauna at the City/Town 15, the Giant, hill at the Temperate Mountain 9, the Hai nu at both ocean 16s",
+    }, {
+      "expr" = "m['djqOA74TempOcean'](8) != 130  or m['djqOA74TempOcean'](10) != 130  or m['djqOA74TempOcean'](5) != 95  or m['djqOA74TempOcean'](12) != 95",
+      "note" = "as printed - the Temperate Ocean the School of fish at 10 and at 12, the Men, wako at 7 and at 14",
+    }, {
+      "expr" = "m['djqOA74ColumnCount']() != 16  or m['djqOA74RowCount']() != 19  or m['djqOA74RollMin']() != 2  or m['djqOA74RollMax']() != 20  or m['djqOA74NameCount']() != 164  or m['djqOA74ColdRegionsAllTerrains']() != 1  or m['djqOA74ColumnByTerrainType']() != 1",
+      "note" = "the shape - the sixteen columns, the nineteen rows, the 2-20 roll, the 164 names, the cold regions all terrain types, the column by terrain type",
+    } },
+  "audit" = {
+      "label" = "R703 OA terrain encounter tables audit",
+      "comment" = "OA round ninety (capture pp. 251-252): the Chapter 11 terrain encounter tables - the sixteen terrain columns of the 2-20 roll grid with the encounter names by ordinal, single-pass pins per the Chapter 9 provenance shift",
+    },
+}
