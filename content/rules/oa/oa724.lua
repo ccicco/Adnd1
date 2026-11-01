@@ -223,7 +223,17 @@ return {
       "default" = 0,
       "comment" = "the arms percentage - row by row the hara-ate-gawa and sword, the sword and bow, the do-maru and sword, the kote and spear, the kote and do-maru and sword and bow, the haramaki and sword and spear and bow; the capture misreads 150 and kote 8 spear are the 15 and the kote and spear of the print (print capture p. 276)",
     } },
-  "tables" = {},
+  "tables" = { {
+      "name" = "dklArms",
+      "tag" = "Arms",
+      "count" = "dklWakoCount",
+      "comment" = "the wako arms table - the arms and armor percentage of any encountered force (print capture p. 276)",
+      "cols" = { "dklArmsPct" },
+      "col_comments" = { "the arms percentage - row by row the hara-ate-gawa and sword, the sword and bow, the do-maru and sword, the kote and spear, the kote and do-maru and sword and bow, the haramaki and sword and spear and bow; the capture misreads 150 and kote 8 spear are the 15 and the kote and spear of the print (print capture p. 276)" },
+      "data" = { { 50 }, { 10 }, { 15 }, { 10 }, { 5 }, { 10 } },
+      "sentinel" = 0,
+      "sentinel_census" = { 0 },
+    } },
   "chains" = {},
   "examples" = { {
       "expr" = "m['dklWakoCount']() != 6  or m['dklAppearMin']() != 30  or m['dklAppearMax']() != 180  or m['dklMove']() != 12  or m['dklHD']() != 1  or m['dklHPMin']() != 2  or m['dklHPMax']() != 7  or m['dklLairPct']() != 100  or m['dklAttackCount']() != 1  or m['dklHitPlus']() != 2  or m['dklDmgPlus']() != 1  or m['dklBushiLevel']() != 5  or m['dklBushiPer']() != 30  or m['dklBarbarianLevel']() != 7  or m['dklBarbarianPer']() != 60  or m['dklSamuraiLevel']() != 10  or m['dklLieutenantLevel']() != 8  or m['dklMatesMin']() != 1  or m['dklMatesMax']() != 3  or m['dklMateLevel']() != 6  or m['dklWuJenChancePct']() != 5  or m['dklWuJenPer']() != 30  or m['dklWuJenLevelMin']() != 6  or m['dklWuJenLevelMax']() != 9  or m['dklXPBase']() != 14  or m['dklXPPerHP']() != 1  or  m['dklFrequencyUncommon']() != 1  or  m['dklACSeeBelow']() != 1  or  m['dklTreasureA']() != 1  or  m['dklDamageByWeapon']() != 1  or  m['dklSpecialAttacksLeaderTypes']() != 1  or  m['dklSpecialDefensesLeaderTypes']() != 1  or  m['dklMRStandard']() != 1  or  m['dklIntelligenceAvgToVery']() != 1  or  m['dklAlignmentLawfulEvil']() != 1  or  m['dklSizeMedium']() != 1  or  m['dklPsionicLeaderTypes']() != 1  or  m['dklModesLeaderTypes']() != 1  or  m['dklPlyTheWarmSeas']() != 1  or  m['dklFearedScourge']() != 1  or  m['dklLowClassOrigins']() != 1  or  m['dklWesternPirateFear']() != 1  or  m['dklDisregardForDeath']() != 1  or  m['dklFightToLastMan']() != 1  or  m['dklNoPrisonersButWomen']() != 1  or  m['dklUtterlyFerocious']() != 1  or  m['dklLeadersInAdditionToDice']() != 1  or  m['dklAlwaysSamuraiLed']() != 1  or  m['dklLeadersWearOYoroi']() != 1  or  m['dklLairPermanentSettlement']() != 1  or  m['dklLairOnSponsorLands']() != 1  or  m['dklLairWalledPatrolled']() != 1",

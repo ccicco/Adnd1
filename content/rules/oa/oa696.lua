@@ -56,7 +56,17 @@ return {
       "default" = 0,
       "comment" = "the calendar festival counts by month ordinal (print capture pp. 236-237): Tsou 8 the richest - the New Year's Festival, God of Heaven, Feast of Lanterns, God of Spring, God of Wealth, Fertility Festival, God of Happiness, God of Learning; Ju 2, Yu 3, Kao 2, Kao II 3, Chu 0 - none printed, Hsiang 2, Chuang 4, Hsuan 4, Yang 1, Ku 0 - none printed, Tu 1 the Kings' Festival",
     } },
-  "tables" = {},
+  "tables" = { {
+      "name" = "djjOACalendarGrid",
+      "tag" = "OACalendarData",
+      "count" = "djjOACalendarRowCount",
+      "col_default" = 0,
+      "cols" = { "djjOAMonthDays", "djjOAMonthFestivals" },
+      "col_comments" = { "the calendar days by month ordinal (print capture pp. 236-237): the 30 of Tsou, Ju, Yu, Kao, Chu, Chuang, Hsuan and Ku; the 29 of Kao II, Hsiang, Yang and Tu - the four short months spread across the year, the 356-day total", "the calendar festival counts by month ordinal (print capture pp. 236-237): Tsou 8 the richest - the New Year's Festival, God of Heaven, Feast of Lanterns, God of Spring, God of Wealth, Fertility Festival, God of Happiness, God of Learning; Ju 2, Yu 3, Kao 2, Kao II 3, Chu 0 - none printed, Hsiang 2, Chuang 4, Hsuan 4, Yang 1, Ku 0 - none printed, Tu 1 the Kings' Festival" },
+      "data" = { { 30, 8 }, { 30, 2 }, { 30, 3 }, { 30, 2 }, { 29, 3 }, { 30, 0 }, { 29, 2 }, { 30, 4 }, { 30, 4 }, { 29, 1 }, { 30, 0 }, { 29, 1 } },
+      "comment" = "the Shou Lung calendar - the twelve months with their day and festival counts (print capture pp. 236-237)",
+      "audit_comment" = "the calendar grid - the twelve months across two columns",
+    } },
   "chains" = {},
   "examples" = { {
       "expr" = "m['djjOACalendarRowCount']() != 12  or m['djjOAYearDays']() != 356  or  m['djjOACalendarEmperorOrigin']() != 1  or  m['djjOACalendarCommonUse']() != 1  or  m['djjOANewYearFebMar']() != 1  or  m['djjOAFestivalsLong']() != 1  or  m['djjOAFeastsBanquets']() != 1  or  m['djjOAHolyDaysOptional']() != 1  or  m['djjOAObservancesSimple']() != 1",

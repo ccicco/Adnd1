@@ -41,7 +41,17 @@ return {
       "default" = 0,
       "comment" = "the misc melee type code - 1 the battle axe; 2 the bo stick; 3 the dagger; 4 the halberd; 5 the jo stick; 6 the kama; 7 the lajatang; 8 the lance; 9 the nagamaki - the capture printing the Nagasaki, the misprint pinned as printed; 10 the naginata; 11 the spear; 12 the tetsubo; 13 the trident (print capture p. 293)",
     } },
-  "tables" = {},
+  "tables" = { {
+      "name" = "dloMiscMelee",
+      "tag" = "MiscMelee",
+      "count" = "dloMiscRowCount",
+      "comment" = "the Table 82 Miscellaneous melee grid - the thirteen d100 bands, the battle axe through the trident, the grid spanning the page break (print capture p. 292)",
+      "cols" = { "dloMiscRollMin", "dloMiscRollMax", "dloMiscCode" },
+      "col_comments" = { "the d100 band minimum - the low roll of the row (print capture p. 292)", "the d100 band maximum - the high roll of the row (print capture p. 293)", "the misc melee type code - 1 the battle axe; 2 the bo stick; 3 the dagger; 4 the halberd; 5 the jo stick; 6 the kama; 7 the lajatang; 8 the lance; 9 the nagamaki - the capture printing the Nagasaki, the misprint pinned as printed; 10 the naginata; 11 the spear; 12 the tetsubo; 13 the trident (print capture p. 293)" },
+      "data" = { { 1, 5, 1 }, { 6, 15, 2 }, { 16, 30, 3 }, { 31, 45, 4 }, { 46, 48, 5 }, { 49, 54, 6 }, { 55, 55, 7 }, { 56, 60, 8 }, { 61, 65, 9 }, { 66, 75, 10 }, { 76, 90, 11 }, { 91, 95, 12 }, { 96, 100, 13 } },
+      "sentinel" = 0,
+      "sentinel_census" = { 0, 0, 0 },
+    } },
   "chains" = {},
   "examples" = { {
       "expr" = "m['dloMiscRowCount']() != 13  or  m['dloMeleeClassBanner']() != 1  or  m['dloNagasakiMisprint']() != 1  or  m['dloSingleRollBands']() != 1",

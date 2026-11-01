@@ -111,7 +111,17 @@ return {
       "default" = 0,
       "comment" = "the usable-by code - the fighter 1 of the samurai, bushi, and kensai; the sohei split 5; the cleric 2 of the shukenja; the magic-user 3 of the wu jen; the thief 4 of the ninja and yakuza (print capture p. 285)",
     } },
-  "tables" = {},
+  "tables" = { {
+      "name" = "dkuClassUse",
+      "tag" = "ClassUse",
+      "count" = "dkuClassCount",
+      "comment" = "the class usage table - the eight Oriental classes row by row, each pinned to its DMG usability code (print capture p. 285)",
+      "cols" = { "dkuUsableCode" },
+      "col_comments" = { "the usable-by code - the fighter 1 of the samurai, bushi, and kensai; the sohei split 5; the cleric 2 of the shukenja; the magic-user 3 of the wu jen; the thief 4 of the ninja and yakuza (print capture p. 285)" },
+      "data" = { { 1 }, { 5 }, { 2 }, { 1 }, { 1 }, { 3 }, { 4 }, { 4 } },
+      "sentinel" = 0,
+      "sentinel_census" = { 0 },
+    } },
   "chains" = {},
   "examples" = { {
       "expr" = "m['dkuClassCount']() != 8  or m['dkuCodeFighter']() != 1  or m['dkuCodeCleric']() != 2  or m['dkuCodeMagicUser']() != 3  or m['dkuCodeThief']() != 4  or m['dkuCodeSoheiSplit']() != 5  or  m['dkuChapterOpener']() != 1  or  m['dkuMoneyMagicPower']() != 1  or  m['dkuPowerToInfluenceDestiny']() != 1  or  m['dkuPowerToInfluenceOthers']() != 1  or  m['dkuTreasureGivesAccess']() != 1  or  m['dkuSupplementsDMG']() != 1  or  m['dkuMostDMGItemsFound']() != 1  or  m['dkuPeculiarItemsGiven']() != 1  or  m['dkuIntegrationTables']() != 1  or  m['dkuDMGRestrictionsApply']() != 1  or  m['dkuSamuraiFighter']() != 1  or  m['dkuSoheiFighterClericExceptStaves']() != 1  or  m['dkuShukenjaCleric']() != 1  or  m['dkuBushiFighter']() != 1  or  m['dkuKensaiFighter']() != 1  or  m['dkuWuJenMagicUser']() != 1  or  m['dkuNinjaThief']() != 1  or  m['dkuYakuzaThief']() != 1",

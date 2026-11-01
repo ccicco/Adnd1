@@ -110,7 +110,17 @@ return {
       "default" = 0,
       "comment" = "the subtable code - the IIIA 1, IIIB 2, IIIC 3, IIID 4, and the IIIE.1 through IIIE.5 of the five misc bands, the 0 the none of the untabled rows (print capture p. 287)",
     } },
-  "tables" = {},
+  "tables" = { {
+      "name" = "dkyIII",
+      "tag" = "III",
+      "count" = "dkyRowCount",
+      "comment" = "the Table III. (Orient) grid - the twelve d100 bands row by row, the category and subtable codes riding with the band edges (print capture p. 287)",
+      "cols" = { "dkyRollMin", "dkyRollMax", "dkyCat", "dkySub" },
+      "col_comments" = { "the d100 band minimum - the low roll of the row (print capture p. 287)", "the d100 band maximum - the high roll of the row (print capture p. 287)", "the category code - the potions 1, scrolls 2, rings 3, rods 4, misc magic 5, oriental 6, armor and shields 7, weapons 8 (print capture p. 287)", "the subtable code - the IIIA 1, IIIB 2, IIIC 3, IIID 4, and the IIIE.1 through IIIE.5 of the five misc bands, the 0 the none of the untabled rows (print capture p. 287)" },
+      "data" = { { 1, 10, 1, 1 }, { 11, 35, 2, 2 }, { 36, 40, 3, 3 }, { 41, 45, 4, 4 }, { 46, 47, 5, 1 }, { 48, 49, 5, 2 }, { 50, 51, 5, 3 }, { 52, 53, 5, 4 }, { 54, 55, 5, 5 }, { 56, 60, 6, 0 }, { 61, 75, 7, 0 }, { 76, 100, 8, 0 } },
+      "sentinel" = 0,
+      "sentinel_census" = { 0, 0, 0, 3 },
+    } },
   "chains" = {},
   "examples" = { {
       "expr" = "m['dkyRowCount']() != 12  or m['dkyDMGPageFirst']() != 121  or m['dkyDMGPageLast']() != 124  or m['dkyCatPotions']() != 1  or m['dkyCatScrolls']() != 2  or m['dkyCatRings']() != 3  or m['dkyCatRods']() != 4  or m['dkyCatMiscMagic']() != 5  or m['dkyCatOriental']() != 6  or m['dkyCatArmorShields']() != 7  or m['dkyCatWeapons']() != 8  or  m['dkyFootnoteDMGTables']() != 1  or  m['dkyBandPotions']() != 1  or  m['dkyBandScrolls']() != 1  or  m['dkyBandRings']() != 1  or  m['dkyBandRods']() != 1  or  m['dkyBandMiscMagic']() != 1  or  m['dkyBandOriental']() != 1  or  m['dkyBandArmorShields']() != 1  or  m['dkyBandWeapons']() != 1",

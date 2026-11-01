@@ -69,7 +69,17 @@ return {
       "default" = 0,
       "comment" = "the bow type code - 1 the composite shortbow; 2 the short bow; 3 the chu-ko-nu; 4 the heavy crossbow; 5 the light crossbow; 6 the daikyu; 7 the hankyu; 8 the pellet bow; 9 the sling; 10 the staff sling (print capture p. 292)",
     } },
-  "tables" = {},
+  "tables" = { {
+      "name" = "dlnBowClass",
+      "tag" = "BowClass",
+      "count" = "dlnBowRowCount",
+      "comment" = "the Table 81 Bow, Crossbow, And Sling Class grid - the ten d100 bands of the missile weapon types, the composite shortbow through the staff sling (print capture p. 292)",
+      "cols" = { "dlnBowRollMin", "dlnBowRollMax", "dlnBowCode" },
+      "col_comments" = { "the d100 band minimum - the low roll of the row (print capture p. 292)", "the d100 band maximum - the high roll of the row (print capture p. 292)", "the bow type code - 1 the composite shortbow; 2 the short bow; 3 the chu-ko-nu; 4 the heavy crossbow; 5 the light crossbow; 6 the daikyu; 7 the hankyu; 8 the pellet bow; 9 the sling; 10 the staff sling (print capture p. 292)" },
+      "data" = { { 1, 15, 1 }, { 16, 30, 2 }, { 31, 31, 3 }, { 32, 45, 4 }, { 46, 60, 5 }, { 61, 80, 6 }, { 81, 90, 7 }, { 91, 91, 8 }, { 92, 96, 9 }, { 97, 100, 10 } },
+      "sentinel" = 0,
+      "sentinel_census" = { 0, 0, 0 },
+    } },
   "chains" = {},
   "examples" = { {
       "expr" = "m['dlnBowRowCount']() != 10  or  m['dlnCompositeShortbowBand']() != 1  or  m['dlnShortBowBand']() != 1  or  m['dlnChuKoNuBand']() != 1  or  m['dlnHeavyCrossbowBand']() != 1  or  m['dlnLightCrossbowBand']() != 1  or  m['dlnDaikyuBand']() != 1  or  m['dlnHankyuBand']() != 1  or  m['dlnPelletBowBand']() != 1  or  m['dlnSlingBand']() != 1  or  m['dlnStaffSlingBand']() != 1",

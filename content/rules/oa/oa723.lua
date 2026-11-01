@@ -253,7 +253,17 @@ return {
       "default" = 0,
       "comment" = "the damage maximum - the 6 at 3 HD, the 8 at 4 HD, the 10 at 5 HD, the 12 at 6 HD (print capture p. 275)",
     } },
-  "tables" = {},
+  "tables" = { {
+      "name" = "dkkPowers",
+      "tag" = "Powers",
+      "count" = "dkkKueiCount",
+      "comment" = "the kuei powers table - the weapon needed and the damage by hit dice (print capture p. 275)",
+      "cols" = { "dkkPowersWeaponPlus", "dkkPowersDmgMin", "dkkPowersDmgMax" },
+      "col_comments" = { "the weapon needed to hit - the +1 at 3 HD up to the +4 at 6 HD (print capture p. 275)", "the damage minimum - the 1 of the 1-6 up to the 1-12 ladder (print capture p. 275)", "the damage maximum - the 6 at 3 HD, the 8 at 4 HD, the 10 at 5 HD, the 12 at 6 HD (print capture p. 275)" },
+      "data" = { { 1, 1, 6 }, { 2, 1, 8 }, { 3, 1, 10 }, { 4, 1, 12 } },
+      "sentinel" = 0,
+      "sentinel_census" = { 0, 0, 0 },
+    } },
   "chains" = {},
   "examples" = { {
       "expr" = "m['dkkKueiCount']() != 4  or m['dkkAppear']() != 1  or m['dkkAC']() != -4  or m['dkkMove']() != 18  or m['dkkHDMin']() != 3  or m['dkkHDMax']() != 6  or m['dkkAttackCount']() != 1  or m['dkkMRPct']() != 10  or m['dkkPossessPerDay']() != 3  or m['dkkXP3Base']() != 180  or m['dkkXP3PerHP']() != 3  or m['dkkXP4Base']() != 275  or m['dkkXP4PerHP']() != 4  or m['dkkXP5Base']() != 405  or m['dkkXP5PerHP']() != 5  or m['dkkXP6Base']() != 725  or m['dkkXP6PerHP']() != 6  or m['dkkMagicalFireColdMult']() != 2  or  m['dkkFrequencyRare']() != 1  or  m['dkkLairNil']() != 1  or  m['dkkTreasureNil']() != 1  or  m['dkkSpecialAttackPossession']() != 1  or  m['dkkSpecialDefensesSeeBelow']() != 1  or  m['dkkIntelligenceAvgToVery']() != 1  or  m['dkkAlignmentSeeBelow']() != 1  or  m['dkkSizeMedium']() != 1  or  m['dkkPsionicNil']() != 1  or  m['dkkModesSeeBelow']() != 1  or  m['dkkSpiritOfTheDead']() != 1  or  m['dkkDiesUnburied']() != 1  or  m['dkkDiesUnfulfilled']() != 1  or  m['dkkDiesViolenceUnavenged']() != 1  or  m['dkkAppearsAsInLife']() != 1  or  m['dkkCannotBeTouched']() != 1  or  m['dkkUnaffectedBySunlight']() != 1  or  m['dkkMostActiveAtNight']() != 1  or  m['dkkAlignmentByTask']() != 1  or  m['dkkPowersByHitDice']() != 1  or  m['dkkEtherealAtWill']() != 1  or  m['dkkPossessAsPerSpell']() != 1  or  m['dkkImmuneToESP']() != 1  or  m['dkkImmuneToCharmEnchantIllusionWater']() != 1  or  m['dkkImmuneToPsionicAttack']() != 1  or  m['dkkNoNormalFireColdDamage']() != 1  or  m['dkkHalfMagicalFireCold']() != 1  or  m['dkkAttemptsPossessionFirst']() != 1  or  m['dkkFormDisappearsOnPossession']() != 1  or  m['dkkUsesBodyForTask']() != 1  or  m['dkkTaskVengeance']() != 1  or  m['dkkTaskFulfillOath']() != 1  or  m['dkkTaskTempleCeremonies']() != 1  or  m['dkkLongPossessionPossible']() != 1  or  m['dkkSisterMarriageStory']() != 1  or  m['dkkBreakByVictimDeath']() != 1  or  m['dkkBreakByTaskFulfilled']() != 1  or  m['dkkBreakByExorcism']() != 1  or  m['dkkVictimRemembersNothing']() != 1",

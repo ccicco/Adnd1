@@ -53,7 +53,17 @@ return {
       "default" = 0,
       "comment" = "the weapon class code - 1 the sword; 2 the bow, crossbow, or sling; 3 the miscellaneous melee weapon; 4 the missile weapon; 5 the martial arts weapon; 6 the ninja weapon (print capture p. 291)",
     } },
-  "tables" = {},
+  "tables" = { {
+      "name" = "dlkWeaponClasses",
+      "tag" = "WeaponClasses",
+      "count" = "dlkClassRowCount",
+      "comment" = "the Table 78 Magical Weapons grid - the six d100 bands of the weapon classes, the sword through the ninja (print capture p. 291)",
+      "cols" = { "dlkClassRollMin", "dlkClassRollMax", "dlkClassCode" },
+      "col_comments" = { "the d100 band minimum - the low roll of the row (print capture p. 291)", "the d100 band maximum - the high roll of the row (print capture p. 291)", "the weapon class code - 1 the sword; 2 the bow, crossbow, or sling; 3 the miscellaneous melee weapon; 4 the missile weapon; 5 the martial arts weapon; 6 the ninja weapon (print capture p. 291)" },
+      "data" = { { 1, 40, 1 }, { 41, 52, 2 }, { 53, 68, 3 }, { 69, 80, 4 }, { 81, 90, 5 }, { 91, 100, 6 } },
+      "sentinel" = 0,
+      "sentinel_census" = { 0, 0, 0 },
+    } },
   "chains" = {},
   "examples" = { {
       "expr" = "m['dlkClassRowCount']() != 6  or  m['dlkSwordClass']() != 1  or  m['dlkBowCrossbowSlingClass']() != 1  or  m['dlkMiscMeleeClass']() != 1  or  m['dlkMissileClass']() != 1  or  m['dlkMartialArtsClass']() != 1  or  m['dlkNinjaClass']() != 1",

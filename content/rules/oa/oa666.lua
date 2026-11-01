@@ -96,7 +96,17 @@ return {
       "default" = 0,
       "comment" = "the travel rate boost by band (print p. 117; compressed pp. 59-60). The band list rides this comment: 0 ill omen, 1 great danger, 2 neutral, 3 favorable, 4 auspicious - the favorable and auspicious bands travel at half again their normal traveling rate that day (pinned 1, the +50 percent riding the diaTravelBoostPct const); the other bands carry none",
     } },
-  "tables" = {},
+  "tables" = { {
+      "name" = "diaT63Grid",
+      "tag" = "T63Data",
+      "count" = "diaBandCount",
+      "col_default" = 0,
+      "cols" = { "diaPartyHit", "diaPartySave", "diaFoeHit", "diaEncMult", "diaReaction", "diaTravel" },
+      "col_comments" = { "the party to hit modifier by band (print p. 117; compressed pp. 59-60). The band list rides this comment: 0 ill omen, 1 great danger, 2 neutral, 3 favorable, 4 auspicious - the -1 applies only in the ill omen band, and there only if the advice is ignored (the diaIllOmenIgnorePenalty pin); the other bands carry no party to hit modifier", "the party saving throw modifier by band (print p. 117; compressed pp. 59-60). The band list rides this comment: 0 ill omen, 1 great danger, 2 neutral, 3 favorable, 4 auspicious - the -1 in the ill omen band (again only if the advice is ignored) and the +1 in the auspicious band; great danger, neutral and favorable carry none", "the foe to hit modifier by band (print p. 117; compressed pp. 59-60). The band list rides this comment: 0 ill omen, 1 great danger, 2 neutral, 3 favorable, 4 auspicious - the adversaries gain +1 in the great danger band and suffer -1 against the characters in the favorable and auspicious bands; the ill omen and neutral bands carry none", "the encounter chance multiplier by band (print p. 117; compressed pp. 59-60). The band list rides this comment: 0 ill omen, 1 great danger, 2 neutral, 3 favorable, 4 auspicious - the chance for encounters is doubled in the ill omen and great danger bands (pinned 2), the other three bands the normal 1", "the reaction modifier by band (print p. 117; compressed pp. 59-60). The band list rides this comment: 0 ill omen, 1 great danger, 2 neutral, 3 favorable, 4 auspicious - the -10 reaction modifier (pinned as a percentage, the diaReactionPenaltyPct const) applies to all encounters in the ill omen and great danger bands; the other bands carry none", "the travel rate boost by band (print p. 117; compressed pp. 59-60). The band list rides this comment: 0 ill omen, 1 great danger, 2 neutral, 3 favorable, 4 auspicious - the favorable and auspicious bands travel at half again their normal traveling rate that day (pinned 1, the +50 percent riding the diaTravelBoostPct const); the other bands carry none" },
+      "data" = { { -1, -1, 0, 2, -10, 0 }, { 0, 0, 1, 2, -10, 0 }, { 0, 0, 0, 1, 0, 0 }, { 0, 0, -1, 1, 0, 1 }, { 0, 1, -1, 1, 0, 1 } },
+      "comment" = "the Table 63 divination results band grid (print p. 117; compressed pp. 59-60)",
+      "audit_comment" = "the divination results grid: the party, foe, encounter, reaction, save and travel modifiers by omen band",
+    } },
   "chains" = { {
       "name" = "diaOmenBand",
       "arg" = "d",

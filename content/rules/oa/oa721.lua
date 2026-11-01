@@ -234,7 +234,17 @@ return {
       "default" = 0,
       "comment" = "the damage maximum - the 8 of the Cave, the 6 of the Earth (print capture p. 272)",
     } },
-  "tables" = {},
+  "tables" = { {
+      "name" = "dkiKala",
+      "tag" = "Kala",
+      "count" = "dkiKalaCount",
+      "comment" = "the kala stat table - the Cave and Earth columns of the paired stat block (print capture pp. 272-273)",
+      "cols" = { "dkiKalaAppearMin", "dkiKalaAppearMax", "dkiKalaAC", "dkiKalaMove", "dkiKalaHD", "dkiKalaLairPct", "dkiKalaDmgMin", "dkiKalaDmgMax" },
+      "col_comments" = { "the appearing minimum - the 1 of both columns (print capture p. 272)", "the appearing maximum - the 10 of the Cave, the 12 of the Earth (print capture p. 272)", "the armor class - the -1 of the Cave, the 2 of the Earth (print capture p. 272)", "the move - the 9 of the Cave, the 12 of the Earth (print capture p. 272)", "the hit dice - the 8 of the Cave, the 6 of the Earth (print capture p. 272)", "the in-lair percentage - the 30% of the Cave, the 25% of the Earth (print capture p. 272)", "the damage minimum - the 1 of both columns (print capture p. 272)", "the damage maximum - the 8 of the Cave, the 6 of the Earth (print capture p. 272)" },
+      "data" = { { 1, 10, -1, 9, 8, 30, 1, 8 }, { 1, 12, 2, 12, 6, 25, 1, 6 } },
+      "sentinel" = 0,
+      "sentinel_census" = { 0, 0, 0, 0, 0, 0, 0, 0 },
+    } },
   "chains" = {},
   "examples" = { {
       "expr" = "m['dkiKalaCount']() != 2  or m['dkiAttackCount']() != 2  or m['dkiXP6Base']() != 825  or m['dkiXP6PerHP']() != 10  or m['dkiXP8Base']() != 1275  or m['dkiXP8PerHP']() != 6  or m['dkiTrackBasePct']() != 80  or m['dkiPainRounds']() != 5  or m['dkiPainTurnsMin']() != 1  or m['dkiPainTurnsMax']() != 3  or m['dkiPainRound2ToHitPenalty']() != 1  or m['dkiPainRound3Penalty']() != 2  or m['dkiPainRound4Penalty']() != 4  or m['dkiDiseaseRangeFeet']() != 5  or m['dkiDiseaseWidthFeet']() != 2  or m['dkiDiseaseDmgDice']() != 1  or m['dkiDiseaseDmgSides']() != 6  or  m['dkiFrequencyRare']() != 1  or  m['dkiSpecialDefensesNil']() != 1  or  m['dkiMagicResistStandard']() != 1  or  m['dkiIntelligenceLow']() != 1  or  m['dkiAlignmentNeutral']() != 1  or  m['dkiSizeMedium']() != 1  or  m['dkiPsionicNil']() != 1  or  m['dkiAncientPrimitiveSpiritRace']() != 1  or  m['dkiColdWastelands']() != 1  or  m['dkiSimilarToHumans']() != 1  or  m['dkiPointedHeads']() != 1  or  m['dkiLargeFeet']() != 1  or  m['dkiInuredToCold']() != 1  or  m['dkiFerocious']() != 1  or  m['dkiCannibalistic']() != 1  or  m['dkiExpertTrackers']() != 1  or  m['dkiExpertHunters']() != 1  or  m['dkiClawedHands']() != 1  or  m['dkiStoneAxes']() != 1  or  m['dkiCaveBitePoison']() != 1  or  m['dkiPainBuildsSlowly']() != 1  or  m['dkiPainRound1Headache']() != 1  or  m['dkiPainRound5Incapacitated']() != 1  or  m['dkiEarthBreathDisease']() != 1  or  m['dkiDiseaseBlocksHealing']() != 1  or  m['dkiCaveLairsInCaves']() != 1  or  m['dkiEarthNomadic']() != 1  or  m['dkiSpeaksNorthernTribes']() != 1  or  m['dkiSpeaksOwnKind']() != 1",

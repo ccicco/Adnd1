@@ -41,7 +41,17 @@ return {
       "default" = 0,
       "comment" = "the missile type code - 1 the armor piercer arrow, 2-12 damage; 2 the frog crotch arrow, 2-8 damage; 3 the humming bulb arrow, 2-5 damage; 4 the leaf head arrow, 2-12 damage; 5 the normal arrow, 3-24 damage; 6 the throwing axe; 7 the blowpipe dart, 2-8 damage; 8 the thrown dart, 3-12 damage; 9 the javelin; 10 the quarrel, 2-24 damage; 11 the sling and pellet bow bullets, 2-20 damage; 12 the uchi-ne (print capture p. 293)",
     } },
-  "tables" = {},
+  "tables" = { {
+      "name" = "dlpMissileClass",
+      "tag" = "MissileClass",
+      "count" = "dlpMissileRowCount",
+      "comment" = "the Table 83 Missile Class grid - the twelve d100 bands of the missile types, the armor piercer arrow through the uchi-ne (print capture p. 293)",
+      "cols" = { "dlpMissileRollMin", "dlpMissileRollMax", "dlpMissileCode" },
+      "col_comments" = { "the d100 band minimum - the low roll of the row (print capture p. 293)", "the d100 band maximum - the high roll of the row (print capture p. 293)", "the missile type code - 1 the armor piercer arrow, 2-12 damage; 2 the frog crotch arrow, 2-8 damage; 3 the humming bulb arrow, 2-5 damage; 4 the leaf head arrow, 2-12 damage; 5 the normal arrow, 3-24 damage; 6 the throwing axe; 7 the blowpipe dart, 2-8 damage; 8 the thrown dart, 3-12 damage; 9 the javelin; 10 the quarrel, 2-24 damage; 11 the sling and pellet bow bullets, 2-20 damage; 12 the uchi-ne (print capture p. 293)" },
+      "data" = { { 1, 10, 1 }, { 11, 20, 2 }, { 21, 25, 3 }, { 26, 40, 4 }, { 41, 60, 5 }, { 61, 70, 6 }, { 71, 71, 7 }, { 72, 72, 8 }, { 73, 77, 9 }, { 78, 90, 10 }, { 91, 98, 11 }, { 99, 100, 12 } },
+      "sentinel" = 0,
+      "sentinel_census" = { 0, 0, 0 },
+    } },
   "chains" = {},
   "examples" = { {
       "expr" = "m['dlpMissileRowCount']() != 12  or  m['dlpArrowBands']() != 1  or  m['dlpSingleRollBands']() != 1  or  m['dlpUchiNeTail']() != 1",

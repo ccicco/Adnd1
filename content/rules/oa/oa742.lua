@@ -77,7 +77,17 @@ return {
       "default" = 0,
       "comment" = "the gems count - the 10 of the 91-100 row, the 0 the nil (print capture p. 289)",
     } },
-  "tables" = {},
+  "tables" = { {
+      "name" = "dldEverfulPurse",
+      "tag" = "EverfulPurse",
+      "count" = "dldPurseRowCount",
+      "comment" = "the Bucknard's everful purse contents table - the three d100 bands of the coins and gems (print capture p. 289)",
+      "cols" = { "dldPurseRollMin", "dldPurseRollMax", "dldPurseFen", "dldPurseYuan", "dldPurseTael", "dldPurseChien", "dldPurseGems" },
+      "col_comments" = { "the d100 band minimum - the low roll of the row (print capture p. 289)", "the d100 band maximum - the high roll of the row (print capture p. 289)", "the fen count - the 20 of the 51-100 rows, the 0 the nil (print capture p. 289)", "the yuan count - the 10 of the 01-50 row, the 0 the nil (print capture p. 289)", "the tael count - the 5 of every row (print capture p. 289)", "the ch'ien count - the 1 and 2 of the first two rows, the 0 the nil of the 91-100 (print capture p. 289)", "the gems count - the 10 of the 91-100 row, the 0 the nil (print capture p. 289)" },
+      "data" = { { 1, 50, 0, 10, 5, 1, 0 }, { 51, 90, 20, 0, 5, 2, 0 }, { 91, 100, 20, 0, 5, 0, 10 } },
+      "sentinel" = 0,
+      "sentinel_census" = { 0, 0, 1, 2, 0, 1, 2 },
+    } },
   "chains" = {},
   "examples" = { {
       "expr" = "m['dldPurseRowCount']() != 3  or  m['dldBootsOfElvenkindRerolled']() != 1  or  m['dldBroomOfAnimatedAttackRerolled']() != 1  or  m['dldBroomOfFlyingRerolled']() != 1  or  m['dldEverfulPurseIntro']() != 1  or  m['dldCloakOfElvenkindRerolled']() != 1  or  m['dldInstrumentsOfTheBardsRerolled']() != 1  or  m['dldManualOfGolemsRerolled']() != 1",

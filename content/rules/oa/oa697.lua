@@ -44,7 +44,17 @@ return {
       "default" = 0,
       "comment" = "the Table 71 maximum rolls by row ordinal (print capture p. 237): Ambassador 10, Assassination 15, Birth 30, Comet 31, Death of a Lord 40, Earthquake 43, Famine 47, Fire 52, Flood 57, Incursion 58, Marriage 68, New Religion 69, Plague 74, Political Plot 78, Rebellion 85, Tsunami 86, Visitation 87, Volcano 88, War 100 - the six single-roll events (Comet, Incursion, New Religion, Tsunami, Visitation, Volcano) and the War closing the table at 100",
     } },
-  "tables" = {},
+  "tables" = { {
+      "name" = "djkOA71Grid",
+      "tag" = "OA71Data",
+      "count" = "djkOA71EventCount",
+      "col_default" = 0,
+      "cols" = { "djkOA71MinRoll", "djkOA71MaxRoll" },
+      "col_comments" = { "the Table 71 minimum rolls by row ordinal (print capture p. 237): Ambassador 1, Assassination 11, Birth 16, Comet 31, Death of a Lord 32, Earthquake 41, Famine 44, Fire 48, Flood 53, Incursion 58, Marriage 59, New Religion 69, Plague 70, Political Plot 75, Rebellion 79, Tsunami 86, Visitation 87, Volcano 88, War 89 - the ranges contiguous, each event beginning where the last ended", "the Table 71 maximum rolls by row ordinal (print capture p. 237): Ambassador 10, Assassination 15, Birth 30, Comet 31, Death of a Lord 40, Earthquake 43, Famine 47, Fire 52, Flood 57, Incursion 58, Marriage 68, New Religion 69, Plague 74, Political Plot 78, Rebellion 85, Tsunami 86, Visitation 87, Volcano 88, War 100 - the six single-roll events (Comet, Incursion, New Religion, Tsunami, Visitation, Volcano) and the War closing the table at 100" },
+      "data" = { { 1, 10 }, { 11, 15 }, { 16, 30 }, { 31, 31 }, { 32, 40 }, { 41, 43 }, { 44, 47 }, { 48, 52 }, { 53, 57 }, { 58, 58 }, { 59, 68 }, { 69, 69 }, { 70, 74 }, { 75, 78 }, { 79, 85 }, { 86, 86 }, { 87, 87 }, { 88, 88 }, { 89, 100 } },
+      "comment" = "Table 71: the yearly events - the nineteen events with their percentile ranges (print capture p. 237)",
+      "audit_comment" = "the Table 71 grid - the nineteen events across two columns",
+    } },
   "chains" = {},
   "examples" = { {
       "expr" = "m['djkOA71EventCount']() != 19  or m['djkOA71WarMin']() != 89  or m['djkOA71WarMax']() != 100  or  m['djkOA71OnePerYear']() != 1  or  m['djkOA71Month1d12']() != 1  or  m['djkOA71CampaignAreaOnly']() != 1",

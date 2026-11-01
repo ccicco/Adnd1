@@ -45,7 +45,17 @@ return {
       "default" = 0,
       "comment" = "the ninja type code - 1 the kawanaga; 2 the kumade; 3 the kusari-gama; 4 the kyoketsu-shogi; 5 the needle, 10-60; 6 the nekode; 7 the ninja-to; 8 the shaken, 2-12; 9 the shikomi-zue; 10 the spike shuriken, 2-12; 11 the large star shuriken, 3-18; 12 the small star shuriken, 3-18 (print capture p. 294)",
     } },
-  "tables" = {},
+  "tables" = { {
+      "name" = "dlrNinjaClass",
+      "tag" = "NinjaClass",
+      "count" = "dlrNinjaRowCount",
+      "comment" = "the Table 85 Ninja Class grid - the twelve d100 bands of the ninja weapon types, the kawanaga through the small star shuriken, the grid spanning the page break (print capture p. 293)",
+      "cols" = { "dlrNinjaRollMin", "dlrNinjaRollMax", "dlrNinjaCode" },
+      "col_comments" = { "the d100 band minimum - the low roll of the row (print capture p. 293)", "the d100 band maximum - the high roll of the row (print capture p. 294)", "the ninja type code - 1 the kawanaga; 2 the kumade; 3 the kusari-gama; 4 the kyoketsu-shogi; 5 the needle, 10-60; 6 the nekode; 7 the ninja-to; 8 the shaken, 2-12; 9 the shikomi-zue; 10 the spike shuriken, 2-12; 11 the large star shuriken, 3-18; 12 the small star shuriken, 3-18 (print capture p. 294)" },
+      "data" = { { 1, 5, 1 }, { 6, 10, 2 }, { 11, 15, 3 }, { 16, 20, 4 }, { 21, 25, 5 }, { 26, 30, 6 }, { 31, 40, 7 }, { 41, 45, 8 }, { 46, 60, 9 }, { 61, 70, 10 }, { 71, 85, 11 }, { 86, 100, 12 } },
+      "sentinel" = 0,
+      "sentinel_census" = { 0, 0, 0 },
+    } },
   "chains" = {},
   "examples" = { {
       "expr" = "m['dlrNinjaRowCount']() != 12  or  m['dlrPageBreakGrid']() != 1  or  m['dlrShurikenBands']() != 1  or  m['dlrNinjaToBand']() != 1  or  m['dlrConcealedWeapons']() != 1",

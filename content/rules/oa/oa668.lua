@@ -39,7 +39,17 @@ return {
       "default" = 0,
       "comment" = "the fate band face widths by ordinal (print p. 135; compressed p. 66). The band list rides this comment: 0 roll 1, 1 roll 2, 2 roll 3, 3 rolls 4-5, 4 rolls 6-7, 5 rolls 8-9, 6 rolls 10-12, 7 rolls 13-15, 8 rolls 16-17, 9 roll 18, 10 roll 19, 11 roll 20 - the widths sum to the twenty faces of the die: six single-face bands at the ladder ends (rolls 1, 2, 3, 18, 19, 20), four two-face bands (rolls 4-5, 6-7, 8-9, 16-17) and the two three-face widest bands at the ladder middle (rolls 10-12 and 13-15). The outcomes themselves are prose - the DM-adventure seeds riding the printed table, not pinned cells",
     } },
-  "tables" = {},
+  "tables" = { {
+      "name" = "didT65Grid",
+      "tag" = "T65Data",
+      "count" = "didT65BandCount",
+      "col_default" = 0,
+      "cols" = { "didT65Faces" },
+      "col_comments" = { "the fate band face widths by ordinal (print p. 135; compressed p. 66). The band list rides this comment: 0 roll 1, 1 roll 2, 2 roll 3, 3 rolls 4-5, 4 rolls 6-7, 5 rolls 8-9, 6 rolls 10-12, 7 rolls 13-15, 8 rolls 16-17, 9 roll 18, 10 roll 19, 11 roll 20 - the widths sum to the twenty faces of the die: six single-face bands at the ladder ends (rolls 1, 2, 3, 18, 19, 20), four two-face bands (rolls 4-5, 6-7, 8-9, 16-17) and the two three-face widest bands at the ladder middle (rolls 10-12 and 13-15). The outcomes themselves are prose - the DM-adventure seeds riding the printed table, not pinned cells" },
+      "data" = { { 1 }, { 1 }, { 1 }, { 2 }, { 2 }, { 2 }, { 3 }, { 3 }, { 2 }, { 1 }, { 1 }, { 1 } },
+      "comment" = "the Table 65 fate band grid (print p. 135; compressed p. 66)",
+      "audit_comment" = "the fate grid: the band face widths by ordinal - the outcome prose is narrative, not pinned cells",
+    } },
   "chains" = { {
       "name" = "didT65FateBand",
       "arg" = "d",

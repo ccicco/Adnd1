@@ -251,7 +251,17 @@ return {
       "default" = 0,
       "comment" = "the arms percentage - row by row the short sword, the trident and speargun, the trident and dagger, the short sword and net (print capture p. 268)",
     } },
-  "tables" = {},
+  "tables" = { {
+      "name" = "dkfArms",
+      "tag" = "Arms",
+      "count" = "dkfArmsCount",
+      "comment" = "the hai nu arms table - the weapon mix of any encountered band (print capture p. 268)",
+      "cols" = { "dkfArmsPct" },
+      "col_comments" = { "the arms percentage - row by row the short sword, the trident and speargun, the trident and dagger, the short sword and net (print capture p. 268)" },
+      "data" = { { 20 }, { 50 }, { 20 }, { 10 } },
+      "sentinel" = 0,
+      "sentinel_census" = { 0 },
+    } },
   "chains" = {},
   "examples" = { {
       "expr" = "m['dkfArmsCount']() != 4  or m['dkfAppearMin']() != 4  or m['dkfAppearMax']() != 40  or m['dkfAC']() != 7  or m['dkfMoveWalk']() != 6  or m['dkfMoveSwim']() != 15  or m['dkfHDMin']() != 1  or m['dkfHDMax']() != 4  or m['dkfLairPct']() != 30  or m['dkfAttackCount']() != 1  or m['dkfXP1Base']() != 14  or m['dkfXP1PerHP']() != 1  or m['dkfXP2Base']() != 28  or m['dkfXP2PerHP']() != 2  or m['dkfXP3Base']() != 50  or m['dkfXP3PerHP']() != 3  or m['dkfXP4Base']() != 85  or m['dkfXP4PerHP']() != 4  or m['dkfFemalePct']() != 75  or m['dkfMatronHD']() != 6  or m['dkfMatronAC']() != 5  or m['dkfSharkDice']() != 2  or m['dkfSharkSides']() != 6  or m['dkfEscortPct']() != 40  or m['dkfEscortDice']() != 3  or m['dkfEscortSides']() != 4  or m['dkfOutOfWaterDmgPerRound']() != 1  or m['dkfFireDamageMult']() != 2  or m['dkfColdBonusPerDie']() != 1  or  m['dkfFrequencyRare']() != 1  or  m['dkfTreasureTypeU']() != 1  or  m['dkfDamageByWeaponType']() != 1  or  m['dkfSpecialAttacksNil']() != 1  or  m['dkfImmuneToWaterAttacks']() != 1  or  m['dkfMagicResistStandard']() != 1  or  m['dkfIntelligenceAvgToHigh']() != 1  or  m['dkfAlignmentLawfulNeutral']() != 1  or  m['dkfSizeMedium']() != 1  or  m['dkfPsionicNil']() != 1  or  m['dkfAquaticRace']() != 1  or  m['dkfWebbedHandsAndFeet']() != 1  or  m['dkfShimmeringFur']() != 1  or  m['dkfWarmShallowSeas']() != 1  or  m['dkfGathersFish']() != 1  or  m['dkfAttendsSeaLordCourt']() != 1  or  m['dkfSpeaksOnlyOwnAndCourt']() != 1  or  m['dkfLairSunkenShipsAndKelp']() != 1  or  m['dkfLovesBrightTreasures']() != 1  or  m['dkfSocietyMatriarchal']() != 1  or  m['dkfMatronLeadsCommunity']() != 1  or  m['dkfTamedSharkGuards']() != 1  or  m['dkfGoodRelationsSeaCreatures']() != 1  or  m['dkfSeldomAttackVessels']() != 1  or  m['dkfPeacefulAndFriendly']() != 1  or  m['dkfDefendsHuntingGrounds']() != 1  or  m['dkfCutsFishermenLines']() != 1  or  m['dkfPetitionsSeaLord']() != 1  or  m['dkfCannotLongSurviveOutOfWater']() != 1  or  m['dkfImmuneToAllWaterForms']() != 1",

@@ -45,7 +45,17 @@ return {
       "default" = 0,
       "comment" = "the Table 67 horseback bowfire to-hit modifiers by band ordinal (print capture p. 220): -1 below half speed, -3 from half to less than three-quarters, -5 from three-quarters to maximum speed - the modifiers deepening with the speed of the animal, cumulative with the range and weapon versus armor modifiers",
     } },
-  "tables" = {},
+  "tables" = { {
+      "name" = "diwOA67Grid",
+      "tag" = "OA67Data",
+      "count" = "diwOA67BandCount",
+      "col_default" = 0,
+      "cols" = { "diwOA67MinEighths", "diwOA67MaxEighths", "diwOA67Modifier" },
+      "col_comments" = { "the Table 67 band floors in eighths of the animal's normal movement, by band ordinal (print capture p. 220): band 0 the less-than-half floor 0, band 1 the half floor 4, band 2 the three-quarters floor 6 - the printed bands read as eighths: less than 1/2, 1/2 to less than 3/4, 3/4 to maximum speed", "the Table 67 band ceilings in eighths of the animal's normal movement, by band ordinal (print capture p. 220): band 0 the below-half ceiling 3, band 1 the below-three-quarters ceiling 5, band 2 the maximum-speed ceiling 8 - the full-speed band capping at the whole movement", "the Table 67 horseback bowfire to-hit modifiers by band ordinal (print capture p. 220): -1 below half speed, -3 from half to less than three-quarters, -5 from three-quarters to maximum speed - the modifiers deepening with the speed of the animal, cumulative with the range and weapon versus armor modifiers" },
+      "data" = { { 0, 3, -1 }, { 4, 5, -3 }, { 6, 8, -5 } },
+      "comment" = "Table 67: the horseback bowfire modifiers - the three speed bands of the animal's current movement with their to-hit penalties, pinned as the eighths-of-normal-movement grid (print capture p. 220)",
+      "audit_comment" = "the Table 67 grid - the three speed bands and their modifiers",
+    } },
   "chains" = {},
   "examples" = { {
       "expr" = "m['diwOA67TurnDegrees']() != 30  or m['diwOA67BandCount']() != 3  or  m['diwOA67CumulativeModifiers']() != 1  or  m['diwOA67SharperTurnsPreventFire']() != 1  or  m['diwOA67HorseLikeCreaturesApply']() != 1",

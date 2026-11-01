@@ -143,7 +143,17 @@ return {
       "default" = 0,
       "comment" = "the one-of-each flag - the 1 of the 20 row, the 0 elsewhere (print capture p. 287)",
     } },
-  "tables" = {},
+  "tables" = { {
+      "name" = "dkxIIA",
+      "tag" = "IIA",
+      "count" = "dkxRowCount",
+      "comment" = "the Table II.A. (Orient) grid - the nine d20 bands row by row, the treasure ranges as the min and max pairs with the nil the 0 sentinel, the roll mechanics riding in the last three columns (print capture p. 286; print capture p. 287)",
+      "cols" = { "dkxRollMin", "dkxRollMax", "dkxFenMin", "dkxFenMax", "dkxYuanMin", "dkxYuanMax", "dkxTaelMin", "dkxTaelMax", "dkxChienMin", "dkxChienMax", "dkxGemsMin", "dkxGemsMax", "dkxArtMin", "dkxArtMax", "dkxRollsCount", "dkxRerollAbove", "dkxOneOfEach" },
+      "col_comments" = { "the d20 band minimum - the low roll of the row (print capture p. 286)", "the d20 band maximum - the high roll of the row (print capture p. 286)", "the fen minimum - the low of the 10,000-40,000, the 0 the nil (print capture p. 286)", "the fen maximum - the high of the 10,000-40,000, the 0 the nil (print capture p. 286)", "the yuan minimum - the low of the 10,000-60,000, the 0 the nil (print capture p. 286)", "the yuan maximum - the high of the 10,000-60,000, the 0 the nil (print capture p. 286)", "the tael minimum - the low of the 10,000-60,000, the 0 the nil (print capture p. 286)", "the tael maximum - the high of the 10,000-60,000, the 0 the nil (print capture p. 286)", "the ch'ien minimum - the low of the 500-1,000 and 500-2,000, the 0 the nil (print capture p. 287)", "the ch'ien maximum - the high of the 500-1,000 and the 500-2,000 of the capture misreading 500-200, the 0 the nil (print capture p. 287)", "the gems minimum - the low of the 10-100, the 0 the nil (print capture p. 287)", "the gems maximum - the high of the 10-100, the 0 the nil (print capture p. 287)", "the art minimum - the low of the 5-50 jewelry or art pieces, the 0 the nil (print capture p. 287)", "the art maximum - the high of the 5-50, the 0 the nil (print capture p. 287)", "the rolls count - the 2 of the roll twice, the 3 of the roll three times, the 1 elsewhere (print capture p. 287)", "the reroll limit column - the 17 rerolled-above of the twice and three-times rows, the 0 elsewhere (print capture p. 287)", "the one-of-each flag - the 1 of the 20 row, the 0 elsewhere (print capture p. 287)" },
+      "data" = { { 1, 2, 10000, 40000, 10000, 60000, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0 }, { 3, 5, 0, 0, 0, 0, 10000, 60000, 0, 0, 0, 0, 0, 0, 1, 0, 0 }, { 6, 10, 0, 0, 0, 0, 0, 0, 500, 1000, 0, 0, 0, 0, 1, 0, 0 }, { 11, 12, 0, 0, 0, 0, 0, 0, 500, 2000, 0, 0, 0, 0, 1, 0, 0 }, { 13, 15, 0, 0, 0, 0, 0, 0, 0, 0, 10, 100, 0, 0, 1, 0, 0 }, { 16, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 50, 1, 0, 0 }, { 18, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 17, 0 }, { 19, 19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 17, 0 }, { 20, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1 } },
+      "sentinel" = 0,
+      "sentinel_census" = { 0, 0, 8, 8, 8, 8, 8, 8, 7, 7, 8, 8, 8, 8, 0, 7, 8 },
+    } },
   "chains" = {},
   "examples" = { {
       "expr" = "m['dkxRowCount']() != 9  or m['dkxRerollLimit']() != 17  or m['dkxOneOfEachRow']() != 20  or  m['dkxRowOneFenYuan']() != 1  or  m['dkxRowTael']() != 1  or  m['dkxRowChienOneDieSix']() != 1  or  m['dkxRowChienFiveDieFour']() != 1  or  m['dkxRowGems']() != 1  or  m['dkxRowJewelryOrArt']() != 1  or  m['dkxRollTwice']() != 1  or  m['dkxRollThreeTimes']() != 1  or  m['dkxOneOfEachTreasure']() != 1",

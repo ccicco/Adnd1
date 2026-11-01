@@ -65,7 +65,17 @@ return {
       "default" = 0,
       "comment" = "the special property code - 1 the etherealness; 2 the +3 versus missiles; 3 the +4 versus missiles; 4 the +5 versus missiles; 5 the vulnerability; 6 the missile attraction; 7 the presence; 8 the blending; 9 the fear; 10 the possession; 11 the healing (print capture p. 290)",
     } },
-  "tables" = {},
+  "tables" = { {
+      "name" = "dlhSpecialProps",
+      "tag" = "SpecialProps",
+      "count" = "dlhSpecialRowCount",
+      "comment" = "the Table 77 Special Properties grid - the eleven d100 bands, the etherealness through the healing, the versus-missiles grades of the 06-50 stretch (print capture p. 290)",
+      "cols" = { "dlhSpecialRollMin", "dlhSpecialRollMax", "dlhSpecialCode" },
+      "col_comments" = { "the d100 band minimum - the low roll of the row (print capture p. 290)", "the d100 band maximum - the high roll of the row (print capture p. 290)", "the special property code - 1 the etherealness; 2 the +3 versus missiles; 3 the +4 versus missiles; 4 the +5 versus missiles; 5 the vulnerability; 6 the missile attraction; 7 the presence; 8 the blending; 9 the fear; 10 the possession; 11 the healing (print capture p. 290)" },
+      "data" = { { 1, 5, 1 }, { 6, 30, 2 }, { 31, 40, 3 }, { 41, 50, 4 }, { 51, 65, 5 }, { 66, 75, 6 }, { 76, 80, 7 }, { 81, 85, 8 }, { 86, 90, 9 }, { 91, 95, 10 }, { 96, 100, 11 } },
+      "sentinel" = 0,
+      "sentinel_census" = { 0, 0, 0 },
+    } },
   "chains" = {},
   "examples" = { {
       "expr" = "m['dlhSpecialRowCount']() != 11  or  m['dlhEtherealnessBand']() != 1  or  m['dlhVersusMissilesBands']() != 1  or  m['dlhVulnerabilityBand']() != 1  or  m['dlhMissileAttractionBand']() != 1  or  m['dlhPresenceBand']() != 1  or  m['dlhBlendingBand']() != 1  or  m['dlhFearBand']() != 1  or  m['dlhPossessionBand']() != 1  or  m['dlhHealingBand']() != 1",

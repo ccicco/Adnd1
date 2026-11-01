@@ -49,7 +49,17 @@ return {
       "default" = 0,
       "comment" = "the property code - 0 the armor of quality (the 0 the no plus); 1 the +1; 2 the +2 (the +1 if an armor piece); 3 the +3 (the +1 if an armor piece); 4 the +4 (the +1 if an armor piece); 5 the +5 (the +1 if an armor piece); 6 the special property, rolled again on the Table 77 (print capture p. 290)",
     } },
-  "tables" = {},
+  "tables" = { {
+      "name" = "dlgArmorProps",
+      "tag" = "ArmorProps",
+      "count" = "dlgPropRowCount",
+      "comment" = "the Table 76 Magical Armor Properties grid - the seven d100 bands, the armor of quality through the special property reroll on the Table 77, the table spanning the page break (print capture p. 289)",
+      "cols" = { "dlgPropRollMin", "dlgPropRollMax", "dlgPropPlus" },
+      "col_comments" = { "the d100 band minimum - the low roll of the row (print capture p. 289)", "the d100 band maximum - the high roll of the row (print capture p. 290)", "the property code - 0 the armor of quality (the 0 the no plus); 1 the +1; 2 the +2 (the +1 if an armor piece); 3 the +3 (the +1 if an armor piece); 4 the +4 (the +1 if an armor piece); 5 the +5 (the +1 if an armor piece); 6 the special property, rolled again on the Table 77 (print capture p. 290)" },
+      "data" = { { 1, 40, 0 }, { 41, 65, 1 }, { 66, 80, 2 }, { 81, 85, 3 }, { 86, 88, 4 }, { 89, 90, 5 }, { 91, 100, 6 } },
+      "sentinel" = 0,
+      "sentinel_census" = { 0, 0, 1 },
+    } },
   "chains" = {},
   "examples" = { {
       "expr" = "m['dlgPropRowCount']() != 7  or m['dlgPiecePlus']() != 1  or  m['dlgCaptionPeriod']() != 1  or  m['dlgQualityAsterisk']() != 1  or  m['dlgSpecialRerollTable77']() != 1  or  m['dlgFootnoteNoSpecialProperty']() != 1",

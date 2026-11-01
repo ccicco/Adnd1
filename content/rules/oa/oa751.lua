@@ -57,7 +57,17 @@ return {
       "default" = 0,
       "comment" = "the sword type code - 1 the katana; 2 the parang; 3 the broad sword; 4 the long sword; 5 the short sword; 6 the two-handed sword; 7 the wakizashi (print capture p. 292)",
     } },
-  "tables" = {},
+  "tables" = { {
+      "name" = "dlmSwordClass",
+      "tag" = "SwordClass",
+      "count" = "dlmSwordRowCount",
+      "comment" = "the Table 80 Sword Class grid - the seven d100 bands of the sword types, the katana through the wakizashi (print capture p. 292)",
+      "cols" = { "dlmSwordRollMin", "dlmSwordRollMax", "dlmSwordCode" },
+      "col_comments" = { "the d100 band minimum - the low roll of the row (print capture p. 292)", "the d100 band maximum - the high roll of the row (print capture p. 292)", "the sword type code - 1 the katana; 2 the parang; 3 the broad sword; 4 the long sword; 5 the short sword; 6 the two-handed sword; 7 the wakizashi (print capture p. 292)" },
+      "data" = { { 1, 30, 1 }, { 31, 35, 2 }, { 36, 50, 3 }, { 51, 65, 4 }, { 66, 80, 5 }, { 81, 85, 6 }, { 86, 100, 7 } },
+      "sentinel" = 0,
+      "sentinel_census" = { 0, 0, 0 },
+    } },
   "chains" = {},
   "examples" = { {
       "expr" = "m['dlmSwordRowCount']() != 7  or  m['dlmKatanaBand']() != 1  or  m['dlmParangBand']() != 1  or  m['dlmBroadSwordBand']() != 1  or  m['dlmLongSwordBand']() != 1  or  m['dlmShortSwordBand']() != 1  or  m['dlmTwoHandedSwordBand']() != 1  or  m['dlmWakizashiBand']() != 1",

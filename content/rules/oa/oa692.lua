@@ -65,7 +65,17 @@ return {
       "default" = 0,
       "comment" = "the Table 70 form tags by row ordinal, coded (print capture p. 227): 0 hard, 1 soft, 2 hard/soft - the general classification of the fighting style; Strike all hard, Push and Vital Area all soft, Movement soft but Speed and Slow Resistance hard/soft; the crossover between the styles allowed, the tag only the general type of maneuver each style uses",
     } },
-  "tables" = {},
+  "tables" = { {
+      "name" = "djfOA70Grid",
+      "tag" = "OA70Data",
+      "count" = "djfOA70RowCount",
+      "col_default" = 0,
+      "cols" = { "djfOA70Method", "djfOA70Rank", "djfOA70Form" },
+      "col_comments" = { "the Table 70 method codes by row ordinal (print capture p. 227): 1 Kick, 2 Movement, 3 Strike, 4 Weapon, 5 Lock, 6 Throw, 7 Mental and Physical Training, 8 Push, 9 Vital Area - the maneuvers grouped under the principal method of fighting used, the Training category learnable in any style", "the Table 70 difficulty ranks by row ordinal (print capture p. 227): 1 the easiest, ranked per column with no gaps - Kick 1-3, Movement 1-7, Strike 1-3, Weapon 1-3, Lock 1-4, Throw 1-4, Training 1-6, Push 1-3, Vital Area 1-3; the progression from 1 on up, more than one maneuver at the same difficulty allowed, a higher maneuver learned only when those beneath it are learned", "the Table 70 form tags by row ordinal, coded (print capture p. 227): 0 hard, 1 soft, 2 hard/soft - the general classification of the fighting style; Strike all hard, Push and Vital Area all soft, Movement soft but Speed and Slow Resistance hard/soft; the crossover between the styles allowed, the tag only the general type of maneuver each style uses" },
+      "data" = { { 1, 1, 0 }, { 1, 2, 0 }, { 1, 3, 2 }, { 2, 1, 2 }, { 2, 2, 1 }, { 2, 3, 1 }, { 2, 4, 1 }, { 2, 5, 1 }, { 2, 6, 2 }, { 2, 7, 2 }, { 3, 1, 0 }, { 3, 2, 0 }, { 3, 3, 0 }, { 4, 1, 2 }, { 4, 2, 2 }, { 4, 3, 1 }, { 5, 1, 2 }, { 5, 2, 1 }, { 5, 3, 2 }, { 5, 4, 2 }, { 6, 1, 2 }, { 6, 2, 2 }, { 6, 3, 0 }, { 6, 4, 1 }, { 7, 1, 2 }, { 7, 2, 1 }, { 7, 3, 1 }, { 7, 4, 1 }, { 7, 5, 0 }, { 7, 6, 1 }, { 8, 1, 1 }, { 8, 2, 1 }, { 8, 3, 1 }, { 9, 1, 1 }, { 9, 2, 1 }, { 9, 3, 1 } },
+      "comment" = "Table 70: the martial arts special maneuvers - the thirty-six ranked maneuvers across the nine method columns with their form tags (print capture p. 227)",
+      "audit_comment" = "the Table 70 grid - the thirty-six maneuvers across three columns",
+    } },
   "chains" = {},
   "examples" = { {
       "expr" = "m['djfOA70RowCount']() != 36  or m['djfOA70KickCount']() != 3  or m['djfOA70MoveCount']() != 7  or m['djfOA70StrikeCount']() != 3  or m['djfOA70WeaponCount']() != 3  or m['djfOA70LockCount']() != 4  or m['djfOA70ThrowCount']() != 4  or m['djfOA70TrainCount']() != 6  or m['djfOA70PushCount']() != 3  or m['djfOA70VitalCount']() != 3",

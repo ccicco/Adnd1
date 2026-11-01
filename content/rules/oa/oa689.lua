@@ -64,7 +64,17 @@ return {
       "default" = 0,
       "comment" = "the Table 68 special maneuver rank counts by style ordinal (print capture p. 224) - the number of listed maneuver ranks: Karate Strike 1,2,3 + Kick 1 + Movement 1 + Mental 1 = 6; Kung-fu Lock 1,2,3 + Strike 1,2 + Kick 2 + Movement 4 + Mental 5 = 8; Tae Kwon Do Kick 1,2,3 + Strike 1 + Throw 4 + Movement 5 = 6; Jujutsu Throw 1,2,3,4 + Movement 1,3 + Vital Area 1,2 + Mental 1,2,3 = 11 - the most maneuver-rich style",
     } },
-  "tables" = {},
+  "tables" = { {
+      "name" = "djcOA68Grid",
+      "tag" = "OA68Data",
+      "count" = "djcOA68StyleCount",
+      "col_default" = 0,
+      "cols" = { "djcOA68AtkNum", "djcOA68AtkDen", "djcOA68DmgDie", "djcOA68AC", "djcOA68Principal", "djcOA68ManeuverRanks" },
+      "col_comments" = { "the Table 68 attacks numerators by style ordinal (print capture p. 224): the styles read 1 Karate, 2 Kung-fu, 3 Tae Kwon Do, 4 Jujutsu - the 3/1, 2/1, 1/1 and 2/1 rates of the four common styles", "the Table 68 attacks denominators by style ordinal (print capture p. 224): every common style a per-round rate, all four denominators the 1", "the Table 68 damage dice by style ordinal (print capture p. 224): Karate the d6, Kung-fu the d6, Tae Kwon Do the d8 - the only d8, Jujutsu the d6", "the Table 68 armor classes by style ordinal (print capture p. 224): Karate 8, Kung-fu 6 - the best, Tae Kwon Do 8, Jujutsu 7; the lower the better, Kung-fu the most protective style", "the Table 68 principal attack forms by style ordinal (print capture p. 224): 1 Hand, 2 Foot - Karate the Hand, Kung-fu the Hand, Tae Kwon Do the Foot - the only Foot style, Jujutsu the Hand", "the Table 68 special maneuver rank counts by style ordinal (print capture p. 224) - the number of listed maneuver ranks: Karate Strike 1,2,3 + Kick 1 + Movement 1 + Mental 1 = 6; Kung-fu Lock 1,2,3 + Strike 1,2 + Kick 2 + Movement 4 + Mental 5 = 8; Tae Kwon Do Kick 1,2,3 + Strike 1 + Throw 4 + Movement 5 = 6; Jujutsu Throw 1,2,3,4 + Movement 1,3 + Vital Area 1,2 + Mental 1,2,3 = 11 - the most maneuver-rich style" },
+      "data" = { { 3, 1, 6, 8, 1, 6 }, { 2, 1, 6, 6, 1, 8 }, { 1, 1, 8, 8, 2, 6 }, { 2, 1, 6, 7, 1, 11 } },
+      "comment" = "Table 68: the common martial styles - the four styles with their attack rates, damage dice, armor classes, principal attack forms and special maneuver rank counts (print capture pp. 224-225)",
+      "audit_comment" = "the Table 68 grid - the four common styles across six columns",
+    } },
   "chains" = {},
   "examples" = { {
       "expr" = "m['djcOA68StyleCount']() != 4  or  m['djcOA68AttacksStyleDependent']() != 1  or  m['djcOA68DamageDefensiveLow']() != 1  or  m['djcOA68ACFromTraining']() != 1  or  m['djcOA68PrincipalBodyPartFree']() != 1  or  m['djcOA68ManeuversSecrets']() != 1",

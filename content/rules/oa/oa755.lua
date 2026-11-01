@@ -49,7 +49,17 @@ return {
       "default" = 0,
       "comment" = "the martial arts type code - 1 the chain; 2 the fang; 3 the gunsen; 4 the jitte; 5 the kau sin ke; 6 the kiseru; 7 the nunchaku; 8 the sai; 9 the sang kauw; 10 the siangkam; 11 the three-piece-rod; 12 the tui-fa (print capture p. 293)",
     } },
-  "tables" = {},
+  "tables" = { {
+      "name" = "dlqMartialArtsClass",
+      "tag" = "MartialArtsClass",
+      "count" = "dlqMartialArtsRowCount",
+      "comment" = "the Table 84 Martial Arts Class grid - the twelve d100 bands of the martial arts weapon types, the chain through the tui-fa (print capture p. 293)",
+      "cols" = { "dlqMartialArtsRollMin", "dlqMartialArtsRollMax", "dlqMartialArtsCode" },
+      "col_comments" = { "the d100 band minimum - the low roll of the row (print capture p. 293)", "the d100 band maximum - the high roll of the row (print capture p. 293)", "the martial arts type code - 1 the chain; 2 the fang; 3 the gunsen; 4 the jitte; 5 the kau sin ke; 6 the kiseru; 7 the nunchaku; 8 the sai; 9 the sang kauw; 10 the siangkam; 11 the three-piece-rod; 12 the tui-fa (print capture p. 293)" },
+      "data" = { { 1, 5, 1 }, { 6, 10, 2 }, { 11, 20, 3 }, { 21, 30, 4 }, { 31, 35, 5 }, { 36, 40, 6 }, { 41, 55, 7 }, { 56, 70, 8 }, { 71, 75, 9 }, { 76, 80, 10 }, { 81, 90, 11 }, { 91, 100, 12 } },
+      "sentinel" = 0,
+      "sentinel_census" = { 0, 0, 0 },
+    } },
   "chains" = {},
   "examples" = { {
       "expr" = "m['dlqMartialArtsRowCount']() != 12  or  m['dlqChainToFangHead']() != 1  or  m['dlqNunchakuBand']() != 1  or  m['dlqSaiBand']() != 1  or  m['dlqThreePieceRodBand']() != 1  or  m['dlqTuiFaTail']() != 1",

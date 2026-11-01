@@ -41,7 +41,17 @@ return {
       "default" = 0,
       "comment" = "the armor type code - 1 the banded; 2 the buckler; 3 the chain; 4 the do-maru; 5 the haidate; 6 the hara-ate; 7 the hara-ate-gawa; 8 the haramaki; 9 the haramaki-do; 10 the hide; 11 the kote; 12 the leather; 13 the o-yoroi; 14 the padded; 15 the ring; 16 the scale, leather; 17 the scale, metal; 18 the shield, large; 19 the shield, medium; 20 the sode, pair; 21 the splinted; 22 the studded; 23 the gajin armor of the DMG Armor and Shield Table (print capture p. 289)",
     } },
-  "tables" = {},
+  "tables" = { {
+      "name" = "dlfMagicalArmor",
+      "tag" = "MagicalArmor",
+      "count" = "dlfArmorRowCount",
+      "comment" = "the Table 75 Magical Armor grid - the twenty-three d100 bands of the armor types, banded through the gajin armor, the splinted overlap pinned as printed (print capture p. 289)",
+      "cols" = { "dlfArmorRollMin", "dlfArmorRollMax", "dlfArmorType" },
+      "col_comments" = { "the d100 band minimum - the low roll of the row (print capture p. 289)", "the d100 band maximum - the high roll of the row (print capture p. 289)", "the armor type code - 1 the banded; 2 the buckler; 3 the chain; 4 the do-maru; 5 the haidate; 6 the hara-ate; 7 the hara-ate-gawa; 8 the haramaki; 9 the haramaki-do; 10 the hide; 11 the kote; 12 the leather; 13 the o-yoroi; 14 the padded; 15 the ring; 16 the scale, leather; 17 the scale, metal; 18 the shield, large; 19 the shield, medium; 20 the sode, pair; 21 the splinted; 22 the studded; 23 the gajin armor of the DMG Armor and Shield Table (print capture p. 289)" },
+      "data" = { { 1, 4, 1 }, { 5, 5, 2 }, { 6, 12, 3 }, { 13, 16, 4 }, { 17, 17, 5 }, { 18, 22, 6 }, { 23, 26, 7 }, { 27, 30, 8 }, { 31, 35, 9 }, { 36, 44, 10 }, { 45, 46, 11 }, { 47, 55, 12 }, { 56, 62, 13 }, { 63, 66, 14 }, { 67, 70, 15 }, { 71, 74, 16 }, { 75, 78, 17 }, { 79, 82, 18 }, { 83, 86, 19 }, { 87, 87, 20 }, { 86, 92, 21 }, { 93, 99, 22 }, { 100, 100, 23 } },
+      "sentinel" = 0,
+      "sentinel_census" = { 0, 0, 0 },
+    } },
   "chains" = {},
   "examples" = { {
       "expr" = "m['dlfArmorRowCount']() != 23  or  m['dlfSodePairAsterisk']() != 1  or  m['dlfSplintedOverlapMisprint']() != 1  or  m['dlfGajinArmorRollOnDMG']() != 1",

@@ -61,7 +61,17 @@ return {
       "default" = 0,
       "comment" = "the number of questions by band (print p. 132; compressed pp. 64-65). The band list rides this comment: 0 less than 7, 1 levels 7-8, 2 levels 9-12, 3 levels 13-15, 4 levels 16-20, 5 more than 20 - the count climbs one per band from two in the least band to seven in the greatest - the band ordinal plus the dibT64QuestionsBase pin",
     } },
-  "tables" = {},
+  "tables" = { {
+      "name" = "dibT64Grid",
+      "tag" = "T64Data",
+      "count" = "dibT64BandCount",
+      "col_default" = 0,
+      "cols" = { "dibT64DeadDays", "dibT64QuestionSegments", "dibT64Questions" },
+      "col_comments" = { "the maximum length of time the subject has been dead by band, pinned in days (print p. 132; compressed pp. 64-65). The band list rides this comment: 0 less than 7, 1 levels 7-8, 2 levels 9-12, 3 levels 13-15, 4 levels 16-20, 5 more than 20 - the ladder: one week (7 days), one month (30, the 30-day month convention), one year (365, the 365-day year convention), then a decade climb per band - 10 years (3650), 100 years (36500) and 1000 years (365000)", "the questioning time by band, pinned in segments (print p. 132; compressed pp. 64-65). The band list rides this comment: 0 less than 7, 1 levels 7-8, 2 levels 9-12, 3 levels 13-15, 4 levels 16-20, 5 more than 20 - the ladder: one round (10 segments, the round = 10 convention), three rounds (30), one turn (60), two turns (120), three turns (180) and six turns (360, the turn = 60 convention)", "the number of questions by band (print p. 132; compressed pp. 64-65). The band list rides this comment: 0 less than 7, 1 levels 7-8, 2 levels 9-12, 3 levels 13-15, 4 levels 16-20, 5 more than 20 - the count climbs one per band from two in the least band to seven in the greatest - the band ordinal plus the dibT64QuestionsBase pin" },
+      "data" = { { 7, 10, 2 }, { 30, 30, 3 }, { 365, 60, 4 }, { 3650, 120, 5 }, { 36500, 180, 6 }, { 365000, 360, 7 } },
+      "comment" = "the Table 64 speak with dead band grid (print p. 132; compressed pp. 64-65)",
+      "audit_comment" = "the speak with dead grid: the maximum dead time, questioning time and question counts by level band",
+    } },
   "chains" = { {
       "name" = "dibT64LevelBand",
       "arg" = "lvl",

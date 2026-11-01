@@ -34,7 +34,17 @@ return {
       "default" = 0,
       "comment" = "the Table 69 body parts by row ordinal, coded (print capture p. 226): 0 none - the form rows printed a dash; 1 Foot (Kick), 2 Body (Lock and Throw), 3 Legs (Movement), 4 Hand (Push and Strike), 5 Hand and Foot (Vital Area), 6 Hand and Arm (Weapon); kicking the feet, throwing the whole body, the attacks effective so long as the part is unbound or free to move",
     } },
-  "tables" = {},
+  "tables" = { {
+      "name" = "djeOA69Grid",
+      "tag" = "OA69Data",
+      "count" = "djeOA69RowCount",
+      "col_default" = 0,
+      "cols" = { "djeOA69ACMod", "djeOA69AtMod", "djeOA69DamageMod", "djeOA69BodyPart" },
+      "col_comments" = { "the Table 69 armor class mods by row ordinal (print capture p. 226): rows 0-2 the forms - Hard 1, Soft 3, Hard/Soft 2; rows 3-10 the methods - Kick 1, Lock 1, Movement 2, Push 2, Strike 1, Throw 1, Vital Area 2, Weapon 1; the AC of a style 10 minus the totaled form and method mods", "the Table 69 attack mods by row ordinal (print capture p. 226): the forms - Hard 1, Soft 0 - the only zero of the grid, Hard/Soft 1; every method a 1; the number of attacks the totaled form and method mods", "the Table 69 damage mods by row ordinal (print capture p. 226): the forms - Hard 4, Soft 2, Hard/Soft 3; the methods - Kick 4, Lock 2, Movement 2, Push 1, Strike 1, Throw 2, Vital Area 1; the Weapon row a 0 - the printed damage BY WEAPON, not a mod, the R662 convention; the damage the totaled mods rounded up to the nearest die - 6 the 1d6, 4 the 1d4, 5 the 1d6", "the Table 69 body parts by row ordinal, coded (print capture p. 226): 0 none - the form rows printed a dash; 1 Foot (Kick), 2 Body (Lock and Throw), 3 Legs (Movement), 4 Hand (Push and Strike), 5 Hand and Foot (Vital Area), 6 Hand and Arm (Weapon); kicking the feet, throwing the whole body, the attacks effective so long as the part is unbound or free to move" },
+      "data" = { { 1, 1, 4, 0 }, { 3, 0, 2, 0 }, { 2, 1, 3, 0 }, { 1, 1, 4, 1 }, { 1, 1, 2, 2 }, { 2, 1, 2, 3 }, { 2, 1, 1, 4 }, { 1, 1, 1, 4 }, { 1, 1, 2, 2 }, { 2, 1, 1, 5 }, { 1, 1, 0, 6 } },
+      "comment" = "Table 69: the martial style combinations - the three forms and the eight principal methods with their AC, attack and damage mods and body parts (print capture p. 226)",
+      "audit_comment" = "the Table 69 grid - the eleven rows across four columns",
+    } },
   "chains" = {},
   "examples" = { {
       "expr" = "m['djeOA69RowCount']() != 11",
