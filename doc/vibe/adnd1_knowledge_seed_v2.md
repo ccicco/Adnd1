@@ -30787,6 +30787,47 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     multi-header rounds begin - the
     headers' pools merge).
     WAIT FOR GO.
+  - R1001 LANDED 2026-11-01 at
+    44b0b479: The UA promotion batch
+    three (census 924) - R360-R364, 5
+    records, 1229 model items,
+    273,078 bytes Lua, prefix ua3
+    (bool ua3R360ThroughR364Complete).
+    LANDED: pushed 9cb10b12..44b0b479,
+    census 923->924; the fresh tarball
+    at 44b0b479 verified - 5/5 records
+    on disk byte-matching the spec
+    (the ua set now 29; the dragon 79,
+    the WSG 77, the DSG 60 and the OA
+    160 on disk unchanged), the batch
+    header (4 consts + 3 bools,
+    remaining 47, cumulative 29), the
+    regtest includes (the ua3.h include
+    at line 705 right after ua2.h; the
+    r1001_batch.h audit at line 4815
+    above r1000_batch.h, descending),
+    the gap report byte-identical
+    base-to-HEAD (102/1, the one open
+    line the legend, no flips), the
+    seed seated (the R1000 record, 36
+    lines, before the Knowledge
+    maintenance anchor), rverify GREEN
+    at base 9cb10b12 (double-run,
+    battery 7 mutants 0 missed), spec
+    md5 unchanged
+    (d739986e52aba22bc11fa5606ffe378e).
+    THE MULTI-HEADER ROUNDS LANDED:
+    R360 (2 headers), R361 (1), R362
+    (2), R363 (3), R364 (3) - the
+    headers' pools merge into one
+    record per round, first of their
+    kind on disk. Cumulative 29 of the
+    76-round UA set, 47 remaining,
+    857,015 bytes of UA Lua on disk.
+    NEXT: ua4 R365-R380, 16 records
+    (the struct-table rounds R409-R411
+    ride here - inspect the headers
+    before building). WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
