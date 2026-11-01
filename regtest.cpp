@@ -686,7 +686,8 @@
 #include "rules/oa2.h"  // R982: the OA promotion batch two
 #include "rules/oa3.h"  // R983: the OA promotion batch three
 #include "rules/oa4.h"  // R984: the OA promotion batch four
-#include "rules/oa5.h"  // R985: the OA promotion batch four
+#include "rules/oa5.h"  // R985: the OA promotion batch five
+#include "rules/oa6.h"  // R986: the OA promotion batch six
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4796,6 +4797,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r986_batch.h"  // R986: R986 OA promotion batch six audit
 #include "rules/audits/r985_batch.h"  // R985: R985 OA promotion batch five audit
 #include "rules/audits/r984_batch.h"  // R984: R984 OA promotion batch four audit
 #include "rules/audits/r983_batch.h"  // R983: R983 OA promotion batch three audit

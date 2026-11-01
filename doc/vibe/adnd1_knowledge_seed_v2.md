@@ -30347,6 +30347,29 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     rec, R987 R727-R759 33 rec, R988
     R760-R773 14 rec - the set closer.
     WAIT FOR GO.
+  - R985 LANDED 2026-11-01 at bbda51e: The
+    OA promotion batch five (census 908)
+    - R695-R712, 18 records, 825 model
+    items, 299,242 bytes Lua, prefix oa5.
+    LANDED: pushed b4b80c4..bbda51e,
+    census 907->908; the fresh tarball at
+    bbda51e verified - 18/18 records on
+    disk byte-matching the spec, the
+    header (4 consts + 3 bools), the regtest
+    includes, the gap 3/0 no-flips and the
+    seed all in place, 99 records on disk
+    (1,560,540 bytes Lua cumulative).
+    DEFECT FOUND AT LANDING: the regtest
+    oa5.h include comment says "batch
+    four" not "batch five" (the builder
+    left the include_comment stale; every
+    other batch-five field is correct) -
+    fold the one-line regtest comment fix
+    into R986's file_patches unless
+    Curtiss rules otherwise. NEXT: R986
+    R713-R726 14 rec, R987 R727-R759 33
+    rec, R988 R760-R773 14 rec - the set
+    closer. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
