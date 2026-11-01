@@ -30391,6 +30391,23 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     NEXT: R987 R727-R759 33 rec, R988
     R760-R773 14 rec - the set closer.
     WAIT FOR GO.
+  - R987 LANDED 2026-11-01 at 6f02fe9: The
+    OA promotion batch seven (census 910)
+    - R727-R759, 33 records, 897 model
+    items, 322,729 bytes Lua, prefix oa7.
+    LANDED: pushed f2c349c..6f02fe9,
+    census 909->910; the fresh tarball at
+    6f02fe9 verified - 33/33 records on
+    disk byte-matching the spec, the
+    header (4 consts + 3 bools), the
+    regtest includes (the oa7.h include at
+    line 691 right after oa6.h; the
+    r987_batch.h audit at the top of the
+    descending audit order), the gap 3/0
+    no-flips and the seed all in place,
+    146 records on disk (2,203,259 bytes
+    Lua cumulative). NEXT: R988 R760-R773
+    14 rec - the set closer. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
