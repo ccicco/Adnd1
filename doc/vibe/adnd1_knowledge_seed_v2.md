@@ -30563,6 +30563,34 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     promoted mechanically and parsed back
     equal. NEXT: the next arc awaits
     Curtiss's call. WAIT FOR GO.
+  - R994 LANDED 2026-11-01 at 4ff6aa06:
+    The DSG promotion batch one (census
+    917) - THE ARC OPENER - R503-R510,
+    8 records, 1,087 model items, 313,629
+    bytes Lua, prefix dsg1 (bool
+    dsg1R503ThroughR510Complete). LANDED:
+    pushed b19d04ef..4ff6aa06, census
+    916->917; the fresh tarball at
+    4ff6aa06 verified - 8/8 records on
+    disk byte-matching the spec (and the
+    WSG set 77/77 still byte-matching),
+    the header (4 consts + 3 bools), the
+    regtest includes (the dsg1.h include
+    at line 698 right after wsg5.h; the
+    r994_batch.h audit at line 4808
+    above r993_batch.h, descending), the
+    gap report byte-identical base-to-
+    HEAD (155/0, no flips), the seed
+    seated (the R993 record, 29 lines),
+    rverify GREEN at base b19d04ef
+    (double-run, battery 7 mutants 0
+    missed), spec md5 unchanged. THE DSG
+    ARC IS OPEN: cumulative 8 of the
+    60-round set (all spec-JSON rounds),
+    52 remaining, 313,629 bytes of Lua on
+    disk; five batches planned (R995
+    R511-R527 next). NEXT: R995 R511-R527,
+    16 rec. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
