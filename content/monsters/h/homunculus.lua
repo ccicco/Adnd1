@@ -24,7 +24,7 @@ return {
   lairPctRaw = "none",
   treasure = "none",
   move = "6\"/18\"",
-  size = "S (1�\")",
+  size = "S (1½\")",
   intelligence = "see below",
   alignment = "see below",
   specialAttacks = "bite causes sleep",

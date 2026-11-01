@@ -25,7 +25,7 @@ return {
   lairPctRaw = "none",
   treasure = "none",
   move = "12\"",
-  size = "M (2�' at shoulder)",
+  size = "M (2½' at shoulder)",
   intelligence = "animal",
   alignment = "neutral",
   specialAttacks = "none",

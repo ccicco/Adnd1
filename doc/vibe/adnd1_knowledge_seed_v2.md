@@ -31096,6 +31096,67 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     the lreg 65/473 pins standing as
     doctrine.
     WAIT FOR GO.
+  - R1007 LANDED 2026-11-01 at
+    fa62cde9: The promotions mop
+    round two - the MM1 text
+    completion (census 930) - the
+    structural half of the naive-era
+    data-quality pass. 136
+    file_patches, every byte derived
+    mechanically from
+    tools/monsters.md (358
+    @-records, 38 family headings):
+    25 family carriers regain their
+    own text_family prose, 61
+    members gain the family prose,
+    50 variants gain base or family
+    prose; paragraphs escaped per
+    the landed convention, non-ASCII
+    raw (7 defs carry the U+FFFD
+    naive-extraction glyph -
+    collation suspects). TWO
+    EXCLUDED: copper_dragon and
+    monoclonius, the only MM1
+    records with NO prose anywhere
+    in the source (the Roc and Gas
+    Spore precedent) - they await
+    the print-voice collation half.
+    LANDED: pushed
+    76fd890d..fa62cde9, census
+    929->930; the fresh tarball at
+    fa62cde9 verified - 136/136
+    patches applied (to-anchors once
+    each), the lexer scan 1338 of
+    1338 clean, the MM1 text census
+    270 -> 406 of 408, the seed
+    seated (the R1006 record, 70
+    lines, before the LAST Knowledge
+    maintenance anchor), the gap
+    report byte-identical
+    base-to-HEAD (mm2 37/0, no
+    flips), the battery line holds
+    loaded 1338 errors 0, rverify
+    GREEN at base 76fd890d
+    (restore, double-run, battery 11
+    mutants 0 missed), spec md5
+    unchanged
+    (440886d92c761f6edab6778233dc895e).
+    Prefix pm2, header
+    rules/pm2.h (8 consts + 3
+    bools), the include at regtest
+    line 711 right after pm1.h, the
+    r1007_batch.h audit at line
+    4821 above r1006_batch.h.
+    THE MOP REMAINING: the
+    collation half of the MM1
+    data-quality pass - the Copper
+    Dragon and Monoclonius texts
+    (print transcription, the Roc and
+    Gas Spore precedent), the seven
+    U+FFFD suspect glyphs, and the
+    print-voice verification of the
+    naive-era prose.
+    WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

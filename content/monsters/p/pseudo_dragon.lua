@@ -24,7 +24,7 @@ return {
   lairPctRaw = "5%",
   treasure = "Q (x10)",
   move = "6\"/24\"",
-  size = "S (1�' long)",
+  size = "S (1½' long)",
   intelligence = "average",
   alignment = "neutral (good)",
   specialAttacks = "poison sting",

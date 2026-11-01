@@ -20,7 +20,7 @@ return {
   lairPctRaw = "90%",
   treasure = "I, R, U, V",
   move = "12\"/24\"",
-  size = "L (13�' tall)",
+  size = "L (13½' tall)",
   intelligence = "supra genius",
   alignment = "lawful evil",
   specialAttacks = "see below",

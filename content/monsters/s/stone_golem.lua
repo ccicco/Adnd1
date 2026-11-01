@@ -20,7 +20,7 @@ return {
   lairPctRaw = "none",
   treasure = "none",
   move = "6\"",
-  size = "L (9�' tall)",
+  size = "L (9½' tall)",
   intelligence = "non",
   alignment = "neutral",
   specialAttacks = "see below",
