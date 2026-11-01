@@ -31975,6 +31975,57 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     per-book normalization
     pass enters its tail.
     WAIT FOR GO.
+  - R1024 LANDED 2026-11-01 at
+    92a09354: THE WSG+MOP
+    NORMALIZATION TAIL BATCH
+    (census 947) - the 23 defs
+    (15 WSG service animals, 8
+    MOP outsiders) rewritten to
+    the full-field 57-key
+    emission. THE TAIL CLOSES
+    23/23. THE wsgRoles LESSON
+    institutionalized: the 15
+    WSG defs carry REAL service
+    role masks (1/3/5/7) - the
+    normalizer preserves them,
+    only absent keys read the
+    sentinels; the sweep pins
+    the mask invariance per def
+    (15 masks byte-identical
+    live at the landed tree, 8
+    MOP sentinel insertions).
+    LANDED VERIFICATION at
+    92a09354 (fresh tarball):
+    spec md5
+    d30ef48e4b05d9d177a71e4f
+    20370cf8 unchanged (the
+    canvas body identical),
+    engine all-already 204
+    twice, WSG+MOP 23/23
+    canonical byte-exact against
+    the landed normalizer,
+    wt1.h after fq3.h,
+    r1024_batch.h above
+    r1023_batch.h, the R1023
+    LANDED record seated
+    verbatim in the seed. THE
+    REGISTRY SCORECARD after the
+    tail: MM1 408, MM2 332, OA
+    47, FF 185, WSG 15, MOP 8
+    all closed, DDG 338 already
+    canonical under the
+    post-R879 promotion schema -
+    1333 of 1338 defs carry the
+    full-field emission, ONLY
+    DRG 5 REMAINS. THE QUEUE:
+    the DRG normalization (the
+    five Dragon magazine defs,
+    consts dq1* presumably - a
+    single small round), then
+    the deity seam - the
+    per-book pass one DRG round
+    from complete.
+    WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

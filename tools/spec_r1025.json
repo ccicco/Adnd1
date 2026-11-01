@@ -1,0 +1,466 @@
+{
+ "round": 1025,
+ "prefix": "dq1",
+ "inline_count": 16,
+ "census_before": 947,
+ "title": "The DRG normalization batch (census 948)",
+ "banner": {
+  "title": "The DRG normalization batch - the five Dragon magazine defs (death angel, mihalli, prowler, qu'uni, vriyagga) rewritten to the full-field 57-key emission",
+  "provenance": "The registry close - the per-book schema pass lands its last book (the R879 normalizer doctrine: MM1 R1009-R1014, the OA book R1016, the MM2 arc R1017-R1020, the FF arc R1021-R1023, the WSG+MOP tail R1024): the five The Dragon magazine variant-layer defs rewritten to the canonical FIELD_ORDER emission, byte-exact against the landed normalize_registry.py, and the registry closes 1338 of 1338 defs canonical - every def of the census carries the full-field emission; the first comma-site round of the arc - each DRG text field lacked the Lua-optional trailing comma, so each of the five end-of-body windows is one whole-line rewrite merged with the sentinel insert, no bare deletes shipped, the sweep green pre-handoff (member scan, value invariance, quote parity, brace balance, name and source invariance, normalizer exactness and idempotence, xp formula zero exceptions)."
+ },
+ "header_file": "rules/dq1.h",
+ "audit_file": "rules/audits/r1025_batch.h",
+ "audit_label": "R1025 DRG normalization audit",
+ "audit_comment": "THE REGISTRY CLOSES - the five Dragon magazine defs (death angel, mihalli, prowler, qu'uni, vriyagga) rewritten to the full-field 57-key emission, byte-exact against the landed normalize_registry.py, the registry 1338 of 1338 canonical; thirty anchored sentinel inserts and the first five comma-site whole-line rewrites of the arc (the DRG text fields lacked the Lua-optional trailing comma).",
+ "audit_anchor": "#include \"rules/audits/r1024_batch.h\"  // R1024: R1024 WSG+MOP normalization audit",
+ "include_after": "#include \"rules/wt1.h\"  // R1024: the WSG+MOP normalization tail batch",
+ "include_comment": "the DRG normalization batch",
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R1024 LANDED 2026-11-01 at",
+ "prev_record": [
+  "  - R1024 LANDED 2026-11-01 at",
+  "    92a09354: THE WSG+MOP",
+  "    NORMALIZATION TAIL BATCH",
+  "    (census 947) - the 23 defs",
+  "    (15 WSG service animals, 8",
+  "    MOP outsiders) rewritten to",
+  "    the full-field 57-key",
+  "    emission. THE TAIL CLOSES",
+  "    23/23. THE wsgRoles LESSON",
+  "    institutionalized: the 15",
+  "    WSG defs carry REAL service",
+  "    role masks (1/3/5/7) - the",
+  "    normalizer preserves them,",
+  "    only absent keys read the",
+  "    sentinels; the sweep pins",
+  "    the mask invariance per def",
+  "    (15 masks byte-identical",
+  "    live at the landed tree, 8",
+  "    MOP sentinel insertions).",
+  "    LANDED VERIFICATION at",
+  "    92a09354 (fresh tarball):",
+  "    spec md5",
+  "    d30ef48e4b05d9d177a71e4f",
+  "    20370cf8 unchanged (the",
+  "    canvas body identical),",
+  "    engine all-already 204",
+  "    twice, WSG+MOP 23/23",
+  "    canonical byte-exact against",
+  "    the landed normalizer,",
+  "    wt1.h after fq3.h,",
+  "    r1024_batch.h above",
+  "    r1023_batch.h, the R1023",
+  "    LANDED record seated",
+  "    verbatim in the seed. THE",
+  "    REGISTRY SCORECARD after the",
+  "    tail: MM1 408, MM2 332, OA",
+  "    47, FF 185, WSG 15, MOP 8",
+  "    all closed, DDG 338 already",
+  "    canonical under the",
+  "    post-R879 promotion schema -",
+  "    1333 of 1338 defs carry the",
+  "    full-field emission, ONLY",
+  "    DRG 5 REMAINS. THE QUEUE:",
+  "    the DRG normalization (the",
+  "    five Dragon magazine defs,",
+  "    consts dq1* presumably - a",
+  "    single small round), then",
+  "    the deity seam - the",
+  "    per-book pass one DRG round",
+  "    from complete.",
+  "    WAIT FOR GO."
+ ],
+ "gap_report": "tools/mm2_gap_report.md",
+ "gap_flips": [],
+ "data_files": [],
+ "consts": [
+  {
+   "name": "dq1Round",
+   "value": 1025,
+   "comment": "the DRG normalization batch - the five defs, the registry close"
+  },
+  {
+   "name": "dq1DefsNormalized",
+   "value": 5,
+   "comment": "the defs rewritten to full-field canonical form this batch - the five Dragon magazine variant-layer defs"
+  },
+  {
+   "name": "dq1DrgTotal",
+   "value": 5,
+   "comment": "the DRG defs in the registry (death angel, mihalli, prowler, qu'uni, vriyagga - The Dragon magazine)"
+  },
+  {
+   "name": "dq1DrgNormalizedAfter",
+   "value": 5,
+   "comment": "the DRG defs carrying the full-field emission after this batch - the book complete"
+  },
+  {
+   "name": "dq1DrgRemaining",
+   "value": 0,
+   "comment": "the DRG defs still sparse after this batch - NONE, the last book closed"
+  },
+  {
+   "name": "dq1RegistryTotal",
+   "value": 1338,
+   "comment": "the full registry census the landed normalizer reads - the registry floor"
+  },
+  {
+   "name": "dq1RegistryCanonicalAfter",
+   "value": 1338,
+   "comment": "the registry defs canonical after this batch - THE REGISTRY CLOSES, every def of the census carries the full-field emission"
+  },
+  {
+   "name": "dq1SchemaKeys",
+   "value": 57,
+   "comment": "the canonical FIELD_ORDER length - every def emitted with all 57 keys"
+  },
+  {
+   "name": "dq1InsSites",
+   "value": 30,
+   "comment": "the anchored insert sites - 45 inserted lines, all sentinel fields"
+  },
+  {
+   "name": "dq1CommaSites",
+   "value": 5,
+   "comment": "the trailing-comma whole-line rewrites - the first comma-site round of the arc, each DRG text field lacked the Lua-optional comma, each merged with its end-of-body insert in one window"
+  },
+  {
+   "name": "dq1ReorderDefs",
+   "value": 0,
+   "comment": "the defs needing whole-line rewrites - NONE this batch, the fields already in canonical FIELD_ORDER"
+  },
+  {
+   "name": "dq1PatchEntries",
+   "value": 35,
+   "comment": "the file patches this round - 30 anchored sentinel inserts, 5 comma-site windows, zero deletes"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dq1NormalizerCensusLive",
+   "value": true,
+   "comment": "the landed normalize_registry.py reads its full 1338-def census - the registry floor live"
+  },
+  {
+   "name": "dq1FullFieldEmission",
+   "value": true,
+   "comment": "every rewritten def carries all 57 keys - string sentinel n/a, integer sentinel -1, the loader reads them uniformly"
+  },
+  {
+   "name": "dq1RegistryComplete",
+   "value": true,
+   "comment": "THE REGISTRY CLOSES - all 1338 defs of the census carry the full-field 57-key emission after this batch, the last five books closed in this arc"
+  },
+  {
+   "name": "dq1NoClassedDefs",
+   "value": true,
+   "comment": "no classed defs in the batch - zero saveAs keys, the R155 contract untouched"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "table_checks": [],
+ "header_sections": {
+  "the batch frame": [
+   {
+    "kind": "const",
+    "name": "dq1Round"
+   },
+   {
+    "kind": "const",
+    "name": "dq1DefsNormalized"
+   },
+   {
+    "kind": "const",
+    "name": "dq1PatchEntries"
+   }
+  ],
+  "the DRG census": [
+   {
+    "kind": "const",
+    "name": "dq1DrgTotal"
+   },
+   {
+    "kind": "const",
+    "name": "dq1DrgNormalizedAfter"
+   },
+   {
+    "kind": "const",
+    "name": "dq1DrgRemaining"
+   },
+   {
+    "kind": "const",
+    "name": "dq1RegistryTotal"
+   },
+   {
+    "kind": "const",
+    "name": "dq1RegistryCanonicalAfter"
+   },
+   {
+    "kind": "const",
+    "name": "dq1SchemaKeys"
+   }
+  ],
+  "the patch anatomy": [
+   {
+    "kind": "const",
+    "name": "dq1InsSites"
+   },
+   {
+    "kind": "const",
+    "name": "dq1CommaSites"
+   },
+   {
+    "kind": "const",
+    "name": "dq1ReorderDefs"
+   }
+  ],
+  "the guarantees": [
+   {
+    "kind": "bool",
+    "name": "dq1NormalizerCensusLive"
+   },
+   {
+    "kind": "bool",
+    "name": "dq1FullFieldEmission"
+   },
+   {
+    "kind": "bool",
+    "name": "dq1RegistryComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "dq1NoClassedDefs"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "expr": "m['dq1Round']() != 1025 or m['dq1DefsNormalized']() != 5 or m['dq1DrgTotal']() != 5 or m['dq1DrgNormalizedAfter']() != 5 or m['dq1DrgRemaining']() != 0 or m['dq1SchemaKeys']() != 57"
+  },
+  {
+   "expr": "m['dq1InsSites']() != 30 or m['dq1CommaSites']() != 5 or m['dq1ReorderDefs']() != 0 or m['dq1PatchEntries']() != 35"
+  },
+  {
+   "expr": "m['dq1DrgNormalizedAfter']() + m['dq1DrgRemaining']() != m['dq1DrgTotal']()"
+  },
+  {
+   "expr": "m['dq1RegistryCanonicalAfter']() != m['dq1RegistryTotal']()"
+  }
+ ],
+ "file_patches": [
+  {
+   "file": "content/monsters/d/death_angel.lua",
+   "note": "the death_angel.lua full-field normalization insert",
+   "from": "  page = \"29\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"29\",\n"
+  },
+  {
+   "file": "content/monsters/d/death_angel.lua",
+   "note": "the death_angel.lua full-field normalization insert",
+   "from": "  source = \"The Dragon #6\",\n",
+   "to": "  pages = \"n/a\",\n  source = \"The Dragon #6\",\n"
+  },
+  {
+   "file": "content/monsters/d/death_angel.lua",
+   "note": "the death_angel.lua full-field normalization insert",
+   "from": "  hitDice = \"7\",\n",
+   "to": "  family = \"n/a\",\n  race = \"n/a\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"7\",\n"
+  },
+  {
+   "file": "content/monsters/d/death_angel.lua",
+   "note": "the death_angel.lua full-field normalization insert",
+   "from": "  damage = \"1-12\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-12\",\n"
+  },
+  {
+   "file": "content/monsters/d/death_angel.lua",
+   "note": "the death_angel.lua full-field normalization insert",
+   "from": "  frequency = \"not printed\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"not printed\",\n"
+  },
+  {
+   "file": "content/monsters/d/death_angel.lua",
+   "note": "the death_angel.lua full-field normalization insert",
+   "from": "  treasure = \"nil\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"nil\",\n"
+  },
+  {
+   "file": "content/monsters/d/death_angel.lua",
+   "note": "the death_angel.lua full-field normalization window",
+   "from": "  text = \"The Death Angel is a finger of Fate utilised by very powerful entities - gods, demi-gods, some liches and very few evil high priests of 20th level or higher. It acts as an Oracle warning of death or represents Death itself on a mission to kill one particular being; it attacks only its intended victim and leaves once the kill is made. Those successfully killed rise as Death Angels after three days unless raised - only Raise Dead Fully works (and then as a regular Raise Dead), the percent chance rolls as if constitution were 3, and a Wish works automatically; a being killed three times is gone forever. The only permanent dispelling is a remove curse thrown on a slain Death Angel battling its intended victim, granting eternal peace; there can be no more than one Death Angel serving any one master. The XP conversion rides the DMG p.85 additive formula - 225 base + 2 specials x 175 + 1 exceptional x 275, plus 8 per hit point at the floored 31 average (7 dice at 4.5 per die) - noted, never silent; promoted from The Dragon Vol. 1 No. 6 (April 1977), folio 29, as a variant-layer def.\"\n}\n",
+   "to": "  attackDefenseModes = \"n/a\",\n  text = \"The Death Angel is a finger of Fate utilised by very powerful entities - gods, demi-gods, some liches and very few evil high priests of 20th level or higher. It acts as an Oracle warning of death or represents Death itself on a mission to kill one particular being; it attacks only its intended victim and leaves once the kill is made. Those successfully killed rise as Death Angels after three days unless raised - only Raise Dead Fully works (and then as a regular Raise Dead), the percent chance rolls as if constitution were 3, and a Wish works automatically; a being killed three times is gone forever. The only permanent dispelling is a remove curse thrown on a slain Death Angel battling its intended victim, granting eternal peace; there can be no more than one Death Angel serving any one master. The XP conversion rides the DMG p.85 additive formula - 225 base + 2 specials x 175 + 1 exceptional x 275, plus 8 per hit point at the floored 31 average (7 dice at 4.5 per die) - noted, never silent; promoted from The Dragon Vol. 1 No. 6 (April 1977), folio 29, as a variant-layer def.\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/m/mihalli.lua",
+   "note": "the mihalli.lua full-field normalization insert",
+   "from": "  page = \"18-19\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"18-19\",\n"
+  },
+  {
+   "file": "content/monsters/m/mihalli.lua",
+   "note": "the mihalli.lua full-field normalization insert",
+   "from": "  source = \"The Dragon #4\",\n",
+   "to": "  pages = \"n/a\",\n  source = \"The Dragon #4\",\n"
+  },
+  {
+   "file": "content/monsters/m/mihalli.lua",
+   "note": "the mihalli.lua full-field normalization insert",
+   "from": "  hitDice = \"3\",\n",
+   "to": "  family = \"n/a\",\n  race = \"n/a\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"3\",\n"
+  },
+  {
+   "file": "content/monsters/m/mihalli.lua",
+   "note": "the mihalli.lua full-field normalization insert",
+   "from": "  damage = \"special\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"special\",\n"
+  },
+  {
+   "file": "content/monsters/m/mihalli.lua",
+   "note": "the mihalli.lua full-field normalization insert",
+   "from": "  frequency = \"not printed\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"not printed\",\n"
+  },
+  {
+   "file": "content/monsters/m/mihalli.lua",
+   "note": "the mihalli.lua full-field normalization insert",
+   "from": "  treasure = \"40% Eyes, amulets or scrolls\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"40% Eyes, amulets or scrolls\",\n"
+  },
+  {
+   "file": "content/monsters/m/mihalli.lua",
+   "note": "the mihalli.lua full-field normalization window",
+   "from": "  text = \"The Mihalli are humanoid, hermaphroditic shape-changers whose skins run from dull green in the lower forms to coppery brown in the higher; they see in the dark. They appear 1-20 near their own territory; 40 percent of the time their lair (80-800 gold) holds Eyes, amulets or scrolls. There is a 20 percent chance each turn they are looked at that their glowing red eyes reveal them. The higher Mihalli command at least two bonus spells, three-plus at levels IV and up. A friendly party is treated well - 5 percent per turn, rolled randomly, with a 1 percent chance of an offered magical item - and the Mihalli defends itself if attacked. The Ball of Immediate Eventuation climbs a four-step colour ladder from light purple through bright silver and bright gold to lambent translucent blue; its use is reserved to magic users and priests of the fourteenth level and up, and below that it scrambles brains. The print stat lines F: 50 and I: 50 garble in both the PDF layer and the OCR and ride pinned AS SCANNED; promoted from The Dragon Vol. 1 No. 4 (December 1976), folios 18-19, as a variant-layer def, the DMG p.85 XP conversion and the 4.5-per-die d8 average noted, never silent.\"\n}\n",
+   "to": "  attackDefenseModes = \"n/a\",\n  text = \"The Mihalli are humanoid, hermaphroditic shape-changers whose skins run from dull green in the lower forms to coppery brown in the higher; they see in the dark. They appear 1-20 near their own territory; 40 percent of the time their lair (80-800 gold) holds Eyes, amulets or scrolls. There is a 20 percent chance each turn they are looked at that their glowing red eyes reveal them. The higher Mihalli command at least two bonus spells, three-plus at levels IV and up. A friendly party is treated well - 5 percent per turn, rolled randomly, with a 1 percent chance of an offered magical item - and the Mihalli defends itself if attacked. The Ball of Immediate Eventuation climbs a four-step colour ladder from light purple through bright silver and bright gold to lambent translucent blue; its use is reserved to magic users and priests of the fourteenth level and up, and below that it scrambles brains. The print stat lines F: 50 and I: 50 garble in both the PDF layer and the OCR and ride pinned AS SCANNED; promoted from The Dragon Vol. 1 No. 4 (December 1976), folios 18-19, as a variant-layer def, the DMG p.85 XP conversion and the 4.5-per-die d8 average noted, never silent.\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/p/prowler.lua",
+   "note": "the prowler.lua full-field normalization insert",
+   "from": "  page = \"24\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"24\",\n"
+  },
+  {
+   "file": "content/monsters/p/prowler.lua",
+   "note": "the prowler.lua full-field normalization insert",
+   "from": "  source = \"The Dragon #7\",\n",
+   "to": "  pages = \"n/a\",\n  source = \"The Dragon #7\",\n"
+  },
+  {
+   "file": "content/monsters/p/prowler.lua",
+   "note": "the prowler.lua full-field normalization insert",
+   "from": "  hitDice = \"14\",\n",
+   "to": "  family = \"n/a\",\n  race = \"n/a\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"14\",\n"
+  },
+  {
+   "file": "content/monsters/p/prowler.lua",
+   "note": "the prowler.lua full-field normalization insert",
+   "from": "  damage = \"constriction 4-48/turn, bite 1-8\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"constriction 4-48/turn, bite 1-8\",\n"
+  },
+  {
+   "file": "content/monsters/p/prowler.lua",
+   "note": "the prowler.lua full-field normalization insert",
+   "from": "  frequency = \"not printed\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"not printed\",\n"
+  },
+  {
+   "file": "content/monsters/p/prowler.lua",
+   "note": "the prowler.lua full-field normalization insert",
+   "from": "  treasure = \"not printed\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"not printed\",\n"
+  },
+  {
+   "file": "content/monsters/p/prowler.lua",
+   "note": "the prowler.lua full-field normalization window",
+   "from": "  text = \"The Prowler lays her eggs beneath the skin of the mind-blanked zombeis with the brown tentacles that line her mouth, dealing 1-8 however tenderly done; the zombeis wander 2-8 days until the eggs hatch and the baby prowlers make their host their first meal. Exceptionally intelligent prowlers form hatcheries - charming large numbers as guards and egg hosts in abandoned caves or underground. A zombei's mind is restored only by three Patriarchs simultaneously casting dispel evil. The XP conversion rides the DMG p.85 additive formula - 1800 base + 3 specials x 950 (the gaze, the constriction, the magic resistance) + 1 exceptional x 1200 (the hatchery lifecycle), plus 18 per hit point at the 63 average (14 dice at 4.5 per die) - noted, never silent; promoted from The Dragon Vol. I No. 7 (June 1977), folio 24, as a variant-layer def.\"\n}\n",
+   "to": "  attackDefenseModes = \"n/a\",\n  text = \"The Prowler lays her eggs beneath the skin of the mind-blanked zombeis with the brown tentacles that line her mouth, dealing 1-8 however tenderly done; the zombeis wander 2-8 days until the eggs hatch and the baby prowlers make their host their first meal. Exceptionally intelligent prowlers form hatcheries - charming large numbers as guards and egg hosts in abandoned caves or underground. A zombei's mind is restored only by three Patriarchs simultaneously casting dispel evil. The XP conversion rides the DMG p.85 additive formula - 1800 base + 3 specials x 950 (the gaze, the constriction, the magic resistance) + 1 exceptional x 1200 (the hatchery lifecycle), plus 18 per hit point at the 63 average (14 dice at 4.5 per die) - noted, never silent; promoted from The Dragon Vol. I No. 7 (June 1977), folio 24, as a variant-layer def.\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/q/qu_uni.lua",
+   "note": "the qu_uni.lua full-field normalization insert",
+   "from": "  page = \"21\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"21\",\n"
+  },
+  {
+   "file": "content/monsters/q/qu_uni.lua",
+   "note": "the qu_uni.lua full-field normalization insert",
+   "from": "  source = \"The Dragon #4\",\n",
+   "to": "  pages = \"n/a\",\n  source = \"The Dragon #4\",\n"
+  },
+  {
+   "file": "content/monsters/q/qu_uni.lua",
+   "note": "the qu_uni.lua full-field normalization insert",
+   "from": "  hitDice = \"2\",\n",
+   "to": "  family = \"n/a\",\n  race = \"n/a\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"2\",\n"
+  },
+  {
+   "file": "content/monsters/q/qu_uni.lua",
+   "note": "the qu_uni.lua full-field normalization insert",
+   "from": "  damage = \"1-3\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-3\",\n"
+  },
+  {
+   "file": "content/monsters/q/qu_uni.lua",
+   "note": "the qu_uni.lua full-field normalization insert",
+   "from": "  frequency = \"not printed\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"not printed\",\n"
+  },
+  {
+   "file": "content/monsters/q/qu_uni.lua",
+   "note": "the qu_uni.lua full-field normalization insert",
+   "from": "  treasure = \"nil except the sea grotto\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"nil except the sea grotto\",\n"
+  },
+  {
+   "file": "content/monsters/q/qu_uni.lua",
+   "note": "the qu_uni.lua full-field normalization window",
+   "from": "  text = \"The Qu'uni is a pallid, semi-transparent, shrimp-like creature of the sea grottos, 2 hit dice, moving at 10 inches per turn, 50-100 appearing, armor class 3. It automatically attacks human parties seeking water. It carries no treasure - except under the water in its sea-grotto home. Promoted from The Dragon Vol. 1 No. 4 (December 1976), folio 21 sidebar, as a variant-layer def, the DMG p.85 XP conversion and the 4.5-per-die d8 average noted, never silent.\"\n}\n",
+   "to": "  attackDefenseModes = \"n/a\",\n  text = \"The Qu'uni is a pallid, semi-transparent, shrimp-like creature of the sea grottos, 2 hit dice, moving at 10 inches per turn, 50-100 appearing, armor class 3. It automatically attacks human parties seeking water. It carries no treasure - except under the water in its sea-grotto home. Promoted from The Dragon Vol. 1 No. 4 (December 1976), folio 21 sidebar, as a variant-layer def, the DMG p.85 XP conversion and the 4.5-per-die d8 average noted, never silent.\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/v/vriyagga.lua",
+   "note": "the vriyagga.lua full-field normalization insert",
+   "from": "  page = \"19, 21\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"19, 21\",\n"
+  },
+  {
+   "file": "content/monsters/v/vriyagga.lua",
+   "note": "the vriyagga.lua full-field normalization insert",
+   "from": "  source = \"The Dragon #4\",\n",
+   "to": "  pages = \"n/a\",\n  source = \"The Dragon #4\",\n"
+  },
+  {
+   "file": "content/monsters/v/vriyagga.lua",
+   "note": "the vriyagga.lua full-field normalization insert",
+   "from": "  hitDice = \"10/15/25\",\n",
+   "to": "  family = \"n/a\",\n  race = \"n/a\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"10/15/25\",\n"
+  },
+  {
+   "file": "content/monsters/v/vriyagga.lua",
+   "note": "the vriyagga.lua full-field normalization insert",
+   "from": "  damage = \"2-4-6 dice by size\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"2-4-6 dice by size\",\n"
+  },
+  {
+   "file": "content/monsters/v/vriyagga.lua",
+   "note": "the vriyagga.lua full-field normalization insert",
+   "from": "  frequency = \"not printed\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"not printed\",\n"
+  },
+  {
+   "file": "content/monsters/v/vriyagga.lua",
+   "note": "the vriyagga.lua full-field normalization insert",
+   "from": "  treasure = \"nil\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"nil\",\n"
+  },
+  {
+   "file": "content/monsters/v/vriyagga.lua",
+   "note": "the vriyagga.lua full-field normalization window",
+   "from": "  text = \"The Vriyagga is a tentacled creature of the cities, 1-10 appearing, 20-200 in its own city, armor class 1, moving 12, 10 or 8 inches per turn by size with 10, 15 or 25 hit dice. It carries four or more tentacles, more in the larger forms; it takes armor class 2 to sever one, and a tentacle does 2, 4 or 6 dice of damage per turn by size. It senses heat, cannot speak, but thinks, organizes and lays ambushes; it cannot climb stairs. Its black-opal eyes see in the dark. Treasure is nil, even in lair. The def pins the 15-dice middle size for the XP formula; promoted from The Dragon Vol. 1 No. 4 (December 1976), folios 19 and 21, as a variant-layer def, the DMG p.85 XP conversion and the 4.5-per-die d8 average noted, never silent.\"\n}\n",
+   "to": "  attackDefenseModes = \"n/a\",\n  text = \"The Vriyagga is a tentacled creature of the cities, 1-10 appearing, 20-200 in its own city, armor class 1, moving 12, 10 or 8 inches per turn by size with 10, 15 or 25 hit dice. It carries four or more tentacles, more in the larger forms; it takes armor class 2 to sever one, and a tentacle does 2, 4 or 6 dice of damage per turn by size. It senses heat, cannot speak, but thinks, organizes and lays ambushes; it cannot climb stairs. Its black-opal eyes see in the dark. Treasure is nil, even in lair. The def pins the 15-dice middle size for the XP formula; promoted from The Dragon Vol. 1 No. 4 (December 1976), folios 19 and 21, as a variant-layer def, the DMG p.85 XP conversion and the 4.5-per-die d8 average noted, never silent.\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  }
+ ]
+}
