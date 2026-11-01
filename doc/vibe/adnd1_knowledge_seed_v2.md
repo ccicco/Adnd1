@@ -30651,6 +30651,38 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     936,262 bytes of Lua on disk.
     NEXT: R997 R542-R556, 15 rec.
     WAIT FOR GO.
+  - R997 LANDED 2026-11-01 at
+    948f84f7: The DSG promotion batch
+    four (census 920) - R542-R556, 15
+    records, 630 model items, 281,080
+    bytes Lua, prefix dsg4 (bool
+    dsg4R542ThroughR556Complete).
+    LANDED: pushed 4570c7b4..948f84f7,
+    census 919->920; the fresh tarball
+    at 948f84f7 verified - 15/15
+    records on disk byte-matching the
+    spec (and the earlier batches
+    R989-R996 115/115 still
+    byte-matching, the WSG 77 on
+    disk), the header (4 consts + 3
+    bools), the regtest includes (the
+    dsg4.h include at line 701 right
+    after dsg3.h; the r997_batch.h
+    audit at line 4811 above
+    r996_batch.h, descending), the
+    gap report byte-identical base-to-
+    HEAD (155/0, no flips), the seed
+    seated (the R996 record, 31
+    lines, before the Knowledge
+    maintenance anchor), rverify GREEN
+    at base 4570c7b4 (double-run,
+    battery 7 mutants 0 missed), spec
+    md5 unchanged. Cumulative 53 of
+    the 60-round set, 7 remaining,
+    1,217,342 bytes of Lua on disk.
+    NEXT: R998 R557-R563, 7 rec - THE
+    SET CLOSER (cumulative 60,
+    remaining 0). WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
