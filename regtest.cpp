@@ -693,6 +693,7 @@
 #include "rules/wsg1.h"  // R989: the WSG promotion batch one
 #include "rules/wsg2.h"  // R990: the WSG promotion batch two
 #include "rules/wsg3.h"  // R991: the WSG promotion batch three
+#include "rules/wsg4.h"  // R992: the WSG promotion batch four
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4802,6 +4803,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r992_batch.h"  // R992: R992 WSG promotion batch four audit
 #include "rules/audits/r991_batch.h"  // R991: R991 WSG promotion batch three audit
 #include "rules/audits/r990_batch.h"  // R990: R990 WSG promotion batch two audit
 #include "rules/audits/r989_batch.h"  // R989: R989 WSG promotion batch one audit
