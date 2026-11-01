@@ -31894,6 +31894,46 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     closes), then WSG+MOP 23,
     DRG 5, the deity seam.
     WAIT FOR GO.
+  - R1022 LANDED 2026-11-01 at
+    2f3a5c46: THE FF
+    NORMALIZATION BATCH TWO
+    (census 945) - the 60 defs
+    of the letters h-r
+    rewritten to the
+    full-field 57-key
+    emission. The FF census:
+    131 canonical (the letters
+    a-r), 54 remaining (the
+    letters s-z). Zero pin
+    repairs, zero reorders,
+    zero comma sites - the
+    single-line anchor doctrine
+    held clean (the builder's
+    second-pass simulation,
+    zero idempotence
+    failures). LANDED
+    VERIFICATION at 2f3a5c46
+    (fresh tarball): spec md5
+    d8724bdfdb3ec5e7f5da098f
+    085d7c74 unchanged (the
+    canvas body identical),
+    engine all-already 425
+    twice, FF 131/185
+    canonical byte-exact
+    against the landed
+    normalizer (the 60 h-r
+    defs 60/60, the 54 s-z
+    sparse confirmed), fq2.h
+    after fq1.h, r1022_batch.h
+    above r1021_batch.h, the
+    R1021 LANDED record seated
+    verbatim in the seed. THE
+    QUEUE: the FF batch three
+    (the letters s-z, 54 defs,
+    consts fq3* - the FF book
+    closes), then WSG+MOP 23,
+    DRG 5, the deity seam.
+    WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
