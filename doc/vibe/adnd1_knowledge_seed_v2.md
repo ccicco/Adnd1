@@ -31627,6 +31627,86 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     follow, then FF 185, WSG+MOP
     23, DRG 5, the deity seam.
     WAIT FOR GO.
+  - R1018 LANDED 2026-11-01 at
+    5daadd64: THE MM2
+    NORMALIZATION BATCH TWO
+    (census 941) - the arc's
+    second quarter, 83 of 332
+    (derro through mephistopheles)
+    rewritten to the full-field
+    57-key emission, byte-exact
+    per file. 592 file patches:
+    578 anchored inserts (2252
+    lines), five trailing-comma
+    normalizations (hangman_tree,
+    haunt, hollyphant, hordling,
+    hybsil), NINE PIN-REPAIR
+    PATCHES - the round that
+    taught the DOUBLE GRID
+    lesson. The duergar and
+    mandragora are by_level defs
+    whose sparse files never
+    carried xp fields; the loader
+    reads absence as 0 and the
+    mm2dg/mm2lmn grids pinned
+    that 0, but the canonical
+    emission writes the -1
+    sentinel (the dervish and
+    dwarf precedent). Two
+    preflight REDs: attempt one
+    caught the four pin cells
+    (R803 bad 2, the battery
+    abort hiding the mandragora);
+    attempt two repaired the
+    cells but the R803 dragon
+    fragment still compared its
+    HARDCODED CDgStats row 10,
+    and the R808 LMN fragment
+    CLmStats row 7 would follow -
+    EACH LETTER WALK EXISTS
+    TWICE, the regtest live-def
+    walk against the grid
+    functions AND the migrated
+    fragment against its own
+    copy; both copies must
+    mirror the repair. Attempt
+    three: 4 grid cells, 2
+    fragment rows, 3 comments,
+    preflight GREEN. LANDED
+    VERIFICATION at 5daadd64:
+    spec md5
+    e2eaf1b46656f62ab963204a384
+    6078b unchanged (the canvas
+    body identical), engine
+    all-already 597 twice,
+    rverify GREEN at the base
+    sha 888198cb (15 mutants 0
+    missed), MM2 census 166/332
+    canonical byte-exact, the
+    four pins and both fragment
+    rows -1, the mongrelman and
+    myconid by_level cells still
+    0 until their own batches,
+    mq2.h after mq1.h,
+    r1018_batch.h above
+    r1017_batch.h, the R1017
+    LANDED record seated verbatim
+    in the seed before the last
+    Knowledge maintenance,
+    normalizer census 941 live.
+    THE QUEUE: the MM2 batches
+    three and four follow (83
+    each, consts mq3*/mq4*; the
+    mongrelman and myconid rows
+    repair their cells plus the
+    r808 CLmStats rows 30/35 the
+    same way; the zombie_monster
+    13-key def needs the wxyz
+    walk pins checked when
+    reached), then FF 185,
+    WSG+MOP 23, DRG 5, the deity
+    seam.
+    WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
