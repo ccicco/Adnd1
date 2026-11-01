@@ -30919,6 +30919,54 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     struct-table rounds R409-R411
     ride here - inspect the headers
     before building). WAIT FOR GO.
+  - R1004 LANDED 2026-11-01 at
+    6a4ef0c0: The UA promotion batch
+    six (census 927) - R391-R423,
+    16 records, 366 model items,
+    242,648 bytes Lua, prefix ua6
+    (bool ua6R391ThroughR423Complete).
+    LANDED: pushed 175c3c47..6a4ef0c0,
+    census 926->927; the fresh tarball
+    at 6a4ef0c0 verified - 16/16
+    records on disk byte-matching the
+    spec (the ua set now 71; the
+    dragon 79, the WSG 77, the DSG 60
+    and the OA 160 on disk unchanged),
+    the batch header (4 consts + 3
+    bools, remaining 5, cumulative 71),
+    the regtest includes (the ua6.h
+    include at line 708 right after
+    ua5.h; the r1004_batch.h audit at
+    line 4818 above r1003_batch.h,
+    descending), the gap report
+    byte-identical base-to-HEAD (102/1,
+    the one open line the legend, no
+    flips), the seed seated (the R1003
+    record, 50 lines, before the
+    Knowledge maintenance anchor),
+    rverify GREEN at base 175c3c47
+    (double-run, battery 7 mutants 0
+    missed), spec md5 unchanged
+    (5b0690aeb559f91782b90ba6664bf99a).
+    THE PLAYERS-TABLES, CANTRIP AND
+    APPENDIX S BLOCK LANDED: the pole
+    arm nomenclature (R391), the
+    players tables (R392, the one
+    multi-header round), the treasure
+    row bodies (R395), the Appendix S
+    block (R406-R411, R423 - the
+    struct-table rounds R409-R411
+    ride here, the struct accessors
+    as header pins) and the six
+    cantrip families (R412-R417).
+    Cumulative 71 of the 76-round UA
+    set, 5 remaining, 1,652,742 bytes
+    of UA Lua on disk. NEXT: ua7
+    R786-R790, 5 records (the deity
+    prose parts one through five), THE
+    SET CLOSER - spec-round records,
+    SetComplete, remaining 0.
+    WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
