@@ -30309,6 +30309,25 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   18 rec, R986 R713-R726 14 rec, R987
   R727-R759 33 rec, R988 R760-R773 14
   rec - the set closer. WAIT FOR GO.
+  - R983 LANDED 2026-10-31 at 8a7d805: The
+    OA promotion batch three (census 906)
+    - R645-R670, 26 records, 482 model
+    items, 316,123 bytes Lua, prefix oa3.
+    LANDED: pushed 9c4b925..8a7d805,
+    census 905->906; the fresh tarball at
+    8a7d805 verified - 26/26 records on
+    disk byte-matching the spec, the
+    header (4 consts + 3 bools), the
+    regtest includes (oa3.h at line 687,
+    the r983_batch.h audit in the
+    descending audit order), the gap 3/0
+    no-flips and the seed all in place,
+    57 records on disk (944,651 bytes Lua
+    cumulative). NEXT: R984 R671-R694 24
+    rec, R985 R695-R712 18 rec, R986
+    R713-R726 14 rec, R987 R727-R759 33
+    rec, R988 R760-R773 14 rec - the set
+    closer. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

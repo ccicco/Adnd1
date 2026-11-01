@@ -1,0 +1,163 @@
+-- oa671: promoted from rules/oawjl2spells.h (the WU JEN SECOND LEVEL SPELLS, printed capture pp. 165-173 - the OA wu jen);
+-- DO NOT hand-edit; the pin header stays the adjudicated record.
+return {
+  "round" = 671,
+  "prefix" = "oa671",
+  "banner" = {
+      "title" = "WU JEN SECOND LEVEL SPELLS, printed capture pp. 165-173 - the OA wu jen",
+      "provenance" = "second level spells round census 593 -> 594.  pinned from the 2018 print capture (the settling authority), with the compressed-print capture giving a second independent read (print pp. 165-173; compressed pp. 79-82); all 30 stat blocks cross-checked spell by spell between the passes, zero contested stat reads. The level is alteration-heavy: 11 of the 30 spells, evocation six, divination and illusion five each, conjuration, enchantment/charm and abjuration one each (animal companion the lone enchantment/charm, protection from charm the lone abjuration). TWO dual-school prints pin the primary alteration: bind the Alteration/Enchantment dual and whispering wind the Alteration/Phantasm dual (the exaction precedent); stinking cloud printed Evocation, pinned 3. The component census: 19 VSM, seven verbal and somatic, hypnotic pattern and vocalize the S,M pairs without the verbal, omen the lone V,M, knock the lone verbal-only oddity. Wind breath alone takes the half save (the wind damage halved); five negation, three special. The casting times run 16 two-segment up through seven one-round and four one-turn (animal companion, enchanted blade, omen, strength), fire shuriken and phantasmal force three segments, knock the lone single segment. Two spells read Reversible (detect evil, locate object). The sixth column cross-checks the R669 element grid: the 10 tagged cells (six Air, two Water, two Fire) matching the landed dieWJT66L2Element pins exactly. The stat grid pins as a table: 30 rows the spell ordinals, six columns - school, components (a V=1 S=2 M=4 bitmask), casting time in segments (1 round = 10, 1 turn = 60), saving throw code (0 none, 1 neg., 2 special, 3 half), reversible and element markers. The spell names ride the column comments, the prose descriptions close in their own rounds. The table tag WJL2Data identifier-safe per the R639 lesson  the gap census after this round: 124 closed, 111 open - the wu jen Second Level Spells box flips (census 593 -> 594); NEXT - R672: the wu jen Third Level Spells (capture pp. 170-177, the 24 stat blocks), prefix dih (verify free), audit \"R672 OA wu jen third level spells audit\"",
+    },
+  "consts" = { {
+      "name" = "digWJL2SpellCount",
+      "value" = 30,
+      "comment" = "the 30 second level wu jen spells (print pp. 165-173; compressed pp. 79-82)",
+    }, {
+      "name" = "digWJL2ReversibleCount",
+      "value" = 2,
+      "comment" = "the two reversible second level wu jen spells - detect evil, locate object (print pp. 165-173; compressed pp. 79-82)",
+    }, {
+      "name" = "digWJL2AlterationCount",
+      "value" = 11,
+      "comment" = "the 11 alteration second level wu jen spells - the most common school (print pp. 165-173; compressed pp. 79-82)",
+    }, {
+      "name" = "digWJL2DivinationCount",
+      "value" = 5,
+      "comment" = "the five divination second level wu jen spells - detect evil, detect invisibility, ESP, locate object, omen (print pp. 165-173; compressed pp. 79-82)",
+    }, {
+      "name" = "digWJL2EvocationCount",
+      "value" = 6,
+      "comment" = "the six evocation second level wu jen spells - enchanted blade, fire shuriken, ice knife, stinking cloud, wind breath, whip (print pp. 165-173; compressed pp. 79-82)",
+    }, {
+      "name" = "digWJL2IllusionCount",
+      "value" = 5,
+      "comment" = "the five illusion second level wu jen spells - apparition, hypnotic pattern, invisibility, misdirection, phantasmal force (print pp. 165-173; compressed pp. 79-82)",
+    }, {
+      "name" = "digWJL2VSMCount",
+      "value" = 19,
+      "comment" = "the 19 second level wu jen spells taking all three components - the bitmask reads 7 (print pp. 165-173; compressed pp. 79-82)",
+    }, {
+      "name" = "digWJL2VSCount",
+      "value" = 7,
+      "comment" = "the seven second level wu jen spells taking verbal and somatic - detect evil, fog cloud, misdirection, pyrotechnics, smoke shape, whispering wind, wizard lock; the bitmask reads 3 (print pp. 165-173; compressed pp. 79-82)",
+    }, {
+      "name" = "digWJL2SMCount",
+      "value" = 2,
+      "comment" = "the two second level wu jen spells taking somatic and material without the verbal - hypnotic pattern, vocalize; the bitmask reads 6 (print pp. 165-173; compressed pp. 79-82)",
+    }, {
+      "name" = "digWJL2VMCount",
+      "value" = 1,
+      "comment" = "the one second level wu jen spell taking verbal and material without the somatic - omen; the bitmask reads 5 (print pp. 165-173; compressed pp. 79-82)",
+    }, {
+      "name" = "digWJL2VerbalOnlyCount",
+      "value" = 1,
+      "comment" = "the one second level wu jen spell taking the verbal component only - knock (print pp. 165-173; compressed pp. 79-82)",
+    }, {
+      "name" = "digWJL2TwoSegmentCasts",
+      "value" = 16,
+      "comment" = "the 16 second level wu jen spells with a two-segment casting time - the most common cast of the level (print pp. 165-173; compressed pp. 79-82)",
+    }, {
+      "name" = "digWJL2RoundCasts",
+      "value" = 7,
+      "comment" = "the seven second level wu jen spells with a one-round casting time - apparition, animate water, ice knife, smoke shape, smoky form, vocalize, wind breath (print pp. 165-173; compressed pp. 79-82)",
+    }, {
+      "name" = "digWJL2TurnCasts",
+      "value" = 4,
+      "comment" = "the four second level wu jen spells with a one-turn casting time - animal companion, enchanted blade, omen, strength (print pp. 165-173; compressed pp. 79-82)",
+    }, {
+      "name" = "digWJL2ThreeSegmentCasts",
+      "value" = 2,
+      "comment" = "the two second level wu jen spells with a three-segment casting time - fire shuriken, phantasmal force (print pp. 165-173; compressed pp. 79-82)",
+    }, {
+      "name" = "digWJL2OneSegmentCasts",
+      "value" = 1,
+      "comment" = "the one second level wu jen spell with a one-segment casting time - knock (print pp. 165-173; compressed pp. 79-82)",
+    }, {
+      "name" = "digWJL2NegSaves",
+      "value" = 5,
+      "comment" = "the five second level wu jen spells with a negation saving throw - animal companion, apparition, hypnotic pattern, ice knife, misdirection (print pp. 165-173; compressed pp. 79-82)",
+    }, {
+      "name" = "digWJL2SpecialSaves",
+      "value" = 3,
+      "comment" = "the three second level wu jen spells with a special saving throw - phantasmal force, stinking cloud, whip (print pp. 165-173; compressed pp. 79-82)",
+    }, {
+      "name" = "digWJL2HalfSaves",
+      "value" = 1,
+      "comment" = "the one second level wu jen spell with the half saving throw code - wind breath, the wind damage halved on a successful save (print pp. 165-173; compressed pp. 79-82)",
+    }, {
+      "name" = "digWJL2ElementCount",
+      "value" = 10,
+      "comment" = "the 10 element-tagged second level wu jen spells - six Air (fog cloud, smoke shape, smoky form, stinking cloud, wind breath, whispering wind), two Water (animate water, ice knife), two Fire (fire shuriken, pyrotechnics) - matching the R669 dieWJT66L2Element grid exactly (print pp. 165-173; compressed pp. 79-82)",
+    } },
+  "bools" = {},
+  "switches" = { {
+      "name" = "digWJL2School",
+      "values" = { 1, 9, 4, 6, 2, 2, 2, 3, 3, 6, 9, 3, 9, 6, 2, 9, 2, 9, 7, 6, 6, 6, 6, 3, 6, 6, 3, 3, 6, 6 },
+      "default" = 0,
+      "comment" = "the wu jen 2nd level spell schools by ordinal (print pp. 165-173; compressed pp. 79-82). The spell list rides this comment: 1 animal companion, 2 apparition, 3 animate water, 4 bind, 5 detect evil, 6 detect invisibility, 7 ESP, 8 enchanted blade, 9 fire shuriken, 10 fog cloud, 11 hypnotic pattern, 12 ice knife, 13 invisibility, 14 knock, 15 locate object, 16 misdirection, 17 omen, 18 phantasmal force, 19 protection from charm, 20 pyrotechnics, 21 rope trick, 22 smoke shape, 23 smoky form, 24 stinking cloud, 25 strength, 26 vocalize, 27 wind breath, 28 whip, 29 whispering wind, 30 wizard lock - the school codes: 1 enchantment/charm, 2 divination, 3 evocation, 4 conjuration (the printed Conjuration and Conjuration/Summoning both pinned 4), 6 alteration, 7 abjuration, 9 illusion/phantasm - alteration the most common school at 11 spells (bind, fog cloud, knock, pyrotechnics, rope trick, smoke shape, smoky form, strength, vocalize, whispering wind, wizard lock); evocation six; divination and illusion five each; conjuration, enchantment/charm and abjuration one each (animal companion the lone enchantment/charm, protection from charm the lone abjuration) - the two dual-school prints pin the primary: bind the Alteration/Enchantment dual and whispering wind the Alteration/Phantasm dual both pinned 6 alteration (the exaction precedent); stinking cloud printed Evocation, pinned 3",
+    }, {
+      "name" = "digWJL2Components",
+      "values" = { 7, 7, 7, 7, 3, 7, 7, 7, 7, 3, 6, 7, 7, 1, 7, 3, 5, 7, 7, 3, 7, 3, 7, 7, 7, 6, 7, 7, 3, 3 },
+      "default" = 0,
+      "comment" = "the wu jen 2nd level spell components by ordinal (print pp. 165-173; compressed pp. 79-82). The spell list rides this comment: 1 animal companion, 2 apparition, 3 animate water, 4 bind, 5 detect evil, 6 detect invisibility, 7 ESP, 8 enchanted blade, 9 fire shuriken, 10 fog cloud, 11 hypnotic pattern, 12 ice knife, 13 invisibility, 14 knock, 15 locate object, 16 misdirection, 17 omen, 18 phantasmal force, 19 protection from charm, 20 pyrotechnics, 21 rope trick, 22 smoke shape, 23 smoky form, 24 stinking cloud, 25 strength, 26 vocalize, 27 wind breath, 28 whip, 29 whispering wind, 30 wizard lock - the component codes a bitmask: verbal 1, somatic 2, material 4 - 19 spells take all three (7), seven verbal and somatic (3): detect evil, fog cloud, misdirection, pyrotechnics, smoke shape, whispering wind, wizard lock; hypnotic pattern and vocalize the somatic and material without the verbal (6); omen the verbal and material without the somatic (5); knock the lone verbal only (1)",
+    }, {
+      "name" = "digWJL2CastTime",
+      "values" = { 60, 10, 10, 2, 2, 2, 2, 60, 3, 2, 2, 10, 2, 1, 2, 2, 60, 3, 2, 2, 2, 10, 10, 2, 60, 10, 10, 2, 2, 2 },
+      "default" = 0,
+      "comment" = "the wu jen 2nd level spell casting times by ordinal (print pp. 165-173; compressed pp. 79-82). The spell list rides this comment: 1 animal companion, 2 apparition, 3 animate water, 4 bind, 5 detect evil, 6 detect invisibility, 7 ESP, 8 enchanted blade, 9 fire shuriken, 10 fog cloud, 11 hypnotic pattern, 12 ice knife, 13 invisibility, 14 knock, 15 locate object, 16 misdirection, 17 omen, 18 phantasmal force, 19 protection from charm, 20 pyrotechnics, 21 rope trick, 22 smoke shape, 23 smoky form, 24 stinking cloud, 25 strength, 26 vocalize, 27 wind breath, 28 whip, 29 whispering wind, 30 wizard lock - the casting time in segments - 1 round = 10 segments, 1 turn = 60 segments: 16 spells two segments (the most common cast of the level), seven a full round (apparition, animate water, ice knife, smoke shape, smoky form, vocalize, wind breath), four a full turn (animal companion, enchanted blade, omen, strength), fire shuriken and phantasmal force three segments, knock the lone single segment",
+    }, {
+      "name" = "digWJL2Save",
+      "values" = { 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0, 2, 0, 0, 3, 2, 0, 0 },
+      "default" = 0,
+      "comment" = "the wu jen 2nd level spell saving throws by ordinal (print pp. 165-173; compressed pp. 79-82). The spell list rides this comment: 1 animal companion, 2 apparition, 3 animate water, 4 bind, 5 detect evil, 6 detect invisibility, 7 ESP, 8 enchanted blade, 9 fire shuriken, 10 fog cloud, 11 hypnotic pattern, 12 ice knife, 13 invisibility, 14 knock, 15 locate object, 16 misdirection, 17 omen, 18 phantasmal force, 19 protection from charm, 20 pyrotechnics, 21 rope trick, 22 smoke shape, 23 smoky form, 24 stinking cloud, 25 strength, 26 vocalize, 27 wind breath, 28 whip, 29 whispering wind, 30 wizard lock - the saving throw codes: 0 none, 1 neg., 2 special, 3 half - animal companion, apparition, hypnotic pattern, ice knife and misdirection neg.; phantasmal force, stinking cloud and whip special; wind breath the lone half code (the wind damage halved on a successful save); the other 21 none",
+    }, {
+      "name" = "digWJL2Reversible",
+      "values" = { 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+      "default" = 0,
+      "comment" = "the wu jen 2nd level spell reversible markers by ordinal (print pp. 165-173; compressed pp. 79-82). The spell list rides this comment: 1 animal companion, 2 apparition, 3 animate water, 4 bind, 5 detect evil, 6 detect invisibility, 7 ESP, 8 enchanted blade, 9 fire shuriken, 10 fog cloud, 11 hypnotic pattern, 12 ice knife, 13 invisibility, 14 knock, 15 locate object, 16 misdirection, 17 omen, 18 phantasmal force, 19 protection from charm, 20 pyrotechnics, 21 rope trick, 22 smoke shape, 23 smoky form, 24 stinking cloud, 25 strength, 26 vocalize, 27 wind breath, 28 whip, 29 whispering wind, 30 wizard lock - the cell is 1 where the printed header reads Reversible - detect evil (detect good) and locate object (obscure object); the two",
+    }, {
+      "name" = "digWJL2Element",
+      "values" = { 0, 0, 4, 0, 0, 0, 0, 0, 3, 1, 0, 4, 0, 0, 0, 0, 0, 0, 0, 3, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0 },
+      "default" = 0,
+      "comment" = "the wu jen 2nd level spell element marks by ordinal (print pp. 165-173; compressed pp. 79-82). The spell list rides this comment: 1 animal companion, 2 apparition, 3 animate water, 4 bind, 5 detect evil, 6 detect invisibility, 7 ESP, 8 enchanted blade, 9 fire shuriken, 10 fog cloud, 11 hypnotic pattern, 12 ice knife, 13 invisibility, 14 knock, 15 locate object, 16 misdirection, 17 omen, 18 phantasmal force, 19 protection from charm, 20 pyrotechnics, 21 rope trick, 22 smoke shape, 23 smoky form, 24 stinking cloud, 25 strength, 26 vocalize, 27 wind breath, 28 whip, 29 whispering wind, 30 wizard lock - the element codes of the R669 T66 grid: 0 none, 1 Air, 2 Earth, 3 Fire, 4 Water, 5 Nature, 6 Wood, 7 All - the 10 tagged spells (animate water and ice knife Water, fire shuriken and pyrotechnics Fire, fog cloud, smoke shape, smoky form, stinking cloud, wind breath and whispering wind Air) matching the R669 dieWJT66L2Element pins exactly - the cross-check column",
+    } },
+  "tables" = {},
+  "chains" = {},
+  "examples" = { {
+      "expr" = "m['digWJL2SpellCount']() != 30  or m['digWJL2ReversibleCount']() != 2  or m['digWJL2AlterationCount']() != 11  or m['digWJL2DivinationCount']() != 5  or m['digWJL2EvocationCount']() != 6  or m['digWJL2IllusionCount']() != 5  or m['digWJL2VSMCount']() != 19  or m['digWJL2VSCount']() != 7  or m['digWJL2SMCount']() != 2  or m['digWJL2VMCount']() != 1  or m['digWJL2VerbalOnlyCount']() != 1  or m['digWJL2TwoSegmentCasts']() != 16  or m['digWJL2RoundCasts']() != 7  or m['digWJL2TurnCasts']() != 4  or m['digWJL2ThreeSegmentCasts']() != 2  or m['digWJL2OneSegmentCasts']() != 1  or m['digWJL2NegSaves']() != 5  or m['digWJL2SpecialSaves']() != 3  or m['digWJL2HalfSaves']() != 1  or m['digWJL2ElementCount']() != 10",
+      "note" = "",
+    }, {
+      "expr" = "m['digWJL2SpellCount']() != 30  or m['digWJL2ReversibleCount']() != 2  or m['digWJL2AlterationCount']() != 11  or m['digWJL2DivinationCount']() != 5  or m['digWJL2EvocationCount']() != 6  or m['digWJL2IllusionCount']() != 5",
+      "note" = "the count pins - 30 spells, two reversible, 11 alteration, five divination, six evocation, five illusion",
+    }, {
+      "expr" = "m['digWJL2VSMCount']() != 19  or m['digWJL2VSCount']() != 7  or m['digWJL2SMCount']() != 2  or m['digWJL2VMCount']() != 1  or m['digWJL2VerbalOnlyCount']() != 1",
+      "note" = "the component pins - 19 VSM, seven VS, hypnotic pattern and vocalize the S,M pairs, omen the V,M, knock the verbal only",
+    }, {
+      "expr" = "m['digWJL2TwoSegmentCasts']() != 16  or m['digWJL2RoundCasts']() != 7  or m['digWJL2TurnCasts']() != 4  or m['digWJL2ThreeSegmentCasts']() != 2  or m['digWJL2OneSegmentCasts']() != 1",
+      "note" = "the casting time pins - 16 two-segment, seven round casts, four turn casts, two three-segment, knock the lone segment",
+    }, {
+      "expr" = "m['digWJL2NegSaves']() != 5  or m['digWJL2SpecialSaves']() != 3  or m['digWJL2HalfSaves']() != 1  or m['digWJL2ElementCount']() != 10",
+      "note" = "the saving throw pins - five neg., three special, wind breath the lone half",
+    }, {
+      "expr" = "m['digWJL2School'](0) != 1  or m['digWJL2School'](18) != 7  or m['digWJL2School'](4) != 2  or m['digWJL2School'](5) != 2  or m['digWJL2School'](6) != 2  or m['digWJL2School'](14) != 2  or m['digWJL2School'](16) != 2  or m['digWJL2School'](7) != 3  or m['digWJL2School'](8) != 3  or m['digWJL2School'](11) != 3  or m['digWJL2School'](23) != 3  or m['digWJL2School'](26) != 3  or m['digWJL2School'](27) != 3  or m['digWJL2School'](2) != 4  or m['digWJL2School'](1) != 9  or m['digWJL2School'](10) != 9  or m['digWJL2School'](12) != 9  or m['digWJL2School'](15) != 9  or m['digWJL2School'](17) != 9  or m['digWJL2School'](3) != 6  or m['digWJL2School'](28) != 6  or m['digWJL2School'](13) != 6  or m['digWJL2School'](29) != 6",
+      "note" = "the school pins - animal companion the lone enchantment/charm and protection from charm the lone abjuration; the five divination; the six evocation; the five illusion; the two duals (bind, whispering wind) and knock among the 11 alteration",
+    }, {
+      "expr" = "m['digWJL2Components'](13) != 1  or m['digWJL2Components'](16) != 5  or m['digWJL2Components'](10) != 6  or m['digWJL2Components'](25) != 6  or m['digWJL2Components'](4) != 3  or m['digWJL2Components'](9) != 3  or m['digWJL2Components'](15) != 3  or m['digWJL2Components'](19) != 3  or m['digWJL2Components'](21) != 3  or m['digWJL2Components'](28) != 3  or m['digWJL2Components'](29) != 3  or m['digWJL2Components'](0) != 7  or m['digWJL2Components'](1) != 7  or m['digWJL2Components'](2) != 7",
+      "note" = "the component cell pins - the verbal-only knock, the V,M omen, the S,M hypnotic pattern and vocalize, and the VS set",
+    }, {
+      "expr" = "m['digWJL2CastTime'](0) != 60  or m['digWJL2CastTime'](7) != 60  or m['digWJL2CastTime'](16) != 60  or m['digWJL2CastTime'](24) != 60  or m['digWJL2CastTime'](8) != 3  or m['digWJL2CastTime'](17) != 3  or m['digWJL2CastTime'](11) != 10  or m['digWJL2CastTime'](25) != 10  or m['digWJL2CastTime'](13) != 1  or m['digWJL2CastTime'](3) != 2  or m['digWJL2CastTime'](5) != 2",
+      "note" = "the casting time cell pins - the four turn casts, the three-segment pair, the one-round ice knife and vocalize, knock the lone segment",
+    }, {
+      "expr" = "m['digWJL2Save'](0) != 1  or m['digWJL2Save'](1) != 1  or m['digWJL2Save'](10) != 1  or m['digWJL2Save'](11) != 1  or m['digWJL2Save'](15) != 1  or m['digWJL2Save'](17) != 2  or m['digWJL2Save'](23) != 2  or m['digWJL2Save'](27) != 2  or m['digWJL2Save'](26) != 3  or m['digWJL2Save'](13) != 0",
+      "note" = "the saving throw cell pins - the five negation saves, the three special saves, wind breath the half, knock none",
+    }, {
+      "expr" = "m['digWJL2Reversible'](4) != 1  or m['digWJL2Reversible'](14) != 1  or m['digWJL2Reversible'](5) != 0  or m['digWJL2Reversible'](12) != 0  or m['digWJL2Reversible'](13) != 0  or m['digWJL2Reversible'](0) != 0",
+      "note" = "the reversible pins - detect evil and locate object marked, detect invisibility, invisibility and knock not",
+    }, {
+      "expr" = "m['digWJL2Element'](2) != 4  or m['digWJL2Element'](11) != 4  or m['digWJL2Element'](8) != 3  or m['digWJL2Element'](19) != 3  or m['digWJL2Element'](9) != 1  or m['digWJL2Element'](21) != 1  or m['digWJL2Element'](22) != 1  or m['digWJL2Element'](23) != 1  or m['digWJL2Element'](26) != 1  or m['digWJL2Element'](28) != 1  or m['digWJL2Element'](13) != 0  or m['digWJL2Element'](0) != 0",
+      "note" = "the element cross-check pins - the 10 tagged cells matching the R669 dieWJT66L2Element grid: animate water and ice knife Water, fire shuriken and pyrotechnics Fire, the six Air marks (fog cloud, smoke shape, smoky form, stinking cloud, wind breath, whispering wind); knock untagged",
+    } },
+  "audit" = {
+      "label" = "R671 OA wu jen second level spells audit",
+      "comment" = "OA round fifty-eight (capture pp. 165-173): the wu jen second level spell stat blocks - the school, component, casting time and saving throw codes with the reversible and element markers, cross-checked spell by spell between the passes",
+    },
+}
