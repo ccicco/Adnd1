@@ -30683,6 +30683,42 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     NEXT: R998 R557-R563, 7 rec - THE
     SET CLOSER (cumulative 60,
     remaining 0). WAIT FOR GO.
+  - R998 LANDED 2026-11-01 at
+    fab699d4: The DSG promotion batch
+    five (census 921) - R557-R563, 7
+    records, 82 model items, 49,790
+    bytes Lua, prefix dsg5 (bool
+    dsg5SetComplete, const
+    dsg5SetRoundsRemaining = 0) - THE
+    SET CLOSER. LANDED: pushed
+    948f84f7..fab699d4, census 920->921;
+    the fresh tarball at fab699d4
+    verified - 7/7 records on disk
+    byte-matching the spec (and the
+    earlier batches R989-R997 130/130
+    still byte-matching, the WSG 77
+    on disk), the closer header (4
+    consts + 3 bools, remaining 0,
+    cumulative 60), the regtest
+    includes (the dsg5.h include at
+    line 702 right after dsg4.h; the
+    r998_batch.h audit at line 4812
+    above r997_batch.h, descending),
+    the gap report byte-identical
+    base-to-HEAD (155/0, no flips),
+    the seed seated (the R997 record,
+    32 lines), rverify GREEN at base
+    948f84f7 (double-run, battery 7
+    mutants 0 missed), spec md5
+    unchanged, the total DSG Lua
+    1,267,132 bytes on disk. THE DSG
+    SET IS CLOSED: content/rules/dsg/
+    holds the full 60 records
+    (R503-R563, R515 absent from the
+    regtest map), zero remaining,
+    five batches R994-R998. THE DSG
+    ARC IS CLOSED - next per the
+    Curtiss call. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
