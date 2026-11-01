@@ -30869,6 +30869,56 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     of UA Lua on disk. NEXT: ua5
     R381-R390, 10 records (inspect the
     headers before building). WAIT FOR GO.
+  - R1003 LANDED 2026-11-01 at
+    175c3c47: The UA promotion batch
+    five (census 926) - R381-R390,
+    10 records, 1350 model items,
+    275,277 bytes Lua, prefix ua5
+    (bool ua5R381ThroughR390Complete).
+    LANDED: pushed 2bacb3a0..175c3c47,
+    census 925->926; the fresh tarball
+    at 175c3c47 verified - 10/10
+    records on disk byte-matching the
+    spec (the ua set now 55; the
+    dragon 79, the WSG 77, the DSG 60
+    and the OA 160 on disk unchanged),
+    the batch header (4 consts + 3
+    bools, remaining 21, cumulative
+    55), the regtest includes (the
+    ua5.h include at line 707 right
+    after ua4.h; the r1003_batch.h
+    audit at line 4817 above
+    r1002_batch.h, descending), the
+    gap report byte-identical
+    base-to-HEAD (102/1, the one open
+    line the legend, no flips), the
+    seed seated (the R1002 record, 41
+    lines, before the Knowledge
+    maintenance anchor), rverify
+    GREEN at base 2bacb3a0
+    (double-run, battery 7 mutants 0
+    missed), spec md5 unchanged
+    (86d496c96467003cfc04b3a05810db0a).
+    THE MISC-PROSE AND APPENDIX BLOCK
+    LANDED: the misc magic items
+    prose parts one through six
+    (R381-R386), the armor and swords
+    prose (R387), the misc weapons
+    prose (R388), the weaponless
+    combat appendix Q (R389) and the
+    non-lethal combat appendix R
+    (R390) - all ten single-header;
+    the char-return letter pins and
+    the one multi-line signature ride
+    as header pins, the r390 audit's
+    99 conditions ride as one example.
+    Cumulative 55 of the 76-round UA
+    set, 21 remaining, 1,410,094
+    bytes of UA Lua on disk. NEXT: ua6
+    R391-R423, 16 records (the
+    struct-table rounds R409-R411
+    ride here - inspect the headers
+    before building). WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
