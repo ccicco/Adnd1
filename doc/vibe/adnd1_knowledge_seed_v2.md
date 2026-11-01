@@ -31584,6 +31584,49 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     normalization stand, then the
     deity seam.
     WAIT FOR GO.
+  - R1017 LANDED 2026-11-01 at
+    888198cb: THE MM2
+    NORMALIZATION BATCH ONE
+    (census 940) - the MM2 arc
+    opens, 83 of 332 defs (the
+    letters a through d) rewritten
+    to the full-field 57-key
+    emission, byte-exact per file;
+    all 586 patches anchored
+    inserts (586 sites / 2236
+    lines), zero reorders - the
+    MM2 defs were promoted
+    post-normalizer, already in
+    canonical FIELD_ORDER, only
+    sparse. Eight audited keys in
+    the batch (amaimon, azer,
+    fire_bat, cambion,
+    camptosaurus, chaggrin,
+    crysmal, dao) - every
+    constraint reads a carried
+    key, no audit touches a
+    sentinel-emitted key. LANDED
+    VERIFICATION at 888198cb:
+    spec md5
+    c66a2b7586bbd33ef06e3c670723
+    8d03 unchanged (recovered
+    from the r1017-spec canvas),
+    engine all-already 591,
+    rverify GREEN at the base sha
+    033179f2 (13 mutants 0
+    missed), mq1.h after
+    oap1.h, r1017_batch.h above
+    r1016_batch.h, the R1016
+    LANDED record seated verbatim
+    in the seed before the last
+    Knowledge maintenance, MM2
+    census 83/332 canonical
+    byte-exact, normalizer census
+    940 live. THE QUEUE: the MM2
+    batches two through four
+    follow, then FF 185, WSG+MOP
+    23, DRG 5, the deity seam.
+    WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

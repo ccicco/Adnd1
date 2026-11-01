@@ -2382,7 +2382,9 @@ inline int mm2lmnLmStatAttacks(int b)
 
 // The xp cells (the moon dog VII/2000 + 12/hp - the capture "V/1/2000" the
 // OCR artifact; the marid VIII/5000 flat; the primus X/32,500 flat; the
-// by_level rows read 0)
+// mandragora by_level row reads -1 (the R1018 pin repair); the
+// mongrelman and myconid by_level rows read 0 until their
+// normalization batches land)
 inline int mm2lmnLmStatXp(int b)
     {
         switch (b) {
@@ -2401,7 +2403,7 @@ inline int mm2lmnLmStatXp(int b)
         case 6:
             return 97;
         case 7:
-            return 0;
+            return -1;
         case 8:
             return 1350;
         case 9:
@@ -2487,7 +2489,7 @@ inline int mm2lmnLmStatXpHp(int b)
         case 6:
             return 2;
         case 7:
-            return 0;
+            return -1;
         case 8:
             return 14;
         case 9:

@@ -396,7 +396,7 @@ inline int mm2dgDgStatAttacks(int b)
         }
     }
 
-// The base xp cells (the duergar Variable reads 0 - the by_level carry)
+// The base xp cells (the duergar Variable reads -1 - the by_level sentinel)
 inline int mm2dgDgStatXp(int b)
     {
         switch (b) {
@@ -421,7 +421,7 @@ inline int mm2dgDgStatXp(int b)
         case 9:
             return 875;
         case 10:
-            return 0;
+            return -1;
         case 11:
             return 165;
         default:
@@ -429,7 +429,7 @@ inline int mm2dgDgStatXp(int b)
         }
     }
 
-// The xp per hit point cells (the duergar variable reads 0)
+// The xp per hit point cells (the duergar variable reads -1)
 inline int mm2dgDgStatXpHp(int b)
     {
         switch (b) {
@@ -454,7 +454,7 @@ inline int mm2dgDgStatXpHp(int b)
         case 9:
             return 8;
         case 10:
-            return 0;
+            return -1;
         case 11:
             return 4;
         default:
