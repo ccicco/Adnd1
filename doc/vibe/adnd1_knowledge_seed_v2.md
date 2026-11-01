@@ -30507,6 +30507,33 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     remaining, 923,470 bytes of Lua
     across 64 records on disk. NEXT: R992
     R490-R496, 7 rec. WAIT FOR GO.
+  - R992 LANDED 2026-11-01 at 2d15a45b:
+    The WSG promotion batch four (census
+    915) - R490-R496, 7 records, 1,035
+    model items, 317,582 bytes Lua,
+    prefix wsg4 (bool
+    wsg4R490ThroughR496Complete). LANDED:
+    pushed c29cde76..2d15a45b, census
+    914->915; the fresh tarball at
+    2d15a45b verified - 7/7 records on
+    disk byte-matching the spec (and
+    batches one-three 64/64 still byte-
+    matching), the header (4 consts + 3
+    bools), the regtest includes (the
+    wsg4.h include at line 696 right
+    after wsg3.h; the r992_batch.h audit
+    at line 4806 above r991_batch.h,
+    descending), the gap report byte-
+    identical base-to-HEAD (no flips),
+    the seed seated (the R991 record, 26
+    lines), rverify GREEN at base
+    c29cde76 (double-run, battery 7
+    mutants 0 missed), spec md5 unchanged.
+    Cumulative 71 of the 77-round set, 6
+    remaining, 1,241,052 bytes of Lua
+    across 71 records on disk. NEXT: R993
+    R497-R502, 6 rec - THE SET CLOSER.
+    WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
