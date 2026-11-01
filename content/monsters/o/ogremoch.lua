@@ -31,9 +31,5 @@ return {
   magicResistance = "85%",
   psionic = "185",
   attackDefenseModes = "All/all",
-  text = "Ogremoch appears in a rough, apparently unfinished bipedal form, 10' tall. He attacks as a 24 hit dice monster, striking twice for 5-50 hit points of damage per attack each round. +3 or better weapons are required to harm him.
-
-As prince of evil earth creatures, Ogremoch can summon one of the following groups once per day: 1-3 earth elementals, 1-6 evil khargra, 1-4 umber hulks or 1-4 evil xorn. In addition, he can perform the following thrice per day: produce a triple-strength wall of stone, move earth (double area, casting time in rounds rather than turns), flesh to stone. Once per day he can cause an earthquake of 100' diameter.
-
-He cannot be harmed by normal fire or by poison. Cold, lightning and magical fire attacks subtract 1 point of damage per attack die against him. Ogremoch lives in a great flat-topped mountain on the Elemental Plane of Earth.",
+  text = "Ogremoch appears in a rough, apparently unfinished bipedal form, 10' tall. He attacks as a 24 hit dice monster, striking twice for 5-50 hit points of damage per attack each round. +3 or better weapons are required to harm him.\n\nAs prince of evil earth creatures, Ogremoch can summon one of the following groups once per day: 1-3 earth elementals, 1-6 evil khargra, 1-4 umber hulks or 1-4 evil xorn. In addition, he can perform the following thrice per day: produce a triple-strength wall of stone, move earth (double area, casting time in rounds rather than turns), flesh to stone. Once per day he can cause an earthquake of 100' diameter.\n\nHe cannot be harmed by normal fire or by poison. Cold, lightning and magical fire attacks subtract 1 point of damage per attack die against him. Ogremoch lives in a great flat-topped mountain on the Elemental Plane of Earth.",
 }

@@ -31,9 +31,5 @@ return {
   magicResistance = "Standard",
   psionic = "Nil",
   attackDefenseModes = "Nil",
-  text = "These shy creatures live in fresh water and have a dragon's head, two forelegs and a giant carp's body/tail. They cannot fly, polymorph or turn invisible; they have no breath weapon and breathe only water, though they can emerge awkwardly onto land for up to one hour.
-
-Their attack is with two claws for 1-4 hit points of damage each and a bite for 2-16 hit points of damage.
-
-When determining the age of yu lung, bring age of all levels of 5 or above down to adult. There are no older yu lung; when they reach 101 years of age, they are metamorphosed into another kind of oriental dragon (equal probability each type).",
+  text = "These shy creatures live in fresh water and have a dragon's head, two forelegs and a giant carp's body/tail. They cannot fly, polymorph or turn invisible; they have no breath weapon and breathe only water, though they can emerge awkwardly onto land for up to one hour.\n\nTheir attack is with two claws for 1-4 hit points of damage each and a bite for 2-16 hit points of damage.\n\nWhen determining the age of yu lung, bring age of all levels of 5 or above down to adult. There are no older yu lung; when they reach 101 years of age, they are metamorphosed into another kind of oriental dragon (equal probability each type).",
 }

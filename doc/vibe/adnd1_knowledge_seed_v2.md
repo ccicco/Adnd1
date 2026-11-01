@@ -30967,6 +30967,65 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     SET CLOSER - spec-round records,
     SetComplete, remaining 0.
     WAIT FOR GO.
+  - R1005 LANDED 2026-11-01 at
+    e4b7a8b5: The UA promotion batch
+    seven (census 928) - R786-R790,
+    THE SET CLOSER - 5 records (the
+    deity prose parts one through
+    five: R786 ua7 dwarven, R787
+    ua7 elven, R788 ua7 halfling,
+    R789 ua7 gnomish, R790 ua7
+    orcish), 487 model items, 132,790
+    bytes Lua, prefix ua7 (bool
+    ua7SetComplete). LANDED: pushed
+    6a4ef0c0..e4b7a8b5, census
+    927->928; the fresh tarball at
+    e4b7a8b5 verified - 5/5 records
+    on disk byte-matching the spec
+    (R786 27,357B 43c/60b, R787
+    27,654B 47c/54b, R788 27,658B
+    53c/52b, R789 25,300B 40c/55b,
+    R790 24,821B 32c/51b; the ua set
+    now 76; the dragon 79, the WSG 77,
+    the DSG 60 and the OA 160 on disk
+    unchanged), the batch header (5
+    consts + 3 bools, remaining 0,
+    cumulative 76), the regtest
+    includes (the ua7.h include at
+    line 709 right after ua6.h; the
+    r1005_batch.h audit at line 4819
+    above r1004_batch.h, descending),
+    the gap report byte-identical
+    base-to-HEAD (102/1, the one open
+    line the legend, no flips), the
+    seed seated (the R1004 record, 48
+    lines, before the LAST Knowledge
+    maintenance anchor - the file has
+    a TOC-style earlier occurrence,
+    compare against rfind), rverify
+    GREEN at base 6a4ef0c0
+    (double-run, battery 7 mutants 0
+    missed), spec md5 unchanged
+    (24eeb1fd51955223e087810636ef09a9).
+    THE APPENDIX S DEITY PROSE
+    LANDED: the dwarven five
+    (Clanggedin, Vergadain, Dumathoin,
+    Abbathor, Berronar), the elven,
+    halfling, gnomish and orcish
+    blocks - the dvpProseStaysOpen
+    pin returns false at last, the
+    five-part description-paragraph
+    close complete, the stat-block
+    numerics still R406/R783.
+    Cumulative 76 of the 76-round UA
+    set, 0 remaining, THE SET CLOSED,
+    1,785,532 bytes of UA Lua on disk.
+    THE UA PROMOTION ARC IS COMPLETE:
+    R999-R1005, 76 records, the whole
+    Unearthed Arcana book adjudicated
+    and pinned; the next arc awaits
+    the standing next-arc decision.
+    WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

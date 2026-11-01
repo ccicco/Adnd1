@@ -31,11 +31,5 @@ return {
   magicResistance = "Standard",
   psionic = "Nil",
   attackDefenseModes = "Nil",
-  text = "This subterranean race of huge black bipedal birds contains ferocious fighters which need never check morale. Long ago the dire corbies lost the power of flight; however they make up for this with their great strength and ferocity, always attacking and fighting to the death.
-
-What were once wings have now developed as two powerful arms which end in sharp, rock-hard claws. They fight with these claws and each is capable of inflicting 1-6 hit points of damage on a victim.
-
-They hunt in flocks, running down their hapless victims, at the same time emitting horrifying shrieks. They have rudimentary language (their attack cry can be recognised as 'Doom! Doom!' by those familiar with it).
-
-Dire corbies live in large underground caverns; at one time there was open warfare between them and giant bats, but this has now become an uneasy truce.",
+  text = "This subterranean race of huge black bipedal birds contains ferocious fighters which need never check morale. Long ago the dire corbies lost the power of flight; however they make up for this with their great strength and ferocity, always attacking and fighting to the death.\n\nWhat were once wings have now developed as two powerful arms which end in sharp, rock-hard claws. They fight with these claws and each is capable of inflicting 1-6 hit points of damage on a victim.\n\nThey hunt in flocks, running down their hapless victims, at the same time emitting horrifying shrieks. They have rudimentary language (their attack cry can be recognised as 'Doom! Doom!' by those familiar with it).\n\nDire corbies live in large underground caverns; at one time there was open warfare between them and giant bats, but this has now become an uneasy truce.",
 }

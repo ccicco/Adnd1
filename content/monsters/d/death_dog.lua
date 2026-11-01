@@ -31,11 +31,5 @@ return {
   magicResistance = "Standard",
   psionic = "Nil",
   attackDefenseModes = "Nil",
-  text = "Large black hounds with two heads, the death dogs can attack with each head independently. They usually hunt in packs, in deserts or in dry areas underground.
-
-Each bite delivers 1-10 hit points of damage and the victim of a bite must save against poison or die as a result of a slow, rotting disease in 4-24 days. Cure disease will be an effective remedy.
-
-When attacking, the death dog usually aims for its victim's legs - a natural roll of 19 or 20 on the 'to hit' die against a man-sized or smaller victim means that the victim has been knocked to the ground and attacks at -4 until able to rise again to his feet (which he can do during a single round if he is not knocked down again).
-
-These vicious hounds, which usually attack humans and near-humans on sight (85% chance), are said to be the descendants of Cerberus; their loud penetrating double bark tends to lend support to this theory.",
+  text = "Large black hounds with two heads, the death dogs can attack with each head independently. They usually hunt in packs, in deserts or in dry areas underground.\n\nEach bite delivers 1-10 hit points of damage and the victim of a bite must save against poison or die as a result of a slow, rotting disease in 4-24 days. Cure disease will be an effective remedy.\n\nWhen attacking, the death dog usually aims for its victim's legs - a natural roll of 19 or 20 on the 'to hit' die against a man-sized or smaller victim means that the victim has been knocked to the ground and attacks at -4 until able to rise again to his feet (which he can do during a single round if he is not knocked down again).\n\nThese vicious hounds, which usually attack humans and near-humans on sight (85% chance), are said to be the descendants of Cerberus; their loud penetrating double bark tends to lend support to this theory.",
 }

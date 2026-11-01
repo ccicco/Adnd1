@@ -707,6 +707,7 @@
 #include "rules/ua5.h"  // R1003: the UA promotion batch five
 #include "rules/ua6.h"  // R1004: the UA promotion batch six
 #include "rules/ua7.h"  // R1005: the UA promotion batch seven
+#include "rules/pm1.h"  // R1006: the promotions mop round one - the FF never-load repair
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4816,6 +4817,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r1006_batch.h"  // R1006: R1006 promotions mop round one audit
 #include "rules/audits/r1005_batch.h"  // R1005: R1005 UA promotion batch seven audit
 #include "rules/audits/r1004_batch.h"  // R1004: R1004 UA promotion batch six audit
 #include "rules/audits/r1003_batch.h"  // R1003: R1003 UA promotion batch five audit

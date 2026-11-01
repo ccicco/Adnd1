@@ -31,11 +31,5 @@ return {
   magicResistance = "Standard",
   psionic = "Nil",
   attackDefenseModes = "Nil",
-  text = "This is a species of giant bat found in dismal underground caverns. The monstrous black creature has a wingspan a full 25' and can pick up and carry off objects weighing up to 300 pounds (3,000 gold pieces weight). At night, it flies into the outer world to hunt - always attacking and seeking to kill any living thing. For the purposes of aerial combat it is manoeuvrability class C.
-
-The bite of the doombat inflicts 1-6 hit points of damage and it also lashes with its tail for 1-4 hit points of damage. The tail, lined with cruel barbs, stretches a considerable distance from the body, and specimens with tails up to 12' long have been reported.
-
-The normal bat's sonar yip has developed into a terrifying shriek of great sonic power in the doombat. Each doombat can shriek continuously for 2-5 rounds and during the shriek, all within 100' who can hear will not be able to concentrate, making spell use impossible and all attacks at -1. No saving throw is permitted against these effects. The effect of several doombats shrieking at the same time is not cumulative.
-
-Bright light (such as a light spell) will keep a doombat at bay, though it is undeterred by torch- or lantern-light.",
+  text = "This is a species of giant bat found in dismal underground caverns. The monstrous black creature has a wingspan a full 25' and can pick up and carry off objects weighing up to 300 pounds (3,000 gold pieces weight). At night, it flies into the outer world to hunt - always attacking and seeking to kill any living thing. For the purposes of aerial combat it is manoeuvrability class C.\n\nThe bite of the doombat inflicts 1-6 hit points of damage and it also lashes with its tail for 1-4 hit points of damage. The tail, lined with cruel barbs, stretches a considerable distance from the body, and specimens with tails up to 12' long have been reported.\n\nThe normal bat's sonar yip has developed into a terrifying shriek of great sonic power in the doombat. Each doombat can shriek continuously for 2-5 rounds and during the shriek, all within 100' who can hear will not be able to concentrate, making spell use impossible and all attacks at -1. No saving throw is permitted against these effects. The effect of several doombats shrieking at the same time is not cumulative.\n\nBright light (such as a light spell) will keep a doombat at bay, though it is undeterred by torch- or lantern-light.",
 }

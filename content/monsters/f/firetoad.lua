@@ -31,9 +31,5 @@ return {
   magicResistance = "Standard",
   psionic = "Nil",
   attackDefenseModes = "Nil",
-  text = "A large red toad about 4' high and covered with warty purple excrescences, this beast shuns water and inhabits dry regions above and below ground. Throwing liquid - even ordinary water - at it will cause it to retreat, though in doing so it will concentrate two fireball attacks, in the single melee round of its retreat, on the person performing this act.
-
-The firetoad has the power of breathing small fireballs with a range of 30' and a blast radius of 5' at will. This is its only mode of attack, the fireball doing damage equivalent to the number of hit points the firetoad has remaining. A normal saving throw is permitted against this attack, success indicating half damage.
-
-The firetoad will rarely (20% chance) attack unless threatened, molested or in defence of its treasure.",
+  text = "A large red toad about 4' high and covered with warty purple excrescences, this beast shuns water and inhabits dry regions above and below ground. Throwing liquid - even ordinary water - at it will cause it to retreat, though in doing so it will concentrate two fireball attacks, in the single melee round of its retreat, on the person performing this act.\n\nThe firetoad has the power of breathing small fireballs with a range of 30' and a blast radius of 5' at will. This is its only mode of attack, the fireball doing damage equivalent to the number of hit points the firetoad has remaining. A normal saving throw is permitted against this attack, success indicating half damage.\n\nThe firetoad will rarely (20% chance) attack unless threatened, molested or in defence of its treasure.",
 }
