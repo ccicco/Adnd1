@@ -30408,6 +30408,27 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     146 records on disk (2,203,259 bytes
     Lua cumulative). NEXT: R988 R760-R773
     14 rec - the set closer. WAIT FOR GO.
+  - R988 LANDED 2026-11-01 at 9566e3e: The
+    OA promotion batch eight (census 911) -
+    THE SET CLOSER - R760-R773, 14 records,
+    328 model items, 131,789 bytes Lua,
+    prefix oa8 (bool oa8SetComplete). LANDED:
+    pushed 6f02fe9..9566e3e, census 910->911;
+    the fresh tarball at 9566e3e verified -
+    14/14 records on disk byte-matching the
+    spec, the header (4 consts + 3 bools),
+    the regtest includes (the oa8.h include
+    at line 692 right after oa7.h; the
+    r988_batch.h audit at the top of the
+    descending audit order), the gap 3/0
+    no-flips and the seed all in place.
+    THE 160-ROUND OA SET IS FULLY PROMOTED:
+    160 of 160, none remaining, 2,335,048
+    bytes of Lua across eight batches
+    R981-R988 under the R968 format, every
+    record promoted mechanically and parsed
+    back equal. NEXT: the next arc awaits
+    Curtiss's call. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

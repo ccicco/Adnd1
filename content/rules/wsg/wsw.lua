@@ -1,0 +1,305 @@
+-- wsw: promoted from tools/spec_r429.json (the The WSG SPECIAL WEATHER, R429: the data slice of the special-weather section - Table 6 (the hurricane damage to structures), Table 7 (the tornado damage to structures) and Table 8 (the hailstorm damage to characters) with the hurricane, gale, tornado and sandstorm prose pins.);
+-- DO NOT hand-edit; the spec JSON stays the adjudicated record.
+return {
+  "round" = 429,
+  "prefix" = "wsw",
+  "banner" = {
+      "title" = "The WSG SPECIAL WEATHER, R429: the data slice of the special-weather section - Table 6 (the hurricane damage to structures), Table 7 (the tornado damage to structures) and Table 8 (the hailstorm damage to characters) with the hurricane, gale, tornado and sandstorm prose pins.",
+      "provenance" = "Provenance: the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed pp. 23-24; the three grids read from the IIIF page images and verified against the text layer and the letter-code and dice prose.",
+      "sentinel" = "Sentinel: 0 = a dash cell. Table 6 damage doubles to half-points (1 = 1/2 point, 2 = 1 point); Table 7 codes 0, 1, 2 = none, damaged, destroyed; Table 8 cells are the 1dN die size with 0 = no damage.",
+    },
+  "consts" = { {
+      "name" = "wswHurrIntensityCount",
+      "value" = 3,
+      "comment" = "The Table 6 intensity count.",
+    }, {
+      "name" = "wswTornadoStructCount",
+      "value" = 6,
+      "comment" = "The Table 7 structure count.",
+    }, {
+      "name" = "wswHailArmorCount",
+      "value" = 4,
+      "comment" = "The Table 8 armor count.",
+    }, {
+      "name" = "wswHurrDashCensus",
+      "value" = 3,
+      "comment" = "The Table 6 dash census: 3 cells.",
+    }, {
+      "name" = "wswTornadoNoneCensus",
+      "value" = 12,
+      "comment" = "The Table 7 dash census: 12 cells.",
+    }, {
+      "name" = "wswHailNoneCensus",
+      "value" = 1,
+      "comment" = "The Table 8 dash census: 1 cell.",
+    }, {
+      "name" = "wswHurrCheckEveryTurns",
+      "value" = 3,
+      "comment" = "The structural damage check: once every 3 turns.",
+    }, {
+      "name" = "wswHurrCheckChancePct",
+      "value" = 50,
+      "comment" = "The structural damage chance per check: 50 percent.",
+    }, {
+      "name" = "wswHurrLightWindMin",
+      "value" = 80,
+      "comment" = "A light hurricane: winds of at least 80 mph.",
+    }, {
+      "name" = "wswHurrNormalWindMin",
+      "value" = 100,
+      "comment" = "A normal hurricane: winds from 100 mph.",
+    }, {
+      "name" = "wswHurrNormalWindMax",
+      "value" = 140,
+      "comment" = "A normal hurricane: winds up to 140 mph.",
+    }, {
+      "name" = "wswHurrHeavyWindMax",
+      "value" = 200,
+      "comment" = "A heavy hurricane: winds as great as 200 mph.",
+    }, {
+      "name" = "wswHurrUnshelteredDie",
+      "value" = 3,
+      "comment" = "Blown across the ground: 50 percent of 1d3 damage.",
+    }, {
+      "name" = "wswHurrThrownDie",
+      "value" = 6,
+      "comment" = "Thrown to the ground in the wind: 1d6 damage.",
+    }, {
+      "name" = "wswGaleWindMin",
+      "value" = 46,
+      "comment" = "A gale: from 46 mph.",
+    }, {
+      "name" = "wswGaleWindMax",
+      "value" = 79,
+      "comment" = "A gale: up to 79 mph.",
+    }, {
+      "name" = "wswTornadoDebrisDice",
+      "value" = 4,
+      "comment" = "Caught in the open: 4d20 debris damage.",
+    }, {
+      "name" = "wswTornadoDebrisDie",
+      "value" = 20,
+      "comment" = "The tornado debris die: d20.",
+    }, {
+      "name" = "wswTornadoLiftDie",
+      "value" = 6,
+      "comment" = "The lift height: 1d6 x 10 feet.",
+    }, {
+      "name" = "wswTornadoLiftMult",
+      "value" = 10,
+      "comment" = "The lift height multiplier.",
+    }, {
+      "name" = "wswTornadoCarryMult",
+      "value" = 100,
+      "comment" = "The carry: 1d6 x 100 yards (100-600).",
+    }, {
+      "name" = "wswTornadoOccDice",
+      "value" = 3,
+      "comment" = "Occupant debris damage: 3d10 destroyed, 3d6 damaged.",
+    }, {
+      "name" = "wswTornadoStructDestroyedDie",
+      "value" = 10,
+      "comment" = "Structure destroyed: 3d10 to each occupant.",
+    }, {
+      "name" = "wswTornadoStructDamagedDie",
+      "value" = 6,
+      "comment" = "Structure damaged: 3d6 to each occupant.",
+    }, {
+      "name" = "wswTornadoLiftChanceDen",
+      "value" = 10,
+      "comment" = "A destroyed structure: 1 in 10 one character lifted.",
+    }, {
+      "name" = "wswTornadoUnnoticedDayNum",
+      "value" = 1,
+      "comment" = "Inside in the storm: 1 in 6 unnoticed by day.",
+    }, {
+      "name" = "wswTornadoUnnoticedNightNum",
+      "value" = 2,
+      "comment" = "Inside in the storm: 2 in 6 unnoticed at night.",
+    }, {
+      "name" = "wswTornadoUnnoticedDen",
+      "value" = 6,
+      "comment" = "The unnoticed chance die: d6.",
+    }, {
+      "name" = "wswSandBlindDie",
+      "value" = 6,
+      "comment" = "Unshielded eyes: blinded on 1, partial on 2-3, 1d6.",
+    }, {
+      "name" = "wswSandCheckEveryRounds",
+      "value" = 3,
+      "comment" = "The blindness check: once every 3 rounds.",
+    }, {
+      "name" = "wswSandPartialWindow",
+      "value" = 3,
+      "comment" = "A partial victim blinds 3 rounds later unaided.",
+    }, {
+      "name" = "wswSandBlindMeleeBonus",
+      "value" = 4,
+      "comment" = "Vs a blinded victim: +4 to hit, +4 melee damage.",
+    }, {
+      "name" = "wswSandPartialHitBonus",
+      "value" = 2,
+      "comment" = "Vs a partial victim: +2 to hit, no damage bonus.",
+    }, {
+      "name" = "wswSandChokeDen",
+      "value" = 6,
+      "comment" = "Unprotected nose and mouth: a 1 in 6 choking fit per round.",
+    }, {
+      "name" = "wswSandChokeWorsenNum",
+      "value" = 3,
+      "comment" = "The fit worsens next round on 3 in 6.",
+    }, {
+      "name" = "wswSandChokeWorsenDie",
+      "value" = 3,
+      "comment" = "The worsened fit: 1d3 damage.",
+    }, {
+      "name" = "wswSandChokeThirdNum",
+      "value" = 4,
+      "comment" = "The third round: disabled on 4 in 6.",
+    }, {
+      "name" = "wswSandWashedDice",
+      "value" = 2,
+      "comment" = "Eyes washed with water: recovered in 2d4 hours.",
+    }, {
+      "name" = "wswSandWashedDie",
+      "value" = 4,
+      "comment" = "The washed-eye recovery die.",
+    }, {
+      "name" = "wswSandPartialRecoverHours",
+      "value" = 12,
+      "comment" = "An unwashed partial victim recovers in 12 hours.",
+    }, {
+      "name" = "wswSandBlindRecoverHours",
+      "value" = 24,
+      "comment" = "An unwashed blind victim recovers to partial in 24 hours.",
+    }, {
+      "name" = "wswHailChancePct",
+      "value" = 50,
+      "comment" = "Unprotected in hail: 50 percent per round.",
+    }, {
+      "name" = "wswHailArmorAcMax",
+      "value" = 4,
+      "comment" = "AC 4 or better plus cover: no hail damage.",
+    }, {
+      "name" = "wswHailUnprotectedDie",
+      "value" = 2,
+      "comment" = "No precautions: +1d2 per round of damage taken.",
+    }, {
+      "name" = "wswHailShieldFloor",
+      "value" = 1,
+      "comment" = "A small shield halves the damage, minimum 1.",
+    } },
+  "bools" = { {
+      "name" = "wswTornadoFlimsyAutoDestroys",
+      "value" = true,
+      "comment" = "Anything flimsier than light wood is destroyed by a tornado.",
+    }, {
+      "name" = "wswGaleAsLightHurr",
+      "value" = true,
+      "comment" = "A severe gale may be treated as a light hurricane for structural damage.",
+    }, {
+      "name" = "wswHurrStructCollapseAtDpv",
+      "value" = true,
+      "comment" = "A structure collapses when the damage reaches its defensive point value.",
+    }, {
+      "name" = "wswHailAcSquatAvoids",
+      "value" = true,
+      "comment" = "Squatting in AC 4 or better avoids hail damage entirely.",
+    }, {
+      "name" = "wswHailEasierTarget",
+      "value" = true,
+      "comment" = "The hail-protection posture makes a character easier to hit.",
+    }, {
+      "name" = "wswHailShieldHalves",
+      "value" = true,
+      "comment" = "A small shield in the protected position halves hail damage.",
+    }, {
+      "name" = "wswSandBlindCannotAttack",
+      "value" = true,
+      "comment" = "A blinded character cannot attack (or attacks at a substantial penalty at the DM option).",
+    }, {
+      "name" = "wswSandPartialNoDamageBonus",
+      "value" = true,
+      "comment" = "Vs a partial victim the +2 is to hit only, never to damage.",
+    }, {
+      "name" = "wswSandEyesMustStayCovered",
+      "value" = true,
+      "comment" = "Any treatment fails unless the eyes stay closed and covered for the healing period.",
+    }, {
+      "name" = "wswSnowNonmagicNoHasten",
+      "value" = true,
+      "comment" = "Blowing-snow blindness recovers in 1d6 turns; nonmagical efforts do not hasten it.",
+    }, {
+      "name" = "wswIceSleetNoDamageMoving",
+      "value" = true,
+      "comment" = "An ice or sleet storm does no damage with precautions taken and the body kept moving.",
+    } },
+  "switches" = {},
+  "tables" = { {
+      "name" = "Table 6",
+      "tag" = "6",
+      "count" = "wswHurrIntensityCount",
+      "sentinel" = 0,
+      "sentinel_sum" = { "cols" = { 0, 1, 2, 3 }, "const" = "wswHurrDashCensus" },
+      "cols" = { "wswHurrWood", "wswHurrEarth", "wswHurrSoftStone", "wswHurrHardRock" },
+      "col_comments" = { "The damage vs wood, doubled to half-points.", "The damage vs earth, doubled to half-points.", "The damage vs soft stone, doubled to half-points.", "The damage vs hard rock, doubled to half-points." },
+      "data" = { { 2, 1, 0, 0 }, { 4, 2, 1, 0 }, { 6, 4, 2, 2 } },
+      "audit_comment" = "the Table 6 grid in half-points, 0 = the dash, with the dash census",
+      "sentinel_census" = { 0, 0, 1, 2 },
+    }, {
+      "name" = "Table 7",
+      "tag" = "7",
+      "count" = "wswTornadoStructCount",
+      "sentinel" = 0,
+      "sentinel_sum" = { "cols" = { 0, 1, 2, 3, 4, 5 }, "const" = "wswTornadoNoneCensus" },
+      "cols" = { "wswTornadoRoll1", "wswTornadoRoll2", "wswTornadoRoll3", "wswTornadoRoll4", "wswTornadoRoll5", "wswTornadoRoll6" },
+      "col_comments" = { "The roll-1 code: 0 none, 1 damaged, 2 destroyed.", "The roll-2 code.", "The roll-3 code.", "The roll-4 code.", "The roll-5 code.", "The roll-6 code." },
+      "data" = { { 1, 1, 2, 2, 2, 2 }, { 0, 1, 1, 2, 2, 2 }, { 0, 0, 1, 1, 2, 2 }, { 0, 0, 1, 1, 1, 2 }, { 0, 0, 0, 1, 1, 1 }, { 0, 0, 0, 0, 1, 1 } },
+      "audit_comment" = "the Table 7 letter-code grid, 0/1/2 = none/damaged/destroyed, with the dash census",
+      "sentinel_census" = { 5, 4, 2, 1, 0, 0 },
+    }, {
+      "name" = "Table 8",
+      "tag" = "8",
+      "count" = "wswHailArmorCount",
+      "sentinel" = 0,
+      "sentinel_sum" = { "cols" = { 0, 1, 2 }, "const" = "wswHailNoneCensus" },
+      "cols" = { "wswHailDieSmall", "wswHailDieMedium", "wswHailDieLarge" },
+      "col_comments" = { "The small-hail die (up to 1/2 inch), 1dN size.", "The medium-hail die (up to 1 1/2 inches), 1dN size.", "The large-hail die (over 1 1/2 inches), 1dN size." },
+      "data" = { { 4, 6, 8 }, { 3, 4, 4 }, { 2, 3, 3 }, { 0, 2, 3 } },
+      "audit_comment" = "the Table 8 dice grid, the cell = the 1dN size, 0 = the dash",
+      "sentinel_census" = { 1, 0, 0 },
+    } },
+  "chains" = { {
+      "name" = "wswHailSizeBandFor",
+      "arg" = "s",
+      "limits" = { 1, 3 },
+      "tail" = 2,
+      "comment" = "The hailstone size dispatch (Table 8 column) in half-inches: 1 = 1/2 small, 3 = 1 1/2 medium, over = large.",
+    } },
+  "examples" = { {
+      "note" = "the Table 6 doubling: light wood 1 point = 2 half-points, light earth and normal soft stone are both 1/2 = 1",
+      "expr" = "m['wswHurrWood'](0) != 2 or m['wswHurrEarth'](0) != 1 or m['wswHurrSoftStone'](1) != 1",
+    }, {
+      "note" = "the heavy row: wood 3 points = 6, earth 2 = 4, hard rock 1 = 2",
+      "expr" = "m['wswHurrWood'](2) != 6 or m['wswHurrEarth'](2) != 4 or m['wswHurrHardRock'](2) != 2",
+    }, {
+      "note" = "the Table 7 ladder: light wooden damaged on 1-2, destroyed on 3-6; wood and stone dash-dash-D-D-D-X",
+      "expr" = "m['wswTornadoRoll1'](0) != 1 or m['wswTornadoRoll3'](0) != 2 or m['wswTornadoRoll2'](3) != 0 or m['wswTornadoRoll6'](3) != 2",
+    }, {
+      "note" = "heavy stone: dashes on 1-4, damaged on 5-6",
+      "expr" = "m['wswTornadoRoll4'](5) != 0 or m['wswTornadoRoll5'](5) + m['wswTornadoRoll6'](5) != 2",
+    }, {
+      "note" = "the Table 8 dice: no armor takes 1d4/1d6/1d8, scale or chain mail is safe in small hail",
+      "expr" = "m['wswHailDieSmall'](0) != 4 or m['wswHailDieLarge'](0) != 8 or m['wswHailDieSmall'](3) != 0",
+    }, {
+      "note" = "the hailstone dispatch: a 1/2 inch stone is small, a 1 1/2 inch stone is medium, a 2 inch stone is large",
+      "expr" = "m['wswHailSizeBandFor'](1) != 0 or m['wswHailSizeBandFor'](3) != 1 or m['wswHailSizeBandFor'](4) != 2",
+    }, {
+      "note" = "the hurricane wind stages: light 80+, normal 100-140, heavy up to 200; the gale tops out below at 79",
+      "expr" = "m['wswHurrLightWindMin']() != 80 or m['wswHurrNormalWindMin']() != 100 or m['wswHurrNormalWindMax']() != 140 or m['wswHurrHeavyWindMax']() != 200 or m['wswGaleWindMax']() != 79",
+    } },
+  "audit" = {
+      "label" = "R429 WSG special weather pin audit",
+      "comment" = "The special weather data slice pins Tables 6, 7 and 8 (rules/wsgsplwx.h, prefix wsw): the hurricane half-point grid, the tornado none/damaged/destroyed codes and the hailstorm dice, verified cell for cell with the dash censuses and the printed prose; census 353 -> 354.",
+    },
+}
