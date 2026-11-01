@@ -725,6 +725,7 @@
 #include "rules/fq1.h"  // R1021: the FF normalization batch one
 #include "rules/fq2.h"  // R1022: the FF normalization batch two
 #include "rules/fq3.h"  // R1023: the FF normalization batch three
+#include "rules/wt1.h"  // R1024: the WSG+MOP normalization tail batch
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4834,6 +4835,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r1024_batch.h"  // R1024: R1024 WSG+MOP normalization audit
 #include "rules/audits/r1023_batch.h"  // R1023: R1023 FF normalization audit
 #include "rules/audits/r1022_batch.h"  // R1022: R1022 FF normalization audit
 #include "rules/audits/r1021_batch.h"  // R1021: R1021 FF normalization audit

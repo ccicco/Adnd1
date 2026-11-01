@@ -31934,6 +31934,47 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     closes), then WSG+MOP 23,
     DRG 5, the deity seam.
     WAIT FOR GO.
+  - R1023 LANDED 2026-11-01 at
+    f96cc96f: THE FF
+    NORMALIZATION BATCH THREE,
+    THE FF BOOK CLOSER (census
+    946) - the last 54 of 185
+    FF defs (the letters s-z)
+    rewritten to the
+    full-field 57-key
+    emission. THE FF BOOK
+    CLOSES COMPLETE: 185/185
+    canonical. Zero pin
+    repairs, zero reorders,
+    zero comma sites across
+    the whole arc - the FF
+    book carries no fragment
+    grids, and the
+    single-line anchor
+    doctrine (the R1021
+    aarakocra lesson) held
+    clean through all three
+    batches. LANDED
+    VERIFICATION at f96cc96f
+    (fresh tarball): spec md5
+    3a712a17bf9f2a99da72c667
+    b404382d unchanged (the
+    canvas body identical),
+    engine all-already 383
+    twice, FF 185/185
+    canonical byte-exact
+    against the landed
+    normalizer (the 54 s-z
+    defs 54/54), fq3.h after
+    fq2.h, r1023_batch.h
+    above r1022_batch.h, the
+    R1022 LANDED record seated
+    verbatim in the seed. THE
+    QUEUE: WSG+MOP 23, DRG 5,
+    the deity seam - the
+    per-book normalization
+    pass enters its tail.
+    WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
