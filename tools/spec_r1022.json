@@ -1,0 +1,2758 @@
+{
+ "round": 1022,
+ "prefix": "fq2",
+ "inline_count": 14,
+ "census_before": 944,
+ "title": "The FF normalization batch two (census 945)",
+ "banner": {
+  "title": "The FF normalization batch two - the letters h-r, 60 of 185 defs rewritten to the full-field 57-key emission",
+  "provenance": "The FF normalization - the per-book schema pass continues for the Fiend Folio (the R879 normalizer doctrine, the R1009-R1014 MM1 arc, R1016 the OA book close, R1017-R1020 the MM2 arc closed, R1021 the letters a-g): the letters h-r rewritten to the canonical FIELD_ORDER emission, byte-exact against the landed normalize_registry.py; all 420 patches are anchored sentinel inserts under the single-line anchor doctrine (the R1021 aarakocra lesson); no reorders, no comma sites, no pin repairs - the FF book carries no fragment grids; the loader reads the sentinels under the R879 uniform coercer doctrine already live on the 787 normalized MM1, MM2 and OA defs"
+ },
+ "header_file": "rules/fq2.h",
+ "audit_file": "rules/audits/r1022_batch.h",
+ "audit_label": "R1022 FF normalization audit",
+ "audit_comment": "THE FF NORMALIZATION, BATCH TWO - the letters h-r, 60 of 185 defs rewritten to the full-field 57-key emission, byte-exact against the landed normalize_registry.py; every patch an anchored sentinel insert.",
+ "audit_anchor": "#include \"rules/audits/r1021_batch.h\"  // R1021: R1021 FF normalization audit",
+ "include_after": "#include \"rules/fq1.h\"  // R1021: the FF normalization batch one",
+ "include_comment": "the FF normalization batch two",
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R1021 LANDED 2026-11-01 at",
+ "prev_record": [
+  "  - R1021 LANDED 2026-11-01 at",
+  "    ecb946db: THE FF",
+  "    NORMALIZATION BATCH ONE,",
+  "    THE FF ARC OPENER (census",
+  "    944) - the first 71 of 185",
+  "    FF defs (the letters a-g)",
+  "    rewritten to the",
+  "    full-field 57-key",
+  "    emission. The FF census:",
+  "    71 canonical, 114",
+  "    remaining (the letters",
+  "    h-z). Zero pin repairs -",
+  "    the FF book carries no",
+  "    fragment grids, the",
+  "    R1018/R1020 mirror class",
+  "    empty here. The",
+  "    single-line anchor",
+  "    doctrine institutionalized",
+  "    (the aarakocra lesson:",
+  "    a two-line anchor breaks",
+  "    engine idempotence when",
+  "    a later patch inserts",
+  "    between the anchor pair);",
+  "    the builder now simulates",
+  "    the second engine pass",
+  "    over every patch - zero",
+  "    idempotence failures.",
+  "    LANDED VERIFICATION at",
+  "    ecb946db (fresh",
+  "    tarball): spec md5",
+  "    8eacc5729928cf4c3552d852",
+  "    a67958af unchanged (the",
+  "    canvas body identical),",
+  "    engine all-already 502",
+  "    twice, FF 71/71 canonical",
+  "    byte-exact against the",
+  "    landed normalizer (114",
+  "    sparse confirmed), fq1.h",
+  "    after mq4.h, r1021_batch.h",
+  "    above r1020_batch.h, the",
+  "    R1020 LANDED record",
+  "    seated verbatim in the",
+  "    seed. THE QUEUE: the FF",
+  "    batch two (the letters",
+  "    h-r, 60 defs, consts",
+  "    fq2*), the FF batch three",
+  "    (the letters s-z, 54",
+  "    defs - the FF book",
+  "    closes), then WSG+MOP 23,",
+  "    DRG 5, the deity seam.",
+  "    WAIT FOR GO."
+ ],
+ "gap_report": "tools/mm2_gap_report.md",
+ "gap_flips": [],
+ "data_files": [],
+ "consts": [
+  {
+   "name": "fq2Round",
+   "value": 1022,
+   "comment": "the FF normalization batch two - the letters h-r, 60 of 185"
+  },
+  {
+   "name": "fq2DefsNormalized",
+   "value": 60,
+   "comment": "the FF defs rewritten to full-field canonical form this batch - the letters h-r"
+  },
+  {
+   "name": "fq2FfTotal",
+   "value": 185,
+   "comment": "the FF def census - unchanged by the batch"
+  },
+  {
+   "name": "fq2FfNormalizedAfter",
+   "value": 131,
+   "comment": "the FF defs carrying the full-field emission after this batch - the letters a-r"
+  },
+  {
+   "name": "fq2FfRemaining",
+   "value": 54,
+   "comment": "the FF defs still sparse after this batch - the letters s-z, the book closes next round"
+  },
+  {
+   "name": "fq2SchemaKeys",
+   "value": 57,
+   "comment": "the canonical FIELD_ORDER length - every FF def emitted with all 57 keys"
+  },
+  {
+   "name": "fq2InsSites",
+   "value": 420,
+   "comment": "the anchored insert sites - 1620 inserted lines, all sentinel fields"
+  },
+  {
+   "name": "fq2CommaSites",
+   "value": 0,
+   "comment": "the trailing-comma whole-line rewrites - NONE this batch, every text field already carried the Lua-optional comma"
+  },
+  {
+   "name": "fq2ReorderDefs",
+   "value": 0,
+   "comment": "the defs needing whole-line rewrites - NONE this batch, the fields already in canonical FIELD_ORDER"
+  },
+  {
+   "name": "fq2PatchEntries",
+   "value": 420,
+   "comment": "the file patches this round - 420 monster windows, all anchored sentinel inserts"
+  }
+ ],
+ "bools": [
+  {
+   "name": "fq2NormalizerCensusLive",
+   "value": true,
+   "comment": "the landed normalize_registry.py reads its full 1338-def census - the registry floor live"
+  },
+  {
+   "name": "fq2FullFieldEmission",
+   "value": true,
+   "comment": "every rewritten def carries all 57 keys - string sentinel n/a, integer sentinel -1, saveAsBonus the loader zero default"
+  },
+  {
+   "name": "fq2InsertOnly",
+   "value": true,
+   "comment": "zero whole-line rewrites, zero deletes - every patch an anchored insert, the single-line anchor doctrine (the R1021 aarakocra lesson held, the second engine pass simulated in full pre-handoff)"
+  },
+  {
+   "name": "fq2NoClassedDefs",
+   "value": true,
+   "comment": "no classed defs in the letters h-r - zero saveAs keys, the R155 contract untouched"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "table_checks": [],
+ "header_sections": {
+  "the batch frame": [
+   {
+    "kind": "const",
+    "name": "fq2Round"
+   },
+   {
+    "kind": "const",
+    "name": "fq2DefsNormalized"
+   },
+   {
+    "kind": "const",
+    "name": "fq2PatchEntries"
+   }
+  ],
+  "the FF normalization census": [
+   {
+    "kind": "const",
+    "name": "fq2FfTotal"
+   },
+   {
+    "kind": "const",
+    "name": "fq2FfNormalizedAfter"
+   },
+   {
+    "kind": "const",
+    "name": "fq2FfRemaining"
+   },
+   {
+    "kind": "const",
+    "name": "fq2SchemaKeys"
+   }
+  ],
+  "the patch anatomy": [
+   {
+    "kind": "const",
+    "name": "fq2InsSites"
+   },
+   {
+    "kind": "const",
+    "name": "fq2CommaSites"
+   },
+   {
+    "kind": "const",
+    "name": "fq2ReorderDefs"
+   }
+  ],
+  "the guarantees": [
+   {
+    "kind": "bool",
+    "name": "fq2NormalizerCensusLive"
+   },
+   {
+    "kind": "bool",
+    "name": "fq2FullFieldEmission"
+   },
+   {
+    "kind": "bool",
+    "name": "fq2InsertOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "fq2NoClassedDefs"
+   }
+  ]
+ },
+ "file_patches": [
+  {
+   "file": "content/monsters/h/hellcat.lua",
+   "note": "the hellcat.lua full-field normalization insert",
+   "from": "  page = \"50\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"50\",\n"
+  },
+  {
+   "file": "content/monsters/h/hellcat.lua",
+   "note": "the hellcat.lua full-field normalization insert",
+   "from": "  race = \"Hellcat\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Hellcat\",\n"
+  },
+  {
+   "file": "content/monsters/h/hellcat.lua",
+   "note": "the hellcat.lua full-field normalization insert",
+   "from": "  hitDice = \"7+2\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"7+2\",\n"
+  },
+  {
+   "file": "content/monsters/h/hellcat.lua",
+   "note": "the hellcat.lua full-field normalization insert",
+   "from": "  damage = \"2-5/2-5/2-12\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"2-5/2-5/2-12\",\n"
+  },
+  {
+   "file": "content/monsters/h/hellcat.lua",
+   "note": "the hellcat.lua full-field normalization insert",
+   "from": "  frequency = \"Rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Rare\",\n"
+  },
+  {
+   "file": "content/monsters/h/hellcat.lua",
+   "note": "the hellcat.lua full-field normalization insert",
+   "from": "  treasure = \"Nil\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"Nil\",\n"
+  },
+  {
+   "file": "content/monsters/h/hellcat.lua",
+   "note": "the hellcat.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/h/hoar_fox.lua",
+   "note": "the hoar_fox.lua full-field normalization insert",
+   "from": "  page = \"50\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"50\",\n"
+  },
+  {
+   "file": "content/monsters/h/hoar_fox.lua",
+   "note": "the hoar_fox.lua full-field normalization insert",
+   "from": "  race = \"Hoar Fox\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Hoar Fox\",\n"
+  },
+  {
+   "file": "content/monsters/h/hoar_fox.lua",
+   "note": "the hoar_fox.lua full-field normalization insert",
+   "from": "  hitDice = \"2\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"2\",\n"
+  },
+  {
+   "file": "content/monsters/h/hoar_fox.lua",
+   "note": "the hoar_fox.lua full-field normalization insert",
+   "from": "  damage = \"1-6\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-6\",\n"
+  },
+  {
+   "file": "content/monsters/h/hoar_fox.lua",
+   "note": "the hoar_fox.lua full-field normalization insert",
+   "from": "  frequency = \"Rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Rare\",\n"
+  },
+  {
+   "file": "content/monsters/h/hoar_fox.lua",
+   "note": "the hoar_fox.lua full-field normalization insert",
+   "from": "  treasure = \"See below\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"See below\",\n"
+  },
+  {
+   "file": "content/monsters/h/hoar_fox.lua",
+   "note": "the hoar_fox.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/h/hook_horror.lua",
+   "note": "the hook_horror.lua full-field normalization insert",
+   "from": "  page = \"51\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"51\",\n"
+  },
+  {
+   "file": "content/monsters/h/hook_horror.lua",
+   "note": "the hook_horror.lua full-field normalization insert",
+   "from": "  race = \"Hook Horror\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Hook Horror\",\n"
+  },
+  {
+   "file": "content/monsters/h/hook_horror.lua",
+   "note": "the hook_horror.lua full-field normalization insert",
+   "from": "  hitDice = \"5\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"5\",\n"
+  },
+  {
+   "file": "content/monsters/h/hook_horror.lua",
+   "note": "the hook_horror.lua full-field normalization insert",
+   "from": "  damage = \"1-8/1-8\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-8/1-8\",\n"
+  },
+  {
+   "file": "content/monsters/h/hook_horror.lua",
+   "note": "the hook_horror.lua full-field normalization insert",
+   "from": "  frequency = \"Rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Rare\",\n"
+  },
+  {
+   "file": "content/monsters/h/hook_horror.lua",
+   "note": "the hook_horror.lua full-field normalization insert",
+   "from": "  treasure = \"P\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"P\",\n"
+  },
+  {
+   "file": "content/monsters/h/hook_horror.lua",
+   "note": "the hook_horror.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/h/hornet_giant.lua",
+   "note": "the hornet_giant.lua full-field normalization insert",
+   "from": "  page = \"52\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"52\",\n"
+  },
+  {
+   "file": "content/monsters/h/hornet_giant.lua",
+   "note": "the hornet_giant.lua full-field normalization insert",
+   "from": "  race = \"Hornet, Giant\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Hornet, Giant\",\n"
+  },
+  {
+   "file": "content/monsters/h/hornet_giant.lua",
+   "note": "the hornet_giant.lua full-field normalization insert",
+   "from": "  hitDice = \"5\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"5\",\n"
+  },
+  {
+   "file": "content/monsters/h/hornet_giant.lua",
+   "note": "the hornet_giant.lua full-field normalization insert",
+   "from": "  damage = \"1-4\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-4\",\n"
+  },
+  {
+   "file": "content/monsters/h/hornet_giant.lua",
+   "note": "the hornet_giant.lua full-field normalization insert",
+   "from": "  frequency = \"Uncommon\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Uncommon\",\n"
+  },
+  {
+   "file": "content/monsters/h/hornet_giant.lua",
+   "note": "the hornet_giant.lua full-field normalization insert",
+   "from": "  treasure = \"Nil\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"Nil\",\n"
+  },
+  {
+   "file": "content/monsters/h/hornet_giant.lua",
+   "note": "the hornet_giant.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/h/hound_of_ill_omen.lua",
+   "note": "the hound_of_ill_omen.lua full-field normalization insert",
+   "from": "  page = \"51\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"51\",\n"
+  },
+  {
+   "file": "content/monsters/h/hound_of_ill_omen.lua",
+   "note": "the hound_of_ill_omen.lua full-field normalization insert",
+   "from": "  race = \"Hound of Ill Omen\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Hound of Ill Omen\",\n"
+  },
+  {
+   "file": "content/monsters/h/hound_of_ill_omen.lua",
+   "note": "the hound_of_ill_omen.lua full-field normalization insert",
+   "from": "  hitDice = \"Not applicable\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"Not applicable\",\n"
+  },
+  {
+   "file": "content/monsters/h/hound_of_ill_omen.lua",
+   "note": "the hound_of_ill_omen.lua full-field normalization insert",
+   "from": "  damage = \"Special\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"Special\",\n"
+  },
+  {
+   "file": "content/monsters/h/hound_of_ill_omen.lua",
+   "note": "the hound_of_ill_omen.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/h/hound_of_ill_omen.lua",
+   "note": "the hound_of_ill_omen.lua full-field normalization insert",
+   "from": "  treasure = \"Nil\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"Nil\",\n"
+  },
+  {
+   "file": "content/monsters/h/hound_of_ill_omen.lua",
+   "note": "the hound_of_ill_omen.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/h/huecuva.lua",
+   "note": "the huecuva.lua full-field normalization insert",
+   "from": "  page = \"51\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"51\",\n"
+  },
+  {
+   "file": "content/monsters/h/huecuva.lua",
+   "note": "the huecuva.lua full-field normalization insert",
+   "from": "  race = \"Huecuva\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Huecuva\",\n"
+  },
+  {
+   "file": "content/monsters/h/huecuva.lua",
+   "note": "the huecuva.lua full-field normalization insert",
+   "from": "  hitDice = \"2\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"2\",\n"
+  },
+  {
+   "file": "content/monsters/h/huecuva.lua",
+   "note": "the huecuva.lua full-field normalization insert",
+   "from": "  damage = \"1-6\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-6\",\n"
+  },
+  {
+   "file": "content/monsters/h/huecuva.lua",
+   "note": "the huecuva.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/h/huecuva.lua",
+   "note": "the huecuva.lua full-field normalization insert",
+   "from": "  treasure = \"C\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"C\",\n"
+  },
+  {
+   "file": "content/monsters/h/huecuva.lua",
+   "note": "the huecuva.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/i/ice_lizard.lua",
+   "note": "the ice_lizard.lua full-field normalization insert",
+   "from": "  page = \"52\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"52\",\n"
+  },
+  {
+   "file": "content/monsters/i/ice_lizard.lua",
+   "note": "the ice_lizard.lua full-field normalization insert",
+   "from": "  race = \"Ice Lizard\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Ice Lizard\",\n"
+  },
+  {
+   "file": "content/monsters/i/ice_lizard.lua",
+   "note": "the ice_lizard.lua full-field normalization insert",
+   "from": "  hitDice = \"3+3\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"3+3\",\n"
+  },
+  {
+   "file": "content/monsters/i/ice_lizard.lua",
+   "note": "the ice_lizard.lua full-field normalization insert",
+   "from": "  damage = \"1-6/1-3/1-3\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-6/1-3/1-3\",\n"
+  },
+  {
+   "file": "content/monsters/i/ice_lizard.lua",
+   "note": "the ice_lizard.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/i/ice_lizard.lua",
+   "note": "the ice_lizard.lua full-field normalization insert",
+   "from": "  treasure = \"G\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"G\",\n"
+  },
+  {
+   "file": "content/monsters/i/ice_lizard.lua",
+   "note": "the ice_lizard.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/i/ice_troll.lua",
+   "note": "the ice_troll.lua full-field normalization insert",
+   "from": "  page = \"90\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"90\",\n"
+  },
+  {
+   "file": "content/monsters/i/ice_troll.lua",
+   "note": "the ice_troll.lua full-field normalization insert",
+   "from": "  race = \"Ice Troll\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Ice Troll\",\n"
+  },
+  {
+   "file": "content/monsters/i/ice_troll.lua",
+   "note": "the ice_troll.lua full-field normalization insert",
+   "from": "  hitDice = \"2\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"2\",\n"
+  },
+  {
+   "file": "content/monsters/i/ice_troll.lua",
+   "note": "the ice_troll.lua full-field normalization insert",
+   "from": "  damage = \"1-8/1-8\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-8/1-8\",\n"
+  },
+  {
+   "file": "content/monsters/i/ice_troll.lua",
+   "note": "the ice_troll.lua full-field normalization insert",
+   "from": "  frequency = \"Rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Rare\",\n"
+  },
+  {
+   "file": "content/monsters/i/ice_troll.lua",
+   "note": "the ice_troll.lua full-field normalization insert",
+   "from": "  treasure = \"D (no magical items)\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"D (no magical items)\",\n"
+  },
+  {
+   "file": "content/monsters/i/ice_troll.lua",
+   "note": "the ice_troll.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/i/imix.lua",
+   "note": "the imix.lua full-field normalization insert",
+   "from": "  page = \"31\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"31\",\n"
+  },
+  {
+   "file": "content/monsters/i/imix.lua",
+   "note": "the imix.lua full-field normalization insert",
+   "from": "  race = \"Imix\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Imix\",\n"
+  },
+  {
+   "file": "content/monsters/i/imix.lua",
+   "note": "the imix.lua full-field normalization insert",
+   "from": "  hitDice = \"90 hit points\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"90 hit points\",\n"
+  },
+  {
+   "file": "content/monsters/i/imix.lua",
+   "note": "the imix.lua full-field normalization insert",
+   "from": "  damage = \"6-36\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"6-36\",\n"
+  },
+  {
+   "file": "content/monsters/i/imix.lua",
+   "note": "the imix.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/i/imix.lua",
+   "note": "the imix.lua full-field normalization insert",
+   "from": "  treasure = \"R, U\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"R, U\",\n"
+  },
+  {
+   "file": "content/monsters/i/imix.lua",
+   "note": "the imix.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/i/imorph.lua",
+   "note": "the imorph.lua full-field normalization insert",
+   "from": "  page = \"52\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"52\",\n"
+  },
+  {
+   "file": "content/monsters/i/imorph.lua",
+   "note": "the imorph.lua full-field normalization insert",
+   "from": "  race = \"Imorph\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Imorph\",\n"
+  },
+  {
+   "file": "content/monsters/i/imorph.lua",
+   "note": "the imorph.lua full-field normalization insert",
+   "from": "  hitDice = \"5 (see below)\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"5 (see below)\",\n"
+  },
+  {
+   "file": "content/monsters/i/imorph.lua",
+   "note": "the imorph.lua full-field normalization insert",
+   "from": "  damage = \"1-4/1-4\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-4/1-4\",\n"
+  },
+  {
+   "file": "content/monsters/i/imorph.lua",
+   "note": "the imorph.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare (at best)\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare (at best)\",\n"
+  },
+  {
+   "file": "content/monsters/i/imorph.lua",
+   "note": "the imorph.lua full-field normalization insert",
+   "from": "  treasure = \"Nil\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"Nil\",\n"
+  },
+  {
+   "file": "content/monsters/i/imorph.lua",
+   "note": "the imorph.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/i/iron_cobra.lua",
+   "note": "the iron_cobra.lua full-field normalization insert",
+   "from": "  page = \"52\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"52\",\n"
+  },
+  {
+   "file": "content/monsters/i/iron_cobra.lua",
+   "note": "the iron_cobra.lua full-field normalization insert",
+   "from": "  race = \"Iron Cobra\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Iron Cobra\",\n"
+  },
+  {
+   "file": "content/monsters/i/iron_cobra.lua",
+   "note": "the iron_cobra.lua full-field normalization insert",
+   "from": "  hitDice = \"1\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"1\",\n"
+  },
+  {
+   "file": "content/monsters/i/iron_cobra.lua",
+   "note": "the iron_cobra.lua full-field normalization insert",
+   "from": "  damage = \"1-3\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-3\",\n"
+  },
+  {
+   "file": "content/monsters/i/iron_cobra.lua",
+   "note": "the iron_cobra.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/i/iron_cobra.lua",
+   "note": "the iron_cobra.lua full-field normalization insert",
+   "from": "  treasure = \"See below\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"See below\",\n"
+  },
+  {
+   "file": "content/monsters/i/iron_cobra.lua",
+   "note": "the iron_cobra.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/j/jaculi.lua",
+   "note": "the jaculi.lua full-field normalization insert",
+   "from": "  page = \"53\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"53\",\n"
+  },
+  {
+   "file": "content/monsters/j/jaculi.lua",
+   "note": "the jaculi.lua full-field normalization insert",
+   "from": "  race = \"Jaculi\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Jaculi\",\n"
+  },
+  {
+   "file": "content/monsters/j/jaculi.lua",
+   "note": "the jaculi.lua full-field normalization insert",
+   "from": "  hitDice = \"1\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"1\",\n"
+  },
+  {
+   "file": "content/monsters/j/jaculi.lua",
+   "note": "the jaculi.lua full-field normalization insert",
+   "from": "  damage = \"1-6\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-6\",\n"
+  },
+  {
+   "file": "content/monsters/j/jaculi.lua",
+   "note": "the jaculi.lua full-field normalization insert",
+   "from": "  frequency = \"Rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Rare\",\n"
+  },
+  {
+   "file": "content/monsters/j/jaculi.lua",
+   "note": "the jaculi.lua full-field normalization insert",
+   "from": "  treasure = \"Nil\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"Nil\",\n"
+  },
+  {
+   "file": "content/monsters/j/jaculi.lua",
+   "note": "the jaculi.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/j/jermlaine.lua",
+   "note": "the jermlaine.lua full-field normalization insert",
+   "from": "  page = \"53\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"53\",\n"
+  },
+  {
+   "file": "content/monsters/j/jermlaine.lua",
+   "note": "the jermlaine.lua full-field normalization insert",
+   "from": "  race = \"Jermlaine\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Jermlaine\",\n"
+  },
+  {
+   "file": "content/monsters/j/jermlaine.lua",
+   "note": "the jermlaine.lua full-field normalization insert",
+   "from": "  hitDice = \"1-4 hit points\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"1-4 hit points\",\n"
+  },
+  {
+   "file": "content/monsters/j/jermlaine.lua",
+   "note": "the jermlaine.lua full-field normalization insert",
+   "from": "  damage = \"1-2 or 1-4\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-2 or 1-4\",\n"
+  },
+  {
+   "file": "content/monsters/j/jermlaine.lua",
+   "note": "the jermlaine.lua full-field normalization insert",
+   "from": "  frequency = \"Uncommon\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Uncommon\",\n"
+  },
+  {
+   "file": "content/monsters/j/jermlaine.lua",
+   "note": "the jermlaine.lua full-field normalization insert",
+   "from": "  treasure = \"Per 10 individuals O, Q; in lair C, Q(x5), S, T\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"Per 10 individuals O, Q; in lair C, Q(x5), S, T\",\n"
+  },
+  {
+   "file": "content/monsters/j/jermlaine.lua",
+   "note": "the jermlaine.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/k/kamadan.lua",
+   "note": "the kamadan.lua full-field normalization insert",
+   "from": "  page = \"55\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"55\",\n"
+  },
+  {
+   "file": "content/monsters/k/kamadan.lua",
+   "note": "the kamadan.lua full-field normalization insert",
+   "from": "  race = \"Kamadan\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Kamadan\",\n"
+  },
+  {
+   "file": "content/monsters/k/kamadan.lua",
+   "note": "the kamadan.lua full-field normalization insert",
+   "from": "  hitDice = \"4+2\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"4+2\",\n"
+  },
+  {
+   "file": "content/monsters/k/kamadan.lua",
+   "note": "the kamadan.lua full-field normalization insert",
+   "from": "  damage = \"1-3/1-3/1-6 plus 1-4 per snake head\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-3/1-3/1-6 plus 1-4 per snake head\",\n"
+  },
+  {
+   "file": "content/monsters/k/kamadan.lua",
+   "note": "the kamadan.lua full-field normalization insert",
+   "from": "  frequency = \"Rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Rare\",\n"
+  },
+  {
+   "file": "content/monsters/k/kamadan.lua",
+   "note": "the kamadan.lua full-field normalization insert",
+   "from": "  treasure = \"C\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"C\",\n"
+  },
+  {
+   "file": "content/monsters/k/kamadan.lua",
+   "note": "the kamadan.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/k/kelpie.lua",
+   "note": "the kelpie.lua full-field normalization insert",
+   "from": "  page = \"55\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"55\",\n"
+  },
+  {
+   "file": "content/monsters/k/kelpie.lua",
+   "note": "the kelpie.lua full-field normalization insert",
+   "from": "  race = \"Kelpie\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Kelpie\",\n"
+  },
+  {
+   "file": "content/monsters/k/kelpie.lua",
+   "note": "the kelpie.lua full-field normalization insert",
+   "from": "  hitDice = \"5\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"5\",\n"
+  },
+  {
+   "file": "content/monsters/k/kelpie.lua",
+   "note": "the kelpie.lua full-field normalization insert",
+   "from": "  damage = \"Nil\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"Nil\",\n"
+  },
+  {
+   "file": "content/monsters/k/kelpie.lua",
+   "note": "the kelpie.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/k/kelpie.lua",
+   "note": "the kelpie.lua full-field normalization insert",
+   "from": "  treasure = \"D\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"D\",\n"
+  },
+  {
+   "file": "content/monsters/k/kelpie.lua",
+   "note": "the kelpie.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/k/kenku.lua",
+   "note": "the kenku.lua full-field normalization insert",
+   "from": "  page = \"56\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"56\",\n"
+  },
+  {
+   "file": "content/monsters/k/kenku.lua",
+   "note": "the kenku.lua full-field normalization insert",
+   "from": "  race = \"Kenku\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Kenku\",\n"
+  },
+  {
+   "file": "content/monsters/k/kenku.lua",
+   "note": "the kenku.lua full-field normalization insert",
+   "from": "  hitDice = \"2-5\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"2-5\",\n"
+  },
+  {
+   "file": "content/monsters/k/kenku.lua",
+   "note": "the kenku.lua full-field normalization insert",
+   "from": "  damage = \"1-4/1-4/1-6 or by weapon type\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-4/1-4/1-6 or by weapon type\",\n"
+  },
+  {
+   "file": "content/monsters/k/kenku.lua",
+   "note": "the kenku.lua full-field normalization insert",
+   "from": "  frequency = \"Uncommon\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Uncommon\",\n"
+  },
+  {
+   "file": "content/monsters/k/kenku.lua",
+   "note": "the kenku.lua full-field normalization insert",
+   "from": "  treasure = \"F\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"F\",\n"
+  },
+  {
+   "file": "content/monsters/k/kenku.lua",
+   "note": "the kenku.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/k/khargra.lua",
+   "note": "the khargra.lua full-field normalization insert",
+   "from": "  page = \"56\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"56\",\n"
+  },
+  {
+   "file": "content/monsters/k/khargra.lua",
+   "note": "the khargra.lua full-field normalization insert",
+   "from": "  race = \"Khargra\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Khargra\",\n"
+  },
+  {
+   "file": "content/monsters/k/khargra.lua",
+   "note": "the khargra.lua full-field normalization insert",
+   "from": "  hitDice = \"6\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"6\",\n"
+  },
+  {
+   "file": "content/monsters/k/khargra.lua",
+   "note": "the khargra.lua full-field normalization insert",
+   "from": "  damage = \"3-18\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"3-18\",\n"
+  },
+  {
+   "file": "content/monsters/k/khargra.lua",
+   "note": "the khargra.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare (at best)\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare (at best)\",\n"
+  },
+  {
+   "file": "content/monsters/k/khargra.lua",
+   "note": "the khargra.lua full-field normalization insert",
+   "from": "  treasure = \"See below\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"See below\",\n"
+  },
+  {
+   "file": "content/monsters/k/khargra.lua",
+   "note": "the khargra.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/k/killmoulis.lua",
+   "note": "the killmoulis.lua full-field normalization insert",
+   "from": "  page = \"57\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"57\",\n"
+  },
+  {
+   "file": "content/monsters/k/killmoulis.lua",
+   "note": "the killmoulis.lua full-field normalization insert",
+   "from": "  race = \"Killmoulis\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Killmoulis\",\n"
+  },
+  {
+   "file": "content/monsters/k/killmoulis.lua",
+   "note": "the killmoulis.lua full-field normalization insert",
+   "from": "  hitDice = \"1/2 (1-4 hit points)\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"1/2 (1-4 hit points)\",\n"
+  },
+  {
+   "file": "content/monsters/k/killmoulis.lua",
+   "note": "the killmoulis.lua full-field normalization insert",
+   "from": "  damage = \"Nil\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"Nil\",\n"
+  },
+  {
+   "file": "content/monsters/k/killmoulis.lua",
+   "note": "the killmoulis.lua full-field normalization insert",
+   "from": "  frequency = \"Uncommon\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Uncommon\",\n"
+  },
+  {
+   "file": "content/monsters/k/killmoulis.lua",
+   "note": "the killmoulis.lua full-field normalization insert",
+   "from": "  treasure = \"K\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"K\",\n"
+  },
+  {
+   "file": "content/monsters/k/killmoulis.lua",
+   "note": "the killmoulis.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/k/kuo_toa.lua",
+   "note": "the kuo_toa.lua full-field normalization insert",
+   "from": "  page = \"57\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"57\",\n"
+  },
+  {
+   "file": "content/monsters/k/kuo_toa.lua",
+   "note": "the kuo_toa.lua full-field normalization insert",
+   "from": "  race = \"Kuo-Toa\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Kuo-Toa\",\n"
+  },
+  {
+   "file": "content/monsters/k/kuo_toa.lua",
+   "note": "the kuo_toa.lua full-field normalization insert",
+   "from": "  hitDice = \"2 or more\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"2 or more\",\n"
+  },
+  {
+   "file": "content/monsters/k/kuo_toa.lua",
+   "note": "the kuo_toa.lua full-field normalization insert",
+   "from": "  damage = \"By weapon type and/or 2-5\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"By weapon type and/or 2-5\",\n"
+  },
+  {
+   "file": "content/monsters/k/kuo_toa.lua",
+   "note": "the kuo_toa.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/k/kuo_toa.lua",
+   "note": "the kuo_toa.lua full-field normalization insert",
+   "from": "  treasure = \"Individuals L, M, N; in lair Z\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"Individuals L, M, N; in lair Z\",\n"
+  },
+  {
+   "file": "content/monsters/k/kuo_toa.lua",
+   "note": "the kuo_toa.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/l/lamia_noble.lua",
+   "note": "the lamia_noble.lua full-field normalization insert",
+   "from": "  page = \"59\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"59\",\n"
+  },
+  {
+   "file": "content/monsters/l/lamia_noble.lua",
+   "note": "the lamia_noble.lua full-field normalization insert",
+   "from": "  race = \"Lamia\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Lamia\",\n"
+  },
+  {
+   "file": "content/monsters/l/lamia_noble.lua",
+   "note": "the lamia_noble.lua full-field normalization insert",
+   "from": "  hitDice = \"10+1\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"10+1\",\n"
+  },
+  {
+   "file": "content/monsters/l/lamia_noble.lua",
+   "note": "the lamia_noble.lua full-field normalization insert",
+   "from": "  damage = \"1-6\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-6\",\n"
+  },
+  {
+   "file": "content/monsters/l/lamia_noble.lua",
+   "note": "the lamia_noble.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/l/lamia_noble.lua",
+   "note": "the lamia_noble.lua full-field normalization insert",
+   "from": "  treasure = \"D\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"D\",\n"
+  },
+  {
+   "file": "content/monsters/l/lamia_noble.lua",
+   "note": "the lamia_noble.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/l/lava_children.lua",
+   "note": "the lava_children.lua full-field normalization insert",
+   "from": "  page = \"61\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"61\",\n"
+  },
+  {
+   "file": "content/monsters/l/lava_children.lua",
+   "note": "the lava_children.lua full-field normalization insert",
+   "from": "  race = \"Lava Children\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Lava Children\",\n"
+  },
+  {
+   "file": "content/monsters/l/lava_children.lua",
+   "note": "the lava_children.lua full-field normalization insert",
+   "from": "  hitDice = \"4 or more\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"4 or more\",\n"
+  },
+  {
+   "file": "content/monsters/l/lava_children.lua",
+   "note": "the lava_children.lua full-field normalization insert",
+   "from": "  damage = \"1-6/1-6/2-12\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-6/1-6/2-12\",\n"
+  },
+  {
+   "file": "content/monsters/l/lava_children.lua",
+   "note": "the lava_children.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/l/lava_children.lua",
+   "note": "the lava_children.lua full-field normalization insert",
+   "from": "  treasure = \"O\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"O\",\n"
+  },
+  {
+   "file": "content/monsters/l/lava_children.lua",
+   "note": "the lava_children.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/l/li_lung.lua",
+   "note": "the li_lung.lua full-field normalization insert",
+   "from": "  page = \"28\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"28\",\n"
+  },
+  {
+   "file": "content/monsters/l/li_lung.lua",
+   "note": "the li_lung.lua full-field normalization insert",
+   "from": "  race = \"Li Lung (Earth Dragon)\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Li Lung (Earth Dragon)\",\n"
+  },
+  {
+   "file": "content/monsters/l/li_lung.lua",
+   "note": "the li_lung.lua full-field normalization insert",
+   "from": "  hitDice = \"7-9\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"7-9\",\n"
+  },
+  {
+   "file": "content/monsters/l/li_lung.lua",
+   "note": "the li_lung.lua full-field normalization insert",
+   "from": "  damage = \"2-8/2-8/1-20\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"2-8/2-8/1-20\",\n"
+  },
+  {
+   "file": "content/monsters/l/li_lung.lua",
+   "note": "the li_lung.lua full-field normalization insert",
+   "from": "  frequency = \"Rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Rare\",\n"
+  },
+  {
+   "file": "content/monsters/l/li_lung.lua",
+   "note": "the li_lung.lua full-field normalization insert",
+   "from": "  treasure = \"H\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"H\",\n"
+  },
+  {
+   "file": "content/monsters/l/li_lung.lua",
+   "note": "the li_lung.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/l/lizard_king.lua",
+   "note": "the lizard_king.lua full-field normalization insert",
+   "from": "  page = \"61\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"61\",\n"
+  },
+  {
+   "file": "content/monsters/l/lizard_king.lua",
+   "note": "the lizard_king.lua full-field normalization insert",
+   "from": "  race = \"Lizard Man\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Lizard Man\",\n"
+  },
+  {
+   "file": "content/monsters/l/lizard_king.lua",
+   "note": "the lizard_king.lua full-field normalization insert",
+   "from": "  hitDice = \"8\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"8\",\n"
+  },
+  {
+   "file": "content/monsters/l/lizard_king.lua",
+   "note": "the lizard_king.lua full-field normalization insert",
+   "from": "  damage = \"5-20\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"5-20\",\n"
+  },
+  {
+   "file": "content/monsters/l/lizard_king.lua",
+   "note": "the lizard_king.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/l/lizard_king.lua",
+   "note": "the lizard_king.lua full-field normalization insert",
+   "from": "  treasure = \"E\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"E\",\n"
+  },
+  {
+   "file": "content/monsters/l/lizard_king.lua",
+   "note": "the lizard_king.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/l/lolth.lua",
+   "note": "the lolth.lua full-field normalization insert",
+   "from": "  page = \"24\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"24\",\n"
+  },
+  {
+   "file": "content/monsters/l/lolth.lua",
+   "note": "the lolth.lua full-field normalization insert",
+   "from": "  race = \"Lolth\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Lolth\",\n"
+  },
+  {
+   "file": "content/monsters/l/lolth.lua",
+   "note": "the lolth.lua full-field normalization insert",
+   "from": "  hitDice = \"66 hit points (16 hit dice)\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"66 hit points (16 hit dice)\",\n"
+  },
+  {
+   "file": "content/monsters/l/lolth.lua",
+   "note": "the lolth.lua full-field normalization insert",
+   "from": "  damage = \"4-16 + poison and webs (by weapon type)\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"4-16 + poison and webs (by weapon type)\",\n"
+  },
+  {
+   "file": "content/monsters/l/lolth.lua",
+   "note": "the lolth.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/l/lolth.lua",
+   "note": "the lolth.lua full-field normalization insert",
+   "from": "  treasure = \"Q(x5), R\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"Q(x5), R\",\n"
+  },
+  {
+   "file": "content/monsters/l/lolth.lua",
+   "note": "the lolth.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/l/luck_changer.lua",
+   "note": "the luck_changer.lua full-field normalization insert",
+   "from": "  page = \"91\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"91\",\n"
+  },
+  {
+   "file": "content/monsters/l/luck_changer.lua",
+   "note": "the luck_changer.lua full-field normalization insert",
+   "from": "  race = \"Tween\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Tween\",\n"
+  },
+  {
+   "file": "content/monsters/l/luck_changer.lua",
+   "note": "the luck_changer.lua full-field normalization insert",
+   "from": "  hitDice = \"1\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"1\",\n"
+  },
+  {
+   "file": "content/monsters/l/luck_changer.lua",
+   "note": "the luck_changer.lua full-field normalization insert",
+   "from": "  damage = \"By weapon type\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"By weapon type\",\n"
+  },
+  {
+   "file": "content/monsters/l/luck_changer.lua",
+   "note": "the luck_changer.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/l/luck_changer.lua",
+   "note": "the luck_changer.lua full-field normalization insert",
+   "from": "  treasure = \"Nil\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"Nil\",\n"
+  },
+  {
+   "file": "content/monsters/l/luck_changer.lua",
+   "note": "the luck_changer.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/l/lung_wang.lua",
+   "note": "the lung_wang.lua full-field normalization insert",
+   "from": "  page = \"28\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"28\",\n"
+  },
+  {
+   "file": "content/monsters/l/lung_wang.lua",
+   "note": "the lung_wang.lua full-field normalization insert",
+   "from": "  race = \"Lung Wang\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Lung Wang\",\n"
+  },
+  {
+   "file": "content/monsters/l/lung_wang.lua",
+   "note": "the lung_wang.lua full-field normalization insert",
+   "from": "  hitDice = \"11-13\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"11-13\",\n"
+  },
+  {
+   "file": "content/monsters/l/lung_wang.lua",
+   "note": "the lung_wang.lua full-field normalization insert",
+   "from": "  damage = \"1-12/1-12/6-36\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-12/1-12/6-36\",\n"
+  },
+  {
+   "file": "content/monsters/l/lung_wang.lua",
+   "note": "the lung_wang.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/l/lung_wang.lua",
+   "note": "the lung_wang.lua full-field normalization insert",
+   "from": "  treasure = \"H(x2)\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"H(x2)\",\n"
+  },
+  {
+   "file": "content/monsters/l/lung_wang.lua",
+   "note": "the lung_wang.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/m/magnesium_spirit.lua",
+   "note": "the magnesium_spirit.lua full-field normalization insert",
+   "from": "  page = \"62\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"62\",\n"
+  },
+  {
+   "file": "content/monsters/m/magnesium_spirit.lua",
+   "note": "the magnesium_spirit.lua full-field normalization insert",
+   "from": "  race = \"Magnesium Spirit\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Magnesium Spirit\",\n"
+  },
+  {
+   "file": "content/monsters/m/magnesium_spirit.lua",
+   "note": "the magnesium_spirit.lua full-field normalization insert",
+   "from": "  hitDice = \"6+1\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"6+1\",\n"
+  },
+  {
+   "file": "content/monsters/m/magnesium_spirit.lua",
+   "note": "the magnesium_spirit.lua full-field normalization insert",
+   "from": "  damage = \"3-12\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"3-12\",\n"
+  },
+  {
+   "file": "content/monsters/m/magnesium_spirit.lua",
+   "note": "the magnesium_spirit.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/m/magnesium_spirit.lua",
+   "note": "the magnesium_spirit.lua full-field normalization insert",
+   "from": "  treasure = \"Nil\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"Nil\",\n"
+  },
+  {
+   "file": "content/monsters/m/magnesium_spirit.lua",
+   "note": "the magnesium_spirit.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/m/mantari.lua",
+   "note": "the mantari.lua full-field normalization insert",
+   "from": "  page = \"62\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"62\",\n"
+  },
+  {
+   "file": "content/monsters/m/mantari.lua",
+   "note": "the mantari.lua full-field normalization insert",
+   "from": "  race = \"Mantari\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Mantari\",\n"
+  },
+  {
+   "file": "content/monsters/m/mantari.lua",
+   "note": "the mantari.lua full-field normalization insert",
+   "from": "  hitDice = \"1+1\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"1+1\",\n"
+  },
+  {
+   "file": "content/monsters/m/mantari.lua",
+   "note": "the mantari.lua full-field normalization insert",
+   "from": "  damage = \"Special - see below\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"Special - see below\",\n"
+  },
+  {
+   "file": "content/monsters/m/mantari.lua",
+   "note": "the mantari.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/m/mantari.lua",
+   "note": "the mantari.lua full-field normalization insert",
+   "from": "  treasure = \"Nil\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"Nil\",\n"
+  },
+  {
+   "file": "content/monsters/m/mantari.lua",
+   "note": "the mantari.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/m/meazel.lua",
+   "note": "the meazel.lua full-field normalization insert",
+   "from": "  page = \"63\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"63\",\n"
+  },
+  {
+   "file": "content/monsters/m/meazel.lua",
+   "note": "the meazel.lua full-field normalization insert",
+   "from": "  race = \"Meazel\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Meazel\",\n"
+  },
+  {
+   "file": "content/monsters/m/meazel.lua",
+   "note": "the meazel.lua full-field normalization insert",
+   "from": "  hitDice = \"4\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"4\",\n"
+  },
+  {
+   "file": "content/monsters/m/meazel.lua",
+   "note": "the meazel.lua full-field normalization insert",
+   "from": "  damage = \"1-4/1-4\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-4/1-4\",\n"
+  },
+  {
+   "file": "content/monsters/m/meazel.lua",
+   "note": "the meazel.lua full-field normalization insert",
+   "from": "  frequency = \"Uncommon\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Uncommon\",\n"
+  },
+  {
+   "file": "content/monsters/m/meazel.lua",
+   "note": "the meazel.lua full-field normalization insert",
+   "from": "  treasure = \"B\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"B\",\n"
+  },
+  {
+   "file": "content/monsters/m/meazel.lua",
+   "note": "the meazel.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/m/meenlock.lua",
+   "note": "the meenlock.lua full-field normalization insert",
+   "from": "  page = \"63\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"63\",\n"
+  },
+  {
+   "file": "content/monsters/m/meenlock.lua",
+   "note": "the meenlock.lua full-field normalization insert",
+   "from": "  race = \"Meenlock\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Meenlock\",\n"
+  },
+  {
+   "file": "content/monsters/m/meenlock.lua",
+   "note": "the meenlock.lua full-field normalization insert",
+   "from": "  hitDice = \"4\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"4\",\n"
+  },
+  {
+   "file": "content/monsters/m/meenlock.lua",
+   "note": "the meenlock.lua full-field normalization insert",
+   "from": "  damage = \"1-4/1-4\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-4/1-4\",\n"
+  },
+  {
+   "file": "content/monsters/m/meenlock.lua",
+   "note": "the meenlock.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/m/meenlock.lua",
+   "note": "the meenlock.lua full-field normalization insert",
+   "from": "  treasure = \"Nil\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"Nil\",\n"
+  },
+  {
+   "file": "content/monsters/m/meenlock.lua",
+   "note": "the meenlock.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_fire.lua",
+   "note": "the mephit_fire.lua full-field normalization insert",
+   "from": "  page = \"64\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"64\",\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_fire.lua",
+   "note": "the mephit_fire.lua full-field normalization insert",
+   "from": "  race = \"Mephit (Fire)\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Mephit (Fire)\",\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_fire.lua",
+   "note": "the mephit_fire.lua full-field normalization insert",
+   "from": "  hitDice = \"3+1\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"3+1\",\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_fire.lua",
+   "note": "the mephit_fire.lua full-field normalization insert",
+   "from": "  damage = \"1-3/1-3\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-3/1-3\",\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_fire.lua",
+   "note": "the mephit_fire.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_fire.lua",
+   "note": "the mephit_fire.lua full-field normalization insert",
+   "from": "  treasure = \"2-12 platinum pieces each\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"2-12 platinum pieces each\",\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_fire.lua",
+   "note": "the mephit_fire.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_lava.lua",
+   "note": "the mephit_lava.lua full-field normalization insert",
+   "from": "  page = \"64\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"64\",\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_lava.lua",
+   "note": "the mephit_lava.lua full-field normalization insert",
+   "from": "  race = \"Mephit (Lava)\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Mephit (Lava)\",\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_lava.lua",
+   "note": "the mephit_lava.lua full-field normalization insert",
+   "from": "  hitDice = \"3\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"3\",\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_lava.lua",
+   "note": "the mephit_lava.lua full-field normalization insert",
+   "from": "  damage = \"See below\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"See below\",\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_lava.lua",
+   "note": "the mephit_lava.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_lava.lua",
+   "note": "the mephit_lava.lua full-field normalization insert",
+   "from": "  treasure = \"1-10 platinum pieces each\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"1-10 platinum pieces each\",\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_lava.lua",
+   "note": "the mephit_lava.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_smoke.lua",
+   "note": "the mephit_smoke.lua full-field normalization insert",
+   "from": "  page = \"65\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"65\",\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_smoke.lua",
+   "note": "the mephit_smoke.lua full-field normalization insert",
+   "from": "  race = \"Mephit (Smoke)\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Mephit (Smoke)\",\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_smoke.lua",
+   "note": "the mephit_smoke.lua full-field normalization insert",
+   "from": "  hitDice = \"3\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"3\",\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_smoke.lua",
+   "note": "the mephit_smoke.lua full-field normalization insert",
+   "from": "  damage = \"1-2/1-2\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-2/1-2\",\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_smoke.lua",
+   "note": "the mephit_smoke.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_smoke.lua",
+   "note": "the mephit_smoke.lua full-field normalization insert",
+   "from": "  treasure = \"1-10 platinum pieces each\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"1-10 platinum pieces each\",\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_smoke.lua",
+   "note": "the mephit_smoke.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_steam.lua",
+   "note": "the mephit_steam.lua full-field normalization insert",
+   "from": "  page = \"65\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"65\",\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_steam.lua",
+   "note": "the mephit_steam.lua full-field normalization insert",
+   "from": "  race = \"Mephit (Steam)\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Mephit (Steam)\",\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_steam.lua",
+   "note": "the mephit_steam.lua full-field normalization insert",
+   "from": "  hitDice = \"3+3\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"3+3\",\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_steam.lua",
+   "note": "the mephit_steam.lua full-field normalization insert",
+   "from": "  damage = \"1-4/1-4\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-4/1-4\",\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_steam.lua",
+   "note": "the mephit_steam.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_steam.lua",
+   "note": "the mephit_steam.lua full-field normalization insert",
+   "from": "  treasure = \"3-18 platinum pieces each\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"3-18 platinum pieces each\",\n"
+  },
+  {
+   "file": "content/monsters/m/mephit_steam.lua",
+   "note": "the mephit_steam.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/m/mezzodaemon.lua",
+   "note": "the mezzodaemon.lua full-field normalization insert",
+   "from": "  page = \"66\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"66\",\n"
+  },
+  {
+   "file": "content/monsters/m/mezzodaemon.lua",
+   "note": "the mezzodaemon.lua full-field normalization insert",
+   "from": "  race = \"Mezzodaemon\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Mezzodaemon\",\n"
+  },
+  {
+   "file": "content/monsters/m/mezzodaemon.lua",
+   "note": "the mezzodaemon.lua full-field normalization insert",
+   "from": "  hitDice = \"10+40 points\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"10+40 points\",\n"
+  },
+  {
+   "file": "content/monsters/m/mezzodaemon.lua",
+   "note": "the mezzodaemon.lua full-field normalization insert",
+   "from": "  damage = \"7-12/7-12 or by weapon +6\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"7-12/7-12 or by weapon +6\",\n"
+  },
+  {
+   "file": "content/monsters/m/mezzodaemon.lua",
+   "note": "the mezzodaemon.lua full-field normalization insert",
+   "from": "  frequency = \"Uncommon\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Uncommon\",\n"
+  },
+  {
+   "file": "content/monsters/m/mezzodaemon.lua",
+   "note": "the mezzodaemon.lua full-field normalization insert",
+   "from": "  treasure = \"Individuals Q (x5), X\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"Individuals Q (x5), X\",\n"
+  },
+  {
+   "file": "content/monsters/m/mezzodaemon.lua",
+   "note": "the mezzodaemon.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/m/mite.lua",
+   "note": "the mite.lua full-field normalization insert",
+   "from": "  page = \"66\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"66\",\n"
+  },
+  {
+   "file": "content/monsters/m/mite.lua",
+   "note": "the mite.lua full-field normalization insert",
+   "from": "  race = \"Mite\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Mite\",\n"
+  },
+  {
+   "file": "content/monsters/m/mite.lua",
+   "note": "the mite.lua full-field normalization insert",
+   "from": "  hitDice = \"1-1\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"1-1\",\n"
+  },
+  {
+   "file": "content/monsters/m/mite.lua",
+   "note": "the mite.lua full-field normalization insert",
+   "from": "  damage = \"1-3\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-3\",\n"
+  },
+  {
+   "file": "content/monsters/m/mite.lua",
+   "note": "the mite.lua full-field normalization insert",
+   "from": "  frequency = \"Rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Rare\",\n"
+  },
+  {
+   "file": "content/monsters/m/mite.lua",
+   "note": "the mite.lua full-field normalization insert",
+   "from": "  treasure = \"C\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"C\",\n"
+  },
+  {
+   "file": "content/monsters/m/mite.lua",
+   "note": "the mite.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/m/mountain_giant.lua",
+   "note": "the mountain_giant.lua full-field normalization insert",
+   "from": "  page = \"42\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"42\",\n"
+  },
+  {
+   "file": "content/monsters/m/mountain_giant.lua",
+   "note": "the mountain_giant.lua full-field normalization insert",
+   "from": "  race = \"Giant\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Giant\",\n"
+  },
+  {
+   "file": "content/monsters/m/mountain_giant.lua",
+   "note": "the mountain_giant.lua full-field normalization insert",
+   "from": "  hitDice = \"12\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"12\",\n"
+  },
+  {
+   "file": "content/monsters/m/mountain_giant.lua",
+   "note": "the mountain_giant.lua full-field normalization insert",
+   "from": "  damage = \"4-40\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"4-40\",\n"
+  },
+  {
+   "file": "content/monsters/m/mountain_giant.lua",
+   "note": "the mountain_giant.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/m/mountain_giant.lua",
+   "note": "the mountain_giant.lua full-field normalization insert",
+   "from": "  treasure = \"E\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"E\",\n"
+  },
+  {
+   "file": "content/monsters/m/mountain_giant.lua",
+   "note": "the mountain_giant.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/n/necrophidius.lua",
+   "note": "the necrophidius.lua full-field normalization insert",
+   "from": "  page = \"67\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"67\",\n"
+  },
+  {
+   "file": "content/monsters/n/necrophidius.lua",
+   "note": "the necrophidius.lua full-field normalization insert",
+   "from": "  race = \"Necrophidius\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Necrophidius\",\n"
+  },
+  {
+   "file": "content/monsters/n/necrophidius.lua",
+   "note": "the necrophidius.lua full-field normalization insert",
+   "from": "  hitDice = \"2\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"2\",\n"
+  },
+  {
+   "file": "content/monsters/n/necrophidius.lua",
+   "note": "the necrophidius.lua full-field normalization insert",
+   "from": "  damage = \"1-8\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-8\",\n"
+  },
+  {
+   "file": "content/monsters/n/necrophidius.lua",
+   "note": "the necrophidius.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/n/necrophidius.lua",
+   "note": "the necrophidius.lua full-field normalization insert",
+   "from": "  treasure = \"Nil\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"Nil\",\n"
+  },
+  {
+   "file": "content/monsters/n/necrophidius.lua",
+   "note": "the necrophidius.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/n/needleman.lua",
+   "note": "the needleman.lua full-field normalization insert",
+   "from": "  page = \"67\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"67\",\n"
+  },
+  {
+   "file": "content/monsters/n/needleman.lua",
+   "note": "the needleman.lua full-field normalization insert",
+   "from": "  race = \"Needleman\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Needleman\",\n"
+  },
+  {
+   "file": "content/monsters/n/needleman.lua",
+   "note": "the needleman.lua full-field normalization insert",
+   "from": "  hitDice = \"3+4\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"3+4\",\n"
+  },
+  {
+   "file": "content/monsters/n/needleman.lua",
+   "note": "the needleman.lua full-field normalization insert",
+   "from": "  damage = \"1-2\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-2\",\n"
+  },
+  {
+   "file": "content/monsters/n/needleman.lua",
+   "note": "the needleman.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/n/needleman.lua",
+   "note": "the needleman.lua full-field normalization insert",
+   "from": "  treasure = \"G\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"G\",\n"
+  },
+  {
+   "file": "content/monsters/n/needleman.lua",
+   "note": "the needleman.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/n/nilbog.lua",
+   "note": "the nilbog.lua full-field normalization insert",
+   "from": "  page = \"67\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"67\",\n"
+  },
+  {
+   "file": "content/monsters/n/nilbog.lua",
+   "note": "the nilbog.lua full-field normalization insert",
+   "from": "  race = \"Nilbog\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Nilbog\",\n"
+  },
+  {
+   "file": "content/monsters/n/nilbog.lua",
+   "note": "the nilbog.lua full-field normalization insert",
+   "from": "  hitDice = \"1-1\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"1-1\",\n"
+  },
+  {
+   "file": "content/monsters/n/nilbog.lua",
+   "note": "the nilbog.lua full-field normalization insert",
+   "from": "  damage = \"1-6 or by weapon type\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-6 or by weapon type\",\n"
+  },
+  {
+   "file": "content/monsters/n/nilbog.lua",
+   "note": "the nilbog.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare (at best)\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare (at best)\",\n"
+  },
+  {
+   "file": "content/monsters/n/nilbog.lua",
+   "note": "the nilbog.lua full-field normalization insert",
+   "from": "  treasure = \"Individuals K; in lair G\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"Individuals K; in lair G\",\n"
+  },
+  {
+   "file": "content/monsters/n/nilbog.lua",
+   "note": "the nilbog.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/n/nonafel.lua",
+   "note": "the nonafel.lua full-field normalization insert",
+   "from": "  page = \"68\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"68\",\n"
+  },
+  {
+   "file": "content/monsters/n/nonafel.lua",
+   "note": "the nonafel.lua full-field normalization insert",
+   "from": "  race = \"Nonafel\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Nonafel\",\n"
+  },
+  {
+   "file": "content/monsters/n/nonafel.lua",
+   "note": "the nonafel.lua full-field normalization insert",
+   "from": "  hitDice = \"9\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"9\",\n"
+  },
+  {
+   "file": "content/monsters/n/nonafel.lua",
+   "note": "the nonafel.lua full-field normalization insert",
+   "from": "  damage = \"2-20 or 1-8\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"2-20 or 1-8\",\n"
+  },
+  {
+   "file": "content/monsters/n/nonafel.lua",
+   "note": "the nonafel.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/n/nonafel.lua",
+   "note": "the nonafel.lua full-field normalization insert",
+   "from": "  treasure = \"Nil\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"Nil\",\n"
+  },
+  {
+   "file": "content/monsters/n/nonafel.lua",
+   "note": "the nonafel.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/n/norker.lua",
+   "note": "the norker.lua full-field normalization insert",
+   "from": "  page = \"68\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"68\",\n"
+  },
+  {
+   "file": "content/monsters/n/norker.lua",
+   "note": "the norker.lua full-field normalization insert",
+   "from": "  race = \"Norker\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Norker\",\n"
+  },
+  {
+   "file": "content/monsters/n/norker.lua",
+   "note": "the norker.lua full-field normalization insert",
+   "from": "  hitDice = \"1+2\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"1+2\",\n"
+  },
+  {
+   "file": "content/monsters/n/norker.lua",
+   "note": "the norker.lua full-field normalization insert",
+   "from": "  damage = \"1-3/1-6\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-3/1-6\",\n"
+  },
+  {
+   "file": "content/monsters/n/norker.lua",
+   "note": "the norker.lua full-field normalization insert",
+   "from": "  frequency = \"Rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Rare\",\n"
+  },
+  {
+   "file": "content/monsters/n/norker.lua",
+   "note": "the norker.lua full-field normalization insert",
+   "from": "  treasure = \"E\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"E\",\n"
+  },
+  {
+   "file": "content/monsters/n/norker.lua",
+   "note": "the norker.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/n/nycadaemon.lua",
+   "note": "the nycadaemon.lua full-field normalization insert",
+   "from": "  page = \"69\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"69\",\n"
+  },
+  {
+   "file": "content/monsters/n/nycadaemon.lua",
+   "note": "the nycadaemon.lua full-field normalization insert",
+   "from": "  race = \"Nycadaemon\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Nycadaemon\",\n"
+  },
+  {
+   "file": "content/monsters/n/nycadaemon.lua",
+   "note": "the nycadaemon.lua full-field normalization insert",
+   "from": "  hitDice = \"12+36 points\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"12+36 points\",\n"
+  },
+  {
+   "file": "content/monsters/n/nycadaemon.lua",
+   "note": "the nycadaemon.lua full-field normalization insert",
+   "from": "  damage = \"9-16/9-16 or by weapon +8\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"9-16/9-16 or by weapon +8\",\n"
+  },
+  {
+   "file": "content/monsters/n/nycadaemon.lua",
+   "note": "the nycadaemon.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/n/nycadaemon.lua",
+   "note": "the nycadaemon.lua full-field normalization insert",
+   "from": "  treasure = \"Q (x10), X\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"Q (x10), X\",\n"
+  },
+  {
+   "file": "content/monsters/n/nycadaemon.lua",
+   "note": "the nycadaemon.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/o/ogremoch.lua",
+   "note": "the ogremoch.lua full-field normalization insert",
+   "from": "  page = \"32\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"32\",\n"
+  },
+  {
+   "file": "content/monsters/o/ogremoch.lua",
+   "note": "the ogremoch.lua full-field normalization insert",
+   "from": "  race = \"Ogremoch\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Ogremoch\",\n"
+  },
+  {
+   "file": "content/monsters/o/ogremoch.lua",
+   "note": "the ogremoch.lua full-field normalization insert",
+   "from": "  hitDice = \"110 hit points\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"110 hit points\",\n"
+  },
+  {
+   "file": "content/monsters/o/ogremoch.lua",
+   "note": "the ogremoch.lua full-field normalization insert",
+   "from": "  damage = \"5-50/5-50\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"5-50/5-50\",\n"
+  },
+  {
+   "file": "content/monsters/o/ogremoch.lua",
+   "note": "the ogremoch.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/o/ogremoch.lua",
+   "note": "the ogremoch.lua full-field normalization insert",
+   "from": "  treasure = \"H, U, Z\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"H, U, Z\",\n"
+  },
+  {
+   "file": "content/monsters/o/ogremoch.lua",
+   "note": "the ogremoch.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/o/ogrillon.lua",
+   "note": "the ogrillon.lua full-field normalization insert",
+   "from": "  page = \"70\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"70\",\n"
+  },
+  {
+   "file": "content/monsters/o/ogrillon.lua",
+   "note": "the ogrillon.lua full-field normalization insert",
+   "from": "  race = \"Ogrillon\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Ogrillon\",\n"
+  },
+  {
+   "file": "content/monsters/o/ogrillon.lua",
+   "note": "the ogrillon.lua full-field normalization insert",
+   "from": "  hitDice = \"2\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"2\",\n"
+  },
+  {
+   "file": "content/monsters/o/ogrillon.lua",
+   "note": "the ogrillon.lua full-field normalization insert",
+   "from": "  damage = \"2-7/2-7\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"2-7/2-7\",\n"
+  },
+  {
+   "file": "content/monsters/o/ogrillon.lua",
+   "note": "the ogrillon.lua full-field normalization insert",
+   "from": "  frequency = \"Rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Rare\",\n"
+  },
+  {
+   "file": "content/monsters/o/ogrillon.lua",
+   "note": "the ogrillon.lua full-field normalization insert",
+   "from": "  treasure = \"Individuals M; in lair B, S\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"Individuals M; in lair B, S\",\n"
+  },
+  {
+   "file": "content/monsters/o/ogrillon.lua",
+   "note": "the ogrillon.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/o/olhydra.lua",
+   "note": "the olhydra.lua full-field normalization insert",
+   "from": "  page = \"32\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"32\",\n"
+  },
+  {
+   "file": "content/monsters/o/olhydra.lua",
+   "note": "the olhydra.lua full-field normalization insert",
+   "from": "  race = \"Olhydra\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Olhydra\",\n"
+  },
+  {
+   "file": "content/monsters/o/olhydra.lua",
+   "note": "the olhydra.lua full-field normalization insert",
+   "from": "  hitDice = \"90 hit points\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"90 hit points\",\n"
+  },
+  {
+   "file": "content/monsters/o/olhydra.lua",
+   "note": "the olhydra.lua full-field normalization insert",
+   "from": "  damage = \"2-24\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"2-24\",\n"
+  },
+  {
+   "file": "content/monsters/o/olhydra.lua",
+   "note": "the olhydra.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/o/olhydra.lua",
+   "note": "the olhydra.lua full-field normalization insert",
+   "from": "  treasure = \"H, S, U\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"H, S, U\",\n"
+  },
+  {
+   "file": "content/monsters/o/olhydra.lua",
+   "note": "the olhydra.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/o/osquip.lua",
+   "note": "the osquip.lua full-field normalization insert",
+   "from": "  page = \"70\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"70\",\n"
+  },
+  {
+   "file": "content/monsters/o/osquip.lua",
+   "note": "the osquip.lua full-field normalization insert",
+   "from": "  race = \"Osquip\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Osquip\",\n"
+  },
+  {
+   "file": "content/monsters/o/osquip.lua",
+   "note": "the osquip.lua full-field normalization insert",
+   "from": "  hitDice = \"3+1\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"3+1\",\n"
+  },
+  {
+   "file": "content/monsters/o/osquip.lua",
+   "note": "the osquip.lua full-field normalization insert",
+   "from": "  damage = \"2-12\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"2-12\",\n"
+  },
+  {
+   "file": "content/monsters/o/osquip.lua",
+   "note": "the osquip.lua full-field normalization insert",
+   "from": "  frequency = \"Uncommon\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Uncommon\",\n"
+  },
+  {
+   "file": "content/monsters/o/osquip.lua",
+   "note": "the osquip.lua full-field normalization insert",
+   "from": "  treasure = \"D\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"D\",\n"
+  },
+  {
+   "file": "content/monsters/o/osquip.lua",
+   "note": "the osquip.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/p/pan_lung.lua",
+   "note": "the pan_lung.lua full-field normalization insert",
+   "from": "  page = \"29\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"29\",\n"
+  },
+  {
+   "file": "content/monsters/p/pan_lung.lua",
+   "note": "the pan_lung.lua full-field normalization insert",
+   "from": "  race = \"Pan Lung (Coiled Dragon)\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Pan Lung (Coiled Dragon)\",\n"
+  },
+  {
+   "file": "content/monsters/p/pan_lung.lua",
+   "note": "the pan_lung.lua full-field normalization insert",
+   "from": "  hitDice = \"6-8\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"6-8\",\n"
+  },
+  {
+   "file": "content/monsters/p/pan_lung.lua",
+   "note": "the pan_lung.lua full-field normalization insert",
+   "from": "  damage = \"1-3/1-3/2-16\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-3/1-3/2-16\",\n"
+  },
+  {
+   "file": "content/monsters/p/pan_lung.lua",
+   "note": "the pan_lung.lua full-field normalization insert",
+   "from": "  frequency = \"Rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Rare\",\n"
+  },
+  {
+   "file": "content/monsters/p/pan_lung.lua",
+   "note": "the pan_lung.lua full-field normalization insert",
+   "from": "  treasure = \"M(x1/2)\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"M(x1/2)\",\n"
+  },
+  {
+   "file": "content/monsters/p/pan_lung.lua",
+   "note": "the pan_lung.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/p/penanggalan.lua",
+   "note": "the penanggalan.lua full-field normalization insert",
+   "from": "  page = \"71\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"71\",\n"
+  },
+  {
+   "file": "content/monsters/p/penanggalan.lua",
+   "note": "the penanggalan.lua full-field normalization insert",
+   "from": "  race = \"P\u0113nanggalan\",\n",
+   "to": "  family = \"n/a\",\n  race = \"P\u0113nanggalan\",\n"
+  },
+  {
+   "file": "content/monsters/p/penanggalan.lua",
+   "note": "the penanggalan.lua full-field normalization insert",
+   "from": "  hitDice = \"Body variable; head and gut when detached 4\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"Body variable; head and gut when detached 4\",\n"
+  },
+  {
+   "file": "content/monsters/p/penanggalan.lua",
+   "note": "the penanggalan.lua full-field normalization insert",
+   "from": "  damage = \"1-6 or by weapon type\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-6 or by weapon type\",\n"
+  },
+  {
+   "file": "content/monsters/p/penanggalan.lua",
+   "note": "the penanggalan.lua full-field normalization insert",
+   "from": "  frequency = \"Rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Rare\",\n"
+  },
+  {
+   "file": "content/monsters/p/penanggalan.lua",
+   "note": "the penanggalan.lua full-field normalization insert",
+   "from": "  treasure = \"Nil\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"Nil\",\n"
+  },
+  {
+   "file": "content/monsters/p/penanggalan.lua",
+   "note": "the penanggalan.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/p/pernicon.lua",
+   "note": "the pernicon.lua full-field normalization insert",
+   "from": "  page = \"72\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"72\",\n"
+  },
+  {
+   "file": "content/monsters/p/pernicon.lua",
+   "note": "the pernicon.lua full-field normalization insert",
+   "from": "  race = \"Pernicon\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Pernicon\",\n"
+  },
+  {
+   "file": "content/monsters/p/pernicon.lua",
+   "note": "the pernicon.lua full-field normalization insert",
+   "from": "  hitDice = \"4 hit points\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"4 hit points\",\n"
+  },
+  {
+   "file": "content/monsters/p/pernicon.lua",
+   "note": "the pernicon.lua full-field normalization insert",
+   "from": "  damage = \"1-3\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-3\",\n"
+  },
+  {
+   "file": "content/monsters/p/pernicon.lua",
+   "note": "the pernicon.lua full-field normalization insert",
+   "from": "  frequency = \"Rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Rare\",\n"
+  },
+  {
+   "file": "content/monsters/p/pernicon.lua",
+   "note": "the pernicon.lua full-field normalization insert",
+   "from": "  treasure = \"1-4 gems and 25% chance of 100-600 gold pieces\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"1-4 gems and 25% chance of 100-600 gold pieces\",\n"
+  },
+  {
+   "file": "content/monsters/p/pernicon.lua",
+   "note": "the pernicon.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/p/phantom_stalker.lua",
+   "note": "the phantom_stalker.lua full-field normalization insert",
+   "from": "  page = \"72\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"72\",\n"
+  },
+  {
+   "file": "content/monsters/p/phantom_stalker.lua",
+   "note": "the phantom_stalker.lua full-field normalization insert",
+   "from": "  race = \"Phantom Stalker\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Phantom Stalker\",\n"
+  },
+  {
+   "file": "content/monsters/p/phantom_stalker.lua",
+   "note": "the phantom_stalker.lua full-field normalization insert",
+   "from": "  hitDice = \"6\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"6\",\n"
+  },
+  {
+   "file": "content/monsters/p/phantom_stalker.lua",
+   "note": "the phantom_stalker.lua full-field normalization insert",
+   "from": "  damage = \"1-4/1-4\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-4/1-4\",\n"
+  },
+  {
+   "file": "content/monsters/p/phantom_stalker.lua",
+   "note": "the phantom_stalker.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/p/phantom_stalker.lua",
+   "note": "the phantom_stalker.lua full-field normalization insert",
+   "from": "  treasure = \"Nil\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"Nil\",\n"
+  },
+  {
+   "file": "content/monsters/p/phantom_stalker.lua",
+   "note": "the phantom_stalker.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/p/poltergeist.lua",
+   "note": "the poltergeist.lua full-field normalization insert",
+   "from": "  page = \"73\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"73\",\n"
+  },
+  {
+   "file": "content/monsters/p/poltergeist.lua",
+   "note": "the poltergeist.lua full-field normalization insert",
+   "from": "  race = \"Poltergeist\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Poltergeist\",\n"
+  },
+  {
+   "file": "content/monsters/p/poltergeist.lua",
+   "note": "the poltergeist.lua full-field normalization insert",
+   "from": "  hitDice = \"1-4 hit points\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"1-4 hit points\",\n"
+  },
+  {
+   "file": "content/monsters/p/poltergeist.lua",
+   "note": "the poltergeist.lua full-field normalization insert",
+   "from": "  damage = \"Nil\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"Nil\",\n"
+  },
+  {
+   "file": "content/monsters/p/poltergeist.lua",
+   "note": "the poltergeist.lua full-field normalization insert",
+   "from": "  frequency = \"Rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Rare\",\n"
+  },
+  {
+   "file": "content/monsters/p/poltergeist.lua",
+   "note": "the poltergeist.lua full-field normalization insert",
+   "from": "  treasure = \"Nil\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"Nil\",\n"
+  },
+  {
+   "file": "content/monsters/p/poltergeist.lua",
+   "note": "the poltergeist.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/p/protein_polymorph.lua",
+   "note": "the protein_polymorph.lua full-field normalization insert",
+   "from": "  page = \"73\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"73\",\n"
+  },
+  {
+   "file": "content/monsters/p/protein_polymorph.lua",
+   "note": "the protein_polymorph.lua full-field normalization insert",
+   "from": "  race = \"Protein Polymorph\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Protein Polymorph\",\n"
+  },
+  {
+   "file": "content/monsters/p/protein_polymorph.lua",
+   "note": "the protein_polymorph.lua full-field normalization insert",
+   "from": "  hitDice = \"6-8\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"6-8\",\n"
+  },
+  {
+   "file": "content/monsters/p/protein_polymorph.lua",
+   "note": "the protein_polymorph.lua full-field normalization insert",
+   "from": "  damage = \"6-36 or by weapon type\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"6-36 or by weapon type\",\n"
+  },
+  {
+   "file": "content/monsters/p/protein_polymorph.lua",
+   "note": "the protein_polymorph.lua full-field normalization insert",
+   "from": "  frequency = \"Rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Rare\",\n"
+  },
+  {
+   "file": "content/monsters/p/protein_polymorph.lua",
+   "note": "the protein_polymorph.lua full-field normalization insert",
+   "from": "  treasure = \"0\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"0\",\n"
+  },
+  {
+   "file": "content/monsters/p/protein_polymorph.lua",
+   "note": "the protein_polymorph.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/q/quaggoth.lua",
+   "note": "the quaggoth.lua full-field normalization insert",
+   "from": "  page = \"74\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"74\",\n"
+  },
+  {
+   "file": "content/monsters/q/quaggoth.lua",
+   "note": "the quaggoth.lua full-field normalization insert",
+   "from": "  race = \"Quaggoth\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Quaggoth\",\n"
+  },
+  {
+   "file": "content/monsters/q/quaggoth.lua",
+   "note": "the quaggoth.lua full-field normalization insert",
+   "from": "  hitDice = \"1+2\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"1+2\",\n"
+  },
+  {
+   "file": "content/monsters/q/quaggoth.lua",
+   "note": "the quaggoth.lua full-field normalization insert",
+   "from": "  damage = \"1-4/1-4 or by weapon type\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-4/1-4 or by weapon type\",\n"
+  },
+  {
+   "file": "content/monsters/q/quaggoth.lua",
+   "note": "the quaggoth.lua full-field normalization insert",
+   "from": "  frequency = \"Rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Rare\",\n"
+  },
+  {
+   "file": "content/monsters/q/quaggoth.lua",
+   "note": "the quaggoth.lua full-field normalization insert",
+   "from": "  treasure = \"A\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"A\",\n"
+  },
+  {
+   "file": "content/monsters/q/quaggoth.lua",
+   "note": "the quaggoth.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/q/quipper.lua",
+   "note": "the quipper.lua full-field normalization insert",
+   "from": "  page = \"74\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"74\",\n"
+  },
+  {
+   "file": "content/monsters/q/quipper.lua",
+   "note": "the quipper.lua full-field normalization insert",
+   "from": "  race = \"Quipper\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Quipper\",\n"
+  },
+  {
+   "file": "content/monsters/q/quipper.lua",
+   "note": "the quipper.lua full-field normalization insert",
+   "from": "  hitDice = \"1-4 hit points\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"1-4 hit points\",\n"
+  },
+  {
+   "file": "content/monsters/q/quipper.lua",
+   "note": "the quipper.lua full-field normalization insert",
+   "from": "  damage = \"1-2\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-2\",\n"
+  },
+  {
+   "file": "content/monsters/q/quipper.lua",
+   "note": "the quipper.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/q/quipper.lua",
+   "note": "the quipper.lua full-field normalization insert",
+   "from": "  treasure = \"Nil\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"Nil\",\n"
+  },
+  {
+   "file": "content/monsters/q/quipper.lua",
+   "note": "the quipper.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/q/qullan.lua",
+   "note": "the qullan.lua full-field normalization insert",
+   "from": "  page = \"74\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"74\",\n"
+  },
+  {
+   "file": "content/monsters/q/qullan.lua",
+   "note": "the qullan.lua full-field normalization insert",
+   "from": "  race = \"Qullan\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Qullan\",\n"
+  },
+  {
+   "file": "content/monsters/q/qullan.lua",
+   "note": "the qullan.lua full-field normalization insert",
+   "from": "  hitDice = \"2\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"2\",\n"
+  },
+  {
+   "file": "content/monsters/q/qullan.lua",
+   "note": "the qullan.lua full-field normalization insert",
+   "from": "  damage = \"5-11\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"5-11\",\n"
+  },
+  {
+   "file": "content/monsters/q/qullan.lua",
+   "note": "the qullan.lua full-field normalization insert",
+   "from": "  frequency = \"Rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Rare\",\n"
+  },
+  {
+   "file": "content/monsters/q/qullan.lua",
+   "note": "the qullan.lua full-field normalization insert",
+   "from": "  treasure = \"most types in lair but in small quantity (10% of A at most)\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"most types in lair but in small quantity (10% of A at most)\",\n"
+  },
+  {
+   "file": "content/monsters/q/qullan.lua",
+   "note": "the qullan.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/r/red_slaad.lua",
+   "note": "the red_slaad.lua full-field normalization insert",
+   "from": "  page = \"82\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"82\",\n"
+  },
+  {
+   "file": "content/monsters/r/red_slaad.lua",
+   "note": "the red_slaad.lua full-field normalization insert",
+   "from": "  race = \"Red Slaad\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Red Slaad\",\n"
+  },
+  {
+   "file": "content/monsters/r/red_slaad.lua",
+   "note": "the red_slaad.lua full-field normalization insert",
+   "from": "  hitDice = \"7\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"7\",\n"
+  },
+  {
+   "file": "content/monsters/r/red_slaad.lua",
+   "note": "the red_slaad.lua full-field normalization insert",
+   "from": "  damage = \"1-4/1-4/2-16\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-4/1-4/2-16\",\n"
+  },
+  {
+   "file": "content/monsters/r/red_slaad.lua",
+   "note": "the red_slaad.lua full-field normalization insert",
+   "from": "  frequency = \"Rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Rare\",\n"
+  },
+  {
+   "file": "content/monsters/r/red_slaad.lua",
+   "note": "the red_slaad.lua full-field normalization insert",
+   "from": "  treasure = \"F\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"F\",\n"
+  },
+  {
+   "file": "content/monsters/r/red_slaad.lua",
+   "note": "the red_slaad.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/r/retriever.lua",
+   "note": "the retriever.lua full-field normalization insert",
+   "from": "  page = \"75\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"75\",\n"
+  },
+  {
+   "file": "content/monsters/r/retriever.lua",
+   "note": "the retriever.lua full-field normalization insert",
+   "from": "  race = \"Retriever\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Retriever\",\n"
+  },
+  {
+   "file": "content/monsters/r/retriever.lua",
+   "note": "the retriever.lua full-field normalization insert",
+   "from": "  hitDice = \"10\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"10\",\n"
+  },
+  {
+   "file": "content/monsters/r/retriever.lua",
+   "note": "the retriever.lua full-field normalization insert",
+   "from": "  damage = \"3-18/3-18/3-18/3-18\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"3-18/3-18/3-18/3-18\",\n"
+  },
+  {
+   "file": "content/monsters/r/retriever.lua",
+   "note": "the retriever.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/r/retriever.lua",
+   "note": "the retriever.lua full-field normalization insert",
+   "from": "  treasure = \"Z\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"Z\",\n"
+  },
+  {
+   "file": "content/monsters/r/retriever.lua",
+   "note": "the retriever.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/r/revenant.lua",
+   "note": "the revenant.lua full-field normalization insert",
+   "from": "  page = \"75\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"75\",\n"
+  },
+  {
+   "file": "content/monsters/r/revenant.lua",
+   "note": "the revenant.lua full-field normalization insert",
+   "from": "  race = \"Revenant\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Revenant\",\n"
+  },
+  {
+   "file": "content/monsters/r/revenant.lua",
+   "note": "the revenant.lua full-field normalization insert",
+   "from": "  hitDice = \"8\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"8\",\n"
+  },
+  {
+   "file": "content/monsters/r/revenant.lua",
+   "note": "the revenant.lua full-field normalization insert",
+   "from": "  damage = \"2-16\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"2-16\",\n"
+  },
+  {
+   "file": "content/monsters/r/revenant.lua",
+   "note": "the revenant.lua full-field normalization insert",
+   "from": "  frequency = \"Very rare\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Very rare\",\n"
+  },
+  {
+   "file": "content/monsters/r/revenant.lua",
+   "note": "the revenant.lua full-field normalization insert",
+   "from": "  treasure = \"Nil\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"Nil\",\n"
+  },
+  {
+   "file": "content/monsters/r/revenant.lua",
+   "note": "the revenant.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "file": "content/monsters/r/rothe.lua",
+   "note": "the rothe.lua full-field normalization insert",
+   "from": "  page = \"76\",\n",
+   "to": "  mmName = \"n/a\",\n  page = \"76\",\n"
+  },
+  {
+   "file": "content/monsters/r/rothe.lua",
+   "note": "the rothe.lua full-field normalization insert",
+   "from": "  race = \"Roth\u00e9\",\n",
+   "to": "  family = \"n/a\",\n  race = \"Roth\u00e9\",\n"
+  },
+  {
+   "file": "content/monsters/r/rothe.lua",
+   "note": "the rothe.lua full-field normalization insert",
+   "from": "  hitDice = \"2\",\n",
+   "to": "  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"2\",\n"
+  },
+  {
+   "file": "content/monsters/r/rothe.lua",
+   "note": "the rothe.lua full-field normalization insert",
+   "from": "  damage = \"1-3/1-3/1-8\",\n",
+   "to": "  numAttacksRaw = \"n/a\",\n  damage = \"1-3/1-3/1-8\",\n"
+  },
+  {
+   "file": "content/monsters/r/rothe.lua",
+   "note": "the rothe.lua full-field normalization insert",
+   "from": "  frequency = \"Uncommon\",\n",
+   "to": "  xpNote = \"n/a\",\n  frequency = \"Uncommon\",\n"
+  },
+  {
+   "file": "content/monsters/r/rothe.lua",
+   "note": "the rothe.lua full-field normalization insert",
+   "from": "  treasure = \"Nil\",\n",
+   "to": "  lairPctRaw = \"n/a\",\n  treasure = \"Nil\",\n"
+  },
+  {
+   "file": "content/monsters/r/rothe.lua",
+   "note": "the rothe.lua full-field normalization insert",
+   "from": "}\n",
+   "to": "  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n}\n"
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['fq2Round']() != 1022 or m['fq2DefsNormalized']() != 60 or m['fq2FfTotal']() != 185 or m['fq2FfNormalizedAfter']() != 131 or m['fq2FfRemaining']() != 54 or m['fq2SchemaKeys']() != 57",
+   "note": "the batch census - 60 FF defs normalized this batch, 131 canonical, 54 remaining - the book closes next round"
+  },
+  {
+   "expr": "m['fq2InsSites']() != 420 or m['fq2CommaSites']() != 0 or m['fq2ReorderDefs']() != 0 or m['fq2PatchEntries']() != 420",
+   "note": "the patch anatomy - 420 anchored inserts, 1620 inserted lines, zero whole-line rewrites"
+  },
+  {
+   "expr": "m['fq2FfNormalizedAfter']() + m['fq2FfRemaining']() != m['fq2FfTotal']()",
+   "note": "the FF census carries the batch - 131 canonical plus 54 sparse equals the 185 total"
+  }
+ ]
+}

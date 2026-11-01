@@ -31843,6 +31843,57 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     23, DRG 5, the deity
     seam.
     WAIT FOR GO.
+  - R1021 LANDED 2026-11-01 at
+    ecb946db: THE FF
+    NORMALIZATION BATCH ONE,
+    THE FF ARC OPENER (census
+    944) - the first 71 of 185
+    FF defs (the letters a-g)
+    rewritten to the
+    full-field 57-key
+    emission. The FF census:
+    71 canonical, 114
+    remaining (the letters
+    h-z). Zero pin repairs -
+    the FF book carries no
+    fragment grids, the
+    R1018/R1020 mirror class
+    empty here. The
+    single-line anchor
+    doctrine institutionalized
+    (the aarakocra lesson:
+    a two-line anchor breaks
+    engine idempotence when
+    a later patch inserts
+    between the anchor pair);
+    the builder now simulates
+    the second engine pass
+    over every patch - zero
+    idempotence failures.
+    LANDED VERIFICATION at
+    ecb946db (fresh
+    tarball): spec md5
+    8eacc5729928cf4c3552d852
+    a67958af unchanged (the
+    canvas body identical),
+    engine all-already 502
+    twice, FF 71/71 canonical
+    byte-exact against the
+    landed normalizer (114
+    sparse confirmed), fq1.h
+    after mq4.h, r1021_batch.h
+    above r1020_batch.h, the
+    R1020 LANDED record
+    seated verbatim in the
+    seed. THE QUEUE: the FF
+    batch two (the letters
+    h-r, 60 defs, consts
+    fq2*), the FF batch three
+    (the letters s-z, 54
+    defs - the FF book
+    closes), then WSG+MOP 23,
+    DRG 5, the deity seam.
+    WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
