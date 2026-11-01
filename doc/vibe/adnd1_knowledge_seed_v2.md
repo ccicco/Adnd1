@@ -30429,6 +30429,32 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     record promoted mechanically and parsed
     back equal. NEXT: the next arc awaits
     Curtiss's call. WAIT FOR GO.
+  - R989 LANDED 2026-11-01 at 7fef137a:
+    The WSG promotion batch one (census
+    912) - THE ARC OPENER - R425-R454, 29
+    records, 723 model items, 317,767
+    bytes Lua, prefix wsg1 (bool
+    wsg1R425ThroughR454Complete). LANDED:
+    pushed 9566e3e..7fef137a, census
+    911->912; the fresh tarball at 7fef137a
+    verified - 29/29 records on disk
+    byte-matching the spec, the header (4
+    consts + 3 bools), the regtest includes
+    (the wsg1.h include at line 693 right
+    after the R988 oa8.h line; the
+    r989_batch.h audit at line 4803 above
+    r988_batch.h in the descending audit
+    order), the gap report byte-identical
+    base-to-HEAD (the 186/0 engine census,
+    no flips) and the seed all in place
+    (the R988 record seated before the
+    maintenance anchor), rverify GREEN at
+    base 9566e3e (double-run, battery 7
+    mutants 0 missed), spec md5 unchanged.
+    THE WSG ARC IS OPEN: cumulative 29 of
+    the 77-round set, 48 remaining, 317,767
+    bytes of Lua on disk. NEXT: R990
+    R455-R474, 20 rec. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
