@@ -31419,6 +31419,46 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     WSG+MOP 23. The next rounds
     are Curtiss's call.
     WAIT FOR GO.
+  - R1013 LANDED 2026-11-01 at
+    da6f7da9: The MM1
+    normalization batch five
+    (census 936), MM1 part five
+    of six, the letters t-v, 40
+    defs rewritten to the
+    full-field 57-key emission,
+    byte-exact against the
+    landed normalizer. 207 file
+    patches: 190 insert sites /
+    664 lines, 17 whole-line
+    reorder sites across 17
+    defs, no move encodings. No
+    normalizer repairs riding;
+    no audited key in the batch
+    rides a field-constraint
+    audit. LANDED VERIFICATION
+    at da6f7da9: spec md5
+    3d6f728490722c90721bdacbb9a
+    dee62 unchanged, every to
+    present, engine all-already
+    212, rverify GREEN at the
+    base sha (13 mutants 0
+    missed), mn5.h after mn4.h,
+    r1013_batch.h above
+    r1012_batch.h, the R1012
+    LANDED record seated
+    verbatim in the seed before
+    the last Knowledge
+    maintenance, the normalizer
+    census 1338 live,
+    byte-exactness green over
+    the 40, MM1 408 defs / 372
+    canonical / 36 remaining.
+    THE QUEUE: the MM1 batch six
+    (w-z 36) closes MM1, then
+    MM2 332, FF 185, OA 47,
+    WSG+MOP 23. The next rounds
+    are Curtiss's call.
+    WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
