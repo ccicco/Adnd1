@@ -30751,6 +30751,42 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     304,979 bytes of UA Lua on disk.
     NEXT: ua2 R349-R359, 11 records.
     WAIT FOR GO.
+  - R1000 LANDED 2026-11-01 at
+    9cb10b12: The UA promotion batch
+    two (census 923) - R349-R359, 11
+    records, 1201 model items,
+    278,958 bytes Lua, prefix ua2
+    (bool ua2R349ThroughR359Complete).
+    LANDED: pushed 6df2f3a8..9cb10b12,
+    census 922->923; the fresh tarball
+    at 9cb10b12 verified - 11/11
+    records on disk byte-matching the
+    spec (the ua set now 24; the dragon
+    79, the WSG 77, the DSG 60 and the
+    OA 160 on disk unchanged), the
+    batch header (4 consts + 3 bools,
+    remaining 52, cumulative 24), the
+    regtest includes (the ua2.h include
+    at line 704 right after ua1.h; the
+    r1000_batch.h audit at line 4813
+    above r999_batch.h, descending),
+    the gap report byte-identical
+    base-to-HEAD (102/1, the one open
+    line the legend, no flips), the
+    seed seated (the R999 record, 32
+    lines, before the Knowledge
+    maintenance anchor), rverify GREEN
+    at base 6df2f3a8 (double-run,
+    battery 7 mutants 0 missed), spec
+    md5 unchanged
+    (eafde8d20147923d678d9ea7c8150d3d).
+    Cumulative 24 of the 76-round UA
+    set, 52 remaining, 583,937 bytes of
+    UA Lua on disk. NEXT: ua3
+    R360-R364, 5 records (the
+    multi-header rounds begin - the
+    headers' pools merge).
+    WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

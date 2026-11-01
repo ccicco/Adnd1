@@ -702,6 +702,7 @@
 #include "rules/dsg5.h"  // R998: the DSG promotion batch five
 #include "rules/ua1.h"  // R999: the UA promotion batch one
 #include "rules/ua2.h"  // R1000: the UA promotion batch two
+#include "rules/ua3.h"  // R1001: the UA promotion batch three
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4811,6 +4812,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r1001_batch.h"  // R1001: R1001 UA promotion batch three audit
 #include "rules/audits/r1000_batch.h"  // R1000: R1000 UA promotion batch two audit
 #include "rules/audits/r999_batch.h"  // R999: R999 UA promotion batch one audit
 #include "rules/audits/r998_batch.h"  // R998: R998 DSG promotion batch five audit
