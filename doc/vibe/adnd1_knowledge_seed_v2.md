@@ -30591,6 +30591,35 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     disk; five batches planned (R995
     R511-R527 next). NEXT: R995 R511-R527,
     16 rec. WAIT FOR GO.
+  - R995 LANDED 2026-11-01 at
+    43e25146: The DSG promotion batch
+    two (census 918) - R511-R527, 16
+    records (R515 absent), 660 model
+    items, 306,698 bytes Lua, prefix
+    dsg2 (bool
+    dsg2R511ThroughR527Complete).
+    LANDED: pushed 4ff6aa06..43e25146,
+    census 917->918; the fresh tarball
+    at 43e25146 verified - 16/16
+    records on disk byte-matching the
+    spec (and the earlier batches
+    85/85 still byte-matching), the
+    header (4 consts + 3 bools), the
+    regtest includes (the dsg2.h
+    include at line 699 right after
+    dsg1.h; the r995_batch.h audit at
+    line 4809 above r994_batch.h,
+    descending), the gap report
+    byte-identical base-to-HEAD (155/0,
+    no flips), the seed seated (the
+    R994 record, 28 lines), rverify
+    GREEN at base 4ff6aa06 (double-
+    run, battery 7 mutants 0 missed),
+    spec md5 unchanged. Cumulative 24
+    of the 60-round set, 36 remaining,
+    620,327 bytes of Lua on disk.
+    NEXT: R996 R528-R541, 14 rec.
+    WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
