@@ -31157,6 +31157,86 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     print-voice verification of the
     naive-era prose.
     WAIT FOR GO.
+  - R1008 LANDED 2026-11-01 at
+    3025a975: The promotions mop
+    round three (census 931) - the MM1
+    collation half, the two lost texts
+    recovered and the mangled-glyph
+    repair, the data-quality pass
+    COMPLETE. TWO TEXT COMPLETIONS
+    from the single readable voice
+    (the archive.org 1977 print djvu
+    scan; the second print scan is
+    lending-restricted - the R923
+    single-voice precedent, every
+    OCR garble adjudicated case by
+    case): copper_dragon (3
+    paragraphs, p. 32) and
+    monoclonius (1 paragraph, p.
+    24), the two R1007 exclusions.
+    GLYPH REPAIR across 222 defs:
+    731 0x14 control codes -> the raw
+    print em-dash (1 unspaced, the
+    gold dragon weapons-fire), 77
+    U+FFFD glyphs (10 degrees - the
+    beholder 90/180/270/360 arcs,
+    the frog 45-degree jumps; 67
+    halves - sizes, hit dice, the
+    1/2-inch breath-weapon cones and
+    streams, djvu rendering the half
+    glyph as % or Yz), 3 stat-field
+    glyphs normalized to the landed
+    convention (mold hitDice -> Nil,
+    war dog noAppearing -> n/a). 444
+    file_patches (442 voice-adjudicated
+    glyph windows, every one simulated
+    green and idempotent, plus the 2
+    text completions), prefix pm3
+    (verified free), header rules/pm3.h
+    (9 consts + 3 bools), audit
+    rules/audits/r1008_batch.h above
+    r1007_batch.h, include after
+    pm2.h, the seed seats the R1007
+    LANDED record (61 lines) before
+    the LAST Knowledge maintenance
+    anchor. LANDED: pushed
+    fa62cde9..3025a975, census
+    930->931; the fresh tarball at
+    3025a975 verified - 444/444
+    patches applied (to present),
+    residual glyph census 0, the
+    includes ordered (pm3.h after
+    pm2.h, r1008_batch.h above
+    r1007_batch.h), the seed seated,
+    the gap report byte-identical
+    base-to-HEAD (mm2 37/0), spec md5
+    unchanged
+    (ec0fe8f376a65656fc337e12cb926944),
+    the user preflight green (loaded
+    1338, errors 0, the audit census
+    clean). ONE LIVE LESSON, twice
+    over: the copper text value first
+    rode with RAW paragraph newlines
+    (the R1006 unfinished-string class
+    - the preflight caught it: loaded
+    1337, errors 1); repaired to
+    backslash-n escapes pre-landing,
+    and the tree recovered BOTH times
+    via the rverify restore (the
+    poisoned-tree cure - overwrite
+    from the base sha, delete the
+    stray new files; the rm/git dance
+    never needed, the R420 mixed
+    applied/already abort cleared the
+    same way). THE MM1 TEXT CENSUS
+    READS 408 OF 408 - the
+    naive-era data-quality pass
+    complete, the battery line loaded
+    1338 errors 0. THE MOP REMAINING:
+    the arc's loose ends stand at
+    census 931; the next rounds are
+    Curtiss's call.
+    WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

@@ -28,7 +28,7 @@ from mm2lua import FIELD_ORDER, INT_KEYS, STRING_SENTINEL, \
     INT_SENTINEL
 
 REG = os.path.normpath(
-    os.path.join(HERE, os.pardir, 'monsters', 'monsters'))
+    os.path.join(HERE, os.pardir, 'content', 'monsters'))
 
 PAT = re.compile(r'^  (\w+) = (.*)$')
 
@@ -94,7 +94,13 @@ def render(hdr, fields, cmts):
         if k in fields:
             out.append('  %s = %s,' % (k, fields[k]))
         elif k in INT_KEYS:
-            out.append('  %s = %d,' % (k, INT_SENTINEL))
+            # saveAsBonus rides the loader's zero default - the
+            # R155 data contract: no die bonus reads 0, not the
+            # -1 sentinel (the classed-monster audit pins it)
+            if k == 'saveAsBonus':
+                out.append('  saveAsBonus = 0,')
+            else:
+                out.append('  %s = %d,' % (k, INT_SENTINEL))
         else:
             out.append('  %s = "%s",' % (k, STRING_SENTINEL))
     out.append('}')
