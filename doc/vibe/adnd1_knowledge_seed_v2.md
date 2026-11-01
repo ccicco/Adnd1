@@ -30534,6 +30534,35 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     across 71 records on disk. NEXT: R993
     R497-R502, 6 rec - THE SET CLOSER.
     WAIT FOR GO.
+  - R993 LANDED 2026-11-01 at b19d04ef:
+    The WSG promotion batch five (census
+    916) - THE SET CLOSER - R497-R502,
+    6 records, 440 model items, 128,521
+    bytes Lua, prefix wsg5 (bool
+    wsg5SetComplete). LANDED: pushed
+    2d15a45b..b19d04ef, census 915->916;
+    the fresh tarball at b19d04ef
+    verified - 6/6 records on disk
+    byte-matching the spec (and batches
+    one-four 71/71 still byte-matching),
+    the header (4 consts + 3 bools), the
+    regtest includes (the wsg5.h include
+    at line 697 right after wsg4.h; the
+    r993_batch.h audit at line 4807
+    above r992_batch.h, descending), the
+    gap report byte-identical base-to-
+    HEAD (no flips), the seed seated
+    (the R992 record, 27 lines), rverify
+    GREEN at base 2d15a45b (double-run,
+    battery 7 mutants 0 missed), spec md5
+    unchanged. THE 77-ROUND WSG SET IS
+    FULLY PROMOTED: 77 of 77, none
+    remaining, 1,369,573 bytes of Lua
+    across five batches R989-R993 under
+    the R968 format, every record
+    promoted mechanically and parsed back
+    equal. NEXT: the next arc awaits
+    Curtiss's call. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
