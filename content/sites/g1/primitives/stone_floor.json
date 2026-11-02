@@ -1,0 +1,11 @@
+{
+  "id": "stone_floor",
+  "file": "stone_floor_master.png",
+  "terrain_class": "interior_stone",
+  "level": "ground",
+  "master": { "size": 640, "px_per_foot": 64, "tile_feet": 10 },
+  "coverage": "full",
+  "seam": { "state": "seamlocked", "vision_gate": "pass 2026-11-02", "pixel_gate": "pending" },
+  "source_prompt": "primitive-generation template, stone-floor subject block",
+  "notes": "offset-repair-wrap workflow; border rows untouched post-offset"
+}
