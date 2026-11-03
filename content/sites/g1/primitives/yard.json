@@ -3,9 +3,9 @@
   "file": "yard_master.png",
   "terrain_class": "yard",
   "level": "exterior",
-  "master": { "size": 640, "px_per_foot": 64, "tile_feet": 10 },
+  "master": { "size": 1254, "px_per_foot": 125.4, "tile_feet": 10 },
   "coverage": "full",
-  "seam": { "state": "native", "vision_gate": "pass 2026-11-03", "pixel_gate": "pending" },
+  "seam": { "state": "native", "vision_gate": "pass 2026-11-03", "pixel_gate": "pass 2026-11-02" },
   "source_prompt": "primitive-generation template, yard subject block",
-  "notes": "wrapped correctly on first generation; no seamlock repair required; outdoor adjudication: the outside is yard"
+  "notes": "generator emits fixed 1254x1254 (master-size fallback clause); wrapped natively, no repair; single exact area-average bake to 64x64; adjudication: outside is yard"
 }
