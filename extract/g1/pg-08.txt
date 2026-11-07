@@ -1,0 +1,151 @@
+KEY TO THE DUNGEON LEVEL
+
+Note Regarding the Dungeon: It will be evident from merely
+descending the stairs and observing the walls that the masonry
+work is quite good, certainly superior to orcish work, except in a
+few places. The observant party will note that most of the
+stonework is old, even that which bears recent chisel marks or is
+patched with new mortar and shored up with newly hewn stone.
+Passageway ceilings are arched and buttressed every 10', withthe
+peak of the arch about 17' overhead. Ceiling height in most
+smallish rooms in the dungeon is 20' or so, again arched and
+buttressed. In the large rooms and chambers the ceilings are 30'
+high. The overhead in the natural cavern area (19-21.) is of
+varying height, passages about 10', and large areas about 20' or
+more. The roof of cavern 23. is about 40' high. All natural cave
+areas have stalagmites.
+
+Wandering Monsters:
+All Non-Natural Areas: Encounter 1 in 12
+1. 4 ogres (HP.: 23, 22, 20, 27) seeking some orcs
+2. The Keeper (see 2. below) and his pet out inspecting
+3. 12orcs HP.: 9, 8 7x7,86, 5, 4) with 2 heavy crossbows (2
+poisoned bolts—see "B" below) out raiding for food
+Other Areas: Encounter 1 in 20
+
+In 19.-20.: 1-4 Subterranean lizards (from 21. below)
+
+In 21: 1-3 carrion crawlers coming up from the sink holes
+Rooms and Areas:
+
+"B": Boulder wall and orcish strong point (see 19).
+"G": Posts for rebel orc guards.
+"W". Watch points for bugbear guards.
+
+1. MARSHALLING AREA: This room is primarily meant as
+the place where slaves are rounded up and sent about
+their tasks under guard. It is also used for the revels of the
+other dungeon crew when off duty. There are a few
+smoky torches burning along the walls. The benches
+and tables are pushed out of the way against the walls,
+revealing a floor of blackish stone, much worn by the
+tread of countless feet.
+
+2. CHAMBER OF THE KEEPER: The Keeper is a ghastly hill
+giant, hunchbacked, twisted, and with but one good eye.
+He is throughly wicked and evil, strong (H.P.: 49), and
+remorseless. He is never without one of his 2 pet
+carnivorous apes (H.P.: 29, 26), and both are in his lair,
+one guarding to the north of the door, the other on a
+platform builtabove it! The Keeper has achain shirtwhich
+makes him AC 3, and he fights with a battle axe +3 (+3 to
+hit, +3 hit points of damage). His room has many skins on
+the floor, a bed, table, chair, 2 boxes, several crates and
+barrels, 1 chest, and odds and ends of armor, weapons,
+furniture, tableware, and so forth. None has any value. A
+loose stone in the floor hides his treasure: 5,400 g.p., 5 500
+g.p. gems, 4 100 g.p. gems, and a large earthenware jug
+which holds 4 potions of water breathing.
+
+3. CELL BLOCK: In the outer guard room are 2 bugbear
+guards (H.P.: 17, 14) armed with morningstars. If not
+engaged immediately, they will raise an alarm by striking
+a large brass gong near the door. If they are prevented
+from doing this, and are faced by an obviously superior
+enemy, they will direct the opponents to cell iv. (see
+below), and when the party is occupied the bugbears will
+smite the alarm and flee. The room contains a table, 2
+stools, torches, and keys to cells i, ii, iii, and v.
+
+In the cells are:
+i. 1 human prisoner, a merchant, now quite insane.
+ii. 1 human prisoner, an engineer, kept alive to help with
+
+the excavation of new areas of the dungeon. He
+cannot aid his rescuers, but he will take service.
+
+ii. An elf fighter/magic-user (5/8 levels but no spells and
+wounded fromtorture—31 hit points now 14) chained
+to the wall. He has 17 strength, 17 intelligence, 14
+wisdom, 16 dexterity, 15 constitution, and 11
+charisma. He will serve with any character of good
+alignment for 1 year after rescue without pay in
+gratitude for his freedom.
+
+iv. TRAP: 3 skeletons, each wearing a brass ring with a
+glass gem. The bugbear guards will claim that they
+have been instructed to keep these skeletons safe, as
+there is something magical about them. They have no
+key to the cell to back up their tale, but the lock can be
+forced with ease. As soon as the cell door is opened,
+the 3 skeletons spring to attack with swords previous-
+ly covered from view by dust and dirt. Each skeleton
+takes 8 HP.
+
+v. Large cell with 5 captured orc rebels. 3 others of their
+number have already been tortured to death and
+eaten, so they will be very willing to help any creature
+promising them escape from the toils of the giants.
+These orcs will lead the party to 19. if they wish, and
+will see them safely past the guards behind "B" if they
+can handle the bugbeara 'W'tothe west ofthat place.
+
+4.-8. BUGBEAR QUARTERS COMPLEX: Each of these areas
+will have afew torches and braziers burning. There will be
+a few hides and skins on the walls and floors, straw and
+similar litter mounded for bedding, a few stools and small
+crates, boxes, and the like for (worthless) personal
+belongings, and tables with scraps offood and odds and
+ends of eating utensils upon them.
+
+4.12 bugbears at ready (HP.: 20, 4 x 15, 6 x 14). Each
+has a spear and morningstar, the former for hurling.
+They have 2-8 g.p. each.
+
+5. 12 bugbears asleep. These monsters are identical in all
+respects to those described in 4. above.
+
+6. 12 bugbears as in 5. above.
+
+7. Chamber of the bugbear captain: 5 bugbears (HP.:
+24, 4 x 19), the captain and 4 lieutenants, are sitting
+around a crude table drinking ale and discussing a
+plan to wipe outthe orcs in area 19. The captain attacks
+as an ogre and is equal to AC 4, doing +2 on damage
+and having a +1 chance to hit. All these bugbears have
+bastard swords. The lieutenants have 20-80 g.p. each.
+The captain has that plus 31 10 g.p. gems, the latter
+hidden in a pouch under his armor.
+
+8. 6 bugbear guards: These alert fellows are readying for
+an attack. One always is at the south exit watching"B"
+to the east. They are armed with hand axes and
+morningstars (HP.: 21,3x 17,16, 13).
+
+. SLAVES' QUARTERS (GOOD BEHAVIOR AREA): These
+areas have afew smoky torches on the walls and moldy
+straw strewn on the floor. Some benches are built intothe
+walls. Each door is barred from the outside with a heavy
+iron rod.
+
+9. 24 unarmed orc slaves, very poor morale.
+10. 30 unarmed orc slaves, very poor morale.
+11. 24 unarmed orc slaves, very poor morale.
+
+12.-14. SLAVES QUARTERS (UNRULY): Note positions "W" have
+1 bugbear (HP.. 16) each hand axe and morningstar
+armed, constantly alert and watching. Each area is
+secured by a barred gate through which the bugbears can
+see. Each set of bars is secured by lock and chain as well
+as bolt. The chambers are unlit, have only scanty straw,
+and are quite noisome with orc odor.

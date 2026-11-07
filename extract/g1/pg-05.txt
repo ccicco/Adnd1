@@ -1,0 +1,161 @@
+Dice Roll
+
+01-03
+04-17
+18-19
+20-21
+22-23
+24-25
+26-30
+31-32
+3340
+41-43
+44-47
+48-53
+54-60
+61-64
+65-67
+68-69
+70-76
+77-83
+84-85
+86-90
+91-98
+99-00
+
+Giant's Bag Contents Table:
+. Item In Bag or Other Container_____
+
+old axe blade for use as hand chopper
+boulders, small (1-4)
+
+bowl and spoon, tin or pewter, battered
+brass items, various and sundry, bent
+caltrops, iron, large (1-6)
+
+cheese, hard, slightly moldy and stinky
+cloak, shabby, wool or hide
+
+comb and hairpins, bone
+
+cooking pot, iron
+
+hom, drinking
+
+knife, skinning
+
+linens, various, soiled, patched
+
+meat, haunch of
+
+money, copper (100-400 pieces)
+money, silver (20-80 pieces)
+
+money, gold (10-40 pieces)
+
+pelt, fur, worthless and mangy
+
+rope, 10'-120' coil, very strong
+
+salt, small bag or box of
+
+sandals, old
+
+skin, water or wine, full
+
+teeth or tusks, animal, no ivory value (1-8)
+
+Itis suggested that no item be duplicated; roll again if a duplicate
+item is indicated by any given roll.
+
+e
+
+D.CSOTHERAND =
+
+KEY TO THE UPPER LEVEL
+
+Wandering Monster:
+
+1. 4-12 orcs rushing to get shields for platters
+
+2. 2 hill giants from 11. going to sleep off a drunk
+
+3. 3 ogres from 11. going to get on of the guards
+
+4. 1 hill giant from 11. taking a stroll
+Great Hallto 11.: Encounter 1 in 8 ("1" on d8)
+
+1. 1-4 hill giants heading for 13 from 11.
+
+2. 1 cloud giant from 11. heading for front gate
+
+3. 2 stone giants from 11. heading for front gate
+Eastern Section: Encounter 1 in 12 ("1" on d12)
+
+1. The giantess coming from 11. to get her cave bear
+
+2. 1 hill giant with 1-4 dire wolves from 22. going to 4.
+
+3. The chief and 2 ogres going to get some trophies from 6. to
+show off in the Great Hall
+
+4. 2-8 young giants from 3. heading through 22. to raid the
+pantry at 18.
+
+Rooms and Areas
+
+1. ENTRY AND CLOAK ROOM: The place is bare, but there are
+many pegs along the walls, and various items of giant
+outerwear (capes, cloaks, etc.) and bags hang from them. Use
+
+random bag contents forany opened. Noise could alertA. or B.
+below:
+
+A. 2 snoring hill glziants, supposedly guarding the entrance
+(HP. 40, 34). There is a nearly empty keg of ale between
+them. Unless attacked and slain immediately, any molesta-
+tion will enable one to alert the other guard at B. There is 1
+chance in 20 that any well-planned scheme to kill them will
+fail, otherwise they can be slain simultaneously and quiet
+maintained.
+
+B. Steps leading up to the watch towerwhere another hill giant
+guard (HP.: 27) is dozing. A flagon which contained mead
+is at his hand. An iron hoop and straight bar hanging on
+ropes from a rafter above will alert the place if struck
+together. The giant wears a belt with a gem-set gold buckle.
+The 6 gems are worth 100 g.p. each. The gold in the buckle
+is worth 100 g.p., but as a piece of jewelry the item has a
+value of 1,400 g.p.
+
+2. SUB-CHIEF'S ROOM: This place contains a scattering of
+furnishing (hides on the floors, a bear skin on the wall, a chair,
+a stool, a huge chest, and a vast bed mounted with furs). On a
+shelf 9" above the floor are a beaten silver comb set with four 50
+g.p. gems (value 300 g.p.), a copper mirror (200 g.p.), and a
+large gold hair pin with a 500 g.p. pearl (800 g.p. value). Under
+the furs on the bed is a sleeping giantess (HP. 29) who will
+awaken on a 1 in 4 or if a loud noise occurs in the room. The
+chest contains 980 ¢.p., 320 sp., and 1,500 g.p.
+
+3. DORMITORY: Here 12 young giants (H.P.: 26,24,3x21, 18x
+17, 2x 16, 14, 13) are rollicking, and beefy smacks, shouts,
+laughter, etc. are easily heard. All these creatures have
+weapons and will fight as ogres. (Note that noise from here will
+be regarded as the "kids" having fun ...) There is no treasure,
+but by wearing the young giants garb, with suitable padding,
+
+the party could pass as the youngsters if not seen closer than
+20".
+
+4. BARRACKS: 2 soundly sleeping giants (H.P.: 39, 38) can be
+heard snoring among the 10 beds and 10 chests in this room.
+There are items of clothing hanging from walls and a couple of
+torches are smouldering in wall cressets. No treasure is in the
+room, save a small pouch in thefirst chest searched, which will
+contain110p.p.
+
+5. MAIDS' CHAMBER: 4 giantesses are in this room (H.P.: 34, 27,
+24, 23), and there are the usual furnishings about the place.
+Only the nasty old matron (the strongest of the 4) is inclined to
+fight, but she dominates the others. If the matron is slain the 3
