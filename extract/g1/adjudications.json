@@ -1,0 +1,412 @@
+{
+ "sheet": "map-006",
+ "walldist": "center",
+ "doors": [],
+ "openings": {
+  "explicit": [
+   {
+    "axis": "x",
+    "line": 17,
+    "cells": [
+     3,
+     5
+    ]
+   },
+   {
+    "axis": "x",
+    "line": 21,
+    "cells": [
+     3,
+     5
+    ]
+   },
+   {
+    "axis": "x",
+    "line": 22,
+    "cells": [
+     3,
+     5
+    ]
+   },
+   {
+    "axis": "x",
+    "line": 23,
+    "cells": [
+     3,
+     5
+    ]
+   },
+   {
+    "axis": "x",
+    "line": 2,
+    "cells": [
+     43,
+     43
+    ]
+   },
+   {
+    "axis": "x",
+    "line": 3,
+    "cells": [
+     43,
+     43
+    ]
+   },
+   {
+    "axis": "x",
+    "line": 4,
+    "cells": [
+     43,
+     43
+    ]
+   },
+   {
+    "axis": "x",
+    "line": 2,
+    "cells": [
+     45,
+     45
+    ]
+   },
+   {
+    "axis": "x",
+    "line": 3,
+    "cells": [
+     45,
+     45
+    ]
+   },
+   {
+    "axis": "x",
+    "line": 4,
+    "cells": [
+     45,
+     45
+    ]
+   },
+   {
+    "axis": "x",
+    "line": 21,
+    "cells": [
+     34,
+     34
+    ]
+   },
+   {
+    "axis": "y",
+    "line": 31,
+    "cells": [
+     4,
+     5
+    ]
+   },
+   {
+    "axis": "y",
+    "line": 31,
+    "cells": [
+     12,
+     13
+    ]
+   },
+   {
+    "axis": "y",
+    "line": 31,
+    "cells": [
+     15,
+     15
+    ]
+   }
+  ],
+  "default": "opening",
+  "revoked": []
+ },
+ "numerals": [
+  {
+   "label": "22",
+   "cell": [
+    22.5,
+    16.5
+   ]
+  },
+  {
+   "label": "10",
+   "cell": [
+    20.67,
+    21.33
+   ]
+  },
+  {
+   "label": "12",
+   "cell": [
+    13.67,
+    34.33
+   ]
+  },
+  {
+   "label": "19",
+   "cell": [
+    12.0,
+    9.5
+   ]
+  },
+  {
+   "label": "20",
+   "cell": [
+    14.5,
+    16.0
+   ]
+  },
+  {
+   "label": "6",
+   "cell": [
+    32.0,
+    31.5
+   ]
+  },
+  {
+   "label": "24",
+   "cell": [
+    32.0,
+    9.0
+   ]
+  },
+  {
+   "label": "8",
+   "cell": [
+    32.0,
+    24.0
+   ]
+  }
+ ],
+ "sheet_labels": [
+  {
+   "region": 1,
+   "text": [
+    "TOWER",
+    "B"
+   ],
+   "feature": "tower with up-stairs"
+  }
+ ],
+ "excluded": [
+  {
+   "region": 7,
+   "reason": "map-legend strip, p12 symbol legend; position-based exclusion, outside building bbox (~col 33), lighter ink"
+  }
+ ],
+ "regions": [
+  {
+   "region": 2,
+   "kind": "fireplaces",
+   "detail": "one regular, one double wide"
+  },
+  {
+   "region": 3,
+   "kind": "kitchen hearth",
+   "detail": "body opens north + flue"
+  },
+  {
+   "region": 4,
+   "kind": "hearth bodies + flues",
+   "detail": "two flagged, third in crop unflagged"
+  },
+  {
+   "region": 5,
+   "kind": "fireplace/hearth run"
+  },
+  {
+   "regions": [
+    11,
+    17
+   ],
+   "kind": "wander-bleed",
+   "detail": "wall ink off-lattice; wander 5.6px + half-thickness > 12.7px margin"
+  }
+ ],
+ "wall_rulings": [
+  {
+   "row": 42,
+   "at": [
+    25.6,
+    9.87
+   ],
+   "ruling": "north wall (continuous, not debris)"
+  }
+ ],
+ "ring": [
+  {
+   "rect": [
+    0,
+    0,
+    3,
+    1
+   ],
+   "kind": "wall",
+   "note": "NW off-lattice double-wall; geometry layer fits its position"
+  },
+  {
+   "rect": [
+    0,
+    0,
+    1,
+    9
+   ],
+   "kind": "wall",
+   "note": "NW off-lattice double-wall"
+  },
+  {
+   "rect": [
+    0,
+    40,
+    1,
+    41
+   ],
+   "kind": "wall",
+   "note": "SW corner"
+  },
+  {
+   "rect": [
+    1,
+    40,
+    7,
+    41
+   ],
+   "kind": "wall",
+   "note": "SW south wall, continuous per crop"
+  },
+  {
+   "rect": [
+    31,
+    14,
+    31,
+    18
+   ],
+   "kind": "wall",
+   "note": "east wall seated, sub-threshold ink"
+  },
+  {
+   "rect": [
+    31,
+    23,
+    31,
+    29
+   ],
+   "kind": "wall",
+   "note": "east wall seated, sub-threshold ink"
+  },
+  {
+   "rect": [
+    31,
+    36,
+    32,
+    41
+   ],
+   "kind": "none",
+   "note": "SE no ring - compound edge bends in; legend strip territory"
+  },
+  {
+   "rect": [
+    30,
+    41,
+    31,
+    41
+   ],
+   "kind": "none",
+   "note": "S cols 30-31 no ring, legend-adjacent"
+  },
+  {
+   "rect": [
+    22,
+    40,
+    27,
+    41
+   ],
+   "kind": "gate",
+   "note": "south gate to road/pens; door with threshold + swing arc; key A nearby"
+  },
+  {
+   "rect": [
+    1,
+    14,
+    1,
+    18
+   ],
+   "kind": "gate",
+   "note": "west door: leaf + swing arc confirmed in crop"
+  },
+  {
+   "rect": [
+    1,
+    23,
+    1,
+    29
+   ],
+   "kind": "open",
+   "note": "west opening: clean, no furniture"
+  },
+  {
+   "rect": [
+    1,
+    33,
+    1,
+    33
+   ],
+   "kind": "wall",
+   "note": "thin ink, seated; no opening in crop"
+  },
+  {
+   "rect": [
+    31,
+    3,
+    31,
+    4
+   ],
+   "kind": "gate",
+   "note": "east door: leaf + swing arc, '24' above, rubble mark nearby"
+  },
+  {
+   "rect": [
+    31,
+    8,
+    31,
+    9
+   ],
+   "kind": "open",
+   "note": "east opening: clean, '23' below"
+  },
+  {
+   "rect": [
+    31,
+    32,
+    31,
+    33
+   ],
+   "kind": "gate",
+   "note": "east door: threshold furniture, '7' above, rubble below"
+  },
+  {
+   "rect": [
+    30,
+    40,
+    31,
+    41
+   ],
+   "kind": "none",
+   "note": "SE no ring extended to the inner row"
+  }
+ ],
+ "secret_doors": [
+  {
+   "tile": [
+    17,
+    18
+   ],
+   "on_line": "x20",
+   "connects": [
+    "10",
+    "10A"
+   ],
+   "note": "secret door from 10 to the scroll room, concealed behind a manticore hide; S mark confirmed in crop; tile draft-grade, dcenter pinned by geometry layer"
+  }
+ ]
+}
