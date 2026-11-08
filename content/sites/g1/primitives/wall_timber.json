@@ -12,7 +12,7 @@
     "boundary_block": "full_square_64",
     "note": "Primitive is neutral, non-offset, full-square. The composer clips to extents and applies the offset transform; thickness is a composition parameter, never baked art."
   },
-  "seam": { "state": "pending", "vision_gate": "pending", "pixel_gate": "pending" },
+  "seam": { "state": "baked", "vision_gate": "pass 2026-11-08", "pixel_gate": "pass 2026-11-08" },
   "source_prompt": "primitive-generation template, wall-face subject block (timber variant)",
   "notes": "Wall-face material primitive per the primitive/composite layer doctrine. Timber variant per module G1 (steading = hewn timber construction). Same generate/vision-gate/seamlock/bake loop as stone_floor and yard: single exact area-average bake to 64x64, seam gates before and after bake. Master-size fallback clause applies (full-coverage organic face, true scale recorded)."
 }
