@@ -7,7 +7,7 @@
   "master": { "size": 1254, "px_per_foot": 125.4, "tile_feet": 10 },
   "coverage": "full",
   "compose": {
-    "interior_stroke_px": 8,
+    "interior_stroke_px": 13,
     "interior_distribution": "center",
     "boundary_block": "full_square_64",
     "note": "Primitive is neutral, non-offset, full-square. The composer clips to extents and applies the offset transform; thickness is a composition parameter, never baked art."
