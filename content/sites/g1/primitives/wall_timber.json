@@ -1,0 +1,18 @@
+{
+  "id": "wall_timber",
+  "file": "wall_timber_master.png",
+  "terrain_class": "wall_face",
+  "level": "wall",
+  "material_variant": "timber",
+  "master": { "size": 1254, "px_per_foot": 125.4, "tile_feet": 10 },
+  "coverage": "full",
+  "compose": {
+    "interior_stroke_px": 8,
+    "interior_distribution": "center",
+    "boundary_block": "full_square_64",
+    "note": "Primitive is neutral, non-offset, full-square. The composer clips to extents and applies the offset transform; thickness is a composition parameter, never baked art."
+  },
+  "seam": { "state": "pending", "vision_gate": "pending", "pixel_gate": "pending" },
+  "source_prompt": "primitive-generation template, wall-face subject block (timber variant)",
+  "notes": "Wall-face material primitive per the primitive/composite layer doctrine. Timber variant per module G1 (steading = hewn timber construction). Same generate/vision-gate/seamlock/bake loop as stone_floor and yard: single exact area-average bake to 64x64, seam gates before and after bake. Master-size fallback clause applies (full-coverage organic face, true scale recorded)."
+}
