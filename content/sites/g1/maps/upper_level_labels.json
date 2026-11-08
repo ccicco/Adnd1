@@ -1,0 +1,17 @@
+{
+  "id": "upper_level",
+  "map": "content/sites/g1/maps/upper_level.ora",
+  "lattice": { "squares": [51, 60], "tile_px": 64 },
+  "note": "Text placement registry. Rendering is on demand - nothing here is stored as pixels in the map. Part of the g1 site tree. Positions ride the same lattice as tile placements: square + px offset from that square's origin.",
+  "labels": [
+    {
+      "id": "room1",
+      "text": "1",
+      "at": { "square": [26, 47], "offset": [32, 32] },
+      "anchor": "center",
+      "size": 64,
+      "color": [255, 255, 255],
+      "group": "room-numerals"
+    }
+  ]
+}
