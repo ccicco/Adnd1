@@ -1,0 +1,18 @@
+{
+  "id": "stair_tread",
+  "file": "stair_tread_master.png",
+  "terrain_class": "stair_tread",
+  "level": "floor",
+  "material_variant": "plank_narrow",
+  "master": { "size": 1024, "px_per_foot": 102.4, "tile_feet": 10 },
+  "coverage": "full",
+  "generator": "true JPEG converted via tools/jpg2png.py (pure stdlib, exact decode, no resampling)",
+  "compose": {
+    "plank_rows": 10,
+    "plank_ft": 1.2,
+    "note": "Narrow-plank tread variant per the keep-both ruling; wide-plank variant to be generated separately. Material for stair tread surfaces in construct composition."
+  },
+  "seam": { "state": "baked", "vision_gate": "pass 2026-11-08", "pixel_gate": "pass 2026-11-09" },
+  "source_prompt": "stair tread subject block, count-first plank spec (v1)",
+  "notes": "Tread material primitive per the primitive/composite layer doctrine. Same generate/vision-gate/seamlock/bake loop; first true-JPEG master (required the jpg2png conversion step before the header gate). Master-size fallback clause applies (true scale recorded)."
+}
