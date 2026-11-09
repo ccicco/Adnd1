@@ -1,0 +1,28 @@
+{
+  "id": "stairwell_upper",
+  "kind": "construct_stamp",
+  "frame": "building_31x40",
+  "feature": "up-stairs to the watch tower (module G1, area 1 approach)",
+  "path": {
+    "start_bottom_step": [10, 37],
+    "up_direction": "E then S then W",
+    "segments": [
+      { "from": [10, 37], "to": [12, 37], "dir": "E", "squares": [[10,37],[11,37],[12,37]], "type": "flight" },
+      { "from": [12, 37], "to": [12, 40], "dir": "S", "squares": [[12,38],[12,39],[12,40]], "type": "flight" },
+      { "from": [12, 40], "to": [9, 40], "dir": "W", "squares": [[11,40],[10,40],[9,40]], "type": "flight" }
+    ],
+    "landings": [[12,37],[12,40]],
+    "top": [9, 40]
+  },
+  "walls": "none - the run butts against existing placement-pass walls (boundary and interior); no ring",
+  "compose": {
+    "tread_pitch_px": 11,
+    "flight_band_px": 40,
+    "tread_material": { "E-W segments": "stair_tread", "N-S segments": "stair_tread_v" },
+    "tread_bands": "full-pitch plank bands, one 11px band per tread, no gaps",
+    "floor": "stone_floor, coverage-driven under every run square",
+    "tile_px": 64
+  },
+  "geometry_source": "his coordinates 2026-11-09 (31x40 frame) + raster measurements (11px pitch, 40px bands, pg-06 page scan)",
+  "notes": "First structured construct stamp. Reverse-J run, open arm west. Materials all gated: stair_tread/stair_tread_v (plank_narrow), stone_floor. No new art; composition only. Composer wiring follows when mkplace.py lands."
+}
