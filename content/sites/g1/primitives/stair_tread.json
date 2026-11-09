@@ -5,7 +5,7 @@
   "level": "floor",
   "material_variant": "plank_narrow",
   "master": { "size": 1024, "px_per_foot": 102.4, "tile_feet": 10 },
-  "coverage": "full",
+  "coverage": "full", "alignments": ["h", "v"],
   "generator": "true JPEG converted via tools/jpg2png.py (pure stdlib, exact decode, no resampling)",
   "compose": {
     "plank_rows": 10,
