@@ -5,7 +5,7 @@
   "level": "wall",
   "material_variant": "timber",
   "master": { "size": 1254, "px_per_foot": 125.4, "tile_feet": 10 },
-  "coverage": "full",
+  "coverage": "full", "alignments": ["h", "v"],
   "compose": {
     "interior_stroke_px": 13,
     "interior_distribution": "center",
