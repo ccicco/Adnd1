@@ -9,8 +9,15 @@ sequential JPEG (SOF0/SOF1), arbitrary component sampling (4:2:0, 4:2:2,
 JPEG (SOF2) and lossless (SOF3) are refused with a clear error.
 
 usage: jpg2png.py IN.jpg OUT.png
+
+v2: fixed three decoder bugs found by closed-loop validation:
+  1. idct2 was missing the 0.5 factor per separable pass (output 4x too large)
+  2. luma plane never got its +128 level shift back after IDCT
+  3. chroma planes were level-shifted twice (128 subtracted in to_rgb even
+     though the IDCT plane already holds sample - 128)
+Also: component planes now use 32-bit float arrays (4x less memory).
 """
-import sys, zlib, struct, math
+import sys, zlib, struct, math, array
 
 # ---------------- PNG writer (same pattern as rot90.py) ----------------
 
@@ -44,13 +51,13 @@ def idct2(block):
         for x in range(8):
             s = 0.0
             for u in range(8):
-                s += CU[u] * COS[u][x] * block[base + u]
+                s += 0.5 * CU[u] * COS[u][x] * block[base + u]
             tmp[base + x] = s
     for x in range(8):
         for y in range(8):
             s = 0.0
             for v in range(8):
-                s += CU[v] * COS[v][y] * tmp[v * 8 + x]
+                s += 0.5 * CU[v] * COS[v][y] * tmp[v * 8 + x]
             out[y * 8 + x] = s
     return out
 
@@ -196,7 +203,7 @@ def decode_jpeg(path):
     for c in comps:
         c["bw"] = mcux * c["h"] * 8
         c["bh"] = mcuy * c["v"] * 8
-        c["px"] = [0.0] * (c["bw"] * c["bh"])
+        c["px"] = array.array("f", bytes(4 * c["bw"] * c["bh"]))  # 32-bit floats: 4x less memory than a float list
 
     br = BitReader(d[data_start:])
     pred = {c["id"]: 0 for c in comps}
@@ -246,7 +253,7 @@ def decode_jpeg(path):
                         bw = c["bw"]
                         for yy in range(8):
                             rb = (y0 + yy) * bw + x0
-                            plane[rb:rb + 8] = px[yy * 8:yy * 8 + 8]
+                            plane[rb:rb + 8] = array.array("f", px[yy * 8:yy * 8 + 8])
             nm += 1
     return W, H, comps
 
@@ -268,15 +275,15 @@ def to_rgb(W, H, comps):
             cbrow = cb["px"][sy * cb["bw"]:sy * cb["bw"] + cb["bw"]]
             crrow = cr["px"][sy * cr["bw"]:sy * cr["bw"] + cr["bw"]]
             for x in range(W):
-                Y = yrow[x]
-                Cb = cbrow[sxb[x]] - 128.0
-                Cr = crrow[sxr[x]] - 128.0
+                Y = yrow[x] + 128.0
+                Cb = cbrow[sxb[x]]   # plane is already level-shifted (sample - 128)
+                Cr = crrow[sxr[x]]
                 row[x * 3] = clamp(Y + 1.402 * Cr)
                 row[x * 3 + 1] = clamp(Y - 0.344136 * Cb - 0.714136 * Cr)
                 row[x * 3 + 2] = clamp(Y + 1.772 * Cb)
         else:
             for x in range(W):
-                Y = yrow[x]
+                Y = yrow[x] + 128.0
                 row[x * 3] = row[x * 3 + 1] = row[x * 3 + 2] = clamp(Y)
         rows.append(bytes(row))
     return rows
