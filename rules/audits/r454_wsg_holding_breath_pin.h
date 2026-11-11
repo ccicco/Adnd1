@@ -11,7 +11,7 @@
     // cumulative +2 after the first, per the con-12/4-round example), the
     // out-of-air unconsciousness with the pulled-to-surface requirement, the
     // not-underwater one-round addition with the penalties applied after, and
-    // the hold-before-affected gas rules (rules/wsgbreath.h, prefix whb);
+    // the hold-before-affected gas rules (rules/wsg/wsgbreath.h, prefix whb);
     // census 378 -> 379.
     {
         using namespace rules;

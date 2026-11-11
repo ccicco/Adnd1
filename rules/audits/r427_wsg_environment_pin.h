@@ -2,7 +2,7 @@
     // environment pin audit ----
     // The environment data
     // slice pins Tables 4 and
-    // 5 (rules/wsgenvfx.h,
+    // 5 (rules/wsg/wsgenvfx.h,
     // prefix wse): Table 4 (the
     // 13 temperature bands, the
     // Str/Dex/Con reductions

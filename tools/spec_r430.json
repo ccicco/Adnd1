@@ -2,7 +2,7 @@
  "round": 430,
  "title": "the WSG damage from heat and cold - the temperature damage and frostbite tables",
  "prefix": "wsh",
- "header_file": "rules/wsgheat.h",
+ "header_file": "rules/wsg/wsgheat.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -13,7 +13,7 @@
  "census_before": 354,
  "inline_count": 72,
  "audit_label": "R430 WSG heat and cold pin audit",
- "audit_comment": "The heat-and-cold data slice pins Tables 9 and 10 (rules/wsgheat.h, prefix wsh): the 25 temperature damage bands, the frostbite shares and thresholds, the damage and check adjustments, the hypothermia and heatstroke rules; census 354 -> 355.",
+ "audit_comment": "The heat-and-cold data slice pins Tables 9 and 10 (rules/wsg/wsgheat.h, prefix wsh): the 25 temperature damage bands, the frostbite shares and thresholds, the damage and check adjustments, the hypothermia and heatstroke rules; census 354 -> 355.",
  "banner": {
   "title": "The WSG DAMAGE FROM HEAT AND COLD, R430: the data slice of the heat-and-cold section - Table 9 (the temperature damage to characters) and Table 10 (the frostbite damage to characters) with the adjustment, hypothermia, frostbite and heatstroke prose pins.",
   "provenance": "Provenance: the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed pp. 25-27, cross-checked against the user own copy and the user eye-read of the Table 10 combination rows (the Frostbite Occurs At cells are blank in print).",
@@ -957,17 +957,17 @@
  "gap_flips": [
   {
    "from": "  - [ ] Damage from heat and cold (p. 25)",
-   "to": "  - [x] Damage from heat and cold (p. 25) - R430: Table 9 with the adjustment, hypothermia, frostbite and heatstroke pins as rules/wsgheat.h",
+   "to": "  - [x] Damage from heat and cold (p. 25) - R430: Table 9 with the adjustment, hypothermia, frostbite and heatstroke pins as rules/wsg/wsgheat.h",
    "note": "the heat-and-cold box"
   },
   {
    "from": "- [ ] **Table 9: temperature damage to characters** (p. 26)",
-   "to": "- [x] **Table 9: temperature damage to characters** (p. 26) - R430: the 25 bands pin as rules/wsgheat.h",
+   "to": "- [x] **Table 9: temperature damage to characters** (p. 26) - R430: the 25 bands pin as rules/wsg/wsgheat.h",
    "note": "Table 9"
   },
   {
    "from": "- [ ] **Table 10: frostbite damage to characters** (p. 27)",
-   "to": "- [x] **Table 10: frostbite damage to characters** (p. 27) - R430: the 7 rows pin as rules/wsgheat.h",
+   "to": "- [x] **Table 10: frostbite damage to characters** (p. 27) - R430: the 7 rows pin as rules/wsg/wsgheat.h",
    "note": "Table 10"
   },
   {
@@ -981,7 +981,7 @@
   "open": 163
  },
  "include_comment": "the WSG heat and cold damage tables",
- "include_after": "#include \"rules/wsgsplwx.h\"  // R429: the WSG special weather tables",
+ "include_after": "#include \"rules/wsg/wsgsplwx.h\"  // R429: the WSG special weather tables",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R429 landed 2026-10-14:",
@@ -992,7 +992,7 @@
   "  round: build_spec_r429.py (Vibe side) is only the ground-truth tables +",
   "  labels over build_spec_general; zero engine changes (Table 6 doubled to",
   "  half-points, Table 7 0/1/2 = -/D/X, Table 8 the 1dN die size, all sentinel",
-  "  0). rules/wsgsplwx.h NEW (70 inlines, prefix wsw) - Table 6 hurricane",
+  "  0). rules/wsg/wsgsplwx.h NEW (70 inlines, prefix wsw) - Table 6 hurricane",
   "  damage, Table 7 tornado codes (incl. the Wood and stone row), Table 8",
   "  hailstorm dice, plus the hurricane, gale, tornado, sandstorm and hailstorm",
   "  prose pins (45 consts, 11 bools, the hailstone-size chain). Ground truth",

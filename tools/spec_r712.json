@@ -2,7 +2,7 @@
  "round": 712,
  "title": "OA MONSTERS - the Oriental Dragons: the Celestial Bureaucracy, the Chiang Lung, and the Tun Mi Lung",
  "prefix": "djz",
- "header_file": "rules/oa83dragons.h",
+ "header_file": "rules/oa/oa83dragons.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA MONSTERS - THE ORIENTAL DRAGONS, printed capture pp. 259-262 - the celestial bureau round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 165 closed, 70 open - the oriental dragons box flips (census 634 -> 635); NEXT - R713: the Gaki, Lesser Spirit (capture pp. 262-263), prefix dka (verify free at the landing), audit \"R713 OA monsters Gaki audit\", include after rules/oa83dragons.h"
+  "sentinel": "the gap census after this round: 165 closed, 70 open - the oriental dragons box flips (census 634 -> 635); NEXT - R713: the Gaki, Lesser Spirit (capture pp. 262-263), prefix dka (verify free at the landing), audit \"R713 OA monsters Gaki audit\", include after rules/oa/oa83dragons.h"
  },
  "consts": [
   {
@@ -1051,7 +1051,7 @@
   "open": 70
  },
  "include_comment": "the OA Oriental Dragons pins",
- "include_after": "#include \"rules/oa82doccuoc.h\"  // R711: the OA Doc Cu'o'c pins",
+ "include_after": "#include \"rules/oa/oa82doccuoc.h\"  // R711: the OA Doc Cu'o'c pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R711 LANDED 2026-10-21: commit",
@@ -1059,7 +1059,7 @@
   "- R711 LANDED 2026-10-21: commit 878365a250e4ddb0f492a2013a590dba74b05782",
   "  (census 633 -> 634, pushed b200a70..878365a), OA MONSTERS - the",
   "  Doc Cu'o'c, Greater Spirit, capture p. 259 print:",
-  "  rules/oa82doccuoc.h, prefix djy (verified free at b200a70),",
+  "  rules/oa/oa82doccuoc.h, prefix djy (verified free at b200a70),",
   "  ONE gap flip, gap census 164/71. 16 consts + 22 bools (38",
   "  inlines): the stat block (the very rare, the 1, the AC -3,",
   "  the move 24, the HD 10, the 10% lair, the treasure G, the",
@@ -1083,6 +1083,6 @@
   "  NEXT - R712: the Oriental Dragons (capture pp. 259-260),",
   "  prefix djz (verified free at 878365a), audit \"R712 OA",
   "  monsters Oriental Dragons audit\", include after",
-  "  rules/oa82doccuoc.h."
+  "  rules/oa/oa82doccuoc.h."
  ]
 }

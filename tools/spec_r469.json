@@ -2,7 +2,7 @@
  "round": 469,
  "title": "the WSG water in the desert slice with the permafrost discussion - the desert dig chance and depth band, the desert survival proficiency boost, the two-tries limit and the permafrost definition and harvest technique, printed p. 60",
  "prefix": "wds",
- "header_file": "rules/wsgdesert.h",
+ "header_file": "rules/wsg/wsgdesert.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -202,12 +202,12 @@
   {
    "note": "water in the desert",
    "from": "  - [ ] Water in the desert (p. 60)",
-   "to": "  - [x] Water in the desert (p. 60) - R469: the 40/60 desert dig split with the 5-15 foot depth band, the desert survival proficiency boost to 80%, the two-tries limit and the permafrost definition and harvest technique pin as rules/wsgdesert.h"
+   "to": "  - [x] Water in the desert (p. 60) - R469: the 40/60 desert dig split with the 5-15 foot depth band, the desert survival proficiency boost to 80%, the two-tries limit and the permafrost definition and harvest technique pin as rules/wsg/wsgdesert.h"
   },
   {
    "note": "the post-state line",
-   "from": "Post-state at R468: 87 closed, 99 open (the R468 round continues the chapter - where water is found pins as rules/wsgwhere.h; the next round continues - water in the desert (p. 60) with the permafrost discussion, then purifying water (p. 60) with the tainted-water effects).",
-   "to": "Post-state at R469: 88 closed, 98 open (the R469 round continues the chapter - water in the desert with the permafrost discussion pins as rules/wsgdesert.h; the next round continues - purifying water (p. 60) with the tainted-water effects)."
+   "from": "Post-state at R468: 87 closed, 99 open (the R468 round continues the chapter - where water is found pins as rules/wsg/wsgwhere.h; the next round continues - water in the desert (p. 60) with the permafrost discussion, then purifying water (p. 60) with the tainted-water effects).",
+   "to": "Post-state at R469: 88 closed, 98 open (the R469 round continues the chapter - water in the desert with the permafrost discussion pins as rules/wsg/wsgdesert.h; the next round continues - purifying water (p. 60) with the tainted-water effects)."
   }
  ],
  "gap_census": {
@@ -215,7 +215,7 @@
   "open": 98
  },
  "include_comment": "the WSG water in the desert and permafrost",
- "include_after": "#include \"rules/wsgwhere.h\"  // R468: the WSG where water is found",
+ "include_after": "#include \"rules/wsg/wsgwhere.h\"  // R468: the WSG where water is found",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R468 LANDED 2026-10-15: commit 7ff85f9 (census 393, pushed",
@@ -241,7 +241,7 @@
   "  own section) and vegetation as a water source\n  (the subtropical and",
   "  tropical plants storing fresh water against a dry\n  spell, the cactus",
   "  keeping many desert travelers from dying of thirst,\n  the drought plains and",
-  "  hills plants, the DM availability-and-quantity\n  ruling). rules/wsgwhere.h",
+  "  hills plants, the DM availability-and-quantity\n  ruling). rules/wsg/wsgwhere.h",
   "  NEW (18 inlines: 4 consts - wwfLowElevMinFt\n  1, wwfLowElevMaxFt 2,",
   "  wwfHighElevMinFt 24, wwfHighElevMaxFt 100 - plus\n  14 bools, prefix wwf,",
   "  checked free). GROUND TRUTH two-way, no contested\n  cells: the user-run",

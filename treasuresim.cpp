@@ -6,14 +6,14 @@
 // printed table, plus hard consistency checks that fail loudly.
 //
 // Build (Termux, from the repo root):
-//   clang++ -std=c++17 -I. treasuresim.cpp dm/treasure.cpp rules/dice.cpp \
+//   clang++ -std=c++17 -I. treasuresim.cpp dm/treasure.cpp rules/engine/dice.cpp \
 //       -o /tmp/treasuresim && /tmp/treasuresim
 //
 // The r71verify.sh regtest gate is unaffected (this is a separate binary).
 // ============================================================================
 
 #include "dm/treasure.h"
-#include "rules/dice.h"
+#include "rules/engine/dice.h"
 
 #include <cstdio>
 #include <cstdlib>

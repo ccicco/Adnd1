@@ -2,7 +2,7 @@
  "round": 435,
  "title": "the WSG climbing - Table 15 (the climbing movement rates)",
  "prefix": "wcs",
- "header_file": "rules/wsgclimb.h",
+ "header_file": "rules/wsg/wsgclimb.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -13,7 +13,7 @@
  "census_before": 359,
  "inline_count": 43,
  "audit_label": "R435 WSG climbing pin audit",
- "audit_comment": "The climbing slice pins Table 15 (the 13 surface rows x the three condition rates in feet per round for a thief with the per-cell thief-or-mountaineering restrictions), the climbing prose (the half rate, the dex adjustment, the no-tools assumption), the encumbrance modifications, the surface types and conditions and the chance-of-falling rating (rules/wsgclimb.h, prefix wcs); census 359 -> 360.",
+ "audit_comment": "The climbing slice pins Table 15 (the 13 surface rows x the three condition rates in feet per round for a thief with the per-cell thief-or-mountaineering restrictions), the climbing prose (the half rate, the dex adjustment, the no-tools assumption), the encumbrance modifications, the surface types and conditions and the chance-of-falling rating (rules/wsg/wsgclimb.h, prefix wcs); census 359 -> 360.",
  "banner": {
   "title": "The WSG CLIMBING, R435: Table 15 (the climbing movement rates - the 13 surface rows x the non-slippery, slightly slippery and slippery feet-per-round rates for a thief, with the asterisked cells climbable only by a thief or a mountaineering-proficient character using special tools) with the prose rules: all characters can climb, the non-thief moves at half rate, the dexterity Reaction/Attacking Adjustment applies, no special tools are assumed and the cracks and protuberances are assumed except on the gentle nonslippery slope, the encumbrance modifications (severe: the gentle nonslippery or slightly slippery slope at half; heavy or moderate: the gentle or moderate nonslippery or slightly slippery slope at half; light: any slope at full; the cliff face needs an unencumbered climber), the surface types (the gentle, moderate and severe degree bands and elevation changes, the cliff past 70 degrees, the overhang treated the same) and the chance of falling (100 minus the Climbing Rating; the non-thief 40 percent, the mountaineer with tools 80 percent on the restricted surfaces; the percentile roll at or under the rating succeeds) - the round opens the movement-across-special-terrain section. Census 359 -> 360.",
   "provenance": "the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed pp. 33-34; the user own copy OCR cross-checked against the archive djvu word layer (every rate cell clean except the cliff smooth with-ledges row, where the djvu reads 16* for the non-slippery cell) and the IIIF full-resolution eye-reads (two eye-reads settle 15* - the 16* is an OCR artifact); every number matched.",
@@ -540,7 +540,7 @@
  "gap_flips": [
   {
    "from": "  - [ ] Climbing (p. 34)",
-   "to": "  - [x] Climbing (p. 34) - R435: the Table 15 rates and restrictions, the encumbrance modifications, the surface types and conditions and the chance-of-falling rating pin as rules/wsgclimb.h",
+   "to": "  - [x] Climbing (p. 34) - R435: the Table 15 rates and restrictions, the encumbrance modifications, the surface types and conditions and the chance-of-falling rating pin as rules/wsg/wsgclimb.h",
    "note": "climbing"
   },
   {
@@ -559,7 +559,7 @@
   "open": 151
  },
  "include_comment": "the WSG climbing",
- "include_after": "#include \"rules/wsgvehicle.h\"  // R434: the WSG land-based vehicles",
+ "include_after": "#include \"rules/wsg/wsgvehicle.h\"  // R434: the WSG land-based vehicles",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R434 landed 2026-10-14: commit 3d74d6a (census 359, pushed",
@@ -574,7 +574,7 @@
   "  one-category-worse rule and the lightly-forested example). Key pins: the",
   "  small cart/pony 8/4/3500, the medium cart/pony cannot go rugged (0), the",
   "  large chariot/heavy horses fastest at 16/10, the large wagon/heavy horses",
-  "  hauling the most at 15000 gp. rules/wsgvehicle.h NEW (15 inlines, prefix",
+  "  hauling the most at 15000 gp. rules/wsg/wsgvehicle.h NEW (15 inlines, prefix",
   "  wvv, checked free). Ground truth three-way verified (the djvu garbled four",
   "  rows settled by the IIIF full-res eye-reads; the compiled-tables copy reads",
   "  the cart medium/pony rugged cell as 6 - a djvu OCR error, the body text and",

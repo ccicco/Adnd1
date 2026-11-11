@@ -1,11 +1,11 @@
--- oa725: promoted from rules/oa96nat.h (the OA MONSTERS - THE NAT, printed capture pp. 276-278 - the lesser spirit);
+-- oa725: promoted from rules/oa/oa96nat.h (the OA MONSTERS - THE NAT, printed capture pp. 276-278 - the lesser spirit);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 725,
   "prefix" = "oa725",
   "banner" = {
       "title" = "OA MONSTERS - THE NAT, printed capture pp. 276-278 - the lesser spirit",
-      "provenance" = "round census 647 -> 648.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 178 closed, 57 open - the nat box flips (census 647 -> 648); NEXT - R726: the Nature Spirits, the Lesser and the Greater (capture pp. 278-279), prefix dkn (verify free at the landing), audit \"R726 OA monsters Nature Spirits audit\", include after rules/oa96nat.h",
+      "provenance" = "round census 647 -> 648.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 178 closed, 57 open - the nat box flips (census 647 -> 648); NEXT - R726: the Nature Spirits, the Lesser and the Greater (capture pp. 278-279), prefix dkn (verify free at the landing), audit \"R726 OA monsters Nature Spirits audit\", include after rules/oa/oa96nat.h",
     },
   "consts" = { {
       "name" = "dkmNatCount",

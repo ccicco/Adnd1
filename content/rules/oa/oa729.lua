@@ -1,11 +1,11 @@
--- oa729: promoted from rules/oa100poh.h (the OA MONSTERS - THE P OH, printed capture pp. 281-282 - the drought spirit);
+-- oa729: promoted from rules/oa/oa100poh.h (the OA MONSTERS - THE P OH, printed capture pp. 281-282 - the drought spirit);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 729,
   "prefix" = "oa729",
   "banner" = {
       "title" = "OA MONSTERS - THE P OH, printed capture pp. 281-282 - the drought spirit",
-      "provenance" = "round census 651 -> 652.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 182 closed, 53 open - the p oh box flips (census 651 -> 652); NEXT - R730: the Shan Sao (capture pp. 282-283), prefix dkr (verify free at the landing), audit \"R730 OA monsters Shan Sao audit\", include after rules/oa100poh.h",
+      "provenance" = "round census 651 -> 652.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 182 closed, 53 open - the p oh box flips (census 651 -> 652); NEXT - R730: the Shan Sao (capture pp. 282-283), prefix dkr (verify free at the landing), audit \"R730 OA monsters Shan Sao audit\", include after rules/oa/oa100poh.h",
     },
   "consts" = { {
       "name" = "dkqFrequencyVeryRare",

@@ -59,7 +59,7 @@ SEED_ENTRY = NL.join([
     '- R371 landed 2026-10-12: commit',
     '  cfa4ec9, census 298, the UA',
     '  expanded armor pin round',
-    '  (rules/uaarmor.h): the armor and',
+    '  (rules/ua/uaarmor.h): the armor and',
     '  encumbrance table rows (the',
     '  banded, bronze plate, field',
     '  plate, full plate, ring, scale,',
@@ -170,13 +170,13 @@ assert len(applied) + len(already) == 1, 'a count'
 
 
 
-# ---- (b) NEW rules/uafollowers.h ----
-P = 'rules/uafollowers.h'
+# ---- (b) NEW rules/ua/uafollowers.h ----
+P = 'rules/ua/uafollowers.h'
 if os.path.exists(P) and 'R372' in rd(P):
     already.append('uafollowers.h: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uafollowers.h
+// Adnd1 - rules/ua/uafollowers.h
 // The UA CAVALIER FOLLOWERS AND
 // HENCHMEN (pp. 74-75) pins, R372:
 // the cavalier follower tables and
@@ -538,7 +538,7 @@ else:
         '      the 1 percent per level monster',
         '      follower.',
         '      - CLOSED R372: the pin round',
-        '        (rules/uafollowers.h) - the',
+        '        (rules/ua/uafollowers.h) - the',
         '        dice ladder (all d4, the',
         '        min-count max-times-four',
         '        invariant), the four',
@@ -581,7 +581,7 @@ else:
         '      the extra man-at-arms at 8th); the',
         '      paladin retainer rules.',
         '      - CLOSED R372: the pin round',
-        '        (rules/uafollowers.h) - the',
+        '        (rules/ua/uafollowers.h) - the',
         '        +3/+1 henchman bonus, the',
         '        alignment type table (the',
         '        paladin, thief and assassin',
@@ -612,7 +612,7 @@ assert s.count(
     '- [x] **The henchman rules**'
 ) == 1, 'c2 flip'
 assert s.count(
-    '(rules/uafollowers.h) - the'
+    '(rules/ua/uafollowers.h) - the'
 ) == 2, 'c notes'
 assert s.count(
     '- [ ] **The comeliness creation note**'
@@ -646,11 +646,11 @@ s = rd(RT)
 if 'R372 UA cavalier followers pin audit' in s:
     already.append('regtest.cpp: the R372 audit')
 else:
-    INC_ANCH = ('#include "rules/uaarmor.h"  // '
+    INC_ANCH = ('#include "rules/ua/uaarmor.h"  // '
         'R371: the UA expanded armor')
     INC_NEW = NL.join([
-        '#include "rules/uaarmor.h"  // R371: the UA expanded armor',
-        '#include "rules/uafollowers.h"  // R372: the UA cavalier followers'
+        '#include "rules/ua/uaarmor.h"  // R371: the UA expanded armor',
+        '#include "rules/ua/uafollowers.h"  // R372: the UA cavalier followers'
     ])
     AUD_ANCH = '    // ---- R227: the wis mental save wiring audit ----'
     AUDIT = r"""    // ---- R372: the UA cavalier
@@ -950,21 +950,21 @@ assert s.count(
     'R227: the wis mental save'
 ) == 1, 'd r227 kept'
 assert s.count(
-    '#include "rules/uafollowers.h"'
+    '#include "rules/ua/uafollowers.h"'
 ) == 1, 'd new include'
 for h in (
         'rules/cavalier.h',
         'rules/classtables.h',
-        'rules/uabirth.h',
-        'rules/uasocialclass.h',
-        'rules/uaspellbooks.h',
-        'rules/uaspellcomment.h',
-        'rules/uauwspelluse.h',
-        'rules/uadarkness.h',
-        'rules/uacavtable.h',
-        'rules/uacantacq.h',
-        'rules/uasmalls1.h',
-        'rules/uailacquisition.h',
+        'rules/ua/uabirth.h',
+        'rules/ua/uasocialclass.h',
+        'rules/ua/uaspellbooks.h',
+        'rules/ua/uaspellcomment.h',
+        'rules/ua/uauwspelluse.h',
+        'rules/ua/uadarkness.h',
+        'rules/ua/uacavtable.h',
+        'rules/ua/uacantacq.h',
+        'rules/ua/uasmalls1.h',
+        'rules/ua/uailacquisition.h',
         'rules/thiefarmor.h',
         'rules/armorratings.h'):
     assert s.count(

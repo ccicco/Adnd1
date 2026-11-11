@@ -1,11 +1,11 @@
--- oa720: promoted from rules/oa91huhuien.h (the OA MONSTERS - THE HU HSIEN BOX, printed capture pp. 269-272 - the triple);
+-- oa720: promoted from rules/oa/oa91huhuien.h (the OA MONSTERS - THE HU HSIEN BOX, printed capture pp. 269-272 - the triple);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 720,
   "prefix" = "oa720",
   "banner" = {
       "title" = "OA MONSTERS - THE HU HSIEN BOX, printed capture pp. 269-272 - the triple",
-      "provenance" = "round census 642 -> 643.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 173 closed, 62 open - the hu hsien box flips (census 642 -> 643); NEXT - R721: the Kala (capture p. 272), prefix dki (verify free at the landing), audit \"R721 OA monsters Kala audit\", include after rules/oa91huhuien.h",
+      "provenance" = "round census 642 -> 643.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 173 closed, 62 open - the hu hsien box flips (census 642 -> 643); NEXT - R721: the Kala (capture p. 272), prefix dki (verify free at the landing), audit \"R721 OA monsters Kala audit\", include after rules/oa/oa91huhuien.h",
     },
   "consts" = { {
       "name" = "dkhHuAC",

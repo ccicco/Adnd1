@@ -1,4 +1,4 @@
--- ua356: promoted from rules/uamuspells1.h (the The UA NEW MAGIC-USER SPELLS (p. 51) pins, R356: the);
+-- ua356: promoted from rules/ua/uamuspells1.h (the The UA NEW MAGIC-USER SPELLS (p. 51) pins, R356: the);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 356,

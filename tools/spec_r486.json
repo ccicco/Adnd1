@@ -2,7 +2,7 @@
  "round": 486,
  "title": "the WSG natural hazards opener slice - the volcano eruption types with the 1d4 lava bands, the 1d6 ash bands and the explosive cloudkill, the earthquake classes from light through severe, and the tidal wave approach rules, printed pp. 76-79",
  "prefix": "whz",
- "header_file": "rules/wsghazd.h",
+ "header_file": "rules/wsg/wsghazd.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -1549,39 +1549,39 @@
   {
    "note": "the volcanoes box",
    "from": "  - [ ] Volcanoes (p. 76)",
-   "to": "  - [x] Volcanoes (p. 76) - R486: the three eruption types with the one-type-per-volcano rule pin as rules/wsghazd.h"
+   "to": "  - [x] Volcanoes (p. 76) - R486: the three eruption types with the one-type-per-volcano rule pin as rules/wsg/wsghazd.h"
   },
   {
    "note": "the lava eruptions box",
    "from": "  - [ ] Lava eruptions (p. 76)",
-   "to": "  - [x] Lava eruptions (p. 76) - R486: the 250-yards-per-hour flow and 2d3-week heat retention with the 1d4 fluid, thick and pyroclastic bands pin as rules/wsghazd.h"
+   "to": "  - [x] Lava eruptions (p. 76) - R486: the 250-yards-per-hour flow and 2d3-week heat retention with the 1d4 fluid, thick and pyroclastic bands pin as rules/wsg/wsghazd.h"
   },
   {
    "note": "the ash eruptions box",
    "from": "  - [ ] Ash eruptions (p. 76)",
-   "to": "  - [x] Ash eruptions (p. 76) - R486: the cloud, accumulation and fertilizer rules with the Mount St. Helens account and the 1d6 light, heavy and pyroclastic bands pin as rules/wsghazd.h"
+   "to": "  - [x] Ash eruptions (p. 76) - R486: the cloud, accumulation and fertilizer rules with the Mount St. Helens account and the 1d6 light, heavy and pyroclastic bands pin as rules/wsg/wsghazd.h"
   },
   {
    "note": "the explosive eruptions box",
    "from": "  - [ ] Explosive eruptions (p. 78)",
-   "to": "  - [x] Explosive eruptions (p. 78) - R486: the blow-the-top opening with the 3-5-mile glowing avalanche, the double-strength cloudkill and the 1d3-day warning pin as rules/wsghazd.h"
+   "to": "  - [x] Explosive eruptions (p. 78) - R486: the blow-the-top opening with the 3-5-mile glowing avalanche, the double-strength cloudkill and the 1d3-day warning pin as rules/wsg/wsghazd.h"
   },
   {
    "note": "the earthquakes box",
    "from": "  - [ ] Earthquakes (p. 78)",
-   "to": "  - [x] Earthquakes (p. 78) - R486: the fault-line frame with the light, moderate and severe quake classes and their penalties pin as rules/wsghazd.h"
+   "to": "  - [x] Earthquakes (p. 78) - R486: the fault-line frame with the light, moderate and severe quake classes and their penalties pin as rules/wsg/wsghazd.h"
   },
   {
    "note": "the post-state line",
-   "from": "Post-state at R485: 113 closed, 73 open (the R485 round CLOSES the vision and visibility chapter - the artificial illumination rules pin as rules/wsglight.h; the next round opens the natural hazards chapter - volcanoes (p. 76)).",
-   "to": "Post-state at R486: 118 closed, 68 open (the R486 round opens the natural hazards chapter - the volcano, earthquake and tidal wave approach rules through printed p. 79 pin as rules/wsghazd.h; the next round finishes the tidal wave death rules and continues - floods and flash floods (p. 80))."
+   "from": "Post-state at R485: 113 closed, 73 open (the R485 round CLOSES the vision and visibility chapter - the artificial illumination rules pin as rules/wsg/wsglight.h; the next round opens the natural hazards chapter - volcanoes (p. 76)).",
+   "to": "Post-state at R486: 118 closed, 68 open (the R486 round opens the natural hazards chapter - the volcano, earthquake and tidal wave approach rules through printed p. 79 pin as rules/wsg/wsghazd.h; the next round finishes the tidal wave death rules and continues - floods and flash floods (p. 80))."
   }
  ],
  "gap_census": {
   "closed": 118,
   "open": 68
  },
- "include_after": "#include \"rules/wsglight.h\"  // R485: the WSG artificial illumination light-source rules",
+ "include_after": "#include \"rules/wsg/wsglight.h\"  // R485: the WSG artificial illumination light-source rules",
  "include_comment": "the WSG volcano, earthquake and tidal wave hazard rules",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
@@ -1591,7 +1591,7 @@
   "  b800d4a..e9d27ae), the WSG ARTIFICIAL ILLUMINATION slice,",
   "  printed pp. 74-75 - the fourth and final vision round,",
   "  CLOSING the vision and visibility chapter (R482-R485), a",
-  "  pure prose round with NO table: pinned as rules/wsglight.h",
+  "  pure prose round with NO table: pinned as rules/wsg/wsglight.h",
   "  with the include after wsgultra.h at line 190 (prefix wli,",
   "  free on the first probe; wai/wal/wil/art all collided). The",
   "  twilight frame: the section supplements the PHB p. 102",

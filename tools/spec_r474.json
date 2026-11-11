@@ -2,7 +2,7 @@
  "round": 474,
  "title": "the WSG good sleep vs bad sleep and fire slice with Table 38 - the rest-quality penalty ladder and the longer-sleep compensation, the armor donning and doffing discipline, the campfire sizes and the warmth-at-distance grid, printed p. 65",
  "prefix": "wgf",
- "header_file": "rules/wsgfire.h",
+ "header_file": "rules/wsg/wsgfire.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -703,22 +703,22 @@
   {
    "note": "good sleep vs bad sleep",
    "from": "  - [ ] Good sleep vs bad sleep (p. 65)",
-   "to": "  - [x] Good sleep vs bad sleep (p. 65) - R474: the eight rest-quality penalties with the plate-armor waivers, the no-rest threshold, the extreme-weather bar, the longer-sleep compensation and the armor donning and doffing discipline pin as rules/wsgfire.h"
+   "to": "  - [x] Good sleep vs bad sleep (p. 65) - R474: the eight rest-quality penalties with the plate-armor waivers, the no-rest threshold, the extreme-weather bar, the longer-sleep compensation and the armor donning and doffing discipline pin as rules/wsg/wsgfire.h"
   },
   {
    "note": "fire: friend and foe",
    "from": "  - [ ] Fire: friend and foe (p. 65)",
-   "to": "  - [x] Fire: friend and foe (p. 65) - R474: the campfire function prose and the three fire sizes with the Table 38 grids (fuel, start, refuel, wind resistance, capacity, visibility and the warmth-at-distance ladder) pin as rules/wsgfire.h"
+   "to": "  - [x] Fire: friend and foe (p. 65) - R474: the campfire function prose and the three fire sizes with the Table 38 grids (fuel, start, refuel, wind resistance, capacity, visibility and the warmth-at-distance ladder) pin as rules/wsg/wsgfire.h"
   },
   {
    "note": "the Table 38 box",
    "from": "- [ ] **Table 38: campfire characteristics** (p. 65)",
-   "to": "- [x] **Table 38: campfire characteristics** (p. 65) - R474: the three-size grid and the warmth-at-distance ladder pin inside rules/wsgfire.h (census 398)"
+   "to": "- [x] **Table 38: campfire characteristics** (p. 65) - R474: the three-size grid and the warmth-at-distance ladder pin inside rules/wsg/wsgfire.h (census 398)"
   },
   {
    "note": "the post-state line",
-   "from": "Post-state at R473: 96 closed, 90 open (the R473 round continues the camping arc - the portable shelter mechanics seam with the rest and comfort sleep rules and Table 37 pin as rules/wsgsleep.h; the next round continues - good sleep vs bad sleep (p. 65) with Table 38).",
-   "to": "Post-state at R474: 99 closed, 87 open (the R474 round continues the camping arc - the rest-quality penalties and armor timing with the campfire Table 38 grids pin as rules/wsgfire.h; the next round continues - precautions and perils (p. 66) with Table 39)."
+   "from": "Post-state at R473: 96 closed, 90 open (the R473 round continues the camping arc - the portable shelter mechanics seam with the rest and comfort sleep rules and Table 37 pin as rules/wsg/wsgsleep.h; the next round continues - good sleep vs bad sleep (p. 65) with Table 38).",
+   "to": "Post-state at R474: 99 closed, 87 open (the R474 round continues the camping arc - the rest-quality penalties and armor timing with the campfire Table 38 grids pin as rules/wsg/wsgfire.h; the next round continues - precautions and perils (p. 66) with Table 39)."
   }
  ],
  "gap_census": {
@@ -726,7 +726,7 @@
   "open": 87
  },
  "include_comment": "the WSG rest quality, armor timing and campfires, and Table 38",
- "include_after": "#include \"rules/wsgsleep.h\"  // R473: the WSG shelter mechanics, rest and sleep, and Table 37",
+ "include_after": "#include \"rules/wsg/wsgsleep.h\"  // R473: the WSG shelter mechanics, rest and sleep, and Table 37",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R473 LANDED 2026-10-15: commit 82ca9d9 (census 398, pushed",
@@ -754,7 +754,7 @@
   "  columns: Dex 1/2/3/4/5, Str 0/1/2/3/4, Wis 0/0/1/2/3,",
   "  Con 0/0/0/1/2, to-hit 0/-1/-1/-2/-3, climb",
   "  0/0/-10/-20/-30, move 0/0/-25/-33/-50, weight multiple",
-  "  0/0/0/50/100). rules/wsgsleep.h NEW (77 inlines: 41",
+  "  0/0/0/50/100). rules/wsg/wsgsleep.h NEW (77 inlines: 41",
   "  consts + 28 bools + the eight Table 37 column switches,",
   "  prefix wrs - checked free in regtest.cpp and the game",
   "  sources; wsl was TAKEN, the R369 wsgslip.h lesson).",

@@ -128,6 +128,6 @@ return {
     } },
   "audit" = {
       "label" = "R448 WSG jumping pin audit",
-      "comment" = "The jumping slice pins the any-character rule, the four-foot running advantage with its 20-foot straight run, the half-height high jump with the roll-to-absorb landing, the thin-barrier high jump plus Dexterity Check with the 1d3 heap damage at five feet or higher and the next-round stand-up, the per-jump die roll, Table 22 (the seven level bands with the standing broad, running broad and high jump dice), and the cumulative modifiers (moderate -1, heavy -2 and cannot high jump, severe cannot jump at all, halfling -1 broad only, gnome or dwarf -2 broad and -1 high) with the 2-foot broad and 1-foot high floors (rules/wsgjump.h, prefix wjp); census 372 -> 373.",
+      "comment" = "The jumping slice pins the any-character rule, the four-foot running advantage with its 20-foot straight run, the half-height high jump with the roll-to-absorb landing, the thin-barrier high jump plus Dexterity Check with the 1d3 heap damage at five feet or higher and the next-round stand-up, the per-jump die roll, Table 22 (the seven level bands with the standing broad, running broad and high jump dice), and the cumulative modifiers (moderate -1, heavy -2 and cannot high jump, severe cannot jump at all, halfling -1 broad only, gnome or dwarf -2 broad and -1 high) with the 2-foot broad and 1-foot high floors (rules/wsg/wsgjump.h, prefix wjp); census 372 -> 373.",
     },
 }

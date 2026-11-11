@@ -3,7 +3,7 @@
   "title": "the WSG tail and DSG migration batch",
   "prefix": "xmb",
   "regtest": "regtest.cpp",
-  "header_file": "rules/xmb.h",
+  "header_file": "rules/meta/migration_batch_wsg_tail_dsg.h",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
   "gap_report": "tools/mm2_gap_report.md",
   "banner": {
@@ -135,7 +135,7 @@
   "audit_file": "rules/audits/r830_batch.h",
   "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
   "include_comment": "the WSG tail and DSG migration batch",
-  "include_after": "#include \"rules/vmb.h\"  // R829: the UA and WSG migration batch",
+  "include_after": "#include \"rules/meta/migration_batch_ua_wsg.h\"  // R829: the UA and WSG migration batch",
   "seed_anchor": "## Knowledge maintenance",
   "prev_seed_key": "- R829 LANDED 2026-10-25: commit",
   "prev_record": [
@@ -158,7 +158,7 @@
     "  (r357_ua_mu_2nd_level.h through",
     "  r458_wsg_portaging.h). R829's own",
     "  audit rode rules/audits/r829_batch.h.",
-    "  Header rules/vmb.h, prefix vmb",
+    "  Header rules/meta/migration_batch_ua_wsg.h, prefix vmb",
     "  (verified free at 508fc72, 0",
     "  hits), 6 consts + 4 bools (inline",
     "  10), 4 examples, the R828 record",

@@ -1,11 +1,11 @@
--- oa625: promoted from rules/oasohei.h (the THE SOHEI, printed capture pp. 45-47 - the OA sohei round);
+-- oa625: promoted from rules/oa/oasohei.h (the THE SOHEI, printed capture pp. 45-47 - the OA sohei round);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 625,
   "prefix" = "oa625",
   "banner" = {
       "title" = "THE SOHEI, printed capture pp. 45-47 - the OA sohei round",
-      "provenance" = "census 547 -> 548.  verified against capture pp. 45-47 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). Two cells settled against the 2018 print BEFORE pinning, per the settling doctrine: the T29 row-4 level cell (the capture prints 3 against four dice; the 2018 prints 4) and the fanaticism roll bonus (the capture prints plus 2; the 2018 prints minus 2, a lost plus against the sustain-himself reading). The T30 row 0 covers the printed levels 1-5 blank row; row k is level k plus 5. The dashes pin as zeros. OCR normalization: 1stlevel reads as 1st-level (prose only)  the gap census after this round: 52 closed, 183 open - the sohei boxes with Tables 29 and 30 flip (census 547 -> 548); NEXT - R626: the Wu Jen, capture pp. 47-51, Table 31, prefix dgm (verify free), audit \"R626 OA wu jen audit\", include after rules/oasohei.h",
+      "provenance" = "census 547 -> 548.  verified against capture pp. 45-47 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). Two cells settled against the 2018 print BEFORE pinning, per the settling doctrine: the T29 row-4 level cell (the capture prints 3 against four dice; the 2018 prints 4) and the fanaticism roll bonus (the capture prints plus 2; the 2018 prints minus 2, a lost plus against the sustain-himself reading). The T30 row 0 covers the printed levels 1-5 blank row; row k is level k plus 5. The dashes pin as zeros. OCR normalization: 1stlevel reads as 1st-level (prose only)  the gap census after this round: 52 closed, 183 open - the sohei boxes with Tables 29 and 30 flip (census 547 -> 548); NEXT - R626: the Wu Jen, capture pp. 47-51, Table 31, prefix dgm (verify free), audit \"R626 OA wu jen audit\", include after rules/oa/oasohei.h",
     },
   "consts" = { {
       "name" = "dglSoheiMinStr",

@@ -2,7 +2,7 @@
  "round": 622,
  "title": "THE NINJA - the dual-class doctrine: the split experience and hit points, the thief saves, the eleven capabilities with the three ki powers, the family rule with the mission and honor mechanics and the nukenin penalty, Tables 22, 23 and 24",
  "prefix": "dgi",
- "header_file": "rules/oaninja.h",
+ "header_file": "rules/oa/oaninja.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "THE NINJA, printed capture pp. 35-39 - the OA ninja round",
   "provenance": "verified against capture pp. 35-39 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). Two cells settled against the 2018 print BEFORE pinning, per the settling doctrine: the T22 level-2 bound pins as 8,000 (the 2018 8,001 cell contradicts its own next-row floor of 8,001) and the T23 Dex-11 pockets cell pins as -5 (the 2018 05 reading lost its minus against the ladder). The T24 pole-vault column pins in half feet. OCR normalization: 15 points for the bushi class reads as 1-5 points; infraction reads as infravision; 1096 reads as 10 percent (prose only)",
-  "sentinel": "the gap census after this round: 43 closed, 192 open - the ninja boxes with Tables 22, 23 and 24 flip (census 544 -> 545); NEXT - R623: the Samurai, capture pp. 39-42, Table 25, prefix dgj (verify free), audit \"R623 OA samurai audit\", include after rules/oaninja.h"
+  "sentinel": "the gap census after this round: 43 closed, 192 open - the ninja boxes with Tables 22, 23 and 24 flip (census 544 -> 545); NEXT - R623: the Samurai, capture pp. 39-42, Table 25, prefix dgj (verify free), audit \"R623 OA samurai audit\", include after rules/oa/oaninja.h"
  },
  "consts": [
   {
@@ -1671,7 +1671,7 @@
   "open": 192
  },
  "include_comment": "the OA ninja pins",
- "include_after": "#include \"rules/oamonk.h\"  // R621: the OA monk pins",
+ "include_after": "#include \"rules/oa/oamonk.h\"  // R621: the OA monk pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R621 LANDED 2026-10-18: commit",
@@ -1680,7 +1680,7 @@
   "  9ae052e37815d0baa1accd52e83af4ba914d4b5f",
   "  (census 543 -> 544, pushed",
   "  17d2892..9ae052e), THE MONK, capture",
-  "  pp. 31-35: rules/oamonk.h, prefix",
+  "  pp. 31-35: rules/oa/oamonk.h, prefix",
   "  dgh (verified free), 93 inlines (59",
   "  consts, 20 bools, 14 table columns):",
   "  the Str/Wis/Dex 15 and Con 11 minima",

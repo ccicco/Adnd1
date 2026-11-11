@@ -2,7 +2,7 @@
  "round": 494,
  "title": "the WSG World of Weather appendix, part 2 - special weather, the effects on play and the optional rules",
  "prefix": "wwy",
- "header_file": "rules/wsgweathx.h",
+ "header_file": "rules/wsg/wsgweathx.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -4106,7 +4106,7 @@
    }
   ]
  },
- "include_after": "#include \"rules/wsgweather.h\"  // R493: the WSG World of Weather generation rules",
+ "include_after": "#include \"rules/wsg/wsgweather.h\"  // R493: the WSG World of Weather generation rules",
  "include_comment": "the WSG World of Weather special weather and optional rules",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
@@ -4117,7 +4117,7 @@
   "  appendix part 1 of 2, printed pp. 107-111 plus the",
   "  extraordinary-precipitation tail from the top-left",
   "  of printed p. 112 - the weather GENERATION system.",
-  "  Pinned as rules/wsgweather.h with the include after",
+  "  Pinned as rules/wsg/wsgweather.h with the include after",
   "  wsgdm.h at regtest.cpp line 198 (prefixes wwx for",
   "  the pins and wws for the table switch columns -",
   "  both free on the first probe), 170 inlines: 61",
@@ -4172,12 +4172,12 @@
   {
    "note": "the weather-effects child box",
    "from": "  - [ ] The weather effects on play",
-   "to": "  - [x] The weather effects on play - R494: the Table A4 special-weather grid with the Roll 1 / Roll 2 cross-index, the per-code definitions (the no-special days, cold wave, cyclone, drought, gale, mist/fog, sandstorm, tornado, the extreme-precipitation dispatch with hail, ice, lightning and severe snow, heat wave) and the optional rules A5-A8 with twilight, local winds, tides and the DM responsibility pin as rules/wsgweathx.h"
+   "to": "  - [x] The weather effects on play - R494: the Table A4 special-weather grid with the Roll 1 / Roll 2 cross-index, the per-code definitions (the no-special days, cold wave, cyclone, drought, gale, mist/fog, sandstorm, tornado, the extreme-precipitation dispatch with hail, ice, lightning and severe snow, heat wave) and the optional rules A5-A8 with twilight, local winds, tides and the DM responsibility pin as rules/wsg/wsgweathx.h"
   },
   {
    "note": "the parent appendix box",
    "from": "- [ ] **Appendix: the world of weather** (pp. 107-119)",
-   "to": "- [x] **Appendix: the world of weather** (pp. 107-119) - R494: both children closed - the R493 generation system (rules/wsgweather.h) and the R494 special weather, effects and optional rules (rules/wsgweathx.h)"
+   "to": "- [x] **Appendix: the world of weather** (pp. 107-119) - R494: both children closed - the R493 generation system (rules/wsg/wsgweather.h) and the R494 special weather, effects and optional rules (rules/wsg/wsgweathx.h)"
   }
  ],
  "gap_census": {

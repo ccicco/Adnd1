@@ -329,7 +329,7 @@
  },
  "gap_flips": [],
  "gap_report": "tools/dsg_gap_report.md",
- "header_file": "rules/dsgcamp3.h",
+ "header_file": "rules/dsg/dsgcamp3.h",
  "header_sections": {
   "the climax section": [
    {
@@ -568,7 +568,7 @@
    }
   ]
  },
- "include_after": "#include \"rules/dsgcamp2.h\"  // R551: the DSG worlds of adventure pins",
+ "include_after": "#include \"rules/dsg/dsgcamp2.h\"  // R551: the DSG worlds of adventure pins",
  "include_comment": "the DSG plot and counterplot pins",
  "inline_count": 55,
  "prefix": "dce",
@@ -606,7 +606,7 @@
   "  style, the unusual names, the new architecture",
   "  and plant forms, the faithful-recreation",
   "  exception). PURE-PROSE ROUND: 0 consts + 37",
-  "  bools, prefix dcd, header rules/dsgcamp2.h,",
+  "  bools, prefix dcd, header rules/dsg/dsgcamp2.h,",
   "  spec 22,397 bytes, md5 7f95ce1627720d18ed4aab",
   "  b6b61387ed2 matched exactly first try, 37",
   "  inlines; djvu lines 13013-13326 with the Capture",

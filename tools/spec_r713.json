@@ -2,7 +2,7 @@
  "round": 713,
  "title": "OA MONSTERS - the Gaki, Lesser Spirit: the four types and the shared doctrine",
  "prefix": "dka",
- "header_file": "rules/oa84gaki.h",
+ "header_file": "rules/oa/oa84gaki.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA MONSTERS - THE GAKI, LESSER SPIRIT, printed capture pp. 262-263 - the four hungry spirits round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 166 closed, 69 open - the gaki box flips (census 635 -> 636); NEXT - R714: the Gargantua (capture pp. 263-265), prefix dkb (verify free at the landing), audit \"R714 OA monsters Gargantua audit\", include after rules/oa84gaki.h"
+  "sentinel": "the gap census after this round: 166 closed, 69 open - the gaki box flips (census 635 -> 636); NEXT - R714: the Gargantua (capture pp. 263-265), prefix dkb (verify free at the landing), audit \"R714 OA monsters Gargantua audit\", include after rules/oa/oa84gaki.h"
  },
  "consts": [
   {
@@ -952,7 +952,7 @@
   "open": 69
  },
  "include_comment": "the OA Gaki pins",
- "include_after": "#include \"rules/oa83dragons.h\"  // R712: the OA Oriental Dragons pins",
+ "include_after": "#include \"rules/oa/oa83dragons.h\"  // R712: the OA Oriental Dragons pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R712 LANDED 2026-10-21: commit",
@@ -960,7 +960,7 @@
   "- R712 LANDED 2026-10-21: commit 683d2c6d6f9fc2b22e3f8a53cbf75d53d22a81e5",
   "  (census 634 -> 635, pushed 878365a..683d2c6), OA MONSTERS - the",
   "  Oriental Dragons, capture pp. 259-262 print:",
-  "  rules/oa83dragons.h, prefix djz (verified free at 878365a),",
+  "  rules/oa/oa83dragons.h, prefix djz (verified free at 878365a),",
   "  ONE gap flip, gap census 165/70 - the whole six-dragon box",
   "  rides one flip (the four FF Tome types are cross-refs). 58",
   "  consts + 51 bools (109 inlines, the largest round of the",
@@ -995,6 +995,6 @@
   "  4755c5a24ed838bb7afcfe0183eb3254). NEXT - R713: the Gaki,",
   "  Lesser Spirit (capture pp. 262-263), prefix dka (verified",
   "  free at 683d2c6), audit \"R713 OA monsters Gaki audit\",",
-  "  include after rules/oa83dragons.h."
+  "  include after rules/oa/oa83dragons.h."
  ]
 }

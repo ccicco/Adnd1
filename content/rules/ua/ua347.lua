@@ -1,4 +1,4 @@
--- ua347: promoted from rules/uaclericspells5.h (the The UA NEW CLERIC SPELLS (pp. 40-41) pins, R347: the 5th-level);
+-- ua347: promoted from rules/ua/uaclericspells5.h (the The UA NEW CLERIC SPELLS (pp. 40-41) pins, R347: the 5th-level);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 347,

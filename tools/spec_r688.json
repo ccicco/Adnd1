@@ -2,7 +2,7 @@
  "round": 688,
  "title": "OA MARTIAL ARTS OPENER - the doctrine prose through the Styles intro: the three reason strands, the regularized art, the proliferation and the five style characteristics",
  "prefix": "djb",
- "header_file": "rules/oamartialopen.h",
+ "header_file": "rules/oa/oamartialopen.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA MARTIAL ARTS OPENER, printed capture pp. 223-224 - the doctrine prose round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift. THE FRAME: the martial arts a combat style unique to these lands - the body into a weapon, hands, feet, legs, arms, head, defeating the better armed and armored through rigorous training and deep discipline. THE THREE REASONS: the nature-forces philosophy (living in harmony, the tools intruding upon it), the religious divestment (only the inner qualities permanent), the social pressure (the weapon-restriction edicts, torture and execution, the commoners unarmed). THE ART: regularized, studied, guiding the student to self-perfection. THE PROLIFERATION: every land its own styles against the local weapons and the beasts, each master his own moves - the school challenges the spectator events. THE GOAL: the fighter trained to avoid being hurt - the defensive, aggressive and weapon-master schools; the near-infinite forms; the unarmed misnomer with the tui-fu; the styles defined by their effects, the five characteristics grouping into a style. The prose codifies per the R431 calculus",
-  "sentinel": "the gap census after this round: 141 closed, 94 open - the Martial Arts prose box flips (census 610 -> 611); NEXT - R689: Table 68 the common martial styles grid (capture p. 224), prefix djc (verify free at the landing), audit \"R689 OA common martial styles audit\", include after rules/oamartialopen.h"
+  "sentinel": "the gap census after this round: 141 closed, 94 open - the Martial Arts prose box flips (census 610 -> 611); NEXT - R689: Table 68 the common martial styles grid (capture p. 224), prefix djc (verify free at the landing), audit \"R689 OA common martial styles audit\", include after rules/oa/oamartialopen.h"
  },
  "consts": [
   {
@@ -219,7 +219,7 @@
   "open": 94
  },
  "include_comment": "the OA martial arts opener pins",
- "include_after": "#include \"rules/oapsychicduel.h\"  // R687: the OA psychic duel pins",
+ "include_after": "#include \"rules/oa/oapsychicduel.h\"  // R687: the OA psychic duel pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R687 LANDED 2026-10-20: commit",
@@ -228,7 +228,7 @@
   "  4c558a35c3afe3b3b8e3d79a85cb33e04ffa9e70",
   "  (census 609 -> 610, pushed c553d03..4c558a3),",
   "  OA THE PSYCHIC DUEL - the wills contest,",
-  "  capture pp. 222-223: rules/oapsychicduel.h,",
+  "  capture pp. 222-223: rules/oa/oapsychicduel.h,",
   "  prefix dja (verified free at c553d03) -",
   "  THE FIRST dj- PREFIX, the family opened",
   "  after diz closed the di- line at R686,",
@@ -264,6 +264,6 @@
   "  (capture pp. 223-224), prefix djb",
   "  (verify free at 4c558a3), audit \"R688 OA",
   "  martial arts opener audit\", include",
-  "  after rules/oapsychicduel.h"
+  "  after rules/oa/oapsychicduel.h"
  ]
 }

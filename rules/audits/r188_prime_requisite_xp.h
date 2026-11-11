@@ -88,8 +88,8 @@
         printf("R188 prime requisite XP adjustment audit: bad %d\n", bad);
         if (bad) return 1;
     }
-    #include "rules/audits/r189_weapon_tables_verify.h"  // R827: migrated
-    #include "rules/audits/r190_starting_money.h"  // R827: migrated
-    #include "rules/audits/r191_armor_class_ratings.h"  // R827: migrated
-    #include "rules/audits/r192_wisdom_tables.h"  // R827: migrated
-    #include "rules/audits/r193_charisma_table.h"  // R827: migrated
+    #include "r189_weapon_tables_verify.h"  // R827: migrated
+    #include "r190_starting_money.h"  // R827: migrated
+    #include "r191_armor_class_ratings.h"  // R827: migrated
+    #include "r192_wisdom_tables.h"  // R827: migrated
+    #include "r193_charisma_table.h"  // R827: migrated

@@ -1,11 +1,11 @@
--- oa760: promoted from rules/oa131karaturintro.h (the OA SETTING - THE KARA-TUR OVERVIEW INTRO, GEOGRAPHY, AND POPULATION,);
+-- oa760: promoted from rules/oa/oa131karaturintro.h (the OA SETTING - THE KARA-TUR OVERVIEW INTRO, GEOGRAPHY, AND POPULATION,);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 760,
   "prefix" = "oa760",
   "banner" = {
       "title" = "OA SETTING - THE KARA-TUR OVERVIEW INTRO, GEOGRAPHY, AND POPULATION,",
-      "provenance" = "printed capture pp. 301-303 - the setting chapter opens census 682 -> 683.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 213 closed, 22 open - the Population box flips (census 682 -> 683); NEXT - R761: Shou Lung (capture p. 303), prefix dlw (verify free at the landing), audit \"R761 OA Shou Lung audit\", include after rules/oa131karaturintro.h",
+      "provenance" = "printed capture pp. 301-303 - the setting chapter opens census 682 -> 683.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 213 closed, 22 open - the Population box flips (census 682 -> 683); NEXT - R761: Shou Lung (capture p. 303), prefix dlw (verify free at the landing), audit \"R761 OA Shou Lung audit\", include after rules/oa/oa131karaturintro.h",
     },
   "consts" = { {
       "name" = "dlvMainEmpireCount",

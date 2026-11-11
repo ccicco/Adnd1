@@ -7,7 +7,7 @@
   "title": "The Dragon issue-25 opener part one - the opener set",
   "provenance": "The opener of the issue-25 four-round shape - three of the eight Curtiss-called chains pinned as the opener set, the Xochiyaoyotl war game and the vampire roster riding the part-two table round, the three-chain commentary set at part three and the flip to follow. All pinned from The Dragon Vol. III No. 11 (May 1979) print 12-19 at extract/dragon/025, PRINT FOLIO = PDF PAGE this issue, the single-voice transcript of the Curtiss-provided scan - the issue runs 48 pages, the cover printing Vol. III No. II (the roman II for 11), pinned as scanned. The Traveller Navy and the Gamma World ink - the cryptic alliances roster, the judging advice and the artifact chart with 20th Century Primitive - sit on the drop list per the Curtiss 2026-10-31 non-D&D calls, and the Armada Disasters history per the same-day usable call - pure narrative, no game ink. The intake seats the gap report and all forty-eight transcripts; the two inherited watches - the Sullin levels 7-9 and the brawling long-term- effects sequel - print nowhere in issue 25 and ride to TD 26."
  },
- "header_file": "rules/t25.h",
+ "header_file": "rules/dragon/issue025_opener1.h",
  "audit_file": "rules/audits/r958_batch.h",
  "audit_label": "R958 issue-25 opener set audit",
  "audit_anchor": "#include \"rules/audits/r957_batch.h\"  // R957: R957 Dragon issue-24 closure audit",
@@ -18,7 +18,7 @@
   "open": 0
  },
  "gap_flips": [],
- "include_after": "#include \"rules/l24.h\"  // R957: the Dragon issue-24 box closing round, the third four-round walk complete",
+ "include_after": "#include \"rules/dragon/issue024_close.h\"  // R957: the Dragon issue-24 box closing round, the third four-round walk complete",
  "include_comment": "the Dragon issue-25 opener part one, the three-chain opener set",
  "header_sections": {
   "the Gygax social class essay (print 12-13)": [

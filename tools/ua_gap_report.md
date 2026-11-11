@@ -280,7 +280,7 @@ fold; the R326 audit, census 253.
       300000 xp per level past 12th;
       reads clean.
       - CLOSED R368: the pin round
-        (rules/uacavtable.h) - the two
+        (rules/ua/uacavtable.h) - the two
         0-level rows, the 1st-level
         footnote, the printed XP bands
         (the level-11 band decoded from
@@ -433,7 +433,7 @@ fold; the R326 audit, census 253.
       8th to 3rd-level spells, MU from
       9th to 2nd-level spells).
       - CLOSED R333: the pin round
-      (rules/uaranger.h) - the
+      (rules/ua/uaranger.h) - the
       tracking base and terrain
       ladders, the indoor reads, the
       identification ladder, the
@@ -511,7 +511,7 @@ fold; the R326 audit, census 253.
 ### Equipping the character (pp. 25-28)
 
 - [x] **The Armor Class Table** (p. 26)
-      - CLOSED R408 (rules/uaac26.h;
+      - CLOSED R408 (rules/ua/uaac26.h;
       the R408 armor class table pin
       audit, census 335): the 11
       composite rows pin directly
@@ -526,7 +526,7 @@ fold; the R326 audit, census 253.
       direct pin now backs it.
 - [x] **The Equipment and Supplies
       Costs table** (p. 26) - CLOSED
-      R392 (rules/uaequip26.h) and
+      R392 (rules/ua/uaequip26.h) and
       re-verified R408 against the
       independent djvu scan (the
       R408 audit cross-checks the
@@ -547,7 +547,7 @@ fold; the R326 audit, census 253.
         'stays open' tail is the
         superseded stratum.
 
-      cells pinned (rules/uaweapontable.h)
+      cells pinned (rules/ua/uaweapontable.h)
       - the 67-row roster, all 50 PHB
       rows cell-verified against the
       R189 seam (the hyphen-loss
@@ -570,7 +570,7 @@ fold; the R326 audit, census 253.
 
       - AMENDED R420: flipped - the
         clean p. 27 print pinned
-        (rules/uahandheld.h, the R392
+        (rules/ua/uahandheld.h, the R392
         manifest item above) - 60
         rows, the footnotes and the
         general note, no holes; the
@@ -589,7 +589,7 @@ fold; the R326 audit, census 253.
         'stays open' tail is the
         superseded stratum.
 
-      cells pinned (rules/uamissile.h)
+      cells pinned (rules/ua/uamissile.h)
       - the 24-row roster, the range
       column (the long range in tens
       of feet, PHB-seam verified),
@@ -607,7 +607,7 @@ fold; the R326 audit, census 253.
       (p. 26) - pairs with the R299
       layer.
       - CLOSED R339: the pin round
-        (rules/uaprof.h) - the 14-row
+        (rules/ua/uaprof.h) - the 14-row
         roster, seven rows cell-verified
         against the R297 PHB seam, the
         UA-new rows (cavalier, barbarian,
@@ -640,7 +640,7 @@ fold; the R326 audit, census 253.
         read, as recorded there.
 
         prose pinned
-        (rules/uanewweapons.h) - the
+        (rules/ua/uanewweapons.h) - the
         16 printed descriptions (the
         14 item-named types plus the
         hand-crossbow and falchion
@@ -668,7 +668,7 @@ fold; the R326 audit, census 253.
       tier; reads clean; the R80 registry
       is data-driven.
       - R341: the readable tables
-        pinned (rules/uaspelltables.h)
+        pinned (rules/ua/uaspelltables.h)
         - the cleric 1st-3rd table
         (20 rows, seam-verified against
         the R80 registry), the cleric
@@ -692,7 +692,7 @@ fold; the R326 audit, census 253.
         roster reads 66 names; the
         R341 audit asserts reseat.
       - CLOSED R342: part 2 pinned
-        (rules/uaspelltables2.h) - the
+        (rules/ua/uaspelltables2.h) - the
         MU 1st-5th columns
         (35/30/28/28/28 readable names,
         every garble position-decoded),
@@ -725,7 +725,7 @@ fold; the R326 audit, census 253.
       (p. 41), 7th (p. 42: exaction,
       succor).
       - R343: the 1st level pinned
-        (rules/uaclericspells1.h) - the
+        (rules/ua/uaclericspells1.h) - the
         eight spell descriptions with the
         digit-garble family (the four
         "Level: 7" cells) decoded, the
@@ -736,7 +736,7 @@ fold; the R326 audit, census 253.
         portent; the 2nd-7th levels stay
         open.
       - R344: the 2nd level pinned
-        (rules/uaclericspells2.h) -
+        (rules/ua/uaclericspells2.h) -
         aid, detect life, dust
         devil, enthrall, holy
         symbol, messenger, withdraw
@@ -754,7 +754,7 @@ fold; the R326 audit, census 253.
         the PDF; the 3rd-7th levels
         stay open.
       - R345: the 3rd level pinned
-        (rules/uaclericspells3.h) -
+        (rules/ua/uaclericspells3.h) -
         cloudburst, death's door,
         flame walk, magical
         vestment, meld into stone,
@@ -777,7 +777,7 @@ fold; the R326 audit, census 253.
         noted pending the PDF; the
         4th-7th levels stay open.
       - R346: the 4th level pinned
-        (rules/uaclericspells4.h) -
+        (rules/ua/uaclericspells4.h) -
         abjure, cloak of fear,
         giant insect (the count
         and hit-dice ladders),
@@ -801,7 +801,7 @@ fold; the R326 audit, census 253.
         noted pending the PDF; the
         5th-7th levels stay open.
       - R347: the 5th level pinned
-        (rules/uaclericspells5.h) -
+        (rules/ua/uaclericspells5.h) -
         air walk, animate dead
         monsters, golem (the four
         material ladders), magic
@@ -827,7 +827,7 @@ fold; the R326 audit, census 253.
         PDF; the 6th-7th levels
         stay open.
       - R348: the 6th level pinned
-        (rules/uaclericspells6.h) -
+        (rules/ua/uaclericspells6.h) -
         forbiddance (the name header
         never prints - identified by
         the 2e descendant text) and
@@ -842,7 +842,7 @@ fold; the R326 audit, census 253.
         holes - noted pending the PDF;
         the 7th level stays open.
       - R349: the 7th level pinned
-        (rules/uaclericspells7.h) -
+        (rules/ua/uaclericspells7.h) -
         exaction (the duty or quest
         with the alignment gates and
         the bargain consequences) and
@@ -873,7 +873,7 @@ fold; the R326 audit, census 253.
       stones), 6th (liveoak, transmute
       water to dust), 7th (changestaff).
       - R350: the 1st level pinned
-        (rules/uadruidspells1.h) - the
+        (rules/ua/uadruidspells1.h) - the
         four spell descriptions
         (ceremony with the nine
         varieties and the cast-out
@@ -891,7 +891,7 @@ fold; the R326 audit, census 253.
         names seam-checks; the 2nd
         through 7th levels stay open.
       - R351: the 2nd level pinned
-        (rules/uadruidspells2.h) - the
+        (rules/ua/uadruidspells2.h) - the
         four spell descriptions
         (flame blade with the undead
         and fire damage modifiers,
@@ -910,7 +910,7 @@ fold; the R326 audit, census 253.
         from the prose; the 3rd
         through 7th levels stay open.
       - R352: the 3rd level pinned
-        (rules/uadruidspells3.h) - the
+        (rules/ua/uadruidspells3.h) - the
         four spell descriptions
         (cloudburst with the stat-
         block interleave and the
@@ -935,7 +935,7 @@ fold; the R326 audit, census 253.
         (the UA prints no 4th-level
         druid section).
       - R353: the 5th level pinned
-        (rules/uadruidspells5.h) - the
+        (rules/ua/uadruidspells5.h) - the
         two spell descriptions (moonbeam
         with the movable spotlight beam
         and the color and vision
@@ -954,7 +954,7 @@ fold; the R326 audit, census 253.
         seam-checks there; the 6th and
         7th levels stay open.
       - R354: the 6th level pinned
-        (rules/uadruidspells6.h) - the
+        (rules/ua/uadruidspells6.h) - the
         two spell descriptions (liveoak
         with the triggered treant and
         the 3-inch movement decode,
@@ -970,7 +970,7 @@ fold; the R326 audit, census 253.
         seam-checks there; the 7th
         level stays open.
       - R355: the 7th level pinned
-        (rules/uadruidspells7.h) -
+        (rules/ua/uadruidspells7.h) -
         the two spell descriptions
         (changestaff behind the
         lost name header with the
@@ -1027,7 +1027,7 @@ fold; the R326 audit, census 253.
       (crystalbrittle, energy drain, the
       Mordenkainen disjunction, succor).
       - R356: the 1st level pinned
-        (rules/uamuspells1.h) - the
+        (rules/ua/uamuspells1.h) - the
         ten spell descriptions
         (alarm with the lost range
         and door-value cells, armor,
@@ -1049,7 +1049,7 @@ fold; the R326 audit, census 253.
         through 9th levels stay
         open.
       - R357: the 2nd level pinned
-        (rules/uamuspells2.h) - the
+        (rules/ua/uamuspells2.h) - the
         twelve spell descriptions
         (bind, deeppockets behind
         the lost name header,
@@ -1075,7 +1075,7 @@ fold; the R326 audit, census 253.
         through 9th levels stay
         open.
       - R358: the 3rd level pinned
-        (rules/uamuspells3.h) - the
+        (rules/ua/uamuspells3.h) - the
         eight spell descriptions
         (cloudburst seam-checking
         the R352 druid pin minus
@@ -1102,7 +1102,7 @@ fold; the R326 audit, census 253.
         noted; the 4th through 9th
         levels stay open.
       - R359: the 4th level pinned
-        (rules/uamuspells4.h) - the
+        (rules/ua/uamuspells4.h) - the
         eight spell descriptions
         (dispel illusion behind the
         lost name tail and the
@@ -1131,8 +1131,8 @@ fold; the R326 audit, census 253.
         hole; the 5th through 9th
         levels stay open.
       - R360: the 5th and 6th levels
-        pinned (rules/uamuspells5.h
-        and rules/uamuspells6.h) - the
+        pinned (rules/ua/uamuspells5.h
+        and rules/ua/uamuspells6.h) - the
         six 5th-level descriptions
         (avoidance behind the lost
         name header, dismissal behind
@@ -1166,7 +1166,7 @@ fold; the R326 audit, census 253.
         wholly lost; the 7th through
         9th levels stay open.
       - R361: the 7th level pinned
-        (rules/uamuspells7.h) - the
+        (rules/ua/uamuspells7.h) - the
         eight spell descriptions
         (banishment with the
         scrambled stat head and
@@ -1200,8 +1200,8 @@ fold; the R326 audit, census 253.
         names seam-checks; the 8th
         and 9th levels stay open.
       - R362: the 8th and 9th levels
-        pinned (rules/uamuspells8.h
-        and rules/uamuspells9.h) - the
+        pinned (rules/ua/uamuspells8.h
+        and rules/ua/uamuspells9.h) - the
         four 8th-level descriptions
         (binding with the lost range
         and duration cells and the six
@@ -1251,9 +1251,9 @@ fold; the R326 audit, census 253.
       spell table (p. 31) first.
       - R363: the cantrips and the
         1st and 2nd levels pinned
-        (rules/uailcantrips.h,
-        rules/uailspells1.h and
-        rules/uailspells2.h) - the
+        (rules/ua/uailcantrips.h,
+        rules/ua/uailspells1.h and
+        rules/ua/uailspells2.h) - the
         eight cantrip descriptions,
         the chromatic orb with the
         color-by-level ladder,
@@ -1277,9 +1277,9 @@ fold; the R326 audit, census 253.
         levels stay open.
       - R364: the 3rd, 4th and 5th
         levels pinned
-        (rules/uailspells3.h,
-        rules/uailspells4.h and
-        rules/uailspells5.h) - delude
+        (rules/ua/uailspells3.h,
+        rules/ua/uailspells4.h and
+        rules/ua/uailspells5.h) - delude
         and wraithform pinned at the
         printed 3rd (the Level: 3
         cells; the item-list 2nd
@@ -1309,8 +1309,8 @@ fold; the R326 audit, census 253.
         next round.
       - CLOSED R365: the 6th and
         7th levels pinned
-        (rules/uailspells6.h and
-        rules/uailspells7.h) - death
+        (rules/ua/uailspells6.h and
+        rules/ua/uailspells7.h) - death
         fog with the acid ladder,
         mislead with the invisibility
         cloak, phantasmagoria (the
@@ -1471,7 +1471,7 @@ the gateway charge.
         pending the PDF read.
           - AMENDED R416: the
         personal descriptions land
-        (rules/uacantrips5.h) - the
+        (rules/ua/uacantrips5.h) - the
         10 blocks pin schools (the
         1/0/1/0/0/0/5/3 census -
         Summoning and Conjuration
@@ -1553,7 +1553,7 @@ the gateway charge.
         stay open.
       - AMENDED R414: the
         legerdemain descriptions
-        land (rules/uacantrips3.h)
+        land (rules/ua/uacantrips3.h)
         - the 6 blocks pin schools
         (the 0/0/3/1/2 census -
         Illusion a NEW school
@@ -1586,7 +1586,7 @@ the gateway charge.
         descriptions stay open.
       - AMENDED R413: the reversed
         category descriptions land
-        (rules/uacantrips2.h) - the
+        (rules/ua/uacantrips2.h) - the
         12 blocks pin schools (the
         3/0/7/2 census), ALL 12
         areas print clean (ZERO
@@ -1611,7 +1611,7 @@ the gateway charge.
         stay open.
       - AMENDED R412: the useful
         category descriptions land
-        (rules/uacantrips1.h) - the
+        (rules/ua/uacantrips1.h) - the
         20 blocks pin schools (the
         7/4/7/2 census), the 14
         clean areas, the six
@@ -1664,7 +1664,7 @@ the gateway charge.
       (7 named).
       - R363: the eight cantrip
         descriptions pinned
-        (rules/uailcantrips.h) -
+        (rules/ua/uailcantrips.h) -
         colored lights with the
         globe ladder, dim with the
         half-radiance round, haze
@@ -1740,7 +1740,7 @@ the gateway charge.
       column) reads clean; the minimum
       and maximum clamps.
       - CLOSED R370: the pin round
-        (rules/uasmalls1.h) - the
+        (rules/ua/uasmalls1.h) - the
         class-first humans-only
         prose, the best-three-of-N
         roll with the DM approval,
@@ -1760,7 +1760,7 @@ the gateway charge.
       3, illusionist 3, thief 4,
       assassin 4, monk 5.
       - CLOSED R370: the pin round
-        (rules/uasmalls1.h) - the 12
+        (rules/ua/uasmalls1.h) - the 12
         class minimums (cavalier 6
         to ranger 9), the
         multi-class average rounded
@@ -1775,7 +1775,7 @@ the gateway charge.
       (p. 74) - the DM pointer; rides
       the R322 pins.
       - CLOSED R373: the pin round
-        (rules/uacomnote.h) - the DM
+        (rules/ua/uacomnote.h) - the DM
         pointer to pages 6 and 7, the
         characteristic read, the
         effects on viewers and
@@ -1801,7 +1801,7 @@ the gateway charge.
       the 1 percent per level monster
       follower.
       - CLOSED R372: the pin round
-        (rules/uafollowers.h) - the
+        (rules/ua/uafollowers.h) - the
         dice ladder (all d4, the
         min-count max-times-four
         invariant), the four
@@ -1824,7 +1824,7 @@ the gateway charge.
       the extra man-at-arms at 8th); the
       paladin retainer rules.
       - CLOSED R372: the pin round
-        (rules/uafollowers.h) - the
+        (rules/ua/uafollowers.h) - the
         +3/+1 henchman bonus, the
         alignment type table (the
         paladin, thief and assassin
@@ -1848,7 +1848,7 @@ the gateway charge.
       shield rows, elfin chain never
       sold.
       - CLOSED R371: the pin round
-        (rules/uaarmor.h) - the
+        (rules/ua/uaarmor.h) - the
         banded, bronze plate, field
         plate, full plate, ring,
         scale, splint and studded
@@ -1870,7 +1870,7 @@ the gateway charge.
       point cap, the repair costs),
       full plate.
       - CLOSED R371: the pin round
-        (rules/uaarmor.h) - the four
+        (rules/ua/uaarmor.h) - the four
         descriptions pin clean: the
         bronze plate AC 4 with the
         +2 rear bonus and the rust
@@ -1887,7 +1887,7 @@ the gateway charge.
 - [x] **Warhorses and barding** (p. 76)
       - the barded movement rate table.
       - CLOSED R370: the pin round
-        (rules/uasmalls1.h) - the
+        (rules/ua/uasmalls1.h) - the
         movement rate table (light
         21/15, medium 17/15, heavy
         14/13/12) with the medium
@@ -1911,7 +1911,7 @@ the gateway charge.
       the pole-arm cross-refs point to
       Appendix T.
       - CLOSED R373: rides the R340
-        pins (rules/uanewweapons.h) -
+        pins (rules/ua/uanewweapons.h) -
         the 16-entry roster with the
         14 item-list types marked; the
         R337 seam cross-checks the
@@ -1933,7 +1933,7 @@ the gateway charge.
       2-8/2-5 random counts; the 3
       developed cantrips cap).
       - CLOSED R369: the pin round
-        (rules/uacantacq.h) - the five
+        (rules/ua/uacantacq.h) - the five
         random bands (reversed 2-8,
         legerdemain 2-5, person-
         affecting 2-8, personal 2-8,
@@ -1962,7 +1962,7 @@ the gateway charge.
       weight, the 450 gp encumbrance,
       the leather-book saves with +2).
       - CLOSED R366: the pin round
-        (rules/uaspellbooks.h) - the
+        (rules/ua/uaspellbooks.h) - the
         capacities with the one-fourth
         travelling read, the costs with
         the master-borne start, the
@@ -1979,7 +1979,7 @@ the gateway charge.
       (p. 80) - the starting list table;
       the illusionist book differences.
       - AMENDED R393: closed - the R365
-        pin (rules/uailacquisition.h);
+        pin (rules/ua/uailacquisition.h);
         the R393 clean PDF read decodes
         the starting list column-wise in
         full (the R365 interleave
@@ -1990,7 +1990,7 @@ the gateway charge.
 - [x] **The cost of spell casting** (pp.
       80-81).
       - CLOSED R365: the pin round
-        (rules/uaspellcost.h) - the
+        (rules/ua/uaspellcost.h) - the
         200 gp per level basic fee with
         the doubled components, the
         10 percent/3x and 100
@@ -2003,7 +2003,7 @@ the gateway charge.
       referee commentary** (pp. 81-82) -
       the permanency list and the rest.
       - CLOSED R366: the pin round
-        (rules/uaspellcomment.h) - the
+        (rules/ua/uaspellcomment.h) - the
         personal permanency list (the six
         detects and protections), the
         22-name object/area list, the 5
@@ -2023,7 +2023,7 @@ the gateway charge.
       sink read, and the rest of the
       list).
       - CLOSED R366: the pin round
-        (rules/uauwspelluse.h) - the
+        (rules/ua/uauwspelluse.h) - the
         cannot-use rosters (cleric,
         druid, magic-user, the
         illusionist fragment) with the
@@ -2040,7 +2040,7 @@ the gateway charge.
 - [x] **The effects of darkness** (p.
       82) - the combat effects ladder.
       - CLOSED R366: the pin round
-        (rules/uadarkness.h) - the -4
+        (rules/ua/uadarkness.h) - the -4
         unseen and -2 vague ladder, the
         illumination exception, the
         infravision converse with the
@@ -2055,7 +2055,7 @@ the gateway charge.
       - the Social Class Table; extends
       the R208 tables.
       - CLOSED R367: the pin round
-        (rules/uasocialclass.h) - the
+        (rules/ua/uasocialclass.h) - the
         nine-band dice ladder with the
         occupation rosters per band, the
         no-effect-on-starting-money note
@@ -2078,7 +2078,7 @@ the gateway charge.
       one-class-lower read for the
       unmarried).
       - CLOSED R367: the pin round
-        (rules/uabirth.h) - the 13-row
+        (rules/ua/uabirth.h) - the 13-row
         birth ladder, the marital
         status split with the
         one-class-below-the-father
@@ -2111,7 +2111,7 @@ round before any treasure charge lands.
 DECIDED R374: RUN BOTH - the engine
       carries the DMG and UA tables as
       switchable alternatives behind a
-      dial (rules/uatreasuredial.h):
+      dial (rules/ua/uatreasuredial.h):
       DMG (the default - the landed
       audits stay authoritative), UA,
       MERGED; playtesting picks; the
@@ -2137,7 +2137,7 @@ DECIDED R374: RUN BOTH - the engine
       (miscellaneous weapons); all read
       clean.
       - AMENDED R375: the skeleton
-        pin round (rules/uadetskel.h)
+        pin round (rules/ua/uadetskel.h)
         - the top-level bands and
         sub-table splits pin clean;
         the misc magic carries SEVEN
@@ -2162,7 +2162,7 @@ DECIDED R374: RUN BOTH - the engine
         eight categories' tables,
         the .2 seconds, the seven
         misc sub-tables) pin in
-        full (rules/uadetrows.h) -
+        full (rules/ua/uadetrows.h) -
         the dice bands, the names,
         the marks, the x.p./g.p.
         columns; the skeleton
@@ -2179,7 +2179,7 @@ DECIDED R374: RUN BOTH - the engine
 - [x] **The new potions** (p. 90).
       - AMENDED R376: the new
         potions prose part 1 pin
-        round (rules/uapotprose.h)
+        round (rules/ua/uapotprose.h)
         - TWELVE of the nineteen
         descriptions pin clean
         (the four elixirs of
@@ -2228,12 +2228,12 @@ DECIDED R374: RUN BOTH - the engine
         speech), stammering (the
         -25% reactions) - all
         nineteen descriptions
-        pin (rules/uapotprose.h).
+        pin (rules/ua/uapotprose.h).
 - [x] **The new scrolls** (pp. 91-93).
       - AMENDED R377: the new
         scrolls protection prose
         pin round
-        (rules/uaprotscr.h) -
+        (rules/ua/uaprotscr.h) -
         ELEVEN of the fifteen
         protection-scroll types
         pin clean (acid, breath
@@ -2272,11 +2272,11 @@ DECIDED R374: RUN BOTH - the engine
         large-missile
         exemption) - all
         fifteen types pin
-        (rules/uaprotscr.h).
+        (rules/ua/uaprotscr.h).
 - [x] **The new rings** (pp. 92-94).
       - AMENDED R378: the new
         rings prose pin round
-        (rules/uaringprose.h) -
+        (rules/ua/uaringprose.h) -
         SIX of the thirteen
         new-ring descriptions
         pin clean (animal
@@ -2327,12 +2327,12 @@ DECIDED R374: RUN BOTH - the engine
         eight sleep, the
         reattune week) - all
         thirteen descriptions
-        pin (rules/uaringprose.h).
+        pin (rules/ua/uaringprose.h).
 - [x] **The new rods and staves** (pp.
       94-96).
       - AMENDED R379: the new
         rods and staves prose pin
-        round (rules/uarodstave.h)
+        round (rules/ua/uarodstave.h)
         - FOUR of the eleven
         new descriptions pin
         clean (the rod of
@@ -2381,11 +2381,11 @@ DECIDED R374: RUN BOTH - the engine
         the +1-to-+4 ladder,
         the d4 even chances) -
         all eleven descriptions
-        pin (rules/uarodstave.h).
+        pin (rules/ua/uarodstave.h).
 - [x] **The new wands** (pp. 96-97).
       - AMENDED R380: the new
         wands prose pin round
-        (rules/uawandprose.h) -
+        (rules/ua/uawandprose.h) -
         SEVEN of the twelve new
         wand types pin: FIVE
         fully clean (anything,
@@ -2440,7 +2440,7 @@ DECIDED R374: RUN BOTH - the engine
         dice decay, the 4-6-8
         fog cloud) - all twelve
         types pin
-        (rules/uawandprose.h).
+        (rules/ua/uawandprose.h).
 - [x] **The new miscellaneous magic
       items** (pp. 97-104) - the named
       additions: the Egg of Reason, the
@@ -2454,7 +2454,7 @@ DECIDED R374: RUN BOTH - the engine
       Lanthorn, the Sheet of Smallness.
       - AMENDED R381: the misc magic
         prose part 1 pin round
-        (rules/uamiscprose1.h) - the
+        (rules/ua/uamiscprose1.h) - the
         A-C stretch, THIRTEEN items
         pin: EIGHT fully clean (the
         beads of force, the boots of
@@ -2478,7 +2478,7 @@ DECIDED R374: RUN BOTH - the engine
         D-Z and the PDF.
       - AMENDED R382: the misc magic
         prose part 2 pin round
-        (rules/uamiscprose2.h) - the
+        (rules/ua/uamiscprose2.h) - the
         D-E stretch, EIGHT items pin:
         ONE fully clean (the dust of
         tracelessness) plus SEVEN
@@ -2496,7 +2496,7 @@ DECIDED R374: RUN BOTH - the engine
         for F-Z and the PDF.
       - AMENDED R383: the misc magic
         prose part 3 pin round
-        (rules/uamiscprose3.h) - the
+        (rules/ua/uamiscprose3.h) - the
         G-H stretch, ELEVEN items pin:
         TWO fully clean (the gloves of
         missile snaring, the hat of
@@ -2518,7 +2518,7 @@ DECIDED R374: RUN BOTH - the engine
         OPEN for I-Z and the PDF.
       - AMENDED R384: the misc magic
         prose part 4 pin round
-        (rules/uamiscprose4.h) - the
+        (rules/ua/uamiscprose4.h) - the
         I-P stretch, NINE items pin:
         FIVE fully clean (the iron
         bands of Bilarro, the lens of
@@ -2538,7 +2538,7 @@ DECIDED R374: RUN BOTH - the engine
         for Q-Z and the PDF.
       - AMENDED R385: the misc magic
         prose part 5 pin round
-        (rules/uamiscprose5.h) - the
+        (rules/ua/uamiscprose5.h) - the
         Q-S stretch, ELEVEN items pin:
         SEVEN fully clean (the robe of
         stars, the scarab versus
@@ -2558,7 +2558,7 @@ DECIDED R374: RUN BOTH - the engine
         OPEN for S-Z and the PDF.
       - AMENDED R386: the misc magic
         prose part 6 pin round
-        (rules/uamiscprose6.h) - the
+        (rules/ua/uamiscprose6.h) - the
         S-Z close-out, FIVE items pin:
         TWO fully clean (the wind fan,
         Zagyg's flowing flagon) plus
@@ -2577,9 +2577,9 @@ DECIDED R374: RUN BOTH - the engine
         flagged hole the six
         misc magic prose parts
         carry (33 flag seams,
-        rules/uamiscprose1.h
+        rules/ua/uamiscprose1.h
         through
-        rules/uamiscprose6.h):
+        rules/ua/uamiscprose6.h):
         the amulet's 9th-level
         cell, the anything
         item's 24-hour tail, the
@@ -2633,7 +2633,7 @@ DECIDED R374: RUN BOTH - the engine
       the +3 strikes-last read).
       - AMENDED R387: the UA armor and
         swords prose pin round
-        (rules/uaarmprose.h) - the
+        (rules/ua/uaarmprose.h) - the
         pp. 104-105 stretch, EIGHT items
         pin: FOUR fully clean (the
         anything armor, the short sword
@@ -2675,7 +2675,7 @@ DECIDED R374: RUN BOTH - the engine
       GP value tables read clean.
       - AMENDED R388: the UA misc
         weapons prose pin round
-        (rules/uamweapprose.h) - the
+        (rules/ua/uamweapprose.h) - the
         pp. 105-106 stretch, NINE items
         pin: SIX fully clean (the bullet
         of impact, the dagger Longtooth,
@@ -2713,25 +2713,25 @@ own index, one item each:
 
 - [x] Armor, Types and Encumbrance (p.
       75).
-      - CLOSED R371 (rules/uaarmor.h);
+      - CLOSED R371 (rules/ua/uaarmor.h);
         the R394 manifest sweep.
 - [x] Barded Warhorse Movement Rate (p.
       76).
       - CLOSED R370 + the R394 clean
         read (the column repin,
-        rules/uasmalls1.h).
+        rules/ua/uasmalls1.h).
 - [x] Birth Table (p. 83).
-      - CLOSED R367 (rules/uabirth.h);
+      - CLOSED R367 (rules/ua/uabirth.h);
         the R394 clean read confirms.
 
 - [x] Character Generation Method V (p.
       74).
       - CLOSED R370 + the R394 clean
         read (the dice-count matrix,
-        rules/uasmalls1.h).
+        rules/ua/uasmalls1.h).
 - [x] Clerical Quick Reference Chart,
       non-human deities (pp. 121-122) -
-      CLOSED R407 (rules/uascharts.h;
+      CLOSED R407 (rules/ua/uascharts.h;
       the R407 charts pin audit, census
       334): the five 8-column charts pin
       all 23 rows (sphere, raiment,
@@ -2748,29 +2748,29 @@ own index, one item each:
       catch cell drift - live against
       the R405 seam chart pins.
 - [x] Hit Points, Starting (p. 74).
-      - CLOSED R370 (rules/uasmalls1.h).
+      - CLOSED R370 (rules/ua/uasmalls1.h).
 
 - [x] Illusionist Spells, Starting List
       (p. 80).
       - CLOSED R365 + the R393 clean
-        read (rules/uailacquisition.h).
+        read (rules/ua/uailacquisition.h).
 - [x] Overbearing, Armor Class
       Adjustments (p. 108).
       - CLOSED R389 + the R394 clean
         read (the AC prose fill,
-        rules/uaappendq.h).
+        rules/ua/uaappendq.h).
 - [x] Parents Marital Status Table (p.
       83).
-      - CLOSED R367 (rules/uabirth.h).
+      - CLOSED R367 (rules/ua/uabirth.h).
 - [x] Pummeling Table, Chance of
       Stunning (p. 107).
       - CLOSED R389 + the R394 clean
         read (the row bodies,
-        rules/uaappendq.h).
+        rules/ua/uaappendq.h).
 - [x] Social Class Table (p. 82).
       - CLOSED R367 + the R394 clean
         read (the LLC label fill,
-        rules/uasocialclass.h).
+        rules/ua/uasocialclass.h).
 
 - [x] Treasure Table III: Magic Items
       (p. 84) - the umbrella table; the
@@ -2778,10 +2778,10 @@ own index, one item each:
       item above.
       - AMENDED R395: closed - the
         umbrella bands pinned R375
-        (rules/uadetskel.h) and the
+        (rules/ua/uadetskel.h) and the
         sub-tables closed by the
         R395 row-body charge
-        (rules/uadetrows.h).
+        (rules/ua/uadetrows.h).
 
 ## Appendices (pp. 106-129)
 
@@ -2794,7 +2794,7 @@ own index, one item each:
       before charging.
       - AMENDED R389: the UA
         weaponless combat appendix Q
-        pin round (rules/uaappendq.h)
+        pin round (rules/ua/uaappendq.h)
         - the pp. 106-108 stretch, SIX
         items pin: ONE fully clean (the
         throwing rules) plus FIVE
@@ -2836,7 +2836,7 @@ own index, one item each:
       AC.
       - AMENDED R390: the UA
         non-lethal combat appendix
-        R pin round (rules/uaappendr.h)
+        R pin round (rules/ua/uaappendr.h)
         - the pp. 109-110 stretch,
         SEVEN items pin: TWO fully
         clean (the subdual
@@ -2887,7 +2887,7 @@ own index, one item each:
       layer is engineerable (the
       mission: everything includeable).
       - AMENDED R406: the stat blocks
-        pin round (rules/uaappends.h)
+        pin round (rules/ua/uaappends.h)
         - the 23 blocks pin their
         scan-clean numerics (tier, AC,
         HP, MR, rating, size, attacks
@@ -2907,13 +2907,13 @@ own index, one item each:
         clerical quick-reference
         charts (pp. 121-122).
       - AMENDED R407: the clerical
-        charts land (rules/uascharts.h)
+        charts land (rules/ua/uascharts.h)
         - CLOSED as their own item; the
         Appendix S box stays open on
         the class lines, MOVE, the stat
         lines and the pantheon prose.
       - AMENDED R409: the stat lines
-        land (rules/uasstatlines.h) -
+        land (rules/ua/uasstatlines.h) -
         the 23 S/I/W/D/C/CH/CM rows
         pin with the R153/R322
         cross-checks live, the
@@ -2933,7 +2933,7 @@ own index, one item each:
         recorded sentinel); MOVE and
         the pantheon prose stay open.
       - AMENDED R411: the MOVE
-        values land (rules/uamoves.h)
+        values land (rules/ua/uamoves.h)
         - the 23 rates and the five
         alternates pin with the
         sanity ladders live; the
@@ -2942,7 +2942,7 @@ own index, one item each:
         pantheon prose ALONE stays
         open in Appendix S.
       - AMENDED R423: the pantheon
-        prose lands (rules/uapantheon.h) - the five intro
+        prose lands (rules/ua/uapantheon.h) - the five intro
         sections pin with the
         censuses cross-checked
         live against the R405 seam
@@ -2962,7 +2962,7 @@ own index, one item each:
       - AMENDED R391: the UA
         pole-arm nomenclature
         appendix T pin round
-        (rules/uaappendt.h) - the
+        (rules/ua/uaappendt.h) - the
         pp. 123-129 stretch,
         SEVEN items pin: TWO
         fully clean (the spear
@@ -3016,7 +3016,7 @@ section own index, one item each:
       19).
       - AMENDED R392: closed - the R332 pin (rules/barbarian.h)
 - [x] Cavaliers Table I (p. 15).
-      - AMENDED R392: closed - the R368 pin (rules/uacavtable.h)
+      - AMENDED R392: closed - the R368 pin (rules/ua/uacavtable.h)
 - [x] Character Class Limitations
       (Character Race Table I) (p. 7).
       - AMENDED R392: closed - the R323 pin (rules/subraces.h)
@@ -3036,7 +3036,7 @@ section own index, one item each:
       - AMENDED R392: closed - the R330 pin (rules/hierophant.h)
 - [x] Equipment and Supplies Costs (p.
       26).
-      - AMENDED R392: PINNED R392 (rules/uaequip26.h) - the clean p.
+      - AMENDED R392: PINNED R392 (rules/ua/uaequip26.h) - the clean p.
         26 print, four armor rows plus 19 arms rows, no holes
 - [x] Racial Preferences Table (p. 12).
       - AMENDED R392: closed - the R323 pin (rules/subraces.h)
@@ -3055,7 +3055,7 @@ section own index, one item each:
 - [x] Thieves Table II (p. 22).
       - AMENDED R392: closed - the R334 pin (rules/thiefarmor.h)
 - [x] Weapon Proficiency Table (p. 26).
-      - AMENDED R392: closed - the R339 pin (rules/uaprof.h); the R392
+      - AMENDED R392: closed - the R339 pin (rules/ua/uaprof.h); the R392
         clean read fills every hole (the cavalier penalty 3, the
         paladin and assassin initials 3, the barbarian 6, the ranger
         3) and recovers the facing-page notes in full
@@ -3064,20 +3064,20 @@ section own index, one item each:
       - AMENDED R392: closed - the R331 pin (rules/weaponspec.h)
 - [x] Weapons, Weight and Damage by
       Type (p. 26).
-      - AMENDED R392: closed - the R337 pin (rules/uaweapontable.h);
+      - AMENDED R392: closed - the R337 pin (rules/ua/uaweapontable.h);
         the R392 clean read fills every hole (the atlatl 30, the
         harpoon 50-60, the falchion 60-80, the lasso dash), adds the
         68th row (the hand-crossbow quarrels) and reconciles the
         garrot L misdecode (1-6)
 - [x] Weapons, Hand-held, General Data
       and To-Hit Adjustments (p. 27).
-      - AMENDED R392: PINNED R392 (rules/uahandheld.h) - the clean p.
+      - AMENDED R392: PINNED R392 (rules/ua/uahandheld.h) - the clean p.
         27 print, 60 rows, the footnotes and the general note, no
         holes
 - [x] Weapons, Hurled and Missile,
       General Data and To-Hit
       Adjustments (p. 28).
-      - AMENDED R392: closed - the R338 pin (rules/uamissile.h); the
+      - AMENDED R392: closed - the R338 pin (rules/ua/uamissile.h); the
         R392 clean read fills every hole (the rate column, the S/M/L
         ranges, the lost AC cells, the AC 7-10 columns) and the aklys
         10-foot footnote
@@ -3119,24 +3119,24 @@ section own index, one item each:
     the seam as its own ungated data
     round.
   - AMENDED R406: the stat block
-    numerics land (rules/uaappends.h)
+    numerics land (rules/ua/uaappends.h)
     - the class lines, MOVE, stat
     lines, prose and the charts stay
     open.
   - AMENDED R407: the charts land
-    (rules/uascharts.h) - the class
+    (rules/ua/uascharts.h) - the class
     lines, MOVE, stat lines and the
     prose stay open.
   - AMENDED R409: the stat lines
-    land (rules/uasstatlines.h) - the
+    land (rules/ua/uasstatlines.h) - the
     class lines, MOVE and the
     pantheon prose stay open.
   - AMENDED R410: the class lines
-    land (rules/uasclasslines.h) -
+    land (rules/ua/uasclasslines.h) -
     MOVE and the pantheon prose
     stay open.
   - AMENDED R411: the MOVE values
-    land (rules/uamoves.h) - the
+    land (rules/ua/uamoves.h) - the
     pantheon prose alone stays
     open.
 
@@ -3170,7 +3170,7 @@ lands before the items it gates.
       remain the open dependents.
 - [x] The treasure system dial -
       CLOSED R402 (the dial state in
-      rules/uatreasuredial.h; the UA
+      rules/ua/uatreasuredial.h; the UA
       determination dispatch in
       dm/treasure.cpp; the R402 seam
       audit, census 329): the DMG

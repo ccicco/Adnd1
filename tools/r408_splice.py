@@ -19,7 +19,7 @@
 # R392 source; the scan
 # agrees cell for cell).
 #
-# 1. rules/uaac26.h (NEW,
+# 1. rules/ua/uaac26.h (NEW,
 #    prefix uacr, 8 inline
 #    functions): the 11
 #    composite rows (AC 10
@@ -118,7 +118,7 @@ SEED_ENTRY = E(
     '  commit a3570fb (census 334,',
     '  preflight GREEN), the UA',
     '  Appendix S clerical charts -',
-    '  rules/uascharts.h (prefix usc)',
+    '  rules/ua/uascharts.h (prefix usc)',
     '  - the five 8-column charts,',
     '  23 rows, the 13 sacred',
     '  animals, the gender reads,',
@@ -147,12 +147,12 @@ if s.count('R407 landed 2026-10-13') != 1:
 if s.count('## Knowledge maintenance') != 1:
     die('the seed maintenance head')
 
-# ========= (b) rules/uaac26.h =========
-AC = 'rules/uaac26.h'
+# ========= (b) rules/ua/uaac26.h =========
+AC = 'rules/ua/uaac26.h'
 
 ACBODY = E(
     '// ===========================================================================',
-    '// Adnd1 - rules/uaac26.h',
+    '// Adnd1 - rules/ua/uaac26.h',
     '// The UA ARMOR CLASS TABLE (p. 26),',
     '// R408: the 11 composite rows AC 10',
     '// down to 0, pinned directly from',
@@ -289,12 +289,12 @@ newfile(AC, ACBODY + NL,
 RT = 'regtest.cpp'
 
 pair(RT,
-     '#include "rules/uaequip26.h"  '
+     '#include "rules/ua/uaequip26.h"  '
      '// R392: the UA equipment costs',
      E(
-    '#include "rules/uaequip26.h"  '
+    '#include "rules/ua/uaequip26.h"  '
     '// R392: the UA equipment costs',
-    '#include "rules/uaac26.h"  '
+    '#include "rules/ua/uaac26.h"  '
     '// R408: the UA p. 26 AC table'),
      'regtest: the AC table include')
 
@@ -429,7 +429,7 @@ pair(GP, E(
     '      - the expanded AC-by-armor table.'),
     E(
     '- [x] **The Armor Class Table** (p. 26)',
-    '      - CLOSED R408 (rules/uaac26.h;',
+    '      - CLOSED R408 (rules/ua/uaac26.h;',
     '      the R408 armor class table pin',
     '      audit, census 335): the 11',
     '      composite rows pin directly',
@@ -450,7 +450,7 @@ pair(GP, E(
     E(
     '- [x] **The Equipment and Supplies',
     '      Costs table** (p. 26) - CLOSED',
-    '      R392 (rules/uaequip26.h) and',
+    '      R392 (rules/ua/uaequip26.h) and',
     '      re-verified R408 against the',
     '      independent djvu scan (the',
     '      R408 audit cross-checks the',

@@ -2,7 +2,7 @@
  "round": 635,
  "title": "ALTERING FAMILY HONOR, THE EFFECTS OF HONOR and TABLE 42 - the family ledger, the honor doctrines, the T42 grid",
  "prefix": "dgv",
- "header_file": "rules/oaeff.h",
+ "header_file": "rules/oa/oaeff.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "ALTERING FAMILY HONOR, THE EFFECTS OF HONOR AND TABLE 42, printed capture pp. 70-72 - the OA effects of honor round",
   "provenance": "pinned from the 2018 print capture alone for this range (the settling authority): the first Mistral-OCR capture session is unavailable above p. 33, so the cross-capture agreement check is impossible. No contested cells detected within the single source: the T42 grid pins as 68 rows x 2 columns across the ten printed sections (all characters, shukenja, hengeyokai, kensai, ninja, samurai, sohei, spirit folk, wu jen, yakuza); the points column carries every printed award and the mark column codes the printed footnotes (0 unmarked, 1 the samurai-doubled star, 2 the single-creature double star). The two rate rows pin as per-unit consts - the monsters row -1 per 2000 experience points for a single creature, the yakuza stolen-goods row +1 per 100 ch'ien - with the base points in the grid. OCR normalization: the double-star footnote reads \"defeating a single-creature\" with a printed em dash (pins as single-creature); the awards use the printed x.p. abbreviation. The Chapter 5 Money and Equipment prose (capture pp. 73+) is deliberately left for the next rounds",
-  "sentinel": "the gap census after this round: 80 closed, 155 open - the Altering Family Honor, Effects of Honor prose, Table 42 and the Chapter 4 parent boxes flip (census 557 -> 558); NEXT - R636: the Chapter 5 Money and Equipment opener, the Currency prose with Table 43 (Currency Values) and Table 44 (Barter Units), capture pp. 73-75, prefix dgw (verify free), audit \"R636 OA money audit\", include after rules/oaeff.h"
+  "sentinel": "the gap census after this round: 80 closed, 155 open - the Altering Family Honor, Effects of Honor prose, Table 42 and the Chapter 4 parent boxes flip (census 557 -> 558); NEXT - R636: the Chapter 5 Money and Equipment opener, the Currency prose with Table 43 (Currency Values) and Table 44 (Barter Units), capture pp. 73-75, prefix dgw (verify free), audit \"R636 OA money audit\", include after rules/oa/oaeff.h"
  },
  "consts": [
   {
@@ -916,7 +916,7 @@
   "open": 155
  },
  "include_comment": "the OA effects of honor pins",
- "include_after": "#include \"rules/oahonor.h\"  // R634: the OA honor pins",
+ "include_after": "#include \"rules/oa/oahonor.h\"  // R634: the OA honor pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R634 LANDED 2026-10-19: commit",
@@ -927,7 +927,7 @@
   "  91502ba..0d6f2cb), HONOR - the",
   "  chapter opener, the starting honor",
   "  doctrine and Table 41, capture pp.",
-  "  69-70: rules/oahonor.h, prefix dgu",
+  "  69-70: rules/oa/oahonor.h, prefix dgu",
   "  (verified free), 21 inlines (2",
   "  consts, 17 bools, 2 table columns):",
   "  the opener doctrine (the family",
@@ -983,6 +983,6 @@
   "  reaction doctrine, prefix dgv",
   "  (verify free), audit \"R635 OA",
   "  effects of honor audit\", include",
-  "  after rules/oahonor.h."
+  "  after rules/oa/oahonor.h."
  ]
 }

@@ -148,6 +148,6 @@ return {
     } },
   "audit" = {
       "label" = "R431 WSG equipment pin audit",
-      "comment" = "The equipment effects slice pins the water, rust, leather, sand and dust rules (rules/wsgequip.h, prefix weq): the moisture and rust mechanics, the leather and rope rules, the wet-arrow penalty and the chafe penalties; census 355 -> 356.",
+      "comment" = "The equipment effects slice pins the water, rust, leather, sand and dust rules (rules/wsg/wsgequip.h, prefix weq): the moisture and rust mechanics, the leather and rope rules, the wet-arrow penalty and the chafe penalties; census 355 -> 356.",
     },
 }

@@ -2,7 +2,7 @@
  "round": 470,
  "title": "the WSG purifying water slice with the tainted-water effects - the boil rule with the elevation time and evaporation ladders, the mild and severe taint durations, the taint-severity geography and the bad-water warnings, printed p. 60",
  "prefix": "wpu",
- "header_file": "rules/wsgpurify.h",
+ "header_file": "rules/wsg/wsgpurify.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -288,12 +288,12 @@
   {
    "note": "purifying water",
    "from": "  - [ ] Purifying water (p. 60)",
-   "to": "  - [x] Purifying water (p. 60) - R470: the boil rule with the elevation time and evaporation ladders, the mild and severe taint durations, the taint-severity geography and the bad-water warnings pin as rules/wsgpurify.h"
+   "to": "  - [x] Purifying water (p. 60) - R470: the boil rule with the elevation time and evaporation ladders, the mild and severe taint durations, the taint-severity geography and the bad-water warnings pin as rules/wsg/wsgpurify.h"
   },
   {
    "note": "the post-state line",
-   "from": "Post-state at R469: 88 closed, 98 open (the R469 round continues the chapter - water in the desert with the permafrost discussion pins as rules/wsgdesert.h; the next round continues - purifying water (p. 60) with the tainted-water effects).",
-   "to": "Post-state at R470: 89 closed, 97 open (the R470 round closes the water chapter arc - purifying water with the tainted-water effects pins as rules/wsgpurify.h; the next round opens the camping and campfires arc - natural shelters (p. 61), pp. 61-68)."
+   "from": "Post-state at R469: 88 closed, 98 open (the R469 round continues the chapter - water in the desert with the permafrost discussion pins as rules/wsg/wsgdesert.h; the next round continues - purifying water (p. 60) with the tainted-water effects).",
+   "to": "Post-state at R470: 89 closed, 97 open (the R470 round closes the water chapter arc - purifying water with the tainted-water effects pins as rules/wsg/wsgpurify.h; the next round opens the camping and campfires arc - natural shelters (p. 61), pp. 61-68)."
   }
  ],
  "gap_census": {
@@ -301,7 +301,7 @@
   "open": 97
  },
  "include_comment": "the WSG purifying water and tainted water",
- "include_after": "#include \"rules/wsgdesert.h\"  // R469: the WSG water in the desert and permafrost",
+ "include_after": "#include \"rules/wsg/wsgdesert.h\"  // R469: the WSG water in the desert and permafrost",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R469 LANDED 2026-10-15: commit 13ebab2 (census 394, pushed",
@@ -328,7 +328,7 @@
   "  beneath it and\n  expose it to heat, the soil and sediment settling to the",
   "  bottom when the ice melts and the water poured off - the\n  harvest sentence",
   "  seaming from the p. 59 right-column tail\n  onto the p. 60 top right).",
-  "  rules/wsgdesert.h NEW (15\n  inlines: 5 consts - wdsDigFindPct 40,",
+  "  rules/wsg/wsgdesert.h NEW (15\n  inlines: 5 consts - wdsDigFindPct 40,",
   "  wdsNoWaterPct 60,\n  wdsProfFindPct 80, wdsDepthMinFt 5, wdsDepthMaxFt 15 -",
   "  plus 10 bools, prefix wds, checked free). GROUND TRUTH\n  two-way, no",
   "  contested cells, no physical-page reads: the\n  user-run Termux tesseract",

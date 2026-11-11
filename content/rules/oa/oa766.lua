@@ -1,11 +1,11 @@
--- oa766: promoted from rules/oa137food.h (the OA DAILY LIFE - FOOD, printed capture p. 307 - the rice constant and the);
+-- oa766: promoted from rules/oa/oa137food.h (the OA DAILY LIFE - FOOD, printed capture p. 307 - the rice constant and the);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 766,
   "prefix" = "oa766",
   "banner" = {
       "title" = "OA DAILY LIFE - FOOD, printed capture p. 307 - the rice constant and the",
-      "provenance" = "food of Kara-Tur census 688 -> 689.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 219 closed, 16 open - the Food box flips (census 688 -> 689); NEXT - R767: Buildings (capture pp. 308-312), prefix dmc (verify free at the landing), audit \"R767 OA Daily Life Buildings audit\", include after rules/oa137food.h",
+      "provenance" = "food of Kara-Tur census 688 -> 689.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 219 closed, 16 open - the Food box flips (census 688 -> 689); NEXT - R767: Buildings (capture pp. 308-312), prefix dmc (verify free at the landing), audit \"R767 OA Daily Life Buildings audit\", include after rules/oa/oa137food.h",
     },
   "consts" = { {
       "name" = "dmbRiceUsesCount",

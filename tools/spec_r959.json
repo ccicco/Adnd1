@@ -7,7 +7,7 @@
   "title": "The Dragon issue-25 opener part two - the war game and the vampire roster",
   "provenance": "The part-two round of the issue-25 four-round shape - two of the eight Curtiss-called chains as the table round: the Neal M. Dorst Xochiyaoyotl rules for pre-Hispanic Mexican warfare (print 37-40) with the prowess ratio grid, the weather table, the projectile ranges, the morale bands, the War of Flowers points and the Spanish optional rules, and the R.P. Smith Varieties of Vampires roster (print 42) - fifteen types from the common vampire through the asanbosam, the burcolakas, the catacano, the lobishumen, the ekimmu, the blautsauger, the mulo, the alp, the anananngel, the krvopijac, the Chinese hopping vampire, the vlkodlak, the bruxsa and the nosferat, the movement pairs and the charm adjustments on the grid. All pinned from The Dragon Vol. III No. 11 (May 1979) print 37-40 and 42 at extract/dragon/025, PRINT FOLIO = PDF PAGE this issue, the single-voice transcript of the Curtiss-provided scan. The part-one opener set landed at R958; the three-chain commentary set rides R960 and the flip to follow; the two inherited watches - the Sullin levels 7-9 and the brawling sequel - print nowhere in issue 25 and ride to TD 26."
  },
- "header_file": "rules/s25.h",
+ "header_file": "rules/dragon/issue025_opener2.h",
  "audit_file": "rules/audits/r959_batch.h",
  "audit_label": "R959 issue-25 table round audit",
  "audit_anchor": "#include \"rules/audits/r958_batch.h\"  // R958: R958 issue-25 opener set audit",
@@ -18,7 +18,7 @@
   "open": 0
  },
  "gap_flips": [],
- "include_after": "#include \"rules/t25.h\"  // R958: the Dragon issue-25 opener part one, the three-chain opener set",
+ "include_after": "#include \"rules/dragon/issue025_opener1.h\"  // R958: the Dragon issue-25 opener part one, the three-chain opener set",
  "include_comment": "the Dragon issue-25 opener part two, the war game and the vampire roster table round",
  "header_sections": {
   "the Xochiyaoyotl war game rules (print 37-40)": [

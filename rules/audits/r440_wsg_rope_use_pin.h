@@ -3,7 +3,7 @@
     // climbing equipment), the 1500-pound support limit, the 20 percent
     // per-turn non-cumulative overload break chance, the cumulative
     // 10/30/60/100 weakening ladder and the 40 percent weakened-rope break
-    // chance (rules/wsgrope.h, prefix wsr); census 364 -> 365.
+    // chance (rules/wsg/wsgrope.h, prefix wsr); census 364 -> 365.
     {
         using namespace rules;
         int bad = 0;

@@ -2,7 +2,7 @@
  "round": 737,
  "title": "OA TREASURE - Table III. (Orient): Magical Items: the twelve d100 bands of the item draw",
  "prefix": "dky",
- "header_file": "rules/oa108tableiii.h",
+ "header_file": "rules/oa/oa108tableiii.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA TREASURE - TABLE III. (ORIENT), MAGICAL ITEMS, printed capture p. 287 - the item draw round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 190 closed, 45 open - the Table III box flips (census 659 -> 660); NEXT - R738: the Modifications to Standard Magical Items prose (capture p. 286), prefix dkz (verify free at the landing), audit \"R738 OA standard item mods audit\", include after rules/oa108tableiii.h"
+  "sentinel": "the gap census after this round: 190 closed, 45 open - the Table III box flips (census 659 -> 660); NEXT - R738: the Modifications to Standard Magical Items prose (capture p. 286), prefix dkz (verify free at the landing), audit \"R738 OA standard item mods audit\", include after rules/oa/oa108tableiii.h"
  },
  "consts": [
   {
@@ -344,7 +344,7 @@
   "open": 45
  },
  "include_comment": "the OA Table III pins",
- "include_after": "#include \"rules/oa107tableiia.h\"  // R736: the OA Table II.A. pins",
+ "include_after": "#include \"rules/oa/oa107tableiia.h\"  // R736: the OA Table II.A. pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R736 LANDED 2026-10-21: commit",
@@ -355,7 +355,7 @@
   "  OA TREASURE, Table II.A. (Orient):",
   "  Monetary Treasure (capture pp. 286-287,",
   "  the table spans the page break), header",
-  "  rules/oa107tableiia.h, prefix dkx",
+  "  rules/oa/oa107tableiia.h, prefix dkx",
   "  (verified free at 7d24d47), one gap flip",
   "  (the Table II.A. box, its two-line wrap",
   "  handled), gap census now 189 closed /",
@@ -388,6 +388,6 @@
   "  dky (verify free at the landing), audit",
   "  \"R737 OA Table III Orient audit\" (the",
   "  label must stay under the width gate),",
-  "  include after rules/oa107tableiia.h."
+  "  include after rules/oa/oa107tableiia.h."
  ]
 }

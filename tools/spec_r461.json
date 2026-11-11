@@ -2,7 +2,7 @@
  "round": 461,
  "title": "the WSG airborne fall chance and riding proficiency",
  "prefix": "wfa",
- "header_file": "rules/wsgfallair.h",
+ "header_file": "rules/wsg/wsgfallair.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -13,7 +13,7 @@
  "census_before": 385,
  "inline_count": 31,
  "audit_label": "R461 WSG airborne fall chance pin audit",
- "audit_comment": "The Chapter 5 closer: the fall-chance system (printed p. 48) and the airborne riding proficiency (printed p. 49) pin as rules/wsgfallair.h (NEW, prefix wfa): the 0% base with the seven reduction modifiers (the full-body strap -200, the lower-body strap -150, the proficiency -50, the saddle -10, the stirrups -10, the -2 per ability point above 12 with the strength cap 18) and the seven increase modifiers (the hands-free +50, the overload +20, the faster-than-normal +20, the unwilling mount +20, the inclement weather +20, the not-level +10, the +2 per ability point below 12 and the +1 per wind mph above the 30-mph threshold), the every-three-turns check cadence restarting on each landing with the bad-conditions once-per-round exception, and the proficiency pins (the per-category slots with the dragon-and-griffon two-slot example, the -50/+50 hands-free negation, no mount control, the feats under ideal conditions only, the nonproficient automatic feat failure).",
+ "audit_comment": "The Chapter 5 closer: the fall-chance system (printed p. 48) and the airborne riding proficiency (printed p. 49) pin as rules/wsg/wsgfallair.h (NEW, prefix wfa): the 0% base with the seven reduction modifiers (the full-body strap -200, the lower-body strap -150, the proficiency -50, the saddle -10, the stirrups -10, the -2 per ability point above 12 with the strength cap 18) and the seven increase modifiers (the hands-free +50, the overload +20, the faster-than-normal +20, the unwilling mount +20, the inclement weather +20, the not-level +10, the +2 per ability point below 12 and the +1 per wind mph above the 30-mph threshold), the every-three-turns check cadence restarting on each landing with the bad-conditions once-per-round exception, and the proficiency pins (the per-category slots with the dragon-and-griffon two-slot example, the -50/+50 hands-free negation, no mount control, the feats under ideal conditions only, the nonproficient automatic feat failure).",
  "banner": {
   "title": "The WSG AIRBORNE FALL CHANCE AND RIDING PROFICIENCY pins, R461: the Chapter 5 closer - the to-fall-or-not-to-fall system (the 0% base on smooth level flight at the full normal rate; the reduction ladder: the full-body strap, the lower-body strap, the proficiency, the saddle, the stirrups, the per-point ability rule over the 12 threshold with the 18 strength cap; the increase ladder: the free hands, the overload, the faster-than-normal flight, the unwilling mount, the inclement weather, the not-level flight, the below-12 per-point rule, the wind ladder over the 30-mph threshold; the every-three-turns check with the landing restart and the once-per-round exception) and the airborne riding proficiency (the per-category slots, the hands-free negation, the no-control rule, the ideal-conditions feats, the nonproficient auto-fail).",
   "provenance": "The read: the OCR session 8d6a65a0, pdf pages 49-50 = printed 48-49, cross-checked against the second OCR copy - the two read word-for-word identical. The sign convention is pinned by the p. 49 text: the proficiency enjoys a -50% modifier that effectively negates the +50% for riding without holding on, so the first six table rows are reductions and the last seven are increases over the 0% base."
@@ -342,17 +342,17 @@
  "gap_flips": [
   {
    "from": "  - [ ] To fall or not to fall (p. 48)",
-   "to": "  - [x] To fall or not to fall (p. 48) - R461: the fall-chance system (the 0% base, the strap/saddle/stirrup/proficiency reductions, the hands-free/overload/faster/unwilling/weather/level increases, the ability-point and wind-velocity ladders, the every-three-turns cadence with the landing restart and the per-round exception) pin as rules/wsgfallair.h",
+   "to": "  - [x] To fall or not to fall (p. 48) - R461: the fall-chance system (the 0% base, the strap/saddle/stirrup/proficiency reductions, the hands-free/overload/faster/unwilling/weather/level increases, the ability-point and wind-velocity ladders, the every-three-turns cadence with the landing restart and the per-round exception) pin as rules/wsg/wsgfallair.h",
    "note": "the to-fall-or-not-to-fall item"
   },
   {
    "from": "  - [ ] Proficiency in airborne riding (p. 49)",
-   "to": "  - [x] Proficiency in airborne riding (p. 49) - R461: the per-category slots (the dragon-and-griffon two-slot example), the -50% fall modifier negating the +50% hands-free, the no-control rule, the ideal-conditions feats and the nonproficient automatic failure pin as rules/wsgfallair.h",
+   "to": "  - [x] Proficiency in airborne riding (p. 49) - R461: the per-category slots (the dragon-and-griffon two-slot example), the -50% fall modifier negating the +50% hands-free, the no-control rule, the ideal-conditions feats and the nonproficient automatic failure pin as rules/wsg/wsgfallair.h",
    "note": "the airborne riding proficiency item"
   },
   {
    "from": "Post-state at R460: 63 closed, 123 open (the R460 round pins the flying mounts - Table 27 with its four category grids and the column definitions, the listing criteria, the willingness and feeding and load rules; the next rounds continue the chapter - the to fall or not to fall and the proficiency in airborne riding).",
-   "to": "Post-state at R461: 65 closed, 121 open (the R461 round closes Chapter 5 - the fall-chance system and the airborne riding proficiency pin as rules/wsgfallair.h; the next rounds open the food and water chapter - going without food, Table 28 and the water requirements).",
+   "to": "Post-state at R461: 65 closed, 121 open (the R461 round closes Chapter 5 - the fall-chance system and the airborne riding proficiency pin as rules/wsg/wsgfallair.h; the next rounds open the food and water chapter - going without food, Table 28 and the water requirements).",
    "note": "the post-state line"
   }
  ],
@@ -361,7 +361,7 @@
   "open": 121
  },
  "include_comment": "the WSG airborne fall chance",
- "include_after": "#include \"rules/wsgflymounts.h\"  // R460: the WSG flying mounts",
+ "include_after": "#include \"rules/wsg/wsgflymounts.h\"  // R460: the WSG flying mounts",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R460 landed 2026-10-14: commit 10c968e (full",
@@ -376,7 +376,7 @@
   "  unreducible, the over-load stamina cut), the solid-form footnote, the",
   "  listing criteria, the training and willingness rules, the triple-to-fifty",
   "  rations feeding and the even-distribution encumbrance with the 2:1 doubling.",
-  "  rules/wsgflymounts.h NEW (60 inlines, prefix wfm, checked free in all three",
+  "  rules/wsg/wsgflymounts.h NEW (60 inlines, prefix wfm, checked free in all three",
   "  TUs). Gap 62/124 -> 63/123; census 384 -> 385. The next round closes Chapter",
   "  5: the fall chance and the airborne riding proficiency on printed pp. 48-49."
  ]

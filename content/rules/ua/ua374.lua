@@ -1,4 +1,4 @@
--- ua374: promoted from rules/uatreasuredial.h (the The UA TREASURE DIAL decision);
+-- ua374: promoted from rules/ua/uatreasuredial.h (the The UA TREASURE DIAL decision);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 374,

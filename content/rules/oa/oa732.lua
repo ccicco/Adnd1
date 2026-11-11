@@ -1,11 +1,11 @@
--- oa732: promoted from rules/oa103tengu.h (the OA MONSTERS - THE TENGU, printed capture pp. 284-285 - the mountain spirit);
+-- oa732: promoted from rules/oa/oa103tengu.h (the OA MONSTERS - THE TENGU, printed capture pp. 284-285 - the mountain spirit);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 732,
   "prefix" = "oa732",
   "banner" = {
       "title" = "OA MONSTERS - THE TENGU, printed capture pp. 284-285 - the mountain spirit",
-      "provenance" = "round census 654 -> 655.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 185 closed, 50 open - the tengu box flips (census 654 -> 655); NEXT - R733: the Chapter 13 treasure opener, the Magical Items Usable By Class table (capture p. 285), prefix dku (verify free at the landing), audit \"R733 OA treasure class usage audit\", include after rules/oa103tengu.h",
+      "provenance" = "round census 654 -> 655.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 185 closed, 50 open - the tengu box flips (census 654 -> 655); NEXT - R733: the Chapter 13 treasure opener, the Magical Items Usable By Class table (capture p. 285), prefix dku (verify free at the landing), audit \"R733 OA treasure class usage audit\", include after rules/oa/oa103tengu.h",
     },
   "consts" = { {
       "name" = "dktTenguCount",

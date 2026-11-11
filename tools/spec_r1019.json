@@ -8,12 +8,12 @@
   "title": "The MM2 normalization batch three - 83 of 332 defs rewritten to the full-field 57-key emission, the mongrelman and myconid by_level pin repairs riding",
   "provenance": "The MM2 normalization - the per-book schema pass continued (the R879 normalizer doctrine, the R1009-R1014 MM1 arc, R1016 the OA book close, R1017 and R1018 the MM2 arc openers): 83 more sparse MM2 defs (mihstu through shadow_mastiff) rewritten to the full-field 57-key emission of the landed tools/normalize_registry.py - string sentinels n/a, integer sentinels -1 - byte-exact against the normalizer output, the canonical FIELD_ORDER honored; 583 anchored inserts (2247 inserted lines), zero whole-line rewrites, zero move encodings; every text field already carried its Lua-optional comma. THE PIN REPAIRS: the mongrelman and myconid are by_level defs whose sparse files never carried xp/xpPerHp, and the loader reads absence as 0 - the mm2lmn pin grid cases 31 and 35 (the kLM walk array order; the russet mold holds case 30 with its own carried 0/0/0 cells) pinned that 0. The canonical emission writes the -1 sentinel (the dervish and dwarf precedent, the duergar and mandragora at R1018), so four pin cells ride this round: xp and xpPerHp at both cases, 0 to -1. Per the R1018 double-grid lesson each letter walk exists TWICE - the regtest live-def walk pins the loader members against the grid functions, and the migrated fragment pins the grid functions against a hardcoded copy of the print grid - so the R808 LMN-walk fragment (CLmStats rows 31 and 35) mirrors the repaired cells, and the lmn xp grid comment rides along; the fragment and the live walk are simulated in full before landing, every row and column aligned. No other audit pins a changed member - the sweep verified all 83 defs against every audit context. THE MM2 census after this round: 332 defs, 249 canonical, 83 remaining - the batch four closes the book. THE QUEUE: the MM2 batch four follows (zombie_monster needs the wxyz-walk pins checked), then FF 185, WSG+MOP 23, DRG 5, the deity seam."
  },
- "header_file": "rules/mq3.h",
+ "header_file": "rules/mm/mm2_normalization_batch3.h",
  "audit_file": "rules/audits/r1019_batch.h",
  "audit_label": "R1019 MM2 normalization audit",
  "audit_comment": "THE MM2 NORMALIZATION - the per-book schema pass continued: 83 of 332 defs rewritten to the full-field 57-key emission, byte-exact against the landed normalize_registry.py; the mongrelman and myconid by_level pin repairs ride the round with their fragment grid-copy mirrors.",
  "audit_anchor": "#include \"rules/audits/r1018_batch.h\"  // R1018: R1018 MM2 normalization audit",
- "include_after": "#include \"rules/mq2.h\"  // R1018: the MM2 normalization batch two",
+ "include_after": "#include \"rules/mm/mm2_normalization_batch2.h\"  // R1018: the MM2 normalization batch two",
  "include_comment": "the MM2 normalization batch three",
  "regtest": "regtest.cpp",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -80,7 +80,7 @@
   "    rows -1, the mongrelman and",
   "    myconid by_level cells still",
   "    0 until their own batches,",
-  "    mq2.h after mq1.h,",
+  "    rules/mm/mm2_normalization_batch2.h after rules/mm/mm2_normalization_batch1.h,",
   "    r1018_batch.h above",
   "    r1017_batch.h, the R1017",
   "    LANDED record seated verbatim",
@@ -3761,31 +3761,31 @@
    "to": "  text = \"These hound-like creatures are normally encountered on the Plane of Shadow. In their natural habitat, they roam in packs or are used as trained guard beasts. In shadowy conditions (Plane of Shadow, moonlight, etc.) a shadow mastiff is a terrible foe. It can strike and then blend with the shadows so that it is 40% unlikely to be seen. However, in bright light it loses 50% of its normal movement ability and cannot use shadows for concealment.\\n\\nThe lair of a pack of shadow mastiffs is 50% likely to contain 2-5 whelps. These young can be taken and sold for from 200-500 gp each. The baying of a pack of shadow mastiffs is certain to cause panic, resulting in flight directly away from the baying while dropping any item held in the hand, unless a save vs. spells is made. For each number of shadow mastiffs under 10, add +1 to the roll (a 1 always failing), but for every 2 mastiffs over 12 subtract 1 from the roll.\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n"
   },
   {
-   "file": "rules/mm2lmn.h",
+   "file": "rules/mm/mm2lmn.h",
    "note": "the mongrelman by_level xp pin 0 -> -1 (the full-field sentinel)",
    "from": "        case 30:\n            return 0;\n        case 31:\n            return 0;\n        case 32:\n            return 2000;",
    "to": "        case 30:\n            return 0;\n        case 31:\n            return -1;\n        case 32:\n            return 2000;"
   },
   {
-   "file": "rules/mm2lmn.h",
+   "file": "rules/mm/mm2lmn.h",
    "note": "the mongrelman by_level xpPerHp pin 0 -> -1 (the full-field sentinel)",
    "from": "        case 30:\n            return 0;\n        case 31:\n            return 0;\n        case 32:\n            return 12;",
    "to": "        case 30:\n            return 0;\n        case 31:\n            return -1;\n        case 32:\n            return 12;"
   },
   {
-   "file": "rules/mm2lmn.h",
+   "file": "rules/mm/mm2lmn.h",
    "note": "the myconid by_level xp pin 0 -> -1 (the full-field sentinel)",
    "from": "        case 34:\n            return 28;\n        case 35:\n            return 0;\n        case 36:\n            return 200;",
    "to": "        case 34:\n            return 28;\n        case 35:\n            return -1;\n        case 36:\n            return 200;"
   },
   {
-   "file": "rules/mm2lmn.h",
+   "file": "rules/mm/mm2lmn.h",
    "note": "the myconid by_level xpPerHp pin 0 -> -1 (the full-field sentinel)",
    "from": "        case 34:\n            return 2;\n        case 35:\n            return 0;\n        case 36:\n            return 4;",
    "to": "        case 34:\n            return 2;\n        case 35:\n            return -1;\n        case 36:\n            return 4;"
   },
   {
-   "file": "rules/mm2lmn.h",
+   "file": "rules/mm/mm2lmn.h",
    "note": "the lmn xp grid comment rides the pin repair",
    "from": "// mandragora by_level row reads -1 (the R1018 pin repair); the\n// mongrelman and myconid by_level rows read 0 until their\n// normalization batches land)",
    "to": "// mandragora, mongrelman and myconid by_level\n// rows read -1 (the R1018 and R1019 pin repairs)"

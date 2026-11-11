@@ -2,7 +2,7 @@
  "round": 638,
  "title": "EXCHANGE - the gajin rates, Table 46",
  "prefix": "dgy",
- "header_file": "rules/oaexch.h",
+ "header_file": "rules/oa/oaexch.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "GAJIN AND RATES OF EXCHANGE AND TABLE 46, printed capture pp. 76-77 - the OA exchange round",
   "provenance": "pinned from the 2018 print capture alone for this range (the settling authority): the first Mistral-OCR capture session is unavailable above p. 33, so the cross-capture agreement check is impossible. No contested cells detected within the single source: the T46 grid pins as nine currency rows x 4 cols - the real value as a fen-based absolute (every printed multi-value cell agrees in fen: the silver 10 fen or 2 yuan, the electrum 100 fen or 20 yuan or 1 tael, the gold 200 fen or 40 yuan or 2 tael, the platinum 1000 fen or 200 yuan or 10 tael or 1 ch'ien), the exchange rate as per-row lo-hi bounds in the row's own unit, the market-value rows pinned as the -99 sentinel with a market flag; the row order pins as the 0-8 code: fen, yuan, tael, ch'ien, copper piece, silver piece, electrum piece, gold piece, platinum piece. The prose street rates and the T46 standard rates differ AS PRINTED - the yuan 'also equal to one copper piece' beside the T46 five-copper real value, the tael 4-14 sp (2d6-2) street fetch beside the T46 2-12 sp - both pinned as printed, the prose as the export street rate, the table as the standard doctrine. OCR normalization: the silver rate prints '(1d6 - 7)' and reads as 1d6+7 fen (spanning 8-13), pinned as the dgySilverFenDieOffset const. The Equipping the Character prose with Table 47 (capture pp. 77-84) is deliberately left for the next round",
-  "sentinel": "the gap census after this round: 88 closed, 147 open - the Gajin and Rates of Exchange and Table 46 boxes flip (census 560 -> 561); NEXT - R639: the Equipping the Character prose with Table 47 (Basic Equipment and Supplies Cost), capture pp. 77-84, the eight cost lists, prefix dgz (verify free), audit \"R639 OA equipment audit\", include after rules/oaexch.h"
+  "sentinel": "the gap census after this round: 88 closed, 147 open - the Gajin and Rates of Exchange and Table 46 boxes flip (census 560 -> 561); NEXT - R639: the Equipping the Character prose with Table 47 (Basic Equipment and Supplies Cost), capture pp. 77-84, the eight cost lists, prefix dgz (verify free), audit \"R639 OA equipment audit\", include after rules/oa/oaexch.h"
  },
  "consts": [
   {
@@ -472,7 +472,7 @@
   "open": 147
  },
  "include_comment": "the OA exchange pins",
- "include_after": "#include \"rules/oastart.h\"  // R637: the OA starting money pins",
+ "include_after": "#include \"rules/oa/oastart.h\"  // R637: the OA starting money pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R637 LANDED 2026-10-19: commit",
@@ -482,7 +482,7 @@
   "  (census 559 -> 560, pushed",
   "  482dad2..1cd7075), STARTING MONEY - the",
   "  class funds dice and Table 45, capture",
-  "  pp. 75-76: rules/oastart.h, prefix dgx",
+  "  pp. 75-76: rules/oa/oastart.h, prefix dgx",
   "  (verified free), 13 inlines (1 const",
   "  dgxT45RowCount=10, 4 bools, 8 table",
   "  columns): the Starting Money opener",
@@ -519,6 +519,6 @@
   "  the real-value and exchange-rate",
   "  doctrine, prefix dgy (verify free),",
   "  audit \"R638 OA exchange audit\",",
-  "  include after rules/oastart.h."
+  "  include after rules/oa/oastart.h."
  ]
 }

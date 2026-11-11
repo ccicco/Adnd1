@@ -2,7 +2,7 @@
  "round": 498,
  "title": "the WSG proficiencies prose - the system frame, the choosing-skills rules and the twenty-five descriptions - THE WSG GAP CLOSURE ROUND",
  "prefix": "wpd",
- "header_file": "rules/wsgprofd.h",
+ "header_file": "rules/wsg/wsgprofd.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -15,7 +15,7 @@
  "audit_label": "R498 WSG proficiencies prose audit",
  "audit_comment": "The wilderness proficiencies prose, printed pp. 11-17 (pdf 12-18): the DSG-system frame with the dual-environment ruling, the choosing-skills rules (the player chooses, the background logic, the DM approval) and all twenty-five descriptions - alertness (1-in-6 surprise), animal handling (20 percent nonproficient), animal lore (the 4-or-less/5-or-more failure split), blind-fighting (the halved penalties), boating, charioteering, direction sense (+4/+2 darkness, the 90-degree error), endurance, fire-building, fishing, foraging, healing (the emergency 1d3, the poison +2 package, the disease step-down), hunting (the party ladder 1/3/6/10/15), mountaineering, plant lore, the riding feats (airborne and land-based), rope use (+3/+6 escape), running (the sprint and distance packages), the survival trio (the 20-degree shifts), swimming, tracking (5 per level plus 5, capped 55) and weather sense (the six-hour read).",
  "banner": {
-  "title": "The WSG PROFICIENCIES PROSE, R498: the chapter frame and the twenty-five descriptions, printed pp. 11-17 (pdf 12-18). The Table 1/2 grids and the check/improving/expanding system stay with R425 (rules/wsgprof.h) as seams; this round pins the prose around and between them - every description mechanic from the 1-in-6 alertness surprise to the weather sense lockout.",
+  "title": "The WSG PROFICIENCIES PROSE, R498: the chapter frame and the twenty-five descriptions, printed pp. 11-17 (pdf 12-18). The Table 1/2 grids and the check/improving/expanding system stay with R425 (rules/wsg/wsgprof.h) as seams; this round pins the prose around and between them - every description mechanic from the 1-in-6 alertness surprise to the weather sense lockout.",
   "provenance": "WSG printed pp. 11-17, pdf 12-18, extracted at r497-extraction sha 0d5f109 (tesseract full-text and tsv, x12-x18, 300 dpi) - the same pass as R497. The tesseract Table 2 read dropped rows but the grid is already pinned by R425 from the IIIF image; the descriptions prose read whole and clean.",
   "sentinel": "THE SETTLE: the last four WSG boxes flip in the same commit; the gap report lands at 186 closed / 0 open - THE ENTIRE WILDERNESS SURVIVAL GUIDE IS PINNED; census 422 -> 423."
  },
@@ -1887,7 +1887,7 @@
    }
   ]
  },
- "include_after": "#include \"rules/wsgoverview.h\"  // R497: the WSG overview chapter pins",
+ "include_after": "#include \"rules/wsg/wsgoverview.h\"  // R497: the WSG overview chapter pins",
  "include_comment": "the WSG proficiencies prose pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
@@ -1897,7 +1897,7 @@
   "  pushed bd58585..6276205), the WSG OVERVIEW OF THE",
   "  WILDERNESS, printed pp. 7-10 (pdf 8-11) - the terrain",
   "  types, the hierarchy, the bodies of water and the",
-  "  climate zones. Pinned as rules/wsgoverview.h (prefix",
+  "  climate zones. Pinned as rules/wsg/wsgoverview.h (prefix",
   "  wov, 85 inlines: 27 consts + 58 bools, no grids).",
   "  Load-bearing pins: the desert under-10-inches rainfall",
   "  definition with the 70-foot dune cap (draa beyond),",
@@ -1933,22 +1933,22 @@
   {
    "note": "the proficiencies parent box",
    "from": "- [ ] **Wilderness proficiencies** (pp. 11-17)",
-   "to": "- [x] **Wilderness proficiencies** (pp. 11-17) - R498: the chapter prose pins as rules/wsgprofd.h - the system frame, the choosing-skills rules and the twenty-five descriptions, with the R425 grids and check system as seams; THE WSG GAP REPORT IS CLOSED"
+   "to": "- [x] **Wilderness proficiencies** (pp. 11-17) - R498: the chapter prose pins as rules/wsg/wsgprofd.h - the system frame, the choosing-skills rules and the twenty-five descriptions, with the R425 grids and check system as seams; THE WSG GAP REPORT IS CLOSED"
   },
   {
    "note": "the nonweapon proficiencies frame",
    "from": "  - [ ] Nonweapon proficiencies (p. 11)",
-   "to": "  - [x] Nonweapon proficiencies (p. 11) - R498: the DSG-equivalence system frame, the dual-environment ruling and the underground-only contrast pin as rules/wsgprofd.h"
+   "to": "  - [x] Nonweapon proficiencies (p. 11) - R498: the DSG-equivalence system frame, the dual-environment ruling and the underground-only contrast pin as rules/wsg/wsgprofd.h"
   },
   {
    "note": "the choosing-skills rules",
    "from": "  - [ ] Choosing skills (p. 11)",
-   "to": "  - [x] Choosing skills (p. 11) - R498: the player-chooses rule, the background-logic recommendation, the delay-and-adventure bar and the DM approval rule pin as rules/wsgprofd.h"
+   "to": "  - [x] Choosing skills (p. 11) - R498: the player-chooses rule, the background-logic recommendation, the delay-and-adventure bar and the DM approval rule pin as rules/wsg/wsgprofd.h"
   },
   {
    "note": "the proficiency descriptions",
    "from": "  - [ ] Proficiency descriptions (pp. 13-17)",
-   "to": "  - [x] Proficiency descriptions (pp. 13-17) - R498: all twenty-five descriptions pin as rules/wsgprofd.h - alertness through weather sense with the healing, riding and running mechanics"
+   "to": "  - [x] Proficiency descriptions (pp. 13-17) - R498: all twenty-five descriptions pin as rules/wsg/wsgprofd.h - alertness through weather sense with the healing, riding and running mechanics"
   }
  ],
  "gap_census": {

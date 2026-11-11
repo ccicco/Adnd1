@@ -8,7 +8,7 @@
   "provenance": "The part-three round of the issue-24 four-round shape - the ten-chain commentary set of the walk: the Pehr magic-user limiting with the Rules of Concentration and Duration, the Gygax Roman military update for Classic Warfare with the Livian manipular legion and the Julian light-infantry mounting, the Brunner Viking Caspian campaign with the three scenario orders of battle, the Gygax melee defense with the door jam and the missile ratios and the Design Department note, the Laking DUNGEON variant set with transference, beast masters and dungeon parties, the Nascati Swiss with the twenty-one-foot pike and the three phalanxes, the Pehr three-type psionic power system with the subsentient costs and the Anti-Psi ladder, the Buettner disease charts with the fatality bands and the ninety-eight skip, the Rahman Petal Throne name generator with the verified sixty-four permutation, and the Ward Monty Haul humor fiction. Pinned from The Dragon Vol. III No. 10, April 1979, number 24, print 7 through 29 and 39 and 42 through 43 - PRINT FOLIO = PDF PAGE this issue, the single-voice transcript of the Curtiss-provided scan."
  },
  "regtest": "regtest.cpp",
- "header_file": "rules/k24.h",
+ "header_file": "rules/dragon/issue024_opener3.h",
  "audit_file": "rules/audits/r956_batch.h",
  "audit_label": "R956 issue-24 commentary set audit",
  "audit_comment": "the ten-chain commentary set audit - the magic-user limits, the Roman maniples, the Viking scenarios, the melee rationale, the DUNGEON variations, the Swiss phalanxes, the psionic professions, the disease charts, the Petal Throne name grid and the Monty Haul satire",
@@ -21,7 +21,7 @@
   "open": 0
  },
  "gap_flips": [],
- "include_after": "#include \"rules/s24.h\"  // R955: the Dragon issue-24 opener part two, the alignment pantheon table round",
+ "include_after": "#include \"rules/dragon/issue024_opener2.h\"  // R955: the Dragon issue-24 opener part two, the alignment pantheon table round",
  "include_comment": "the Dragon issue-24 opener part three, the ten-chain commentary round",
  "audit_anchor": "#include \"rules/audits/r955_batch.h\"  // R955: R955 issue-24 alignment pantheon audit",
  "seed_anchor": "## Knowledge maintenance",

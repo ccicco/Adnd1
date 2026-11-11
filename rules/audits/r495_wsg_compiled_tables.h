@@ -8,7 +8,7 @@
     // ONE exception is the compiled Table 32 (fishing success): the reprint
     // reads Fair daytime 1d6-3 against the original 1d6-2, and Good daytime
     // 1d6-2 against the original 1d8-2 - pinned here as the errata record
-    // with the landed rules/wsgfish.h keeping the original readings. The
+    // with the landed rules/wsg/wsgfish.h keeping the original readings. The
     // Table 4 attack cells at 90-99 (-1) and 100-109 (-2), shredded by the
     // tesseract pass, were confirmed by direct eyeball and match the pin.
     // This closes the compiled-tables box: the WSG arc is complete.

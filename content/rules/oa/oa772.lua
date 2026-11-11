@@ -1,4 +1,4 @@
--- oa772: promoted from rules/oa143weaponsprose.h (the OA WEAPONS PROSE - THE FORTY-SEVEN WEAPON DESCRIPTIONS, printed capture pp.);
+-- oa772: promoted from rules/oa/oa143weaponsprose.h (the OA WEAPONS PROSE - THE FORTY-SEVEN WEAPON DESCRIPTIONS, printed capture pp.);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 772,

@@ -2,7 +2,7 @@
  "prefix": "tpl",
  "round": 868,
  "title": "temple trappings",
- "header_file": "rules/tpl.h",
+ "header_file": "rules/ddg/appendix2_temple_trappings.h",
  "audit_file": "rules/audits/r868_batch.h",
  "audit_label": "R868 temple trappings audit",
  "include_after": "#include \"rules/pln.h\"  // R867: the known planes of existence",

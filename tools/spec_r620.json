@@ -2,7 +2,7 @@
  "round": 620,
  "title": "THE KENSAI - the sword saint: the favored-weapon doctrine, the natural AC formula, the ki power, the level ladders with the pupil and whirlwind powers, the duel doctrine, Tables 18 and 19",
  "prefix": "dgg",
- "header_file": "rules/oakensai.h",
+ "header_file": "rules/oa/oakensai.h",
  "regtest": "regtest.cpp",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "gap_report": "tools/oa_gap_report.md",
@@ -32,7 +32,7 @@
   "  (the v2). THE AMENDMENT IS RE-APPLIED",
   "  TO THE WORKING TREE AND MUST RIDE THE",
   "  R620 PUSH - EXPLICITLY git add",
-  "  tools/spec_r618.json rules/oaraces.h",
+  "  tools/spec_r618.json rules/oa/oaraces.h",
   "  (a PRIOR-ROUND-FILE fold does not",
   "  happen by itself). Battery 227 mutants,",
   "  0 missed; gap census 27/208 -> 33/202.",
@@ -47,7 +47,7 @@
  "audit_label": "R620 OA kensai audit",
  "audit_comment": "OA round seven (capture pp. 28-31): the kensai - the dual prime requisites, the natural AC formula and step, the initiative and ki powers, the damage and to-hit ladders, the pupil and whirlwind powers, the restrictions and practice, and the duel doctrine with the honor demotion.",
  "census_before": 542,
- "include_after": "#include \"rules/oabarbbushi.h\"  // R619: the OA barbarian and bushi pins",
+ "include_after": "#include \"rules/oa/oabarbbushi.h\"  // R619: the OA barbarian and bushi pins",
  "include_comment": "the OA kensai pins",
  "caller_files": [],
  "switches": [],
@@ -967,6 +967,6 @@
  "banner": {
   "title": "THE KENSAI, printed capture pp. 28-31 - the OA sword saint round",
   "provenance": "verified against capture pp. 28-31 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). The Table 19 special-abilities column pins as a coded ladder (meditation, the 1-in-6 surprise, two weapons and fear, the pupils, the whirlwind). OCR normalization: practice daisy reads as practice daily (prose only). This push ALSO carries the still-unlanded R618 v3 amendment (spec_r618 08fa91d7 -> 9ea88b9e, oaraces.h 3786b6c2 -> 615b853c) - the R619 fold silently failed because the rn flow stages only the current round files; this time the two prior-round files must be added explicitly.",
-  "sentinel": "the gap census after this round: 36 closed, 199 open - the kensai boxes with Tables 18 and 19 flip (census 542 -> 543); NEXT - R621: the Monk - the discipline ladder, the quirks, Tables 20 and 21, prefix dgh (verify free), audit \"R621 OA monk audit\", include after rules/oakensai.h"
+  "sentinel": "the gap census after this round: 36 closed, 199 open - the kensai boxes with Tables 18 and 19 flip (census 542 -> 543); NEXT - R621: the Monk - the discipline ladder, the quirks, Tables 20 and 21, prefix dgh (verify free), audit \"R621 OA monk audit\", include after rules/oa/oakensai.h"
  }
 }

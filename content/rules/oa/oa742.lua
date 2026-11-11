@@ -1,11 +1,11 @@
--- oa742: promoted from rules/oa113miscmagic.h (the OA TREASURE - MISCELLANEOUS MAGIC, printed capture pp. 288-289 - the misc);
+-- oa742: promoted from rules/oa/oa113miscmagic.h (the OA TREASURE - MISCELLANEOUS MAGIC, printed capture pp. 288-289 - the misc);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 742,
   "prefix" = "oa742",
   "banner" = {
       "title" = "OA TREASURE - MISCELLANEOUS MAGIC, printed capture pp. 288-289 - the misc",
-      "provenance" = "item notes round census 664 -> 665.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 195 closed, 40 open - the misc magic box flips (census 664 -> 665); NEXT - R743: Armor and Shield prose (capture pp. 289-291), prefix dle (verify free at the landing), audit \"R743 OA armor shield audit\", include after rules/oa113miscmagic.h",
+      "provenance" = "item notes round census 664 -> 665.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 195 closed, 40 open - the misc magic box flips (census 664 -> 665); NEXT - R743: Armor and Shield prose (capture pp. 289-291), prefix dle (verify free at the landing), audit \"R743 OA armor shield audit\", include after rules/oa/oa113miscmagic.h",
     },
   "consts" = { {
       "name" = "dldBootsOfElvenkindRerolled",

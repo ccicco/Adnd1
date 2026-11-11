@@ -41,7 +41,7 @@ SEED_ENTRY = NL.join([
     '  f9e1522, census 275, the UA',
     '  new cleric spells pin round,',
     '  the 6th level',
-    '  (rules/uaclericspells6.h):',
+    '  (rules/ua/uaclericspells6.h):',
     '  forbiddance (the name header',
     '  never prints - identified by',
     '  the near-verbatim 2e',
@@ -83,13 +83,13 @@ assert s.count('R340 landed 2026-10-11') == 1,     'a r340 kept'
 assert s.count('R339 landed 2026-10-11') == 1,     'a r339 kept'
 assert s.count('## Knowledge maintenance') == 1,     'a maint'
 assert len(applied) + len(already) == 1, 'a count'
-# ---- (b) NEW rules/uaclericspells7.h ----
-US = 'rules/uaclericspells7.h'
+# ---- (b) NEW rules/ua/uaclericspells7.h ----
+US = 'rules/ua/uaclericspells7.h'
 if os.path.exists(US) and 'R349' in rd(US):
     already.append('uaclericspells7.h: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uaclericspells7.h
+// Adnd1 - rules/ua/uaclericspells7.h
 // The UA NEW CLERIC SPELLS (p. 42) pins, R349: the 7th-level
 // spell descriptions - exaction and succor. With this round
 // all seven levels are pinned (R343 through this round) and the
@@ -433,7 +433,7 @@ else:
     assert s.count(TAIL_OLD) == 1, 'c tail'
     NOTE = NL.join([
     '      - R349: the 7th level pinned',
-    '        (rules/uaclericspells7.h) -',
+    '        (rules/ua/uaclericspells7.h) -',
     '        exaction (the duty or quest',
     '        with the alignment gates and',
     '        the bargain consequences) and',
@@ -491,12 +491,12 @@ if 'R349 UA cleric 7th level spells pin audit' in s:
     already.append('regtest.cpp: the R349 audit')
 else:
     INC_ANCH = (
-        '#include "rules/uaclericspells6.h"'
+        '#include "rules/ua/uaclericspells6.h"'
         '  // R348: the UA new cleric 6th'
         ' level')
     INC_NEW = NL.join([
         INC_ANCH,
-        '#include "rules/uaclericspells7.h"'
+        '#include "rules/ua/uaclericspells7.h"'
         '  // R349: the UA new cleric 7th'
         ' level',
     ])
@@ -685,7 +685,7 @@ assert s.count(
     'pin audit: bad ') == 1, 'd r340 kept'
 assert s.count('R227: the wis mental save') == 1,     'd r227 kept'
 assert s.count(
-    '#include "rules/uaclericspells7.h"') == 1, 'd include'
+    '#include "rules/ua/uaclericspells7.h"') == 1, 'd include'
 assert len(applied) + len(already) == 4, 'd count'
 # ---- the summary ----
 print('R349 splice: ALL OK (applied %d, already %d)'

@@ -16,7 +16,7 @@
   "  the Wesley D. Ives non-prime-requisite",
   "  adjudication system, the arc's first",
   "  VARIANT-layer pin). THE SHAPE: prefix ivs",
-  "  (full-repo scan clean), header rules/ivs.h",
+  "  (full-repo scan clean), header rules/dragon/issue001_ives_tables.h",
   "  (92 opener-only), the die-band chain (the",
   "  d100-plus-score total picks the d4-d12",
   "  band), the exceptional-strength ladder",
@@ -65,7 +65,7 @@
   "  bulette.lua) with the Ives box flip.",
   "  WAIT FOR GO."
  ],
- "include_after": "#include \"rules/ivs.h\"  // R887: the Ives attribute tables, the Dragon opener",
+ "include_after": "#include \"rules/dragon/issue001_ives_tables.h\"  // R887: the Ives attribute tables, the Dragon opener",
  "include_comment": "the Dragon small-variant set",
  "header_file": "rules/drg.h",
  "audit_file": "rules/audits/r888_batch.h",

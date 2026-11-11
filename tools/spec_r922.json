@@ -22,9 +22,9 @@
   "  unharvested. Standing by for the next",
   "  direction. WAIT FOR GO."
  ],
- "include_after": "#include \"rules/fcl.h\"  // R921: the Dragon issue-12 box closing round, the four-chain walk complete",
+ "include_after": "#include \"rules/dragon/issue012_close.h\"  // R921: the Dragon issue-12 box closing round, the four-chain walk complete",
  "include_comment": "the Dragon issue-13 opener part one, the Shlump da Orc giant physics article and the Jon Pickens demon generation article",
- "header_file": "rules/dgm.h",
+ "header_file": "rules/dragon/issue013_opener1.h",
  "audit_file": "rules/audits/r922_batch.h",
  "audit_label": "R922 issue-13 opener audit",
  "audit_anchor": "#include \"rules/audits/r921_batch.h\"  // R921: R921 Dragon issue-12 closure audit",

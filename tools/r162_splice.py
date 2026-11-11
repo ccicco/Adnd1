@@ -1,10 +1,10 @@
 # tools/r162_splice.py - R162, 8 patches: level title
 # ladders (PHB pp.20-31 class tables) - the R4 named
-# leader. This round PATCHES rules/classes.cpp and
-# rules/classes.h (no new header): the placeholder
+# leader. This round PATCHES rules/engine/classes.cpp and
+# rules/engine/classes.h (no new header): the placeholder
 # TITLES_* ladders are replaced with the printed ones.
 #
-# (1)-(2) rules/classes.cpp: the header debt comment
+# (1)-(2) rules/engine/classes.cpp: the header debt comment
 #     and the four TITLES_* arrays. FIGHTER (p.20):
 #     Veteran, Warrior, Swordsman, Hero, Swashbuckler,
 #     Myrmidon, Champion, Superhero, Lord (already
@@ -19,7 +19,7 @@
 #     Rogue (Apprentice), Footpad, Cutpurse, Robber,
 #     Burglar, Filcher, Sharper, Magsman, Thief,
 #     Master Thief (the all-Rogue run was wrong).
-#     (3)-(5) rules/classes.h: the three debt
+#     (3)-(5) rules/engine/classes.h: the three debt
 #     comments discharged (titles pinned, HP_BEYOND
 #     CAP 3/1/2/2 print-verified; the xpForLevel rows
 #     DIVERGE from the print and stay open).
@@ -65,35 +65,35 @@ def patch(p, old, new, tag, marker):
 
 p1_old = NL.join(['// RE-AUTHORED from the R4 spec after the original upload was lost.', '// VERIFICATION DEBT: xpForLevel rows and titleFor ladders follow', '// the standard 1e shape from project notes; the PHB printed tables', '// (p.20-31) win when re-uploaded. The HP_BEYOND_CAP convention and', '// linear adders are likewise flagged.'])
 p1_new = NL.join(['// RE-AUTHORED from the R4 spec after the original upload was lost.', '// R162: the titleFor ladders and the HP_BEYOND_CAP convention are', '// verified against the PHB print (pp.20-31); the xpForLevel rows', '// DIVERGE from the print from mid-table on (fighter level 5 reads', '// 16000 against the printed 18000 boundary; the MU, cleric and', '// thief rows diverge above that) and stay open.'])
-patch("rules/classes.cpp", p1_old, p1_new,
+patch("rules/engine/classes.cpp", p1_old, p1_new,
       "classes.cpp: header debt comment",
       marker='R162: the titleFor ladders')
 assert len(applied) + len(already) == 1
 
 p2_old = NL.join(['// ----------------------------------------------------------------------------', '// Titles (PLACEHOLDER LADDERS - display only; verify vs PHB p.20-31)', '// ----------------------------------------------------------------------------', '', 'static const char* const TITLES_FIGHTER[9] = {', '    "Veteran", "Warrior", "Swordsman", "Hero", "Swashbuckler",', '    "Myrmidon", "Champion", "Superhero", "Lord"', '};', 'static const char* const TITLES_MAGIC_USER[11] = {', '    "Conjurer", "Conjurer", "Conjurer", "Conjurer", "Conjurer",', '    "Conjurer", "Conjurer", "Conjurer", "Conjurer", "Conjurer",', '    "Wizard"', '};', 'static const char* const TITLES_CLERIC[9] = {', '    "Acolyte", "Adept", "Priest", "Curate", "Curate",', '    "Curate", "Curate", "Curate", "Patriarch"', '};', 'static const char* const TITLES_THIEF[10] = {', '    "Rogue", "Rogue", "Rogue", "Rogue", "Rogue",', '    "Rogue", "Rogue", "Rogue", "Rogue", "Master Thief"', '};'])
 p2_new = NL.join(['// ----------------------------------------------------------------------------', '// Titles (the PHB p.20-31 printed ladders - R162 verified; the', '// cleric level 5 cell prints blank and carries Curate down)', '// ----------------------------------------------------------------------------', '', 'static const char* const TITLES_FIGHTER[9] = {', '    "Veteran", "Warrior", "Swordsman", "Hero", "Swashbuckler",', '    "Myrmidon", "Champion", "Superhero", "Lord"', '};', 'static const char* const TITLES_MAGIC_USER[11] = {', '    "Prestidigitator", "Evoker", "Conjurer", "Theurgist",', '    "Thaumaturgist", "Magician", "Enchanter", "Warlock",', '    "Sorcerer", "Necromancer", "Wizard"', '};', 'static const char* const TITLES_CLERIC[9] = {', '    "Acolyte", "Adept", "Priest", "Curate", "Curate",', '    "Canon", "Lama", "Patriarch", "High Priest"', '};', 'static const char* const TITLES_THIEF[10] = {', '    "Rogue (Apprentice)", "Footpad", "Cutpurse", "Robber",', '    "Burglar", "Filcher", "Sharper", "Magsman", "Thief",', '    "Master Thief"', '};'])
-patch("rules/classes.cpp", p2_old, p2_new,
+patch("rules/engine/classes.cpp", p2_old, p2_new,
       "classes.cpp: the four TITLES ladders",
       marker='printed ladders - R162 verified')
 assert len(applied) + len(already) == 2
 
 p3_old = NL.join(['// RE-AUTHORED from the R4 spec after the original upload was lost', '// from the repo. NOTE discipline: XP tables and title ladders are', '// transcribed from project notes and follow the standard 1e shape;', '// when the PHB PDF is re-uploaded, the printed tables win (PHB', '// p.20-31) - verify xpForLevel rows and titleFor ladders then.'])
 p3_new = NL.join(['// RE-AUTHORED from the R4 spec after the original upload was lost', '// from the repo. NOTE discipline: the titleFor ladders are verified', '// against the PHB print by R162 (p.20-31); the XP tables are', '// transcribed from project notes and DIVERGE from the print from', '// mid-table on (an open box - see the gap report header note).'])
-patch("rules/classes.h", p3_old, p3_new,
+patch("rules/engine/classes.h", p3_old, p3_new,
       "classes.h: header debt comment",
       marker='the titleFor ladders are verified')
 assert len(applied) + len(already) == 3
 
 p4_old = NL.join(['// Fixed hp per level beyond the name cap: fighter 3, MU 1, cleric 2,', '// thief 2 (the 3/2/2/1-vs-3/1/2/2 convention question is settled', '// HERE as 3/1/2/2 in F/MU/C/T order; PHB verification pending)'])
 p4_new = NL.join(['// Fixed hp per level beyond the name cap: fighter 3, MU 1, cleric 2,', '// thief 2 (the 3/2/2/1-vs-3/1/2/2 convention question is settled', '// HERE as 3/1/2/2 in F/MU/C/T order; verified against the PHB', '// print by R162)'])
-patch("rules/classes.h", p4_old, p4_new,
+patch("rules/engine/classes.h", p4_old, p4_new,
       "classes.h: HP_BEYOND_CAP debt comment",
       marker='print by R162)')
 assert len(applied) + len(already) == 4
 
 p5_old = NL.join(['// Display title for a class/level (PLACEHOLDER LADDERS - verify vs', '// PHB p.20-31 in a later pass).'])
 p5_new = NL.join(['// Display title for a class/level (the PHB p.20-31 printed', '// ladders, pinned by R162; the cleric level 5 blank cell carries', '// Curate down as the JUDGMENT).'])
-patch("rules/classes.h", p5_old, p5_new,
+patch("rules/engine/classes.h", p5_old, p5_new,
       "classes.h: titleFor debt comment",
       marker='blank cell carries')
 assert len(applied) + len(already) == 5
@@ -106,14 +106,14 @@ patch("regtest.cpp", p6_old, p6_new,
 assert len(applied) + len(already) == 6
 
 p7_old = NL.join(['as a shield or parrying device. Census 79.', '', 'Categories:'])
-p7_new = NL.join(['as a shield or parrying device. Census 79.', 'R162 PINNED level title ladders (PHB pp.20-31', 'class tables) - rules/classes.cpp: the printed', 'per-level titles for the four engine classes,', 'replacing the placeholder ladders (the all-Conjurer', 'MU run, the Curate run, the all-Rogue thief).', 'Fighter: Veteran, Warrior, Swordsman, Hero,', 'Swashbuckler, Myrmidon, Champion, Superhero,', 'Lord. Magic-user: Prestidigitator, Evoker,', 'Conjurer, Theurgist, Thaumaturgist, Magician,', 'Enchanter, Warlock, Sorcerer, Necromancer,', 'Wizard. Cleric: Acolyte, Adept, Priest, Curate,', 'Canon, Lama, Patriarch, High Priest. Thief:', 'Rogue (Apprentice), Footpad, Cutpurse, Robber,', 'Burglar, Filcher, Sharper, Magsman, Thief,', 'Master Thief. JUDGMENT: the cleric level 5 title', 'cell prints blank and carries Curate down. The', 'PHB display rows above the engine caps (Lord', '(10th Level) and the like) sit beyond', 'CLASS_LEVEL_CAP and stay out of engine scope.', 'The HP_BEYOND_CAP convention (3/1/2/2) is', 'print-verified in passing. R162 FINDING while', 'discharging the classes.h debt: the xpForLevel', 'rows DIVERGE from the print from mid-table on', '(fighter level 5 reads 16000 against the printed', '18000 boundary; the MU, cleric and thief rows', 'diverge above that) - the XP tables stay an', 'open box. Census 80.', '', 'Categories:'])
+p7_new = NL.join(['as a shield or parrying device. Census 79.', 'R162 PINNED level title ladders (PHB pp.20-31', 'class tables) - rules/engine/classes.cpp: the printed', 'per-level titles for the four engine classes,', 'replacing the placeholder ladders (the all-Conjurer', 'MU run, the Curate run, the all-Rogue thief).', 'Fighter: Veteran, Warrior, Swordsman, Hero,', 'Swashbuckler, Myrmidon, Champion, Superhero,', 'Lord. Magic-user: Prestidigitator, Evoker,', 'Conjurer, Theurgist, Thaumaturgist, Magician,', 'Enchanter, Warlock, Sorcerer, Necromancer,', 'Wizard. Cleric: Acolyte, Adept, Priest, Curate,', 'Canon, Lama, Patriarch, High Priest. Thief:', 'Rogue (Apprentice), Footpad, Cutpurse, Robber,', 'Burglar, Filcher, Sharper, Magsman, Thief,', 'Master Thief. JUDGMENT: the cleric level 5 title', 'cell prints blank and carries Curate down. The', 'PHB display rows above the engine caps (Lord', '(10th Level) and the like) sit beyond', 'CLASS_LEVEL_CAP and stay out of engine scope.', 'The HP_BEYOND_CAP convention (3/1/2/2) is', 'print-verified in passing. R162 FINDING while', 'discharging the classes.h debt: the xpForLevel', 'rows DIVERGE from the print from mid-table on', '(fighter level 5 reads 16000 against the printed', '18000 boundary; the MU, cleric and thief rows', 'diverge above that) - the XP tables stay an', 'open box. Census 80.', '', 'Categories:'])
 patch("tools/dmg_gap_report.md", p7_old, p7_new,
       "gap report: R162 header note",
       marker='R162 PINNED level title ladders')
 assert len(applied) + len(already) == 7
 
 p8_old = NL.join(['- [ ] **Level title ladders (PHB class tables)** - the R4', '      named leader: the printed per-level titles for the', '      four engine classes.'])
-p8_new = NL.join(['- [x] **Level title ladders (PHB class tables)** - pinned by', '      R162: rules/classes.cpp (the four printed ladders', '      through the name levels; the cleric level 5 blank', '      cell carries Curate down; the XP-row divergence is', '      recorded in the header note).'])
+p8_new = NL.join(['- [x] **Level title ladders (PHB class tables)** - pinned by', '      R162: rules/engine/classes.cpp (the four printed ladders', '      through the name levels; the cleric level 5 blank', '      cell carries Curate down; the XP-row divergence is', '      recorded in the header note).'])
 patch("tools/dmg_gap_report.md", p8_old, p8_new,
       "gap report: level titles box closed",
       marker='Level title ladders (PHB class tables)** - pinned by')

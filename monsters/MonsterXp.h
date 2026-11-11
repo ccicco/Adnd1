@@ -27,7 +27,7 @@
 #pragma once
 
 #include "MonsterRegistry.h"
-#include "../rules/classes.h"
+#include "../rules/engine/classes.h"
 
 namespace monsters {
 namespace xp {

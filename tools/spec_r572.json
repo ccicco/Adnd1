@@ -1,7 +1,7 @@
 {
   "round": 572,
   "prefix": "dda",
-  "header_file": "rules/motppara.h",
+  "header_file": "rules/mop/motppara.h",
   "regtest": "regtest.cpp",
   "gap_report": "tools/motp_gap_report.md",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -10,7 +10,7 @@
   "audit_label": "R572 MotP para-planes audit",
   "audit_comment": "the Para-Elemental Planes, printed pp. 51-54, the four in one round: Smoke, Magma, Ooze and Ice - the minor-plane doctrine, the per-plane survival (asphyxiation, heat-as-Fire, drowning-as-Water, the 1d6-per-round ice cold reduced to per turn when protected), the vision ladder (30 yards / touch / 10-20), the 1-in-20-per-eight-true-hours check, the 50/50 pocket rule with lair chances, the native immunity doctrine, the movement/combat/magic mappings to the majors, the d8+d12 encounter chart, and the features (the guide-bribe doubling, the Demi-Power archoments without Greater Powers - Cryonax, Ehkahk, Chlimbia, Bwimb - and no native genies).",
   "include_comment": "the MotP para-planes pins",
-  "include_after": "#include \"rules/motpwater.h\"  // R571: the MotP Water plane pins",
+  "include_after": "#include \"rules/mop/motpwater.h\"  // R571: the MotP Water plane pins",
   "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
   "seed_anchor": "## Knowledge maintenance",
   "prev_seed_key": "- R571 LANDED 2026-10-17: commit 289841a4445263bba656",

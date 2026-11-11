@@ -31,8 +31,8 @@
         printf("R194 wisdom defense repin audit: bad %d\n", bad);
         if (bad) return 1;
     }
-    #include "rules/audits/r195_int_languages_repin.h"  // R827: migrated
-    #include "rules/audits/r196_int_table_ii.h"  // R827: migrated
-    #include "rules/audits/r197_mental_form_flag.h"  // R827: migrated
-    #include "rules/audits/r198_class_weapon_allowlists.h"  // R827: migrated
-    #include "rules/audits/r199_oil_and_poison_columns.h"  // R827: migrated
+    #include "r195_int_languages_repin.h"  // R827: migrated
+    #include "r196_int_table_ii.h"  // R827: migrated
+    #include "r197_mental_form_flag.h"  // R827: migrated
+    #include "r198_class_weapon_allowlists.h"  // R827: migrated
+    #include "r199_oil_and_poison_columns.h"  // R827: migrated

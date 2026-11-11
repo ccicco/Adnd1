@@ -2,7 +2,7 @@
  "round": 492,
  "title": "the WSG Dungeon Master section slice - the starting-from-scratch world-building rules from the crossroads opener and the realism-vs-fantasy Earthlike assumption through the ten map-making steps, the fault-line and hot-spot rules, the semi-finished-product political guidelines with the country example, the clustering scale-down ladder from 36 miles through 12 and 4 and 1-and-a-third to the half mile, and the winging-it improvisation rules with the cannot-uncreate law, printed pp. 103-106, CLOSING the Dungeon Master section",
  "prefix": "wmd",
- "header_file": "rules/wsgdm.h",
+ "header_file": "rules/wsg/wsgdm.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -914,19 +914,19 @@
   {
    "note": "the starting-from-scratch box",
    "from": "  - [ ] Starting from scratch (pp. 103-106)",
-   "to": "  - [x] Starting from scratch (pp. 103-106) - R492: the realism-vs-fantasy and ten-step world map rules with the political guidelines, clustering scale-down and winging-it rules pin as rules/wsgdm.h"
+   "to": "  - [x] Starting from scratch (pp. 103-106) - R492: the realism-vs-fantasy and ten-step world map rules with the political guidelines, clustering scale-down and winging-it rules pin as rules/wsg/wsgdm.h"
   },
   {
    "note": "the Dungeon Master section box",
    "from": "- [ ] **Dungeon Master section** (pp. 103-106)",
-   "to": "- [x] **Dungeon Master section** (pp. 103-106) - R492: the full DM section pins as rules/wsgdm.h"
+   "to": "- [x] **Dungeon Master section** (pp. 103-106) - R492: the full DM section pins as rules/wsg/wsgdm.h"
   }
  ],
  "gap_census": {
   "closed": 143,
   "open": 43
  },
- "include_after": "#include \"rules/wsgmagic.h\"  // R491: the WSG magic in the wilderness rules",
+ "include_after": "#include \"rules/wsg/wsgmagic.h\"  // R491: the WSG magic in the wilderness rules",
  "include_comment": "the WSG Dungeon Master section rules",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
@@ -935,7 +935,7 @@
   "- R491 LANDED 2026-10-16: commit 4e07d5d (census 416,",
   "  pushed 86a2308..4e07d5d), the WSG MAGIC IN THE",
   "  WILDERNESS chapter slice, printed pp. 95-101 - CLOSING",
-  "  the chapter. Pinned as rules/wsgmagic.h with the",
+  "  the chapter. Pinned as rules/wsg/wsgmagic.h with the",
   "  include after wsgmount.h at line 196 (prefix wmg - free",
   "  on the first probe), 241 inlines: 90 consts + 150",
   "  bools + the wmgWebThickBand chain in twelve sections -",

@@ -33,9 +33,9 @@
   "  7-14. Standing by for the next direction. WAIT",
   "  FOR GO."
  ],
- "include_after": "#include \"rules/icl.h\"  // R924: the Dragon issue-13 box closing round, the three-chain walk complete",
+ "include_after": "#include \"rules/dragon/issue013_close.h\"  // R924: the Dragon issue-13 box closing round, the three-chain walk complete",
  "include_comment": "the Dragon issue-14 opener, the Name That Monster Contest #1 winners and the Rihn lycanthropy variant",
- "header_file": "rules/lyc.h",
+ "header_file": "rules/dragon/issue014_opener.h",
  "audit_file": "rules/audits/r925_batch.h",
  "audit_label": "R925 issue-14 opener audit",
  "audit_anchor": "#include \"rules/audits/r924_batch.h\"  // R924: R924 Dragon issue-13 closure audit",

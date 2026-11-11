@@ -2,7 +2,7 @@
  "round": 747,
  "title": "OA TREASURE - the Explanation of Armor Properties: the quality, presence, fear, possession, and healing notes",
  "prefix": "dli",
- "header_file": "rules/oa118armorexpl.h",
+ "header_file": "rules/oa/oa118armorexpl.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA TREASURE - THE EXPLANATION OF ARMOR PROPERTIES, printed capture pp. 290-291 - the big prose round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 200 closed, 35 open - the explanation box flips (census 669 -> 670); NEXT - R748: Weapons prose (capture pp. 291-294), prefix dlj (verify free at the landing), audit \"R748 OA weapons prose audit\", include after rules/oa118armorexpl.h"
+  "sentinel": "the gap census after this round: 200 closed, 35 open - the explanation box flips (census 669 -> 670); NEXT - R748: Weapons prose (capture pp. 291-294), prefix dlj (verify free at the landing), audit \"R748 OA weapons prose audit\", include after rules/oa/oa118armorexpl.h"
  },
  "consts": [
   {
@@ -501,7 +501,7 @@
   "open": 35
  },
  "include_comment": "the OA armor explanation pins",
- "include_after": "#include \"rules/oa117table77.h\"  // R746: the OA Table 77 pins",
+ "include_after": "#include \"rules/oa/oa117table77.h\"  // R746: the OA Table 77 pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R746 LANDED 2026-10-22: commit",
@@ -511,7 +511,7 @@
   "  (census 668 -> 669, pushed 28aaef1..d329a5c),",
   "  OA TREASURE, Table 77: Special Properties",
   "  (capture p. 290), header",
-  "  rules/oa117table77.h, prefix dlh",
+  "  rules/oa/oa117table77.h, prefix dlh",
   "  (verified free at 28aaef1), one gap flip",
   "  (the Table 77 box, single-line), gap",
   "  census now 199 closed / 36 open. Round",
@@ -540,7 +540,7 @@
   "  Properties (capture p. 290), prefix dli",
   "  (verify free at the landing), audit \"R747",
   "  OA armor explanation audit\", include",
-  "  after rules/oa117table77.h. The big",
+  "  after rules/oa/oa117table77.h. The big",
   "  prose round - the armor of quality (one",
   "  encumbrance class less, the 2d4 times",
   "  value), the etherealness, the",

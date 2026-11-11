@@ -1,11 +1,11 @@
--- oa743: promoted from rules/oa114armorprose.h (the OA TREASURE - THE ARMOR AND SHIELD PROSE, printed capture p. 289 - the);
+-- oa743: promoted from rules/oa/oa114armorprose.h (the OA TREASURE - THE ARMOR AND SHIELD PROSE, printed capture p. 289 - the);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 743,
   "prefix" = "oa743",
   "banner" = {
       "title" = "OA TREASURE - THE ARMOR AND SHIELD PROSE, printed capture p. 289 - the",
-      "provenance" = "armor determination round census 665 -> 666.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 196 closed, 39 open - the armor prose box flips (census 665 -> 666); NEXT - R744: Table 75: Magical Armor (capture p. 289), prefix dlf (verify free at the landing), audit \"R744 OA Table 75 armor audit\", include after rules/oa114armorprose.h",
+      "provenance" = "armor determination round census 665 -> 666.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 196 closed, 39 open - the armor prose box flips (census 665 -> 666); NEXT - R744: Table 75: Magical Armor (capture p. 289), prefix dlf (verify free at the landing), audit \"R744 OA Table 75 armor audit\", include after rules/oa/oa114armorprose.h",
     },
   "consts" = { {
       "name" = "dleDetermineTypeAndProperties",

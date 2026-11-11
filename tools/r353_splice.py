@@ -39,7 +39,7 @@ SEED_ENTRY = NL.join([
     '- R352 landed 2026-10-11: commit',
     '  849d516, census 279, the UA',
     '  new druid 3rd level spells pin',
-    '  round (rules/uadruidspells3.h):',
+    '  round (rules/ua/uadruidspells3.h):',
     '  cloudburst (the stat-block',
     '  interleave decoded with the',
     '  call lightning exclusion),',
@@ -81,13 +81,13 @@ assert s.count('R343 landed 2026-10-11') == 1, 'a r343 kept'
 assert s.count('## Knowledge maintenance') == 1, 'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
-# ---- (b) NEW rules/uadruidspells5.h ----
-US = 'rules/uadruidspells5.h'
+# ---- (b) NEW rules/ua/uadruidspells5.h ----
+US = 'rules/ua/uadruidspells5.h'
 if os.path.exists(US) and 'R353' in rd(US):
     already.append('uadruidspells5.h: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uadruidspells5.h
+// Adnd1 - rules/ua/uadruidspells5.h
 // The UA NEW DRUID SPELLS (p. 45) pins, R353: the 5th-level
 // spell descriptions - moonbeam and spike stones.
 //
@@ -295,7 +295,7 @@ else:
     assert s.count(TAIL_OLD) == 1, 'c tail'
     NOTE = NL.join([
     '      - R353: the 5th level pinned',
-    '        (rules/uadruidspells5.h) - the',
+    '        (rules/ua/uadruidspells5.h) - the',
     '        two spell descriptions (moonbeam',
     '        with the movable spotlight beam',
     '        and the color and vision',
@@ -341,12 +341,12 @@ if 'R353 UA druid 5th level spells pin audit' in s:
     already.append('regtest.cpp: the R353 audit')
 else:
     INC_ANCH = (
-        '#include "rules/uadruidspells3.h"'
+        '#include "rules/ua/uadruidspells3.h"'
         '  // R352: the UA new druid 3rd'
         ' level')
     INC_NEW = NL.join([
         INC_ANCH,
-        '#include "rules/uadruidspells5.h"'
+        '#include "rules/ua/uadruidspells5.h"'
         '  // R353: the UA new druid 5th'
         ' level',
     ])
@@ -508,7 +508,7 @@ assert s.count(
     ' pin audit: bad ') == 1, 'd r347 kept'
 assert s.count('R227: the wis mental save') == 1, 'd r227 kept'
 assert s.count(
-    '#include "rules/uadruidspells5.h"') == 1, 'd include'
+    '#include "rules/ua/uadruidspells5.h"') == 1, 'd include'
 assert len(applied) + len(already) == 4, 'd count'
 
 # ---- the summary ----

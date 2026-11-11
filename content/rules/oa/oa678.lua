@@ -1,4 +1,4 @@
--- oa678: promoted from rules/oawjl9spells.h (the WU JEN NINTH LEVEL SPELLS, printed capture pp. 213-216 - the OA wu jen);
+-- oa678: promoted from rules/oa/oawjl9spells.h (the WU JEN NINTH LEVEL SPELLS, printed capture pp. 213-216 - the OA wu jen);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 678,

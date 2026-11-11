@@ -2,7 +2,7 @@
  "round": 768,
  "title": "OA DAILY LIFE - Manners: the politeness, the bow, and the insult",
  "prefix": "dmd",
- "header_file": "rules/oa139manners.h",
+ "header_file": "rules/oa/oa139manners.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA DAILY LIFE - MANNERS, printed capture p. 312 - the politeness, the bow, and the insult",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 221 closed, 14 open - the Manners box flips (census 690 -> 691); NEXT - R769: Names (capture pp. 312-313), prefix dme (verify free at the landing), audit \"R769 OA Daily Life Names audit\", include after rules/oa139manners.h"
+  "sentinel": "the gap census after this round: 221 closed, 14 open - the Manners box flips (census 690 -> 691); NEXT - R769: Names (capture pp. 312-313), prefix dme (verify free at the landing), audit \"R769 OA Daily Life Names audit\", include after rules/oa/oa139manners.h"
  },
  "consts": [
   {
@@ -187,7 +187,7 @@
   "open": 14
  },
  "include_comment": "the OA Daily Life Manners pins",
- "include_after": "#include \"rules/oa138buildings.h\"  // R767: the OA Daily Life Buildings pins",
+ "include_after": "#include \"rules/oa/oa138buildings.h\"  // R767: the OA Daily Life Buildings pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R767 LANDED 2026-10-22: commit",
@@ -201,7 +201,7 @@
   "  drinks, the town and travel meals -",
   "  FOLDED IN per the user call after the",
   "  R766 handoff flagged it), header",
-  "  rules/oa138buildings.h, prefix dmc (fully",
+  "  rules/oa/oa138buildings.h, prefix dmc (fully",
   "  free at 220526c - zero substring hits,",
   "  zero call-site dmc\\w*( collisions), one",
   "  gap flip (the Buildings box, single-line),",
@@ -255,6 +255,6 @@
   "  NEXT - R768: Manners (capture p. 312),",
   "  prefix dmd (verify free at the landing),",
   "  audit \"R768 OA Daily Life Manners audit\",",
-  "  include after rules/oa138buildings.h."
+  "  include after rules/oa/oa138buildings.h."
  ]
 }

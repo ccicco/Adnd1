@@ -72,7 +72,7 @@ home for world-agnostic modules is an open item.
    directory is the citation unit.
 6. Page artifacts: pNNN_full.txt (full text), pNNN_tsv.tsv
    (cell table), pNNN.png (scan).
-7. Pin headers take the round prefix (s26.h); audits ride
+7. Pin headers take the round prefix (rules/dragon/issue026_opener2.h); audits ride
    rules/audits/r{NNN}_batch.h.
 8. Engine code is PascalCase matching the type
    (MonsterRegistry.cpp); state machines state_{noun}.cpp.

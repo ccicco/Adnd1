@@ -16,7 +16,7 @@
 #     footnoted Race Table II level caps, the goblin-
 #     kind/giant-kind to-hit lists and the detection
 #     lists (in-N pairs as printed). (3) preflight
-#     gains rules/races.cpp in the battery build.
+#     gains rules/engine/races.cpp in the battery build.
 #     (4)-(5) the regtest include + the R154 audit: all
 #     seven adjustment rows, the full 7x6 min table and
 #     both max columns, every CON band 3-18 per race,
@@ -87,7 +87,7 @@ def create(p, text, tag, marker):
 # ---- (1)-(2) the new rules/races layer ----
 races_h_text = NL.join([
     '// ============================================================================',
-    '// Adnd1 - rules/races.h',
+    '// Adnd1 - rules/engine/races.h',
     '// The PC races layer: PHB pp.15-18, Race Tables I-III.',
     '//',
     '// R154: the races half of the authored-but-unlanded R148',
@@ -552,10 +552,10 @@ races_cpp_text = NL.join([
 
 # ---- (3) preflight.sh: the battery build ----
 pf_old = NL.join([
-    '  rules/saves.cpp rules/turn.cpp dm/dm.cpp dm/dungeon.cpp dm/encounters.cpp ' + BS + '',
+    '  rules/engine/saves.cpp rules/engine/turn.cpp dm/dm.cpp dm/dungeon.cpp dm/encounters.cpp ' + BS + '',
 ])
 pf_new = NL.join([
-    '  rules/saves.cpp rules/turn.cpp rules/races.cpp ' + BS + '',
+    '  rules/engine/saves.cpp rules/engine/turn.cpp rules/engine/races.cpp ' + BS + '',
     '  dm/dm.cpp dm/dungeon.cpp dm/encounters.cpp ' + BS + '',
 ])
 
@@ -565,7 +565,7 @@ inc_old = NL.join([
 ])
 inc_new = NL.join([
     '#include "abilities/abilities.h"',
-    '#include "rules/races.h"   // R154: pp.15-18 Race Tables I-III',
+    '#include "rules/engine/races.h"   // R154: pp.15-18 Race Tables I-III',
 ])
 
 # ---- (5) regtest.cpp: the R154 audit block ----
@@ -855,13 +855,13 @@ pr_new = NL.join([
 
 # ---- (7) appstate.h: the races include ----
 ai_old = NL.join([
-    '#include "../rules/classes.h"',
-    '#include "../rules/saves.h"   // R45: trap saves',
+    '#include "../rules/engine/classes.h"',
+    '#include "../rules/engine/saves.h"   // R45: trap saves',
 ])
 ai_new = NL.join([
-    '#include "../rules/classes.h"',
-    '#include "../rules/races.h"   // R154: Race Tables I-III',
-    '#include "../rules/saves.h"   // R45: trap saves',
+    '#include "../rules/engine/classes.h"',
+    '#include "../rules/engine/races.h"   // R154: Race Tables I-III',
+    '#include "../rules/engine/saves.h"   // R45: trap saves',
 ])
 
 # ---- (8) appstate.h: the CR_RACE stage ----
@@ -1215,17 +1215,17 @@ gb_new = NL.join([
 ])
 
 # ---- run ----
-create("rules/races.h", races_h_text,
-      "rules/races.h: the PC races layer",
+create("rules/engine/races.h", races_h_text,
+      "rules/engine/races.h: the PC races layer",
       marker="R154: the races half of the authored-but-unlanded")
 assert len(applied) + len(already) == 1
-create("rules/races.cpp", races_cpp_text,
-      "rules/races.cpp: the PC races layer",
+create("rules/engine/races.cpp", races_cpp_text,
+      "rules/engine/races.cpp: the PC races layer",
       marker="the gnome print names magic only")
 assert len(applied) + len(already) == 2
 patch("tools/preflight.sh", pf_old, pf_new,
       "preflight.sh: races.cpp joins the battery build",
-      marker="rules/races.cpp")
+      marker="rules/engine/races.cpp")
 assert len(applied) + len(already) == 3
 patch("regtest.cpp", inc_old, inc_new,
       "regtest.cpp: races include",
@@ -1241,7 +1241,7 @@ patch("game/party.h", pr_old, pr_new,
 assert len(applied) + len(already) == 6
 patch("game/appstate.h", ai_old, ai_new,
       "appstate.h: races include",
-      marker="rules/races.h")
+      marker="rules/engine/races.h")
 assert len(applied) + len(already) == 7
 patch("game/appstate.h", en_old, en_new,
       "appstate.h: the CR_RACE stage",

@@ -1,11 +1,11 @@
--- oa721: promoted from rules/oa92kala.h (the OA MONSTERS - THE KALA, printed capture pp. 272-273 - the paired columns);
+-- oa721: promoted from rules/oa/oa92kala.h (the OA MONSTERS - THE KALA, printed capture pp. 272-273 - the paired columns);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 721,
   "prefix" = "oa721",
   "banner" = {
       "title" = "OA MONSTERS - THE KALA, printed capture pp. 272-273 - the paired columns",
-      "provenance" = "round census 643 -> 644.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 174 closed, 61 open - the kala box flips (census 643 -> 644); NEXT - R722: the Kappa (capture p. 273), prefix dkj (verify free at the landing), audit \"R722 OA monsters Kappa audit\", include after rules/oa92kala.h",
+      "provenance" = "round census 643 -> 644.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 174 closed, 61 open - the kala box flips (census 643 -> 644); NEXT - R722: the Kappa (capture p. 273), prefix dkj (verify free at the landing), audit \"R722 OA monsters Kappa audit\", include after rules/oa/oa92kala.h",
     },
   "consts" = { {
       "name" = "dkiKalaCount",

@@ -13,7 +13,7 @@
 # druid WIS and CHA both 16+; illusionist,
 # assassin and monk NEVER (printed).
 #
-# rules/character.cpp: the engine ladder
+# rules/engine/character.cpp: the engine ladder
 # primeRequisitePct (+10, +5, 0, -10, -20)
 # is verified - the +10 rung at 16+ is the
 # printed rule; the +5, 0, -10 and -20 rungs
@@ -180,7 +180,7 @@ a('//     example 975 x .10 = 97.5, or 98 XP, total 1073.')
 a('//     The formula is (awarded + 9) / 10, the ceiling of')
 a('//     one tenth.')
 a('//   - the engine ladder primeRequisitePct')
-a('//     (rules/character.cpp: +10, +5, 0, -10, -20')
+a('//     (rules/engine/character.cpp: +10, +5, 0, -10, -20')
 a('//     percent by score) is VERIFIED as to its +10 rung')
 a('//     only. The +5, 0, -10 and -20 rungs are ENGINE')
 a('//     CONVENTION, unsourced against the 1e print: the')
@@ -397,10 +397,10 @@ patch('regtest.cpp',
       NL.join(aud) + NL + '    // ---- R163: the poison table audit -------------')
 
 # ---------------------------------------------------------------------------
-# Patch 4: rules/character.cpp - the verify recorded
+# Patch 4: rules/engine/character.cpp - the verify recorded
 # ---------------------------------------------------------------------------
 
-patch('rules/character.cpp',
+patch('rules/engine/character.cpp',
       'ENGINE CONVENTION, unsourced against the 1e print',
       '// Prime requisite XP adjustment (PHB p.12-13)',
       '// Prime requisite XP adjustment - the +10 rung at 16+ is the'

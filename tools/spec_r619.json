@@ -2,7 +2,7 @@
  "round": 619,
  "title": "THE BARBARIAN AND BUSHI - the OA class run opens: the barbarian doctrine with its territories and horde, Tables 14, 15 and 16, and the bushi doctrine with Table 17",
  "prefix": "dgf",
- "header_file": "rules/oabarbbushi.h",
+ "header_file": "rules/oa/oabarbbushi.h",
  "regtest": "regtest.cpp",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "gap_report": "tools/oa_gap_report.md",
@@ -14,7 +14,7 @@
   "  e28547c (census 540 -> 541,",
   "  pushed 0659a83..7305a1f), THE",
   "  ORIENTAL RACES, capture pp. 17-22:",
-  "  rules/oaraces.h, prefix dge, 70",
+  "  rules/oa/oaraces.h, prefix dge, 70",
   "  inlines - the korobokuru, hengeyokai",
   "  (T11 12x10) and the three spirit folk",
   "  with their life-force ties. THE 4 1/2",
@@ -37,13 +37,13 @@
   "  Barbarian and Bushi with Tables",
   "  14-17, prefix dgf (verify free),",
   "  audit \"R619 OA barbarian bushi",
-  "  audit\", include after rules/oaraces.h."
+  "  audit\", include after rules/oa/oaraces.h."
  ],
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "audit_label": "R619 OA barbarian bushi audit",
  "audit_comment": "OA round six (capture pp. 23-28): the first two of the ten classes - the barbarian with its hit-die and Con bonuses, the capability ladders, the three territories, the horde doctrine, and the bushi with its advancement and poverty doctrine.",
  "census_before": 541,
- "include_after": "#include \"rules/oaraces.h\"  // R618: the OA races pins",
+ "include_after": "#include \"rules/oa/oaraces.h\"  // R618: the OA races pins",
  "include_comment": "the OA barbarian and bushi pins",
  "caller_files": [],
  "switches": [],
@@ -1435,6 +1435,6 @@
  "banner": {
   "title": "THE BARBARIAN AND BUSHI, printed capture pp. 23-28 - the OA class run opens",
   "provenance": "verified against capture pp. 23-28 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages), with the 2018-print settling capture consulted for the contested horde cell: the first capture prints 1112 times the leader level - the 2018 print reads 1 1/2 times CLEAN; pinned as the 3-over-2 pair. Other settled garbles: hone/tells read as horse/tents, hulling as hunting, five as live - prose only, the numbers read clean. The Table 15 bonus rows pin as a coded grid (each lifted restriction its own code const) with the save bonuses as their own column. This round also carries the R618 v3 adjudication amendment folded in (comment-only, no data changes).",
-  "sentinel": "the gap census after this round: 33 closed, 202 open - the barbarian and bushi boxes with Tables 14-17 flip (census 541 -> 542); NEXT - R620: the Kensai - the favored-weapon doctrine, the honor code, the ki powers, Tables 18 and 19, prefix dgg (verify free), audit \"R620 OA kensai audit\", include after rules/oabarbbushi.h"
+  "sentinel": "the gap census after this round: 33 closed, 202 open - the barbarian and bushi boxes with Tables 14-17 flip (census 541 -> 542); NEXT - R620: the Kensai - the favored-weapon doctrine, the honor code, the ki powers, Tables 18 and 19, prefix dgg (verify free), audit \"R620 OA kensai audit\", include after rules/oa/oabarbbushi.h"
  }
 }

@@ -2,7 +2,7 @@
  "round": 449,
  "title": "the WSG overland movement in reduced visibility",
  "prefix": "wsv",
- "header_file": "rules/wsgvis.h",
+ "header_file": "rules/wsg/wsgvis.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -13,7 +13,7 @@
  "census_before": 373,
  "inline_count": 21,
  "audit_label": "R449 WSG reduced visibility pin audit",
- "audit_comment": "The reduced visibility slice pins the daylight assumption behind the previously described rates, the other-factors-first multiplication by the Table 23 entry (the 1/1 clear-daylight cell means no further reduction), the on-foot daylight hazard avoidance (no trees, no roots) with the night exception (a pit or cliff unless the surface is tested or probed), the infravision heat-only detection (a warm-blooded ambush yes, a cliff edge usually no), the Dexterity Check above the maximum safe speed with the blunder/stop-short consequences (saddle, wagon seat, chariot front) and the twice-the-figure cap, and Table 23 (the three light rows x the five visibility conditions, the fractions from 1/1 down to 1/8) (rules/wsgvis.h, prefix wsv); census 373 -> 374.",
+ "audit_comment": "The reduced visibility slice pins the daylight assumption behind the previously described rates, the other-factors-first multiplication by the Table 23 entry (the 1/1 clear-daylight cell means no further reduction), the on-foot daylight hazard avoidance (no trees, no roots) with the night exception (a pit or cliff unless the surface is tested or probed), the infravision heat-only detection (a warm-blooded ambush yes, a cliff edge usually no), the Dexterity Check above the maximum safe speed with the blunder/stop-short consequences (saddle, wagon seat, chariot front) and the twice-the-figure cap, and Table 23 (the three light rows x the five visibility conditions, the fractions from 1/1 down to 1/8) (rules/wsg/wsgvis.h, prefix wsv); census 373 -> 374.",
  "banner": {
   "title": "The WSG OVERLAND MOVEMENT IN REDUCED VISIBILITY, R449: the visibility prose and TABLE 23 MOVEMENT IN REDUCED VISIBILITY - all movement rates previously described assume daylight under conditions that do not impair visibility. Table 23 gives the maximum safe speed, as a fraction of the character's or animal's current normal movement rate, for a character on foot or riding or driving an animal in less than ideal visibility: three light rows (daylight, moonlight, darkness) x five conditions (clear, moderate fog, heavy fog or snow, heavy snow with wind, blowing sand or dust), from 1/1 down to 1/8. All other factors (encumbrance, terrain, climbing, etc.) are applied FIRST to determine the current normal rate, and then that number is multiplied by the table entry; the 1/1 at daylight/clear means no further reduction. On foot at the maximum safe speed in daylight, short-range vision extends far enough to avoid easily visible hazards - he will not walk into a tree or stumble over an exposed root; at night the safe speed does NOT keep him safe from hazards (a pit or cliff edge unless he tests the surface or probes ahead with a pole). Infravision detects heat-detectable hazards in moonlight or darkness (a warm-blooded creature in ambush - yes; a cliff edge - usually no). Exceeding the maximum safe speed demands a Dexterity Check per obstacle - failure means he or the animal blundered into it or stopped short, possibly throwing him from the saddle, off the wagon seat or over the chariot front; and in no event can the speed exceed twice the table figure or the full normal movement rate, whichever is less. Census 373 -> 374.",
   "provenance": "the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed pp. 40-41; the user own copy OCR (pages 41-42) cross-checked against the archive djvu word layer (Guide_0040.djvu with the Guide_0041.djvu head) - the prose reads CLEAN two-way, every number (the 2x cap and the 1/8 sandstorm-in-darkness example) matched exactly; the Table 23 grid is GARBLED in the djvu word layer, so every cell was confirmed by TWO independent IIIF eye-reads of leaf 40 - the OCR and both eye-reads agree on all 15 fractions.",
@@ -240,7 +240,7 @@
  "gap_flips": [
   {
    "from": "  - [ ] Overland movement in reduced visibility (p. 40)",
-   "to": "  - [x] Overland movement in reduced visibility (p. 40) - R449: the daylight assumption, the other-factors-first multiplication, the 1/1 clear-daylight cell, the daylight hazard-avoidance with the night exception, the infravision heat-only detection, the Dex check above the safe speed with the 2x cap and Table 23 (the three light rows x the five conditions, 1/1 to 1/8) pin as rules/wsgvis.h",
+   "to": "  - [x] Overland movement in reduced visibility (p. 40) - R449: the daylight assumption, the other-factors-first multiplication, the 1/1 clear-daylight cell, the daylight hazard-avoidance with the night exception, the infravision heat-only detection, the Dex check above the safe speed with the 2x cap and Table 23 (the three light rows x the five conditions, 1/1 to 1/8) pin as rules/wsg/wsgvis.h",
    "note": "reduced visibility"
   },
   {
@@ -254,7 +254,7 @@
   "open": 134
  },
  "include_comment": "the WSG movement in reduced visibility",
- "include_after": "#include \"rules/wsgjump.h\"  // R448: the WSG jumping rules",
+ "include_after": "#include \"rules/wsg/wsgjump.h\"  // R448: the WSG jumping rules",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R448 landed 2026-10-14: commit 55284c8",
@@ -277,7 +277,7 @@
   "  die and plus); the cumulative modifiers (moderate -1, heavy -2 and cannot",
   "  high jump, severe cannot jump at all, halfling -1 broad only, gnome/dwarf -2",
   "  broad and -1 high) with the 2-foot broad and 1-foot high floors.",
-  "  rules/wsgjump.h NEW (28 inlines, prefix wjp - checked free in all three",
+  "  rules/wsg/wsgjump.h NEW (28 inlines, prefix wjp - checked free in all three",
   "  TUs). Ground truth: the prose CLEAN two-way (the user copy OCR vs the djvu",
   "  word layer Guide_0039/Guide_0040); the Table 22 grid GARBLED in the djvu",
   "  word layer, so every cell was confirmed by TWO independent IIIF eye-reads of",

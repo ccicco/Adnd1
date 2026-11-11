@@ -36,14 +36,14 @@
 # flips in the SAME commit (the
 # R420 convention lesson).
 #
-# 1. rules/uailcantrips.h: the
+# 1. rules/ua/uailcantrips.h: the
 #    hole flags amend away; the
 #    casting-time family lands
 #    (uailcCastTimeDen over a
 #    D[8] array + the DenCount
 #    census helper); the resolved
 #    reads pin.
-# 2. rules/uaspelltables2.h:
+# 2. rules/ua/uaspelltables2.h:
 #    uas2IlCantripListLost amends
 #    to the resolved roster
 #    (uas2IlCantripCount +
@@ -120,8 +120,8 @@ def pair_n(path, old, new, want, label):
     applied.append(label)
 
 
-ILC = 'rules/uailcantrips.h'
-UAS2 = 'rules/uaspelltables2.h'
+ILC = 'rules/ua/uailcantrips.h'
+UAS2 = 'rules/ua/uaspelltables2.h'
 RT = 'regtest.cpp'
 GP = 'tools/ua_gap_report.md'
 SD = ('doc/vibe/'
@@ -173,7 +173,7 @@ else:
     wr(SD, s)
     applied.append('seed: the R419 record')
 
-# ========= (b) rules/uailcantrips.h =========
+# ========= (b) rules/ua/uailcantrips.h =========
 
 # the header judgment bullet
 pair(ILC,
@@ -492,7 +492,7 @@ pair(ILC,
        ' uailcCastTimeDen(7).'),
      'ilc: the twod casting time')
 
-# ========= (c) rules/uaspelltables2.h =========
+# ========= (c) rules/ua/uaspelltables2.h =========
 
 pair(UAS2,
      E('// the illusionist cantrip column'
@@ -523,7 +523,7 @@ pair(UAS2,
        '// print gives the whole column, the',
        '// eight names in roster order,',
        '// matching the description roster',
-       '// (rules/uailcantrips.h) row for'
+       '// (rules/ua/uailcantrips.h) row for'
        ' row.',
        'inline int uas2IlCantripCount()',
        '    { return 8; }',
@@ -972,12 +972,12 @@ for n, ln in enumerate(s.split(NL), 1):
 # holds against the header D[] arrays -
 # ALL seven families
 DENSRC = [
-    ('ucn', 'rules/uacantrips1.h', 20),
-    ('ucr', 'rules/uacantrips2.h', 12),
-    ('ucl', 'rules/uacantrips3.h', 6),
-    ('ucp', 'rules/uacantrips4.h', 10),
-    ('uco', 'rules/uacantrips5.h', 10),
-    ('uch', 'rules/uacantrips6.h', 8),
+    ('ucn', 'rules/ua/uacantrips1.h', 20),
+    ('ucr', 'rules/ua/uacantrips2.h', 12),
+    ('ucl', 'rules/ua/uacantrips3.h', 6),
+    ('ucp', 'rules/ua/uacantrips4.h', 10),
+    ('uco', 'rules/ua/uacantrips5.h', 10),
+    ('uch', 'rules/ua/uacantrips6.h', 8),
     ('uailc', ILC, 8),
 ]
 DD = {}

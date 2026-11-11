@@ -7,7 +7,7 @@
   "title": "The Dragon issue-23 opener part three - the six-chain commentary set",
   "provenance": "The part-three round of the issue-23 four-round shape - six of the ten Curtiss-called chains pinned as the commentary set: the gaming-hobby trade-show report (print 6), the armor-weights polemic (print 14), the permanent-damage charts (print 19-20), the dungeon-as-prison formula (print 21), the Origins scheduling critique (print 4 and 21) and the Niall sword-and-sorcery tale (print 8-9 and 22-30, Gardner Fox and the witchwoman Sosaria Thota). All pinned from The Dragon Vol. III No. 9 (March 1979) at extract/dragon/023, PRINT FOLIO = PDF PAGE this issue, the transcript of the Curtiss-provided scan. The two inherited watches - the Sullin levels 7-9 and the brawling sequel - print nowhere in issue 23 and ride to TD 24."
  },
- "header_file": "rules/k23.h",
+ "header_file": "rules/dragon/issue023_opener3.h",
  "audit_file": "rules/audits/r952_batch.h",
  "audit_label": "R952 issue-23 commentary set audit",
  "audit_anchor": "#include \"rules/audits/r951_batch.h\"  // R951: R951 issue-23 Lower Planes generation audit",
@@ -18,7 +18,7 @@
   "open": 3
  },
  "gap_flips": [],
- "include_after": "#include \"rules/s23.h\"  // R951: the Dragon issue-23 opener part two, the Lower Planes creature-generation table round",
+ "include_after": "#include \"rules/dragon/issue023_opener2.h\"  // R951: the Dragon issue-23 opener part two, the Lower Planes creature-generation table round",
  "include_comment": "the Dragon issue-23 opener part three, the six-chain commentary round",
  "header_sections": {
   "the gaming-hobby trade-show report (print 6)": [

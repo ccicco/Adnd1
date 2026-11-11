@@ -1,11 +1,11 @@
--- oa728: promoted from rules/oa99oni.h (the OA MONSTERS - THE ONI, printed capture pp. 280-281 - the fearsome spirit);
+-- oa728: promoted from rules/oa/oa99oni.h (the OA MONSTERS - THE ONI, printed capture pp. 280-281 - the fearsome spirit);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 728,
   "prefix" = "oa728",
   "banner" = {
       "title" = "OA MONSTERS - THE ONI, printed capture pp. 280-281 - the fearsome spirit",
-      "provenance" = "round census 650 -> 651.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 181 closed, 54 open - the oni box flips (census 650 -> 651); NEXT - R729: the P oh, the Lesser Spirit (capture pp. 281-282), prefix dkq (verify free at the landing), audit \"R729 OA monsters P oh audit\", include after rules/oa99oni.h",
+      "provenance" = "round census 650 -> 651.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 181 closed, 54 open - the oni box flips (census 650 -> 651); NEXT - R729: the P oh, the Lesser Spirit (capture pp. 281-282), prefix dkq (verify free at the landing), audit \"R729 OA monsters P oh audit\", include after rules/oa/oa99oni.h",
     },
   "consts" = { {
       "name" = "dkpOniCount",

@@ -8,7 +8,7 @@
     // rules (half falling damage at 40 feet or more, the breath-weapon save
     // with no damage at 40-100 feet and one-tenth rounded up beyond 100, the
     // under-40 fall treated as a normal dive, and rocks at the base assessed
-    // as a fall through the air) (rules/wsgmwater.h, prefix wmw); census 375
+    // as a fall through the air) (rules/wsg/wsgmwater.h, prefix wmw); census 375
     // -> 376.
     {
         using namespace rules;

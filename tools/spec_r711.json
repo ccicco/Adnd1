@@ -2,7 +2,7 @@
  "round": 711,
  "title": "OA MONSTERS - the Doc Cu'o'c, Greater Spirit: the stat block, the protector covenant, and the axe",
  "prefix": "djy",
- "header_file": "rules/oa82doccuoc.h",
+ "header_file": "rules/oa/oa82doccuoc.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA MONSTERS - THE DOC CU'O'C, GREATER SPIRIT, printed capture p. 259 - the one-legged protector round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 164 closed, 71 open - the doc cu'o'c box flips (census 633 -> 634); NEXT - R712: the Oriental Dragons (capture pp. 259-260), prefix djz (verify free at the landing), audit \"R712 OA monsters Oriental Dragons audit\", include after rules/oa82doccuoc.h"
+  "sentinel": "the gap census after this round: 164 closed, 71 open - the doc cu'o'c box flips (census 633 -> 634); NEXT - R712: the Oriental Dragons (capture pp. 259-260), prefix djz (verify free at the landing), audit \"R712 OA monsters Oriental Dragons audit\", include after rules/oa/oa82doccuoc.h"
  },
  "consts": [
   {
@@ -400,7 +400,7 @@
   "open": 71
  },
  "include_comment": "the OA Doc Cu'o'c pins",
- "include_after": "#include \"rules/oa81continh.h\"  // R710: the OA Con-Tinh pins",
+ "include_after": "#include \"rules/oa/oa81continh.h\"  // R710: the OA Con-Tinh pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R710 LANDED 2026-10-21: commit",
@@ -408,7 +408,7 @@
   "- R710 LANDED 2026-10-21: commit b200a70c8f3ef318cbb47dec313e9eef57fa3833",
   "  (census 632 -> 633, pushed b7a2dad..b200a70), OA MONSTERS - the",
   "  Con-Tinh, Lesser Spirit, capture pp. 258-259 print:",
-  "  rules/oa81continh.h, prefix djx (verified free at b7a2dad),",
+  "  rules/oa/oa81continh.h, prefix djx (verified free at b7a2dad),",
   "  ONE gap flip, gap census 163/72. 16 consts + 26 bools (42",
   "  inlines): the stat block (the rare, the 1-2, the AC 7, the",
   "  move 12, the HD 6, the 100% lair, the treasure I, the 1",
@@ -430,6 +430,6 @@
   "  d0a1bea4300e873d62245c76d827710b). NEXT - R711: the",
   "  Doc Cu'o'c, Greater Spirit (capture p. 259), prefix djy",
   "  (verified free at b200a70), audit \"R711 OA monsters Doc",
-  "  Cu'o'c audit\", include after rules/oa81continh.h."
+  "  Cu'o'c audit\", include after rules/oa/oa81continh.h."
  ]
 }

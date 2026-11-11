@@ -38,7 +38,7 @@
   "  (117,796 bytes); the canvas spec-r882 gated",
   "  byte-exact; rverify 144 mutants 0 missed;",
   "  the land verified byte-exact against the",
-  "  fresh-tarball rebuild (1178 defs, dpu.h,",
+  "  fresh-tarball rebuild (1178 defs, rules/ddg/lua_promo_batch3.h,",
   "  audit, census, seed, regtest identical;",
   "  engine idempotent applied 66 / already 66).",
   "  NEXT: the promotion continues print-order -",
@@ -46,9 +46,9 @@
   "  batches through Nonhumans and Norse. WAIT",
   "  FOR GO."
  ],
- "include_after": "#include \"rules/dpu.h\"  // R882: the DDG lua promotion, batch three",
+ "include_after": "#include \"rules/ddg/lua_promo_batch3.h\"  // R882: the DDG lua promotion, batch three",
  "include_comment": "the DDG lua promotion, batch four",
- "header_file": "rules/dpw.h",
+ "header_file": "rules/ddg/lua_promo_batch4.h",
  "audit_file": "rules/audits/r883_batch.h",
  "audit_label": "R883 DDG promotion audit",
  "audit_anchor": "#include \"rules/audits/r882_batch.h\"  // R882: R882 DDG promotion audit",
@@ -60,7 +60,7 @@
  "gap_flips": [],
  "banner": {
   "title": "The DDG lua promotion, batch four - 31 full-field defs (Indian 18, Japanese 13) generated ONLY from the adjudicated pin headers, the registry floor 1178 -> 1209.",
-  "provenance": "Generated from rules/idn.h and jpn.h at 2c96981: the four grids x rows (combat, class, ability, roster), the being name orders locked by the pinned cross-references and verified against the 1st-print ink geometry (the archive.org djvu word voice - the Termux tsv folds are unusable on these pages, the R860/R861 lesson); the legend tables decode verbatim from the header comments; the unpinned cells emit the sentinels.",
+  "provenance": "Generated from rules/ddg/mythos_indian.h and rules/ddg/mythos_japanese.h at 2c96981: the four grids x rows (combat, class, ability, roster), the being name orders locked by the pinned cross-references and verified against the 1st-print ink geometry (the archive.org djvu word voice - the Termux tsv folds are unusable on these pages, the R860/R861 lesson); the legend tables decode verbatim from the header comments; the unpinned cells emit the sentinels.",
   "sentinel": "The sentinels ride the R879 doctrine unchanged: n/a for strings, -1 for ints, distinct from every real print value; the printed See below, Standard, Nil, None and Infinite are REAL values and stay. The audits read the sentinels exactly, so fail-on-wrong stays the rule."
  },
  "consts": [

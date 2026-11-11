@@ -2,7 +2,7 @@
  "round": 715,
  "title": "OA MONSTERS - the Generals of the Animal Kings: the shared powers and the three generals",
  "prefix": "dkc",
- "header_file": "rules/oa86generals.h",
+ "header_file": "rules/oa/oa86generals.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA MONSTERS - THE GENERALS OF THE ANIMAL KINGS, printed capture pp. 265-266 - the three generals round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 168 closed, 67 open - the animal generals box flips (census 637 -> 638); NEXT - R716: the Goblin Rat (capture p. 266), prefix dkd (verify free at the landing), audit \"R716 OA monsters Goblin Rat audit\", include after rules/oa86generals.h"
+  "sentinel": "the gap census after this round: 168 closed, 67 open - the animal generals box flips (census 637 -> 638); NEXT - R716: the Goblin Rat (capture p. 266), prefix dkd (verify free at the landing), audit \"R716 OA monsters Goblin Rat audit\", include after rules/oa/oa86generals.h"
  },
  "consts": [
   {
@@ -835,14 +835,14 @@
   "open": 67
  },
  "include_comment": "the OA Animal Generals pins",
- "include_after": "#include \"rules/oa85gargantua.h\"  // R714: the OA Gargantua pins",
+ "include_after": "#include \"rules/oa/oa85gargantua.h\"  // R714: the OA Gargantua pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R714 LANDED 2026-10-21: commit",
  "prev_record": [
   "- R714 LANDED 2026-10-21: commit 9f0a277da0798dcf5e5c1e10de8ef51af01448f3",
   "  (census 636 -> 637, pushed 0124fd4..9f0a277), OA MONSTERS - the",
-  "  Gargantua, capture pp. 263-265 print: rules/oa85gargantua.h,",
+  "  Gargantua, capture pp. 263-265 print: rules/oa/oa85gargantua.h,",
   "  prefix dkb (verified free at 0124fd4), ONE gap flip, gap",
   "  census 167/68 - the kaiju round, the three behemoths riding",
   "  one flip. 66 consts + 42 bools (108 inlines): the shared",
@@ -872,6 +872,6 @@
   "  NEXT - R715: the Generals of the Animal Kings, Greater",
   "  Spirits (capture p. 265), prefix dkc (verified free at",
   "  9f0a277), audit \"R715 OA monsters Animal Generals audit\",",
-  "  include after rules/oa85gargantua.h."
+  "  include after rules/oa/oa85gargantua.h."
  ]
 }

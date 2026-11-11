@@ -2,7 +2,7 @@
  "round": 631,
  "title": "THE MASTER FAMILY CHART and ANCESTRY - the honor-adds-to-birth doctrine, the ancestry results, Table 39",
  "prefix": "dgr",
- "header_file": "rules/oaanc.h",
+ "header_file": "rules/oa/oaanc.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "MASTER FAMILY CHART AND ANCESTRY, printed capture pp. 64-65 - the OA ancestry round",
   "provenance": "pinned from the 2018 print capture alone for this range (the settling authority): the first Mistral-OCR capture session is unavailable above p. 33, so the cross-capture agreement check is impossible. No contested cells detected within the single source: the T39 bands run contiguously 1 through 100 and every honor value sits on its printed row. The T39 result column pins as the 0-34 code (blank 0, roll again 1, criminal 2 through tragic event 34); the die bands pin as lo and hi bounds. OCR normalization: the T39 classic artist reads as the prose classical artist; the T39 roll-again rows 6, 10 and 20 read \"next higher die or + 10\" while row 97 reads \"+ 10 on die roll\" (the printed d100 doctrine - both pin as the roll-again code); Folk Hero capitalized as printed; the Assigning Ancestral Holdings and Birthrights prose (capture pp. 67-69) is deliberately left for the next rounds",
-  "sentinel": "the gap census after this round: 71 closed, 164 open - the Master Family Chart, Ancestry prose and Table 39 boxes flip (census 553 -> 554); NEXT - R632: the Assigning Ancestral Holdings prose, capture pp. 67-68, the head-of-family rule and the NPC-only holdings, prefix dgs (verify free), audit \"R632 OA holdings audit\", include after rules/oaanc.h"
+  "sentinel": "the gap census after this round: 71 closed, 164 open - the Master Family Chart, Ancestry prose and Table 39 boxes flip (census 553 -> 554); NEXT - R632: the Assigning Ancestral Holdings prose, capture pp. 67-68, the head-of-family rule and the NPC-only holdings, prefix dgs (verify free), audit \"R632 OA holdings audit\", include after rules/oa/oaanc.h"
  },
  "consts": [
   {
@@ -731,7 +731,7 @@
   "open": 164
  },
  "include_comment": "the OA ancestry pins",
- "include_after": "#include \"rules/oafamstr.h\"  // R630: the OA family structures pins",
+ "include_after": "#include \"rules/oa/oafamstr.h\"  // R630: the OA family structures pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R630 LANDED 2026-10-19: commit",
@@ -742,7 +742,7 @@
   "  681a99f..9fbb973), THE FAMILY",
   "  STRUCTURE prose - the additional family",
   "  structures, capture pp. 62-64:",
-  "  rules/oafamstr.h, prefix dgq",
+  "  rules/oa/oafamstr.h, prefix dgq",
   "  (verified free), 37 inlines (14",
   "  consts, 23 bools, no tables): the",
   "  1d8-minus-2 children per space with",
@@ -804,6 +804,6 @@
   "  pp. 64-65, Table 39 (Ancestry),",
   "  prefix dgr (verify free), audit",
   "  \"R631 OA ancestry audit\", include",
-  "  after rules/oafamstr.h."
+  "  after rules/oa/oafamstr.h."
  ]
 }

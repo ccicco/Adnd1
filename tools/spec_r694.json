@@ -2,7 +2,7 @@
  "round": 694,
  "title": "OA MENTAL AND PHYSICAL TRAINING - the any-style training maneuvers with the stunning and incapacitating rules of the unmodified 20",
  "prefix": "djh",
- "header_file": "rules/oatrain.h",
+ "header_file": "rules/oa/oatrain.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA MENTAL AND PHYSICAL TRAINING, printed capture pp. 232-233 - the any-style training round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift. THE CATEGORY: the training maneuvers belong to no principal method - learned by practitioners of any method or style, reflecting the superb control over mind and body. THE MANEUVERS: the Meditation with all the shukenja powers, the shukenja and kensai spending no slot for what they have; the All-Around Sight constant, the opponents on all sides detected but the invisible unseen, never struck from behind nor penalized from a back attack; the Mental Resistance constant, the +2 against the charm, illusion and hold; the Blind Fighting constant, only a -1 in darkness or blindness or against the invisible, but the silence spell with any of them leaving the character effectively blind again; the Ironskin, the muscles hardened like iron for the AC 2 better - only unarmored; the Levitation the rarest, one turn of concentration to negate the weight, then five feet per round up, down or sideways, no actions, the broken concentration a fall, one round of rest owed. THE STUNNING AND INCAPACITATING: every style's chance against a man-sized opponent - the UNMODIFIED 20 on the to hit roll forcing the save vs. paralyzation; the save made meaning no stun or incapacity but the normal damage kept; the save failed meaning the die roll compared to the hit dice or level - the roll LESS the 1d6 melee round stun, the roll GREATER the 1-3 hour incapacity, an equal roll the stun per the printed lizard man example (the 2 rolled equal to the 2+1 dice); the +4 or greater on the hit dice treated as one extra die. The grid mechanics codified per the R431 calculus",
-  "sentinel": "the gap census after this round: 147 closed, 88 open - the Mental and Physical Training box flips (census 616 -> 617); NEXT - R695: the Learning Martial Arts with Multiple Styles and Combining Styles prose (capture pp. 233-235), prefix dji (verify free at the landing), audit \"R695 OA learning martial arts audit\", include after rules/oatrain.h"
+  "sentinel": "the gap census after this round: 147 closed, 88 open - the Mental and Physical Training box flips (census 616 -> 617); NEXT - R695: the Learning Martial Arts with Multiple Styles and Combining Styles prose (capture pp. 233-235), prefix dji (verify free at the landing), audit \"R695 OA learning martial arts audit\", include after rules/oa/oatrain.h"
  },
  "consts": [
   {
@@ -316,7 +316,7 @@
   "open": 88
  },
  "include_comment": "the OA mental and physical training pins",
- "include_after": "#include \"rules/oamethods.h\"  // R693: the OA principal methods pins",
+ "include_after": "#include \"rules/oa/oamethods.h\"  // R693: the OA principal methods pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R693 LANDED 2026-10-20: commit",
@@ -327,7 +327,7 @@
   "  1393818..269b6c0), OA PRINCIPAL",
   "  METHODS - the eight method",
   "  descriptions, capture pp. 228-232",
-  "  print: rules/oamethods.h, prefix djg",
+  "  print: rules/oa/oamethods.h, prefix djg",
   "  (verified free at 1393818), ONE gap",
   "  flip, gap census 145/90 -> 146/89. 42",
   "  consts + 46 bools (88 inlines, no",
@@ -394,6 +394,6 @@
   "  232-233), prefix djh (verified free",
   "  at 269b6c0), audit \"R694 OA mental",
   "  and physical training audit\",",
-  "  include after rules/oamethods.h"
+  "  include after rules/oa/oamethods.h"
  ]
 }

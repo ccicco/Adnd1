@@ -6,19 +6,19 @@
 # audit simulation pass could not see (it models the
 # accessors' return VALUES, not the emitted C text):
 #
-# 1. rules/uaequip26.h lost the leading slash of its
+# 1. rules/ua/uaequip26.h lost the leading slash of its
 #    "// ===" opener (a [1:-1] strip on a literal
 #    with no leading newline) - the file started
 #    "/ ===", a syntax error at line 1.
-# 2. rules/uahandheld.h shipped the dagger length
+# 2. rules/ua/uahandheld.h shipped the dagger length
 #    c. 15" (fifteen INCHES, double-prime, per the
 #    clean print) unescaped - the cell read
 #    "c. 15"" and left an unbalanced quote.
-# 3. rules/uaweapontable.h: the uawtName replacement
+# 3. rules/ua/uaweapontable.h: the uawtName replacement
 #    flipped the return type (const char* -> int) -
 #    every strcmp(uawtName(...)) call in the audit
 #    failed to compile.
-# 4. rules/uaweapontable.h: the uawtIsNewWeapon
+# 4. rules/ua/uaweapontable.h: the uawtIsNewWeapon
 #    replacement flipped bool -> int - this one
 #    compiles silently; only a signature-vs-array
 #    check caught it.
@@ -34,9 +34,9 @@ import io
 
 NL = '\n'
 
-HDRS = ('rules/uaequip26.h', 'rules/uahandheld.h',
-        'rules/uaweapontable.h', 'rules/uamissile.h',
-        'rules/uaprof.h')
+HDRS = ('rules/ua/uaequip26.h', 'rules/ua/uahandheld.h',
+        'rules/ua/uaweapontable.h', 'rules/ua/uamissile.h',
+        'rules/ua/uaprof.h')
 
 applied = []
 already = []
@@ -59,7 +59,7 @@ def abort(label, detail):
 
 
 # ---- fix 1: the uaequip26.h opener slash ----
-P = 'rules/uaequip26.h'
+P = 'rules/ua/uaequip26.h'
 src = rd(P)
 if src.startswith('// '):
     already.append('uaequip26.h: the opener slash')
@@ -70,7 +70,7 @@ else:
     abort('%s opener not recognised' % P, src[:60])
 
 # ---- fix 2: the dagger inches escape ----
-P = 'rules/uahandheld.h'
+P = 'rules/ua/uahandheld.h'
 src = rd(P)
 BAD = '"c. 15"", "8\' +",'
 GOOD = '"c. 15\\"", "8\' +",'
@@ -86,7 +86,7 @@ else:
           'no c. 15 cell')
 
 # ---- fixes 3+4: the flipped return types ----
-P = 'rules/uaweapontable.h'
+P = 'rules/ua/uaweapontable.h'
 src = rd(P)
 PAIRS = [
     ('inline int uawtName(int i) {',
@@ -143,7 +143,7 @@ for h in HDRS:
 if rd('regtest.cpp').count('audit: bad ') != 319:
     abort('the census is not 319', 'run the R392 splice first')
 
-if not rd('rules/uaequip26.h').startswith('// '):
+if not rd('rules/ua/uaequip26.h').startswith('// '):
     abort('the opener fix did not hold', '')
 
 print('R392b splice: ALL OK (applied %d, already %d)'

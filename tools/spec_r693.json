@@ -2,7 +2,7 @@
  "round": 693,
  "title": "OA PRINCIPAL METHODS - the eight method descriptions: the kick, lock, movement, push, strike, throw, vital area and weapon maneuvers with their hit, damage, save and concentration mechanics",
  "prefix": "djg",
- "header_file": "rules/oamethods.h",
+ "header_file": "rules/oa/oamethods.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA PRINCIPAL METHODS, printed capture pp. 228-232 - the eight method descriptions round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift. KICK: the Circle Kick twice damage on the spin with the next attack lost on a miss; the Flying Kick the triple damage of the five-foot run, the miss dropping the fighter prone unless Prone Fighting or Instant Stand; the Backward Kick behind without facing, its miss harmless. LOCK: the gripping art - the Choke Hold with its -2 escape attempts per attack and the 1-3 round unconsciousness; the Locking Block scissors trap with the feet-only +4 and the weapon-recoil on a miss; the Incapacitator double damage and the 24-hour useless limb before the save vs. paralyzation; the Immobilizing one-hand hold with the -6 escape and the -4 next-attack on a miss. MOVEMENT: the Feint +2 for the next attack; the Prone Fighting constant, Instant Stand alone beside it; the Immovability auto-save; the Missile Deflection save per attack, awareness required; the Leap with its standing 4/3 and running 8/10 springs plus a foot per level, one attack the cost; the Speed doubling attacks and the combat movement alone, once per day, five rounds, then rest; the Slow Resistance automatic. PUSH: the soft protective force - the Concentrated Push a foot per level, the three-foot save threshold, the fall damage into a solid object, the +2 against the character on a miss; the Sticking Touch +2 to hit and AC 2 better; the One Finger push at one foot per level, the only action of the round. STRIKE: the Iron Fist 1d10; the Crushing Blow of the half-foot wood and quarter-foot stone per level, normal damage plus level against the living, the hurt hand on a missed hard object; the Eagle Claw 3d10 - the OCR artifact 3410 resolved - snapping shafts and crushing metal. THROW: the constant Fall at half damage; the Instant Stand in place of an attack; the Hurl 1d4 feet and double damage, the miss costing attacks and initiative; the Great Throw one foot per level standing, six plus a foot per level against a charge, triple damage. VITAL AREA: human and humanoid only - the Pain Touch with its -2/+2 for 1-3 rounds, no damage; the Stunning Touch 1d4 rounds before the save; the Paralyzing Touch 1d6 turns before the save; the Distance Death pool-side mastery, the Pain unsavable and the Stunning saved at -2, or the triple damage, one foot per level. WEAPON: the martial-arts-exclusive weapons only - the Weapon Catch lock and +2 with the disarm on a miss; the Weapon Breaker against melee weapons alone, the save vs. crushing blow, the bo stick vs the sword; the Steel Cloth 6-10 feet rigid as a spear that cannot be thrown, automatic. The grid mechanics codified per the R431 calculus",
-  "sentinel": "the gap census after this round: 146 closed, 89 open - the Principal Methods box flips (census 615 -> 616); NEXT - R694: the Mental and Physical Training with Stunning and Incapacitating prose (capture pp. 232-233), prefix djh (verify free at the landing), audit \"R694 OA mental and physical training audit\", include after rules/oamethods.h"
+  "sentinel": "the gap census after this round: 146 closed, 89 open - the Principal Methods box flips (census 615 -> 616); NEXT - R694: the Mental and Physical Training with Stunning and Incapacitating prose (capture pp. 232-233), prefix djh (verify free at the landing), audit \"R694 OA mental and physical training audit\", include after rules/oa/oamethods.h"
  },
  "consts": [
   {
@@ -872,7 +872,7 @@
   "open": 89
  },
  "include_comment": "the OA principal methods pins",
- "include_after": "#include \"rules/oa70maneuvers.h\"  // R692: the OA Table 70 special maneuvers pins",
+ "include_after": "#include \"rules/oa/oa70maneuvers.h\"  // R692: the OA Table 70 special maneuvers pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R692 LANDED 2026-10-20: commit",
@@ -882,7 +882,7 @@
   "  fe60ff6a (census 614 -> 615, pushed",
   "  3a019a9..1393818), OA TABLE 70 - the",
   "  martial arts special maneuvers, capture",
-  "  p. 227 print: rules/oa70maneuvers.h,",
+  "  p. 227 print: rules/oa/oa70maneuvers.h,",
   "  prefix djf (verified free at 3a019a9),",
   "  ONE gap flip, gap census 144/91 ->",
   "  145/90. The 36x3 grid OA70Data across",
@@ -929,6 +929,6 @@
   "  228-232), prefix djg (verified free at",
   "  1393818), audit \"R693 OA principal",
   "  methods audit\", include after",
-  "  rules/oa70maneuvers.h"
+  "  rules/oa/oa70maneuvers.h"
  ]
 }

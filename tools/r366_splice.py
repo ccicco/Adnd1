@@ -44,10 +44,10 @@ SEED_ENTRY = NL.join([
     '  d7bb603, census 292, the UA new',
     '  illusionist 6th/7th levels,',
     '  acquisition and cost pin round',
-    '  (rules/uailspells6.h,',
-    '  rules/uailspells7.h,',
-    '  rules/uailacquisition.h and',
-    '  rules/uaspellcost.h): death fog,',
+    '  (rules/ua/uailspells6.h,',
+    '  rules/ua/uailspells7.h,',
+    '  rules/ua/uailacquisition.h and',
+    '  rules/ua/uaspellcost.h): death fog,',
     '  mislead, phantasmagoria and the',
     '  mirage arcane at the printed 6th',
     '  (the item-list 7th divergence',
@@ -130,13 +130,13 @@ assert s.count(
 assert len(applied) + len(already) == 1, 'a count'
 
 
-# ---- (b) NEW rules/uaspellbooks.h ----
-P = 'rules/uaspellbooks.h'
+# ---- (b) NEW rules/ua/uaspellbooks.h ----
+P = 'rules/ua/uaspellbooks.h'
 if os.path.exists(P) and 'R366' in rd(P):
     already.append('uaspellbooks: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uaspellbooks.h
+// Adnd1 - rules/ua/uaspellbooks.h
 // The UA MAGIC-USER SPELL BOOKS (pp. 79-80 print) pins,
 // R366: the book types and capacities, the costs, the
 // physical aspects, the values and the direct-casting
@@ -461,13 +461,13 @@ assert 'uasc' not in s, 'b no uasc ref'
 assert len(applied) + len(already) == 2, 'b count'
 
 
-# ---- (b2) NEW rules/uaspellcomment.h ----
-P = 'rules/uaspellcomment.h'
+# ---- (b2) NEW rules/ua/uaspellcomment.h ----
+P = 'rules/ua/uaspellcomment.h'
 if os.path.exists(P) and 'R366' in rd(P):
     already.append('uaspellcomment: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uaspellcomment.h
+// Adnd1 - rules/ua/uaspellcomment.h
 // The UA SPELL EXPLANATIONS - the referee commentary
 // (pp. 81-82 print) pins, R366: the permanency lists
 // and the Serten's spell immunity commentary.
@@ -670,13 +670,13 @@ assert 'uasc' not in s, 'b2 no uasc ref'
 assert len(applied) + len(already) == 3, 'b2 count'
 
 
-# ---- (b3) NEW rules/uauwspelluse.h ----
-P = 'rules/uauwspelluse.h'
+# ---- (b3) NEW rules/ua/uauwspelluse.h ----
+P = 'rules/ua/uauwspelluse.h'
 if os.path.exists(P) and 'R366' in rd(P):
     already.append('uauwspelluse: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uauwspelluse.h
+// Adnd1 - rules/ua/uauwspelluse.h
 // The UA UNDERWATER SPELL USE (pp. 81-83 print) pins,
 // R366: the cannot-be-used lists by class, the
 // airy-water footnote and the altered-effects reads.
@@ -939,13 +939,13 @@ assert 'uasc' not in s, 'b3 no uasc ref'
 assert len(applied) + len(already) == 4, 'b3 count'
 
 
-# ---- (b4) NEW rules/uadarkness.h ----
-P = 'rules/uadarkness.h'
+# ---- (b4) NEW rules/ua/uadarkness.h ----
+P = 'rules/ua/uadarkness.h'
 if os.path.exists(P) and 'R366' in rd(P):
     already.append('uadarkness: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uadarkness.h
+// Adnd1 - rules/ua/uadarkness.h
 // The UA EFFECTS OF DARKNESS (p. 82 print) pins,
 // R366: the combat to-hit ladder, the illumination
 // exception, the converse read, the faerie fire
@@ -1100,7 +1100,7 @@ else:
         '      weight, the 450 gp encumbrance,',
         '      the leather-book saves with +2).',
         '      - CLOSED R366: the pin round',
-        '        (rules/uaspellbooks.h) - the',
+        '        (rules/ua/uaspellbooks.h) - the',
         '        capacities with the one-fourth',
         '        travelling read, the costs with',
         '        the master-borne start, the',
@@ -1136,7 +1136,7 @@ else:
         '      referee commentary** (pp. 81-82) -',
         '      the permanency list and the rest.',
         '      - CLOSED R366: the pin round',
-        '        (rules/uaspellcomment.h) - the',
+        '        (rules/ua/uaspellcomment.h) - the',
         '        personal permanency list (the six',
         '        detects and protections), the',
         '        22-name object/area list, the 5',
@@ -1180,7 +1180,7 @@ else:
         '      sink read, and the rest of the',
         '      list).',
         '      - CLOSED R366: the pin round',
-        '        (rules/uauwspelluse.h) - the',
+        '        (rules/ua/uauwspelluse.h) - the',
         '        cannot-use rosters (cleric,',
         '        druid, magic-user, the',
         '        illusionist fragment) with the',
@@ -1215,7 +1215,7 @@ else:
         '- [x] **The effects of darkness** (p.',
         '      82) - the combat effects ladder.',
         '      - CLOSED R366: the pin round',
-        '        (rules/uadarkness.h) - the -4',
+        '        (rules/ua/uadarkness.h) - the -4',
         '        unseen and -2 vague ladder, the',
         '        illumination exception, the',
         '        infravision converse with the',
@@ -1244,10 +1244,10 @@ assert s.count(
 assert s.count(
     '- [x] **The effects of darkness**'
 ) == 1, 'c4 flip'
-assert s.count('(rules/uaspellbooks.h) - the') == 1, 'c1 note'
-assert s.count('(rules/uaspellcomment.h) - the') == 1, 'c2 note'
-assert s.count('(rules/uauwspelluse.h) - the') == 1, 'c3 note'
-assert s.count('(rules/uadarkness.h) - the') == 1, 'c4 note'
+assert s.count('(rules/ua/uaspellbooks.h) - the') == 1, 'c1 note'
+assert s.count('(rules/ua/uaspellcomment.h) - the') == 1, 'c2 note'
+assert s.count('(rules/ua/uauwspelluse.h) - the') == 1, 'c3 note'
+assert s.count('(rules/ua/uadarkness.h) - the') == 1, 'c4 note'
 assert s.count(
     '- [ ] **Cantrip acquisition, MU**'
 ) == 1, 'c cantrip kept open'
@@ -1276,14 +1276,14 @@ s = rd(RT)
 if 'R366 UA DM-section spells pin audit' in s:
     already.append('regtest.cpp: the R366 audit')
 else:
-    INC_ANCH = ('#include "rules/uaspellcost.h"  // '
+    INC_ANCH = ('#include "rules/ua/uaspellcost.h"  // '
         'R365: the UA spell casting cost')
     INC_NEW = NL.join([
-        '#include "rules/uaspellcost.h"  // R365: the UA spell casting cost',
-        '#include "rules/uaspellbooks.h"  // R366: the UA spell books',
-        '#include "rules/uaspellcomment.h"  // R366: the UA spell commentary',
-        '#include "rules/uauwspelluse.h"  // R366: the UA underwater spells',
-        '#include "rules/uadarkness.h"  // R366: the UA effects of darkness',
+        '#include "rules/ua/uaspellcost.h"  // R365: the UA spell casting cost',
+        '#include "rules/ua/uaspellbooks.h"  // R366: the UA spell books',
+        '#include "rules/ua/uaspellcomment.h"  // R366: the UA spell commentary',
+        '#include "rules/ua/uauwspelluse.h"  // R366: the UA underwater spells',
+        '#include "rules/ua/uadarkness.h"  // R366: the UA effects of darkness',
     ])
     AUD_ANCH = '    // ---- R227: the wis mental save wiring audit ----'
     AUDIT = r"""    // ---- R366: the UA DM-section spells
@@ -1595,46 +1595,46 @@ assert s.count(
     'R227: the wis mental save'
 ) == 1, 'd r227 kept'
 assert s.count(
-    '#include "rules/uaspellbooks.h"'
+    '#include "rules/ua/uaspellbooks.h"'
 ) == 1, 'd new include'
 assert s.count(
-    '#include "rules/uaspellcomment.h"'
+    '#include "rules/ua/uaspellcomment.h"'
 ) == 1, 'd new include'
 assert s.count(
-    '#include "rules/uauwspelluse.h"'
+    '#include "rules/ua/uauwspelluse.h"'
 ) == 1, 'd new include'
 assert s.count(
-    '#include "rules/uadarkness.h"'
+    '#include "rules/ua/uadarkness.h"'
 ) == 1, 'd new include'
 assert s.count(
-    '#include "rules/uaspellcost.h"'
+    '#include "rules/ua/uaspellcost.h"'
 ) == 1, 'd kept include'
 assert s.count(
-    '#include "rules/uailacquisition.h"'
+    '#include "rules/ua/uailacquisition.h"'
 ) == 1, 'd kept include'
 assert s.count(
-    '#include "rules/uailspells1.h"'
+    '#include "rules/ua/uailspells1.h"'
 ) == 1, 'd kept include'
 assert s.count(
-    '#include "rules/uailspells2.h"'
+    '#include "rules/ua/uailspells2.h"'
 ) == 1, 'd kept include'
 assert s.count(
-    '#include "rules/uailspells3.h"'
+    '#include "rules/ua/uailspells3.h"'
 ) == 1, 'd kept include'
 assert s.count(
-    '#include "rules/uailspells5.h"'
+    '#include "rules/ua/uailspells5.h"'
 ) == 1, 'd kept include'
 assert s.count(
-    '#include "rules/uailspells6.h"'
+    '#include "rules/ua/uailspells6.h"'
 ) == 1, 'd kept include'
 assert s.count(
-    '#include "rules/uailspells7.h"'
+    '#include "rules/ua/uailspells7.h"'
 ) == 1, 'd kept include'
 assert s.count(
-    '#include "rules/uailspells4.h"'
+    '#include "rules/ua/uailspells4.h"'
 ) == 1, 'd kept include'
 assert s.count(
-    '#include "rules/uailcantrips.h"'
+    '#include "rules/ua/uailcantrips.h"'
 ) == 1, 'd il include'
 for i in range(1, 10):
     assert s.count(

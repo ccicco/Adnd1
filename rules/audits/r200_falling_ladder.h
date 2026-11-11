@@ -45,10 +45,10 @@
         printf("R200 falling ladder audit: bad %d\n", bad);
         if (bad) return 1;
     }
-    #include "rules/audits/r201_npc_monk_alignment_split.h"  // R827: migrated
-    #include "rules/audits/r203_apparent_armor_ac.h"  // R827: migrated
-    #include "rules/audits/r204_item_saving_throw_matrix.h"  // R827: migrated
-    #include "rules/audits/r205_spying_tables.h"  // R827: migrated
-    #include "rules/audits/r206_pursuit_and_evasion.h"  // R827: migrated
-    #include "rules/audits/r207_town_taxation.h"  // R827: migrated
-    #include "rules/audits/r208_social_class_and_rank.h"  // R827: migrated
+    #include "r201_npc_monk_alignment_split.h"  // R827: migrated
+    #include "r203_apparent_armor_ac.h"  // R827: migrated
+    #include "r204_item_saving_throw_matrix.h"  // R827: migrated
+    #include "r205_spying_tables.h"  // R827: migrated
+    #include "r206_pursuit_and_evasion.h"  // R827: migrated
+    #include "r207_town_taxation.h"  // R827: migrated
+    #include "r208_social_class_and_rank.h"  // R827: migrated

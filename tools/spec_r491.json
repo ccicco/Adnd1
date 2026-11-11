@@ -2,7 +2,7 @@
  "round": 491,
  "title": "the WSG magic in the wilderness chapter slice - the alphabetical spell commentary from affect normal fires through wraithform with the climbing and falling interplay of bind, bee, bug, fumble, haste, jump, knot, sink, snare and web, the web thickness chain with the 10-20-40-60 ladder and the 2x 4x 8x slope multipliers, the temperature magics of armor, cone of cold, control weather, heat metal and the protection scrolls, the cold-weather reductions of insect plague, summon insects and the staff of swarming insects, and the potion, protection scroll, ring, rod and miscellaneous item rules from gaseous form through the stone of good luck, printed pp. 95-101, CLOSING the magic in the wilderness chapter",
  "prefix": "wmg",
- "header_file": "rules/wsgmagic.h",
+ "header_file": "rules/wsg/wsgmagic.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -2302,39 +2302,39 @@
   {
    "note": "the spells box",
    "from": "  - [ ] Spells (p. 95)",
-   "to": "  - [x] Spells (p. 95) - R491: the alphabetical spell commentary from affect normal fires through wraithform with the climbing, temperature, cold-weather and web rules pins as rules/wsgmagic.h"
+   "to": "  - [x] Spells (p. 95) - R491: the alphabetical spell commentary from affect normal fires through wraithform with the climbing, temperature, cold-weather and web rules pins as rules/wsg/wsgmagic.h"
   },
   {
    "note": "the potions box",
    "from": "  - [ ] Potions (p. 100)",
-   "to": "  - [x] Potions (p. 100) - R491: the gaseous form, invulnerability and vitality rules pin as rules/wsgmagic.h"
+   "to": "  - [x] Potions (p. 100) - R491: the gaseous form, invulnerability and vitality rules pin as rules/wsg/wsgmagic.h"
   },
   {
    "note": "the protection scrolls box",
    "from": "  - [ ] Protection scrolls (p. 100)",
-   "to": "  - [x] Protection scrolls (p. 100) - R491: the cold, fire and gas scroll rules pin as rules/wsgmagic.h"
+   "to": "  - [x] Protection scrolls (p. 100) - R491: the cold, fire and gas scroll rules pin as rules/wsg/wsgmagic.h"
   },
   {
    "note": "the rings box",
    "from": "  - [ ] Rings (p. 100)",
-   "to": "  - [x] Rings (p. 100) - R491: the fire resistance, free action, protection, sustenance and warmth rules pin as rules/wsgmagic.h"
+   "to": "  - [x] Rings (p. 100) - R491: the fire resistance, free action, protection, sustenance and warmth rules pin as rules/wsg/wsgmagic.h"
   },
   {
    "note": "the rods staves and wands box",
    "from": "  - [ ] Rods, staves, and wands (p. 101)",
-   "to": "  - [x] Rods, staves, and wands (p. 101) - R491: the rod of lordly might and staff of swarming insects rules pin as rules/wsgmagic.h"
+   "to": "  - [x] Rods, staves, and wands (p. 101) - R491: the rod of lordly might and staff of swarming insects rules pin as rules/wsg/wsgmagic.h"
   },
   {
    "note": "the miscellaneous magic box",
    "from": "  - [ ] Miscellaneous magic (p. 101)",
-   "to": "  - [x] Miscellaneous magic (p. 101) - R491: the Kwalish through stone of good luck item rules pin as rules/wsgmagic.h"
+   "to": "  - [x] Miscellaneous magic (p. 101) - R491: the Kwalish through stone of good luck item rules pin as rules/wsg/wsgmagic.h"
   }
  ],
  "gap_census": {
   "closed": 141,
   "open": 45
  },
- "include_after": "#include \"rules/wsgmount.h\"  // R490: the WSG mounts and beasts of burden rules",
+ "include_after": "#include \"rules/wsg/wsgmount.h\"  // R490: the WSG mounts and beasts of burden rules",
  "include_comment": "the WSG magic in the wilderness rules",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
@@ -2343,7 +2343,7 @@
   "- R490 LANDED 2026-10-16: commit 86a2308 (census 415,",
   "  pushed c11cbe1..86a2308), the WSG MOUNTS AND BEASTS",
   "  OF BURDEN chapter slice, printed pp. 90-94 - CLOSING",
-  "  the chapter. Pinned as rules/wsgmount.h with the",
+  "  the chapter. Pinned as rules/wsg/wsgmount.h with the",
   "  include after wsgfatig.h at line 195 (prefix wmb -",
   "  free on the first probe), 185 inlines: 80 consts +",
   "  90 bools + the 15 Table 42 switch columns in",

@@ -1,11 +1,11 @@
--- oa749: promoted from rules/oa120table78.h (the OA TREASURE - TABLE 78, MAGICAL WEAPONS, printed capture p. 291 - the);
+-- oa749: promoted from rules/oa/oa120table78.h (the OA TREASURE - TABLE 78, MAGICAL WEAPONS, printed capture p. 291 - the);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 749,
   "prefix" = "oa749",
   "banner" = {
       "title" = "OA TREASURE - TABLE 78, MAGICAL WEAPONS, printed capture p. 291 - the",
-      "provenance" = "weapon class grid round census 671 -> 672.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 202 closed, 33 open - the Table 78 box flips (census 671 -> 672); NEXT - R750: Table 79: Weapon Properties (capture p. 291, the grid runs onto p. 292), prefix dll (verify free at the landing), audit \"R750 OA Table 79 properties audit\", include after rules/oa120table78.h",
+      "provenance" = "weapon class grid round census 671 -> 672.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 202 closed, 33 open - the Table 78 box flips (census 671 -> 672); NEXT - R750: Table 79: Weapon Properties (capture p. 291, the grid runs onto p. 292), prefix dll (verify free at the landing), audit \"R750 OA Table 79 properties audit\", include after rules/oa/oa120table78.h",
     },
   "consts" = { {
       "name" = "dlkClassRowCount",

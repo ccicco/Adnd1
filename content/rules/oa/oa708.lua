@@ -1,11 +1,11 @@
--- oa708: promoted from rules/oa79buso.h (the OA MONSTERS - THE BUSO, printed capture pp. 256-257 - the two-type ghoul);
+-- oa708: promoted from rules/oa/oa79buso.h (the OA MONSTERS - THE BUSO, printed capture pp. 256-257 - the two-type ghoul);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 708,
   "prefix" = "oa708",
   "banner" = {
       "title" = "OA MONSTERS - THE BUSO, printed capture pp. 256-257 - the two-type ghoul",
-      "provenance" = "round census 630 -> 631.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 161 closed, 74 open - the Buso box flips (census 630 -> 631); NEXT - R709: the Carp, Giant (capture p. 257), prefix djw (verify free at the landing), audit \"R709 OA monsters Giant Carp audit\", include after rules/oa79buso.h",
+      "provenance" = "round census 630 -> 631.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 161 closed, 74 open - the Buso box flips (census 630 -> 631); NEXT - R709: the Carp, Giant (capture p. 257), prefix djw (verify free at the landing), audit \"R709 OA monsters Giant Carp audit\", include after rules/oa/oa79buso.h",
     },
   "consts" = { {
       "name" = "djvBusoTypesCount",

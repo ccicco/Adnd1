@@ -2,18 +2,18 @@
     // The WSG movement/fall-chain fold, the third seam round after gap
     // closure: no new book pages, the R499 pattern applied to the
     // climbing-and-falling chapter. One falling character flows through seven
-    // landed headers: the climbing ratings (rules/wsgclimb.h R435: the 40
+    // landed headers: the climbing ratings (rules/wsg/wsgclimb.h R435: the 40
     // percent non-thief, the 80 percent mountaineer, the fall chance as 100
-    // minus the rating), the Table 17 fall ladder (rules/wsgfall.h R437: the
+    // minus the rating), the Table 17 fall ladder (rules/wsg/wsgfall.h R437: the
     // six bands 1, 3, 6, 10, 15, 20 dice, the 1000-foot free-fall rate, the
-    // 600-800 severe slope), the tumble rates (rules/wsgtumble.h R438: the
+    // 600-800 severe slope), the tumble rates (rules/wsg/wsgtumble.h R438: the
     // 10-foot abrasion granularity, the 100-300 gentle and 300-500 moderate
-    // rates), the stop windows (rules/wsgstop.h R439: 50 feet cliff or
-    // severe, 75 moderate, 100 gentle), the jump floors (rules/wsgjump.h
+    // rates), the stop windows (rules/wsg/wsgstop.h R439: 50 feet cliff or
+    // severe, 75 moderate, 100 gentle), the jump floors (rules/wsg/wsgjump.h
     // R448: the 2-foot broad and 1-foot high floors, the 20-foot run, the 1d3
-    // heap at 5 feet), the slippery-surface cadence (rules/wsgslip.h R447:
+    // heap at 5 feet), the slippery-surface cadence (rules/wsg/wsgslip.h R447:
     // the five-segment run check, the half-rate caution) and the airborne
-    // fall chance (rules/wsgfallair.h R461: the zero base, the -200/-150
+    // fall chance (rules/wsg/wsgfallair.h R461: the zero base, the -200/-150
     // straps, the -50 proficiency, the -10 saddle and stirrups). The
     // findings: the Table 17 dice are the triangular numbers (increments 2,
     // 3, 4, 5) and the 51-or-more band caps at 20d6 ONE DIE SHORT of the pure

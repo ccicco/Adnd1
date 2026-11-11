@@ -2,7 +2,7 @@
  "round": 743,
  "title": "OA TREASURE - the Armor and Shield prose: the type and property determination",
  "prefix": "dle",
- "header_file": "rules/oa114armorprose.h",
+ "header_file": "rules/oa/oa114armorprose.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA TREASURE - THE ARMOR AND SHIELD PROSE, printed capture p. 289 - the armor determination round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 196 closed, 39 open - the armor prose box flips (census 665 -> 666); NEXT - R744: Table 75: Magical Armor (capture p. 289), prefix dlf (verify free at the landing), audit \"R744 OA Table 75 armor audit\", include after rules/oa114armorprose.h"
+  "sentinel": "the gap census after this round: 196 closed, 39 open - the armor prose box flips (census 665 -> 666); NEXT - R744: Table 75: Magical Armor (capture p. 289), prefix dlf (verify free at the landing), audit \"R744 OA Table 75 armor audit\", include after rules/oa/oa114armorprose.h"
  },
  "consts": [
   {
@@ -115,7 +115,7 @@
   "open": 39
  },
  "include_comment": "the OA armor prose pins",
- "include_after": "#include \"rules/oa113miscmagic.h\"  // R742: the OA misc magic pins",
+ "include_after": "#include \"rules/oa/oa113miscmagic.h\"  // R742: the OA misc magic pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R742 LANDED 2026-10-22: commit",
@@ -124,7 +124,7 @@
   "  c367366a87f57a54f0ebf400e97a79d792ab0026",
   "  (census 664 -> 665, pushed 1f4bad3..c367366),",
   "  OA TREASURE, Miscellaneous Magic (capture",
-  "  pp. 288-289), header rules/oa113miscmagic.h,",
+  "  pp. 288-289), header rules/oa/oa113miscmagic.h,",
   "  prefix dld (verified free at 1f4bad3), one",
   "  gap flip (the misc magic box, its",
   "  two-line wrap handled), gap census now",
@@ -155,7 +155,7 @@
   "  (capture pp. 289-291), prefix dle (verify",
   "  free at the landing), audit \"R743 OA",
   "  armor shield audit\", include after",
-  "  rules/oa113miscmagic.h. Scope carefully:",
+  "  rules/oa/oa113miscmagic.h. Scope carefully:",
   "  the box covers the section prose (the",
   "  roll-or-select instruction, Table 75 for",
   "  the type then Tables 76 + 77 for the",

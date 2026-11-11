@@ -1,11 +1,11 @@
--- oa714: promoted from rules/oa85gargantua.h (the OA MONSTERS - THE GARGANTUA, printed capture pp. 263-265 - the kaiju round);
+-- oa714: promoted from rules/oa/oa85gargantua.h (the OA MONSTERS - THE GARGANTUA, printed capture pp. 263-265 - the kaiju round);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 714,
   "prefix" = "oa714",
   "banner" = {
       "title" = "OA MONSTERS - THE GARGANTUA, printed capture pp. 263-265 - the kaiju round",
-      "provenance" = "census 636 -> 637.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 167 closed, 68 open - the gargantua box flips (census 636 -> 637); NEXT - R715: the Generals of the Animal Kings, Greater Spirits (capture p. 265), prefix dkc (verify free at the landing), audit \"R715 OA monsters Animal Generals audit\", include after rules/oa85gargantua.h",
+      "provenance" = "census 636 -> 637.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 167 closed, 68 open - the gargantua box flips (census 636 -> 637); NEXT - R715: the Generals of the Animal Kings, Greater Spirits (capture p. 265), prefix dkc (verify free at the landing), audit \"R715 OA monsters Animal Generals audit\", include after rules/oa/oa85gargantua.h",
     },
   "consts" = { {
       "name" = "dkbGargantuaTypeCount",

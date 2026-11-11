@@ -300,6 +300,6 @@ return {
     } },
   "audit" = {
       "label" = "R429 WSG special weather pin audit",
-      "comment" = "The special weather data slice pins Tables 6, 7 and 8 (rules/wsgsplwx.h, prefix wsw): the hurricane half-point grid, the tornado none/damaged/destroyed codes and the hailstorm dice, verified cell for cell with the dash censuses and the printed prose; census 353 -> 354.",
+      "comment" = "The special weather data slice pins Tables 6, 7 and 8 (rules/wsg/wsgsplwx.h, prefix wsw): the hurricane half-point grid, the tornado none/damaged/destroyed codes and the hailstorm dice, verified cell for cell with the dash censuses and the printed prose; census 353 -> 354.",
     },
 }

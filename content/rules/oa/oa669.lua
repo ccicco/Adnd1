@@ -1,4 +1,4 @@
--- oa669: promoted from rules/oawjspelllist.h (the TABLE 66 WU JEN SPELLS, printed capture pp. 153-155 - the OA wu jen spell);
+-- oa669: promoted from rules/oa/oawjspelllist.h (the TABLE 66 WU JEN SPELLS, printed capture pp. 153-155 - the OA wu jen spell);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 669,

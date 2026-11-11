@@ -3,7 +3,7 @@
   "title": "the second FF promotion batch",
   "prefix": "ffs",
   "regtest": "regtest.cpp",
-  "header_file": "rules/ffs.h",
+  "header_file": "rules/ff/promo_batch2.h",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
   "gap_report": "tools/mm2_gap_report.md",
   "banner": {
@@ -242,7 +242,7 @@
   "audit_file": "rules/audits/r837_batch.h",
   "audit_anchor": "#include \"rules/audits/r836_batch.h\"  // R836: R836 first FF promotion audit",
   "include_comment": "the second FF promotion batch",
-  "include_after": "#include \"rules/ffp.h\"  // R836: the first FF promotion batch",
+  "include_after": "#include \"rules/ff/promo_batch1.h\"  // R836: the first FF promotion batch",
   "seed_anchor": "## Knowledge maintenance",
   "prev_seed_key": "- R836 LANDED 2026-10-25: commit",
   "prev_record": [
@@ -278,7 +278,7 @@
     "  the registry 812 -> 837, the ff",
     "  def census 2 -> 27; NO gap boxes",
     "  flip (MM2 stays 37 closed 0 open).",
-    "  Header rules/ffp.h, prefix ffp",
+    "  Header rules/ff/promo_batch1.h, prefix ffp",
     "  (16 consts + 4 bools, inline 20),",
     "  the standing pace pinned at 25",
     "  defs per promotion round; audit",
@@ -286,14 +286,14 @@
     "  rode rules/audits/r836_batch.h;",
     "  the R835 record seated into the",
     "  seed; file patches on regtest.cpp,",
-    "  mm2enca.h, mm2enco.h, lmp.h,",
-    "  lungp.h and the audits",
+    "  mm2enca.h, mm2enco.h, rules/mm/mm2_lammasu_promotion.h,",
+    "  rules/ff/lung_dragons_promotion.h and the audits",
     "  r817/r818/r820/r821 (the walk-key",
     "  census chains). THE PACE IS",
     "  USER-SET: 25 defs walking per",
     "  promotion round (2026-10-25,",
     "  Curtiss's call after the R836",
-    "  landing) - also pinned in ffp.h",
+    "  landing) - also pinned in rules/ff/promo_batch1.h",
     "  as ffpDefsPerRound; each batch",
     "  sizes to 25 defs unless Curtiss",
     "  calls a different slice. NEXT:",
@@ -546,13 +546,13 @@
       "to": "                \"vulture_ordinary\",\n                \"osquip\","
     },
     {
-      "file": "rules/mm2enco.h",
+      "file": "rules/mm/mm2enco.h",
       "note": "the outdoor walk-key census const re-pins 632",
       "from": "// keyless cells, 570 -> 572; the R836 FF promotion rewired\n// 18 more, 572 -> 590)\ninline int mm2encoWalkKeyRows()\n    { return 590; }",
       "to": "// keyless cells, 570 -> 572; the R836 FF promotion rewired\n// 18 more, 572 -> 590; the R837 FF promotion rewired\n// 42 more, 590 -> 632)\ninline int mm2encoWalkKeyRows()\n    { return 632; }"
     },
     {
-      "file": "rules/lmp.h",
+      "file": "rules/mm/mm2_lammasu_promotion.h",
       "note": "the lammasu rewire check rides 632",
       "from": "inline int lmpWalkKeyRowsAfter()\n    { return 590; }",
       "to": "inline int lmpWalkKeyRowsAfter()\n    { return 632; }"

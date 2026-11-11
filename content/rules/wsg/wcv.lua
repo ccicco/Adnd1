@@ -79,6 +79,6 @@ return {
     } },
   "audit" = {
       "label" = "R459 WSG capsized use pin audit",
-      "comment" = "The capsized-use slice pins the natural buoyancy (most vessels remain afloat just beneath the surface after capsizing or hull damage), the flotation preconditions (no passengers and no more than 10% of the listed maximum cargo capacity, with the small-rowboat 200 gp example), the cling-to-the-sides flotation with the even-weight-distribution requirement, the twice-capacity support figure (eight characters around a large rowboat), and the sink rules when the weight limit is exceeded or the weight is unevenly distributed (rules/wsgcapsized.h, prefix wcv); census 383 -> 384.",
+      "comment" = "The capsized-use slice pins the natural buoyancy (most vessels remain afloat just beneath the surface after capsizing or hull damage), the flotation preconditions (no passengers and no more than 10% of the listed maximum cargo capacity, with the small-rowboat 200 gp example), the cling-to-the-sides flotation with the even-weight-distribution requirement, the twice-capacity support figure (eight characters around a large rowboat), and the sink rules when the weight limit is exceeded or the weight is unevenly distributed (rules/wsg/wsgcapsized.h, prefix wcv); census 383 -> 384.",
     },
 }

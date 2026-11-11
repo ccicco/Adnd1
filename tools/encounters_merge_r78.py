@@ -12,7 +12,7 @@ import re
 
 DRY = "--dry" in sys.argv[1:]
 
-H_INC_ANCHOR = '#include "../rules/dice.h"'
+H_INC_ANCHOR = '#include "../rules/engine/dice.h"'
 H_INC_NEW = '#include "treasure.h"   // R74: Hoard (encounters::rollEncounter)'
 NS_ANCHOR = "} // namespace dm"
 CPP_INC_ANCHOR = "#include <algorithm>"

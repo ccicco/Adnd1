@@ -2,7 +2,7 @@
  "round": 626,
  "title": "THE WU JEN - the oriental wizard: the Intelligence doctrine with the spell-learning mechanics, the two ki powers, the elemental mastery, the pupils, the taboo ladder, Tables 31, 32 and 33",
  "prefix": "dgm",
- "header_file": "rules/oawujen.h",
+ "header_file": "rules/oa/oawujen.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "THE WU JEN, printed capture pp. 47-51 - the OA wu jen round",
   "provenance": "verified against capture pp. 47-51 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). Three cells settled against the 2018 print BEFORE pinning, per the settling doctrine: the T31 row-2 bound (the capture lost the comma - 4,000); the T33 row-5 first-spell cell (the capture prints 4, the 2018 prints 3, the ladder-consistent reading stands); the T33 row-22 ninth-spell cell (the capture prints 2, the 2018 prints 1, the ladder-consistent reading stands). The T32 All maximum pins as the -1 code; the T33 dashes pin as zeros. OCR normalization: konobokuru reads as korobokuru; in hit, spell book reads as in his spell book; cloud/adder reads as cloud ladder (prose only)",
-  "sentinel": "the gap census after this round: 56 closed, 179 open - the wu jen boxes with Tables 31, 32 and 33 flip (census 548 -> 549); NEXT - R627: the Yakuza, capture pp. 51-54, Tables 34 and 35, prefix dgn (verify free), audit \"R627 OA yakuza audit\", include after rules/oawujen.h"
+  "sentinel": "the gap census after this round: 56 closed, 179 open - the wu jen boxes with Tables 31, 32 and 33 flip (census 548 -> 549); NEXT - R627: the Yakuza, capture pp. 51-54, Tables 34 and 35, prefix dgn (verify free), audit \"R627 OA yakuza audit\", include after rules/oa/oawujen.h"
  },
  "consts": [
   {
@@ -1208,7 +1208,7 @@
   "open": 179
  },
  "include_comment": "the OA wu jen pins",
- "include_after": "#include \"rules/oasohei.h\"  // R625: the OA sohei pins",
+ "include_after": "#include \"rules/oa/oasohei.h\"  // R625: the OA sohei pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R625 LANDED 2026-10-18: commit",
@@ -1217,7 +1217,7 @@
   "  9204c4c58ed247ce08775d243de60aeddbfa58bd",
   "  (census 547 -> 548, pushed",
   "  7bbb728..9204c4c), THE SOHEI, capture",
-  "  pp. 45-47: rules/oasohei.h, prefix",
+  "  pp. 45-47: rules/oa/oasohei.h, prefix",
   "  dgl (verified free), 53 inlines (33",
   "  consts, 12 bools, 7 table columns):",
   "  the Str 13 and Wis/Con 10 minima",

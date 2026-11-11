@@ -1,11 +1,11 @@
--- oa741: promoted from rules/oa112rods.h (the OA TREASURE - RODS, STAVES, AND WANDS, printed capture p. 288 - the);
+-- oa741: promoted from rules/oa/oa112rods.h (the OA TREASURE - RODS, STAVES, AND WANDS, printed capture p. 288 - the);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 741,
   "prefix" = "oa741",
   "banner" = {
       "title" = "OA TREASURE - RODS, STAVES, AND WANDS, printed capture p. 288 - the",
-      "provenance" = "resurrection rod round census 663 -> 664.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 194 closed, 41 open - the rods box flips (census 663 -> 664); NEXT - R742: Miscellaneous Magic (capture pp. 288-289), prefix dld (verify free at the landing), audit \"R742 OA misc magic audit\", include after rules/oa112rods.h",
+      "provenance" = "resurrection rod round census 663 -> 664.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 194 closed, 41 open - the rods box flips (census 663 -> 664); NEXT - R742: Miscellaneous Magic (capture pp. 288-289), prefix dld (verify free at the landing), audit \"R742 OA misc magic audit\", include after rules/oa/oa112rods.h",
     },
   "consts" = { {
       "name" = "dlcRodOfResurrection",

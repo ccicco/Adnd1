@@ -8,7 +8,7 @@
 # wind bands) with the
 # how-to-use prose and the
 # precipitation rules pin as
-# rules/wsgenvfx.h.
+# rules/wsg/wsgenvfx.h.
 #
 # The pins (the WSG printed
 # p. 21-22, verified from the
@@ -140,7 +140,7 @@ def newfile(path, text, label):
 
 
 RT = 'regtest.cpp'
-HD = 'rules/wsgenvfx.h'
+HD = 'rules/wsg/wsgenvfx.h'
 GR = 'tools/wsg_gap_report.md'
 SD = ('doc/vibe/'
       'adnd1_knowledge_seed_v2.md')
@@ -285,7 +285,7 @@ SEED_ENTRY = E(
     '  WHOLE - the first WSG',
     '  pin round after the arc',
     '  opener.',
-    '  rules/wsgdress.h (NEW, 54',
+    '  rules/wsg/wsgdress.h (NEW, 54',
     '  inlines, prefix wsd): the',
     '  four clothing categories',
     '  (very cold below 0, cold',
@@ -356,7 +356,7 @@ else:
     wr(SD, s)
     applied.append('seed: the R426 record')
 
-# ======== (b) rules/wsgenvfx.h ========
+# ======== (b) rules/wsg/wsgenvfx.h ========
 
 # the header: 38 inlines, the
 # Table 4/5 switches + the
@@ -390,7 +390,7 @@ def sw_int(name, vals, comment):
 
 HS += [
     '// ' + '=' * 89,
-    '// Adnd1 - rules/wsgenvfx.h',
+    '// Adnd1 - rules/wsg/wsgenvfx.h',
     '// The WSG ENVIRONMENT',
     '// EFFECTS, R427: the data',
     '// slice of the',
@@ -749,7 +749,7 @@ HS += [
 HEADER = E(*HS) + NL
 
 newfile(HD, HEADER,
-        'rules/wsgenvfx.h')
+        'rules/wsg/wsgenvfx.h')
 
 # the header statics:
 # 38 inlines, lines <= 78
@@ -805,14 +805,14 @@ FL = [
      'wind (p. 21) - R427: '
      'Tables 4 and 5 with the '
      'how-to-use rules pin as '
-     'rules/wsgenvfx.h'),
+     'rules/wsg/wsgenvfx.h'),
     ('  - [ ] Precipitation '
      '(p. 22)',
      '  - [x] Precipitation '
      '(p. 22) - R427: the '
      'moderate/heavy wind-line '
      'shifts pin as '
-     'rules/wsgenvfx.h'),
+     'rules/wsg/wsgenvfx.h'),
     ('- [ ] **Table 4: '
      'temperature effects** '
      '(p. 21)',
@@ -820,7 +820,7 @@ FL = [
      'temperature effects** '
      '(p. 21) - R427: the 13 '
      'bands pin as '
-     'rules/wsgenvfx.h'),
+     'rules/wsg/wsgenvfx.h'),
     ('- [ ] **Table 5: '
      'wind velocity effects** '
      '(p. 21)',
@@ -828,7 +828,7 @@ FL = [
      'wind velocity effects** '
      '(p. 21) - R427: the 6 '
      'bands pin as '
-     'rules/wsgenvfx.h'),
+     'rules/wsg/wsgenvfx.h'),
     ('Post-state at R426: 12 '
      'closed, 174 open (the '
      'R426 round closes the '
@@ -887,13 +887,13 @@ if g.count('**Table ') != 42:
 # ======== the include ========
 
 pair(RT,
-     '#include "rules/wsgdress.h"  '
+     '#include "rules/wsg/wsgdress.h"  '
      '// R426: the WSG dressing '
      'for the weather',
-     '#include "rules/wsgdress.h"  '
+     '#include "rules/wsg/wsgdress.h"  '
      '// R426: the WSG dressing '
      'for the weather' + NL
-     + '#include "rules/wsgenvfx.h"  '
+     + '#include "rules/wsg/wsgenvfx.h"  '
      '// R427: the WSG '
      'environment effects',
      'regtest: the include line')
@@ -906,7 +906,7 @@ AUD = E(*[l.rstrip() for l in [
     '    // environment pin audit ----',
     '    // The environment data',
     '    // slice pins Tables 4 and',
-    '    // 5 (rules/wsgenvfx.h,',
+    '    // 5 (rules/wsg/wsgenvfx.h,',
     '    // prefix wse): Table 4 (the',
     '    // 13 temperature bands, the',
     '    // Str/Dex/Con reductions',
@@ -1347,7 +1347,7 @@ print('NOTE: the environment data '
       'slice - Table 4 (the 13')
 print('  temperature bands) and '
       'Table 5 (the 6 wind bands)')
-print('  pin as rules/wsgenvfx.h '
+print('  pin as rules/wsg/wsgenvfx.h '
       '(38 inlines, prefix wse)')
 print('  with the how-to-use rules '
       'and the precipitation')

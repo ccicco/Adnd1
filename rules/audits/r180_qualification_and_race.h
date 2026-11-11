@@ -121,16 +121,16 @@
         if (bad) return 1;
     }
 
-    #include "rules/audits/r230_subclass_creation_seam.h"  // R827: migrated
-    #include "rules/audits/r231_subclass_leveling_seam.h"  // R827: migrated
-    #include "rules/audits/r232_subclass_specials_hooks.h"  // R827: migrated
-    #include "rules/audits/r233a_multi_class_seam.h"  // R827: migrated
-    #include "rules/audits/r233_multi_class_engine.h"  // R827: migrated
-    #include "rules/audits/r234a_dual_class_seam.h"  // R827: migrated
-    #include "rules/audits/r234_dual_class_engine.h"  // R827: migrated
-    #include "rules/audits/r235a_bard_career_seam.h"  // R827: migrated
-    #include "rules/audits/r235_bard_engine.h"  // R827: migrated
-    #include "rules/audits/r236_bard_specials.h"  // R827: migrated
-    #include "rules/audits/r181_attacks_per_melee_round.h"  // R827: migrated
-    #include "rules/audits/r182_druid_spell_layer.h"  // R827: migrated
-    #include "rules/audits/r183_illusionist_spell_layer.h"  // R827: migrated
+    #include "r230_subclass_creation_seam.h"  // R827: migrated
+    #include "r231_subclass_leveling_seam.h"  // R827: migrated
+    #include "r232_subclass_specials_hooks.h"  // R827: migrated
+    #include "r233a_multi_class_seam.h"  // R827: migrated
+    #include "r233_multi_class_engine.h"  // R827: migrated
+    #include "r234a_dual_class_seam.h"  // R827: migrated
+    #include "r234_dual_class_engine.h"  // R827: migrated
+    #include "r235a_bard_career_seam.h"  // R827: migrated
+    #include "r235_bard_engine.h"  // R827: migrated
+    #include "r236_bard_specials.h"  // R827: migrated
+    #include "r181_attacks_per_melee_round.h"  // R827: migrated
+    #include "r182_druid_spell_layer.h"  // R827: migrated
+    #include "r183_illusionist_spell_layer.h"  // R827: migrated

@@ -1,4 +1,4 @@
--- ua379: promoted from rules/uarodstave.h (the The UA TREASURE (RODS and);
+-- ua379: promoted from rules/ua/uarodstave.h (the The UA TREASURE (RODS and);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 379,

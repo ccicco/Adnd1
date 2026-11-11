@@ -13,7 +13,7 @@
     // air-carrier), the trained-mount scarcity and the untrained at-mercy
     // rule, the coerced-mount refusals, the triple-to-fifty rations feeding,
     // and the saddle/container even-distribution encumbrance rules with the
-    // 2:1 doubling (rules/wsgflymounts.h, prefix wfm); census 384 -> 385.
+    // 2:1 doubling (rules/wsg/wsgflymounts.h, prefix wfm); census 384 -> 385.
     {
         using namespace rules;
         int bad = 0;

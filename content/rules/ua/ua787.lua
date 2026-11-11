@@ -1,4 +1,4 @@
--- ua: promoted from rules/uadeityprose2.h (the THE ELVEN DEITY PROSE - part 2 of the Appendix S paragraph close: Aerdrie,);
+-- ua: promoted from rules/ua/uadeityprose2.h (the THE ELVEN DEITY PROSE - part 2 of the Appendix S paragraph close: Aerdrie,);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 787,
@@ -440,6 +440,6 @@ return {
     } },
   "audit" = {
       "label" = "R787 elven deity prose audit",
-      "comment" = "THE ELVEN DEITY PROSE - part 2 of the Appendix S description-paragraph close. The archive.org full-text OCR of pp. 113-116 reads the five elven blocks scan-clean: the Aerdrie wind blasts and air summons, the Erevan tricks and twenty small helpers, the Solonor never-empty quiver and slaying arrows, the Hanali Evergold pool and charm aura, and the Labelas time powers - temporal stasis, the 100-year touch, and the 18-inch slow and haste radius. The stat-block numerics stay R406/R783; the paragraph facts ride rules/uadeityprose2.h.",
+      "comment" = "THE ELVEN DEITY PROSE - part 2 of the Appendix S description-paragraph close. The archive.org full-text OCR of pp. 113-116 reads the five elven blocks scan-clean: the Aerdrie wind blasts and air summons, the Erevan tricks and twenty small helpers, the Solonor never-empty quiver and slaying arrows, the Hanali Evergold pool and charm aura, and the Labelas time powers - temporal stasis, the 100-year touch, and the 18-inch slow and haste radius. The stat-block numerics stay R406/R783; the paragraph facts ride rules/ua/uadeityprose2.h.",
     },
 }

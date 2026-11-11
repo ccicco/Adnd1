@@ -1,4 +1,4 @@
--- oa665: promoted from rules/oal7spells.h (the SEVENTH LEVEL SPELLS, printed capture pp. 147-152 - the OA seventh level);
+-- oa665: promoted from rules/oa/oal7spells.h (the SEVENTH LEVEL SPELLS, printed capture pp. 147-152 - the OA seventh level);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 665,

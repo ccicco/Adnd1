@@ -1,4 +1,4 @@
--- ua: promoted from rules/uaac26.h (the The UA ARMOR CLASS TABLE (p. 26),);
+-- ua: promoted from rules/ua/uaac26.h (the The UA ARMOR CLASS TABLE (p. 26),);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 408,

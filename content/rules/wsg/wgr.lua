@@ -5,7 +5,7 @@ return {
   "prefix" = "wgr",
   "banner" = {
       "title" = "The WSG GAP RECONCILIATION, R496: the bookkeeping round that closes the distance between the gap report and the landed pins. The WSG arc rounds R425-R495 pinned every section of the book, but twenty-four boxes were never ticked: eleven chapter parents whose children all closed, nine manifest table lines whose grids landed with their chapter rounds, and the four movement items that pin inside the R435/R434/R432 headers.",
-      "provenance" = "This round pins no new book material: every flipped box is verified against its landed original (rules/wsgenvfx.h, wsgencum.h, wsgvehicle.h, wsgclimb.h, wsggrap.h, wsgchasm.h, wsgjump.h, wsgvis.h, wsgswim.h, wsgvessels.h, wsgcapsizing.h, wsgflymounts.h, wsgmount.h and the chapter headers). What remains open after this round: the overview chapter (pp. 7-10, eleven boxes - the seven terrain descriptions, the hierarchy of terrain, the bodies of water, the climate) and the wilderness proficiencies prose (pp. 11-17, four boxes - the nonweapon list, the choosing-skills rules, the proficiency descriptions).",
+      "provenance" = "This round pins no new book material: every flipped box is verified against its landed original (rules/wsg/wsgenvfx.h, wsgencum.h, wsgvehicle.h, wsgclimb.h, wsggrap.h, wsgchasm.h, wsgjump.h, wsgvis.h, wsgswim.h, wsgvessels.h, wsgcapsizing.h, wsgflymounts.h, wsgmount.h and the chapter headers). What remains open after this round: the overview chapter (pp. 7-10, eleven boxes - the seven terrain descriptions, the hierarchy of terrain, the bodies of water, the climate) and the wilderness proficiencies prose (pp. 11-17, four boxes - the nonweapon list, the choosing-skills rules, the proficiency descriptions).",
       "sentinel" = "THE SETTLE: the gap report lands at 171 closed / 15 open, every open box a genuinely un-pinned prose stretch; census 420 -> 421.",
     },
   "consts" = { {
@@ -108,39 +108,39 @@ return {
     }, {
       "name" = "wgrT20Pinned",
       "value" = true,
-      "comment" = "Table 20 pins with the grappling-hook round R444 (rules/wsggrap.h - the ten terrain rows with the catch chances).",
+      "comment" = "Table 20 pins with the grappling-hook round R444 (rules/wsg/wsggrap.h - the ten terrain rows with the catch chances).",
     }, {
       "name" = "wgrT21Pinned",
       "value" = true,
-      "comment" = "Table 21 pins with the chasm-crossing round R445 (rules/wsgchasm.h - the five level-band ranges).",
+      "comment" = "Table 21 pins with the chasm-crossing round R445 (rules/wsg/wsgchasm.h - the five level-band ranges).",
     }, {
       "name" = "wgrT22Pinned",
       "value" = true,
-      "comment" = "Table 22 pins with the jumping round R448 (rules/wsgjump.h - the seven distance bands).",
+      "comment" = "Table 22 pins with the jumping round R448 (rules/wsg/wsgjump.h - the seven distance bands).",
     }, {
       "name" = "wgrT23Pinned",
       "value" = true,
-      "comment" = "Table 23 pins with the reduced-visibility round R449 (rules/wsgvis.h - the three light rows by the five conditions).",
+      "comment" = "Table 23 pins with the reduced-visibility round R449 (rules/wsg/wsgvis.h - the three light rows by the five conditions).",
     }, {
       "name" = "wgrT24Pinned",
       "value" = true,
-      "comment" = "Table 24 pins with the swimming round R450 (rules/wsgswim.h - the five encumbrance rows by the four functions).",
+      "comment" = "Table 24 pins with the swimming round R450 (rules/wsg/wsgswim.h - the five encumbrance rows by the four functions).",
     }, {
       "name" = "wgrT25Pinned",
       "value" = true,
-      "comment" = "Table 25 pins with the waterborne-vehicles round R455 (rules/wsgvessels.h - the eight vessels by the ten characteristics).",
+      "comment" = "Table 25 pins with the waterborne-vehicles round R455 (rules/wsg/wsgvessels.h - the eight vessels by the ten characteristics).",
     }, {
       "name" = "wgrT26Pinned",
       "value" = true,
-      "comment" = "Table 26 pins with the capsizing round R456 (rules/wsgcapsizing.h - the eight vessels by the four conditions).",
+      "comment" = "Table 26 pins with the capsizing round R456 (rules/wsg/wsgcapsizing.h - the eight vessels by the four conditions).",
     }, {
       "name" = "wgrT27Pinned",
       "value" = true,
-      "comment" = "Table 27 pins with the flying-mounts round R460 (rules/wsgflymounts.h - the 41 creatures by the seven columns).",
+      "comment" = "Table 27 pins with the flying-mounts round R460 (rules/wsg/wsgflymounts.h - the 41 creatures by the seven columns).",
     }, {
       "name" = "wgrT42Pinned",
       "value" = true,
-      "comment" = "Table 42 pins with the mounts round R490 (rules/wsgmount.h - the reaction grid).",
+      "comment" = "Table 42 pins with the mounts round R490 (rules/wsg/wsgmount.h - the reaction grid).",
     }, {
       "name" = "wgrSurfaceTypesPinned",
       "value" = true,

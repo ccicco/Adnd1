@@ -1,11 +1,11 @@
--- oa623: promoted from rules/oasamurai.h (the THE SAMURAI, printed capture pp. 39-42 - the OA samurai round);
+-- oa623: promoted from rules/oa/oasamurai.h (the THE SAMURAI, printed capture pp. 39-42 - the OA samurai round);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 623,
   "prefix" = "oa623",
   "banner" = {
       "title" = "THE SAMURAI, printed capture pp. 39-42 - the OA samurai round",
-      "provenance" = "census 545 -> 546.  verified against capture pp. 39-42 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). The Table 25 hit-points header is settled against the 2018 print (10-sided dice for accum. hit points) - the dice column pins as accumulated d10 with the printed 9-plus-N cells. The Table 25 grid itself sits as an extracted image in the first capture; the cells pin from the page-40 continuation with the 2018 print confirming every cell. OCR normalization: 2d level reads as 2nd level; a fitting homes reads as a fitting home; Stunned character cannot reads as the stunned cannot (prose only)  the gap census after this round: 45 closed, 190 open - the samurai boxes with Table 25 flip (census 545 -> 546); NEXT - R624: the Shukenja, capture pp. 42-45, Tables 26, 27 and 28, prefix dgk (verify free), audit \"R624 OA shukenja audit\", include after rules/oasamurai.h",
+      "provenance" = "census 545 -> 546.  verified against capture pp. 39-42 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). The Table 25 hit-points header is settled against the 2018 print (10-sided dice for accum. hit points) - the dice column pins as accumulated d10 with the printed 9-plus-N cells. The Table 25 grid itself sits as an extracted image in the first capture; the cells pin from the page-40 continuation with the 2018 print confirming every cell. OCR normalization: 2d level reads as 2nd level; a fitting homes reads as a fitting home; Stunned character cannot reads as the stunned cannot (prose only)  the gap census after this round: 45 closed, 190 open - the samurai boxes with Table 25 flip (census 545 -> 546); NEXT - R624: the Shukenja, capture pp. 42-45, Tables 26, 27 and 28, prefix dgk (verify free), audit \"R624 OA shukenja audit\", include after rules/oa/oasamurai.h",
     },
   "consts" = { {
       "name" = "dgjSamuraiMinStr",

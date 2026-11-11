@@ -2,7 +2,7 @@
   "round": 431,
   "title": "the WSG effects on equipment - the water, sand and dust rules",
   "prefix": "weq",
-  "header_file": "rules/wsgequip.h",
+  "header_file": "rules/wsg/wsgequip.h",
   "regtest": "regtest.cpp",
   "gap_report": "tools/wsg_gap_report.md",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -13,7 +13,7 @@
   "census_before": 355,
   "inline_count": 30,
   "audit_label": "R431 WSG equipment pin audit",
-  "audit_comment": "The equipment effects slice pins the water, rust, leather, sand and dust rules (rules/wsgequip.h, prefix weq): the moisture and rust mechanics, the leather and rope rules, the wet-arrow penalty and the chafe penalties; census 355 -> 356.",
+  "audit_comment": "The equipment effects slice pins the water, rust, leather, sand and dust rules (rules/wsg/wsgequip.h, prefix weq): the moisture and rust mechanics, the leather and rope rules, the wet-arrow penalty and the chafe penalties; census 355 -> 356.",
   "banner": {
     "title": "The WSG EFFECTS ON EQUIPMENT, R431: the water and rust rules (the 2-day drying, the 2-week oiling, the armor crack, the shield split, the weapon break), the leather and rope rules, the wet-clothing temperature shift and the sand/dust chafe rules - the section closes the effects-of-the-environment chapter WHOLE.",
     "provenance": "Provenance: the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed pp. 28-29; the user own copy OCR cross-checked against the djvu text layer, every number matched.",
@@ -328,7 +328,7 @@
   "gap_flips": [
     {
       "from": "  - [ ] Effects on equipment (p. 28)",
-      "to": "  - [x] Effects on equipment (p. 28) - R431: the water, rust, leather, sand and dust rules pin as rules/wsgequip.h",
+      "to": "  - [x] Effects on equipment (p. 28) - R431: the water, rust, leather, sand and dust rules pin as rules/wsg/wsgequip.h",
       "note": "the equipment box"
     },
     {
@@ -342,7 +342,7 @@
     "open": 162
   },
   "include_comment": "the WSG effects on equipment",
-  "include_after": "#include \"rules/wsgheat.h\"  // R430: the WSG heat and cold damage tables",
+  "include_after": "#include \"rules/wsg/wsgheat.h\"  // R430: the WSG heat and cold damage tables",
   "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
   "seed_anchor": "## Knowledge maintenance",
   "prev_seed_key": "- R430 landed 2026-10-14:",
@@ -358,7 +358,7 @@
     "  Hands 8; the four combination-row cells BLANK IN PRINT, settled by the USER",
     "  EYE-READ after the archive scan blurred them and vision reads confabulated;",
     "  the user own copy upload agreed) plus the damage and Con-check adjustments,",
-    "  hypothermia, frostbite and heatstroke prose. rules/wsgheat.h NEW (72",
+    "  hypothermia, frostbite and heatstroke prose. rules/wsg/wsgheat.h NEW (72",
     "  inlines, prefix wsh) - the heatstroke worked example pins as three checks",
     "  (2+6 = 8, 2-1 = 1, 2/3 of 10 rounded up = 7). rverify GREEN: 215 mutants, 0",
     "  missed. The nano-paste md5 matched the PREDICTED value exactly (the",

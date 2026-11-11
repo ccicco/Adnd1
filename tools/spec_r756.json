@@ -2,7 +2,7 @@
  "round": 756,
  "title": "OA TREASURE - Table 85: Ninja Class: the d100 ninja type grid",
  "prefix": "dlr",
- "header_file": "rules/oa127table85.h",
+ "header_file": "rules/oa/oa127table85.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA TREASURE - TABLE 85, NINJA CLASS, printed capture pp. 293-294 - the ninja grid round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 209 closed, 26 open - the Table 85 box flips (census 678 -> 679); NEXT - R757: Explanation of Weapon Properties (capture p. 294), prefix dls (verify free at the landing), audit \"R757 OA weapon explanation audit\", include after rules/oa127table85.h"
+  "sentinel": "the gap census after this round: 209 closed, 26 open - the Table 85 box flips (census 678 -> 679); NEXT - R757: Explanation of Weapon Properties (capture p. 294), prefix dls (verify free at the landing), audit \"R757 OA weapon explanation audit\", include after rules/oa/oa127table85.h"
  },
  "consts": [
   {
@@ -186,7 +186,7 @@
   "open": 26
  },
  "include_comment": "the OA Table 85 pins",
- "include_after": "#include \"rules/oa126table84.h\"  // R755: the OA Table 84 pins",
+ "include_after": "#include \"rules/oa/oa126table84.h\"  // R755: the OA Table 84 pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R755 LANDED 2026-10-22: commit",
@@ -196,7 +196,7 @@
   "  (census 677 -> 678, pushed 845fca4..d98830e),",
   "  OA TREASURE, Table 84: Martial Arts Class",
   "  (capture p. 293), header",
-  "  rules/oa126table84.h, prefix dlq",
+  "  rules/oa/oa126table84.h, prefix dlq",
   "  (verified free at 845fca4), one gap flip",
   "  (the Table 84 box, single-line), gap",
   "  census now 208 closed / 27 open. Round",
@@ -225,6 +225,6 @@
   "  Class (capture p. 293), prefix dlr",
   "  (verify free at the landing), audit \"R756",
   "  OA Table 85 ninja audit\", include after",
-  "  rules/oa126table84.h."
+  "  rules/oa/oa126table84.h."
  ]
 }

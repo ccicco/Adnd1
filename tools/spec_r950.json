@@ -30,8 +30,8 @@
   "  the Sullin levels 7-9 and the brawling long-term-effects watches",
   "  come due there. WAIT FOR GO."
  ],
- "header_file": "rules/t23.h",
- "include_after": "#include \"rules/l22.h\"  // R949: the Dragon issue-22 box closing round, the four-round walk complete",
+ "header_file": "rules/dragon/issue023_opener1.h",
+ "include_after": "#include \"rules/dragon/issue022_close.h\"  // R949: the Dragon issue-22 box closing round, the four-round walk complete",
  "include_comment": "the Dragon issue-23 opener part one, the three-chain variant round",
  "audit_file": "rules/audits/r950_batch.h",
  "audit_anchor": "#include \"rules/audits/r949_batch.h\"  // R949: R949 Dragon issue-22 closure audit",

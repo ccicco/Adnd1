@@ -1,11 +1,11 @@
--- oa759: promoted from rules/oa130table86.h (the OA TREASURE - TABLE 86, ORIENTAL MAGICAL ITEMS, printed capture pp. 296-297);
+-- oa759: promoted from rules/oa/oa130table86.h (the OA TREASURE - TABLE 86, ORIENTAL MAGICAL ITEMS, printed capture pp. 296-297);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 759,
   "prefix" = "oa759",
   "banner" = {
       "title" = "OA TREASURE - TABLE 86, ORIENTAL MAGICAL ITEMS, printed capture pp. 296-297",
-      "provenance" = "- the item grid round census 681 -> 682.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 212 closed, 23 open - the Table 86 box flips (census 681 -> 682); CHAPTER 13 COMPLETE - NEXT - R760: Chapter 14 An Overview of Kara-Tur, the chapter intro and the Population prose (capture pp. 301-302), prefix dlv (verify free at the landing), audit \"R760 OA Kara-Tur overview audit\", include after rules/oa130table86.h - the setting chapter, advisory prose closing on doctrine pins",
+      "provenance" = "- the item grid round census 681 -> 682.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 212 closed, 23 open - the Table 86 box flips (census 681 -> 682); CHAPTER 13 COMPLETE - NEXT - R760: Chapter 14 An Overview of Kara-Tur, the chapter intro and the Population prose (capture pp. 301-302), prefix dlv (verify free at the landing), audit \"R760 OA Kara-Tur overview audit\", include after rules/oa/oa130table86.h - the setting chapter, advisory prose closing on doctrine pins",
     },
   "consts" = { {
       "name" = "dluItemRowCount",

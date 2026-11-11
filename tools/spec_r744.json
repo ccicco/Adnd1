@@ -2,7 +2,7 @@
  "round": 744,
  "title": "OA TREASURE - Table 75: Magical Armor: the d100 armor type grid",
  "prefix": "dlf",
- "header_file": "rules/oa115table75.h",
+ "header_file": "rules/oa/oa115table75.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA TREASURE - TABLE 75, MAGICAL ARMOR, printed capture p. 289 - the armor type grid round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 197 closed, 38 open - the Table 75 box flips (census 666 -> 667); NEXT - R745: Table 76. Magical Armor Properties (capture p. 289, the caption prints a period), prefix dlg (verify free at the landing), audit \"R745 OA Table 76 properties audit\", include after rules/oa115table75.h"
+  "sentinel": "the gap census after this round: 197 closed, 38 open - the Table 75 box flips (census 666 -> 667); NEXT - R745: Table 76. Magical Armor Properties (capture p. 289, the caption prints a period), prefix dlg (verify free at the landing), audit \"R745 OA Table 76 properties audit\", include after rules/oa/oa115table75.h"
  },
  "consts": [
   {
@@ -232,7 +232,7 @@
   "open": 38
  },
  "include_comment": "the OA Table 75 pins",
- "include_after": "#include \"rules/oa114armorprose.h\"  // R743: the OA armor prose pins",
+ "include_after": "#include \"rules/oa/oa114armorprose.h\"  // R743: the OA armor prose pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R743 LANDED 2026-10-22: commit",
@@ -243,7 +243,7 @@
   "  OA TREASURE, the Armor and Shield prose",
   "  (capture p. 289, the box spanning",
   "  pp. 289-291 for the section), header",
-  "  rules/oa114armorprose.h, prefix dle",
+  "  rules/oa/oa114armorprose.h, prefix dle",
   "  (verified free at c367366), one gap flip",
   "  (the armor prose box, single-line), gap",
   "  census now 196 closed / 39 open. Round",
@@ -270,7 +270,7 @@
   "  Armor (capture p. 289), prefix dlf",
   "  (verify free at the landing), audit \"R744",
   "  OA Table 75 armor audit\", include after",
-  "  rules/oa114armorprose.h. A 23-band d100",
+  "  rules/oa/oa114armorprose.h. A 23-band d100",
   "  armor-type grid (banded through gajin",
   "  armor), with two capture quirks to pin:",
   "  the 87 Sode pair row before the 86-92",

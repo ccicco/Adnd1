@@ -2,7 +2,7 @@
  "round": 481,
  "title": "the WSG first aid equipment slice - the bandage, splint, stretcher and litter gear rules with the carry and terrain semantics, printed p. 71",
  "prefix": "wfe",
- "header_file": "rules/wsgfae.h",
+ "header_file": "rules/wsg/wsgfae.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -269,12 +269,12 @@
   {
    "note": "the first aid equipment box",
    "from": "  - [ ] First aid equipment (p. 71)",
-   "to": "  - [x] First aid equipment (p. 71) - R481: the bandage, splint, stretcher and litter gear rules with the carry and terrain semantics pin as rules/wsgfae.h"
+   "to": "  - [x] First aid equipment (p. 71) - R481: the bandage, splint, stretcher and litter gear rules with the carry and terrain semantics pin as rules/wsg/wsgfae.h"
   },
   {
    "note": "the post-state line",
-   "from": "Post-state at R480: 107 closed, 79 open (the R480 round continues the camping arc medicine chapter - the injuries and treatment rules pin as rules/wsginj.h; the next round continues - first aid equipment (p. 71)).",
-   "to": "Post-state at R481: 108 closed, 78 open (the R481 round CLOSES the camping arc medicine chapter - the first aid equipment gear rules pin as rules/wsgfae.h; the next round opens the vision and visibility chapter - normal vision (p. 72))."
+   "from": "Post-state at R480: 107 closed, 79 open (the R480 round continues the camping arc medicine chapter - the injuries and treatment rules pin as rules/wsg/wsginj.h; the next round continues - first aid equipment (p. 71)).",
+   "to": "Post-state at R481: 108 closed, 78 open (the R481 round CLOSES the camping arc medicine chapter - the first aid equipment gear rules pin as rules/wsg/wsgfae.h; the next round opens the vision and visibility chapter - normal vision (p. 72))."
   }
  ],
  "gap_census": {
@@ -282,7 +282,7 @@
   "open": 78
  },
  "include_comment": "the WSG first aid equipment gear rules",
- "include_after": "#include \"rules/wsginj.h\"  // R480: the WSG injuries and treatment rules",
+ "include_after": "#include \"rules/wsg/wsginj.h\"  // R480: the WSG injuries and treatment rules",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R480 LANDED 2026-10-15: commit 414dbb3 (census 405, pushed",
@@ -291,7 +291,7 @@
   "  8089f20..414dbb3), the WSG INJURIES AND TREATMENT slice,",
   "  printed p. 70 - the tenth camping-arc round, a pure",
   "  prose round with NO table: the five specific injuries",
-  "  and treatments pinned as rules/wsginj.h with the include",
+  "  and treatments pinned as rules/wsg/wsginj.h with the include",
   "  after wsglore.h at line 185 (prefix wtr, free in all four",
   "  files). The frame: first-aid skills are common knowledge,",
   "  useful only when the DM rules with proper reason that a",

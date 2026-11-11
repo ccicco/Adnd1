@@ -141,6 +141,6 @@ return {
     } },
   "audit" = {
       "label" = "R433 WSG animals pin audit",
-      "comment" = "The land-based animals slice pins Table 13 (the 18 mounts and beasts of burden x the normal and maximum loads and the unencumbered/encumbered rates over the three terrain classes), the forced-move stamina rules (the half-rate hour cap, the cumulative fatigue chances) and the accelerated no-rest spillover (rules/wsganimal.h, prefix wam); census 357 -> 358.",
+      "comment" = "The land-based animals slice pins Table 13 (the 18 mounts and beasts of burden x the normal and maximum loads and the unencumbered/encumbered rates over the three terrain classes), the forced-move stamina rules (the half-rate hour cap, the cumulative fatigue chances) and the accelerated no-rest spillover (rules/wsg/wsganimal.h, prefix wam); census 357 -> 358.",
     },
 }

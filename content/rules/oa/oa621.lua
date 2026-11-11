@@ -1,11 +1,11 @@
--- oa621: promoted from rules/oamonk.h (the THE MONK, printed capture pp. 31-35 - the OA monk round);
+-- oa621: promoted from rules/oa/oamonk.h (the THE MONK, printed capture pp. 31-35 - the OA monk round);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 621,
   "prefix" = "oa621",
   "banner" = {
       "title" = "THE MONK, printed capture pp. 31-35 - the OA monk round",
-      "provenance" = "census 543 -> 544.  verified against capture pp. 31-35 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). The Table 20 hit-points column header is settled against the 2018 print (4-sided dice for accum. hit points) - the 2-through-18 cells pin as accumulated d4 dice, the level plus one. The Table 21 additional-attack and additional-damage cells pin as codes (the slash pairs and the plus-dice notation). OCR normalization: may riot own horses reads as may not own horses; immune to gees reads as immune to geas (prose only)  the gap census after this round: 39 closed, 196 open - the monk boxes with Tables 20 and 21 flip (census 543 -> 544); NEXT - R622: the Ninja, capture pp. 35-39, Tables 22 and 23, prefix dgi (verify free), audit \"R622 OA ninja audit\", include after rules/oamonk.h",
+      "provenance" = "census 543 -> 544.  verified against capture pp. 31-35 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). The Table 20 hit-points column header is settled against the 2018 print (4-sided dice for accum. hit points) - the 2-through-18 cells pin as accumulated d4 dice, the level plus one. The Table 21 additional-attack and additional-damage cells pin as codes (the slash pairs and the plus-dice notation). OCR normalization: may riot own horses reads as may not own horses; immune to gees reads as immune to geas (prose only)  the gap census after this round: 39 closed, 196 open - the monk boxes with Tables 20 and 21 flip (census 543 -> 544); NEXT - R622: the Ninja, capture pp. 35-39, Tables 22 and 23, prefix dgi (verify free), audit \"R622 OA ninja audit\", include after rules/oa/oamonk.h",
     },
   "consts" = { {
       "name" = "dghMonkMinStr",

@@ -2,7 +2,7 @@
  "round": 616,
  "title": "THE ABILITY PROSE - the OA Chapter 1 prose riders: the Dexterity missile-and-surprise doctrine, the Constitution revival ledger, the Intelligence spell gate, the Wisdom bonus spells, the Charisma henchmen doctrine and the full Comeliness system (the reaction bands, the smitten doctrine, the magic caps)",
  "prefix": "dgc",
- "header_file": "rules/oaabilityprose.h",
+ "header_file": "rules/oa/oaabilityprose.h",
  "regtest": "regtest.cpp",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "gap_report": "tools/oa_gap_report.md",
@@ -50,7 +50,7 @@
  "audit_label": "R616 OA ability prose audit",
  "audit_comment": "OA round three (capture pp. 8-15): the six ability prose sub-items - the prime requisites and column explanations, the Constitution revival ledger, the Comeliness reaction bands with the smitten doctrine and the magic caps.",
  "census_before": 538,
- "include_after": "#include \"rules/oaabilities.h\"  // R615: the OA ability tables pins",
+ "include_after": "#include \"rules/oa/oaabilities.h\"  // R615: the OA ability tables pins",
  "include_comment": "the OA ability prose pins",
  "caller_files": [],
  "switches": [],
@@ -790,6 +790,6 @@
  "banner": {
   "title": "THE ABILITY PROSE, printed capture pp. 8-15 - the OA Chapter 1 prose round",
   "provenance": "verified against capture pp. 8-15 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). ADJUDICATIONS: the capture prints the Comeliness bands with two holes - no 26-27 band exists between the stunning +25 top and the unearthly +28 floor, and the bands print contiguous otherwise; both pinned as printed, flagged for the physical copy. The smitten doctrine prints the fascinate equation with the +t contrary-interest modifier read as the plus-one-class hazard ladder (up to +6 or more at the extreme) - pinned as the printed ladder. The reaction-band reaction-adds (score, 150 percent, twice) pin as the printed multipliers.",
-  "sentinel": "the gap census after this round: 18 closed, 217 open - the six ability prose boxes flip and Chapter 1 closes COMPLETE (the parent closed at R614; every child now closed) - the first full OA chapter in the arc (census 538 -> 539); NEXT - R617: Chapter 2 opens - the Class and Race Combinations prose, Tables 9, 10, 12 and 13 (the limits and the armor/weapons grids), prefix dgd (verify free), audit \"R617 OA class combos audit\", include after rules/oaabilityprose.h"
+  "sentinel": "the gap census after this round: 18 closed, 217 open - the six ability prose boxes flip and Chapter 1 closes COMPLETE (the parent closed at R614; every child now closed) - the first full OA chapter in the arc (census 538 -> 539); NEXT - R617: Chapter 2 opens - the Class and Race Combinations prose, Tables 9, 10, 12 and 13 (the limits and the armor/weapons grids), prefix dgd (verify free), audit \"R617 OA class combos audit\", include after rules/oa/oaabilityprose.h"
  }
 }

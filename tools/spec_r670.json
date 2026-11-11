@@ -2,7 +2,7 @@
  "round": 670,
  "title": "WU JEN FIRST LEVEL SPELLS - the 30 first level wu jen spells with the school, component, casting time, saving throw, reversible and element codes",
  "prefix": "dif",
- "header_file": "rules/oawjl1spells.h",
+ "header_file": "rules/oa/oawjl1spells.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -516,7 +516,7 @@
   "open": 112
  },
  "include_comment": "the OA wu jen first level spells pins",
- "include_after": "#include \"rules/oawjspelllist.h\"  // R669: the OA wu jen spell list pins",
+ "include_after": "#include \"rules/oa/oawjspelllist.h\"  // R669: the OA wu jen spell list pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R669 LANDED 2026-10-20: commit f0cdd266503487243703bb2393e29dbfca59ca13",
@@ -525,7 +525,7 @@
   "  (census 591 -> 592, pushed f2ddaaa..f0cdd26),",
   "  TABLE 66 WU JEN SPELLS - the full",
   "  wu jen spell list by level, capture",
-  "  pp. 153-155: rules/oawjspelllist.h,",
+  "  pp. 153-155: rules/oa/oawjspelllist.h,",
   "  prefix die (verified free at f2ddaaa -",
   "  only comment-word matches, the engine's",
   "  call-site check governs), ONE gap flip",
@@ -583,6 +583,6 @@
   "  riding the R669 grid), prefix dif",
   "  (verify free), audit \"R670 OA wu jen",
   "  first level spells audit\", include",
-  "  after rules/oawjspelllist.h"
+  "  after rules/oa/oawjspelllist.h"
  ]
 }

@@ -67,7 +67,7 @@
 # 5+2 HD reach, and the 50%
 # unaffected chance.
 
-# 1. rules/uacantrips4.h (NEW,
+# 1. rules/ua/uacantrips4.h (NEW,
 #    prefix ucp - verified no
 #    collision): the 10
 #    person-affecting cantrips
@@ -212,7 +212,7 @@ SEED_ENTRY = E(
     '  the precedents ride; the',
     '  casting-time family records',
     '  as holes pending the PDF',
-    '  read. rules/uacantrips3.h',
+    '  read. rules/ua/uacantrips3.h',
     '  (prefix ucl): the 6',
     '  legerdemain cantrips in',
     '  roster order, the school',
@@ -250,12 +250,12 @@ if s.count('R414 landed 2026-10-13') != 1:
 if s.count('## Knowledge maintenance') != 1:
     die('the seed maintenance head')
 
-# ========= (b) rules/uacantrips4.h =========
-UC = 'rules/uacantrips4.h'
+# ========= (b) rules/ua/uacantrips4.h =========
+UC = 'rules/ua/uacantrips4.h'
 
 HDR = E(
     '// ===========================================================================',
-    '// Adnd1 - rules/uacantrips4.h',
+    '// Adnd1 - rules/ua/uacantrips4.h',
     '// The UA MAGIC-USER CANTRIP',
     '// DESCRIPTIONS, part 4 (R415):',
     '// the PERSON-AFFECTING',
@@ -494,14 +494,14 @@ newfile(UC, HDR + NL,
 RT = 'regtest.cpp'
 
 pair(RT,
-     '#include "rules/uacantrips3.h"  '
+     '#include "rules/ua/uacantrips3.h"  '
      '// R414: the UA legerdemain'
      ' cantrips',
      E(
-    '#include "rules/uacantrips3.h"  '
+    '#include "rules/ua/uacantrips3.h"  '
     '// R414: the UA legerdemain'
     ' cantrips',
-    '#include "rules/uacantrips4.h"  '
+    '#include "rules/ua/uacantrips4.h"  '
     '// R415: the UA person-'
     'affecting cantrips'),
      'regtest: the person-affecting'
@@ -672,7 +672,7 @@ GP = 'tools/ua_gap_report.md'
 pair(GP, E(
     '      - AMENDED R414: the',
     '        legerdemain descriptions',
-    '        land (rules/uacantrips3.h)',
+    '        land (rules/ua/uacantrips3.h)',
     '        - the 6 blocks pin schools',
     '        (the 0/0/3/1/2 census -',
     '        Illusion a NEW school',
@@ -740,7 +740,7 @@ pair(GP, E(
     '        stay open.',
     '      - AMENDED R414: the',
     '        legerdemain descriptions',
-    '        land (rules/uacantrips3.h)',
+    '        land (rules/ua/uacantrips3.h)',
     '        - the 6 blocks pin schools',
     '        (the 0/0/3/1/2 census -',
     '        Illusion a NEW school',

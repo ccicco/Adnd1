@@ -10,7 +10,7 @@
     // cannot belay, the leader cannot be belayed, one belay at a time, no
     // climbing while belaying, the middle faller drags no one below, the
     // failed belayer can be saved by the character above, the first faller is
-    // unhelpable) (rules/wsgbelay.h, prefix wbl); census 367 -> 368.
+    // unhelpable) (rules/wsg/wsgbelay.h, prefix wbl); census 367 -> 368.
     {
         using namespace rules;
         int bad = 0;

@@ -2,7 +2,7 @@
  "round": 727,
  "title": "OA MONSTERS - the Ningyo: the flaming-haired kin of the merman",
  "prefix": "dko",
- "header_file": "rules/oa98ningyo.h",
+ "header_file": "rules/oa/oa98ningyo.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA MONSTERS - THE NINGYO, printed capture pp. 279-280 - the sea folk round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 180 closed, 55 open - the ningyo box flips (census 649 -> 650); NEXT - R728: the Oni, the Lesser Spirit (capture pp. 280-281), prefix dkp (verify free at the landing), audit \"R728 OA monsters Oni audit\", include after rules/oa98ningyo.h"
+  "sentinel": "the gap census after this round: 180 closed, 55 open - the ningyo box flips (census 649 -> 650); NEXT - R728: the Oni, the Lesser Spirit (capture pp. 280-281), prefix dkp (verify free at the landing), audit \"R728 OA monsters Oni audit\", include after rules/oa/oa98ningyo.h"
  },
  "consts": [
   {
@@ -448,7 +448,7 @@
   "open": 55
  },
  "include_comment": "the OA Ningyo pins",
- "include_after": "#include \"rules/oa97naturespirit.h\"  // R726: the OA Nature Spirits pins",
+ "include_after": "#include \"rules/oa/oa97naturespirit.h\"  // R726: the OA Nature Spirits pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R726 LANDED 2026-10-21: commit",
@@ -458,7 +458,7 @@
   "  (census 648 -> 649, pushed 16cefa3..15687f2), OA",
   "  MONSTERS, the Nature Spirits, the Lesser and",
   "  the Greater (capture pp. 278-279 print):",
-  "  rules/oa97naturespirit.h, prefix dkn",
+  "  rules/oa/oa97naturespirit.h, prefix dkn",
   "  (verified free at 16cefa3), ONE gap flip, gap",
   "  census 179/56 - the nature spirits box (its",
   "  two-line wrap handled, the from spanned both",
@@ -513,6 +513,6 @@
   "  R727: the Ningyo (capture p. 279), prefix dko",
   "  (verified free at 15687f2), audit \"R727 OA",
   "  monsters Ningyo audit\", include after",
-  "  rules/oa97naturespirit.h."
+  "  rules/oa/oa97naturespirit.h."
  ]
 }

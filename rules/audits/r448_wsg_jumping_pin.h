@@ -8,7 +8,7 @@
     // the cumulative modifiers (moderate -1, heavy -2 and cannot high jump,
     // severe cannot jump at all, halfling -1 broad only, gnome or dwarf -2
     // broad and -1 high) with the 2-foot broad and 1-foot high floors
-    // (rules/wsgjump.h, prefix wjp); census 372 -> 373.
+    // (rules/wsg/wsgjump.h, prefix wjp); census 372 -> 373.
     {
         using namespace rules;
         int bad = 0;

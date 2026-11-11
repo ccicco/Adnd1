@@ -1,11 +1,11 @@
--- oa632: promoted from rules/oahold.h (the ASSIGNING ANCESTRAL HOLDINGS, printed capture pp. 67-68 - the OA holdings);
+-- oa632: promoted from rules/oa/oahold.h (the ASSIGNING ANCESTRAL HOLDINGS, printed capture pp. 67-68 - the OA holdings);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 632,
   "prefix" = "oa632",
   "banner" = {
       "title" = "ASSIGNING ANCESTRAL HOLDINGS, printed capture pp. 67-68 - the OA holdings",
-      "provenance" = "round census 554 -> 555.  pinned from the 2018 print capture alone for this range (the settling authority): the first Mistral-OCR capture session is unavailable above p. 33, so the cross-capture agreement check is impossible. A pure-prose round with no tables and no numeric cells, so no contested cells can arise within the single source; every doctrine of the two capture paragraphs is pinned as a bool (the R431 prose codifies insight: no section is unpinnable). The Birthrights prose and Table 40 (capture pp. 68-69) are deliberately left for the next round  the gap census after this round: 72 closed, 163 open - the Assigning Ancestral Holdings box flips (census 554 -> 555); NEXT - R633: the Birthrights prose and Table 40, capture pp. 68-69, the property-share, heirloom and cash-string doctrines, prefix dgt (verify free), audit \"R633 OA birthrights audit\", include after rules/oahold.h",
+      "provenance" = "round census 554 -> 555.  pinned from the 2018 print capture alone for this range (the settling authority): the first Mistral-OCR capture session is unavailable above p. 33, so the cross-capture agreement check is impossible. A pure-prose round with no tables and no numeric cells, so no contested cells can arise within the single source; every doctrine of the two capture paragraphs is pinned as a bool (the R431 prose codifies insight: no section is unpinnable). The Birthrights prose and Table 40 (capture pp. 68-69) are deliberately left for the next round  the gap census after this round: 72 closed, 163 open - the Assigning Ancestral Holdings box flips (census 554 -> 555); NEXT - R633: the Birthrights prose and Table 40, capture pp. 68-69, the property-share, heirloom and cash-string doctrines, prefix dgt (verify free), audit \"R633 OA birthrights audit\", include after rules/oa/oahold.h",
     },
   "consts" = {},
   "bools" = { {

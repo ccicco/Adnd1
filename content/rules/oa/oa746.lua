@@ -1,11 +1,11 @@
--- oa746: promoted from rules/oa117table77.h (the OA TREASURE - TABLE 77, SPECIAL PROPERTIES, printed capture p. 290 - the);
+-- oa746: promoted from rules/oa/oa117table77.h (the OA TREASURE - TABLE 77, SPECIAL PROPERTIES, printed capture p. 290 - the);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 746,
   "prefix" = "oa746",
   "banner" = {
       "title" = "OA TREASURE - TABLE 77, SPECIAL PROPERTIES, printed capture p. 290 - the",
-      "provenance" = "special property grid round census 668 -> 669.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 199 closed, 36 open - the Table 77 box flips (census 668 -> 669); NEXT - R747: Explanation of Armor Properties (capture p. 290), prefix dli (verify free at the landing), audit \"R747 OA armor explanation audit\", include after rules/oa117table77.h",
+      "provenance" = "special property grid round census 668 -> 669.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 199 closed, 36 open - the Table 77 box flips (census 668 -> 669); NEXT - R747: Explanation of Armor Properties (capture p. 290), prefix dli (verify free at the landing), audit \"R747 OA armor explanation audit\", include after rules/oa/oa117table77.h",
     },
   "consts" = { {
       "name" = "dlhSpecialRowCount",

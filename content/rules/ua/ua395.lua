@@ -1,4 +1,4 @@
--- ua: promoted from rules/uadetrows.h (the The UA RANDOM TREASURE);
+-- ua: promoted from rules/ua/uadetrows.h (the The UA RANDOM TREASURE);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 395,

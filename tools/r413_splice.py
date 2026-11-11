@@ -43,7 +43,7 @@
 # reverse of the R412 shine
 # volume - a live cross-check).
 
-# 1. rules/uacantrips2.h (NEW,
+# 1. rules/ua/uacantrips2.h (NEW,
 #    prefix ucr - verified no
 #    collision): the 12 reversed
 #    cantrips in R341/R401 roster
@@ -186,7 +186,7 @@ SEED_ENTRY = E(
     '  rounds; the R363 precedent',
     '  rides; the casting-time family',
     '  records as holes pending the',
-    '  PDF read. rules/uacantrips1.h',
+    '  PDF read. rules/ua/uacantrips1.h',
     '  (prefix ucn): the 20 useful',
     '  cantrips in roster order, the',
     '  school census 7/4/7/2, the 14',
@@ -230,12 +230,12 @@ if s.count('R412 landed 2026-10-13') != 1:
 if s.count('## Knowledge maintenance') != 1:
     die('the seed maintenance head')
 
-# ========= (b) rules/uacantrips2.h =========
-UC = 'rules/uacantrips2.h'
+# ========= (b) rules/ua/uacantrips2.h =========
+UC = 'rules/ua/uacantrips2.h'
 
 HDR = E(
     '// ===========================================================================',
-    '// Adnd1 - rules/uacantrips2.h',
+    '// Adnd1 - rules/ua/uacantrips2.h',
     '// The UA MAGIC-USER CANTRIP',
     '// DESCRIPTIONS, part 2 (R413):',
     '// the REVERSED category',
@@ -448,12 +448,12 @@ newfile(UC, HDR + NL,
 RT = 'regtest.cpp'
 
 pair(RT,
-     '#include "rules/uacantrips1.h"  '
+     '#include "rules/ua/uacantrips1.h"  '
      '// R412: the UA useful cantrips',
      E(
-    '#include "rules/uacantrips1.h"  '
+    '#include "rules/ua/uacantrips1.h"  '
     '// R412: the UA useful cantrips',
-    '#include "rules/uacantrips2.h"  '
+    '#include "rules/ua/uacantrips2.h"  '
     '// R413: the UA reversed'
     ' cantrips'),
      'regtest: the reversed cantrips'
@@ -594,7 +594,7 @@ GP = 'tools/ua_gap_report.md'
 pair(GP, E(
     '      - AMENDED R412: the useful',
     '        category descriptions land',
-    '        (rules/uacantrips1.h) - the',
+    '        (rules/ua/uacantrips1.h) - the',
     '        20 blocks pin schools (the',
     '        7/4/7/2 census), the 14',
     '        clean areas, the six',
@@ -615,7 +615,7 @@ pair(GP, E(
     E(
     '      - AMENDED R413: the reversed',
     '        category descriptions land',
-    '        (rules/uacantrips2.h) - the',
+    '        (rules/ua/uacantrips2.h) - the',
     '        12 blocks pin schools (the',
     '        3/0/7/2 census), ALL 12',
     '        areas print clean (ZERO',
@@ -640,7 +640,7 @@ pair(GP, E(
     '        stay open.',
     '      - AMENDED R412: the useful',
     '        category descriptions land',
-    '        (rules/uacantrips1.h) - the',
+    '        (rules/ua/uacantrips1.h) - the',
     '        20 blocks pin schools (the',
     '        7/4/7/2 census), the 14',
     '        clean areas, the six',

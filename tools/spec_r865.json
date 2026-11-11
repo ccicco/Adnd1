@@ -19,8 +19,8 @@
    "note": "the Norse mythos box"
   }
  ],
- "header_file": "rules/nrs.h",
- "include_after": "#include \"rules/nhg.h\"  // R864: the Nonhumans' Deities",
+ "header_file": "rules/ddg/mythos_norse.h",
+ "include_after": "#include \"rules/ddg/nonhumans_deities.h\"  // R864: the Nonhumans' Deities",
  "include_comment": "the Norse mythos",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "seed_anchor": "## Knowledge maintenance",

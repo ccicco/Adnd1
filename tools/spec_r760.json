@@ -2,7 +2,7 @@
  "round": 760,
  "title": "OA SETTING - the Kara-Tur overview: the chapter intro, the geography walk, and the population walk",
  "prefix": "dlv",
- "header_file": "rules/oa131karaturintro.h",
+ "header_file": "rules/oa/oa131karaturintro.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA SETTING - THE KARA-TUR OVERVIEW INTRO, GEOGRAPHY, AND POPULATION, printed capture pp. 301-303 - the setting chapter opens",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 213 closed, 22 open - the Population box flips (census 682 -> 683); NEXT - R761: Shou Lung (capture p. 303), prefix dlw (verify free at the landing), audit \"R761 OA Shou Lung audit\", include after rules/oa131karaturintro.h"
+  "sentinel": "the gap census after this round: 213 closed, 22 open - the Population box flips (census 682 -> 683); NEXT - R761: Shou Lung (capture p. 303), prefix dlw (verify free at the landing), audit \"R761 OA Shou Lung audit\", include after rules/oa/oa131karaturintro.h"
  },
  "consts": [
   {
@@ -355,7 +355,7 @@
   "open": 22
  },
  "include_comment": "the OA Kara-Tur overview pins",
- "include_after": "#include \"rules/oa130table86.h\"  // R759: the OA Table 86 pins",
+ "include_after": "#include \"rules/oa/oa130table86.h\"  // R759: the OA Table 86 pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R759 LANDED 2026-10-22: commit",
@@ -366,7 +366,7 @@
   "  OA TREASURE, Table 86: Oriental Magical",
   "  Items (capture pp. 296-297, the grid",
   "  spanning the page break), header",
-  "  rules/oa130table86.h, prefix dlu",
+  "  rules/oa/oa130table86.h, prefix dlu",
   "  (verified free at afdfa13), one gap flip",
   "  (the Table 86 box, its two-line wrap",
   "  handled), gap census now 212 closed /",
@@ -406,7 +406,7 @@
   "  Population prose (capture pp. 301-302),",
   "  prefix dlv (verify free at the landing),",
   "  audit \"R760 OA Kara-Tur overview audit\",",
-  "  include after rules/oa130table86.h - the",
+  "  include after rules/oa/oa130table86.h - the",
   "  setting chapter, advisory prose closing",
   "  on doctrine pins."
  ]

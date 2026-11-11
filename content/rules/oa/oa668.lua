@@ -1,4 +1,4 @@
--- oa668: promoted from rules/oat65fate.h (the TABLE 65 FATE, printed capture p. 135 - the OA fate round);
+-- oa668: promoted from rules/oa/oat65fate.h (the TABLE 65 FATE, printed capture p. 135 - the OA fate round);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 668,

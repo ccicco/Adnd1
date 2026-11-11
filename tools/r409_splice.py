@@ -31,7 +31,7 @@
 # the stat line pins and the
 # divergence records.
 #
-# 1. rules/uasstatlines.h
+# 1. rules/ua/uasstatlines.h
 #    (NEW, prefix usl, 15
 #    inline functions): the
 #    23 rows x 7 scores plus
@@ -252,7 +252,7 @@ SEED_ENTRY = E(
     '  commit cee2979 (census 335,',
     '  preflight GREEN), the UA p. 26',
     '  armor class table -',
-    '  rules/uaac26.h (prefix uacr)',
+    '  rules/ua/uaac26.h (prefix uacr)',
     '  - the 11 composite rows, 28',
     '  composites, the',
     '  R191/R371/R392 cross-checks',
@@ -278,12 +278,12 @@ if s.count('R408 landed 2026-10-13') != 1:
 if s.count('## Knowledge maintenance') != 1:
     die('the seed maintenance head')
 
-# ========= (b) rules/uasstatlines.h =========
-SL = 'rules/uasstatlines.h'
+# ========= (b) rules/ua/uasstatlines.h =========
+SL = 'rules/ua/uasstatlines.h'
 
 COMMENT = E(
     '// ===========================================================================',
-    '// Adnd1 - rules/uasstatlines.h',
+    '// Adnd1 - rules/ua/uasstatlines.h',
     '// The UA APPENDIX S STAT LINES',
     '// (pp. 110-120), R409: the',
     '// S/I/W/D/C/CH/CM row for each of',
@@ -430,14 +430,14 @@ newfile(SL, HEADER + NL,
 RT = 'regtest.cpp'
 
 pair(RT,
-     '#include "rules/uaappends.h"  '
+     '#include "rules/ua/uaappends.h"  '
      '// R406: the UA Appendix S stat'
      ' blocks',
      E(
-    '#include "rules/uaappends.h"  '
+    '#include "rules/ua/uaappends.h"  '
     '// R406: the UA Appendix S stat'
     ' blocks',
-    '#include "rules/uasstatlines.h"  '
+    '#include "rules/ua/uasstatlines.h"  '
     '// R409: the UA Appendix S stat'
     ' lines'),
      'regtest: the stat lines include')
@@ -623,20 +623,20 @@ GP = 'tools/ua_gap_report.md'
 
 pair(GP, E(
     '      - AMENDED R407: the clerical',
-    '        charts land (rules/uascharts.h)',
+    '        charts land (rules/ua/uascharts.h)',
     '        - CLOSED as their own item; the',
     '        Appendix S box stays open on',
     '        the class lines, MOVE, the stat',
     '        lines and the pantheon prose.'),
     E(
     '      - AMENDED R407: the clerical',
-    '        charts land (rules/uascharts.h)',
+    '        charts land (rules/ua/uascharts.h)',
     '        - CLOSED as their own item; the',
     '        Appendix S box stays open on',
     '        the class lines, MOVE, the stat',
     '        lines and the pantheon prose.',
     '      - AMENDED R409: the stat lines',
-    '        land (rules/uasstatlines.h) -',
+    '        land (rules/ua/uasstatlines.h) -',
     '        the 23 S/I/W/D/C/CH/CM rows',
     '        pin with the R153/R322',
     '        cross-checks live, the',
@@ -649,16 +649,16 @@ pair(GP, E(
 
 pair(GP, E(
     '  - AMENDED R407: the charts land',
-    '    (rules/uascharts.h) - the class',
+    '    (rules/ua/uascharts.h) - the class',
     '    lines, MOVE, stat lines and the',
     '    prose stay open.'),
     E(
     '  - AMENDED R407: the charts land',
-    '    (rules/uascharts.h) - the class',
+    '    (rules/ua/uascharts.h) - the class',
     '    lines, MOVE, stat lines and the',
     '    prose stay open.',
     '  - AMENDED R409: the stat lines',
-    '    land (rules/uasstatlines.h) - the',
+    '    land (rules/ua/uasstatlines.h) - the',
     '    class lines, MOVE and the',
     '    pantheon prose stay open.'),
     'gap: the section tail takes R409')

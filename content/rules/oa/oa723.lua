@@ -1,11 +1,11 @@
--- oa723: promoted from rules/oa94kuei.h (the OA MONSTERS - THE KUEI, printed capture pp. 274-275 - the demon ghost round);
+-- oa723: promoted from rules/oa/oa94kuei.h (the OA MONSTERS - THE KUEI, printed capture pp. 274-275 - the demon ghost round);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 723,
   "prefix" = "oa723",
   "banner" = {
       "title" = "OA MONSTERS - THE KUEI, printed capture pp. 274-275 - the demon ghost round",
-      "provenance" = "census 645 -> 646.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 176 closed, 59 open - the kuei box flips (census 645 -> 646); NEXT - R724: the Men Wako, the Sea Pirate (capture p. 275), prefix dkl (verify free at the landing), audit \"R724 OA monsters Men Wako audit\", include after rules/oa94kuei.h",
+      "provenance" = "census 645 -> 646.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 176 closed, 59 open - the kuei box flips (census 645 -> 646); NEXT - R724: the Men Wako, the Sea Pirate (capture p. 275), prefix dkl (verify free at the landing), audit \"R724 OA monsters Men Wako audit\", include after rules/oa/oa94kuei.h",
     },
   "consts" = { {
       "name" = "dkkFrequencyRare",

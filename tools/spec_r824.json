@@ -3,7 +3,7 @@
   "title": "the pilot migration round",
   "prefix": "pmb",
   "regtest": "regtest.cpp",
-  "header_file": "rules/pmb.h",
+  "header_file": "rules/meta/migration_batch_pilot.h",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
   "gap_report": "tools/mm2_gap_report.md",
   "banner": {
@@ -135,7 +135,7 @@
   "audit_file": "rules/audits/r824_pilot.h",
   "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
   "include_comment": "the pilot migration round",
-  "include_after": "#include \"rules/migw.h\"  // R823: the audit blocks migration wiring",
+  "include_after": "#include \"rules/meta/migration_wiring.h\"  // R823: the audit blocks migration wiring",
   "seed_anchor": "## Knowledge maintenance",
   "prev_seed_key": "- R823 LANDED 2026-10-25: commit",
   "prev_record": [
@@ -175,7 +175,7 @@
     "  tooling lands alone - R823's own",
     "  audit landed inline (old way), no",
     "  block moved in this round. Header",
-    "  rules/migw.h, prefix migw (verified",
+    "  rules/meta/migration_wiring.h, prefix migw (verified",
     "  free at 55c3b0d via code search, 0",
     "  hits), 10 consts + 10 bools",
     "  (inline 20), 4 examples, the R822",

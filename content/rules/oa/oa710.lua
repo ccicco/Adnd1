@@ -1,11 +1,11 @@
--- oa710: promoted from rules/oa81continh.h (the OA MONSTERS - THE CON-TINH, LESSER SPIRIT, printed capture pp. 258-259 -);
+-- oa710: promoted from rules/oa/oa81continh.h (the OA MONSTERS - THE CON-TINH, LESSER SPIRIT, printed capture pp. 258-259 -);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 710,
   "prefix" = "oa710",
   "banner" = {
       "title" = "OA MONSTERS - THE CON-TINH, LESSER SPIRIT, printed capture pp. 258-259 -",
-      "provenance" = "the maiden spirit round census 632 -> 633.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 163 closed, 72 open - the con-tinh box flips (census 632 -> 633); NEXT - R711: the Doc Cu'o'c, Greater Spirit (capture p. 259), prefix djy (verify free at the landing), audit \"R711 OA monsters Doc Cu'o'c audit\", include after rules/oa81continh.h",
+      "provenance" = "the maiden spirit round census 632 -> 633.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 163 closed, 72 open - the con-tinh box flips (census 632 -> 633); NEXT - R711: the Doc Cu'o'c, Greater Spirit (capture p. 259), prefix djy (verify free at the landing), audit \"R711 OA monsters Doc Cu'o'c audit\", include after rules/oa/oa81continh.h",
     },
   "consts" = { {
       "name" = "djxConTinhNoAppearingMin",

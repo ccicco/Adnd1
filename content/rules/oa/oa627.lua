@@ -1,11 +1,11 @@
--- oa627: promoted from rules/oayakuza.h (the THE YAKUZA, printed capture pp. 51-54 - the OA yakuza round);
+-- oa627: promoted from rules/oa/oayakuza.h (the THE YAKUZA, printed capture pp. 51-54 - the OA yakuza round);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 627,
   "prefix" = "oa627",
   "banner" = {
       "title" = "THE YAKUZA, printed capture pp. 51-54 - the OA yakuza round",
-      "provenance" = "census 549 -> 550.  verified against capture pp. 51-54 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). No contested cells this round - both captures agree on every pinned value. The T35 area column pins as the 1-9 code: 1, 2 and 3 blocks; 1 ward 4; 2 wards 5; 1 district 6; 2 districts 7; 3 districts 8; province 9. The T34 9-plus-N cells pin as dice 9 with the 1-per-level bonus 1, 2, 3. OCR normalization: Zing reads Zingi; 2d level reads 2nd level; hide-out and hideout both printed  the gap census after this round: 59 closed, 176 open - the yakuza boxes with Tables 34 and 35 flip (census 549 -> 550); NEXT - R628: the Character Abilities chapter opener, capture pp. 55-59, Tables 36 (Multiple Attacks), prefix dgo (verify free), audit \"R628 OA character abilities audit\", include after rules/oayakuza.h",
+      "provenance" = "census 549 -> 550.  verified against capture pp. 51-54 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). No contested cells this round - both captures agree on every pinned value. The T35 area column pins as the 1-9 code: 1, 2 and 3 blocks; 1 ward 4; 2 wards 5; 1 district 6; 2 districts 7; 3 districts 8; province 9. The T34 9-plus-N cells pin as dice 9 with the 1-per-level bonus 1, 2, 3. OCR normalization: Zing reads Zingi; 2d level reads 2nd level; hide-out and hideout both printed  the gap census after this round: 59 closed, 176 open - the yakuza boxes with Tables 34 and 35 flip (census 549 -> 550); NEXT - R628: the Character Abilities chapter opener, capture pp. 55-59, Tables 36 (Multiple Attacks), prefix dgo (verify free), audit \"R628 OA character abilities audit\", include after rules/oa/oayakuza.h",
     },
   "consts" = { {
       "name" = "dgnYakuzaMinStr",

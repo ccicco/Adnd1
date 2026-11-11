@@ -317,6 +317,6 @@ return {
     } },
   "audit" = {
       "label" = "R430 WSG heat and cold pin audit",
-      "comment" = "The heat-and-cold data slice pins Tables 9 and 10 (rules/wsgheat.h, prefix wsh): the 25 temperature damage bands, the frostbite shares and thresholds, the damage and check adjustments, the hypothermia and heatstroke rules; census 354 -> 355.",
+      "comment" = "The heat-and-cold data slice pins Tables 9 and 10 (rules/wsg/wsgheat.h, prefix wsh): the 25 temperature damage bands, the frostbite shares and thresholds, the damage and check adjustments, the hypothermia and heatstroke rules; census 354 -> 355.",
     },
 }

@@ -60,7 +60,7 @@ SEED_ENTRY = NL.join([
     '- R382 landed 2026-10-12: commit',
     '  471ff43, census 309, the UA',
     '  misc magic prose part 2 pin',
-    '  round (rules/uamiscprose2.h):',
+    '  round (rules/ua/uamiscprose2.h):',
     '  eight D-E items pin - one',
     '  fully clean (the dust of',
     '  tracelessness) plus seven',
@@ -202,13 +202,13 @@ assert s.count(
 assert len(applied) + len(already) == 1, 'a count'
 
 
-# ---- (b) NEW rules/uamiscprose3.h ----
-P = 'rules/uamiscprose3.h'
+# ---- (b) NEW rules/ua/uamiscprose3.h ----
+P = 'rules/ua/uamiscprose3.h'
 if os.path.exists(P) and 'R383' in rd(P):
     already.append('uamiscprose3.h: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uamiscprose3.h
+// Adnd1 - rules/ua/uamiscprose3.h
 // The UA TREASURE
 // (MISCELLANEOUS MAGIC) prose
 // pins, part 3, R383: the
@@ -825,7 +825,7 @@ else:
         '      Lanthorn, the Sheet of Smallness.',
         '      - AMENDED R381: the misc magic',
         '        prose part 1 pin round',
-        '        (rules/uamiscprose1.h) - the',
+        '        (rules/ua/uamiscprose1.h) - the',
         '        A-C stretch, THIRTEEN items',
         '        pin: EIGHT fully clean (the',
         '        beads of force, the boots of',
@@ -849,7 +849,7 @@ else:
         '        D-Z and the PDF.',
         '      - AMENDED R382: the misc magic',
         '        prose part 2 pin round',
-        '        (rules/uamiscprose2.h) - the',
+        '        (rules/ua/uamiscprose2.h) - the',
         '        D-E stretch, EIGHT items pin:',
         '        ONE fully clean (the dust of',
         '        tracelessness) plus SEVEN',
@@ -870,7 +870,7 @@ else:
     NEW = OLD + NL + NL.join([
         '      - AMENDED R383: the misc magic',
         '        prose part 3 pin round',
-        '        (rules/uamiscprose3.h) - the',
+        '        (rules/ua/uamiscprose3.h) - the',
         '        G-H stretch, ELEVEN items pin:',
         '        TWO fully clean (the gloves of',
         '        missile snaring, the hat of',
@@ -928,31 +928,31 @@ assert s.count(
     'AMENDED R375'
 ) == 1, 'c r375 amendment kept'
 assert s.count(
-    '(rules/uamiscprose2.h)'
+    '(rules/ua/uamiscprose2.h)'
 ) == 1, 'c misc2 note kept'
 assert s.count(
-    '(rules/uamiscprose3.h)'
+    '(rules/ua/uamiscprose3.h)'
 ) == 1, 'c misc3 note'
 assert s.count(
-    '(rules/uamiscprose1.h)'
+    '(rules/ua/uamiscprose1.h)'
 ) == 1, 'c misc note kept'
 assert s.count(
-    '(rules/uawandprose.h)'
+    '(rules/ua/uawandprose.h)'
 ) == 1, 'c wands note kept'
 assert s.count(
-    '(rules/uarodstave.h)'
+    '(rules/ua/uarodstave.h)'
 ) == 1, 'c rods note kept'
 assert s.count(
-    '(rules/uaringprose.h)'
+    '(rules/ua/uaringprose.h)'
 ) == 1, 'c rings note kept'
 assert s.count(
-    '(rules/uaprotscr.h)'
+    '(rules/ua/uaprotscr.h)'
 ) == 1, 'c scrolls note kept'
 assert s.count(
-    '(rules/uapotprose.h)'
+    '(rules/ua/uapotprose.h)'
 ) == 1, 'c potions note kept'
 assert s.count(
-    '(rules/uadetskel.h)'
+    '(rules/ua/uadetskel.h)'
 ) == 1, 'c skeleton note kept'
 assert s.count(
     'DECIDED R374'
@@ -1003,11 +1003,11 @@ s = rd(RT)
 if 'R383 UA misc magic prose part 3 pin audit' in s:
     already.append('regtest.cpp: the R383 audit')
 else:
-    INC_ANCH = ('#include "rules/uamiscprose2.h"  // '
+    INC_ANCH = ('#include "rules/ua/uamiscprose2.h"  // '
         'R382: the UA misc magic prose 2')
     INC_NEW = NL.join([
         INC_ANCH,
-        '#include "rules/uamiscprose3.h"  // R383: the UA misc magic prose 3'
+        '#include "rules/ua/uamiscprose3.h"  // R383: the UA misc magic prose 3'
     ])
     AUD_ANCH = '    // ---- R227: the wis mental save wiring audit ----'
     AUDIT = r"""    // ---- R383: the UA misc magic
@@ -1372,38 +1372,38 @@ assert s.count(
     'R227: the wis mental save'
 ) == 1, 'd r227 kept'
 assert s.count(
-    '#include "rules/uamiscprose3.h"'
+    '#include "rules/ua/uamiscprose3.h"'
 ) == 1, 'd new include'
 for h in (
         'rules/cavalier.h',
         'rules/classtables.h',
-        'rules/uabirth.h',
-        'rules/uasocialclass.h',
-        'rules/uaspellbooks.h',
-        'rules/uaspellcomment.h',
-        'rules/uauwspelluse.h',
-        'rules/uadarkness.h',
-        'rules/uacavtable.h',
-        'rules/uacantacq.h',
-        'rules/uasmalls1.h',
-        'rules/uailacquisition.h',
+        'rules/ua/uabirth.h',
+        'rules/ua/uasocialclass.h',
+        'rules/ua/uaspellbooks.h',
+        'rules/ua/uaspellcomment.h',
+        'rules/ua/uauwspelluse.h',
+        'rules/ua/uadarkness.h',
+        'rules/ua/uacavtable.h',
+        'rules/ua/uacantacq.h',
+        'rules/ua/uasmalls1.h',
+        'rules/ua/uailacquisition.h',
         'rules/thiefarmor.h',
         'rules/armorratings.h',
         'rules/comeliness.h',
-        'rules/uaweapontable.h',
-        'rules/uamissile.h',
-        'rules/uanewweapons.h',
-        'rules/uafollowers.h',
-        'rules/uacomnote.h',
-        'rules/uatreasuredial.h',
-        'rules/uadetskel.h',
-        'rules/uapotprose.h',
-        'rules/uaprotscr.h',
-        'rules/uaringprose.h',
-        'rules/uarodstave.h',
-        'rules/uawandprose.h',
-        'rules/uamiscprose1.h',
-        'rules/uamiscprose2.h',
+        'rules/ua/uaweapontable.h',
+        'rules/ua/uamissile.h',
+        'rules/ua/uanewweapons.h',
+        'rules/ua/uafollowers.h',
+        'rules/ua/uacomnote.h',
+        'rules/ua/uatreasuredial.h',
+        'rules/ua/uadetskel.h',
+        'rules/ua/uapotprose.h',
+        'rules/ua/uaprotscr.h',
+        'rules/ua/uaringprose.h',
+        'rules/ua/uarodstave.h',
+        'rules/ua/uawandprose.h',
+        'rules/ua/uamiscprose1.h',
+        'rules/ua/uamiscprose2.h',
         'rules/treasdet.h',
         'rules/hoard.h'):
     assert s.count(

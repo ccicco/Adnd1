@@ -2,15 +2,15 @@
     // The WSG swimmer's motion-chain fold, the second seam round after gap
     // closure: no new book pages, the R499 pattern applied to the water
     // chapter. One swimmer state flows through five landed headers: the
-    // swimming rates (rules/wsgswim.h R450: 40 feet base, the 2/3 subsurface
+    // swimming rates (rules/wsg/wsgswim.h R450: 40 feet base, the 2/3 subsurface
     // cut, the 2x high speed with the 1/10 endurance cut, the 3-per-turn rest
-    // regain, the 1-3/4-6 inch current ranges), the dive leg (rules/wsgdive.h
+    // regain, the 1-3/4-6 inch current ranges), the dive leg (rules/wsg/wsgdive.h
     // R452: the 2 inch or 20 foot base, doubled moderate and tripled heavy),
-    // the surfacing leg (rules/wsgbreath.h R454: the same 2 inch base, the 5
-    // foot inert buoyancy rise), the moving-water hazards (rules/wsgmwater.h
+    // the surfacing leg (rules/wsg/wsgbreath.h R454: the same 2 inch base, the 5
+    // foot inert buoyancy rise), the moving-water hazards (rules/wsg/wsgmwater.h
     // R451: the 1-10 stream rating, the two-round hold cadence, the 40/100
     // foot waterfall thresholds, the half and tenth damage divisors) and the
-    // treading economy (rules/wsgtread.h R453: 2 turns per endurance point, 1
+    // treading economy (rules/wsg/wsgtread.h R453: 2 turns per endurance point, 1
     // round per strength point, the +1 check ladder). The findings: the
     // vertical rates equal each other and are half the horizontal base; the
     // Table 24 dive column matches the dive prose exactly; the encumbrance

@@ -1,11 +1,11 @@
--- oa727: promoted from rules/oa98ningyo.h (the OA MONSTERS - THE NINGYO, printed capture pp. 279-280 - the sea folk round);
+-- oa727: promoted from rules/oa/oa98ningyo.h (the OA MONSTERS - THE NINGYO, printed capture pp. 279-280 - the sea folk round);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 727,
   "prefix" = "oa727",
   "banner" = {
       "title" = "OA MONSTERS - THE NINGYO, printed capture pp. 279-280 - the sea folk round",
-      "provenance" = "census 649 -> 650.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 180 closed, 55 open - the ningyo box flips (census 649 -> 650); NEXT - R728: the Oni, the Lesser Spirit (capture pp. 280-281), prefix dkp (verify free at the landing), audit \"R728 OA monsters Oni audit\", include after rules/oa98ningyo.h",
+      "provenance" = "census 649 -> 650.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 180 closed, 55 open - the ningyo box flips (census 649 -> 650); NEXT - R728: the Oni, the Lesser Spirit (capture pp. 280-281), prefix dkp (verify free at the landing), audit \"R728 OA monsters Oni audit\", include after rules/oa/oa98ningyo.h",
     },
   "consts" = { {
       "name" = "dkoFrequencyRare",

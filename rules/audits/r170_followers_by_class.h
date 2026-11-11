@@ -355,5 +355,5 @@
         printf("R170 followers by class audit: bad %d\n", bad);
         if (bad) return 1;
     }
-    #include "rules/audits/r171_appendices_k_l_and_m.h"  // R833: migrated
-    #include "rules/audits/r175_appendix_l_5_and_up_tabl.h"  // R833: migrated
+    #include "r171_appendices_k_l_and_m.h"  // R833: migrated
+    #include "r175_appendix_l_5_and_up_tabl.h"  // R833: migrated

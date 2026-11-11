@@ -2,7 +2,7 @@
  "round": 451,
  "title": "the WSG other effects of moving water",
  "prefix": "wmw",
- "header_file": "rules/wsgmwater.h",
+ "header_file": "rules/wsg/wsgmwater.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -13,7 +13,7 @@
  "census_before": 375,
  "inline_count": 20,
  "audit_label": "R451 WSG moving water pin audit",
- "audit_comment": "The moving water slice pins the 1-10 stream hazard rating as the proficiency-check cadence (rating 1 = every round, rating 5 = rounds 1, 6, 11...), the 1d6 buffeting damage on a failed check, the virtually helpless nonproficient swimmer at 1d3 damage per round, the grab-a-protrusion halt (a Dex check, retried every round, then a Strength check every two rounds to stay attached), and the waterfall rules (half falling damage at 40 feet or more, the breath-weapon save with no damage at 40-100 feet and one-tenth rounded up beyond 100, the under-40 fall treated as a normal dive, and rocks at the base assessed as a fall through the air) (rules/wsgmwater.h, prefix wmw); census 375 -> 376.",
+ "audit_comment": "The moving water slice pins the 1-10 stream hazard rating as the proficiency-check cadence (rating 1 = every round, rating 5 = rounds 1, 6, 11...), the 1d6 buffeting damage on a failed check, the virtually helpless nonproficient swimmer at 1d3 damage per round, the grab-a-protrusion halt (a Dex check, retried every round, then a Strength check every two rounds to stay attached), and the waterfall rules (half falling damage at 40 feet or more, the breath-weapon save with no damage at 40-100 feet and one-tenth rounded up beyond 100, the under-40 fall treated as a normal dive, and rocks at the base assessed as a fall through the air) (rules/wsg/wsgmwater.h, prefix wmw); census 375 -> 376.",
  "banner": {
   "title": "The WSG OTHER EFFECTS OF MOVING WATER, R451: the rough-water prose (no table this round) - a shallow river or stream in which the water is moving rapidly can harm characters by buffeting them against rocks and other protrusions. As outlined in the Dungeoneer's Survival Guide, the DM attaches a rating of from 1 to 10 to a shallow, rapidly coursing stream or river, with 1 being the most hazardous; the number is the amount of time, in ROUNDS, that a swimmer can traverse the water before needing a Proficiency Check - a rating of 1 means a check every round, a rating of 5 means a check on the first round, the sixth round and every fifth round thereafter. Failure means the swimmer has been thrown against the rocks, suffering 1d6 points of damage; a character without swimming proficiency is virtually helpless in similar circumstances and suffers 1d3 points of damage every round he remains in the water. Any character can halt his movement through rough water by grabbing onto a handy protrusion (a big rock, an overhanging tree limb), if one is available and within reach - a successful Dexterity Check, with a new attempt every round if desired; after catching on, a successful Strength Check once every TWO rounds to remain attached, failure meaning he has lost his grip and is again being swept downstream. The waterfall rules: carried over a waterfall of 40 feet or more, he suffers falling damage equal to ONE-HALF the normal free-fall amount - but a saving throw versus breath weapon is allowed: on a successful save with the fall at least 40 but not more than 100 feet, no damage; on a successful save beyond 100 feet, one-tenth of normal falling damage (rounded up); under 40 feet, no falling damage at all - the fall is treated as a normal dive. These guidelines assume the base of the waterfall is free of rocks: a plunge into rocks is assessed as a fall through the air. Census 375 -> 376.",
   "provenance": "the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed p. 42; the user own copy OCR (page 43) cross-checked against the archive djvu word layer (Guide_0042.djvu) - the section reads CLEAN two-way, every number (the 1-10 rating, the two damage dice, the two-round strength cadence, the 40/100 foot thresholds, the one-half and one-tenth divisors) matched exactly; no eye-reads were needed.",
@@ -241,7 +241,7 @@
  "gap_flips": [
   {
    "from": "  - [ ] Other effects of moving water (p. 42)",
-   "to": "  - [x] Other effects of moving water (p. 42) - R451: the 1-10 stream hazard rating as the proficiency-check cadence, the 1d6 buffeting damage, the 1d3 nonproficient damage, the grab-a-protrusion Dex check with the two-round Strength hold and the waterfall rules (half damage at 40 feet, the breath save with the 40/100 thresholds, the one-tenth saved damage, the under-40 dive and the rocks void the mercy) pin as rules/wsgmwater.h",
+   "to": "  - [x] Other effects of moving water (p. 42) - R451: the 1-10 stream hazard rating as the proficiency-check cadence, the 1d6 buffeting damage, the 1d3 nonproficient damage, the grab-a-protrusion Dex check with the two-round Strength hold and the waterfall rules (half damage at 40 feet, the breath save with the 40/100 thresholds, the one-tenth saved damage, the under-40 dive and the rocks void the mercy) pin as rules/wsg/wsgmwater.h",
    "note": "other effects of moving water"
   },
   {
@@ -255,7 +255,7 @@
   "open": 132
  },
  "include_comment": "the WSG other effects of moving water",
- "include_after": "#include \"rules/wsgswim.h\"  // R450: the WSG swimming rules",
+ "include_after": "#include \"rules/wsg/wsgswim.h\"  // R450: the WSG swimming rules",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R450 landed 2026-10-14: commit 657c7fc",
@@ -284,7 +284,7 @@
   "  light 1-3 and strong 4-6 current modifiers, the 0-inch hold position at",
   "  endurance cost, the mercy-of-the-current backward drift 1-3 inches, the",
   "  DM-determined currents with the gentle 1-2 and mountain 5-6 examples, the",
-  "  surface-only high speed halved at a 0 rate). rules/wsgswim.h NEW (38",
+  "  surface-only high speed halved at a 0 rate). rules/wsg/wsgswim.h NEW (38",
   "  inlines, prefix wsm - the FIRST CHOICE wsw was TAKEN by the R429 hurricane",
   "  pins; wsm checked free in all three TUs). Ground truth: the",
   "  intro/Endurance/Speed prose CLEAN two-way (the user copy OCR vs the djvu",

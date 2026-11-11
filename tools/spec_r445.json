@@ -2,7 +2,7 @@
  "round": 445,
  "title": "the WSG rope - crossing a chasm",
  "prefix": "wcx",
- "header_file": "rules/wsgchasm.h",
+ "header_file": "rules/wsg/wsgchasm.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -13,7 +13,7 @@
  "census_before": 369,
  "inline_count": 18,
  "audit_label": "R445 WSG chasm crossing pin audit",
- "audit_comment": "The chasm-crossing slice pins the two anchor factors (a protrusion to anchor on, an anchor that holds - the grappling hook answers both via Table 20), the thrown-loop tactic (thief or rope-use proficient only, target directly across or slightly above/below, never on a vertical climb), Table 21 THROWN LOOP RANGES (40/50/60/75/90 feet by level band), the 10-foot whirl-radius assumption with the halved range otherwise, the 20% base hit chance with the +1% closeness bonus per foot below maximum range, the halving conditions (moderate to heavy precipitation, wind over 20 mph, hampered visibility), the both-ends-anchored rule with the near-side protrusion requirement, and the 30-feet-per-round hand-over-hand crossing rate with the +2 Dexterity check for multiple simultaneous hangers (rules/wsgchasm.h, prefix wcx); census 369 -> 370.",
+ "audit_comment": "The chasm-crossing slice pins the two anchor factors (a protrusion to anchor on, an anchor that holds - the grappling hook answers both via Table 20), the thrown-loop tactic (thief or rope-use proficient only, target directly across or slightly above/below, never on a vertical climb), Table 21 THROWN LOOP RANGES (40/50/60/75/90 feet by level band), the 10-foot whirl-radius assumption with the halved range otherwise, the 20% base hit chance with the +1% closeness bonus per foot below maximum range, the halving conditions (moderate to heavy precipitation, wind over 20 mph, hampered visibility), the both-ends-anchored rule with the near-side protrusion requirement, and the 30-feet-per-round hand-over-hand crossing rate with the +2 Dexterity check for multiple simultaneous hangers (rules/wsg/wsgchasm.h, prefix wcx); census 369 -> 370.",
  "banner": {
   "title": "The WSG CROSSING A CHASM ON A ROPE, R445: the chasm prose and Table 21 - characters can negotiate a chasm or deep canyon by anchoring a rope on the far side and moving hand-over-hand across it. Success depends on two factors: whether the terrain offers a protrusion to anchor a line, and whether the rope can be anchored to hold their weight; a grappling hook answers both questions through Table 20. A thrown loop of rope can also catch a protrusion if the target is directly across or only slightly above or below the thrower (never on a vertical climb), but only a thief or a rope-use proficient character can succeed. Table 21 gives the maximum ranges by level band: 40 feet at 1-4, 50 at 5-8, 60 at 9-12, 75 at 13-16 and 90 at 17+. The ranges assume a clear 10-foot radius to whirl the loop; without it, half the given figure. The base chance of hitting the target is 20%, plus 1% for every foot of distance below the maximum range; moderate to heavy precipitation, wind over 20 miles per hour or hampered visibility (fog, night) halve the chance - the fog example: a 17th-level character at 50 feet has (20 + 40) / 2 = 30%. Before crossing, BOTH ends must be anchored, and a suitable protrusion must exist on the near side too (wise to check before anchoring the far side). Once anchored, characters move hand-over-hand at a maximum 30 feet per round; it is prudent for only one to use the rope at a time - if more than one hangs from it, each makes a Dexterity Check at +2 on the die, failure meaning a lost grip and a fall. Census 369 -> 370.",
   "provenance": "the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed pp. 38-39; the user own copy OCR cross-checked against the archive djvu word layer (Guide_0038.djvu for the chasm prose and Table 21, the Guide_0039.djvu head for the crossing rate) - the section reads CLEAN, every number (the 40/50/60/75/90 ranges, the 10-foot radius, the 20% base with the +1% per foot, the 20 mph wind, the 17th-level 30% fog example, the 30-feet-per-round rate and the +2 Dexterity modifier) matched exactly; no eye-reads were needed.",
@@ -259,7 +259,7 @@
  "gap_flips": [
   {
    "from": "  - [ ] Crossing a chasm on a rope (p. 38)",
-   "to": "  - [x] Crossing a chasm on a rope (p. 38) - R445: the two anchor factors, the thief-or-rope-use thrown loop, Table 21 (the five level-band ranges), the whirl-radius halving, the 20% hit formula with the halving conditions, the both-ends-anchored rule and the 30-feet-per-round crossing rate pin as rules/wsgchasm.h",
+   "to": "  - [x] Crossing a chasm on a rope (p. 38) - R445: the two anchor factors, the thief-or-rope-use thrown loop, Table 21 (the five level-band ranges), the whirl-radius halving, the 20% hit formula with the halving conditions, the both-ends-anchored rule and the 30-feet-per-round crossing rate pin as rules/wsg/wsgchasm.h",
    "note": "chasm crossing"
   },
   {
@@ -273,7 +273,7 @@
   "open": 138
  },
  "include_comment": "the WSG chasm crossing",
- "include_after": "#include \"rules/wsggrap.h\"  // R444: the WSG grappling hooks",
+ "include_after": "#include \"rules/wsg/wsggrap.h\"  // R444: the WSG grappling hooks",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R444 landed 2026-10-14: commit 5e98ed9 (census 369, pushed",
@@ -289,7 +289,7 @@
   "  protrusion pair and the three catch chances, the last eye-read row 80/90",
   "  with 92/99/99); the solid vs not-solid procedure (solid holds indefinitely,",
   "  not-solid gives way after 1d6 rounds of climbing); the recheck-after-10-feet",
-  "  rule. rules/wsggrap.h NEW (31 inlines, prefix wgh - checked free in all",
+  "  rule. rules/wsg/wsggrap.h NEW (31 inlines, prefix wgh - checked free in all",
   "  three TUs). Ground truth THREE-WAY (the djvu garbled at the last Table 20",
   "  row, the strength fraction and the climb bonus; two independent IIIF",
   "  eye-reads per zone matched the user copy exactly). Gap 46/140 -> 47/139;",

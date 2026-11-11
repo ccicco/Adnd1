@@ -49,7 +49,7 @@
 // only - no breathing print pin).
 //
 // The wclass reads the plain
-// rules::WeaponClass ints (rules/combat.h
+// rules::WeaponClass ints (rules/engine/combat.h
 // order): 0 bludgeoning, 1 piercing,
 // 2 slashing - dagger, short sword and
 // spear thrust; the swords, axes, maces
@@ -58,7 +58,7 @@
 
 #pragma once
 
-#include "rules/underwater.h"  // R311: the cap pin
+#include "underwater.h"  // R311: the cap pin
 
 namespace rules {
 

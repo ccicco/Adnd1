@@ -1,11 +1,11 @@
--- oa712: promoted from rules/oa83dragons.h (the OA MONSTERS - THE ORIENTAL DRAGONS, printed capture pp. 259-262 - the);
+-- oa712: promoted from rules/oa/oa83dragons.h (the OA MONSTERS - THE ORIENTAL DRAGONS, printed capture pp. 259-262 - the);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 712,
   "prefix" = "oa712",
   "banner" = {
       "title" = "OA MONSTERS - THE ORIENTAL DRAGONS, printed capture pp. 259-262 - the",
-      "provenance" = "celestial bureau round census 634 -> 635.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 165 closed, 70 open - the oriental dragons box flips (census 634 -> 635); NEXT - R713: the Gaki, Lesser Spirit (capture pp. 262-263), prefix dka (verify free at the landing), audit \"R713 OA monsters Gaki audit\", include after rules/oa83dragons.h",
+      "provenance" = "celestial bureau round census 634 -> 635.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 165 closed, 70 open - the oriental dragons box flips (census 634 -> 635); NEXT - R713: the Gaki, Lesser Spirit (capture pp. 262-263), prefix dka (verify free at the landing), audit \"R713 OA monsters Gaki audit\", include after rules/oa/oa83dragons.h",
     },
   "consts" = { {
       "name" = "djzBureauPositionRows",

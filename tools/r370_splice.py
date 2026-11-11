@@ -43,7 +43,7 @@ SEED_ENTRY = NL.join([
     '- R369 landed 2026-10-12: commit',
     '  41ca7f2, census 296, the UA',
     '  cantrip acquisition pin round',
-    '  (rules/uacantacq.h): the five',
+    '  (rules/ua/uacantacq.h): the five',
     '  random known-count bands',
     '  (reversed 2-8, legerdemain 2-5,',
     '  person-affecting 2-8, personal',
@@ -146,13 +146,13 @@ assert len(applied) + len(already) == 1, 'a count'
 
 
 
-# ---- (b) NEW rules/uasmalls1.h ----
-P = 'rules/uasmalls1.h'
+# ---- (b) NEW rules/ua/uasmalls1.h ----
+P = 'rules/ua/uasmalls1.h'
 if os.path.exists(P) and 'R370' in rd(P):
     already.append('uasmalls1.h: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uasmalls1.h
+// Adnd1 - rules/ua/uasmalls1.h
 // The UA DM-SECTION SMALLS, part 1,
 // R370: three items - Method V
 // (p. 74), the starting hit-point
@@ -163,7 +163,7 @@ else:
 // Pin-era pattern (R322): pinned data only - no engine
 // site exists. The R368 seam cross-checks the cavalier
 // starting floor against the level-1 d10 pin
-// (rules/uacavtable.h).
+// (rules/ua/uacavtable.h).
 //
 // JUDGMENTs (the decode method):
 //   - the Method V prose prints clean (the humans-only
@@ -414,7 +414,7 @@ else:
         '      column) reads clean; the minimum',
         '      and maximum clamps.',
         '      - CLOSED R370: the pin round',
-        '        (rules/uasmalls1.h) - the',
+        '        (rules/ua/uasmalls1.h) - the',
         '        class-first humans-only',
         '        prose, the best-three-of-N',
         '        roll with the DM approval,',
@@ -449,7 +449,7 @@ else:
         '      3, illusionist 3, thief 4,',
         '      assassin 4, monk 5.',
         '      - CLOSED R370: the pin round',
-        '        (rules/uasmalls1.h) - the 12',
+        '        (rules/ua/uasmalls1.h) - the 12',
         '        class minimums (cavalier 6',
         '        to ranger 9), the',
         '        multi-class average rounded',
@@ -476,7 +476,7 @@ else:
         '- [x] **Warhorses and barding** (p. 76)',
         '      - the barded movement rate table.',
         '      - CLOSED R370: the pin round',
-        '        (rules/uasmalls1.h) - the',
+        '        (rules/ua/uasmalls1.h) - the',
         '        movement rate table (light',
         '        21/15, medium 17/15, heavy',
         '        14/13/12) with the medium',
@@ -506,7 +506,7 @@ assert s.count(
     '- [x] **Warhorses and barding**'
 ) == 1, 'c3 flip'
 assert s.count(
-    '(rules/uasmalls1.h) - the'
+    '(rules/ua/uasmalls1.h) - the'
 ) == 3, 'c notes'
 assert s.count(
     '- [ ] Barded Warhorse Movement Rate (p.'
@@ -546,11 +546,11 @@ s = rd(RT)
 if 'R370 UA DM-section smalls pin audit' in s:
     already.append('regtest.cpp: the R370 audit')
 else:
-    INC_ANCH = ('#include "rules/uacantacq.h"  // '
+    INC_ANCH = ('#include "rules/ua/uacantacq.h"  // '
         'R369: the UA cantrip acquisition')
     INC_NEW = NL.join([
-        '#include "rules/uacantacq.h"  // R369: the UA cantrip acquisition',
-        '#include "rules/uasmalls1.h"  // R370: the UA DM-section smalls'
+        '#include "rules/ua/uacantacq.h"  // R369: the UA cantrip acquisition',
+        '#include "rules/ua/uasmalls1.h"  // R370: the UA DM-section smalls'
     ])
     AUD_ANCH = '    // ---- R227: the wis mental save wiring audit ----'
     AUDIT = r"""    // ---- R370: the UA DM-section
@@ -788,20 +788,20 @@ assert s.count(
     'R227: the wis mental save'
 ) == 1, 'd r227 kept'
 assert s.count(
-    '#include "rules/uasmalls1.h"'
+    '#include "rules/ua/uasmalls1.h"'
 ) == 1, 'd new include'
 for h in (
         'rules/cavalier.h',
         'rules/classtables.h',
-        'rules/uabirth.h',
-        'rules/uasocialclass.h',
-        'rules/uaspellbooks.h',
-        'rules/uaspellcomment.h',
-        'rules/uauwspelluse.h',
-        'rules/uadarkness.h',
-        'rules/uacavtable.h',
-        'rules/uacantacq.h',
-        'rules/uailacquisition.h'):
+        'rules/ua/uabirth.h',
+        'rules/ua/uasocialclass.h',
+        'rules/ua/uaspellbooks.h',
+        'rules/ua/uaspellcomment.h',
+        'rules/ua/uauwspelluse.h',
+        'rules/ua/uadarkness.h',
+        'rules/ua/uacavtable.h',
+        'rules/ua/uacantacq.h',
+        'rules/ua/uailacquisition.h'):
     assert s.count(
         '#include "' + h + '"'
         ) == 1, 'd kept include'

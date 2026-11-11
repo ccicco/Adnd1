@@ -66,8 +66,8 @@
   "  gap_census 3 closed 0 open, prefix scan fresh at the then-HEAD (l22",
   "  free at 446f677, k22 now taken). WAIT FOR GO."
  ],
- "header_file": "rules/l22.h",
- "include_after": "#include \"rules/k22.h\"  // R948: the Dragon issue-22 opener part three, the five-chain commentary round",
+ "header_file": "rules/dragon/issue022_close.h",
+ "include_after": "#include \"rules/dragon/issue022_opener3.h\"  // R948: the Dragon issue-22 opener part three, the five-chain commentary round",
  "include_comment": "the Dragon issue-22 box closing round, the four-round walk complete",
  "audit_file": "rules/audits/r949_batch.h",
  "audit_anchor": "#include \"rules/audits/r948_batch.h\"  // R948: R948 issue-22 commentary set audit",

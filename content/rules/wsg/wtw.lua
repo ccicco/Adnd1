@@ -85,6 +85,6 @@ return {
     } },
   "audit" = {
       "label" = "R453 WSG treading water pin audit",
-      "comment" = "The treading water slice pins the proficient calm-water hold (turns equal to twice the endurance score, one endurance point per two turns), the nonproficient limit (rounds equal to the strength score, modified for encumbrance the same way a swimmer's endurance is modified), the expiry checks (a Strength Check at expiration and every round thereafter, cumulative +1 after the first, per the 6-strength/12-round example), and the current rules (carried at the current speed modified for encumbrance, the proficient hold-position effectively swimming with endurance assessed, the nonproficient sinking immediately if he resists) (rules/wsgtread.h, prefix wtw); census 377 -> 378.",
+      "comment" = "The treading water slice pins the proficient calm-water hold (turns equal to twice the endurance score, one endurance point per two turns), the nonproficient limit (rounds equal to the strength score, modified for encumbrance the same way a swimmer's endurance is modified), the expiry checks (a Strength Check at expiration and every round thereafter, cumulative +1 after the first, per the 6-strength/12-round example), and the current rules (carried at the current speed modified for encumbrance, the proficient hold-position effectively swimming with endurance assessed, the nonproficient sinking immediately if he resists) (rules/wsg/wsgtread.h, prefix wtw); census 377 -> 378.",
     },
 }

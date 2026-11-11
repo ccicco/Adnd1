@@ -9,7 +9,7 @@
     // the boating-proficiency assumption, and the mast damage rules (the 40
     // mph threshold, the percentage chance equal to the wind velocity, the
     // 30% furled-sail reduction, the upward adjustment for poor rigging and
-    // the hourly check) (rules/wsgcapsizing.h, prefix wcp); census 380 ->
+    // the hourly check) (rules/wsg/wsgcapsizing.h, prefix wcp); census 380 ->
     // 381.
     {
         using namespace rules;

@@ -12,7 +12,7 @@
 #       fix-round candidates, the open items and the
 #       out-of-scope notes. The founding read verified
 #       SIX ability-table divergences (the
-#       rules/character.cpp ladders transcribed from
+#       rules/engine/character.cpp ladders transcribed from
 #       project notes - the same finding class as the
 #       R162 XP rows, repinned R176): DEX reaction
 #       cells 3/4/18, the CON system-shock and

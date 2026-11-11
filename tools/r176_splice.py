@@ -8,14 +8,14 @@
 # XP boundary columns (the R162 round had read only the
 # title columns), so the finding is payable:
 #
-#   (a) rules/classes.h header comment - the divergence
+#   (a) rules/engine/classes.h header comment - the divergence
 #       wording closes.
-#   (b) rules/classes.h - the xpForLevel function comment
+#   (b) rules/engine/classes.h - the xpForLevel function comment
 #       carries the attain convention and the printed
 #       adders.
-#   (c) rules/classes.cpp header comment - the divergence
+#   (c) rules/engine/classes.cpp header comment - the divergence
 #       wording closes.
-#   (d) rules/classes.cpp - the four XP rows repinned to
+#   (d) rules/engine/classes.cpp - the four XP rows repinned to
 #       the print cell by cell (levels 1-13 each), and the
 #       XP_ADDER row repinned to the printed adders
 #       (fighter 250k past the 11th, MU 375k past the
@@ -276,12 +276,12 @@ p5_new = NL.join([
 
 # ---- (6) the gap report header round note + census ----
 p6_old = NL.join([
-    '0 (the printed dash). rules/klm.h; the R175',
+    '0 (the printed dash). rules/dmg_appendices_klm.h; the R175',
     'battery audit carries the cell-by-cell check.',
     'Census 93.',
 ])
 p6_new = NL.join([
-    '0 (the printed dash). rules/klm.h; the R175',
+    '0 (the printed dash). rules/dmg_appendices_klm.h; the R175',
     'battery audit carries the cell-by-cell check.',
     'R176 PINNED the printed XP tables (PHB pp.20-31',
     'class tables) - the R162 FINDING closed: the PHB',
@@ -303,7 +303,7 @@ p6_new = NL.join([
     'bound - 1 (fighter level 5: 18,001-35,000 gives',
     '18000 - the old row read 16000); the engine',
     'linear-beyond convention is kept, now anchored',
-    'on the printed adders. rules/classes.cpp; the',
+    'on the printed adders. rules/engine/classes.cpp; the',
     'R176 battery audit carries the row walk, the',
     'beyond-table probes and the clamps.',
     'Census 94.',
@@ -328,35 +328,35 @@ p7_new = NL.join([
 
 # ---- (8) the gap report classes box tail ----
 p8_old = NL.join([
-    '      R162: rules/classes.cpp (the four printed ladders',
+    '      R162: rules/engine/classes.cpp (the four printed ladders',
     '      through the name levels; the cleric level 5 blank',
     '      cell carries Curate down; the XP-row divergence is',
     '      recorded in the header note).',
 ])
 p8_new = NL.join([
-    '      R162: rules/classes.cpp (the four printed ladders',
+    '      R162: rules/engine/classes.cpp (the four printed ladders',
     '      through the name levels; the cleric level 5 blank',
     '      cell carries Curate down; the XP-row divergence is',
     '      CLOSED R176 - the rows repinned to the print).',
 ])
 
 # ---- run ----
-patch("rules/classes.h", p1_old, p1_new,
+patch("rules/engine/classes.h", p1_old, p1_new,
       "classes.h: header comment closed",
       marker="pinned to the printed XP boundaries by R176")
 assert len(applied) + len(already) == 1
 
-patch("rules/classes.h", p2_old, p2_new,
+patch("rules/engine/classes.h", p2_old, p2_new,
       "classes.h: xpForLevel comment",
       marker="Convention: the printed band" + chr(39) + 's lower bound - 1')
 assert len(applied) + len(already) == 2
 
-patch("rules/classes.cpp", p3_old, p3_new,
+patch("rules/engine/classes.cpp", p3_old, p3_new,
       "classes.cpp: header comment closed",
       marker="R176 repins the")
 assert len(applied) + len(already) == 3
 
-patch("rules/classes.cpp", p4_old, p4_new,
+patch("rules/engine/classes.cpp", p4_old, p4_new,
       "classes.cpp: the printed XP tables",
       marker="static const int XP_ADDER[CLASS_COUNT] = { 250000, 375000, 225000, 220000 };")
 assert len(applied) + len(already) == 4

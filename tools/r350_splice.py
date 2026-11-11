@@ -39,7 +39,7 @@ SEED_ENTRY = NL.join([
     '- R349 landed 2026-10-11: commit',
     '  ba3dc04, census 276, the UA',
     '  new cleric 7th level spells pin',
-    '  round (rules/uaclericspells7.h):',
+    '  round (rules/ua/uaclericspells7.h):',
     '  exaction (the alignment gates',
     '  and the bargain consequences)',
     '  and succor (the prepared-object',
@@ -84,19 +84,19 @@ assert s.count('R340 landed 2026-10-11') == 1, 'a r340 kept'
 assert s.count('## Knowledge maintenance') == 1, 'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
-# ---- (b) NEW rules/uadruidspells1.h ----
-US = 'rules/uadruidspells1.h'
+# ---- (b) NEW rules/ua/uadruidspells1.h ----
+US = 'rules/ua/uadruidspells1.h'
 if os.path.exists(US) and 'R350' in rd(US):
     already.append('uadruidspells1.h: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uadruidspells1.h
+// Adnd1 - rules/ua/uadruidspells1.h
 // The UA NEW DRUID SPELLS (pp. 42-43) pins, R350: the 1st-level
 // spell descriptions - ceremony, detect balance, detect poison,
 // precipitation.
 //
 // Pin-era pattern (R322): pinned data only - no engine site exists.
-// The R341 druid table pin (rules/uaspelltables.h) is the name seam.
+// The R341 druid table pin (rules/ua/uaspelltables.h) is the name seam.
 //
 // JUDGMENTs (the decode method):
 //   - the digit-garble family (the R343 precedent): three
@@ -608,7 +608,7 @@ else:
     assert s.count(TAIL_OLD) == 1, 'c tail'
     NOTE = NL.join([
     '      - R350: the 1st level pinned',
-    '        (rules/uadruidspells1.h) - the',
+    '        (rules/ua/uadruidspells1.h) - the',
     '        four spell descriptions',
     '        (ceremony with the nine',
     '        varieties and the cast-out',
@@ -655,12 +655,12 @@ if 'R350 UA druid 1st level spells pin audit' in s:
     already.append('regtest.cpp: the R350 audit')
 else:
     INC_ANCH = (
-        '#include "rules/uaclericspells7.h"'
+        '#include "rules/ua/uaclericspells7.h"'
         '  // R349: the UA new cleric 7th'
         ' level')
     INC_NEW = NL.join([
         INC_ANCH,
-        '#include "rules/uadruidspells1.h"'
+        '#include "rules/ua/uadruidspells1.h"'
         '  // R350: the UA new druid 1st'
         ' level',
     ])
@@ -955,7 +955,7 @@ assert s.count(
     ' pin audit: bad ') == 1, 'd r343 kept'
 assert s.count('R227: the wis mental save') == 1, 'd r227 kept'
 assert s.count(
-    '#include "rules/uadruidspells1.h"') == 1, 'd include'
+    '#include "rules/ua/uadruidspells1.h"') == 1, 'd include'
 assert len(applied) + len(already) == 4, 'd count'
 
 # ---- the summary ----

@@ -67,7 +67,7 @@ SEED_ENTRY = NL.join([
     '- R374 landed 2026-10-12: commit',
     '  1e9af1d, census 301, the UA',
     '  treasure dial decision round',
-    '  (rules/uatreasuredial.h): THE',
+    '  (rules/ua/uatreasuredial.h): THE',
     '  DECISION resolved RUN BOTH -',
     '  the DMG and UA tables ride as',
     '  switchable alternatives behind',
@@ -180,13 +180,13 @@ assert len(applied) + len(already) == 1, 'a count'
 
 
 
-# ---- (b) NEW rules/uadetskel.h ----
-P = 'rules/uadetskel.h'
+# ---- (b) NEW rules/ua/uadetskel.h ----
+P = 'rules/ua/uadetskel.h'
 if os.path.exists(P) and 'R375' in rd(P):
     already.append('uadetskel.h: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uadetskel.h
+// Adnd1 - rules/ua/uadetskel.h
 // The UA RANDOM TREASURE
 // DETERMINATION - MAGIC ITEMS
 // (Revised Table) skeleton pins
@@ -414,7 +414,7 @@ else:
         '      (miscellaneous weapons); all read',
         '      clean.',
         '      - AMENDED R375: the skeleton',
-        '        pin round (rules/uadetskel.h)',
+        '        pin round (rules/ua/uadetskel.h)',
         '        - the top-level bands and',
         '        sub-table splits pin clean;',
         '        the misc magic carries SEVEN',
@@ -446,7 +446,7 @@ assert s.count(
     'AMENDED R375'
 ) == 1, 'c amendment'
 assert s.count(
-    '(rules/uadetskel.h)'
+    '(rules/ua/uadetskel.h)'
 ) == 1, 'c skeleton note'
 assert s.count(
     'DECIDED R374'
@@ -498,11 +498,11 @@ s = rd(RT)
 if 'R375 UA determination skeleton pin audit' in s:
     already.append('regtest.cpp: the R375 audit')
 else:
-    INC_ANCH = ('#include "rules/uatreasuredial.h"  // '
+    INC_ANCH = ('#include "rules/ua/uatreasuredial.h"  // '
         'R374: the UA treasure dial')
     INC_NEW = NL.join([
-        '#include "rules/uatreasuredial.h"  // R374: the UA treasure dial',
-        '#include "rules/uadetskel.h"  // R375: the UA determination skeleton'
+        '#include "rules/ua/uatreasuredial.h"  // R374: the UA treasure dial',
+        '#include "rules/ua/uadetskel.h"  // R375: the UA determination skeleton'
     ])
     AUD_ANCH = '    // ---- R227: the wis mental save wiring audit ----'
     AUDIT = r"""    // ---- R375: the UA determination
@@ -706,30 +706,30 @@ assert s.count(
     'R227: the wis mental save'
 ) == 1, 'd r227 kept'
 assert s.count(
-    '#include "rules/uadetskel.h"'
+    '#include "rules/ua/uadetskel.h"'
 ) == 1, 'd new include'
 for h in (
         'rules/cavalier.h',
         'rules/classtables.h',
-        'rules/uabirth.h',
-        'rules/uasocialclass.h',
-        'rules/uaspellbooks.h',
-        'rules/uaspellcomment.h',
-        'rules/uauwspelluse.h',
-        'rules/uadarkness.h',
-        'rules/uacavtable.h',
-        'rules/uacantacq.h',
-        'rules/uasmalls1.h',
-        'rules/uailacquisition.h',
+        'rules/ua/uabirth.h',
+        'rules/ua/uasocialclass.h',
+        'rules/ua/uaspellbooks.h',
+        'rules/ua/uaspellcomment.h',
+        'rules/ua/uauwspelluse.h',
+        'rules/ua/uadarkness.h',
+        'rules/ua/uacavtable.h',
+        'rules/ua/uacantacq.h',
+        'rules/ua/uasmalls1.h',
+        'rules/ua/uailacquisition.h',
         'rules/thiefarmor.h',
         'rules/armorratings.h',
         'rules/comeliness.h',
-        'rules/uaweapontable.h',
-        'rules/uamissile.h',
-        'rules/uanewweapons.h',
-        'rules/uafollowers.h',
-        'rules/uacomnote.h',
-        'rules/uatreasuredial.h',
+        'rules/ua/uaweapontable.h',
+        'rules/ua/uamissile.h',
+        'rules/ua/uanewweapons.h',
+        'rules/ua/uafollowers.h',
+        'rules/ua/uacomnote.h',
+        'rules/ua/uatreasuredial.h',
         'rules/treasdet.h',
         'rules/hoard.h'):
     assert s.count(

@@ -2,7 +2,7 @@
  "round": 621,
  "title": "THE MONK - the oriental monk: the ability minima with no prime requisite, the d4 hit-dice doctrine, the ki power, the level-power ladder with the falls and the mind shields, the monastery duel, the material restrictions, Tables 20 and 21",
  "prefix": "dgh",
- "header_file": "rules/oamonk.h",
+ "header_file": "rules/oa/oamonk.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "THE MONK, printed capture pp. 31-35 - the OA monk round",
   "provenance": "verified against capture pp. 31-35 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). The Table 20 hit-points column header is settled against the 2018 print (4-sided dice for accum. hit points) - the 2-through-18 cells pin as accumulated d4 dice, the level plus one. The Table 21 additional-attack and additional-damage cells pin as codes (the slash pairs and the plus-dice notation). OCR normalization: may riot own horses reads as may not own horses; immune to gees reads as immune to geas (prose only)",
-  "sentinel": "the gap census after this round: 39 closed, 196 open - the monk boxes with Tables 20 and 21 flip (census 543 -> 544); NEXT - R622: the Ninja, capture pp. 35-39, Tables 22 and 23, prefix dgi (verify free), audit \"R622 OA ninja audit\", include after rules/oamonk.h"
+  "sentinel": "the gap census after this round: 39 closed, 196 open - the monk boxes with Tables 20 and 21 flip (census 543 -> 544); NEXT - R622: the Ninja, capture pp. 35-39, Tables 22 and 23, prefix dgi (verify free), audit \"R622 OA ninja audit\", include after rules/oa/oamonk.h"
  },
  "consts": [
   {
@@ -1519,7 +1519,7 @@
   "open": 196
  },
  "include_comment": "the OA monk pins",
- "include_after": "#include \"rules/oakensai.h\"  // R620: the OA kensai pins",
+ "include_after": "#include \"rules/oa/oakensai.h\"  // R620: the OA kensai pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R620 LANDED 2026-10-18: commit",
@@ -1529,7 +1529,7 @@
   "  2c812df (census 542 -> 543,",
   "  pushed 96b0682..36f2d5c), THE",
   "  KENSAI, capture pp. 28-31 - the",
-  "  sword saint: rules/oakensai.h,",
+  "  sword saint: rules/oa/oakensai.h,",
   "  prefix dgg (verified free), 58",
   "  inlines (34 consts, 16 bools, 8",
   "  table columns): the Wis/Dex dual",

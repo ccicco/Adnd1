@@ -11,11 +11,11 @@
 #include "game/party.h"
 #include "game/appstate.h"  // R233: the multi-class audit
 #include "ai/actor.h"  // R782: the deity bridge site block
-#include "rules/combat.h"
-#include "rules/saves.h"
+#include "rules/engine/combat.h"
+#include "rules/engine/saves.h"
 #include "spells/spells.h"
 #include "abilities/abilities.h"
-#include "rules/races.h"   // R154: pp.15-18 Race Tables I-III
+#include "rules/engine/races.h"   // R154: pp.15-18 Race Tables I-III
 #include "rules/grenade.h"  // R157: pp.64-65 grenade-like missiles
 #include "rules/weaponspeed.h"  // R158: p.66 weapon speed factors
 #include "rules/subdue.h"  // R159: p.67 striking to subdue
@@ -39,245 +39,245 @@
 #include "rules/hierophant.h"  // R330: the UA druid hierophant
 #include "rules/weaponspec.h"  // R331: the UA weapon spec
 #include "rules/barbarian.h"  // R332: the UA barbarian
-#include "rules/uaranger.h"  // R333: the UA ranger expansion
+#include "rules/ua/uaranger.h"  // R333: the UA ranger expansion
 #include "rules/thiefarmor.h"  // R334: the UA thief armor and attacks
 #include "rules/acrobat.h"  // R335: the UA thief-acrobat
 #include "rules/cavmoney.h"  // R336: the UA cavalier money
-#include "rules/uaweapontable.h"  // R337: the UA weight and damage
-#include "rules/uamissile.h"  // R338: the UA hurled and missile data
-#include "rules/uaprof.h"  // R339: the UA weapon proficiency
-#include "rules/uanewweapons.h"  // R340: the UA new weapons prose
-#include "rules/uaspelltables.h"  // R341: the UA spell tables part 1
-#include "rules/uaspelltables2.h"  // R342: the UA MU and illusionist tables
-#include "rules/uaclericspells1.h"  // R343: the UA new cleric 1st level
-#include "rules/uaclericspells2.h"  // R344: the UA new cleric 2nd level
-#include "rules/uaclericspells3.h"  // R345: the UA new cleric 3rd level
-#include "rules/uaclericspells4.h"  // R346: the UA new cleric 4th level
-#include "rules/uaclericspells5.h"  // R347: the UA new cleric 5th level
-#include "rules/uaclericspells6.h"  // R348: the UA new cleric 6th level
-#include "rules/uaclericspells7.h"  // R349: the UA new cleric 7th level
-#include "rules/uadruidspells1.h"  // R350: the UA new druid 1st level
-#include "rules/uadruidspells2.h"  // R351: the UA new druid 2nd level
-#include "rules/uadruidspells3.h"  // R352: the UA new druid 3rd level
-#include "rules/uadruidspells5.h"  // R353: the UA new druid 5th level
-#include "rules/uadruidspells6.h"  // R354: the UA new druid 6th level
-#include "rules/uadruidspells7.h"  // R355: the UA new druid 7th level
-#include "rules/uamuspells1.h"  // R356: the UA new magic-user 1st level
-#include "rules/uamuspells2.h"  // R357: the UA new magic-user 2nd level
-#include "rules/uamuspells3.h"  // R358: the UA new magic-user 3rd level
-#include "rules/uamuspells4.h"  // R359: the UA new magic-user 4th level
-#include "rules/uamuspells5.h"  // R360: the UA new magic-user 5th level
-#include "rules/uamuspells6.h"  // R360: the UA new magic-user 6th level
-#include "rules/uamuspells7.h"  // R361: the UA new magic-user 7th level
-#include "rules/uamuspells8.h"  // R362: the UA new magic-user 8th level
-#include "rules/uamuspells9.h"  // R362: the UA new magic-user 9th level
-#include "rules/uailcantrips.h"  // R363: the UA new illusionist cantrips
-#include "rules/uailspells1.h"  // R363: the UA new illusionist 1st level
-#include "rules/uailspells2.h"  // R363: the UA new illusionist 2nd level
-#include "rules/uailspells3.h"  // R364: the UA new illusionist 3rd level
-#include "rules/uailspells4.h"  // R364: the UA new illusionist 4th level
-#include "rules/uailspells5.h"  // R364: the UA new illusionist 5th level
-#include "rules/uailspells6.h"  // R365: the UA new illusionist 6th level
-#include "rules/uailspells7.h"  // R365: the UA new illusionist 7th level
-#include "rules/uailacquisition.h"  // R365: the UA illusionist acquisition
-#include "rules/uaspellcost.h"  // R365: the UA spell casting cost
-#include "rules/uaspellbooks.h"  // R366: the UA spell books
-#include "rules/uaspellcomment.h"  // R366: the UA spell commentary
-#include "rules/uauwspelluse.h"  // R366: the UA underwater spells
-#include "rules/uadarkness.h"  // R366: the UA effects of darkness
-#include "rules/uasocialclass.h"  // R367: the UA social class
-#include "rules/uabirth.h"  // R367: the UA circumstances of birth
-#include "rules/uacavtable.h"  // R368: the UA Cavaliers Table I
-#include "rules/uacantacq.h"  // R369: the UA cantrip acquisition
-#include "rules/uasmalls1.h"  // R370: the UA DM-section smalls
-#include "rules/uaarmor.h"  // R371: the UA expanded armor
-#include "rules/uafollowers.h"  // R372: the UA cavalier followers
-#include "rules/uacomnote.h"  // R373: the UA comeliness note
-#include "rules/uatreasuredial.h"  // R374: the UA treasure dial
-#include "rules/uadetskel.h"  // R375: the UA determination skeleton
-#include "rules/uadetrows.h"  // R395: the UA determination row bodies
-#include "rules/uapotprose.h"  // R376: the UA new potions prose
-#include "rules/uaprotscr.h"  // R377: the UA new scrolls prose
-#include "rules/uaringprose.h"  // R378: the UA new rings prose
-#include "rules/uarodstave.h"  // R379: the UA new rods staves prose
-#include "rules/uawandprose.h"  // R380: the UA new wands prose
-#include "rules/uamiscprose1.h"  // R381: the UA misc magic prose 1
-#include "rules/uamiscprose2.h"  // R382: the UA misc magic prose 2
-#include "rules/uamiscprose3.h"  // R383: the UA misc magic prose 3
-#include "rules/uamiscprose4.h"  // R384: the UA misc magic prose 4
-#include "rules/uamiscprose5.h"  // R385: the UA misc magic prose 5
-#include "rules/uamiscprose6.h"  // R386: the UA misc magic prose 6
-#include "rules/uaarmprose.h"  // R387: the UA armor prose
-#include "rules/uamweapprose.h"  // R388: the UA misc weapons prose
-#include "rules/uaappendq.h"  // R389: the UA weaponless combat
-#include "rules/uaappendr.h"  // R390: the UA non-lethal combat
-#include "rules/uaappendt.h"  // R391: the UA pole-arm nomenclature
-#include "rules/uaequip26.h"  // R392: the UA equipment costs
-#include "rules/uaac26.h"  // R408: the UA p. 26 AC table
-#include "rules/uahandheld.h"  // R392: the UA hand-held data
+#include "rules/ua/uaweapontable.h"  // R337: the UA weight and damage
+#include "rules/ua/uamissile.h"  // R338: the UA hurled and missile data
+#include "rules/ua/uaprof.h"  // R339: the UA weapon proficiency
+#include "rules/ua/uanewweapons.h"  // R340: the UA new weapons prose
+#include "rules/ua/uaspelltables.h"  // R341: the UA spell tables part 1
+#include "rules/ua/uaspelltables2.h"  // R342: the UA MU and illusionist tables
+#include "rules/ua/uaclericspells1.h"  // R343: the UA new cleric 1st level
+#include "rules/ua/uaclericspells2.h"  // R344: the UA new cleric 2nd level
+#include "rules/ua/uaclericspells3.h"  // R345: the UA new cleric 3rd level
+#include "rules/ua/uaclericspells4.h"  // R346: the UA new cleric 4th level
+#include "rules/ua/uaclericspells5.h"  // R347: the UA new cleric 5th level
+#include "rules/ua/uaclericspells6.h"  // R348: the UA new cleric 6th level
+#include "rules/ua/uaclericspells7.h"  // R349: the UA new cleric 7th level
+#include "rules/ua/uadruidspells1.h"  // R350: the UA new druid 1st level
+#include "rules/ua/uadruidspells2.h"  // R351: the UA new druid 2nd level
+#include "rules/ua/uadruidspells3.h"  // R352: the UA new druid 3rd level
+#include "rules/ua/uadruidspells5.h"  // R353: the UA new druid 5th level
+#include "rules/ua/uadruidspells6.h"  // R354: the UA new druid 6th level
+#include "rules/ua/uadruidspells7.h"  // R355: the UA new druid 7th level
+#include "rules/ua/uamuspells1.h"  // R356: the UA new magic-user 1st level
+#include "rules/ua/uamuspells2.h"  // R357: the UA new magic-user 2nd level
+#include "rules/ua/uamuspells3.h"  // R358: the UA new magic-user 3rd level
+#include "rules/ua/uamuspells4.h"  // R359: the UA new magic-user 4th level
+#include "rules/ua/uamuspells5.h"  // R360: the UA new magic-user 5th level
+#include "rules/ua/uamuspells6.h"  // R360: the UA new magic-user 6th level
+#include "rules/ua/uamuspells7.h"  // R361: the UA new magic-user 7th level
+#include "rules/ua/uamuspells8.h"  // R362: the UA new magic-user 8th level
+#include "rules/ua/uamuspells9.h"  // R362: the UA new magic-user 9th level
+#include "rules/ua/uailcantrips.h"  // R363: the UA new illusionist cantrips
+#include "rules/ua/uailspells1.h"  // R363: the UA new illusionist 1st level
+#include "rules/ua/uailspells2.h"  // R363: the UA new illusionist 2nd level
+#include "rules/ua/uailspells3.h"  // R364: the UA new illusionist 3rd level
+#include "rules/ua/uailspells4.h"  // R364: the UA new illusionist 4th level
+#include "rules/ua/uailspells5.h"  // R364: the UA new illusionist 5th level
+#include "rules/ua/uailspells6.h"  // R365: the UA new illusionist 6th level
+#include "rules/ua/uailspells7.h"  // R365: the UA new illusionist 7th level
+#include "rules/ua/uailacquisition.h"  // R365: the UA illusionist acquisition
+#include "rules/ua/uaspellcost.h"  // R365: the UA spell casting cost
+#include "rules/ua/uaspellbooks.h"  // R366: the UA spell books
+#include "rules/ua/uaspellcomment.h"  // R366: the UA spell commentary
+#include "rules/ua/uauwspelluse.h"  // R366: the UA underwater spells
+#include "rules/ua/uadarkness.h"  // R366: the UA effects of darkness
+#include "rules/ua/uasocialclass.h"  // R367: the UA social class
+#include "rules/ua/uabirth.h"  // R367: the UA circumstances of birth
+#include "rules/ua/uacavtable.h"  // R368: the UA Cavaliers Table I
+#include "rules/ua/uacantacq.h"  // R369: the UA cantrip acquisition
+#include "rules/ua/uasmalls1.h"  // R370: the UA DM-section smalls
+#include "rules/ua/uaarmor.h"  // R371: the UA expanded armor
+#include "rules/ua/uafollowers.h"  // R372: the UA cavalier followers
+#include "rules/ua/uacomnote.h"  // R373: the UA comeliness note
+#include "rules/ua/uatreasuredial.h"  // R374: the UA treasure dial
+#include "rules/ua/uadetskel.h"  // R375: the UA determination skeleton
+#include "rules/ua/uadetrows.h"  // R395: the UA determination row bodies
+#include "rules/ua/uapotprose.h"  // R376: the UA new potions prose
+#include "rules/ua/uaprotscr.h"  // R377: the UA new scrolls prose
+#include "rules/ua/uaringprose.h"  // R378: the UA new rings prose
+#include "rules/ua/uarodstave.h"  // R379: the UA new rods staves prose
+#include "rules/ua/uawandprose.h"  // R380: the UA new wands prose
+#include "rules/ua/uamiscprose1.h"  // R381: the UA misc magic prose 1
+#include "rules/ua/uamiscprose2.h"  // R382: the UA misc magic prose 2
+#include "rules/ua/uamiscprose3.h"  // R383: the UA misc magic prose 3
+#include "rules/ua/uamiscprose4.h"  // R384: the UA misc magic prose 4
+#include "rules/ua/uamiscprose5.h"  // R385: the UA misc magic prose 5
+#include "rules/ua/uamiscprose6.h"  // R386: the UA misc magic prose 6
+#include "rules/ua/uaarmprose.h"  // R387: the UA armor prose
+#include "rules/ua/uamweapprose.h"  // R388: the UA misc weapons prose
+#include "rules/ua/uaappendq.h"  // R389: the UA weaponless combat
+#include "rules/ua/uaappendr.h"  // R390: the UA non-lethal combat
+#include "rules/ua/uaappendt.h"  // R391: the UA pole-arm nomenclature
+#include "rules/ua/uaequip26.h"  // R392: the UA equipment costs
+#include "rules/ua/uaac26.h"  // R408: the UA p. 26 AC table
+#include "rules/ua/uahandheld.h"  // R392: the UA hand-held data
 #include "rules/cantriptier.h"  // R401: the UA cantrip tier
-#include "rules/uacantrips1.h"  // R412: the UA useful cantrips
-#include "rules/uacantrips2.h"  // R413: the UA reversed cantrips
-#include "rules/uacantrips3.h"  // R414: the UA legerdemain cantrips
-#include "rules/uacantrips4.h"  // R415: the UA person-affecting cantrips
-#include "rules/uacantrips5.h"  // R416: the UA personal cantrips
-#include "rules/uacantrips6.h"  // R417: the UA haunting-sound cantrips
+#include "rules/ua/uacantrips1.h"  // R412: the UA useful cantrips
+#include "rules/ua/uacantrips2.h"  // R413: the UA reversed cantrips
+#include "rules/ua/uacantrips3.h"  // R414: the UA legerdemain cantrips
+#include "rules/ua/uacantrips4.h"  // R415: the UA person-affecting cantrips
+#include "rules/ua/uacantrips5.h"  // R416: the UA personal cantrips
+#include "rules/ua/uacantrips6.h"  // R417: the UA haunting-sound cantrips
 #include "rules/humrpref.h"  // R169: p.106 humanoid racial preferences
 #include "rules/deities.h"  // R405: the deity layer seam
-#include "rules/uaappends.h"  // R406: the UA Appendix S stat blocks
-#include "rules/uasstatlines.h"  // R409: the UA Appendix S stat lines
-#include "rules/uasclasslines.h"  // R410: the UA Appendix S class lines
-#include "rules/uamoves.h"  // R411: the UA Appendix S MOVE values
-#include "rules/uapantheon.h"  // R423: the UA Appendix S pantheon prose
-#include "rules/wsgprof.h"  // R425: the WSG wilderness proficiencies
-#include "rules/wsgdress.h"  // R426: the WSG dressing for the weather
-#include "rules/wsgenvfx.h"  // R427: the WSG environment effects
-#include "rules/wsgsplwx.h"  // R429: the WSG special weather tables
-#include "rules/wsgheat.h"  // R430: the WSG heat and cold damage tables
-#include "rules/wsgequip.h"  // R431: the WSG effects on equipment
-#include "rules/wsgencum.h"  // R432: the WSG encumbrance and movement
-#include "rules/wsganimal.h"  // R433: the WSG land-based animals
-#include "rules/wsgvehicle.h"  // R434: the WSG land-based vehicles
-#include "rules/wsgclimb.h"  // R435: the WSG climbing
-#include "rules/wsgcheck.h"  // R436: the WSG climbing checks
-#include "rules/wsgfall.h"  // R437: the WSG damage from falling
-#include "rules/wsgtumble.h"  // R438: the WSG tumbling damage
-#include "rules/wsgstop.h"  // R439: the WSG stopping a fall
-#include "rules/wsgrope.h"  // R440: the WSG rope use
-#include "rules/wsgtog.h"  // R441: the WSG roping together
-#include "rules/wsgrapp.h"  // R442: the WSG rappelling
-#include "rules/wsgbelay.h"  // R443: the WSG belaying
-#include "rules/wsggrap.h"  // R444: the WSG grappling hooks
-#include "rules/wsgchasm.h"  // R445: the WSG chasm crossing
-#include "rules/wsgmntnr.h"  // R446: the WSG mountaineering proficiency
-#include "rules/wsgslip.h"  // R447: the WSG slippery surface movement
-#include "rules/wsgjump.h"  // R448: the WSG jumping rules
-#include "rules/wsgvis.h"  // R449: the WSG movement in reduced visibility
-#include "rules/wsgswim.h"  // R450: the WSG swimming rules
-#include "rules/wsgmwater.h"  // R451: the WSG other effects of moving water
-#include "rules/wsgdive.h"  // R452: the WSG diving and surfacing
-#include "rules/wsgtread.h"  // R453: the WSG treading water
-#include "rules/wsgbreath.h"  // R454: the WSG holding one breath
-#include "rules/wsgvessels.h"  // R455: the WSG movement in waterborne vehicles
-#include "rules/wsgcapsizing.h"  // R456: the WSG capsizing and damage to craft
-#include "rules/wsgboat.h"  // R457: the WSG boating proficiency
-#include "rules/wsgportage.h"  // R458: the WSG portaging
-#include "rules/wsgcapsized.h"  // R459: the WSG use of a capsized vessel
-#include "rules/wsgflymounts.h"  // R460: the WSG flying mounts
-#include "rules/wsgfallair.h"  // R461: the WSG airborne fall chance
-#include "rules/wsgfood.h"  // R462: the WSG going without food and water
-#include "rules/wsgforage.h"  // R463: the WSG food gathering, foraging and Table 30
-#include "rules/wsghunt.h"  // R464: the WSG hunting, stalking and Table 31
-#include "rules/wsgfish.h"  // R465: the WSG hunting proficiency, fishing and Table 32
-#include "rules/wsgcarry.h"  // R466: the WSG consuming and carrying food and Table 33
-#include "rules/wsgwater.h"  // R467: the WSG finding water and Table 34
-#include "rules/wsgwhere.h"  // R468: the WSG where water is found
-#include "rules/wsgdesert.h"  // R469: the WSG water in the desert and permafrost
-#include "rules/wsgpurify.h"  // R470: the WSG purifying water and tainted water
-#include "rules/wsgshelter.h"  // R471: the WSG natural shelters and Table 35
-#include "rules/wsgtents.h"  // R472: the WSG portable shelters and Table 36
-#include "rules/wsgsleep.h"  // R473: the WSG shelter mechanics, rest and sleep, and Table 37
-#include "rules/wsgfire.h"  // R474: the WSG rest quality, armor timing and campfires, and Table 38
-#include "rules/wsgfuel.h"  // R475: the WSG fuel availability and fire safety, and Table 39
-#include "rules/wsgblaze.h"  // R476: the WSG uncontrollable fires, and the fire discipline and extinguishing rules
-#include "rules/wsgdmg.h"  // R477: the WSG damage from fire, and the firebreak and heat rules
-#include "rules/wsgmed.h"  // R478: the WSG medicinal plants, and the Table 40 grids
-#include "rules/wsglore.h"  // R479: the WSG plant lore proficiency prose
-#include "rules/wsginj.h"  // R480: the WSG injuries and treatment rules
-#include "rules/wsgfae.h"  // R481: the WSG first aid equipment gear rules
-#include "rules/wsgnvis.h"  // R482: the WSG normal vision definition and range rules
-#include "rules/wsginfra.h"  // R483: the WSG infravision and Table 41 range rules
-#include "rules/wsgultra.h"  // R484: the WSG ultravision and infravision effectiveness rules
-#include "rules/wsglight.h"  // R485: the WSG artificial illumination light-source rules
-#include "rules/wsghazd.h"  // R486: the WSG volcano, earthquake and tidal wave hazard rules
-#include "rules/wsghazd2.h"  // R487: the WSG flood, avalanche, mudslide and quicksand hazard rules
-#include "rules/wsgfight.h"  // R488: the WSG wilderness combat rules
-#include "rules/wsgfatig.h"  // R489: the WSG fatigue and exhaustion rules
-#include "rules/wsgmount.h"  // R490: the WSG mounts and beasts of burden rules
-#include "rules/wsgmagic.h"  // R491: the WSG magic in the wilderness rules
-#include "rules/wsgdm.h"  // R492: the WSG Dungeon Master section rules
-#include "rules/wsgweather.h"  // R493: the WSG World of Weather generation rules
-#include "rules/wsgweathx.h"  // R494: the WSG World of Weather special weather and optional rules
-#include "rules/wsgtables.h"  // R495: R495: the WSG compiled tables manifest
-#include "rules/wsgrecon.h"  // R496: the WSG gap reconciliation bookkeeping
-#include "rules/wsgoverview.h"  // R497: the WSG overview chapter pins
-#include "rules/wsgprofd.h"  // R498: the WSG proficiencies prose pins
-#include "rules/wsgtempfold.h"  // R499: the WSG temperature-chain fold pins
-#include "rules/wsgswimfold.h"  // R500: the WSG swimmer's motion-chain fold pins
-#include "rules/wsgmovefold.h"  // R501: the WSG movement/fall-chain fold pins
-#include "rules/wsgcampfold.h"  // R502: the WSG camp-chain fold pins
-#include "rules/dsgoverview.h"  // R503: the DSG overview pins
-#include "rules/dsgmove.h"  // R504: the DSG movement I pins
-#include "rules/dsgmove2.h"  // R505: the DSG movement II pins
-#include "rules/dsgprof.h"  // R506: the DSG proficiencies pins
-#include "rules/dsgfight.h"  // R507: the DSG combat pins
-#include "rules/dsgbatt.h"  // R508: the DSG battlesystem pins
-#include "rules/dsgair.h"  // R509: the DSG air and gases pins
-#include "rules/dsgodor.h"  // R510: the DSG odor detection pins
-#include "rules/dsgcavein.h"  // R511: the DSG cave-in causes pins
-#include "rules/dsgcavein2.h"  // R512: the DSG chain reaction pins
-#include "rules/dsgdpv.h"  // R513: the DSG DPV and hypothermia pins
-#include "rules/dsglode.h"  // R514: the DSG lodestone and NPC reaction pins
-#include "rules/dsgdecay.h"  // R516: the DSG structural decay pins
-#include "rules/dsgwater.h"  // R517: the DSG underground waterways pins
-#include "rules/dsgboat.h"  // R518: the DSG underground water travel pins
-#include "rules/dsgmine.h"  // R519: the DSG mining where-to-mine and types pins
-#include "rules/dsgmine2.h"  // R520: the DSG mining excavation veins and shoring pins
-#include "rules/dsgmine3.h"  // R521: the DSG mining products pins
-#include "rules/dsgmine4.h"  // R522: the DSG mine product quality pins
-#include "rules/dsgmine5.h"  // R523: the DSG mining tail pins
-#include "rules/dsgmine6.h"  // R524: the DSG hireling loyalty and hazards pins
-#include "rules/dsgequip.h"  // R525: the DSG equipment costs pins
-#include "rules/dsgequip2.h"  // R526: the DSG equipment descriptions pins
-#include "rules/dsgequip3.h"  // R527: the DSG proficiency descriptions pins
-#include "rules/dsgplay.h"  // R528: the DSG improving-play opener pins
-#include "rules/dsgplay2.h"  // R529: the DSG improving-play tail pins
-#include "rules/dsgenv.h"  // R530: the DSG underground environment pins
-#include "rules/dsggeo.h"  // R531: the DSG underground geography and theories pins
-#include "rules/dsgcult.h"  // R532: the DSG cultures of the underdark pins
-#include "rules/dsgland.h"  // R533: the DSG lands of Deepearth opener pins
-#include "rules/dsgarea1.h"  // R534: the DSG Deepearth areas 1-3 pins
-#include "rules/dsgarea2.h"  // R535: the DSG Deepearth areas 4-5 pins
-#include "rules/dsgarea3.h"  // R536: the DSG Deepearth areas 6-7 pins
-#include "rules/dsgarea4.h"  // R537: the DSG Deepearth areas 8-9 pins
-#include "rules/dsgarea5.h"  // R538: the DSG Deepearth areas 10-11 pins
-#include "rules/dsgarea6.h"  // R539: the DSG Deepearth areas 12-13 pins
-#include "rules/dsgarea7.h"  // R540: the DSG Deepearth areas 14-15 pins
-#include "rules/dsgarea8.h"  // R541: the DSG Deepearth areas 16-17 pins
-#include "rules/dsgarea9.h"  // R542: the DSG Deepearth areas 18-19 pins
-#include "rules/dsgarea10.h"  // R543: the DSG Deepearth areas 20-21 pins
-#include "rules/dsgarea11.h"  // R544: the DSG Deepearth areas 22-23 pins
-#include "rules/dsgarea12.h"  // R545: the DSG Deepearth areas 24-25 pins
-#include "rules/dsgarea13.h"  // R546: the DSG Deepearth areas 26-27 pins
-#include "rules/dsgarea14.h"  // R547: the DSG Deepearth areas 28-29 pins
-#include "rules/dsgarea15.h"  // R548: the DSG Deepearth areas 30-31 pins
-#include "rules/dsgdeep.h"  // R549: the DSG Deepearth closure
-#include "rules/dsgcamp.h"  // R550: the DSG campaign opener pins
-#include "rules/dsgcamp2.h"  // R551: the DSG worlds of adventure pins
-#include "rules/dsgcamp3.h"  // R552: the DSG plot and counterplot pins
-#include "rules/dsgcamp4.h"  // R553: the DSG story elements tail pins
-#include "rules/dsgcamp5.h"  // R554: the DSG techniques of story and campaign design pins
-#include "rules/dsgcamp6.h"  // R555: the DSG help from the players pins
-#include "rules/dsgcamp7.h"  // R556: the DSG campaign considerations closure
-#include "rules/dsgmap.h"  // R557: the DSG mapping your settings pins
-#include "rules/dsgtabs.h"  // R558: the DSG compiled tables pins
-#include "rules/dsgplate.h"  // R559: the DSG perspective map plates closure
-#include "rules/dsgindex.h"  // R560: the DSG index roster pins
-#include "rules/dsgdmsec.h"  // R561: the DSG DM section parent closure
-#include "rules/dsgintro.h"  // R562: the DSG what-is-it front matter pins
-#include "rules/dsgfin.h"  // R563: the DSG arc final census closure
-#include "rules/motpintro.h"  // R564: the MotP introduction opener pins
-#include "rules/motpspell.h"  // R565: the MotP spell summary pins
-#include "rules/motpeth.h"  // R566: the MotP Ethereal chapter pins
-#include "rules/motpinner.h"  // R567: the MotP inner planes doctrine pins
-#include "rules/motpair.h"  // R568: the MotP Air plane pins
-#include "rules/motpfire.h"  // R569: the MotP Fire plane pins
-#include "rules/motpearth.h"  // R570: the MotP Earth plane pins
-#include "rules/motpwater.h"  // R571: the MotP Water plane pins
-#include "rules/motppara.h"  // R572: the MotP para-planes pins
-#include "rules/motpenergy.h"  // R573: the MotP energy planes pins
-#include "rules/motpquasipos.h"  // R574: the MotP positive quasi-planes pins
-#include "rules/motpquasineg.h"  // R575: the MotP negative quasi-planes pins
+#include "rules/ua/uaappends.h"  // R406: the UA Appendix S stat blocks
+#include "rules/ua/uasstatlines.h"  // R409: the UA Appendix S stat lines
+#include "rules/ua/uasclasslines.h"  // R410: the UA Appendix S class lines
+#include "rules/ua/uamoves.h"  // R411: the UA Appendix S MOVE values
+#include "rules/ua/uapantheon.h"  // R423: the UA Appendix S pantheon prose
+#include "rules/wsg/wsgprof.h"  // R425: the WSG wilderness proficiencies
+#include "rules/wsg/wsgdress.h"  // R426: the WSG dressing for the weather
+#include "rules/wsg/wsgenvfx.h"  // R427: the WSG environment effects
+#include "rules/wsg/wsgsplwx.h"  // R429: the WSG special weather tables
+#include "rules/wsg/wsgheat.h"  // R430: the WSG heat and cold damage tables
+#include "rules/wsg/wsgequip.h"  // R431: the WSG effects on equipment
+#include "rules/wsg/wsgencum.h"  // R432: the WSG encumbrance and movement
+#include "rules/wsg/wsganimal.h"  // R433: the WSG land-based animals
+#include "rules/wsg/wsgvehicle.h"  // R434: the WSG land-based vehicles
+#include "rules/wsg/wsgclimb.h"  // R435: the WSG climbing
+#include "rules/wsg/wsgcheck.h"  // R436: the WSG climbing checks
+#include "rules/wsg/wsgfall.h"  // R437: the WSG damage from falling
+#include "rules/wsg/wsgtumble.h"  // R438: the WSG tumbling damage
+#include "rules/wsg/wsgstop.h"  // R439: the WSG stopping a fall
+#include "rules/wsg/wsgrope.h"  // R440: the WSG rope use
+#include "rules/wsg/wsgtog.h"  // R441: the WSG roping together
+#include "rules/wsg/wsgrapp.h"  // R442: the WSG rappelling
+#include "rules/wsg/wsgbelay.h"  // R443: the WSG belaying
+#include "rules/wsg/wsggrap.h"  // R444: the WSG grappling hooks
+#include "rules/wsg/wsgchasm.h"  // R445: the WSG chasm crossing
+#include "rules/wsg/wsgmntnr.h"  // R446: the WSG mountaineering proficiency
+#include "rules/wsg/wsgslip.h"  // R447: the WSG slippery surface movement
+#include "rules/wsg/wsgjump.h"  // R448: the WSG jumping rules
+#include "rules/wsg/wsgvis.h"  // R449: the WSG movement in reduced visibility
+#include "rules/wsg/wsgswim.h"  // R450: the WSG swimming rules
+#include "rules/wsg/wsgmwater.h"  // R451: the WSG other effects of moving water
+#include "rules/wsg/wsgdive.h"  // R452: the WSG diving and surfacing
+#include "rules/wsg/wsgtread.h"  // R453: the WSG treading water
+#include "rules/wsg/wsgbreath.h"  // R454: the WSG holding one breath
+#include "rules/wsg/wsgvessels.h"  // R455: the WSG movement in waterborne vehicles
+#include "rules/wsg/wsgcapsizing.h"  // R456: the WSG capsizing and damage to craft
+#include "rules/wsg/wsgboat.h"  // R457: the WSG boating proficiency
+#include "rules/wsg/wsgportage.h"  // R458: the WSG portaging
+#include "rules/wsg/wsgcapsized.h"  // R459: the WSG use of a capsized vessel
+#include "rules/wsg/wsgflymounts.h"  // R460: the WSG flying mounts
+#include "rules/wsg/wsgfallair.h"  // R461: the WSG airborne fall chance
+#include "rules/wsg/wsgfood.h"  // R462: the WSG going without food and water
+#include "rules/wsg/wsgforage.h"  // R463: the WSG food gathering, foraging and Table 30
+#include "rules/wsg/wsghunt.h"  // R464: the WSG hunting, stalking and Table 31
+#include "rules/wsg/wsgfish.h"  // R465: the WSG hunting proficiency, fishing and Table 32
+#include "rules/wsg/wsgcarry.h"  // R466: the WSG consuming and carrying food and Table 33
+#include "rules/wsg/wsgwater.h"  // R467: the WSG finding water and Table 34
+#include "rules/wsg/wsgwhere.h"  // R468: the WSG where water is found
+#include "rules/wsg/wsgdesert.h"  // R469: the WSG water in the desert and permafrost
+#include "rules/wsg/wsgpurify.h"  // R470: the WSG purifying water and tainted water
+#include "rules/wsg/wsgshelter.h"  // R471: the WSG natural shelters and Table 35
+#include "rules/wsg/wsgtents.h"  // R472: the WSG portable shelters and Table 36
+#include "rules/wsg/wsgsleep.h"  // R473: the WSG shelter mechanics, rest and sleep, and Table 37
+#include "rules/wsg/wsgfire.h"  // R474: the WSG rest quality, armor timing and campfires, and Table 38
+#include "rules/wsg/wsgfuel.h"  // R475: the WSG fuel availability and fire safety, and Table 39
+#include "rules/wsg/wsgblaze.h"  // R476: the WSG uncontrollable fires, and the fire discipline and extinguishing rules
+#include "rules/wsg/wsgdmg.h"  // R477: the WSG damage from fire, and the firebreak and heat rules
+#include "rules/wsg/wsgmed.h"  // R478: the WSG medicinal plants, and the Table 40 grids
+#include "rules/wsg/wsglore.h"  // R479: the WSG plant lore proficiency prose
+#include "rules/wsg/wsginj.h"  // R480: the WSG injuries and treatment rules
+#include "rules/wsg/wsgfae.h"  // R481: the WSG first aid equipment gear rules
+#include "rules/wsg/wsgnvis.h"  // R482: the WSG normal vision definition and range rules
+#include "rules/wsg/wsginfra.h"  // R483: the WSG infravision and Table 41 range rules
+#include "rules/wsg/wsgultra.h"  // R484: the WSG ultravision and infravision effectiveness rules
+#include "rules/wsg/wsglight.h"  // R485: the WSG artificial illumination light-source rules
+#include "rules/wsg/wsghazd.h"  // R486: the WSG volcano, earthquake and tidal wave hazard rules
+#include "rules/wsg/wsghazd2.h"  // R487: the WSG flood, avalanche, mudslide and quicksand hazard rules
+#include "rules/wsg/wsgfight.h"  // R488: the WSG wilderness combat rules
+#include "rules/wsg/wsgfatig.h"  // R489: the WSG fatigue and exhaustion rules
+#include "rules/wsg/wsgmount.h"  // R490: the WSG mounts and beasts of burden rules
+#include "rules/wsg/wsgmagic.h"  // R491: the WSG magic in the wilderness rules
+#include "rules/wsg/wsgdm.h"  // R492: the WSG Dungeon Master section rules
+#include "rules/wsg/wsgweather.h"  // R493: the WSG World of Weather generation rules
+#include "rules/wsg/wsgweathx.h"  // R494: the WSG World of Weather special weather and optional rules
+#include "rules/wsg/wsgtables.h"  // R495: R495: the WSG compiled tables manifest
+#include "rules/wsg/wsgrecon.h"  // R496: the WSG gap reconciliation bookkeeping
+#include "rules/wsg/wsgoverview.h"  // R497: the WSG overview chapter pins
+#include "rules/wsg/wsgprofd.h"  // R498: the WSG proficiencies prose pins
+#include "rules/wsg/wsgtempfold.h"  // R499: the WSG temperature-chain fold pins
+#include "rules/wsg/wsgswimfold.h"  // R500: the WSG swimmer's motion-chain fold pins
+#include "rules/wsg/wsgmovefold.h"  // R501: the WSG movement/fall-chain fold pins
+#include "rules/wsg/wsgcampfold.h"  // R502: the WSG camp-chain fold pins
+#include "rules/dsg/dsgoverview.h"  // R503: the DSG overview pins
+#include "rules/dsg/dsgmove.h"  // R504: the DSG movement I pins
+#include "rules/dsg/dsgmove2.h"  // R505: the DSG movement II pins
+#include "rules/dsg/dsgprof.h"  // R506: the DSG proficiencies pins
+#include "rules/dsg/dsgfight.h"  // R507: the DSG combat pins
+#include "rules/dsg/dsgbatt.h"  // R508: the DSG battlesystem pins
+#include "rules/dsg/dsgair.h"  // R509: the DSG air and gases pins
+#include "rules/dsg/dsgodor.h"  // R510: the DSG odor detection pins
+#include "rules/dsg/dsgcavein.h"  // R511: the DSG cave-in causes pins
+#include "rules/dsg/dsgcavein2.h"  // R512: the DSG chain reaction pins
+#include "rules/dsg/dsgdpv.h"  // R513: the DSG DPV and hypothermia pins
+#include "rules/dsg/dsglode.h"  // R514: the DSG lodestone and NPC reaction pins
+#include "rules/dsg/dsgdecay.h"  // R516: the DSG structural decay pins
+#include "rules/dsg/dsgwater.h"  // R517: the DSG underground waterways pins
+#include "rules/dsg/dsgboat.h"  // R518: the DSG underground water travel pins
+#include "rules/dsg/dsgmine.h"  // R519: the DSG mining where-to-mine and types pins
+#include "rules/dsg/dsgmine2.h"  // R520: the DSG mining excavation veins and shoring pins
+#include "rules/dsg/dsgmine3.h"  // R521: the DSG mining products pins
+#include "rules/dsg/dsgmine4.h"  // R522: the DSG mine product quality pins
+#include "rules/dsg/dsgmine5.h"  // R523: the DSG mining tail pins
+#include "rules/dsg/dsgmine6.h"  // R524: the DSG hireling loyalty and hazards pins
+#include "rules/dsg/dsgequip.h"  // R525: the DSG equipment costs pins
+#include "rules/dsg/dsgequip2.h"  // R526: the DSG equipment descriptions pins
+#include "rules/dsg/dsgequip3.h"  // R527: the DSG proficiency descriptions pins
+#include "rules/dsg/dsgplay.h"  // R528: the DSG improving-play opener pins
+#include "rules/dsg/dsgplay2.h"  // R529: the DSG improving-play tail pins
+#include "rules/dsg/dsgenv.h"  // R530: the DSG underground environment pins
+#include "rules/dsg/dsggeo.h"  // R531: the DSG underground geography and theories pins
+#include "rules/dsg/dsgcult.h"  // R532: the DSG cultures of the underdark pins
+#include "rules/dsg/dsgland.h"  // R533: the DSG lands of Deepearth opener pins
+#include "rules/dsg/dsgarea1.h"  // R534: the DSG Deepearth areas 1-3 pins
+#include "rules/dsg/dsgarea2.h"  // R535: the DSG Deepearth areas 4-5 pins
+#include "rules/dsg/dsgarea3.h"  // R536: the DSG Deepearth areas 6-7 pins
+#include "rules/dsg/dsgarea4.h"  // R537: the DSG Deepearth areas 8-9 pins
+#include "rules/dsg/dsgarea5.h"  // R538: the DSG Deepearth areas 10-11 pins
+#include "rules/dsg/dsgarea6.h"  // R539: the DSG Deepearth areas 12-13 pins
+#include "rules/dsg/dsgarea7.h"  // R540: the DSG Deepearth areas 14-15 pins
+#include "rules/dsg/dsgarea8.h"  // R541: the DSG Deepearth areas 16-17 pins
+#include "rules/dsg/dsgarea9.h"  // R542: the DSG Deepearth areas 18-19 pins
+#include "rules/dsg/dsgarea10.h"  // R543: the DSG Deepearth areas 20-21 pins
+#include "rules/dsg/dsgarea11.h"  // R544: the DSG Deepearth areas 22-23 pins
+#include "rules/dsg/dsgarea12.h"  // R545: the DSG Deepearth areas 24-25 pins
+#include "rules/dsg/dsgarea13.h"  // R546: the DSG Deepearth areas 26-27 pins
+#include "rules/dsg/dsgarea14.h"  // R547: the DSG Deepearth areas 28-29 pins
+#include "rules/dsg/dsgarea15.h"  // R548: the DSG Deepearth areas 30-31 pins
+#include "rules/dsg/dsgdeep.h"  // R549: the DSG Deepearth closure
+#include "rules/dsg/dsgcamp.h"  // R550: the DSG campaign opener pins
+#include "rules/dsg/dsgcamp2.h"  // R551: the DSG worlds of adventure pins
+#include "rules/dsg/dsgcamp3.h"  // R552: the DSG plot and counterplot pins
+#include "rules/dsg/dsgcamp4.h"  // R553: the DSG story elements tail pins
+#include "rules/dsg/dsgcamp5.h"  // R554: the DSG techniques of story and campaign design pins
+#include "rules/dsg/dsgcamp6.h"  // R555: the DSG help from the players pins
+#include "rules/dsg/dsgcamp7.h"  // R556: the DSG campaign considerations closure
+#include "rules/dsg/dsgmap.h"  // R557: the DSG mapping your settings pins
+#include "rules/dsg/dsgtabs.h"  // R558: the DSG compiled tables pins
+#include "rules/dsg/dsgplate.h"  // R559: the DSG perspective map plates closure
+#include "rules/dsg/dsgindex.h"  // R560: the DSG index roster pins
+#include "rules/dsg/dsgdmsec.h"  // R561: the DSG DM section parent closure
+#include "rules/dsg/dsgintro.h"  // R562: the DSG what-is-it front matter pins
+#include "rules/dsg/dsgfin.h"  // R563: the DSG arc final census closure
+#include "rules/mop/motpintro.h"  // R564: the MotP introduction opener pins
+#include "rules/mop/motpspell.h"  // R565: the MotP spell summary pins
+#include "rules/mop/motpeth.h"  // R566: the MotP Ethereal chapter pins
+#include "rules/mop/motpinner.h"  // R567: the MotP inner planes doctrine pins
+#include "rules/mop/motpair.h"  // R568: the MotP Air plane pins
+#include "rules/mop/motpfire.h"  // R569: the MotP Fire plane pins
+#include "rules/mop/motpearth.h"  // R570: the MotP Earth plane pins
+#include "rules/mop/motpwater.h"  // R571: the MotP Water plane pins
+#include "rules/mop/motppara.h"  // R572: the MotP para-planes pins
+#include "rules/mop/motpenergy.h"  // R573: the MotP energy planes pins
+#include "rules/mop/motpquasipos.h"  // R574: the MotP positive quasi-planes pins
+#include "rules/mop/motpquasineg.h"  // R575: the MotP negative quasi-planes pins
 #include "rules/astralplane.h"  // R576: the Astral Plane pins
 #include "rules/outerplanes.h"  // R577: the outer planes general pins
 #include "rules/nirvanaarcadia.h"  // R578: the Nirvana and Arcadia pins
@@ -294,189 +294,189 @@
 #include "rules/concordantopposition.h"  // R589: the Concordant Opposition pins
 #include "rules/beyondouterplanes.h"  // R590: the Beyond the outer planes pins
 #include "rules/outerplanesseal.h"  // R591: the Outer Planes chapter seal pins
-#include "rules/appendixiprimes.h"  // R592: the Appendix I Prime Material Planes pins
-#include "rules/appendixiiinnercreatures.h"  // R593: the Appendix II inner creatures pins
-#include "rules/appendixiiioutercreatures.h"  // R594: the Appendix III outer creatures pins
-#include "rules/appendixivabilitiespowers.h"  // R595: the Appendix IV Powers abilities pins
+#include "rules/mop/appendixiprimes.h"  // R592: the Appendix I Prime Material Planes pins
+#include "rules/mop/appendixiiinnercreatures.h"  // R593: the Appendix II inner creatures pins
+#include "rules/mop/appendixiiioutercreatures.h"  // R594: the Appendix III outer creatures pins
+#include "rules/mop/appendixivabilitiespowers.h"  // R595: the Appendix IV Powers abilities pins
 #include "rules/indices.h"  // R596: the Indices closing pins
-#include "rules/motpethcyclone.h"  // R598: the MotP Ether cyclone pins
-#include "rules/dmomaxims.h"  // R599: the DMO arc opener pins
-#include "rules/dmocampaign.h"  // R600: the DMO maxim-doctrine pins
-#include "rules/dmoadventures.h"  // R601: the DMO adventure-doctrine pins
-#include "rules/dmoworlds.h"  // R602: the DMO world-rating pins
-#include "rules/dmomonsters.h"  // R603: the DMO monster-doctrine pins
-#include "rules/dmospells.h"  // R604: the DMO spells-and-items pins
-#include "rules/dmoitems.h"  // R605: the DMO item-creation pins
-#include "rules/dmoduels.h"  // R606: the DMO magical-duels pins
-#include "rules/dmodweomers.h"  // R607: the DMO true-dweomer pins
-#include "rules/dmohighlevel.h"  // R608: the DMO high-level save pins
-#include "rules/dmohighskills.h"  // R609: the DMO high-level skills pins
-#include "rules/dmohighwizpri.h"  // R610: the DMO wizard and priest pins
-#include "rules/dmohighrogues.h"  // R611: the DMO rogue pins
-#include "rules/dmohighascend.h"  // R612: the DMO demihuman and ascension pins
-#include "rules/dmoduelroster.h"  // R613: the DMO spell dueling roster pins
-#include "rules/oacreating.h"  // R614: the OA arc opener pins
-#include "rules/oaabilities.h"  // R615: the OA ability tables pins
-#include "rules/oaabilityprose.h"  // R616: the OA ability prose pins
-#include "rules/oaclasscombos.h"  // R617: the OA class combos pins
-#include "rules/oaraces.h"  // R618: the OA races pins
-#include "rules/oabarbbushi.h"  // R619: the OA barbarian and bushi pins
-#include "rules/oakensai.h"  // R620: the OA kensai pins
-#include "rules/oamonk.h"  // R621: the OA monk pins
-#include "rules/oaninja.h"  // R622: the OA ninja pins
-#include "rules/oasamurai.h"  // R623: the OA samurai pins
-#include "rules/oashukenja.h"  // R624: the OA shukenja pins
-#include "rules/oasohei.h"  // R625: the OA sohei pins
-#include "rules/oawujen.h"  // R626: the OA wu jen pins
-#include "rules/oayakuza.h"  // R627: the OA yakuza pins
-#include "rules/oacharab.h"  // R628: the OA character abilities pins
-#include "rules/oabirth.h"  // R629: the OA families pins
-#include "rules/oafamstr.h"  // R630: the OA family structures pins
-#include "rules/oaanc.h"  // R631: the OA ancestry pins
-#include "rules/oahold.h"  // R632: the OA holdings pins
-#include "rules/oabr.h"  // R633: the OA birthrights pins
-#include "rules/oahonor.h"  // R634: the OA honor pins
-#include "rules/oaeff.h"  // R635: the OA effects of honor pins
-#include "rules/oamoney.h"  // R636: the OA money pins
-#include "rules/oastart.h"  // R637: the OA starting money pins
-#include "rules/oaexch.h"  // R638: the OA exchange pins
-#include "rules/oaequip.h"  // R639: the OA equipment pins
-#include "rules/oaweapon.h"  // R640: the OA weapons pins
-#include "rules/oahandheld.h"  // R641: the OA hand-held pins
-#include "rules/oahurled.h"  // R642: the OA hurled pins
-#include "rules/oaarmor.h"  // R643: the OA armor pins
-#include "rules/oapiece.h"  // R644: the OA piece armor pins
-#include "rules/oaencumb.h"  // R645: the OA armor encumbrance pins
-#include "rules/oabarding.h"  // R646: the OA barding pins
-#include "rules/oagrenade.h"  // R647: the OA grenades pins
-#include "rules/oabardprose.h"  // R648: the OA barding prose pins
-#include "rules/oaarmordesc.h"  // R649: the OA armor descriptions pins
-#include "rules/oaweaponspec.h"  // R650: the OA weapon specialization pins
-#include "rules/oamslspec.h"  // R651: the OA missile specializations pins
-#include "rules/oanwprof.h"  // R652: the OA non-weapon proficiency pins
-#include "rules/oacharprof.h"  // R653: the OA character proficiencies pins
-#include "rules/oaartprof.h"  // R654: the OA artisan proficiencies pins
-#include "rules/oabarbprof.h"  // R655: the OA barbarian proficiencies pins
-#include "rules/oacomprof.h"  // R656: the OA common proficiencies pins
-#include "rules/oacourtprof.h"  // R657: the OA court proficiencies pins
-#include "rules/oashkspells.h"  // R658: the OA shukenja spell list pins
-#include "rules/oal1spells.h"  // R659: the OA first level spells pins
-#include "rules/oal2spells.h"  // R660: the OA second level spells pins
-#include "rules/oal3spells.h"  // R661: the OA third level spells pins
-#include "rules/oal4spells.h"  // R662: the OA fourth level spells pins
-#include "rules/oal5spells.h"  // R663: the OA fifth level spells pins
-#include "rules/oal6spells.h"  // R664: the OA sixth level spells pins
-#include "rules/oal7spells.h"  // R665: the OA seventh level spells pins
-#include "rules/oat63divination.h"  // R666: the OA divination results pins
-#include "rules/oat64speakdead.h"  // R667: the OA speak with dead pins
-#include "rules/oat65fate.h"  // R668: the OA fate pins
-#include "rules/oawjspelllist.h"  // R669: the OA wu jen spell list pins
-#include "rules/oawjl1spells.h"  // R670: the OA wu jen first level spells pins
-#include "rules/oawjl2spells.h"  // R671: the OA wu jen second level spells pins
-#include "rules/oawjl3spells.h"  // R672: the OA wu jen third level spells pins
-#include "rules/oawjl4spells.h"  // R673: the OA wu jen fourth level spells pins
-#include "rules/oawjl5spells.h"  // R674: the OA wu jen fifth level spells pins
-#include "rules/oawjl6spells.h"  // R675: the OA wu jen sixth level spells pins
-#include "rules/oawjl7spells.h"  // R676: the OA wu jen seventh level spells pins
-#include "rules/oawjl8spells.h"  // R677: the OA wu jen eighth level spells pins
-#include "rules/oawjl9spells.h"  // R678: the OA wu jen ninth level spells pins
-#include "rules/oacombatseq.h"  // R679: the OA combat sequence pins
-#include "rules/oaiaijutsu.h"  // R680: the OA iaijutsu surprise pins
-#include "rules/oainitmods.h"  // R681: the OA initiative modifiers pins
-#include "rules/oahorsefire.h"  // R682: the OA mounted bowfire pins
-#include "rules/oa67bowfire.h"  // R683: the OA Table 67 bowfire modifier pins
-#include "rules/oaunhorsing.h"  // R684: the OA unhorsing pins
-#include "rules/oadisarming.h"  // R685: the OA disarming pins
-#include "rules/oasubdual.h"  // R686: the OA subduing pins
-#include "rules/oapsychicduel.h"  // R687: the OA psychic duel pins
-#include "rules/oamartialopen.h"  // R688: the OA martial arts opener pins
-#include "rules/oa68styles.h"  // R689: the OA Table 68 common styles pins
-#include "rules/oacreatestyle.h"  // R690: the OA creating a style pins
-#include "rules/oa69combos.h"  // R691: the OA Table 69 style combinations pins
-#include "rules/oa70maneuvers.h"  // R692: the OA Table 70 special maneuvers pins
-#include "rules/oamethods.h"  // R693: the OA principal methods pins
-#include "rules/oatrain.h"  // R694: the OA mental and physical training pins
-#include "rules/oalearn.h"  // R695: the OA learning martial arts pins
-#include "rules/oacalendar.h"  // R696: the OA calendar pins
-#include "rules/oa71yearly.h"  // R697: the OA Table 71 yearly events pins
-#include "rules/oa71explain.h"  // R698: the OA yearly events explanation pins
-#include "rules/oa72monthly.h"  // R699: the OA Table 72 monthly events pins
-#include "rules/oa72explain.h"  // R700: the OA monthly events explanation pins
-#include "rules/oa73daily.h"  // R701: the OA Table 73 daily events pins
-#include "rules/oa73explain.h"  // R702: the OA daily events explanation pins
-#include "rules/oa74terrain.h"  // R703: the OA Chapter 11 terrain encounter tables pins
-#include "rules/oa75climate.h"  // R704: the OA climate groupings pins
-#include "rules/oa76bajang.h"  // R705: the OA Bajang pins
-#include "rules/oa77bakemono.h"  // R706: the OA Bakemono pins
-#include "rules/oa78bisan.h"  // R707: the OA Bisan pins
-#include "rules/oa79buso.h"  // R708: the OA Buso pins
-#include "rules/oa80carp.h"  // R709: the OA Giant Carp pins
-#include "rules/oa81continh.h"  // R710: the OA Con-Tinh pins
-#include "rules/oa82doccuoc.h"  // R711: the OA Doc Cu'o'c pins
-#include "rules/oa83dragons.h"  // R712: the OA Oriental Dragons pins
-#include "rules/oa84gaki.h"  // R713: the OA Gaki pins
-#include "rules/oa85gargantua.h"  // R714: the OA Gargantua pins
-#include "rules/oa86generals.h"  // R715: the OA Animal Generals pins
-#include "rules/oa87goblinrat.h"  // R716: the OA Goblin Rat pins
-#include "rules/oa88goblinspider.h"  // R717: the OA Goblin Spider pins
-#include "rules/oa89hainu.h"  // R718: the OA Hai Nu pins
-#include "rules/oa90hsingsing.h"  // R719: the OA Hsing-Sing pins
-#include "rules/oa91huhuien.h"  // R720: the OA Hu Hsien pins
-#include "rules/oa92kala.h"  // R721: the OA Kala pins
-#include "rules/oa93kappa.h"  // R722: the OA Kappa pins
-#include "rules/oa94kuei.h"  // R723: the OA Kuei pins
-#include "rules/oa95menwako.h"  // R724: the OA Men Wako pins
-#include "rules/oa96nat.h"  // R725: the OA Nat pins
-#include "rules/oa97naturespirit.h"  // R726: the OA Nature Spirits pins
-#include "rules/oa98ningyo.h"  // R727: the OA Ningyo pins
-#include "rules/oa99oni.h"  // R728: the OA Oni pins
-#include "rules/oa100poh.h"  // R729: the OA P oh pins
-#include "rules/oa101shansao.h"  // R730: the OA Shan Sao pins
-#include "rules/oa102shiro.h"  // R731: the OA Shirokinukatsukami pins
-#include "rules/oa103tengu.h"  // R732: the OA Tengu pins
-#include "rules/oa104classuse.h"  // R733: the OA class usage pins
-#include "rules/oa105randtres.h"  // R734: the OA random treasure pins
-#include "rules/oa106table74.h"  // R735: the OA Table 74 pins
-#include "rules/oa107tableiia.h"  // R736: the OA Table II.A. pins
-#include "rules/oa108tableiii.h"  // R737: the OA Table III pins
-#include "rules/oa109itemmods.h"  // R738: the OA item mods pins
-#include "rules/oa110potions.h"  // R739: the OA potions pins
-#include "rules/oa111scrolls.h"  // R740: the OA scrolls pins
-#include "rules/oa112rods.h"  // R741: the OA rods pins
-#include "rules/oa113miscmagic.h"  // R742: the OA misc magic pins
-#include "rules/oa114armorprose.h"  // R743: the OA armor prose pins
-#include "rules/oa115table75.h"  // R744: the OA Table 75 pins
-#include "rules/oa116table76.h"  // R745: the OA Table 76 pins
-#include "rules/oa117table77.h"  // R746: the OA Table 77 pins
-#include "rules/oa118armorexpl.h"  // R747: the OA armor explanation pins
-#include "rules/oa119weaponsprose.h"  // R748: the OA weapons prose pins
-#include "rules/oa120table78.h"  // R749: the OA Table 78 pins
-#include "rules/oa121table79.h"  // R750: the OA Table 79 pins
-#include "rules/oa122table80.h"  // R751: the OA Table 80 pins
-#include "rules/oa123table81.h"  // R752: the OA Table 81 pins
-#include "rules/oa124table82.h"  // R753: the OA Table 82 pins
-#include "rules/oa125table83.h"  // R754: the OA Table 83 pins
-#include "rules/oa126table84.h"  // R755: the OA Table 84 pins
-#include "rules/oa127table85.h"  // R756: the OA Table 85 pins
-#include "rules/oa128weaponexpl.h"  // R757: the OA weapon explanation pins
-#include "rules/oa129magitemsprose.h"  // R758: the OA magical items prose pins
-#include "rules/oa130table86.h"  // R759: the OA Table 86 pins
-#include "rules/oa131karaturintro.h"  // R760: the OA Kara-Tur overview pins
-#include "rules/oa132shoulung.h"  // R761: the OA Shou Lung pins
-#include "rules/oa133tulung.h"  // R762: the OA Tu Lung pins
-#include "rules/oa134wa.h"  // R763: the OA Wa pins
-#include "rules/oa135kozakura.h"  // R764: the OA Kozakura pins
-#include "rules/oa136gajin.h"  // R765: the OA Gajin pins
-#include "rules/oa137food.h"  // R766: the OA Daily Life Food pins
-#include "rules/oa138buildings.h"  // R767: the OA Daily Life Buildings pins
-#include "rules/oa139manners.h"  // R768: the OA Daily Life Manners pins
-#include "rules/oa140names.h"  // R769: the OA Daily Life Names pins
-#include "rules/oa141backmatter.h"  // R770: the OA Back matter pins
-#include "rules/oa142celestial.h"  // R771: the OA Celestial Emperor pins
-#include "rules/oa143weaponsprose.h"  // R772: the OA Weapons prose pins
-#include "rules/oa144dailylife.h"  // R773: the OA daily-life misses pins
-#include "rules/filepatchseam.h"  // R774: the file-patch seam tooling pins
-#include "rules/rtseam.h"  // R775: the RT seam fix pins
+#include "rules/mop/motpethcyclone.h"  // R598: the MotP Ether cyclone pins
+#include "rules/dmo/dmomaxims.h"  // R599: the DMO arc opener pins
+#include "rules/dmo/dmocampaign.h"  // R600: the DMO maxim-doctrine pins
+#include "rules/dmo/dmoadventures.h"  // R601: the DMO adventure-doctrine pins
+#include "rules/dmo/dmoworlds.h"  // R602: the DMO world-rating pins
+#include "rules/dmo/dmomonsters.h"  // R603: the DMO monster-doctrine pins
+#include "rules/dmo/dmospells.h"  // R604: the DMO spells-and-items pins
+#include "rules/dmo/dmoitems.h"  // R605: the DMO item-creation pins
+#include "rules/dmo/dmoduels.h"  // R606: the DMO magical-duels pins
+#include "rules/dmo/dmodweomers.h"  // R607: the DMO true-dweomer pins
+#include "rules/dmo/dmohighlevel.h"  // R608: the DMO high-level save pins
+#include "rules/dmo/dmohighskills.h"  // R609: the DMO high-level skills pins
+#include "rules/dmo/dmohighwizpri.h"  // R610: the DMO wizard and priest pins
+#include "rules/dmo/dmohighrogues.h"  // R611: the DMO rogue pins
+#include "rules/dmo/dmohighascend.h"  // R612: the DMO demihuman and ascension pins
+#include "rules/dmo/dmoduelroster.h"  // R613: the DMO spell dueling roster pins
+#include "rules/oa/oacreating.h"  // R614: the OA arc opener pins
+#include "rules/oa/oaabilities.h"  // R615: the OA ability tables pins
+#include "rules/oa/oaabilityprose.h"  // R616: the OA ability prose pins
+#include "rules/oa/oaclasscombos.h"  // R617: the OA class combos pins
+#include "rules/oa/oaraces.h"  // R618: the OA races pins
+#include "rules/oa/oabarbbushi.h"  // R619: the OA barbarian and bushi pins
+#include "rules/oa/oakensai.h"  // R620: the OA kensai pins
+#include "rules/oa/oamonk.h"  // R621: the OA monk pins
+#include "rules/oa/oaninja.h"  // R622: the OA ninja pins
+#include "rules/oa/oasamurai.h"  // R623: the OA samurai pins
+#include "rules/oa/oashukenja.h"  // R624: the OA shukenja pins
+#include "rules/oa/oasohei.h"  // R625: the OA sohei pins
+#include "rules/oa/oawujen.h"  // R626: the OA wu jen pins
+#include "rules/oa/oayakuza.h"  // R627: the OA yakuza pins
+#include "rules/oa/oacharab.h"  // R628: the OA character abilities pins
+#include "rules/oa/oabirth.h"  // R629: the OA families pins
+#include "rules/oa/oafamstr.h"  // R630: the OA family structures pins
+#include "rules/oa/oaanc.h"  // R631: the OA ancestry pins
+#include "rules/oa/oahold.h"  // R632: the OA holdings pins
+#include "rules/oa/oabr.h"  // R633: the OA birthrights pins
+#include "rules/oa/oahonor.h"  // R634: the OA honor pins
+#include "rules/oa/oaeff.h"  // R635: the OA effects of honor pins
+#include "rules/oa/oamoney.h"  // R636: the OA money pins
+#include "rules/oa/oastart.h"  // R637: the OA starting money pins
+#include "rules/oa/oaexch.h"  // R638: the OA exchange pins
+#include "rules/oa/oaequip.h"  // R639: the OA equipment pins
+#include "rules/oa/oaweapon.h"  // R640: the OA weapons pins
+#include "rules/oa/oahandheld.h"  // R641: the OA hand-held pins
+#include "rules/oa/oahurled.h"  // R642: the OA hurled pins
+#include "rules/oa/oaarmor.h"  // R643: the OA armor pins
+#include "rules/oa/oapiece.h"  // R644: the OA piece armor pins
+#include "rules/oa/oaencumb.h"  // R645: the OA armor encumbrance pins
+#include "rules/oa/oabarding.h"  // R646: the OA barding pins
+#include "rules/oa/oagrenade.h"  // R647: the OA grenades pins
+#include "rules/oa/oabardprose.h"  // R648: the OA barding prose pins
+#include "rules/oa/oaarmordesc.h"  // R649: the OA armor descriptions pins
+#include "rules/oa/oaweaponspec.h"  // R650: the OA weapon specialization pins
+#include "rules/oa/oamslspec.h"  // R651: the OA missile specializations pins
+#include "rules/oa/oanwprof.h"  // R652: the OA non-weapon proficiency pins
+#include "rules/oa/oacharprof.h"  // R653: the OA character proficiencies pins
+#include "rules/oa/oaartprof.h"  // R654: the OA artisan proficiencies pins
+#include "rules/oa/oabarbprof.h"  // R655: the OA barbarian proficiencies pins
+#include "rules/oa/oacomprof.h"  // R656: the OA common proficiencies pins
+#include "rules/oa/oacourtprof.h"  // R657: the OA court proficiencies pins
+#include "rules/oa/oashkspells.h"  // R658: the OA shukenja spell list pins
+#include "rules/oa/oal1spells.h"  // R659: the OA first level spells pins
+#include "rules/oa/oal2spells.h"  // R660: the OA second level spells pins
+#include "rules/oa/oal3spells.h"  // R661: the OA third level spells pins
+#include "rules/oa/oal4spells.h"  // R662: the OA fourth level spells pins
+#include "rules/oa/oal5spells.h"  // R663: the OA fifth level spells pins
+#include "rules/oa/oal6spells.h"  // R664: the OA sixth level spells pins
+#include "rules/oa/oal7spells.h"  // R665: the OA seventh level spells pins
+#include "rules/oa/oat63divination.h"  // R666: the OA divination results pins
+#include "rules/oa/oat64speakdead.h"  // R667: the OA speak with dead pins
+#include "rules/oa/oat65fate.h"  // R668: the OA fate pins
+#include "rules/oa/oawjspelllist.h"  // R669: the OA wu jen spell list pins
+#include "rules/oa/oawjl1spells.h"  // R670: the OA wu jen first level spells pins
+#include "rules/oa/oawjl2spells.h"  // R671: the OA wu jen second level spells pins
+#include "rules/oa/oawjl3spells.h"  // R672: the OA wu jen third level spells pins
+#include "rules/oa/oawjl4spells.h"  // R673: the OA wu jen fourth level spells pins
+#include "rules/oa/oawjl5spells.h"  // R674: the OA wu jen fifth level spells pins
+#include "rules/oa/oawjl6spells.h"  // R675: the OA wu jen sixth level spells pins
+#include "rules/oa/oawjl7spells.h"  // R676: the OA wu jen seventh level spells pins
+#include "rules/oa/oawjl8spells.h"  // R677: the OA wu jen eighth level spells pins
+#include "rules/oa/oawjl9spells.h"  // R678: the OA wu jen ninth level spells pins
+#include "rules/oa/oacombatseq.h"  // R679: the OA combat sequence pins
+#include "rules/oa/oaiaijutsu.h"  // R680: the OA iaijutsu surprise pins
+#include "rules/oa/oainitmods.h"  // R681: the OA initiative modifiers pins
+#include "rules/oa/oahorsefire.h"  // R682: the OA mounted bowfire pins
+#include "rules/oa/oa67bowfire.h"  // R683: the OA Table 67 bowfire modifier pins
+#include "rules/oa/oaunhorsing.h"  // R684: the OA unhorsing pins
+#include "rules/oa/oadisarming.h"  // R685: the OA disarming pins
+#include "rules/oa/oasubdual.h"  // R686: the OA subduing pins
+#include "rules/oa/oapsychicduel.h"  // R687: the OA psychic duel pins
+#include "rules/oa/oamartialopen.h"  // R688: the OA martial arts opener pins
+#include "rules/oa/oa68styles.h"  // R689: the OA Table 68 common styles pins
+#include "rules/oa/oacreatestyle.h"  // R690: the OA creating a style pins
+#include "rules/oa/oa69combos.h"  // R691: the OA Table 69 style combinations pins
+#include "rules/oa/oa70maneuvers.h"  // R692: the OA Table 70 special maneuvers pins
+#include "rules/oa/oamethods.h"  // R693: the OA principal methods pins
+#include "rules/oa/oatrain.h"  // R694: the OA mental and physical training pins
+#include "rules/oa/oalearn.h"  // R695: the OA learning martial arts pins
+#include "rules/oa/oacalendar.h"  // R696: the OA calendar pins
+#include "rules/oa/oa71yearly.h"  // R697: the OA Table 71 yearly events pins
+#include "rules/oa/oa71explain.h"  // R698: the OA yearly events explanation pins
+#include "rules/oa/oa72monthly.h"  // R699: the OA Table 72 monthly events pins
+#include "rules/oa/oa72explain.h"  // R700: the OA monthly events explanation pins
+#include "rules/oa/oa73daily.h"  // R701: the OA Table 73 daily events pins
+#include "rules/oa/oa73explain.h"  // R702: the OA daily events explanation pins
+#include "rules/oa/oa74terrain.h"  // R703: the OA Chapter 11 terrain encounter tables pins
+#include "rules/oa/oa75climate.h"  // R704: the OA climate groupings pins
+#include "rules/oa/oa76bajang.h"  // R705: the OA Bajang pins
+#include "rules/oa/oa77bakemono.h"  // R706: the OA Bakemono pins
+#include "rules/oa/oa78bisan.h"  // R707: the OA Bisan pins
+#include "rules/oa/oa79buso.h"  // R708: the OA Buso pins
+#include "rules/oa/oa80carp.h"  // R709: the OA Giant Carp pins
+#include "rules/oa/oa81continh.h"  // R710: the OA Con-Tinh pins
+#include "rules/oa/oa82doccuoc.h"  // R711: the OA Doc Cu'o'c pins
+#include "rules/oa/oa83dragons.h"  // R712: the OA Oriental Dragons pins
+#include "rules/oa/oa84gaki.h"  // R713: the OA Gaki pins
+#include "rules/oa/oa85gargantua.h"  // R714: the OA Gargantua pins
+#include "rules/oa/oa86generals.h"  // R715: the OA Animal Generals pins
+#include "rules/oa/oa87goblinrat.h"  // R716: the OA Goblin Rat pins
+#include "rules/oa/oa88goblinspider.h"  // R717: the OA Goblin Spider pins
+#include "rules/oa/oa89hainu.h"  // R718: the OA Hai Nu pins
+#include "rules/oa/oa90hsingsing.h"  // R719: the OA Hsing-Sing pins
+#include "rules/oa/oa91huhuien.h"  // R720: the OA Hu Hsien pins
+#include "rules/oa/oa92kala.h"  // R721: the OA Kala pins
+#include "rules/oa/oa93kappa.h"  // R722: the OA Kappa pins
+#include "rules/oa/oa94kuei.h"  // R723: the OA Kuei pins
+#include "rules/oa/oa95menwako.h"  // R724: the OA Men Wako pins
+#include "rules/oa/oa96nat.h"  // R725: the OA Nat pins
+#include "rules/oa/oa97naturespirit.h"  // R726: the OA Nature Spirits pins
+#include "rules/oa/oa98ningyo.h"  // R727: the OA Ningyo pins
+#include "rules/oa/oa99oni.h"  // R728: the OA Oni pins
+#include "rules/oa/oa100poh.h"  // R729: the OA P oh pins
+#include "rules/oa/oa101shansao.h"  // R730: the OA Shan Sao pins
+#include "rules/oa/oa102shiro.h"  // R731: the OA Shirokinukatsukami pins
+#include "rules/oa/oa103tengu.h"  // R732: the OA Tengu pins
+#include "rules/oa/oa104classuse.h"  // R733: the OA class usage pins
+#include "rules/oa/oa105randtres.h"  // R734: the OA random treasure pins
+#include "rules/oa/oa106table74.h"  // R735: the OA Table 74 pins
+#include "rules/oa/oa107tableiia.h"  // R736: the OA Table II.A. pins
+#include "rules/oa/oa108tableiii.h"  // R737: the OA Table III pins
+#include "rules/oa/oa109itemmods.h"  // R738: the OA item mods pins
+#include "rules/oa/oa110potions.h"  // R739: the OA potions pins
+#include "rules/oa/oa111scrolls.h"  // R740: the OA scrolls pins
+#include "rules/oa/oa112rods.h"  // R741: the OA rods pins
+#include "rules/oa/oa113miscmagic.h"  // R742: the OA misc magic pins
+#include "rules/oa/oa114armorprose.h"  // R743: the OA armor prose pins
+#include "rules/oa/oa115table75.h"  // R744: the OA Table 75 pins
+#include "rules/oa/oa116table76.h"  // R745: the OA Table 76 pins
+#include "rules/oa/oa117table77.h"  // R746: the OA Table 77 pins
+#include "rules/oa/oa118armorexpl.h"  // R747: the OA armor explanation pins
+#include "rules/oa/oa119weaponsprose.h"  // R748: the OA weapons prose pins
+#include "rules/oa/oa120table78.h"  // R749: the OA Table 78 pins
+#include "rules/oa/oa121table79.h"  // R750: the OA Table 79 pins
+#include "rules/oa/oa122table80.h"  // R751: the OA Table 80 pins
+#include "rules/oa/oa123table81.h"  // R752: the OA Table 81 pins
+#include "rules/oa/oa124table82.h"  // R753: the OA Table 82 pins
+#include "rules/oa/oa125table83.h"  // R754: the OA Table 83 pins
+#include "rules/oa/oa126table84.h"  // R755: the OA Table 84 pins
+#include "rules/oa/oa127table85.h"  // R756: the OA Table 85 pins
+#include "rules/oa/oa128weaponexpl.h"  // R757: the OA weapon explanation pins
+#include "rules/oa/oa129magitemsprose.h"  // R758: the OA magical items prose pins
+#include "rules/oa/oa130table86.h"  // R759: the OA Table 86 pins
+#include "rules/oa/oa131karaturintro.h"  // R760: the OA Kara-Tur overview pins
+#include "rules/oa/oa132shoulung.h"  // R761: the OA Shou Lung pins
+#include "rules/oa/oa133tulung.h"  // R762: the OA Tu Lung pins
+#include "rules/oa/oa134wa.h"  // R763: the OA Wa pins
+#include "rules/oa/oa135kozakura.h"  // R764: the OA Kozakura pins
+#include "rules/oa/oa136gajin.h"  // R765: the OA Gajin pins
+#include "rules/oa/oa137food.h"  // R766: the OA Daily Life Food pins
+#include "rules/oa/oa138buildings.h"  // R767: the OA Daily Life Buildings pins
+#include "rules/oa/oa139manners.h"  // R768: the OA Daily Life Manners pins
+#include "rules/oa/oa140names.h"  // R769: the OA Daily Life Names pins
+#include "rules/oa/oa141backmatter.h"  // R770: the OA Back matter pins
+#include "rules/oa/oa142celestial.h"  // R771: the OA Celestial Emperor pins
+#include "rules/oa/oa143weaponsprose.h"  // R772: the OA Weapons prose pins
+#include "rules/oa/oa144dailylife.h"  // R773: the OA daily-life misses pins
+#include "rules/meta/file_patch_seam.h"  // R774: the file-patch seam tooling pins
+#include "rules/meta/rt_seam.h"  // R775: the RT seam fix pins
 #include "rules/mountcombat.h"  // R776: the mount site pins
 #include "rules/saddle.h"  // R777: the saddle acquisition pins
 #include "rules/mountmove.h"  // R778: the mounted movement pins
@@ -487,250 +487,250 @@
 #include "rules/deitylines.h"  // R783: the deity stat lines
 #include "rules/worshipsites.h"  // R784: the worship sites
 #include "rules/spelltableledger.h"  // R785: the UA spell table ledger
-#include "rules/uadeityprose1.h"  // R786: the dwarven deity prose
-#include "rules/uadeityprose2.h"  // R787: the elven deity prose
-#include "rules/uadeityprose3.h"  // R788: the halfling deity prose
-#include "rules/uadeityprose4.h"  // R789: the gnomish deity prose
-#include "rules/uadeityprose5.h"  // R790: the orcish deity prose
-#include "rules/lreg.h"  // R791: the registry promotion wiring
-#include "rules/prg.h"  // R792: the registry promotion defs
-#include "rules/prf.h"  // R793: the registry promotion def name fix
-#include "rules/rtk.h"  // R794: the tooling data_files adaptation
-#include "rules/rns.h"  // R795: the rn self-patch guard
-#include "rules/mma.h"  // R796: the MM2 arc opener
-#include "rules/mm2a.h"  // R797: the MM2 letter A
-#include "rules/mm2bc.h"  // R798: the MM2 letters B and C
-#include "rules/mm2dp.h"  // R799: the MM2 letter D part 1 - the planar evil families
-#include "rules/mm2dv.h"  // R800: the MM2 letter D part 2 - the deva turn
-#include "rules/mm2df.h"  // R801: the MM2 letter D part 3 - the devil section
-#include "rules/mm2dn.h"  // R802: the MM2 letter D part 4 - the diakk and dinosaur walk
-#include "rules/mm2dg.h"  // R803: the MM2 letter D part 5 - the dracolisk, dragon and dustdigger turns
-#include "rules/mm2de.h"  // R804: the MM2 letter E walk - the eagle, elf and executioner hood turns
-#include "rules/mm2fg.h"  // R805: the MM2 letters FG walk - the falcon, foo creature, giant and grue turns
-#include "rules/mm2hi.h"  // R806: the MM2 letters HI walk - the hangman tree, haunt, hollyphant, hordling and hybsil turns
-#include "rules/mm2jk.h"  // R807: the MM2 letters JK walk - the jann, mustard jelly, kampfult, kech, korred and kraken turns
-#include "rules/mm2lmn.h"  // R808: the MM2 letters LMN walk - the land lamprey, luck eater, lycanthrope, magman, mandragora, giant mantis, mantrap, margoyle, marid, shadow mastiff, mihstu, miner, minimal, modron, russet mold, mongrelman, moon dog, muckdweller, mud-man, myconid, nereid and narwhale turns
-#include "rules/mm2o.h"  // R809: the MM2 letter O walk - the obliviax, ogre aquatic (merrow), oliphant, ophidian, opinicus, otter and owl turns
-#include "rules/mm2p.h"  // R810: the MM2 letter P walk - the para-elemental (ice, smoke, magma and ooze), pech, pedipalp (large, huge and giant), phantom, phoenix, phycomid, planetar, pseudo-undead, deadly pudding (brown, dun and white) and pyrolisk turns
-#include "rules/mm2q.h"  // R811: the MM2 letter Q walk - the quasi-elemental lightning, quickling and quickwood turns
-#include "rules/mm2r.h"  // R812: the MM2 letter R walk - the rat (ordinary and vapor), raven (ordinary, huge and giant), retch plant and rock reptile turns
-#include "rules/mm2s.h"  // R813: the MM2 letter S walk - the sandling to taer turns
-#include "rules/mm2tuv.h"  // R814: the MM2 letters TUV walk - the tarrasque to vulture turns
-#include "rules/mm2wxyz.h"  // R815: the MM2 letters WXYZ walk - the weasel to zygom turns
-#include "rules/mm2encd.h"  // R816: the MM2 dungeon encounter tables walk - the ten monster level grids
-#include "rules/mm2enco.h"  // R817: the MM2 outdoor encounter tables walk - the 36 terrain grids
-#include "rules/mm2enca.h"  // R818: the MM2 aquatic encounter tables walk - the 12 surface and depths grids
-#include "rules/mm2enci.h"  // R819: the MM2 index walk - the merged MM1/FF/MM2 index census
-#include "rules/lmp.h"  // R820: the lammasu promotion
-#include "rules/lungp.h"  // R821: the lung promotion
-#include "rules/afw.h"  // R822: the audit files decomposition wiring
-#include "rules/migw.h"  // R823: the audit blocks migration wiring
-#include "rules/pmb.h"  // R824: the pilot migration round
-#include "rules/nmb.h"  // R825: the DMG appendix migration batch
-#include "rules/tmb.h"  // R826: the DMG tables migration batch
-#include "rules/qmb.h"  // R827: the subclass migration batch
-#include "rules/zmb.h"  // R828: the hundred-block migration batch
-#include "rules/vmb.h"  // R829: the UA and WSG migration batch
-#include "rules/xmb.h"  // R830: the WSG tail and DSG migration batch
-#include "rules/kmb.h"  // R831: the planes and OA migration batch
-#include "rules/jmb.h"  // R832: the OA tail migration batch
-#include "rules/fmb.h"  // R833: the final digest migration batch
-#include "rules/hmb.h"  // R834: the holdback tooling patch
-#include "rules/ymb.h"  // R835: the final holdback batch
-#include "rules/ffp.h"  // R836: the first FF promotion batch
-#include "rules/ffs.h"  // R837: the second FF promotion batch
-#include "rules/fft.h"  // R838: the third FF promotion batch
-#include "rules/ffu.h"  // R839: the fourth FF promotion batch
-#include "rules/ffh.h"  // R840: the hornet promotion
-#include "rules/ffik.h"  // R841: the FF index line walk
-#include "rules/ffj.h"  // R842: the fifth FF promotion batch
-#include "rules/ffk.h"  // R843: the sixth FF promotion batch
-#include "rules/ffl.h"  // R844: the seventh FF promotion batch
-#include "rules/ffm.h"  // R845: the eighth FF promotion batch
-#include "rules/ffn.h"  // R846: the FF monster level tables
-#include "rules/ffo.h"  // R847: the FF encounter listings
-#include "rules/ffq.h"  // R848: the FF magic item tables
-#include "rules/dga.h"  // R849: the DDG front matter
-#include "rules/dgb.h"  // R850: the American Indian mythos
-#include "rules/dgc.h"  // R851: the Arthurian mythos
-#include "rules/dgd.h"  // R852: the Babylonian mythos
-#include "rules/dge.h"  // R853: the Celtic mythos
-#include "rules/dgf.h"  // R854: the Central American mythos
-#include "rules/dgg.h"  // R855: the Chinese mythos
-#include "rules/cth.h"  // R856: the Cthulhu mythos
-#include "rules/egp.h"  // R857: the Egyptian mythos
-#include "rules/klv.h"  // R858: the Finnish mythos
-#include "rules/grk.h"  // R859: the Greek mythos
-#include "rules/idn.h"  // R860: the Indian mythos
-#include "rules/jpn.h"  // R861: the Japanese mythos
-#include "rules/mlb.h"  // R862: the Melnibonean mythos
-#include "rules/nhw.h"  // R863: the Nehwon mythos
-#include "rules/nhg.h"  // R864: the Nonhumans' Deities
-#include "rules/nrs.h"  // R865: the Norse mythos
-#include "rules/smr.h"  // R866: the Sumerian mythos
+#include "rules/ua/uadeityprose1.h"  // R786: the dwarven deity prose
+#include "rules/ua/uadeityprose2.h"  // R787: the elven deity prose
+#include "rules/ua/uadeityprose3.h"  // R788: the halfling deity prose
+#include "rules/ua/uadeityprose4.h"  // R789: the gnomish deity prose
+#include "rules/ua/uadeityprose5.h"  // R790: the orcish deity prose
+#include "rules/meta/registry_promotion_wiring.h"  // R791: the registry promotion wiring
+#include "rules/meta/registry_promotion_defs.h"  // R792: the registry promotion defs
+#include "rules/meta/registry_def_name_fix.h"  // R793: the registry promotion def name fix
+#include "rules/meta/tooling_datafiles_adaptation.h"  // R794: the tooling data_files adaptation
+#include "rules/meta/rn_selfpatch_guard.h"  // R795: the rn self-patch guard
+#include "rules/mm/mm2_arc_opener.h"  // R796: the MM2 arc opener
+#include "rules/mm/mm2a.h"  // R797: the MM2 letter A
+#include "rules/mm/mm2bc.h"  // R798: the MM2 letters B and C
+#include "rules/mm/mm2dp.h"  // R799: the MM2 letter D part 1 - the planar evil families
+#include "rules/mm/mm2dv.h"  // R800: the MM2 letter D part 2 - the deva turn
+#include "rules/mm/mm2df.h"  // R801: the MM2 letter D part 3 - the devil section
+#include "rules/mm/mm2dn.h"  // R802: the MM2 letter D part 4 - the diakk and dinosaur walk
+#include "rules/mm/mm2dg.h"  // R803: the MM2 letter D part 5 - the dracolisk, dragon and dustdigger turns
+#include "rules/mm/mm2de.h"  // R804: the MM2 letter E walk - the eagle, elf and executioner hood turns
+#include "rules/mm/mm2fg.h"  // R805: the MM2 letters FG walk - the falcon, foo creature, giant and grue turns
+#include "rules/mm/mm2hi.h"  // R806: the MM2 letters HI walk - the hangman tree, haunt, hollyphant, hordling and hybsil turns
+#include "rules/mm/mm2jk.h"  // R807: the MM2 letters JK walk - the jann, mustard jelly, kampfult, kech, korred and kraken turns
+#include "rules/mm/mm2lmn.h"  // R808: the MM2 letters LMN walk - the land lamprey, luck eater, lycanthrope, magman, mandragora, giant mantis, mantrap, margoyle, marid, shadow mastiff, mihstu, miner, minimal, modron, russet mold, mongrelman, moon dog, muckdweller, mud-man, myconid, nereid and narwhale turns
+#include "rules/mm/mm2o.h"  // R809: the MM2 letter O walk - the obliviax, ogre aquatic (merrow), oliphant, ophidian, opinicus, otter and owl turns
+#include "rules/mm/mm2p.h"  // R810: the MM2 letter P walk - the para-elemental (ice, smoke, magma and ooze), pech, pedipalp (large, huge and giant), phantom, phoenix, phycomid, planetar, pseudo-undead, deadly pudding (brown, dun and white) and pyrolisk turns
+#include "rules/mm/mm2q.h"  // R811: the MM2 letter Q walk - the quasi-elemental lightning, quickling and quickwood turns
+#include "rules/mm/mm2r.h"  // R812: the MM2 letter R walk - the rat (ordinary and vapor), raven (ordinary, huge and giant), retch plant and rock reptile turns
+#include "rules/mm/mm2s.h"  // R813: the MM2 letter S walk - the sandling to taer turns
+#include "rules/mm/mm2tuv.h"  // R814: the MM2 letters TUV walk - the tarrasque to vulture turns
+#include "rules/mm/mm2wxyz.h"  // R815: the MM2 letters WXYZ walk - the weasel to zygom turns
+#include "rules/mm/mm2encd.h"  // R816: the MM2 dungeon encounter tables walk - the ten monster level grids
+#include "rules/mm/mm2enco.h"  // R817: the MM2 outdoor encounter tables walk - the 36 terrain grids
+#include "rules/mm/mm2enca.h"  // R818: the MM2 aquatic encounter tables walk - the 12 surface and depths grids
+#include "rules/mm/mm2enci.h"  // R819: the MM2 index walk - the merged MM1/FF/MM2 index census
+#include "rules/mm/mm2_lammasu_promotion.h"  // R820: the lammasu promotion
+#include "rules/ff/lung_dragons_promotion.h"  // R821: the lung promotion
+#include "rules/engine/audit_wiring.h"  // R822: the audit files decomposition wiring
+#include "rules/meta/migration_wiring.h"  // R823: the audit blocks migration wiring
+#include "rules/meta/migration_batch_pilot.h"  // R824: the pilot migration round
+#include "rules/meta/migration_batch_dmg_appendix.h"  // R825: the DMG appendix migration batch
+#include "rules/meta/migration_batch_dmg_tables.h"  // R826: the DMG tables migration batch
+#include "rules/meta/migration_batch_subclass.h"  // R827: the subclass migration batch
+#include "rules/meta/migration_batch_hundred.h"  // R828: the hundred-block migration batch
+#include "rules/meta/migration_batch_ua_wsg.h"  // R829: the UA and WSG migration batch
+#include "rules/meta/migration_batch_wsg_tail_dsg.h"  // R830: the WSG tail and DSG migration batch
+#include "rules/meta/migration_batch_planes_oa.h"  // R831: the planes and OA migration batch
+#include "rules/meta/migration_batch_oa_tail.h"  // R832: the OA tail migration batch
+#include "rules/meta/migration_batch_final_digest.h"  // R833: the final digest migration batch
+#include "rules/meta/tooling_holdback_patch.h"  // R834: the holdback tooling patch
+#include "rules/meta/migration_batch_final_holdback.h"  // R835: the final holdback batch
+#include "rules/ff/promo_batch1.h"  // R836: the first FF promotion batch
+#include "rules/ff/promo_batch2.h"  // R837: the second FF promotion batch
+#include "rules/ff/promo_batch3.h"  // R838: the third FF promotion batch
+#include "rules/ff/promo_batch4.h"  // R839: the fourth FF promotion batch
+#include "rules/ff/hornet_promotion.h"  // R840: the hornet promotion
+#include "rules/ff/index_walk.h"  // R841: the FF index line walk
+#include "rules/ff/promo_batch5.h"  // R842: the fifth FF promotion batch
+#include "rules/ff/promo_batch6.h"  // R843: the sixth FF promotion batch
+#include "rules/ff/promo_batch7.h"  // R844: the seventh FF promotion batch
+#include "rules/ff/promo_batch8.h"  // R845: the eighth FF promotion batch
+#include "rules/ff/monster_level_tables.h"  // R846: the FF monster level tables
+#include "rules/ff/encounter_listings.h"  // R847: the FF encounter listings
+#include "rules/ff/magic_item_tables.h"  // R848: the FF magic item tables
+#include "rules/ddg/ddg_frontmatter.h"  // R849: the DDG front matter
+#include "rules/ddg/mythos_american_indian.h"  // R850: the American Indian mythos
+#include "rules/ddg/mythos_arthurian.h"  // R851: the Arthurian mythos
+#include "rules/ddg/mythos_babylonian.h"  // R852: the Babylonian mythos
+#include "rules/ddg/mythos_celtic.h"  // R853: the Celtic mythos
+#include "rules/ddg/mythos_central_american.h"  // R854: the Central American mythos
+#include "rules/ddg/mythos_chinese.h"  // R855: the Chinese mythos
+#include "rules/ddg/mythos_cthulhu.h"  // R856: the Cthulhu mythos
+#include "rules/ddg/mythos_egyptian.h"  // R857: the Egyptian mythos
+#include "rules/ddg/mythos_finnish.h"  // R858: the Finnish mythos
+#include "rules/ddg/mythos_greek.h"  // R859: the Greek mythos
+#include "rules/ddg/mythos_indian.h"  // R860: the Indian mythos
+#include "rules/ddg/mythos_japanese.h"  // R861: the Japanese mythos
+#include "rules/ddg/mythos_melnibonean.h"  // R862: the Melnibonean mythos
+#include "rules/ddg/mythos_nehwon.h"  // R863: the Nehwon mythos
+#include "rules/ddg/nonhumans_deities.h"  // R864: the Nonhumans' Deities
+#include "rules/ddg/mythos_norse.h"  // R865: the Norse mythos
+#include "rules/ddg/mythos_sumerian.h"  // R866: the Sumerian mythos
 #include "rules/pln.h"  // R867: the known planes of existence
-#include "rules/tpl.h"  // R868: temple trappings
-#include "rules/cqc.h"  // R869: the clerical chart, batch one
-#include "rules/cqc2.h"  // R870: the clerical chart, batch two
-#include "rules/cqc3.h"  // R871: the clerical chart, batch three
-#include "rules/cqc4.h"  // R872: the clerical chart, batch four
-#include "rules/cqc5.h"  // R873: the clerical chart, batch five
-#include "rules/cqc6.h"  // R874: the clerical chart, batch six
-#include "rules/cqc7.h"  // R875: the clerical chart, batch seven
-#include "rules/cqc8.h"  // R876: the clerical chart, batch eight
-#include "rules/idx.h"  // R877: Appendix 4 and the index
-#include "rules/afg.h"  // R878: the alignment figures
-#include "rules/rsc.h"  // R879: the registry schema
-#include "rules/dpe.h"  // R880: the DDG lua promotion, batch one
-#include "rules/dpt.h"  // R881: the DDG lua promotion, batch two
-#include "rules/dpu.h"  // R882: the DDG lua promotion, batch three
-#include "rules/dpw.h"  // R883: the DDG lua promotion, batch four
-#include "rules/dpx.h"  // R884: the DDG lua promotion, batch five
-#include "rules/dpy.h"  // R885: the DDG lua promotion, batch six
-#include "rules/dpz.h"  // R886: the DDG lua promotion, batch seven
-#include "rules/ivs.h"  // R887: the Ives attribute tables, the Dragon opener
+#include "rules/ddg/appendix2_temple_trappings.h"  // R868: temple trappings
+#include "rules/ddg/cqc_batch1.h"  // R869: the clerical chart, batch one
+#include "rules/ddg/cqc_batch2.h"  // R870: the clerical chart, batch two
+#include "rules/ddg/cqc_batch3.h"  // R871: the clerical chart, batch three
+#include "rules/ddg/cqc_batch4.h"  // R872: the clerical chart, batch four
+#include "rules/ddg/cqc_batch5.h"  // R873: the clerical chart, batch five
+#include "rules/ddg/cqc_batch6.h"  // R874: the clerical chart, batch six
+#include "rules/ddg/cqc_batch7.h"  // R875: the clerical chart, batch seven
+#include "rules/ddg/cqc_batch8.h"  // R876: the clerical chart, batch eight
+#include "rules/ddg/appendix4_index.h"  // R877: Appendix 4 and the index
+#include "rules/ddg/alignment_figures.h"  // R878: the alignment figures
+#include "rules/meta/registry_schema.h"  // R879: the registry schema
+#include "rules/ddg/lua_promo_batch1.h"  // R880: the DDG lua promotion, batch one
+#include "rules/ddg/lua_promo_batch2.h"  // R881: the DDG lua promotion, batch two
+#include "rules/ddg/lua_promo_batch3.h"  // R882: the DDG lua promotion, batch three
+#include "rules/ddg/lua_promo_batch4.h"  // R883: the DDG lua promotion, batch four
+#include "rules/ddg/lua_promo_batch5.h"  // R884: the DDG lua promotion, batch five
+#include "rules/ddg/lua_promo_batch6.h"  // R885: the DDG lua promotion, batch six
+#include "rules/ddg/lua_promo_batch7.h"  // R886: the DDG lua promotion, batch seven
+#include "rules/dragon/issue001_ives_tables.h"  // R887: the Ives attribute tables, the Dragon opener
 #include "rules/drg.h"  // R888: the Dragon small-variant set
-#include "rules/arn.h"  // R889: the Aronson illusionist deltas
-#include "rules/rmz.h"  // R890: the Remorhaz lore, the issue-2 opener
-#include "rules/alc.h"  // R891: the Alchemist class
-#include "rules/fch.h"  // R892: the Fischer Hints magic items
-#include "rules/sys.h"  // R893: the systems round
+#include "rules/dragon/aronson_illusionist_deltas.h"  // R889: the Aronson illusionist deltas
+#include "rules/dragon/issue002_remorhaz_lore.h"  // R890: the Remorhaz lore, the issue-2 opener
+#include "rules/dragon/class_alchemist.h"  // R891: the Alchemist class
+#include "rules/dragon/fischer_hints_magic_items.h"  // R892: the Fischer Hints magic items
+#include "rules/dragon/systems_round.h"  // R893: the systems round
 #include "rules/art.h"  // R894: the Ward Artificer devices items sweep
-#include "rules/wmn.h"  // R895: the Lakofka women round
-#include "rules/spr.h"  // R896: the Healer and Scribe specialists round
-#include "rules/fsc.h"  // R897: the Samurai and Berserker fighting sub-classes round
-#include "rules/chr.h"  // R898: the Dwarves, birth tables and Eldar deltas character round
-#include "rules/cmv.h"  // R899: the Idiot, Jester and dexterity mods comedy round
-#include "rules/cfe.h"  // R900: the Dragon issue-4 opener, the Creature Features monsters
-#include "rules/cfc.h"  // R901: the Creature Features box closing round
-#include "rules/wch.h"  // R902: the Dragon issue-5 opener, the Witchcraft Supplement, the Anhkheg and the Wizard Research Rules
-#include "rules/cwx.h"  // R903: the Dragon issue-5 box closing round
-#include "rules/wwt.h"  // R904: the witchcraft wilderness encounter table round, the upload cross-check resolution
-#include "rules/wrm.h"  // R905: the witch remainders and the Friedman elf sub-race table, the might-be-usable micro-round
-#include "rules/dso.h"  // R906: the Dragon issue-6 opener, the Sea Trade system, the psionic option, the morale system and the Death Angel
-#include "rules/csx.h"  // R907: the Dragon issue-6 box closing round, the four-chain walk complete
-#include "rules/pwl.h"  // R908: the Dragon issue-7 opener, the Prowler, the thin single-chain harvest
-#include "rules/cpx.h"  // R909: the Dragon issue-7 box closing round, the thin walk complete
-#include "rules/dgo.h"  // R910: the Dragon issue-8 opener, the Gygax Planes article, the Watson towns article and the Kuntz gems re-evaluation
-#include "rules/cgx.h"  // R911: the Dragon issue-8 box closing round, the three-chain walk complete
-#include "rules/dgn.h"  // R912: the Dragon issue-9 opener, the Gygax alignment article and the Ward Tombs & Crypts article
-#include "rules/dnp.h"  // R913: the Dragon issue-9 box closing round, the two-chain walk complete
-#include "rules/dtn.h"  // R914: the Dragon issue-10 opener part one, the Orgies Inc. article, the Clifton wilderness article and the Random Monsters article
-#include "rules/dte.h"  // R915: the Dragon issue-10 opener part two, the Gilbert dungeon method article, the Weights & Measures article and the Holsinger level ritual article
-#include "rules/dfp.h"  // R916: the Dragon issue-10 box closing round, the six-chain walk complete
-#include "rules/brw.h"  // R917: the Dragon issue-11 opener, the Kuntz brawling article and the Ward quarterstaff article
-#include "rules/bfx.h"  // R918: the Dragon issue-11 box closing round, the two-chain walk complete
-#include "rules/ilv.h"  // R919: the Dragon issue-12 opener part one, the Ovalle illusionist article and the Endersby and Carroll ship cargo article
-#include "rules/myt.h"  // R920: the Dragon issue-12 opener part two, the Persian Mythos and the Lovecraftian Mythos
-#include "rules/fcl.h"  // R921: the Dragon issue-12 box closing round, the four-chain walk complete
-#include "rules/dgm.h"  // R922: the Dragon issue-13 opener part one, the Shlump da Orc giant physics article and the Jon Pickens demon generation article
-#include "rules/kmy.h"  // R923: the Dragon issue-13 opener part two, The Japanese Mythos by Jerome Arkenberg
-#include "rules/icl.h"  // R924: the Dragon issue-13 box closing round, the three-chain walk complete
-#include "rules/lyc.h"  // R925: the Dragon issue-14 opener, the Name That Monster Contest #1 winners and the Rihn lycanthropy variant
-#include "rules/f14.h"  // R926: the Dragon issue-14 box closing round, the two-chain walk complete
-#include "rules/drm.h"  // R927: the Dragon issue-15 opener, Dragon Magic and the four rider chains
-#include "rules/f15.h"  // R928: the Dragon issue-15 box closing round, the five-chain walk complete
-#include "rules/nin.h"  // R929: the Dragon issue-16 opener, the Near Eastern Mythos and the Ninja chains
-#include "rules/f16.h"  // R930: the Dragon issue-16 box closing round, the two-chain walk complete
-#include "rules/jou.h"  // R931: the Dragon issue-17 opener part one, the seven-chain round
-#include "rules/wzd.h"  // R932: the Dragon issue-17 opener part two, the Ward wizard variants round
-#include "rules/f17.h"  // R933: the Dragon issue-17 box closing round, the eight-chain walk complete
-#include "rules/psy.h"  // R934: the Dragon issue-18 opener part one, the four-chain round
-#include "rules/mkn.h"  // R935: the Dragon issue-18 opener part two, the three-chain round
-#include "rules/f18.h"  // R936: the Dragon issue-18 box closing round, the seven-chain walk complete
-#include "rules/dws.h"  // R937: the Dragon issue-19 opener part one, the three-chain round
-#include "rules/sdm.h"  // R938: the Dragon issue-19 opener part two, the three-chain round
-#include "rules/d19.h"  // R939: the Dragon issue-19 box closing round, the six-chain walk complete
-#include "rules/t20.h"  // R940: the Dragon issue-20 opener part one, the three-chain round
-#include "rules/dst.h"  // R941: the Dragon issue-20 opener part two, the two-chain round
-#include "rules/d2c.h"  // R942: the Dragon issue-20 box closing round, the five-chain walk complete
-#include "rules/t21.h"  // R943: the Dragon issue-21 opener part one, the three-chain round
-#include "rules/g21.h"  // R944: the Dragon issue-21 opener part two, the four-chain round
-#include "rules/d21.h"  // R945: the Dragon issue-21 box closing round, the seven-chain walk complete
-#include "rules/t22.h"  // R946: the Dragon issue-22 opener part one, the three-chain round
-#include "rules/s22.h"  // R947: the Dragon issue-22 opener part two, the DMG sneak preview table round
-#include "rules/k22.h"  // R948: the Dragon issue-22 opener part three, the five-chain commentary round
-#include "rules/l22.h"  // R949: the Dragon issue-22 box closing round, the four-round walk complete
-#include "rules/t23.h"  // R950: the Dragon issue-23 opener part one, the three-chain variant round
-#include "rules/s23.h"  // R951: the Dragon issue-23 opener part two, the Lower Planes creature-generation table round
-#include "rules/k23.h"  // R952: the Dragon issue-23 opener part three, the six-chain commentary round
-#include "rules/l23.h"  // R953: the Dragon issue-23 box closing round, the second four-round walk complete
-#include "rules/t24.h"  // R954: the Dragon issue-24 opener part one, the three-chain variant round
-#include "rules/s24.h"  // R955: the Dragon issue-24 opener part two, the alignment pantheon table round
-#include "rules/k24.h"  // R956: the Dragon issue-24 opener part three, the ten-chain commentary round
-#include "rules/l24.h"  // R957: the Dragon issue-24 box closing round, the third four-round walk complete
-#include "rules/t25.h"  // R958: the Dragon issue-25 opener part one, the three-chain opener set
-#include "rules/s25.h"  // R959: the Dragon issue-25 opener part two, the war game and the vampire roster table round
-#include "rules/k25.h"  // R960: the Dragon issue-25 opener part three, the three-chain commentary set
-#include "rules/l25.h"  // R961: the Dragon issue-25 box closing round, the fourth four-round walk complete
-#include "rules/t26.h"  // R962: the Dragon issue-26 opener part one, the five-chain opener set
-#include "rules/s26.h"  // R963: the Dragon issue-26 opener part two, the four-chain table round
-#include "rules/k26.h"  // R964: the Dragon issue-26 opener part three, the four-chain commentary set
-#include "rules/l26.h"  // R965: the Dragon issue-26 box closing round, the fifth four-round walk complete
-#include "rules/csh.h"  // R966: the content-structure charter round
-#include "rules/cnt.h"  // R967: the content tree creation round
-#include "rules/rpf.h"  // R968: the rules record format round
-#include "rules/dp1.h"  // R969: the Dragon promotion batch one
-#include "rules/dp2.h"  // R970: the Dragon promotion batch two
-#include "rules/dp3.h"  // R971: the Dragon promotion batch three
-#include "rules/dp4.h"  // R972: the Dragon promotion batch four
-#include "rules/dp5.h"  // R973: the Dragon promotion batch five
-#include "rules/dp6.h"  // R974: the Dragon promotion batch six
-#include "rules/dp7.h"  // R975: the Dragon promotion batch seven
-#include "rules/dp8.h"  // R976: the Dragon promotion batch eight
-#include "rules/dp9.h"  // R977: the Dragon promotion batch nine
-#include "rules/dp10.h"  // R978: the Dragon promotion batch ten
-#include "rules/dp11.h"  // R979: the Dragon promotion batch eleven
-#include "rules/dp12.h"  // R980: the Dragon promotion batch twelve
-#include "rules/oa1.h"  // R981: the OA promotion batch one
-#include "rules/oa2.h"  // R982: the OA promotion batch two
-#include "rules/oa3.h"  // R983: the OA promotion batch three
-#include "rules/oa4.h"  // R984: the OA promotion batch four
-#include "rules/oa5.h"  // R985: the OA promotion batch five
-#include "rules/oa6.h"  // R986: the OA promotion batch six
-#include "rules/oa7.h"  // R987: the OA promotion batch seven
-#include "rules/oa8.h"  // R988: the OA promotion batch eight
-#include "rules/wsg1.h"  // R989: the WSG promotion batch one
-#include "rules/wsg2.h"  // R990: the WSG promotion batch two
-#include "rules/wsg3.h"  // R991: the WSG promotion batch three
-#include "rules/wsg4.h"  // R992: the WSG promotion batch four
-#include "rules/wsg5.h"  // R993: the WSG promotion batch five
-#include "rules/dsg1.h"  // R994: the DSG promotion batch one
-#include "rules/dsg2.h"  // R995: the DSG promotion batch two
-#include "rules/dsg3.h"  // R996: the DSG promotion batch three
-#include "rules/dsg4.h"  // R997: the DSG promotion batch four
-#include "rules/dsg5.h"  // R998: the DSG promotion batch five
-#include "rules/ua1.h"  // R999: the UA promotion batch one
-#include "rules/ua2.h"  // R1000: the UA promotion batch two
-#include "rules/ua3.h"  // R1001: the UA promotion batch three
-#include "rules/ua4.h"  // R1002: the UA promotion batch four
-#include "rules/ua5.h"  // R1003: the UA promotion batch five
-#include "rules/ua6.h"  // R1004: the UA promotion batch six
-#include "rules/ua7.h"  // R1005: the UA promotion batch seven
-#include "rules/pm1.h"  // R1006: the promotions mop round one - the FF never-load repair
-#include "rules/pm2.h"  // R1007: the promotions mop round two - the MM1 text completion
-#include "rules/pm3.h"  // R1008: the promotions mop round three - the MM1 collation half
-#include "rules/mn1.h"  // R1009: the MM1 normalization batch one
-#include "rules/mn2.h"  // R1010: the MM1 normalization batch two
-#include "rules/mn3.h"  // R1011: the MM1 normalization batch three
-#include "rules/mn4.h"  // R1012: the MM1 normalization batch four
-#include "rules/mn5.h"  // R1013: the MM1 normalization batch five
-#include "rules/mn6.h"  // R1014: the MM1 normalization batch six
-#include "rules/oa9.h"  // R1015: the OA table promotion batch nine
-#include "rules/oap1.h"  // R1016: the OA normalization batch
-#include "rules/mq1.h"  // R1017: the MM2 normalization batch one
-#include "rules/mq2.h"  // R1018: the MM2 normalization batch two
-#include "rules/mq3.h"  // R1019: the MM2 normalization batch three
-#include "rules/mq4.h"  // R1020: the MM2 normalization batch four
-#include "rules/fq1.h"  // R1021: the FF normalization batch one
-#include "rules/fq2.h"  // R1022: the FF normalization batch two
-#include "rules/fq3.h"  // R1023: the FF normalization batch three
+#include "rules/dragon/issue003_women_magic_notes.h"  // R895: the Lakofka women round
+#include "rules/dragon/specialists_healers_scribes.h"  // R896: the Healer and Scribe specialists round
+#include "rules/dragon/fighting_subclasses.h"  // R897: the Samurai and Berserker fighting sub-classes round
+#include "rules/dragon/dwarves_birth_eldar.h"  // R898: the Dwarves, birth tables and Eldar deltas character round
+#include "rules/dragon/idiot_jester_dex_mods.h"  // R899: the Idiot, Jester and dexterity mods comedy round
+#include "rules/dragon/issue004_creature_features.h"  // R900: the Dragon issue-4 opener, the Creature Features monsters
+#include "rules/dragon/issue004_close.h"  // R901: the Creature Features box closing round
+#include "rules/dragon/issue005_opener.h"  // R902: the Dragon issue-5 opener, the Witchcraft Supplement, the Anhkheg and the Wizard Research Rules
+#include "rules/dragon/issue005_close.h"  // R903: the Dragon issue-5 box closing round
+#include "rules/dragon/witchcraft_wilderness_table.h"  // R904: the witchcraft wilderness encounter table round, the upload cross-check resolution
+#include "rules/dragon/witch_remainders_elf_subraces.h"  // R905: the witch remainders and the Friedman elf sub-race table, the might-be-usable micro-round
+#include "rules/dragon/issue006_opener.h"  // R906: the Dragon issue-6 opener, the Sea Trade system, the psionic option, the morale system and the Death Angel
+#include "rules/dragon/issue006_close.h"  // R907: the Dragon issue-6 box closing round, the four-chain walk complete
+#include "rules/dragon/issue007_prowler.h"  // R908: the Dragon issue-7 opener, the Prowler, the thin single-chain harvest
+#include "rules/dragon/issue007_close.h"  // R909: the Dragon issue-7 box closing round, the thin walk complete
+#include "rules/dragon/issue008_opener.h"  // R910: the Dragon issue-8 opener, the Gygax Planes article, the Watson towns article and the Kuntz gems re-evaluation
+#include "rules/dragon/issue008_close.h"  // R911: the Dragon issue-8 box closing round, the three-chain walk complete
+#include "rules/dragon/issue009_opener.h"  // R912: the Dragon issue-9 opener, the Gygax alignment article and the Ward Tombs & Crypts article
+#include "rules/dragon/issue009_close.h"  // R913: the Dragon issue-9 box closing round, the two-chain walk complete
+#include "rules/dragon/issue010_opener1.h"  // R914: the Dragon issue-10 opener part one, the Orgies Inc. article, the Clifton wilderness article and the Random Monsters article
+#include "rules/dragon/issue010_opener2.h"  // R915: the Dragon issue-10 opener part two, the Gilbert dungeon method article, the Weights & Measures article and the Holsinger level ritual article
+#include "rules/dragon/issue010_close.h"  // R916: the Dragon issue-10 box closing round, the six-chain walk complete
+#include "rules/dragon/issue011_opener.h"  // R917: the Dragon issue-11 opener, the Kuntz brawling article and the Ward quarterstaff article
+#include "rules/dragon/issue011_close.h"  // R918: the Dragon issue-11 box closing round, the two-chain walk complete
+#include "rules/dragon/issue012_opener1.h"  // R919: the Dragon issue-12 opener part one, the Ovalle illusionist article and the Endersby and Carroll ship cargo article
+#include "rules/dragon/issue012_opener2.h"  // R920: the Dragon issue-12 opener part two, the Persian Mythos and the Lovecraftian Mythos
+#include "rules/dragon/issue012_close.h"  // R921: the Dragon issue-12 box closing round, the four-chain walk complete
+#include "rules/dragon/issue013_opener1.h"  // R922: the Dragon issue-13 opener part one, the Shlump da Orc giant physics article and the Jon Pickens demon generation article
+#include "rules/dragon/issue013_opener2.h"  // R923: the Dragon issue-13 opener part two, The Japanese Mythos by Jerome Arkenberg
+#include "rules/dragon/issue013_close.h"  // R924: the Dragon issue-13 box closing round, the three-chain walk complete
+#include "rules/dragon/issue014_opener.h"  // R925: the Dragon issue-14 opener, the Name That Monster Contest #1 winners and the Rihn lycanthropy variant
+#include "rules/dragon/issue014_close.h"  // R926: the Dragon issue-14 box closing round, the two-chain walk complete
+#include "rules/dragon/issue015_opener.h"  // R927: the Dragon issue-15 opener, Dragon Magic and the four rider chains
+#include "rules/dragon/issue015_close.h"  // R928: the Dragon issue-15 box closing round, the five-chain walk complete
+#include "rules/dragon/issue016_opener.h"  // R929: the Dragon issue-16 opener, the Near Eastern Mythos and the Ninja chains
+#include "rules/dragon/issue016_close.h"  // R930: the Dragon issue-16 box closing round, the two-chain walk complete
+#include "rules/dragon/issue017_opener1.h"  // R931: the Dragon issue-17 opener part one, the seven-chain round
+#include "rules/dragon/issue017_opener2.h"  // R932: the Dragon issue-17 opener part two, the Ward wizard variants round
+#include "rules/dragon/issue017_close.h"  // R933: the Dragon issue-17 box closing round, the eight-chain walk complete
+#include "rules/dragon/issue018_opener1.h"  // R934: the Dragon issue-18 opener part one, the four-chain round
+#include "rules/dragon/issue018_opener2.h"  // R935: the Dragon issue-18 opener part two, the three-chain round
+#include "rules/dragon/issue018_close.h"  // R936: the Dragon issue-18 box closing round, the seven-chain walk complete
+#include "rules/dragon/issue019_opener1.h"  // R937: the Dragon issue-19 opener part one, the three-chain round
+#include "rules/dragon/issue019_opener2.h"  // R938: the Dragon issue-19 opener part two, the three-chain round
+#include "rules/dragon/issue019_close.h"  // R939: the Dragon issue-19 box closing round, the six-chain walk complete
+#include "rules/dragon/issue020_opener1.h"  // R940: the Dragon issue-20 opener part one, the three-chain round
+#include "rules/dragon/issue020_opener2.h"  // R941: the Dragon issue-20 opener part two, the two-chain round
+#include "rules/dragon/issue020_close.h"  // R942: the Dragon issue-20 box closing round, the five-chain walk complete
+#include "rules/dragon/issue021_opener1.h"  // R943: the Dragon issue-21 opener part one, the three-chain round
+#include "rules/dragon/issue021_opener2.h"  // R944: the Dragon issue-21 opener part two, the four-chain round
+#include "rules/dragon/issue021_close.h"  // R945: the Dragon issue-21 box closing round, the seven-chain walk complete
+#include "rules/dragon/issue022_opener1.h"  // R946: the Dragon issue-22 opener part one, the three-chain round
+#include "rules/dragon/issue022_opener2.h"  // R947: the Dragon issue-22 opener part two, the DMG sneak preview table round
+#include "rules/dragon/issue022_opener3.h"  // R948: the Dragon issue-22 opener part three, the five-chain commentary round
+#include "rules/dragon/issue022_close.h"  // R949: the Dragon issue-22 box closing round, the four-round walk complete
+#include "rules/dragon/issue023_opener1.h"  // R950: the Dragon issue-23 opener part one, the three-chain variant round
+#include "rules/dragon/issue023_opener2.h"  // R951: the Dragon issue-23 opener part two, the Lower Planes creature-generation table round
+#include "rules/dragon/issue023_opener3.h"  // R952: the Dragon issue-23 opener part three, the six-chain commentary round
+#include "rules/dragon/issue023_close.h"  // R953: the Dragon issue-23 box closing round, the second four-round walk complete
+#include "rules/dragon/issue024_opener1.h"  // R954: the Dragon issue-24 opener part one, the three-chain variant round
+#include "rules/dragon/issue024_opener2.h"  // R955: the Dragon issue-24 opener part two, the alignment pantheon table round
+#include "rules/dragon/issue024_opener3.h"  // R956: the Dragon issue-24 opener part three, the ten-chain commentary round
+#include "rules/dragon/issue024_close.h"  // R957: the Dragon issue-24 box closing round, the third four-round walk complete
+#include "rules/dragon/issue025_opener1.h"  // R958: the Dragon issue-25 opener part one, the three-chain opener set
+#include "rules/dragon/issue025_opener2.h"  // R959: the Dragon issue-25 opener part two, the war game and the vampire roster table round
+#include "rules/dragon/issue025_opener3.h"  // R960: the Dragon issue-25 opener part three, the three-chain commentary set
+#include "rules/dragon/issue025_close.h"  // R961: the Dragon issue-25 box closing round, the fourth four-round walk complete
+#include "rules/dragon/issue026_opener1.h"  // R962: the Dragon issue-26 opener part one, the five-chain opener set
+#include "rules/dragon/issue026_opener2.h"  // R963: the Dragon issue-26 opener part two, the four-chain table round
+#include "rules/dragon/issue026_opener3.h"  // R964: the Dragon issue-26 opener part three, the four-chain commentary set
+#include "rules/dragon/issue026_close.h"  // R965: the Dragon issue-26 box closing round, the fifth four-round walk complete
+#include "rules/meta/content_structure_charter.h"  // R966: the content-structure charter round
+#include "rules/meta/content_tree_creation.h"  // R967: the content tree creation round
+#include "rules/meta/rules_record_format.h"  // R968: the rules record format round
+#include "rules/dragon/promo_batch01.h"  // R969: the Dragon promotion batch one
+#include "rules/dragon/promo_batch02.h"  // R970: the Dragon promotion batch two
+#include "rules/dragon/promo_batch03.h"  // R971: the Dragon promotion batch three
+#include "rules/dragon/promo_batch04.h"  // R972: the Dragon promotion batch four
+#include "rules/dragon/promo_batch05.h"  // R973: the Dragon promotion batch five
+#include "rules/dragon/promo_batch06.h"  // R974: the Dragon promotion batch six
+#include "rules/dragon/promo_batch07.h"  // R975: the Dragon promotion batch seven
+#include "rules/dragon/promo_batch08.h"  // R976: the Dragon promotion batch eight
+#include "rules/dragon/promo_batch09.h"  // R977: the Dragon promotion batch nine
+#include "rules/dragon/promo_batch10.h"  // R978: the Dragon promotion batch ten
+#include "rules/dragon/promo_batch11.h"  // R979: the Dragon promotion batch eleven
+#include "rules/dragon/promo_batch12.h"  // R980: the Dragon promotion batch twelve
+#include "rules/oa/oa1.h"  // R981: the OA promotion batch one
+#include "rules/oa/oa2.h"  // R982: the OA promotion batch two
+#include "rules/oa/oa3.h"  // R983: the OA promotion batch three
+#include "rules/oa/oa4.h"  // R984: the OA promotion batch four
+#include "rules/oa/oa5.h"  // R985: the OA promotion batch five
+#include "rules/oa/oa6.h"  // R986: the OA promotion batch six
+#include "rules/oa/oa7.h"  // R987: the OA promotion batch seven
+#include "rules/oa/oa8.h"  // R988: the OA promotion batch eight
+#include "rules/wsg/wsg1.h"  // R989: the WSG promotion batch one
+#include "rules/wsg/wsg2.h"  // R990: the WSG promotion batch two
+#include "rules/wsg/wsg3.h"  // R991: the WSG promotion batch three
+#include "rules/wsg/wsg4.h"  // R992: the WSG promotion batch four
+#include "rules/wsg/wsg5.h"  // R993: the WSG promotion batch five
+#include "rules/dsg/dsg1.h"  // R994: the DSG promotion batch one
+#include "rules/dsg/dsg2.h"  // R995: the DSG promotion batch two
+#include "rules/dsg/dsg3.h"  // R996: the DSG promotion batch three
+#include "rules/dsg/dsg4.h"  // R997: the DSG promotion batch four
+#include "rules/dsg/dsg5.h"  // R998: the DSG promotion batch five
+#include "rules/ua/ua1.h"  // R999: the UA promotion batch one
+#include "rules/ua/ua2.h"  // R1000: the UA promotion batch two
+#include "rules/ua/ua3.h"  // R1001: the UA promotion batch three
+#include "rules/ua/ua4.h"  // R1002: the UA promotion batch four
+#include "rules/ua/ua5.h"  // R1003: the UA promotion batch five
+#include "rules/ua/ua6.h"  // R1004: the UA promotion batch six
+#include "rules/ua/ua7.h"  // R1005: the UA promotion batch seven
+#include "rules/meta/promotions_mop_batch1.h"  // R1006: the promotions mop round one - the FF never-load repair
+#include "rules/meta/promotions_mop_batch2.h"  // R1007: the promotions mop round two - the MM1 text completion
+#include "rules/meta/promotions_mop_batch3.h"  // R1008: the promotions mop round three - the MM1 collation half
+#include "rules/mm/mm1_normalization_batch1.h"  // R1009: the MM1 normalization batch one
+#include "rules/mm/mm1_normalization_batch2.h"  // R1010: the MM1 normalization batch two
+#include "rules/mm/mm1_normalization_batch3.h"  // R1011: the MM1 normalization batch three
+#include "rules/mm/mm1_normalization_batch4.h"  // R1012: the MM1 normalization batch four
+#include "rules/mm/mm1_normalization_batch5.h"  // R1013: the MM1 normalization batch five
+#include "rules/mm/mm1_normalization_batch6.h"  // R1014: the MM1 normalization batch six
+#include "rules/oa/oa9.h"  // R1015: the OA table promotion batch nine
+#include "rules/oa/oap1.h"  // R1016: the OA normalization batch
+#include "rules/mm/mm2_normalization_batch1.h"  // R1017: the MM2 normalization batch one
+#include "rules/mm/mm2_normalization_batch2.h"  // R1018: the MM2 normalization batch two
+#include "rules/mm/mm2_normalization_batch3.h"  // R1019: the MM2 normalization batch three
+#include "rules/mm/mm2_normalization_batch4.h"  // R1020: the MM2 normalization batch four
+#include "rules/ff/normalization_batch1.h"  // R1021: the FF normalization batch one
+#include "rules/ff/normalization_batch2.h"  // R1022: the FF normalization batch two
+#include "rules/ff/normalization_batch3.h"  // R1023: the FF normalization batch three
 #include "rules/wt1.h"  // R1024: the WSG+MOP normalization tail batch
-#include "rules/dq1.h"  // R1025: the DRG normalization batch
-#include "rules/ll1.h"  // R1026: the deity seam close
-#include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
+#include "rules/dragon/registry_normalization.h"  // R1025: the DRG normalization batch
+#include "rules/ddg/legends_lore_parity.h"  // R1026: the deity seam close
+#include "rules/ua/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
-#include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
+#include "rules/dmg_appendices_klm.h"  // R171: pp.221-224 appendices K L and M
 #include "rules/herbs.h"  // R172: p.220 appendix J herbs spices and medicinal vegetables
 #include "rules/secondary.h"  // R173: p.12 secondary skills
 #include "rules/subclasses.h"  // R179: the subclass registry

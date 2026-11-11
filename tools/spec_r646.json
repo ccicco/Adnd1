@@ -2,7 +2,7 @@
  "round": 646,
  "title": "BARDING - Table 55, the barded warhorse base movement rates",
  "prefix": "dhg",
- "header_file": "rules/oabarding.h",
+ "header_file": "rules/oa/oabarding.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "TABLE 55 (BARDED WARHORSE BASE MOVEMENT RATES), printed capture p. 98 - the OA barding round",
   "provenance": "pinned from the 2018 print capture (the settling authority), with the compressed-print capture giving a second independent read of the page - the 4-row grid cross-checked cell-by-cell between the two passes; the movement pairs agree in both passes - zero numeric contested cells. The artifacts are glyph and word class: the movement prints with the prime glyph (feet) in the print capture against the compressed double-prime (the R645 class, the feet read stands, the numeric columns strip the unit) and the light-horse metal-scale pair prints 15 with a stray space before the prime in the print pass (an OCR cell artifact, the value stands). The note under the table reads Tumber before the slash in BOTH passes - an OCR slip for The number, noted; the note doctrine pins as two bools: the number before the slash is for full barding, the number after for half-barding, and an X indicates the barding is heavier than the horse can bear. The light-horse chain full cell prints X and the elephant metal and chain cells print blank - both classes pin as -99, distinguished by the column comments; the elephant padded cell prints a lone 12 without the full/half slash - the T50 lone-number lo=hi convention carries it. The warhorse names ride the column comments per the T48 doctrine. The barding prose box (the AC-factor and weight paragraph) and the misc equipment prose box stay open",
-  "sentinel": "the gap census after this round: 97 closed, 138 open - the Table 55 box flips (census 568 -> 569); NEXT - R647: the Miscellaneous Equipment Descriptions prose box (capture p. 98), the grenades prose, prefix dhh (verify free), audit \"R647 OA misc equipment audit\", include after rules/oabarding.h - the barding prose box stays open beside it"
+  "sentinel": "the gap census after this round: 97 closed, 138 open - the Table 55 box flips (census 568 -> 569); NEXT - R647: the Miscellaneous Equipment Descriptions prose box (capture p. 98), the grenades prose, prefix dhh (verify free), audit \"R647 OA misc equipment audit\", include after rules/oa/oabarding.h - the barding prose box stays open beside it"
  },
  "consts": [
   {
@@ -190,7 +190,7 @@
   "open": 138
  },
  "include_comment": "the OA barding pins",
- "include_after": "#include \"rules/oaencumb.h\"  // R645: the OA armor encumbrance pins",
+ "include_after": "#include \"rules/oa/oaencumb.h\"  // R645: the OA armor encumbrance pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R645 LANDED 2026-10-19: commit",
@@ -200,7 +200,7 @@
   "  (census 567 -> 568, pushed",
   "  91f1d95..50ada1a), ARMOR ENCUMBRANCE -",
   "  Table 54 (Types of Armor & Encumbrance),",
-  "  capture p. 95: rules/oaencumb.h, prefix",
+  "  capture p. 95: rules/oa/oaencumb.h, prefix",
   "  dhf (verified free), 3 inlines (1 const,",
   "  2 table columns): the 23-row armor type",
   "  grid - the base weight column (pounds,",
@@ -238,7 +238,7 @@
   "  Movement Rates), capture p. 98, the",
   "  barding movement grid, prefix dhg",
   "  (verify free), audit \"R646 OA barding",
-  "  audit\", include after rules/oaencumb.h -",
+  "  audit\", include after rules/oa/oaencumb.h -",
   "  the misc equipment and barding prose",
   "  boxes stay open."
  ]

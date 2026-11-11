@@ -46,7 +46,7 @@ SEED_ENTRY = NL.join([
     '- R361 landed 2026-10-11: commit',
     '  5c52199, census 288, the UA',
     '  new magic-user 7th level spells',
-    '  pin round (rules/uamuspells7.h):',
+    '  pin round (rules/ua/uamuspells7.h):',
     '  the eight spell descriptions',
     '  (banishment behind the scrambled',
     '  stat head with the range',
@@ -100,13 +100,13 @@ assert s.count('## Knowledge maintenance') == 1, 'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
 
-# ---- (b) NEW rules/uamuspells8.h ----
-US8 = 'rules/uamuspells8.h'
+# ---- (b) NEW rules/ua/uamuspells8.h ----
+US8 = 'rules/ua/uamuspells8.h'
 if os.path.exists(US8) and 'R362' in rd(US8):
     already.append('uamuspells8.h: the pins')
 else:
     HDR8 = r"""// ===========================================================================
-// Adnd1 - rules/uamuspells8.h
+// Adnd1 - rules/ua/uamuspells8.h
 // The UA NEW MAGIC-USER SPELLS (pp. 71-74) pins, R362: the
 // 8th-level spell descriptions - binding, demand, the
 // Otiluke telekinetic sphere and sink.
@@ -630,13 +630,13 @@ assert 'uas2' not in s, 'b no r342 ref'
 assert len(applied) + len(already) == 2, 'b count'
 
 
-# ---- (b2) NEW rules/uamuspells9.h ----
-US9 = 'rules/uamuspells9.h'
+# ---- (b2) NEW rules/ua/uamuspells9.h ----
+US9 = 'rules/ua/uamuspells9.h'
 if os.path.exists(US9) and 'R362' in rd(US9):
     already.append('uamuspells9.h: the pins')
 else:
     HDR9 = r"""// ===========================================================================
-// Adnd1 - rules/uamuspells9.h
+// Adnd1 - rules/ua/uamuspells9.h
 // The UA NEW MAGIC-USER SPELLS (pp. 74-77) pins, R362: the
 // 9th-level spell descriptions - crystalbrittle, succor,
 // energy drain and the Mordenkainen disjunction.
@@ -1082,8 +1082,8 @@ else:
         ' magic-user spells**') == 1, 'c open header'
     NOTE = NL.join([
     '      - R362: the 8th and 9th levels',
-    '        pinned (rules/uamuspells8.h',
-    '        and rules/uamuspells9.h) - the',
+    '        pinned (rules/ua/uamuspells8.h',
+    '        and rules/ua/uamuspells9.h) - the',
     '        four 8th-level descriptions',
     '        (binding with the lost range',
     '        and duration cells and the six',
@@ -1157,15 +1157,15 @@ if 'R362 UA MU 8th/9th level spells pin audit' in s:
     already.append('regtest.cpp: the R362 audit')
 else:
     INC_ANCH = (
-        '#include "rules/uamuspells7.h"'
+        '#include "rules/ua/uamuspells7.h"'
         '  // R361: the UA new magic-user'
         ' 7th level')
     INC_NEW = NL.join([
         INC_ANCH,
-        '#include "rules/uamuspells8.h"'
+        '#include "rules/ua/uamuspells8.h"'
         '  // R362: the UA new magic-user'
         ' 8th level',
-        '#include "rules/uamuspells9.h"'
+        '#include "rules/ua/uamuspells9.h"'
         '  // R362: the UA new magic-user'
         ' 9th level',
     ])
@@ -1506,31 +1506,31 @@ assert s.count(
     'R227: the wis mental save'
     ) == 1, 'd r227 kept'
 assert s.count(
-    '#include "rules/uamuspells9.h"'
+    '#include "rules/ua/uamuspells9.h"'
     ) == 1, 'd include 9'
 assert s.count(
-    '#include "rules/uamuspells8.h"'
+    '#include "rules/ua/uamuspells8.h"'
     ) == 1, 'd include 8'
 assert s.count(
-    '#include "rules/uamuspells7.h"'
+    '#include "rules/ua/uamuspells7.h"'
     ) == 1, 'd r361 include'
 assert s.count(
-    '#include "rules/uamuspells6.h"'
+    '#include "rules/ua/uamuspells6.h"'
     ) == 1, 'd r360 include'
 assert s.count(
-    '#include "rules/uamuspells5.h"'
+    '#include "rules/ua/uamuspells5.h"'
     ) == 1, 'd r360-5 include'
 assert s.count(
-    '#include "rules/uamuspells4.h"'
+    '#include "rules/ua/uamuspells4.h"'
     ) == 1, 'd r359 include'
 assert s.count(
-    '#include "rules/uamuspells3.h"'
+    '#include "rules/ua/uamuspells3.h"'
     ) == 1, 'd r358 include'
 assert s.count(
-    '#include "rules/uamuspells2.h"'
+    '#include "rules/ua/uamuspells2.h"'
     ) == 1, 'd r357 include'
 assert s.count(
-    '#include "rules/uamuspells1.h"'
+    '#include "rules/ua/uamuspells1.h"'
     ) == 1, 'd r356 include'
 assert len(applied) + len(already) == 5, 'd count'
 

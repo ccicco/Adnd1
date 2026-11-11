@@ -1,11 +1,11 @@
--- oa763: promoted from rules/oa134wa.h (the OA SETTING - THE ISLAND OF WA, printed capture p. 304 - the unified);
+-- oa763: promoted from rules/oa/oa134wa.h (the OA SETTING - THE ISLAND OF WA, printed capture p. 304 - the unified);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 763,
   "prefix" = "oa763",
   "banner" = {
       "title" = "OA SETTING - THE ISLAND OF WA, printed capture p. 304 - the unified",
-      "provenance" = "military state of the shogun census 685 -> 686.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 216 closed, 19 open - the Wa box flips (census 685 -> 686); NEXT - R764: Kozakura (capture p. 304), prefix dlz (verify free at the landing), audit \"R764 OA Kozakura audit\", include after rules/oa134wa.h",
+      "provenance" = "military state of the shogun census 685 -> 686.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 216 closed, 19 open - the Wa box flips (census 685 -> 686); NEXT - R764: Kozakura (capture p. 304), prefix dlz (verify free at the landing), audit \"R764 OA Kozakura audit\", include after rules/oa/oa134wa.h",
     },
   "consts" = { {
       "name" = "dlyUnifiedMilitaryState",

@@ -1,4 +1,4 @@
--- ua: promoted from rules/uaappendr.h (the The UA APPENDIX R: NON-LETHAL);
+-- ua: promoted from rules/ua/uaappendr.h (the The UA APPENDIX R: NON-LETHAL);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 390,

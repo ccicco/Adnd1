@@ -1,11 +1,11 @@
--- oa718: promoted from rules/oa89hainu.h (the OA MONSTERS - THE HAI NU, printed capture p. 268 - the Sea Lord servitors);
+-- oa718: promoted from rules/oa/oa89hainu.h (the OA MONSTERS - THE HAI NU, printed capture p. 268 - the Sea Lord servitors);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 718,
   "prefix" = "oa718",
   "banner" = {
       "title" = "OA MONSTERS - THE HAI NU, printed capture p. 268 - the Sea Lord servitors",
-      "provenance" = "round census 640 -> 641.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 171 closed, 64 open - the hai nu box flips (census 640 -> 641); NEXT - R719: the Hsing-Sing (capture p. 269), prefix dkg (verify free at the landing), audit \"R719 OA monsters Hsing-Sing audit\", include after rules/oa89hainu.h",
+      "provenance" = "round census 640 -> 641.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 171 closed, 64 open - the hai nu box flips (census 640 -> 641); NEXT - R719: the Hsing-Sing (capture p. 269), prefix dkg (verify free at the landing), audit \"R719 OA monsters Hsing-Sing audit\", include after rules/oa/oa89hainu.h",
     },
   "consts" = { {
       "name" = "dkfAppearMin",

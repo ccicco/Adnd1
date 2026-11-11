@@ -5,7 +5,7 @@
 # Appendix S - the five pantheon
 # intro prose sections (pp.
 # 110-120, the clean OCR read)
-# pin as rules/uapantheon.h
+# pin as rules/ua/uapantheon.h
 # (NEW, prefix uapn - checked
 # free; the uapp prefix is
 # taken by uapotprose.h), the
@@ -152,8 +152,8 @@ RT = 'regtest.cpp'
 GP = 'tools/ua_gap_report.md'
 SD = ('doc/vibe/'
       'adnd1_knowledge_seed_v2.md')
-AR = 'rules/uaappendr.h'
-PN = 'rules/uapantheon.h'
+AR = 'rules/ua/uaappendr.h'
+PN = 'rules/ua/uapantheon.h'
 
 # ======== (a) the new header ========
 
@@ -177,7 +177,7 @@ for p in ('dm/treasure.cpp',
 
 HEADER = E(
     '// ===========================================================================',
-    '// Adnd1 - rules/uapantheon.h',
+    '// Adnd1 - rules/ua/uapantheon.h',
     '// The UA APPENDIX S PANTHEON',
     '// PROSE, R423: the five pantheon',
     '// intro sections (pp. 110-120)',
@@ -629,13 +629,13 @@ else:
 # the include rides the R411
 # uamoves include
 pair(RT,
-     '#include "rules/uamoves.h"'
+     '#include "rules/ua/uamoves.h"'
      '  // R411: the UA Appendix S MOVE'
      ' values',
-     E('#include "rules/uamoves.h"'
+     E('#include "rules/ua/uamoves.h"'
        '  // R411: the UA Appendix S MOVE'
        ' values',
-       '#include "rules/uapantheon.h"'
+       '#include "rules/ua/uapantheon.h"'
        '  // R423: the UA Appendix S'
        ' pantheon prose'),
      'regtest: the uapantheon include')
@@ -645,7 +645,7 @@ AUD = E(
     '    // ---- R423: the UA appendix S',
     '    // pantheon prose pin audit ----',
     '    // The five intro sections pin',
-    '    // (rules/uapantheon.h, prefix',
+    '    // (rules/ua/uapantheon.h, prefix',
     '    // uapn) with the censuses',
     '    // cross-checked LIVE against',
     '    // the R405 seam: the five',
@@ -1051,7 +1051,7 @@ print('R423 splice: ALL OK'
       % (len(applied), len(already)))
 print('NOTE: the UA appendix S pantheon')
 print('  prose - the five intro sections')
-print('  pin (rules/uapantheon.h, prefix')
+print('  pin (rules/ua/uapantheon.h, prefix')
 print('  uapn) with the censuses')
 print('  cross-checked live against the')
 print('  R405 seam (the described counts')

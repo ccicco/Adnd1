@@ -3,17 +3,17 @@
  "title": "the DSG nonweapon proficiencies chapter - the check system and Table 10, the slot economy, the artisans and NPC training, the optional bonuses, the craftsman and adventuring lists with Tables 11-13, and the XP option",
  "census_before": 430,
  "prefix": "dnp",
- "header_file": "rules/dsgprof.h",
+ "header_file": "rules/dsg/dsgprof.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/dsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "inline_count": 208,
  "banner": {
   "title": "The DSG NONWEAPON PROFICIENCIES, R506: the printed pp. 23-29 (pdf 24-30) - the Proficiency Check system (the Ability Check frame with the listed die-roll modifiers, the improving +2 per additional slot, the quality ladder from success to the natural-20 flawless creation and the 110-200 percent pricing), the slot economy (the weapon-slot-buys-nonweapon one-way trade, the filled-slot immutability, the Secondary Skills conversion), the artisan ladder for NPCs, the optional DM bonuses, the fourteen craftsman descriptions, the fifteen adventuring descriptions and the XP-for-proficiencies option, with Table 10 (the 14 class rows), Table 11 (the 14 craftsman rows), Table 12 (the 11 weapon-making rows) and Table 13 (the 15 adventuring rows).",
-  "provenance": "the DSG scan (archive.org item advanced-dungeons-dragons-1st-edition), pdf = printed + 1; the grids read from the IA djvu OCR at 300dpi coordinates with the pdf Acrobat-Capture layer as the second read; the Weaver and Weaponsmith cells and the trainer/armorer slot cells carry the grids-file image cautions and are pinned as printed (the R501 precedent); the cross-book seam verified const-for-const against rules/wsgprof.h (R425) and rules/wsgprofd.h (R498) - NOTHING auto-credited; Table 10 agrees cell-for-cell with the WSG Table 1 pins, the shared Table 13 rows are SUBSTANTIALLY rebalanced (10 of 11 diverge), the shared description numbers agree whole.",
+  "provenance": "the DSG scan (archive.org item advanced-dungeons-dragons-1st-edition), pdf = printed + 1; the grids read from the IA djvu OCR at 300dpi coordinates with the pdf Acrobat-Capture layer as the second read; the Weaver and Weaponsmith cells and the trainer/armorer slot cells carry the grids-file image cautions and are pinned as printed (the R501 precedent); the cross-book seam verified const-for-const against rules/wsg/wsgprof.h (R425) and rules/wsg/wsgprofd.h (R498) - NOTHING auto-credited; Table 10 agrees cell-for-cell with the WSG Table 1 pins, the shared Table 13 rows are SUBSTANTIALLY rebalanced (10 of 11 diverge), the shared description numbers agree whole.",
   "sentinel": "The DSG Table 10/11/13 sign convention is the die-roll convention (negative easier), matching the WSG tables; the p. 23 prose example (+3 makes 12 equal 15) is the ability-score framing of the same modifiers. NA cells: ability 0, modifier 99, the bard as-other-classes row -1, the arrowhead per-day row -1."
  },
- "include_after": "#include \"rules/dsgmove2.h\"  // R505: the DSG movement II pins",
+ "include_after": "#include \"rules/dsg/dsgmove2.h\"  // R505: the DSG movement II pins",
  "include_comment": "the DSG proficiencies pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "audit_comment": "The DSG nonweapon proficiencies pins the check system (the Ability Check frame, the +3-makes-12-equal-15 example, the improving +2 per slot, the natural-20 flawless creation, the 110-200 percent pricing), the slot economy (the one-way weapon-for-nonweapon trade, the Secondary Skills conversion), the artisan ladder (the 2-slot no-weapon NPC, journeyman 1-4 years, the master slot per 4 years), the craftsman numbers (the armorer 2-weeks-per-AC-point with the 19-20 flawed breakage, the trainer 3-month/6-animal cycles, the boatwright week-per-foot, the bowyer and weaponsmith fine-quality options, the carpenter crews, the smelter 4/20/100-miner ladder at 5/12/25 gp, the potter costs), the adventuring numbers (the blind-fighting -2, the direction-sense bands, the endurance doubling, the fire-building dice, the fishing count, the fungus 50 percent, the healing pins, the six riding feats, the rope bonuses, the slow respiration, the sound analysis margins) and the XP option, with the four grids (Tables 10-13).",
@@ -26,7 +26,7 @@
   "  PART II - printed pp. 19-22 (pdf 20-23): bridges,",
   "  falling expanded, spelunking, excavation, fatigue,",
   "  darkness and slippery surfaces. Pinned as",
-  "  rules/dsgmove2.h (prefix dmx, 130 inlines: 85 consts",
+  "  rules/dsg/dsgmove2.h (prefix dmx, 130 inlines: 85 consts",
   "  + 40 bools + 3 tables/5 cols; 22 examples, 8",
   "  table_checks). Gap 27/128 -> 38/117: 11 flips - the",
   "  movement PARENT box, 7 chapter boxes (Bridges,",
@@ -57,8 +57,8 @@
  },
  "gap_flips": [
   {
-   "from": "- [ ] **Proficiencies** (pp. 23-29) - the expanded nonweapon proficiency system: the check system, the artisan/craftsman and adventuring lists, the optional bonuses, the NPC training rules and the XP-for-proficiencies option; the cross-book seam against R425 (rules/wsgprof.h) and R498 (rules/wsgprofd.h)",
-   "to": "- [x] **Proficiencies** (pp. 23-29) - the expanded nonweapon proficiency system: the check system, the artisan/craftsman and adventuring lists, the optional bonuses, the NPC training rules and the XP-for-proficiencies option; the cross-book seam against R425 (rules/wsgprof.h) and R498 (rules/wsgprofd.h) - R506: the expanded nonweapon proficiency system - the check system with Table 10, the slot economy, the artisan/NPC training rules, the optional bonuses, the craftsman and adventuring lists with Tables 11-13, and the XP-for-proficiencies option (the wsgprof/wsgprofd seam verified const-for-const, nothing auto-credited)",
+   "from": "- [ ] **Proficiencies** (pp. 23-29) - the expanded nonweapon proficiency system: the check system, the artisan/craftsman and adventuring lists, the optional bonuses, the NPC training rules and the XP-for-proficiencies option; the cross-book seam against R425 (rules/wsg/wsgprof.h) and R498 (rules/wsg/wsgprofd.h)",
+   "to": "- [x] **Proficiencies** (pp. 23-29) - the expanded nonweapon proficiency system: the check system, the artisan/craftsman and adventuring lists, the optional bonuses, the NPC training rules and the XP-for-proficiencies option; the cross-book seam against R425 (rules/wsg/wsgprof.h) and R498 (rules/wsg/wsgprofd.h) - R506: the expanded nonweapon proficiency system - the check system with Table 10, the slot economy, the artisan/NPC training rules, the optional bonuses, the craftsman and adventuring lists with Tables 11-13, and the XP-for-proficiencies option (the wsgprof/wsgprofd seam verified const-for-const, nothing auto-credited)",
    "note": "the proficiencies parent"
   },
   {

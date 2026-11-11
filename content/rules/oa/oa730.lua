@@ -1,11 +1,11 @@
--- oa730: promoted from rules/oa101shansao.h (the OA MONSTERS - THE SHAN SAO, printed capture pp. 282-283 - the woodlander);
+-- oa730: promoted from rules/oa/oa101shansao.h (the OA MONSTERS - THE SHAN SAO, printed capture pp. 282-283 - the woodlander);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 730,
   "prefix" = "oa730",
   "banner" = {
       "title" = "OA MONSTERS - THE SHAN SAO, printed capture pp. 282-283 - the woodlander",
-      "provenance" = "round census 652 -> 653.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 183 closed, 52 open - the shan sao box flips (census 652 -> 653); NEXT - R731: the Shirokinukatsukami, the Greater Spirit (capture pp. 283-284), prefix dks (verify free at the landing), audit \"R731 OA monsters Shirokinukatsukami audit\", include after rules/oa101shansao.h",
+      "provenance" = "round census 652 -> 653.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 183 closed, 52 open - the shan sao box flips (census 652 -> 653); NEXT - R731: the Shirokinukatsukami, the Greater Spirit (capture pp. 283-284), prefix dks (verify free at the landing), audit \"R731 OA monsters Shirokinukatsukami audit\", include after rules/oa/oa101shansao.h",
     },
   "consts" = { {
       "name" = "dkrFrequencyUncommon",

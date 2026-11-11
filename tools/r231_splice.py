@@ -194,10 +194,10 @@ PATCHES = [
     ('game/party.h',
      'the subclass leveling seam',
      lines([
-         '#include "../rules/classes.h"',
+         '#include "../rules/engine/classes.h"',
      ]),
      lines([
-         '#include "../rules/classes.h"',
+         '#include "../rules/engine/classes.h"',
          '#include "../rules/subclassgates.h"  // R231: the subclass leveling seam',
      ])),
     ('game/party.h',

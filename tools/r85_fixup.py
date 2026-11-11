@@ -15,9 +15,9 @@ def wr(p, s):
         f.write(s)
 OK = True
 s = rd('items/items.h')
-NEW = ('#include "../rules/classes.h"   // ArmorWeight, ARMOR_NONE/'
+NEW = ('#include "../rules/engine/classes.h"   // ArmorWeight, ARMOR_NONE/'
        'LEATHER/CHAIN/PLATE\n'
-       '#include "../rules/character.h" // ExceptionalStrength\n'
+       '#include "../rules/engine/character.h" // ExceptionalStrength\n'
        '#include <cstdint>\n')
 if NEW in s:
     print('items.h includes: already patched')

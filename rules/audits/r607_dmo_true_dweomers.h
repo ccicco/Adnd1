@@ -1572,4 +1572,4 @@
         printf("R607 DMO true-dweomers audit: bad %d\n", bad);
         if (bad) return 1;
     }
-    #include "rules/audits/r608_dmo_auto_save_failure.h"  // R831: migrated
+    #include "r608_dmo_auto_save_failure.h"  // R831: migrated

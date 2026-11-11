@@ -2,7 +2,7 @@
  "round": 731,
  "title": "OA MONSTERS - the Shirokinukatsukami: the Eater of Dreams",
  "prefix": "dks",
- "header_file": "rules/oa102shiro.h",
+ "header_file": "rules/oa/oa102shiro.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA MONSTERS - THE SHIROKINUKATSUKAMI, printed capture pp. 283-284 - the Eater of Dreams round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 184 closed, 51 open - the shirokinukatsukami box flips (census 653 -> 654); NEXT - R732: the Tengu (capture p. 284), prefix dkt (verify free at the landing), audit \"R732 OA monsters Tengu audit\", include after rules/oa102shiro.h"
+  "sentinel": "the gap census after this round: 184 closed, 51 open - the shirokinukatsukami box flips (census 653 -> 654); NEXT - R732: the Tengu (capture p. 284), prefix dkt (verify free at the landing), audit \"R732 OA monsters Tengu audit\", include after rules/oa/oa102shiro.h"
  },
  "consts": [
   {
@@ -658,7 +658,7 @@
   "open": 51
  },
  "include_comment": "the OA Shirokinukatsukami pins",
- "include_after": "#include \"rules/oa101shansao.h\"  // R730: the OA Shan Sao pins",
+ "include_after": "#include \"rules/oa/oa101shansao.h\"  // R730: the OA Shan Sao pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R730 LANDED 2026-10-21: commit",
@@ -667,7 +667,7 @@
   "  981038137da8b53d3f3d0b37c29883de5b0fa34b",
   "  (census 652 -> 653, pushed 96a5de9..9810381), OA",
   "  MONSTERS, the Shan Sao (capture pp. 282-283",
-  "  print): rules/oa101shansao.h, prefix dkr",
+  "  print): rules/oa/oa101shansao.h, prefix dkr",
   "  (verified free at 96a5de9), ONE gap flip, gap",
   "  census 183/52 - the shan sao box. A consts",
   "  round. 29 consts + 29 bools (58 inlines): the",
@@ -707,6 +707,6 @@
   "  Spirit (capture pp. 283-284), prefix dks",
   "  (verified free at 9810381), audit \"R731 OA",
   "  monsters Shirokinukatsukami audit\", include",
-  "  after rules/oa101shansao.h."
+  "  after rules/oa/oa101shansao.h."
  ]
 }

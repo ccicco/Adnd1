@@ -2,7 +2,7 @@
  "round": 637,
  "title": "STARTING MONEY - the class funds dice, Table 45",
  "prefix": "dgx",
- "header_file": "rules/oastart.h",
+ "header_file": "rules/oa/oastart.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "STARTING MONEY AND TABLE 45, printed capture pp. 75-76 - the OA funds round",
   "provenance": "pinned from the 2018 print capture alone for this range (the settling authority): the first Mistral-OCR capture session is unavailable above p. 33, so the cross-capture agreement check is impossible. No contested cells detected within the single source: the T45 grid pins as ten class rows x 8 bounds - the ch'ien, tael, yuan and fen components each as a lo-hi pair, a 0-0 pair meaning the row has no such component; the tael amounts read as (ch'ao) - the R636 ch'ao-tael equality covers the note. The class row order pins as the 0-9 code: samurai, shukenja, monk, sohei, kensai, barbarian, bushi, wu jen, ninja, yakuza. The ninja footnote (the amount in addition to the other class cash) pins as a bool. The Gajin and Rates of Exchange prose with Table 46 (capture pp. 76-77) are deliberately left for the next round",
-  "sentinel": "the gap census after this round: 86 closed, 149 open - the Starting Money and Table 45 boxes flip (census 559 -> 560); NEXT - R638: the Gajin and Rates of Exchange prose with Table 46 (Currency Exchange Rates), capture pp. 76-77, the real-value and exchange-rate doctrine, prefix dgy (verify free), audit \"R638 OA exchange audit\", include after rules/oastart.h"
+  "sentinel": "the gap census after this round: 86 closed, 149 open - the Starting Money and Table 45 boxes flip (census 559 -> 560); NEXT - R638: the Gajin and Rates of Exchange prose with Table 46 (Currency Exchange Rates), capture pp. 76-77, the real-value and exchange-rate doctrine, prefix dgy (verify free), audit \"R638 OA exchange audit\", include after rules/oa/oastart.h"
  },
  "consts": [
   {
@@ -296,7 +296,7 @@
   "open": 149
  },
  "include_comment": "the OA starting money pins",
- "include_after": "#include \"rules/oamoney.h\"  // R636: the OA money pins",
+ "include_after": "#include \"rules/oa/oamoney.h\"  // R636: the OA money pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R636 LANDED 2026-10-19: commit",
@@ -307,7 +307,7 @@
   "  6d3f2b7..482dad2), MONEY - the chapter",
   "  opener, the currency systems and Tables",
   "  43-44, capture pp. 73-75:",
-  "  rules/oamoney.h, prefix dgw (verified",
+  "  rules/oa/oamoney.h, prefix dgw (verified",
   "  free), 32 inlines (17 consts, 13",
   "  bools, 2 table columns): the gold-not-",
   "  currency read (copper, silver and",
@@ -357,6 +357,6 @@
   "  Funds), capture pp. 75-76, the class",
   "  funds dice, prefix dgx (verify free),",
   "  audit \"R637 OA starting money audit\",",
-  "  include after rules/oamoney.h."
+  "  include after rules/oa/oamoney.h."
  ]
 }

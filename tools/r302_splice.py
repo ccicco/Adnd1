@@ -185,7 +185,7 @@ AH_ACTOR_OLD = NL.join([
 ])
 AH_ACTOR_NEW = NL.join([
     '    bool nonIntelligent = false;',
-    '    // R302: the PC CharRace (rules/races.h)',
+    '    // R302: the PC CharRace (rules/engine/races.h)',
     '    // for the thief percentile columns - the',
     '    // race field above stays the dm::NpcRace',
     '    // int (the R147 saves convention)',

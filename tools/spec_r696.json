@@ -2,7 +2,7 @@
  "round": 696,
  "title": "OA THE CALENDAR - the twelve months of the Shou Lung calendar with their day counts and festival counts",
  "prefix": "djj",
- "header_file": "rules/oacalendar.h",
+ "header_file": "rules/oa/oacalendar.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA THE CALENDAR, printed capture pp. 236-237 - the months and festivals round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift. THE CALENDAR: devised in ancient times by one of the great emperors of Shou Lung to fix the regular holidays and festivals, a success used throughout all the civilized lands of Kara-Tur, the first of the year falling sometime in modern-day February or March. THE TWELVE MONTHS with their days and festival counts: Tsou the 30 of eight observances - the New Year's Festival, the God of Heaven, the Feast of Lanterns, the God of Spring, the God of Wealth, the Fertility Festival, the God of Happiness, the God of Learning; Ju the 30 of the God of North and the Goddess of Mercy; Yu the 30 of the God of Central Mound, the Queen of Heaven, the Cherry Blossom Festival; Kao the 30 of the God of Medicine and the God of South; Kao II the 29 of the Thunder God, the Dragon Boat Festival, the God of War; Chu the 30 with none printed; Hsiang the 29 of the God of Fire and the Purification Festival; Chuang the 30 of the Moon Feast Festival, the God of Land and Grain, the God of Furnace, the Great Sage's Birthday; Hsuan the 30 of the Wine God, the Yang Feast, the Polar Gods, the God of Wealth; Yang the 29 of the God of Disease; Ku the 30 with none printed; Tu the 29 of the Kings' Festival. THE YEAR: eight months of 30 days and four of 29 - Kao II, Hsiang, Yang and Tu - the 356-day year. THE OBSERVANCE KINDS: the festivals lasting several days to weeks; the feasts the banquet gatherings; the holy days observed or not per the religion of the area and the character of the inhabitants; the observances simple, the excuse for a feast. The calendar pins per the R431 calculus",
-  "sentinel": "the gap census after this round: 149 closed, 86 open - the Calendar box flips (census 618 -> 619); NEXT - R697: Table 71 the yearly events grid (capture p. 237), prefix djk (verify free at the landing), audit \"R697 OA yearly events audit\", include after rules/oacalendar.h"
+  "sentinel": "the gap census after this round: 149 closed, 86 open - the Calendar box flips (census 618 -> 619); NEXT - R697: Table 71 the yearly events grid (capture p. 237), prefix djk (verify free at the landing), audit \"R697 OA yearly events audit\", include after rules/oa/oacalendar.h"
  },
  "consts": [
   {
@@ -214,7 +214,7 @@
   "open": 86
  },
  "include_comment": "the OA calendar pins",
- "include_after": "#include \"rules/oalearn.h\"  // R695: the OA learning martial arts pins",
+ "include_after": "#include \"rules/oa/oalearn.h\"  // R695: the OA learning martial arts pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R695 LANDED 2026-10-20: commit",
@@ -228,7 +228,7 @@
   "  and slot costs, with the multiple",
   "  styles and the combining of styles,",
   "  capture pp. 233-235 print:",
-  "  rules/oalearn.h, prefix dji",
+  "  rules/oa/oalearn.h, prefix dji",
   "  (verified free at e9a5608 - only",
   "  djinn prose in old headers, no",
   "  identifiers), ONE gap flip, gap",
@@ -288,6 +288,6 @@
   "  prose (capture p. 236), prefix djj",
   "  (verified free at 61d0647), audit",
   "  \"R696 OA calendar audit\", include",
-  "  after rules/oalearn.h"
+  "  after rules/oa/oalearn.h"
  ]
 }

@@ -99,6 +99,6 @@ return {
     } },
   "audit" = {
       "label" = "R458 WSG portaging pin audit",
-      "comment" = "The portaging slice pins the solo-portage gate (a vessel smaller than a large rowboat carried by one character able to support its encumbrance without becoming severely encumbered), the severe-encumbrance bar on portaging or helping, the portage-crew minimums (two for the large rowboat and the small barge, four for the large barge) with the maximum of twice the minimum, the beyond-max futility (the third small-canoe carrier), and the 3-inch portage move rate - 3 miles in eight hours, 30 feet per round, regardless of terrain or overall encumbrance status (rules/wsgportage.h, prefix wpg); census 382 -> 383.",
+      "comment" = "The portaging slice pins the solo-portage gate (a vessel smaller than a large rowboat carried by one character able to support its encumbrance without becoming severely encumbered), the severe-encumbrance bar on portaging or helping, the portage-crew minimums (two for the large rowboat and the small barge, four for the large barge) with the maximum of twice the minimum, the beyond-max futility (the third small-canoe carrier), and the 3-inch portage move rate - 3 miles in eight hours, 30 feet per round, regardless of terrain or overall encumbrance status (rules/wsg/wsgportage.h, prefix wpg); census 382 -> 383.",
     },
 }

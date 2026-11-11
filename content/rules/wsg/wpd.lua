@@ -1,10 +1,10 @@
--- wpd: promoted from tools/spec_r498.json (the The WSG PROFICIENCIES PROSE, R498: the chapter frame and the twenty-five descriptions, printed pp. 11-17 (pdf 12-18). The Table 1/2 grids and the check/improving/expanding system stay with R425 (rules/wsgprof.h) as seams; this round pins the prose around and between them - every description mechanic from the 1-in-6 alertness surprise to the weather sense lockout.);
+-- wpd: promoted from tools/spec_r498.json (the The WSG PROFICIENCIES PROSE, R498: the chapter frame and the twenty-five descriptions, printed pp. 11-17 (pdf 12-18). The Table 1/2 grids and the check/improving/expanding system stay with R425 (rules/wsg/wsgprof.h) as seams; this round pins the prose around and between them - every description mechanic from the 1-in-6 alertness surprise to the weather sense lockout.);
 -- DO NOT hand-edit; the spec JSON stays the adjudicated record.
 return {
   "round" = 498,
   "prefix" = "wpd",
   "banner" = {
-      "title" = "The WSG PROFICIENCIES PROSE, R498: the chapter frame and the twenty-five descriptions, printed pp. 11-17 (pdf 12-18). The Table 1/2 grids and the check/improving/expanding system stay with R425 (rules/wsgprof.h) as seams; this round pins the prose around and between them - every description mechanic from the 1-in-6 alertness surprise to the weather sense lockout.",
+      "title" = "The WSG PROFICIENCIES PROSE, R498: the chapter frame and the twenty-five descriptions, printed pp. 11-17 (pdf 12-18). The Table 1/2 grids and the check/improving/expanding system stay with R425 (rules/wsg/wsgprof.h) as seams; this round pins the prose around and between them - every description mechanic from the 1-in-6 alertness surprise to the weather sense lockout.",
       "provenance" = "WSG printed pp. 11-17, pdf 12-18, extracted at r497-extraction sha 0d5f109 (tesseract full-text and tsv, x12-x18, 300 dpi) - the same pass as R497. The tesseract Table 2 read dropped rows but the grid is already pinned by R425 from the IIIF image; the descriptions prose read whole and clean.",
       "sentinel" = "THE SETTLE: the last four WSG boxes flip in the same commit; the gap report lands at 186 closed / 0 open - THE ENTIRE WILDERNESS SURVIVAL GUIDE IS PINNED; census 422 -> 423.",
     },

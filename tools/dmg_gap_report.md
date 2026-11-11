@@ -239,7 +239,7 @@ the PHB Reaction/Attacking Adjustment to EACH attack
 (caller-side), and the secondary weapon never acting
 as a shield or parrying device. Census 79.
 R162 PINNED level title ladders (PHB pp.20-31
-class tables) - rules/classes.cpp: the printed
+class tables) - rules/engine/classes.cpp: the printed
 per-level titles for the four engine classes,
 replacing the placeholder ladders (the all-Conjurer
 MU run, the Curate run, the all-Rogue thief).
@@ -513,7 +513,7 @@ the printed asterisks ride as flags. The
 caller rolls the dice and builds the
 rosters. Census 88.
 R171 PINNED Appendices K, L and M (DMG
-pp.221-224) - rules/klm.h: Appendix K - the
+pp.221-224) - rules/dmg_appendices_klm.h: Appendix K - the
 appearance and consistency list (10), the
 transparency list (10 with the printed
 parentheticals, four asking the reader to
@@ -613,7 +613,7 @@ giant, lion, bear cave and boar giant were
 absent) - replaced by the full table; the
 compilation spelling woolly corrects the
 pinned wooly; the bandless rows pin as lo/hi
-0 (the printed dash). rules/klm.h; the R175
+0 (the printed dash). rules/dmg_appendices_klm.h; the R175
 battery audit carries the cell-by-cell check.
 R176 PINNED the printed XP tables (PHB pp.20-31
 class tables) - the R162 FINDING closed: the PHB
@@ -635,7 +635,7 @@ attain convention is the printed band lower
 bound - 1 (fighter level 5: 18,001-35,000 gives
 18000 - the old row read 16000); the engine
 linear-beyond convention is kept, now anchored
-on the printed adders. rules/classes.cpp; the
+on the printed adders. rules/engine/classes.cpp; the
 R176 battery audit carries the row walk, the
 beyond-table probes and the clamps.
 Census 94.
@@ -667,7 +667,7 @@ round; the per-subclass specials renumber to
 R187+. No audit; census stays 94.
 R178c CLOSED the PHB report divergences 1 and 2
 (the live bugs first, per the arc ordering
-rule): rules/character.cpp - the DEX reaction
+rule): rules/engine/character.cpp - the DEX reaction
 ladder repinned (3 -3, 4 -2, 18 +3; missile
 attacks and surprise now read the print), the
 CON system-shock (35-99) and resurrection-
@@ -711,7 +711,7 @@ rules/attacksround.h CREATED (the fighter-group
 bands with the printed level edges, the
 under-one-hit-die note, the monk unarmed ladder
 cell by cell, the monk weapon-damage bonus).
-rules/turn.cpp meleeAttacksPerRound repinned - the
+rules/engine/turn.cpp meleeAttacksPerRound repinned - the
 level-8+ original note replaced by the print (the
 3/2 band opens at 7th; heavy-round convention, the
 full rates in the header). New R181 battery audit;
@@ -808,7 +808,7 @@ rollClericSpellFailure. The R130 wisdom-not-modeled
 engine limit closes. New R192 battery audit; census
 109. Next: the gap report names the next round.
 R193 landed the charisma repin (PHB divergence 5,
-the live one): rules/character.cpp chaReactionAdj,
+the live one): rules/engine/character.cpp chaReactionAdj,
 chaLoyaltyBase and chaHenchmenMax repinned cell for
 cell to the printed CHARISMA TABLE - the reaction
 and loyalty ladders are now the printed PERCENT
@@ -818,7 +818,7 @@ henchmen cells repinned (cha 4 = 1, cha 12 = 5).
 New R193 battery audit; census 110. Next: the PHB
 divergences 3 (WIS) and 4 (INT).
 R194 landed the wisdom defense repin (PHB divergence
-3): rules/character.cpp wisMagDefAdj repinned to the
+3): rules/engine/character.cpp wisMagDefAdj repinned to the
 printed Wisdom Table I ladder (-3..+4) by delegating to
 the R192 header pin rules::wisMagicalAttackAdj; the
 saves.h modifier note repins (mental attack forms
@@ -826,7 +826,7 @@ only; the save rolls still do not call it - the caller
 assembles). New R194 battery audit; census 111. Next:
 the last PHB divergence, 4 (INT languages).
 R195 landed the INT languages repin (the LAST
-founding-read divergence, 4): rules/character.cpp
+founding-read divergence, 4): rules/engine/character.cpp
 intExtraLanguages repinned to the printed
 INTELLIGENCE TABLE I column (3-7 none through 18
 seven); the engine convention diverged at every
@@ -8409,7 +8409,7 @@ Categories:
       the low-dex add-to-each rule, no shield or
       parry from the second weapon).
 - [x] **Level title ladders (PHB class tables)** - pinned by
-      R162: rules/classes.cpp (the four printed ladders
+      R162: rules/engine/classes.cpp (the four printed ladders
       through the name levels; the cleric level 5 blank
       cell carries Curate down; the XP-row divergence is
       CLOSED R176 - the rows repinned to the print).
@@ -8454,7 +8454,7 @@ Categories:
       the star marks, the letter key, the usage and
       the compatibility prose).
 - [x] **Appendices K + L + M (pp.221-224)** - PINNED
-      R171: rules/klm.h (the substance word lists, the
+      R171: rules/dmg_appendices_klm.h (the substance word lists, the
       conjured animals categories, the 20 summoned
       monsters tables; the Appendix L 5-and-up band
       columns were the OCR-debt finding, CLOSED

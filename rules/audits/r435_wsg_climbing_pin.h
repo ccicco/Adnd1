@@ -4,7 +4,7 @@
     // thief-or-mountaineering restrictions), the climbing prose (the half
     // rate, the dex adjustment, the no-tools assumption), the encumbrance
     // modifications, the surface types and conditions and the
-    // chance-of-falling rating (rules/wsgclimb.h, prefix wcs); census 359 ->
+    // chance-of-falling rating (rules/wsg/wsgclimb.h, prefix wcs); census 359 ->
     // 360.
     {
         using namespace rules;

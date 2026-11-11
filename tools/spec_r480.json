@@ -2,7 +2,7 @@
  "round": 480,
  "title": "the WSG injuries and treatment slice - the broken bone, burn, major wound and minor wound rules with the first-aid treatment semantics, printed p. 70",
  "prefix": "wtr",
- "header_file": "rules/wsginj.h",
+ "header_file": "rules/wsg/wsginj.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -458,12 +458,12 @@
   {
    "note": "the injuries and treatment box",
    "from": "  - [ ] Injuries and treatment (p. 70)",
-   "to": "  - [x] Injuries and treatment (p. 70) - R480: the broken bone, burn, major wound and minor wound rules with the first-aid treatment semantics pin as rules/wsginj.h"
+   "to": "  - [x] Injuries and treatment (p. 70) - R480: the broken bone, burn, major wound and minor wound rules with the first-aid treatment semantics pin as rules/wsg/wsginj.h"
   },
   {
    "note": "the post-state line",
-   "from": "Post-state at R479: 106 closed, 80 open (the R479 round continues the camping arc medicine chapter - the proficiency in plant lore prose pins as rules/wsglore.h; the next round continues - injuries and treatment (p. 70)).",
-   "to": "Post-state at R480: 107 closed, 79 open (the R480 round continues the camping arc medicine chapter - the injuries and treatment rules pin as rules/wsginj.h; the next round continues - first aid equipment (p. 71))."
+   "from": "Post-state at R479: 106 closed, 80 open (the R479 round continues the camping arc medicine chapter - the proficiency in plant lore prose pins as rules/wsg/wsglore.h; the next round continues - injuries and treatment (p. 70)).",
+   "to": "Post-state at R480: 107 closed, 79 open (the R480 round continues the camping arc medicine chapter - the injuries and treatment rules pin as rules/wsg/wsginj.h; the next round continues - first aid equipment (p. 71))."
   }
  ],
  "gap_census": {
@@ -471,7 +471,7 @@
   "open": 79
  },
  "include_comment": "the WSG injuries and treatment rules",
- "include_after": "#include \"rules/wsglore.h\"  // R479: the WSG plant lore proficiency prose",
+ "include_after": "#include \"rules/wsg/wsglore.h\"  // R479: the WSG plant lore proficiency prose",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R479 LANDED 2026-10-15: commit 8089f20 (census 404, pushed",
@@ -486,7 +486,7 @@
   "  way, the no-vegetation bar, the greater-chance-in-greenery",
   "  rule, and the pointer to the Wilderness Proficiencies",
   "  section for the benefits), prefix plr, pinned as",
-  "  rules/wsglore.h with the include after wsgmed.h at line",
+  "  rules/wsg/wsglore.h with the include after wsgmed.h at line",
   "  184. THE SETTLE: two-way clean on the FIRST pass - the",
   "  tesseract full-text and the pdfy layout read agree word",
   "  for word, no contested cells, no vision reads needed; the",

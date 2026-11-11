@@ -14,7 +14,7 @@
 # delivers the seven flagged
 # seams:
 #
-# 1. rules/uaarmprose.h
+# 1. rules/ua/uaarmprose.h
 #    (R387): four flags drop -
 #    the elfin chain mail's
 #    size table (the row-one
@@ -29,7 +29,7 @@
 #    Word broadswords' nine
 #    appellations; the part
 #    ledger flips 4/4 -> 8/0.
-# 2. rules/uamweapprose.h
+# 2. rules/ua/uamweapprose.h
 #    (R388): three flags drop -
 #    the axe of hurling's 12
 #    1/2% familiarization
@@ -153,9 +153,9 @@ SEED_ENTRY = E(
     '  98-104 read fills all 33',
     '  flagged holes the six misc',
     '  magic prose parts carry',
-    '  (rules/uamiscprose1.h',
+    '  (rules/ua/uamiscprose1.h',
     '  through',
-    '  rules/uamiscprose6.h) -',
+    '  rules/ua/uamiscprose6.h) -',
     '  every part ledger runs',
     '  clean, the four',
     '  provisional pins correct',
@@ -187,8 +187,8 @@ if s.count('R398 landed 2026-10-13') != 1:
 if s.count('## Knowledge maintenance') != 1:
     die('the seed maintenance head')
 
-# ============ (b) rules/uaarmprose.h ============
-P1 = 'rules/uaarmprose.h'
+# ============ (b) rules/ua/uaarmprose.h ============
+P1 = 'rules/ua/uaarmprose.h'
 NS = NL + 'namespace rules {'
 
 pair(P1, E(
@@ -375,8 +375,8 @@ pair(P1, E(
     '    { return 0; }'),
     'armor: the part ledger')
 
-# ============ (c) rules/uamweapprose.h ============
-P2 = 'rules/uamweapprose.h'
+# ============ (c) rules/ua/uamweapprose.h ============
+P2 = 'rules/ua/uamweapprose.h'
 
 pair(P2, E(
     '// armor and skeleton seams',
@@ -516,7 +516,7 @@ GP = 'tools/ua_gap_report.md'
 pair(GP, E(
     '      - AMENDED R387: the UA armor and',
     '        swords prose pin round',
-    '        (rules/uaarmprose.h) - the',
+    '        (rules/ua/uaarmprose.h) - the',
     '        pp. 104-105 stretch, EIGHT items',
     '        pin: FOUR fully clean (the',
     '        anything armor, the short sword',
@@ -535,7 +535,7 @@ pair(GP, E(
     E(
     '      - AMENDED R387: the UA armor and',
     '        swords prose pin round',
-    '        (rules/uaarmprose.h) - the',
+    '        (rules/ua/uaarmprose.h) - the',
     '        pp. 104-105 stretch, EIGHT items',
     '        pin: FOUR fully clean (the',
     '        anything armor, the short sword',
@@ -574,7 +574,7 @@ pair(GP, E(
 pair(GP, E(
     '      - AMENDED R388: the UA misc',
     '        weapons prose pin round',
-    '        (rules/uamweapprose.h) - the',
+    '        (rules/ua/uamweapprose.h) - the',
     '        pp. 105-106 stretch, NINE items',
     '        pin: SIX fully clean (the bullet',
     '        of impact, the dagger Longtooth,',
@@ -595,7 +595,7 @@ pair(GP, E(
     E(
     '      - AMENDED R388: the UA misc',
     '        weapons prose pin round',
-    '        (rules/uamweapprose.h) - the',
+    '        (rules/ua/uamweapprose.h) - the',
     '        pp. 105-106 stretch, NINE items',
     '        pin: SIX fully clean (the bullet',
     '        of impact, the dagger Longtooth,',

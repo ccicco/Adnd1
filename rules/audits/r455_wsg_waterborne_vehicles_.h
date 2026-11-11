@@ -11,7 +11,7 @@
     // minimum, the two-turns-on one-turn-off max-oar exertion with the
     // fatigued half speed and the forced one-turn exhaustion, and the
     // shorthanded proportionate rowing per the 3-rowers large-rowboat
-    // example) (rules/wsgvessels.h, prefix wvb); census 379 -> 380.
+    // example) (rules/wsg/wsgvessels.h, prefix wvb); census 379 -> 380.
     {
         using namespace rules;
         int bad = 0;

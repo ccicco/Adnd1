@@ -482,7 +482,7 @@ history (R172-R312) stays at adnd1_knowledge_backup_v2.md.
   leading count), tags Bnd/T1/T2/
   T3/T4, prefix ffq (ffp taken:
   the R836 promotion header owns
-  rules/ffp.h). THE CENSUS PINS:
+  rules/ff/promo_batch1.h). THE CENSUS PINS:
   ZERO registry defs touched (the
   item rows are not monster
   listings, no defs promoted, the
@@ -517,7 +517,7 @@ history (R172-R312) stays at adnd1_knowledge_backup_v2.md.
   personal-select advice and the
   groups-or-multiples note, and the
   bands match the DMG listing
-  exactly. Header rules/ffq.h (12
+  exactly. Header rules/ff/magic_item_tables.h (12
   consts + 11 bools + 17 table
   cols, inline 40), audit "R848 FF
   magic item tables audit", rode
@@ -736,7 +736,7 @@ above this header stays the R848 content, unchanged.
   the psionic classes I-VI, the
   intervention modifiers), the
   monster intelligence ladder to
-  godlike; header rules/dga.h
+  godlike; header rules/ddg/ddg_frontmatter.h
   (inline 237), prefix dga; audit
   "R849 DDG front matter audit",
   rode rules/audits/r849_batch.h;
@@ -791,7 +791,7 @@ above this header stays the R848 content, unchanged.
   cols, 14 rows each - one row
   per being), 93 consts + 103
   bools + 25 examples, inline
-  232; header rules/dgb.h,
+  232; header rules/ddg/mythos_american_indian.h,
   prefix dgb; audit "R850
   American Indian mythos
   audit", rode
@@ -870,7 +870,7 @@ above this header stays the R848 content, unchanged.
   grids x 15 rows (combat, class,
   ability, roster), 52 consts + 89
   bools + 38 table cols, inline 179;
-  header rules/dgc.h, prefix dgc;
+  header rules/ddg/mythos_arthurian.h, prefix dgc;
   audit "R851 Arthurian mythos
   audit", rode rules/audits/
   r851_batch.h; 25 examples. ZERO
@@ -911,7 +911,7 @@ above this header stays the R848 content, unchanged.
   mid-write-list with everything else
   applied; the unwind (git restore
   seed/regtest/gap report to base +
-  rm dgc.h/r851_batch.h) plus
+  rm rules/ddg/mythos_arthurian.h/r851_batch.h) plus
   mkdir -p doc/data re-landed clean;
   future data-file rounds need the
   directory or a one-line engine
@@ -939,7 +939,7 @@ above this header stays the R848 content, unchanged.
   THE SHAPE: 4 grids x 10 rows
   (combat, class, ability, roster;
   38 cols), 73 consts + 114 bools,
-  inline 225; header rules/dgd.h,
+  inline 225; header rules/ddg/mythos_babylonian.h,
   prefix dgd; audit "R852 Babylonian
   mythos audit", rode rules/audits/
   r852_batch.h; 34 examples. The
@@ -1012,7 +1012,7 @@ above this header stays the R848 content, unchanged.
   See below), 135 consts + 151
   bools + 38 table cols, inline
   324; 43 examples; header
-  rules/dge.h, prefix dge;
+  rules/ddg/mythos_celtic.h, prefix dge;
   audit "R853 Celtic mythos
   audit", rode rules/audits/
   r853_batch.h. THE ADJUDICATIONS
@@ -1102,7 +1102,7 @@ above this header stays the R848 content, unchanged.
   printed-damage flags), 70
   consts + 127 bools + 38 table
   cols, inline 235; 30 examples;
-  header rules/dgf.h, prefix dgf;
+  header rules/ddg/mythos_central_american.h, prefix dgf;
   audit "R854 Central American
   mythos audit", rode
   rules/audits/r854_batch.h. THE
@@ -1191,7 +1191,7 @@ above this header stays the R848 content, unchanged.
   THE SHAPE: 132 consts + 109
   bools + 4 grids (38 table
   cols), 279 inlines, 28
-  examples; header rules/dgg.h,
+  examples; header rules/ddg/mythos_chinese.h,
   prefix dgg; audit "R855
   Chinese mythos audit", rode
   rules/audits/r855_batch.h.
@@ -1279,13 +1279,13 @@ above this header stays the R848 content, unchanged.
   Shub-Niggurath d6 summon-list
   flag, col 8 as the in-each
   flag), 330 inlines, 29
-  examples; header rules/cth.h,
+  examples; header rules/ddg/mythos_cthulhu.h,
   prefix cth; audit "R856
   Cthulhu mythos audit", rode
   rules/audits/r856_batch.h.
   THE PREFIX CATCH (the round's
   new lesson): dgh was NOT free
-  - rules/oamonk.h owns
+  - rules/oa/oamonk.h owns
   dghMonkMinStr and friends
   (the oakensai comment even
   warned "verify free"), and
@@ -1976,7 +1976,7 @@ above this header stays the R848 content, unchanged.
   as the round's one grid (40 rows, Ord/Low/High) with
   the 40-label roster riding the round's data file
   doc/data/ddg_temple_trappings.txt; prefix tpl
-  (full-repo scan clean); header rules/tpl.h; audit
+  (full-repo scan clean); header rules/ddg/appendix2_temple_trappings.h; audit
   "R868 temple trappings audit", rode
   rules/audits/r868_batch.h. THE HEADLINE
   ADJUDICATIONS: the print reads CHOIR AREA (two
@@ -2030,7 +2030,7 @@ above this header stays the R848 content, unchanged.
   ordinals, the M/F/N-H flags) with the nine
   per-column rosters riding doc/data/
   ddg_clerical_chart_1.txt; prefix cqc
-  (full-repo scan clean); header rules/cqc.h;
+  (full-repo scan clean); header rules/ddg/cqc_batch1.h;
   audit "R869 clerical chart batch one audit",
   rode rules/audits/r869_batch.h. NO GAP FLIP -
   the App 3 box stays open until the last chart
@@ -2099,7 +2099,7 @@ above this header stays the R848 content, unchanged.
   Ord, the nine string-field roster ordinals, the
   M/F/N-H flags) with the nine per-column rosters
   riding doc/data/ddg_clerical_chart_2.txt; prefix
-  cqc2 (full-repo scan clean); header rules/cqc2.h;
+  cqc2 (full-repo scan clean); header rules/ddg/cqc_batch2.h;
   audit "R870 clerical chart batch two audit", rode
   rules/audits/r870_batch.h. NO GAP FLIP - the
   App 3 box stays open until the last chart batch
@@ -2156,7 +2156,7 @@ above this header stays the R848 content, unchanged.
   nine string-field roster ordinals, the M/F/N-H
   flags) with the nine per-column rosters riding
   doc/data/ddg_clerical_chart_3.txt; prefix cqc3
-  (full-repo scan clean); header rules/cqc3.h;
+  (full-repo scan clean); header rules/ddg/cqc_batch3.h;
   audit "R871 clerical chart batch three audit",
   rode rules/audits/r871_batch.h. NO GAP FLIP -
   the App 3 box stays open until the last chart
@@ -2211,7 +2211,7 @@ above this header stays the R848 content, unchanged.
   string-field roster ordinals, the M/F/N-H flags)
   with the nine per-column rosters riding
   doc/data/ddg_clerical_chart_4.txt; prefix cqc4
-  (full-repo scan clean); header rules/cqc4.h;
+  (full-repo scan clean); header rules/ddg/cqc_batch4.h;
   audit "R872 clerical chart batch four audit",
   rode rules/audits/r872_batch.h. NO GAP FLIP -
   the App 3 box stays open until the last chart
@@ -2268,7 +2268,7 @@ above this header stays the R848 content, unchanged.
   nine string-field roster ordinals, the M/F/N-H
   flags) with the nine per-column rosters riding
   doc/data/ddg_clerical_chart_5.txt; prefix cqc5
-  (full-repo scan clean); header rules/cqc5.h;
+  (full-repo scan clean); header rules/ddg/cqc_batch5.h;
   audit "R873 clerical chart batch five audit",
   rode rules/audits/r873_batch.h. NO GAP FLIP -
   the App 3 box stays open until the last chart
@@ -2328,7 +2328,7 @@ above this header stays the R848 content, unchanged.
   roster ordinals, the M/F/N-H flags) with the nine
   per-column rosters riding
   doc/data/ddg_clerical_chart_6.txt; prefix cqc6
-  (full-repo scan clean); header rules/cqc6.h;
+  (full-repo scan clean); header rules/ddg/cqc_batch6.h;
   audit "R874 clerical chart batch six audit",
   rode rules/audits/r874_batch.h. NO GAP FLIP -
   the App 3 box stays open until the last chart
@@ -2389,7 +2389,7 @@ above this header stays the R848 content, unchanged.
   roster ordinals, the M/F/N-H flags) with the nine
   per-column rosters riding
   doc/data/ddg_clerical_chart_7.txt; prefix cqc7
-  (full-repo scan clean); header rules/cqc7.h;
+  (full-repo scan clean); header rules/ddg/cqc_batch7.h;
   audit "R875 clerical chart batch seven audit",
   rode rules/audits/r875_batch.h. NO GAP FLIP -
   the App 3 box stays open until the last chart
@@ -2452,7 +2452,7 @@ above this header stays the R848 content, unchanged.
   nine string-field roster ordinals, the M/F/N-H
   flags) with the nine per-column rosters riding
   doc/data/ddg_clerical_chart_8.txt; prefix cqc8
-  (full-repo scan clean); header rules/cqc8.h;
+  (full-repo scan clean); header rules/ddg/cqc_batch8.h;
   audit "R876 clerical chart batch eight audit",
   rode rules/audits/r876_batch.h. NO GAP FLIP -
   the App 3 flip was HELD at the R876 scoping per
@@ -2568,7 +2568,7 @@ above this header stays the R848 content, unchanged.
   TwoVolumes, NoDate); the rosters ride
   doc/data/ddg_index.txt and doc/data/
   ddg_app4.txt; prefix idx (full-repo scan clean);
-  header rules/idx.h; audit "R877 Appendix 4 and
+  header rules/ddg/appendix4_index.h; audit "R877 Appendix 4 and
   index audit" rode rules/audits/r877_batch.h;
   regtest.cpp +2 include lines. ZERO registry
   defs touched - the floor holds at 995. Spec
@@ -2586,11 +2586,11 @@ above this header stays the R848 content, unchanged.
   - a spec change needs a fresh pristine tree
   re-extract. rverify double-run GREEN, 4,457
   mutants 0 missed; statics clean (audits dir
-  799 = 798+1, idx.h maxwidth 92 opener-only,
+  799 = 798+1, rules/ddg/appendix4_index.h maxwidth 92 opener-only,
   r877_batch.h 78 chars char-based - an earlier
   "80" was awk counting UTF-8 bytes of the right
   single quote; zero True/False tokens; quote
-  parity even, idx.h zero double quotes; hyphen
+  parity even, rules/ddg/appendix4_index.h zero double quotes; hyphen
   scan clean); the R876 record seated in the
   seed at line 25569; the canvas spec-r877 gated
   byte-exact (frontmatter + spec bytes, no extra
@@ -2637,7 +2637,7 @@ above this header stays the R848 content, unchanged.
   15, Ord 2 at 16, Ord 17 center at 0); the
   rosters ride doc/data/ddg_fig4.txt and
   doc/data/ddg_fig5.txt; prefix afg (full-repo
-  scan clean); header rules/afg.h; audit "R878
+  scan clean); header rules/ddg/alignment_figures.h; audit "R878
   alignment figures audit" rode
   rules/audits/r878_batch.h; regtest.cpp +2
   include lines; 19 consts, 18 bools, 5 cols, 6
@@ -2657,7 +2657,7 @@ above this header stays the R848 content, unchanged.
   authoritative transit, all eight files
   cmp-clean, zero strays). rverify GREEN, 98
   mutants 0 missed; statics clean (audits dir
-  800 = 799+1, afg.h maxwidth 92 opener-only,
+  800 = 799+1, rules/ddg/alignment_figures.h maxwidth 92 opener-only,
   r878_batch.h 78 chars char-based, zero
   True/False tokens in the emitted C++ files,
   quote parity even, hyphen scan clean - the
@@ -2704,7 +2704,7 @@ above this header stays the R848 content, unchanged.
   (pony, ape, mule) - the anchor catch of the
   round.
   THE MECHANICS: prefix rsc (full-repo scan clean),
-  header rules/rsc.h (maxwidth 92 opener-only),
+  header rules/meta/registry_schema.h (maxwidth 92 opener-only),
   audit "R879 registry schema audit" rode
   rules/audits/r879_batch.h (78 char-based); 10
   consts, 9 bools, 2 grids (books 6x2, keys 57x7
@@ -2768,7 +2768,7 @@ above this header stays the R848 content, unchanged.
   eleven fixed-damage rows but the grid and audit
   pin ten - the grid wins.
   THE MECHANICS: prefix dpe (full-repo scan clean),
-  header rules/dpe.h (92 opener-only), audit "R880
+  header rules/ddg/lua_promo_batch1.h (92 opener-only), audit "R880
   DDG promotion audit" rode
   rules/audits/r880_batch.h (801 -> 802 audit
   files); 12 consts, 10 bools, 2 grids (mythoi 4x4,
@@ -2850,7 +2850,7 @@ above this header stays the R848 content, unchanged.
   (117,796 bytes); the canvas spec-r882 gated
   byte-exact; rverify 144 mutants 0 missed;
   the land verified byte-exact against the
-  fresh-tarball rebuild (1178 defs, dpu.h,
+  fresh-tarball rebuild (1178 defs, rules/ddg/lua_promo_batch3.h,
   audit, census, seed, regtest identical;
   engine idempotent applied 66 / already 66).
   NEXT: the promotion continues print-order -
@@ -2896,7 +2896,7 @@ above this header stays the R848 content, unchanged.
   (71,581 bytes); the canvas spec-r883 gated
   byte-exact; rverify 144 mutants 0 missed;
   the land verified byte-exact against the
-  fresh-tarball rebuild (1209 defs, dpw.h,
+  fresh-tarball rebuild (1209 defs, rules/ddg/lua_promo_batch4.h,
   audit, census, seed, regtest, spec
   identical; engine idempotent applied 37 /
   already 37). NEXT: the promotion continues
@@ -2942,7 +2942,7 @@ above this header stays the R848 content, unchanged.
   bytes); the canvas spec-r884 gated
   byte-exact; rverify 140 mutants 0 missed;
   the land verified byte-exact against the
-  fresh-tarball rebuild (1242 defs, dpx.h,
+  fresh-tarball rebuild (1242 defs, rules/ddg/lua_promo_batch5.h,
   audit, census, seed, regtest, spec
   identical; engine idempotent applied 39 /
   already 39). NEXT: the promotion continues
@@ -3000,7 +3000,7 @@ above this header stays the R848 content, unchanged.
   the canvas spec-r885 gated byte-exact; rverify
   144 mutants 0 missed; the land verified
   byte-exact against the fresh-tarball rebuild
-  (1291 defs, dpy.h, audit, census, seed, regtest,
+  (1291 defs, rules/ddg/lua_promo_batch6.h, audit, census, seed, regtest,
   spec identical; engine idempotent applied 55 /
   already 55). NEXT: the promotion tail - Norse,
   then Sumerian. WAIT FOR GO.
@@ -3064,7 +3064,7 @@ above this header stays the R848 content, unchanged.
   bytes); the canvas spec-r886 gated
   byte-exact; rverify 144 mutants 0 missed;
   the land verified byte-exact against the
-  fresh-tarball rebuild (1333 defs, dpz.h,
+  fresh-tarball rebuild (1333 defs, rules/ddg/lua_promo_batch7.h,
   audit, census, seed, regtest, spec
   identical; engine idempotent applied 48 /
   already 48). NEXT: the per-book

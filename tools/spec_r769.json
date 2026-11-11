@@ -2,7 +2,7 @@
  "round": 769,
  "title": "OA DAILY LIFE - Names: the thirteen name types of the Oriental world",
  "prefix": "dme",
- "header_file": "rules/oa140names.h",
+ "header_file": "rules/oa/oa140names.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA DAILY LIFE - NAMES, printed capture pp. 312-313 - the thirteen name types of the Oriental world",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 222 closed, 13 open - the Names box flips (census 691 -> 692); NEXT - R770: Back matter (capture pp. 313-314, the bibliography and the closing page), prefix dmf (verify free at the landing), audit \"R770 OA Back matter audit\", include after rules/oa140names.h"
+  "sentinel": "the gap census after this round: 222 closed, 13 open - the Names box flips (census 691 -> 692); NEXT - R770: Back matter (capture pp. 313-314, the bibliography and the closing page), prefix dmf (verify free at the landing), audit \"R770 OA Back matter audit\", include after rules/oa/oa140names.h"
  },
  "consts": [
   {
@@ -240,7 +240,7 @@
   "open": 13
  },
  "include_comment": "the OA Daily Life Names pins",
- "include_after": "#include \"rules/oa139manners.h\"  // R768: the OA Daily Life Manners pins",
+ "include_after": "#include \"rules/oa/oa139manners.h\"  // R768: the OA Daily Life Manners pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R768 LANDED 2026-10-22: commit",
@@ -249,7 +249,7 @@
   "  2725a47efffedf7d139183f9e10ba3fb4670302f",
   "  (census 690 -> 691, pushed a73ac2a..2725a47),",
   "  OA DAILY LIFE, Manners (capture p. 312),",
-  "  header rules/oa139manners.h, prefix dmd",
+  "  header rules/oa/oa139manners.h, prefix dmd",
   "  (fully free at a73ac2a - zero substring",
   "  hits, zero call-site dmd\\w*( collisions),",
   "  one gap flip (the Manners box,",
@@ -294,6 +294,6 @@
   "  NEXT - R769: Names (capture pp. 312-313),",
   "  prefix dme (verify free at the landing),",
   "  audit \"R769 OA Daily Life Names audit\",",
-  "  include after rules/oa139manners.h."
+  "  include after rules/oa/oa139manners.h."
  ]
 }

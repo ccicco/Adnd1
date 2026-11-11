@@ -1,7 +1,7 @@
 {
   "round": 558,
   "prefix": "dck",
-  "header_file": "rules/dsgtabs.h",
+  "header_file": "rules/dsg/dsgtabs.h",
   "regtest": "regtest.cpp",
   "gap_report": "tools/dsg_gap_report.md",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -10,7 +10,7 @@
   "audit_label": "R558 DSG compiled tables audit",
   "audit_comment": "The compiled tables pins printed pp. 121-123: the book's own reprint spread, verified const-for-const against the landed pins - Tables 1-9 the movement reprints (R504/R505), 15-16 the odor, 17-18 the cave-ins, 19 the DPV, 20 the unsteady reactions, 21-26 the boats, and 27-34 the mining - with the Table 3 five-row grapple delta pinned this round (the stone parapet, stone wall top, and tree branches rows the chapter original lacked), the Table 1 and Table 2 footnotes, the Table 25 proficiency slash split, and the Table 33 pure-vein footnote. The Compiled tables child flips [x] in the same commit.",
   "include_comment": "the DSG compiled tables pins",
-  "include_after": "#include \"rules/dsgmap.h\"  // R557: the DSG mapping your settings pins",
+  "include_after": "#include \"rules/dsg/dsgmap.h\"  // R557: the DSG mapping your settings pins",
   "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
   "seed_anchor": "## Knowledge maintenance",
   "prev_seed_key": "- R557 LANDED 2026-10-17: commit 3abdb7d50bbf121e72",
@@ -45,7 +45,7 @@
     "  generation, the d3/d4/d6 placement rolls, the",
     "  unnoticed matches and dead-end mismatches, the",
     "  variety hiding revisits). 8 consts + 35",
-    "  bools, prefix dcj, header rules/dsgmap.h,",
+    "  bools, prefix dcj, header rules/dsg/dsgmap.h,",
     "  spec 24,770 bytes, md5",
     "  06ca8c8c0975a49990958655599be5d5 matched",
     "  exactly first try, 43 inlines; djvu lines",
@@ -334,7 +334,7 @@
     {
       "from": "- [ ] **Compiled tables** (p. 121) - the book's own table reprint pages",
       "note": "the Compiled tables child closes",
-      "to": "- [x] **Compiled tables** (pp. 121-123) - R558: the thirty-four-table reprint spread verified const-for-const against the landed chapter pins (rules/dsgtabs.h) - Tables 1-9 the movement, 15-16 the odor, 17-18 the cave-ins, 19 the DPV, 20 the unsteady reactions, 21-26 the boats, 27-34 the mining - with the Table 3 five-row grapple delta pinned (the stone parapet, stone wall top, and tree branches rows the chapter original lacked); tables 10-14 not reprinted. Closed R558"
+      "to": "- [x] **Compiled tables** (pp. 121-123) - R558: the thirty-four-table reprint spread verified const-for-const against the landed chapter pins (rules/dsg/dsgtabs.h) - Tables 1-9 the movement, 15-16 the odor, 17-18 the cave-ins, 19 the DPV, 20 the unsteady reactions, 21-26 the boats, 27-34 the mining - with the Table 3 five-row grapple delta pinned (the stone parapet, stone wall top, and tree branches rows the chapter original lacked); tables 10-14 not reprinted. Closed R558"
     }
   ],
   "gap_census": {

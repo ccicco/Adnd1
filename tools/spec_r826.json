@@ -3,7 +3,7 @@
   "title": "the DMG tables migration batch",
   "prefix": "tmb",
   "regtest": "regtest.cpp",
-  "header_file": "rules/tmb.h",
+  "header_file": "rules/meta/migration_batch_dmg_tables.h",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
   "gap_report": "tools/mm2_gap_report.md",
   "banner": {
@@ -135,7 +135,7 @@
   "audit_file": "rules/audits/r826_batch.h",
   "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
   "include_comment": "the DMG tables migration batch",
-  "include_after": "#include \"rules/nmb.h\"  // R825: the DMG appendix migration batch",
+  "include_after": "#include \"rules/meta/migration_batch_dmg_appendix.h\"  // R825: the DMG appendix migration batch",
   "seed_anchor": "## Knowledge maintenance",
   "prev_seed_key": "- R825 LANDED 2026-10-25: commit",
   "prev_record": [
@@ -164,7 +164,7 @@
     "  magic aging) migrated as separate",
     "  blocks - the label, not the round",
     "  number, is the migration key. Header",
-    "  rules/nmb.h, prefix nmb (verified",
+    "  rules/meta/migration_batch_dmg_appendix.h, prefix nmb (verified",
     "  free at 0f7f233, 0 hits), 6 consts +",
     "  4 bools (inline 10), 4 examples, the",
     "  R824 record seated into the seed, NO",

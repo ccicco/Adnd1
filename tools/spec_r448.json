@@ -2,7 +2,7 @@
  "round": 448,
  "title": "the WSG jumping rules",
  "prefix": "wjp",
- "header_file": "rules/wsgjump.h",
+ "header_file": "rules/wsg/wsgjump.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -13,7 +13,7 @@
  "census_before": 372,
  "inline_count": 28,
  "audit_label": "R448 WSG jumping pin audit",
- "audit_comment": "The jumping slice pins the any-character rule, the four-foot running advantage with its 20-foot straight run, the half-height high jump with the roll-to-absorb landing, the thin-barrier high jump plus Dexterity Check with the 1d3 heap damage at five feet or higher and the next-round stand-up, the per-jump die roll, Table 22 (the seven level bands with the standing broad, running broad and high jump dice), and the cumulative modifiers (moderate -1, heavy -2 and cannot high jump, severe cannot jump at all, halfling -1 broad only, gnome or dwarf -2 broad and -1 high) with the 2-foot broad and 1-foot high floors (rules/wsgjump.h, prefix wjp); census 372 -> 373.",
+ "audit_comment": "The jumping slice pins the any-character rule, the four-foot running advantage with its 20-foot straight run, the half-height high jump with the roll-to-absorb landing, the thin-barrier high jump plus Dexterity Check with the 1d3 heap damage at five feet or higher and the next-round stand-up, the per-jump die roll, Table 22 (the seven level bands with the standing broad, running broad and high jump dice), and the cumulative modifiers (moderate -1, heavy -2 and cannot high jump, severe cannot jump at all, halfling -1 broad only, gnome or dwarf -2 broad and -1 high) with the 2-foot broad and 1-foot high floors (rules/wsg/wsgjump.h, prefix wjp); census 372 -> 373.",
  "banner": {
   "title": "The WSG JUMPING, R448: the jumping prose and TABLE 22 CHARACTERS' JUMPING ABILITY with the p. 40 modifiers - thief-acrobats and barbarians are particularly skilled in jumping, but ANY character can make a broad jump or a high jump. On the average a running broad jump covers FOUR more feet than a standing one, but it requires a 20-foot run in a straight line toward the obstacle immediately before leaping; without that space or the time to start the run, the standing jump is the best he can do. A high jump covers HALF as much distance horizontally as its height; a flat surface higher than the current elevation is landed on with a roll to absorb the impact; a thin barrier with level ground on the far side demands a successful high jump AND a Dexterity Check - failure lands him in a heap (1d3 damage for a jump of five feet or higher) and he needs the next round to stand up. The die is rolled for EACH jump attempt (a 4th-level character clears a 3-foot high jump only on a 1d3 roll of 3). Table 22: the seven level bands 1-6 through 23+ with the standing broad (1d4+1 to 1d6+6), the running broad (1d4+5 to 1d6+15) and the high jump (1d3 to 1d6+1). Modifiers, cumulative: moderately encumbered -1 foot; heavily encumbered -2 feet and cannot high jump; severely encumbered cannot jump at all; halfling -1 foot on broad jumps only; gnome or dwarf -2 feet broad and -1 foot high - with floors of 2 feet broad and 1 foot high. Census 372 -> 373.",
   "provenance": "the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed pp. 39-40; the user own copy OCR (pages 40-41) cross-checked against the archive djvu word layer (Guide_0039.djvu with the Guide_0040.djvu head) - the prose reads CLEAN two-way, every number (the four-foot advantage, the 20-foot run, the half-height high jump, the 1d3 five-foot heap damage, the modifier feet and the 2/1 floors) matched exactly; the Table 22 grid is GARBLED in the djvu word layer, so every cell was confirmed by TWO independent IIIF eye-reads of leaf 39 - the OCR and both eye-reads agree on all 21 cells.",
@@ -359,7 +359,7 @@
  "gap_flips": [
   {
    "from": "  - [ ] Jumping (p. 39)",
-   "to": "  - [x] Jumping (p. 39) - R448: the any-character rule, the four-foot running advantage with the 20-foot straight run, the half-height high jump, the thin-barrier Dex check with the 1d3 five-foot heap damage, the per-jump die roll, Table 22 (the seven bands, 1d4+1 through 1d6+15) and the cumulative modifiers with the 2/1 floors pin as rules/wsgjump.h",
+   "to": "  - [x] Jumping (p. 39) - R448: the any-character rule, the four-foot running advantage with the 20-foot straight run, the half-height high jump, the thin-barrier Dex check with the 1d3 five-foot heap damage, the per-jump die roll, Table 22 (the seven bands, 1d4+1 through 1d6+15) and the cumulative modifiers with the 2/1 floors pin as rules/wsg/wsgjump.h",
    "note": "jumping"
   },
   {
@@ -373,7 +373,7 @@
   "open": 135
  },
  "include_comment": "the WSG jumping rules",
- "include_after": "#include \"rules/wsgslip.h\"  // R447: the WSG slippery surface movement",
+ "include_after": "#include \"rules/wsg/wsgslip.h\"  // R447: the WSG slippery surface movement",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R447 landed 2026-10-14: commit 8a6f5c9",
@@ -393,7 +393,7 @@
   "  segments, even in a straight line); the half-rate free turn (turns need no",
   "  check at half the full normal movement rate); the full-round speed-change",
   "  exemption (a full round to slow down or speed up, full movement to",
-  "  standstill or vice versa, needs no check). rules/wsgslip.h NEW (8 inlines,",
+  "  standstill or vice versa, needs no check). rules/wsg/wsgslip.h NEW (8 inlines,",
   "  prefix wsl - checked free in all three TUs). Ground truth CLEAN two-way (the",
   "  user copy OCR vs the djvu word layer Guide_0039 - every number matched, no",
   "  eye-reads). Gap 49/137 -> 50/136; census 371 -> 372. rverify GREEN on the",

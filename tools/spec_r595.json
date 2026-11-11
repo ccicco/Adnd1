@@ -1,7 +1,7 @@
 {
  "round": 595,
  "prefix": "deb",
- "header_file": "rules/appendixivabilitiespowers.h",
+ "header_file": "rules/mop/appendixivabilitiespowers.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/motp_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -10,7 +10,7 @@
  "audit_label": "R595 AppIV audit",
  "audit_comment": "APPENDIX IV: ABILITIES OF THE POWERS, printed pp. 124-126, the divine ability ladder from the at-will standard set to the native-plane heights: the four ability types (specialized to a named Power like Zeus's roundly lightning bolt, standard at will to all, individual by rank, native only on the home plane); the sixteen standard divine abilities used at will (astral travel in physical or projected form, command with no save for followers or believers, continual light and darkness, the eight-part cure and twelve-part detect lists used one at a time with the reverse spells and the undetectable lie, ethereal travel with the Greater and Lesser crossing of living fields but no emerging into occupied space, enlarge to 300%, geas, levitate, polymorph self, protection from cantrips and from evil/good, the no-failure cross-planar sending, teleport without error, the four-spell understand languages, vocalize); the caster levels of magic use 30/20/15 by Greater/Lesser/Demi rank unless the Power has a defined level, the 4/3/2-round command durations, the 30/20/10-foot protection radii; the individual abilities by intensity in the campaign day - Greater: the at-will eight (atonement through regenerate), the six-a-day fourteen (anti-magic shell through summon), the three-a-day eleven (debth spell through holy/unholy word), no harmful side effects, resurrection without rest, the 2d6 same-alignment summon capped at 40 hit dice; Lesser: alter self at will, four a day, two a day, the vision servitude exception, the 1d6 summon of 30 hit dice; Demi: the three at-will, three a day, one a day, affected by malefic side effects, the 1d3 summon of 20 hit dice, the limited wish; the wish rules - Prime inhabitants only, no other Power in his home plane, no effect on the granting Power, violations void; and the native abilities - Greater: six-a-day to at will, three to six, doubled hit points, the 120% domain magic resistance, the always-on Astral and Border Ethereal senses, no conjuration summoning or necromantic harm, unslayable at home turning to sparkling vapor reforming in a tenth of a day, the hundred-year slayer-plane ban and ten-year own-plane confinement, sealed color pools and the forced pull, twenty spells of a hundred levels altered, the silver cord cut at AC -5, the Aspect built in a tenth of a year; Lesser: doubled hit points on the native layer, 100% resistance, the conscious look, permanently slayable at home and hundred-year banished abroad, twenty spells of eighty levels, the soul object of Orcus's wand; Demi: the 80% personal resistance, the observe-only senses, the reversible home-plane debth, the opaque pools, the attempted cord.",
  "include_comment": "the Appendix IV Powers abilities pins",
- "include_after": "#include \"rules/appendixiiioutercreatures.h\"  // R594: the Appendix III outer creatures pins",
+ "include_after": "#include \"rules/mop/appendixiiioutercreatures.h\"  // R594: the Appendix III outer creatures pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R594 LANDED 2026-10-17: commit",

@@ -2,7 +2,7 @@
  "round": 473,
  "title": "the WSG portable shelter mechanics and rest and comfort slice with Table 37 - the shelter kits and the Table 36 column semantics, the sleep requirements and the five-band lack-of-sleep effects, printed pp. 63-64",
  "prefix": "wrs",
- "header_file": "rules/wsgsleep.h",
+ "header_file": "rules/wsg/wsgsleep.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -895,22 +895,22 @@
   {
    "note": "rest and comfort",
    "from": "  - [ ] Rest and comfort (p. 64)",
-   "to": "  - [x] Rest and comfort (p. 64) - R473: the 16-hour active day with the 3-hour camp chores, the 5-hour sleep requirement and the p. 63 shelter-mechanics seam pin as rules/wsgsleep.h"
+   "to": "  - [x] Rest and comfort (p. 64) - R473: the 16-hour active day with the 3-hour camp chores, the 5-hour sleep requirement and the p. 63 shelter-mechanics seam pin as rules/wsg/wsgsleep.h"
   },
   {
    "note": "how much sleep",
    "from": "  - [ ] How much sleep? (p. 64)",
-   "to": "  - [x] How much sleep? (p. 64) - R473: the two-day trigger with the sunrise onset, the day-by-day average rest calculation, the one-night negation and the check and movement semantics pin as rules/wsgsleep.h"
+   "to": "  - [x] How much sleep? (p. 64) - R473: the two-day trigger with the sunrise onset, the day-by-day average rest calculation, the one-night negation and the check and movement semantics pin as rules/wsg/wsgsleep.h"
   },
   {
    "note": "the Table 37 box",
    "from": "- [ ] **Table 37: effects of lack of sleep** (p. 64)",
-   "to": "- [x] **Table 37: effects of lack of sleep** (p. 64) - R473: the five-band grid pins inside rules/wsgsleep.h (census 397)"
+   "to": "- [x] **Table 37: effects of lack of sleep** (p. 64) - R473: the five-band grid pins inside rules/wsg/wsgsleep.h (census 397)"
   },
   {
    "note": "the post-state line",
-   "from": "Post-state at R472: 93 closed, 93 open (the R472 round continues the camping arc - portable shelters with Table 36 pin as rules/wsgtents.h; the next round continues - rest and comfort (p. 64) with Table 37).",
-   "to": "Post-state at R473: 96 closed, 90 open (the R473 round continues the camping arc - the portable shelter mechanics seam with the rest and comfort sleep rules and Table 37 pin as rules/wsgsleep.h; the next round continues - good sleep vs bad sleep (p. 65) with Table 38)."
+   "from": "Post-state at R472: 93 closed, 93 open (the R472 round continues the camping arc - portable shelters with Table 36 pin as rules/wsg/wsgtents.h; the next round continues - rest and comfort (p. 64) with Table 37).",
+   "to": "Post-state at R473: 96 closed, 90 open (the R473 round continues the camping arc - the portable shelter mechanics seam with the rest and comfort sleep rules and Table 37 pin as rules/wsg/wsgsleep.h; the next round continues - good sleep vs bad sleep (p. 65) with Table 38)."
   }
  ],
  "gap_census": {
@@ -918,7 +918,7 @@
   "open": 90
  },
  "include_comment": "the WSG shelter mechanics, rest and sleep, and Table 37",
- "include_after": "#include \"rules/wsgtents.h\"  // R472: the WSG portable shelters and Table 36",
+ "include_after": "#include \"rules/wsg/wsgtents.h\"  // R472: the WSG portable shelters and Table 36",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R472 LANDED 2026-10-15: commit 663e014 (census 397, pushed",
@@ -957,7 +957,7 @@
   "  GOOD LARGE 1d4+2 OUTLIER breaking the 1d3+ pattern of",
   "  its band, verified in all three readers; moisture light/",
   "  moderate/heavy/downpour; wind 20/30/40/50 pct; life span",
-  "  40/80/120/180 days). rules/wsgtents.h NEW (27 inlines: 8",
+  "  40/80/120/180 days). rules/wsg/wsgtents.h NEW (27 inlines: 8",
   "  consts - the 6/10 pole band, the 30/45 pitch band, the",
   "  3-piece pole cap, the 4-band x 3-size x 12-row geometry -",
   "  plus 12 bools plus the seven Table 36 column switches -",

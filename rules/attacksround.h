@@ -25,7 +25,7 @@
 //     round sequence (the printed slash convention; 5/4 likewise
 //     5 attacks per 4 rounds).
 //   - the engine round model carries two swing slots (initiative
-//     and initiative+5, rules/turn.cpp); meleeAttacksPerRound
+//     and initiative+5, rules/engine/turn.cpp); meleeAttacksPerRound
 //     returns the routine count of the HEAVY round of the printed
 //     cycle: 1 below the 3/2 band, 2 in the 3/2 and 2/1 bands.
 //     The full printed rates live HERE.
@@ -38,7 +38,7 @@
 
 #pragma once
 
-#include "classes.h"
+#include "engine/classes.h"
 #include "subclasses.h"
 
 #include <cstdint>

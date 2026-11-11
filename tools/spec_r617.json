@@ -2,7 +2,7 @@
  "round": 617,
  "title": "CLASS AND RACE COMBINATIONS - the OA Chapter 2 opener: the combos prose riders, Table 9 Character Class Limits, Table 10 Racial Ability Score Limits, Table 12 Class Ability Score and Table 13 Armor & Weapons Permitted by Class",
  "prefix": "dgd",
- "header_file": "rules/oaclasscombos.h",
+ "header_file": "rules/oa/oaclasscombos.h",
  "regtest": "regtest.cpp",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "gap_report": "tools/oa_gap_report.md",
@@ -44,13 +44,13 @@
   "  10, 12 and 13, prefix dgd",
   "  (verify free), audit \"R617 OA",
   "  class combos audit\", include",
-  "  after rules/oaabilityprose.h."
+  "  after rules/oa/oaabilityprose.h."
  ],
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "audit_label": "R617 OA class combos audit",
  "audit_comment": "OA round four (capture pp. 16-23): the Chapter 2 opener - the class and race combinations riders and the four combination tables: the class limits with the alignment tiers, the racial ability limits, the class ability minimums with the bonus columns, and the armor and weapons permissions with the weapon-list counts.",
  "census_before": 539,
- "include_after": "#include \"rules/oaabilityprose.h\"  // R616: the OA ability prose pins",
+ "include_after": "#include \"rules/oa/oaabilityprose.h\"  // R616: the OA ability prose pins",
  "include_comment": "the OA class combos pins",
  "caller_files": [],
  "switches": [],
@@ -1089,6 +1089,6 @@
  "banner": {
   "title": "CLASS AND RACE COMBINATIONS, printed capture pp. 16-23 - the OA Chapter 2 opener round",
   "provenance": "verified against capture pp. 16-23 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). ENCODINGS: Table 9 U pins as the sentinel 99 and No as 0; Table 13 is a TEXT-HEAVY grid encoded as tiers - the armor tiers (any/leather-class/none), the weapon modes (any/any-but/named) with the list-count column carrying the printed weapon lists as counts (shukenja 16, the sohei 7-item exclusion list, wu jen 20, monk 16), the oil and poison tiers. The Table 12 colon notation pins as two columns - the required minimum and the 10-percent bonus minimum; the barbarian Wisdom 16 prints as the only MAXIMUM on a minimum table and pins as its own bool. The Table 13 riders (the samurai-kensai ninja-weapon honor loss, the samurai siege-oil exception, the ninja proficiency requirement) pin as bools.",
-  "sentinel": "the gap census after this round: 23 closed, 212 open - the Chapter 2 combos openers flip (census 539 -> 540); NEXT - R618: the three races - the korobokuru, hengeyokai and spirit folk sections with Table 11 Hengeyokai Creatures, prefix dge (verify free), audit \"R618 OA races audit\", include after rules/oaclasscombos.h"
+  "sentinel": "the gap census after this round: 23 closed, 212 open - the Chapter 2 combos openers flip (census 539 -> 540); NEXT - R618: the three races - the korobokuru, hengeyokai and spirit folk sections with Table 11 Hengeyokai Creatures, prefix dge (verify free), audit \"R618 OA races audit\", include after rules/oa/oaclasscombos.h"
  }
 }

@@ -1,11 +1,11 @@
--- oa753: promoted from rules/oa124table82.h (the OA TREASURE - TABLE 82, MISCELLANEOUS, printed capture pp. 292-293 - the);
+-- oa753: promoted from rules/oa/oa124table82.h (the OA TREASURE - TABLE 82, MISCELLANEOUS, printed capture pp. 292-293 - the);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 753,
   "prefix" = "oa753",
   "banner" = {
       "title" = "OA TREASURE - TABLE 82, MISCELLANEOUS, printed capture pp. 292-293 - the",
-      "provenance" = "misc melee grid round census 675 -> 676.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 206 closed, 29 open - the Table 82 box flips (census 675 -> 676); NEXT - R754: Table 83: Missile Class (capture p. 293), prefix dlp (verify free at the landing), audit \"R754 OA Table 83 missile audit\", include after rules/oa124table82.h",
+      "provenance" = "misc melee grid round census 675 -> 676.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 206 closed, 29 open - the Table 82 box flips (census 675 -> 676); NEXT - R754: Table 83: Missile Class (capture p. 293), prefix dlp (verify free at the landing), audit \"R754 OA Table 83 missile audit\", include after rules/oa/oa124table82.h",
     },
   "consts" = { {
       "name" = "dloMiscRowCount",

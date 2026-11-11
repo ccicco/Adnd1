@@ -6,7 +6,7 @@
     // Gehenna, the Ilneval slaying sword and red chainmail, the Yurtrus gas
     // envelope and death magic, and the Luthic cave-mother curse and claws.
     // The stat-block numerics stay R406/R783; the paragraph facts ride
-    // rules/uadeityprose5.h. THE FLIP: dvpProseStaysOpen returns false at
+    // rules/ua/uadeityprose5.h. THE FLIP: dvpProseStaysOpen returns false at
     // last - the close is complete, and the R783 audit assertion rides with
     // it.
     {

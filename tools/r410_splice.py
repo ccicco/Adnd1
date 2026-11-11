@@ -32,7 +32,7 @@
 # NO line, the recorded
 # R406 unrecorded sentinel.
 #
-# 1. rules/uasclasslines.h
+# 1. rules/ua/uasclasslines.h
 #    (NEW, prefix uascl, 5
 #    inline functions + the
 #    UasClassLine struct):
@@ -352,7 +352,7 @@ SEED_ENTRY = E(
     '  commit bac456b (census 336,',
     '  preflight GREEN), the UA',
     '  Appendix S stat lines -',
-    '  rules/uasstatlines.h (prefix',
+    '  rules/ua/uasstatlines.h (prefix',
     '  usl) - the 23',
     '  S/I/W/D/C/CH/CM rows, the',
     '  R153/R322 cross-checks live,',
@@ -380,12 +380,12 @@ if s.count('R409 landed 2026-10-13') != 1:
 if s.count('## Knowledge maintenance') != 1:
     die('the seed maintenance head')
 
-# ========= (b) rules/uasclasslines.h =========
-CL = 'rules/uasclasslines.h'
+# ========= (b) rules/ua/uasclasslines.h =========
+CL = 'rules/ua/uasclasslines.h'
 
 COMMENT = E(
     '// ===========================================================================',
-    '// Adnd1 - rules/uasclasslines.h',
+    '// Adnd1 - rules/ua/uasclasslines.h',
     '// The UA APPENDIX S CLASS/LINES',
     '// (pp. 110-120), R410: the six',
     '// printed lines per deity block -',
@@ -515,14 +515,14 @@ newfile(CL, HDR + NL,
 RT = 'regtest.cpp'
 
 pair(RT,
-     '#include "rules/uasstatlines.h"  '
+     '#include "rules/ua/uasstatlines.h"  '
      '// R409: the UA Appendix S stat'
      ' lines',
      E(
-    '#include "rules/uasstatlines.h"  '
+    '#include "rules/ua/uasstatlines.h"  '
     '// R409: the UA Appendix S stat'
     ' lines',
-    '#include "rules/uasclasslines.h"  '
+    '#include "rules/ua/uasclasslines.h"  '
     '// R410: the UA Appendix S class'
     ' lines'),
      'regtest: the class lines include')
@@ -661,7 +661,7 @@ GP = 'tools/ua_gap_report.md'
 
 pair(GP, E(
     '      - AMENDED R409: the stat lines',
-    '        land (rules/uasstatlines.h) -',
+    '        land (rules/ua/uasstatlines.h) -',
     '        the 23 S/I/W/D/C/CH/CM rows',
     '        pin with the R153/R322',
     '        cross-checks live, the',
@@ -672,7 +672,7 @@ pair(GP, E(
     '        pantheon prose stay open.'),
     E(
     '      - AMENDED R409: the stat lines',
-    '        land (rules/uasstatlines.h) -',
+    '        land (rules/ua/uasstatlines.h) -',
     '        the 23 S/I/W/D/C/CH/CM rows',
     '        pin with the R153/R322',
     '        cross-checks live, the',
@@ -695,16 +695,16 @@ pair(GP, E(
 
 pair(GP, E(
     '  - AMENDED R409: the stat lines',
-    '    land (rules/uasstatlines.h) - the',
+    '    land (rules/ua/uasstatlines.h) - the',
     '    class lines, MOVE and the',
     '    pantheon prose stay open.'),
     E(
     '  - AMENDED R409: the stat lines',
-    '    land (rules/uasstatlines.h) - the',
+    '    land (rules/ua/uasstatlines.h) - the',
     '    class lines, MOVE and the',
     '    pantheon prose stay open.',
     '  - AMENDED R410: the class lines',
-    '    land (rules/uasclasslines.h) -',
+    '    land (rules/ua/uasclasslines.h) -',
     '    MOVE and the pantheon prose',
     '    stay open.'),
     'gap: the section tail takes R410')

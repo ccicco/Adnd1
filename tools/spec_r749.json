@@ -2,7 +2,7 @@
  "round": 749,
  "title": "OA TREASURE - Table 78: Magical Weapons: the d100 weapon class grid",
  "prefix": "dlk",
- "header_file": "rules/oa120table78.h",
+ "header_file": "rules/oa/oa120table78.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA TREASURE - TABLE 78, MAGICAL WEAPONS, printed capture p. 291 - the weapon class grid round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 202 closed, 33 open - the Table 78 box flips (census 671 -> 672); NEXT - R750: Table 79: Weapon Properties (capture p. 291, the grid runs onto p. 292), prefix dll (verify free at the landing), audit \"R750 OA Table 79 properties audit\", include after rules/oa120table78.h"
+  "sentinel": "the gap census after this round: 202 closed, 33 open - the Table 78 box flips (census 671 -> 672); NEXT - R750: Table 79: Weapon Properties (capture p. 291, the grid runs onto p. 292), prefix dll (verify free at the landing), audit \"R750 OA Table 79 properties audit\", include after rules/oa/oa120table78.h"
  },
  "consts": [
   {
@@ -174,7 +174,7 @@
   "open": 33
  },
  "include_comment": "the OA Table 78 pins",
- "include_after": "#include \"rules/oa119weaponsprose.h\"  // R748: the OA weapons prose pins",
+ "include_after": "#include \"rules/oa/oa119weaponsprose.h\"  // R748: the OA weapons prose pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R748 LANDED 2026-10-22: commit",
@@ -185,7 +185,7 @@
   "  OA TREASURE, the Weapons prose (capture",
   "  p. 291, the box spanning pp. 291-294 for",
   "  the section), header",
-  "  rules/oa119weaponsprose.h, prefix dlj",
+  "  rules/oa/oa119weaponsprose.h, prefix dlj",
   "  (verified free at a6ba40c), one gap flip",
   "  (the weapons prose box, single-line),",
   "  gap census now 201 closed / 34 open.",
@@ -211,7 +211,7 @@
   "  Weapons (capture p. 291), prefix dlk",
   "  (verify free at the landing), audit \"R749",
   "  OA Table 78 weapons audit\", include after",
-  "  rules/oa119weaponsprose.h. The six-band",
+  "  rules/oa/oa119weaponsprose.h. The six-band",
   "  d100 weapon-class grid: the sword 01-40,",
   "  the bow crossbow sling 41-52, the",
   "  miscellaneous melee 53-68, the missile",

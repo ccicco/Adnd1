@@ -2,7 +2,7 @@
  "round": 457,
  "title": "the WSG boating proficiency",
  "prefix": "wbp",
- "header_file": "rules/wsgboat.h",
+ "header_file": "rules/wsg/wsgboat.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -13,7 +13,7 @@
  "census_before": 381,
  "inline_count": 18,
  "audit_label": "R457 WSG boating pin audit",
- "audit_comment": "The boating-proficiency slice pins the nonproficient penalties - the movement-rate reductions (kayak, small canoe and coracle at one-half, small rowboat, large canoe, large rowboat and small barge at two-thirds, large barge at three-quarters, applied before the wind and current alterations), the +25% capsize penalty where the base chance exceeds zero, capped at 100%; the proficient-crew benefits - the -20% capsize reduction per proficient character after the first, the -20% mast/sail damage reduction with the rigging-brace assumption, the all-proficient waiver of the movement penalties, and the two-character sail crews for the large rowboat, the small barge and the large barge (rules/wsgboat.h, prefix wbp); census 381 -> 382.",
+ "audit_comment": "The boating-proficiency slice pins the nonproficient penalties - the movement-rate reductions (kayak, small canoe and coracle at one-half, small rowboat, large canoe, large rowboat and small barge at two-thirds, large barge at three-quarters, applied before the wind and current alterations), the +25% capsize penalty where the base chance exceeds zero, capped at 100%; the proficient-crew benefits - the -20% capsize reduction per proficient character after the first, the -20% mast/sail damage reduction with the rigging-brace assumption, the all-proficient waiver of the movement penalties, and the two-character sail crews for the large rowboat, the small barge and the large barge (rules/wsg/wsgboat.h, prefix wbp); census 381 -> 382.",
  "banner": {
   "title": "The WSG THE BOATING PROFICIENCY, R457: this section deals primarily with the effects of not having a character with boating proficiency aboard. In a vessel containing no proficient characters, or one in which at least one non-proficient character is doing some of the work of rowing or sailing, the penalties apply: the movement rates of a kayak, a small canoe and a coracle are reduced to one-half of normal; a small rowboat, a large canoe, a large rowboat and a small barge to two-thirds of normal; and a large barge to three-quarters of normal - the reduction applied before any other alterations (wind speed and current speed) are taken into account. The chance of capsizing is increased by 25% in any situation where the chance is normally greater than 0%, to a maximum of 100%. With more than one proficient character aboard: the chance of capsizing is reduced by 20% for each proficient character after the first one; the chance of damage to the mast or sails is reduced by 20%, assuming the proficient characters have some means of making the rigging secure or bracing the mast so that it will better withstand the stress. If ALL of the characters helping to row or sail a vessel have proficiency in boating, the movement penalties do not apply and the movement rates are as given on the table at the beginning of this section. Two characters are required to sail a large rowboat, a small barge or a large barge; all other vessels can be sailed by one character.",
   "provenance": "the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed p. 45; the user own copy OCR (page 46) cross-checked against the archive djvu word layer (Guide_0045) - the prose reads clean two-way and NO eye-reads were needed for this round (a pure-prose section, no printed grid)."
@@ -278,7 +278,7 @@
  "gap_flips": [
   {
    "from": "  - [ ] The boating proficiency (p. 45)",
-   "to": "  - [x] The boating proficiency (p. 45) - R457: the nonproficient penalties (the kayak, small canoe and coracle at one-half, the small rowboat, large canoe, large rowboat and small barge at two-thirds, the large barge at three-quarters, applied before the wind and current alterations), the +25% capsize penalty where the base exceeds zero capped at 100%, the -20% capsize per extra proficient character, the -20% mast/sail damage reduction with the rigging-brace assumption, the all-proficient waiver of the movement penalties and the two-character sail crews for the large rowboat, small barge and large barge) pin as rules/wsgboat.h",
+   "to": "  - [x] The boating proficiency (p. 45) - R457: the nonproficient penalties (the kayak, small canoe and coracle at one-half, the small rowboat, large canoe, large rowboat and small barge at two-thirds, the large barge at three-quarters, applied before the wind and current alterations), the +25% capsize penalty where the base exceeds zero capped at 100%, the -20% capsize per extra proficient character, the -20% mast/sail damage reduction with the rigging-brace assumption, the all-proficient waiver of the movement penalties and the two-character sail crews for the large rowboat, small barge and large barge) pin as rules/wsg/wsgboat.h",
    "note": "the boating proficiency"
   },
   {
@@ -292,7 +292,7 @@
   "open": 126
  },
  "include_comment": "the WSG boating proficiency",
- "include_after": "#include \"rules/wsgcapsizing.h\"  // R456: the WSG capsizing and damage to craft",
+ "include_after": "#include \"rules/wsg/wsgcapsizing.h\"  // R456: the WSG capsizing and damage to craft",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R456 landed 2026-10-14: commit ecda891",
@@ -324,7 +324,7 @@
   "  the wind velocity, the 30% furled-sail",
   "  reduction, the poor-rigging upward",
   "  adjustment, the hourly check).",
-  "  rules/wsgcapsizing.h NEW (32 inlines: 16",
+  "  rules/wsg/wsgcapsizing.h NEW (32 inlines: 16",
   "  consts + 12 bools + the 4-column grid,",
   "  prefix wcp - checked free in all three",
   "  TUs). Ground truth CLEAN three-way: the",

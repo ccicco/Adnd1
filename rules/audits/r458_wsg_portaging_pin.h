@@ -7,7 +7,7 @@
     // of twice the minimum, the beyond-max futility (the third small-canoe
     // carrier), and the 3-inch portage move rate - 3 miles in eight hours, 30
     // feet per round, regardless of terrain or overall encumbrance status
-    // (rules/wsgportage.h, prefix wpg); census 382 -> 383.
+    // (rules/wsg/wsgportage.h, prefix wpg); census 382 -> 383.
     {
         using namespace rules;
         int bad = 0;

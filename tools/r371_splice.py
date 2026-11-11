@@ -47,7 +47,7 @@ SEED_ENTRY = NL.join([
     '- R370 landed 2026-10-12: commit',
     '  4571cf3, census 297, the UA',
     '  DM-section smalls part 1 pin',
-    '  round (rules/uasmalls1.h):',
+    '  round (rules/ua/uasmalls1.h):',
     '  Method V (the class-first prose',
     '  clean, the dice table cells a',
     '  flagged hole), the 12 starting',
@@ -148,13 +148,13 @@ assert len(applied) + len(already) == 1, 'a count'
 
 
 
-# ---- (b) NEW rules/uaarmor.h ----
-P = 'rules/uaarmor.h'
+# ---- (b) NEW rules/ua/uaarmor.h ----
+P = 'rules/ua/uaarmor.h'
 if os.path.exists(P) and 'R371' in rd(P):
     already.append('uaarmor.h: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uaarmor.h
+// Adnd1 - rules/ua/uaarmor.h
 // The UA EXPANDED ARMOR (pp. 75-76)
 // pins, R371: the armor and
 // encumbrance table rows (the
@@ -424,7 +424,7 @@ else:
         '      shield rows, elfin chain never',
         '      sold.',
         '      - CLOSED R371: the pin round',
-        '        (rules/uaarmor.h) - the',
+        '        (rules/ua/uaarmor.h) - the',
         '        banded, bronze plate, field',
         '        plate, full plate, ring,',
         '        scale, splint and studded',
@@ -465,7 +465,7 @@ else:
         '      point cap, the repair costs),',
         '      full plate.',
         '      - CLOSED R371: the pin round',
-        '        (rules/uaarmor.h) - the four',
+        '        (rules/ua/uaarmor.h) - the four',
         '        descriptions pin clean: the',
         '        bronze plate AC 4 with the',
         '        +2 rear bonus and the rust',
@@ -494,7 +494,7 @@ assert s.count(
     '- [x] **The new armor descriptions**'
 ) == 1, 'c2 flip'
 assert s.count(
-    '(rules/uaarmor.h) - the'
+    '(rules/ua/uaarmor.h) - the'
 ) == 2, 'c notes'
 assert s.count(
     '- [ ] Armor, Types and Encumbrance (p.'
@@ -531,11 +531,11 @@ s = rd(RT)
 if 'R371 UA expanded armor pin audit' in s:
     already.append('regtest.cpp: the R371 audit')
 else:
-    INC_ANCH = ('#include "rules/uasmalls1.h"  // '
+    INC_ANCH = ('#include "rules/ua/uasmalls1.h"  // '
         'R370: the UA DM-section smalls')
     INC_NEW = NL.join([
-        '#include "rules/uasmalls1.h"  // R370: the UA DM-section smalls',
-        '#include "rules/uaarmor.h"  // R371: the UA expanded armor'
+        '#include "rules/ua/uasmalls1.h"  // R370: the UA DM-section smalls',
+        '#include "rules/ua/uaarmor.h"  // R371: the UA expanded armor'
     ])
     AUD_ANCH = '    // ---- R227: the wis mental save wiring audit ----'
     AUDIT = r"""    // ---- R371: the UA expanded armor
@@ -767,21 +767,21 @@ assert s.count(
     'R227: the wis mental save'
 ) == 1, 'd r227 kept'
 assert s.count(
-    '#include "rules/uaarmor.h"'
+    '#include "rules/ua/uaarmor.h"'
 ) == 1, 'd new include'
 for h in (
         'rules/cavalier.h',
         'rules/classtables.h',
-        'rules/uabirth.h',
-        'rules/uasocialclass.h',
-        'rules/uaspellbooks.h',
-        'rules/uaspellcomment.h',
-        'rules/uauwspelluse.h',
-        'rules/uadarkness.h',
-        'rules/uacavtable.h',
-        'rules/uacantacq.h',
-        'rules/uasmalls1.h',
-        'rules/uailacquisition.h',
+        'rules/ua/uabirth.h',
+        'rules/ua/uasocialclass.h',
+        'rules/ua/uaspellbooks.h',
+        'rules/ua/uaspellcomment.h',
+        'rules/ua/uauwspelluse.h',
+        'rules/ua/uadarkness.h',
+        'rules/ua/uacavtable.h',
+        'rules/ua/uacantacq.h',
+        'rules/ua/uasmalls1.h',
+        'rules/ua/uailacquisition.h',
         'rules/thiefarmor.h',
         'rules/armorratings.h'):
     assert s.count(

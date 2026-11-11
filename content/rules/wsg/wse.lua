@@ -1,4 +1,4 @@
--- wse: promoted from rules/wsgenvfx.h (the The WSG ENVIRONMENT EFFECTS, R427:);
+-- wse: promoted from rules/wsg/wsgenvfx.h (the The WSG ENVIRONMENT EFFECTS, R427:);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 427,
@@ -241,6 +241,6 @@ return {
     } },
   "audit" = {
       "label" = "R427: the WSG environment pin audit",
-      "comment" = "The environment data slice pins Tables 4 and 5 (rules/wsgenvfx.h, prefix wse): Table 4 (the 13 temperature bands, the Str/Dex/Con reductions nonstrenuous/strenuous, the Land Move fractions, the Attack Rolls penalty) and Table 5 (the 6 wind bands, the missile adjustments with the xx impossible cells, the melee penalty, the move-against-wind fractions) verified cell for cell with the 99 censuses, the book own examples (the 105-degree strength, the -30 move, the 35-mph wind, the 85/40 greater reduction) and the precipitation shifts; census 352 -> 353.",
+      "comment" = "The environment data slice pins Tables 4 and 5 (rules/wsg/wsgenvfx.h, prefix wse): Table 4 (the 13 temperature bands, the Str/Dex/Con reductions nonstrenuous/strenuous, the Land Move fractions, the Attack Rolls penalty) and Table 5 (the 6 wind bands, the missile adjustments with the xx impossible cells, the melee penalty, the move-against-wind fractions) verified cell for cell with the 99 censuses, the book own examples (the 105-degree strength, the -30 move, the 35-mph wind, the 85/40 greater reduction) and the precipitation shifts; census 352 -> 353.",
     },
 }

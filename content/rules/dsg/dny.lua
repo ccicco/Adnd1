@@ -60,7 +60,7 @@ return {
     }, {
       "name" = "dnyCollapseChecksChainReaction",
       "value" = true,
-      "comment" = "after a DPV collapse, check for additional ceiling or wall collapses with the normal chain reaction procedure - the R512 rules/dsgcavein2.h seam.",
+      "comment" = "after a DPV collapse, check for additional ceiling or wall collapses with the normal chain reaction procedure - the R512 rules/dsg/dsgcavein2.h seam.",
     }, {
       "name" = "dnyDampChillUnhealthy",
       "value" = true,

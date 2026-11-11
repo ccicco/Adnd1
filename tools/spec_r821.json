@@ -1,9 +1,9 @@
 {
  "round": 821,
  "title": "the lung promotion",
- "header_file": "rules/lungp.h",
+ "header_file": "rules/ff/lung_dragons_promotion.h",
  "prefix": "lungp",
- "include_after": "#include \"rules/lmp.h\"  // R820: the lammasu promotion",
+ "include_after": "#include \"rules/mm/mm2_lammasu_promotion.h\"  // R820: the lammasu promotion",
  "include_comment": "the lung promotion",
  "census_before": 743,
  "audit_label": "R821 lung promotion audit",
@@ -605,13 +605,13 @@
    "to": "        if (lung != mm2encaLungDragonRows()\n            - lungpCellsRewired())"
   },
   {
-   "file": "rules/mm2enca.h",
+   "file": "rules/mm/mm2enca.h",
    "note": "the mm2enca walk-key const bumps 189 -> 192",
    "from": "// The keyed rows (the MM1 and MM2 defs the registry owns)\ninline int mm2encaWalkKeyRows()\n    { return 189; }",
    "to": "// The keyed rows (the MM1, MM2, and promoted FF defs the\n// registry owns; the R821 lung promotion rewired the 3\n// keyless lung dragon cells, 189 -> 192)\ninline int mm2encaWalkKeyRows()\n    { return 192; }"
   },
   {
-   "file": "rules/mm2enca.h",
+   "file": "rules/mm/mm2enca.h",
    "note": "the lung dragon const comment records the FF settle",
    "from": "// The oriental lung dragon cross-ref cells (the sea lung wang and the spirit\n// shan lung) - no registry def, the OA promotion seam owns them",
    "to": "// The oriental lung dragon cross-ref cells (the sea lung wang and the spirit\n// shen lung) - the R821 lung promotion keyed them (the FF print defs own\n// them, the walk-key census carries the rewire)"
@@ -685,7 +685,7 @@
   "  CSW 8-28), 50 percent holy word,",
   "  spell-like ability level 12 (as",
   "  HD), dwell with 6 or more ordinary",
-  "  lammasu. Header rules/lmp.h, prefix",
+  "  lammasu. Header rules/mm/mm2_lammasu_promotion.h, prefix",
   "  lmp (free at 52a015a), 25 consts +",
   "  10 bools (inline 35), audit \"R820",
   "  lammasu promotion audit\", 6 file",

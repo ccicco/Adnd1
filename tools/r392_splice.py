@@ -3,8 +3,8 @@
 # stretch: the equipment and
 # supplies costs table and the
 # hand-held weapons table pin
-# NEW (rules/uaequip26.h,
-# rules/uahandheld.h), the
+# NEW (rules/ua/uaequip26.h,
+# rules/ua/uahandheld.h), the
 # weight/damage, missile and
 # proficiency tables AMEND (the
 # clean PDF read: every hole
@@ -52,7 +52,7 @@ SEED_ENTRY = r"""
   census 318, the UA
   Appendix T pole-arm
   nomenclature pin round
-  (rules/uaappendt.h): the pp.
+  (rules/ua/uaappendt.h): the pp.
   123-129 stretch, seven
   items - two fully clean (the
   spear family, the axe family)
@@ -71,10 +71,10 @@ SEED_ENTRY = r"""
 """
 SEED_ENTRY = SEED_ENTRY[1:-1]
 
-# ---- (b) rules/uaequip26.h ----
+# ---- (b) rules/ua/uaequip26.h ----
 HDR_EC = r"""// ===========================================================================
 // ===========================================================================
-// Adnd1 - rules/uaequip26.h
+// Adnd1 - rules/ua/uaequip26.h
 // The UA BASIC EQUIPMENT AND SUPPLIES COSTS table (p. 26) pins
 // (R392).
 //
@@ -199,10 +199,10 @@ inline bool uaecArmsPriceIsElectrum(int i) {
 """
 HDR_EC = HDR_EC[1:-1]
 
-# ---- (c) rules/uahandheld.h ----
+# ---- (c) rules/ua/uahandheld.h ----
 HDR_HH = r"""
 // ===========================================================================
-// Adnd1 - rules/uahandheld.h
+// Adnd1 - rules/ua/uahandheld.h
 // The UA HAND HELD WEAPON TYPES, GENERAL DATA, AND "TO HIT"
 // ADJUSTMENTS table (p. 27) pins (R392).
 //
@@ -451,8 +451,8 @@ AUDIT392 = r"""
     // ---- R392: the UA players tables pin audit ----
     // The players tables manifest sweep (20 items): the
     // equipment and supplies costs table and the
-    // hand-held weapons table pin NEW (rules/uaequip26.h,
-    // rules/uahandheld.h); the weight/damage, missile and
+    // hand-held weapons table pin NEW (rules/ua/uaequip26.h,
+    // rules/ua/uahandheld.h); the weight/damage, missile and
     // proficiency tables AMEND (the clean PDF read: every
     // hole fills, three misdecodes reconcile - the garrot
     // L damage, the barbarian initial, the ranger initial);
@@ -1324,12 +1324,12 @@ WT_PAIRS = [
 ]
 
 O_RT_0 = r"""
-#include "rules/uaappendt.h"  // R391: the UA pole-arm nomenclature
+#include "rules/ua/uaappendt.h"  // R391: the UA pole-arm nomenclature
 """[1:-1]
 N_RT_0 = r"""
-#include "rules/uaappendt.h"  // R391: the UA pole-arm nomenclature
-#include "rules/uaequip26.h"  // R392: the UA equipment costs
-#include "rules/uahandheld.h"  // R392: the UA hand-held data
+#include "rules/ua/uaappendt.h"  // R391: the UA pole-arm nomenclature
+#include "rules/ua/uaequip26.h"  // R392: the UA equipment costs
+#include "rules/ua/uahandheld.h"  // R392: the UA hand-held data
 """[1:-1]
 
 O_RT_1 = r"""
@@ -1809,7 +1809,7 @@ O_GP_3 = r"""
 """[1:-1]
 N_GP_3 = r"""
 - [x] Cavaliers Table I (p. 15).
-      - AMENDED R392: closed - the R368 pin (rules/uacavtable.h)
+      - AMENDED R392: closed - the R368 pin (rules/ua/uacavtable.h)
 """[1:-1]
 
 O_GP_4 = r"""
@@ -1873,7 +1873,7 @@ O_GP_9 = r"""
 N_GP_9 = r"""
 - [x] Equipment and Supplies Costs (p.
       26).
-      - AMENDED R392: PINNED R392 (rules/uaequip26.h) - the clean p.
+      - AMENDED R392: PINNED R392 (rules/ua/uaequip26.h) - the clean p.
         26 print, four armor rows plus 19 arms rows, no holes
 """[1:-1]
 
@@ -1933,7 +1933,7 @@ O_GP_15 = r"""
 """[1:-1]
 N_GP_15 = r"""
 - [x] Weapon Proficiency Table (p. 26).
-      - AMENDED R392: closed - the R339 pin (rules/uaprof.h); the R392
+      - AMENDED R392: closed - the R339 pin (rules/ua/uaprof.h); the R392
         clean read fills every hole (the cavalier penalty 3, the
         paladin and assassin initials 3, the barbarian 6, the ranger
         3) and recovers the facing-page notes in full
@@ -1956,7 +1956,7 @@ O_GP_17 = r"""
 N_GP_17 = r"""
 - [x] Weapons, Weight and Damage by
       Type (p. 26).
-      - AMENDED R392: closed - the R337 pin (rules/uaweapontable.h);
+      - AMENDED R392: closed - the R337 pin (rules/ua/uaweapontable.h);
         the R392 clean read fills every hole (the atlatl 30, the
         harpoon 50-60, the falchion 60-80, the lasso dash), adds the
         68th row (the hand-crossbow quarrels) and reconciles the
@@ -1970,7 +1970,7 @@ O_GP_18 = r"""
 N_GP_18 = r"""
 - [x] Weapons, Hand-held, General Data
       and To-Hit Adjustments (p. 27).
-      - AMENDED R392: PINNED R392 (rules/uahandheld.h) - the clean p.
+      - AMENDED R392: PINNED R392 (rules/ua/uahandheld.h) - the clean p.
         27 print, 60 rows, the footnotes and the general note, no
         holes
 """[1:-1]
@@ -1984,7 +1984,7 @@ N_GP_19 = r"""
 - [x] Weapons, Hurled and Missile,
       General Data and To-Hit
       Adjustments (p. 28).
-      - AMENDED R392: closed - the R338 pin (rules/uamissile.h); the
+      - AMENDED R392: closed - the R338 pin (rules/ua/uamissile.h); the
         R392 clean read fills every hole (the rate column, the S/M/L
         ranges, the lost AC cells, the AC 7-10 columns) and the aklys
         10-foot footnote
@@ -2088,8 +2088,8 @@ assert s.count(
 ) == 1, 'a maint'
 
 
-# ---- (b) NEW rules/uaequip26.h ----
-P = 'rules/uaequip26.h'
+# ---- (b) NEW rules/ua/uaequip26.h ----
+P = 'rules/ua/uaequip26.h'
 if os.path.exists(P) and 'R392' in rd(P):
     already.append('uaequip26.h: the pins')
 else:
@@ -2101,8 +2101,8 @@ assert rd(P).count(
     ) == 1, 'b electrum'
 
 
-# ---- (c) NEW rules/uahandheld.h ----
-P = 'rules/uahandheld.h'
+# ---- (c) NEW rules/ua/uahandheld.h ----
+P = 'rules/ua/uahandheld.h'
 if os.path.exists(P) and 'R392' in rd(P):
     already.append('uahandheld.h: the pins')
 else:
@@ -2117,9 +2117,9 @@ assert rd(P).count(
     ) >= 1, 'c dm'
 
 
-# ---- (d) rules/uaprof.h: the
+# ---- (d) rules/ua/uaprof.h: the
 # R392 reconcile ----
-P = 'rules/uaprof.h'
+P = 'rules/ua/uaprof.h'
 s = rd(P)
 if 'uapfHorsemenInitialSlots' in s:
     already.append('uaprof.h: the reconcile')
@@ -2132,9 +2132,9 @@ else:
     applied.append('uaprof.h: the reconcile')
 
 
-# ---- (e) rules/uamissile.h: the
+# ---- (e) rules/ua/uamissile.h: the
 # R392 fills ----
-P = 'rules/uamissile.h'
+P = 'rules/ua/uamissile.h'
 s = rd(P)
 if 'uamtAklysTenFootOnly' in s:
     already.append('uamissile.h: the fills')
@@ -2147,9 +2147,9 @@ else:
     applied.append('uamissile.h: the fills')
 
 
-# ---- (f) rules/uaweapontable.h:
+# ---- (f) rules/ua/uaweapontable.h:
 # the R392 fills ----
-P = 'rules/uaweapontable.h'
+P = 'rules/ua/uaweapontable.h'
 s = rd(P)
 if 'uawtDamagePrintsDash' in s:
     already.append('uaweapontable.h: the fills')
@@ -2229,12 +2229,12 @@ assert s.count(
     'R385 UA misc magic prose part 5 pin audit: bad '
 ) == 1, 'd kept label'
 for h in (
-    'rules/uaequip26.h',
-    'rules/uahandheld.h',
-    'rules/uaappendt.h',
-    'rules/uaweapontable.h',
-    'rules/uamissile.h',
-    'rules/uaprof.h',
+    'rules/ua/uaequip26.h',
+    'rules/ua/uahandheld.h',
+    'rules/ua/uaappendt.h',
+    'rules/ua/uaweapontable.h',
+    'rules/ua/uamissile.h',
+    'rules/ua/uaprof.h',
 ):
     assert s.count(
         '#include "' + h + '"') == 1, 'd kept include'

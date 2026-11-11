@@ -6,7 +6,7 @@
     // and slaying arrows, the Hanali Evergold pool and charm aura, and the
     // Labelas time powers - temporal stasis, the 100-year touch, and the
     // 18-inch slow and haste radius. The stat-block numerics stay R406/R783;
-    // the paragraph facts ride rules/uadeityprose2.h.
+    // the paragraph facts ride rules/ua/uadeityprose2.h.
     {
         using namespace rules;
         int bad = 0;

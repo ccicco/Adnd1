@@ -35,7 +35,7 @@
 #     rollers only (the p.176 convention-party generator is
 #     a future lane).
 #
-#  - rules/character.h/.cpp: dwarfConSaveBonus
+#  - rules/engine/character.h/.cpp: dwarfConSaveBonus
 #  - ai/actor.h: Actor.race + Actor.nonIntelligent; the
 #    asTarget comment amended
 #  - ai/actor.cpp: dm/encounters.h include; asTarget
@@ -95,7 +95,7 @@ def newfile(p, content, tag):
     wr(p, content)
     applied.append(tag)
 
-# ---- (1) rules/character.h: dwarfConSaveBonus decl ----
+# ---- (1) rules/engine/character.h: dwarfConSaveBonus decl ----
 old_ch_h = NL.join([
     'int  conPoisonSaveAdj(uint8_t con);  // -2..+2',
 ])
@@ -110,7 +110,7 @@ new_ch_h = NL.join([
     'int  dwarfConSaveBonus(uint8_t con); // 0..+5 (0 below CON 4)',
 ])
 
-# ---- (2) rules/character.cpp: impl ----
+# ---- (2) rules/engine/character.cpp: impl ----
 old_ch_cpp = NL.join([
     'int conPoisonSaveAdj(uint8_t con) {',
     '    static constexpr int v[16] = {',
@@ -383,7 +383,7 @@ appendixp = NL.join([
     '',
     '#pragma once',
     '',
-    '#include "../rules/dice.h"',
+    '#include "../rules/engine/dice.h"',
     '',
     'namespace dm {',
     'namespace appendixp {',
@@ -819,12 +819,12 @@ new_gap_tail = NL.join([
 ])
 
 # ---- run ----
-patch("rules/character.h", old_ch_h, new_ch_h,
+patch("rules/engine/character.h", old_ch_h, new_ch_h,
       "character.h: dwarfConSaveBonus decl",
       marker="int  dwarfConSaveBonus(uint8_t con);")
 assert len(applied) + len(already) == 1
 
-patch("rules/character.cpp", old_ch_cpp, new_ch_cpp,
+patch("rules/engine/character.cpp", old_ch_cpp, new_ch_cpp,
       "character.cpp: dwarfConSaveBonus impl",
       marker="int dwarfConSaveBonus(uint8_t con) {")
 assert len(applied) + len(already) == 2

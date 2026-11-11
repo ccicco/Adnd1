@@ -26,9 +26,9 @@
 
 #pragma once
 
-#include "../rules/dice.h"
-#include "../rules/character.h"
-#include "../rules/classes.h"
+#include "../rules/engine/dice.h"
+#include "../rules/engine/character.h"
+#include "../rules/engine/classes.h"
 #include "../rules/subclassgates.h"  // R231: the subclass leveling seam
 #include "../rules/multiclass.h"  // R233: the multi-class engine
 #include "../rules/subracecap.h"  // R325: the Race Table II fold

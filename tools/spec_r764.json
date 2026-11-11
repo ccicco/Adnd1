@@ -2,7 +2,7 @@
  "round": 764,
  "title": "OA SETTING - the island of Kozakura: the turbulent land of the daimyo wars",
  "prefix": "dlz",
- "header_file": "rules/oa135kozakura.h",
+ "header_file": "rules/oa/oa135kozakura.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA SETTING - THE ISLAND OF KOZAKURA, printed capture p. 304 - the turbulent land of the daimyo wars",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 217 closed, 18 open - the Kozakura box flips (census 686 -> 687); NEXT - R765: Gajin (capture p. 304), prefix dma (verify free at the landing), audit \"R765 OA Gajin audit\", include after rules/oa135kozakura.h"
+  "sentinel": "the gap census after this round: 217 closed, 18 open - the Kozakura box flips (census 686 -> 687); NEXT - R765: Gajin (capture p. 304), prefix dma (verify free at the landing), audit \"R765 OA Gajin audit\", include after rules/oa/oa135kozakura.h"
  },
  "consts": [
   {
@@ -236,7 +236,7 @@
   "open": 18
  },
  "include_comment": "the OA Kozakura pins",
- "include_after": "#include \"rules/oa134wa.h\"  // R763: the OA Wa pins",
+ "include_after": "#include \"rules/oa/oa134wa.h\"  // R763: the OA Wa pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R763 LANDED 2026-10-22: commit",
@@ -245,7 +245,7 @@
   "  6a93395ac445732e1ffe01c28a5333de7f65fd1f",
   "  (census 685 -> 686, pushed 4b3029b..6a93395),",
   "  OA SETTING, the island of Wa (capture",
-  "  p. 304), header rules/oa134wa.h,",
+  "  p. 304), header rules/oa/oa134wa.h,",
   "  prefix dly (91 substring hits in regtest",
   "  but ZERO call-site dly\\w*( collisions -",
   "  the R669 die precedent; the engine gate",
@@ -293,6 +293,6 @@
   "  NEXT - R764: Kozakura (capture p. 304),",
   "  prefix dlz (verify free at the landing),",
   "  audit \"R764 OA Kozakura audit\", include",
-  "  after rules/oa134wa.h."
+  "  after rules/oa/oa134wa.h."
  ]
 }

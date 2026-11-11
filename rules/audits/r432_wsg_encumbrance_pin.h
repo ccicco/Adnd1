@@ -3,7 +3,7 @@
     // x the Light/Moderate/Heavy/Severe gp limits), Table 12 (the encumbrance
     // category x the terrain class, the normal and the accelerated rates),
     // the bulk rule-of-thumb, the terrain definitions and the large-scale
-    // overland movement rules (rules/wsgencum.h, prefix wem); census 356 ->
+    // overland movement rules (rules/wsg/wsgencum.h, prefix wem); census 356 ->
     // 357.
     {
         using namespace rules;

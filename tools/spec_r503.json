@@ -567,7 +567,7 @@
   }
  ],
  "gap_report": "tools/dsg_gap_report.md",
- "header_file": "rules/dsgoverview.h",
+ "header_file": "rules/dsg/dsgoverview.h",
  "header_sections": {
   "the chapter opener": [
    {
@@ -816,7 +816,7 @@
    }
   ]
  },
- "include_after": "#include \"rules/wsgcampfold.h\"  // R502: the WSG camp-chain fold pins",
+ "include_after": "#include \"rules/wsg/wsgcampfold.h\"  // R502: the WSG camp-chain fold pins",
  "include_comment": "the DSG overview pins",
  "inline_count": 58,
  "prefix": "dov",
@@ -824,11 +824,11 @@
   "- R502 LANDED 2026-10-16: commit 4681d11 (census 427, pushed",
   "77d39de..4681d11), the WSG CAMP-CHAIN FOLD - the fourth seam round, the R499",
   "fold pattern applied to the camp chapter: one campsite flows through six",
-  "landed headers - the rest quality and Table 38 fire (rules/wsgfire.h R474),",
-  "the fire starting and fuel rules (rules/wsgfuel.h R475), the wildfire rules",
-  "(rules/wsgblaze.h R476), the tent quality system (rules/wsgsleep.h R473), the",
-  "natural shelters (rules/wsgshelter.h R471) and the R499 temperature chain",
-  "re-read for the seam. Pinned as rules/wsgcampfold.h (prefix wmc, 63 inlines:",
+  "landed headers - the rest quality and Table 38 fire (rules/wsg/wsgfire.h R474),",
+  "the fire starting and fuel rules (rules/wsg/wsgfuel.h R475), the wildfire rules",
+  "(rules/wsg/wsgblaze.h R476), the tent quality system (rules/wsg/wsgsleep.h R473), the",
+  "natural shelters (rules/wsg/wsgshelter.h R471) and the R499 temperature chain",
+  "re-read for the seam. Pinned as rules/wsg/wsgcampfold.h (prefix wmc, 63 inlines:",
   "53 consts + 10 bools, no grids, NO gap flips - the report stays 186/0).",
   "FINDINGS: the wildfire hour (the 6-turn uncontrollable bar equals the 6 turns",
   "per hour - a fire left alone for exactly one hour becomes uncontrollable); the",

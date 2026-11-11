@@ -26,7 +26,7 @@
 // males-only rows - the male dwarves, the gnomish all-male, the non-Luthic
 // orcs; the lone Berronar females-only row; 10 either-gender rows - the
 // elves, the halflings, Luthic). The printed site strings ride
-// rules/uascharts.h (the uscWorshipSite accessor) with a live regtest strings
+// rules/ua/uascharts.h (the uscWorshipSite accessor) with a live regtest strings
 // block walking all 23 rows row for row (the R782 site-block precedent).
 // Honest boundaries: the M, F, and N-H columns on the compilation pages are
 // the compilation's own additions, not print chart columns - they stay
@@ -101,7 +101,7 @@ inline int plcFemaleOnlyDeityRow()
     { return 4; }
 
 // The place-of-worship reads print in the prose under the five clerical
-// charts, not a chart column (the strings ride rules/uascharts.h, the kinds
+// charts, not a chart column (the strings ride rules/ua/uascharts.h, the kinds
 // and genders pin here)
 inline bool plcSitesRideTheChartProse()
     { return true; }

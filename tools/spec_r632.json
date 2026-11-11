@@ -2,7 +2,7 @@
  "round": 632,
  "title": "ASSIGNING ANCESTRAL HOLDINGS - the NPC ownership, the head-of-family rule, the permission doctrine",
  "prefix": "dgs",
- "header_file": "rules/oahold.h",
+ "header_file": "rules/oa/oahold.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "ASSIGNING ANCESTRAL HOLDINGS, printed capture pp. 67-68 - the OA holdings round",
   "provenance": "pinned from the 2018 print capture alone for this range (the settling authority): the first Mistral-OCR capture session is unavailable above p. 33, so the cross-capture agreement check is impossible. A pure-prose round with no tables and no numeric cells, so no contested cells can arise within the single source; every doctrine of the two capture paragraphs is pinned as a bool (the R431 prose codifies insight: no section is unpinnable). The Birthrights prose and Table 40 (capture pp. 68-69) are deliberately left for the next round",
-  "sentinel": "the gap census after this round: 72 closed, 163 open - the Assigning Ancestral Holdings box flips (census 554 -> 555); NEXT - R633: the Birthrights prose and Table 40, capture pp. 68-69, the property-share, heirloom and cash-string doctrines, prefix dgt (verify free), audit \"R633 OA birthrights audit\", include after rules/oahold.h"
+  "sentinel": "the gap census after this round: 72 closed, 163 open - the Assigning Ancestral Holdings box flips (census 554 -> 555); NEXT - R633: the Birthrights prose and Table 40, capture pp. 68-69, the property-share, heirloom and cash-string doctrines, prefix dgt (verify free), audit \"R633 OA birthrights audit\", include after rules/oa/oahold.h"
  },
  "consts": [],
  "bools": [
@@ -186,7 +186,7 @@
   "open": 163
  },
  "include_comment": "the OA holdings pins",
- "include_after": "#include \"rules/oaanc.h\"  // R631: the OA ancestry pins",
+ "include_after": "#include \"rules/oa/oaanc.h\"  // R631: the OA ancestry pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R631 LANDED 2026-10-19: commit",
@@ -196,7 +196,7 @@
   "  (census 553 -> 554, pushed",
   "  9fbb973..f0a630e), THE MASTER FAMILY",
   "  CHART and ANCESTRY, capture pp. 64-65:",
-  "  rules/oaanc.h, prefix dgr (verified",
+  "  rules/oa/oaanc.h, prefix dgr (verified",
   "  free), 29 inlines (13 consts, 12",
   "  bools, 4 table columns): the master",
   "  family chart doctrine (the DM chart of",
@@ -254,6 +254,6 @@
   "  head-of-family rule and the NPC-only",
   "  holdings, prefix dgs (verify free),",
   "  audit \"R632 OA holdings audit\",",
-  "  include after rules/oaanc.h."
+  "  include after rules/oa/oaanc.h."
  ]
 }

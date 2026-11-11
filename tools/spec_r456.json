@@ -2,7 +2,7 @@
  "round": 456,
  "title": "the WSG capsizing and damage to craft",
  "prefix": "wcp",
- "header_file": "rules/wsgcapsizing.h",
+ "header_file": "rules/wsg/wsgcapsizing.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -13,7 +13,7 @@
  "census_before": 380,
  "inline_count": 32,
  "audit_label": "R456 WSG capsizing pin audit",
- "audit_comment": "The capsizing slice pins Table 26 (the chance of capsizing for the eight vessels under the four wind/water conditions - the kayak 25/40/60/80 down to the large barge 0/0/5/10), the check triggers (entering or leaving the boat, abrupt movement, DM discretion), the under-sail +20% wherever the base chance is greater than zero, the condition bands (mild at 15 mph and 3 inches or less, moderate 16-30 and up to 6, dangerous 31-50 and up to 9, severe beyond 50 and from 9), the boating-proficiency assumption, and the mast damage rules (the 40 mph threshold, the percentage chance equal to the wind velocity, the 30% furled-sail reduction, the upward adjustment for poor rigging and the hourly check) (rules/wsgcapsizing.h, prefix wcp); census 380 -> 381.",
+ "audit_comment": "The capsizing slice pins Table 26 (the chance of capsizing for the eight vessels under the four wind/water conditions - the kayak 25/40/60/80 down to the large barge 0/0/5/10), the check triggers (entering or leaving the boat, abrupt movement, DM discretion), the under-sail +20% wherever the base chance is greater than zero, the condition bands (mild at 15 mph and 3 inches or less, moderate 16-30 and up to 6, dangerous 31-50 and up to 9, severe beyond 50 and from 9), the boating-proficiency assumption, and the mast damage rules (the 40 mph threshold, the percentage chance equal to the wind velocity, the 30% furled-sail reduction, the upward adjustment for poor rigging and the hourly check) (rules/wsg/wsgcapsizing.h, prefix wcp); census 380 -> 381.",
  "banner": {
   "title": "The WSG CAPSIZING AND DAMAGE TO CRAFT, R456: waterborne vehicles and their passengers are to some degree at the mercy of the elements - most vessels have a chance of capsizing (turning over, and perhaps sinking) if the wind is strong or the water is rough, and violent weather can damage masts and sails on a rigged vessel. Table 26, the CHANCE OF CAPSIZING: kayak 25/40/60/80, small canoe 20/35/50/75, small rowboat 5/15/30/50, coracle 10/20/30/50, large canoe 10/20/30/40, large rowboat 0/10/25/40, small barge 0/5/10/20, and large barge 0/0/5/10, across the four wind/water conditions - MILD, MODERATE, DANGEROUS and SEVERE. The check is made whenever a character enters or leaves a boat, when someone moves abruptly from one spot to another in or on the craft, and at any other time the Dungeon Master deems appropriate. The table rates are for vessels with no sails, or with the sails furled (rolled up and tied to the mast); under sail the chance of capsizing is 20% greater in all cases where the base chance is greater than 0%. The condition bands: MILD - wind light at 15 miles per hour or less and the water calm or moving only slightly (current of 3 inches or less); MODERATE - wind 16 to 30 miles per hour, or the water running fairly fast (current faster than 3 inches, up to 6); DANGEROUS - wind 31 to 50 miles per hour, or the water running very fast (current faster than 6 inches, up to 9); SEVERE - wind more than 50 miles per hour, or a current of 9 inches or greater. As with the movement figures, all of these assume at least one character aboard with proficiency in boating/sailing. The mast damage rules: strong winds can damage sails, rigging or the mast (assuming the mast is raised) whenever the wind velocity is 40 miles per hour or greater, on a percentage chance equal to the velocity of the wind, modified downward by 30% if the mast is raised but the sail is furled - and upward if the mast is not securely rigged or is made of weak material, at the Dungeon Master discretion. The check is made once per hour or as often as the DM deems appropriate, conceivably more frequently for a poorly rigged or substandard mast. Census 380 -> 381.",
   "provenance": "the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed p. 45; the user own copy OCR (page 46) cross-checked against the archive djvu word layer (Guide_0045) - the prose reads clean two-way, but the djvu TRUNCATES the Table 26 large barge row (the severe cell cut off at the page break), so the grid was settled by TWO independent IIIF eye-reads of leaf $45, which agree with the OCR exactly on all eight rows and all four columns, the large barge severe cell reading 10%.",
@@ -409,7 +409,7 @@
  "gap_flips": [
   {
    "from": "  - [ ] Capsizing and damage to craft (p. 45)",
-   "to": "  - [x] Capsizing and damage to craft (p. 45) - R456: Table 26 (the chance of capsizing, the eight vessels x the four wind/water conditions, 25/40/60/80 for the kayak down to 0/0/5/10 for the large barge), the check triggers (entering/leaving, abrupt moves, DM calls), the under-sail +20 where the base exceeds zero, the condition bands (mild 15 mph/3 inches, moderate 16-30/3-6, dangerous 31-50/6-9, severe beyond 50/9-plus) and the mast/sail damage rules (the 40 mph threshold, the velocity-equal chance, the 30% furled reduction, the hourly check) pin as rules/wsgcapsizing.h",
+   "to": "  - [x] Capsizing and damage to craft (p. 45) - R456: Table 26 (the chance of capsizing, the eight vessels x the four wind/water conditions, 25/40/60/80 for the kayak down to 0/0/5/10 for the large barge), the check triggers (entering/leaving, abrupt moves, DM calls), the under-sail +20 where the base exceeds zero, the condition bands (mild 15 mph/3 inches, moderate 16-30/3-6, dangerous 31-50/6-9, severe beyond 50/9-plus) and the mast/sail damage rules (the 40 mph threshold, the velocity-equal chance, the 30% furled reduction, the hourly check) pin as rules/wsg/wsgcapsizing.h",
    "note": "capsizing and damage to craft"
   },
   {
@@ -423,7 +423,7 @@
   "open": 127
  },
  "include_comment": "the WSG capsizing and damage to craft",
- "include_after": "#include \"rules/wsgvessels.h\"  // R455: the WSG movement in waterborne vehicles",
+ "include_after": "#include \"rules/wsg/wsgvessels.h\"  // R455: the WSG movement in waterborne vehicles",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R455 landed 2026-10-14: commit eef7ebb",
@@ -456,7 +456,7 @@
   "  forced one-turn exhaustion - and the",
   "  shorthanded proportional rowing with the",
   "  3-rowers large-rowboat example: 6 of 8",
-  "  miles, 45 of 60 feet). rules/wsgvessels.h NEW",
+  "  miles, 45 of 60 feet). rules/wsg/wsgvessels.h NEW",
   "  (55 inlines: 17 consts + 16 bools + the",
   "  22-column grid split into Table 25a the",
   "  characteristics / 25b the rates, prefix wvb -",

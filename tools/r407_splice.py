@@ -8,7 +8,7 @@
 # scan-clean cells pin; the
 # pantheon prose stays open.
 #
-# 1. rules/uascharts.h (NEW,
+# 1. rules/ua/uascharts.h (NEW,
 #    prefix usc, 11 inline
 #    functions): the five
 #    8-column charts - 23
@@ -125,7 +125,7 @@ SEED_ENTRY = E(
     '  Appendix S stat blocks -',
     '  the first ungated data round',
     '  riding the R405 seam;',
-    '  rules/uaappends.h (prefix uas)',
+    '  rules/ua/uaappends.h (prefix uas)',
     '  - the 23 blocks pin the',
     '  scan-clean numerics, the',
     '  tier/rating censuses live',
@@ -156,12 +156,12 @@ if s.count('R406 landed 2026-10-13') != 1:
 if s.count('## Knowledge maintenance') != 1:
     die('the seed maintenance head')
 
-# ========= (b) rules/uascharts.h =========
-CH = 'rules/uascharts.h'
+# ========= (b) rules/ua/uascharts.h =========
+CH = 'rules/ua/uascharts.h'
 
 CHBODY = E(
     '// ===========================================================================',
-    '// Adnd1 - rules/uascharts.h',
+    '// Adnd1 - rules/ua/uascharts.h',
     '// The UA APPENDIX S clerical',
     '// quick-reference charts, R407:',
     '// the five charts (pp. 121-122)',
@@ -434,14 +434,14 @@ newfile(CH, CHBODY + NL,
 RT = 'regtest.cpp'
 
 pair(RT,
-     '#include "rules/uaappends.h"  '
+     '#include "rules/ua/uaappends.h"  '
      '// R406: the UA Appendix S'
      ' stat blocks',
      E(
-    '#include "rules/uaappends.h"  '
+    '#include "rules/ua/uaappends.h"  '
     '// R406: the UA Appendix S'
     ' stat blocks',
-    '#include "rules/uascharts.h"  '
+    '#include "rules/ua/uascharts.h"  '
     '// R407: the UA Appendix S'
     ' clerical charts'),
      'regtest: the charts include')
@@ -612,7 +612,7 @@ pair(GP, E(
     E(
     '- [x] Clerical Quick Reference Chart,',
     '      non-human deities (pp. 121-122) -',
-    '      CLOSED R407 (rules/uascharts.h;',
+    '      CLOSED R407 (rules/ua/uascharts.h;',
     '      the R407 charts pin audit, census',
     '      334): the five 8-column charts pin',
     '      all 23 rows (sphere, raiment,',
@@ -641,7 +641,7 @@ pair(GP, E(
     '        clerical quick-reference',
     '        charts (pp. 121-122).',
     '      - AMENDED R407: the clerical',
-    '        charts land (rules/uascharts.h)',
+    '        charts land (rules/ua/uascharts.h)',
     '        - CLOSED as their own item; the',
     '        Appendix S box stays open on',
     '        the class lines, MOVE, the stat',
@@ -650,18 +650,18 @@ pair(GP, E(
 
 pair(GP, E(
     '  - AMENDED R406: the stat block',
-    '    numerics land (rules/uaappends.h)',
+    '    numerics land (rules/ua/uaappends.h)',
     '    - the class lines, MOVE, stat',
     '    lines, prose and the charts stay',
     '    open.'),
     E(
     '  - AMENDED R406: the stat block',
-    '    numerics land (rules/uaappends.h)',
+    '    numerics land (rules/ua/uaappends.h)',
     '    - the class lines, MOVE, stat',
     '    lines, prose and the charts stay',
     '    open.',
     '  - AMENDED R407: the charts land',
-    '    (rules/uascharts.h) - the class',
+    '    (rules/ua/uascharts.h) - the class',
     '    lines, MOVE, stat lines and the',
     '    prose stay open.'),
     'gap: the DEFERRED amendment')

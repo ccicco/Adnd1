@@ -31,21 +31,21 @@ def replace_exact(text, old, new, label):
 def main():
     changed = 0
 
-    c = read("rules/combat.cpp")
+    c = read("rules/engine/combat.cpp")
     if "kClericMatrix" in c:
         print("already applied: combat.cpp class matrices")
     else:
         c, did = replace_exact(c, CPP_OLD, CPP_NEW, "combat.cpp class matrices")
         changed += did
-    write("rules/combat.cpp", c)
+    write("rules/engine/combat.cpp", c)
 
-    h = read("rules/combat.h")
+    h = read("rules/engine/combat.h")
     if "transcribed cell for cell by R113" in h:
         print("already applied: combat.h class note")
     else:
         h, did = replace_exact(h, H_OLD, H_NEW, "combat.h class note")
         changed += did
-    write("rules/combat.h", h)
+    write("rules/engine/combat.h", h)
 
     r = read("regtest.cpp")
     if 'printf("R113 class matrix audit' in r:

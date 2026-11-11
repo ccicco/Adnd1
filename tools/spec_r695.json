@@ -2,7 +2,7 @@
  "round": 695,
  "title": "OA LEARNING MARTIAL ARTS - the master search and acceptance, the study obligations and slot costs, with the multiple styles and the combining of styles",
  "prefix": "dji",
- "header_file": "rules/oalearn.h",
+ "header_file": "rules/oa/oalearn.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA LEARNING MARTIAL ARTS, printed capture pp. 233-235 - the masters, study and styles round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift. THE MASTERS: the honorary title no character class - the brilliant, the skilled, the mediocre and the incompetent all called master; anyone anywhere - the peasant, the hermit, the traveling bushi, the professional teacher, the famous samurai, the temple priest; the scarcity - the select few, the unadvertised skill, the seclusion, the politics and the secret societies, the styles vanished with refusing masters; the schools of the towns and cities. THE ACCEPTANCE: the untrained character's 10% chance at the properly humble presentation; the courting - each gift-bearing visit +10%, until accepted or the master offended, the offense permanent; the skilled character's challenge, automatically accepted, the unknown challenger given a student; the subdue preferred over the death, the death no crime; the victor automatically accepted, the loser returning later or humbly begging. THE MASTER'S KNOWLEDGE: the basics automatic; the weapons and the maneuvers each rolled on the nearest die equal to or greater than their count; the maneuvers always from the lowest difficulty upward; the master fixed, never increasing without the DM's special circumstances. THE STUDY: the one-month minimum before the one slot buys the basics - the AC, the attacks, the damage, no maneuvers or weapons yet; then the travel and adventure with the one hour of daily practice and the six weekly master hours, the obligation unfulfilled blocking all additions; one slot per maneuver or weapon, no more than two slots per style per level, the strict difficulty order, the practice assumed; the outgrown master left for another. THE STYLES: more than one learned at a time - more than one master, the slots and the dedication; the fighting choice of a single style, its abilities alone, the constant maneuvers the exception; the change from round to round; the combining after all is learned - the unique style of mixed elements, the AC of one with the attacks and damage of another, every learned maneuver combined, the creator instructing others as a master. The grid mechanics codified per the R431 calculus",
-  "sentinel": "the gap census after this round: 148 closed, 87 open - the Learning Martial Arts box flips (census 617 -> 618); NEXT - R696: the Chapter 10 Calendar prose (capture p. 236), prefix djj (verify free at the landing), audit \"R696 OA calendar audit\", include after rules/oalearn.h"
+  "sentinel": "the gap census after this round: 148 closed, 87 open - the Learning Martial Arts box flips (census 617 -> 618); NEXT - R696: the Chapter 10 Calendar prose (capture p. 236), prefix djj (verify free at the landing), audit \"R696 OA calendar audit\", include after rules/oa/oalearn.h"
  },
  "consts": [
   {
@@ -352,7 +352,7 @@
   "open": 87
  },
  "include_comment": "the OA learning martial arts pins",
- "include_after": "#include \"rules/oatrain.h\"  // R694: the OA mental and physical training pins",
+ "include_after": "#include \"rules/oa/oatrain.h\"  // R694: the OA mental and physical training pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R694 LANDED 2026-10-20: commit",
@@ -364,7 +364,7 @@
   "  PHYSICAL TRAINING - the any-style",
   "  training maneuvers with the stunning",
   "  and incapacitating rules, capture pp.",
-  "  232-233 print: rules/oatrain.h,",
+  "  232-233 print: rules/oa/oatrain.h,",
   "  prefix djh (verified free at 269b6c0),",
   "  ONE gap flip, gap census 146/89 ->",
   "  147/88. 11 consts + 17 bools (28",
@@ -415,6 +415,6 @@
   "  at e9a5608 - only djinn prose in",
   "  old headers, no identifiers), audit",
   "  \"R695 OA learning martial arts",
-  "  audit\", include after rules/oatrain.h"
+  "  audit\", include after rules/oa/oatrain.h"
  ]
 }

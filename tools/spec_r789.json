@@ -1,16 +1,16 @@
 {
  "round": 789,
  "prefix": "udp4",
- "header_file": "rules/uadeityprose4.h",
+ "header_file": "rules/ua/uadeityprose4.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "census_before": 711,
  "title": "the gnomish deity prose",
  "audit_label": "R789 gnomish deity prose audit",
- "audit_comment": "THE GNOMISH DEITY PROSE - part 4 of the Appendix S description-paragraph close. The archive.org full-text OCR of pp. 116-118 reads the four gnomish blocks scan-clean: the Baervan Whisperleaf spear and the raccoon Chiktikka, the Urdlen blur and the soul-eating evil, the Segojan rock speech and the quartz rod, and the Flandal fire apron and the hammer Rhondang. The stat-block numerics stay R406/R783; the paragraph facts ride rules/uadeityprose4.h.",
+ "audit_comment": "THE GNOMISH DEITY PROSE - part 4 of the Appendix S description-paragraph close. The archive.org full-text OCR of pp. 116-118 reads the four gnomish blocks scan-clean: the Baervan Whisperleaf spear and the raccoon Chiktikka, the Urdlen blur and the soul-eating evil, the Segojan rock speech and the quartz rod, and the Flandal fire apron and the hammer Rhondang. The stat-block numerics stay R406/R783; the paragraph facts ride rules/ua/uadeityprose4.h.",
  "include_comment": "the gnomish deity prose",
- "include_after": "#include \"rules/uadeityprose3.h\"  // R788: the halfling deity prose",
+ "include_after": "#include \"rules/ua/uadeityprose3.h\"  // R788: the halfling deity prose",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R788 LANDED 2026-10-23: commit",
@@ -55,7 +55,7 @@
   "  percent-per-level 11th-level thief",
   "  meeting, identity only after and only",
   "  to followers). THE PINS: header",
-  "  rules/uadeityprose3.h, prefix udp3",
+  "  rules/ua/uadeityprose3.h, prefix udp3",
   "  (free at c98bd6a), 53 consts + 52",
   "  bools (105 inline), no tables - pure",
   "  prose data; the stat-block numerics",
@@ -980,7 +980,7 @@
  },
  "caller_files": [
   "rules/deitylines.h",
-  "rules/uaappends.h"
+  "rules/ua/uaappends.h"
  ],
  "inline_count": 95,
  "file_patches": [
@@ -991,7 +991,7 @@
    "to": "// R786-R789: the dwarven, elven,\n// halfling, and gnomish paragraphs pin\n// (rules/uadeityprose1-4.h); the orcs'\n// prose stays open - the lines pin, the\n// paragraphs do not (yet)\n"
   },
   {
-   "file": "rules/uaappends.h",
+   "file": "rules/ua/uaappends.h",
    "note": "the uaappends prose note strike (part 4)",
    "from": "// stat lines) in rules/deitylines.h; the dwarven,\n// elven, and halfling prose pin in rules/\n// uadeityprose1-3.h (R786-R788); the gnomes'\n// and orcs' prose stays open.\n",
    "to": "// stat lines) in rules/deitylines.h; the dwarven,\n// elven, halfling, and gnomish prose pin in\n// rules/uadeityprose1-4.h (R786-R789); the\n// orcs' prose stays open.\n"

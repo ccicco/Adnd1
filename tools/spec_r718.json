@@ -2,7 +2,7 @@
  "round": 718,
  "title": "OA MONSTERS - the Hai Nu: the servitors of the Sea Lord",
  "prefix": "dkf",
- "header_file": "rules/oa89hainu.h",
+ "header_file": "rules/oa/oa89hainu.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA MONSTERS - THE HAI NU, printed capture p. 268 - the Sea Lord servitors round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 171 closed, 64 open - the hai nu box flips (census 640 -> 641); NEXT - R719: the Hsing-Sing (capture p. 269), prefix dkg (verify free at the landing), audit \"R719 OA monsters Hsing-Sing audit\", include after rules/oa89hainu.h"
+  "sentinel": "the gap census after this round: 171 closed, 64 open - the hai nu box flips (census 640 -> 641); NEXT - R719: the Hsing-Sing (capture p. 269), prefix dkg (verify free at the landing), audit \"R719 OA monsters Hsing-Sing audit\", include after rules/oa/oa89hainu.h"
  },
  "consts": [
   {
@@ -648,7 +648,7 @@
   "open": 64
  },
  "include_comment": "the OA Hai Nu pins",
- "include_after": "#include \"rules/oa88goblinspider.h\"  // R717: the OA Goblin Spider pins",
+ "include_after": "#include \"rules/oa/oa88goblinspider.h\"  // R717: the OA Goblin Spider pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R717 LANDED 2026-10-21: commit",
@@ -682,6 +682,6 @@
   "  d3ba7e1b576afadf5f1bcc6017f1e849). NEXT - R718: the",
   "  Hai Nu (capture p. 268), prefix dkf (verified free at",
   "  658be4c), audit \"R718 OA monsters Hai Nu audit\",",
-  "  include after rules/oa88goblinspider.h."
+  "  include after rules/oa/oa88goblinspider.h."
  ]
 }

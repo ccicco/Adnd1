@@ -1,11 +1,11 @@
--- oa761: promoted from rules/oa132shoulung.h (the OA SETTING - THE SHOU LUNG EMPIRE, printed capture p. 303 - the largest and);
+-- oa761: promoted from rules/oa/oa132shoulung.h (the OA SETTING - THE SHOU LUNG EMPIRE, printed capture p. 303 - the largest and);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 761,
   "prefix" = "oa761",
   "banner" = {
       "title" = "OA SETTING - THE SHOU LUNG EMPIRE, printed capture p. 303 - the largest and",
-      "provenance" = "most powerful empire of Kara-Tur census 683 -> 684.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 214 closed, 21 open - the Shou Lung box flips (census 683 -> 684); NEXT - R762: Tu Lung (capture p. 303), prefix dlx (verify free at the landing), audit \"R762 OA Tu Lung audit\", include after rules/oa132shoulung.h",
+      "provenance" = "most powerful empire of Kara-Tur census 683 -> 684.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 214 closed, 21 open - the Shou Lung box flips (census 683 -> 684); NEXT - R762: Tu Lung (capture p. 303), prefix dlx (verify free at the landing), audit \"R762 OA Tu Lung audit\", include after rules/oa/oa132shoulung.h",
     },
   "consts" = { {
       "name" = "dlwReceiverOfTheDragon",

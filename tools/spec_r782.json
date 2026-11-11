@@ -360,7 +360,7 @@
       "file": "ai/actor.h",
       "note": "the uaappends.h include lands in actor.h (the bridge decl needs the stat block type)",
       "from": "#include \"../dm/dm.h\"",
-      "to": "#include \"../dm/dm.h\"\n#include \"../rules/uaappends.h\"  // R782: the deity bridge type"
+      "to": "#include \"../dm/dm.h\"\n#include \"../rules/ua/uaappends.h\"  // R782: the deity bridge type"
     },
     {
       "file": "ai/actor.h",

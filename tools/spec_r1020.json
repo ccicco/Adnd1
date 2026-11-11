@@ -8,12 +8,12 @@
   "title": "The MM2 normalization batch four - the book closer, the last 83 of 332 defs rewritten to the full-field 57-key emission, the monster zombie pin repairs riding",
   "provenance": "The MM2 normalization - the per-book schema pass concludes for the MM2 book (the R879 normalizer doctrine, the R1009-R1014 MM1 arc, R1016 the OA book close, R1017-R1019 the MM2 arc openers): the last 83 sparse MM2 defs (shator through zygom) rewritten to the full-field 57-key emission of the landed tools/normalize_registry.py - string sentinels n/a, integer sentinels -1 - byte-exact against the normalizer output, the canonical FIELD_ORDER honored; 581 anchored inserts (2258 inserted lines), zero whole-line rewrites, zero move encodings. THE MM2 BOOK CLOSES COMPLETE: 332 of 332 canonical. THE PIN REPAIRS: the monster zombie (the kWXYZ walk index 14) carries hitDiceNum 0 and its mm2_print xp 0/0/0 cells but never carried hitDiceBonus, avgHp or lairPct - the loader read absence as 0 and the WXYZ grid pinned that 0; the canonical emission writes the -1 sentinel, so three pin cells ride this round. The triple-grid shape of this walk: the regtest live-def walk pins the loader members against the grid functions, the migrated R815 fragment pins the grid functions against its hardcoded CWXYZStats copy, AND the fragment carries direct per-cell pins - the row 14 grid copy and the three direct pins all mirror the repair, the avgHp grid comment rides along. The numAttacks/move/magicResistance sentinels are loader-coercer neutral (the n/a strings parse to the same 1/0/0 the pre-round absence defaults read). The yuan ti carries its by_level xp cells - no repair needed. The sweep simulated the fragment (grid copy, direct pins) and the live walk in full before the handoff - all bad 0. THE QUEUE: FF 185, WSG+MOP 23, DRG 5, the deity seam."
  },
- "header_file": "rules/mq4.h",
+ "header_file": "rules/mm/mm2_normalization_batch4.h",
  "audit_file": "rules/audits/r1020_batch.h",
  "audit_label": "R1020 MM2 normalization audit",
  "audit_comment": "THE MM2 NORMALIZATION - the book closes: the last 83 of 332 defs rewritten to the full-field 57-key emission, byte-exact against the landed normalize_registry.py; the monster zombie pin repairs ride the round with their fragment mirrors.",
  "audit_anchor": "#include \"rules/audits/r1019_batch.h\"  // R1019: R1019 MM2 normalization audit",
- "include_after": "#include \"rules/mq3.h\"  // R1019: the MM2 normalization batch three",
+ "include_after": "#include \"rules/mm/mm2_normalization_batch3.h\"  // R1019: the MM2 normalization batch three",
  "include_comment": "the MM2 normalization batch four",
  "regtest": "regtest.cpp",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -75,7 +75,7 @@
   "    mongrelman and myconid",
   "    cells and fragment rows",
   "    -1, the russet mold cells",
-  "    0, mq3.h after mq2.h,",
+  "    0, rules/mm/mm2_normalization_batch3.h after rules/mm/mm2_normalization_batch2.h,",
   "    r1019_batch.h above",
   "    r1018_batch.h, the R1018",
   "    LANDED record seated",
@@ -3741,25 +3741,25 @@
    "to": "  text = \"Zygoms are small individual fungoid growths which consist of a short, thin stem with an ovoid cap. One or 2 dozen such growths are joined by a rhizome structure to form a singular communal creature, a zygom. Although able to exist in earth, zygoms perfer to infest living flesh and nourish themselves on the host's blood and tissue. This infestation controls the host creature by brain and nerve connections. It leads to death in 1-8 weeks, depending on the size and constitution of the host creature. The zygom remains until the whole of the dead body is consumed and then moves on. As host creatures are controlled, they move, attack, and defend according to the dictates of the possessing zygoms. Infestation is typically on head, neck, and back (spinal) areas. Typical host creatures are: ants (giant), rats (giant), osquips, and occasionally small humanoids. Whenever a colony of zygoms comes in rough contact with any creature, there is a 1 in 6 chance that the pale blue \\\"milk\\\" of a broken cap will stick fast to the creature. This milk is extremely sticky, and it has the power to glue materials together for 2-5 days before the substance drys and crumbles. If glued to flesh, a colony of zygom spores will infect the creature and begin growth by the time the glue powders, allowing the zygoms to infest and control the host. Only a cure disease will remove infestation. Zygom glue can be otherwise embarassing, for it will stick weapons to targets, creatures to creatures, etc.\\n\\nAs zygoms have fungoid intelligence which is totally alien to humans, no magic affecting the mind - beguiling, charming, dominating, holding, hypnotizing, etc. - will affect them.\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = 0,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = -1,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"n/a\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"n/a\",\n"
   },
   {
-   "file": "rules/mm2wxyz.h",
+   "file": "rules/mm/mm2wxyz.h",
    "note": "the monster zombie hitDiceBonus pin 0 -> -1 (the full-field sentinel)",
    "from": "        case 13:\n            return 12;\n        case 14:\n            return 0;\n        case 15:\n            return 2;",
    "to": "        case 13:\n            return 12;\n        case 14:\n            return -1;\n        case 15:\n            return 2;"
   },
   {
-   "file": "rules/mm2wxyz.h",
+   "file": "rules/mm/mm2wxyz.h",
    "note": "the monster zombie avgHp pin 0 -> -1 (the full-field sentinel)",
    "from": "        case 13:\n            return 22;\n        case 14:\n            return 0;\n        case 15:\n            return 16;",
    "to": "        case 13:\n            return 22;\n        case 14:\n            return -1;\n        case 15:\n            return 16;"
   },
   {
-   "file": "rules/mm2wxyz.h",
+   "file": "rules/mm/mm2wxyz.h",
    "note": "the monster zombie lairPct pin 0 -> -1 (the full-field sentinel)",
    "from": "        case 13:\n            return 0;\n        case 14:\n            return 0;\n        case 15:\n            return 30;",
    "to": "        case 13:\n            return 0;\n        case 14:\n            return -1;\n        case 15:\n            return 30;"
   },
   {
-   "file": "rules/mm2wxyz.h",
+   "file": "rules/mm/mm2wxyz.h",
    "note": "the avgHp grid comment rides the pin repair",
    "from": "the weasel and\n// webbird 2 - the atomie half-dice precedent; the monster zombie the nil\n// block 0)",
    "to": "the weasel and\n// webbird 2 - the atomie half-dice precedent; the monster zombie the\n// nil block -1 (the R1020 pin repair)"

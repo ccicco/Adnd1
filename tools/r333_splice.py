@@ -71,14 +71,14 @@ assert s.count('## Knowledge maintenance') == 1, \
     'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
-# ---- (b) NEW rules/uaranger.h ----
-UR = 'rules/uaranger.h'
+# ---- (b) NEW rules/ua/uaranger.h ----
+UR = 'rules/ua/uaranger.h'
 if os.path.exists(UR) and 'R333' in rd(UR):
     already.append('uaranger.h: the pins')
 else:
     HDR = NL.join([
     '// ===========================================================================',
-    '// Adnd1 - rules/uaranger.h',
+    '// Adnd1 - rules/ua/uaranger.h',
     '// The UA ranger expansion (pp. 21-22) pins (R333).',
     '//',
     '// Pin-era pattern (R322): pinned data only - no engine site exists.',
@@ -319,7 +319,7 @@ else:
                 ' (pp.')
     CLOSE = NL.join([
     '      - CLOSED R333: the pin round',
-    '      (rules/uaranger.h) - the',
+    '      (rules/ua/uaranger.h) - the',
     '      tracking base and terrain',
     '      ladders, the indoor reads, the',
     '      identification ladder, the',
@@ -358,7 +358,7 @@ else:
                 '  // R332: the UA barbarian')
     INC_NEW = NL.join([
     INC_ANCH,
-    '#include "rules/uaranger.h"'
+    '#include "rules/ua/uaranger.h"'
     '  // R333: the UA ranger expansion',
     ])
     AUD_ANCH = ('    // ---- R227: the wis mental'
@@ -557,7 +557,7 @@ assert s.count(
     'd r331 kept'
 assert s.count('R227: the wis mental save') == 1, \
     'd r227 kept'
-assert s.count('#include "rules/uaranger.h"') == 1, \
+assert s.count('#include "rules/ua/uaranger.h"') == 1, \
     'd include'
 assert len(applied) + len(already) == 4, 'd count'
 

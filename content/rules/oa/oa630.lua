@@ -1,11 +1,11 @@
--- oa630: promoted from rules/oafamstr.h (the FAMILY STRUCTURE AND ADDITIONAL FAMILY STRUCTURES, printed capture pp.);
+-- oa630: promoted from rules/oa/oafamstr.h (the FAMILY STRUCTURE AND ADDITIONAL FAMILY STRUCTURES, printed capture pp.);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 630,
   "prefix" = "oa630",
   "banner" = {
       "title" = "FAMILY STRUCTURE AND ADDITIONAL FAMILY STRUCTURES, printed capture pp.",
-      "provenance" = "62-64 - the OA family structures round census 552 -> 553.  pinned from the 2018 print capture alone for this range (the settling authority per the R629 ruling): the first Mistral-OCR capture session is no longer available above p. 33, so the cross-capture agreement check is impossible for pp. 62-64. No tables this round, so no contested cells. Cites are the capture pp. 62-64 range (the per-fact printed pages cannot be isolated without the first capture). OCR normalization: splinterhood reads as spinsterhood; the deaths bad-feelings sentence appears twice in the 2018 print (the second occurrence stands as printed); the Master Family Chart prose (capture pp. 64-65) is deliberately left for the next round  the gap census after this round: 68 closed, 167 open - the Family Structure + Additional Family Structures box flips (census 552 -> 553); NEXT - R631: the Master Family Chart and Ancestry prose, capture pp. 64-65, Table 39 (Ancestry), prefix dgr (verify free), audit \"R631 OA ancestry audit\", include after rules/oafamstr.h",
+      "provenance" = "62-64 - the OA family structures round census 552 -> 553.  pinned from the 2018 print capture alone for this range (the settling authority per the R629 ruling): the first Mistral-OCR capture session is no longer available above p. 33, so the cross-capture agreement check is impossible for pp. 62-64. No tables this round, so no contested cells. Cites are the capture pp. 62-64 range (the per-fact printed pages cannot be isolated without the first capture). OCR normalization: splinterhood reads as spinsterhood; the deaths bad-feelings sentence appears twice in the 2018 print (the second occurrence stands as printed); the Master Family Chart prose (capture pp. 64-65) is deliberately left for the next round  the gap census after this round: 68 closed, 167 open - the Family Structure + Additional Family Structures box flips (census 552 -> 553); NEXT - R631: the Master Family Chart and Ancestry prose, capture pp. 64-65, Table 39 (Ancestry), prefix dgr (verify free), audit \"R631 OA ancestry audit\", include after rules/oa/oafamstr.h",
     },
   "consts" = { {
       "name" = "dgqChildrenDiceSides",

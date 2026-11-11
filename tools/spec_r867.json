@@ -20,7 +20,7 @@
   }
  ],
  "header_file": "rules/pln.h",
- "include_after": "#include \"rules/smr.h\"  // R866: the Sumerian mythos",
+ "include_after": "#include \"rules/ddg/mythos_sumerian.h\"  // R866: the Sumerian mythos",
  "include_comment": "the known planes of existence",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "seed_anchor": "## Knowledge maintenance",

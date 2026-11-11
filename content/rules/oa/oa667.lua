@@ -1,4 +1,4 @@
--- oa667: promoted from rules/oat64speakdead.h (the TABLE 64 SPEAK WITH DEAD, printed capture p. 132 - the OA speak with dead);
+-- oa667: promoted from rules/oa/oat64speakdead.h (the TABLE 64 SPEAK WITH DEAD, printed capture p. 132 - the OA speak with dead);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 667,

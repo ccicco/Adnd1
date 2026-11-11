@@ -1,4 +1,4 @@
--- ua: promoted from rules/uaappendt.h (the The UA APPENDIX T: POLE-ARM);
+-- ua: promoted from rules/ua/uaappendt.h (the The UA APPENDIX T: POLE-ARM);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 391,

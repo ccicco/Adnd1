@@ -2,7 +2,7 @@
  "round": 490,
  "title": "the WSG mounts and beasts of burden chapter slice - the full catalog of land-based animals as mounts and pack animals with the animals-as-individuals rules, the Table 42 reaction grid and the calming and understanding rules, printed pp. 90-94, CLOSING the mounts and beasts of burden chapter",
  "prefix": "wmb",
- "header_file": "rules/wsgmount.h",
+ "header_file": "rules/wsg/wsgmount.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -1973,24 +1973,24 @@
   {
    "note": "the animals-as-individuals box",
    "from": "  - [ ] Animals as individuals (p. 91)",
-   "to": "  - [x] Animals as individuals (p. 91) - R490: the former-owner and trial-and-error personality rules with the Table 42 reaction grid and the fire, weather, noise, odor and other band rules pin as rules/wsgmount.h"
+   "to": "  - [x] Animals as individuals (p. 91) - R490: the former-owner and trial-and-error personality rules with the Table 42 reaction grid and the fire, weather, noise, odor and other band rules pin as rules/wsg/wsgmount.h"
   },
   {
    "note": "the calming-an-excited-animal box",
    "from": "  - [ ] Calming an excited animal (p. 94)",
-   "to": "  - [x] Calming an excited animal (p. 94) - R490: the proficiency and 20 percent nonproficient rules with the motion details and the +2/+4 modifiers pin as rules/wsgmount.h"
+   "to": "  - [x] Calming an excited animal (p. 94) - R490: the proficiency and 20 percent nonproficient rules with the motion details and the +2/+4 modifiers pin as rules/wsg/wsgmount.h"
   },
   {
    "note": "the understanding-an-animal box",
    "from": "  - [ ] Understanding an animal (p. 94)",
-   "to": "  - [x] Understanding an animal (p. 94) - R490: the animal lore educated-guess and certainty rules pin as rules/wsgmount.h"
+   "to": "  - [x] Understanding an animal (p. 94) - R490: the animal lore educated-guess and certainty rules pin as rules/wsg/wsgmount.h"
   }
  ],
  "gap_census": {
   "closed": 135,
   "open": 51
  },
- "include_after": "#include \"rules/wsgfatig.h\"  // R489: the WSG fatigue and exhaustion rules",
+ "include_after": "#include \"rules/wsg/wsgfatig.h\"  // R489: the WSG fatigue and exhaustion rules",
  "include_comment": "the WSG mounts and beasts of burden rules",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
@@ -2001,7 +2001,7 @@
   "  slice, printed pp. 87-89 - CLOSING the wilderness",
   "  combat chapter with its dismount tail and LANDING",
   "  the full fatigue and exhaustion chapter. Pinned as",
-  "  rules/wsgfatig.h with the include after",
+  "  rules/wsg/wsgfatig.h with the include after",
   "  wsgfight.h at line 194 (prefix wft - free on the",
   "  first probe), 120 inlines: 65 consts + 55 bools in",
   "  five sections - the chapter opener, the p. 87",

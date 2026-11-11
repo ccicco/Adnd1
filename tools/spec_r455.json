@@ -2,7 +2,7 @@
  "round": 455,
  "title": "the WSG movement in waterborne vehicles",
  "prefix": "wvb",
- "header_file": "rules/wsgvessels.h",
+ "header_file": "rules/wsg/wsgvessels.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -13,7 +13,7 @@
  "census_before": 379,
  "inline_count": 55,
  "audit_label": "R455 WSG waterborne vehicles pin audit",
- "audit_comment": "The waterborne vehicles slice pins Table 25 (the eight inland vessels - kayak through large barge - across length, width, the passenger-plus-gold capacity, the four large-scale miles-per-half-day and four small-scale feet-per-round rates, the encumbrance ranges with the large barge open 10000+, the startup and hull ranges, and the draughts) and the modifications to movement (the downstream add and upstream subtract of the current, the 20-to-30 wind band with the minus-1 and plus-2 steps per 10 mph, the 5 mph no-sail floor, the right-angle maximum sail, the into-wind 3-inch reduction to the 1-inch minimum, the two-turns-on one-turn-off max-oar exertion with the fatigued half speed and the forced one-turn exhaustion, and the shorthanded proportionate rowing per the 3-rowers large-rowboat example) (rules/wsgvessels.h, prefix wvb); census 379 -> 380.",
+ "audit_comment": "The waterborne vehicles slice pins Table 25 (the eight inland vessels - kayak through large barge - across length, width, the passenger-plus-gold capacity, the four large-scale miles-per-half-day and four small-scale feet-per-round rates, the encumbrance ranges with the large barge open 10000+, the startup and hull ranges, and the draughts) and the modifications to movement (the downstream add and upstream subtract of the current, the 20-to-30 wind band with the minus-1 and plus-2 steps per 10 mph, the 5 mph no-sail floor, the right-angle maximum sail, the into-wind 3-inch reduction to the 1-inch minimum, the two-turns-on one-turn-off max-oar exertion with the fatigued half speed and the forced one-turn exhaustion, and the shorthanded proportionate rowing per the 3-rowers large-rowboat example) (rules/wsg/wsgvessels.h, prefix wvb); census 379 -> 380.",
  "banner": {
   "title": "The WSG MOVEMENT IN WATERBORNE VEHICLES, R455: Table 25, the WATERBORNE VEHICLE CHARACTERISTICS of the eight inland vessels - kayak (length 8-12, width 2-3, capacity 1 + 1000, large move 18/24/12/14, small move 160/200/120/180, enc. 600-800, startup 1-2, hull 1-2, draught 1/4), small canoe (10-15, 2-3, 2 + 2500, 20/30/10/12, 160/200/120/180, 700-900, 1-2, 1-2, 1/4), small rowboat (8-12, 2-4, 2 + 2000, 16/24/12/14, 120/180/90/120, 700-1000, 1-3, 1-3, 1/2), coracle (10-15, 3-5, 2 + 2000, 12/18/6/8, 45/60/30/45, 900-1200, 1-3, 1-2, 1/2), large canoe (15-20, 2-3, 2 + 4000, 20/30/10/12, 120/180/90/120, 1000-1200, 1-3, 2-3, 1/3), large rowboat (15-20, 3-4, 4 + 4000, 16/24/8/10, 45/90/45/60, 1200-1600, 2-5, 2-4, 3/4), small barge (15-20, 8-12, 4 + 6000, 16/24/8/9, 45/60/30/45, 4000-6000, 2-6, 1-6, 3/4) and large barge (25-45, 12-20, 6 + 7500, 8/16/4/5, 30/60/20/30, 10000+, 5-10, 2-8, draught 1). Large move is miles per half-day under normal sail, maximum sail, normal oar and maximum oar; small move is feet per round under the same four. The modifications: if the water is moving the vessel drifts with the current at that speed - downstream the normal sail or normal oar rate ADDS the current, upstream the current is DEDUCTED and maximum sail or oar may be needed for headway. Normal sail assumes movement in the direction of the wind blowing between 20 and 30 miles per hour: subtract 1 inch (one mile per half-day or 10 feet per round) for each 10 mph of wind below 20, add 2 inches for each 10 mph above 30 - and a vessel cannot be successfully sailed if the wind is less than 5 miles per hour. Maximum sail applies when moving at RIGHT ANGLES to the wind, with the same wind-speed modifiers; a vessel sailed INTO the wind has its normal sail rate reduced by 3 inches per 10 mph of wind speed, to a minimum of 1 inch in any case. The maximum oar rate is extremely strenuous: a character must rest or row at the normal rate for one turn after two turns of such effort or risk fatigue - a fatigued oarsman can only propel the craft at HALF normal speed, and if forced to row at normal speed he becomes exhausted after one turn. A craft can be rowed by fewer characters than the capacity figure, but only at a PROPORTIONATE fraction of its movement rate - the printed example: three people rowing a large rowboat travel 6 miles in eight hours at normal oar (three-quarters of 8) or 45 feet per round at maximum oar (three-quarters of 60). All these rates and modifiers assume at least one character aboard with proficiency in boating. The rules cover only inland-waterway vessels - galleys, merchant ships and warships are out of scope. Census 379 -> 380.",
   "provenance": "the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed p. 44 with the movement-modification prose continuing on p. 45; the user own copy OCR (pages 45-46) cross-checked against the archive djvu word layer (Guide_0044, Guide_0045) - the prose reads clean two-way, but the djvu TRUNCATES the printed Table 25 (only six of eight rows, the draught column garbled, the barge rows missing), so the grid was settled by TWO independent IIIF eye-reads of leaf $44, which agree with the OCR exactly on all eight rows and every cell, including the 10000+ open-ended encumbrance of the large barge.",
@@ -665,7 +665,7 @@
  "gap_flips": [
   {
    "from": "  - [ ] Movement in waterborne vehicles (p. 44)",
-   "to": "  - [x] Movement in waterborne vehicles (p. 44) - R455: Table 25 (the eight inland vessels x the ten characteristics - length, width, capacity, the four large-scale and four small-scale movement rates, encumbrance with the 10000+ open end, startup, hull value and draught) and the modifications (the current add/subtract, the 20-30 mph wind band with the -1/+2 per 10 mph steps, the 5 mph no-sail floor, the into-wind 3-inch reduction to the 1-inch minimum, the max-oar exertion ladder with fatigue and exhaustion, and the shorthanded proportional rowing with the 3-rowers example) pin as rules/wsgvessels.h",
+   "to": "  - [x] Movement in waterborne vehicles (p. 44) - R455: Table 25 (the eight inland vessels x the ten characteristics - length, width, capacity, the four large-scale and four small-scale movement rates, encumbrance with the 10000+ open end, startup, hull value and draught) and the modifications (the current add/subtract, the 20-30 mph wind band with the -1/+2 per 10 mph steps, the 5 mph no-sail floor, the into-wind 3-inch reduction to the 1-inch minimum, the max-oar exertion ladder with fatigue and exhaustion, and the shorthanded proportional rowing with the 3-rowers example) pin as rules/wsg/wsgvessels.h",
    "note": "movement in waterborne vehicles"
   },
   {
@@ -679,7 +679,7 @@
   "open": 128
  },
  "include_comment": "the WSG movement in waterborne vehicles",
- "include_after": "#include \"rules/wsgbreath.h\"  // R454: the WSG holding one breath",
+ "include_after": "#include \"rules/wsg/wsgbreath.h\"  // R454: the WSG holding one breath",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R454 landed 2026-10-14: commit e0a5480",
@@ -718,7 +718,7 @@
   "  addition with the penalties applied after, and",
   "  the hold-before-affected gas rules (a small",
   "  dose as harmful as an extended one).",
-  "  rules/wsgbreath.h NEW (31 inlines: 13 consts",
+  "  rules/wsg/wsgbreath.h NEW (31 inlines: 13 consts",
   "  + 18 bools, prefix whb - checked free in all",
   "  three TUs). Ground truth CLEAN two-way (the",
   "  user copy OCR page 44 vs the djvu word layer",

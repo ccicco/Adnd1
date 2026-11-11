@@ -2,7 +2,7 @@
  "round": 458,
  "title": "the WSG portaging",
  "prefix": "wpg",
- "header_file": "rules/wsgportage.h",
+ "header_file": "rules/wsg/wsgportage.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -13,7 +13,7 @@
  "census_before": 382,
  "inline_count": 16,
  "audit_label": "R458 WSG portaging pin audit",
- "audit_comment": "The portaging slice pins the solo-portage gate (a vessel smaller than a large rowboat carried by one character able to support its encumbrance without becoming severely encumbered), the severe-encumbrance bar on portaging or helping, the portage-crew minimums (two for the large rowboat and the small barge, four for the large barge) with the maximum of twice the minimum, the beyond-max futility (the third small-canoe carrier), and the 3-inch portage move rate - 3 miles in eight hours, 30 feet per round, regardless of terrain or overall encumbrance status (rules/wsgportage.h, prefix wpg); census 382 -> 383.",
+ "audit_comment": "The portaging slice pins the solo-portage gate (a vessel smaller than a large rowboat carried by one character able to support its encumbrance without becoming severely encumbered), the severe-encumbrance bar on portaging or helping, the portage-crew minimums (two for the large rowboat and the small barge, four for the large barge) with the maximum of twice the minimum, the beyond-max futility (the third small-canoe carrier), and the 3-inch portage move rate - 3 miles in eight hours, 30 feet per round, regardless of terrain or overall encumbrance status (rules/wsg/wsgportage.h, prefix wpg); census 382 -> 383.",
  "banner": {
   "title": "The WSG PORTAGING, R458: it is not unusual for areas of the wilderness to be dotted with small lakes or streams separated from one another by short expanses of land, and characters may find it desirable or necessary to portage their vessels (carry them overland) from one body of water to another rather than leave them behind. As with all encumbrance values, the ones given for watercraft account for the bulkiness of the vessel as well as its actual weight. If a character is able to support the listed amount without becoming severely encumbered, and if the vessel is smaller than a large rowboat, he can portage the vessel by himself. Severely encumbered characters cannot portage, or help to portage, a vessel. A large rowboat or a small barge requires at least two characters to share its encumbrance, and a large barge must be portaged by at least four characters. No vessel can be portaged by more than twice the minimum number needed to carry it - a third character is of no use in an attempt to portage a small canoe; despite his presence, the canoe must be able to be carried by the other two characters, or it cannot be portaged. Any character portaging or helping to portage a vessel can move no faster than 3 inches of movement (3 miles in eight hours, or 30 feet per round), regardless of terrain or his overall encumbrance status.",
   "provenance": "the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed pp. 45-46 (the section spans the page break); the user own copy OCR (pages 46-47) cross-checked against the archive djvu word layer (Guide_0045/0046) - the prose reads clean two-way, with only the usual page-break garble in the djvu (the solo- portage clause, which the user OCR reads whole and the continuation text confirms); NO eye-reads needed (a pure-prose section, no printed grid)."
@@ -253,7 +253,7 @@
  "gap_flips": [
   {
    "from": "  - [ ] Portaging (p. 45)",
-   "to": "  - [x] Portaging (p. 45) - R458: the solo-portage gate (a vessel smaller than a large rowboat carried by one character able to support its encumbrance without becoming severely encumbered), the severe-encumbrance bar on portaging or helping, the portage-crew minimums and the twice-minimum maximums (two and four for the large rowboat and small barge, four and eight for the large barge) with the beyond-max futility, and the 3-inch portage move rate (3 miles in eight hours, 30 feet per round, regardless of terrain or encumbrance status) pin as rules/wsgportage.h",
+   "to": "  - [x] Portaging (p. 45) - R458: the solo-portage gate (a vessel smaller than a large rowboat carried by one character able to support its encumbrance without becoming severely encumbered), the severe-encumbrance bar on portaging or helping, the portage-crew minimums and the twice-minimum maximums (two and four for the large rowboat and small barge, four and eight for the large barge) with the beyond-max futility, and the 3-inch portage move rate (3 miles in eight hours, 30 feet per round, regardless of terrain or encumbrance status) pin as rules/wsg/wsgportage.h",
    "note": "portaging"
   },
   {
@@ -267,7 +267,7 @@
   "open": 125
  },
  "include_comment": "the WSG portaging",
- "include_after": "#include \"rules/wsgboat.h\"  // R457: the WSG boating proficiency",
+ "include_after": "#include \"rules/wsg/wsgboat.h\"  // R457: the WSG boating proficiency",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R457 landed 2026-10-14: commit 9dbb69e",
@@ -297,7 +297,7 @@
   "  movement penalties) and the sail-crew",
   "  minimums (two characters for the large",
   "  rowboat, small barge and large barge, one",
-  "  for all the rest). rules/wsgboat.h NEW",
+  "  for all the rest). rules/wsg/wsgboat.h NEW",
   "  (18 inlines: 6 consts + 9 bools + the",
   "  synthesized 3-column grid - the",
   "  movement-fraction num/den and the sail",

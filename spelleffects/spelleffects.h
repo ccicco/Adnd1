@@ -9,8 +9,8 @@
 
 #pragma once
 
-#include "../rules/dice.h"
-#include "../rules/saves.h"
+#include "../rules/engine/dice.h"
+#include "../rules/engine/saves.h"
 #include "../spells/spells.h"
 
 #include <vector>

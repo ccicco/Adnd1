@@ -478,7 +478,7 @@ bool spellIsMentalForm(SpellId id) {
 // wisMagicalAttackAdj, the same one R194 wisMagDefAdj
 // delegates to - on mental-form spells; 0 on everything
 // else. The save rolls stay caller-assembled
-// (rules/saves.h); callers call this.
+// (rules/engine/saves.h); callers call this.
 int spellSaveModWis(SpellId id, uint8_t wis) {
     // R227: delegates to the mental-form gate
     // seam (rules/wisdom.h) - the same

@@ -72,7 +72,7 @@
 # Patches (5):
 #   - the seed takes the R424
 #     landed record
-#   - rules/wsgprof.h NEW (33
+#   - rules/wsg/wsgprof.h NEW (33
 #     inlines, prefix wsg -
 #     checked free, the
 #     collision gate keyed on
@@ -182,7 +182,7 @@ def newfile(path, text, label):
 
 
 RT = 'regtest.cpp'
-HD = 'rules/wsgprof.h'
+HD = 'rules/wsg/wsgprof.h'
 GR = 'tools/wsg_gap_report.md'
 SD = ('doc/vibe/'
       'adnd1_knowledge_seed_v2.md')
@@ -368,7 +368,7 @@ else:
     wr(SD, s)
     applied.append('seed: the R424 record')
 
-# ======== (b) rules/wsgprof.h ========
+# ======== (b) rules/wsg/wsgprof.h ========
 
 # the header: 33 inlines, the
 # system pins + the Table 1/2
@@ -382,7 +382,7 @@ HS = []  # header source lines
 
 HS += [
     '// ' + '=' * 89,
-    '// Adnd1 - rules/wsgprof.h',
+    '// Adnd1 - rules/wsg/wsgprof.h',
     '// The WSG WILDERNESS',
     '// PROFICIENCIES, R425:',
     '// the wilderness arc',
@@ -710,7 +710,7 @@ HS += [
 HEADER = E(*HS) + NL
 
 newfile(HD, HEADER,
-        'rules/wsgprof.h')
+        'rules/wsg/wsgprof.h')
 
 # the header statics:
 # 33 inlines, lines <= 78
@@ -1185,7 +1185,7 @@ for title, pages, subs in CH:
                       'system and the '
                       'improving/expanding '
                       'rules pin as '
-                      'rules/wsgprof.h'
+                      'rules/wsg/wsgprof.h'
                       % (sub, pg))
         else:
             RP.append('  - [ ] %s (%s)'
@@ -1220,7 +1220,7 @@ for num, name, pg in TB:
         RP.append('- [x] **Table %d: %s** '
                   '(p. %d) - R425: the '
                   'printed grids pin as '
-                  'rules/wsgprof.h'
+                  'rules/wsg/wsgprof.h'
                   % (num, name, pg))
     else:
         RP.append('- [ ] **Table %d: %s** '
@@ -1281,13 +1281,13 @@ newfile(GR, REPORT,
 # ======== the include ========
 
 pair(RT,
-     '#include "rules/uapantheon.h"  '
+     '#include "rules/ua/uapantheon.h"  '
      '// R423: the UA Appendix S '
      'pantheon prose',
-     '#include "rules/uapantheon.h"  '
+     '#include "rules/ua/uapantheon.h"  '
      '// R423: the UA Appendix S '
      'pantheon prose' + NL
-     + '#include "rules/wsgprof.h"  '
+     + '#include "rules/wsg/wsgprof.h"  '
      '// R425: the WSG '
      'wilderness proficiencies',
      'regtest: the include line')
@@ -1302,7 +1302,7 @@ AUD = E(*[l.rstrip() for l in [
     '    // The wilderness arc ',
     '    // opener pins the WSG ',
     '    // proficiency system ',
-    '    // (rules/wsgprof.h, ',
+    '    // (rules/wsg/wsgprof.h, ',
     '    // prefix wsg): the ',
     '    // Proficiency Check ',
     '    // system (1d20 vs the ',
@@ -1635,7 +1635,7 @@ print('R425 splice: ALL OK '
 print('NOTE: the WSG arc opener - '
       'the wilderness')
 print('  proficiencies pin as '
-      'rules/wsgprof.h (33')
+      'rules/wsg/wsgprof.h (33')
 print('  inlines, prefix wsg) with '
       'the check')
 print('  system, Table 1 (the 14 '

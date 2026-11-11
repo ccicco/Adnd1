@@ -30,7 +30,7 @@
     // percent ladder, the +30 crossing check each round, the swing with the
     // -5 per 10 feet and the 1d6 per 20-foot section, the belay with the
     // second check and the 3-foot edge rule and the -10 per faller, the
-    // roping-together cascade at -10) (rules/dsgmove.h, prefix dmv); census
+    // roping-together cascade at -10) (rules/dsg/dsgmove.h, prefix dmv); census
     // 428 -> 429.
     {
         using namespace rules;

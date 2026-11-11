@@ -1,11 +1,11 @@
--- oa736: promoted from rules/oa107tableiia.h (the OA TREASURE - TABLE II.A. (ORIENT), MONETARY TREASURE, printed capture pp.);
+-- oa736: promoted from rules/oa/oa107tableiia.h (the OA TREASURE - TABLE II.A. (ORIENT), MONETARY TREASURE, printed capture pp.);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 736,
   "prefix" = "oa736",
   "banner" = {
       "title" = "OA TREASURE - TABLE II.A. (ORIENT), MONETARY TREASURE, printed capture pp.",
-      "provenance" = "286-287 - the rolled hoard round census 658 -> 659.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 189 closed, 46 open - the Table II.A. box flips (census 658 -> 659); NEXT - R737: Table III. (Orient): Magical Items (capture p. 287), prefix dky (verify free at the landing), audit \"R737 OA Table III Orient magical items audit\", include after rules/oa107tableiia.h",
+      "provenance" = "286-287 - the rolled hoard round census 658 -> 659.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 189 closed, 46 open - the Table II.A. box flips (census 658 -> 659); NEXT - R737: Table III. (Orient): Magical Items (capture p. 287), prefix dky (verify free at the landing), audit \"R737 OA Table III Orient magical items audit\", include after rules/oa/oa107tableiia.h",
     },
   "consts" = { {
       "name" = "dkxRowCount",

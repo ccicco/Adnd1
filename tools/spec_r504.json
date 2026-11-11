@@ -2,7 +2,7 @@
   "round": 504,
   "title": "the DSG movement chapter part I - the check frames, swimming, breath, moving water, climbing, rappelling, jumping and the rope system",
   "prefix": "dmv",
-  "header_file": "rules/dsgmove.h",
+  "header_file": "rules/dsg/dsgmove.h",
   "regtest": "regtest.cpp",
   "gap_report": "tools/dsg_gap_report.md",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -10,11 +10,11 @@
   "census_before": 428,
   "inline_count": 234,
   "audit_label": "R504 DSG movement I audit",
-  "audit_comment": "The DSG movement chapter part I pins the check frames (the 1d20 ability check equal-or-less with the dice substitution, the proficiency check strictly less), the swimming block (the proficiency gate with the 1/3 humanoid-monster chance, the three functions, Table 1 with the five encumbrance rows x the four functions in numerator/denominator cells, the levels+con endurance with the treading double and the 1/10 high-speed cut and the equal high-speed rest, the 4/3-inch base rates with the strength damage-bonus speed addendum capped at +3, the 20-foot dive with the 10-foot jump-in bonus and the 5-per-10 height ladder capped at the 40-foot jump, the 20-foot surfacing with the 5-foot passive-float slowdown and the armor-removal rounds), the breath economy (the 1/3 con base rounded up, the cumulative halvings, the one-round floor, the -2 cumulative con checks, the +1 nonswimming round), the moving-water effects (the relative-speed rule with the 40-foot stream example, the waterfall half damage with the breath save and the 100-foot/1-10 plunge split, the 1-10 danger rating as the check cadence with the 1d6 failed-check damage and the five-or-less high-speed forcing), the climbing block (the surface taxonomy, Table 2 with the nine rows and the thief-only rates halved for others with the dexterity adjustment, the 2x and 10x slippery fall multipliers, the 40 percent non-thief rating, the armor/race/surface modifier ladders, the tools with the 1d4 spike rounds and the 10 percent arrest failure and the 15 percent ice-slip, Table 3, the grapple throw at 1/3 strength x 10 with the noise ladder, the rappel at +50/+30 and 120 feet per round), the jumping block (the 20-foot head start, the one-segment jumps, Table 4 with the seven bands, the encumbrance and race modifiers with the 2-foot floor), and the rope system (the 50 percent protrusion chance, Table 5, the thrown loop with Table 6 and the 20 percent +1 percent ladder, the +30 crossing check each round, the swing with the -5 per 10 feet and the 1d6 per 20-foot section, the belay with the second check and the 3-foot edge rule and the -10 per faller, the roping-together cascade at -10) (rules/dsgmove.h, prefix dmv); census 428 -> 429.",
+  "audit_comment": "The DSG movement chapter part I pins the check frames (the 1d20 ability check equal-or-less with the dice substitution, the proficiency check strictly less), the swimming block (the proficiency gate with the 1/3 humanoid-monster chance, the three functions, Table 1 with the five encumbrance rows x the four functions in numerator/denominator cells, the levels+con endurance with the treading double and the 1/10 high-speed cut and the equal high-speed rest, the 4/3-inch base rates with the strength damage-bonus speed addendum capped at +3, the 20-foot dive with the 10-foot jump-in bonus and the 5-per-10 height ladder capped at the 40-foot jump, the 20-foot surfacing with the 5-foot passive-float slowdown and the armor-removal rounds), the breath economy (the 1/3 con base rounded up, the cumulative halvings, the one-round floor, the -2 cumulative con checks, the +1 nonswimming round), the moving-water effects (the relative-speed rule with the 40-foot stream example, the waterfall half damage with the breath save and the 100-foot/1-10 plunge split, the 1-10 danger rating as the check cadence with the 1d6 failed-check damage and the five-or-less high-speed forcing), the climbing block (the surface taxonomy, Table 2 with the nine rows and the thief-only rates halved for others with the dexterity adjustment, the 2x and 10x slippery fall multipliers, the 40 percent non-thief rating, the armor/race/surface modifier ladders, the tools with the 1d4 spike rounds and the 10 percent arrest failure and the 15 percent ice-slip, Table 3, the grapple throw at 1/3 strength x 10 with the noise ladder, the rappel at +50/+30 and 120 feet per round), the jumping block (the 20-foot head start, the one-segment jumps, Table 4 with the seven bands, the encumbrance and race modifiers with the 2-foot floor), and the rope system (the 50 percent protrusion chance, Table 5, the thrown loop with Table 6 and the 20 percent +1 percent ladder, the +30 crossing check each round, the swing with the -5 per 10 feet and the 1d6 per 20-foot section, the belay with the second check and the 3-foot edge rule and the -10 per faller, the roping-together cascade at -10) (rules/dsg/dsgmove.h, prefix dmv); census 428 -> 429.",
   "banner": {
     "title": "The DSG MOVEMENT CHAPTER PART I, R504: the printed pp. 12-19 (pdf 13-20) first half of the movement chapter - the ability/proficiency check frames, the swimming block with TABLE 1 SWIMMING EFFECTS OF ENCUMBRANCE, the breath economy, the moving-water effects, the climbing block with TABLE 2 RATES OF CLIMBING and TABLE 3 GRAPPLING SUCCESS and the rappel, the non-acrobat jumping with TABLE 4 BROAD JUMPING, and the rope system (the chasm crossing with TABLE 5 CROSSING WITH A GRAPPLE and TABLE 6 THROWN LOOP RANGES, the swing, the belay, the roping-together cascade). The movement chapter parent stays open: bridges, the expanded falling rules, spelunking, excavation, fatigue, darkness and slippery surfaces ride the next round.",
     "provenance": "the DSG scan (the user own copy), printed pp. 12-19 = pdf 13-20, pulled per-page on the r504-extraction branch with the tsv confidence tables and the 300-dpi page images under extract/r504/ on main; the damaged grid cells (the Table 1 encumbered row, the Table 2 mid-column, the Table 4 top bands) confirmed by the table crops (t1-014 through t9-023). CAUTION carried from the extraction: the Table 2 slightly-slippery cells of the last four rows came from image reads where the tsv showed a misread 0; the 36/24, 60/40, 60/30, 40/30 pattern was confirmed twice by image. The printed dive example says heavy gear TRIPLES the dive rate where the Table 1 heavy row DOUBLES it: the table is the authority (the R501 precedent), the example pinned as printed with the tension noted.",
-    "sentinel": "THE SETTLE: census 428 -> 429; the gap report 5/150 -> 27 closed / 128 open (the sixteen movement-chapter boxes from the check frames through roping together, plus the six manifest tables 1-6; the movement parent box stays open for the next round). CROSS-BOOK SEAM: Table 1 verified const-for-const against rules/wsgswim.h, the breath against rules/wsgbreath.h, the moving water against rules/wsgmwater.h, the rappel against rules/wsgrapp.h, the loop against rules/wsgchasm.h, the belay against rules/wsgbelay.h, the cascade against rules/wsgtog.h and the jump floors against rules/wsgjump.h - two divergences pin under dmv: the strength speed bonus keyed on the DAMAGE bonus (the WSG keys on strength bands; both cap +3) and the encumbered -4 jump allowed (the WSG forbids severe jumps)."
+    "sentinel": "THE SETTLE: census 428 -> 429; the gap report 5/150 -> 27 closed / 128 open (the sixteen movement-chapter boxes from the check frames through roping together, plus the six manifest tables 1-6; the movement parent box stays open for the next round). CROSS-BOOK SEAM: Table 1 verified const-for-const against rules/wsg/wsgswim.h, the breath against rules/wsg/wsgbreath.h, the moving water against rules/wsg/wsgmwater.h, the rappel against rules/wsg/wsgrapp.h, the loop against rules/wsg/wsgchasm.h, the belay against rules/wsg/wsgbelay.h, the cascade against rules/wsg/wsgtog.h and the jump floors against rules/wsg/wsgjump.h - two divergences pin under dmv: the strength speed bonus keyed on the DAMAGE bonus (the WSG keys on strength bands; both cap +3) and the encumbered -4 jump allowed (the WSG forbids severe jumps)."
   },
   "consts": [
     {
@@ -2493,13 +2493,13 @@
       "note": "the check frames"
     },
     {
-      "from": "  - [ ] Swimming (p. 12) - the rate rules with Table 1, the cross-book seam against rules/wsgswim.h",
-      "to": "  - [x] Swimming (p. 12) - R504: the proficiency gate, the 1/3 monster chance, the three functions and Table 1 (verified const-for-const against rules/wsgswim.h), the endurance, speed and dive rules; the strength speed bonus pins on the DAMAGE bonus, a WSG divergence (both cap +3)",
+      "from": "  - [ ] Swimming (p. 12) - the rate rules with Table 1, the cross-book seam against rules/wsg/wsgswim.h",
+      "to": "  - [x] Swimming (p. 12) - R504: the proficiency gate, the 1/3 monster chance, the three functions and Table 1 (verified const-for-const against rules/wsg/wsgswim.h), the endurance, speed and dive rules; the strength speed bonus pins on the DAMAGE bonus, a WSG divergence (both cap +3)",
       "note": "swimming"
     },
     {
-      "from": "  - [ ] Holding one's breath (p. 12) - the breath economy, the cross-book seam against rules/wsgbreath.h",
-      "to": "  - [x] Holding one's breath (p. 12) - R504: the 1/3-con breath with the cumulative halvings and the one-round floor, the -2 cumulative con checks after, the +1 nonswimming round (verified against rules/wsgbreath.h)",
+      "from": "  - [ ] Holding one's breath (p. 12) - the breath economy, the cross-book seam against rules/wsg/wsgbreath.h",
+      "to": "  - [x] Holding one's breath (p. 12) - R504: the 1/3-con breath with the cumulative halvings and the one-round floor, the -2 cumulative con checks after, the +1 nonswimming round (verified against rules/wsg/wsgbreath.h)",
       "note": "holding one's breath"
     },
     {
@@ -2508,13 +2508,13 @@
       "note": "moving in water"
     },
     {
-      "from": "  - [ ] Effects of moving water (p. 14) - the current/flow hazards, the cross-book seam against rules/wsgmwater.h",
-      "to": "  - [x] Effects of moving water (p. 14) - R504: the relative-speed rule with the 40-foot stream example, the waterfall half damage with the breath save and the 100-foot/1-10 plunge split, the 1-10 danger-rating cadence with the 1d6 failed-check damage (verified against rules/wsgmwater.h)",
+      "from": "  - [ ] Effects of moving water (p. 14) - the current/flow hazards, the cross-book seam against rules/wsg/wsgmwater.h",
+      "to": "  - [x] Effects of moving water (p. 14) - R504: the relative-speed rule with the 40-foot stream example, the waterfall half damage with the breath save and the 100-foot/1-10 plunge split, the 1-10 danger-rating cadence with the 1d6 failed-check damage (verified against rules/wsg/wsgmwater.h)",
       "note": "effects of moving water"
     },
     {
-      "from": "  - [ ] Climbing (pp. 14-16) - the climbing success rates for non-thieves with Table 2, the encumbrance and armor effects, the surface ladder; the cross-book seam against rules/wsgclimb.h",
-      "to": "  - [x] Climbing (pp. 14-16) - R504: the surface taxonomy with Table 2 (nine rows, thieves at half for others), the surface and condition definitions with the 2x/10x fall multipliers, the encumbrance halving and the 40 percent non-thief rating with the equal-or-less check (verified against rules/wsgclimb.h)",
+      "from": "  - [ ] Climbing (pp. 14-16) - the climbing success rates for non-thieves with Table 2, the encumbrance and armor effects, the surface ladder; the cross-book seam against rules/wsg/wsgclimb.h",
+      "to": "  - [x] Climbing (pp. 14-16) - R504: the surface taxonomy with Table 2 (nine rows, thieves at half for others), the surface and condition definitions with the 2x/10x fall multipliers, the encumbrance halving and the 40 percent non-thief rating with the equal-or-less check (verified against rules/wsg/wsgclimb.h)",
       "note": "climbing"
     },
     {
@@ -2528,8 +2528,8 @@
       "note": "climbing tools"
     },
     {
-      "from": "  - [ ] Rappelling (p. 16) - the descent rules, the cross-book seam against rules/wsgrapp.h",
-      "to": "  - [x] Rappelling (p. 16) - R504: the +50 climbing check, the +30 free-hang modifier, the 120 feet-per-round rate and the full-distance failure fall (verified against rules/wsgrapp.h)",
+      "from": "  - [ ] Rappelling (p. 16) - the descent rules, the cross-book seam against rules/wsg/wsgrapp.h",
+      "to": "  - [x] Rappelling (p. 16) - R504: the +50 climbing check, the +30 free-hang modifier, the 120 feet-per-round rate and the full-distance failure fall (verified against rules/wsg/wsgrapp.h)",
       "note": "rappelling"
     },
     {
@@ -2544,12 +2544,12 @@
     },
     {
       "from": "  - [ ] Using rope (pp. 17-19) - the rope-use proficiency system: crossing a chasm on a rope, swinging across, belaying, roping together",
-      "to": "  - [x] Using rope (pp. 17-19) - R504: the rope system pinned whole - the chasm crossing (Tables 5-6), the swing, the belay and the roping-together cascade (verified against rules/wsgchasm.h, rules/wsgbelay.h and rules/wsgtog.h)",
+      "to": "  - [x] Using rope (pp. 17-19) - R504: the rope system pinned whole - the chasm crossing (Tables 5-6), the swing, the belay and the roping-together cascade (verified against rules/wsg/wsgchasm.h, rules/wsg/wsgbelay.h and rules/wsg/wsgtog.h)",
       "note": "using rope"
     },
     {
-      "from": "  - [ ] Crossing a chasm on a rope (p. 17) - the anchor and loop rules with Tables 5-6, the cross-book seam against rules/wsgchasm.h",
-      "to": "  - [x] Crossing a chasm on a rope (p. 17) - R504: the anchor problem, the 50 percent protrusion chance, Table 5, the thrown loop (the 20 percent base, +1 percent per foot, Table 6, the halved range without the 10-foot radius) and the +30 crossing check each round (verified against rules/wsgchasm.h)",
+      "from": "  - [ ] Crossing a chasm on a rope (p. 17) - the anchor and loop rules with Tables 5-6, the cross-book seam against rules/wsg/wsgchasm.h",
+      "to": "  - [x] Crossing a chasm on a rope (p. 17) - R504: the anchor problem, the 50 percent protrusion chance, Table 5, the thrown loop (the 20 percent base, +1 percent per foot, Table 6, the halved range without the 10-foot radius) and the +30 crossing check each round (verified against rules/wsg/wsgchasm.h)",
       "note": "crossing a chasm on a rope"
     },
     {
@@ -2558,13 +2558,13 @@
       "note": "swinging across"
     },
     {
-      "from": "  - [ ] Belaying (p. 18) - the belay sequence and checks, the cross-book seam against rules/wsgbelay.h",
-      "to": "  - [x] Belaying (p. 18) - R504: the belay check with the rope-length bound, the second check with the 3-foot edge rule, the -10 per additional faller, the spike anchor and the both-ends crossing (verified against rules/wsgbelay.h)",
+      "from": "  - [ ] Belaying (p. 18) - the belay sequence and checks, the cross-book seam against rules/wsg/wsgbelay.h",
+      "to": "  - [x] Belaying (p. 18) - R504: the belay check with the rope-length bound, the second check with the 3-foot edge rule, the -10 per additional faller, the spike anchor and the both-ends crossing (verified against rules/wsg/wsgbelay.h)",
       "note": "belaying"
     },
     {
-      "from": "  - [ ] Roping together (p. 19) - the roped-party cascade rules, the cross-book seam against rules/wsgtog.h",
-      "to": "  - [x] Roping together (p. 19) - R504: the 20-30 feet of slack, the slowest-rate march, the both-sides checks with the -10 two-faller cascade and the end-character single check (verified against rules/wsgtog.h - the cascade step pins at -10)",
+      "from": "  - [ ] Roping together (p. 19) - the roped-party cascade rules, the cross-book seam against rules/wsg/wsgtog.h",
+      "to": "  - [x] Roping together (p. 19) - R504: the 20-30 feet of slack, the slowest-rate march, the both-sides checks with the -10 two-faller cascade and the end-character single check (verified against rules/wsg/wsgtog.h - the cascade step pins at -10)",
       "note": "roping together"
     },
     {
@@ -2603,7 +2603,7 @@
     "open": 128
   },
   "include_comment": "the DSG movement I pins",
-  "include_after": "#include \"rules/dsgoverview.h\"  // R503: the DSG overview pins",
+  "include_after": "#include \"rules/dsg/dsgoverview.h\"  // R503: the DSG overview pins",
   "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
   "seed_anchor": "## Knowledge maintenance",
   "prev_seed_key": "- R503 LANDED 2026-10-16: commit c8ec2d1 (census 428,",
@@ -2611,7 +2611,7 @@
     "- R503 LANDED 2026-10-16: commit c8ec2d1 (census 428, pushed",
     "0e8907a..c8ec2d1), the DSG OVERVIEW OF THE UNDERDARK, printed pp. 7-11 (pdf",
     "8-12) - the arc first content round, the R497 pattern. Pinned as",
-    "rules/dsgoverview.h (prefix dov, 58 inlines: 8 consts + 50 bools, no grids).",
+    "rules/dsg/dsgoverview.h (prefix dov, 58 inlines: 8 consts + 50 bools, no grids).",
     "Load-bearing pins: the pdf = printed + 1 offset (opener on pdf 7 for printed",
     "6); the three-cave taxonomy; molten lava 1,800 F killing non-fire-resistant on",
     "contact; the 10-foot dirt shoring; the realms-deeper-than-a-mile rule; the",

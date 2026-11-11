@@ -1,4 +1,4 @@
--- ua376: promoted from rules/uapotprose.h (the The UA TREASURE (POTIONS) prose);
+-- ua376: promoted from rules/ua/uapotprose.h (the The UA TREASURE (POTIONS) prose);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 376,

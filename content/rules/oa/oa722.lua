@@ -1,11 +1,11 @@
--- oa722: promoted from rules/oa93kappa.h (the OA MONSTERS - THE KAPPA, printed capture p. 273 - the paired columns round);
+-- oa722: promoted from rules/oa/oa93kappa.h (the OA MONSTERS - THE KAPPA, printed capture p. 273 - the paired columns round);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 722,
   "prefix" = "oa722",
   "banner" = {
       "title" = "OA MONSTERS - THE KAPPA, printed capture p. 273 - the paired columns round",
-      "provenance" = "census 644 -> 645.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 175 closed, 60 open - the kappa box flips (census 644 -> 645); NEXT - R723: the Kuei, Lesser Spirit (capture p. 274), prefix dkk (verify free at the landing), audit \"R723 OA monsters Kuei audit\", include after rules/oa93kappa.h",
+      "provenance" = "census 644 -> 645.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 175 closed, 60 open - the kappa box flips (census 644 -> 645); NEXT - R723: the Kuei, Lesser Spirit (capture p. 274), prefix dkk (verify free at the landing), audit \"R723 OA monsters Kuei audit\", include after rules/oa/oa93kappa.h",
     },
   "consts" = { {
       "name" = "dkjKappaCount",

@@ -2,7 +2,7 @@
  "round": 625,
  "title": "THE SOHEI - the warrior monk: the dual prime requisites, the shukenja spell gate with the weapon of choice, the berserk ki and the fanaticism, the command and the commission, the less-strict rules, Tables 29 and 30",
  "prefix": "dgl",
- "header_file": "rules/oasohei.h",
+ "header_file": "rules/oa/oasohei.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "THE SOHEI, printed capture pp. 45-47 - the OA sohei round",
   "provenance": "verified against capture pp. 45-47 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). Two cells settled against the 2018 print BEFORE pinning, per the settling doctrine: the T29 row-4 level cell (the capture prints 3 against four dice; the 2018 prints 4) and the fanaticism roll bonus (the capture prints plus 2; the 2018 prints minus 2, a lost plus against the sustain-himself reading). The T30 row 0 covers the printed levels 1-5 blank row; row k is level k plus 5. The dashes pin as zeros. OCR normalization: 1stlevel reads as 1st-level (prose only)",
-  "sentinel": "the gap census after this round: 52 closed, 183 open - the sohei boxes with Tables 29 and 30 flip (census 547 -> 548); NEXT - R626: the Wu Jen, capture pp. 47-51, Table 31, prefix dgm (verify free), audit \"R626 OA wu jen audit\", include after rules/oasohei.h"
+  "sentinel": "the gap census after this round: 52 closed, 183 open - the sohei boxes with Tables 29 and 30 flip (census 547 -> 548); NEXT - R626: the Wu Jen, capture pp. 47-51, Table 31, prefix dgm (verify free), audit \"R626 OA wu jen audit\", include after rules/oa/oasohei.h"
  },
  "consts": [
   {
@@ -969,7 +969,7 @@
   "open": 183
  },
  "include_comment": "the OA sohei pins",
- "include_after": "#include \"rules/oashukenja.h\"  // R624: the OA shukenja pins",
+ "include_after": "#include \"rules/oa/oashukenja.h\"  // R624: the OA shukenja pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R624 LANDED 2026-10-18: commit",
@@ -979,7 +979,7 @@
   "  (census 546 -> 547, pushed",
   "  666c85a..7bbb728), THE",
   "  SHUKENJA, capture pp. 42-45:",
-  "  rules/oashukenja.h, prefix dgk",
+  "  rules/oa/oashukenja.h, prefix dgk",
   "  (verified free), 63 inlines (31",
   "  consts, 19 bools, 13 table columns):",
   "  the Wis 12 and Str/Con 9 minima",

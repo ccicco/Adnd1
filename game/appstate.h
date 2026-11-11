@@ -222,15 +222,15 @@
 #pragma once
 
 #include "../world/map.h"
-#include "../rules/dice.h"
-#include "../rules/character.h"
-#include "../rules/classes.h"
+#include "../rules/engine/dice.h"
+#include "../rules/engine/character.h"
+#include "../rules/engine/classes.h"
 #include "../rules/subclasses.h"  // R230: the subclass registry
 #include "../rules/subclassgates.h"  // R230: the creation gates
-#include "../rules/races.h"   // R154: Race Tables I-III
+#include "../rules/engine/races.h"   // R154: Race Tables I-III
 #include "../rules/subraces.h"  // R326: the sub-race picker
-#include "../rules/saves.h"   // R45: trap saves
-#include "../rules/combat.h"   // R61: monsterEffectiveLevel (p.86 guard rule)
+#include "../rules/engine/saves.h"   // R45: trap saves
+#include "../rules/engine/combat.h"   // R61: monsterEffectiveLevel (p.86 guard rule)
 #include "../dm/dm.h"
 #include "../dm/dungeon.h"
 #include "../dm/encounters.h"   // R52: Appendix C tables

@@ -61,7 +61,7 @@
             rules::thfTakeTenths(7, -3) != 0 ||
             rules::thfTakeTenths(7, 20) != 800) ++bad;
         // the printed racial rows (upload lines
-        // 1645-1650), keyed to the rules/races.h
+        // 1645-1650), keyed to the rules/engine/races.h
         // enum order
         static const int kRace[7][8] = {
             {   0,   0,   0,   0,   0,   0,   0,   0 },  // human

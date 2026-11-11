@@ -121,23 +121,23 @@
         printf("R259 misc magic prose part 3 pins audit: bad %d\n", bad);
         if (bad) return 1;
     }
-    #include "rules/audits/r260_misc_magic_prose_part_4_.h"  // R828: migrated
-    #include "rules/audits/r261_misc_magic_prose_part_5_.h"  // R828: migrated
-    #include "rules/audits/r262_misc_magic_prose_part_6_.h"  // R828: migrated
-    #include "rules/audits/r263_misc_magic_prose_part_7_.h"  // R828: migrated
-    #include "rules/audits/r264_misc_magic_prose_part_8_.h"  // R828: migrated
-    #include "rules/audits/r265_misc_magic_prose_part_9_.h"  // R828: migrated
-    #include "rules/audits/r266_misc_magic_prose_part_10.h"  // R828: migrated
-    #include "rules/audits/r267_misc_magic_prose_part_11.h"  // R828: migrated
-    #include "rules/audits/r268_misc_magic_prose_part_12.h"  // R828: migrated
-    #include "rules/audits/r269_misc_magic_prose_part_13.h"  // R828: migrated
-    #include "rules/audits/r270_misc_magic_prose_part_14.h"  // R828: migrated
-    #include "rules/audits/r271_misc_magic_prose_part_15.h"  // R828: migrated
-    #include "rules/audits/r272_misc_magic_prose_part_16.h"  // R828: migrated
-    #include "rules/audits/r273_misc_magic_prose_part_17.h"  // R828: migrated
-    #include "rules/audits/r274_misc_magic_prose_part_18.h"  // R828: migrated
-    #include "rules/audits/r275_misc_magic_prose_part_19.h"  // R828: migrated
-    #include "rules/audits/r276_misc_magic_prose_part_20.h"  // R828: migrated
-    #include "rules/audits/r277_misc_magic_prose_part_21.h"  // R828: migrated
-    #include "rules/audits/r278_misc_magic_prose_part_22.h"  // R828: migrated
-    #include "rules/audits/r279_misc_magic_prose_part_23.h"  // R828: migrated
+    #include "r260_misc_magic_prose_part_4_.h"  // R828: migrated
+    #include "r261_misc_magic_prose_part_5_.h"  // R828: migrated
+    #include "r262_misc_magic_prose_part_6_.h"  // R828: migrated
+    #include "r263_misc_magic_prose_part_7_.h"  // R828: migrated
+    #include "r264_misc_magic_prose_part_8_.h"  // R828: migrated
+    #include "r265_misc_magic_prose_part_9_.h"  // R828: migrated
+    #include "r266_misc_magic_prose_part_10.h"  // R828: migrated
+    #include "r267_misc_magic_prose_part_11.h"  // R828: migrated
+    #include "r268_misc_magic_prose_part_12.h"  // R828: migrated
+    #include "r269_misc_magic_prose_part_13.h"  // R828: migrated
+    #include "r270_misc_magic_prose_part_14.h"  // R828: migrated
+    #include "r271_misc_magic_prose_part_15.h"  // R828: migrated
+    #include "r272_misc_magic_prose_part_16.h"  // R828: migrated
+    #include "r273_misc_magic_prose_part_17.h"  // R828: migrated
+    #include "r274_misc_magic_prose_part_18.h"  // R828: migrated
+    #include "r275_misc_magic_prose_part_19.h"  // R828: migrated
+    #include "r276_misc_magic_prose_part_20.h"  // R828: migrated
+    #include "r277_misc_magic_prose_part_21.h"  // R828: migrated
+    #include "r278_misc_magic_prose_part_22.h"  // R828: migrated
+    #include "r279_misc_magic_prose_part_23.h"  // R828: migrated

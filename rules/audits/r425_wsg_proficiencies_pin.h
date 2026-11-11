@@ -4,7 +4,7 @@
     // The wilderness arc
     // opener pins the WSG
     // proficiency system
-    // (rules/wsgprof.h,
+    // (rules/wsg/wsgprof.h,
     // prefix wsg): the
     // Proficiency Check
     // system (1d20 vs the

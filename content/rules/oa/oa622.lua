@@ -1,11 +1,11 @@
--- oa622: promoted from rules/oaninja.h (the THE NINJA, printed capture pp. 35-39 - the OA ninja round);
+-- oa622: promoted from rules/oa/oaninja.h (the THE NINJA, printed capture pp. 35-39 - the OA ninja round);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 622,
   "prefix" = "oa622",
   "banner" = {
       "title" = "THE NINJA, printed capture pp. 35-39 - the OA ninja round",
-      "provenance" = "census 544 -> 545.  verified against capture pp. 35-39 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). Two cells settled against the 2018 print BEFORE pinning, per the settling doctrine: the T22 level-2 bound pins as 8,000 (the 2018 8,001 cell contradicts its own next-row floor of 8,001) and the T23 Dex-11 pockets cell pins as -5 (the 2018 05 reading lost its minus against the ladder). The T24 pole-vault column pins in half feet. OCR normalization: 15 points for the bushi class reads as 1-5 points; infraction reads as infravision; 1096 reads as 10 percent (prose only)  the gap census after this round: 43 closed, 192 open - the ninja boxes with Tables 22, 23 and 24 flip (census 544 -> 545); NEXT - R623: the Samurai, capture pp. 39-42, Table 25, prefix dgj (verify free), audit \"R623 OA samurai audit\", include after rules/oaninja.h",
+      "provenance" = "census 544 -> 545.  verified against capture pp. 35-39 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). Two cells settled against the 2018 print BEFORE pinning, per the settling doctrine: the T22 level-2 bound pins as 8,000 (the 2018 8,001 cell contradicts its own next-row floor of 8,001) and the T23 Dex-11 pockets cell pins as -5 (the 2018 05 reading lost its minus against the ladder). The T24 pole-vault column pins in half feet. OCR normalization: 15 points for the bushi class reads as 1-5 points; infraction reads as infravision; 1096 reads as 10 percent (prose only)  the gap census after this round: 43 closed, 192 open - the ninja boxes with Tables 22, 23 and 24 flip (census 544 -> 545); NEXT - R623: the Samurai, capture pp. 39-42, Table 25, prefix dgj (verify free), audit \"R623 OA samurai audit\", include after rules/oa/oaninja.h",
     },
   "consts" = { {
       "name" = "dgiNinjaMinDex",

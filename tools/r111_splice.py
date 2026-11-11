@@ -47,17 +47,17 @@ def replace_exact(old_text, anchor, replacement, what):
 def main():
     changed = False
 
-    c = read("rules/combat.cpp")
+    c = read("rules/engine/combat.cpp")
     c, did = replace_exact(c, CPP_OLD, CPP_NEW, "combat.cpp matrix I.B")
     changed = changed or did
-    write("rules/combat.cpp", c)
+    write("rules/engine/combat.cpp", c)
 
-    h = read("rules/combat.h")
+    h = read("rules/engine/combat.h")
     h, did = replace_exact(h, HHDR_OLD, HHDR_NEW, "combat.h source note")
     changed = changed or did
     h, did = replace_exact(h, HFTR_OLD, HFTR_NEW, "combat.h fighter decl note")
     changed = changed or did
-    write("rules/combat.h", h)
+    write("rules/engine/combat.h", h)
 
     r = read("regtest.cpp")
     r, did = replace_exact(r, RT_OLD, RT_NEW, "regtest R111 audit")

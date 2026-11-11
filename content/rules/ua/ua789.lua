@@ -1,4 +1,4 @@
--- ua: promoted from rules/uadeityprose4.h (the THE GNOMISH DEITY PROSE - part 4 of the Appendix S paragraph close:);
+-- ua: promoted from rules/ua/uadeityprose4.h (the THE GNOMISH DEITY PROSE - part 4 of the Appendix S paragraph close:);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 789,
@@ -416,6 +416,6 @@ return {
     } },
   "audit" = {
       "label" = "R789 gnomish deity prose audit",
-      "comment" = "THE GNOMISH DEITY PROSE - part 4 of the Appendix S description-paragraph close. The archive.org full-text OCR of pp. 116-118 reads the four gnomish blocks scan-clean: the Baervan Whisperleaf spear and the raccoon Chiktikka, the Urdlen blur and the soul-eating evil, the Segojan rock speech and the quartz rod, and the Flandal fire apron and the hammer Rhondang. The stat-block numerics stay R406/R783; the paragraph facts ride rules/uadeityprose4.h.",
+      "comment" = "THE GNOMISH DEITY PROSE - part 4 of the Appendix S description-paragraph close. The archive.org full-text OCR of pp. 116-118 reads the four gnomish blocks scan-clean: the Baervan Whisperleaf spear and the raccoon Chiktikka, the Urdlen blur and the soul-eating evil, the Segojan rock speech and the quartz rod, and the Flandal fire apron and the hammer Rhondang. The stat-block numerics stay R406/R783; the paragraph facts ride rules/ua/uadeityprose4.h.",
     },
 }

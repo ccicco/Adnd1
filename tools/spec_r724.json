@@ -2,7 +2,7 @@
  "round": 724,
  "title": "OA MONSTERS - the Men Wako: the sea pirate scourge of Kara-Tur",
  "prefix": "dkl",
- "header_file": "rules/oa95menwako.h",
+ "header_file": "rules/oa/oa95menwako.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA MONSTERS - THE MEN WAKO, printed capture pp. 275-276 - the sea pirate round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 177 closed, 58 open - the men wako box flips (census 646 -> 647); NEXT - R725: the Nat, the Lesser Spirit (capture pp. 276-278), prefix dkm (verify free at the landing), audit \"R725 OA monsters Nat audit\", include after rules/oa95menwako.h"
+  "sentinel": "the gap census after this round: 177 closed, 58 open - the men wako box flips (census 646 -> 647); NEXT - R725: the Nat, the Lesser Spirit (capture pp. 276-278), prefix dkm (verify free at the landing), audit \"R725 OA monsters Nat audit\", include after rules/oa/oa95menwako.h"
  },
  "consts": [
   {
@@ -591,7 +591,7 @@
   "open": 58
  },
  "include_comment": "the OA Men Wako pins",
- "include_after": "#include \"rules/oa94kuei.h\"  // R723: the OA Kuei pins",
+ "include_after": "#include \"rules/oa/oa94kuei.h\"  // R723: the OA Kuei pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R723 LANDED 2026-10-21: commit",
@@ -600,7 +600,7 @@
   "  a4ed27f5cf39a0b1d743ff1af2c340620c5db5d5",
   "  (census 645 -> 646, pushed 29b807e..a4ed27f), OA",
   "  MONSTERS, the Kuei (capture pp. 274-275 print):",
-  "  rules/oa94kuei.h, prefix dkk (verified free at",
+  "  rules/oa/oa94kuei.h, prefix dkk (verified free at",
   "  29b807e), ONE gap flip, gap census 176/59 - the kuei",
   "  box. A TABLES round. 18 consts + 39 bools + 3 table",
   "  cols (60 inlines): the stat block (the rare 1, the",
@@ -630,6 +630,6 @@
   "  Men Wako, the Sea Pirate (capture p. 275), prefix",
   "  dkl (verified free at a4ed27f), audit \"R724 OA",
   "  monsters Men Wako audit\", include after",
-  "  rules/oa94kuei.h."
+  "  rules/oa/oa94kuei.h."
  ]
 }

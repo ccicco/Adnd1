@@ -42,7 +42,7 @@ SEED_ENTRY = NL.join([
     '  9988376, census 272, the UA',
     '  new cleric spells pin round,',
     '  the 3rd level',
-    '  (rules/uaclericspells3.h):',
+    '  (rules/ua/uaclericspells3.h):',
     '  cloudburst, death\'s door,',
     '  flame walk, magical vestment,',
     '  meld into stone, negative',
@@ -80,13 +80,13 @@ assert s.count('R339 landed 2026-10-11') == 1,     'a r339 kept'
 assert s.count('## Knowledge maintenance') == 1,     'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
-# ---- (b) NEW rules/uaclericspells4.h ----
-US = 'rules/uaclericspells4.h'
+# ---- (b) NEW rules/ua/uaclericspells4.h ----
+US = 'rules/ua/uaclericspells4.h'
 if os.path.exists(US) and 'R346' in rd(US):
     already.append('uaclericspells4.h: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uaclericspells4.h
+// Adnd1 - rules/ua/uaclericspells4.h
 // The UA NEW CLERIC SPELLS (pp. 38-39) pins, R346: the 4th-level
 // spell descriptions - abjure, cloak of fear, giant insect, imbue
 // with spell ability, spell immunity, spike growth.
@@ -862,7 +862,7 @@ else:
     assert s.count(TAIL_OLD) == 1, 'c tail'
     NOTE = NL.join([
         '      - R346: the 4th level pinned',
-        '        (rules/uaclericspells4.h) -',
+        '        (rules/ua/uaclericspells4.h) -',
         '        abjure, cloak of fear,',
         '        giant insect (the count',
         '        and hit-dice ladders),',
@@ -910,12 +910,12 @@ if 'R346 UA cleric 4th level spells pin audit' in s:
     already.append('regtest.cpp: the R346 audit')
 else:
     INC_ANCH = (
-        '#include "rules/uaclericspells3.h"'
+        '#include "rules/ua/uaclericspells3.h"'
         '  // R345: the UA new cleric 3rd'
         ' level')
     INC_NEW = NL.join([
         INC_ANCH,
-        '#include "rules/uaclericspells4.h"'
+        '#include "rules/ua/uaclericspells4.h"'
         '  // R346: the UA new cleric 4th'
         ' level',
     ])
@@ -1277,7 +1277,7 @@ assert s.count(
     'R339 UA proficiency pin audit: bad ')     == 1, 'd r339 kept'
 assert s.count('R227: the wis mental save') == 1,     'd r227 kept'
 assert s.count(
-    '#include "rules/uaclericspells4.h"') == 1,     'd include'
+    '#include "rules/ua/uaclericspells4.h"') == 1,     'd include'
 assert len(applied) + len(already) == 4, 'd count'
 
 # ---- the summary ----

@@ -2,7 +2,7 @@
  "round": 762,
  "title": "OA SETTING - the Tu Lung empire: the breakaway state of the Earth Dragon",
  "prefix": "dlx",
- "header_file": "rules/oa133tulung.h",
+ "header_file": "rules/oa/oa133tulung.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA SETTING - THE TU LUNG EMPIRE, printed capture pp. 303-304 - the breakaway state of the Earth Dragon",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 215 closed, 20 open - the Tu Lung box flips (census 684 -> 685); NEXT - R763: Wa (capture p. 304), prefix dly (verify free at the landing), audit \"R763 OA Wa audit\", include after rules/oa133tulung.h"
+  "sentinel": "the gap census after this round: 215 closed, 20 open - the Tu Lung box flips (census 684 -> 685); NEXT - R763: Wa (capture p. 304), prefix dly (verify free at the landing), audit \"R763 OA Wa audit\", include after rules/oa/oa133tulung.h"
  },
  "consts": [
   {
@@ -300,7 +300,7 @@
   "open": 20
  },
  "include_comment": "the OA Tu Lung pins",
- "include_after": "#include \"rules/oa132shoulung.h\"  // R761: the OA Shou Lung pins",
+ "include_after": "#include \"rules/oa/oa132shoulung.h\"  // R761: the OA Shou Lung pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R761 LANDED 2026-10-22: commit",
@@ -309,7 +309,7 @@
   "  acfc953de72a37480529bbde071ab63211f571b2",
   "  (census 683 -> 684, pushed 97f4373..acfc953),",
   "  OA SETTING, the Shou Lung empire (capture",
-  "  p. 303), header rules/oa132shoulung.h,",
+  "  p. 303), header rules/oa/oa132shoulung.h,",
   "  prefix dlw (verified free at 97f4373), one",
   "  gap flip (the Shou Lung box, its",
   "  two-line wrap handled), gap census now",
@@ -365,6 +365,6 @@
   "  p. 303, the section running into p. 304),",
   "  prefix dlx (verify free at the landing),",
   "  audit \"R762 OA Tu Lung audit\", include",
-  "  after rules/oa132shoulung.h."
+  "  after rules/oa/oa132shoulung.h."
  ]
 }

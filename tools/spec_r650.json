@@ -2,7 +2,7 @@
  "round": 650,
  "title": "WEAPON PROFICIENCIES AND SPECIALIZATION - the Chapter 6 opener with the slot doctrine and the specialist bonuses",
  "prefix": "dhk",
- "header_file": "rules/oaweaponspec.h",
+ "header_file": "rules/oa/oaweaponspec.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "WEAPON PROFICIENCIES AND SPECIALIZATION, printed capture pp. 99-101 - the OA proficiencies arc opener",
   "provenance": "pinned from the 2018 print capture (the settling authority), with the compressed-print capture giving a second independent read of the section - the chapter opener intro on capture p. 99 and the weapon proficiencies and specialization prose on pp. 100-101 of the print pass, cross-checked paragraph-by-paragraph between the two passes (compressed pp. 52-53); every printed number agrees. One OCR artifact class: the compressed pass systematically renders the specialization bonuses with minus signs - the +1/+2 melee, the +3 double, the +2/+2 and +1 bow reads all print as negatives - and each such read contradicts its own sentence (an increase to a bonus, a doubled base damage), so the print + signs stand per the R643 pattern; likewise the print pocked read of the arrow-ready doctrine is a letter slip, settled as nocked. The Chapter 6 parent box opens this round with the proficiency slot system pinned: all characters receive slots at 1st level, some or all fillable with weapon training and the rest with other skills, unfilled slots saveable, and a selected proficiency never changed for any reason. The specialization doctrine pins as consts and bools: a weapon proficiency costs one slot; only samurai and bushi specialize; the bushi any-one-weapon at-creation rule and the samurai katana-and-bow two-weapon rule (the katana at creation, the bow delayable); melee or crossbow specialization costs two slots, other missile weapons three; unarmed combat cannot be a weapon proficiency except under a master; the specific-type-not-general-class rule; the melee specialist +1 to hit and +2 damage, the iaijutsu fast-draw benefit, the next-higher-rank multiple-attack rule with the 3/2 first-level and 2/1 fifth-level samurai examples, and double specialization at one more slot for +3 to hit and damage. The bow specialist gains the point blank band (5 to 30 feet, +2 to hit and damage, the base damage doubled with strength and magic added to the final total), +1 at short range, no special bonus at medium and longer, no damage bonuses beyond point blank, and the ready-arrow auto-fire before initiative; the crossbow specialist the same point blank benefits within 5 to 60 feet, +1 to hit and damage at short range, +1 to hit at medium, and the same ready benefit; other missile specialists +1 to hit and +2 damage, with the higher-level extra attacks listed on Table 57 (its own box) and the per-class numbers on Table 56 (likewise). The p. 101 restrictions pin: class-disallowed weapons usable at the non-proficiency penalty (worst for split class) but never kept and carried; the under-5-feet 12-foot weapon-length bound; the under-4-feet daikyu ban; and the under-100-pounds heavy crossbow, over-200-gp and two-handed-sword bans - prohibitions that override the penalty since the weapons cannot be wielded at all",
-  "sentinel": "the gap census after this round: 102 closed, 133 open - the Chapter 6 parent box opens and the weapon proficiencies and specialization prose box flips (census 572 -> 573); NEXT - R651: Table 57 (Missile Weapon Specializations), capture p. 100, the specialist attacks-per-round grid, prefix dhl (verify free), audit \"R651 OA missile specializations audit\", include after rules/oaweaponspec.h"
+  "sentinel": "the gap census after this round: 102 closed, 133 open - the Chapter 6 parent box opens and the weapon proficiencies and specialization prose box flips (census 572 -> 573); NEXT - R651: Table 57 (Missile Weapon Specializations), capture p. 100, the specialist attacks-per-round grid, prefix dhl (verify free), audit \"R651 OA missile specializations audit\", include after rules/oa/oaweaponspec.h"
  },
  "consts": [
   {
@@ -532,7 +532,7 @@
   "open": 133
  },
  "include_comment": "the OA weapon specialization pins",
- "include_after": "#include \"rules/oaarmordesc.h\"  // R649: the OA armor descriptions pins",
+ "include_after": "#include \"rules/oa/oaarmordesc.h\"  // R649: the OA armor descriptions pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R649 LANDED 2026-10-19: commit ffef1f8ff283803a88a8ccab17d5b8de848cf110",
@@ -540,7 +540,7 @@
   "- R649 LANDED 2026-10-19: commit ffef1f8ff283803a88a8ccab17d5b8de848cf110",
   "  (census 571 -> 572, pushed 22d52ad..ffef1f8), ARMOR PROSE AND DESCRIPTIONS -",
   "  the suits-and-pieces doctrine and the armor description entries, capture pp.",
-  "  93-98: rules/oaarmordesc.h, prefix dhj (verified free), 40 inlines (13",
+  "  93-98: rules/oa/oaarmordesc.h, prefix dhj (verified free), 40 inlines (13",
   "  consts, 27 bools, no table): the two-group suits-and-pieces doctrine with",
   "  the common, rare and virtually-unknown suit lists as counts (the names",
   "  riding the comments), the corselet-AC-7 example equal to studded leather and",
@@ -568,7 +568,7 @@
   "  canvas md5 10f15d4495d1829913a815e7912e6653). NEXT - R650: the Chapter 6",
   "  Proficiencies arc begins - the weapon proficiencies and weapon",
   "  specialization prose (capture pp. 100-101), prefix dhk (verify free), audit",
-  "  \"R650 OA proficiencies audit\", include after rules/oaarmordesc.h - the",
+  "  \"R650 OA proficiencies audit\", include after rules/oa/oaarmordesc.h - the",
   "  Chapter 6 boxes at HEAD name the exact labels"
  ]
 }

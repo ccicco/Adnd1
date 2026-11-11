@@ -1,4 +1,4 @@
--- ua: promoted from rules/uasclasslines.h (the The UA APPENDIX S CLASS/LINES);
+-- ua: promoted from rules/ua/uasclasslines.h (the The UA APPENDIX S CLASS/LINES);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 410,

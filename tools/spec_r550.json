@@ -355,7 +355,7 @@
  },
  "gap_flips": [],
  "gap_report": "tools/dsg_gap_report.md",
- "header_file": "rules/dsgcamp.h",
+ "header_file": "rules/dsg/dsgcamp.h",
  "header_sections": {
   "the Adventurers section": [
    {
@@ -618,7 +618,7 @@
    }
   ]
  },
- "include_after": "#include \"rules/dsgdeep.h\"  // R549: the DSG Deepearth closure",
+ "include_after": "#include \"rules/dsg/dsgdeep.h\"  // R549: the DSG Deepearth closure",
  "include_comment": "the DSG campaign opener pins",
  "inline_count": 61,
  "prefix": "dcc",
@@ -633,7 +633,7 @@
   "  Deepearth child finally flips [x] - the gap",
   "  census moves 139/16 -> 140/15. The child closes",
   "  against work already landed and verified: R533",
-  "  the opener (rules/dsgland.h - the setting frame,",
+  "  the opener (rules/dsg/dsgland.h - the setting frame,",
   "  the connecting-passage generation, the",
   "  area-details framework; the pp. 76-77 map plates",
   "  graphics, pinning nothing) and R534-R548 the",
@@ -646,7 +646,7 @@
   "  lands in full\". Prefix dnas (NOTE: the summary",
   "  list of used dna* prefixes missed dnar - the",
   "  R533 opener itself; verified free against",
-  "  regtest before use), header rules/dsgdeep.h",
+  "  regtest before use), header rules/dsg/dsgdeep.h",
   "  (empty namespace, banner only), spec 4,960",
   "  bytes, md5 015111a42b8d9e84708cb051b1f4b3b3",
   "  matched exactly first try; engine applied 5",

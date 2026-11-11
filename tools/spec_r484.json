@@ -2,7 +2,7 @@
  "round": 484,
  "title": "the WSG ultravision and infravision effectiveness slice - the heat-as-light color scale with the temperature bands, the surface-temperature perception rules, heat blindness and the cold-blooded bar, and the ultravision definition with its five range modifiers, printed p. 74",
  "prefix": "wuv",
- "header_file": "rules/wsgultra.h",
+ "header_file": "rules/wsg/wsgultra.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -710,12 +710,12 @@
   {
    "note": "the ultravision box",
    "from": "  - [ ] Ultravision (p. 74)",
-   "to": "  - [x] Ultravision (p. 74) - R484: the infravision effectiveness rules with the color scale and the ultravision definition with its range modifiers pin as rules/wsgultra.h"
+   "to": "  - [x] Ultravision (p. 74) - R484: the infravision effectiveness rules with the color scale and the ultravision definition with its range modifiers pin as rules/wsg/wsgultra.h"
   },
   {
    "note": "the post-state line",
-   "from": "Post-state at R483: 111 closed, 75 open (the R483 round continues the vision and visibility chapter - the infravision definition with the Table 41 outdoor range grid pins as rules/wsginfra.h; the next round continues - ultravision (p. 74)).",
-   "to": "Post-state at R484: 112 closed, 74 open (the R484 round continues the vision and visibility chapter - the infravision effectiveness rules with the ultravision definition and range modifiers pin as rules/wsgultra.h; the next round continues - artificial illumination (p. 74))."
+   "from": "Post-state at R483: 111 closed, 75 open (the R483 round continues the vision and visibility chapter - the infravision definition with the Table 41 outdoor range grid pins as rules/wsg/wsginfra.h; the next round continues - ultravision (p. 74)).",
+   "to": "Post-state at R484: 112 closed, 74 open (the R484 round continues the vision and visibility chapter - the infravision effectiveness rules with the ultravision definition and range modifiers pin as rules/wsg/wsgultra.h; the next round continues - artificial illumination (p. 74))."
   }
  ],
  "gap_census": {
@@ -723,7 +723,7 @@
   "open": 74
  },
  "include_comment": "the WSG ultravision and infravision effectiveness rules",
- "include_after": "#include \"rules/wsginfra.h\"  // R483: the WSG infravision and Table 41 range rules",
+ "include_after": "#include \"rules/wsg/wsginfra.h\"  // R483: the WSG infravision and Table 41 range rules",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R483 LANDED 2026-10-15: commit 19d5d92 (census 408, pushed",

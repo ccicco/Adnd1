@@ -1,8 +1,8 @@
     // ---- R392: the UA players tables pin audit ----
     // The players tables manifest sweep (20 items): the
     // equipment and supplies costs table and the
-    // hand-held weapons table pin NEW (rules/uaequip26.h,
-    // rules/uahandheld.h); the weight/damage, missile and
+    // hand-held weapons table pin NEW (rules/ua/uaequip26.h,
+    // rules/ua/uahandheld.h); the weight/damage, missile and
     // proficiency tables AMEND (the clean PDF read: every
     // hole fills, three misdecodes reconcile - the garrot
     // L damage, the barbarian initial, the ranger initial);

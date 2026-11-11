@@ -1,11 +1,11 @@
--- oa756: promoted from rules/oa127table85.h (the OA TREASURE - TABLE 85, NINJA CLASS, printed capture pp. 293-294 - the);
+-- oa756: promoted from rules/oa/oa127table85.h (the OA TREASURE - TABLE 85, NINJA CLASS, printed capture pp. 293-294 - the);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 756,
   "prefix" = "oa756",
   "banner" = {
       "title" = "OA TREASURE - TABLE 85, NINJA CLASS, printed capture pp. 293-294 - the",
-      "provenance" = "ninja grid round census 678 -> 679.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 209 closed, 26 open - the Table 85 box flips (census 678 -> 679); NEXT - R757: Explanation of Weapon Properties (capture p. 294), prefix dls (verify free at the landing), audit \"R757 OA weapon explanation audit\", include after rules/oa127table85.h",
+      "provenance" = "ninja grid round census 678 -> 679.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 209 closed, 26 open - the Table 85 box flips (census 678 -> 679); NEXT - R757: Explanation of Weapon Properties (capture p. 294), prefix dls (verify free at the landing), audit \"R757 OA weapon explanation audit\", include after rules/oa/oa127table85.h",
     },
   "consts" = { {
       "name" = "dlrNinjaRowCount",

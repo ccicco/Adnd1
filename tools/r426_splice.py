@@ -13,7 +13,7 @@
 # rules, the exertion
 # regimes and the
 # clothing-as-armor option
-# pin as rules/wsgdress.h.
+# pin as rules/wsg/wsgdress.h.
 #
 # The pins (the WSG printed
 # pp. 18-20, verified from
@@ -166,7 +166,7 @@ def newfile(path, text, label):
 
 
 RT = 'regtest.cpp'
-HD = 'rules/wsgdress.h'
+HD = 'rules/wsg/wsgdress.h'
 GR = 'tools/wsg_gap_report.md'
 SD = ('doc/vibe/'
       'adnd1_knowledge_seed_v2.md')
@@ -288,7 +288,7 @@ SEED_ENTRY = E(
     '  8e710fb..f313aa1), the',
     '  WSG ARC OPENER - the',
     '  wilderness proficiencies.',
-    '  rules/wsgprof.h (NEW, 33',
+    '  rules/wsg/wsgprof.h (NEW, 33',
     '  inlines, prefix wsg): the',
     '  Proficiency Check system',
     '  (1d20 vs the Appropriate',
@@ -343,7 +343,7 @@ else:
     wr(SD, s)
     applied.append('seed: the R425 record')
 
-# ======== (b) rules/wsgdress.h ========
+# ======== (b) rules/wsg/wsgdress.h ========
 
 # the header: 54 inlines, the
 # category pins + the Table 3
@@ -381,7 +381,7 @@ def sw_int(name, param, vals,
 
 HS += [
     '// ' + '=' * 89,
-    '// Adnd1 - rules/wsgdress.h',
+    '// Adnd1 - rules/wsg/wsgdress.h',
     '// The WSG DRESSING FOR',
     '// THE WEATHER, R426: the',
     '// first WSG pin round',
@@ -844,7 +844,7 @@ HS += [
 HEADER = E(*HS) + NL
 
 newfile(HD, HEADER,
-        'rules/wsgdress.h')
+        'rules/wsg/wsgdress.h')
 
 # the header statics:
 # 54 inlines, lines <= 78
@@ -911,7 +911,7 @@ FL = [
      '- [x] **Dressing for the '
      'weather** (pp. 18-20) - '
      'R426: the whole chapter '
-     'pins as rules/wsgdress.h'),
+     'pins as rules/wsg/wsgdress.h'),
     ('  - [ ] Personal '
      'temperature (p. 18)',
      '  - [x] Personal '
@@ -919,14 +919,14 @@ FL = [
      'R426: the Fahrenheit '
      'effective/personal '
      'temperature system pins '
-     'as rules/wsgdress.h'),
+     'as rules/wsg/wsgdress.h'),
     ('  - [ ] Clothing (p. 18)',
      '  - [x] Clothing (p. 18) '
      '- R426: the four '
      'categories (the ranges, '
      'the encumbrance '
      'equivalents, the costs) '
-     'pin as rules/wsgdress.h'),
+     'pin as rules/wsg/wsgdress.h'),
     ('  - [ ] Protected and '
      'unprotected characters '
      '(p. 19)',
@@ -934,7 +934,7 @@ FL = [
      'unprotected characters '
      '(p. 19) - R426: the five '
      'unprotected rules pin as '
-     'rules/wsgdress.h'),
+     'rules/wsg/wsgdress.h'),
     ('  - [ ] Clothing that '
      'functions as armor (p. 19)',
      '  - [x] Clothing that '
@@ -942,13 +942,13 @@ FL = [
      '(p. 19) - R426: the AC '
      '8/9 option and the '
      'miscast risk pin as '
-     'rules/wsgdress.h'),
+     'rules/wsg/wsgdress.h'),
     ('  - [ ] Effects of '
      'exertion (p. 20)',
      '  - [x] Effects of '
      'exertion (p. 20) - R426: '
      'the three regimes pin as '
-     'rules/wsgdress.h'),
+     'rules/wsg/wsgdress.h'),
     ('- [ ] **Table 3: effects '
      'of clothing and armor on '
      'personal temperature** '
@@ -959,7 +959,7 @@ FL = [
      '(p. 19) - R426: the 15 '
      'attire rows x the 4 '
      'columns pin as '
-     'rules/wsgdress.h'),
+     'rules/wsg/wsgdress.h'),
     ('Post-state at R425: 5 '
      'closed, 181 open (the '
      'R425 round closes the '
@@ -1017,14 +1017,14 @@ if g.count('**Table ') != 42:
 # ======== the include ========
 
 pair(RT,
-     '#include "rules/wsgprof.h"  '
+     '#include "rules/wsg/wsgprof.h"  '
      '// R425: the WSG '
      'wilderness proficiencies',
-     '#include "rules/wsgprof.h"  '
+     '#include "rules/wsg/wsgprof.h"  '
      '// R425: the WSG '
      'wilderness proficiencies'
      + NL
-     + '#include "rules/wsgdress.h"  '
+     + '#include "rules/wsg/wsgdress.h"  '
      '// R426: the WSG dressing '
      'for the weather',
      'regtest: the include line')
@@ -1040,7 +1040,7 @@ AUD = E(*[l.rstrip() for l in [
     '    // closes the',
     '    // dressing-for-the-weather',
     '    // chapter whole',
-    '    // (rules/wsgdress.h,',
+    '    // (rules/wsg/wsgdress.h,',
     '    // prefix wsd): the four',
     '    // clothing categories (the',
     '    // ranges, the',
@@ -1418,7 +1418,7 @@ print('NOTE: the first WSG pin '
       'round after the opener -')
 print('  the dressing-for-the-'
       'weather chapter closes')
-print('  whole as rules/wsgdress.h '
+print('  whole as rules/wsg/wsgdress.h '
       '(54 inlines, prefix')
 print('  wsd): the four clothing '
       'categories, Table 3 (the')

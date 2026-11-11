@@ -4,7 +4,7 @@
     // the falling-vs-tumbling prose (the vertical-drop definition, the
     // 1d6-cumulative-per-10-feet basis, the recurring-impact rule on severe
     // slopes, the smooth/slippery abrasion note and the 1000 and 600-800
-    // feet-per-round rates) (rules/wsgfall.h, prefix wdf); census 361 -> 362.
+    // feet-per-round rates) (rules/wsg/wsgfall.h, prefix wdf); census 361 -> 362.
     {
         using namespace rules;
         int bad = 0;

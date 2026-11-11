@@ -2,7 +2,7 @@
  "round": 677,
  "title": "WU JEN EIGHTH LEVEL SPELLS - the 14 eighth level wu jen spells with the school, component, casting time, saving throw, reversible and element codes",
  "prefix": "dim",
- "header_file": "rules/oawjl8spells.h",
+ "header_file": "rules/oa/oawjl8spells.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -347,7 +347,7 @@
   "open": 105
  },
  "include_comment": "the OA wu jen eighth level spells pins",
- "include_after": "#include \"rules/oawjl7spells.h\"  // R676: the OA wu jen seventh level spells pins",
+ "include_after": "#include \"rules/oa/oawjl7spells.h\"  // R676: the OA wu jen seventh level spells pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R676 LANDED 2026-10-20: commit",
@@ -358,7 +358,7 @@
   "  WU JEN SEVENTH LEVEL SPELLS - the",
   "  12 seventh level wu jen spell stat",
   "  blocks, capture pp. 203-207:",
-  "  rules/oawjl7spells.h, prefix dil",
+  "  rules/oa/oawjl7spells.h, prefix dil",
   "  (verified free at b23dcfe - only",
   "  the string-literal dill, the R669",
   "  die precedent), ONE gap flip",
@@ -437,6 +437,6 @@
   "  the R669 die precedent), audit",
   "  \"R677 OA wu jen eighth level",
   "  spells audit\", include after",
-  "  rules/oawjl7spells.h"
+  "  rules/oa/oawjl7spells.h"
  ]
 }

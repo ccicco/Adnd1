@@ -1,16 +1,16 @@
 {
   "round": 787,
   "prefix": "udp2",
-  "header_file": "rules/uadeityprose2.h",
+  "header_file": "rules/ua/uadeityprose2.h",
   "regtest": "regtest.cpp",
   "gap_report": "tools/oa_gap_report.md",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
   "census_before": 709,
   "title": "the elven deity prose",
   "audit_label": "R787 elven deity prose audit",
-  "audit_comment": "THE ELVEN DEITY PROSE - part 2 of the Appendix S description-paragraph close. The archive.org full-text OCR of pp. 113-116 reads the five elven blocks scan-clean: the Aerdrie wind blasts and air summons, the Erevan tricks and twenty small helpers, the Solonor never-empty quiver and slaying arrows, the Hanali Evergold pool and charm aura, and the Labelas time powers - temporal stasis, the 100-year touch, and the 18-inch slow and haste radius. The stat-block numerics stay R406/R783; the paragraph facts ride rules/uadeityprose2.h.",
+  "audit_comment": "THE ELVEN DEITY PROSE - part 2 of the Appendix S description-paragraph close. The archive.org full-text OCR of pp. 113-116 reads the five elven blocks scan-clean: the Aerdrie wind blasts and air summons, the Erevan tricks and twenty small helpers, the Solonor never-empty quiver and slaying arrows, the Hanali Evergold pool and charm aura, and the Labelas time powers - temporal stasis, the 100-year touch, and the 18-inch slow and haste radius. The stat-block numerics stay R406/R783; the paragraph facts ride rules/ua/uadeityprose2.h.",
   "include_comment": "the elven deity prose",
-  "include_after": "#include \"rules/uadeityprose1.h\"  // R786: the dwarven deity prose",
+  "include_after": "#include \"rules/ua/uadeityprose1.h\"  // R786: the dwarven deity prose",
   "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
   "seed_anchor": "## Knowledge maintenance",
   "prev_seed_key": "- R786 LANDED 2026-10-23: commit",
@@ -47,7 +47,7 @@
     "  silver rings at 10\", the 5 percent",
     "  paladin grant 3-6 days once per 10",
     "  years). THE PINS: header",
-    "  rules/uadeityprose1.h, prefix udp (free",
+    "  rules/ua/uadeityprose1.h, prefix udp (free",
     "  at 2969a86), 43 consts + 60 bools (103",
     "  inline), no tables - pure prose data; the",
     "  stat-block numerics stay R406/R783, the",
@@ -1024,20 +1024,20 @@
   },
   "caller_files": [
     "rules/deitylines.h",
-    "rules/uaappends.h"
+    "rules/ua/uaappends.h"
   ],
   "inline_count": 101,
   "file_patches": [
     {
       "file": "rules/deitylines.h",
       "note": "the prose note strike (the dwarven and elven parts pin)",
-      "from": "// R786: the dwarven paragraphs pin\n// (rules/uadeityprose1.h); the other\n// pantheons' prose stays open - the lines\n// pin, the paragraphs do not (yet)\n",
+      "from": "// R786: the dwarven paragraphs pin\n// (rules/ua/uadeityprose1.h); the other\n// pantheons' prose stays open - the lines\n// pin, the paragraphs do not (yet)\n",
       "to": "// R786/R787: the dwarven and elven\n// paragraphs pin (rules/uadeityprose1-2.h);\n// the other pantheons' prose stays open -\n// the lines pin, the paragraphs do not (yet)\n"
     },
     {
-      "file": "rules/uaappends.h",
+      "file": "rules/ua/uaappends.h",
       "note": "the uaappends prose note strike (part 2)",
-      "from": "// stat lines) in rules/deitylines.h; the dwarven\n// prose pins in rules/uadeityprose1.h (R786); the\n// other pantheons' prose stays open.\n",
+      "from": "// stat lines) in rules/deitylines.h; the dwarven\n// prose pins in rules/ua/uadeityprose1.h (R786); the\n// other pantheons' prose stays open.\n",
       "to": "// stat lines) in rules/deitylines.h; the dwarven\n// and elven prose pin in rules/uadeityprose1-2.h\n// (R786/R787); the other pantheons' prose\n// stays open.\n"
     }
   ]

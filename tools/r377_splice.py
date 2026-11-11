@@ -52,7 +52,7 @@ SEED_ENTRY = NL.join([
     '- R376 landed 2026-10-12: commit',
     '  be2766f, census 303, the UA',
     '  new potions prose part 1',
-    '  round (rules/uapotprose.h):',
+    '  round (rules/ua/uapotprose.h):',
     '  twelve of the nineteen',
     '  new-potion descriptions pin',
     '  clean (the four elixirs,',
@@ -173,13 +173,13 @@ assert len(applied) + len(already) == 1, 'a count'
 
 
 
-# ---- (b) NEW rules/uaprotscr.h ----
-P = 'rules/uaprotscr.h'
+# ---- (b) NEW rules/ua/uaprotscr.h ----
+P = 'rules/ua/uaprotscr.h'
 if os.path.exists(P) and 'R377' in rd(P):
     already.append('uaprotscr.h: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uaprotscr.h
+// Adnd1 - rules/ua/uaprotscr.h
 // The UA TREASURE (SCROLLS)
 // protection prose pins, R377:
 // the eleven clean
@@ -518,7 +518,7 @@ else:
         '      - AMENDED R377: the new',
         '        scrolls protection prose',
         '        pin round',
-        '        (rules/uaprotscr.h) -',
+        '        (rules/ua/uaprotscr.h) -',
         '        ELEVEN of the fifteen',
         '        protection-scroll types',
         '        pin clean (acid, breath',
@@ -557,13 +557,13 @@ assert s.count(
     'AMENDED R375'
 ) == 1, 'c r375 amendment kept'
 assert s.count(
-    '(rules/uaprotscr.h)'
+    '(rules/ua/uaprotscr.h)'
 ) == 1, 'c scrolls note'
 assert s.count(
-    '(rules/uapotprose.h)'
+    '(rules/ua/uapotprose.h)'
 ) == 1, 'c potions note kept'
 assert s.count(
-    '(rules/uadetskel.h)'
+    '(rules/ua/uadetskel.h)'
 ) == 1, 'c skeleton note kept'
 assert s.count(
     'DECIDED R374'
@@ -615,11 +615,11 @@ s = rd(RT)
 if 'R377 UA new scrolls protection pin audit' in s:
     already.append('regtest.cpp: the R377 audit')
 else:
-    INC_ANCH = ('#include "rules/uapotprose.h"  // '
+    INC_ANCH = ('#include "rules/ua/uapotprose.h"  // '
         'R376: the UA new potions prose')
     INC_NEW = NL.join([
         INC_ANCH,
-        '#include "rules/uaprotscr.h"  // R377: the UA new scrolls prose'
+        '#include "rules/ua/uaprotscr.h"  // R377: the UA new scrolls prose'
     ])
     AUD_ANCH = '    // ---- R227: the wis mental save wiring audit ----'
     AUDIT = r"""    // ---- R377: the UA new scrolls
@@ -877,32 +877,32 @@ assert s.count(
     'R227: the wis mental save'
 ) == 1, 'd r227 kept'
 assert s.count(
-    '#include "rules/uaprotscr.h"'
+    '#include "rules/ua/uaprotscr.h"'
 ) == 1, 'd new include'
 for h in (
         'rules/cavalier.h',
         'rules/classtables.h',
-        'rules/uabirth.h',
-        'rules/uasocialclass.h',
-        'rules/uaspellbooks.h',
-        'rules/uaspellcomment.h',
-        'rules/uauwspelluse.h',
-        'rules/uadarkness.h',
-        'rules/uacavtable.h',
-        'rules/uacantacq.h',
-        'rules/uasmalls1.h',
-        'rules/uailacquisition.h',
+        'rules/ua/uabirth.h',
+        'rules/ua/uasocialclass.h',
+        'rules/ua/uaspellbooks.h',
+        'rules/ua/uaspellcomment.h',
+        'rules/ua/uauwspelluse.h',
+        'rules/ua/uadarkness.h',
+        'rules/ua/uacavtable.h',
+        'rules/ua/uacantacq.h',
+        'rules/ua/uasmalls1.h',
+        'rules/ua/uailacquisition.h',
         'rules/thiefarmor.h',
         'rules/armorratings.h',
         'rules/comeliness.h',
-        'rules/uaweapontable.h',
-        'rules/uamissile.h',
-        'rules/uanewweapons.h',
-        'rules/uafollowers.h',
-        'rules/uacomnote.h',
-        'rules/uatreasuredial.h',
-        'rules/uadetskel.h',
-        'rules/uapotprose.h',
+        'rules/ua/uaweapontable.h',
+        'rules/ua/uamissile.h',
+        'rules/ua/uanewweapons.h',
+        'rules/ua/uafollowers.h',
+        'rules/ua/uacomnote.h',
+        'rules/ua/uatreasuredial.h',
+        'rules/ua/uadetskel.h',
+        'rules/ua/uapotprose.h',
         'rules/treasdet.h',
         'rules/hoard.h'):
     assert s.count(

@@ -1,4 +1,4 @@
--- ua339: promoted from rules/uaprof.h (the The UA WEAPON PROFICIENCY TABLE (p. 26) pins (R339).);
+-- ua339: promoted from rules/ua/uaprof.h (the The UA WEAPON PROFICIENCY TABLE (p. 26) pins (R339).);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 339,

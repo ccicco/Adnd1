@@ -41,7 +41,7 @@ SEED_ENTRY = NL.join([
     '- R350 landed 2026-10-11: commit',
     '  037cdf6, census 277, the UA',
     '  new druid 1st level spells pin',
-    '  round (rules/uadruidspells1.h):',
+    '  round (rules/ua/uadruidspells1.h):',
     '  ceremony (the nine varieties',
     '  with the cast-out permission',
     '  ladder), detect balance, detect',
@@ -84,13 +84,13 @@ assert s.count('R340 landed 2026-10-11') == 1, 'a r340 kept'
 assert s.count('## Knowledge maintenance') == 1, 'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
-# ---- (b) NEW rules/uadruidspells2.h ----
-US = 'rules/uadruidspells2.h'
+# ---- (b) NEW rules/ua/uadruidspells2.h ----
+US = 'rules/ua/uadruidspells2.h'
 if os.path.exists(US) and 'R351' in rd(US):
     already.append('uadruidspells2.h: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uadruidspells2.h
+// Adnd1 - rules/ua/uadruidspells2.h
 // The UA NEW DRUID SPELLS (pp. 43-44) pins, R351: the 2nd-level
 // spell descriptions - flame blade, goodberry, reflecting pool
 // and slow poison.
@@ -522,7 +522,7 @@ else:
     assert s.count(TAIL_OLD) == 1, 'c tail'
     NOTE = NL.join([
     '      - R351: the 2nd level pinned',
-    '        (rules/uadruidspells2.h) - the',
+    '        (rules/ua/uadruidspells2.h) - the',
     '        four spell descriptions',
     '        (flame blade with the undead',
     '        and fire damage modifiers,',
@@ -571,12 +571,12 @@ if 'R351 UA druid 2nd level spells pin audit' in s:
     already.append('regtest.cpp: the R351 audit')
 else:
     INC_ANCH = (
-        '#include "rules/uadruidspells1.h"'
+        '#include "rules/ua/uadruidspells1.h"'
         '  // R350: the UA new druid 1st'
         ' level')
     INC_NEW = NL.join([
         INC_ANCH,
-        '#include "rules/uadruidspells2.h"'
+        '#include "rules/ua/uadruidspells2.h"'
         '  // R351: the UA new druid 2nd'
         ' level',
     ])
@@ -817,7 +817,7 @@ assert s.count(
     ' pin audit: bad ') == 1, 'd r343 kept'
 assert s.count('R227: the wis mental save') == 1, 'd r227 kept'
 assert s.count(
-    '#include "rules/uadruidspells2.h"') == 1, 'd include'
+    '#include "rules/ua/uadruidspells2.h"') == 1, 'd include'
 assert len(applied) + len(already) == 4, 'd count'
 
 # ---- the summary ----

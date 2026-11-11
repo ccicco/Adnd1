@@ -43,9 +43,9 @@
   "  pure flip closing both boxes (2 closed 0 open,",
   "  the two-chain walk complete). WAIT FOR GO."
  ],
- "include_after": "#include \"rules/lyc.h\"  // R925: the Dragon issue-14 opener, the Name That Monster Contest #1 winners and the Rihn lycanthropy variant",
+ "include_after": "#include \"rules/dragon/issue014_opener.h\"  // R925: the Dragon issue-14 opener, the Name That Monster Contest #1 winners and the Rihn lycanthropy variant",
  "include_comment": "the Dragon issue-14 box closing round, the two-chain walk complete",
- "header_file": "rules/f14.h",
+ "header_file": "rules/dragon/issue014_close.h",
  "audit_file": "rules/audits/r926_batch.h",
  "audit_label": "R926 Dragon issue-14 closure audit",
  "audit_anchor": "#include \"rules/audits/r925_batch.h\"  // R925: R925 issue-14 opener audit",

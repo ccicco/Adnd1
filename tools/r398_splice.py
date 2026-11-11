@@ -11,7 +11,7 @@
 # delivers the 33 flagged
 # seams across the six parts:
 #
-# 1. rules/uamiscprose1.h
+# 1. rules/ua/uamiscprose1.h
 #    (R381): six flags drop -
 #    the amulet's 9th-level
 #    cell, the anything item's
@@ -22,7 +22,7 @@
 #    the chime's opening; the
 #    part ledger flips 8/5 ->
 #    13/0.
-# 2. rules/uamiscprose2.h
+# 2. rules/ua/uamiscprose2.h
 #    (R382): seven flags drop -
 #    the deck of illusions'
 #    card list (eight rank
@@ -31,7 +31,7 @@
 #    description seam, the
 #    dusts' seams, the three
 #    egg seams; 1/7 -> 8/0.
-# 3. rules/uamiscprose3.h
+# 3. rules/ua/uamiscprose3.h
 #    (R383): nine flags drop -
 #    the gem's 50-year
 #    function cell, the
@@ -42,7 +42,7 @@
 #    haversack's quart, the
 #    horns' seams; 2/9 ->
 #    11/0.
-# 4. rules/uamiscprose4.h
+# 4. rules/ua/uamiscprose4.h
 #    (R384): four flags drop -
 #    the lens of ultravision's
 #    diameter cell (1.5
@@ -55,7 +55,7 @@
 #    attunement seam and
 #    quarter-foot shrink;
 #    5/4 -> 9/0.
-# 5. rules/uamiscprose5.h
+# 5. rules/ua/uamiscprose5.h
 #    (R385): four flags drop -
 #    the quiver of Ehlonna's
 #    command sentence, the
@@ -64,7 +64,7 @@
 #    smallness' intro seam,
 #    the spoon of stirring's
 #    table cell; 7/4 -> 11/0.
-# 6. rules/uamiscprose6.h
+# 6. rules/ua/uamiscprose6.h
 #    (R386): three flags drop -
 #    the stone horse's
 #    activation seam, the
@@ -186,14 +186,14 @@ SEED_ENTRY = E(
     '  fills the four PDF-gated',
     '  treasure items - the four',
     '  scroll types',
-    '  (rules/uaprotscr.h), the',
+    '  (rules/ua/uaprotscr.h), the',
     '  seven rings',
-    '  (rules/uaringprose.h), the',
+    '  (rules/ua/uaringprose.h), the',
     '  seven rods and staves',
-    '  (rules/uarodstave.h), the',
+    '  (rules/ua/uarodstave.h), the',
     '  two wand holes and five',
     '  garbled wands',
-    '  (rules/uawandprose.h); all',
+    '  (rules/ua/uawandprose.h); all',
     '  four gap items flip',
     '  AMENDED R397: closed -',
     '  every UA treasure',
@@ -223,12 +223,12 @@ if s.count('## Knowledge maintenance') != 1:
     die('the seed maintenance head')
 
 # ============ (b) the six headers ============
-P1 = 'rules/uamiscprose1.h'
-P2 = 'rules/uamiscprose2.h'
-P3 = 'rules/uamiscprose3.h'
-P4 = 'rules/uamiscprose4.h'
-P5 = 'rules/uamiscprose5.h'
-P6 = 'rules/uamiscprose6.h'
+P1 = 'rules/ua/uamiscprose1.h'
+P2 = 'rules/ua/uamiscprose2.h'
+P3 = 'rules/ua/uamiscprose3.h'
+P4 = 'rules/ua/uamiscprose4.h'
+P5 = 'rules/ua/uamiscprose5.h'
+P6 = 'rules/ua/uamiscprose6.h'
 NS = NL + 'namespace rules {'
 NNOTE = ['// The R398 clean read',
          '// filled every flagged hole',
@@ -1369,9 +1369,9 @@ pair(GP, E(
     '        flagged hole the six',
     '        misc magic prose parts',
     '        carry (33 flag seams,',
-    '        rules/uamiscprose1.h',
+    '        rules/ua/uamiscprose1.h',
     '        through',
-    '        rules/uamiscprose6.h):',
+    '        rules/ua/uamiscprose6.h):',
     "        the amulet's 9th-level",
     '        cell, the anything',
     "        item's 24-hour tail, the",

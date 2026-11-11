@@ -1,6 +1,6 @@
 {
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
- "audit_comment": "The first FLIP-ONLY round: zero consts, zero bools, zero tables - the census advances by the audit block alone. The pp. 75-98 Lands of Deepearth child closes against work already landed and verified: the R533 opener (rules/dsgland.h - the setting frame, the connecting-passage generation, the area-details framework) and the R534-R548 individual area key, all 31 areas (rules/dsgarea1.h through rules/dsgarea15.h).",
+ "audit_comment": "The first FLIP-ONLY round: zero consts, zero bools, zero tables - the census advances by the audit block alone. The pp. 75-98 Lands of Deepearth child closes against work already landed and verified: the R533 opener (rules/dsg/dsgland.h - the setting frame, the connecting-passage generation, the area-details framework) and the R534-R548 individual area key, all 31 areas (rules/dsg/dsgarea1.h through rules/dsg/dsgarea15.h).",
  "audit_label": "R549 DSG Deepearth closed audit",
  "banner": {
   "provenance": "The R503 closure criterion: a box closes when the feature PLAYS right - compiling is not the test. The Deepearth areas played through 15 landed engine-verified rounds (R534-R548, each double-run and preflight GREEN, census 458 -> 472); this round verifies the landed state and flips the child in the same commit. The gap census moves 139/16 -> 140/15. No book text pinned this round - the map plates pp. 76-77 are graphics and pin nothing.",
@@ -25,9 +25,9 @@
   }
  ],
  "gap_report": "tools/dsg_gap_report.md",
- "header_file": "rules/dsgdeep.h",
+ "header_file": "rules/dsg/dsgdeep.h",
  "header_sections": {},
- "include_after": "#include \"rules/dsgarea15.h\"  // R548: the DSG Deepearth areas 30-31 pins",
+ "include_after": "#include \"rules/dsg/dsgarea15.h\"  // R548: the DSG Deepearth areas 30-31 pins",
  "include_comment": "the DSG Deepearth closure",
  "inline_count": 0,
  "prefix": "dnas",
@@ -47,7 +47,7 @@
   "  aboleth cities, the capital 3x usual size with 36",
   "  towers against the standard 6). Prose-only round;",
   "  12 consts + 24 bools, prefix dnaq, header",
-  "  rules/dsgarea15.h, spec 21,385 bytes, 36 inlines;",
+  "  rules/dsg/dsgarea15.h, spec 21,385 bytes, 36 inlines;",
   "  djvu lines ~12557-12709 with capture idx 229",
   "  cross-read (garbles: seerns->seems, var-dig->",
   "  vardigg); first try: authored md5 cf3257a8e48110",

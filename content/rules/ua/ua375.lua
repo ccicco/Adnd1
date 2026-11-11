@@ -1,11 +1,11 @@
--- ua375: promoted from rules/uadetskel.h (the The UA RANDOM TREASURE);
+-- ua375: promoted from rules/ua/uadetskel.h (the The UA RANDOM TREASURE);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 375,
   "prefix" = "ua375",
   "banner" = {
       "title" = "The UA RANDOM TREASURE",
-      "provenance" = "DETERMINATION - MAGIC ITEMS (Revised Table) skeleton pins (pp. 84-89), R375: the top-level category bands and the sub-table splits. The row bodies ride R395 - the clean PDF read fills every row (rules/uadetrows.h); the extract markers below flip with it. The dial ride: the R374 seam (checked in the regtest audit, not here).",
+      "provenance" = "DETERMINATION - MAGIC ITEMS (Revised Table) skeleton pins (pp. 84-89), R375: the top-level category bands and the sub-table splits. The row bodies ride R395 - the clean PDF read fills every row (rules/ua/uadetrows.h); the extract markers below flip with it. The dial ride: the R374 seam (checked in the regtest audit, not here).",
     },
   "consts" = { {
       "name" = "uadsCategoryCount",
@@ -99,7 +99,7 @@ return {
     }, {
       "name" = "uadsRowBodiesGarble",
       "value" = false,
-      "comment" = "---- the extract read ---- The R395 clean read delivers every row body - the marker flips false (the rows pin in rules/uadetrows.h).",
+      "comment" = "---- the extract read ---- The R395 clean read delivers every row body - the marker flips false (the rows pin in rules/ua/uadetrows.h).",
     } },
   "switches" = {},
   "tables" = { {

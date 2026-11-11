@@ -2,7 +2,7 @@
  "round": 722,
  "title": "OA MONSTERS - the Kappa: the bowl and the grip",
  "prefix": "dkj",
- "header_file": "rules/oa93kappa.h",
+ "header_file": "rules/oa/oa93kappa.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA MONSTERS - THE KAPPA, printed capture p. 273 - the paired columns round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 175 closed, 60 open - the kappa box flips (census 644 -> 645); NEXT - R723: the Kuei, Lesser Spirit (capture p. 274), prefix dkk (verify free at the landing), audit \"R723 OA monsters Kuei audit\", include after rules/oa93kappa.h"
+  "sentinel": "the gap census after this round: 175 closed, 60 open - the kappa box flips (census 644 -> 645); NEXT - R723: the Kuei, Lesser Spirit (capture p. 274), prefix dkk (verify free at the landing), audit \"R723 OA monsters Kuei audit\", include after rules/oa/oa93kappa.h"
  },
  "consts": [
   {
@@ -769,14 +769,14 @@
   "open": 60
  },
  "include_comment": "the OA Kappa pins",
- "include_after": "#include \"rules/oa92kala.h\"  // R721: the OA Kala pins",
+ "include_after": "#include \"rules/oa/oa92kala.h\"  // R721: the OA Kala pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R721 LANDED 2026-10-21: commit",
  "prev_record": [
   "- R721 LANDED 2026-10-21: commit 7c917a1cd39e05d6d131af74552e5256e1ccd585",
   "  (census 643 -> 644, pushed 5058dcf..7c917a1), OA MONSTERS,",
-  "  the Kala (capture pp. 272-273 print): rules/oa92kala.h,",
+  "  the Kala (capture pp. 272-273 print): rules/oa/oa92kala.h,",
   "  prefix dki (verified free at 5058dcf), ONE gap flip, gap",
   "  census 174/61 - the kala box. A TABLES round. 17",
   "  consts + 29 bools + 8 table cols (54 inlines): the",
@@ -809,6 +809,6 @@
   "  6c15e56670933aaf3a7036fa55f4581a). NEXT - R722: the",
   "  Kappa (capture p. 273), prefix dkj (verified free",
   "  at 7c917a1), audit \"R722 OA monsters Kappa audit\",",
-  "  include after rules/oa92kala.h."
+  "  include after rules/oa/oa92kala.h."
  ]
 }

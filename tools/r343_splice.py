@@ -41,7 +41,7 @@ SEED_ENTRY = NL.join([
     '  3bba003, census 269, the UA',
     '  spell tables pin round,',
     '  part 2',
-    '  (rules/uaspelltables2.h):',
+    '  (rules/ua/uaspelltables2.h):',
     '  the MU 1st-5th columns',
     '  (35/30/28/28/28 readable',
     '  names, every garble',
@@ -79,20 +79,20 @@ assert s.count('R339 landed 2026-10-11') == 1,     'a r339 kept'
 assert s.count('## Knowledge maintenance') == 1,     'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
-# ---- (b) NEW rules/uaclericspells1.h ----
-US = 'rules/uaclericspells1.h'
+# ---- (b) NEW rules/ua/uaclericspells1.h ----
+US = 'rules/ua/uaclericspells1.h'
 if os.path.exists(US) and 'R343' in rd(US):
     already.append('uaclericspells1.h: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uaclericspells1.h
+// Adnd1 - rules/ua/uaclericspells1.h
 // The UA NEW CLERIC SPELLS (pp. 32-35) pins, R343: the 1st-level
 // spell descriptions - ceremony, combine, endure cold/heat, penetrate
 // disguise, invisibility to undead, portent, magic stone,
 // precipitation.
 //
 // Pin-era pattern (R322): pinned data only - no engine site exists.
-// The R341 cleric table pin (rules/uaspelltables.h) is the name seam.
+// The R341 cleric table pin (rules/ua/uaspelltables.h) is the name seam.
 //
 // JUDGMENTs (the decode method):
 //   - the digit-garble family: four "Level: 7" cells print where the
@@ -665,7 +665,7 @@ else:
     assert s.count(FIRST_OLD + ' (pp.') == 1, 'c first'
     NOTE = NL.join([
         '      - R343: the 1st level pinned',
-        '        (rules/uaclericspells1.h) - the',
+        '        (rules/ua/uaclericspells1.h) - the',
         '        eight spell descriptions with the',
         '        digit-garble family (the four',
         '        "Level: 7" cells) decoded, the',
@@ -698,12 +698,12 @@ if 'R343 UA cleric 1st level spells pin audit' in s:
     already.append('regtest.cpp: the R343 audit')
 else:
     INC_ANCH = (
-        '#include "rules/uaspelltables2.h"'
+        '#include "rules/ua/uaspelltables2.h"'
         '  // R342: the UA MU and illusionist'
         ' tables')
     INC_NEW = NL.join([
         INC_ANCH,
-        '#include "rules/uaclericspells1.h"'
+        '#include "rules/ua/uaclericspells1.h"'
         '  // R343: the UA new cleric 1st'
         ' level',
     ])
@@ -998,7 +998,7 @@ assert s.count(
     'R339 UA proficiency pin audit: bad ')     == 1, 'd r339 kept'
 assert s.count('R227: the wis mental save') == 1,     'd r227 kept'
 assert s.count(
-    '#include "rules/uaclericspells1.h"') == 1,     'd include'
+    '#include "rules/ua/uaclericspells1.h"') == 1,     'd include'
 assert len(applied) + len(already) == 4, 'd count'
 
 # ---- the summary ----

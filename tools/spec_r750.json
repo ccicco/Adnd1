@@ -2,7 +2,7 @@
  "round": 750,
  "title": "OA TREASURE - Table 79: Weapon Properties: the d100 property grid by the five weapon types",
  "prefix": "dll",
- "header_file": "rules/oa121table79.h",
+ "header_file": "rules/oa/oa121table79.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA TREASURE - TABLE 79, WEAPON PROPERTIES, printed capture pp. 291-292 - the property grid round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 203 closed, 32 open - the Table 79 box flips (census 672 -> 673); NEXT - R751: Table 80: Sword Class (capture p. 292), prefix dlm (verify free at the landing), audit \"R751 OA Table 80 sword audit\", include after rules/oa121table79.h"
+  "sentinel": "the gap census after this round: 203 closed, 32 open - the Table 79 box flips (census 672 -> 673); NEXT - R751: Table 80: Sword Class (capture p. 292), prefix dlm (verify free at the landing), audit \"R751 OA Table 80 sword audit\", include after rules/oa/oa121table79.h"
  },
  "consts": [
   {
@@ -336,7 +336,7 @@
   "open": 32
  },
  "include_comment": "the OA Table 79 pins",
- "include_after": "#include \"rules/oa120table78.h\"  // R749: the OA Table 78 pins",
+ "include_after": "#include \"rules/oa/oa120table78.h\"  // R749: the OA Table 78 pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R749 LANDED 2026-10-22: commit",
@@ -345,7 +345,7 @@
   "  b1e5d05349bcf08b04cd7e1db7410d0a9da53f9f",
   "  (census 671 -> 672, pushed c00afcf..b1e5d05),",
   "  OA TREASURE, Table 78: Magical Weapons",
-  "  (capture p. 291), header rules/oa120table78.h,",
+  "  (capture p. 291), header rules/oa/oa120table78.h,",
   "  prefix dlk (verified free at c00afcf), one",
   "  gap flip (the Table 78 box, single-line),",
   "  gap census now 202 closed / 33 open.",
@@ -372,7 +372,7 @@
   "  onto p. 292), prefix dll (verify free at",
   "  the landing), audit \"R750 OA Table 79",
   "  properties audit\", include after",
-  "  rules/oa120table78.h. A dense round - the",
+  "  rules/oa/oa120table78.h. A dense round - the",
   "  20-band d100 grid x 5 weapon-type columns",
   "  (bow, missile, melee, martial arts,",
   "  ninja): the quality, the +1/+2/+3 to-hit",

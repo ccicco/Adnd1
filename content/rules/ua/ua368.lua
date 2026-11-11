@@ -1,4 +1,4 @@
--- ua368: promoted from rules/uacavtable.h (the The UA CAVALIERS TABLE I (p. 15 print) pins,);
+-- ua368: promoted from rules/ua/uacavtable.h (the The UA CAVALIERS TABLE I (p. 15 print) pins,);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 368,

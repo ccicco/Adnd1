@@ -2,7 +2,7 @@
  "round": 493,
  "title": "the WSG World of Weather appendix, part 1 - the weather generation system",
  "prefix": "wwx",
- "header_file": "rules/wsgweather.h",
+ "header_file": "rules/wsg/wsgweather.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -3361,14 +3361,14 @@
   {
    "note": "the weather-system box",
    "from": "  - [ ] The weather system (generation, the tables)",
-   "to": "  - [x] The weather system (generation, the tables) - R493: the Table A1 temperature-variation grid with the letter-code scale, Table A2 day-to-day change, Table A3 precipitation variation and the generation prose pin as rules/wsgweather.h (part 1 of 2 - the special weather and optional rules ride with R494)"
+   "to": "  - [x] The weather system (generation, the tables) - R493: the Table A1 temperature-variation grid with the letter-code scale, Table A2 day-to-day change, Table A3 precipitation variation and the generation prose pin as rules/wsg/wsgweather.h (part 1 of 2 - the special weather and optional rules ride with R494)"
   }
  ],
  "gap_census": {
   "closed": 144,
   "open": 42
  },
- "include_after": "#include \"rules/wsgdm.h\"  // R492: the WSG Dungeon Master section rules",
+ "include_after": "#include \"rules/wsg/wsgdm.h\"  // R492: the WSG Dungeon Master section rules",
  "include_comment": "the WSG World of Weather generation rules",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
@@ -3377,7 +3377,7 @@
   "- R492 LANDED 2026-10-16: commit e84e00a (census 417,",
   "  pushed 4e07d5d..e84e00a), the WSG DUNGEON MASTER",
   "  SECTION slice, printed pp. 103-106 - CLOSING the",
-  "  section. Pinned as rules/wsgdm.h with the include",
+  "  section. Pinned as rules/wsg/wsgdm.h with the include",
   "  after wsgmagic.h at line 197 (prefix wmd - free on",
   "  the first probe; wdm is taken), 91 inlines: 27",
   "  consts + 64 bools in ten sections - the opener,",

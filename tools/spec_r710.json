@@ -2,7 +2,7 @@
  "round": 710,
  "title": "OA MONSTERS - the Con-Tinh, Lesser Spirit: the stat block, the tree lifeforce, and the two special attacks",
  "prefix": "djx",
- "header_file": "rules/oa81continh.h",
+ "header_file": "rules/oa/oa81continh.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA MONSTERS - THE CON-TINH, LESSER SPIRIT, printed capture pp. 258-259 - the maiden spirit round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 163 closed, 72 open - the con-tinh box flips (census 632 -> 633); NEXT - R711: the Doc Cu'o'c, Greater Spirit (capture p. 259), prefix djy (verify free at the landing), audit \"R711 OA monsters Doc Cu'o'c audit\", include after rules/oa81continh.h"
+  "sentinel": "the gap census after this round: 163 closed, 72 open - the con-tinh box flips (census 632 -> 633); NEXT - R711: the Doc Cu'o'c, Greater Spirit (capture p. 259), prefix djy (verify free at the landing), audit \"R711 OA monsters Doc Cu'o'c audit\", include after rules/oa/oa81continh.h"
  },
  "consts": [
   {
@@ -436,14 +436,14 @@
   "open": 72
  },
  "include_comment": "the OA Con-Tinh pins",
- "include_after": "#include \"rules/oa80carp.h\"  // R709: the OA Giant Carp pins",
+ "include_after": "#include \"rules/oa/oa80carp.h\"  // R709: the OA Giant Carp pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R709 LANDED 2026-10-21: commit",
  "prev_record": [
   "- R709 LANDED 2026-10-21: commit b7a2dad2e184a8cf83d1600dc0d68e9638614a71",
   "  (census 631 -> 632, pushed 8361dca..b7a2dad), OA MONSTERS - the",
-  "  Carp, Giant, capture pp. 257-258 print: rules/oa80carp.h,",
+  "  Carp, Giant, capture pp. 257-258 print: rules/oa/oa80carp.h,",
   "  prefix djw (verified free at 8361dca), ONE gap flip, gap",
   "  census 162/73. 28 consts + 19 bools (47 inlines): the stat",
   "  block (the uncommon, the 1-4, the AC 6, the move 18, the",
@@ -468,6 +468,6 @@
   "  be1cf09bb972c8d2db2e3824aed5b634). NEXT - R710: the",
   "  Con-Tinh, Lesser Spirit (capture pp. 258-259), prefix djx",
   "  (verified free at b7a2dad), audit \"R710 OA monsters Con-Tinh",
-  "  audit\", include after rules/oa80carp.h."
+  "  audit\", include after rules/oa/oa80carp.h."
  ]
 }

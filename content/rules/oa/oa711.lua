@@ -1,11 +1,11 @@
--- oa711: promoted from rules/oa82doccuoc.h (the OA MONSTERS - THE DOC CU'O'C, GREATER SPIRIT, printed capture p. 259 - the);
+-- oa711: promoted from rules/oa/oa82doccuoc.h (the OA MONSTERS - THE DOC CU'O'C, GREATER SPIRIT, printed capture p. 259 - the);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 711,
   "prefix" = "oa711",
   "banner" = {
       "title" = "OA MONSTERS - THE DOC CU'O'C, GREATER SPIRIT, printed capture p. 259 - the",
-      "provenance" = "one-legged protector round census 633 -> 634.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 164 closed, 71 open - the doc cu'o'c box flips (census 633 -> 634); NEXT - R712: the Oriental Dragons (capture pp. 259-260), prefix djz (verify free at the landing), audit \"R712 OA monsters Oriental Dragons audit\", include after rules/oa82doccuoc.h",
+      "provenance" = "one-legged protector round census 633 -> 634.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 164 closed, 71 open - the doc cu'o'c box flips (census 633 -> 634); NEXT - R712: the Oriental Dragons (capture pp. 259-260), prefix djz (verify free at the landing), audit \"R712 OA monsters Oriental Dragons audit\", include after rules/oa/oa82doccuoc.h",
     },
   "consts" = { {
       "name" = "djyDocCuocNoAppearing",

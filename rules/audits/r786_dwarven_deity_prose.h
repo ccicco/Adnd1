@@ -7,7 +7,7 @@
     // the Dumathoin veins and earth elementals, the Abbathor greed mechanics
     // and level-draining dagger, the Berronar braid-of-gold and the paladin
     // grant. The stat-block lines stay R406/R783; these paragraphs ride
-    // rules/uadeityprose1.h.
+    // rules/ua/uadeityprose1.h.
     {
         using namespace rules;
         int bad = 0;

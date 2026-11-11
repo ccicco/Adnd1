@@ -9,7 +9,7 @@
     // non-slippery/slightly slippery/slippery catch chances), the solid vs
     // not-solid protrusion procedure (solid holds indefinitely, not-solid
     // gives way after 1d6 rounds of climbing) and the recheck-after-10-feet
-    // rule (rules/wsggrap.h, prefix wgh); census 368 -> 369.
+    // rule (rules/wsg/wsggrap.h, prefix wgh); census 368 -> 369.
     {
         using namespace rules;
         int bad = 0;

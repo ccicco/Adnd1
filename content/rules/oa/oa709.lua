@@ -1,11 +1,11 @@
--- oa709: promoted from rules/oa80carp.h (the OA MONSTERS - THE CARP, GIANT, printed capture pp. 257-258 - the overgrown);
+-- oa709: promoted from rules/oa/oa80carp.h (the OA MONSTERS - THE CARP, GIANT, printed capture pp. 257-258 - the overgrown);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 709,
   "prefix" = "oa709",
   "banner" = {
       "title" = "OA MONSTERS - THE CARP, GIANT, printed capture pp. 257-258 - the overgrown",
-      "provenance" = "fish round census 631 -> 632.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 162 closed, 73 open - the giant carp box flips (census 631 -> 632); NEXT - R710: the Con-Tinh, Lesser Spirit (capture pp. 258-259), prefix djx (verify free at the landing), audit \"R710 OA monsters Con-Tinh audit\", include after rules/oa80carp.h",
+      "provenance" = "fish round census 631 -> 632.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 162 closed, 73 open - the giant carp box flips (census 631 -> 632); NEXT - R710: the Con-Tinh, Lesser Spirit (capture pp. 258-259), prefix djx (verify free at the landing), audit \"R710 OA monsters Con-Tinh audit\", include after rules/oa/oa80carp.h",
     },
   "consts" = { {
       "name" = "djwCarpNoAppearingMin",

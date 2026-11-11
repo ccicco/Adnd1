@@ -1,4 +1,4 @@
--- ua: promoted from rules/uaappends.h (the The UA APPENDIX S stat blocks,);
+-- ua: promoted from rules/ua/uaappends.h (the The UA APPENDIX S stat blocks,);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 406,

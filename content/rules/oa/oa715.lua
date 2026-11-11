@@ -1,11 +1,11 @@
--- oa715: promoted from rules/oa86generals.h (the OA MONSTERS - THE GENERALS OF THE ANIMAL KINGS, printed capture pp. 265-266);
+-- oa715: promoted from rules/oa/oa86generals.h (the OA MONSTERS - THE GENERALS OF THE ANIMAL KINGS, printed capture pp. 265-266);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 715,
   "prefix" = "oa715",
   "banner" = {
       "title" = "OA MONSTERS - THE GENERALS OF THE ANIMAL KINGS, printed capture pp. 265-266",
-      "provenance" = "- the three generals round census 637 -> 638.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 168 closed, 67 open - the animal generals box flips (census 637 -> 638); NEXT - R716: the Goblin Rat (capture p. 266), prefix dkd (verify free at the landing), audit \"R716 OA monsters Goblin Rat audit\", include after rules/oa86generals.h",
+      "provenance" = "- the three generals round census 637 -> 638.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 168 closed, 67 open - the animal generals box flips (census 637 -> 638); NEXT - R716: the Goblin Rat (capture p. 266), prefix dkd (verify free at the landing), audit \"R716 OA monsters Goblin Rat audit\", include after rules/oa/oa86generals.h",
     },
   "consts" = { {
       "name" = "dkcGeneralTypeCount",

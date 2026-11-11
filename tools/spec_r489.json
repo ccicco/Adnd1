@@ -2,7 +2,7 @@
  "round": 489,
  "title": "the WSG fatigue chapter slice - the close-to-the-ground dismount tail closing the wilderness combat chapter and the full fatigue and exhaustion rules for characters, land-based mounts and flying mounts, printed pp. 87-89, CLOSING the wilderness combat chapter and the fatigue chapter",
  "prefix": "wft",
- "header_file": "rules/wsgfatig.h",
+ "header_file": "rules/wsg/wsgfatig.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -1189,29 +1189,29 @@
   {
    "note": "the forcing-opponents-to-dismount box (the p. 87 tail)",
    "from": "  - [ ] Forcing opponents to dismount (p. 87)",
-   "to": "  - [x] Forcing opponents to dismount (p. 87) - R489: the close-to-the-ground death tail with the proficient leap pin as rules/wsgfatig.h"
+   "to": "  - [x] Forcing opponents to dismount (p. 87) - R489: the close-to-the-ground death tail with the proficient leap pin as rules/wsg/wsgfatig.h"
   },
   {
    "note": "the characters fatigue box",
    "from": "  - [ ] Characters (p. 88)",
-   "to": "  - [x] Characters (p. 88) - R489: the strenuous rhythm with the fatigue and exhaustion penalties and the recovery and carried-rest rules pin as rules/wsgfatig.h"
+   "to": "  - [x] Characters (p. 88) - R489: the strenuous rhythm with the fatigue and exhaustion penalties and the recovery and carried-rest rules pin as rules/wsg/wsgfatig.h"
   },
   {
    "note": "the land-based mounts box",
    "from": "  - [ ] Land-based mounts and pack animals (p. 88)",
-   "to": "  - [x] Land-based mounts and pack animals (p. 88) - R489: the nourishment and overwork rules with the fatigued movement, armor class and collapse rules and the trauma drain pin as rules/wsgfatig.h"
+   "to": "  - [x] Land-based mounts and pack animals (p. 88) - R489: the nourishment and overwork rules with the fatigued movement, armor class and collapse rules and the trauma drain pin as rules/wsg/wsgfatig.h"
   },
   {
    "note": "the flying mounts box",
    "from": "  - [ ] Flying mounts (p. 89)",
-   "to": "  - [x] Flying mounts (p. 89) - R489: the stamina table rules with the 1d10 fatigue check and the dive buffet and thrown-rider damage pin as rules/wsgfatig.h"
+   "to": "  - [x] Flying mounts (p. 89) - R489: the stamina table rules with the 1d10 fatigue check and the dive buffet and thrown-rider damage pin as rules/wsg/wsgfatig.h"
   }
  ],
  "gap_census": {
   "closed": 132,
   "open": 54
  },
- "include_after": "#include \"rules/wsgfight.h\"  // R488: the WSG wilderness combat rules",
+ "include_after": "#include \"rules/wsg/wsgfight.h\"  // R488: the WSG wilderness combat rules",
  "include_comment": "the WSG fatigue and exhaustion rules",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
@@ -1221,7 +1221,7 @@
   "  pushed 5fa9bdf..1ac64e0), the WSG WILDERNESS COMBAT",
   "  opener slice, printed pp. 84-87 - OPENING the wilderness",
   "  combat chapter, the last WSG chapter. Pinned as",
-  "  rules/wsgfight.h with the include after wsghazd2.h at",
+  "  rules/wsg/wsgfight.h with the include after wsghazd2.h at",
   "  line 193 (prefix wfc - free on the first probe), 145",
   "  inlines: 68 consts + 77 bools in nine sections - the",
   "  chapter opener with the DSG pp. 30-34 cross-reference,",

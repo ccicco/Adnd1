@@ -1,4 +1,4 @@
--- ua: promoted from rules/uadeityprose1.h (the THE DWARVEN DEITY PROSE - the Appendix S description paragraphs open:);
+-- ua: promoted from rules/ua/uadeityprose1.h (the THE DWARVEN DEITY PROSE - the Appendix S description paragraphs open:);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 786,
@@ -448,6 +448,6 @@ return {
     } },
   "audit" = {
       "label" = "R786 dwarven deity prose audit",
-      "comment" = "THE DWARVEN DEITY PROSE - part 1 of the Appendix S description-paragraph pins (the prose alone stays open no more, the dwarves open it). The archive.org full-text OCR of pp. 110-113 reads the five dwarven blocks scan-clean: the Clanggedin fortress and anti-giant methods, the Vergadain con-games and treasure-sensing sword, the Dumathoin veins and earth elementals, the Abbathor greed mechanics and level-draining dagger, the Berronar braid-of-gold and the paladin grant. The stat-block lines stay R406/R783; these paragraphs ride rules/uadeityprose1.h.",
+      "comment" = "THE DWARVEN DEITY PROSE - part 1 of the Appendix S description-paragraph pins (the prose alone stays open no more, the dwarves open it). The archive.org full-text OCR of pp. 110-113 reads the five dwarven blocks scan-clean: the Clanggedin fortress and anti-giant methods, the Vergadain con-games and treasure-sensing sword, the Dumathoin veins and earth elementals, the Abbathor greed mechanics and level-draining dagger, the Berronar braid-of-gold and the paladin grant. The stat-block lines stay R406/R783; these paragraphs ride rules/ua/uadeityprose1.h.",
     },
 }

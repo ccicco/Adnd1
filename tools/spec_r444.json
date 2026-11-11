@@ -2,7 +2,7 @@
  "round": 444,
  "title": "the WSG grappling hooks",
  "prefix": "wgh",
- "header_file": "rules/wsggrap.h",
+ "header_file": "rules/wsg/wsggrap.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -13,7 +13,7 @@
  "census_before": 368,
  "inline_count": 31,
  "audit_label": "R444 WSG grappling hooks pin audit",
- "audit_comment": "The grappling-hooks slice pins the 1/3-of-strength rounded-up times-10-feet throw (Str 8 = 30 feet), the horizontal throw (same as vertical on a 30-degree-or-less incline, doubled from a secure position with a 10-foot whirling radius), the one-round throw with the 1d4-round re-coil on a miss, the 01-05 self-hit for 1d6 damage on a missed throw directly above, the 3-foot climb bonus for the unencumbered, Table 20 GRAPPLING SUCCESS (10 terrain rows x the protrusion pair and the non-slippery/slightly slippery/slippery catch chances), the solid vs not-solid protrusion procedure (solid holds indefinitely, not-solid gives way after 1d6 rounds of climbing) and the recheck-after-10-feet rule (rules/wsggrap.h, prefix wgh); census 368 -> 369.",
+ "audit_comment": "The grappling-hooks slice pins the 1/3-of-strength rounded-up times-10-feet throw (Str 8 = 30 feet), the horizontal throw (same as vertical on a 30-degree-or-less incline, doubled from a secure position with a 10-foot whirling radius), the one-round throw with the 1d4-round re-coil on a miss, the 01-05 self-hit for 1d6 damage on a missed throw directly above, the 3-foot climb bonus for the unencumbered, Table 20 GRAPPLING SUCCESS (10 terrain rows x the protrusion pair and the non-slippery/slightly slippery/slippery catch chances), the solid vs not-solid protrusion procedure (solid holds indefinitely, not-solid gives way after 1d6 rounds of climbing) and the recheck-after-10-feet rule (rules/wsg/wsggrap.h, prefix wgh); census 368 -> 369.",
  "banner": {
   "title": "The WSG USE OF GRAPPLING HOOKS, R444: the hook prose and Table 20 - the other piece of equipment any climber can use (thief or non-thief, mountaineer or not) is a grappling hook, a three- or four-pronged metal hook attached to the end of a rope and thrown toward a protrusion in hopes it catches and holds. Hooks are normally needed only for severe slopes and cliff faces but expedite a moderate slope, especially a slippery one. A character throws a hook upward a maximum of 1/3 of his strength score (rounded up) times 10 feet - strength 8 reaches 30 feet above the head. A horizontal throw (a 30-degree-or-less incline) matches the vertical distance unless the thrower is in a secure position with a 10-foot whirling radius, in which case he throws twice as far. A throw takes one round; a miss costs the next 1d4 rounds coiling the rope. A missed throw at a target directly above with a roll of 01-05 hits the thrower for 1d6 damage. Climbing an anchored rope gives a 3-foot bonus to the climbing movement rate if lightly or not encumbered, otherwise no movement benefit. Table 20 pairs the Chance of Protrusion (a percentile roll at or above the first number means a protrusion exists; at or above the second it is solid and holds indefinitely; between the two it gives way after 1d6 rounds of climbing) with the condition catch chances (a second percentile roll at or above the number means the throw succeeded); with no protrusion in range, recheck after traveling 10 feet vertically or horizontally. Census 368 -> 369.",
   "provenance": "the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed p. 38; the user own copy OCR cross-checked against the archive djvu word layer (Guide_0038.djvu) with IIIF eye-reads - the djvu is garbled at the last Table 20 row (it reads 60/90 m 96 99), at the strength fraction and at the climb bonus; two independent eye-reads of each zone matched the user copy exactly: the last row is 80/90 with 92/99/99, the throw is 1/3 of strength rounded up times 10 feet, and the bonus is a 3-FOOT bonus (the OCR inch mark resolved to the printed foot mark, no plus sign). Every other cell and number matched the djvu clean.",
@@ -407,7 +407,7 @@
  "gap_flips": [
   {
    "from": "  - [ ] Use of grappling hooks (p. 38)",
-   "to": "  - [x] Use of grappling hooks (p. 38) - R444: the strength throw, the doubled secure horizontal throw, the one-round throw with the 1d4 re-coil, the 01-05 self-hit, the 3-foot climb bonus, Table 20 (the 10 terrain rows with the protrusion pair and the three catch chances) and the solid/not-solid procedure pin as rules/wsggrap.h",
+   "to": "  - [x] Use of grappling hooks (p. 38) - R444: the strength throw, the doubled secure horizontal throw, the one-round throw with the 1d4 re-coil, the 01-05 self-hit, the 3-foot climb bonus, Table 20 (the 10 terrain rows with the protrusion pair and the three catch chances) and the solid/not-solid procedure pin as rules/wsg/wsggrap.h",
    "note": "grappling hooks"
   },
   {
@@ -421,7 +421,7 @@
   "open": 139
  },
  "include_comment": "the WSG grappling hooks",
- "include_after": "#include \"rules/wsgbelay.h\"  // R443: the WSG belaying",
+ "include_after": "#include \"rules/wsg/wsgbelay.h\"  // R443: the WSG belaying",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R443 landed 2026-10-14: commit 1f0a8d6 (census 368, pushed",
@@ -439,7 +439,7 @@
   "  cannot belay, leader cannot be belayed, one belay at a time, no climbing",
   "  while belaying, the middle faller drags none below, the failed belayer can",
   "  be saved by the character above, the first faller is unhelpable - only two",
-  "  per rope). rules/wsgbelay.h NEW (23 inlines, prefix wbl - checked free in",
+  "  per rope). rules/wsg/wsgbelay.h NEW (23 inlines, prefix wbl - checked free in",
   "  all three TUs). Ground truth CLEAN two-way (the user copy OCR vs the djvu",
   "  word layer Guide_0037 with the Guide_0038 head continuation - every number",
   "  matched, no eye-reads). Gap 45/141 -> 46/140; census 367 -> 368. rverify",

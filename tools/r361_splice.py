@@ -51,8 +51,8 @@ SEED_ENTRY = NL.join([
     '  follow-up, census 287, the',
     '  UA new magic-user 5th and',
     '  6th level spells pin round',
-    '  (rules/uamuspells5.h and',
-    '  rules/uamuspells6.h): the',
+    '  (rules/ua/uamuspells5.h and',
+    '  rules/ua/uamuspells6.h): the',
     '  twelve spell descriptions',
     '  (avoidance behind the lost',
     '  name header, dismissal',
@@ -118,13 +118,13 @@ assert s.count('## Knowledge maintenance') == 1, 'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
 
-# ---- (b) NEW rules/uamuspells7.h ----
-US = 'rules/uamuspells7.h'
+# ---- (b) NEW rules/ua/uamuspells7.h ----
+US = 'rules/ua/uamuspells7.h'
 if os.path.exists(US) and 'R361' in rd(US):
     already.append('uamuspells7.h: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uamuspells7.h
+// Adnd1 - rules/ua/uamuspells7.h
 // The UA NEW MAGIC-USER SPELLS (pp. 66-71) pins, R361: the
 // 7th-level spell descriptions - banishment, forcecage, the
 // Mordenkainen magnificent mansion, sequester, teleport
@@ -1120,7 +1120,7 @@ else:
     assert s.count(TAIL_OLD) == 1, 'c tail'
     NOTE = NL.join([
     '      - R361: the 7th level pinned',
-    '        (rules/uamuspells7.h) - the',
+    '        (rules/ua/uamuspells7.h) - the',
     '        eight spell descriptions',
     '        (banishment with the',
     '        scrambled stat head and',
@@ -1188,12 +1188,12 @@ if 'R361 UA MU 7th level spells pin audit' in s:
     already.append('regtest.cpp: the R361 audit')
 else:
     INC_ANCH = (
-        '#include "rules/uamuspells6.h"'
+        '#include "rules/ua/uamuspells6.h"'
         '  // R360: the UA new magic-user'
         ' 6th level')
     INC_NEW = NL.join([
         INC_ANCH,
-        '#include "rules/uamuspells7.h"'
+        '#include "rules/ua/uamuspells7.h"'
         '  // R361: the UA new magic-user'
         ' 7th level',
     ])
@@ -1566,25 +1566,25 @@ assert s.count(
     'R227: the wis mental save'
     ) == 1, 'd r227 kept'
 assert s.count(
-    '#include "rules/uamuspells7.h"'
+    '#include "rules/ua/uamuspells7.h"'
     ) == 1, 'd include'
 assert s.count(
-    '#include "rules/uamuspells6.h"'
+    '#include "rules/ua/uamuspells6.h"'
     ) == 1, 'd r360 include'
 assert s.count(
-    '#include "rules/uamuspells5.h"'
+    '#include "rules/ua/uamuspells5.h"'
     ) == 1, 'd r360-5 include'
 assert s.count(
-    '#include "rules/uamuspells4.h"'
+    '#include "rules/ua/uamuspells4.h"'
     ) == 1, 'd r359 include'
 assert s.count(
-    '#include "rules/uamuspells3.h"'
+    '#include "rules/ua/uamuspells3.h"'
     ) == 1, 'd r358 include'
 assert s.count(
-    '#include "rules/uamuspells2.h"'
+    '#include "rules/ua/uamuspells2.h"'
     ) == 1, 'd r357 include'
 assert s.count(
-    '#include "rules/uamuspells1.h"'
+    '#include "rules/ua/uamuspells1.h"'
     ) == 1, 'd r356 include'
 assert len(applied) + len(already) == 4, 'd count'
 

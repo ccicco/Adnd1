@@ -5,7 +5,7 @@
     // and the entangle craft, the Arvoreen unseen summons of halfling heroes,
     // the Cyrrollalee furniture animation and home trust, and the Brandobaris
     // dust sling, escape dagger, and reward risks. The stat-block numerics
-    // stay R406/R783; the paragraph facts ride rules/uadeityprose3.h.
+    // stay R406/R783; the paragraph facts ride rules/ua/uadeityprose3.h.
     {
         using namespace rules;
         int bad = 0;

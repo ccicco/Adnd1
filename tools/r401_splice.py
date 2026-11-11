@@ -29,7 +29,7 @@
 #    illusionist minor
 #    illusion) and the roster
 #    totals.
-# 2. rules/uaspelltables.h: the
+# 2. rules/ua/uaspelltables.h: the
 #    clean p. 30 print CORRECTS
 #    the R341 decode - the
 #    reversed column carries
@@ -169,15 +169,15 @@ CTBODY = E(
     '// the spell procedure (the R369/R366 seams).',
     '//',
     '// The cross-checked pins: the R369 acquisition',
-    '// bands (rules/uacantacq.h), the R365/R393',
-    '// illusionist counts (rules/uailacquisition.h,',
-    '// rules/uaspelltables.h), the R341 roster',
-    '// (rules/uaspelltables.h, amended R401 - the',
+    '// bands (rules/ua/uacantacq.h), the R365/R393',
+    '// illusionist counts (rules/ua/uailacquisition.h,',
+    '// rules/ua/uaspelltables.h), the R341 roster',
+    '// (rules/ua/uaspelltables.h, amended R401 - the',
     '// clean p. 30 table prints Tangle in the',
     '// reversed column and Tweak in the personal',
     '// column, both row 9; the roster reads 66',
     '// names, not 64) and the R363 minor-illusion',
-    '// descriptions (rules/uailcantrips.h).',
+    '// descriptions (rules/ua/uailcantrips.h).',
     '// ===========================================================================',
     '',
     '#pragma once',
@@ -335,8 +335,8 @@ CTBODY = E(
 newfile(CT, CTBODY + NL,
         'cantriptier: the seam header')
 
-# ======== (c) rules/uaspelltables.h ========
-UST = 'rules/uaspelltables.h'
+# ======== (c) rules/ua/uaspelltables.h ========
+UST = 'rules/ua/uaspelltables.h'
 
 pair(UST, E(
     '// ---- the magic-user cantrip table (p. 30) ----',
@@ -390,9 +390,9 @@ pair(UST, E(
 RT = 'regtest.cpp'
 
 pair(RT, E(
-    '#include "rules/uahandheld.h"  // R392: the UA hand-held data'),
+    '#include "rules/ua/uahandheld.h"  // R392: the UA hand-held data'),
     E(
-    '#include "rules/uahandheld.h"  // R392: the UA hand-held data',
+    '#include "rules/ua/uahandheld.h"  // R392: the UA hand-held data',
     '#include "rules/cantriptier.h"  // R401: the UA cantrip tier'),
     'regtest: the include')
 
@@ -635,7 +635,7 @@ pair(GP, E(
 
 pair(GP, E(
     '      - R341: the readable tables',
-    '        pinned (rules/uaspelltables.h)',
+    '        pinned (rules/ua/uaspelltables.h)',
     '        - the cleric 1st-3rd table',
     '        (20 rows, seam-verified against',
     '        the R80 registry), the cleric',
@@ -652,7 +652,7 @@ pair(GP, E(
     '        pending the PDF read.'),
     E(
     '      - R341: the readable tables',
-    '        pinned (rules/uaspelltables.h)',
+    '        pinned (rules/ua/uaspelltables.h)',
     '        - the cleric 1st-3rd table',
     '        (20 rows, seam-verified against',
     '        the R80 registry), the cleric',

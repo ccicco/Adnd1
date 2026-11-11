@@ -1,4 +1,4 @@
--- ua354: promoted from rules/uadruidspells6.h (the The UA NEW DRUID SPELLS (p. 45) pins, R354: the 6th-level);
+-- ua354: promoted from rules/ua/uadruidspells6.h (the The UA NEW DRUID SPELLS (p. 45) pins, R354: the 6th-level);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 354,

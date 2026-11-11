@@ -1,4 +1,4 @@
--- ua: promoted from rules/uamiscprose3.h (the The UA TREASURE);
+-- ua: promoted from rules/ua/uamiscprose3.h (the The UA TREASURE);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 383,

@@ -2,7 +2,7 @@
  "round": 701,
  "title": "OA TABLE 73 - the daily events: the twenty-eight die-range rows of the five location columns with the twenty-nine event names and the frequency chart",
  "prefix": "djo",
- "header_file": "rules/oa73daily.h",
+ "header_file": "rules/oa/oa73daily.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA TABLE 73, printed capture pp. 247-248 - the daily events round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift. THE GRID: the twenty-eight die-range rows of the daily events across the percentile die, the ranges contiguous and complete 1-100, each row read across the five location columns - the court, the city/town, the rural, the wilderness, the ocean. THE TWENTY-NINE NAMES by ordinal: Bandit Camp the 1; Bandits the 2; Becalmed the 3; Contest the 4; Crime the 5; Duel the 6; Entreaty the 7; Fire Small the 8; Haunting the 9; Illness the 10; Insult the 11; Invitation the 12; Kidnapping the 13; Land the 14; Maiden the 15; Monster the 16; Mystery the 17; No Event the 18; Nobles the 19; Pirates the 20; Plot the 21; Ruins the 22; Ship the 23; Shrine the 24; Special the 25; Storm the 26; Stranger the 27; Traveler the 28; VIP the 29. THE OPEN: the rows 01-50 No Event in all five columns, the first possible event at 51. THE FREQUENCY CHART: the events possible per day by location - court 0-1, city and town 0-1, rural 0-2, wilderness 0-3, sea and ocean 0-2; the roll on the column best fitting the location, the maximum rolled for the area (three die rolls in wilderness), many rolls no event. THE OCR REPAIR: the row 88 cell-drop resolved to Shrine/Ruins/Ship per the column bands. The grid codifies per the R431 calculus",
-  "sentinel": "the gap census after this round: 154 closed, 81 open - the Table 73 box flips (census 623 -> 624); NEXT - R702: the Daily Events prose and explanations (capture pp. 247-251), prefix djp (verify free at the landing), audit \"R702 OA daily events prose audit\", include after rules/oa73daily.h"
+  "sentinel": "the gap census after this round: 154 closed, 81 open - the Table 73 box flips (census 623 -> 624); NEXT - R702: the Daily Events prose and explanations (capture pp. 247-251), prefix djp (verify free at the landing), audit \"R702 OA daily events prose audit\", include after rules/oa/oa73daily.h"
  },
  "consts": [
   {
@@ -477,14 +477,14 @@
   "open": 81
  },
  "include_comment": "the OA Table 73 daily events pins",
- "include_after": "#include \"rules/oa72explain.h\"  // R700: the OA monthly events explanation pins",
+ "include_after": "#include \"rules/oa/oa72explain.h\"  // R700: the OA monthly events explanation pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R700 LANDED 2026-10-21: commit",
  "prev_record": [
   "- R700 LANDED 2026-10-21: commit 7ffe0952a0d3974369d3ec4ffb66a1c961ffa4e1",
   "  (census 622 -> 623, pushed 11ae6a8..7ffe095), OA EXPLANATION OF MONTHLY",
-  "  EVENTS, capture pp. 243-247 print: rules/oa72explain.h, prefix djn (verified",
+  "  EVENTS, capture pp. 243-247 print: rules/oa/oa72explain.h, prefix djn (verified",
   "  free at 11ae6a8), ONE gap flip, gap census 152/83 -> 153/82. 66 consts + 46",
   "  bools (112 inlines): the twenty-eight monthly events explained (the Accident",
   "  DM-chose; the Bad Harvest 25% income, 5% famine, 50% food, the blamed ruler;",
@@ -516,6 +516,6 @@
   "  d15b11329269a6d086c1018ac7b2b633 - the value the ritual gated and matched;",
   "  canvas md5 073e8da443d5134acb3121991f153b4e). NEXT - R701: Table 73 the",
   "  daily events grid (capture p. 247), prefix djo (verified free at 7ffe095),",
-  "  audit \"R701 OA daily events audit\", include after rules/oa72explain.h"
+  "  audit \"R701 OA daily events audit\", include after rules/oa/oa72explain.h"
  ]
 }

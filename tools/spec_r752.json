@@ -2,7 +2,7 @@
  "round": 752,
  "title": "OA TREASURE - Table 81: Bow, Crossbow, And Sling Class: the d100 missile weapon type grid",
  "prefix": "dln",
- "header_file": "rules/oa123table81.h",
+ "header_file": "rules/oa/oa123table81.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA TREASURE - TABLE 81, BOW, CROSSBOW, AND SLING CLASS, printed capture p. 292 - the bow class grid round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 205 closed, 30 open - the Table 81 box flips (census 674 -> 675); NEXT - R753: Table 82: Miscellaneous (capture p. 292), prefix dlo (verify free at the landing), audit \"R753 OA Table 82 misc melee audit\", include after rules/oa123table81.h"
+  "sentinel": "the gap census after this round: 205 closed, 30 open - the Table 81 box flips (census 674 -> 675); NEXT - R753: Table 82: Miscellaneous (capture p. 292), prefix dlo (verify free at the landing), audit \"R753 OA Table 82 misc melee audit\", include after rules/oa/oa123table81.h"
  },
  "consts": [
   {
@@ -230,7 +230,7 @@
   "open": 30
  },
  "include_comment": "the OA Table 81 pins",
- "include_after": "#include \"rules/oa122table80.h\"  // R751: the OA Table 80 pins",
+ "include_after": "#include \"rules/oa/oa122table80.h\"  // R751: the OA Table 80 pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R751 LANDED 2026-10-22: commit",
@@ -239,7 +239,7 @@
   "  5296a8ea6c1cfe6d91f6101b96977df9044d68f6",
   "  (census 673 -> 674, pushed 797c191..5296a8e),",
   "  OA TREASURE, Table 80: Sword Class (capture",
-  "  p. 292), header rules/oa122table80.h,",
+  "  p. 292), header rules/oa/oa122table80.h,",
   "  prefix dlm (verified free at 797c191), one",
   "  gap flip (the Table 80 box, single-line),",
   "  gap census now 204 closed / 31 open.",
@@ -266,6 +266,6 @@
   "  And Sling Class (capture p. 292), prefix",
   "  dln (verify free at the landing), audit",
   "  \"R752 OA Table 81 bow class audit\",",
-  "  include after rules/oa122table80.h."
+  "  include after rules/oa/oa122table80.h."
  ]
 }

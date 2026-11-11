@@ -52,7 +52,7 @@ SEED_ENTRY = NL.join([
     '- R359 landed 2026-10-11: commit',
     '  97e1ff2, census 286, the UA',
     '  new magic-user 4th level spells',
-    '  pin round (rules/uamuspells4.h):',
+    '  pin round (rules/ua/uamuspells4.h):',
     '  the eight spell descriptions',
     '  (dispel illusion behind the lost',
     '  name tail and the garbled',
@@ -105,13 +105,13 @@ assert s.count('## Knowledge maintenance') == 1, 'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
 
-# ---- (b) NEW rules/uamuspells5.h ----
-US5 = 'rules/uamuspells5.h'
+# ---- (b) NEW rules/ua/uamuspells5.h ----
+US5 = 'rules/ua/uamuspells5.h'
 if os.path.exists(US5) and 'R360' in rd(US5):
     already.append('uamuspells5.h: the pins')
 else:
     HDR5 = r"""// ===========================================================================
-// Adnd1 - rules/uamuspells5.h
+// Adnd1 - rules/ua/uamuspells5.h
 // The UA NEW MAGIC-USER SPELLS (pp. 51-66) pins, R360: the
 // 5th-level spell descriptions - avoidance, dismissal,
 // dolor, fabricate, the Leomund belabourment and
@@ -125,7 +125,7 @@ else:
 //     casting-time and duration 7s decode as 1 - the
 //     sending "7 turn" as 1 turn. The range 7s stay as
 //     printed (the dolor "7"" and the ensnarement "7"",
-//     in rules/uamuspells6.h): the family decodes a
+//     in rules/ua/uamuspells6.h): the family decodes a
 //     range cell only when corroborated (the flaming
 //     sphere prose, the R352 cloudburst seam, the druid
 //     water-to-dust seam below) - pending the PDF.
@@ -758,13 +758,13 @@ assert 'uas2' not in s, 'b no r342 ref'
 assert len(applied) + len(already) == 2, 'b count'
 
 
-# ---- (b2) NEW rules/uamuspells6.h ----
-US6 = 'rules/uamuspells6.h'
+# ---- (b2) NEW rules/ua/uamuspells6.h ----
+US6 = 'rules/ua/uamuspells6.h'
 if os.path.exists(US6) and 'R360' in rd(US6):
     already.append('uamuspells6.h: the pins')
 else:
     HDR6 = r"""// ===========================================================================
-// Adnd1 - rules/uamuspells6.h
+// Adnd1 - rules/ua/uamuspells6.h
 // The UA NEW MAGIC-USER SPELLS (pp. 66-71) pins, R360: the
 // 6th-level spell descriptions - chain lightning,
 // contingency, ensnarement, eyebite, the Mordenkainen
@@ -784,7 +784,7 @@ else:
 //     cloudburst seam, the druid water-to-dust seam
 //     below) - pending the PDF. The water-to-dust "7
 //     cubic" area decodes as 1 - corroborated by the
-//     druid seam in rules/uadruidspells6.h.
+//     druid seam in rules/ua/uadruidspells6.h.
 //   - the R342 MU table seam loses the whole 6th-level
 //     column - no 6th-level seam fn
 //     exists; every 6th-level name pins
@@ -1514,8 +1514,8 @@ else:
     assert s.count(TAIL_OLD) == 1, 'c tail'
     NOTE = NL.join([
     '      - R360: the 5th and 6th levels',
-    '        pinned (rules/uamuspells5.h',
-    '        and rules/uamuspells6.h) - the',
+    '        pinned (rules/ua/uamuspells5.h',
+    '        and rules/ua/uamuspells6.h) - the',
     '        six 5th-level descriptions',
     '        (avoidance behind the lost',
     '        name header, dismissal behind',
@@ -1586,15 +1586,15 @@ if 'R360 UA MU 5th and 6th level spells pin' in s:
     already.append('regtest.cpp: the R360 audit')
 else:
     INC_ANCH = (
-        '#include "rules/uamuspells4.h"'
+        '#include "rules/ua/uamuspells4.h"'
         '  // R359: the UA new magic-user'
         ' 4th level')
     INC_NEW = NL.join([
         INC_ANCH,
-        '#include "rules/uamuspells5.h"'
+        '#include "rules/ua/uamuspells5.h"'
         '  // R360: the UA new magic-user'
         ' 5th level',
-        '#include "rules/uamuspells6.h"'
+        '#include "rules/ua/uamuspells6.h"'
         '  // R360: the UA new magic-user'
         ' 6th level',
     ])
@@ -2050,22 +2050,22 @@ assert s.count(
     'R227: the wis mental save'
     ) == 1, 'd r227 kept'
 assert s.count(
-    '#include "rules/uamuspells6.h"'
+    '#include "rules/ua/uamuspells6.h"'
     ) == 1, 'd include 6'
 assert s.count(
-    '#include "rules/uamuspells5.h"'
+    '#include "rules/ua/uamuspells5.h"'
     ) == 1, 'd include 5'
 assert s.count(
-    '#include "rules/uamuspells4.h"'
+    '#include "rules/ua/uamuspells4.h"'
     ) == 1, 'd r359 include'
 assert s.count(
-    '#include "rules/uamuspells3.h"'
+    '#include "rules/ua/uamuspells3.h"'
     ) == 1, 'd r358 include'
 assert s.count(
-    '#include "rules/uamuspells2.h"'
+    '#include "rules/ua/uamuspells2.h"'
     ) == 1, 'd r357 include'
 assert s.count(
-    '#include "rules/uamuspells1.h"'
+    '#include "rules/ua/uamuspells1.h"'
     ) == 1, 'd r356 include'
 assert len(applied) + len(already) == 5, 'd count'
 

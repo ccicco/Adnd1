@@ -1,9 +1,9 @@
 {
  "round": 819,
  "title": "the MM2 index walk - the merged MM1/FF/MM2 index census",
- "header_file": "rules/mm2enci.h",
+ "header_file": "rules/mm/mm2enci.h",
  "prefix": "mm2enci",
- "include_after": "#include \"rules/mm2enca.h\"  // R818: the MM2 aquatic encounter tables walk - the 12 surface and depths grids",
+ "include_after": "#include \"rules/mm/mm2enca.h\"  // R818: the MM2 aquatic encounter tables walk - the 12 surface and depths grids",
  "include_comment": "the MM2 index walk - the merged MM1/FF/MM2 index census",
  "census_before": 741,
  "audit_label": "R819 MM2 index census audit",

@@ -3,7 +3,7 @@
     // burden x the normal and maximum loads and the unencumbered/encumbered
     // rates over the three terrain classes), the forced-move stamina rules
     // (the half-rate hour cap, the cumulative fatigue chances) and the
-    // accelerated no-rest spillover (rules/wsganimal.h, prefix wam); census
+    // accelerated no-rest spillover (rules/wsg/wsganimal.h, prefix wam); census
     // 357 -> 358.
     {
         using namespace rules;

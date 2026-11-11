@@ -2,7 +2,7 @@
  "round": 746,
  "title": "OA TREASURE - Table 77: Special Properties: the d100 special property grid",
  "prefix": "dlh",
- "header_file": "rules/oa117table77.h",
+ "header_file": "rules/oa/oa117table77.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA TREASURE - TABLE 77, SPECIAL PROPERTIES, printed capture p. 290 - the special property grid round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 199 closed, 36 open - the Table 77 box flips (census 668 -> 669); NEXT - R747: Explanation of Armor Properties (capture p. 290), prefix dli (verify free at the landing), audit \"R747 OA armor explanation audit\", include after rules/oa117table77.h"
+  "sentinel": "the gap census after this round: 199 closed, 36 open - the Table 77 box flips (census 668 -> 669); NEXT - R747: Explanation of Armor Properties (capture p. 290), prefix dli (verify free at the landing), audit \"R747 OA armor explanation audit\", include after rules/oa/oa117table77.h"
  },
  "consts": [
   {
@@ -226,7 +226,7 @@
   "open": 36
  },
  "include_comment": "the OA Table 77 pins",
- "include_after": "#include \"rules/oa116table76.h\"  // R745: the OA Table 76 pins",
+ "include_after": "#include \"rules/oa/oa116table76.h\"  // R745: the OA Table 76 pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R745 LANDED 2026-10-22: commit",
@@ -237,7 +237,7 @@
   "  OA TREASURE, Table 76. Magical Armor",
   "  Properties (capture pp. 289-290, the grid",
   "  spans the page break, the caption prints",
-  "  a period), header rules/oa116table76.h,",
+  "  a period), header rules/oa/oa116table76.h,",
   "  prefix dlg (verified free at c335e9a),",
   "  one gap flip (the Table 76 box, its",
   "  two-line wrap handled), gap census now",
@@ -273,7 +273,7 @@
   "  Properties (capture p. 290), prefix dlh",
   "  (verify free at the landing), audit \"R746",
   "  OA Table 77 special audit\", include after",
-  "  rules/oa116table76.h. The special-property",
+  "  rules/oa/oa116table76.h. The special-property",
   "  grid - etherealness through blending,",
   "  presence, fear, missile attraction,",
   "  vulnerability, and the 91-95 possession,",

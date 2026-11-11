@@ -2,7 +2,7 @@
  "round": 771,
  "title": "OA OPEN BOXES SWEEP - the Celestial Emperor and the nine closes",
  "prefix": "dnh",
- "header_file": "rules/oa142celestial.h",
+ "header_file": "rules/oa/oa142celestial.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA OPEN BOXES SWEEP - THE CELESTIAL EMPEROR AND THE CELESTIAL BUREAUCRACY, printed capture p. 253 - the spirit-world framing doctrine",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift (the p. 253 text re-captured at p. 117 of the compressed-3 re-upload)",
-  "sentinel": "the gap census after this round: 234 closed, 1 open - the Celestial Emperor box and the eight missed parents of Chapters 2, 3, 8, 9, 10, 11, 12, 13 flip (census 693 -> 694); NEXT - R772: the Weapons prose arc (capture pp. 84-93, the weapon descriptions, re-captured at pp. 42-51 of the compressed-3 re-upload) - the last open box, split into per-weapon rounds; prefix dnj (verify free at the landing), audit \"R772 OA Weapons prose audit\", include after rules/oa142celestial.h"
+  "sentinel": "the gap census after this round: 234 closed, 1 open - the Celestial Emperor box and the eight missed parents of Chapters 2, 3, 8, 9, 10, 11, 12, 13 flip (census 693 -> 694); NEXT - R772: the Weapons prose arc (capture pp. 84-93, the weapon descriptions, re-captured at pp. 42-51 of the compressed-3 re-upload) - the last open box, split into per-weapon rounds; prefix dnj (verify free at the landing), audit \"R772 OA Weapons prose audit\", include after rules/oa/oa142celestial.h"
  },
  "consts": [
   {
@@ -187,7 +187,7 @@
   "open": 1
  },
  "include_comment": "the OA Celestial Emperor pins",
- "include_after": "#include \"rules/oa141backmatter.h\"  // R770: the OA Back matter pins",
+ "include_after": "#include \"rules/oa/oa141backmatter.h\"  // R770: the OA Back matter pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R770 LANDED 2026-10-22: commit",
@@ -197,7 +197,7 @@
   "  (census 692 -> 693, pushed 643d70e..b4fd255),",
   "  OA BACK MATTER, the bibliography (capture",
   "  pp. 313-314, the book's closing page),",
-  "  header rules/oa141backmatter.h, prefix dmf",
+  "  header rules/oa/oa141backmatter.h, prefix dmf",
   "  (fully free at 643d70e - zero substring",
   "  hits, zero call-site dmf\\w*( collisions),",
   "  THREE gap flips (the Back matter box; the",
@@ -244,6 +244,6 @@
   "  authoring, prefix dng (verify free at the",
   "  landing), audit \"R771 OA open boxes",
   "  audit\", include after",
-  "  rules/oa141backmatter.h."
+  "  rules/oa/oa141backmatter.h."
  ]
 }

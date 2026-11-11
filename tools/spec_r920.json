@@ -27,9 +27,9 @@
   "  flips [x], box 2 stays open), then R921 pure",
   "  flip closing both boxes. WAIT FOR GO."
  ],
- "include_after": "#include \"rules/ilv.h\"  // R919: the Dragon issue-12 opener part one, the Ovalle illusionist article and the Endersby and Carroll ship cargo article",
+ "include_after": "#include \"rules/dragon/issue012_opener1.h\"  // R919: the Dragon issue-12 opener part one, the Ovalle illusionist article and the Endersby and Carroll ship cargo article",
  "include_comment": "the Dragon issue-12 opener part two, the Persian Mythos and the Lovecraftian Mythos",
- "header_file": "rules/myt.h",
+ "header_file": "rules/dragon/issue012_opener2.h",
  "audit_file": "rules/audits/r920_batch.h",
  "audit_label": "R920 issue-12 opener part two audit",
  "audit_anchor": "#include \"rules/audits/r919_batch.h\"  // R919: R919 issue-12 opener audit",

@@ -5,7 +5,7 @@
     // closes the
     // dressing-for-the-weather
     // chapter whole
-    // (rules/wsgdress.h,
+    // (rules/wsg/wsgdress.h,
     // prefix wsd): the four
     // clothing categories (the
     // ranges, the

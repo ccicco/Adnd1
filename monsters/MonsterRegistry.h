@@ -20,8 +20,8 @@
 
 #pragma once
 
-#include "../rules/character.h"
-#include "../rules/classes.h"
+#include "../rules/engine/character.h"
+#include "../rules/engine/classes.h"
 #include "../ai/actor.h"
 
 #include <map>

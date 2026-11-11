@@ -2,7 +2,7 @@
  "round": 615,
  "title": "THE ABILITY TABLES - the OA Chapter 1 ability tables: Table 1 Strength, Table 2 Strength Adjustments, Table 3 Dexterity, Table 4 Constitution, Table 5 Intelligence, Table 6 Wisdom, Table 7 Charisma and Table 8 Comeliness Adjustments - the grids with their class and race annotation pins",
  "prefix": "dgb",
- "header_file": "rules/oaabilities.h",
+ "header_file": "rules/oa/oaabilities.h",
  "regtest": "regtest.cpp",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "gap_report": "tools/oa_gap_report.md",
@@ -30,7 +30,7 @@
   "  working-tree mode only - the",
   "  sha restore deletes the new",
   "  report (the R564 lesson).",
-  "  PINS: rules/oacreating.h,",
+  "  PINS: rules/oa/oacreating.h,",
   "  prefix dga (verified free), 22",
   "  inlines (7 consts, 15 bools):",
   "  the front-matter doctrine (the",
@@ -57,13 +57,13 @@
   "  prefix dgb (verify free), audit",
   "  \"R615 OA ability tables audit\",",
   "  include after",
-  "  rules/oacreating.h."
+  "  rules/oa/oacreating.h."
  ],
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "audit_label": "R615 OA ability tables audit",
  "audit_comment": "OA round two (capture pp. 7-13): the eight ability tables - the six grids (Strength Adjustments, Dexterity, Constitution, Intelligence, Wisdom, Charisma) with the Table 8 band chain and grid, the class and race annotations of the General Information columns, the Table 4 warrior-bonus footnote and the Table 2 one-attempt riders.",
  "census_before": 537,
- "include_after": "#include \"rules/oacreating.h\"  // R614: the OA arc opener pins",
+ "include_after": "#include \"rules/oa/oacreating.h\"  // R614: the OA arc opener pins",
  "include_comment": "the OA ability tables pins",
  "caller_files": [],
  "switches": [],
@@ -1850,6 +1850,6 @@
  "banner": {
   "title": "THE ABILITY TABLES, printed capture pp. 7-13 - the OA Chapter 1 ability tables round",
   "provenance": "verified against capture pp. 7-13 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). OCR normalizations: the Table 4 \"+\" and percent spacing read clean as numbers; the Table 5 korobokuru maximum splits from its Intelligence 15 row in the capture and merges back per book-internal settling; Table 2 Strength 3 weight allowance prints 0 - pinned as printed, flagged for the physical copy. The open-doors parentheticals pin as their own column (the engine strOpenDoors precedent); the Str 19 row prints 7-in-8 and pins as the face 7. The Table 4 footnote prints the warrior bonus (+3 at Con 17, +4 at 18) for samurai, bushi, kensai and sohei with the barbarian also entitled - all pinned as printed.",
-  "sentinel": "the gap census after this round: 12 closed, 223 open - the eight ability tables flip (census 537 -> 538); NEXT - R616: the six ability prose sub-items (the Dexterity, Constitution, Intelligence, Wisdom, Charisma and Comeliness prose - the column explanations, the smitten doctrine, the Comeliness reaction bands and the racial adjustments), prefix dgc (verify free), audit \"R616 OA ability prose audit\", include after rules/oaabilities.h"
+  "sentinel": "the gap census after this round: 12 closed, 223 open - the eight ability tables flip (census 537 -> 538); NEXT - R616: the six ability prose sub-items (the Dexterity, Constitution, Intelligence, Wisdom, Charisma and Comeliness prose - the column explanations, the smitten doctrine, the Comeliness reaction bands and the racial adjustments), prefix dgc (verify free), audit \"R616 OA ability prose audit\", include after rules/oa/oaabilities.h"
  }
 }

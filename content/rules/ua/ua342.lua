@@ -1,4 +1,4 @@
--- ua342: promoted from rules/uaspelltables2.h (the The UA SPELL TABLES (pp. 30-31) pins, part 2 (R342): the magic-user);
+-- ua342: promoted from rules/ua/uaspelltables2.h (the The UA SPELL TABLES (pp. 30-31) pins, part 2 (R342): the magic-user);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 342,
@@ -58,7 +58,7 @@ return {
     }, {
       "name" = "uas2IlCantripCount",
       "value" = 8,
-      "comment" = "The illusionist minor-illusion cantrip column: the PDF read resolves the loss (R421) - the clean p. 31 print gives the whole column, the eight names in roster order, matching the description roster (rules/uailcantrips.h) row for row.",
+      "comment" = "The illusionist minor-illusion cantrip column: the PDF read resolves the loss (R421) - the clean p. 31 print gives the whole column, the eight names in roster order, matching the description roster (rules/ua/uailcantrips.h) row for row.",
     } },
   "bools" = { {
       "name" = "uas2MuSixthLevelColumnLost",

@@ -47,7 +47,7 @@
   "  (71,581 bytes); the canvas spec-r883 gated",
   "  byte-exact; rverify 144 mutants 0 missed;",
   "  the land verified byte-exact against the",
-  "  fresh-tarball rebuild (1209 defs, dpw.h,",
+  "  fresh-tarball rebuild (1209 defs, rules/ddg/lua_promo_batch4.h,",
   "  audit, census, seed, regtest, spec",
   "  identical; engine idempotent applied 37 /",
   "  already 37). NEXT: the promotion continues",
@@ -55,9 +55,9 @@
   "  batches through Nonhumans and Norse. WAIT",
   "  FOR GO."
  ],
- "include_after": "#include \"rules/dpw.h\"  // R883: the DDG lua promotion, batch four",
+ "include_after": "#include \"rules/ddg/lua_promo_batch4.h\"  // R883: the DDG lua promotion, batch four",
  "include_comment": "the DDG lua promotion, batch five",
- "header_file": "rules/dpx.h",
+ "header_file": "rules/ddg/lua_promo_batch5.h",
  "audit_file": "rules/audits/r884_batch.h",
  "audit_label": "R884 DDG promotion audit",
  "audit_anchor": "#include \"rules/audits/r883_batch.h\"  // R883: R883 DDG promotion audit",
@@ -69,7 +69,7 @@
  "gap_flips": [],
  "banner": {
   "title": "The DDG lua promotion, batch five - 33 full-field defs (the Melnibonean mythos) generated ONLY from the adjudicated pin headers, the registry floor 1209 -> 1242.",
-  "provenance": "Generated from rules/mlb.h at e1bb817: the four grids x rows (combat, class, ability, roster), the being name order locked by the pinned cross-references (the Elric-through-Yyrkoon print order) and verified against the 2nd-print ink (the tesseract tsv voice; the junk-swallowed Moonglum, Nnuurrr and Nuru-ah columns read from the full-text voice); the legend tables decode verbatim from the header comments; the unpinned cells emit the sentinels.",
+  "provenance": "Generated from rules/ddg/mythos_melnibonean.h at e1bb817: the four grids x rows (combat, class, ability, roster), the being name order locked by the pinned cross-references (the Elric-through-Yyrkoon print order) and verified against the 2nd-print ink (the tesseract tsv voice; the junk-swallowed Moonglum, Nnuurrr and Nuru-ah columns read from the full-text voice); the legend tables decode verbatim from the header comments; the unpinned cells emit the sentinels.",
   "sentinel": "The sentinels ride the R879 doctrine unchanged: n/a for strings, -1 for ints, distinct from every real print value; the printed See below, Standard, Nil, None and Infinite are REAL values and stay. The audits read the sentinels exactly, so fail-on-wrong stays the rule."
  },
  "consts": [

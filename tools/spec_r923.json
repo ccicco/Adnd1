@@ -34,9 +34,9 @@
   "  report 013 box 1), then R924 pure flip closing",
   "  box 2. WAIT FOR GO."
  ],
- "include_after": "#include \"rules/dgm.h\"  // R922: the Dragon issue-13 opener part one, the Shlump da Orc giant physics article and the Jon Pickens demon generation article",
+ "include_after": "#include \"rules/dragon/issue013_opener1.h\"  // R922: the Dragon issue-13 opener part one, the Shlump da Orc giant physics article and the Jon Pickens demon generation article",
  "include_comment": "the Dragon issue-13 opener part two, The Japanese Mythos by Jerome Arkenberg",
- "header_file": "rules/kmy.h",
+ "header_file": "rules/dragon/issue013_opener2.h",
  "audit_file": "rules/audits/r923_batch.h",
  "audit_label": "R923 issue-13 opener part two audit",
  "audit_anchor": "#include \"rules/audits/r922_batch.h\"  // R922: R922 issue-13 opener audit",

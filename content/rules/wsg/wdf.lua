@@ -85,6 +85,6 @@ return {
     } },
   "audit" = {
       "label" = "R437 WSG falling damage pin audit",
-      "comment" = "The damage-from-falling slice pins Table 17 (the six fall-distance bands x the band-minimum distances and the cumulative damage dice) with the falling-vs-tumbling prose (the vertical-drop definition, the 1d6-cumulative-per-10-feet basis, the recurring-impact rule on severe slopes, the smooth/slippery abrasion note and the 1000 and 600-800 feet-per-round rates) (rules/wsgfall.h, prefix wdf); census 361 -> 362.",
+      "comment" = "The damage-from-falling slice pins Table 17 (the six fall-distance bands x the band-minimum distances and the cumulative damage dice) with the falling-vs-tumbling prose (the vertical-drop definition, the 1d6-cumulative-per-10-feet basis, the recurring-impact rule on severe slopes, the smooth/slippery abrasion note and the 1000 and 600-800 feet-per-round rates) (rules/wsg/wsgfall.h, prefix wdf); census 361 -> 362.",
     },
 }

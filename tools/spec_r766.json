@@ -2,7 +2,7 @@
  "round": 766,
  "title": "OA DAILY LIFE - Food: the rice constant and the food of Kara-Tur",
  "prefix": "dmb",
- "header_file": "rules/oa137food.h",
+ "header_file": "rules/oa/oa137food.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA DAILY LIFE - FOOD, printed capture p. 307 - the rice constant and the food of Kara-Tur",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 219 closed, 16 open - the Food box flips (census 688 -> 689); NEXT - R767: Buildings (capture pp. 308-312), prefix dmc (verify free at the landing), audit \"R767 OA Daily Life Buildings audit\", include after rules/oa137food.h"
+  "sentinel": "the gap census after this round: 219 closed, 16 open - the Food box flips (census 688 -> 689); NEXT - R767: Buildings (capture pp. 308-312), prefix dmc (verify free at the landing), audit \"R767 OA Daily Life Buildings audit\", include after rules/oa/oa137food.h"
  },
  "consts": [
   {
@@ -262,7 +262,7 @@
   "open": 16
  },
  "include_comment": "the OA Daily Life Food pins",
- "include_after": "#include \"rules/oa136gajin.h\"  // R765: the OA Gajin pins",
+ "include_after": "#include \"rules/oa/oa136gajin.h\"  // R765: the OA Gajin pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R765 LANDED 2026-10-22: commit",
@@ -274,7 +274,7 @@
   "  p. 304, the text cutting off mid-sentence",
   "  into p. 305 - the pins cover only what",
   "  the p. 304 capture holds), header",
-  "  rules/oa136gajin.h, prefix dma (zero",
+  "  rules/oa/oa136gajin.h, prefix dma (zero",
   "  call-site dma\\w*( collisions at 345ec5c),",
   "  one gap flip (the Gajin box, two-line), gap",
   "  census now 218 closed / 17 open. Round",
@@ -314,6 +314,6 @@
   "  Chapter 15 daily-life opener), prefix dmb",
   "  (verify free at the landing), audit \"R766",
   "  OA Daily Life Food audit\", include",
-  "  after rules/oa136gajin.h."
+  "  after rules/oa/oa136gajin.h."
  ]
 }

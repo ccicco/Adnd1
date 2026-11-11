@@ -12,9 +12,9 @@
 // pulls its own rules headers (the
 // R400 lesson - the engine TUs do
 // not pull rules/ transitively).
-#include "rules/uatreasuredial.h"
-#include "rules/uadetskel.h"
-#include "rules/uadetrows.h"
+#include "../rules/ua/uatreasuredial.h"
+#include "../rules/ua/uadetskel.h"
+#include "../rules/ua/uadetrows.h"
 
 #include <cstdio>
 #include <cstdlib>

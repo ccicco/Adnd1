@@ -7,7 +7,7 @@
 # reachable in play.
 # Idempotent: safe to run twice; a silent run means the
 # paste was truncated - this tail ALWAYS prints.
-#  - rules/combat.h: engagementBands(w, h) - the pure
+#  - rules/engine/combat.h: engagementBands(w, h) - the pure
 #    helper (floored 5, capped 12)
 #  - ai/actor.h: the R141 comment + Encounter::
 #    setOpeningBands(bands) (clamped 1-12)
@@ -50,7 +50,7 @@ def patch(p, old, new, tag, expect=1, marker=None):
     wr(p, s.replace(old, new))
     applied.append(tag)
 
-patch("rules/combat.h",
+patch("rules/engine/combat.h",
 """// the book's to-hit modifier at that distance:
 // 0 at short, -2 at medium, -5 at long
 int missileRangeMod(int distanceFeet, int shortRangeFeet);

@@ -1,11 +1,11 @@
--- oa619: promoted from rules/oabarbbushi.h (the THE BARBARIAN AND BUSHI, printed capture pp. 23-28 - the OA class run opens);
+-- oa619: promoted from rules/oa/oabarbbushi.h (the THE BARBARIAN AND BUSHI, printed capture pp. 23-28 - the OA class run opens);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 619,
   "prefix" = "oa619",
   "banner" = {
       "title" = "THE BARBARIAN AND BUSHI, printed capture pp. 23-28 - the OA class run opens",
-      "provenance" = "census 541 -> 542.  verified against capture pp. 23-28 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages), with the 2018-print settling capture consulted for the contested horde cell: the first capture prints 1112 times the leader level - the 2018 print reads 1 1/2 times CLEAN; pinned as the 3-over-2 pair. Other settled garbles: hone/tells read as horse/tents, hulling as hunting, five as live - prose only, the numbers read clean. The Table 15 bonus rows pin as a coded grid (each lifted restriction its own code const) with the save bonuses as their own column. This round also carries the R618 v3 adjudication amendment folded in (comment-only, no data changes).  the gap census after this round: 33 closed, 202 open - the barbarian and bushi boxes with Tables 14-17 flip (census 541 -> 542); NEXT - R620: the Kensai - the favored-weapon doctrine, the honor code, the ki powers, Tables 18 and 19, prefix dgg (verify free), audit \"R620 OA kensai audit\", include after rules/oabarbbushi.h",
+      "provenance" = "census 541 -> 542.  verified against capture pp. 23-28 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages), with the 2018-print settling capture consulted for the contested horde cell: the first capture prints 1112 times the leader level - the 2018 print reads 1 1/2 times CLEAN; pinned as the 3-over-2 pair. Other settled garbles: hone/tells read as horse/tents, hulling as hunting, five as live - prose only, the numbers read clean. The Table 15 bonus rows pin as a coded grid (each lifted restriction its own code const) with the save bonuses as their own column. This round also carries the R618 v3 adjudication amendment folded in (comment-only, no data changes).  the gap census after this round: 33 closed, 202 open - the barbarian and bushi boxes with Tables 14-17 flip (census 541 -> 542); NEXT - R620: the Kensai - the favored-weapon doctrine, the honor code, the ki powers, Tables 18 and 19, prefix dgg (verify free), audit \"R620 OA kensai audit\", include after rules/oa/oabarbbushi.h",
     },
   "consts" = { {
       "name" = "dgfBarbHitDie",

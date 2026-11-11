@@ -14,8 +14,8 @@
 
 #pragma once
 
-#include "../rules/dice.h"
-#include "../rules/turn.h"
+#include "../rules/engine/dice.h"
+#include "../rules/engine/turn.h"
 
 #include <cstdint>
 

@@ -12,7 +12,7 @@
 # OCR holes - the item stays open
 # pending the PDF. Also: the R337b
 # duplicate-const fix in
-# rules/uaweapontable.h. Pin-era
+# rules/ua/uaweapontable.h. Pin-era
 # pattern (R322). Idempotent; run
 # twice.
 import io
@@ -42,7 +42,7 @@ SEED_ENTRY = NL.join([
     '- R337 landed 2026-10-11: commit',
     '  924e41d, census 264, the UA',
     '  weight and damage pin round',
-    '  (rules/uaweapontable.h): the',
+    '  (rules/ua/uaweapontable.h): the',
     '  67-row roster, all 50 PHB rows',
     '  cell-verified against the R189',
     '  seam (the hyphen-loss pattern',
@@ -76,14 +76,14 @@ assert s.count('## Knowledge maintenance') == 1, \
     'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
-# ---- (b) NEW rules/uamissile.h ----
-UM = 'rules/uamissile.h'
+# ---- (b) NEW rules/ua/uamissile.h ----
+UM = 'rules/ua/uamissile.h'
 if os.path.exists(UM) and 'R338' in rd(UM):
     already.append('uamissile.h: the pins')
 else:
     HDR = NL.join([
     '// ===========================================================================',
-    '// Adnd1 - rules/uamissile.h',
+    '// Adnd1 - rules/ua/uamissile.h',
     '// The UA HURLED WEAPON AND MISSILE TYPES, GENERAL DATA, AND',
     '// "TO HIT" ADJUSTMENTS table (p. 28) pins (R338).',
     '//',
@@ -283,7 +283,7 @@ else:
     assert s.count(TAIL_OLD) == 1, 'c tail'
     NOTE = NL.join([
     '      - R338: the fragment-verified',
-    '      cells pinned (rules/uamissile.h)',
+    '      cells pinned (rules/ua/uamissile.h)',
     '      - the 24-row roster, the range',
     '      column (the long range in tens',
     '      of feet, PHB-seam verified),',
@@ -321,11 +321,11 @@ s = rd(RT)
 if 'R338 UA missile data pin audit' in s:
     already.append('regtest.cpp: the R338 audit')
 else:
-    INC_ANCH = ('#include "rules/uaweapontable.h"'
+    INC_ANCH = ('#include "rules/ua/uaweapontable.h"'
                 '  // R337: the UA weight and damage')
     INC_NEW = NL.join([
     INC_ANCH,
-    '#include "rules/uamissile.h"'
+    '#include "rules/ua/uamissile.h"'
     '  // R338: the UA hurled and missile data',
     ])
     AUD_ANCH = ('    // ---- R227: the wis mental'
@@ -544,13 +544,13 @@ assert s.count(
     == 1, 'd r336 kept'
 assert s.count('R227: the wis mental save') == 1, \
     'd r227 kept'
-assert s.count('#include "rules/uamissile.h"') == 1, \
+assert s.count('#include "rules/ua/uamissile.h"') == 1, \
     'd include'
 assert len(applied) + len(already) == 4, 'd count'
 
 # ---- (e) the R337b fix: the duplicate
-# const in rules/uaweapontable.h ----
-UW = 'rules/uaweapontable.h'
+# const in rules/ua/uaweapontable.h ----
+UW = 'rules/ua/uaweapontable.h'
 s = rd(UW)
 if 'static const char* const k[67]' in s:
     already.append('uaweapontable.h: the fix')

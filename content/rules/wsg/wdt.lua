@@ -108,6 +108,6 @@ return {
     } },
   "audit" = {
       "label" = "R438 WSG tumbling damage pin audit",
-      "comment" = "The tumbling-damage slice pins Table 18 (the six moderate-or-gentle slope rows x the three condition cells, each split into the abrasion-free feet, the abrasion die and the impact distance) with the entry format rules, the worst-case and gradual-stop impact rules, the flat-terrain extra-abrasion rule and the tumble rates (rules/wsgtumble.h, prefix wdt); census 362 -> 363.",
+      "comment" = "The tumbling-damage slice pins Table 18 (the six moderate-or-gentle slope rows x the three condition cells, each split into the abrasion-free feet, the abrasion die and the impact distance) with the entry format rules, the worst-case and gradual-stop impact rules, the flat-terrain extra-abrasion rule and the tumble rates (rules/wsg/wsgtumble.h, prefix wdt); census 362 -> 363.",
     },
 }

@@ -2,7 +2,7 @@
  "round": 674,
  "title": "WU JEN FIFTH LEVEL SPELLS - the 24 fifth level wu jen spells with the school, component, casting time, saving throw, reversible and element codes",
  "prefix": "dij",
- "header_file": "rules/oawjl5spells.h",
+ "header_file": "rules/oa/oawjl5spells.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -468,7 +468,7 @@
   "open": 108
  },
  "include_comment": "the OA wu jen fifth level spells pins",
- "include_after": "#include \"rules/oawjl4spells.h\"  // R673: the OA wu jen fourth level spells pins",
+ "include_after": "#include \"rules/oa/oawjl4spells.h\"  // R673: the OA wu jen fourth level spells pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R673 LANDED 2026-10-20: commit fba4d3493287cee1363dc6c74ea0358ce879d100",
@@ -478,7 +478,7 @@
   "  WU JEN FOURTH LEVEL SPELLS - the 24",
   "  fourth level wu jen spell stat",
   "  blocks, capture pp. 181-188:",
-  "  rules/oawjl4spells.h, prefix dii",
+  "  rules/oa/oawjl4spells.h, prefix dii",
   "  (verified free at f6b10e5), ONE gap",
   "  flip (single-line child label), 21",
   "  consts, 27 inlines (grid tag",
@@ -542,6 +542,6 @@
   "  (verified free at fba4d34), audit",
   "  \"R674 OA wu jen fifth level spells",
   "  audit\", include after",
-  "  rules/oawjl4spells.h"
+  "  rules/oa/oawjl4spells.h"
  ]
 }

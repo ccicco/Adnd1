@@ -27,7 +27,7 @@
 # as the hole sentinel, never
 # a guess.
 #
-# 1. rules/uamoves.h (NEW,
+# 1. rules/ua/uamoves.h (NEW,
 #    prefix umv, 6 inline
 #    functions): the 23 base
 #    rates, the 5 parenthetical
@@ -168,7 +168,7 @@ SEED_ENTRY = E(
     '  commit e98c880 (census 337,',
     '  preflight GREEN), the UA',
     '  Appendix S class lines -',
-    '  rules/uasclasslines.h (prefix',
+    '  rules/ua/uasclasslines.h (prefix',
     '  uascl) - the 23 blocks x 6',
     '  printed lines, the Nil',
     '  census 29, the psionic lines',
@@ -196,12 +196,12 @@ if s.count('R410 landed 2026-10-13') != 1:
 if s.count('## Knowledge maintenance') != 1:
     die('the seed maintenance head')
 
-# ========= (b) rules/uamoves.h =========
-MV = 'rules/uamoves.h'
+# ========= (b) rules/ua/uamoves.h =========
+MV = 'rules/ua/uamoves.h'
 
 COMMENT = E(
     '// ===========================================================================',
-    '// Adnd1 - rules/uamoves.h',
+    '// Adnd1 - rules/ua/uamoves.h',
     '// The UA APPENDIX S MOVE values',
     '// (pp. 110-120), R411: the 23',
     '// deity block movement rates -',
@@ -334,14 +334,14 @@ newfile(MV, HDR + NL,
 RT = 'regtest.cpp'
 
 pair(RT,
-     '#include "rules/uasclasslines.h"  '
+     '#include "rules/ua/uasclasslines.h"  '
      '// R410: the UA Appendix S class'
      ' lines',
      E(
-    '#include "rules/uasclasslines.h"  '
+    '#include "rules/ua/uasclasslines.h"  '
     '// R410: the UA Appendix S class'
     ' lines',
-    '#include "rules/uamoves.h"  '
+    '#include "rules/ua/uamoves.h"  '
     '// R411: the UA Appendix S MOVE'
     ' values'),
      'regtest: the MOVE include')
@@ -445,7 +445,7 @@ pair(GP, E(
     '        recorded sentinel); MOVE and',
     '        the pantheon prose stay open.',
     '      - AMENDED R411: the MOVE',
-    '        values land (rules/uamoves.h)',
+    '        values land (rules/ua/uamoves.h)',
     '        - the 23 rates and the five',
     '        alternates pin with the',
     '        sanity ladders live; the',
@@ -457,16 +457,16 @@ pair(GP, E(
 
 pair(GP, E(
     '  - AMENDED R410: the class lines',
-    '    land (rules/uasclasslines.h) -',
+    '    land (rules/ua/uasclasslines.h) -',
     '    MOVE and the pantheon prose',
     '    stay open.'),
     E(
     '  - AMENDED R410: the class lines',
-    '    land (rules/uasclasslines.h) -',
+    '    land (rules/ua/uasclasslines.h) -',
     '    MOVE and the pantheon prose',
     '    stay open.',
     '  - AMENDED R411: the MOVE values',
-    '    land (rules/uamoves.h) - the',
+    '    land (rules/ua/uamoves.h) - the',
     '    pantheon prose alone stays',
     '    open.'),
     'gap: the section tail takes R411')

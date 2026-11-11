@@ -2,7 +2,7 @@
  "round": 684,
  "title": "OA UNHORSING - the dismount doctrine: the slain-mount rule, the mounted natural-20 unhorsing, the foot-soldier bands, the grapple doctrine, the footman pull and the set defenses",
  "prefix": "dix",
- "header_file": "rules/oaunhorsing.h",
+ "header_file": "rules/oa/oaunhorsing.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA UNHORSING, printed capture pp. 220-221 - the dismount doctrine round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift. THE DOCTRINE: the horseman important and formidable, the foot soldier's goal to get him off his horse - once downed the lone warrior outnumbered and overpowered. THE SLAIN MOUNT: the rider automatically on foot, the horse lost as a prize, the kill a last resort. THE MOUNTED UNHORSING: a natural 20 on 1d20 from a 3-or-more-feet melee weapon of another mounted character - without horsemanship the automatic fall with the extra 1d3, with it the proficiency check. THE FOOT SOLDIER: the 5-to-9-feet band the same chance as mounted, the 10-or-more-feet the 25 percent 16-20 on 1d20. THE GRAPPLE: the dive-on with the to hit roll, the failed check dropping both for the 1d6 each, the hang-on state with the every-turn re-roll and the -2 rider penalty. THE FOOTMAN PULL: the man-sized gate, the -2/-4/-6 speed ladder of the grab, the -1 per extra footman to 4, the eight-men surround, the free attacks above 12 feet. THE SET DEFENSES: the stake line - the 2d6 per stake, the 1d4-1 per 10 feet of depth, the barding reductions, the jump check. The prose codifies per the R431 calculus",
-  "sentinel": "the gap census after this round: 137 closed, 98 open - the Unhorsing box flips (census 606 -> 607); NEXT - R685: the Disarming doctrine (capture p. 221), prefix diy (verify free at the landing - diu, div, diw and dix TAKEN by the R681-R684 call families), audit \"R685 OA disarming audit\", include after rules/oaunhorsing.h"
+  "sentinel": "the gap census after this round: 137 closed, 98 open - the Unhorsing box flips (census 606 -> 607); NEXT - R685: the Disarming doctrine (capture p. 221), prefix diy (verify free at the landing - diu, div, diw and dix TAKEN by the R681-R684 call families), audit \"R685 OA disarming audit\", include after rules/oa/oaunhorsing.h"
  },
  "consts": [
   {
@@ -386,7 +386,7 @@
   "open": 98
  },
  "include_comment": "the OA unhorsing pins",
- "include_after": "#include \"rules/oa67bowfire.h\"  // R683: the OA Table 67 bowfire modifier pins",
+ "include_after": "#include \"rules/oa/oa67bowfire.h\"  // R683: the OA Table 67 bowfire modifier pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R683 LANDED 2026-10-20: commit",
@@ -396,7 +396,7 @@
   "  (census 605 -> 606, pushed 4080171..cefc1ba),",
   "  OA TABLE 67 - the horseback bowfire",
   "  modifiers, capture p. 220:",
-  "  rules/oa67bowfire.h, prefix diw",
+  "  rules/oa/oa67bowfire.h, prefix diw",
   "  (verified free at 4080171), ONE gap",
   "  flip, 2 consts + 3 bools (8 inlines,",
   "  3x3 grid tag OA67Data), gap census",
@@ -441,6 +441,6 @@
   "  p. 220), prefix dix (verified free at",
   "  cefc1ba - zero engine-gate hits), audit",
   "  \"R684 OA unhorsing audit\", include",
-  "  after rules/oa67bowfire.h"
+  "  after rules/oa/oa67bowfire.h"
  ]
 }

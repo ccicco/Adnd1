@@ -2,7 +2,7 @@
  "round": 754,
  "title": "OA TREASURE - Table 83: Missile Class: the d100 missile type grid",
  "prefix": "dlp",
- "header_file": "rules/oa125table83.h",
+ "header_file": "rules/oa/oa125table83.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA TREASURE - TABLE 83, MISSILE CLASS, printed capture p. 293 - the missile type grid round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 207 closed, 28 open - the Table 83 box flips (census 676 -> 677); NEXT - R755: Table 84: Martial Arts Class (capture p. 293), prefix dlq (verify free at the landing), audit \"R755 OA Table 84 martial arts audit\", include after rules/oa125table83.h"
+  "sentinel": "the gap census after this round: 207 closed, 28 open - the Table 83 box flips (census 676 -> 677); NEXT - R755: Table 84: Martial Arts Class (capture p. 293), prefix dlq (verify free at the landing), audit \"R755 OA Table 84 martial arts audit\", include after rules/oa/oa125table83.h"
  },
  "consts": [
   {
@@ -177,7 +177,7 @@
   "open": 28
  },
  "include_comment": "the OA Table 83 pins",
- "include_after": "#include \"rules/oa124table82.h\"  // R753: the OA Table 82 pins",
+ "include_after": "#include \"rules/oa/oa124table82.h\"  // R753: the OA Table 82 pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R753 LANDED 2026-10-22: commit",
@@ -187,7 +187,7 @@
   "  (census 675 -> 676, pushed 689bb64..3c6a44d),",
   "  OA TREASURE, Table 82: Miscellaneous (capture",
   "  pp. 292-293, the grid spanning the page",
-  "  break), header rules/oa124table82.h,",
+  "  break), header rules/oa/oa124table82.h,",
   "  prefix dlo (verified free at 689bb64),",
   "  one gap flip (the Table 82 box,",
   "  single-line), gap census now 206 closed /",
@@ -222,6 +222,6 @@
   "  (capture p. 293), prefix dlp (verify free",
   "  at the landing), audit \"R754 OA Table 83",
   "  missile audit\", include after",
-  "  rules/oa124table82.h."
+  "  rules/oa/oa124table82.h."
  ]
 }

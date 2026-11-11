@@ -2,7 +2,7 @@
  "round": 465,
  "title": "the WSG hunting proficiency and fishing slice - the hunting proficiency, fishing and Table 32, printed p. 57 with the spot-guideline tail on p. 58",
  "prefix": "wfs",
- "header_file": "rules/wsgfish.h",
+ "header_file": "rules/wsg/wsgfish.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -381,22 +381,22 @@
   {
    "note": "the hunting proficiency",
    "from": "  - [ ] The hunting proficiency (p. 57)",
-   "to": "  - [x] The hunting proficiency (p. 57) - R465: the one-hit size M kill, the two-hit size L kill, the 50% distance kill of a wounded size M, the single-hit wounded size L, the Proficiency Check before the 1d6 roll and the missile-weapon requirement pin as rules/wsgfish.h"
+   "to": "  - [x] The hunting proficiency (p. 57) - R465: the one-hit size M kill, the two-hit size L kill, the 50% distance kill of a wounded size M, the single-hit wounded size L, the Proficiency Check before the 1d6 roll and the missile-weapon requirement pin as rules/wsg/wsgfish.h"
   },
   {
    "note": "fishing",
    "from": "  - [ ] Fishing (p. 57)",
-   "to": "  - [x] Fishing (p. 57) - R465: the one-hour hook-and-line base, the net +50%, the zero-or-lower gate, the proficiency +2 in fair or good spots, the cumulative group and hour penalties, the fished-out rule and the spot-quality guidelines pin as rules/wsgfish.h"
+   "to": "  - [x] Fishing (p. 57) - R465: the one-hour hook-and-line base, the net +50%, the zero-or-lower gate, the proficiency +2 in fair or good spots, the cumulative group and hour penalties, the fished-out rule and the spot-quality guidelines pin as rules/wsg/wsgfish.h"
   },
   {
    "note": "Table 32",
    "from": "- [ ] **Table 32: fishing success** (p. 57)",
-   "to": "- [x] **Table 32: fishing success** (p. 57) - R465: the spot-quality by time-of-day dice grid, all 18 cells pixel-verified with the Good-Night cell proven by the book own A/B/C example, pin as rules/wsgfish.h"
+   "to": "- [x] **Table 32: fishing success** (p. 57) - R465: the spot-quality by time-of-day dice grid, all 18 cells pixel-verified with the Good-Night cell proven by the book own A/B/C example, pin as rules/wsg/wsgfish.h"
   },
   {
    "note": "the post-state line",
-   "from": "Post-state at R464: 79 closed, 107 open (the R464 round continues the chapter - hunting, stalking a wounded animal and Table 31 pin as rules/wsghunt.h; the next round continues - the hunting proficiency, and then Table 32 and the food gathering of the water chapter close).",
-   "to": "Post-state at R465: 82 closed, 104 open (the R465 round continues the chapter - the hunting proficiency, fishing and Table 32 pin as rules/wsgfish.h; the next round continues - consuming and carrying food (p. 58) and Table 33: chance of food spoilage)."
+   "from": "Post-state at R464: 79 closed, 107 open (the R464 round continues the chapter - hunting, stalking a wounded animal and Table 31 pin as rules/wsg/wsghunt.h; the next round continues - the hunting proficiency, and then Table 32 and the food gathering of the water chapter close).",
+   "to": "Post-state at R465: 82 closed, 104 open (the R465 round continues the chapter - the hunting proficiency, fishing and Table 32 pin as rules/wsg/wsgfish.h; the next round continues - consuming and carrying food (p. 58) and Table 33: chance of food spoilage)."
   }
  ],
  "gap_census": {
@@ -404,7 +404,7 @@
   "open": 104
  },
  "include_comment": "the WSG hunting proficiency, fishing and Table 32",
- "include_after": "#include \"rules/wsghunt.h\"  // R464: the WSG hunting, stalking and Table 31",
+ "include_after": "#include \"rules/wsg/wsghunt.h\"  // R464: the WSG hunting, stalking and Table 31",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R464 LANDED 2026-10-15: commit 91fad93 (census",
@@ -428,7 +428,7 @@
   "  1d4 direction band and the 20-foot kill range, the",
   "  first-miss escape) and Table 31 (all 132 cells:",
   "  the 33-row terrain-by-season grid, Arctic 5 rows,",
-  "  the others 7). rules/wsghunt.h NEW (30 inlines:",
+  "  the others 7). rules/wsg/wsghunt.h NEW (30 inlines:",
   "  14 consts + 5 bools + 1 chain + 1 switch + 9 table",
   "  columns, prefix whn, checked free in all three",
   "  TUs). GROUND TRUTH: the vision sheets made two",

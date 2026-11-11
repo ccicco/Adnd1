@@ -68,8 +68,8 @@ create("rules/grenade.h", p1_text,
       marker='GREN_UNHOLY_WATER')
 assert len(applied) + len(already) == 1
 
-p2_old = NL.join(['#include "rules/races.h"   // R154: pp.15-18 Race Tables I-III'])
-p2_new = NL.join(['#include "rules/races.h"   // R154: pp.15-18 Race Tables I-III', '#include "rules/grenade.h"  // R157: pp.64-65 grenade-like missiles'])
+p2_old = NL.join(['#include "rules/engine/races.h"   // R154: pp.15-18 Race Tables I-III'])
+p2_new = NL.join(['#include "rules/engine/races.h"   // R154: pp.15-18 Race Tables I-III', '#include "rules/grenade.h"  // R157: pp.64-65 grenade-like missiles'])
 patch("regtest.cpp", p2_old, p2_new,
       "regtest.cpp: grenade include",
       marker='rules/grenade.h"  // R157')

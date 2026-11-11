@@ -1,11 +1,11 @@
--- oa748: promoted from rules/oa119weaponsprose.h (the OA TREASURE - THE WEAPONS PROSE, printed capture pp. 291-294 - the weapons);
+-- oa748: promoted from rules/oa/oa119weaponsprose.h (the OA TREASURE - THE WEAPONS PROSE, printed capture pp. 291-294 - the weapons);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 748,
   "prefix" = "oa748",
   "banner" = {
       "title" = "OA TREASURE - THE WEAPONS PROSE, printed capture pp. 291-294 - the weapons",
-      "provenance" = "flow round census 670 -> 671.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 201 closed, 34 open - the weapons prose box flips (census 670 -> 671); NEXT - R749: Table 78: Magical Weapons (capture p. 291), prefix dlk (verify free at the landing), audit \"R749 OA Table 78 weapons audit\", include after rules/oa119weaponsprose.h",
+      "provenance" = "flow round census 670 -> 671.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 201 closed, 34 open - the weapons prose box flips (census 670 -> 671); NEXT - R749: Table 78: Magical Weapons (capture p. 291), prefix dlk (verify free at the landing), audit \"R749 OA Table 78 weapons audit\", include after rules/oa/oa119weaponsprose.h",
     },
   "consts" = { {
       "name" = "dljRolledOnTableIII",

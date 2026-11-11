@@ -226,9 +226,9 @@ GB_NEW = """- [x] **Missile range modifiers (p.75)** -
 # ---- patch table: (file, marker, old, new, label) --------------------------
 
 PATCHES = [
-    ("rules/combat.h", "bool missileInRange(int distanceFeet,",
+    ("rules/engine/combat.h", "bool missileInRange(int distanceFeet,",
      RH_OLD, RH_NEW, "combat.h missile range decls"),
-    ("rules/combat.cpp", "bool missileInRange(int distanceFeet, int shortRangeFeet) {",
+    ("rules/engine/combat.cpp", "bool missileInRange(int distanceFeet, int shortRangeFeet) {",
      RC_OLD, RC_NEW, "combat.cpp missile range defs"),
     ("ai/actor.cpp", "int rangeAdj = 0;",
      AC1_OLD, AC1_NEW, "actor.cpp resolveMissile band"),

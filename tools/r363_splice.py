@@ -49,8 +49,8 @@ SEED_ENTRY = NL.join([
     '  f9ef2b6, census 289, the UA new',
     '  magic-user 8th and 9th level',
     '  spells pin round',
-    '  (rules/uamuspells8.h and',
-    '  rules/uamuspells9.h): the four',
+    '  (rules/ua/uamuspells8.h and',
+    '  rules/ua/uamuspells9.h): the four',
     '  8th-level descriptions (binding',
     '  with the lost range and duration',
     '  cells and the six forms with the',
@@ -108,13 +108,13 @@ assert s.count('## Knowledge maintenance') == 1, 'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
 
-# ---- (b) NEW rules/uailcantrips.h ----
-USC = 'rules/uailcantrips.h'
+# ---- (b) NEW rules/ua/uailcantrips.h ----
+USC = 'rules/ua/uailcantrips.h'
 if os.path.exists(USC) and 'R363' in rd(USC):
     already.append('uailcantrips.h: the pins')
 else:
     HDRC = r"""// ===========================================================================
-// Adnd1 - rules/uailcantrips.h
+// Adnd1 - rules/ua/uailcantrips.h
 // The UA NEW ILLUSIONIST CANTRIPS (pp. 65-66) pins, R363:
 // the eight minor-illusion cantrip descriptions -
 // colored lights, dim, haze, mask, mirage, noise,
@@ -639,13 +639,13 @@ assert 'uadruid' not in s, 'b no druid ref'
 assert len(applied) + len(already) == 2, 'b count'
 
 
-# ---- (b2) NEW rules/uailspells1.h ----
-US1 = 'rules/uailspells1.h'
+# ---- (b2) NEW rules/ua/uailspells1.h ----
+US1 = 'rules/ua/uailspells1.h'
 if os.path.exists(US1) and 'R363' in rd(US1):
     already.append('uailspells1.h: the pins')
 else:
     HDR1 = r"""// ===========================================================================
-// Adnd1 - rules/uailspells1.h
+// Adnd1 - rules/ua/uailspells1.h
 // The UA NEW ILLUSIONIST SPELLS (pp. 66-68) pins, R363:
 // the 1st-level spell descriptions - the chromatic
 // orb and phantom armor.
@@ -1060,13 +1060,13 @@ assert 'uailc' not in s, 'b2 no cantrip ref'
 assert len(applied) + len(already) == 3, 'b2 count'
 
 
-# ---- (b3) NEW rules/uailspells2.h ----
-US2 = 'rules/uailspells2.h'
+# ---- (b3) NEW rules/ua/uailspells2.h ----
+US2 = 'rules/ua/uailspells2.h'
 if os.path.exists(US2) and 'R363' in rd(US2):
     already.append('uailspells2.h: the pins')
 else:
     HDR2 = r"""// ===========================================================================
-// Adnd1 - rules/uailspells2.h
+// Adnd1 - rules/ua/uailspells2.h
 // The UA NEW ILLUSIONIST SPELLS (pp. 67-68) pins,
 // R363: the 2nd-level spell descriptions - read
 // magic, spook, alter self and fascinate, plus the
@@ -1633,9 +1633,9 @@ else:
     NOTE1 = NL.join([
         '      - R363: the cantrips and the',
         '        1st and 2nd levels pinned',
-        '        (rules/uailcantrips.h,',
-        '        rules/uailspells1.h and',
-        '        rules/uailspells2.h) - the',
+        '        (rules/ua/uailcantrips.h,',
+        '        rules/ua/uailspells1.h and',
+        '        rules/ua/uailspells2.h) - the',
         '        eight cantrip descriptions,',
         '        the chromatic orb with the',
         '        color-by-level ladder,',
@@ -1679,7 +1679,7 @@ else:
     NOTE2 = NL.join([
         '      - R363: the eight cantrip',
         '        descriptions pinned',
-        '        (rules/uailcantrips.h) -',
+        '        (rules/ua/uailcantrips.h) -',
         '        colored lights with the',
         '        globe ladder, dim with the',
         '        half-radiance round, haze',
@@ -1739,18 +1739,18 @@ if 'R363 UA IL cantrips/1st/2nd pin audit' in s:
     already.append('regtest.cpp: the R363 audit')
 else:
     INC_ANCH = (
-        '#include "rules/uamuspells9.h"'
+        '#include "rules/ua/uamuspells9.h"'
         '  // R362: the UA new magic-user'
         ' 9th level')
     INC_NEW = NL.join([
         INC_ANCH,
-        '#include "rules/uailcantrips.h"'
+        '#include "rules/ua/uailcantrips.h"'
         '  // R363: the UA new illusionist'
         ' cantrips',
-        '#include "rules/uailspells1.h"'
+        '#include "rules/ua/uailspells1.h"'
         '  // R363: the UA new illusionist'
         ' 1st level',
-        '#include "rules/uailspells2.h"'
+        '#include "rules/ua/uailspells2.h"'
         '  // R363: the UA new illusionist'
         ' 2nd level',
     ])
@@ -2253,40 +2253,40 @@ assert s.count(
     'R227: the wis mental save'
     ) == 1, 'd r227 kept'
 assert s.count(
-    '#include "rules/uailcantrips.h"'
+    '#include "rules/ua/uailcantrips.h"'
     ) == 1, 'd cantrips include'
 assert s.count(
-    '#include "rules/uailspells1.h"'
+    '#include "rules/ua/uailspells1.h"'
     ) == 1, 'd spells1 include'
 assert s.count(
-    '#include "rules/uailspells2.h"'
+    '#include "rules/ua/uailspells2.h"'
     ) == 1, 'd spells2 include'
 assert s.count(
-    '#include "rules/uamuspells9.h"'
+    '#include "rules/ua/uamuspells9.h"'
     ) == 1, 'd r362 include'
 assert s.count(
-    '#include "rules/uamuspells8.h"'
+    '#include "rules/ua/uamuspells8.h"'
     ) == 1, 'd r362-8 include'
 assert s.count(
-    '#include "rules/uamuspells7.h"'
+    '#include "rules/ua/uamuspells7.h"'
     ) == 1, 'd r361 include'
 assert s.count(
-    '#include "rules/uamuspells6.h"'
+    '#include "rules/ua/uamuspells6.h"'
     ) == 1, 'd r360-6 include'
 assert s.count(
-    '#include "rules/uamuspells5.h"'
+    '#include "rules/ua/uamuspells5.h"'
     ) == 1, 'd r360-5 include'
 assert s.count(
-    '#include "rules/uamuspells4.h"'
+    '#include "rules/ua/uamuspells4.h"'
     ) == 1, 'd r359 include'
 assert s.count(
-    '#include "rules/uamuspells3.h"'
+    '#include "rules/ua/uamuspells3.h"'
     ) == 1, 'd r358 include'
 assert s.count(
-    '#include "rules/uamuspells2.h"'
+    '#include "rules/ua/uamuspells2.h"'
     ) == 1, 'd r357 include'
 assert s.count(
-    '#include "rules/uamuspells1.h"'
+    '#include "rules/ua/uamuspells1.h"'
     ) == 1, 'd r356 include'
 assert len(applied) + len(already) == 7, 'd count'
 

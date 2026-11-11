@@ -2,7 +2,7 @@
  "round": 698,
  "title": "OA EXPLANATION OF YEARLY EVENTS - the nineteen event explanations: the ambassadors and assassinations, the disasters and wars, with their durations, chances and price effects",
  "prefix": "djl",
- "header_file": "rules/oa71explain.h",
+ "header_file": "rules/oa/oa71explain.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA EXPLANATION OF YEARLY EVENTS, printed capture pp. 240-243 - the yearly explanations round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift. THE RIGIDITY: the events not accounting for the player characters, the outcomes changeable, but the yearly event NEVER rerolled - prevented meaning no yearly event for the year; the season check after the month roll. THE EXPLANATIONS: the Ambassador of the 50/50 direction staying 3d10 months, the 10% gaijin, the court ceremonies; the Assassination with the 30% taken-alive, the 1% accusation, the 20% succession struggle and the 1d6-month turmoil; the Birth celebrated for days; the Comet of the 1d4 weeks, the portent, the DM's second event to follow; the Death of a Lord with the Assassination's succession; the Major Earthquake of the 50-mile radius, the 70% fire and the 40% plague, the earthquake spell effects, the few hours; the Famine of the 2-7 months, the food at 10 to 100 times, the 25% next-year income, the 60% uprising, the 5% monthly population loss, the 20% plague; the Major Fire of the 50% to 80% city, the 10% to 40% population, the 20% plague, the 10% famine, the 10x lumber for four months, the doubled food for one; the Flood of the 5d6-foot crest, the half foot per hour, the 4d6-hour high, the signs 2-5 days ahead, the dikes, the 50% planting-season and 80% harvest losses, the 40% famine, the 20% plague, no deserts; the Major Incursion of the 1d12 months, proportionate, remaining until driven out; the Marriage diplomatic and festive; the New Religion with the 75% hostility, the 60% ruler's favor, the 40% ban, the 2-7 month arrival, the feuds of centuries; the Plague of the 2d6 months, the 40% and 60% contagion, the 5% monthly loss, the 5x imports, the moving scythe; the Political Plot with the 40% and 80% accusations, the 20% noble rising, the 1-3 month turmoil; the Rebellion of the 1d6 months, the BATTLESYSTEM recommendation, no mercy for the captured; the Tsunami of the 50-mile coast, the 100-200 feet, the 70% population loss, the landlocked no-event, the 10% plague, the 3x building materials; the Visitation of the revered pilgrim site or the despised 5-mile shunning; the Volcano of the 70/30 origin, the 5-mile destruction, the 30-mile ash, the 1d12-month activity, the 10% monthly re-eruption; the War of the 50/50 direction, the 2-5 month campaign in the summer, the 1-3 years, the 50% farm loss, the press gangs. The explanations codify per the R431 calculus",
-  "sentinel": "the gap census after this round: 151 closed, 84 open - the Yearly Events prose box flips (census 620 -> 621); NEXT - R699: Table 72 the monthly events grid (capture p. 238), prefix djm (verify free at the landing), audit \"R699 OA monthly events audit\", include after rules/oa71explain.h"
+  "sentinel": "the gap census after this round: 151 closed, 84 open - the Yearly Events prose box flips (census 620 -> 621); NEXT - R699: Table 72 the monthly events grid (capture p. 238), prefix djm (verify free at the landing), audit \"R699 OA monthly events audit\", include after rules/oa/oa71explain.h"
  },
  "consts": [
   {
@@ -902,7 +902,7 @@
   "open": 84
  },
  "include_comment": "the OA yearly events explanation pins",
- "include_after": "#include \"rules/oa71yearly.h\"  // R697: the OA Table 71 yearly events pins",
+ "include_after": "#include \"rules/oa/oa71yearly.h\"  // R697: the OA Table 71 yearly events pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R697 LANDED 2026-10-20: commit",
@@ -912,7 +912,7 @@
   "  341675 (census 619 -> 620, pushed",
   "  918b6cb..491c0a6), OA TABLE 71 - the",
   "  yearly events, capture p. 237 print:",
-  "  rules/oa71yearly.h, prefix djk",
+  "  rules/oa/oa71yearly.h, prefix djk",
   "  (verified free at 918b6cb), ONE gap",
   "  flip, gap census 149/86 -> 150/85. 3",
   "  consts + 3 bools + the 19x2 grid",
@@ -953,6 +953,6 @@
   "  and explanations (capture pp. 237-243),",
   "  prefix djl (verified free at 491c0a6),",
   "  audit \"R698 OA yearly events prose",
-  "  audit\", include after rules/oa71yearly.h"
+  "  audit\", include after rules/oa/oa71yearly.h"
  ]
 }

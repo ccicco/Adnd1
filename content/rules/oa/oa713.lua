@@ -1,11 +1,11 @@
--- oa713: promoted from rules/oa84gaki.h (the OA MONSTERS - THE GAKI, LESSER SPIRIT, printed capture pp. 262-263 - the);
+-- oa713: promoted from rules/oa/oa84gaki.h (the OA MONSTERS - THE GAKI, LESSER SPIRIT, printed capture pp. 262-263 - the);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 713,
   "prefix" = "oa713",
   "banner" = {
       "title" = "OA MONSTERS - THE GAKI, LESSER SPIRIT, printed capture pp. 262-263 - the",
-      "provenance" = "four hungry spirits round census 635 -> 636.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 166 closed, 69 open - the gaki box flips (census 635 -> 636); NEXT - R714: the Gargantua (capture pp. 263-265), prefix dkb (verify free at the landing), audit \"R714 OA monsters Gargantua audit\", include after rules/oa84gaki.h",
+      "provenance" = "four hungry spirits round census 635 -> 636.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 166 closed, 69 open - the gaki box flips (census 635 -> 636); NEXT - R714: the Gargantua (capture pp. 263-265), prefix dkb (verify free at the landing), audit \"R714 OA monsters Gargantua audit\", include after rules/oa/oa84gaki.h",
     },
   "consts" = { {
       "name" = "dkaGakiTypeCount",

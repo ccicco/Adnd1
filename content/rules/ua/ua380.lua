@@ -1,4 +1,4 @@
--- ua380: promoted from rules/uawandprose.h (the The UA TREASURE (WANDS));
+-- ua380: promoted from rules/ua/uawandprose.h (the The UA TREASURE (WANDS));
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 380,

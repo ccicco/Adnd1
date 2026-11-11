@@ -2,7 +2,7 @@
  "round": 720,
  "title": "OA MONSTERS - the Hu Hsien box: the fox spirit, the ikiryo, and the jishin mushi",
  "prefix": "dkh",
- "header_file": "rules/oa91huhuien.h",
+ "header_file": "rules/oa/oa91huhuien.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA MONSTERS - THE HU HSIEN BOX, printed capture pp. 269-272 - the triple round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 173 closed, 62 open - the hu hsien box flips (census 642 -> 643); NEXT - R721: the Kala (capture p. 272), prefix dki (verify free at the landing), audit \"R721 OA monsters Kala audit\", include after rules/oa91huhuien.h"
+  "sentinel": "the gap census after this round: 173 closed, 62 open - the hu hsien box flips (census 642 -> 643); NEXT - R721: the Kala (capture p. 272), prefix dki (verify free at the landing), audit \"R721 OA monsters Kala audit\", include after rules/oa/oa91huhuien.h"
  },
  "consts": [
   {
@@ -1780,14 +1780,14 @@
   "open": 62
  },
  "include_comment": "the OA Hu Hsien pins",
- "include_after": "#include \"rules/oa90hsingsing.h\"  // R719: the OA Hsing-Sing pins",
+ "include_after": "#include \"rules/oa/oa90hsingsing.h\"  // R719: the OA Hsing-Sing pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R719 LANDED 2026-10-21: commit",
  "prev_record": [
   "- R719 LANDED 2026-10-21: commit de4c144fa311638060787782e08ec55dc34f94ca",
   "  (census 641 -> 642, pushed d4c68bd..de4c144), OA MONSTERS - the",
-  "  Hsing-Sing (capture p. 269 print): rules/oa90hsingsing.h,",
+  "  Hsing-Sing (capture p. 269 print): rules/oa/oa90hsingsing.h,",
   "  prefix dkg (verified free at d4c68bd), ONE gap flip, gap",
   "  census 172/63 - the hsing-sing box. 25 consts + 40 bools",
   "  (65 inlines): the stat block (the rare 2-20, the AC 6, the",
@@ -1814,6 +1814,6 @@
   "  db359f792c38c5eb2a4e528d4a132221). NEXT - R720: the",
   "  Hu Hsien, Lesser Spirit (capture pp. 269-272), prefix",
   "  dkh (verified free at de4c144), audit \"R720 OA monsters",
-  "  Hu Hsien audit\", include after rules/oa90hsingsing.h."
+  "  Hu Hsien audit\", include after rules/oa/oa90hsingsing.h."
  ]
 }

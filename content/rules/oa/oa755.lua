@@ -1,11 +1,11 @@
--- oa755: promoted from rules/oa126table84.h (the OA TREASURE - TABLE 84, MARTIAL ARTS CLASS, printed capture p. 293 - the);
+-- oa755: promoted from rules/oa/oa126table84.h (the OA TREASURE - TABLE 84, MARTIAL ARTS CLASS, printed capture p. 293 - the);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 755,
   "prefix" = "oa755",
   "banner" = {
       "title" = "OA TREASURE - TABLE 84, MARTIAL ARTS CLASS, printed capture p. 293 - the",
-      "provenance" = "martial arts grid round census 677 -> 678.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 208 closed, 27 open - the Table 84 box flips (census 677 -> 678); NEXT - R756: Table 85: Ninja Class (capture p. 293), prefix dlr (verify free at the landing), audit \"R756 OA Table 85 ninja audit\", include after rules/oa126table84.h",
+      "provenance" = "martial arts grid round census 677 -> 678.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 208 closed, 27 open - the Table 84 box flips (census 677 -> 678); NEXT - R756: Table 85: Ninja Class (capture p. 293), prefix dlr (verify free at the landing), audit \"R756 OA Table 85 ninja audit\", include after rules/oa/oa126table84.h",
     },
   "consts" = { {
       "name" = "dlqMartialArtsRowCount",

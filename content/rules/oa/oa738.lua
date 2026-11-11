@@ -1,11 +1,11 @@
--- oa738: promoted from rules/oa109itemmods.h (the OA TREASURE - THE MODIFICATIONS TO STANDARD MAGICAL ITEMS, printed capture);
+-- oa738: promoted from rules/oa/oa109itemmods.h (the OA TREASURE - THE MODIFICATIONS TO STANDARD MAGICAL ITEMS, printed capture);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 738,
   "prefix" = "oa738",
   "banner" = {
       "title" = "OA TREASURE - THE MODIFICATIONS TO STANDARD MAGICAL ITEMS, printed capture",
-      "provenance" = "p. 286 - the occidental items round census 660 -> 661.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 191 closed, 44 open - the item mods box flips (census 660 -> 661); NEXT - R739: Potions (capture p. 287), prefix dla (verify free at the landing), audit \"R739 OA potions audit\", include after rules/oa109itemmods.h",
+      "provenance" = "p. 286 - the occidental items round census 660 -> 661.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 191 closed, 44 open - the item mods box flips (census 660 -> 661); NEXT - R739: Potions (capture p. 287), prefix dla (verify free at the landing), audit \"R739 OA potions audit\", include after rules/oa/oa109itemmods.h",
     },
   "consts" = { {
       "name" = "dkzMajorityAvailable",

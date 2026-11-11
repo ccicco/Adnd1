@@ -188,6 +188,6 @@ return {
     } },
   "audit" = {
       "label" = "R435 WSG climbing pin audit",
-      "comment" = "The climbing slice pins Table 15 (the 13 surface rows x the three condition rates in feet per round for a thief with the per-cell thief-or-mountaineering restrictions), the climbing prose (the half rate, the dex adjustment, the no-tools assumption), the encumbrance modifications, the surface types and conditions and the chance-of-falling rating (rules/wsgclimb.h, prefix wcs); census 359 -> 360.",
+      "comment" = "The climbing slice pins Table 15 (the 13 surface rows x the three condition rates in feet per round for a thief with the per-cell thief-or-mountaineering restrictions), the climbing prose (the half rate, the dex adjustment, the no-tools assumption), the encumbrance modifications, the surface types and conditions and the chance-of-falling rating (rules/wsg/wsgclimb.h, prefix wcs); census 359 -> 360.",
     },
 }

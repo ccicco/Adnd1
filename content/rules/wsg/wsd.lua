@@ -1,4 +1,4 @@
--- wsd: promoted from rules/wsgdress.h (the The WSG DRESSING FOR THE WEATHER, R426:);
+-- wsd: promoted from rules/wsg/wsgdress.h (the The WSG DRESSING FOR THE WEATHER, R426:);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 426,
@@ -260,6 +260,6 @@ return {
     } },
   "audit" = {
       "label" = "R426: the WSG dressing pin audit",
-      "comment" = "The first WSG pin round after the arc opener closes the dressing-for-the-weather chapter whole (rules/wsgdress.h, prefix wsd): the four clothing categories (the ranges, the encumbrance equivalents, the outfit costs), the Table 3 grid (the 15 attire rows x the 4 temperature columns, cumulative) verified cell for cell with the row/column censuses, the protected/unprotected truth table, the three exertion regimes with the book own chain mail example and the clothing-as-armor option; census 351 -> 352.",
+      "comment" = "The first WSG pin round after the arc opener closes the dressing-for-the-weather chapter whole (rules/wsg/wsgdress.h, prefix wsd): the four clothing categories (the ranges, the encumbrance equivalents, the outfit costs), the Table 3 grid (the 15 attire rows x the 4 temperature columns, cumulative) verified cell for cell with the row/column censuses, the protected/unprotected truth table, the three exertion regimes with the book own chain mail example and the clothing-as-armor option; census 351 -> 352.",
     },
 }

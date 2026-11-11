@@ -1,11 +1,11 @@
--- oa757: promoted from rules/oa128weaponexpl.h (the OA TREASURE - THE EXPLANATION OF WEAPON PROPERTIES, printed capture pp.);
+-- oa757: promoted from rules/oa/oa128weaponexpl.h (the OA TREASURE - THE EXPLANATION OF WEAPON PROPERTIES, printed capture pp.);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 757,
   "prefix" = "oa757",
   "banner" = {
       "title" = "OA TREASURE - THE EXPLANATION OF WEAPON PROPERTIES, printed capture pp.",
-      "provenance" = "294-296 - the big weapons prose round census 679 -> 680.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 210 closed, 25 open - the explanation box flips (census 679 -> 680); NEXT - R758: Oriental Magical Items prose with Table 86 and the item descriptions (capture pp. 296-301), prefix dlt (verify free at the landing), audit \"R758 OA magical items prose audit\", include after rules/oa128weaponexpl.h",
+      "provenance" = "294-296 - the big weapons prose round census 679 -> 680.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 210 closed, 25 open - the explanation box flips (census 679 -> 680); NEXT - R758: Oriental Magical Items prose with Table 86 and the item descriptions (capture pp. 296-301), prefix dlt (verify free at the landing), audit \"R758 OA magical items prose audit\", include after rules/oa/oa128weaponexpl.h",
     },
   "consts" = { {
       "name" = "dlsSwordQualityValueDie",

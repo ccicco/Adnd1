@@ -9,7 +9,7 @@
 # site resolves).
 #
 # The three fixes:
-#   1. rules/character.cpp -- AbilityScores::set() gains a
+#   1. rules/engine/character.cpp -- AbilityScores::set() gains a
 #      `default: break;` so the -Wswitch warning on
 #      ABILITY_COUNT dies (the getter already had its default).
 #   2. regtest.cpp -- the R320 statusName comparison becomes a
@@ -75,8 +75,8 @@ def patch_file(relpath, patches):
 total_applied = 0
 total_already = 0
 
-# ---- 1. rules/character.cpp: the -Wswitch fix -------------------------
-res = patch_file('rules/character.cpp', [(
+# ---- 1. rules/engine/character.cpp: the -Wswitch fix -------------------------
+res = patch_file('rules/engine/character.cpp', [(
     '        case ABILITY_CHA: cha  = v; break;\n    }\n',
     '        case ABILITY_CHA: cha  = v; break;\n'
     '        default: break;  // R515: ABILITY_COUNT is never set (the getter has its default)\n'

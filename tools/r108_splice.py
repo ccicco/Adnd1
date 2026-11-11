@@ -79,7 +79,7 @@ Categories:
       shared with henchman morale. Values vs the p.67
       trigger table still to diff (minor).
 - [x] **Saving throws / turning undead exist** -
-      rules/saves.cpp, rules/turn.cpp implement them;
+      rules/engine/saves.cpp, rules/engine/turn.cpp implement them;
       matrix values pending text (p.75, 79-80 are beyond
       OCR range) - carried below as open verifications.
 

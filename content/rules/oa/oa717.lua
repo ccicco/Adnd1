@@ -1,11 +1,11 @@
--- oa717: promoted from rules/oa88goblinspider.h (the OA MONSTERS - THE GOBLIN SPIDER, printed capture p. 267 - the trapdoor);
+-- oa717: promoted from rules/oa/oa88goblinspider.h (the OA MONSTERS - THE GOBLIN SPIDER, printed capture p. 267 - the trapdoor);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 717,
   "prefix" = "oa717",
   "banner" = {
       "title" = "OA MONSTERS - THE GOBLIN SPIDER, printed capture p. 267 - the trapdoor",
-      "provenance" = "ambush round census 639 -> 640.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 170 closed, 65 open - the goblin spider box flips (census 639 -> 640); NEXT - R718: the Hai Nu (capture p. 268), prefix dkf (verify free at the landing), audit \"R718 OA monsters Hai Nu audit\", include after rules/oa88goblinspider.h",
+      "provenance" = "ambush round census 639 -> 640.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 170 closed, 65 open - the goblin spider box flips (census 639 -> 640); NEXT - R718: the Hai Nu (capture p. 268), prefix dkf (verify free at the landing), audit \"R718 OA monsters Hai Nu audit\", include after rules/oa/oa88goblinspider.h",
     },
   "consts" = { {
       "name" = "dkeAppearMin",

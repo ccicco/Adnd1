@@ -52,7 +52,7 @@
 # reads) stay open pending the
 # R419 resolution.
 
-# 1. rules/uacantrips1.h,
+# 1. rules/ua/uacantrips1.h,
 #    uacantrips2.h,
 #    uacantrips3.h: the hole-
 #    family blocks amend to the
@@ -124,7 +124,7 @@ def pair(path, old, new, label):
 # denominators in roster order,
 # the hole-block anchor text)
 FAM = [
-    ('ucn', 'rules/uacantrips1.h', 20,
+    ('ucn', 'rules/ua/uacantrips1.h', 20,
      [2, 2, 2, 2, 2, 2, 10, 2, 2, 8,
       2, 8, 2, 2, 2, 2, 2, 2, 2, 2],
      '// The casting-time hole'
@@ -142,7 +142,7 @@ FAM = [
      'inline bool'
      ' ucnCastTimesAreHoles()\n'
      '    { return true; }'),
-    ('ucr', 'rules/uacantrips2.h', 12,
+    ('ucr', 'rules/ua/uacantrips2.h', 12,
      [8, 8, 8, 10, 2, 10, 2, 8, 8, 2,
       3, 2],
      '// The casting-time hole'
@@ -165,7 +165,7 @@ FAM = [
      'inline bool'
      ' ucrCastTimesAreHoles()\n'
      '    { return true; }'),
-    ('ucl', 'rules/uacantrips3.h', 6,
+    ('ucl', 'rules/ua/uacantrips3.h', 6,
      [10, 3, 10, 10, 10, 8],
      '// The casting-time hole'
      ' family:\n'
@@ -195,7 +195,7 @@ SEED_ENTRY = E(
     '  DESCRIPTIONS (pp. 50-51) -',
     '  the LAST of the six MU cantrip',
     '  description rounds; ALL SIX',
-    '  now stand. rules/uacantrips6.h',
+    '  now stand. rules/ua/uacantrips6.h',
     '  (prefix uch): the 8 haunting-',
     '  sound cantrips in roster',
     '  order, the school census',
@@ -587,7 +587,7 @@ if g.count('AMENDED R418') != 1:
         % g.count('AMENDED R418'))
 
 for path, mark in (
-        ('rules/uacantrips1.h',
+        ('rules/ua/uacantrips1.h',
          'ucnCastTimeDenCount'),
         (RT, 'R418 UA cantrip cast-'),
         (SD, 'R417 landed')):

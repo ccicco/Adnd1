@@ -39,7 +39,7 @@ SEED_ENTRY = NL.join([
     '- R333 landed 2026-10-11: commit',
     '  458c831, census 260, the UA',
     '  ranger expansion pin round',
-    '  (rules/uaranger.h): the tracking',
+    '  (rules/ua/uaranger.h): the tracking',
     '  base and terrain ladders, the',
     '  indoor reads, the identification',
     '  ladder, the giant-class roster',
@@ -399,7 +399,7 @@ s = rd(RT)
 if 'R334 thief armor and attacks pin audit' in s:
     already.append('regtest.cpp: the R334 audit')
 else:
-    INC_ANCH = ('#include "rules/uaranger.h"'
+    INC_ANCH = ('#include "rules/ua/uaranger.h"'
                 '  // R333: the UA ranger expansion')
     INC_NEW = NL.join([
     INC_ANCH,

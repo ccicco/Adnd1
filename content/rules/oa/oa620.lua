@@ -1,11 +1,11 @@
--- oa620: promoted from rules/oakensai.h (the THE KENSAI, printed capture pp. 28-31 - the OA sword saint round);
+-- oa620: promoted from rules/oa/oakensai.h (the THE KENSAI, printed capture pp. 28-31 - the OA sword saint round);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 620,
   "prefix" = "oa620",
   "banner" = {
       "title" = "THE KENSAI, printed capture pp. 28-31 - the OA sword saint round",
-      "provenance" = "census 542 -> 543.  verified against capture pp. 28-31 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). The Table 19 special-abilities column pins as a coded ladder (meditation, the 1-in-6 surprise, two weapons and fear, the pupils, the whirlwind). OCR normalization: practice daisy reads as practice daily (prose only). This push ALSO carries the still-unlanded R618 v3 amendment (spec_r618 08fa91d7 -> 9ea88b9e, oaraces.h 3786b6c2 -> 615b853c) - the R619 fold silently failed because the rn flow stages only the current round files; this time the two prior-round files must be added explicitly.  the gap census after this round: 36 closed, 199 open - the kensai boxes with Tables 18 and 19 flip (census 542 -> 543); NEXT - R621: the Monk - the discipline ladder, the quirks, Tables 20 and 21, prefix dgh (verify free), audit \"R621 OA monk audit\", include after rules/oakensai.h",
+      "provenance" = "census 542 -> 543.  verified against capture pp. 28-31 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). The Table 19 special-abilities column pins as a coded ladder (meditation, the 1-in-6 surprise, two weapons and fear, the pupils, the whirlwind). OCR normalization: practice daisy reads as practice daily (prose only). This push ALSO carries the still-unlanded R618 v3 amendment (spec_r618 08fa91d7 -> 9ea88b9e, oaraces.h 3786b6c2 -> 615b853c) - the R619 fold silently failed because the rn flow stages only the current round files; this time the two prior-round files must be added explicitly.  the gap census after this round: 36 closed, 199 open - the kensai boxes with Tables 18 and 19 flip (census 542 -> 543); NEXT - R621: the Monk - the discipline ladder, the quirks, Tables 20 and 21, prefix dgh (verify free), audit \"R621 OA monk audit\", include after rules/oa/oakensai.h",
     },
   "consts" = { {
       "name" = "dggKensaiMinStr",

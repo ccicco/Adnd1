@@ -1,11 +1,11 @@
--- oa733: promoted from rules/oa104classuse.h (the OA TREASURE - THE MAGICAL ITEMS USABLE BY CLASS, printed capture p. 285 -);
+-- oa733: promoted from rules/oa/oa104classuse.h (the OA TREASURE - THE MAGICAL ITEMS USABLE BY CLASS, printed capture p. 285 -);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 733,
   "prefix" = "oa733",
   "banner" = {
       "title" = "OA TREASURE - THE MAGICAL ITEMS USABLE BY CLASS, printed capture p. 285 -",
-      "provenance" = "the Chapter 13 opener round census 655 -> 656.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 186 closed, 49 open - the class usage box flips (census 655 -> 656); NEXT - R734: the Random Treasure Determination prose (capture pp. 285-286), prefix dkv (verify free at the landing), audit \"R734 OA random treasure prose audit\", include after rules/oa104classuse.h",
+      "provenance" = "the Chapter 13 opener round census 655 -> 656.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 186 closed, 49 open - the class usage box flips (census 655 -> 656); NEXT - R734: the Random Treasure Determination prose (capture pp. 285-286), prefix dkv (verify free at the landing), audit \"R734 OA random treasure prose audit\", include after rules/oa/oa104classuse.h",
     },
   "consts" = { {
       "name" = "dkuChapterOpener",

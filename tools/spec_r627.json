@@ -2,7 +2,7 @@
  "round": 627,
  "title": "THE YAKUZA - the gangster: the family-clan requirement, the investigate tiers, the ki power, the brethren, the stipend, Tables 34 and 35",
  "prefix": "dgn",
- "header_file": "rules/oayakuza.h",
+ "header_file": "rules/oa/oayakuza.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "THE YAKUZA, printed capture pp. 51-54 - the OA yakuza round",
   "provenance": "verified against capture pp. 51-54 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). No contested cells this round - both captures agree on every pinned value. The T35 area column pins as the 1-9 code: 1, 2 and 3 blocks; 1 ward 4; 2 wards 5; 1 district 6; 2 districts 7; 3 districts 8; province 9. The T34 9-plus-N cells pin as dice 9 with the 1-per-level bonus 1, 2, 3. OCR normalization: Zing reads Zingi; 2d level reads 2nd level; hide-out and hideout both printed",
-  "sentinel": "the gap census after this round: 59 closed, 176 open - the yakuza boxes with Tables 34 and 35 flip (census 549 -> 550); NEXT - R628: the Character Abilities chapter opener, capture pp. 55-59, Tables 36 (Multiple Attacks), prefix dgo (verify free), audit \"R628 OA character abilities audit\", include after rules/oayakuza.h"
+  "sentinel": "the gap census after this round: 59 closed, 176 open - the yakuza boxes with Tables 34 and 35 flip (census 549 -> 550); NEXT - R628: the Character Abilities chapter opener, capture pp. 55-59, Tables 36 (Multiple Attacks), prefix dgo (verify free), audit \"R628 OA character abilities audit\", include after rules/oa/oayakuza.h"
  },
  "consts": [
   {
@@ -1046,7 +1046,7 @@
   "open": 176
  },
  "include_comment": "the OA yakuza pins",
- "include_after": "#include \"rules/oawujen.h\"  // R626: the OA wu jen pins",
+ "include_after": "#include \"rules/oa/oawujen.h\"  // R626: the OA wu jen pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R626 LANDED 2026-10-18: commit",
@@ -1055,7 +1055,7 @@
   "  5f23689fda6387c0a263f0dd0220183ce5b706a6",
   "  (census 548 -> 549, pushed",
   "  9204c4c..5f23689), THE WU JEN, capture",
-  "  pp. 47-51: rules/oawujen.h, prefix",
+  "  pp. 47-51: rules/oa/oawujen.h, prefix",
   "  dgm (verified free), 60 inlines (31",
   "  consts, 14 bools, 15 table columns):",
   "  the Int 13 minimum with the Int-15 xp",

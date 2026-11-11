@@ -1758,4 +1758,4 @@
         printf("R611 DMO rogues audit: bad %d\n", bad);
         if (bad) return 1;
     }
-    #include "rules/audits/r612_dmo_ascension.h"  // R831: migrated
+    #include "r612_dmo_ascension.h"  // R831: migrated

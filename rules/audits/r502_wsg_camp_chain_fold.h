@@ -2,19 +2,19 @@
     // The WSG camp-chain fold, the fourth seam round after gap closure: no
     // new book pages, the R499 pattern applied to the camp chapter. One
     // campsite flows through six landed headers: the rest quality and Table
-    // 38 fire (rules/wsgfire.h R474: the three fire sizes, the fuel ladder 6,
+    // 38 fire (rules/wsg/wsgfire.h R474: the three fire sizes, the fuel ladder 6,
     // 12, 18 turns for an eight-hour burn, the refuel ladder 3, 6, 9, the
     // wind resistance 20, 30, 40, the rest penalties 1, 1, 2, 2, 3, 3, 4
     // hours, the plate economy 5-to-1 and 9-to-5), the fire starting and fuel
-    // rules (rules/wsgfuel.h R475: the 15 mph breeze bar, the 30 mph no-start
+    // rules (rules/wsg/wsgfuel.h R475: the 15 mph breeze bar, the 30 mph no-start
     // maximum, the 2d20/3d20 start dice, the 3-turn small-fire grace, the
     // capacity doubling 6 at 10 feet to 12 at 20), the wildfire rules
-    // (rules/wsgblaze.h R476: the spark carry 10, 20, 30 feet plus one foot
+    // (rules/wsg/wsgblaze.h R476: the spark carry 10, 20, 30 feet plus one foot
     // per mph of wind, the growth ladder 1, 2, 4 turns, the 6-turn
     // uncontrollable bar, the halving divisor), the tent quality system
-    // (rules/wsgsleep.h R473: the pole ladder 2, 4, 6, the 10 mph leak step
+    // (rules/wsg/wsgsleep.h R473: the pole ladder 2, 4, 6, the 10 mph leak step
     // with the 5 mph leak, the 25 percent damage chance), the natural
-    // shelters (rules/wsgshelter.h R471: the 3-turn material floor, the
+    // shelters (rules/wsg/wsgshelter.h R471: the 3-turn material floor, the
     // 6-turn lash) and the R499 temperature chain re-read for the seam. The
     // findings: the uncontrollable bar of 6 turns is exactly one hour; the
     // small-fire refuel interval and the grace period are the same 3 turns in

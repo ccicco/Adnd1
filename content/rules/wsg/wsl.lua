@@ -54,6 +54,6 @@ return {
     } },
   "audit" = {
       "label" = "R447 WSG slippery surface movement pin audit",
-      "comment" = "The slippery surface slice pins the full-rate straight-line rule (no fall risk in a straight line at the full normal movement rate), the Dexterity Check on anything other than a very gradual turn or an abrupt stop or speed-up, the running rule (a Dexterity Check after every five segments of running, even in a straight line), the half-rate exemption (turns need no check at half the full normal movement rate), the full-round speed-change exemption (a full round to slow down or speed up, full movement to standstill or vice versa, needs no check), and the fall consequence (no direct damage, only an indirect cause of greater problems) (rules/wsgslip.h, prefix wsl); census 371 -> 372.",
+      "comment" = "The slippery surface slice pins the full-rate straight-line rule (no fall risk in a straight line at the full normal movement rate), the Dexterity Check on anything other than a very gradual turn or an abrupt stop or speed-up, the running rule (a Dexterity Check after every five segments of running, even in a straight line), the half-rate exemption (turns need no check at half the full normal movement rate), the full-round speed-change exemption (a full round to slow down or speed up, full movement to standstill or vice versa, needs no check), and the fall consequence (no direct damage, only an indirect cause of greater problems) (rules/wsg/wsgslip.h, prefix wsl); census 371 -> 372.",
     },
 }

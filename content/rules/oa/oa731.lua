@@ -1,11 +1,11 @@
--- oa731: promoted from rules/oa102shiro.h (the OA MONSTERS - THE SHIROKINUKATSUKAMI, printed capture pp. 283-284 - the);
+-- oa731: promoted from rules/oa/oa102shiro.h (the OA MONSTERS - THE SHIROKINUKATSUKAMI, printed capture pp. 283-284 - the);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 731,
   "prefix" = "oa731",
   "banner" = {
       "title" = "OA MONSTERS - THE SHIROKINUKATSUKAMI, printed capture pp. 283-284 - the",
-      "provenance" = "Eater of Dreams round census 653 -> 654.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 184 closed, 51 open - the shirokinukatsukami box flips (census 653 -> 654); NEXT - R732: the Tengu (capture p. 284), prefix dkt (verify free at the landing), audit \"R732 OA monsters Tengu audit\", include after rules/oa102shiro.h",
+      "provenance" = "Eater of Dreams round census 653 -> 654.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 184 closed, 51 open - the shirokinukatsukami box flips (census 653 -> 654); NEXT - R732: the Tengu (capture p. 284), prefix dkt (verify free at the landing), audit \"R732 OA monsters Tengu audit\", include after rules/oa/oa102shiro.h",
     },
   "consts" = { {
       "name" = "dksFrequencyVeryRare",

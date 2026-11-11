@@ -80,7 +80,7 @@ STRATA = [
      """
       - AMENDED R420: flipped - the
         clean p. 27 print pinned
-        (rules/uahandheld.h, the R392
+        (rules/ua/uahandheld.h, the R392
         manifest item above) - 60
         rows, the footnotes and the
         general note, no holes; the

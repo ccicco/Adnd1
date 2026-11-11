@@ -19,7 +19,7 @@
     // Flandal's underground forge, Yurtrus's crypt, Luthic's cave temple) and
     // the cleric-gender reads (12 males-only rows, the lone Berronar
     // females-only row, 10 either-gender rows with the Luthic exception). THE
-    // STRINGS: the printed site phrases ride rules/uascharts.h (the
+    // STRINGS: the printed site phrases ride rules/ua/uascharts.h (the
     // uscWorshipSite accessor) with a live regtest strings block checking all
     // 23 row for row (the R782 site-block precedent). Honest boundaries: the
     // M, F, and N-H columns on the compilation pages are the compilation's

@@ -1,11 +1,11 @@
--- oa745: promoted from rules/oa116table76.h (the OA TREASURE - TABLE 76, MAGICAL ARMOR PROPERTIES, printed capture pp.);
+-- oa745: promoted from rules/oa/oa116table76.h (the OA TREASURE - TABLE 76, MAGICAL ARMOR PROPERTIES, printed capture pp.);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 745,
   "prefix" = "oa745",
   "banner" = {
       "title" = "OA TREASURE - TABLE 76, MAGICAL ARMOR PROPERTIES, printed capture pp.",
-      "provenance" = "289-290 - the property grid round census 667 -> 668.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 198 closed, 37 open - the Table 76 box flips (census 667 -> 668); NEXT - R746: Table 77: Special Properties (capture p. 290), prefix dlh (verify free at the landing), audit \"R746 OA Table 77 special audit\", include after rules/oa116table76.h",
+      "provenance" = "289-290 - the property grid round census 667 -> 668.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 198 closed, 37 open - the Table 76 box flips (census 667 -> 668); NEXT - R746: Table 77: Special Properties (capture p. 290), prefix dlh (verify free at the landing), audit \"R746 OA Table 77 special audit\", include after rules/oa/oa116table76.h",
     },
   "consts" = { {
       "name" = "dlgPropRowCount",

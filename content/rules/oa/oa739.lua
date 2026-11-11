@@ -1,11 +1,11 @@
--- oa739: promoted from rules/oa110potions.h (the OA TREASURE - POTIONS, printed capture pp. 287-288 - the control brews);
+-- oa739: promoted from rules/oa/oa110potions.h (the OA TREASURE - POTIONS, printed capture pp. 287-288 - the control brews);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 739,
   "prefix" = "oa739",
   "banner" = {
       "title" = "OA TREASURE - POTIONS, printed capture pp. 287-288 - the control brews",
-      "provenance" = "round census 661 -> 662.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 192 closed, 43 open - the potions box flips (census 661 -> 662); NEXT - R740: Scrolls (capture p. 288), prefix dlb (verify free at the landing), audit \"R740 OA scrolls audit\", include after rules/oa110potions.h",
+      "provenance" = "round census 661 -> 662.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 192 closed, 43 open - the potions box flips (census 661 -> 662); NEXT - R740: Scrolls (capture p. 288), prefix dlb (verify free at the landing), audit \"R740 OA scrolls audit\", include after rules/oa/oa110potions.h",
     },
   "consts" = { {
       "name" = "dlaDragonRowCount",

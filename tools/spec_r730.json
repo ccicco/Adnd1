@@ -2,7 +2,7 @@
  "round": 730,
  "title": "OA MONSTERS - the Shan Sao: the one-foot woodlanders and their tiger allies",
  "prefix": "dkr",
- "header_file": "rules/oa101shansao.h",
+ "header_file": "rules/oa/oa101shansao.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA MONSTERS - THE SHAN SAO, printed capture pp. 282-283 - the woodlander round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 183 closed, 52 open - the shan sao box flips (census 652 -> 653); NEXT - R731: the Shirokinukatsukami, the Greater Spirit (capture pp. 283-284), prefix dks (verify free at the landing), audit \"R731 OA monsters Shirokinukatsukami audit\", include after rules/oa101shansao.h"
+  "sentinel": "the gap census after this round: 183 closed, 52 open - the shan sao box flips (census 652 -> 653); NEXT - R731: the Shirokinukatsukami, the Greater Spirit (capture pp. 283-284), prefix dks (verify free at the landing), audit \"R731 OA monsters Shirokinukatsukami audit\", include after rules/oa/oa101shansao.h"
  },
  "consts": [
   {
@@ -592,7 +592,7 @@
   "open": 52
  },
  "include_comment": "the OA Shan Sao pins",
- "include_after": "#include \"rules/oa100poh.h\"  // R729: the OA P oh pins",
+ "include_after": "#include \"rules/oa/oa100poh.h\"  // R729: the OA P oh pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R729 LANDED 2026-10-21: commit",
@@ -601,7 +601,7 @@
   "  96a5de9fee7516f2ec6b53665622cb2eaead84b9",
   "  (census 651 -> 652, pushed a20e85a..96a5de9), OA",
   "  MONSTERS, the P oh, the Lesser Spirit (capture",
-  "  pp. 281-282 print): rules/oa100poh.h, prefix",
+  "  pp. 281-282 print): rules/oa/oa100poh.h, prefix",
   "  dkq (verified free at a20e85a), ONE gap flip,",
   "  gap census 182/53 - the p oh box (the",
   "  apostrophe of the print kept to the gap box",
@@ -640,6 +640,6 @@
   "  R730: the Shan Sao (capture pp. 282-283),",
   "  prefix dkr (verified free at 96a5de9), audit",
   "  \"R730 OA monsters Shan Sao audit\", include",
-  "  after rules/oa100poh.h."
+  "  after rules/oa/oa100poh.h."
  ]
 }

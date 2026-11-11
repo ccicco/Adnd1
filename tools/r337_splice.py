@@ -73,14 +73,14 @@ assert s.count('## Knowledge maintenance') == 1, \
     'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
-# ---- (b) NEW rules/uaweapontable.h ----
-UW = 'rules/uaweapontable.h'
+# ---- (b) NEW rules/ua/uaweapontable.h ----
+UW = 'rules/ua/uaweapontable.h'
 if os.path.exists(UW) and 'R337' in rd(UW):
     already.append('uaweapontable.h: the pins')
 else:
     HDR = NL.join([
     '// ===========================================================================',
-    '// Adnd1 - rules/uaweapontable.h',
+    '// Adnd1 - rules/ua/uaweapontable.h',
     '// The UA WEIGHT AND DAMAGE BY WEAPON TYPE table (p. 26) pins',
     '// (R337).',
     '//',
@@ -328,7 +328,7 @@ else:
     assert s.count(TAIL_OLD) == 1, 'c tail'
     NOTE = NL.join([
     '      - R337: the fragment-verified',
-    '      cells pinned (rules/uaweapontable.h)',
+    '      cells pinned (rules/ua/uaweapontable.h)',
     '      - the 67-row roster, all 50 PHB',
     '      rows cell-verified against the',
     '      R189 seam (the hyphen-loss',
@@ -370,7 +370,7 @@ else:
                 '  // R336: the UA cavalier money')
     INC_NEW = NL.join([
     INC_ANCH,
-    '#include "rules/uaweapontable.h"'
+    '#include "rules/ua/uaweapontable.h"'
     '  // R337: the UA weight and damage',
     ])
     AUD_ANCH = ('    // ---- R227: the wis mental'
@@ -586,7 +586,7 @@ assert s.count(
 assert s.count('R227: the wis mental save') == 1, \
     'd r227 kept'
 assert s.count(
-    '#include "rules/uaweapontable.h"') == 1, \
+    '#include "rules/ua/uaweapontable.h"') == 1, \
     'd include'
 assert len(applied) + len(already) == 4, 'd count'
 

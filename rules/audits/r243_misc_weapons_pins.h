@@ -107,15 +107,15 @@
         printf("R243 misc weapons pins audit: bad %d\n", bad);
         if (bad) return 1;
     }
-    #include "rules/audits/r244_iii_d_rods_explanation.h"  // R827: migrated
-    #include "rules/audits/r245_iii_d_staves_explanation.h"  // R827: migrated
-    #include "rules/audits/r246_wands_prose_pins.h"  // R828: migrated
-    #include "rules/audits/r247_wands_prose_part_2_pins.h"  // R828: migrated
-    #include "rules/audits/r248_wand_of_wonder_effect_ta.h"  // R828: migrated
-    #include "rules/audits/r249_potions_prose_part_1_pin.h"  // R828: migrated
-    #include "rules/audits/r250_potions_prose_part_2_pin.h"  // R828: migrated
-    #include "rules/audits/r251_potions_prose_part_3_pin.h"  // R828: migrated
-    #include "rules/audits/r252_scrolls_prose_pins.h"  // R828: migrated
-    #include "rules/audits/r253_rings_prose_pins.h"  // R828: migrated
-    #include "rules/audits/r254_rings_prose_part_2_pins.h"  // R828: migrated
-    #include "rules/audits/r256_rings_prose_part_3_pins.h"  // R828: migrated
+    #include "r244_iii_d_rods_explanation.h"  // R827: migrated
+    #include "r245_iii_d_staves_explanation.h"  // R827: migrated
+    #include "r246_wands_prose_pins.h"  // R828: migrated
+    #include "r247_wands_prose_part_2_pins.h"  // R828: migrated
+    #include "r248_wand_of_wonder_effect_ta.h"  // R828: migrated
+    #include "r249_potions_prose_part_1_pin.h"  // R828: migrated
+    #include "r250_potions_prose_part_2_pin.h"  // R828: migrated
+    #include "r251_potions_prose_part_3_pin.h"  // R828: migrated
+    #include "r252_scrolls_prose_pins.h"  // R828: migrated
+    #include "r253_rings_prose_pins.h"  // R828: migrated
+    #include "r254_rings_prose_part_2_pins.h"  // R828: migrated
+    #include "r256_rings_prose_part_3_pins.h"  // R828: migrated

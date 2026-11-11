@@ -2,7 +2,7 @@
  "round": 639,
  "title": "EQUIPMENT - the equipping doctrine, Table 47",
  "prefix": "dgz",
- "header_file": "rules/oaequip.h",
+ "header_file": "rules/oa/oaequip.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "EQUIPPING THE CHARACTER AND TABLE 47, printed capture pp. 76-78 - the OA equipment round",
   "provenance": "pinned from the 2018 print capture alone for this range (the settling authority): the first Mistral-OCR capture session is unavailable above p. 33, so the cross-capture agreement check is impossible. The equipping prose pins from capture p. 76 (printed p. 38) and the full Table 47 from capture pp. 77-78 (printed pp. 39-40); the T47 gap box label reads capture pp. 78-84 - the label is preserved byte-exact in the flip. The printed table carries TEN sections - the eight cost lists the box names plus the ARMOR and ARMS lists that ride the same table; all ten pin this round as 256 rows, each a cost-unit-star triple (the unit code 1 fen, 2 yuan, 3 tael, 4 ch'ien per the R636 T43 doctrine; the star flags pin the printed asterisks - the ten armor-piece rows, the chijiriki, the five ninja-preferred misc rows). No contested cells detected within the single source. OCR normalizations: the Kyoketsu-shogi \"(biaded rope)\" reads as bladed rope and the stray mid-table separator row after it is an OCR artifact pinning nothing. The Weapons chapter prose with Tables 48-49 (capture pp. 79-80) is deliberately left for the next round",
-  "sentinel": "the gap census after this round: 89 closed, 146 open - the Table 47 box flips (census 561 -> 562); NEXT - R640: the Weapons prose with Table 48 (Weapon Equivalents) and Table 49 (Weight and Damage by Weapon Type), capture pp. 79-80, the weapon equivalents doctrine, prefix dha (verify free), audit \"R640 OA weapons audit\", include after rules/oaequip.h"
+  "sentinel": "the gap census after this round: 89 closed, 146 open - the Table 47 box flips (census 561 -> 562); NEXT - R640: the Weapons prose with Table 48 (Weapon Equivalents) and Table 49 (Weight and Damage by Weapon Type), capture pp. 79-80, the weapon equivalents doctrine, prefix dha (verify free), audit \"R640 OA weapons audit\", include after rules/oa/oaequip.h"
  },
  "consts": [
   {
@@ -1928,7 +1928,7 @@
   "open": 146
  },
  "include_comment": "the OA equipment pins",
- "include_after": "#include \"rules/oaexch.h\"  // R638: the OA exchange pins",
+ "include_after": "#include \"rules/oa/oaexch.h\"  // R638: the OA exchange pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R638 LANDED 2026-10-19: commit",
@@ -1938,7 +1938,7 @@
   "  (census 560 -> 561, pushed",
   "  1cd7075..6580845), EXCHANGE - the gajin",
   "  rates and Table 46, capture pp. 76-77:",
-  "  rules/oaexch.h, prefix dgy (verified",
+  "  rules/oa/oaexch.h, prefix dgy (verified",
   "  free), 27 inlines (9 consts, 14 bools,",
   "  4 table columns): the gajin-contact",
   "  exchange need, the caravan-route and",
@@ -1987,6 +1987,6 @@
   "  pp. 77-84, the eight cost lists, prefix",
   "  dgz (verify free), audit \"R639 OA",
   "  equipment audit\", include after",
-  "  rules/oaexch.h."
+  "  rules/oa/oaexch.h."
  ]
 }

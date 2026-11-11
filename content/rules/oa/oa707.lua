@@ -1,11 +1,11 @@
--- oa707: promoted from rules/oa78bisan.h (the OA MONSTERS - THE BISAN, LESSER SPIRIT, printed capture pp. 255-256 - the);
+-- oa707: promoted from rules/oa/oa78bisan.h (the OA MONSTERS - THE BISAN, LESSER SPIRIT, printed capture pp. 255-256 - the);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 707,
   "prefix" = "oa707",
   "banner" = {
       "title" = "OA MONSTERS - THE BISAN, LESSER SPIRIT, printed capture pp. 255-256 - the",
-      "provenance" = "tree spirit round census 629 -> 630.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 160 closed, 75 open - the Bisan box flips (census 629 -> 630); NEXT - R708: the Buso (capture pp. 256-257), prefix djv (verify free at the landing), audit \"R708 OA monsters Buso audit\", include after rules/oa78bisan.h",
+      "provenance" = "tree spirit round census 629 -> 630.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 160 closed, 75 open - the Bisan box flips (census 629 -> 630); NEXT - R708: the Buso (capture pp. 256-257), prefix djv (verify free at the landing), audit \"R708 OA monsters Buso audit\", include after rules/oa/oa78bisan.h",
     },
   "consts" = { {
       "name" = "djuBisanNoAppearing",

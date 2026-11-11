@@ -2,7 +2,7 @@
  "round": 735,
  "title": "OA TREASURE - Table 74: Monetary Treasure And Magical Items: the A through Z treasure type grid",
  "prefix": "dkw",
- "header_file": "rules/oa106table74.h",
+ "header_file": "rules/oa/oa106table74.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA TREASURE - TABLE 74, MONETARY TREASURE AND MAGICAL ITEMS, printed capture p. 286 - the treasure type grid round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 188 closed, 47 open - the Table 74 box flips (census 657 -> 658); NEXT - R736: Table II.A. (Orient): Monetary Treasure (capture p. 286), prefix dkx (verify free at the landing), audit \"R736 OA Table II.A. Orient monetary treasure audit\", include after rules/oa106table74.h"
+  "sentinel": "the gap census after this round: 188 closed, 47 open - the Table 74 box flips (census 657 -> 658); NEXT - R736: Table II.A. (Orient): Monetary Treasure (capture p. 286), prefix dkx (verify free at the landing), audit \"R736 OA Table II.A. Orient monetary treasure audit\", include after rules/oa/oa106table74.h"
  },
  "consts": [
   {
@@ -1248,7 +1248,7 @@
   "open": 47
  },
  "include_comment": "the OA Table 74 pins",
- "include_after": "#include \"rules/oa105randtres.h\"  // R734: the OA random treasure pins",
+ "include_after": "#include \"rules/oa/oa105randtres.h\"  // R734: the OA random treasure pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R734 LANDED 2026-10-21: commit",
@@ -1258,7 +1258,7 @@
   "  (census 656 -> 657, pushed 943ff7e..dd3890c),",
   "  OA TREASURE, the Random Treasure",
   "  Determination prose (capture p. 285), header",
-  "  rules/oa105randtres.h, prefix dkv",
+  "  rules/oa/oa105randtres.h, prefix dkv",
   "  (verified free at 943ff7e), one gap flip",
   "  (the random treasure prose box, its",
   "  two-line wrap handled), gap census now",
@@ -1284,6 +1284,6 @@
   "  p. 286), prefix dkw (verify free at the",
   "  landing), audit \"R735 OA Table 74",
   "  monetary treasure audit\", include after",
-  "  rules/oa105randtres.h."
+  "  rules/oa/oa105randtres.h."
  ]
 }

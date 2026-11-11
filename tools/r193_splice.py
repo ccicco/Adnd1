@@ -3,7 +3,7 @@
 # divergence 5 of the R177 founding read -
 # the LIVE divergence).
 #
-# rules/character.cpp: all three accessors
+# rules/engine/character.cpp: all three accessors
 # repinned to the printed CHARISMA TABLE,
 # cell for cell:
 # - chaReactionAdj: the flat -4..+4 ladder
@@ -71,10 +71,10 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/character.cpp - chaReactionAdj repin (the percent ladder)
+# Patch 1: rules/engine/character.cpp - chaReactionAdj repin (the percent ladder)
 # ---------------------------------------------------------------------------
 
-patch('rules/character.cpp',
+patch('rules/engine/character.cpp',
       'if (cha == 16)  return 25;',
       'int chaReactionAdj(uint8_t cha) {'
       + NL + '    if (cha <= 3)   return -4;'
@@ -106,10 +106,10 @@ patch('rules/character.cpp',
       + NL + '}')
 
 # ---------------------------------------------------------------------------
-# Patch 2: rules/character.cpp - chaHenchmenMax repin (cha 4 = 1, cha 12 = 5)
+# Patch 2: rules/engine/character.cpp - chaHenchmenMax repin (cha 4 = 1, cha 12 = 5)
 # ---------------------------------------------------------------------------
 
-patch('rules/character.cpp',
+patch('rules/engine/character.cpp',
       'if (cha == 12)  return 5;   // R193: was 4',
       'int chaHenchmenMax(uint8_t cha) {'
       + NL + '    if (cha <= 3)   return 1;'
@@ -141,10 +141,10 @@ patch('rules/character.cpp',
       + NL + '}')
 
 # ---------------------------------------------------------------------------
-# Patch 3: rules/character.cpp - chaLoyaltyBase repin (the percent ladder)
+# Patch 3: rules/engine/character.cpp - chaLoyaltyBase repin (the percent ladder)
 # ---------------------------------------------------------------------------
 
-patch('rules/character.cpp',
+patch('rules/engine/character.cpp',
       'if (cha == 14)  return 5;   // R193: percent',
       'int chaLoyaltyBase(uint8_t cha) {'
       + NL + '    if (cha <= 3)  return 1;'
@@ -180,10 +180,10 @@ patch('rules/character.cpp',
       + NL + '}')
 
 # ---------------------------------------------------------------------------
-# Patch 4: rules/character.h - the range comments repin
+# Patch 4: rules/engine/character.h - the range comments repin
 # ---------------------------------------------------------------------------
 
-patch('rules/character.h',
+patch('rules/engine/character.h',
       'the printed percent ladder -25..+35 (R193)',
       'int  chaReactionAdj(uint8_t cha);       // -4..+4 (hireling reaction roll)'
       + NL + 'int  chaHenchmenMax(uint8_t cha);       // 0..15 (max henchmen, morale-linked)'
@@ -347,7 +347,7 @@ patch('tools/dmg_gap_report.md',
       'engine limit closes. New R192 battery audit; census'
       + NL + '109. Next: the gap report names the next round.'
       + NL + 'R193 landed the charisma repin (PHB divergence 5,'
-      + NL + 'the live one): rules/character.cpp chaReactionAdj,'
+      + NL + 'the live one): rules/engine/character.cpp chaReactionAdj,'
       + NL + 'chaLoyaltyBase and chaHenchmenMax repinned cell for'
       + NL + 'cell to the printed CHARISMA TABLE - the reaction'
       + NL + 'and loyalty ladders are now the printed PERCENT'

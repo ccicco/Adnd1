@@ -30,7 +30,7 @@ Standing doctrines (user-set, 2026-10-29):
 - VARIANT LAYER SEATING. Dragon ink is never core 1e canon: pins
   ride a variant layer with provenance (banner, sentinel, audit
   comment, gap report), distinct audit vocabulary, no silent core
-  rewrites. Issue #1's Ives tables are the template (rules/ivs.h).
+  rewrites. Issue #1's Ives tables are the template (rules/dragon/issue001_ives_tables.h).
 - WAIT FOR GO before preparing any round. The mining adjudication
   happens per chain, in discussion, one by one - never a bulk take.
 
@@ -100,7 +100,7 @@ Standing doctrines (user-set, 2026-10-29):
 
 ## Issue #1 state (as of R887, commit 2229eba)
 
-- R887 LANDED: the Ives attribute tables (rules/ivs.h, census 810).
+- R887 LANDED: the Ives attribute tables (rules/dragon/issue001_ives_tables.h, census 810).
 - Round B (awaiting go): Gold languages (9-10) + Smith Eldar (30) +
   the Bulette lore pin vs monsters/monsters/b/bulette.lua; the Ives
   gap box flips here (the dragon report's first flip round).

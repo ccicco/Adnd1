@@ -2,7 +2,7 @@
  "round": 709,
  "title": "OA MONSTERS - the Carp, Giant: the stat block, the four-row XP table, and the swallow rules",
  "prefix": "djw",
- "header_file": "rules/oa80carp.h",
+ "header_file": "rules/oa/oa80carp.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA MONSTERS - THE CARP, GIANT, printed capture pp. 257-258 - the overgrown fish round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 162 closed, 73 open - the giant carp box flips (census 631 -> 632); NEXT - R710: the Con-Tinh, Lesser Spirit (capture pp. 258-259), prefix djx (verify free at the landing), audit \"R710 OA monsters Con-Tinh audit\", include after rules/oa80carp.h"
+  "sentinel": "the gap census after this round: 162 closed, 73 open - the giant carp box flips (census 631 -> 632); NEXT - R710: the Con-Tinh, Lesser Spirit (capture pp. 258-259), prefix djx (verify free at the landing), audit \"R710 OA monsters Con-Tinh audit\", include after rules/oa/oa80carp.h"
  },
  "consts": [
   {
@@ -481,14 +481,14 @@
   "open": 73
  },
  "include_comment": "the OA Giant Carp pins",
- "include_after": "#include \"rules/oa79buso.h\"  // R708: the OA Buso pins",
+ "include_after": "#include \"rules/oa/oa79buso.h\"  // R708: the OA Buso pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R708 LANDED 2026-10-21: commit",
  "prev_record": [
   "- R708 LANDED 2026-10-21: commit 8361dca91baf5ef64f20c5bfb672692fa245b4ca",
   "  (census 630 -> 631, pushed 2a2f67a..8361dca), OA MONSTERS - the",
-  "  Buso, capture pp. 256-257 print: rules/oa79buso.h, prefix djv",
+  "  Buso, capture pp. 256-257 print: rules/oa/oa79buso.h, prefix djv",
   "  (verified free at 2a2f67a), ONE gap flip, gap census 161/74",
   "  (the engine counts every checkbox occurrence - the pre-flip",
   "  160/75 went to 161/74, not the 161/75 first guessed; the R708",
@@ -518,6 +518,6 @@
   "  byte-exact; canvas md5 94313a263837d5020ca2b6fdca4bc554).",
   "  NEXT - R709: the Carp, Giant (capture p. 257), prefix djw",
   "  (verified free at 8361dca), audit \"R709 OA monsters Giant",
-  "  Carp audit\", include after rules/oa79buso.h."
+  "  Carp audit\", include after rules/oa/oa79buso.h."
  ]
 }

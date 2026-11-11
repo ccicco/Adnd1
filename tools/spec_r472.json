@@ -2,7 +2,7 @@
  "round": 472,
  "title": "the WSG portable shelters slice with Table 36 - the simple pole-and-cloth shelter with the pitch rules, the occupancy limits, the four-band quality-by-size characteristics grid and the p. 61 cave-sentence seam tail, printed p. 62",
  "prefix": "wps",
- "header_file": "rules/wsgtents.h",
+ "header_file": "rules/wsg/wsgtents.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -468,17 +468,17 @@
   {
    "note": "portable shelters",
    "from": "  - [ ] Portable shelters (p. 62)",
-   "to": "  - [x] Portable shelters (p. 62) - R472: the pole-and-cloth simple shelter with the pitch rules, the occupancy limits, the hauling rules and the Table 36 quality-by-size grid pin as rules/wsgtents.h"
+   "to": "  - [x] Portable shelters (p. 62) - R472: the pole-and-cloth simple shelter with the pitch rules, the occupancy limits, the hauling rules and the Table 36 quality-by-size grid pin as rules/wsg/wsgtents.h"
   },
   {
    "note": "the Table 36 box",
    "from": "- [ ] **Table 36: portable shelter characteristics** (p. 62)",
-   "to": "- [x] **Table 36: portable shelter characteristics** (p. 62) - R472: the 72-cell grid pins inside rules/wsgtents.h (census 396)"
+   "to": "- [x] **Table 36: portable shelter characteristics** (p. 62) - R472: the 72-cell grid pins inside rules/wsg/wsgtents.h (census 396)"
   },
   {
    "note": "the post-state line",
-   "from": "Post-state at R471: 91 closed, 95 open (the R471 round opens the camping arc - natural shelters with Table 35 pin as rules/wsgshelter.h; the next round continues - portable shelters (p. 62) with Table 36).",
-   "to": "Post-state at R472: 93 closed, 93 open (the R472 round continues the camping arc - portable shelters with Table 36 pin as rules/wsgtents.h; the next round continues - rest and comfort (p. 64) with Table 37)."
+   "from": "Post-state at R471: 91 closed, 95 open (the R471 round opens the camping arc - natural shelters with Table 35 pin as rules/wsg/wsgshelter.h; the next round continues - portable shelters (p. 62) with Table 36).",
+   "to": "Post-state at R472: 93 closed, 93 open (the R472 round continues the camping arc - portable shelters with Table 36 pin as rules/wsg/wsgtents.h; the next round continues - rest and comfort (p. 64) with Table 37)."
   }
  ],
  "gap_census": {
@@ -486,7 +486,7 @@
   "open": 93
  },
  "include_comment": "the WSG portable shelters and Table 36",
- "include_after": "#include \"rules/wsgshelter.h\"  // R471: the WSG natural shelters and Table 35",
+ "include_after": "#include \"rules/wsg/wsgshelter.h\"  // R471: the WSG natural shelters and Table 35",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R471 LANDED 2026-10-15: commit 2eec600 (census 396, pushed",
@@ -530,7 +530,7 @@
   "  adequate or perhaps good; the lee side of a large rock:",
   "  good wind but only adequate-or-poor precip protection -",
   "  the prose seams mid-sentence onto p. 62 at the cave",
-  "  sentence). rules/wsgshelter.h NEW (31 inlines: 11 consts",
+  "  sentence). rules/wsg/wsgshelter.h NEW (31 inlines: 11 consts",
   "  - wnsTerrainCount 6, the 3/8 forest band, the 2/1 helper",
   "  reductions with the 3-turn floor and the 2-helper lash",
   "  cap, the 6-turn lashing, the 7/12 plains band, the",

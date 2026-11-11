@@ -47,7 +47,7 @@ def replace_exact(old_text, anchor, replacement, what):
 def main():
     changed = False
 
-    c = read("rules/saves.cpp")
+    c = read("rules/engine/saves.cpp")
     c, did = replace_exact(c, SAVES_OLD, SAVES_NEW, "saves.cpp banded matrices")
     changed = changed or did
     c, did = replace_exact(c, INC_OLD, "", "saves.cpp include prune")
@@ -56,16 +56,16 @@ def main():
     changed = changed or did
     c, did = replace_exact(c, MSAVE_OLD, MSAVE_NEW, "saves.cpp monster stepping")
     changed = changed or did
-    write("rules/saves.cpp", c)
+    write("rules/engine/saves.cpp", c)
 
-    h = read("rules/saves.h")
+    h = read("rules/engine/saves.h")
     h, did = replace_exact(h, HSRC_OLD, HSRC_NEW, "saves.h source note")
     changed = changed or did
     h, did = replace_exact(h, HATT_OLD, HATT_NEW, "saves.h attemptSave note")
     changed = changed or did
     h, did = replace_exact(h, HMON_OLD, HMON_NEW, "saves.h monster decl")
     changed = changed or did
-    write("rules/saves.h", h)
+    write("rules/engine/saves.h", h)
 
     r = read("regtest.cpp")
     r, did = replace_exact(r, RINC_OLD, RINC_NEW, "regtest saves include")
@@ -220,7 +220,7 @@ static const SaveBand kThiefBands[] = {
 };
 
 // classIndex order: 0 fighter, 1 magic-user, 2 cleric, 3 thief
-// (CharClass order, see rules/classes.h)
+// (CharClass order, see rules/engine/classes.h)
 static const SaveBand* const kClassBands[4] = {
     kFighterBands, kMagicUserBands, kClericBands, kThiefBands
 };
@@ -323,8 +323,8 @@ int monsterSaveLevel(float hitDice);
 
 bool attemptMonsterSave(Dice& dice, float hitDice, SaveCategory cat,
                         int modifier = 0);"""
-RINC_OLD = "#include \"rules/combat.h\"\n#include \"spells/spells.h\""
-RINC_NEW = "#include \"rules/combat.h\"\n#include \"rules/saves.h\"\n#include \"spells/spells.h\""
+RINC_OLD = "#include \"rules/engine/combat.h\"\n#include \"spells/spells.h\""
+RINC_NEW = "#include \"rules/engine/combat.h\"\n#include \"rules/engine/saves.h\"\n#include \"spells/spells.h\""
 RT_OLD = """        printf("R109 turn audit: bad %d\\n", bad);
         if (bad) return 1;
     }

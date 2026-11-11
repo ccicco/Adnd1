@@ -1,11 +1,11 @@
--- oa758: promoted from rules/oa129magitemsprose.h (the OA TREASURE - THE ORIENTAL MAGICAL ITEMS PROSE, printed capture pp. 296-301);
+-- oa758: promoted from rules/oa/oa129magitemsprose.h (the OA TREASURE - THE ORIENTAL MAGICAL ITEMS PROSE, printed capture pp. 296-301);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 758,
   "prefix" = "oa758",
   "banner" = {
       "title" = "OA TREASURE - THE ORIENTAL MAGICAL ITEMS PROSE, printed capture pp. 296-301",
-      "provenance" = "- the item descriptions round census 680 -> 681.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 211 closed, 24 open - the magical items prose box flips (census 680 -> 681); NEXT - R759: Table 86: Oriental Magical Items (capture p. 296, the grid running onto p. 297), prefix dlu (verify free at the landing), audit \"R759 OA Table 86 items audit\", include after rules/oa129magitemsprose.h",
+      "provenance" = "- the item descriptions round census 680 -> 681.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 211 closed, 24 open - the magical items prose box flips (census 680 -> 681); NEXT - R759: Table 86: Oriental Magical Items (capture p. 296, the grid running onto p. 297), prefix dlu (verify free at the landing), audit \"R759 OA Table 86 items audit\", include after rules/oa/oa129magitemsprose.h",
     },
   "consts" = { {
       "name" = "dltBannerSpellBlockLevel",

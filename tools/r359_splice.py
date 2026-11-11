@@ -44,7 +44,7 @@ SEED_ENTRY = NL.join([
     '- R358 landed 2026-10-11: commit',
     '  8db9ec7, census 285, the UA',
     '  new magic-user 3rd level spells',
-    '  pin round (rules/uamuspells3.h):',
+    '  pin round (rules/ua/uamuspells3.h):',
     '  the eight spell descriptions',
     '  (cloudburst seam-checking the',
     '  R352 druid pin minus the holy',
@@ -89,13 +89,13 @@ assert s.count('R343 landed 2026-10-11') == 1, 'a r343 kept'
 assert s.count('## Knowledge maintenance') == 1, 'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
-# ---- (b) NEW rules/uamuspells1.h ----
-US = 'rules/uamuspells4.h'
+# ---- (b) NEW rules/ua/uamuspells1.h ----
+US = 'rules/ua/uamuspells4.h'
 if os.path.exists(US) and 'R359' in rd(US):
     already.append('uamuspells4.h: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uamuspells4.h
+// Adnd1 - rules/ua/uamuspells4.h
 // The UA NEW MAGIC-USER SPELLS (pp. 51-66) pins, R359: the
 // 4th-level spell descriptions - dispel illusion, the
 // Evard black tentacles, the Leomund secure shelter,
@@ -144,7 +144,7 @@ else:
 //     level heading; the cells pin clean.
 //   - the region also carries the R358-pinned secret
 //     page and sepia snake sigil bodies; their pins
-//     live in rules/uamuspells3.h.
+//     live in rules/ua/uamuspells3.h.
 //
 // ===========================================================================
 
@@ -843,7 +843,7 @@ else:
     assert s.count(TAIL_OLD) == 1, 'c tail'
     NOTE = NL.join([
         '      - R359: the 4th level pinned',
-        '        (rules/uamuspells4.h) - the',
+        '        (rules/ua/uamuspells4.h) - the',
         '        eight spell descriptions',
         '        (dispel illusion behind the',
         '        lost name tail and the',
@@ -902,12 +902,12 @@ if 'R359 UA MU 4th level spells pin audit' in s:
     already.append('regtest.cpp: the R359 audit')
 else:
     INC_ANCH = (
-        '#include "rules/uamuspells3.h"'
+        '#include "rules/ua/uamuspells3.h"'
         '  // R358: the UA new magic-user'
         ' 3rd level')
     INC_NEW = NL.join([
         INC_ANCH,
-        '#include "rules/uamuspells4.h"'
+        '#include "rules/ua/uamuspells4.h"'
         '  // R359: the UA new magic-user'
         ' 4th level',
     ])
@@ -1180,13 +1180,13 @@ assert s.count(
     ' pin audit: bad ') == 1, 'd r349 kept'
 assert s.count('R227: the wis mental save') == 1, 'd r227 kept'
 assert s.count(
-    '#include "rules/uamuspells4.h"') == 1, 'd include'
+    '#include "rules/ua/uamuspells4.h"') == 1, 'd include'
 assert s.count(
-    '#include "rules/uamuspells3.h"') == 1, 'd r358 include'
+    '#include "rules/ua/uamuspells3.h"') == 1, 'd r358 include'
 assert s.count(
-    '#include "rules/uamuspells2.h"') == 1, 'd r357 include'
+    '#include "rules/ua/uamuspells2.h"') == 1, 'd r357 include'
 assert s.count(
-    '#include "rules/uamuspells1.h"') == 1, 'd r356 include'
+    '#include "rules/ua/uamuspells1.h"') == 1, 'd r356 include'
 assert len(applied) + len(already) == 4, 'd count'
 
 # ---- the summary ----

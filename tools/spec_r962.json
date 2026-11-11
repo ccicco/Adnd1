@@ -7,7 +7,7 @@
   "title": "The Dragon issue-26 opener part one - the opener set",
   "provenance": "The opener of the issue-26 four-round shape - five of the thirteen Curtiss-called chains pinned as the opener set, the four-chain table round and the four-chain commentary set riding parts two and three with the flip to follow. All pinned from The Dragon Vol. III No. 12 (June 1979) print 13-14 + 26-30 + 39 at extract/dragon/026, PRINT FOLIO = PDF PAGE - 2 this issue, the single-voice transcript of the Curtiss-provided scan - the issue runs 52 pages, the cover printing the issue tag 36 and the PDF-3 mail-label notice printing the TD 26 last-issue note, both pinned as scanned, and no letters page this issue. The System 7 Napoleonics block, the Solo Berserker 1066 design, Boot Hill, the EPT birth tables, the Skinnies Starship Troopers variant and Lords and Wizards sit on the drop list per the Curtiss 2026-10-31 non-D&D calls, the Mugger! humor variant and the Dragon Augury reviews per the same-day calls, and the two watches - the Sullin levels 7-9 and the brawling sequel - ride to TD 27 absent a fifth issue."
  },
- "header_file": "rules/t26.h",
+ "header_file": "rules/dragon/issue026_opener1.h",
  "audit_file": "rules/audits/r962_batch.h",
  "audit_label": "R962 issue-26 opener set audit",
  "audit_anchor": "#include \"rules/audits/r961_batch.h\"  // R961: R961 Dragon issue-25 closure audit",
@@ -18,7 +18,7 @@
   "open": 0
  },
  "gap_flips": [],
- "include_after": "#include \"rules/l25.h\"  // R961: the Dragon issue-25 box closing round, the fourth four-round walk complete",
+ "include_after": "#include \"rules/dragon/issue025_close.h\"  // R961: the Dragon issue-25 box closing round, the fourth four-round walk complete",
  "include_comment": "the Dragon issue-26 opener part one, the five-chain opener set",
  "header_sections": {
   "the Giants in the Earth heroes roster (print 13-14)": [

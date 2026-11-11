@@ -2,7 +2,7 @@
  "round": 649,
  "title": "ARMOR PROSE AND DESCRIPTIONS - the suits-and-pieces doctrine and the armor description entries",
  "prefix": "dhj",
- "header_file": "rules/oaarmordesc.h",
+ "header_file": "rules/oa/oaarmordesc.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "ARMOR PROSE AND DESCRIPTIONS, printed capture pp. 93-97 - the OA armor descriptions round",
   "provenance": "pinned from the 2018 print capture (the settling authority), with the compressed-print capture giving a second independent read of the section - the armor prose and the description entries cross-checked paragraph-by-paragraph between the two passes (the intro on capture p. 93, the suits-and-pieces doctrine and the corselet example on p. 94, the averaging and piece-combination rules on p. 95, the nineteen description entries on pp. 96-97 of the print pass); every printed number agrees - zero contested cells. The doctrine pins as consts and bools: all armor falls into two groups, suits and pieces, with the common suit list (padded, leather, studded leather, leather scale, chain mail, brigandine), the rare list (metal scale, splint, banded, laced) and the virtually-unknown list (plate, field plate, full plate) as counts with the names riding the comments; a suit's type sets the armor class via the Table 52 grid pinned in R643; the corselet example pins AC 7 equal to studded leather and the printed piece examples pin kote-only AC 9 and kote-do-maru-haidate AC 6, cross-checking the Table 53 steps pinned in R644; the averaging doctrine, the no-general-protection rule for the specialized small pieces, the o-yoroi-below-the-pieces-combined rule, the one-piece-per-area rule and the no-pieces-with-suits rule pin as bools. The description entries pin their printed numbers as consts - the horo back-missile bonus of 1, the kabuto head armor class 3, the sode one foot square, the o-yoroi six included pieces and five smaller pieces - and their categorical rules as bools: the buckler same-hand rule, the chain-under-clothing detection rule, the do-maru lamellar rule, the kote under-robes rule, the hara-ate-gawa leather rule, the hara-ate rear-attacks-AC-10 rule (the prose mirror of the R644 star pair), the haramaki and haramaki-do concealability split, the hide-better-than-leather rule, the horo riding-only and no-other-use rules, the sode-needs-a-corselet rule, the o-yoroi matched-set rule, the scale commoner split, the shields-lighter rule, the sune-ate crippling-blow rule, and the movement drop with the o-yoroi floor. The hanburi, haidate, kabuto and jingasa flavor text rides the banner and comments. The shared OCR slips settle per the R643 branded-mail pattern - a read contradicting its own page does not stand: the print Hare-ate and here-ate reads are slips against the print pass's own Table 53 (hara-ate, corroborated by the compressed pass), the compressed Hanburt is a slip against the print Hanburi, and the print suns-ate, sods, Bode and Kate reads are slips corroborated by the compressed pass (sune-ate, sode, kote). The Table 52, 53, 54 and 55 grids stay with their rounds - R643 through R646. This is the last Chapter 5 box",
-  "sentinel": "the gap census after this round: 100 closed, 135 open - the armor prose and armor descriptions box flips (census 571 -> 572); NEXT - R650: the Chapter 6 Proficiencies arc begins - the weapon proficiencies and weapon specialization prose (capture pp. 100-101), prefix dhk (verify free), audit \"R650 OA proficiencies audit\", include after rules/oaarmordesc.h - the Chapter 6 boxes at HEAD name the exact labels"
+  "sentinel": "the gap census after this round: 100 closed, 135 open - the armor prose and armor descriptions box flips (census 571 -> 572); NEXT - R650: the Chapter 6 Proficiencies arc begins - the weapon proficiencies and weapon specialization prose (capture pp. 100-101), prefix dhk (verify free), audit \"R650 OA proficiencies audit\", include after rules/oa/oaarmordesc.h - the Chapter 6 boxes at HEAD name the exact labels"
  },
  "consts": [
   {
@@ -474,7 +474,7 @@
   "open": 135
  },
  "include_comment": "the OA armor descriptions pins",
- "include_after": "#include \"rules/oabardprose.h\"  // R648: the OA barding prose pins",
+ "include_after": "#include \"rules/oa/oabardprose.h\"  // R648: the OA barding prose pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R648 LANDED 2026-10-19: commit",
@@ -484,7 +484,7 @@
   "  (census 570 -> 571, pushed",
   "  9a2f19d..22d52ad), BARDING PROSE - the",
   "  barding AC factors and weight doctrine,",
-  "  capture pp. 98-99: rules/oabardprose.h,",
+  "  capture pp. 98-99: rules/oa/oabardprose.h,",
   "  prefix dhi (verified free), 13 inlines",
   "  (8 consts, 5 bools, no table): the",
   "  barding AC-factor ladder (leather or",
@@ -518,7 +518,7 @@
   "  entries, prefix dhj (verify free),",
   "  audit \"R649 OA armor descriptions",
   "  audit\", include after",
-  "  rules/oabardprose.h - the last",
+  "  rules/oa/oabardprose.h - the last",
   "  Chapter 5 box."
  ]
 }

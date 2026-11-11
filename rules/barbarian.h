@@ -17,7 +17,7 @@
 
 #pragma once
 
-#include "character.h"  // the Ability enum
+#include "engine/character.h"  // the Ability enum
 
 namespace rules {
 

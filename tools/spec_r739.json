@@ -2,7 +2,7 @@
  "round": 739,
  "title": "OA TREASURE - Potions: the dragon, giant, human, and undead control brews",
  "prefix": "dla",
- "header_file": "rules/oa110potions.h",
+ "header_file": "rules/oa/oa110potions.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA TREASURE - POTIONS, printed capture pp. 287-288 - the control brews round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 192 closed, 43 open - the potions box flips (census 661 -> 662); NEXT - R740: Scrolls (capture p. 288), prefix dlb (verify free at the landing), audit \"R740 OA scrolls audit\", include after rules/oa110potions.h"
+  "sentinel": "the gap census after this round: 192 closed, 43 open - the potions box flips (census 661 -> 662); NEXT - R740: Scrolls (capture p. 288), prefix dlb (verify free at the landing), audit \"R740 OA scrolls audit\", include after rules/oa/oa110potions.h"
  },
  "consts": [
   {
@@ -372,7 +372,7 @@
   "open": 43
  },
  "include_comment": "the OA potions pins",
- "include_after": "#include \"rules/oa109itemmods.h\"  // R738: the OA item mods pins",
+ "include_after": "#include \"rules/oa/oa109itemmods.h\"  // R738: the OA item mods pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R738 LANDED 2026-10-21: commit",
@@ -382,7 +382,7 @@
   "  (census 660 -> 661, pushed 5b369f6..cf2f961),",
   "  OA TREASURE, the Modifications to Standard",
   "  Magical Items prose (capture p. 286), header",
-  "  rules/oa109itemmods.h, prefix dkz",
+  "  rules/oa/oa109itemmods.h, prefix dkz",
   "  (verified free at 5b369f6), one gap flip",
   "  (the item mods box, its two-line wrap",
   "  handled), gap census now 191 closed /",
@@ -416,6 +416,6 @@
   "  call check - the 15 substring hits are",
   "  woodland words in comments and strings),",
   "  audit \"R739 OA potions audit\", include",
-  "  after rules/oa109itemmods.h."
+  "  after rules/oa/oa109itemmods.h."
  ]
 }

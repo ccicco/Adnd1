@@ -4,13 +4,13 @@
 # abilities layer first; the verification found the
 # ex-band data diverging from the printed table).
 #
-# (1) rules/character.h - the struct block: press() is
+# (1) rules/engine/character.h - the struct block: press() is
 #     retired and the printed Table II columns replace
 #     the unsourced carry/press numbers (the divergence
 #     named in place); weightAllow becomes weightAllowGp
 #     (+1,000..+3,000 as printed). (2) character.h -
 #     the four full-table accessors declared. (3)
-#     rules/character.cpp - the ex-band block corrected
+#     rules/engine/character.cpp - the ex-band block corrected
 #     to the printed rows (18/91-99 is +2/+5, not
 #     +3/+6; 18/51-75 damage is +3, not +4). (4)
 #     character.cpp - the full-table functions: weight
@@ -77,7 +77,7 @@ def patch(p, old, new, tag, expect=1, marker=None):
     wr(p, s.replace(old, new))
     applied.append(tag)
 
-# ---- (1) rules/character.h: the struct block ----
+# ---- (1) rules/engine/character.h: the struct block ----
 h1_old = NL.join([
     '// The to-hit/damage/carry bands (PHB p.9) are indexed by 51/76/91/100.',
     '// ----------------------------------------------------------------------------',
@@ -117,7 +117,7 @@ h1_new = NL.join([
     '};',
 ])
 
-# ---- (2) rules/character.h: the full-table accessors ----
+# ---- (2) rules/engine/character.h: the full-table accessors ----
 h2_old = NL.join([
     'int strHitAdj(uint8_t str, const ExceptionalStrength& ex);',
     'int strDmgAdj(uint8_t str, const ExceptionalStrength& ex);',
@@ -139,7 +139,7 @@ h2_new = NL.join([
     'int strBendBarsPct(uint8_t str, const ExceptionalStrength& ex);',
 ])
 
-# ---- (3) rules/character.cpp: the ex-band block ----
+# ---- (3) rules/engine/character.cpp: the ex-band block ----
 c1_old = NL.join([
     '// ----------------------------------------------------------------------------',
     '// Exceptional strength (PHB p.9)',
@@ -249,7 +249,7 @@ c1_new = NL.join([
     '}',
 ])
 
-# ---- (4) rules/character.cpp: the full-table functions ----
+# ---- (4) rules/engine/character.cpp: the full-table functions ----
 c2_old = NL.join([
     'int strDmgAdj(uint8_t str, const ExceptionalStrength& ex) {',
     '    if (str < 3)  return -1;',
@@ -334,7 +334,7 @@ c2_new = NL.join([
     '}',
 ])
 
-# ---- (5) rules/character.cpp: the score-3 to-hit fix ----
+# ---- (5) rules/engine/character.cpp: the score-3 to-hit fix ----
 c3_old = NL.join([
     'int strHitAdj(uint8_t str, const ExceptionalStrength& ex) {',
     '    if (str < 3)  return -3;',
@@ -502,24 +502,24 @@ gap_box_new = NL.join([
 ])
 
 # ---- run ----
-patch("rules/character.h", h1_old, h1_new,
-      "rules/character.h: struct block fixed",
+patch("rules/engine/character.h", h1_old, h1_new,
+      "rules/engine/character.h: struct block fixed",
       marker="R153 DIVERGENCE FIX")
 assert len(applied) + len(already) == 1
-patch("rules/character.h", h2_old, h2_new,
-      "rules/character.h: full-table accessors",
+patch("rules/engine/character.h", h2_old, h2_new,
+      "rules/engine/character.h: full-table accessors",
       marker="int strWeightAllowGp")
 assert len(applied) + len(already) == 2
-patch("rules/character.cpp", c1_old, c1_new,
-      "rules/character.cpp: ex-band block fixed",
+patch("rules/engine/character.cpp", c1_old, c1_new,
+      "rules/engine/character.cpp: ex-band block fixed",
       marker="R153 DIVERGENCE FIX, named in character.h")
 assert len(applied) + len(already) == 3
-patch("rules/character.cpp", c2_old, c2_new,
-      "rules/character.cpp: full-table functions",
+patch("rules/engine/character.cpp", c2_old, c2_new,
+      "rules/engine/character.cpp: full-table functions",
       marker="int strWeightAllowGp(uint8_t str")
 assert len(applied) + len(already) == 4
-patch("rules/character.cpp", c3_old, c3_new,
-      "rules/character.cpp: score-3 to-hit fix",
+patch("rules/engine/character.cpp", c3_old, c3_new,
+      "rules/engine/character.cpp: score-3 to-hit fix",
       marker="the printed score-3 row")
 assert len(applied) + len(already) == 5
 patch("regtest.cpp", aud_old, aud_new,

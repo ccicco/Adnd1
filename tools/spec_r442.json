@@ -2,7 +2,7 @@
  "round": 442,
  "title": "the WSG rope - rappelling",
  "prefix": "wrl",
- "header_file": "rules/wsgrapp.h",
+ "header_file": "rules/wsg/wsgrapp.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -13,7 +13,7 @@
  "census_before": 366,
  "inline_count": 9,
  "audit_label": "R442 WSG rappelling pin audit",
- "audit_comment": "The rappelling slice pins the rope-secured descent of a non-horizontal surface - the 120-feet-per-round base speed (encumbrance and other penalties apply as for an ascent), the +50% Climbing Check modifier per round or part of a round, the lost-grip failure state (hanging upside down, spinning, until rescued or a successful Dexterity Check - allowed once per round), and the free-hanging-rope variant (no surface to brace against: +30% instead of +50%, Dex checks at +2) (rules/wsgrapp.h, prefix wrl); census 366 -> 367.",
+ "audit_comment": "The rappelling slice pins the rope-secured descent of a non-horizontal surface - the 120-feet-per-round base speed (encumbrance and other penalties apply as for an ascent), the +50% Climbing Check modifier per round or part of a round, the lost-grip failure state (hanging upside down, spinning, until rescued or a successful Dexterity Check - allowed once per round), and the free-hanging-rope variant (no surface to brace against: +30% instead of +50%, Dex checks at +2) (rules/wsg/wsgrapp.h, prefix wrl); census 366 -> 367.",
  "banner": {
   "title": "The WSG RAPPELLING, R442: the descent prose (no table this round) - by securing a rope at the top of a slope or cliff and then winding it around his body, a character can descend a non-horizontal surface quite rapidly by the process known as rappelling; applying sideways pressure against the surface and using the friction of the rope around his body, the climber comes down under control at a base speed of 120 feet per round (encumbrance and other penalties apply just as for an ascent). To successfully rappel the character must make a Climbing Check with a +50% modifier to his current Climbing Rating for every round or part of a round spent descending; failure on any check means he has lost his grip and hangs upside down, spinning while suspended by the rope, until rescued or until he makes a successful Dexterity Check (regained bearings, new hold) - allowed once per round. Rappelling down a free-hanging rope (no surface to brace against) can be done, but the modifier is only +30% instead of +50%; a failed check while free-hanging means his Dexterity Checks take a +2 modifier to the die roll. Census 366 -> 367.",
   "provenance": "the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed p. 37; the user own copy OCR cross-checked against the archive djvu word layer (Guide_0037.djvu) - the section reads CLEAN in the djvu, every number (the 120 feet per round, the +50% modifier, the +30% free-hanging modifier and the +2 Dexterity modifier) matched exactly; no eye-reads were needed.",
@@ -142,7 +142,7 @@
  "gap_flips": [
   {
    "from": "  - [ ] Rappelling (p. 37)",
-   "to": "  - [x] Rappelling (p. 37) - R442: the 120-feet-per-round base speed, the +50% per-round check modifier, the hang-upside-down failure state, the once-per-round Dexterity recovery and the free-hanging variant (+30%, Dex at +2) pin as rules/wsgrapp.h",
+   "to": "  - [x] Rappelling (p. 37) - R442: the 120-feet-per-round base speed, the +50% per-round check modifier, the hang-upside-down failure state, the once-per-round Dexterity recovery and the free-hanging variant (+30%, Dex at +2) pin as rules/wsg/wsgrapp.h",
    "note": "rappelling"
   },
   {
@@ -156,7 +156,7 @@
   "open": 141
  },
  "include_comment": "the WSG rappelling",
- "include_after": "#include \"rules/wsgtog.h\"  // R441: the WSG roping together",
+ "include_after": "#include \"rules/wsg/wsgtog.h\"  // R441: the WSG roping together",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R441 landed 2026-10-14: commit 1aa49f0 (census 366, pushed",
@@ -169,7 +169,7 @@
   "  the wrpCascadePenaltyPct switch ladder 0/10/20/30/40 - a -10% step per",
   "  fallen character beyond the first (the five-character example on a 200-foot",
   "  rope cascades -10, -20, -30); the last-pair extra check; the tie capacity -",
-  "  50 feet ties two, one more per additional 50 feet. rules/wsgtog.h NEW (11",
+  "  50 feet ties two, one more per additional 50 feet. rules/wsg/wsgtog.h NEW (11",
   "  inlines, prefix wrp - checked free in all three TUs). Ground truth CLEAN",
   "  two-way (the user copy OCR vs the djvu word layer Guide_0037 - every number",
   "  matched, no eye-reads). Gap 43/143 -> 44/142; census 365 -> 366. rverify:",

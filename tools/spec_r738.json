@@ -2,7 +2,7 @@
  "round": 738,
  "title": "OA TREASURE - the Modifications to Standard Magical Items: the occidental items rule and the form changes",
  "prefix": "dkz",
- "header_file": "rules/oa109itemmods.h",
+ "header_file": "rules/oa/oa109itemmods.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA TREASURE - THE MODIFICATIONS TO STANDARD MAGICAL ITEMS, printed capture p. 286 - the occidental items round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 191 closed, 44 open - the item mods box flips (census 660 -> 661); NEXT - R739: Potions (capture p. 287), prefix dla (verify free at the landing), audit \"R739 OA potions audit\", include after rules/oa109itemmods.h"
+  "sentinel": "the gap census after this round: 191 closed, 44 open - the item mods box flips (census 660 -> 661); NEXT - R739: Potions (capture p. 287), prefix dla (verify free at the landing), audit \"R739 OA potions audit\", include after rules/oa/oa109itemmods.h"
  },
  "consts": [
   {
@@ -247,7 +247,7 @@
   "open": 44
  },
  "include_comment": "the OA item mods pins",
- "include_after": "#include \"rules/oa108tableiii.h\"  // R737: the OA Table III pins",
+ "include_after": "#include \"rules/oa/oa108tableiii.h\"  // R737: the OA Table III pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R737 LANDED 2026-10-21: commit",
@@ -257,7 +257,7 @@
   "  (census 659 -> 660, pushed ec8606c..5b369f6),",
   "  OA TREASURE, Table III. (Orient): Magical",
   "  Items (capture p. 287), header",
-  "  rules/oa108tableiii.h, prefix dky",
+  "  rules/oa/oa108tableiii.h, prefix dky",
   "  (verified free at ec8606c), one gap flip",
   "  (the Table III box, its two-line wrap",
   "  handled), gap census now 190 closed /",
@@ -287,6 +287,6 @@
   "  p. 286), prefix dkz (verify free at the",
   "  landing), audit \"R738 OA standard item",
   "  mods audit\", include after",
-  "  rules/oa108tableiii.h."
+  "  rules/oa/oa108tableiii.h."
  ]
 }

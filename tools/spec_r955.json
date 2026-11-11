@@ -7,7 +7,7 @@
   "title": "The Dragon issue-24 opener part two - the alignment pantheon",
   "provenance": "The part-two round of the issue-24 four-round shape - the single chain of the Schick Design Forum alignment variant, the table round of the walk: choir practice at the First Church of Lawful Evil (Orthodox), The Ramifications of Alignment - the eighteen prime alignments across Law, Neutrality and Chaos, the twenty-one prime deities with the four elemental lords at two hundred hit points, the five sons of Thakta Tylden and the Headsman of Marly, the fourteen-spell standard god list, the gods created and maintained by their believers worship. Pinned from The Dragon Vol. III No. 10, April 1979, number 24, print 34 and 36 through 39 - print 35 is the In Search of the Unknown module advertisement."
  },
- "header_file": "rules/s24.h",
+ "header_file": "rules/dragon/issue024_opener2.h",
  "audit_file": "rules/audits/r955_batch.h",
  "audit_label": "R955 issue-24 alignment pantheon audit",
  "audit_anchor": "#include \"rules/audits/r954_batch.h\"  // R954: R954 issue-24 variant triptych audit",
@@ -18,7 +18,7 @@
   "open": 0
  },
  "gap_flips": [],
- "include_after": "#include \"rules/t24.h\"  // R954: the Dragon issue-24 opener part one, the three-chain variant round",
+ "include_after": "#include \"rules/dragon/issue024_opener1.h\"  // R954: the Dragon issue-24 opener part one, the three-chain variant round",
  "include_comment": "the Dragon issue-24 opener part two, the alignment pantheon table round",
  "header_sections": {
   "the alignment pantheon variant (print 34+36-39)": [

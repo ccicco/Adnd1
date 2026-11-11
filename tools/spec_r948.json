@@ -46,8 +46,8 @@
   "  print 44, Stalemate at Kassala print 45-47, Mapping the Dungeons",
   "  catalog print 18-28. WAIT FOR GO."
  ],
- "header_file": "rules/k22.h",
- "include_after": "#include \"rules/s22.h\"  // R947: the Dragon issue-22 opener part two, the DMG sneak preview table round",
+ "header_file": "rules/dragon/issue022_opener3.h",
+ "include_after": "#include \"rules/dragon/issue022_opener2.h\"  // R947: the Dragon issue-22 opener part two, the DMG sneak preview table round",
  "include_comment": "the Dragon issue-22 opener part three, the five-chain commentary round",
  "audit_file": "rules/audits/r948_batch.h",
  "audit_anchor": "#include \"rules/audits/r947_batch.h\"  // R947: R947 issue-22 sneak preview audit",

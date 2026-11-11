@@ -8,7 +8,7 @@
     // full-round speed-change exemption (a full round to slow down or speed
     // up, full movement to standstill or vice versa, needs no check), and the
     // fall consequence (no direct damage, only an indirect cause of greater
-    // problems) (rules/wsgslip.h, prefix wsl); census 371 -> 372.
+    // problems) (rules/wsg/wsgslip.h, prefix wsl); census 371 -> 372.
     {
         using namespace rules;
         int bad = 0;

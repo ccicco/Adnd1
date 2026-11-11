@@ -1,4 +1,4 @@
--- ua: promoted from rules/uadeityprose3.h (the THE HALFLING DEITY PROSE - part 3 of the Appendix S paragraph close:);
+-- ua: promoted from rules/ua/uadeityprose3.h (the THE HALFLING DEITY PROSE - part 3 of the Appendix S paragraph close:);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 788,
@@ -456,6 +456,6 @@ return {
     } },
   "audit" = {
       "label" = "R788 halfling deity prose audit",
-      "comment" = "THE HALFLING DEITY PROSE - part 3 of the Appendix S description-paragraph close. The archive.org full-text OCR of pp. 116-118 reads the four halfling blocks scan-clean: the Sheela festivals and the entangle craft, the Arvoreen unseen summons of halfling heroes, the Cyrrollalee furniture animation and home trust, and the Brandobaris dust sling, escape dagger, and reward risks. The stat-block numerics stay R406/R783; the paragraph facts ride rules/uadeityprose3.h.",
+      "comment" = "THE HALFLING DEITY PROSE - part 3 of the Appendix S description-paragraph close. The archive.org full-text OCR of pp. 116-118 reads the four halfling blocks scan-clean: the Sheela festivals and the entangle craft, the Arvoreen unseen summons of halfling heroes, the Cyrrollalee furniture animation and home trust, and the Brandobaris dust sling, escape dagger, and reward risks. The stat-block numerics stay R406/R783; the paragraph facts ride rules/ua/uadeityprose3.h.",
     },
 }

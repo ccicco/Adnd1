@@ -2,7 +2,7 @@
  "round": 717,
  "title": "OA MONSTERS - the Goblin Spider: the trapdoor ambush",
  "prefix": "dke",
- "header_file": "rules/oa88goblinspider.h",
+ "header_file": "rules/oa/oa88goblinspider.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA MONSTERS - THE GOBLIN SPIDER, printed capture p. 267 - the trapdoor ambush round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 170 closed, 65 open - the goblin spider box flips (census 639 -> 640); NEXT - R718: the Hai Nu (capture p. 268), prefix dkf (verify free at the landing), audit \"R718 OA monsters Hai Nu audit\", include after rules/oa88goblinspider.h"
+  "sentinel": "the gap census after this round: 170 closed, 65 open - the goblin spider box flips (census 639 -> 640); NEXT - R718: the Hai Nu (capture p. 268), prefix dkf (verify free at the landing), audit \"R718 OA monsters Hai Nu audit\", include after rules/oa/oa88goblinspider.h"
  },
  "consts": [
   {
@@ -685,14 +685,14 @@
   "open": 65
  },
  "include_comment": "the OA Goblin Spider pins",
- "include_after": "#include \"rules/oa87goblinrat.h\"  // R716: the OA Goblin Rat pins",
+ "include_after": "#include \"rules/oa/oa87goblinrat.h\"  // R716: the OA Goblin Rat pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R716 LANDED 2026-10-21: commit",
  "prev_record": [
   "- R716 LANDED 2026-10-21: commit 91bfd2404a253ff1842ac0c22616361c5f30a604",
   "  (census 638 -> 639, pushed 1669743..91bfd24), OA MONSTERS - the",
-  "  Goblin Rat (capture pp. 266-267 print): rules/oa87goblinrat.h,",
+  "  Goblin Rat (capture pp. 266-267 print): rules/oa/oa87goblinrat.h,",
   "  prefix dkd (verified free at 1669743), ONE gap flip, gap",
   "  census 169/66 - the goblin rat box. 24 consts + 37 bools",
   "  (61 inlines): the stat block (the rare 1-20, the AC 7, the",
@@ -717,6 +717,6 @@
   "  byte-exact; canvas md5 2e808dd7e25c9475cbbe96320c903d5e).",
   "  NEXT - R717: the Goblin Spider (capture p. 267), prefix",
   "  dke (verified free at 91bfd24), audit \"R717 OA monsters",
-  "  Goblin Spider audit\", include after rules/oa87goblinrat.h."
+  "  Goblin Spider audit\", include after rules/oa/oa87goblinrat.h."
  ]
 }

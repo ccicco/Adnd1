@@ -1,4 +1,4 @@
--- ua333: promoted from rules/uaranger.h (the The UA ranger expansion (pp. 21-22) pins (R333).);
+-- ua333: promoted from rules/ua/uaranger.h (the The UA ranger expansion (pp. 21-22) pins (R333).);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 333,

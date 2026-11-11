@@ -10,7 +10,7 @@
 # through III.H, the .2 seconds,
 # the seven misc sub-tables.
 #
-# 1. rules/uadetrows.h (NEW): the
+# 1. rules/ua/uadetrows.h (NEW): the
 #    full charge - every dice
 #    band, every name, every mark
 #    (the * control/charge/
@@ -28,7 +28,7 @@
 #    precedent; the em-dash
 #    normalizes to -, the house
 #    ASCII discipline).
-# 2. rules/uadetskel.h (R375): the
+# 2. rules/ua/uadetskel.h (R375): the
 #    extract markers flip (the
 #    row bodies no longer garble;
 #    the seventh misc sub-table
@@ -63,7 +63,7 @@ applied = []
 already = []
 
 HDR = r'''// ===========================================================================
-// Adnd1 - rules/uadetrows.h
+// Adnd1 - rules/ua/uadetrows.h
 // The UA RANDOM TREASURE
 // DETERMINATION - MAGIC ITEMS
 // (Revised Table) ROW BODIES,
@@ -2112,7 +2112,7 @@ if s.count('## Knowledge maintenance') != 1:
     die('the seed maintenance head')
 
 # ============ (b) uadetskel.h ============
-SK = 'rules/uadetskel.h'
+SK = 'rules/ua/uadetskel.h'
 
 pair(SK, B(
     '// the sub-table splits. The row',
@@ -2124,7 +2124,7 @@ pair(SK, B(
     '// the sub-table splits. The row',
     '// bodies ride R395 - the clean',
     '// PDF read fills every row',
-    '// (rules/uadetrows.h); the',
+    '// (rules/ua/uadetrows.h); the',
     '// extract markers below flip',
     '// with it. The dial ride: the').rstrip(NL),
     'skel: the header note')
@@ -2179,13 +2179,13 @@ pair(SK, B(
     '// The R395 clean read delivers',
     '// every row body - the marker',
     '// flips false (the rows pin in',
-    '// rules/uadetrows.h).',
+    '// rules/ua/uadetrows.h).',
     'inline bool uadsRowBodiesGarble()',
     '    { return false; }').rstrip(NL),
     'skel: the row-bodies marker')
 
-# ============ (c) NEW rules/uadetrows.h ============
-RH = 'rules/uadetrows.h'
+# ============ (c) NEW rules/ua/uadetrows.h ============
+RH = 'rules/ua/uadetrows.h'
 if os.path.exists(RH) and 'R395' in rd(RH):
     already.append('uadetrows.h: the pins')
 else:
@@ -2223,7 +2223,7 @@ pair(GP, B(
     '        eight categories\' tables,',
     '        the .2 seconds, the seven',
     '        misc sub-tables) pin in',
-    '        full (rules/uadetrows.h) -',
+    '        full (rules/ua/uadetrows.h) -',
     '        the dice bands, the names,',
     '        the marks, the x.p./g.p.',
     '        columns; the skeleton',
@@ -2259,22 +2259,22 @@ pair(GP, B(
     '      item above.',
     '      - AMENDED R395: closed - the',
     '        umbrella bands pinned R375',
-    '        (rules/uadetskel.h) and the',
+    '        (rules/ua/uadetskel.h) and the',
     '        sub-tables closed by the',
     '        R395 row-body charge',
-    '        (rules/uadetrows.h).').rstrip(NL),
+    '        (rules/ua/uadetrows.h).').rstrip(NL),
     'gap: the umbrella item')
 
 # ============ (e) regtest.cpp ============
 RT = 'regtest.cpp'
 
 pair(RT,
-    '#include "rules/uadetskel.h"'
+    '#include "rules/ua/uadetskel.h"'
     '  // R375: the UA determination skeleton',
-    '#include "rules/uadetskel.h"'
+    '#include "rules/ua/uadetskel.h"'
     '  // R375: the UA determination skeleton'
     + NL +
-    '#include "rules/uadetrows.h"'
+    '#include "rules/ua/uadetrows.h"'
     '  // R395: the UA determination row bodies',
     'regtest: the include')
 

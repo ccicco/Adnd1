@@ -1,11 +1,11 @@
--- oa747: promoted from rules/oa118armorexpl.h (the OA TREASURE - THE EXPLANATION OF ARMOR PROPERTIES, printed capture pp.);
+-- oa747: promoted from rules/oa/oa118armorexpl.h (the OA TREASURE - THE EXPLANATION OF ARMOR PROPERTIES, printed capture pp.);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 747,
   "prefix" = "oa747",
   "banner" = {
       "title" = "OA TREASURE - THE EXPLANATION OF ARMOR PROPERTIES, printed capture pp.",
-      "provenance" = "290-291 - the big prose round census 669 -> 670.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 200 closed, 35 open - the explanation box flips (census 669 -> 670); NEXT - R748: Weapons prose (capture pp. 291-294), prefix dlj (verify free at the landing), audit \"R748 OA weapons prose audit\", include after rules/oa118armorexpl.h",
+      "provenance" = "290-291 - the big prose round census 669 -> 670.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 200 closed, 35 open - the explanation box flips (census 669 -> 670); NEXT - R748: Weapons prose (capture pp. 291-294), prefix dlj (verify free at the landing), audit \"R748 OA weapons prose audit\", include after rules/oa/oa118armorexpl.h",
     },
   "consts" = { {
       "name" = "dliQualityNotMagical",

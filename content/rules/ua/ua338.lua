@@ -1,4 +1,4 @@
--- ua338: promoted from rules/uamissile.h (the The UA HURLED WEAPON AND MISSILE TYPES, GENERAL DATA, AND);
+-- ua338: promoted from rules/ua/uamissile.h (the The UA HURLED WEAPON AND MISSILE TYPES, GENERAL DATA, AND);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 338,

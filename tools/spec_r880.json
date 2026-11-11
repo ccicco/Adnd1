@@ -37,7 +37,7 @@
   "  (pony, ape, mule) - the anchor catch of the",
   "  round.",
   "  THE MECHANICS: prefix rsc (full-repo scan clean),",
-  "  header rules/rsc.h (maxwidth 92 opener-only),",
+  "  header rules/meta/registry_schema.h (maxwidth 92 opener-only),",
   "  audit \"R879 registry schema audit\" rode",
   "  rules/audits/r879_batch.h (78 char-based); 10",
   "  consts, 9 bools, 2 grids (books 6x2, keys 57x7",
@@ -62,9 +62,9 @@
   "  data_files byte-exact; THEN the DDG lua promotion",
   "  (promotion-from-headers). WAIT FOR GO."
  ],
- "include_after": "#include \"rules/rsc.h\"  // R879: the registry schema",
+ "include_after": "#include \"rules/meta/registry_schema.h\"  // R879: the registry schema",
  "include_comment": "the DDG lua promotion, batch one",
- "header_file": "rules/dpe.h",
+ "header_file": "rules/ddg/lua_promo_batch1.h",
  "audit_file": "rules/audits/r880_batch.h",
  "audit_label": "R880 DDG promotion audit",
  "audit_anchor": "#include \"rules/audits/r879_batch.h\"  // R879: R879 registry schema audit",
@@ -76,7 +76,7 @@
  "gap_flips": [],
  "banner": {
   "title": "The DDG lua promotion, batch one - 55 full-field defs (American Indian 14, Arthurian 15, Babylonian 10, Celtic 16) generated ONLY from the adjudicated pin headers, the registry floor 995 -> 1050.",
-  "provenance": "Generated from rules/dgb.h, dgc.h, dgd.h and dge.h at dbe3170: the four grids x rows (combat, class, ability, roster), the being name orders locked by the pinned cross-references and verified against the primary ink extract pages; the legend tables decode verbatim from the header comments; the unpinned cells emit the sentinels.",
+  "provenance": "Generated from rules/ddg/mythos_american_indian.h, rules/ddg/mythos_arthurian.h, rules/ddg/mythos_babylonian.h and rules/ddg/mythos_celtic.h at dbe3170: the four grids x rows (combat, class, ability, roster), the being name orders locked by the pinned cross-references and verified against the primary ink extract pages; the legend tables decode verbatim from the header comments; the unpinned cells emit the sentinels.",
   "sentinel": "The sentinels ride the R879 doctrine unchanged: n/a for strings, -1 for ints, distinct from every real print value; the printed See below, Standard, Nil and Infinite are REAL values and stay. The audits read the sentinels exactly, so fail-on-wrong stays the rule."
  },
  "consts": [

@@ -1,11 +1,11 @@
--- oa737: promoted from rules/oa108tableiii.h (the OA TREASURE - TABLE III. (ORIENT), MAGICAL ITEMS, printed capture p. 287 -);
+-- oa737: promoted from rules/oa/oa108tableiii.h (the OA TREASURE - TABLE III. (ORIENT), MAGICAL ITEMS, printed capture p. 287 -);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 737,
   "prefix" = "oa737",
   "banner" = {
       "title" = "OA TREASURE - TABLE III. (ORIENT), MAGICAL ITEMS, printed capture p. 287 -",
-      "provenance" = "the item draw round census 659 -> 660.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 190 closed, 45 open - the Table III box flips (census 659 -> 660); NEXT - R738: the Modifications to Standard Magical Items prose (capture p. 286), prefix dkz (verify free at the landing), audit \"R738 OA standard item mods audit\", include after rules/oa108tableiii.h",
+      "provenance" = "the item draw round census 659 -> 660.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 190 closed, 45 open - the Table III box flips (census 659 -> 660); NEXT - R738: the Modifications to Standard Magical Items prose (capture p. 286), prefix dkz (verify free at the landing), audit \"R738 OA standard item mods audit\", include after rules/oa/oa108tableiii.h",
     },
   "consts" = { {
       "name" = "dkyRowCount",

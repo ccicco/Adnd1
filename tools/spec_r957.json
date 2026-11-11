@@ -8,7 +8,7 @@
   "provenance": "The pure flip, no new ink - all three report-024 boxes check at this single round: the part-one variant triptych (R954, t24), the part-two alignment pantheon (R955, s24) and the part-three ten-chain commentary set (R956, k24). The walk holds issues 2-24 all closed, the four-round shape thrice proven at issues 22, 23 and 24; the Sullin and brawling watches ride to TD 25. Pinned from The Dragon Vol. III No. 10 (April 1979) number 24, the single-voice transcript of the Curtiss-provided scan at extract/dragon/024."
  },
  "regtest": "regtest.cpp",
- "header_file": "rules/l24.h",
+ "header_file": "rules/dragon/issue024_close.h",
  "audit_file": "rules/audits/r957_batch.h",
  "audit_label": "R957 Dragon issue-24 closure audit",
  "audit_comment": "THE DRAGON ISSUE-24 BOX CLOSING ROUND - the pure flip, no new ink. All three report-024 boxes flip at this single round: the part-one variant triptych (R954, t24), the part-two alignment pantheon (R955, s24) and the part-three ten-chain commentary set (R956, k24). The walk holds issues 2-24 all closed, the four-round shape thrice proven; the Sullin and brawling watches ride to TD 25.",
@@ -37,7 +37,7 @@
    "note": "the issue-24 part-three box"
   }
  ],
- "include_after": "#include \"rules/k24.h\"  // R956: the Dragon issue-24 opener part three, the ten-chain commentary round",
+ "include_after": "#include \"rules/dragon/issue024_opener3.h\"  // R956: the Dragon issue-24 opener part three, the ten-chain commentary round",
  "include_comment": "the Dragon issue-24 box closing round, the third four-round walk complete",
  "audit_anchor": "#include \"rules/audits/r956_batch.h\"  // R956: R956 issue-24 commentary set audit",
  "seed_anchor": "## Knowledge maintenance",

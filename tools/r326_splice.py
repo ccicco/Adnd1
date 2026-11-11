@@ -157,7 +157,7 @@ s = rd(AS)
 if 'CR_SUBRACE' in s:
     already.append('appstate.h: the stage, the rows')
 else:
-    INC_ANCH = ('#include "../rules/races.h"'
+    INC_ANCH = ('#include "../rules/engine/races.h"'
                 '   // R154: Race Tables I-III')
     INC_NEW = NL.join([
     INC_ANCH,

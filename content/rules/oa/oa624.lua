@@ -1,11 +1,11 @@
--- oa624: promoted from rules/oashukenja.h (the THE SHUKENJA, printed capture pp. 42-45 - the OA shukenja round);
+-- oa624: promoted from rules/oa/oashukenja.h (the THE SHUKENJA, printed capture pp. 42-45 - the OA shukenja round);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 624,
   "prefix" = "oa624",
   "banner" = {
       "title" = "THE SHUKENJA, printed capture pp. 42-45 - the OA shukenja round",
-      "provenance" = "census 546 -> 547.  verified against capture pp. 42-45 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). The T26 row-1 and row-12 xp bounds are OCR-mangled in the capture (0-1 250 and 1,200,00) and settled against the 2018 print BEFORE pinning (1,250 and 1,200,000) per the settling doctrine. The T27 spell-bonus column pins as cumulative codes and the T28 dashes pin as zeros. OCR normalization: minimum scares reads as minimum scores; principal attitude reads as principal attribute; t has failed reads as it has failed (prose only)  the gap census after this round: 49 closed, 186 open - the shukenja boxes with Tables 26, 27 and 28 flip (census 546 -> 547); NEXT - R625: the Sohei, capture pp. 45-47, Tables 29 and 30, prefix dgl (verify free), audit \"R625 OA sohei audit\", include after rules/oashukenja.h",
+      "provenance" = "census 546 -> 547.  verified against capture pp. 42-45 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). The T26 row-1 and row-12 xp bounds are OCR-mangled in the capture (0-1 250 and 1,200,00) and settled against the 2018 print BEFORE pinning (1,250 and 1,200,000) per the settling doctrine. The T27 spell-bonus column pins as cumulative codes and the T28 dashes pin as zeros. OCR normalization: minimum scares reads as minimum scores; principal attitude reads as principal attribute; t has failed reads as it has failed (prose only)  the gap census after this round: 49 closed, 186 open - the shukenja boxes with Tables 26, 27 and 28 flip (census 546 -> 547); NEXT - R625: the Sohei, capture pp. 45-47, Tables 29 and 30, prefix dgl (verify free), audit \"R625 OA sohei audit\", include after rules/oa/oashukenja.h",
     },
   "consts" = { {
       "name" = "dgkShukenjaMinWis",

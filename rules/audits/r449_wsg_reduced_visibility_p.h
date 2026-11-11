@@ -9,7 +9,7 @@
     // safe speed with the blunder/stop-short consequences (saddle, wagon
     // seat, chariot front) and the twice-the-figure cap, and Table 23 (the
     // three light rows x the five visibility conditions, the fractions from
-    // 1/1 down to 1/8) (rules/wsgvis.h, prefix wsv); census 373 -> 374.
+    // 1/1 down to 1/8) (rules/wsg/wsgvis.h, prefix wsv); census 373 -> 374.
     {
         using namespace rules;
         int bad = 0;

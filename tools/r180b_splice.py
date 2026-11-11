@@ -2,7 +2,7 @@
 # R180b splice: the R180 build fix (the R179b pattern).
 #
 # The R180 audit probed rules::RACE_HALFELF but the enum
-# in rules/races.h is RACE_HALF_ELF - one identifier, one
+# in rules/engine/races.h is RACE_HALF_ELF - one identifier, one
 # line, preflight RED with a single compile error. The
 # census failures were all downstream of the missing
 # binary. This splice renames the probe to the real enum

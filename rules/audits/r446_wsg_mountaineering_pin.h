@@ -9,7 +9,7 @@
     // and the piton loosen rules (a 10% come-loose chance, checked the first
     // time it supports 100 pounds or more; a passed check stays lodged until
     // a mountaineer dislodges it; a 10% chance a secured piton cannot be
-    // dislodged and must be left behind) (rules/wsgmntnr.h, prefix wmt);
+    // dislodged and must be left behind) (rules/wsg/wsgmntnr.h, prefix wmt);
     // census 370 -> 371.
     {
         using namespace rules;

@@ -62,14 +62,14 @@ def patch(p, old, new, tag, marker):
 
 p1_old = NL.join(['int monsterSaveLevel(float hitDice);'])
 p1_new = NL.join(['// ----------------------------------------------------------------------------', '// R155: DMG p.80 matrix II.C - classed monsters. A monster whose', '// write-up gives it class abilities saves on its MOST FAVORABLE', '// matrix (footnotes 1-2: the best class score, or the matrix of', '// its area of ability). The Lua saveAs key parses into these class', '// bits with per-class levels (couatl: MU 5 AND cleric 7).', '// ----------------------------------------------------------------------------', 'const int SAVE_AS_FIGHTER     = 1;', 'const int SAVE_AS_MAGIC_USER  = 2;', 'const int SAVE_AS_CLERIC      = 4;', 'const int SAVE_AS_THIEF       = 8;', '', '// R155: the min target over the classes in the mask (each at its', '// own level, levels[classIndex]) vs the base class/level target -', '// the II.B fighter-matrix convention stays in the min. mask 0 (or', '// no usable bits) returns the plain base target.', 'int mostFavorableSaveTarget(int classMask, const int* levels,', '                            int baseClass, int baseLevel,', '                            SaveCategory cat);', '', 'int monsterSaveLevel(float hitDice);'])
-patch("rules/saves.h", p1_old, p1_new,
+patch("rules/engine/saves.h", p1_old, p1_new,
       "saves.h: II.C class bits + mostFavorableSaveTarget decl",
       marker='SAVE_AS_FIGHTER     = 1')
 assert len(applied) + len(already) == 1
 
 p2_old = NL.join(['// Monster HD -> save level (DMG p.80 matrix II.B): hit dice equate to'])
 p2_new = NL.join(['// ----------------------------------------------------------------------------', '// R155: matrix II.C most-favorable matrix - a classed monster', '// saves at the BEST score across its class matrices (each class at', '// its own level) vs the base target; the II.B fighter matrix stays', '// in the min (a classed foe never saves WORSE than the matrix II', '// convention).', '// ----------------------------------------------------------------------------', '', 'int mostFavorableSaveTarget(int classMask, const int* levels,', '                            int baseClass, int baseLevel,', '                            SaveCategory cat) {', '    int best = saveTarget(baseClass, baseLevel, cat);', '    for (int ci = 0; ci < 4; ++ci) {', '        if (!(classMask & (1 << ci))) continue;', '        if (!levels || levels[ci] < 1) continue;', '        int t = saveTarget(ci, levels[ci], cat);', '        if (t < best) best = t;', '    }', '    return best;', '}', '', '// ----------------------------------------------------------------------------', '// Monster HD -> save level (DMG p.80 matrix II.B): hit dice equate to'])
-patch("rules/saves.cpp", p2_old, p2_new,
+patch("rules/engine/saves.cpp", p2_old, p2_new,
       "saves.cpp: mostFavorableSaveTarget impl",
       marker='never saves WORSE')
 assert len(applied) + len(already) == 2

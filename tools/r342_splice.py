@@ -39,7 +39,7 @@ SEED_ENTRY = NL.join([
     '- R341 landed 2026-10-11: commit',
     '  d619290, census 268, the UA spell',
     '  tables pin round, part 1',
-    '  (rules/uaspelltables.h): the',
+    '  (rules/ua/uaspelltables.h): the',
     '  cleric 1st-3rd table (20 rows,',
     '  seam-verified against the R80',
     '  registry), the cleric 4th-7th',
@@ -70,13 +70,13 @@ assert s.count('R338 landed 2026-10-11') == 1,     'a r338 kept'
 assert s.count('## Knowledge maintenance') == 1,     'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
-# ---- (b) NEW rules/uaspelltables2.h ----
-US = 'rules/uaspelltables2.h'
+# ---- (b) NEW rules/ua/uaspelltables2.h ----
+US = 'rules/ua/uaspelltables2.h'
 if os.path.exists(US) and 'R342' in rd(US):
     already.append('uaspelltables2.h: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uaspelltables2.h
+// Adnd1 - rules/ua/uaspelltables2.h
 // The UA SPELL TABLES (pp. 30-31) pins, part 2 (R342): the magic-user
 // spells tables and the illusionist spell table.
 //
@@ -414,7 +414,7 @@ else:
     assert s.count(TAIL_OLD) == 1, 'c tail'
     NOTE = NL.join([
         '      - CLOSED R342: part 2 pinned',
-        '        (rules/uaspelltables2.h) - the',
+        '        (rules/ua/uaspelltables2.h) - the',
         '        MU 1st-5th columns',
         '        (35/30/28/28/28 readable names,',
         '        every garble position-decoded),',
@@ -453,11 +453,11 @@ if 'R342 UA MU and IL tables pin audit' in s:
     already.append('regtest.cpp: the R342 audit')
 else:
     INC_ANCH = (
-        '#include "rules/uaspelltables.h"'
+        '#include "rules/ua/uaspelltables.h"'
         '  // R341: the UA spell tables part 1')
     INC_NEW = NL.join([
         INC_ANCH,
-        '#include "rules/uaspelltables2.h"'
+        '#include "rules/ua/uaspelltables2.h"'
         '  // R342: the UA MU and illusionist'
         ' tables',
     ])
@@ -729,7 +729,7 @@ assert s.count(
     'R339 UA proficiency pin audit: bad ')     == 1, 'd r339 kept'
 assert s.count('R227: the wis mental save') == 1,     'd r227 kept'
 assert s.count(
-    '#include "rules/uaspelltables2.h"') == 1,     'd include'
+    '#include "rules/ua/uaspelltables2.h"') == 1,     'd include'
 assert len(applied) + len(already) == 4, 'd count'
 
 # ---- the summary ----

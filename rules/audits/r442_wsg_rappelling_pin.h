@@ -5,7 +5,7 @@
     // round or part of a round, the lost-grip failure state (hanging upside
     // down, spinning, until rescued or a successful Dexterity Check - allowed
     // once per round), and the free-hanging-rope variant (no surface to brace
-    // against: +30% instead of +50%, Dex checks at +2) (rules/wsgrapp.h,
+    // against: +30% instead of +50%, Dex checks at +2) (rules/wsg/wsgrapp.h,
     // prefix wrl); census 366 -> 367.
     {
         using namespace rules;

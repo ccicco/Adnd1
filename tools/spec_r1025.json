@@ -8,7 +8,7 @@
   "title": "The DRG normalization batch - the five Dragon magazine defs (death angel, mihalli, prowler, qu'uni, vriyagga) rewritten to the full-field 57-key emission",
   "provenance": "The registry close - the per-book schema pass lands its last book (the R879 normalizer doctrine: MM1 R1009-R1014, the OA book R1016, the MM2 arc R1017-R1020, the FF arc R1021-R1023, the WSG+MOP tail R1024): the five The Dragon magazine variant-layer defs rewritten to the canonical FIELD_ORDER emission, byte-exact against the landed normalize_registry.py, and the registry closes 1338 of 1338 defs canonical - every def of the census carries the full-field emission; the first comma-site round of the arc - each DRG text field lacked the Lua-optional trailing comma, so each of the five end-of-body windows is one whole-line rewrite merged with the sentinel insert, no bare deletes shipped, the sweep green pre-handoff (member scan, value invariance, quote parity, brace balance, name and source invariance, normalizer exactness and idempotence, xp formula zero exceptions)."
  },
- "header_file": "rules/dq1.h",
+ "header_file": "rules/dragon/registry_normalization.h",
  "audit_file": "rules/audits/r1025_batch.h",
  "audit_label": "R1025 DRG normalization audit",
  "audit_comment": "THE REGISTRY CLOSES - the five Dragon magazine defs (death angel, mihalli, prowler, qu'uni, vriyagga) rewritten to the full-field 57-key emission, byte-exact against the landed normalize_registry.py, the registry 1338 of 1338 canonical; thirty anchored sentinel inserts and the first five comma-site whole-line rewrites of the arc (the DRG text fields lacked the Lua-optional trailing comma).",
@@ -49,7 +49,7 @@
   "    twice, WSG+MOP 23/23",
   "    canonical byte-exact against",
   "    the landed normalizer,",
-  "    wt1.h after fq3.h,",
+  "    wt1.h after rules/ff/normalization_batch3.h,",
   "    r1024_batch.h above",
   "    r1023_batch.h, the R1023",
   "    LANDED record seated",

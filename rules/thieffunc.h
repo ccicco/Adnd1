@@ -25,7 +25,7 @@
 // elf, gnome, half-elf, halfling, half-orc;
 // the human prints no row and reads 0),
 // keyed to the engine race enum
-// (rules/races.h, the printed order).
+// (rules/engine/races.h, the printed order).
 //
 // Conventions:
 //   - the BASE CHANCES are pinned in TENTHS
@@ -112,7 +112,7 @@ inline int thfTakeTenths(int fn, int level) {
 inline int thfRaceAdj(int race, int fn) {
     // the six printed racial adjustment rows
     // (upload lines 1645-1650) in whole
-    // percent, keyed to the rules/races.h enum
+    // percent, keyed to the rules/engine/races.h enum
     // (the human prints no row and reads 0);
     // fn clamps 0..7
     if (race < 0) race = 0;

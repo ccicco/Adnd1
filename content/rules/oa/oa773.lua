@@ -1,4 +1,4 @@
--- oa773: promoted from rules/oa144dailylife.h (the OA DAILY-LIFE MISSES - DRESS, RELIGION, AND LAW AND JUSTICE, printed);
+-- oa773: promoted from rules/oa/oa144dailylife.h (the OA DAILY-LIFE MISSES - DRESS, RELIGION, AND LAW AND JUSTICE, printed);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 773,

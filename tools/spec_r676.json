@@ -2,7 +2,7 @@
  "round": 676,
  "title": "WU JEN SEVENTH LEVEL SPELLS - the 12 seventh level wu jen spells with the school, component, casting time, saving throw, reversible and element codes",
  "prefix": "dil",
- "header_file": "rules/oawjl7spells.h",
+ "header_file": "rules/oa/oawjl7spells.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -322,7 +322,7 @@
   "open": 106
  },
  "include_comment": "the OA wu jen seventh level spells pins",
- "include_after": "#include \"rules/oawjl6spells.h\"  // R675: the OA wu jen sixth level spells pins",
+ "include_after": "#include \"rules/oa/oawjl6spells.h\"  // R675: the OA wu jen sixth level spells pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R675 LANDED 2026-10-20: commit b23dcfea241d5382ce4597804d7a77bfe112b4fc",
@@ -332,7 +332,7 @@
   "  WU JEN SIXTH LEVEL SPELLS - the 24",
   "  sixth level wu jen spell stat",
   "  blocks, capture pp. 196-203:",
-  "  rules/oawjl6spells.h, prefix dik",
+  "  rules/oa/oawjl6spells.h, prefix dik",
   "  (verified free at 7cf655d - only",
   "  the comment-word dikes), ONE gap",
   "  flip (single-line child label), 18",
@@ -408,6 +408,6 @@
   "  dill, the R669 die precedent),",
   "  audit \"R676 OA wu jen seventh",
   "  level spells audit\", include after",
-  "  rules/oawjl6spells.h"
+  "  rules/oa/oawjl6spells.h"
  ]
 }

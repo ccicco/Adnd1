@@ -2,7 +2,7 @@
  "round": 734,
  "title": "OA TREASURE - the Random Treasure Determination prose: the DMG procedure and its exceptions",
  "prefix": "dkv",
- "header_file": "rules/oa105randtres.h",
+ "header_file": "rules/oa/oa105randtres.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA TREASURE - THE RANDOM TREASURE DETERMINATION PROSE, printed capture p. 285 - the procedure round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 187 closed, 48 open - the random treasure prose box flips (census 656 -> 657); NEXT - R735: Table 74: Monetary Treasure And Magical Items (capture p. 286), prefix dkw (verify free at the landing), audit \"R735 OA Table 74 monetary treasure audit\", include after rules/oa105randtres.h"
+  "sentinel": "the gap census after this round: 187 closed, 48 open - the random treasure prose box flips (census 656 -> 657); NEXT - R735: Table 74: Monetary Treasure And Magical Items (capture p. 286), prefix dkw (verify free at the landing), audit \"R735 OA Table 74 monetary treasure audit\", include after rules/oa/oa105randtres.h"
  },
  "consts": [
   {
@@ -151,7 +151,7 @@
   "open": 48
  },
  "include_comment": "the OA random treasure pins",
- "include_after": "#include \"rules/oa104classuse.h\"  // R733: the OA class usage pins",
+ "include_after": "#include \"rules/oa/oa104classuse.h\"  // R733: the OA class usage pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R733 LANDED 2026-10-21: commit",
@@ -162,7 +162,7 @@
   "  OA TREASURE, the Chapter 13 opener, the",
   "  Magical Items Usable by Character Class",
   "  table (capture p. 285), header",
-  "  rules/oa104classuse.h, prefix dku",
+  "  rules/oa/oa104classuse.h, prefix dku",
   "  (verified free at d8cf893), one gap flip",
   "  (the class usage box, its two-line wrap",
   "  handled), gap census now 186 closed /",
@@ -189,6 +189,6 @@
   "  pp. 285-286), prefix dkv (verify free at",
   "  the landing), audit \"R734 OA random",
   "  treasure prose audit\", include after",
-  "  rules/oa104classuse.h."
+  "  rules/oa/oa104classuse.h."
  ]
 }

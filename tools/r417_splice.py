@@ -54,7 +54,7 @@
 # once/twice/thrice 1..3
 # band, the whistle pair.
 
-# 1. rules/uacantrips6.h (NEW,
+# 1. rules/ua/uacantrips6.h (NEW,
 #    prefix uch - verified no
 #    collision): the 8
 #    haunting-sound cantrips in
@@ -243,12 +243,12 @@ if s.count('R416 landed 2026-10-13') != 1:
 if s.count('## Knowledge maintenance') != 1:
     die('the seed maintenance head')
 
-# ========= (b) rules/uacantrips6.h =========
-UC = 'rules/uacantrips6.h'
+# ========= (b) rules/ua/uacantrips6.h =========
+UC = 'rules/ua/uacantrips6.h'
 
 HDR = E(
     '// ===========================================================================',
-    '// Adnd1 - rules/uacantrips6.h',
+    '// Adnd1 - rules/ua/uacantrips6.h',
     '// The UA MAGIC-USER CANTRIP',
     '// DESCRIPTIONS, part 6 (R417):',
     '// the HAUNTING-SOUND category',
@@ -479,14 +479,14 @@ newfile(UC, HDR + NL,
 RT = 'regtest.cpp'
 
 pair(RT,
-     '#include "rules/uacantrips5.h"  '
+     '#include "rules/ua/uacantrips5.h"  '
      '// R416: the UA personal'
      ' cantrips',
      E(
-    '#include "rules/uacantrips5.h"  '
+    '#include "rules/ua/uacantrips5.h"  '
     '// R416: the UA personal'
     ' cantrips',
-    '#include "rules/uacantrips6.h"  '
+    '#include "rules/ua/uacantrips6.h"  '
     '// R417: the UA haunting-'
     'sound cantrips'),
      'regtest: the haunting-sound'
@@ -672,7 +672,7 @@ GP_R417 = E(
 GP_R416 = E(
     '      - AMENDED R416: the',
     '        personal descriptions land',
-    '        (rules/uacantrips5.h) - the',
+    '        (rules/ua/uacantrips5.h) - the',
     '        10 blocks pin schools (the',
     '        1/0/1/0/0/0/5/3 census -',
     '        Summoning and Conjuration',
@@ -723,7 +723,7 @@ GP_R416 = E(
 GP_R416X = E(
     '      - AMENDED R416: the',
     '        personal descriptions land',
-    '        (rules/uacantrips5.h) - the',
+    '        (rules/ua/uacantrips5.h) - the',
     '        10 blocks pin schools (the',
     '        1/0/1/0/0/0/5/3 census -',
     '        Summoning and Conjuration',

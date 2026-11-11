@@ -48,8 +48,8 @@
   "  I.D.1, the psionic IV.B-IV.D, three saving-throw matrices,",
   "  grenade-like missiles). WAIT FOR GO."
  ],
- "header_file": "rules/s22.h",
- "include_after": "#include \"rules/t22.h\"  // R946: the Dragon issue-22 opener part one, the three-chain round",
+ "header_file": "rules/dragon/issue022_opener2.h",
+ "include_after": "#include \"rules/dragon/issue022_opener1.h\"  // R946: the Dragon issue-22 opener part one, the three-chain round",
  "include_comment": "the Dragon issue-22 opener part two, the DMG sneak preview table round",
  "audit_file": "rules/audits/r947_batch.h",
  "audit_anchor": "#include \"rules/audits/r946_batch.h\"  // R946: R946 issue-22 opener part one audit",

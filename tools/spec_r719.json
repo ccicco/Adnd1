@@ -2,7 +2,7 @@
  "round": 719,
  "title": "OA MONSTERS - the Hsing-Sing: the war-season raiders",
  "prefix": "dkg",
- "header_file": "rules/oa90hsingsing.h",
+ "header_file": "rules/oa/oa90hsingsing.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA MONSTERS - THE HSING-SING, printed capture p. 269 - the war-season round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 172 closed, 63 open - the hsing-sing box flips (census 641 -> 642); NEXT - R720: the Hu Hsien, Lesser Spirit (capture pp. 269-272), prefix dkh (verify free at the landing), audit \"R720 OA monsters Hu Hsien audit\", include after rules/oa90hsingsing.h"
+  "sentinel": "the gap census after this round: 172 closed, 63 open - the hsing-sing box flips (census 641 -> 642); NEXT - R720: the Hu Hsien, Lesser Spirit (capture pp. 269-272), prefix dkh (verify free at the landing), audit \"R720 OA monsters Hu Hsien audit\", include after rules/oa/oa90hsingsing.h"
  },
  "consts": [
   {
@@ -661,14 +661,14 @@
   "open": 63
  },
  "include_comment": "the OA Hsing-Sing pins",
- "include_after": "#include \"rules/oa89hainu.h\"  // R718: the OA Hai Nu pins",
+ "include_after": "#include \"rules/oa/oa89hainu.h\"  // R718: the OA Hai Nu pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R718 LANDED 2026-10-21: commit",
  "prev_record": [
   "- R718 LANDED 2026-10-21: commit d4c68bd064af867cd154b484afdd24755688fd80",
   "  (census 640 -> 641, pushed 658be4c..d4c68bd), OA MONSTERS - the",
-  "  Hai Nu (capture pp. 268-269 print): rules/oa89hainu.h,",
+  "  Hai Nu (capture pp. 268-269 print): rules/oa/oa89hainu.h,",
   "  prefix dkf (verified free at 658be4c), ONE gap flip, gap",
   "  census 171/64 - the hai nu box. A TABLES round. 29",
   "  consts + 30 bools + 1 table col (60 inlines): the stat",
@@ -702,6 +702,6 @@
   "  a893a00a8ed07946f03926c014d53b2a). NEXT - R719: the",
   "  Hsing-Sing (capture p. 269), prefix dkg (verified",
   "  free at d4c68bd), audit \"R719 OA monsters Hsing-Sing",
-  "  audit\", include after rules/oa89hainu.h."
+  "  audit\", include after rules/oa/oa89hainu.h."
  ]
 }

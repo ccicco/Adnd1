@@ -1,11 +1,11 @@
--- oa765: promoted from rules/oa136gajin.h (the OA SETTING - THE GAJIN DOCTRINE, printed capture p. 304 - the insular lands);
+-- oa765: promoted from rules/oa/oa136gajin.h (the OA SETTING - THE GAJIN DOCTRINE, printed capture p. 304 - the insular lands);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 765,
   "prefix" = "oa765",
   "banner" = {
       "title" = "OA SETTING - THE GAJIN DOCTRINE, printed capture p. 304 - the insular lands",
-      "provenance" = "and the outside barbarians census 687 -> 688.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 218 closed, 17 open - the Gajin box flips (census 687 -> 688); NEXT - R766: Food (capture p. 307, the Chapter 15 daily-life opener), prefix dmb (verify free at the landing), audit \"R766 OA Daily Life Food audit\", include after rules/oa136gajin.h",
+      "provenance" = "and the outside barbarians census 687 -> 688.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 218 closed, 17 open - the Gajin box flips (census 687 -> 688); NEXT - R766: Food (capture p. 307, the Chapter 15 daily-life opener), prefix dmb (verify free at the landing), audit \"R766 OA Daily Life Food audit\", include after rules/oa/oa136gajin.h",
     },
   "consts" = { {
       "name" = "dmaOutsideClassesIntroduced",

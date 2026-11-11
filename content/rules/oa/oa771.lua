@@ -1,11 +1,11 @@
--- oa771: promoted from rules/oa142celestial.h (the OA OPEN BOXES SWEEP - THE CELESTIAL EMPEROR AND THE CELESTIAL BUREAUCRACY,);
+-- oa771: promoted from rules/oa/oa142celestial.h (the OA OPEN BOXES SWEEP - THE CELESTIAL EMPEROR AND THE CELESTIAL BUREAUCRACY,);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 771,
   "prefix" = "oa771",
   "banner" = {
       "title" = "OA OPEN BOXES SWEEP - THE CELESTIAL EMPEROR AND THE CELESTIAL BUREAUCRACY,",
-      "provenance" = "printed capture p. 253 - the spirit-world framing doctrine census 693 -> 694.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift (the p. 253 text re-captured at p. 117 of the compressed-3 re-upload)  the gap census after this round: 234 closed, 1 open - the Celestial Emperor box and the eight missed parents of Chapters 2, 3, 8, 9, 10, 11, 12, 13 flip (census 693 -> 694); NEXT - R772: the Weapons prose arc (capture pp. 84-93, the weapon descriptions, re-captured at pp. 42-51 of the compressed-3 re-upload) - the last open box, split into per-weapon rounds; prefix dnj (verify free at the landing), audit \"R772 OA Weapons prose audit\", include after rules/oa142celestial.h",
+      "provenance" = "printed capture p. 253 - the spirit-world framing doctrine census 693 -> 694.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift (the p. 253 text re-captured at p. 117 of the compressed-3 re-upload)  the gap census after this round: 234 closed, 1 open - the Celestial Emperor box and the eight missed parents of Chapters 2, 3, 8, 9, 10, 11, 12, 13 flip (census 693 -> 694); NEXT - R772: the Weapons prose arc (capture pp. 84-93, the weapon descriptions, re-captured at pp. 42-51 of the compressed-3 re-upload) - the last open box, split into per-weapon rounds; prefix dnj (verify free at the landing), audit \"R772 OA Weapons prose audit\", include after rules/oa/oa142celestial.h",
     },
   "consts" = { {
       "name" = "dnhUnifiedWholeDoctrine",

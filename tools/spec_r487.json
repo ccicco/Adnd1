@@ -2,7 +2,7 @@
  "round": 487,
  "title": "the WSG natural hazards closer slice - the tidal wave death rules with the floods and flash floods, the avalanche burial and digging rules, the slope, cliff-face and base rockfall bands, the mudslide sinking rules and quicksand, printed pp. 80-83, CLOSING the natural hazards chapter",
  "prefix": "whz2",
- "header_file": "rules/wsghazd2.h",
+ "header_file": "rules/wsg/wsghazd2.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -1092,34 +1092,34 @@
   {
    "note": "the tidal waves box",
    "from": "  - [ ] Tidal waves (p. 79)",
-   "to": "  - [x] Tidal waves (p. 79) - R487: the sighting, approach and death rules for the wave, the tail landing with R486 and the drowning and go-with-the-flow rules pin as rules/wsghazd2.h"
+   "to": "  - [x] Tidal waves (p. 79) - R487: the sighting, approach and death rules for the wave, the tail landing with R486 and the drowning and go-with-the-flow rules pin as rules/wsg/wsghazd2.h"
   },
   {
    "note": "the floods and flash floods box",
    "from": "  - [ ] Floods and flash floods (p. 80)",
-   "to": "  - [x] Floods and flash floods (p. 80) - R487: the flood and flash flood causes with the d6+9-round duration and the strength-check protrusion chain pin as rules/wsghazd2.h"
+   "to": "  - [x] Floods and flash floods (p. 80) - R487: the flood and flash flood causes with the d6+9-round duration and the strength-check protrusion chain pin as rules/wsg/wsghazd2.h"
   },
   {
    "note": "the avalanches, rockfalls and mudslides box",
    "from": "  - [ ] Avalanches, rockfalls, and mudslides (p. 80)",
-   "to": "  - [x] Avalanches, rockfalls, and mudslides (p. 80) - R487: the avalanche burial and digging rules, the slope, cliff-face and base rockfall bands and the mudslide sinking rules pin as rules/wsghazd2.h"
+   "to": "  - [x] Avalanches, rockfalls, and mudslides (p. 80) - R487: the avalanche burial and digging rules, the slope, cliff-face and base rockfall bands and the mudslide sinking rules pin as rules/wsg/wsghazd2.h"
   },
   {
    "note": "the quicksand box",
    "from": "  - [ ] Quicksand (p. 83)",
-   "to": "  - [x] Quicksand (p. 83) - R487: the no-suction rule with the treading self-rescue and the pole and swimmer rescues pin as rules/wsghazd2.h"
+   "to": "  - [x] Quicksand (p. 83) - R487: the no-suction rule with the treading self-rescue and the pole and swimmer rescues pin as rules/wsg/wsghazd2.h"
   },
   {
    "note": "the post-state line",
-   "from": "Post-state at R486: 118 closed, 68 open (the R486 round opens the natural hazards chapter - the volcano, earthquake and tidal wave approach rules through printed p. 79 pin as rules/wsghazd.h; the next round finishes the tidal wave death rules and continues - floods and flash floods (p. 80)).",
-   "to": "Post-state at R487: 122 closed, 64 open (the R487 round CLOSES the natural hazards chapter - the tidal wave death rules, floods and flash floods, avalanches, rockfalls and mudslides, and quicksand pin as rules/wsghazd2.h; the next round opens the wilderness combat chapter - fighting while climbing (p. 84))."
+   "from": "Post-state at R486: 118 closed, 68 open (the R486 round opens the natural hazards chapter - the volcano, earthquake and tidal wave approach rules through printed p. 79 pin as rules/wsg/wsghazd.h; the next round finishes the tidal wave death rules and continues - floods and flash floods (p. 80)).",
+   "to": "Post-state at R487: 122 closed, 64 open (the R487 round CLOSES the natural hazards chapter - the tidal wave death rules, floods and flash floods, avalanches, rockfalls and mudslides, and quicksand pin as rules/wsg/wsghazd2.h; the next round opens the wilderness combat chapter - fighting while climbing (p. 84))."
   }
  ],
  "gap_census": {
   "closed": 122,
   "open": 64
  },
- "include_after": "#include \"rules/wsghazd.h\"  // R486: the WSG volcano, earthquake and tidal wave hazard rules",
+ "include_after": "#include \"rules/wsg/wsghazd.h\"  // R486: the WSG volcano, earthquake and tidal wave hazard rules",
  "include_comment": "the WSG flood, avalanche, mudslide and quicksand hazard rules",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
@@ -1129,7 +1129,7 @@
   "  e9d27ae..908b31b), the WSG NATURAL HAZARDS opener slice,",
   "  printed pp. 76-79 - the FIRST content-density round (the",
   "  post-R485 scope decision): four pages in one round, pinned",
-  "  as rules/wsghazd.h with the include after wsglight.h at",
+  "  as rules/wsg/wsghazd.h with the include after wsglight.h at",
   "  line 191 (prefix whz, free on the first probe across all",
   "  277 rules headers, regtest, both caller TUs, the seed and",
   "  the gap report). The volcano frame: three eruption types -",

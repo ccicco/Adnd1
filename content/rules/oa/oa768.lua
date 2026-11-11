@@ -1,11 +1,11 @@
--- oa768: promoted from rules/oa139manners.h (the OA DAILY LIFE - MANNERS, printed capture p. 312 - the politeness, the bow,);
+-- oa768: promoted from rules/oa/oa139manners.h (the OA DAILY LIFE - MANNERS, printed capture p. 312 - the politeness, the bow,);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 768,
   "prefix" = "oa768",
   "banner" = {
       "title" = "OA DAILY LIFE - MANNERS, printed capture p. 312 - the politeness, the bow,",
-      "provenance" = "and the insult census 690 -> 691.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 221 closed, 14 open - the Manners box flips (census 690 -> 691); NEXT - R769: Names (capture pp. 312-313), prefix dme (verify free at the landing), audit \"R769 OA Daily Life Names audit\", include after rules/oa139manners.h",
+      "provenance" = "and the insult census 690 -> 691.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 221 closed, 14 open - the Manners box flips (census 690 -> 691); NEXT - R769: Names (capture pp. 312-313), prefix dme (verify free at the landing), audit \"R769 OA Daily Life Names audit\", include after rules/oa/oa139manners.h",
     },
   "consts" = { {
       "name" = "dmdExtraordinarilyPolite",

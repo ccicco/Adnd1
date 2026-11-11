@@ -5,7 +5,7 @@
 # lands first, the charge
 # after:
 #
-# 1. rules/uatreasuredial.h:
+# 1. rules/ua/uatreasuredial.h:
 #    the runtime dial layer -
 #    the mode state (DMG the
 #    default, UA, MERGED; the
@@ -135,8 +135,8 @@ if s.count('R401 landed 2026-10-13') != 1:
 if s.count('## Knowledge maintenance') != 1:
     die('the seed maintenance head')
 
-# ========= (b) rules/uatreasuredial.h =========
-TD = 'rules/uatreasuredial.h'
+# ========= (b) rules/ua/uatreasuredial.h =========
+TD = 'rules/ua/uatreasuredial.h'
 
 pair(TD, E(
     '// The UA pin rounds have not',
@@ -218,9 +218,9 @@ pair(TR, E(
     '// pulls its own rules headers (the',
     '// R400 lesson - the engine TUs do',
     '// not pull rules/ transitively).',
-    '#include "rules/uatreasuredial.h"',
-    '#include "rules/uadetskel.h"',
-    '#include "rules/uadetrows.h"',
+    '#include "rules/ua/uatreasuredial.h"',
+    '#include "rules/ua/uadetskel.h"',
+    '#include "rules/ua/uadetrows.h"',
     '',
     '#include <cstdio>'),
     'treasure: the rules includes')
@@ -559,7 +559,7 @@ pair(GP, E(
     E(
     '- [x] The treasure system dial -',
     '      CLOSED R402 (the dial state in',
-    '      rules/uatreasuredial.h; the UA',
+    '      rules/ua/uatreasuredial.h; the UA',
     '      determination dispatch in',
     '      dm/treasure.cpp; the R402 seam',
     '      audit, census 329): the DMG',
@@ -628,7 +628,7 @@ if t.count('rollMagicItemUa') != 3:
 if t.count('uadrowRowName') != 1:
     die('the row name count %d'
         % t.count('uadrowRowName'))
-if t.count('rules/uatreasuredial.h') != 1:
+if t.count('rules/ua/uatreasuredial.h') != 1:
     die('the dial include')
 
 g = rd(GP)

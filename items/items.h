@@ -11,10 +11,10 @@
 
 #pragma once
 
-#include "../rules/combat.h"   // WeaponClass, AcType, weaponVsAc...
+#include "../rules/engine/combat.h"   // WeaponClass, AcType, weaponVsAc...
 
-#include "../rules/classes.h"   // ArmorWeight, ARMOR_NONE/LEATHER/CHAIN/PLATE
-#include "../rules/character.h" // ExceptionalStrength
+#include "../rules/engine/classes.h"   // ArmorWeight, ARMOR_NONE/LEATHER/CHAIN/PLATE
+#include "../rules/engine/character.h" // ExceptionalStrength
 #include <cstdint>
 
 namespace items {

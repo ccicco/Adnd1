@@ -1,11 +1,11 @@
--- oa762: promoted from rules/oa133tulung.h (the OA SETTING - THE TU LUNG EMPIRE, printed capture pp. 303-304 - the);
+-- oa762: promoted from rules/oa/oa133tulung.h (the OA SETTING - THE TU LUNG EMPIRE, printed capture pp. 303-304 - the);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 762,
   "prefix" = "oa762",
   "banner" = {
       "title" = "OA SETTING - THE TU LUNG EMPIRE, printed capture pp. 303-304 - the",
-      "provenance" = "breakaway state of the Earth Dragon census 684 -> 685.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 215 closed, 20 open - the Tu Lung box flips (census 684 -> 685); NEXT - R763: Wa (capture p. 304), prefix dly (verify free at the landing), audit \"R763 OA Wa audit\", include after rules/oa133tulung.h",
+      "provenance" = "breakaway state of the Earth Dragon census 684 -> 685.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 215 closed, 20 open - the Tu Lung box flips (census 684 -> 685); NEXT - R763: Wa (capture p. 304), prefix dly (verify free at the landing), audit \"R763 OA Wa audit\", include after rules/oa/oa133tulung.h",
     },
   "consts" = { {
       "name" = "dlxEarthDragon",

@@ -224,6 +224,6 @@ return {
     } },
   "audit" = {
       "label" = "R436 WSG climbing checks pin audit",
-      "comment" = "The climbing-checks slice pins Table 16 (the 13 surface rows x the three condition modifiers to the non-thief Climbing Rating) with the 100 percent no-fall and 5 percent floor rules, the other modifiers (the encumbrance, race, armor, strength and hands rules), the thief modifiers (the +30 auto rule, the double and quadruple falling chances) and the initial, intermediate and final check rules (rules/wsgcheck.h, prefix wck); census 360 -> 361.",
+      "comment" = "The climbing-checks slice pins Table 16 (the 13 surface rows x the three condition modifiers to the non-thief Climbing Rating) with the 100 percent no-fall and 5 percent floor rules, the other modifiers (the encumbrance, race, armor, strength and hands rules), the thief modifiers (the +30 auto rule, the double and quadruple falling chances) and the initial, intermediate and final check rules (rules/wsg/wsgcheck.h, prefix wck); census 360 -> 361.",
     },
 }

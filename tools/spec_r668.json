@@ -2,7 +2,7 @@
  "round": 668,
  "title": "TABLE 65 FATE - the twelve fate bands of the 1d20 roll with their face widths",
  "prefix": "did",
- "header_file": "rules/oat65fate.h",
+ "header_file": "rules/oa/oat65fate.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -200,7 +200,7 @@
   "open": 114
  },
  "include_comment": "the OA fate pins",
- "include_after": "#include \"rules/oat64speakdead.h\"  // R667: the OA speak with dead pins",
+ "include_after": "#include \"rules/oa/oat64speakdead.h\"  // R667: the OA speak with dead pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R667 LANDED 2026-10-19: commit eb88e69f073f422cee9f0b487af43c7705ce47b0",
@@ -209,7 +209,7 @@
   "  (census 589 -> 590, pushed 633d0d8..eb88e69),",
   "  TABLE 64 SPEAK WITH DEAD - the six",
   "  shukenja level bands, capture p. 132:",
-  "  rules/oat64speakdead.h, prefix dib",
+  "  rules/oa/oat64speakdead.h, prefix dib",
   "  (verified free at 633d0d8), ONE gap flip",
   "  (single-line child label), 9 consts,",
   "  1 chain, 13 inlines (grid tag T64Data,",
@@ -249,7 +249,7 @@
   "  NEXT - R668: Table 65 Fate (print",
   "  p. 135), prefix did (verified free - dic is NOT free: the dice() helpers),",
   "  audit \"R668 OA fate audit\", include",
-  "  after rules/oat64speakdead.h; then the",
+  "  after rules/oa/oat64speakdead.h; then the",
   "  wu jen spell chapter (Chapter 8: Table",
   "  66 and L1-L9)"
  ]

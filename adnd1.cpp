@@ -68,7 +68,7 @@
 // Build (MinGW, Lua 5.4) - game/ headers are
 // header-only; R52 adds one translation unit,
 // dm/encounters.cpp:
-//   g++ -std=c++17 -I. -Ilua/include adnd1.cpp rules/dice.cpp rules/character.cpp rules/combat.cpp rules/saves.cpp rules/turn.cpp rules/classes.cpp spells/spells.cpp spelleffects/spelleffects.cpp items/items.cpp dm/dm.cpp dm/dungeon.cpp dm/encounters.cpp ai/actor.cpp monsters/MonsterRegistry.cpp lua/src/liblua.a -o adnd1.exe -mwindows
+//   g++ -std=c++17 -I. -Ilua/include adnd1.cpp rules/engine/dice.cpp rules/engine/character.cpp rules/engine/combat.cpp rules/engine/saves.cpp rules/engine/turn.cpp rules/engine/classes.cpp spells/spells.cpp spelleffects/spelleffects.cpp items/items.cpp dm/dm.cpp dm/dungeon.cpp dm/encounters.cpp ai/actor.cpp monsters/MonsterRegistry.cpp lua/src/liblua.a -o adnd1.exe -mwindows
 // ============================================================================
 
 #define WIN32_LEAN_AND_MEAN

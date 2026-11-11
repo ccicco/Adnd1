@@ -26,7 +26,7 @@
 //     The formula is (awarded + 9) / 10, the ceiling of
 //     one tenth.
 //   - the engine ladder primeRequisitePct
-//     (rules/character.cpp: +10, +5, 0, -10, -20
+//     (rules/engine/character.cpp: +10, +5, 0, -10, -20
 //     percent by score) is VERIFIED as to its +10 rung
 //     only. The +5, 0, -10 and -20 rungs are ENGINE
 //     CONVENTION, unsourced against the 1e print: the
@@ -45,7 +45,7 @@
 
 #pragma once
 
-#include "classes.h"
+#include "engine/classes.h"
 #include "subclasses.h"
 
 #include <cstdint>

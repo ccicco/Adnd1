@@ -2,7 +2,7 @@
  "round": 726,
  "title": "OA MONSTERS - the Nature Spirits: the lesser and the greater children of the lifeforce",
  "prefix": "dkn",
- "header_file": "rules/oa97naturespirit.h",
+ "header_file": "rules/oa/oa97naturespirit.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA MONSTERS - THE NATURE SPIRITS, printed capture pp. 278-279 - the lifeforce round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 179 closed, 56 open - the nature spirits box flips (census 648 -> 649); NEXT - R727: the Ningyo (capture p. 279), prefix dko (verify free at the landing), audit \"R727 OA monsters Ningyo audit\", include after rules/oa97naturespirit.h"
+  "sentinel": "the gap census after this round: 179 closed, 56 open - the nature spirits box flips (census 648 -> 649); NEXT - R727: the Ningyo (capture p. 279), prefix dko (verify free at the landing), audit \"R727 OA monsters Ningyo audit\", include after rules/oa/oa97naturespirit.h"
  },
  "consts": [
   {
@@ -734,7 +734,7 @@
   "open": 56
  },
  "include_comment": "the OA Nature Spirits pins",
- "include_after": "#include \"rules/oa96nat.h\"  // R725: the OA Nat pins",
+ "include_after": "#include \"rules/oa/oa96nat.h\"  // R725: the OA Nat pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R725 LANDED 2026-10-21: commit",
@@ -743,7 +743,7 @@
   "  16cefa355bb4155ea4d1e917d4e031d462781a4e",
   "  (census 647 -> 648, pushed fc2b428..16cefa3), OA",
   "  MONSTERS, the Nat, Lesser Spirit (capture",
-  "  pp. 276-278 print): rules/oa96nat.h, prefix dkm",
+  "  pp. 276-278 print): rules/oa/oa96nat.h, prefix dkm",
   "  (verified free at fc2b428), ONE gap flip, gap",
   "  census 178/57 - the nat box. A TABLES round.",
   "  10 consts + 77 bools + 11 table cols (98",
@@ -801,6 +801,6 @@
   "  Greater (capture pp. 278-279), prefix dkn",
   "  (verified free at 16cefa3), audit \"R726 OA",
   "  monsters Nature Spirits audit\", include after",
-  "  rules/oa96nat.h."
+  "  rules/oa/oa96nat.h."
  ]
 }

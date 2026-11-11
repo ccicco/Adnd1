@@ -1,11 +1,11 @@
--- oa716: promoted from rules/oa87goblinrat.h (the OA MONSTERS - THE GOBLIN RAT, printed capture p. 266 - the shapechanger);
+-- oa716: promoted from rules/oa/oa87goblinrat.h (the OA MONSTERS - THE GOBLIN RAT, printed capture p. 266 - the shapechanger);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 716,
   "prefix" = "oa716",
   "banner" = {
       "title" = "OA MONSTERS - THE GOBLIN RAT, printed capture p. 266 - the shapechanger",
-      "provenance" = "round census 638 -> 639.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 169 closed, 66 open - the goblin rat box flips (census 638 -> 639); NEXT - R717: the Goblin Spider (capture p. 267), prefix dke (verify free at the landing), audit \"R717 OA monsters Goblin Spider audit\", include after rules/oa87goblinrat.h",
+      "provenance" = "round census 638 -> 639.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 169 closed, 66 open - the goblin rat box flips (census 638 -> 639); NEXT - R717: the Goblin Spider (capture p. 267), prefix dke (verify free at the landing), audit \"R717 OA monsters Goblin Spider audit\", include after rules/oa/oa87goblinrat.h",
     },
   "consts" = { {
       "name" = "dkdAppearMin",

@@ -2,7 +2,7 @@
  "round": 721,
  "title": "OA MONSTERS - the Kala: the Cave and Earth spirit race",
  "prefix": "dki",
- "header_file": "rules/oa92kala.h",
+ "header_file": "rules/oa/oa92kala.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA MONSTERS - THE KALA, printed capture pp. 272-273 - the paired columns round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 174 closed, 61 open - the kala box flips (census 643 -> 644); NEXT - R722: the Kappa (capture p. 273), prefix dkj (verify free at the landing), audit \"R722 OA monsters Kappa audit\", include after rules/oa92kala.h"
+  "sentinel": "the gap census after this round: 174 closed, 61 open - the kala box flips (census 643 -> 644); NEXT - R722: the Kappa (capture p. 273), prefix dkj (verify free at the landing), audit \"R722 OA monsters Kappa audit\", include after rules/oa/oa92kala.h"
  },
  "consts": [
   {
@@ -560,7 +560,7 @@
   "open": 61
  },
  "include_comment": "the OA Kala pins",
- "include_after": "#include \"rules/oa91huhuien.h\"  // R720: the OA Hu Hsien pins",
+ "include_after": "#include \"rules/oa/oa91huhuien.h\"  // R720: the OA Hu Hsien pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R720 LANDED 2026-10-21: commit",
@@ -606,6 +606,6 @@
   "  71ae8572b5c060f753a385fd321c1b83). NEXT - R721: the",
   "  Kala (capture p. 272), prefix dki (verified free at",
   "  5058dcf), audit \"R721 OA monsters Kala audit\", include",
-  "  after rules/oa91huhuien.h."
+  "  after rules/oa/oa91huhuien.h."
  ]
 }

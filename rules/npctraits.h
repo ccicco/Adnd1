@@ -41,7 +41,7 @@
 
 #pragma once
 
-#include "rules/npcpersonae.h"  // R209: the d10 face clamp
+#include "npcpersonae.h"  // R209: the d10 face clamp
 
 namespace rules {
 

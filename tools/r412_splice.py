@@ -45,7 +45,7 @@
 # day renewal, the Polish
 # 1,000 sq. ft. floor.
 #
-# 1. rules/uacantrips1.h
+# 1. rules/ua/uacantrips1.h
 #    (NEW, prefix ucn, 16
 #    inline functions + the
 #    UcnCantrip struct): the
@@ -217,7 +217,7 @@ SEED_ENTRY = E(
     '  commit 94e9302 (census 338,',
     '  preflight GREEN), the UA',
     '  Appendix S MOVE values -',
-    '  rules/uamoves.h (prefix umv)',
+    '  rules/ua/uamoves.h (prefix umv)',
     '  - the 23 rates, the five',
     '  alternates, the Aerdrie',
     '  flight-only flag; the Shargaas',
@@ -245,12 +245,12 @@ if s.count('R411 landed 2026-10-13') != 1:
 if s.count('## Knowledge maintenance') != 1:
     die('the seed maintenance head')
 
-# ========= (b) rules/uacantrips1.h =========
-UC = 'rules/uacantrips1.h'
+# ========= (b) rules/ua/uacantrips1.h =========
+UC = 'rules/ua/uacantrips1.h'
 
 HDR = E(
     '// ===========================================================================',
-    '// Adnd1 - rules/uacantrips1.h',
+    '// Adnd1 - rules/ua/uacantrips1.h',
     '// The UA MAGIC-USER CANTRIP',
     '// DESCRIPTIONS, part 1 (R412):',
     '// the USEFUL category (pp. 45-47),',
@@ -444,7 +444,7 @@ pair(RT,
      E(
     '#include "rules/cantriptier.h"  '
     '// R401: the UA cantrip tier',
-    '#include "rules/uacantrips1.h"  '
+    '#include "rules/ua/uacantrips1.h"  '
     '// R412: the UA useful cantrips'),
      'regtest: the useful cantrips'
      ' include')
@@ -567,7 +567,7 @@ pair(GP, E(
     E(
     '      - AMENDED R412: the useful',
     '        category descriptions land',
-    '        (rules/uacantrips1.h) - the',
+    '        (rules/ua/uacantrips1.h) - the',
     '        20 blocks pin schools (the',
     '        7/4/7/2 census), the 14',
     '        clean areas, the six',

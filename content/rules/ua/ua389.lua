@@ -1,4 +1,4 @@
--- ua: promoted from rules/uaappendq.h (the The UA APPENDIX Q: WEAPONLESS);
+-- ua: promoted from rules/ua/uaappendq.h (the The UA APPENDIX Q: WEAPONLESS);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 389,

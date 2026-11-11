@@ -2,7 +2,7 @@
  "round": 466,
  "title": "the WSG consuming and carrying food and Table 33 slice - the ration ladder, the spoilage mechanics and Table 33: chance of food spoilage, printed p. 58",
  "prefix": "wcc",
- "header_file": "rules/wsgcarry.h",
+ "header_file": "rules/wsg/wsgcarry.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -541,17 +541,17 @@
   {
    "note": "consuming and carrying food",
    "from": "  - [ ] Consuming and carrying food (p. 58)",
-   "to": "  - [x] Consuming and carrying food (p. 58) - R466: the ration ladder (one fish half a ration, size S a full ration, size M feeds three, size L six rations, twenty rations for a full day of butchering), the druid disapproval, the carry rule and the taint and spoil mechanics pin as rules/wsgcarry.h"
+   "to": "  - [x] Consuming and carrying food (p. 58) - R466: the ration ladder (one fish half a ration, size S a full ration, size M feeds three, size L six rations, twenty rations for a full day of butchering), the druid disapproval, the carry rule and the taint and spoil mechanics pin as rules/wsg/wsgcarry.h"
   },
   {
    "note": "Table 33",
    "from": "- [ ] **Table 33: chance of food spoilage** (p. 58)",
-   "to": "- [x] **Table 33: chance of food spoilage** (p. 58) - R466: the food-type by temperature-band days/pct grid, all 40 cells text-layer verified, pin as rules/wsgcarry.h"
+   "to": "- [x] **Table 33: chance of food spoilage** (p. 58) - R466: the food-type by temperature-band days/pct grid, all 40 cells text-layer verified, pin as rules/wsg/wsgcarry.h"
   },
   {
    "note": "the post-state line",
-   "from": "Post-state at R465: 82 closed, 104 open (the R465 round continues the chapter - the hunting proficiency, fishing and Table 32 pin as rules/wsgfish.h; the next round continues - consuming and carrying food (p. 58) and Table 33: chance of food spoilage).",
-   "to": "Post-state at R466: 84 closed, 102 open (the R466 round continues the chapter - consuming and carrying food and Table 33 pin as rules/wsgcarry.h; the next round continues - finding water (p. 58) and its Table 34)."
+   "from": "Post-state at R465: 82 closed, 104 open (the R465 round continues the chapter - the hunting proficiency, fishing and Table 32 pin as rules/wsg/wsgfish.h; the next round continues - consuming and carrying food (p. 58) and Table 33: chance of food spoilage).",
+   "to": "Post-state at R466: 84 closed, 102 open (the R466 round continues the chapter - consuming and carrying food and Table 33 pin as rules/wsg/wsgcarry.h; the next round continues - finding water (p. 58) and its Table 34)."
   }
  ],
  "gap_census": {
@@ -559,7 +559,7 @@
   "open": 102
  },
  "include_comment": "the WSG consuming and carrying food and Table 33",
- "include_after": "#include \"rules/wsgfish.h\"  // R465: the WSG hunting proficiency, fishing and Table 32",
+ "include_after": "#include \"rules/wsg/wsgfish.h\"  // R465: the WSG hunting proficiency, fishing and Table 32",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R465 LANDED 2026-10-15: commit 27481c0 (census 390, pushed",
@@ -579,7 +579,7 @@
   "  mid-water beats shore, swamp/bog and stagnant shallow creek poor, shaded",
   "  spots fair or good) and Table 32 (the 3x3 spot-by-time dice grid: Poor",
   "  1d4-2/1d4/1d4+2, Fair 1d6-2/1d6-1/1d6+2, Good 1d8-2/1d6+2/1d8+2).",
-  "  rules/wsgfish.h NEW (29 inlines: 8 consts + 14 bools + 1 switch + 6 table",
+  "  rules/wsg/wsgfish.h NEW (29 inlines: 8 consts + 14 bools + 1 switch + 6 table",
   "  columns, prefix wfs, checked free in all three TUs). GROUND TRUTH - the",
   "  hardest pixel fight since R463: the OCR DROPPED the Fair-Day cell and",
   "  garbled four Good cells; the native decode of the printed p. 57 image (a",

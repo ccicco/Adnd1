@@ -46,7 +46,7 @@ SEED_ENTRY = NL.join([
     '  942031f, census 273, the UA',
     '  new cleric spells pin round,',
     '  the 4th level',
-    '  (rules/uaclericspells4.h):',
+    '  (rules/ua/uaclericspells4.h):',
     '  abjure with the implore',
     '  reverse, cloak of fear with',
     '  the bravery reverse, giant',
@@ -94,13 +94,13 @@ assert s.count('R340 landed 2026-10-11') == 1,     'a r340 kept'
 assert s.count('R339 landed 2026-10-11') == 1,     'a r339 kept'
 assert s.count('## Knowledge maintenance') == 1,     'a maint'
 assert len(applied) + len(already) == 1, 'a count'
-# ---- (b) NEW rules/uaclericspells5.h ----
-US = 'rules/uaclericspells5.h'
+# ---- (b) NEW rules/ua/uaclericspells5.h ----
+US = 'rules/ua/uaclericspells5.h'
 if os.path.exists(US) and 'R347' in rd(US):
     already.append('uaclericspells5.h: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uaclericspells5.h
+// Adnd1 - rules/ua/uaclericspells5.h
 // The UA NEW CLERIC SPELLS (pp. 40-41) pins, R347: the 5th-level
 // spell descriptions - air walk, animate dead monsters, golem,
 // magic font, rainbow and spike stones (the spike stones prose
@@ -959,7 +959,7 @@ else:
     assert s.count(TAIL_OLD) == 1, 'c tail'
     NOTE = NL.join([
     '      - R347: the 5th level pinned',
-    '        (rules/uaclericspells5.h) -',
+    '        (rules/ua/uaclericspells5.h) -',
     '        air walk, animate dead',
     '        monsters, golem (the four',
     '        material ladders), magic',
@@ -1008,12 +1008,12 @@ if 'R347 UA cleric 5th level spells pin audit' in s:
     already.append('regtest.cpp: the R347 audit')
 else:
     INC_ANCH = (
-        '#include "rules/uaclericspells4.h"'
+        '#include "rules/ua/uaclericspells4.h"'
         '  // R346: the UA new cleric 4th'
         ' level')
     INC_NEW = NL.join([
         INC_ANCH,
-        '#include "rules/uaclericspells5.h"'
+        '#include "rules/ua/uaclericspells5.h"'
         '  // R347: the UA new cleric 5th'
         ' level',
     ])
@@ -1379,7 +1379,7 @@ assert s.count(
     'pin audit: bad ') == 1, 'd r340 kept'
 assert s.count('R227: the wis mental save') == 1,     'd r227 kept'
 assert s.count(
-    '#include "rules/uaclericspells5.h"') == 1, 'd include'
+    '#include "rules/ua/uaclericspells5.h"') == 1, 'd include'
 assert len(applied) + len(already) == 4, 'd count'
 # ---- the summary ----
 print('R347 splice: ALL OK (applied %d, already %d)'

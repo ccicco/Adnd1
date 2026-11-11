@@ -9,7 +9,7 @@
     // catalog pins), read through the existing coercers. The stale untracked
     // wsg_ keys leave the tree by the pre-cut git clean; the registry reads
     // 481 -> 478 live, superseding the prg 481 pin. Audit R793 registry
-    // promotion def name fix audit, header rules/prf.h, prefix prf.
+    // promotion def name fix audit, header rules/meta/registry_def_name_fix.h, prefix prf.
     {
         using namespace rules;
         int bad = 0;

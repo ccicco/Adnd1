@@ -6,7 +6,7 @@
     // the cling-to-the-sides flotation with the even-weight-distribution
     // requirement, the twice-capacity support figure (eight characters around
     // a large rowboat), and the sink rules when the weight limit is exceeded
-    // or the weight is unevenly distributed (rules/wsgcapsized.h, prefix
+    // or the weight is unevenly distributed (rules/wsg/wsgcapsized.h, prefix
     // wcv); census 383 -> 384.
     {
         using namespace rules;

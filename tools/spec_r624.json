@@ -2,7 +2,7 @@
  "round": 624,
  "title": "THE SHUKENJA - the holy man: the Wisdom doctrine with the spell-failure ladder, the three-part training with the ki save power, the ethos experience rules, the religious restrictions and the family severance, Tables 26, 27 and 28",
  "prefix": "dgk",
- "header_file": "rules/oashukenja.h",
+ "header_file": "rules/oa/oashukenja.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "THE SHUKENJA, printed capture pp. 42-45 - the OA shukenja round",
   "provenance": "verified against capture pp. 42-45 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). The T26 row-1 and row-12 xp bounds are OCR-mangled in the capture (0-1 250 and 1,200,00) and settled against the 2018 print BEFORE pinning (1,250 and 1,200,000) per the settling doctrine. The T27 spell-bonus column pins as cumulative codes and the T28 dashes pin as zeros. OCR normalization: minimum scares reads as minimum scores; principal attitude reads as principal attribute; t has failed reads as it has failed (prose only)",
-  "sentinel": "the gap census after this round: 49 closed, 186 open - the shukenja boxes with Tables 26, 27 and 28 flip (census 546 -> 547); NEXT - R625: the Sohei, capture pp. 45-47, Tables 29 and 30, prefix dgl (verify free), audit \"R625 OA sohei audit\", include after rules/oashukenja.h"
+  "sentinel": "the gap census after this round: 49 closed, 186 open - the shukenja boxes with Tables 26, 27 and 28 flip (census 546 -> 547); NEXT - R625: the Sohei, capture pp. 45-47, Tables 29 and 30, prefix dgl (verify free), audit \"R625 OA sohei audit\", include after rules/oa/oashukenja.h"
  },
  "consts": [
   {
@@ -1233,7 +1233,7 @@
   "open": 186
  },
  "include_comment": "the OA shukenja pins",
- "include_after": "#include \"rules/oasamurai.h\"  // R623: the OA samurai pins",
+ "include_after": "#include \"rules/oa/oasamurai.h\"  // R623: the OA samurai pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R623 LANDED 2026-10-18: commit",
@@ -1242,7 +1242,7 @@
   "  666c85abf6e556a7e86397ed8caf700d09342c76",
   "  (census 545 -> 546, pushed",
   "  7efe429..666c85a), THE SAMURAI, capture",
-  "  pp. 39-42: rules/oasamurai.h, prefix",
+  "  pp. 39-42: rules/oa/oasamurai.h, prefix",
   "  dgj (verified free), 76 inlines (45",
   "  consts, 27 bools, 4 table columns):",
   "  the Str/Wis/Con 13 and Int 14 minima",
@@ -1292,6 +1292,6 @@
   "  pp. 42-45, Tables 26, 27 and 28,",
   "  prefix dgk (verify free), audit \"R624",
   "  OA shukenja audit\", include after",
-  "  rules/oasamurai.h."
+  "  rules/oa/oasamurai.h."
  ]
 }

@@ -1,11 +1,11 @@
--- oa724: promoted from rules/oa95menwako.h (the OA MONSTERS - THE MEN WAKO, printed capture pp. 275-276 - the sea pirate);
+-- oa724: promoted from rules/oa/oa95menwako.h (the OA MONSTERS - THE MEN WAKO, printed capture pp. 275-276 - the sea pirate);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 724,
   "prefix" = "oa724",
   "banner" = {
       "title" = "OA MONSTERS - THE MEN WAKO, printed capture pp. 275-276 - the sea pirate",
-      "provenance" = "round census 646 -> 647.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 177 closed, 58 open - the men wako box flips (census 646 -> 647); NEXT - R725: the Nat, the Lesser Spirit (capture pp. 276-278), prefix dkm (verify free at the landing), audit \"R725 OA monsters Nat audit\", include after rules/oa95menwako.h",
+      "provenance" = "round census 646 -> 647.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 177 closed, 58 open - the men wako box flips (census 646 -> 647); NEXT - R725: the Nat, the Lesser Spirit (capture pp. 276-278), prefix dkm (verify free at the landing), audit \"R725 OA monsters Nat audit\", include after rules/oa/oa95menwako.h",
     },
   "consts" = { {
       "name" = "dklFrequencyUncommon",

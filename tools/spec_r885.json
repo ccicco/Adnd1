@@ -46,16 +46,16 @@
   "  bytes); the canvas spec-r884 gated",
   "  byte-exact; rverify 140 mutants 0 missed;",
   "  the land verified byte-exact against the",
-  "  fresh-tarball rebuild (1242 defs, dpx.h,",
+  "  fresh-tarball rebuild (1242 defs, rules/ddg/lua_promo_batch5.h,",
   "  audit, census, seed, regtest, spec",
   "  identical; engine idempotent applied 39 /",
   "  already 39). NEXT: the promotion continues",
   "  print-order - Nonhumans, then the Norse",
   "  tail. WAIT FOR GO."
  ],
- "include_after": "#include \"rules/dpx.h\"  // R884: the DDG lua promotion, batch five",
+ "include_after": "#include \"rules/ddg/lua_promo_batch5.h\"  // R884: the DDG lua promotion, batch five",
  "include_comment": "the DDG lua promotion, batch six",
- "header_file": "rules/dpy.h",
+ "header_file": "rules/ddg/lua_promo_batch6.h",
  "audit_file": "rules/audits/r885_batch.h",
  "audit_label": "R885 DDG promotion audit",
  "audit_anchor": "#include \"rules/audits/r884_batch.h\"  // R884: R884 DDG promotion audit",
@@ -67,7 +67,7 @@
  "gap_flips": [],
  "banner": {
   "title": "The DDG lua promotion, batch six - 49 full-field defs (the Nehwon mythos and the Nonhumans' Deities) generated ONLY from the adjudicated pin headers, the registry floor 1242 -> 1291.",
-  "provenance": "Generated from rules/nhw.h and rules/nhg.h at d838c9a: the four grids x rows (combat, class, ability, roster) per mythos, the being name orders locked by the pinned cross-references (the Fafhrd-through-Water-Cobra and Hruggek-through-Laogzed print orders) and verified against the 2nd-print ink (the tesseract tsv voice) with the 1eonline L&L pages as the parity voice; the legend tables decode verbatim from the header comments; the unpinned cells emit the sentinels.",
+  "provenance": "Generated from rules/ddg/mythos_nehwon.h and rules/ddg/nonhumans_deities.h at d838c9a: the four grids x rows (combat, class, ability, roster) per mythos, the being name orders locked by the pinned cross-references (the Fafhrd-through-Water-Cobra and Hruggek-through-Laogzed print orders) and verified against the 2nd-print ink (the tesseract tsv voice) with the 1eonline L&L pages as the parity voice; the legend tables decode verbatim from the header comments; the unpinned cells emit the sentinels.",
   "sentinel": "The sentinels ride the R879 doctrine unchanged: n/a for strings, -1 for ints, distinct from every real print value; the printed See below, Standard, Nil, None and Infinite are REAL values and stay. The audits read the sentinels exactly, so fail-on-wrong stays the rule."
  },
  "consts": [

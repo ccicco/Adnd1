@@ -2,7 +2,7 @@
  "round": 767,
  "title": "OA DAILY LIFE - Buildings: the three building types of Kara-Tur (with the food tail)",
  "prefix": "dmc",
- "header_file": "rules/oa138buildings.h",
+ "header_file": "rules/oa/oa138buildings.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA DAILY LIFE - BUILDINGS, printed capture pp. 308-309 (with the food tail of p. 308) - the three building types of Kara-Tur",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 220 closed, 15 open - the Buildings box flips (census 689 -> 690); NEXT - R768: Manners (capture p. 312), prefix dmd (verify free at the landing), audit \"R768 OA Daily Life Manners audit\", include after rules/oa138buildings.h"
+  "sentinel": "the gap census after this round: 220 closed, 15 open - the Buildings box flips (census 689 -> 690); NEXT - R768: Manners (capture p. 312), prefix dmd (verify free at the landing), audit \"R768 OA Daily Life Manners audit\", include after rules/oa/oa138buildings.h"
  },
  "consts": [
   {
@@ -279,7 +279,7 @@
   "open": 15
  },
  "include_comment": "the OA Daily Life Buildings pins",
- "include_after": "#include \"rules/oa137food.h\"  // R766: the OA Daily Life Food pins",
+ "include_after": "#include \"rules/oa/oa137food.h\"  // R766: the OA Daily Life Food pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R766 LANDED 2026-10-22: commit",
@@ -293,7 +293,7 @@
   "  day's meals - runs onto p. 308, outside",
   "  the box scope, pinned p. 307 only per the",
   "  R765 box-scope precedent), header",
-  "  rules/oa137food.h, prefix dmb (fully free",
+  "  rules/oa/oa137food.h, prefix dmb (fully free",
   "  at 2343f9b - zero substring hits, zero",
   "  call-site dmb\\w*( collisions), one gap",
   "  flip (the Food box, single-line), gap",
@@ -349,6 +349,6 @@
   "  308-312), prefix dmc (verify free at the",
   "  landing), audit \"R767 OA Daily Life",
   "  Buildings audit\", include",
-  "  after rules/oa137food.h."
+  "  after rules/oa/oa137food.h."
  ]
 }

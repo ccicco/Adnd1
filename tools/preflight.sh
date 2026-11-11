@@ -83,8 +83,8 @@ echo "== [2/5] regtest build + battery (fresh binary) =="
 batfile=$(mktemp)
 warnfile=$(mktemp)
 if g++ -std=c++17 -I. -I"$PREFIX/include/lua5.4" \
-  rules/dice.cpp rules/character.cpp rules/classes.cpp rules/combat.cpp \
-  rules/saves.cpp rules/turn.cpp rules/races.cpp \
+  rules/engine/dice.cpp rules/engine/character.cpp rules/engine/classes.cpp rules/engine/combat.cpp \
+  rules/engine/saves.cpp rules/engine/turn.cpp rules/engine/races.cpp \
   dm/dm.cpp dm/dungeon.cpp dm/encounters.cpp \
   dm/treasure.cpp monsters/MonsterRegistry.cpp spells/spells.cpp \
   abilities/abilities.cpp items/items.cpp ai/actor.cpp \

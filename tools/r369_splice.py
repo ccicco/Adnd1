@@ -47,7 +47,7 @@ SEED_ENTRY = NL.join([
     '- R368 landed 2026-10-12: commit',
     '  37c7f1a, census 295, the UA',
     '  Cavaliers Table I pin round',
-    '  (rules/uacavtable.h): the two',
+    '  (rules/ua/uacavtable.h): the two',
     '  0-level rows, the 1st-level',
     '  footnote, the printed XP bands',
     '  (the level-11 band decoded), the',
@@ -145,13 +145,13 @@ assert len(applied) + len(already) == 1, 'a count'
 
 
 
-# ---- (b) NEW rules/uacantacq.h ----
-P = 'rules/uacantacq.h'
+# ---- (b) NEW rules/ua/uacantacq.h ----
+P = 'rules/ua/uacantacq.h'
 if os.path.exists(P) and 'R369' in rd(P):
     already.append('uacantacq.h: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uacantacq.h
+// Adnd1 - rules/ua/uacantacq.h
 // The UA ACQUISITION OF CANTRIPS,
 // MAGIC-USERS (p. 79) pins, R369: the
 // known-count rules - the useful category
@@ -165,7 +165,7 @@ else:
 //
 // Pin-era pattern (R322): pinned data only - no engine
 // site exists. Cross-checks the landed R365 seam
-// (rules/uailacquisition.h - the illusionist bands
+// (rules/ua/uailacquisition.h - the illusionist bands
 // deliberately differ, the documented divergence)
 // and the R366 spell-book seam (cantrips count as
 // 1st-level spells).
@@ -294,7 +294,7 @@ else:
         '      2-8/2-5 random counts; the 3',
         '      developed cantrips cap).',
         '      - CLOSED R369: the pin round',
-        '        (rules/uacantacq.h) - the five',
+        '        (rules/ua/uacantacq.h) - the five',
         '        random bands (reversed 2-8,',
         '        legerdemain 2-5, person-',
         '        affecting 2-8, personal 2-8,',
@@ -323,7 +323,7 @@ assert s.count(
     '- [x] **Cantrip acquisition, MU**'
 ) == 1, 'c flip'
 assert s.count(
-    '(rules/uacantacq.h) - the five'
+    '(rules/ua/uacantacq.h) - the five'
 ) == 1, 'c note'
 assert s.count(
     '- [ ] **Illusionist spell acquisition**'
@@ -354,11 +354,11 @@ s = rd(RT)
 if 'R369 UA cantrip acquisition pin audit' in s:
     already.append('regtest.cpp: the R369 audit')
 else:
-    INC_ANCH = ('#include "rules/uacavtable.h"  // '
+    INC_ANCH = ('#include "rules/ua/uacavtable.h"  // '
         'R368: the UA Cavaliers Table I')
     INC_NEW = NL.join([
-        '#include "rules/uacavtable.h"  // R368: the UA Cavaliers Table I',
-        '#include "rules/uacantacq.h"  // R369: the UA cantrip acquisition'
+        '#include "rules/ua/uacavtable.h"  // R368: the UA Cavaliers Table I',
+        '#include "rules/ua/uacantacq.h"  // R369: the UA cantrip acquisition'
     ])
     AUD_ANCH = '    // ---- R227: the wis mental save wiring audit ----'
     AUDIT = r"""    // ---- R369: the UA cantrip
@@ -532,19 +532,19 @@ assert s.count(
     'R227: the wis mental save'
 ) == 1, 'd r227 kept'
 assert s.count(
-    '#include "rules/uacantacq.h"'
+    '#include "rules/ua/uacantacq.h"'
 ) == 1, 'd new include'
 for h in (
         'rules/cavalier.h',
         'rules/classtables.h',
-        'rules/uabirth.h',
-        'rules/uasocialclass.h',
-        'rules/uaspellbooks.h',
-        'rules/uaspellcomment.h',
-        'rules/uauwspelluse.h',
-        'rules/uadarkness.h',
-        'rules/uacavtable.h',
-        'rules/uailacquisition.h'):
+        'rules/ua/uabirth.h',
+        'rules/ua/uasocialclass.h',
+        'rules/ua/uaspellbooks.h',
+        'rules/ua/uaspellcomment.h',
+        'rules/ua/uauwspelluse.h',
+        'rules/ua/uadarkness.h',
+        'rules/ua/uacavtable.h',
+        'rules/ua/uailacquisition.h'):
     assert s.count(
         '#include "' + h + '"'
         ) == 1, 'd kept include'

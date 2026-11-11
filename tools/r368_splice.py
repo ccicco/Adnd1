@@ -47,8 +47,8 @@ SEED_ENTRY = NL.join([
     '- R367 landed 2026-10-12: commit',
     '  6047766, census 294, the UA',
     '  campaign social class and birth',
-    '  pin round (rules/uasocialclass.h',
-    '  and rules/uabirth.h): the',
+    '  pin round (rules/ua/uasocialclass.h',
+    '  and rules/ua/uabirth.h): the',
     '  nine-band Social Class Table',
     '  with the 68-entry occupation',
     '  rosters, the starting-money',
@@ -142,13 +142,13 @@ assert s.count(
 assert len(applied) + len(already) == 1, 'a count'
 
 
-# ---- (b) NEW rules/uacavtable.h ----
-P = 'rules/uacavtable.h'
+# ---- (b) NEW rules/ua/uacavtable.h ----
+P = 'rules/ua/uacavtable.h'
 if os.path.exists(P) and 'R368' in rd(P):
     already.append('uacavtable.h: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uacavtable.h
+// Adnd1 - rules/ua/uacavtable.h
 // The UA CAVALIERS TABLE I (p. 15 print) pins,
 // R368: the full table - the two 0-level track rows
 // (Horseman 1d4+1, Lancer 2d4+1), the 1st-level
@@ -394,7 +394,7 @@ else:
         '      300000 xp per level past 12th;',
         '      reads clean.',
         '      - CLOSED R368: the pin round',
-        '        (rules/uacavtable.h) - the two',
+        '        (rules/ua/uacavtable.h) - the two',
         '        0-level rows, the 1st-level',
         '        footnote, the printed XP bands',
         '        (the level-11 band decoded from',
@@ -424,7 +424,7 @@ assert s.count(
     '- [x] **Cavaliers Table I**'
 ) == 1, 'c flip'
 assert s.count(
-    '(rules/uacavtable.h) - the'
+    '(rules/ua/uacavtable.h) - the'
 ) == 1, 'c note'
 assert s.count(
     '- [ ] Cavaliers Table I (p. 15).'
@@ -457,11 +457,11 @@ s = rd(RT)
 if 'R368 UA Cavaliers Table I pin audit' in s:
     already.append('regtest.cpp: the R368 audit')
 else:
-    INC_ANCH = ('#include "rules/uabirth.h"  // '
+    INC_ANCH = ('#include "rules/ua/uabirth.h"  // '
         'R367: the UA circumstances of birth')
     INC_NEW = NL.join([
-        '#include "rules/uabirth.h"  // R367: the UA circumstances of birth',
-        '#include "rules/uacavtable.h"  // R368: the UA Cavaliers Table I',
+        '#include "rules/ua/uabirth.h"  // R367: the UA circumstances of birth',
+        '#include "rules/ua/uacavtable.h"  // R368: the UA Cavaliers Table I',
     ])
     AUD_ANCH = '    // ---- R227: the wis mental save wiring audit ----'
     AUDIT = r"""    // ---- R368: the UA Cavaliers Table I
@@ -675,16 +675,16 @@ assert s.count(
     'R227: the wis mental save'
 ) == 1, 'd r227 kept'
 assert s.count(
-    '#include "rules/uacavtable.h"'
+    '#include "rules/ua/uacavtable.h"'
 ) == 1, 'd new include'
 for h in ('rules/cavalier.h',
         'rules/classtables.h',
-        'rules/uabirth.h',
-        'rules/uasocialclass.h',
-        'rules/uaspellbooks.h',
-        'rules/uaspellcomment.h',
-        'rules/uauwspelluse.h',
-        'rules/uadarkness.h'):
+        'rules/ua/uabirth.h',
+        'rules/ua/uasocialclass.h',
+        'rules/ua/uaspellbooks.h',
+        'rules/ua/uaspellcomment.h',
+        'rules/ua/uauwspelluse.h',
+        'rules/ua/uadarkness.h'):
     assert s.count(
         '#include "' + h + '"'
         ) == 1, 'd kept include'

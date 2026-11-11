@@ -1,4 +1,4 @@
--- ua337: promoted from rules/uaweapontable.h (the The UA WEIGHT AND DAMAGE BY WEAPON TYPE table (p. 26) pins);
+-- ua337: promoted from rules/ua/uaweapontable.h (the The UA WEIGHT AND DAMAGE BY WEAPON TYPE table (p. 26) pins);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 337,

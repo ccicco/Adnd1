@@ -2,7 +2,7 @@
 # R194 splice: the WIS Table I repin (PHB
 # divergence 3 of the R177 founding read).
 #
-# rules/character.cpp: wisMagDefAdj repinned
+# rules/engine/character.cpp: wisMagDefAdj repinned
 # from the engine -2..+2 convention to the
 # printed Wisdom Table I ladder (3 -3, 4
 # -2, 5-7 -1, 8-14 0, 15 +1, 16 +2, 17 +3,
@@ -11,7 +11,7 @@
 # R192 print pin): one ladder, not two.
 # The block comment repins with it.
 #
-# rules/saves.h: the modifier note repins -
+# rules/engine/saves.h: the modifier note repins -
 # the adjustment applies only to mental
 # attack forms involving will force
 # (beguiling, charming, fear, hypnosis,
@@ -65,20 +65,20 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/character.cpp - the include
+# Patch 1: rules/engine/character.cpp - the include
 # ---------------------------------------------------------------------------
 
-patch('rules/character.cpp',
+patch('rules/engine/character.cpp',
       '#include "wisdom.h"  // R194',
       '#include "character.h"',
       '#include "character.h"'
       + NL + '#include "wisdom.h"  // R194: Wisdom Table I (the print pin)')
 
 # ---------------------------------------------------------------------------
-# Patch 2: rules/character.cpp - the wisMagDefAdj repin (delegates)
+# Patch 2: rules/engine/character.cpp - the wisMagDefAdj repin (delegates)
 # ---------------------------------------------------------------------------
 
-patch('rules/character.cpp',
+patch('rules/engine/character.cpp',
       'return rules::wisMagicalAttackAdj(wis);',
       '// WIS (PHB p.11): magical defense adjustment'
       + NL + '//   3: -2; 4-5: -1; 6-8: -1; 9-12: 0; 13-14: 0; 15: +1; 16-17: +2; 18: +2'
@@ -105,19 +105,19 @@ patch('rules/character.cpp',
       + NL + '}')
 
 # ---------------------------------------------------------------------------
-# Patch 3: rules/character.h - the comment repin
+# Patch 3: rules/engine/character.h - the comment repin
 # ---------------------------------------------------------------------------
 
-patch('rules/character.h',
+patch('rules/engine/character.h',
       'the printed ladder -3..+4 (R194',
       'int  wisMagDefAdj(uint8_t wis);         // save vs. magic adj, -2..+2',
       'int  wisMagDefAdj(uint8_t wis);         // the printed ladder -3..+4 (R194, delegates to wisMagicalAttackAdj)')
 
 # ---------------------------------------------------------------------------
-# Patch 4: rules/saves.h - the modifier note repin
+# Patch 4: rules/engine/saves.h - the modifier note repin
 # ---------------------------------------------------------------------------
 
-patch('rules/saves.h',
+patch('rules/engine/saves.h',
       'the printed Wisdom Table I ladder R194 -3..+4; applies',
       '//   WIS magical defense adjustment (rules/character wisMagDefAdj)',
       '//   WIS magical defense adjustment (rules/character wisMagDefAdj,'
@@ -197,7 +197,7 @@ box_old = ('- [~] 3. **WIS Table I, magical attack adjustment'
 
 box_new = ('- [x] 3. **WIS Table I, magical attack adjustment'
            + NL + '      (the WISDOM TABLE I page)** -'
-           + NL + '      CLOSED R194: rules/character.cpp wisMagDefAdj'
+           + NL + '      CLOSED R194: rules/engine/character.cpp wisMagDefAdj'
            + NL + '      repinned to the print (3 -3, 4 -2, 5-7 -1,'
            + NL + '      8-14 0, 15 +1, 16 +2, 17 +3, 18 +4) by'
            + NL + '      DELEGATING to rules::wisMagicalAttackAdj'
@@ -215,13 +215,13 @@ box_new = ('- [x] 3. **WIS Table I, magical attack adjustment'
            + NL + '      the delegation. Census 111.')
 
 t2 = rd('tools/phb_gap_report.md')
-if 'CLOSED R194: rules/character.cpp wisMagDefAdj' not in t2:
+if 'CLOSED R194: rules/engine/character.cpp wisMagDefAdj' not in t2:
     assert t2.count(box_old) == 1, 'R194 box anchor not unique'
 else:
     assert t2.count(box_old) == 0, 'R194 box old text lingers'
 
 patch('tools/phb_gap_report.md',
-      'CLOSED R194: rules/character.cpp wisMagDefAdj',
+      'CLOSED R194: rules/engine/character.cpp wisMagDefAdj',
       box_old,
       box_new)
 
@@ -247,7 +247,7 @@ patch('tools/dmg_gap_report.md',
       'New R193 battery audit; census 110. Next: the PHB'
       + NL + 'divergences 3 (WIS) and 4 (INT).'
       + NL + 'R194 landed the wisdom defense repin (PHB divergence'
-      + NL + '3): rules/character.cpp wisMagDefAdj repinned to the'
+      + NL + '3): rules/engine/character.cpp wisMagDefAdj repinned to the'
       + NL + 'printed Wisdom Table I ladder (-3..+4) by delegating to'
       + NL + 'the R192 header pin rules::wisMagicalAttackAdj; the'
       + NL + 'saves.h modifier note repins (mental attack forms'

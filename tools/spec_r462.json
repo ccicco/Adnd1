@@ -2,7 +2,7 @@
  "round": 462,
  "title": "the WSG going without food and water",
  "prefix": "wnf",
- "header_file": "rules/wsgfood.h",
+ "header_file": "rules/wsg/wsgfood.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -1065,42 +1065,42 @@
   {
    "note": "going without food",
    "from": "- [ ] Going without food (p. 50)",
-   "to": "- [x] Going without food (p. 50) - R462: the Table 28 tolerance ladder, the 12-hour Str/Con checks with the cumulative +1 then +2 modifiers, the weakened/distressed/incapacitated progression with the -1-per-day penalty and the eating recovery pin as rules/wsgfood.h"
+   "to": "- [x] Going without food (p. 50) - R462: the Table 28 tolerance ladder, the 12-hour Str/Con checks with the cumulative +1 then +2 modifiers, the weakened/distressed/incapacitated progression with the -1-per-day penalty and the eating recovery pin as rules/wsg/wsgfood.h"
   },
   {
    "note": "going without water",
    "from": "- [ ] Going without water (p. 52)",
-   "to": "- [x] Going without water (p. 52) - R462: the 3-day base with the +2/+1/+1/+1 and -1/-1/-1 modifier set, the one-day floor, the high-water-content food definitions and the total-deprivation rule pin as rules/wsgfood.h"
+   "to": "- [x] Going without water (p. 52) - R462: the 3-day base with the +2/+1/+1/+1 and -1/-1/-1 modifier set, the one-day floor, the high-water-content food definitions and the total-deprivation rule pin as rules/wsg/wsgfood.h"
   },
   {
    "note": "effects on animals",
    "from": "- [ ] Effects on animals (p. 52)",
-   "to": "- [x] Effects on animals (p. 52) - R462: the halved movement and carrying capacity, the 3-turn hard-work incapacitation, the 1.5-times-tolerance multiple, the death rules and the 13-24-hour 1d12+12 recovery pin as rules/wsgfood.h"
+   "to": "- [x] Effects on animals (p. 52) - R462: the halved movement and carrying capacity, the 3-turn hard-work incapacitation, the 1.5-times-tolerance multiple, the death rules and the 13-24-hour 1d12+12 recovery pin as rules/wsg/wsgfood.h"
   },
   {
    "note": "minimum daily requirement of food",
    "from": "- [ ] Minimum daily requirement of food (p. 52)",
-   "to": "- [x] Minimum daily requirement of food (p. 52) - R462: the 1-2 pound human ration with the 3/4 elf and 1/2 small-race fractions, the ration pack arithmetic, the meat-vs-vegetables ratio, the two-meal cadence and the half-ration cheat pin as rules/wsgfood.h"
+   "to": "- [x] Minimum daily requirement of food (p. 52) - R462: the 1-2 pound human ration with the 3/4 elf and 1/2 small-race fractions, the ration pack arithmetic, the meat-vs-vegetables ratio, the two-meal cadence and the half-ration cheat pin as rules/wsg/wsgfood.h"
   },
   {
    "note": "minimum daily requirement of water",
    "from": "- [ ] Minimum daily requirement of water (p. 53)",
-   "to": "- [x] Minimum daily requirement of water (p. 53) - R462: the Table 29 pint grid with the racial reductions and the activity hour thresholds, the create-water arithmetic and the water encumbrance pin as rules/wsgfood.h"
+   "to": "- [x] Minimum daily requirement of water (p. 53) - R462: the Table 29 pint grid with the racial reductions and the activity hour thresholds, the create-water arithmetic and the water encumbrance pin as rules/wsg/wsgfood.h"
   },
   {
    "note": "the Table 28 box",
    "from": "- [ ] **Table 28: tolerance levels for lack of food** (p. 50)",
-   "to": "- [x] **Table 28: tolerance levels for lack of food** (p. 50) - R462: the 4/5/6/7/8/10-day ladder pins as rules/wsgfood.h"
+   "to": "- [x] **Table 28: tolerance levels for lack of food** (p. 50) - R462: the 4/5/6/7/8/10-day ladder pins as rules/wsg/wsgfood.h"
   },
   {
    "note": "the Table 29 box",
    "from": "- [ ] **Table 29: water requirements for characters** (p. 53)",
-   "to": "- [x] **Table 29: water requirements for characters** (p. 53) - R462: the 4x4 pint grid pins as rules/wsgfood.h"
+   "to": "- [x] **Table 29: water requirements for characters** (p. 53) - R462: the 4x4 pint grid pins as rules/wsg/wsgfood.h"
   },
   {
    "note": "the post-state line",
-   "from": "Post-state at R461: 65 closed, 121 open (the R461 round closes Chapter 5 - the fall-chance system and the airborne riding proficiency pin as rules/wsgfallair.h; the next rounds open the food and water chapter - going without food, Table 28 and the water requirements).",
-   "to": "Post-state at R462: 72 closed, 114 open (the R462 round opens the food and water chapter - going without food and Table 28, going without water, the effects on animals, the minimum daily requirements of food and water and Table 29 pin as rules/wsgfood.h; the next round continues the chapter - food gathering, foraging and Table 30)."
+   "from": "Post-state at R461: 65 closed, 121 open (the R461 round closes Chapter 5 - the fall-chance system and the airborne riding proficiency pin as rules/wsg/wsgfallair.h; the next rounds open the food and water chapter - going without food, Table 28 and the water requirements).",
+   "to": "Post-state at R462: 72 closed, 114 open (the R462 round opens the food and water chapter - going without food and Table 28, going without water, the effects on animals, the minimum daily requirements of food and water and Table 29 pin as rules/wsg/wsgfood.h; the next round continues the chapter - food gathering, foraging and Table 30)."
   }
  ],
  "gap_census": {
@@ -1108,7 +1108,7 @@
   "open": 114
  },
  "include_comment": "the WSG going without food and water",
- "include_after": "#include \"rules/wsgfallair.h\"  // R461: the WSG airborne fall chance",
+ "include_after": "#include \"rules/wsg/wsgfallair.h\"  // R461: the WSG airborne fall chance",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R461 landed 2026-10-14: commit 1745169 (census 386, pushed",
@@ -1116,7 +1116,7 @@
   "- R461 landed 2026-10-14: commit 1745169 (census 386, pushed",
   "  cf8c4a5..1745169, preflight GREEN first run), the WSG CHAPTER 5 CLOSER - the",
   "  airborne fall chance (printed p. 48) and the proficiency in airborne riding",
-  "  (printed p. 49) in one round, rules/wsgfallair.h NEW (31 inlines: 20 consts",
+  "  (printed p. 49) in one round, rules/wsg/wsgfallair.h NEW (31 inlines: 20 consts",
   "  + 11 bools, prefix wfa, checked free in all three TUs), both gap items",
   "  flipped in one commit (gap 63/123 -> 65/121). Ground truth clean two-way",
   "  (the 8d6a65a0 OCR pages 49-50 vs the second OCR copy, the sign convention",

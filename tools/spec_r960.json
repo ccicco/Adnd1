@@ -7,7 +7,7 @@
   "title": "The Dragon issue-25 opener part three - the commentary set",
   "provenance": "The part-three round of the issue-25 four-round shape - three of the eight Curtiss-called chains as the commentary set: the William B. Fawcett War of Flowers commentary (print 35-37) - the tribute empire, the three-delegation declaration ritual with the twenty day waits, the command ladder from the Tlacatechth to the twenty man platoon, the house of darts and the knights orders - the Bob Bledsaw To Select a Mythos guide (print 43) on the campaign mythos - the nexus gates, the clean slate and the system fits - and the Michael H. Kluwer Arms and Armor of the Conquistadores commentary (print 44-45) - the Cortez and Pizarro expedition numbers, the half armor and the morion, the pike, arquebus and crossbow notes. All pinned from The Dragon Vol. III No. 11 (May 1979) print 35-37 and 43-45 at extract/dragon/025, PRINT FOLIO = PDF PAGE this issue, the single-voice transcript of the Curtiss-provided scan - the contents printing Mike H. Kleuvor for Michael H. Kluwer, the part-three heading joined from the scan. The Flower Wars and Conquistadores chains stayed in at the R960 adjudication per the standing eight-chain call; the flip rides R961. The two inherited watches - the Sullin levels 7-9 and the brawling sequel - print nowhere in issue 25 and ride to TD 26."
  },
- "header_file": "rules/k25.h",
+ "header_file": "rules/dragon/issue025_opener3.h",
  "audit_file": "rules/audits/r960_batch.h",
  "audit_label": "R960 issue-25 commentary set audit",
  "audit_anchor": "#include \"rules/audits/r959_batch.h\"  // R959: R959 issue-25 table round audit",
@@ -18,7 +18,7 @@
   "open": 0
  },
  "gap_flips": [],
- "include_after": "#include \"rules/s25.h\"  // R959: the Dragon issue-25 opener part two, the war game and the vampire roster table round",
+ "include_after": "#include \"rules/dragon/issue025_opener2.h\"  // R959: the Dragon issue-25 opener part two, the war game and the vampire roster table round",
  "include_comment": "the Dragon issue-25 opener part three, the three-chain commentary set",
  "header_sections": {
   "the War of Flowers commentary (print 35-37)": [

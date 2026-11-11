@@ -14,7 +14,7 @@
 
 #include <cstring>
 
-#include "character.h"  // the Ability enum
+#include "engine/character.h"  // the Ability enum
 #include "subraces.h"    // CharSubRace
 
 namespace rules {

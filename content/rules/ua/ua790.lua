@@ -1,4 +1,4 @@
--- ua: promoted from rules/uadeityprose5.h (the THE ORCISH DEITY PROSE - part 5, the finale of the Appendix S paragraph);
+-- ua: promoted from rules/ua/uadeityprose5.h (the THE ORCISH DEITY PROSE - part 5, the finale of the Appendix S paragraph);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 790,
@@ -371,6 +371,6 @@ return {
     } },
   "audit" = {
       "label" = "R790 orcish deity prose audit",
-      "comment" = "THE ORCISH DEITY PROSE - part 5, the finale of the Appendix S description-paragraph close. The archive.org full-text OCR of pp. 118-121 reads the shaman tale and the five orcish blocks scan-clean: the Bahgtru grapple and cesti might, the Shargaas night caves below Gehenna, the Ilneval slaying sword and red chainmail, the Yurtrus gas envelope and death magic, and the Luthic cave-mother curse and claws. The stat-block numerics stay R406/R783; the paragraph facts ride rules/uadeityprose5.h. THE FLIP: dvpProseStaysOpen returns false at last - the close is complete, and the R783 audit assertion rides with it.",
+      "comment" = "THE ORCISH DEITY PROSE - part 5, the finale of the Appendix S description-paragraph close. The archive.org full-text OCR of pp. 118-121 reads the shaman tale and the five orcish blocks scan-clean: the Bahgtru grapple and cesti might, the Shargaas night caves below Gehenna, the Ilneval slaying sword and red chainmail, the Yurtrus gas envelope and death magic, and the Luthic cave-mother curse and claws. The stat-block numerics stay R406/R783; the paragraph facts ride rules/ua/uadeityprose5.h. THE FLIP: dvpProseStaysOpen returns false at last - the close is complete, and the R783 audit assertion rides with it.",
     },
 }

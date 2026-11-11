@@ -93,6 +93,6 @@ return {
     } },
   "audit" = {
       "label" = "R439 WSG stopping a fall pin audit",
-      "comment" = "The stopping-a-fall slice pins Table 19 (the four surface rows x the three condition stop fractions, the cliff slippery dash as the 0/0 no-chance sentinel) with the fraction-of-rating reading, the one-attempt-only rule, the 50/75/100-foot attempt windows, the protrusion requirement on cliff and severe, the slope-self-halt rule on moderate and gentle, the damage-still-applies rule and the halt-before-damage possibility (rules/wsgstop.h, prefix wsf); census 363 -> 364.",
+      "comment" = "The stopping-a-fall slice pins Table 19 (the four surface rows x the three condition stop fractions, the cliff slippery dash as the 0/0 no-chance sentinel) with the fraction-of-rating reading, the one-attempt-only rule, the 50/75/100-foot attempt windows, the protrusion requirement on cliff and severe, the slope-self-halt rule on moderate and gentle, the damage-still-applies rule and the halt-before-damage possibility (rules/wsg/wsgstop.h, prefix wsf); census 363 -> 364.",
     },
 }

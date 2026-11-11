@@ -70,9 +70,9 @@
   "  WAIT FOR GO.",
   ""
  ],
- "include_after": "#include \"rules/drm.h\"  // R927: the Dragon issue-15 opener, Dragon Magic and the four rider chains",
+ "include_after": "#include \"rules/dragon/issue015_opener.h\"  // R927: the Dragon issue-15 opener, Dragon Magic and the four rider chains",
  "include_comment": "the Dragon issue-15 box closing round, the five-chain walk complete",
- "header_file": "rules/f15.h",
+ "header_file": "rules/dragon/issue015_close.h",
  "audit_file": "rules/audits/r928_batch.h",
  "audit_label": "R928 Dragon issue-15 closure audit",
  "audit_anchor": "#include \"rules/audits/r927_batch.h\"  // R927: R927 issue-15 opener audit",

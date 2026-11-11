@@ -2,7 +2,7 @@
  "round": 772,
  "title": "OA WEAPONS PROSE - the forty-seven weapon descriptions",
  "prefix": "dnj",
- "header_file": "rules/oa143weaponsprose.h",
+ "header_file": "rules/oa/oa143weaponsprose.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -683,7 +683,7 @@
   "open": 0
  },
  "include_comment": "the OA Weapons prose pins",
- "include_after": "#include \"rules/oa142celestial.h\"  // R771: the OA Celestial Emperor pins",
+ "include_after": "#include \"rules/oa/oa142celestial.h\"  // R771: the OA Celestial Emperor pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R771 LANDED 2026-10-22: commit",
@@ -697,7 +697,7 @@
   "  of the f9e32d73 OCR - the compressed-3",
   "  re-upload is a 145-page 1:1 scan whose",
   "  numbering differs from the gap-report",
-  "  cites), header rules/oa142celestial.h,",
+  "  cites), header rules/oa/oa142celestial.h,",
   "  prefix dnh (fully free at b4fd255), NINE",
   "  gap flips (the Celestial Emperor child",
   "  box plus the eight missed chapter parents",
@@ -734,6 +734,6 @@
   "  into per-weapon rounds before authoring;",
   "  prefix dnj (verified free at b4fd255),",
   "  audit \"R772 OA Weapons prose audit\",",
-  "  include after rules/oa142celestial.h."
+  "  include after rules/oa/oa142celestial.h."
  ]
 }

@@ -1,4 +1,4 @@
--- ua: promoted from rules/uaarmprose.h (the The UA TREASURE (ARMOR AND);
+-- ua: promoted from rules/ua/uaarmprose.h (the The UA TREASURE (ARMOR AND);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 387,

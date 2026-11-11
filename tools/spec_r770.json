@@ -2,7 +2,7 @@
  "round": 770,
  "title": "OA BACK MATTER - the bibliography: the book closes",
  "prefix": "dmf",
- "header_file": "rules/oa141backmatter.h",
+ "header_file": "rules/oa/oa141backmatter.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA BACK MATTER - THE BIBLIOGRAPHY, printed capture pp. 313-314 - the book closes",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 225 closed, 10 open - the Back matter box flips and the missed Chapter 14 and 15 parents close (the R613b lesson caught pre-landing, census 692 -> 693); NEXT - R771: the open-boxes sweep - the ten remaining: the Chapter 2, 3, 8, 9, 10, 11, 12, and 13 parents plus the Weapons prose and the Celestial Emperor items; audit what each holds before authoring, prefix dng (verify free at the landing), audit \"R771 OA open boxes audit\", include after rules/oa141backmatter.h"
+  "sentinel": "the gap census after this round: 225 closed, 10 open - the Back matter box flips and the missed Chapter 14 and 15 parents close (the R613b lesson caught pre-landing, census 692 -> 693); NEXT - R771: the open-boxes sweep - the ten remaining: the Chapter 2, 3, 8, 9, 10, 11, 12, and 13 parents plus the Weapons prose and the Celestial Emperor items; audit what each holds before authoring, prefix dng (verify free at the landing), audit \"R771 OA open boxes audit\", include after rules/oa/oa141backmatter.h"
  },
  "consts": [
   {
@@ -258,7 +258,7 @@
   "open": 10
  },
  "include_comment": "the OA Back matter pins",
- "include_after": "#include \"rules/oa140names.h\"  // R769: the OA Daily Life Names pins",
+ "include_after": "#include \"rules/oa/oa140names.h\"  // R769: the OA Daily Life Names pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R769 LANDED 2026-10-22: commit",
@@ -268,7 +268,7 @@
   "  (census 691 -> 692, pushed 2725a47..643d70e),",
   "  OA DAILY LIFE, Names (capture pp. 312-313,",
   "  the Chapter 15 closer), header",
-  "  rules/oa140names.h, prefix dme (zero",
+  "  rules/oa/oa140names.h, prefix dme (zero",
   "  call-site dme\\w*( collisions at 2725a47),",
   "  one gap flip (the Names box, single-line),",
   "  gap census now 222 closed / 13 open.",
@@ -312,6 +312,6 @@
   "  pp. 313-314, the bibliography and the",
   "  closing page), prefix dmf (verify free at",
   "  the landing), audit \"R770 OA Back matter",
-  "  audit\", include after rules/oa140names.h."
+  "  audit\", include after rules/oa/oa140names.h."
  ]
 }

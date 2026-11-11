@@ -67,15 +67,15 @@
 
 #pragma once
 
-#include "../rules/dice.h"
-#include "../rules/combat.h"
-#include "../rules/saves.h"
-#include "../rules/turn.h"
+#include "../rules/engine/dice.h"
+#include "../rules/engine/combat.h"
+#include "../rules/engine/saves.h"
+#include "../rules/engine/turn.h"
 #include "../spells/spells.h"
 #include "../spelleffects/spelleffects.h"
 #include "../items/items.h"
 #include "../dm/dm.h"
-#include "../rules/uaappends.h"  // R782: the deity bridge type
+#include "../rules/ua/uaappends.h"  // R782: the deity bridge type
 
 #include <functional>
 #include <string>
@@ -117,7 +117,7 @@ struct Actor {
     // except vs. death/poison).
     int  race = 0;
     bool nonIntelligent = false;
-    // R302: the PC CharRace (rules/races.h)
+    // R302: the PC CharRace (rules/engine/races.h)
     // for the thief percentile columns - the
     // race field above stays the dm::NpcRace
     // int (the R147 saves convention)

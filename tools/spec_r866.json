@@ -19,8 +19,8 @@
    "note": "the Sumerian mythos box"
   }
  ],
- "header_file": "rules/smr.h",
- "include_after": "#include \"rules/nrs.h\"  // R865: the Norse mythos",
+ "header_file": "rules/ddg/mythos_sumerian.h",
+ "include_after": "#include \"rules/ddg/mythos_norse.h\"  // R865: the Norse mythos",
  "include_comment": "the Sumerian mythos",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "seed_anchor": "## Knowledge maintenance",

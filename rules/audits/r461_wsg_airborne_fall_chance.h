@@ -1,6 +1,6 @@
     // ---- R461 WSG airborne fall chance pin audit ----
     // The Chapter 5 closer: the fall-chance system (printed p. 48) and the
-    // airborne riding proficiency (printed p. 49) pin as rules/wsgfallair.h
+    // airborne riding proficiency (printed p. 49) pin as rules/wsg/wsgfallair.h
     // (NEW, prefix wfa): the 0% base with the seven reduction modifiers (the
     // full-body strap -200, the lower-body strap -150, the proficiency -50,
     // the saddle -10, the stirrups -10, the -2 per ability point above 12

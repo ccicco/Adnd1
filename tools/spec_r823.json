@@ -3,7 +3,7 @@
   "title": "the audit blocks migration wiring",
   "prefix": "migw",
   "regtest": "regtest.cpp",
-  "header_file": "rules/migw.h",
+  "header_file": "rules/meta/migration_wiring.h",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
   "gap_report": "tools/mm2_gap_report.md",
   "banner": {
@@ -224,7 +224,7 @@
   "audit_comment": "the tooling round: no block moves yet - the wiring rides the spec key, the first real moves are the pilot round; the audit checks the wiring constants themselves",
   "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
   "include_comment": "the audit blocks migration wiring",
-  "include_after": "#include \"rules/afw.h\"  // R822: the audit files decomposition wiring",
+  "include_after": "#include \"rules/engine/audit_wiring.h\"  // R822: the audit files decomposition wiring",
   "seed_anchor": "## Knowledge maintenance",
   "prev_seed_key": "- R822 LANDED 2026-10-25: commit",
   "prev_record": [
@@ -260,7 +260,7 @@
     "  inline (old way), the engine can never",
     "  consume its own extension in the run that",
     "  patches it in, and the FIRST audit-file",
-    "  round is the next one. Header rules/afw.h,",
+    "  round is the next one. Header rules/engine/audit_wiring.h,",
     "  prefix afw (verified free at 951b962 via",
     "  code search - only dnafWaterCaverns",
     "  case-slices, no \\bafw match), 10 consts +",

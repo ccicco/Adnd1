@@ -2,7 +2,7 @@
  "round": 714,
  "title": "OA MONSTERS - the Gargantua: the three types and the shared doctrine",
  "prefix": "dkb",
- "header_file": "rules/oa85gargantua.h",
+ "header_file": "rules/oa/oa85gargantua.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA MONSTERS - THE GARGANTUA, printed capture pp. 263-265 - the kaiju round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 167 closed, 68 open - the gargantua box flips (census 636 -> 637); NEXT - R715: the Generals of the Animal Kings, Greater Spirits (capture p. 265), prefix dkc (verify free at the landing), audit \"R715 OA monsters Animal Generals audit\", include after rules/oa85gargantua.h"
+  "sentinel": "the gap census after this round: 167 closed, 68 open - the gargantua box flips (census 636 -> 637); NEXT - R715: the Generals of the Animal Kings, Greater Spirits (capture p. 265), prefix dkc (verify free at the landing), audit \"R715 OA monsters Animal Generals audit\", include after rules/oa/oa85gargantua.h"
  },
  "consts": [
   {
@@ -1036,7 +1036,7 @@
   "open": 68
  },
  "include_comment": "the OA Gargantua pins",
- "include_after": "#include \"rules/oa84gaki.h\"  // R713: the OA Gaki pins",
+ "include_after": "#include \"rules/oa/oa84gaki.h\"  // R713: the OA Gaki pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R713 LANDED 2026-10-21: commit",
@@ -1044,7 +1044,7 @@
   "- R713 LANDED 2026-10-21: commit 0124fd4ca300c5abf57005f5bedc018b4b1f0947",
   "  (census 635 -> 636, pushed 683d2c6..0124fd4), OA MONSTERS - the",
   "  Gaki, Lesser Spirit, capture pp. 262-263 print:",
-  "  rules/oa84gaki.h, prefix dka (verified free at 683d2c6), ONE",
+  "  rules/oa/oa84gaki.h, prefix dka (verified free at 683d2c6), ONE",
   "  gap flip, gap census 166/69 - OA round one hundred, the",
   "  four hungry spirits riding one flip. 56 consts + 42 bools",
   "  (98 inlines): the shared doctrine (the spirits of the",
@@ -1073,6 +1073,6 @@
   "  byte-exact; canvas md5 4230843d82b31ded684dffaaa2c24e5e).",
   "  NEXT - R714: the Gargantua (capture pp. 263-265), prefix",
   "  dkb (verified free at 0124fd4), audit \"R714 OA monsters",
-  "  Gargantua audit\", include after rules/oa84gaki.h."
+  "  Gargantua audit\", include after rules/oa/oa84gaki.h."
  ]
 }

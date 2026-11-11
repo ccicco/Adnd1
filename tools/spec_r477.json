@@ -2,7 +2,7 @@
  "round": 477,
  "title": "the WSG damage from fire slice - the firebreak and advance speed prose, the engulfment rule, the brief-contact and panic rules and the extreme-heat rule, printed p. 68",
  "prefix": "wdm",
- "header_file": "rules/wsgdmg.h",
+ "header_file": "rules/wsg/wsgdmg.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -411,12 +411,12 @@
   {
    "note": "the damage from fire box",
    "from": "  - [ ] Damage from fire (p. 68)",
-   "to": "  - [x] Damage from fire (p. 68) - R477: the firebreak and advance prose with the engulfment rule, the brief-contact and panic rules and the extreme-heat rule pin as rules/wsgdmg.h"
+   "to": "  - [x] Damage from fire (p. 68) - R477: the firebreak and advance prose with the engulfment rule, the brief-contact and panic rules and the extreme-heat rule pin as rules/wsg/wsgdmg.h"
   },
   {
    "note": "the post-state line",
-   "from": "Post-state at R476: 102 closed, 84 open (the R476 round continues the camping arc - the uncontrollable fires rules with the fire discipline and extinguishing semantics pin as rules/wsgblaze.h; the next round continues - damage from fire (p. 68)).",
-   "to": "Post-state at R477: 103 closed, 83 open (the R477 round closes the camping arc FIRE chapter - the damage from fire rules with the firebreak and extinguishing semantics pin as rules/wsgdmg.h; the next round continues - medicine and first aid (pp. 69-71))."
+   "from": "Post-state at R476: 102 closed, 84 open (the R476 round continues the camping arc - the uncontrollable fires rules with the fire discipline and extinguishing semantics pin as rules/wsg/wsgblaze.h; the next round continues - damage from fire (p. 68)).",
+   "to": "Post-state at R477: 103 closed, 83 open (the R477 round closes the camping arc FIRE chapter - the damage from fire rules with the firebreak and extinguishing semantics pin as rules/wsg/wsgdmg.h; the next round continues - medicine and first aid (pp. 69-71))."
   }
  ],
  "gap_census": {
@@ -424,7 +424,7 @@
   "open": 83
  },
  "include_comment": "the WSG damage from fire, and the firebreak and heat rules",
- "include_after": "#include \"rules/wsgblaze.h\"  // R476: the WSG uncontrollable fires, and the fire discipline and extinguishing rules",
+ "include_after": "#include \"rules/wsg/wsgblaze.h\"  // R476: the WSG uncontrollable fires, and the fire discipline and extinguishing rules",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R476 LANDED 2026-10-15: commit 21d9e59 (census 401, pushed",
@@ -449,7 +449,7 @@
   "  uncontrollable-fire spread prose (rough circle stringing out",
   "  into a wind-driven wall of fire; animals and wise",
   "  characters flee ahead). 46 inlines (25 consts, 21 bools)",
-  "  pin as rules/wsgblaze.h; census 400 -> 401; gap 101/85 ->",
+  "  pin as rules/wsg/wsgblaze.h; census 400 -> 401; gap 101/85 ->",
   "  102/84 (uncontrollable fires p. 67 box; next: damage from",
   "  fire p. 68). md5 pair: authored no-nl",
   "  f4bc46529ddbdd42609b752ab7561c10, as-built",

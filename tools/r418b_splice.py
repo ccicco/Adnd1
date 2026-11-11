@@ -49,9 +49,9 @@ import re
 NL = '\n'
 
 RT = 'regtest.cpp'
-HDRS = ('rules/uacantrips1.h',
-        'rules/uacantrips2.h',
-        'rules/uacantrips3.h')
+HDRS = ('rules/ua/uacantrips1.h',
+        'rules/ua/uacantrips2.h',
+        'rules/ua/uacantrips3.h')
 
 applied = []
 already = []

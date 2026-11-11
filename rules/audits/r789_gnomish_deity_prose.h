@@ -5,7 +5,7 @@
     // Whisperleaf spear and the raccoon Chiktikka, the Urdlen blur and the
     // soul-eating evil, the Segojan rock speech and the quartz rod, and the
     // Flandal fire apron and the hammer Rhondang. The stat-block numerics
-    // stay R406/R783; the paragraph facts ride rules/uadeityprose4.h.
+    // stay R406/R783; the paragraph facts ride rules/ua/uadeityprose4.h.
     {
         using namespace rules;
         int bad = 0;

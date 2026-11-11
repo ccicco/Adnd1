@@ -115,7 +115,7 @@ tables now read the print.
       walks all three repinned columns.
 - [x] 3. **WIS Table I, magical attack adjustment
       (the WISDOM TABLE I page)** -
-      CLOSED R194: rules/character.cpp wisMagDefAdj
+      CLOSED R194: rules/engine/character.cpp wisMagDefAdj
       repinned to the print (3 -3, 4 -2, 5-7 -1,
       8-14 0, 15 +1, 16 +2, 17 +3, 18 +4) by
       DELEGATING to rules::wisMagicalAttackAdj
@@ -133,7 +133,7 @@ tables now read the print.
       the delegation. Census 111.
 - [x] 4. **INT Table I, additional languages (the
       INTELLIGENCE TABLE I page)** -
-      CLOSED R195: rules/character.cpp
+      CLOSED R195: rules/engine/character.cpp
       intExtraLanguages repinned to the print (3-7
       none, 8-9 one, 10-11 two, 12-13 three, 14-15
       four, 16 five, 17 six, 18 seven). The engine
@@ -253,7 +253,7 @@ tables now read the print.
       tables section)** - PINNED R181: the engine
       convention verified and repinned - the printed
       bands now live in rules/attacksround.h and
-      rules/turn.cpp (meleeAttacksPerRound was the
+      rules/engine/turn.cpp (meleeAttacksPerRound was the
       unsourced level-8+ original note).
 - [x] **Wisdom Table II, cleric bonus spells and
       spell failure - PINNED R192:** rules/wisdom.h
@@ -379,7 +379,7 @@ census grows with the arc):
       point per level, doubled form; the monk
       attacks on the thief table, strength never
       modifies the monk to-hit - recorded for the
-      specials rounds). rules/turn.cpp repinned:
+      specials rounds). rules/engine/turn.cpp repinned:
       meleeAttacksPerRound was fighters level 8+
       from unsourced original notes - now the
       heavy round of the printed cycle (the 3/2
@@ -903,7 +903,7 @@ census stays 213.
       reads 0); the six racial adjustment
       rows beneath (upload lines 1645-1650;
       the human default reads 0) keyed to
-      the rules/races.h enum; and DEXTERITY
+      the rules/engine/races.h enum; and DEXTERITY
       TABLE II (upload line 400), the five
       thief adjustment columns for scores 9
       through 18 (below the 9 reads the 9
@@ -1298,7 +1298,7 @@ charisma-limited); the TIME and
 end-of-book INITIATIVE reads carry the
 DMG-side pins (the turn clock p.38,
 the R158 speed factors, the
-rules/turn.h round and segment
+rules/engine/turn.h round and segment
 conventions); the reference-sheet
 repeats of the pinned tables read as
 copies; the paladin Furthermore list

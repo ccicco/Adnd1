@@ -1,4 +1,4 @@
--- ua371: promoted from rules/uaarmor.h (the The UA EXPANDED ARMOR (pp. 75-76));
+-- ua371: promoted from rules/ua/uaarmor.h (the The UA EXPANDED ARMOR (pp. 75-76));
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 371,

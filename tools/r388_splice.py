@@ -59,7 +59,7 @@ SEED_ENTRY = NL.join([
     '- R387 landed 2026-10-12: commit',
     '  5f9b91e, census 314, the UA',
     '  armor and swords prose pin',
-    '  round (rules/uaarmprose.h):',
+    '  round (rules/ua/uaarmprose.h):',
     '  the pp. 104-105 stretch,',
     '  eight items pin - four fully',
     '  clean (the anything armor,',
@@ -235,13 +235,13 @@ assert s.count(
 assert len(applied) + len(already) == 1, 'a count'
 
 
-# ---- (b) NEW rules/uamweapprose.h ----
-P = 'rules/uamweapprose.h'
+# ---- (b) NEW rules/ua/uamweapprose.h ----
+P = 'rules/ua/uamweapprose.h'
 if os.path.exists(P) and 'R388' in rd(P):
     already.append('uamweapprose.h: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uamweapprose.h
+// Adnd1 - rules/ua/uamweapprose.h
 // The UA TREASURE
 // (MISCELLANEOUS WEAPONS)
 // prose pins, R388: the pp.
@@ -1151,7 +1151,7 @@ else:
     NEW = OLD + NL + NL.join([
         '      - AMENDED R388: the UA misc',
         '        weapons prose pin round',
-        '        (rules/uamweapprose.h) - the',
+        '        (rules/ua/uamweapprose.h) - the',
         '        pp. 105-106 stretch, NINE items',
         '        pin: SIX fully clean (the bullet',
         '        of impact, the dagger Longtooth,',
@@ -1221,46 +1221,46 @@ assert s.count(
     'AMENDED R375'
 ) == 1, 'c r375 amendment kept'
 assert s.count(
-    '(rules/uamiscprose2.h)'
+    '(rules/ua/uamiscprose2.h)'
 ) == 1, 'c misc2 note kept'
 assert s.count(
-    '(rules/uamweapprose.h)'
+    '(rules/ua/uamweapprose.h)'
 ) == 1, 'c mweapprose note'
 assert s.count(
-    '(rules/uaarmprose.h)'
+    '(rules/ua/uaarmprose.h)'
 ) == 1, 'c armprose note kept'
 assert s.count(
-    '(rules/uamiscprose6.h)'
+    '(rules/ua/uamiscprose6.h)'
 ) == 1, 'c misc6 note kept'
 assert s.count(
-    '(rules/uamiscprose5.h)'
+    '(rules/ua/uamiscprose5.h)'
 ) == 1, 'c misc5 note kept'
 assert s.count(
-    '(rules/uamiscprose4.h)'
+    '(rules/ua/uamiscprose4.h)'
 ) == 1, 'c misc4 note kept'
 assert s.count(
-    '(rules/uamiscprose3.h)'
+    '(rules/ua/uamiscprose3.h)'
 ) == 1, 'c misc3 note kept'
 assert s.count(
-    '(rules/uamiscprose1.h)'
+    '(rules/ua/uamiscprose1.h)'
 ) == 1, 'c misc note kept'
 assert s.count(
-    '(rules/uawandprose.h)'
+    '(rules/ua/uawandprose.h)'
 ) == 1, 'c wands note kept'
 assert s.count(
-    '(rules/uarodstave.h)'
+    '(rules/ua/uarodstave.h)'
 ) == 1, 'c rods note kept'
 assert s.count(
-    '(rules/uaringprose.h)'
+    '(rules/ua/uaringprose.h)'
 ) == 1, 'c rings note kept'
 assert s.count(
-    '(rules/uaprotscr.h)'
+    '(rules/ua/uaprotscr.h)'
 ) == 1, 'c scrolls note kept'
 assert s.count(
-    '(rules/uapotprose.h)'
+    '(rules/ua/uapotprose.h)'
 ) == 1, 'c potions note kept'
 assert s.count(
-    '(rules/uadetskel.h)'
+    '(rules/ua/uadetskel.h)'
 ) == 1, 'c skeleton note kept'
 assert s.count(
     'DECIDED R374'
@@ -1312,11 +1312,11 @@ s = rd(RT)
 if 'R388 UA misc weapons prose pin audit' in s:
     already.append('regtest.cpp: the R388 audit')
 else:
-    INC_ANCH = ('#include "rules/uaarmprose.h"  // '
+    INC_ANCH = ('#include "rules/ua/uaarmprose.h"  // '
         'R387: the UA armor prose')
     INC_NEW = NL.join([
         INC_ANCH,
-        '#include "rules/uamweapprose.h"  // R388: the UA misc weapons prose'
+        '#include "rules/ua/uamweapprose.h"  // R388: the UA misc weapons prose'
     ])
     AUD_ANCH = '    // ---- R227: the wis mental save wiring audit ----'
     AUDIT = r"""    // ---- R388: the UA misc
@@ -1915,49 +1915,49 @@ assert s.count(
     'R227: the wis mental save'
 ) == 1, 'd r227 kept'
 assert s.count(
-    '#include "rules/uamweapprose.h"'
+    '#include "rules/ua/uamweapprose.h"'
 ) == 1, 'd new include'
 assert s.count(
-    '#include "rules/uaarmprose.h"'
+    '#include "rules/ua/uaarmprose.h"'
 ) == 1, 'd r387 include kept'
 assert s.count(
-    '#include "rules/uamiscprose6.h"'
+    '#include "rules/ua/uamiscprose6.h"'
 ) == 1, 'd kept include'
 for h in (
         'rules/cavalier.h',
         'rules/classtables.h',
-        'rules/uabirth.h',
-        'rules/uasocialclass.h',
-        'rules/uaspellbooks.h',
-        'rules/uaspellcomment.h',
-        'rules/uauwspelluse.h',
-        'rules/uadarkness.h',
-        'rules/uacavtable.h',
-        'rules/uacantacq.h',
-        'rules/uasmalls1.h',
-        'rules/uailacquisition.h',
+        'rules/ua/uabirth.h',
+        'rules/ua/uasocialclass.h',
+        'rules/ua/uaspellbooks.h',
+        'rules/ua/uaspellcomment.h',
+        'rules/ua/uauwspelluse.h',
+        'rules/ua/uadarkness.h',
+        'rules/ua/uacavtable.h',
+        'rules/ua/uacantacq.h',
+        'rules/ua/uasmalls1.h',
+        'rules/ua/uailacquisition.h',
         'rules/thiefarmor.h',
         'rules/armorratings.h',
         'rules/comeliness.h',
-        'rules/uaweapontable.h',
-        'rules/uamissile.h',
-        'rules/uanewweapons.h',
-        'rules/uafollowers.h',
-        'rules/uacomnote.h',
-        'rules/uatreasuredial.h',
-        'rules/uadetskel.h',
-        'rules/uapotprose.h',
-        'rules/uaprotscr.h',
-        'rules/uaringprose.h',
-        'rules/uarodstave.h',
-        'rules/uawandprose.h',
-        'rules/uamiscprose1.h',
-        'rules/uamiscprose2.h',
-        'rules/uamiscprose3.h',
-        'rules/uamiscprose4.h',
-        'rules/uamiscprose5.h',
-        'rules/uamiscprose6.h',
-        'rules/uaarmprose.h',
+        'rules/ua/uaweapontable.h',
+        'rules/ua/uamissile.h',
+        'rules/ua/uanewweapons.h',
+        'rules/ua/uafollowers.h',
+        'rules/ua/uacomnote.h',
+        'rules/ua/uatreasuredial.h',
+        'rules/ua/uadetskel.h',
+        'rules/ua/uapotprose.h',
+        'rules/ua/uaprotscr.h',
+        'rules/ua/uaringprose.h',
+        'rules/ua/uarodstave.h',
+        'rules/ua/uawandprose.h',
+        'rules/ua/uamiscprose1.h',
+        'rules/ua/uamiscprose2.h',
+        'rules/ua/uamiscprose3.h',
+        'rules/ua/uamiscprose4.h',
+        'rules/ua/uamiscprose5.h',
+        'rules/ua/uamiscprose6.h',
+        'rules/ua/uaarmprose.h',
         'rules/treasdet.h',
         'rules/hoard.h'):
     assert s.count(

@@ -234,6 +234,6 @@ return {
     } },
   "audit" = {
       "label" = "R432 WSG encumbrance pin audit",
-      "comment" = "The encumbrance and movement slice pins Table 11 (the 14 strength rows x the Light/Moderate/Heavy/Severe gp limits), Table 12 (the encumbrance category x the terrain class, the normal and the accelerated rates), the bulk rule-of-thumb, the terrain definitions and the large-scale overland movement rules (rules/wsgencum.h, prefix wem); census 356 -> 357.",
+      "comment" = "The encumbrance and movement slice pins Table 11 (the 14 strength rows x the Light/Moderate/Heavy/Severe gp limits), Table 12 (the encumbrance category x the terrain class, the normal and the accelerated rates), the bulk rule-of-thumb, the terrain definitions and the large-scale overland movement rules (rules/wsg/wsgencum.h, prefix wem); census 356 -> 357.",
     },
 }

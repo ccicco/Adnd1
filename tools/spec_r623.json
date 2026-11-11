@@ -2,7 +2,7 @@
  "round": 623,
  "title": "THE SAMURAI - the oriental knight: the ability minima with the caste birth doctrine, the katana specialization, the ki and great kiai powers, the damage ladder, the jito and shugo stewardships, the bushido precepts and the ronin, Table 25",
  "prefix": "dgj",
- "header_file": "rules/oasamurai.h",
+ "header_file": "rules/oa/oasamurai.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "THE SAMURAI, printed capture pp. 39-42 - the OA samurai round",
   "provenance": "verified against capture pp. 39-42 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). The Table 25 hit-points header is settled against the 2018 print (10-sided dice for accum. hit points) - the dice column pins as accumulated d10 with the printed 9-plus-N cells. The Table 25 grid itself sits as an extracted image in the first capture; the cells pin from the page-40 continuation with the 2018 print confirming every cell. OCR normalization: 2d level reads as 2nd level; a fitting homes reads as a fitting home; Stunned character cannot reads as the stunned cannot (prose only)",
-  "sentinel": "the gap census after this round: 45 closed, 190 open - the samurai boxes with Table 25 flip (census 545 -> 546); NEXT - R624: the Shukenja, capture pp. 42-45, Tables 26, 27 and 28, prefix dgk (verify free), audit \"R624 OA shukenja audit\", include after rules/oasamurai.h"
+  "sentinel": "the gap census after this round: 45 closed, 190 open - the samurai boxes with Table 25 flip (census 545 -> 546); NEXT - R624: the Shukenja, capture pp. 42-45, Tables 26, 27 and 28, prefix dgk (verify free), audit \"R624 OA shukenja audit\", include after rules/oa/oasamurai.h"
  },
  "consts": [
   {
@@ -1127,7 +1127,7 @@
   "open": 190
  },
  "include_comment": "the OA samurai pins",
- "include_after": "#include \"rules/oaninja.h\"  // R622: the OA ninja pins",
+ "include_after": "#include \"rules/oa/oaninja.h\"  // R622: the OA ninja pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R622 LANDED 2026-10-18: commit",
@@ -1136,7 +1136,7 @@
   "  7efe429eae3143fb3b5e6203f56172fc69089e58",
   "  (census 544 -> 545, pushed",
   "  9ae052e..7efe429), THE NINJA, capture",
-  "  pp. 35-39: rules/oaninja.h, prefix",
+  "  pp. 35-39: rules/oa/oaninja.h, prefix",
   "  dgi (verified free), 100 inlines (44",
   "  consts, 37 bools, 19 table columns):",
   "  the human-only split class (Dex 14,",

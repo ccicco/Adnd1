@@ -88,6 +88,6 @@ return {
     } },
   "audit" = {
       "label" = "R434 WSG vehicles pin audit",
-      "comment" = "The land-based vehicles slice pins Table 14 (the 21 cart, chariot and wagon rows x the normal and rugged rates and the maximum loads), the miles-per-half-day scale, the no-very-rugged rule and the pathless one-category-worse rule (rules/wsgvehicle.h, prefix wvv); census 358 -> 359.",
+      "comment" = "The land-based vehicles slice pins Table 14 (the 21 cart, chariot and wagon rows x the normal and rugged rates and the maximum loads), the miles-per-half-day scale, the no-very-rugged rule and the pathless one-category-worse rule (rules/wsg/wsgvehicle.h, prefix wvv); census 358 -> 359.",
     },
 }

@@ -1,11 +1,11 @@
--- oa734: promoted from rules/oa105randtres.h (the OA TREASURE - THE RANDOM TREASURE DETERMINATION PROSE, printed capture p.);
+-- oa734: promoted from rules/oa/oa105randtres.h (the OA TREASURE - THE RANDOM TREASURE DETERMINATION PROSE, printed capture p.);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 734,
   "prefix" = "oa734",
   "banner" = {
       "title" = "OA TREASURE - THE RANDOM TREASURE DETERMINATION PROSE, printed capture p.",
-      "provenance" = "285 - the procedure round census 656 -> 657.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 187 closed, 48 open - the random treasure prose box flips (census 656 -> 657); NEXT - R735: Table 74: Monetary Treasure And Magical Items (capture p. 286), prefix dkw (verify free at the landing), audit \"R735 OA Table 74 monetary treasure audit\", include after rules/oa105randtres.h",
+      "provenance" = "285 - the procedure round census 656 -> 657.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 187 closed, 48 open - the random treasure prose box flips (census 656 -> 657); NEXT - R735: Table 74: Monetary Treasure And Magical Items (capture p. 286), prefix dkw (verify free at the landing), audit \"R735 OA Table 74 monetary treasure audit\", include after rules/oa/oa105randtres.h",
     },
   "consts" = { {
       "name" = "dkvDMGProcedureUsed",

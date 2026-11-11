@@ -2,7 +2,7 @@
  "round": 755,
  "title": "OA TREASURE - Table 84: Martial Arts Class: the d100 martial arts type grid",
  "prefix": "dlq",
- "header_file": "rules/oa126table84.h",
+ "header_file": "rules/oa/oa126table84.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA TREASURE - TABLE 84, MARTIAL ARTS CLASS, printed capture p. 293 - the martial arts grid round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 208 closed, 27 open - the Table 84 box flips (census 677 -> 678); NEXT - R756: Table 85: Ninja Class (capture p. 293), prefix dlr (verify free at the landing), audit \"R756 OA Table 85 ninja audit\", include after rules/oa126table84.h"
+  "sentinel": "the gap census after this round: 208 closed, 27 open - the Table 84 box flips (census 677 -> 678); NEXT - R756: Table 85: Ninja Class (capture p. 293), prefix dlr (verify free at the landing), audit \"R756 OA Table 85 ninja audit\", include after rules/oa/oa126table84.h"
  },
  "consts": [
   {
@@ -195,7 +195,7 @@
   "open": 27
  },
  "include_comment": "the OA Table 84 pins",
- "include_after": "#include \"rules/oa125table83.h\"  // R754: the OA Table 83 pins",
+ "include_after": "#include \"rules/oa/oa125table83.h\"  // R754: the OA Table 83 pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R754 LANDED 2026-10-22: commit",
@@ -205,7 +205,7 @@
   "  (census 676 -> 677, pushed 3c6a44d..845fca4),",
   "  OA TREASURE, Table 83: Missile Class",
   "  (capture p. 293), header",
-  "  rules/oa125table83.h, prefix dlp",
+  "  rules/oa/oa125table83.h, prefix dlp",
   "  (verified free at 3c6a44d), one gap flip",
   "  (the Table 83 box, single-line), gap",
   "  census now 207 closed / 28 open. Round",
@@ -240,6 +240,6 @@
   "  prefix dlq (verify free at the landing),",
   "  audit \"R755 OA Table 84 martial arts",
   "  audit\", include after",
-  "  rules/oa125table83.h."
+  "  rules/oa/oa125table83.h."
  ]
 }

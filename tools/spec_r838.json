@@ -3,7 +3,7 @@
  "title": "the third FF promotion batch",
  "prefix": "fft",
  "regtest": "regtest.cpp",
- "header_file": "rules/fft.h",
+ "header_file": "rules/ff/promo_batch3.h",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "gap_report": "tools/mm2_gap_report.md",
  "banner": {
@@ -241,7 +241,7 @@
  "audit_comment": "the third promotion wave of the ff arc: twenty-five defs, the thirteen cells (the two disenchanter cells ride the standing def), the outdoor walk keys re-pinned, the registry and ff def censuses carried, the keyless census drained to one (the Mountain Giant row stays keyless); the constants check themselves",
  "audit_file": "rules/audits/r838_batch.h",
  "audit_anchor": "#include \"rules/audits/r837_batch.h\"  // R837: R837 second FF promotion audit",
- "include_after": "#include \"rules/ffs.h\"  // R837: the second FF promotion batch",
+ "include_after": "#include \"rules/ff/promo_batch2.h\"  // R837: the second FF promotion batch",
  "include_comment": "the third FF promotion batch",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R837 LANDED 2026-10-25: commit",
@@ -298,7 +298,7 @@
   "  -> 52; NO gap boxes",
   "  flip (MM2 stays 37",
   "  closed 0 open). Header",
-  "  rules/ffs.h, prefix",
+  "  rules/ff/promo_batch2.h, prefix",
   "  ffs (17 consts + 4",
   "  bools, inline 21),",
   "  audit \"R837 second FF",
@@ -308,7 +308,7 @@
   "  into the seed; file",
   "  patches on regtest.cpp",
   "  (39 rekey patches),",
-  "  mm2enco.h, lmp.h and",
+  "  mm2enco.h, rules/mm/mm2_lammasu_promotion.h and",
   "  the audits r817/r820",
   "  (the walk-key census",
   "  chains). NOTABLE BUGS",
@@ -436,13 +436,13 @@
    "to": "                \"griffon\",\n                \"vortex\","
   },
   {
-   "file": "rules/mm2enco.h",
+   "file": "rules/mm/mm2enco.h",
    "note": "the outdoor walk-key census const re-pins 645",
    "from": "// 42 more, 590 -> 632)\ninline int mm2encoWalkKeyRows()\n    { return 632; }",
    "to": "// 42 more, 590 -> 632; the R838 FF promotion rewired\n// 13 more, 632 -> 645)\ninline int mm2encoWalkKeyRows()\n    { return 645; }"
   },
   {
-   "file": "rules/lmp.h",
+   "file": "rules/mm/mm2_lammasu_promotion.h",
    "note": "the lammasu rewire check rides 645",
    "from": "inline int lmpWalkKeyRowsAfter()\n    { return 632; }",
    "to": "inline int lmpWalkKeyRowsAfter()\n    { return 645; }"

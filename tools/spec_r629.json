@@ -2,7 +2,7 @@
  "round": 629,
  "title": "THE CHAPTER 3 opener - the family doctrine, the birth rank and the caste doctrine, Tables 37 and 38",
  "prefix": "dgp",
- "header_file": "rules/oabirth.h",
+ "header_file": "rules/oa/oabirth.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "FAMILIES, CLASS, AND CASTE, printed capture pp. 60-62 - the OA Chapter 3 opener round",
   "provenance": "verified against capture pp. 60-62 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). ONE CONTESTED CELL SETTLED AGAINST THE 2018 PRINT BEFORE PINNING: the T38 row-27 ancestry cell d100/8 (the first capture printed d100/9, the second d100/8 - the settled reading stands). The T38 holds seventeen printed rows (the 2d10 bands 2 through 30 - the first preflight run mispinned eighteen and the battery caught bad 14); the T38 rank column pins as the 0-16 code (outcast 0 through the 1st Rank 16); the ancestry and birthright dice pin as die codes (d4=4 through d100=100) with the rolls as the after-slash counts; the T37 requirement columns pin as the 0/1 code. OCR normalization: \"should affect and NPC\" reads as should affect an NPC; \"1 d6\" reads as 1d6; the Table 38 header spans two rows in the second capture (the printed six-column header stands)",
-  "sentinel": "the gap census after this round: 67 closed, 168 open - the Birth Rank prose, Table 37 and Table 38 boxes flip (census 551 -> 552); NEXT - R630: the Family Structure and Additional Family Structures prose, capture pp. 62-64, the family chart rows with the honor-by-position doctrine, prefix dgq (verify free), audit \"R630 OA family structures audit\", include after rules/oabirth.h"
+  "sentinel": "the gap census after this round: 67 closed, 168 open - the Birth Rank prose, Table 37 and Table 38 boxes flip (census 551 -> 552); NEXT - R630: the Family Structure and Additional Family Structures prose, capture pp. 62-64, the family chart rows with the honor-by-position doctrine, prefix dgq (verify free), audit \"R630 OA family structures audit\", include after rules/oa/oabirth.h"
  },
  "consts": [
   {
@@ -699,7 +699,7 @@
   "open": 168
  },
  "include_comment": "the OA families pins",
- "include_after": "#include \"rules/oacharab.h\"  // R628: the OA character abilities pins",
+ "include_after": "#include \"rules/oa/oacharab.h\"  // R628: the OA character abilities pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R628 LANDED 2026-10-19: commit",
@@ -709,7 +709,7 @@
   "  (census 550 -> 551, pushed",
   "  db94e62..1b788fe), THE CHARACTER",
   "  ABILITIES chapter opener, capture",
-  "  pp. 55-59: rules/oacharab.h, prefix",
+  "  pp. 55-59: rules/oa/oacharab.h, prefix",
   "  dgo (verified free), 47 inlines (10",
   "  consts, 32 bools, 5 table columns):",
   "  the multiple attacks doctrine (beyond",
@@ -770,6 +770,6 @@
   "  Table 38 (Character Birth), prefix",
   "  dgp (verify free), audit \"R629 OA",
   "  families audit\", include after",
-  "  rules/oacharab.h."
+  "  rules/oa/oacharab.h."
  ]
 }

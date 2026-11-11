@@ -2,7 +2,7 @@
  "round": 742,
  "title": "OA TREASURE - Miscellaneous Magic: the rerolled items and the everful purse",
  "prefix": "dld",
- "header_file": "rules/oa113miscmagic.h",
+ "header_file": "rules/oa/oa113miscmagic.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA TREASURE - MISCELLANEOUS MAGIC, printed capture pp. 288-289 - the misc item notes round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 195 closed, 40 open - the misc magic box flips (census 664 -> 665); NEXT - R743: Armor and Shield prose (capture pp. 289-291), prefix dle (verify free at the landing), audit \"R743 OA armor shield audit\", include after rules/oa113miscmagic.h"
+  "sentinel": "the gap census after this round: 195 closed, 40 open - the misc magic box flips (census 664 -> 665); NEXT - R743: Armor and Shield prose (capture pp. 289-291), prefix dle (verify free at the landing), audit \"R743 OA armor shield audit\", include after rules/oa/oa113miscmagic.h"
  },
  "consts": [
   {
@@ -192,7 +192,7 @@
   "open": 40
  },
  "include_comment": "the OA misc magic pins",
- "include_after": "#include \"rules/oa112rods.h\"  // R741: the OA rods pins",
+ "include_after": "#include \"rules/oa/oa112rods.h\"  // R741: the OA rods pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R741 LANDED 2026-10-22: commit",
@@ -202,7 +202,7 @@
   "  (census 663 -> 664, pushed eaf2529..1f4bad3),",
   "  OA TREASURE, Rods, Staves, and Wands - the",
   "  Rod of Resurrection charge table (capture",
-  "  p. 288), header rules/oa112rods.h, prefix",
+  "  p. 288), header rules/oa/oa112rods.h, prefix",
   "  dlc (verified free at eaf2529), one gap",
   "  flip (the rods box, single-line), gap",
   "  census now 194 closed / 41 open. Round",
@@ -229,7 +229,7 @@
   "  (capture pp. 288-289), prefix dld (verify",
   "  free at the landing), audit \"R742 OA misc",
   "  magic audit\", include after",
-  "  rules/oa112rods.h. The boots of elvenkind",
+  "  rules/oa/oa112rods.h. The boots of elvenkind",
   "  and both brooms rerolled, Bucknard's",
   "  everful purse contents, and the item",
   "  notes running onto p. 289."

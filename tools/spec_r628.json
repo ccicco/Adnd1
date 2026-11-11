@@ -2,7 +2,7 @@
  "round": 628,
  "title": "THE CHARACTER ABILITIES chapter opener - the multiple attacks, the dual-class doctrine, the alignment doctrine, the languages, Table 36",
  "prefix": "dgo",
- "header_file": "rules/oacharab.h",
+ "header_file": "rules/oa/oacharab.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "THE CHARACTER ABILITIES, printed capture pp. 55-59 - the OA chapter opener round",
   "provenance": "verified against capture pp. 55-59 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). No contested cells this round - both captures agree on every pinned value. The T36 class column pins as the 1-6 code (bushi, kensai, ninja, barbarian, samurai, sohei); the printed \"and up\" bands pin as the -1 code; the attack rates pin as the numerator and denominator of the printed N/D notation. OCR normalization: \"lying and yang\" reads as yin and yang (prose only); \"human (or human)\" reads as the printed text (prose only); the ninja asterisk footnote appears twice in the second capture (the printed footnote stands)",
-  "sentinel": "the gap census after this round: 64 closed, 171 open - the Character Abilities, Multi-Class and Dual-Class, Alignment, Languages and Table 36 boxes flip (census 550 -> 551); NEXT - R629: the Chapter 3 opener, the birth rank prose and the caste doctrine, capture pp. 60-62, Table 37 (Birth Requirements by Class) and Table 38 (Character Birth), prefix dgp (verify free), audit \"R629 OA families audit\", include after rules/oacharab.h"
+  "sentinel": "the gap census after this round: 64 closed, 171 open - the Character Abilities, Multi-Class and Dual-Class, Alignment, Languages and Table 36 boxes flip (census 550 -> 551); NEXT - R629: the Chapter 3 opener, the birth rank prose and the caste doctrine, capture pp. 60-62, Table 37 (Birth Requirements by Class) and Table 38 (Character Birth), prefix dgp (verify free), audit \"R629 OA families audit\", include after rules/oa/oacharab.h"
  },
  "consts": [
   {
@@ -838,7 +838,7 @@
   "open": 171
  },
  "include_comment": "the OA character abilities pins",
- "include_after": "#include \"rules/oayakuza.h\"  // R627: the OA yakuza pins",
+ "include_after": "#include \"rules/oa/oayakuza.h\"  // R627: the OA yakuza pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R627 LANDED 2026-10-19: commit",
@@ -847,7 +847,7 @@
   "  db94e62fd73176ba4f77cba6dbda777e63f4a535",
   "  (census 549 -> 550, pushed",
   "  5f23689..db94e62), THE YAKUZA, capture",
-  "  pp. 51-54: rules/oayakuza.h, prefix",
+  "  pp. 51-54: rules/oa/oayakuza.h, prefix",
   "  dgn (verified free), 62 inlines (36",
   "  consts, 21 bools, 5 table columns):",
   "  the Str 11/Int 15/Dex 15/Cha 16 minima",
@@ -906,6 +906,6 @@
   "  Tables 36 (Multiple Attacks), prefix",
   "  dgo (verify free), audit \"R628 OA",
   "  character abilities audit\", include",
-  "  after rules/oayakuza.h."
+  "  after rules/oa/oayakuza.h."
  ]
 }

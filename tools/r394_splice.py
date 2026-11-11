@@ -7,7 +7,7 @@
 # holes and closes the DM tables
 # manifest:
 #
-# 1. rules/uasmalls1.h (R370): the
+# 1. rules/ua/uasmalls1.h (R370): the
 #    Method V dice-count table - the
 #    full 12 x 7 matrix pins cell by
 #    cell; the barding movement
@@ -16,16 +16,16 @@
 #    off - light scale 15 chain NA,
 #    medium scale 15 chain 12, heavy
 #    leather 15 scale 14 chain 13).
-# 2. rules/uasocialclass.h (R367): the
+# 2. rules/ua/uasocialclass.h (R367): the
 #    LLC label cell reads clean (the
 #    roster head is Freed slaves); the
 #    halfling parenthetical confirms
 #    the band.
-# 3. rules/uabirth.h (R367): the
+# 3. rules/ua/uabirth.h (R367): the
 #    high-elf sign pins negative
 #    (-20); the section intro reads
 #    clean.
-# 4. rules/uaappendq.h (R389): every
+# 4. rules/ua/uaappendq.h (R389): every
 #    flagged hole fills (the System I
 #    six-foot example, the pummeling
 #    row bodies with the merged
@@ -141,7 +141,7 @@ if s.count('## Knowledge maintenance') != 1:
     die('the seed maintenance head')
 
 # ============ (b) uasmalls1.h ============
-SM = 'rules/uasmalls1.h'
+SM = 'rules/ua/uasmalls1.h'
 
 pair(SM, B(
     '//   - the barding table: light 21/15'
@@ -313,7 +313,7 @@ pair(SM, B(
     'smalls: the Method V matrix section')
 
 # ========== (c) uasocialclass.h ==========
-SC = 'rules/uasocialclass.h'
+SC = 'rules/ua/uasocialclass.h'
 
 pair(SC, B(
     '//   - the halfling placement prints'
@@ -376,7 +376,7 @@ pair(SC, B(
     'social: the halfling marker')
 
 # ============ (d) uabirth.h ============
-UB = 'rules/uabirth.h'
+UB = 'rules/ua/uabirth.h'
 
 pair(UB, B(
     '// The high-elf cell prints a bare 20'
@@ -413,7 +413,7 @@ pair(UB, B(
     'birth: the intro marker')
 
 # ========== (e) uaappendq.h ==========
-UQ = 'rules/uaappendq.h'
+UQ = 'rules/ua/uaappendq.h'
 
 pair(UQ, B(
     'inline bool uaqSysOneSixFtExampleGarbles()',
@@ -782,7 +782,7 @@ pair(GP, B(
     B(
     '- [x] Armor, Types and Encumbrance (p.',
     '      75).',
-    '      - CLOSED R371 (rules/uaarmor.h);',
+    '      - CLOSED R371 (rules/ua/uaarmor.h);',
     '        the R394 manifest sweep.'),
     'gap: the armor manifest item')
 
@@ -794,13 +794,13 @@ pair(GP, B(
     '      76).',
     '      - CLOSED R370 + the R394 clean',
     '        read (the column repin,',
-    '        rules/uasmalls1.h).'),
+    '        rules/ua/uasmalls1.h).'),
     'gap: the barding manifest item')
 
 pair(GP, '- [ ] Birth Table (p. 83).',
     B(
     '- [x] Birth Table (p. 83).',
-    '      - CLOSED R367 (rules/uabirth.h);',
+    '      - CLOSED R367 (rules/ua/uabirth.h);',
     '        the R394 clean read confirms.'),
     'gap: the birth manifest item')
 
@@ -812,14 +812,14 @@ pair(GP, B(
     '      74).',
     '      - CLOSED R370 + the R394 clean',
     '        read (the dice-count matrix,',
-    '        rules/uasmalls1.h).'),
+    '        rules/ua/uasmalls1.h).'),
     'gap: the Method V manifest item')
 
 pair(GP, '- [ ] Hit Points, Starting (p. 74).',
     B(
     '- [x] Hit Points, Starting (p. 74).',
     '      - CLOSED R370'
-    ' (rules/uasmalls1.h).'),
+    ' (rules/ua/uasmalls1.h).'),
     'gap: the hit points manifest item')
 
 pair(GP, B(
@@ -829,7 +829,7 @@ pair(GP, B(
     '- [x] Illusionist Spells, Starting List',
     '      (p. 80).',
     '      - CLOSED R365 + the R393 clean',
-    '        read (rules/uailacquisition.h).'),
+    '        read (rules/ua/uailacquisition.h).'),
     'gap: the IL list manifest item')
 
 pair(GP, B(
@@ -840,7 +840,7 @@ pair(GP, B(
     '      Adjustments (p. 108).',
     '      - CLOSED R389 + the R394 clean',
     '        read (the AC prose fill,',
-    '        rules/uaappendq.h).'),
+    '        rules/ua/uaappendq.h).'),
     'gap: the overbearing manifest item')
 
 pair(GP, B(
@@ -849,7 +849,7 @@ pair(GP, B(
     B(
     '- [x] Parents Marital Status Table (p.',
     '      83).',
-    '      - CLOSED R367 (rules/uabirth.h).'),
+    '      - CLOSED R367 (rules/ua/uabirth.h).'),
     'gap: the marital manifest item')
 
 pair(GP, B(
@@ -860,7 +860,7 @@ pair(GP, B(
     '      Stunning (p. 107).',
     '      - CLOSED R389 + the R394 clean',
     '        read (the row bodies,',
-    '        rules/uaappendq.h).'),
+    '        rules/ua/uaappendq.h).'),
     'gap: the pummeling manifest item')
 
 pair(GP, '- [ ] Social Class Table (p. 82).',
@@ -868,7 +868,7 @@ pair(GP, '- [ ] Social Class Table (p. 82).',
     '- [x] Social Class Table (p. 82).',
     '      - CLOSED R367 + the R394 clean',
     '        read (the LLC label fill,',
-    '        rules/uasocialclass.h).'),
+    '        rules/ua/uasocialclass.h).'),
     'gap: the social manifest item')
 
 # ========== (g) regtest.cpp ==========

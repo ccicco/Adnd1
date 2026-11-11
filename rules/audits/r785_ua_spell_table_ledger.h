@@ -6,7 +6,7 @@
     // the fragment holes resolve against the UA-new description rosters and
     // the R80 registry. Glassteel and Power Word Kill stay open holes.
     // THIRTEEN consts + TWENTY bools + the 4 x 3 ledger grid; the string
-    // rosters ride 13 file patches (7 on rules/uaspelltables2.h, 6 on
+    // rosters ride 13 file patches (7 on rules/ua/uaspelltables2.h, 6 on
     // regtest.cpp including the R361/R362 seam reversals).
     {
         using namespace rules;

@@ -1,7 +1,7 @@
 {
  "round": 612,
  "prefix": "dfb",
- "header_file": "rules/dmohighascend.h",
+ "header_file": "rules/dmo/dmohighascend.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/dmo_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -9,7 +9,7 @@
  "title": "Demihumans and Divine Ascension",
  "audit_label": "R612 DMO ascension audit",
  "include_comment": "the DMO demihuman and ascension pins",
- "include_after": "#include \"rules/dmohighrogues.h\"  // R611: the DMO rogue pins",
+ "include_after": "#include \"rules/dmo/dmohighrogues.h\"  // R611: the DMO rogue pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R611 LANDED 2026-10-18: commit",
@@ -23,7 +23,7 @@
   "  the split plan - ONE box flips",
   "  (Rogues; gap census now 90 closed",
   "  / 6 open):",
-  "  rules/dmohighrogues.h, prefix dfa",
+  "  rules/dmo/dmohighrogues.h, prefix dfa",
   "  (verified free), 273 inlines (111",
   "  consts, 117 bools, 6 chains, 39",
   "  table columns), 9 grids (T47r",
@@ -77,7 +77,7 @@
   "  1de9c4b; verify next prefix free",
   "  (dfb family next). Audit: \"R612",
   "  DMO demihumans-ascension audit\";",
-  "  include after rules/dmohighrogues.h."
+  "  include after rules/dmo/dmohighrogues.h."
  ],
  "banner": {
   "title": "DEMIHUMANS AND DIVINE ASCENSION - DMO Chapter 7, round five of five: the demihuman advancement doctrine (retirement is what is supposed to happen, do not ignore the limits, the limits are the price of the demihuman advantages), the four solutions (a wish or 10th-level transformation spell to become human; a wish or 10th-level imbue spell per level beyond the racial maximum with the experience earned; the Slow Advancement rule with humans pulling ahead from 10th level; slow-after-max with the racial heroic task per extra level), the beyond-30th ceiling (all advancement stops at 30th, the pinnacle of mortal achievement, more hit points than five normal men, powers greater than the avatars), and the divine ascension path (seek anytime after 20th, never turn back, the divine sponsor, the gift at the experience-point total value, the 500,000-per-point saving throw benefit down to a minimum of three, the Table 59 offering roll with the three match columns, the heroic task with its five examples, no ability score under 13, the demigod-and-NPC ending, and the closing line: AD&D is a game of heroes, not gods).",

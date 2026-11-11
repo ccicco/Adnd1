@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "dice.h"
+#include "engine/dice.h"
 
 namespace rules {
 

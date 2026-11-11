@@ -1,4 +1,4 @@
--- wsg: promoted from rules/wsgprof.h (the The WSG WILDERNESS PROFICIENCIES, R425:);
+-- wsg: promoted from rules/wsg/wsgprof.h (the The WSG WILDERNESS PROFICIENCIES, R425:);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 425,
@@ -134,6 +134,6 @@ return {
     } },
   "audit" = {
       "label" = "R425: the WSG proficiencies pin audit",
-      "comment" = "The wilderness arc opener pins the WSG proficiency system (rules/wsgprof.h, prefix wsg): the Proficiency Check system (1d20 vs the Appropriate Ability, the unmodified 19/20 auto-fail, the 18 cap, the 2-in-20 floor), the improving rule (a cumulative -2 per extra slot, from 3rd level; an improved 19 succeeds, a natural 20 always fails), the slot rules (a weapon slot may hold a nonweapon proficiency, never the reverse) and the expanding optional rule (one extra nonweapon slot at 1st level, all slots filled right away - a delayed slot is lost); Table 1 (the 14 class rows, the bard \"as other classes\" sentinel, the horseman footnote) and Table 2 (the 25 rows) pin with the censuses verified and the denominator arithmetic - the book own cleric and illusionist examples; census 350 -> 351.",
+      "comment" = "The wilderness arc opener pins the WSG proficiency system (rules/wsg/wsgprof.h, prefix wsg): the Proficiency Check system (1d20 vs the Appropriate Ability, the unmodified 19/20 auto-fail, the 18 cap, the 2-in-20 floor), the improving rule (a cumulative -2 per extra slot, from 3rd level; an improved 19 succeeds, a natural 20 always fails), the slot rules (a weapon slot may hold a nonweapon proficiency, never the reverse) and the expanding optional rule (one extra nonweapon slot at 1st level, all slots filled right away - a delayed slot is lost); Table 1 (the 14 class rows, the bard \"as other classes\" sentinel, the horseman footnote) and Table 2 (the 25 rows) pin with the censuses verified and the denominator arithmetic - the book own cleric and illusionist examples; census 350 -> 351.",
     },
 }

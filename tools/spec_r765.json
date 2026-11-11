@@ -2,7 +2,7 @@
  "round": 765,
  "title": "OA SETTING - the gajin doctrine: the insular lands and the outside barbarians",
  "prefix": "dma",
- "header_file": "rules/oa136gajin.h",
+ "header_file": "rules/oa/oa136gajin.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA SETTING - THE GAJIN DOCTRINE, printed capture p. 304 - the insular lands and the outside barbarians",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 218 closed, 17 open - the Gajin box flips (census 687 -> 688); NEXT - R766: Food (capture p. 307, the Chapter 15 daily-life opener), prefix dmb (verify free at the landing), audit \"R766 OA Daily Life Food audit\", include after rules/oa136gajin.h"
+  "sentinel": "the gap census after this round: 218 closed, 17 open - the Gajin box flips (census 687 -> 688); NEXT - R766: Food (capture p. 307, the Chapter 15 daily-life opener), prefix dmb (verify free at the landing), audit \"R766 OA Daily Life Food audit\", include after rules/oa/oa136gajin.h"
  },
  "consts": [
   {
@@ -176,7 +176,7 @@
   "open": 17
  },
  "include_comment": "the OA Gajin pins",
- "include_after": "#include \"rules/oa135kozakura.h\"  // R764: the OA Kozakura pins",
+ "include_after": "#include \"rules/oa/oa135kozakura.h\"  // R764: the OA Kozakura pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R764 LANDED 2026-10-22: commit",
@@ -185,7 +185,7 @@
   "  345ec5c683c24b5041c661cd02a3ee63f16a9fcb",
   "  (census 686 -> 687, pushed 6a93395..345ec5c),",
   "  OA SETTING, the island of Kozakura (capture",
-  "  p. 304), header rules/oa135kozakura.h,",
+  "  p. 304), header rules/oa/oa135kozakura.h,",
   "  prefix dlz (fully free at 6a93395 - zero",
   "  substring hits, zero call-site dlz\\w*(",
   "  collisions), one gap flip (the Kozakura",
@@ -222,6 +222,6 @@
   "  NEXT - R765: Gajin (capture p. 304),",
   "  prefix dma (verify free at the landing),",
   "  audit \"R765 OA Gajin audit\", include",
-  "  after rules/oa135kozakura.h."
+  "  after rules/oa/oa135kozakura.h."
  ]
 }

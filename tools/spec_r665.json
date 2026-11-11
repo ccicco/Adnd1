@@ -2,7 +2,7 @@
  "round": 665,
  "title": "SEVENTH LEVEL SPELLS - the 12 seventh level shukenja spells with the school, component, casting time, saving throw, reversible and sohei codes",
  "prefix": "dhz",
- "header_file": "rules/oal7spells.h",
+ "header_file": "rules/oa/oal7spells.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -346,7 +346,7 @@
   "open": 117
  },
  "include_comment": "the OA seventh level spells pins",
- "include_after": "#include \"rules/oal6spells.h\"  // R664: the OA sixth level spells pins",
+ "include_after": "#include \"rules/oa/oal6spells.h\"  // R664: the OA sixth level spells pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R664 LANDED 2026-10-19: commit c0a5a683535eb2e0028617c47e90969f84983893",
@@ -355,7 +355,7 @@
   "  (census 586 -> 587, pushed 28d5951..c0a5a68),",
   "  SIXTH LEVEL SPELLS - the 12 sixth",
   "  level shukenja spell stat blocks,",
-  "  capture pp. 143-147: rules/oal6spells.h,",
+  "  capture pp. 143-147: rules/oa/oal6spells.h,",
   "  prefix dhy (verified free), ONE gap flip",
   "  (single-line child label), 15 consts,",
   "  21 inlines (grid tag L6Data, 12 rows x",
@@ -394,6 +394,6 @@
   "  (capture pp. 147-152), prefix dhz",
   "  (verify free), audit \"R665 OA seventh",
   "  level spells audit\", include after",
-  "  rules/oal6spells.h"
+  "  rules/oa/oal6spells.h"
  ]
 }

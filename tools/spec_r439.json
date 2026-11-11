@@ -2,7 +2,7 @@
  "round": 439,
  "title": "the WSG stopping a fall - Table 19 (the chance of stopping a fall or tumble)",
  "prefix": "wsf",
- "header_file": "rules/wsgstop.h",
+ "header_file": "rules/wsg/wsgstop.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -13,7 +13,7 @@
  "census_before": 363,
  "inline_count": 20,
  "audit_label": "R439 WSG stopping a fall pin audit",
- "audit_comment": "The stopping-a-fall slice pins Table 19 (the four surface rows x the three condition stop fractions, the cliff slippery dash as the 0/0 no-chance sentinel) with the fraction-of-rating reading, the one-attempt-only rule, the 50/75/100-foot attempt windows, the protrusion requirement on cliff and severe, the slope-self-halt rule on moderate and gentle, the damage-still-applies rule and the halt-before-damage possibility (rules/wsgstop.h, prefix wsf); census 363 -> 364.",
+ "audit_comment": "The stopping-a-fall slice pins Table 19 (the four surface rows x the three condition stop fractions, the cliff slippery dash as the 0/0 no-chance sentinel) with the fraction-of-rating reading, the one-attempt-only rule, the 50/75/100-foot attempt windows, the protrusion requirement on cliff and severe, the slope-self-halt rule on moderate and gentle, the damage-still-applies rule and the halt-before-damage possibility (rules/wsg/wsgstop.h, prefix wsf); census 363 -> 364.",
  "banner": {
   "title": "The WSG STOPPING A FALL, R439: Table 19 (the chance of stopping a fall or tumble - the four surface rows x the non-slippery, slightly slippery and slippery conditions, each entry a fraction of the Climbing Rating: gentle 7/8, 3/4, 2/3; moderate 3/4, 2/3, 1/2; severe 2/3, 1/2, 1/4; cliff face 1/2, 1/4 and the slippery dash - no chance at all) with the prose rules: a character can attempt to halt his descent and reduce the damage, the chances much greater tumbling down a gentle slope than in free fall; the DM either requires the attempt announced before it becomes impossible or allows an automatic attempt right after the fall begins (holding a sword and shield means no attempt unless dropped); only one attempt may be made, within the first 50 feet from a cliff or severe slope, 75 feet down a moderate slope or 100 feet down a gentle slope - past the window the velocity is too great; the cliff and severe attempt only succeeds if a protrusion exists to grab, while a moderate or gentle tumble presses arms and legs against the slope itself; a stopped fall still takes impact and/or abrasion damage for the distance fallen, but an immediate successful hands-free attempt can halt a moderate or gentle tumble before any damage - the round continues the movement-across-special-terrain section. Census 363 -> 364.",
   "provenance": "the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed p. 36; the user own copy OCR cross-checked against the archive djvu word layer (the djvu table zone is heavily garbled - only the cliff slightly-slippery 1/4 cell legible there) and the IIIF full-resolution eye-reads (two independent reads of the full table; every value matched the user copy exactly). The fraction-of-rating worked example (3/4 of 60) is written cross-multiplied, division-free.",
@@ -251,7 +251,7 @@
  "gap_flips": [
   {
    "from": "  - [ ] Stopping a fall (p. 36)",
-   "to": "  - [x] Stopping a fall (p. 36) - R439: the Table 19 stop fractions, the one-attempt rule, the 50/75/100-foot windows, the protrusion requirement and the slope-self-halt rule pin as rules/wsgstop.h",
+   "to": "  - [x] Stopping a fall (p. 36) - R439: the Table 19 stop fractions, the one-attempt rule, the 50/75/100-foot windows, the protrusion requirement and the slope-self-halt rule pin as rules/wsg/wsgstop.h",
    "note": "stopping a fall"
   },
   {
@@ -270,7 +270,7 @@
   "open": 144
  },
  "include_comment": "the WSG stopping a fall",
- "include_after": "#include \"rules/wsgtumble.h\"  // R438: the WSG tumbling damage",
+ "include_after": "#include \"rules/wsg/wsgtumble.h\"  // R438: the WSG tumbling damage",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R438 landed 2026-10-14: commit e0bc5a3 (census 363, pushed",
@@ -284,7 +284,7 @@
   "  worst-case and gradual-stop impact rules, the flat-terrain extra abrasion",
   "  and the tumble rates; the book own worked example (the smooth moderate",
   "  slightly-slippery 40/3/20 cell) pinned as two division-free examples.",
-  "  rules/wsgtumble.h NEW (26 inlines, prefix wdt, checked free). Ground truth",
+  "  rules/wsg/wsgtumble.h NEW (26 inlines, prefix wdt, checked free). Ground truth",
   "  three-way verified (the two normal-row slippery cells settled by two IIIF",
   "  eye-reads, matching the user copy). NOTE: the first build had a row-index",
   "  slip in the worked example - the sim caught the two TRUE-on-healthy",

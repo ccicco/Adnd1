@@ -75,8 +75,8 @@ def main():
     # 3. build line: tee the battery into a temp file (byte-identical
     #    stdout; regtest's own exit code preserved via PIPESTATUS)
     old = ("g++ -std=c++17 -I. -I\"$PREFIX/include/lua5.4\" \\\n"
-           "  rules/dice.cpp rules/character.cpp rules/classes.cpp rules/combat.cpp \\\n"
-           "  rules/saves.cpp rules/turn.cpp dm/dm.cpp dm/dungeon.cpp dm/encounters.cpp \\\n"
+           "  rules/engine/dice.cpp rules/engine/character.cpp rules/engine/classes.cpp rules/engine/combat.cpp \\\n"
+           "  rules/engine/saves.cpp rules/engine/turn.cpp dm/dm.cpp dm/dungeon.cpp dm/encounters.cpp \\\n"
            "  dm/treasure.cpp monsters/MonsterRegistry.cpp spells/spells.cpp \\\n"
            "  items/items.cpp regtest.cpp \\\n"
            "  -o regtest -L\"$PREFIX/lib\" -llua5.4 && ./regtest || fail=1\n")
@@ -85,8 +85,8 @@ def main():
            "# code authoritative (a failed battery still ends RED).\n"
            "batfile=$(mktemp)\n"
            "if g++ -std=c++17 -I. -I\"$PREFIX/include/lua5.4\" \\\n"
-           "  rules/dice.cpp rules/character.cpp rules/classes.cpp rules/combat.cpp \\\n"
-           "  rules/saves.cpp rules/turn.cpp dm/dm.cpp dm/dungeon.cpp dm/encounters.cpp \\\n"
+           "  rules/engine/dice.cpp rules/engine/character.cpp rules/engine/classes.cpp rules/engine/combat.cpp \\\n"
+           "  rules/engine/saves.cpp rules/engine/turn.cpp dm/dm.cpp dm/dungeon.cpp dm/encounters.cpp \\\n"
            "  dm/treasure.cpp monsters/MonsterRegistry.cpp spells/spells.cpp \\\n"
            "  items/items.cpp regtest.cpp \\\n"
            "  -o regtest -L\"$PREFIX/lib\" -llua5.4 && ./regtest | tee \"$batfile\"; then\n"

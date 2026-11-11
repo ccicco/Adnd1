@@ -54,7 +54,7 @@ SEED_ENTRY = NL.join([
     '- R372 landed 2026-10-12: commit',
     '  25881ba, census 299, the UA',
     '  cavalier followers pin round',
-    '  (rules/uafollowers.h): the',
+    '  (rules/ua/uafollowers.h): the',
     '  men-at-arms dice ladder (all d4,',
     '  non-cumulative, the no-gain',
     '  rule), the four equipment',
@@ -166,13 +166,13 @@ assert len(applied) + len(already) == 1, 'a count'
 
 
 
-# ---- (b) NEW rules/uacomnote.h ----
-P = 'rules/uacomnote.h'
+# ---- (b) NEW rules/ua/uacomnote.h ----
+P = 'rules/ua/uacomnote.h'
 if os.path.exists(P) and 'R373' in rd(P):
     already.append('uacomnote.h: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uacomnote.h
+// Adnd1 - rules/ua/uacomnote.h
 // The UA COMELINESS CREATION NOTE
 // (p. 74) pins, R373: the DM
 // pointer in the DM section's
@@ -274,7 +274,7 @@ else:
         '      (p. 74) - the DM pointer; rides',
         '      the R322 pins.',
         '      - CLOSED R373: the pin round',
-        '        (rules/uacomnote.h) - the DM',
+        '        (rules/ua/uacomnote.h) - the DM',
         '        pointer to pages 6 and 7, the',
         '        characteristic read, the',
         '        effects on viewers and',
@@ -306,7 +306,7 @@ else:
         '      the pole-arm cross-refs point to',
         '      Appendix T.',
         '      - CLOSED R373: rides the R340',
-        '        pins (rules/uanewweapons.h) -',
+        '        pins (rules/ua/uanewweapons.h) -',
         '        the 16-entry roster with the',
         '        14 item-list types marked; the',
         '        R337 seam cross-checks the',
@@ -334,10 +334,10 @@ assert s.count(
     '- [x] **The new weapon descriptions**'
 ) == 1, 'c2 flip'
 assert s.count(
-    '(rules/uacomnote.h) - the'
+    '(rules/ua/uacomnote.h) - the'
 ) == 1, 'c uacomnote note'
 assert s.count(
-    '(rules/uanewweapons.h) -'
+    '(rules/ua/uanewweapons.h) -'
 ) == 2, 'c uanewweapons notes'
 assert s.count(
     '- [ ] **The new weapons**'
@@ -374,11 +374,11 @@ s = rd(RT)
 if 'R373 UA comeliness note pin audit' in s:
     already.append('regtest.cpp: the R373 audit')
 else:
-    INC_ANCH = ('#include "rules/uafollowers.h"  // '
+    INC_ANCH = ('#include "rules/ua/uafollowers.h"  // '
         'R372: the UA cavalier followers')
     INC_NEW = NL.join([
-        '#include "rules/uafollowers.h"  // R372: the UA cavalier followers',
-        '#include "rules/uacomnote.h"  // R373: the UA comeliness note'
+        '#include "rules/ua/uafollowers.h"  // R372: the UA cavalier followers',
+        '#include "rules/ua/uacomnote.h"  // R373: the UA comeliness note'
     ])
     AUD_ANCH = '    // ---- R227: the wis mental save wiring audit ----'
     AUDIT = r"""    // ---- R373: the UA comeliness
@@ -598,28 +598,28 @@ assert s.count(
     'R227: the wis mental save'
 ) == 1, 'd r227 kept'
 assert s.count(
-    '#include "rules/uacomnote.h"'
+    '#include "rules/ua/uacomnote.h"'
 ) == 1, 'd new include'
 for h in (
         'rules/cavalier.h',
         'rules/classtables.h',
-        'rules/uabirth.h',
-        'rules/uasocialclass.h',
-        'rules/uaspellbooks.h',
-        'rules/uaspellcomment.h',
-        'rules/uauwspelluse.h',
-        'rules/uadarkness.h',
-        'rules/uacavtable.h',
-        'rules/uacantacq.h',
-        'rules/uasmalls1.h',
-        'rules/uailacquisition.h',
+        'rules/ua/uabirth.h',
+        'rules/ua/uasocialclass.h',
+        'rules/ua/uaspellbooks.h',
+        'rules/ua/uaspellcomment.h',
+        'rules/ua/uauwspelluse.h',
+        'rules/ua/uadarkness.h',
+        'rules/ua/uacavtable.h',
+        'rules/ua/uacantacq.h',
+        'rules/ua/uasmalls1.h',
+        'rules/ua/uailacquisition.h',
         'rules/thiefarmor.h',
         'rules/armorratings.h',
         'rules/comeliness.h',
-        'rules/uaweapontable.h',
-        'rules/uamissile.h',
-        'rules/uanewweapons.h',
-        'rules/uafollowers.h'):
+        'rules/ua/uaweapontable.h',
+        'rules/ua/uamissile.h',
+        'rules/ua/uanewweapons.h',
+        'rules/ua/uafollowers.h'):
     assert s.count(
         '#include "' + h + '"'
         ) == 1, 'd kept include'

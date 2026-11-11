@@ -41,7 +41,7 @@ SEED_ENTRY = NL.join([
     '- R351 landed 2026-10-11: commit',
     '  4f47d8a, census 278, the UA',
     '  new druid 2nd level spells pin',
-    '  round (rules/uadruidspells2.h):',
+    '  round (rules/ua/uadruidspells2.h):',
     '  flame blade (the undead and',
     '  fire damage modifiers), the',
     '  goodberry reverse (the name',
@@ -84,13 +84,13 @@ assert s.count('R340 landed 2026-10-11') == 1, 'a r340 kept'
 assert s.count('## Knowledge maintenance') == 1, 'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
-# ---- (b) NEW rules/uadruidspells3.h ----
-US = 'rules/uadruidspells3.h'
+# ---- (b) NEW rules/ua/uadruidspells3.h ----
+US = 'rules/ua/uadruidspells3.h'
 if os.path.exists(US) and 'R352' in rd(US):
     already.append('uadruidspells3.h: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uadruidspells3.h
+// Adnd1 - rules/ua/uadruidspells3.h
 // The UA NEW DRUID SPELLS (pp. 44-45) pins, R352: the 3rd-level
 // spell descriptions - cloudburst, know alignment, spike growth
 // and starshine.
@@ -395,7 +395,7 @@ inline bool uad3StarshineMaterialHollyBerries()
     { return true; }
 
 // The R351 reflecting pool seam: starshine operates normally
-// through the reflecting pool (see rules/uadruidspells2.h).
+// through the reflecting pool (see rules/ua/uadruidspells2.h).
 inline bool uad3StarshineWorksThroughReflectingPool()
     { return true; }
 
@@ -427,7 +427,7 @@ else:
     assert s.count(TAIL_OLD) == 1, 'c tail'
     NOTE = NL.join([
     '      - R352: the 3rd level pinned',
-    '        (rules/uadruidspells3.h) - the',
+    '        (rules/ua/uadruidspells3.h) - the',
     '        four spell descriptions',
     '        (cloudburst with the stat-',
     '        block interleave and the',
@@ -480,12 +480,12 @@ if 'R352 UA druid 3rd level spells pin audit' in s:
     already.append('regtest.cpp: the R352 audit')
 else:
     INC_ANCH = (
-        '#include "rules/uadruidspells2.h"'
+        '#include "rules/ua/uadruidspells2.h"'
         '  // R351: the UA new druid 2nd'
         ' level')
     INC_NEW = NL.join([
         INC_ANCH,
-        '#include "rules/uadruidspells3.h"'
+        '#include "rules/ua/uadruidspells3.h"'
         '  // R352: the UA new druid 3rd'
         ' level',
     ])
@@ -691,7 +691,7 @@ assert s.count(
     ' pin audit: bad ') == 1, 'd r343 kept'
 assert s.count('R227: the wis mental save') == 1, 'd r227 kept'
 assert s.count(
-    '#include "rules/uadruidspells3.h"') == 1, 'd include'
+    '#include "rules/ua/uadruidspells3.h"') == 1, 'd include'
 assert len(applied) + len(already) == 4, 'd count'
 
 # ---- the summary ----

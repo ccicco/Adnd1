@@ -2,7 +2,7 @@
  "round": 485,
  "title": "the WSG artificial illumination slice - the torch wind bands with the lantern and bullseye sighting rules, the magic weapon glows, the campfire radii and the group visibility rules, printed pp. 74-75",
  "prefix": "wli",
- "header_file": "rules/wsglight.h",
+ "header_file": "rules/wsg/wsglight.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -538,12 +538,12 @@
   {
    "note": "the artificial illumination box",
    "from": "  - [ ] Artificial illumination (p. 74)",
-   "to": "  - [x] Artificial illumination (p. 74) - R485: the torch wind bands with the lantern, magic weapon and campfire illumination rules pin as rules/wsglight.h"
+   "to": "  - [x] Artificial illumination (p. 74) - R485: the torch wind bands with the lantern, magic weapon and campfire illumination rules pin as rules/wsg/wsglight.h"
   },
   {
    "note": "the post-state line",
-   "from": "Post-state at R484: 112 closed, 74 open (the R484 round continues the vision and visibility chapter - the infravision effectiveness rules with the ultravision definition and range modifiers pin as rules/wsgultra.h; the next round continues - artificial illumination (p. 74)).",
-   "to": "Post-state at R485: 113 closed, 73 open (the R485 round CLOSES the vision and visibility chapter - the artificial illumination rules pin as rules/wsglight.h; the next round opens the natural hazards chapter - volcanoes (p. 76))."
+   "from": "Post-state at R484: 112 closed, 74 open (the R484 round continues the vision and visibility chapter - the infravision effectiveness rules with the ultravision definition and range modifiers pin as rules/wsg/wsgultra.h; the next round continues - artificial illumination (p. 74)).",
+   "to": "Post-state at R485: 113 closed, 73 open (the R485 round CLOSES the vision and visibility chapter - the artificial illumination rules pin as rules/wsg/wsglight.h; the next round opens the natural hazards chapter - volcanoes (p. 76))."
   }
  ],
  "gap_census": {
@@ -551,7 +551,7 @@
   "open": 73
  },
  "include_comment": "the WSG artificial illumination light-source rules",
- "include_after": "#include \"rules/wsgultra.h\"  // R484: the WSG ultravision and infravision effectiveness rules",
+ "include_after": "#include \"rules/wsg/wsgultra.h\"  // R484: the WSG ultravision and infravision effectiveness rules",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R484 LANDED 2026-10-15: commit b800d4a (census 409, pushed",
@@ -560,7 +560,7 @@
   "  19d5d92..b800d4a), the WSG ULTRAVISION and infravision",
   "  effectiveness slice, printed p. 74 - the third vision round,",
   "  a prose round with a pin-table interior (no printed grid):",
-  "  pinned as rules/wsgultra.h with the include after wsginfra.h",
+  "  pinned as rules/wsg/wsgultra.h with the include after wsginfra.h",
   "  at line 189 (prefix wuv, free on the first probe). The daylight",
   "  bar: infravision is useless in daylight or artificial",
   "  illumination stronger than moonlight, the visible light",

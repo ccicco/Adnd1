@@ -22,7 +22,7 @@
 #    Shadows footnote-4 marker prints
 #    orphaned (no text anywhere) -
 #    flagged as the print anomaly.
-# 3. rules/uailacquisition.h (R365):
+# 3. rules/ua/uailacquisition.h (R365):
 #    the illusionist starting list
 #    reads column-wise in full; the
 #    R365 interleave decode corrected
@@ -441,8 +441,8 @@ pair(TA,
      '    static const int k[4] = {1, 2, 1, 2};',
      'thiefarmor.h: the band rounds')
 
-# ========== (d) rules/uailacquisition.h ==========
-UA = 'rules/uailacquisition.h'
+# ========== (d) rules/ua/uailacquisition.h ==========
+UA = 'rules/ua/uailacquisition.h'
 
 pair(UA,
      B('// JUDGMENTs (the decode method):',
@@ -1041,7 +1041,7 @@ pair(GP,
        '      the illusionist book differences.',
        '      - R365: the fragment-verified',
        '        cells pinned',
-       '        (rules/uailacquisition.h) -',
+       '        (rules/ua/uailacquisition.h) -',
        '        the three-group start, the',
        '        five defensive rows, the',
        '        misc fragments, the DM',
@@ -1057,7 +1057,7 @@ pair(GP,
        '      (p. 80) - the starting list table;',
        '      the illusionist book differences.',
        '      - AMENDED R393: closed - the R365',
-       '        pin (rules/uailacquisition.h);',
+       '        pin (rules/ua/uailacquisition.h);',
        '        the R393 clean PDF read decodes',
        '        the starting list column-wise in',
        '        full (the R365 interleave',

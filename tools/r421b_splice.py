@@ -69,8 +69,8 @@ def die(msg):
 
 RT = 'regtest.cpp'
 GP = 'tools/ua_gap_report.md'
-ILC = 'rules/uailcantrips.h'
-UAS2 = 'rules/uaspelltables2.h'
+ILC = 'rules/ua/uailcantrips.h'
+UAS2 = 'rules/ua/uaspelltables2.h'
 
 # ---- the one repair patch ----
 

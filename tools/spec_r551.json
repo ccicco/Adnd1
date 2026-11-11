@@ -238,7 +238,7 @@
  },
  "gap_flips": [],
  "gap_report": "tools/dsg_gap_report.md",
- "header_file": "rules/dsgcamp2.h",
+ "header_file": "rules/dsg/dsgcamp2.h",
  "header_sections": {
   "the Consistency section": [
    {
@@ -399,7 +399,7 @@
    }
   ]
  },
- "include_after": "#include \"rules/dsgcamp.h\"  // R550: the DSG campaign opener pins",
+ "include_after": "#include \"rules/dsg/dsgcamp.h\"  // R550: the DSG campaign opener pins",
  "include_comment": "the DSG worlds of adventure pins",
  "inline_count": 37,
  "prefix": "dcd",
@@ -441,7 +441,7 @@
   "  whole with the break noted). Prose-only round: 1",
   "  const + 60 bools, prefix dcc (NEW FAMILY - the",
   "  campaign chapter leaves the dna* Deepearth run",
-  "  behind; verified free), header rules/dsgcamp.h,",
+  "  behind; verified free), header rules/dsg/dsgcamp.h,",
   "  spec 26,449 bytes, md5 dad51b1ab207aecca09f6432",
   "  b55367b5 matched exactly first try, 61 inlines;",
   "  djvu lines 12711-13012 with the Capture-layer",

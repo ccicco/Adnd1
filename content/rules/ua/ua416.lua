@@ -1,4 +1,4 @@
--- ua: promoted from rules/uacantrips5.h (the The UA MAGIC-USER CANTRIP);
+-- ua: promoted from rules/ua/uacantrips5.h (the The UA MAGIC-USER CANTRIP);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 416,

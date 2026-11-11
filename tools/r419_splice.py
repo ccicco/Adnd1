@@ -61,7 +61,7 @@
 # flags and their audit
 # assertions amend away).
 #
-# 1. rules/uacantrips4.h,
+# 1. rules/ua/uacantrips4.h,
 #    uacantrips5.h,
 #    uacantrips6.h: the hole-
 #    family blocks amend to the
@@ -140,13 +140,13 @@ def pair(path, old, new, label):
 # (prefix, header path, count,
 # denominators in roster order)
 FAM = [
-    ('ucp', 'rules/uacantrips4.h', 10,
+    ('ucp', 'rules/ua/uacantrips4.h', 10,
      [10, 10, 3, 3, 10, 8, 2, 3,
       10, 8]),
-    ('uco', 'rules/uacantrips5.h', 10,
+    ('uco', 'rules/ua/uacantrips5.h', 10,
      [2, 2, 2, 3, 2, 2, 3, 2, 3,
       2]),
-    ('uch', 'rules/uacantrips6.h', 8,
+    ('uch', 'rules/ua/uacantrips6.h', 8,
      [6, 6, 6, 10, 10, 6, 10, 6]),
 ]
 
@@ -339,7 +339,7 @@ for pfx, path, n, dens in FAM:
          'the %s casting times' % cap)
 
 # ---- the uco resolved reads ----
-UCO = 'rules/uacantrips5.h'
+UCO = 'rules/ua/uacantrips5.h'
 
 pair(UCO,
      E('const int UCO_AREA_LOCK = 12;'),
@@ -428,7 +428,7 @@ pair(UCO,
      'uco: the slow poison defer')
 
 # ---- the uch resolved reads ----
-UCH = 'rules/uacantrips6.h'
+UCH = 'rules/ua/uacantrips6.h'
 
 pair(UCH,
      E('// The range unit hole'
@@ -919,11 +919,11 @@ for n, ln in enumerate(s.split(NL), 1):
 # ALL six families (the R418 part-1
 # rows ride uacantrips1/2/3.h)
 DENS = {}
-DENSRC = [('ucn', 'rules/uacantrips1.h',
+DENSRC = [('ucn', 'rules/ua/uacantrips1.h',
            20),
-          ('ucr', 'rules/uacantrips2.h',
+          ('ucr', 'rules/ua/uacantrips2.h',
            12),
-          ('ucl', 'rules/uacantrips3.h',
+          ('ucl', 'rules/ua/uacantrips3.h',
            6)] + [(f[0], f[1], f[2])
                  for f in FAM]
 for dpfx, dpath, dn in DENSRC:
@@ -1005,11 +1005,11 @@ if g.count('AMENDED R419') != 1:
         % g.count('AMENDED R419'))
 
 for path, mark in (
-        ('rules/uacantrips4.h',
+        ('rules/ua/uacantrips4.h',
          'ucpCastTimeDenCount'),
-        ('rules/uacantrips5.h',
+        ('rules/ua/uacantrips5.h',
          'ucoRangeUnitIsInch'),
-        ('rules/uacantrips6.h',
+        ('rules/ua/uacantrips6.h',
          'uchCreakTraverseFeet'),
         (RT, 'R419 UA cantrip cast-'),
         (SD, 'R418 landed')):

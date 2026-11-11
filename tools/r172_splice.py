@@ -409,9 +409,9 @@ create("rules/herbs.h", p1_text,
 assert len(applied) + len(already) == 1
 
 # ---- patch 2: the regtest include ----
-p2_old = '#include "rules/klm.h"  // R171: pp.221-224 appendices K L and M'
+p2_old = '#include "rules/dmg_appendices_klm.h"  // R171: pp.221-224 appendices K L and M'
 p2_new = NL.join([
-    '#include "rules/klm.h"  // R171: pp.221-224 appendices K L and M',
+    '#include "rules/dmg_appendices_klm.h"  // R171: pp.221-224 appendices K L and M',
     '#include "rules/herbs.h"  // R172: p.220 appendix J herbs spices and medicinal vegetables'
 ])
 patch("regtest.cpp", p2_old, p2_new,

@@ -1,4 +1,4 @@
--- ua372: promoted from rules/uafollowers.h (the The UA CAVALIER FOLLOWERS AND);
+-- ua372: promoted from rules/ua/uafollowers.h (the The UA CAVALIER FOLLOWERS AND);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 372,

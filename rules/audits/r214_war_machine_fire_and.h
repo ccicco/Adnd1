@@ -245,5 +245,5 @@
         printf("R214 war machine fire and siege values audit: bad %d\n", bad);
         if (bad) return 1;
     }
-    #include "rules/audits/r215_conducting_game.h"  // R827: migrated
-    #include "rules/audits/r216_magical_research.h"  // R827: migrated
+    #include "r215_conducting_game.h"  // R827: migrated
+    #include "r216_magical_research.h"  // R827: migrated

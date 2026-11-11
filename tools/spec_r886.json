@@ -60,14 +60,14 @@
   "  the canvas spec-r885 gated byte-exact; rverify",
   "  144 mutants 0 missed; the land verified",
   "  byte-exact against the fresh-tarball rebuild",
-  "  (1291 defs, dpy.h, audit, census, seed, regtest,",
+  "  (1291 defs, rules/ddg/lua_promo_batch6.h, audit, census, seed, regtest,",
   "  spec identical; engine idempotent applied 55 /",
   "  already 55). NEXT: the promotion tail - Norse,",
   "  then Sumerian. WAIT FOR GO."
  ],
- "include_after": "#include \"rules/dpy.h\"  // R885: the DDG lua promotion, batch six",
+ "include_after": "#include \"rules/ddg/lua_promo_batch6.h\"  // R885: the DDG lua promotion, batch six",
  "include_comment": "the DDG lua promotion, batch seven",
- "header_file": "rules/dpz.h",
+ "header_file": "rules/ddg/lua_promo_batch7.h",
  "audit_file": "rules/audits/r886_batch.h",
  "audit_label": "R886 DDG promotion audit",
  "audit_anchor": "#include \"rules/audits/r885_batch.h\"  // R885: R885 DDG promotion audit",
@@ -79,7 +79,7 @@
  "gap_flips": [],
  "banner": {
   "title": "The DDG lua promotion, batch seven - 42 full-field defs (the Norse mythos and the Sumerian mythos) generated ONLY from the adjudicated pin headers, the registry floor 1291 -> 1333.",
-  "provenance": "Generated from rules/nrs.h and rules/smr.h at a187f50: the four grids x rows (combat, class, ability, roster) per mythos, the being name orders locked by the pinned cross-references (the Odin-through-Valkyries and Enlil-through-Utu print orders) and verified against the 2nd-print ink (the tesseract tsv voice) with the 1eonline L&L pages as the parity voice; the legend tables decode verbatim from the header comments; the unpinned cells emit the sentinels.",
+  "provenance": "Generated from rules/ddg/mythos_norse.h and rules/ddg/mythos_sumerian.h at a187f50: the four grids x rows (combat, class, ability, roster) per mythos, the being name orders locked by the pinned cross-references (the Odin-through-Valkyries and Enlil-through-Utu print orders) and verified against the 2nd-print ink (the tesseract tsv voice) with the 1eonline L&L pages as the parity voice; the legend tables decode verbatim from the header comments; the unpinned cells emit the sentinels.",
   "sentinel": "The sentinels ride the R879 doctrine unchanged: n/a for strings, -1 for ints, distinct from every real print value; the printed See below, Standard, Nil, None and Infinite are REAL values and stay. The audits read the sentinels exactly, so fail-on-wrong stays the rule."
  },
  "consts": [

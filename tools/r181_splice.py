@@ -11,13 +11,13 @@
 # all 17 levels), and the monk weapon-damage bonus
 # (half a hit point per level, the doubled form).
 #
-# rules/turn.cpp: meleeAttacksPerRound repinned from
+# rules/engine/turn.cpp: meleeAttacksPerRound repinned from
 # the unsourced level-8+ original note to the print -
 # the 3/2 band opens at 7th level for the fighter
 # base class; the engine round model keeps its two
 # swing slots (initiative and +5), so the function
 # returns the routine count of the HEAVY round of
-# the printed cycle. rules/turn.h comment repinned to
+# the printed cycle. rules/engine/turn.h comment repinned to
 # match.
 #
 # regtest.cpp: the include lands WITH the audit (the
@@ -107,7 +107,7 @@ a('//     3 attacks per 2 rounds, the extra attack at the end of the')
 a('//     round sequence (the printed slash convention; 5/4 likewise')
 a('//     5 attacks per 4 rounds).')
 a('//   - the engine round model carries two swing slots (initiative')
-a('//     and initiative+5, rules/turn.cpp); meleeAttacksPerRound')
+a('//     and initiative+5, rules/engine/turn.cpp); meleeAttacksPerRound')
 a('//     returns the routine count of the HEAVY round of the printed')
 a('//     cycle: 1 below the 3/2 band, 2 in the 3/2 and 2/1 bands.')
 a('//     The full printed rates live HERE.')
@@ -334,20 +334,20 @@ patch('regtest.cpp',
       NL.join(aud) + NL + '    // ---- R163: the poison table audit -------------')
 
 # ---------------------------------------------------------------------------
-# Patch 4: rules/turn.cpp - the include
+# Patch 4: rules/engine/turn.cpp - the include
 # ---------------------------------------------------------------------------
 
-patch('rules/turn.cpp',
+patch('rules/engine/turn.cpp',
       'R181: the fighter-group print consults rules/attacksround.h',
       '#include "turn.h"',
       '#include "turn.h"'
       + NL + '#include "attacksround.h"  // R181: the fighter-group print consults rules/attacksround.h')
 
 # ---------------------------------------------------------------------------
-# Patch 5: rules/turn.cpp - the meleeAttacksPerRound repin
+# Patch 5: rules/engine/turn.cpp - the meleeAttacksPerRound repin
 # ---------------------------------------------------------------------------
 
-patch('rules/turn.cpp',
+patch('rules/engine/turn.cpp',
       'R181 repin: the printed 3/2 band opens at 7th level',
       'int meleeAttacksPerRound(int classIndex, int level) {'
       + NL + '    // fighters L8+ (and monsters with noted routines) fight twice per'
@@ -375,10 +375,10 @@ patch('rules/turn.cpp',
       + NL + '}')
 
 # ---------------------------------------------------------------------------
-# Patch 6: rules/turn.h - the comment repin
+# Patch 6: rules/engine/turn.h - the comment repin
 # ---------------------------------------------------------------------------
 
-patch('rules/turn.h',
+patch('rules/engine/turn.h',
       'R181: the 3/2 band opens at 7th',
       '// Multiple attacks (DMG p.39, PHB fighter notes): fighters (and'
       + NL + '// monsters with multiple attack routines) act on both initiative and'
@@ -418,7 +418,7 @@ patch('tools/phb_gap_report.md',
       + NL + '      point per level, doubled form; the monk'
       + NL + '      attacks on the thief table, strength never'
       + NL + '      modifies the monk to-hit - recorded for the'
-      + NL + '      specials rounds). rules/turn.cpp repinned:'
+      + NL + '      specials rounds). rules/engine/turn.cpp repinned:'
       + NL + '      meleeAttacksPerRound was fighters level 8+'
       + NL + '      from unsourced original notes - now the'
       + NL + '      heavy round of the printed cycle (the 3/2'
@@ -442,7 +442,7 @@ patch('tools/phb_gap_report.md',
       + NL + '      tables section)** - PINNED R181: the engine'
       + NL + '      convention verified and repinned - the printed'
       + NL + '      bands now live in rules/attacksround.h and'
-      + NL + '      rules/turn.cpp (meleeAttacksPerRound was the'
+      + NL + '      rules/engine/turn.cpp (meleeAttacksPerRound was the'
       + NL + '      unsourced level-8+ original note).')
 
 # ---------------------------------------------------------------------------
@@ -458,7 +458,7 @@ patch('tools/dmg_gap_report.md',
       + NL + 'bands with the printed level edges, the'
       + NL + 'under-one-hit-die note, the monk unarmed ladder'
       + NL + 'cell by cell, the monk weapon-damage bonus).'
-      + NL + 'rules/turn.cpp meleeAttacksPerRound repinned - the'
+      + NL + 'rules/engine/turn.cpp meleeAttacksPerRound repinned - the'
       + NL + 'level-8+ original note replaced by the print (the'
       + NL + '3/2 band opens at 7th; heavy-round convention, the'
       + NL + 'full rates in the header). New R181 battery audit;'

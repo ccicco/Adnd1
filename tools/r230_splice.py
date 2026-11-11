@@ -196,10 +196,10 @@ PATCHES = [
     ('game/appstate.h',
      '#include "../rules/subclassgates.h"',
      lines([
-         '#include "../rules/classes.h"',
+         '#include "../rules/engine/classes.h"',
      ]),
      lines([
-         '#include "../rules/classes.h"',
+         '#include "../rules/engine/classes.h"',
          '#include "../rules/subclasses.h"  // R230: the subclass registry',
          '#include "../rules/subclassgates.h"  // R230: the creation gates',
      ])),

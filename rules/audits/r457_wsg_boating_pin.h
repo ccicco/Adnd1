@@ -9,7 +9,7 @@
     // mast/sail damage reduction with the rigging-brace assumption, the
     // all-proficient waiver of the movement penalties, and the two-character
     // sail crews for the large rowboat, the small barge and the large barge
-    // (rules/wsgboat.h, prefix wbp); census 381 -> 382.
+    // (rules/wsg/wsgboat.h, prefix wbp); census 381 -> 382.
     {
         using namespace rules;
         int bad = 0;

@@ -6,7 +6,7 @@
 # (redefinition errors for kMonsterBands/kMonsterMatrix/
 # monsterAttackBand/attackMatrixMonster; the battery would print the
 # R112 audit line twice). This repair:
-#   1. removes the duplicated monster section from rules/combat.cpp,
+#   1. removes the duplicated monster section from rules/engine/combat.cpp,
 #   2. removes the duplicated audit block from regtest.cpp,
 #   3. rewrites the splice's combat.cpp and regtest.cpp branches to
 #      detect their patches by unique markers instead of the
@@ -73,18 +73,18 @@ def dedupe_regtest(r):
     return r2, "patched"
 
 
-SP_OLD_C = '''    c = read("rules/combat.cpp")
+SP_OLD_C = '''    c = read("rules/engine/combat.cpp")
     c, did = replace_exact(c, CPP_OLD, CPP_NEW, "combat.cpp matrix II")
     changed = changed or did
-    write("rules/combat.cpp", c)
+    write("rules/engine/combat.cpp", c)
 '''
-SP_NEW_C = '''    c = read("rules/combat.cpp")
+SP_NEW_C = '''    c = read("rules/engine/combat.cpp")
     if "int attackMatrixMonster(" in c:
         print("already applied: combat.cpp matrix II")
     else:
         c, did = replace_exact(c, CPP_OLD, CPP_NEW, "combat.cpp matrix II")
         changed = changed or did
-    write("rules/combat.cpp", c)
+    write("rules/engine/combat.cpp", c)
 '''
 SP_OLD_R = '''    r = read("regtest.cpp")
     r, did = replace_exact(r, RT_OLD, RT_NEW, "regtest R112 audit")
@@ -106,10 +106,10 @@ SP_MARK_R = "if 'printf(\"R112 monster matrix audit: bad %d' in r:"
 def main():
     changed = False
 
-    c = read("rules/combat.cpp")
+    c = read("rules/engine/combat.cpp")
     c, msg = dedupe_combat(c)
     if msg == "patched":
-        write("rules/combat.cpp", c)
+        write("rules/engine/combat.cpp", c)
         changed = True
     print(msg + (": combat.cpp duplicate monster section removed"
                  if msg == "patched" else ": combat.cpp single monster section"

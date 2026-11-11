@@ -4,7 +4,7 @@
     // abrasion-free feet, the abrasion die and the impact distance) with the
     // entry format rules, the worst-case and gradual-stop impact rules, the
     // flat-terrain extra-abrasion rule and the tumble rates
-    // (rules/wsgtumble.h, prefix wdt); census 362 -> 363.
+    // (rules/wsg/wsgtumble.h, prefix wdt); census 362 -> 363.
     {
         using namespace rules;
         int bad = 0;

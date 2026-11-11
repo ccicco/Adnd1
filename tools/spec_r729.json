@@ -2,7 +2,7 @@
  "round": 729,
  "title": "OA MONSTERS - the P oh, the Lesser Spirit: the drying drought of the country roads",
  "prefix": "dkq",
- "header_file": "rules/oa100poh.h",
+ "header_file": "rules/oa/oa100poh.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA MONSTERS - THE P OH, printed capture pp. 281-282 - the drought spirit round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 182 closed, 53 open - the p oh box flips (census 651 -> 652); NEXT - R730: the Shan Sao (capture pp. 282-283), prefix dkr (verify free at the landing), audit \"R730 OA monsters Shan Sao audit\", include after rules/oa100poh.h"
+  "sentinel": "the gap census after this round: 182 closed, 53 open - the p oh box flips (census 651 -> 652); NEXT - R730: the Shan Sao (capture pp. 282-283), prefix dkr (verify free at the landing), audit \"R730 OA monsters Shan Sao audit\", include after rules/oa/oa100poh.h"
  },
  "consts": [
   {
@@ -511,7 +511,7 @@
   "open": 53
  },
  "include_comment": "the OA P oh pins",
- "include_after": "#include \"rules/oa99oni.h\"  // R728: the OA Oni pins",
+ "include_after": "#include \"rules/oa/oa99oni.h\"  // R728: the OA Oni pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R728 LANDED 2026-10-21: commit",
@@ -520,7 +520,7 @@
   "  a20e85ab9c8a965673ee32a5f1f96c202b17df17",
   "  (census 650 -> 651, pushed d583601..a20e85a), OA",
   "  MONSTERS, the Oni, Lesser Spirit (capture",
-  "  pp. 280-281 print): rules/oa99oni.h, prefix",
+  "  pp. 280-281 print): rules/oa/oa99oni.h, prefix",
   "  dkp (verified free at d583601), ONE gap flip,",
   "  gap census 181/54 - the oni box. A TABLES",
   "  round. 11 consts + 56 bools + 10 table cols",
@@ -591,6 +591,6 @@
   "  R729: the P oh, the Lesser Spirit (capture",
   "  pp. 281-282), prefix dkq (verified free at",
   "  a20e85a), audit \"R729 OA monsters P oh",
-  "  audit\", include after rules/oa99oni.h."
+  "  audit\", include after rules/oa/oa99oni.h."
  ]
 }

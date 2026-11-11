@@ -2,7 +2,7 @@
  "round": 468,
  "title": "the WSG where water is found slice - the standing-water basis, the rain-drought DM reduction, the water table and digging for underground water, printed p. 59 with the water-table depths on p. 60",
  "prefix": "wwf",
- "header_file": "rules/wsgwhere.h",
+ "header_file": "rules/wsg/wsgwhere.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -237,12 +237,12 @@
   {
    "note": "where water is found",
    "from": "  - [ ] Where water is found (p. 59)",
-   "to": "  - [x] Where water is found (p. 59) - R468: the standing-water basis, the drought DM reduction, the water-table depth rules by elevation and terrain, the dig-for-water chance and the vegetation source pin as rules/wsgwhere.h"
+   "to": "  - [x] Where water is found (p. 59) - R468: the standing-water basis, the drought DM reduction, the water-table depth rules by elevation and terrain, the dig-for-water chance and the vegetation source pin as rules/wsg/wsgwhere.h"
   },
   {
    "note": "the post-state line",
-   "from": "Post-state at R467: 86 closed, 100 open (the R467 round continues the chapter - finding water and Table 34 pin as rules/wsgwater.h; the next round continues - where water is found (p. 59) and the water table mechanics, then water in the desert (p. 60) and purifying water (p. 60)).",
-   "to": "Post-state at R468: 87 closed, 99 open (the R468 round continues the chapter - where water is found pins as rules/wsgwhere.h; the next round continues - water in the desert (p. 60) with the permafrost discussion, then purifying water (p. 60) with the tainted-water effects)."
+   "from": "Post-state at R467: 86 closed, 100 open (the R467 round continues the chapter - finding water and Table 34 pin as rules/wsg/wsgwater.h; the next round continues - where water is found (p. 59) and the water table mechanics, then water in the desert (p. 60) and purifying water (p. 60)).",
+   "to": "Post-state at R468: 87 closed, 99 open (the R468 round continues the chapter - where water is found pins as rules/wsg/wsgwhere.h; the next round continues - water in the desert (p. 60) with the permafrost discussion, then purifying water (p. 60) with the tainted-water effects)."
   }
  ],
  "gap_census": {
@@ -250,7 +250,7 @@
   "open": 99
  },
  "include_comment": "the WSG where water is found",
- "include_after": "#include \"rules/wsgwater.h\"  // R467: the WSG finding water and Table 34",
+ "include_after": "#include \"rules/wsg/wsgwater.h\"  // R467: the WSG finding water and Table 34",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R467 LANDED 2026-10-15: commit efd8d78 (census 392, pushed",
@@ -272,7 +272,7 @@
   "  subarctic/temperate/subtropical/tropical D/F/H/M/P/Sw - each cell the",
   "  find%/taint% pair by season; the swamp rows top the find chances, the desert",
   "  rows bottom them, the tropical swamp spring 90/75 the only taint value in",
-  "  the table not ending in 0). rules/wsgwater.h NEW (27 inlines: 5 consts + 14",
+  "  the table not ending in 0). rules/wsg/wsgwater.h NEW (27 inlines: 5 consts + 14",
   "  bools + 8 table columns, prefix wfw - wsw taken by R450; checked free in all",
   "  three TUs). GROUND TRUTH - the NEW WORKFLOW, user decision this round, a",
   "  proven success: the user ran tesseract ON TERMUX (pkg install poppler",

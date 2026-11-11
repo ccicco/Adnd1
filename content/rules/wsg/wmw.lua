@@ -108,6 +108,6 @@ return {
     } },
   "audit" = {
       "label" = "R451 WSG moving water pin audit",
-      "comment" = "The moving water slice pins the 1-10 stream hazard rating as the proficiency-check cadence (rating 1 = every round, rating 5 = rounds 1, 6, 11...), the 1d6 buffeting damage on a failed check, the virtually helpless nonproficient swimmer at 1d3 damage per round, the grab-a-protrusion halt (a Dex check, retried every round, then a Strength check every two rounds to stay attached), and the waterfall rules (half falling damage at 40 feet or more, the breath-weapon save with no damage at 40-100 feet and one-tenth rounded up beyond 100, the under-40 fall treated as a normal dive, and rocks at the base assessed as a fall through the air) (rules/wsgmwater.h, prefix wmw); census 375 -> 376.",
+      "comment" = "The moving water slice pins the 1-10 stream hazard rating as the proficiency-check cadence (rating 1 = every round, rating 5 = rounds 1, 6, 11...), the 1d6 buffeting damage on a failed check, the virtually helpless nonproficient swimmer at 1d3 damage per round, the grab-a-protrusion halt (a Dex check, retried every round, then a Strength check every two rounds to stay attached), and the waterfall rules (half falling damage at 40 feet or more, the breath-weapon save with no damage at 40-100 feet and one-tenth rounded up beyond 100, the under-40 fall treated as a normal dive, and rocks at the base assessed as a fall through the air) (rules/wsg/wsgmwater.h, prefix wmw); census 375 -> 376.",
     },
 }

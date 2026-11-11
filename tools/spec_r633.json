@@ -2,7 +2,7 @@
  "round": 633,
  "title": "BIRTHRIGHTS and TABLE 40 - the clan-virtue doctrine, the heirloom rules, the T40 grid",
  "prefix": "dgt",
- "header_file": "rules/oabr.h",
+ "header_file": "rules/oa/oabr.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "BIRTHRIGHTS AND TABLE 40, printed capture pp. 68-69 - the OA birthrights round",
   "provenance": "pinned from the 2018 print capture alone for this range (the settling authority): the first Mistral-OCR capture session is unavailable above p. 33, so the cross-capture agreement check is impossible. No contested cells detected within the single source: the T40 bands run contiguously 1 through 100 and every honor value sits on its printed row. The T40 result column pins as the 0-11 code (blank 0, roll again 1, property share 2, horse 3, the 1-6 cash strings 4, armor of quality 5, the 1-8 cash strings 6, weapon of quality 7, the 1-4 horses 8, the 2-12 cash strings 9, the magical weapon 10, the d100 roll again 11); the die bands pin as the lo and hi bounds; the honor column is personal honor. OCR normalization: the print capitalization varies (Property Share at 6 and 17-18, Property share at 8, 41-45 and 56-60, Armor of quality and Weapon of quality at their rows) - all pin as the same codes; rows 4 and 7 read \"next higher die or + 10\" while row 100 reads \"with + 10 on die roll\" (the printed d100 doctrine - both pin as the roll-again codes 1 and 11). The Chapter 4 Honor prose (capture pp. 69-73) is deliberately left for the next rounds",
-  "sentinel": "the gap census after this round: 74 closed, 161 open - the Birthrights prose and Table 40 boxes flip (census 555 -> 556); NEXT - R634: the Honor chapter opener, the Gaining and Losing Honor prose and Table 41 (Initial Honor), capture pp. 69-70, prefix dgu (verify free), audit \"R634 OA honor audit\", include after rules/oabr.h"
+  "sentinel": "the gap census after this round: 74 closed, 161 open - the Birthrights prose and Table 40 boxes flip (census 555 -> 556); NEXT - R634: the Honor chapter opener, the Gaining and Losing Honor prose and Table 41 (Initial Honor), capture pp. 69-70, prefix dgu (verify free), audit \"R634 OA honor audit\", include after rules/oa/oabr.h"
  },
  "consts": [
   {
@@ -615,7 +615,7 @@
   "open": 161
  },
  "include_comment": "the OA birthrights pins",
- "include_after": "#include \"rules/oahold.h\"  // R632: the OA holdings pins",
+ "include_after": "#include \"rules/oa/oahold.h\"  // R632: the OA holdings pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R632 LANDED 2026-10-19: commit",
@@ -625,7 +625,7 @@
   "  (census 554 -> 555, pushed",
   "  f0a630e..bb00f5a), THE ASSIGNING",
   "  ANCESTRAL HOLDINGS prose, capture pp.",
-  "  67-68: rules/oahold.h, prefix dgs",
+  "  67-68: rules/oa/oahold.h, prefix dgs",
   "  (verified free), 11 inlines (11",
   "  bools, no consts, no tables): the",
   "  holdings as the Table 39 property",
@@ -664,6 +664,6 @@
   "  cash-string doctrines, prefix dgt",
   "  (verify free), audit \"R633 OA",
   "  birthrights audit\", include after",
-  "  rules/oahold.h."
+  "  rules/oa/oahold.h."
  ]
 }

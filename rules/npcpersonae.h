@@ -13,7 +13,7 @@
 // dice and the selection; the tables and
 // the resolution rules read here). The
 // ability enums are the engine ones
-// (rules/character.h); ABILITY_COUNT is
+// (rules/engine/character.h); ABILITY_COUNT is
 // the none marker in the adjustment
 // tables.
 //

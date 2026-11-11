@@ -1,11 +1,11 @@
--- oa626: promoted from rules/oawujen.h (the THE WU JEN, printed capture pp. 47-51 - the OA wu jen round);
+-- oa626: promoted from rules/oa/oawujen.h (the THE WU JEN, printed capture pp. 47-51 - the OA wu jen round);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 626,
   "prefix" = "oa626",
   "banner" = {
       "title" = "THE WU JEN, printed capture pp. 47-51 - the OA wu jen round",
-      "provenance" = "census 548 -> 549.  verified against capture pp. 47-51 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). Three cells settled against the 2018 print BEFORE pinning, per the settling doctrine: the T31 row-2 bound (the capture lost the comma - 4,000); the T33 row-5 first-spell cell (the capture prints 4, the 2018 prints 3, the ladder-consistent reading stands); the T33 row-22 ninth-spell cell (the capture prints 2, the 2018 prints 1, the ladder-consistent reading stands). The T32 All maximum pins as the -1 code; the T33 dashes pin as zeros. OCR normalization: konobokuru reads as korobokuru; in hit, spell book reads as in his spell book; cloud/adder reads as cloud ladder (prose only)  the gap census after this round: 56 closed, 179 open - the wu jen boxes with Tables 31, 32 and 33 flip (census 548 -> 549); NEXT - R627: the Yakuza, capture pp. 51-54, Tables 34 and 35, prefix dgn (verify free), audit \"R627 OA yakuza audit\", include after rules/oawujen.h",
+      "provenance" = "census 548 -> 549.  verified against capture pp. 47-51 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). Three cells settled against the 2018 print BEFORE pinning, per the settling doctrine: the T31 row-2 bound (the capture lost the comma - 4,000); the T33 row-5 first-spell cell (the capture prints 4, the 2018 prints 3, the ladder-consistent reading stands); the T33 row-22 ninth-spell cell (the capture prints 2, the 2018 prints 1, the ladder-consistent reading stands). The T32 All maximum pins as the -1 code; the T33 dashes pin as zeros. OCR normalization: konobokuru reads as korobokuru; in hit, spell book reads as in his spell book; cloud/adder reads as cloud ladder (prose only)  the gap census after this round: 56 closed, 179 open - the wu jen boxes with Tables 31, 32 and 33 flip (census 548 -> 549); NEXT - R627: the Yakuza, capture pp. 51-54, Tables 34 and 35, prefix dgn (verify free), audit \"R627 OA yakuza audit\", include after rules/oa/oawujen.h",
     },
   "consts" = { {
       "name" = "dgmWuJenMinInt",

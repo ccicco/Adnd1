@@ -44,7 +44,7 @@ SEED_ENTRY = NL.join([
     '- R339 landed 2026-10-11: commit',
     '  a701ba9, census 266, the UA',
     '  proficiency pin round',
-    '  (rules/uaprof.h): the 14-row',
+    '  (rules/ua/uaprof.h): the 14-row',
     '  roster, seven rows cell-verified',
     '  against the R297 PHB seam, the',
     '  attributed fragment rows',
@@ -71,19 +71,19 @@ assert s.count('R337 landed 2026-10-11') == 1,     'a r337 kept'
 assert s.count('## Knowledge maintenance') == 1,     'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
-# ---- (b) NEW rules/uanewweapons.h ----
-UN = 'rules/uanewweapons.h'
+# ---- (b) NEW rules/ua/uanewweapons.h ----
+UN = 'rules/ua/uanewweapons.h'
 if os.path.exists(UN) and 'R340' in rd(UN):
     already.append('uanewweapons.h: the pins')
 else:
     HDR = NL.join([
         '// ===========================================================================',
-        '// Adnd1 - rules/uanewweapons.h',
+        '// Adnd1 - rules/ua/uanewweapons.h',
         '// The UA DESCRIPTIONS OF NEW WEAPON TYPES (pp. 26-28) pins (R340).',
         '//',
         '// Pin-era pattern (R322): pinned data only - no engine site exists.',
-        '// The R337 data rows (rules/uaweapontable.h) and the R338 missile rows',
-        '// (rules/uamissile.h) are the data seam; this header pins the PROSE.',
+        '// The R337 data rows (rules/ua/uaweapontable.h) and the R338 missile rows',
+        '// (rules/ua/uamissile.h) are the data seam; this header pins the PROSE.',
         '//',
         '// JUDGMENTs:',
         '//   - the roster: 16 prose entries in the printed order. The gap item',
@@ -534,7 +534,7 @@ else:
     NOTE = NL.join([
         '      - R340: the fragment-verified',
         '        prose pinned',
-        '        (rules/uanewweapons.h) - the',
+        '        (rules/ua/uanewweapons.h) - the',
         '        16 printed descriptions (the',
         '        14 item-named types plus the',
         '        hand-crossbow and falchion',
@@ -573,12 +573,12 @@ s = rd(RT)
 if 'R340 UA new weapons prose pin audit' in s:
     already.append('regtest.cpp: the R340 audit')
 else:
-    INC_ANCH = ('#include "rules/uaprof.h"'
+    INC_ANCH = ('#include "rules/ua/uaprof.h"'
                 '  // R339: the UA weapon'
                 ' proficiency')
     INC_NEW = NL.join([
     INC_ANCH,
-    '#include "rules/uanewweapons.h"'
+    '#include "rules/ua/uanewweapons.h"'
     '  // R340: the UA new weapons prose',
     ])
     AUD_ANCH = ('    // ---- R227: the wis mental'
@@ -808,7 +808,7 @@ assert s.count(
     'R338 UA missile data pin audit: bad ')     == 1, 'd r338 kept'
 assert s.count('R227: the wis mental save') == 1,     'd r227 kept'
 assert s.count(
-    '#include "rules/uanewweapons.h"') == 1,     'd include'
+    '#include "rules/ua/uanewweapons.h"') == 1,     'd include'
 assert len(applied) + len(already) == 4, 'd count'
 
 # ---- the summary ----

@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 # ============================================================================
-# Adnd1 - tools/rules_reorg_pass1.py
+# Adnd1 - tools/rules_reorg_pass1.py (v2)
 # The rules/ cleanup, pass 1 (book-family subdirs + engine split +
-# cryptic renames). Pure stdlib. Idempotent: run twice -> the second
-# run reports already N, applied 0. Does NOT commit; the ritual
-# commits after preflight GREEN.
+# cryptic renames). v2 adds the include-repair pass: every quoted
+# include is normalized to its file-relative target (fixes bare
+# includes that broke when their target moved - the R400 lesson).
+# Pure stdlib. Idempotent: run twice -> the second run reports
+# already N, applied 0. Does NOT commit; the ritual commits after
+# preflight GREEN.
 # ============================================================================
 import os, re, subprocess, sys
 
@@ -323,6 +326,50 @@ def main():
             touched += 1
             print("rewrote " + f)
 
+    # include repair (v2): normalize every quoted include to its
+    # file-relative target (true quoted-include semantics - the
+    # R400 lesson: a moved classes.h breaks bare includes that
+    # only worked at the old location). Idempotent.
+    by_base = {}
+    for f in tracked:
+        by_base.setdefault(os.path.basename(f), []).append(f)
+    inc_pat = re.compile(r'(#include\s+")([^"]+)(")')
+    fixed_inc, unresolved = 0, []
+
+    def resolve_incl(f, m):
+        nonlocal fixed_inc
+        d = os.path.dirname(f) or "."
+        target = os.path.normpath(os.path.join(d, m.group(2)))
+        if os.path.isfile(target):
+            return m.group(0)              # already correct
+        cands = by_base.get(os.path.basename(m.group(2)), [])
+        if len(cands) == 1:
+            rel = os.path.relpath(cands[0], d).replace(os.sep, "/")
+            fixed_inc += 1
+            return m.group(1) + rel + m.group(3)
+        if not cands:
+            return m.group(0)
+        unresolved.append(f + ': "' + m.group(2) + '"')
+        return m.group(0)
+
+    for f in tracked:
+        if not f.endswith((".h", ".cpp", ".c")):
+            continue
+        try:
+            with open(f, "r", encoding="utf-8") as fh:
+                body = fh.read()
+        except (UnicodeDecodeError, IsADirectoryError):
+            continue
+        new = inc_pat.sub(lambda m: resolve_incl(f, m), body)
+        if new != body:
+            with open(f, "w", encoding="utf-8") as fh:
+                fh.write(new)
+            print("fixed includes in " + f)
+    if unresolved:
+        for u in sorted(set(unresolved))[:40]:
+            sys.stderr.write("ambiguous include " + u + "\n")
+        die("ambiguous includes (" + str(len(unresolved)) + ")")
+
     # verify: no stale references ------------------------------------------
     stale = []
     for f in tracked:
@@ -340,7 +387,8 @@ def main():
         die("stale references remain (" + str(len(stale)) + ")")
     print("REORG GREEN: applied " + str(applied) + ", already "
           + str(already) + ", moved " + str(len(moves))
-          + ", rewrote " + str(touched) + " files")
+          + ", rewrote " + str(touched) + " files, include_fix "
+          + str(fixed_inc))
 
 
 main()

@@ -64,6 +64,6 @@ return {
     } },
   "audit" = {
       "label" = "R442 WSG rappelling pin audit",
-      "comment" = "The rappelling slice pins the rope-secured descent of a non-horizontal surface - the 120-feet-per-round base speed (encumbrance and other penalties apply as for an ascent), the +50% Climbing Check modifier per round or part of a round, the lost-grip failure state (hanging upside down, spinning, until rescued or a successful Dexterity Check - allowed once per round), and the free-hanging-rope variant (no surface to brace against: +30% instead of +50%, Dex checks at +2) (rules/wsgrapp.h, prefix wrl); census 366 -> 367.",
+      "comment" = "The rappelling slice pins the rope-secured descent of a non-horizontal surface - the 120-feet-per-round base speed (encumbrance and other penalties apply as for an ascent), the +50% Climbing Check modifier per round or part of a round, the lost-grip failure state (hanging upside down, spinning, until rescued or a successful Dexterity Check - allowed once per round), and the free-hanging-rope variant (no surface to brace against: +30% instead of +50%, Dex checks at +2) (rules/wsg/wsgrapp.h, prefix wrl); census 366 -> 367.",
     },
 }

@@ -14,7 +14,7 @@
 # glibness, stammering and
 # stuttering.
 #
-# 1. rules/uapotprose.h (R376):
+# 1. rules/ua/uapotprose.h (R376):
 #    seven description sections
 #    pin (~46 accessors); the part
 #    ledger flips 12/7 -> 19/0;
@@ -97,7 +97,7 @@ SEED_ENTRY = B(
     '  body of all TWENTY-ONE tables',
     '  (573 rows, perfect 1-100',
     '  contiguity) - NEW',
-    '  rules/uadetrows.h (23',
+    '  rules/ua/uadetrows.h (23',
     '  accessors, flattened arrays:',
     '  dice bands, names, marks,',
     '  the x.p./g.p. columns as lo/',
@@ -140,7 +140,7 @@ if s.count('## Knowledge maintenance') != 1:
     die('the seed maintenance head')
 
 # ============ (b) uapotprose.h ============
-PP = 'rules/uapotprose.h'
+PP = 'rules/ua/uapotprose.h'
 
 pair(PP, B(
     '// ventriloquism, vitality. The',
@@ -475,7 +475,7 @@ pair(GP, B(
     '        speech), stammering (the',
     '        -25% reactions) - all',
     '        nineteen descriptions',
-    '        pin (rules/uapotprose.h).',
+    '        pin (rules/ua/uapotprose.h).',
     '- [ ] **The new scrolls**'
     ' (pp. 91-93).').rstrip(NL),
     'gap: the new-potions item')

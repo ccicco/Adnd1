@@ -1,7 +1,7 @@
 {
  "round": 613,
  "prefix": "dfc",
- "header_file": "rules/dmoduelroster.h",
+ "header_file": "rules/dmo/dmoduelroster.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/dmo_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -9,7 +9,7 @@
  "title": "The Spell Dueling Roster and Index",
  "audit_label": "R613 DMO dueling appendix audit",
  "include_comment": "the DMO spell dueling roster pins",
- "include_after": "#include \"rules/dmohighascend.h\"  // R612: the DMO demihuman and ascension pins",
+ "include_after": "#include \"rules/dmo/dmohighascend.h\"  // R612: the DMO demihuman and ascension pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R612 LANDED 2026-10-18: commit",
@@ -25,7 +25,7 @@
   "  Ascension, AND the Chapter 7 PARENT;",
   "  gap census now 93 closed / 3 open;",
   "  Chapter 7 fully closed across",
-  "  R608-R612): rules/dmohighascend.h,",
+  "  R608-R612): rules/dmo/dmohighascend.h,",
   "  prefix dfb (verified free), 54",
   "  inlines (10 consts, 44 bools, no",
   "  chains or grids - a prose-only round;",
@@ -64,7 +64,7 @@
   "  verify next prefix free (dfc family",
   "  next). Audit: \"R613 DMO dueling",
   "  appendix audit\"; include after",
-  "  rules/dmohighascend.h."
+  "  rules/dmo/dmohighascend.h."
  ],
  "banner": {
   "title": "THE SPELL DUELING ROSTER AND INDEX - the DMO Appendix (Spell Dueling Characteristics, printed pp. 180-188) and the closing Index (pp. 189-192): the complete per-spell dueling roster, 707 entries in 24 letter sections A through Z (no X or Y - no dueling spells begin with them), each pinned with its school (priest or wizard), level 1-9, usage code (the A/D/L/M/Any bitmask: A 1, D 2, L 4, M 8, Any 16, combinations summed), power rating PR 10-19, movement value MV 1-5 single or ranged, the Tome of Magic dagger mark and the Chapter 5 special-effect asterisk mark.",

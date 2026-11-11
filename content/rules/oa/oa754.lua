@@ -1,11 +1,11 @@
--- oa754: promoted from rules/oa125table83.h (the OA TREASURE - TABLE 83, MISSILE CLASS, printed capture p. 293 - the missile);
+-- oa754: promoted from rules/oa/oa125table83.h (the OA TREASURE - TABLE 83, MISSILE CLASS, printed capture p. 293 - the missile);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 754,
   "prefix" = "oa754",
   "banner" = {
       "title" = "OA TREASURE - TABLE 83, MISSILE CLASS, printed capture p. 293 - the missile",
-      "provenance" = "type grid round census 676 -> 677.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 207 closed, 28 open - the Table 83 box flips (census 676 -> 677); NEXT - R755: Table 84: Martial Arts Class (capture p. 293), prefix dlq (verify free at the landing), audit \"R755 OA Table 84 martial arts audit\", include after rules/oa125table83.h",
+      "provenance" = "type grid round census 676 -> 677.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 207 closed, 28 open - the Table 83 box flips (census 676 -> 677); NEXT - R755: Table 84: Martial Arts Class (capture p. 293), prefix dlq (verify free at the landing), audit \"R755 OA Table 84 martial arts audit\", include after rules/oa/oa125table83.h",
     },
   "consts" = { {
       "name" = "dlpMissileRowCount",

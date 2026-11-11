@@ -4,7 +4,7 @@
 # The LAST open book-content
 # box in the UA gap report -
 # the five R391 flagged holes
-# in rules/uaappendt.h (the
+# in rules/ua/uaappendt.h (the
 # pp. 123-129 stretch) resolve
 # with the clean OCR read
 # (pages 124, 127, 128, 129 =
@@ -62,7 +62,7 @@
 # Patches (22):
 #   - the seed takes the R423
 #     record
-#   - rules/uaappendt.h: the
+#   - rules/ua/uaappendt.h: the
 #     top comment, six flag
 #     sites, the ledger (clean
 #     2 -> 7, flagged 5 -> 0)
@@ -135,7 +135,7 @@ def pair(path, old, new, label):
     applied.append(label)
 
 
-AT = 'rules/uaappendt.h'
+AT = 'rules/ua/uaappendt.h'
 RT = 'regtest.cpp'
 GP = 'tools/ua_gap_report.md'
 SD = ('doc/vibe/'
@@ -152,7 +152,7 @@ SEED_ENTRY = E(
     '  PROSE - the five pantheon',
     '  intro sections (pp. 110-120,',
     '  the clean OCR read) pin as',
-    '  rules/uapantheon.h (NEW,',
+    '  rules/ua/uapantheon.h (NEW,',
     '  prefix uapn), the censuses',
     '  cross-checked live against',
     '  the R405 seam (the described',
@@ -177,7 +177,7 @@ else:
     wr(SD, s)
     applied.append('seed: the R423 record')
 
-# ======== (b) rules/uaappendt.h ========
+# ======== (b) rules/ua/uaappendt.h ========
 
 # the top comment
 pair(AT,
@@ -725,7 +725,7 @@ if (h.count('uapaPartFlaggedCount()'
 # the include line (the R390
 # lesson): the uaappendt include
 # comment must stay whole
-if s.count('#include "rules/uaappendt.h"'
+if s.count('#include "rules/ua/uaappendt.h"'
           '  // R391: the UA pole-arm'
           ' nomenclature') != 1:
     die('the uaappendt include line')

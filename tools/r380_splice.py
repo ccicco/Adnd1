@@ -75,7 +75,7 @@ SEED_ENTRY = NL.join([
     '- R379 landed 2026-10-12: commit',
     '  1b76292, census 306, the UA',
     '  new rods staves prose pin',
-    '  round (rules/uarodstave.h):',
+    '  round (rules/ua/uarodstave.h):',
     '  four of the eleven new',
     '  descriptions pin clean',
     '  (the rod of alertness, the',
@@ -208,13 +208,13 @@ assert len(applied) + len(already) == 1, 'a count'
 
 
 
-# ---- (b) NEW rules/uawandprose.h ----
-P = 'rules/uawandprose.h'
+# ---- (b) NEW rules/ua/uawandprose.h ----
+P = 'rules/ua/uawandprose.h'
 if os.path.exists(P) and 'R380' in rd(P):
     already.append('uawandprose.h: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uawandprose.h
+// Adnd1 - rules/ua/uawandprose.h
 // The UA TREASURE (WANDS)
 // prose pins, R380: the seven
 // pinnable new-wand types
@@ -618,7 +618,7 @@ else:
         '- [ ] **The new wands** (pp. 96-97).',
         '      - AMENDED R380: the new',
         '        wands prose pin round',
-        '        (rules/uawandprose.h) -',
+        '        (rules/ua/uawandprose.h) -',
         '        SEVEN of the twelve new',
         '        wand types pin: FIVE',
         '        fully clean (anything,',
@@ -674,22 +674,22 @@ assert s.count(
     'AMENDED R375'
 ) == 1, 'c r375 amendment kept'
 assert s.count(
-    '(rules/uawandprose.h)'
+    '(rules/ua/uawandprose.h)'
 ) == 1, 'c wands note'
 assert s.count(
-    '(rules/uarodstave.h)'
+    '(rules/ua/uarodstave.h)'
 ) == 1, 'c rods note kept'
 assert s.count(
-    '(rules/uaringprose.h)'
+    '(rules/ua/uaringprose.h)'
 ) == 1, 'c rings note kept'
 assert s.count(
-    '(rules/uaprotscr.h)'
+    '(rules/ua/uaprotscr.h)'
 ) == 1, 'c scrolls note kept'
 assert s.count(
-    '(rules/uapotprose.h)'
+    '(rules/ua/uapotprose.h)'
 ) == 1, 'c potions note kept'
 assert s.count(
-    '(rules/uadetskel.h)'
+    '(rules/ua/uadetskel.h)'
 ) == 1, 'c skeleton note kept'
 assert s.count(
     'DECIDED R374'
@@ -741,11 +741,11 @@ s = rd(RT)
 if 'R380 UA new wands prose pin audit' in s:
     already.append('regtest.cpp: the R380 audit')
 else:
-    INC_ANCH = ('#include "rules/uarodstave.h"  // '
+    INC_ANCH = ('#include "rules/ua/uarodstave.h"  // '
         'R379: the UA new rods staves prose')
     INC_NEW = NL.join([
         INC_ANCH,
-        '#include "rules/uawandprose.h"  // R380: the UA new wands prose'
+        '#include "rules/ua/uawandprose.h"  // R380: the UA new wands prose'
     ])
     AUD_ANCH = '    // ---- R227: the wis mental save wiring audit ----'
     AUDIT = r"""    // ---- R380: the UA new wands
@@ -1015,35 +1015,35 @@ assert s.count(
     'R227: the wis mental save'
 ) == 1, 'd r227 kept'
 assert s.count(
-    '#include "rules/uawandprose.h"'
+    '#include "rules/ua/uawandprose.h"'
 ) == 1, 'd new include'
 for h in (
         'rules/cavalier.h',
         'rules/classtables.h',
-        'rules/uabirth.h',
-        'rules/uasocialclass.h',
-        'rules/uaspellbooks.h',
-        'rules/uaspellcomment.h',
-        'rules/uauwspelluse.h',
-        'rules/uadarkness.h',
-        'rules/uacavtable.h',
-        'rules/uacantacq.h',
-        'rules/uasmalls1.h',
-        'rules/uailacquisition.h',
+        'rules/ua/uabirth.h',
+        'rules/ua/uasocialclass.h',
+        'rules/ua/uaspellbooks.h',
+        'rules/ua/uaspellcomment.h',
+        'rules/ua/uauwspelluse.h',
+        'rules/ua/uadarkness.h',
+        'rules/ua/uacavtable.h',
+        'rules/ua/uacantacq.h',
+        'rules/ua/uasmalls1.h',
+        'rules/ua/uailacquisition.h',
         'rules/thiefarmor.h',
         'rules/armorratings.h',
         'rules/comeliness.h',
-        'rules/uaweapontable.h',
-        'rules/uamissile.h',
-        'rules/uanewweapons.h',
-        'rules/uafollowers.h',
-        'rules/uacomnote.h',
-        'rules/uatreasuredial.h',
-        'rules/uadetskel.h',
-        'rules/uapotprose.h',
-        'rules/uaprotscr.h',
-        'rules/uaringprose.h',
-        'rules/uarodstave.h',
+        'rules/ua/uaweapontable.h',
+        'rules/ua/uamissile.h',
+        'rules/ua/uanewweapons.h',
+        'rules/ua/uafollowers.h',
+        'rules/ua/uacomnote.h',
+        'rules/ua/uatreasuredial.h',
+        'rules/ua/uadetskel.h',
+        'rules/ua/uapotprose.h',
+        'rules/ua/uaprotscr.h',
+        'rules/ua/uaringprose.h',
+        'rules/ua/uarodstave.h',
         'rules/treasdet.h',
         'rules/hoard.h'):
     assert s.count(

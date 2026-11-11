@@ -1,11 +1,11 @@
--- oa770: promoted from rules/oa141backmatter.h (the OA BACK MATTER - THE BIBLIOGRAPHY, printed capture pp. 313-314 - the book);
+-- oa770: promoted from rules/oa/oa141backmatter.h (the OA BACK MATTER - THE BIBLIOGRAPHY, printed capture pp. 313-314 - the book);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 770,
   "prefix" = "oa770",
   "banner" = {
       "title" = "OA BACK MATTER - THE BIBLIOGRAPHY, printed capture pp. 313-314 - the book",
-      "provenance" = "closes census 692 -> 693.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 225 closed, 10 open - the Back matter box flips and the missed Chapter 14 and 15 parents close (the R613b lesson caught pre-landing, census 692 -> 693); NEXT - R771: the open-boxes sweep - the ten remaining: the Chapter 2, 3, 8, 9, 10, 11, 12, and 13 parents plus the Weapons prose and the Celestial Emperor items; audit what each holds before authoring, prefix dng (verify free at the landing), audit \"R771 OA open boxes audit\", include after rules/oa141backmatter.h",
+      "provenance" = "closes census 692 -> 693.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 225 closed, 10 open - the Back matter box flips and the missed Chapter 14 and 15 parents close (the R613b lesson caught pre-landing, census 692 -> 693); NEXT - R771: the open-boxes sweep - the ten remaining: the Chapter 2, 3, 8, 9, 10, 11, 12, and 13 parents plus the Weapons prose and the Celestial Emperor items; audit what each holds before authoring, prefix dng (verify free at the landing), audit \"R771 OA open boxes audit\", include after rules/oa/oa141backmatter.h",
     },
   "consts" = { {
       "name" = "dmfBibliographyHeader",

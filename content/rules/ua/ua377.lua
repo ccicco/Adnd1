@@ -1,4 +1,4 @@
--- ua377: promoted from rules/uaprotscr.h (the The UA TREASURE (SCROLLS));
+-- ua377: promoted from rules/ua/uaprotscr.h (the The UA TREASURE (SCROLLS));
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 377,

@@ -2,7 +2,7 @@
  "round": 441,
  "title": "the WSG rope - roping together",
  "prefix": "wrp",
- "header_file": "rules/wsgtog.h",
+ "header_file": "rules/wsg/wsgtog.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -13,7 +13,7 @@
  "census_before": 365,
  "inline_count": 11,
  "audit_label": "R441 WSG roping-together pin audit",
- "audit_comment": "The roping-together slice pins the adjacent-recheck rule (even after a successful check earlier in the same round), the end/middle faller rules, the -10%-per-extra-faller cascade penalty ladder (0/10/20/30/40), the last-pair extra check and the 50-feet-per-character tie capacity (rules/wsgtog.h, prefix wrp); census 365 -> 366.",
+ "audit_comment": "The roping-together slice pins the adjacent-recheck rule (even after a successful check earlier in the same round), the end/middle faller rules, the -10%-per-extra-faller cascade penalty ladder (0/10/20/30/40), the last-pair extra check and the 50-feet-per-character tie capacity (rules/wsg/wsgtog.h, prefix wrp); census 365 -> 366.",
  "banner": {
   "title": "The WSG ROPING TOGETHER, R441: the cascade prose (no table this round) - if two or more characters are roped together on a climb and one fails a Climbing Check, the character or characters adjacent to the one who fell must make additional successful Climbing Checks (even if they had just made a successful check earlier in the same round) to keep from being pulled off the slope or cliff face and also falling; a fallen end character forces a check only on his one neighbor, a fallen middle character forces checks on both sides; for each character who fails beyond the first the adjacent checks take a -10% penalty to their Climbing Ratings per extra fallen character, until characters on either side succeed or the entire group has fallen; if the last two characters both check at the same time and only one succeeds, that character makes one more check to keep the entire group from falling. The example: five characters on a 200-foot rope (a 50-foot rope ties two together, one more per additional 50 feet) - the cascade reaches -10, -20 and -30 percent. Census 365 -> 366.",
   "provenance": "the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed p. 37; the user own copy OCR cross-checked against the archive djvu word layer (Guide_0037.djvu) - the section reads CLEAN in the djvu, every number (the 50-foot tie capacity, the 200-foot rope, the five characters, the -10/-20/-30 cascade) matched exactly; no eye-reads were needed. Scope note: the tie-capacity rule sits in the USING ROPE: BELAYING intro but is the roping-together enabler, so it lands here; the climbing-rope stats and the knot rules stay for the belaying round.",
@@ -172,7 +172,7 @@
  "gap_flips": [
   {
    "from": "  - [ ] Roping together (p. 37)",
-   "to": "  - [x] Roping together (p. 37) - R441: the adjacent-recheck rule, the end/middle faller rules, the cascade penalty ladder, the last-pair extra check and the tie capacity pin as rules/wsgtog.h",
+   "to": "  - [x] Roping together (p. 37) - R441: the adjacent-recheck rule, the end/middle faller rules, the cascade penalty ladder, the last-pair extra check and the tie capacity pin as rules/wsg/wsgtog.h",
    "note": "roping together"
   },
   {
@@ -186,7 +186,7 @@
   "open": 142
  },
  "include_comment": "the WSG roping together",
- "include_after": "#include \"rules/wsgrope.h\"  // R440: the WSG rope use",
+ "include_after": "#include \"rules/wsg/wsgrope.h\"  // R440: the WSG rope use",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R440 landed 2026-10-14: commit 4bf7254 (census 365, pushed",
@@ -202,7 +202,7 @@
   "  is cumulative - 10 percent after one turn of strain, 30 after two, 60 after",
   "  three, 100 after four (the wsrWeakenPct switch ladder); a weakened rope",
   "  breaks the next time it supports more than its limit at 40 percent per turn",
-  "  non-cumulative. rules/wsgrope.h NEW (12 inlines, prefix wsr - wro was NOT",
+  "  non-cumulative. rules/wsg/wsgrope.h NEW (12 inlines, prefix wsr - wro was NOT",
   "  free; wsr checked free in all three TUs). Ground truth CLEAN two-way (the",
   "  user copy OCR vs the djvu word layer - the section reads clean in the djvu,",
   "  every number matched, no eye-reads needed). Gap 42/144 -> 43/143; census 364",

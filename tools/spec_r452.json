@@ -2,7 +2,7 @@
  "round": 452,
  "title": "the WSG diving and surfacing",
  "prefix": "wdv",
- "header_file": "rules/wsgdive.h",
+ "header_file": "rules/wsg/wsgdive.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -13,7 +13,7 @@
  "census_before": 376,
  "inline_count": 14,
  "audit_label": "R452 WSG diving and surfacing pin audit",
- "audit_comment": "The diving and surfacing slice pins the base downward swim rate (2 inches, 20 feet per round), the encumbrance multipliers (doubled for moderate, tripled for heavy or severe - the same x2/x3/x3 the Table 24 dive column carries), the leap-height extra-depth ladder (at least 5/15/25/35/40 feet -> 1/2/3/4/5 inches on the first round), the 5-inch cap beyond 40 feet regardless of height, and the falling-damage risk on a dive from 40 feet or more (rules/wsgdive.h, prefix wdv); census 376 -> 377.",
+ "audit_comment": "The diving and surfacing slice pins the base downward swim rate (2 inches, 20 feet per round), the encumbrance multipliers (doubled for moderate, tripled for heavy or severe - the same x2/x3/x3 the Table 24 dive column carries), the leap-height extra-depth ladder (at least 5/15/25/35/40 feet -> 1/2/3/4/5 inches on the first round), the 5-inch cap beyond 40 feet regardless of height, and the falling-damage risk on a dive from 40 feet or more (rules/wsg/wsgdive.h, prefix wdv); census 376 -> 377.",
  "banner": {
   "title": "The WSG DIVING AND SURFACING, R452: the basic movement rate for a character attempting to swim downward through the water is 2 inches, or 20 feet per round - and this figure is DOUBLED for moderately encumbered characters and TRIPLED for heavily or severely encumbered characters (the same 1/1/2/3/3 dive column the swimming round pinned in Table 24). In addition, the depth attainable on the FIRST round of a dive can be increased if the character leaps into the water from a point above the surface: a leap of at least 5 feet adds 1 inch of depth, at least 15 feet adds 2, at least 25 feet adds 3, at least 35 feet adds 4, and at least 40 feet adds 5. Footnote: leaping from MORE than 40 feet above the surface does not increase the extra depth beyond 5 inches regardless of the height involved; and a dive from 40 feet or any greater height may suffer falling damage as described in the text about being carried over a waterfall. Census 376 -> 377.",
   "provenance": "the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed p. 42; the user own copy OCR (page 43) cross-checked against the archive djvu word layer (Guide_0042) and TWO independent IIIF eye-reads of the leaf - the prose matched three-way, and the djvu garbles the printed table (the 35-feet row reads \"36 feet\", the 40-feet row is mangled), so the ladder was settled by the two eye-reads, which agree with the OCR exactly: 5/15/25/35/40 feet -> 1/2/3/4/5 inches.",
@@ -221,7 +221,7 @@
  "gap_flips": [
   {
    "from": "  - [ ] Diving and surfacing (p. 42)",
-   "to": "  - [x] Diving and surfacing (p. 42) - R452: the 2-inch/20-foot base downward swim rate with the moderate double and the heavy/severe triple, and the leap-height extra-depth ladder (5/15/25/35/40 feet -> 1/2/3/4/5 inches, capped at 5 beyond 40 feet, a 40-foot-or-more dive risking falling damage) pin as rules/wsgdive.h",
+   "to": "  - [x] Diving and surfacing (p. 42) - R452: the 2-inch/20-foot base downward swim rate with the moderate double and the heavy/severe triple, and the leap-height extra-depth ladder (5/15/25/35/40 feet -> 1/2/3/4/5 inches, capped at 5 beyond 40 feet, a 40-foot-or-more dive risking falling damage) pin as rules/wsg/wsgdive.h",
    "note": "diving and surfacing"
   },
   {
@@ -235,7 +235,7 @@
   "open": 131
  },
  "include_comment": "the WSG diving and surfacing",
- "include_after": "#include \"rules/wsgmwater.h\"  // R451: the WSG other effects of moving water",
+ "include_after": "#include \"rules/wsg/wsgmwater.h\"  // R451: the WSG other effects of moving water",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R451 landed 2026-10-14: commit 94d5631",
@@ -257,7 +257,7 @@
   "  damage, a save vs breath weapon allowed - success at 40-100 feet = no",
   "  damage, success beyond 100 feet = one-tenth rounded up, under 40 feet = no",
   "  falling damage, treated as a normal dive; rocks at the base void the mercy -",
-  "  damage assessed as a fall through the air). rules/wsgmwater.h NEW (20",
+  "  damage assessed as a fall through the air). rules/wsg/wsgmwater.h NEW (20",
   "  inlines, prefix wmw - checked free in all three TUs). Ground truth CLEAN",
   "  two-way (the user copy OCR vs the djvu word layer Guide_0042 - every number",
   "  matched, no eye-reads). Gap 53/133 -> 54/132; census 375 -> 376. rverify",

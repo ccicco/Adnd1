@@ -2,7 +2,7 @@
  "round": 669,
  "title": "TABLE 66 WU JEN SPELLS - the full spell list by level with the elemental marks",
  "prefix": "die",
- "header_file": "rules/oawjspelllist.h",
+ "header_file": "rules/oa/oawjspelllist.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -665,7 +665,7 @@
   "open": 113
  },
  "include_comment": "the OA wu jen spell list pins",
- "include_after": "#include \"rules/oat65fate.h\"  // R668: the OA fate pins",
+ "include_after": "#include \"rules/oa/oat65fate.h\"  // R668: the OA fate pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R668 LANDED 2026-10-20: commit f2ddaaaf29a2e3f0ff642ba408e997403d50babb",
@@ -674,7 +674,7 @@
   "  (census 590 -> 591, pushed eb88e69..f2ddaaa),",
   "  TABLE 65 FATE - the twelve fate bands of",
   "  the 1d20 roll, capture p. 135:",
-  "  rules/oat65fate.h, prefix did (the",
+  "  rules/oa/oat65fate.h, prefix did (the",
   "  dic GUESS WAS WRONG - the dice()",
   "  helpers occupy it, caught by the",
   "  engine's prefix gate at the first run;",
@@ -725,6 +725,6 @@
   "  call-site regex, not just whole-word",
   "  grep), audit \"R669 OA wu jen spell",
   "  list audit\", include after",
-  "  rules/oat65fate.h"
+  "  rules/oa/oat65fate.h"
  ]
 }

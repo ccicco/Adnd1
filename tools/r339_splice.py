@@ -42,7 +42,7 @@ SEED_ENTRY = NL.join([
     '- R338 landed 2026-10-11: commit',
     '  1775600, census 265, the UA',
     '  missile data pin round',
-    '  (rules/uamissile.h): the 24-row',
+    '  (rules/ua/uamissile.h): the 24-row',
     '  roster, the range column decoded',
     '  as the long range in tens of feet',
     '  (PHB-seam verified), the',
@@ -74,14 +74,14 @@ assert s.count('## Knowledge maintenance') == 1, \
     'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
-# ---- (b) NEW rules/uaprof.h ----
-UP = 'rules/uaprof.h'
+# ---- (b) NEW rules/ua/uaprof.h ----
+UP = 'rules/ua/uaprof.h'
 if os.path.exists(UP) and 'R339' in rd(UP):
     already.append('uaprof.h: the pins')
 else:
     HDR = NL.join([
         '// ===========================================================================',
-        '// Adnd1 - rules/uaprof.h',
+        '// Adnd1 - rules/ua/uaprof.h',
         '// The UA WEAPON PROFICIENCY TABLE (p. 26) pins (R339).',
         '//',
         '// Pin-era pattern (R322): pinned data only - no engine site exists.',
@@ -261,7 +261,7 @@ else:
     assert s.count(TAIL_OLD) == 1, 'c tail'
     NOTE = NL.join([
         '      - CLOSED R339: the pin round',
-        '        (rules/uaprof.h) - the 14-row',
+        '        (rules/ua/uaprof.h) - the 14-row',
         '        roster, seven rows cell-verified',
         '        against the R297 PHB seam, the',
         '        UA-new rows (cavalier, barbarian,',
@@ -302,12 +302,12 @@ s = rd(RT)
 if 'R339 UA proficiency pin audit' in s:
     already.append('regtest.cpp: the R339 audit')
 else:
-    INC_ANCH = ('#include "rules/uamissile.h"'
+    INC_ANCH = ('#include "rules/ua/uamissile.h"'
                 '  // R338: the UA hurled and'
                 ' missile data')
     INC_NEW = NL.join([
     INC_ANCH,
-    '#include "rules/uaprof.h"'
+    '#include "rules/ua/uaprof.h"'
     '  // R339: the UA weapon proficiency',
     ])
     AUD_ANCH = ('    // ---- R227: the wis mental'
@@ -484,7 +484,7 @@ assert s.count(
     == 1, 'd r337 kept'
 assert s.count('R227: the wis mental save') == 1, \
     'd r227 kept'
-assert s.count('#include "rules/uaprof.h"') == 1, \
+assert s.count('#include "rules/ua/uaprof.h"') == 1, \
     'd include'
 assert len(applied) + len(already) == 4, 'd count'
 

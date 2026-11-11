@@ -5,7 +5,7 @@ return {
   "prefix" = "wct",
   "banner" = {
       "title" = "The WSG COMPILED TABLES, R495: the play-session reprint section, printed pp. 120-123 (pdf pages 121-124) - thirty of the forty-two book tables reproduced with their from-pages, the selection limited to the tables most often referred to during play. This round closes the compiled-tables gap box and COMPLETES THE WSG ARC: every section of the Wilderness Survival Guide is now pinned.",
-      "provenance" = "WSG printed pp. 120-123, pdf pages 121-124, extracted at r493-extraction sha 5af0ac2 (tesseract full-text and tsv, x121-x124, 300 dpi; pdf 125 confirmed blank end-matter). Reconciled against the landed originals: every reprinted table was compared cell-for-cell with its R425-R494 pin (rules/wsgdress.h, wsgenvfx.h, wsgheat.h, wsgencum.h, wsganimal.h, wsgvehicle.h, wsgclimb.h, wsgcheck.h, wsgfall.h, wsgtumble.h, wsgstop.h, wsggrap.h, wsgjump.h, wsgnvis.h, wsgswim.h, wsgvessels.h, wsgcapsizing.h, wsgfood.h, wsgfish.h, wsgcarry.h, wsgtents.h, wsgsleep.h, wsgfire.h, wsgfuel.h, wsginfra.h, wsgmount.h). No new grids are pinned: the data lives in the original headers; this round pins the compilation itself - the manifest, the from-pages, the per-table reconciliation, and the one errata.",
+      "provenance" = "WSG printed pp. 120-123, pdf pages 121-124, extracted at r493-extraction sha 5af0ac2 (tesseract full-text and tsv, x121-x124, 300 dpi; pdf 125 confirmed blank end-matter). Reconciled against the landed originals: every reprinted table was compared cell-for-cell with its R425-R494 pin (rules/wsg/wsgdress.h, wsgenvfx.h, wsgheat.h, wsgencum.h, wsganimal.h, wsgvehicle.h, wsgclimb.h, wsgcheck.h, wsgfall.h, wsgtumble.h, wsgstop.h, wsggrap.h, wsgjump.h, wsgnvis.h, wsgswim.h, wsgvessels.h, wsgcapsizing.h, wsgfood.h, wsgfish.h, wsgcarry.h, wsgtents.h, wsgsleep.h, wsgfire.h, wsgfuel.h, wsginfra.h, wsgmount.h). No new grids are pinned: the data lives in the original headers; this round pins the compilation itself - the manifest, the from-pages, the per-table reconciliation, and the one errata.",
       "sentinel" = "THE SETTLE: twenty-nine of the thirty reprints reconcile with their landed pins cell for cell, including every cell the tesseract pass shredded (the Table 19 stop grid, the Table 20 rows 4-5, the whole Table 23 and Table 24 reads, the Table 25 lower half, the Table 39 hills row, the Table 41 rows 3-4, and the six Table 42 rows whose labels garbled - all settle from the pins with nothing contradicted, and the TSV row-gap geometry confirms the fourteen Table 42 rows and the thirty-manifest in full). The ONE genuine print discrepancy is the compiled Table 32: Fair daytime 1d6-3 (original 1d6-2, both tokens legible and column-aligned at x=1600/1668 on pdf 124) and Good daytime 1d6-2 (original 1d8-2) - an errata-class reprint difference, the first found in the arc, pinned as compiled-side consts with the original pin untouched. The Table 4 attack cells (90-99 = -1, 100-109 = -2) were OCR-shredded (=3 / =0 at conf 31/70) and settled by the user direct eyeball of printed p. 120, matching the pin. The printed page span is 120-123: the footers read 120 (pdf 121), 121 (pdf 122, conf 97) and 123 (pdf 124, conf 97); the pdf 123 footer (printed 122 by the pdf-minus-one rule) OCRs ambiguously as 123 at low confidence - the pdf 124 footer at conf 97 settles the span end.",
     },
   "consts" = { {
@@ -380,15 +380,15 @@ return {
     }, {
       "name" = "wctT32ErrataIsCompiledSide",
       "value" = true,
-      "comment" = "the landed rules/wsgfish.h pin keeps the ORIGINAL p. 57 readings; the compiled-side readings live here as the errata record.",
+      "comment" = "the landed rules/wsg/wsgfish.h pin keeps the ORIGINAL p. 57 readings; the compiled-side readings live here as the errata record.",
     }, {
       "name" = "wctT9CompanionsMatch",
       "value" = true,
-      "comment" = "the damage-adjustment and Con-check-adjustment companions reprinted beneath the compiled Table 9 match the landed rules/wsgheat.h pins exactly.",
+      "comment" = "the damage-adjustment and Con-check-adjustment companions reprinted beneath the compiled Table 9 match the landed rules/wsg/wsgheat.h pins exactly.",
     }, {
       "name" = "wctT25MergedHalves",
       "value" = true,
-      "comment" = "the compiled Table 25 prints the vessel characteristics and the hull-value / draught columns as one table - the landed pin splits them into the 25a characteristics and 25b movement-rate halves (rules/wsgvessels.h).",
+      "comment" = "the compiled Table 25 prints the vessel characteristics and the hull-value / draught columns as one table - the landed pin splits them into the 25a characteristics and 25b movement-rate halves (rules/wsg/wsgvessels.h).",
     }, {
       "name" = "wctT36QualityBandsLabeled",
       "value" = true,
@@ -523,6 +523,6 @@ return {
     } },
   "audit" = {
       "label" = "R495 WSG compiled tables audit",
-      "comment" = "The compiled tables, printed pp. 120-123 (pdf 121-124): thirty of the forty-two book tables reprinted as the play-session reference, each with its from-page. Twenty-nine of the thirty reprints match their landed originals cell for cell (the Table 3 attire grid, Tables 4 and 5, Table 9 with its damage-adjustment and Con-check companions, Tables 11-19, 20-26, 28-29, 33, 36-39, 41 and the fourteen-row Table 42). The ONE exception is the compiled Table 32 (fishing success): the reprint reads Fair daytime 1d6-3 against the original 1d6-2, and Good daytime 1d6-2 against the original 1d8-2 - pinned here as the errata record with the landed rules/wsgfish.h keeping the original readings. The Table 4 attack cells at 90-99 (-1) and 100-109 (-2), shredded by the tesseract pass, were confirmed by direct eyeball and match the pin. This closes the compiled-tables box: the WSG arc is complete.",
+      "comment" = "The compiled tables, printed pp. 120-123 (pdf 121-124): thirty of the forty-two book tables reprinted as the play-session reference, each with its from-page. Twenty-nine of the thirty reprints match their landed originals cell for cell (the Table 3 attire grid, Tables 4 and 5, Table 9 with its damage-adjustment and Con-check companions, Tables 11-19, 20-26, 28-29, 33, 36-39, 41 and the fourteen-row Table 42). The ONE exception is the compiled Table 32 (fishing success): the reprint reads Fair daytime 1d6-3 against the original 1d6-2, and Good daytime 1d6-2 against the original 1d8-2 - pinned here as the errata record with the landed rules/wsg/wsgfish.h keeping the original readings. The Table 4 attack cells at 90-99 (-1) and 100-109 (-2), shredded by the tesseract pass, were confirmed by direct eyeball and match the pin. This closes the compiled-tables box: the WSG arc is complete.",
     },
 }

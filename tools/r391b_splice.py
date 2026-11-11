@@ -82,7 +82,7 @@ assert s.count(
 ) == 1, 'd r389 kept'
 assert s.count('audit: bad ') == 318, 'd census 318'
 assert s.count(
-    '#include "rules/uaappendt.h"'
+    '#include "rules/ua/uaappendt.h"'
 ) == 1, 'd include kept'
 assert s.count(
     'R227: the wis mental save'

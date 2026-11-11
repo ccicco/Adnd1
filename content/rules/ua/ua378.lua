@@ -1,4 +1,4 @@
--- ua378: promoted from rules/uaringprose.h (the The UA TREASURE (RINGS) prose);
+-- ua378: promoted from rules/ua/uaringprose.h (the The UA TREASURE (RINGS) prose);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 378,

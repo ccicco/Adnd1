@@ -51,27 +51,27 @@ inline int sldMu8thRosterCount()
 inline int sldMu9thRosterCount()
     { return 8; }
 
-// The UA-new illusionist 3rd-level census (rules/uailspells3.h): Delude,
+// The UA-new illusionist 3rd-level census (rules/ua/uailspells3.h): Delude,
 // Phantom Steed, Phantom Wind, Wraithform
 inline int sldIl3rdNewCount()
     { return 4; }
 
-// The UA-new illusionist 4th-level census (rules/uailspells4.h): Dispel
+// The UA-new illusionist 4th-level census (rules/ua/uailspells4.h): Dispel
 // Magic, Rainbow Pattern, Solid Fog, Vacancy
 inline int sldIl4thNewCount()
     { return 4; }
 
-// The UA-new illusionist 5th-level census (rules/uailspells5.h): Advanced
+// The UA-new illusionist 5th-level census (rules/ua/uailspells5.h): Advanced
 // Illusion, Dream, Magic Mirror, Tempus Fugit
 inline int sldIl5thNewCount()
     { return 4; }
 
-// The UA-new illusionist 6th-level census (rules/uailspells6.h): Death Fog,
+// The UA-new illusionist 6th-level census (rules/ua/uailspells6.h): Death Fog,
 // Mislead, Phantasmagoria, Mirage Arcane
 inline int sldIl6thNewCount()
     { return 4; }
 
-// The UA-new illusionist 7th-level census (rules/uailspells7.h): Shadow Walk,
+// The UA-new illusionist 7th-level census (rules/ua/uailspells7.h): Shadow Walk,
 // Weird
 inline int sldIl7thNewCount()
     { return 2; }

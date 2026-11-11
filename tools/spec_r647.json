@@ -2,7 +2,7 @@
  "round": 647,
  "title": "MISC EQUIPMENT - the grenades prose of the equipment descriptions",
  "prefix": "dhh",
- "header_file": "rules/oagrenade.h",
+ "header_file": "rules/oa/oagrenade.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "MISCELLANEOUS EQUIPMENT DESCRIPTIONS (THE GRENADES PROSE), printed capture p. 98 - the OA misc equipment round",
   "provenance": "pinned from the 2018 print capture (the settling authority), with the compressed-print capture giving a second independent read of the page - the grenades prose cross-checked paragraph-by-paragraph between the two passes; every printed number agrees - zero contested cells. The lone glyph artifact is the em-dash class (the print hyphen against the compressed em-dash in the not-modern-sense clause - not a pin, noted). The grenades are blown-out eggshells (nutshells and paper packets also used) filled with powders - four kinds pin: pepper-filled (single target, save versus poison or incapacitated 1-6 rounds by choking and sneezing), dust-filled (the same save, blinded 1-6 rounds), flash powder (thrown onto a fire source, all looking automatically blinded 1-3 rounds, the may-or-may-not-looking allowed a save versus petrification) and poison smoke (cast onto a fire source, fills five feet by five feet per round, save versus poison or blinded and incapacitated, 1-2 hit points per round within, enough powder for a 10-foot by 10-foot area, remains one turn or until the wind). The to-hit doctrine pins as a bool pair: no armor modifiers (the contents burst in a small cloud on impact) and the eggshell fragility (a fall of 10 feet or more with damage forces a save versus crushing blow per grenade carried). The barding prose box and the armor descriptions box stay open",
-  "sentinel": "the gap census after this round: 98 closed, 137 open - the Miscellaneous Equipment Descriptions box flips (census 569 -> 570); NEXT - R648: the Barding prose box (capture p. 98), the barding AC-factor and weight paragraph, prefix dhi (verify free), audit \"R648 OA barding prose audit\", include after rules/oagrenade.h - the armor descriptions box stays open beside it"
+  "sentinel": "the gap census after this round: 98 closed, 137 open - the Miscellaneous Equipment Descriptions box flips (census 569 -> 570); NEXT - R648: the Barding prose box (capture p. 98), the barding AC-factor and weight paragraph, prefix dhi (verify free), audit \"R648 OA barding prose audit\", include after rules/oa/oagrenade.h - the armor descriptions box stays open beside it"
  },
  "consts": [
   {
@@ -266,7 +266,7 @@
   "open": 137
  },
  "include_comment": "the OA grenades pins",
- "include_after": "#include \"rules/oabarding.h\"  // R646: the OA barding pins",
+ "include_after": "#include \"rules/oa/oabarding.h\"  // R646: the OA barding pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R646 LANDED 2026-10-19: commit",
@@ -276,7 +276,7 @@
   "  (census 568 -> 569, pushed",
   "  50ada1a..6ad968b), BARDING - Table 55",
   "  (Barded Warhorse Base Movement Rates),",
-  "  capture p. 98: rules/oabarding.h, prefix",
+  "  capture p. 98: rules/oa/oabarding.h, prefix",
   "  dhg (verified free), 10 inlines (2 consts,",
   "  6 table columns, 2 bools): the 4-row",
   "  barded warhorse grid - the full/half",
@@ -314,7 +314,7 @@
   "  Descriptions prose box (capture p. 98),",
   "  the grenades prose, prefix dhh (verify",
   "  free), audit \"R647 OA misc equipment",
-  "  audit\", include after rules/oabarding.h -",
+  "  audit\", include after rules/oa/oabarding.h -",
   "  the barding prose box stays open beside",
   "  it."
  ]

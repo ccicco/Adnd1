@@ -4,7 +4,7 @@
 // ============================================================================
 
 #include "items.h"
-#include "../rules/character.h"   // dexDefensiveAdj, strHitAdj...
+#include "../rules/engine/character.h"   // dexDefensiveAdj, strHitAdj...
 
 namespace items {
 

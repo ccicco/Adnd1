@@ -1040,12 +1040,12 @@
     "open": 0
   },
   "caller_files": [
-    "rules/uaappends.h"
+    "rules/ua/uaappends.h"
   ],
   "inline_count": 41,
   "file_patches": [
     {
-      "file": "rules/uaappends.h",
+      "file": "rules/ua/uaappends.h",
       "note": "the R406 messy-reads boundary closes - the stat lines pin in deitylines.h, the prose alone stays open",
       "from": "// the scan-clean stat-line numerics\n// pin; the messy reads stay open\n// (the six class/level lines, the\n// MOVE values, the S/I/W/D/C/CH/CM\n// stat lines, the prose).",
       "to": "// the scan-clean stat-line numerics\n// pin; the R783 round pins the messy\n// reads (the class/level lines, the\n// MOVE values, the S/I/W/D/C/CH/CM\n// stat lines) in rules/deitylines.h;\n// the prose alone stays open."

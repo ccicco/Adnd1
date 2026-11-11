@@ -2,7 +2,7 @@
  "round": 725,
  "title": "OA MONSTERS - the Nat: the three lesser spirits of hearth, village, and grave",
  "prefix": "dkm",
- "header_file": "rules/oa96nat.h",
+ "header_file": "rules/oa/oa96nat.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA MONSTERS - THE NAT, printed capture pp. 276-278 - the lesser spirit round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 178 closed, 57 open - the nat box flips (census 647 -> 648); NEXT - R726: the Nature Spirits, the Lesser and the Greater (capture pp. 278-279), prefix dkn (verify free at the landing), audit \"R726 OA monsters Nature Spirits audit\", include after rules/oa96nat.h"
+  "sentinel": "the gap census after this round: 178 closed, 57 open - the nat box flips (census 647 -> 648); NEXT - R726: the Nature Spirits, the Lesser and the Greater (capture pp. 278-279), prefix dkn (verify free at the landing), audit \"R726 OA monsters Nature Spirits audit\", include after rules/oa/oa96nat.h"
  },
  "consts": [
   {
@@ -949,7 +949,7 @@
   "open": 57
  },
  "include_comment": "the OA Nat pins",
- "include_after": "#include \"rules/oa95menwako.h\"  // R724: the OA Men Wako pins",
+ "include_after": "#include \"rules/oa/oa95menwako.h\"  // R724: the OA Men Wako pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R724 LANDED 2026-10-21: commit",
@@ -958,7 +958,7 @@
   "  fc2b428dbb81f386b2ffb7909257b2f38b0afd48",
   "  (census 646 -> 647, pushed a4ed27f..fc2b428), OA",
   "  MONSTERS, the Men Wako, the Sea Pirate (capture",
-  "  pp. 275-276 print): rules/oa95menwako.h, prefix",
+  "  pp. 275-276 print): rules/oa/oa95menwako.h, prefix",
   "  dkl (verified free at a4ed27f), ONE gap flip, gap",
   "  census 177/58 - the men wako box. A TABLES",
   "  round. 26 consts + 26 bools + 1 table col (53",
@@ -1001,6 +1001,6 @@
   "  the Nat, the Lesser Spirit (capture",
   "  pp. 276-278), prefix dkm (verified free at",
   "  fc2b428), audit \"R725 OA monsters Nat audit\",",
-  "  include after rules/oa95menwako.h."
+  "  include after rules/oa/oa95menwako.h."
  ]
 }

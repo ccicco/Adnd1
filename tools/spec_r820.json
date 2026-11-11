@@ -1,9 +1,9 @@
 {
  "round": 820,
  "title": "the lammasu promotion",
- "header_file": "rules/lmp.h",
+ "header_file": "rules/mm/mm2_lammasu_promotion.h",
  "prefix": "lmp",
- "include_after": "#include \"rules/mm2enci.h\"  // R819: the MM2 index walk - the merged MM1/FF/MM2 index census",
+ "include_after": "#include \"rules/mm/mm2enci.h\"  // R819: the MM2 index walk - the merged MM1/FF/MM2 index census",
  "include_comment": "the lammasu promotion",
  "census_before": 742,
  "audit_label": "R820 lammasu promotion audit",
@@ -421,7 +421,7 @@
    "note": "the R817 audit walk-key expression"
   },
   {
-   "file": "rules/mm2enco.h",
+   "file": "rules/mm/mm2enco.h",
    "from": "// The rows with a registry walk key (the MM1 and MM2 defs the registry owns)\ninline int mm2encoWalkKeyRows()\n    { return 570; }",
    "to": "// The rows with a registry walk key (the MM1 and MM2 defs the\n// registry owns; the R820 lammasu promotion rewired the 2\n// keyless cells, 570 -> 572)\ninline int mm2encoWalkKeyRows()\n    { return 572; }",
    "note": "the mm2enco walk-key const"

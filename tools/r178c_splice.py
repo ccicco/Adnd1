@@ -6,14 +6,14 @@
 # 1 and 2; this round closes them, the live bugs
 # first per the arc ordering rule:
 #
-#   (a) rules/character.cpp - the DEX Table I
+#   (a) rules/engine/character.cpp - the DEX Table I
 #       reaction/attacking ladder repinned (dex 3
 #       reads -3, dex 4 -2, dex 18 +3; the defensive
 #       ladder already matched the print and is
 #       re-noted). LIVE callers now read the right
 #       cells: missile attacks (ai/actor) and the
 #       surprise roll (rules/turn).
-#   (b) rules/character.cpp - the CON table repinned
+#   (b) rules/engine/character.cpp - the CON table repinned
 #       cell by cell: the system shock column (35
 #       through 99), the resurrection survival column
 #       (40 through 100 - LIVE, the raise-dead roll),
@@ -21,7 +21,7 @@
 #       unsourced, unused poison-save column
 #       (conPoisonSaveAdj) is RETIRED - not in the 1e
 #       print.
-#   (c) rules/character.h - the CON block comment
+#   (c) rules/engine/character.h - the CON block comment
 #       updated; the poison-save declaration removed.
 #   (d) regtest.cpp - a NEW R178c audit block after
 #       the R176 audit: the 16-score DEX reaction and
@@ -394,7 +394,7 @@ p9_new = NL.join([
     'R187+. No audit; census stays 94.',
     'R178c CLOSED the PHB report divergences 1 and 2',
     '(the live bugs first, per the arc ordering',
-    'rule): rules/character.cpp - the DEX reaction',
+    'rule): rules/engine/character.cpp - the DEX reaction',
     'ladder repinned (3 -3, 4 -2, 18 +3; missile',
     'attacks and surprise now read the print), the',
     'CON system-shock (35-99) and resurrection-',
@@ -406,22 +406,22 @@ p9_new = NL.join([
 ])
 
 # ---- run ----
-patch("rules/character.cpp", p1_old, p1_new,
+patch("rules/engine/character.cpp", p1_old, p1_new,
       "character.cpp: the DEX ladder repinned",
       marker="return 3;   // 18")
 assert len(applied) + len(already) == 1
 
-patch("rules/character.cpp", p2_old, p2_new,
+patch("rules/engine/character.cpp", p2_old, p2_new,
       "character.cpp: the CON comment repinned",
       marker="CON (PHB p.12, pinned R178c cell by cell)")
 assert len(applied) + len(already) == 2
 
-patch("rules/character.cpp", p3_old, p3_new,
+patch("rules/engine/character.cpp", p3_old, p3_new,
       "character.cpp: the CON ladders repinned",
       marker="85, 90, 92, 94, 96, 98, 100")
 assert len(applied) + len(already) == 3
 
-patch("rules/character.h", p4_old, p4_new,
+patch("rules/engine/character.h", p4_old, p4_new,
       "character.h: the CON block updated",
       marker="CON table (PHB p.12, pinned R178c)")
 assert len(applied) + len(already) == 4

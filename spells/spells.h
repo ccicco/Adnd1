@@ -14,7 +14,7 @@
 
 #pragma once
 
-#include "../rules/dice.h"
+#include "../rules/engine/dice.h"
 
 #include <cstdint>
 
@@ -328,7 +328,7 @@ int maxSpellsPerLevel(uint8_t int_);
 // spellIsMentalForm is the per-spell engine data;
 // spellSaveModWis assembles the WIS magical defense
 // adjustment for those spells, 0 on everything else -
-// the save rolls stay caller-assembled (rules/saves.h).
+// the save rolls stay caller-assembled (rules/engine/saves.h).
 // Registry rows flagged: charm person, charm monster.
 // ----------------------------------------------------------------------------
 bool spellIsMentalForm(SpellId id);

@@ -44,7 +44,7 @@ SEED_ENTRY = NL.join([
     '- R340 landed 2026-10-11: commit',
     '  1288a5c, census 267, the UA new',
     '  weapons prose pin round',
-    '  (rules/uanewweapons.h): the 16',
+    '  (rules/ua/uanewweapons.h): the 16',
     '  printed descriptions, every',
     '  readable number pinned, the',
     '  khopesh slash-loss and whip 3d6',
@@ -70,14 +70,14 @@ assert s.count('R338 landed 2026-10-11') == 1,     'a r338 kept'
 assert s.count('## Knowledge maintenance') == 1,     'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
-# ---- (b) NEW rules/uaspelltables.h ----
-US = 'rules/uaspelltables.h'
+# ---- (b) NEW rules/ua/uaspelltables.h ----
+US = 'rules/ua/uaspelltables.h'
 if os.path.exists(US) and 'R341' in rd(US):
     already.append('uaspelltables.h: the pins')
 else:
     HDR = NL.join([
         '// ===========================================================================',
-        '// Adnd1 - rules/uaspelltables.h',
+        '// Adnd1 - rules/ua/uaspelltables.h',
         '// The UA SPELL TABLES (pp. 28-31) pins, part 1 (R341): the cleric',
         '// tables, the druid tables and the magic-user cantrip table.',
         '//',
@@ -449,7 +449,7 @@ else:
     assert s.count(FIRST_OLD) == 1, 'c first'
     NOTE = NL.join([
         '      - R341: the readable tables',
-        '        pinned (rules/uaspelltables.h)',
+        '        pinned (rules/ua/uaspelltables.h)',
         '        - the cleric 1st-3rd table',
         '        (20 rows, seam-verified against',
         '        the R80 registry), the cleric',
@@ -486,12 +486,12 @@ s = rd(RT)
 if 'R341 UA spell tables pin audit' in s:
     already.append('regtest.cpp: the R341 audit')
 else:
-    INC_ANCH = ('#include "rules/uanewweapons.h"'
+    INC_ANCH = ('#include "rules/ua/uanewweapons.h"'
                 '  // R340: the UA new weapons'
                 ' prose')
     INC_NEW = NL.join([
     INC_ANCH,
-    '#include "rules/uaspelltables.h"'
+    '#include "rules/ua/uaspelltables.h"'
     '  // R341: the UA spell tables part 1',
     ])
     AUD_ANCH = ('    // ---- R227: the wis mental'
@@ -760,7 +760,7 @@ assert s.count(
     'R339 UA proficiency pin audit: bad ')     == 1, 'd r339 kept'
 assert s.count('R227: the wis mental save') == 1,     'd r227 kept'
 assert s.count(
-    '#include "rules/uaspelltables.h"') == 1,     'd include'
+    '#include "rules/ua/uaspelltables.h"') == 1,     'd include'
 assert len(applied) + len(already) == 4, 'd count'
 
 # ---- the summary ----

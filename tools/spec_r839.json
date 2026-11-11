@@ -3,7 +3,7 @@
  "title": "the fourth FF promotion batch",
  "prefix": "ffu",
  "regtest": "regtest.cpp",
- "header_file": "rules/ffu.h",
+ "header_file": "rules/ff/promo_batch4.h",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "gap_report": "tools/mm2_gap_report.md",
  "banner": {
@@ -316,7 +316,7 @@
  "audit_comment": "the fourth promotion wave of the ff arc: twenty-five defs, the twenty-four cells (nine ride the standing defs), the dungeon walk-key census re-pinned, the registry and ff def censuses carried, the two keyless FF rows pinned (the Elemental Prince and Hornet Giant rows); the constants check themselves",
  "audit_file": "rules/audits/r839_batch.h",
  "audit_anchor": "#include \"rules/audits/r838_batch.h\"  // R838: R838 third FF promotion audit",
- "include_after": "#include \"rules/fft.h\"  // R838: the third FF promotion batch",
+ "include_after": "#include \"rules/ff/promo_batch3.h\"  // R838: the third FF promotion batch",
  "include_comment": "the fourth FF promotion batch",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R838 LANDED 2026-10-25: commit",
@@ -339,8 +339,8 @@
   "  xvart) - the R836/R837 def shape with",
   "  the print-fidelity pin headers. THE",
   "  REWIRE: the outdoor rekeys ride",
-  "  rules/mm2enco.h with the walk-key",
-  "  census chains patched through lmp.h",
+  "  rules/mm/mm2enco.h with the walk-key",
+  "  census chains patched through rules/mm/mm2_lammasu_promotion.h",
   "  and the audits r817_mm2_outdoor_",
   "  encounter.h and r820_lammasu_",
   "  promotion.h (the R837 pattern); the",
@@ -350,7 +350,7 @@
   "  round's own audit rode",
   "  rules/audits/r838_batch.h; file",
   "  patches: regtest.cpp (13 patches),",
-  "  mm2enco.h, lmp.h, r817/r820 audit",
+  "  mm2enco.h, rules/mm/mm2_lammasu_promotion.h, r817/r820 audit",
   "  fragments. Spec tools/spec_r838.json,",
   "  md5 28cc388610c6aefe78e8b353847e7905.",
   "  GATES (per the pasted landing):",
@@ -519,7 +519,7 @@
    "to": "                \"planetar\",\n                \"slaad_death\",\n                \"beholder\","
   },
   {
-   "file": "rules/mm2encd.h",
+   "file": "rules/mm/mm2encd.h",
    "note": "the dungeon walk-key census inline lands 170",
    "from": "// The registry census floor (the landed R815 count; this round promotes no\n// defs)\ninline int mm2encdRegistryFloor()\n    { return 809; }",
    "to": "// The registry census floor (the landed R815 count; this round promotes no\n// defs)\ninline int mm2encdRegistryFloor()\n    { return 809; }\n\n// The keyed rows (the MM1, MM2, ALL and promoted FF defs the\n// registry owns; the R839 FF promotion rewired\n// 24 blank cells, 146 -> 170; the two\n// FF rows left keyless: the Elemental\n// Prince row (no print def) and the\n// Hornet, Giant row (the FF p. 52 def\n// rides a future promotion))\ninline int mm2encdWalkKeyRows()\n    { return 170; }"

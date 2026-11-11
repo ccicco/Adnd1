@@ -2,7 +2,7 @@
  "round": 497,
  "title": "the WSG overview of the wilderness - the terrain types, the hierarchy, the bodies of water and the climate zones",
  "prefix": "wov",
- "header_file": "rules/wsgoverview.h",
+ "header_file": "rules/wsg/wsgoverview.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -1093,7 +1093,7 @@
    }
   ]
  },
- "include_after": "#include \"rules/wsgrecon.h\"  // R496: the WSG gap reconciliation bookkeeping",
+ "include_after": "#include \"rules/wsg/wsgrecon.h\"  // R496: the WSG gap reconciliation bookkeeping",
  "include_comment": "the WSG overview chapter pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
@@ -1103,7 +1103,7 @@
   "  pushed 88c0739..bd58585), the WSG GAP RECONCILIATION -",
   "  the bookkeeping round: twenty-four boxes that were",
   "  already pinned by earlier rounds flip in one commit.",
-  "  NO new book material; pinned as rules/wsgrecon.h",
+  "  NO new book material; pinned as rules/wsg/wsgrecon.h",
   "  (prefix wgr, 37 inlines: 13 consts + 24 bools). Eleven",
   "  chapter parents flip, every child closed by R427-R491",
   "  (env effects, encumbrance/movement, food/water,",
@@ -1136,57 +1136,57 @@
   {
    "note": "the overview parent box",
    "from": "- [ ] **Overview of the wilderness** (pp. 7-10)",
-   "to": "- [x] **Overview of the wilderness** (pp. 7-10) - R497: the whole chapter pins as rules/wsgoverview.h - the terrain types, the hierarchy ranking, the bodies of water and the climate zones"
+   "to": "- [x] **Overview of the wilderness** (pp. 7-10) - R497: the whole chapter pins as rules/wsg/wsgoverview.h - the terrain types, the hierarchy ranking, the bodies of water and the climate zones"
   },
   {
    "note": "desert",
    "from": "  - [ ] Terrain: desert (p. 7)",
-   "to": "  - [x] Terrain: desert (p. 7) - R497: the under-10-inches rainfall definition, the dune/draa technical split at 70 feet and the polar-wastes-are-desert rule pin as rules/wsgoverview.h"
+   "to": "  - [x] Terrain: desert (p. 7) - R497: the under-10-inches rainfall definition, the dune/draa technical split at 70 feet and the polar-wastes-are-desert rule pin as rules/wsg/wsgoverview.h"
   },
   {
    "note": "forest",
    "from": "  - [ ] Terrain: forest (p. 7)",
-   "to": "  - [x] Terrain: forest (p. 7) - R497: the any-climate-but-polar rule, the cactus-stand exception, the taiga and the 160-foot temperate maximum pin as rules/wsgoverview.h"
+   "to": "  - [x] Terrain: forest (p. 7) - R497: the any-climate-but-polar rule, the cactus-stand exception, the taiga and the 160-foot temperate maximum pin as rules/wsg/wsgoverview.h"
   },
   {
    "note": "hills",
    "from": "  - [ ] Terrain: hills (p. 8)",
-   "to": "  - [x] Terrain: hills (p. 8) - R497: the four classification guidelines with the 2,000/4,000-foot bands pin as rules/wsgoverview.h"
+   "to": "  - [x] Terrain: hills (p. 8) - R497: the four classification guidelines with the 2,000/4,000-foot bands pin as rules/wsg/wsgoverview.h"
   },
   {
    "note": "mountains",
    "from": "  - [ ] Terrain: mountains (p. 8)",
-   "to": "  - [x] Terrain: mountains (p. 8) - R497: the 4,000-foot minimum, the begins-where-trees-end rule, the Earth tree line (10,000) and snow line (12,000) pin as rules/wsgoverview.h"
+   "to": "  - [x] Terrain: mountains (p. 8) - R497: the 4,000-foot minimum, the begins-where-trees-end rule, the Earth tree line (10,000) and snow line (12,000) pin as rules/wsg/wsgoverview.h"
   },
   {
    "note": "plains",
    "from": "  - [ ] Terrain: plains (p. 9)",
-   "to": "  - [x] Terrain: plains (p. 9) - R497: the flat-vegetated definition, the not-enough-trees rule, the easy food and water, the scarce shelter material and the seen-from-far-away warning pin as rules/wsgoverview.h"
+   "to": "  - [x] Terrain: plains (p. 9) - R497: the flat-vegetated definition, the not-enough-trees rule, the easy food and water, the scarce shelter material and the seen-from-far-away warning pin as rules/wsg/wsgoverview.h"
   },
   {
    "note": "seacoast",
    "from": "  - [ ] Terrain: seacoast (p. 9)",
-   "to": "  - [x] Terrain: seacoast (p. 9) - R497: the near-ocean definition and the encounter-table reclassification rule pin as rules/wsgoverview.h"
+   "to": "  - [x] Terrain: seacoast (p. 9) - R497: the near-ocean definition and the encounter-table reclassification rule pin as rules/wsg/wsgoverview.h"
   },
   {
    "note": "swamp",
    "from": "  - [ ] Terrain: swamp (p. 9)",
-   "to": "  - [x] Terrain: swamp (p. 9) - R497: the standing-water definition, the low-elevation rule, the fertile soil and the mounts warning pin as rules/wsgoverview.h"
+   "to": "  - [x] Terrain: swamp (p. 9) - R497: the standing-water definition, the low-elevation rule, the fertile soil and the mounts warning pin as rules/wsg/wsgoverview.h"
   },
   {
    "note": "hierarchy of terrain",
    "from": "  - [ ] Hierarchy of terrain (p. 9)",
-   "to": "  - [x] Hierarchy of terrain (p. 9) - R497: the 1-through-7 ranking (seacoast highest, mountains lowest) with the highest-wins rule and the two common-sense exceptions pin as rules/wsgoverview.h"
+   "to": "  - [x] Hierarchy of terrain (p. 9) - R497: the 1-through-7 ranking (seacoast highest, mountains lowest) with the highest-wins rule and the two common-sense exceptions pin as rules/wsg/wsgoverview.h"
   },
   {
    "note": "bodies of water",
    "from": "  - [ ] Bodies of water (p. 9)",
-   "to": "  - [x] Bodies of water (p. 9) - R497: the water-source-and-challenge frame, the boat and swim travel rules and the preparation advice pin as rules/wsgoverview.h"
+   "to": "  - [x] Bodies of water (p. 9) - R497: the water-source-and-challenge frame, the boat and swim travel rules and the preparation advice pin as rules/wsg/wsgoverview.h"
   },
   {
    "note": "climate",
    "from": "  - [ ] Climate (p. 10)",
-   "to": "  - [x] Climate (p. 10) - R497: the five climate zones (arctic, subarctic, temperate, subtropical, tropical) with their characterizations pin as rules/wsgoverview.h"
+   "to": "  - [x] Climate (p. 10) - R497: the five climate zones (arctic, subarctic, temperate, subtropical, tropical) with their characterizations pin as rules/wsg/wsgoverview.h"
   }
  ],
  "gap_census": {

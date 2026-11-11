@@ -2,7 +2,7 @@
  "round": 736,
  "title": "OA TREASURE - Table II.A. (Orient): Monetary Treasure: the nine d20 bands of the rolled hoard",
  "prefix": "dkx",
- "header_file": "rules/oa107tableiia.h",
+ "header_file": "rules/oa/oa107tableiia.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA TREASURE - TABLE II.A. (ORIENT), MONETARY TREASURE, printed capture pp. 286-287 - the rolled hoard round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 189 closed, 46 open - the Table II.A. box flips (census 658 -> 659); NEXT - R737: Table III. (Orient): Magical Items (capture p. 287), prefix dky (verify free at the landing), audit \"R737 OA Table III Orient magical items audit\", include after rules/oa107tableiia.h"
+  "sentinel": "the gap census after this round: 189 closed, 46 open - the Table II.A. box flips (census 658 -> 659); NEXT - R737: Table III. (Orient): Magical Items (capture p. 287), prefix dky (verify free at the landing), audit \"R737 OA Table III Orient magical items audit\", include after rules/oa/oa107tableiia.h"
  },
  "consts": [
   {
@@ -408,7 +408,7 @@
   "open": 46
  },
  "include_comment": "the OA Table II.A. pins",
- "include_after": "#include \"rules/oa106table74.h\"  // R735: the OA Table 74 pins",
+ "include_after": "#include \"rules/oa/oa106table74.h\"  // R735: the OA Table 74 pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R735 LANDED 2026-10-21: commit",
@@ -418,7 +418,7 @@
   "  (census 657 -> 658, pushed dd3890c..7d24d47),",
   "  OA TREASURE, Table 74, Monetary Treasure",
   "  And Magical Items (capture p. 286), header",
-  "  rules/oa106table74.h, prefix dkw",
+  "  rules/oa/oa106table74.h, prefix dkw",
   "  (verified free at dd3890c), one gap flip",
   "  (the Table 74 box, its two-line wrap",
   "  handled), gap census now 188 closed /",
@@ -451,6 +451,6 @@
   "  prefix dkx (verify free at the landing),",
   "  audit \"R736 OA Table II.A. Orient",
   "  monetary treasure audit\", include after",
-  "  rules/oa106table74.h."
+  "  rules/oa/oa106table74.h."
  ]
 }

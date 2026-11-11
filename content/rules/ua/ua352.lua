@@ -1,4 +1,4 @@
--- ua352: promoted from rules/uadruidspells3.h (the The UA NEW DRUID SPELLS (pp. 44-45) pins, R352: the 3rd-level);
+-- ua352: promoted from rules/ua/uadruidspells3.h (the The UA NEW DRUID SPELLS (pp. 44-45) pins, R352: the 3rd-level);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 352,
@@ -271,7 +271,7 @@ return {
     }, {
       "name" = "uad3StarshineWorksThroughReflectingPool",
       "value" = true,
-      "comment" = "The R351 reflecting pool seam: starshine operates normally through the reflecting pool (see rules/uadruidspells2.h).",
+      "comment" = "The R351 reflecting pool seam: starshine operates normally through the reflecting pool (see rules/ua/uadruidspells2.h).",
     } },
   "switches" = {},
   "tables" = {},

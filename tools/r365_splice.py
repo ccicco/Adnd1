@@ -47,9 +47,9 @@ SEED_ENTRY = NL.join([
     '  141fbcb, census 291, the UA new',
     '  illusionist 3rd/4th/5th level',
     '  spells pin round',
-    '  (rules/uailspells3.h,',
-    '  rules/uailspells4.h and',
-    '  rules/uailspells5.h): delude',
+    '  (rules/ua/uailspells3.h,',
+    '  rules/ua/uailspells4.h and',
+    '  rules/ua/uailspells5.h): delude',
     '  and wraithform at the printed',
     '  3rd, phantom steed and phantom',
     '  wind pinned as the print adds',
@@ -135,13 +135,13 @@ assert s.count(
 assert len(applied) + len(already) == 1, 'a count'
 
 
-# ---- (b) NEW rules/uailspells6.h ----
-US6 = 'rules/uailspells6.h'
+# ---- (b) NEW rules/ua/uailspells6.h ----
+US6 = 'rules/ua/uailspells6.h'
 if os.path.exists(US6) and 'R365' in rd(US6):
     already.append('uailspells6.h: the pins')
 else:
     HDR6 = r"""// ===========================================================================
-// Adnd1 - rules/uailspells6.h
+// Adnd1 - rules/ua/uailspells6.h
 // The UA NEW ILLUSIONIST SPELLS (pp. 71-72) pins,
 // R365: the 6th-level spell descriptions - death
 // fog, mislead, phantasmagoria and the mirage
@@ -512,13 +512,13 @@ assert 'uasc' not in s, 'b no cost ref'
 assert len(applied) + len(already) == 2, 'b count'
 
 
-# ---- (b2) NEW rules/uailspells7.h ----
-US7 = 'rules/uailspells7.h'
+# ---- (b2) NEW rules/ua/uailspells7.h ----
+US7 = 'rules/ua/uailspells7.h'
 if os.path.exists(US7) and 'R365' in rd(US7):
     already.append('uailspells7.h: the pins')
 else:
     HDR7 = r"""// ===========================================================================
-// Adnd1 - rules/uailspells7.h
+// Adnd1 - rules/ua/uailspells7.h
 // The UA NEW ILLUSIONIST SPELLS (pp. 72-73) pins,
 // R365: the 7th-level spell descriptions - shadow
 // walk and weird.
@@ -671,13 +671,13 @@ assert 'uasc' not in s, 'b2 no cost ref'
 assert len(applied) + len(already) == 3, 'b2 count'
 
 
-# ---- (b3) NEW rules/uailacquisition.h ----
-USA = 'rules/uailacquisition.h'
+# ---- (b3) NEW rules/ua/uailacquisition.h ----
+USA = 'rules/ua/uailacquisition.h'
 if os.path.exists(USA) and 'R365' in rd(USA):
     already.append('uailacquisition.h: pins')
 else:
     HDRA = r"""// ===========================================================================
-// Adnd1 - rules/uailacquisition.h
+// Adnd1 - rules/ua/uailacquisition.h
 // The UA ILLUSIONIST SPELL ACQUISITION (pp. 33-34
 // players extract, p. 80 print) pins, R365: the
 // starting-list table, the illusionist spell book
@@ -906,13 +906,13 @@ assert 'uasc' not in s, 'b3 no cost ref'
 assert len(applied) + len(already) == 4, 'b3 count'
 
 
-# ---- (b4) NEW rules/uaspellcost.h ----
-USC = 'rules/uaspellcost.h'
+# ---- (b4) NEW rules/ua/uaspellcost.h ----
+USC = 'rules/ua/uaspellcost.h'
 if os.path.exists(USC) and 'R365' in rd(USC):
     already.append('uaspellcost.h: the pins')
 else:
     HDRC = r"""// ===========================================================================
-// Adnd1 - rules/uaspellcost.h
+// Adnd1 - rules/ua/uaspellcost.h
 // The UA COST OF MAGIC-USER/ILLUSIONIST SPELL
 // CASTING (p. 81 print) pins, R365.
 //
@@ -1049,8 +1049,8 @@ else:
     NOTE = NL.join([
         '      - CLOSED R365: the 6th and',
         '        7th levels pinned',
-        '        (rules/uailspells6.h and',
-        '        rules/uailspells7.h) - death',
+        '        (rules/ua/uailspells6.h and',
+        '        rules/ua/uailspells7.h) - death',
         '        fog with the acid ladder,',
         '        mislead with the invisibility',
         '        cloak, phantasmagoria (the',
@@ -1094,7 +1094,7 @@ else:
         '      the illusionist book differences.',
         '      - R365: the fragment-verified',
         '        cells pinned',
-        '        (rules/uailacquisition.h) -',
+        '        (rules/ua/uailacquisition.h) -',
         '        the three-group start, the',
         '        five defensive rows, the',
         '        misc fragments, the DM',
@@ -1124,7 +1124,7 @@ else:
         '- [x] **The cost of spell casting** (pp.',
         '      80-81).',
         '      - CLOSED R365: the pin round',
-        '        (rules/uaspellcost.h) - the',
+        '        (rules/ua/uaspellcost.h) - the',
         '        200 gp per level basic fee with',
         '        the doubled components, the',
         '        10 percent/3x and 100',
@@ -1186,21 +1186,21 @@ if 'R365 UA IL 6th/7th and DM pin audit' in s:
     already.append('regtest.cpp: the R365 audit')
 else:
     INC_ANCH = (
-        '#include "rules/uailspells5.h"'
+        '#include "rules/ua/uailspells5.h"'
         '  // R364: the UA new illusionist'
         ' 5th level')
     INC_NEW = NL.join([
         INC_ANCH,
-        '#include "rules/uailspells6.h"'
+        '#include "rules/ua/uailspells6.h"'
         '  // R365: the UA new illusionist'
         ' 6th level',
-        '#include "rules/uailspells7.h"'
+        '#include "rules/ua/uailspells7.h"'
         '  // R365: the UA new illusionist'
         ' 7th level',
-        '#include "rules/uailacquisition.h"'
+        '#include "rules/ua/uailacquisition.h"'
         '  // R365: the UA illusionist'
         ' acquisition',
-        '#include "rules/uaspellcost.h"'
+        '#include "rules/ua/uaspellcost.h"'
         '  // R365: the UA spell casting cost',
     ])
     AUD_ANCH = (
@@ -1526,34 +1526,34 @@ assert s.count(
     'R227: the wis mental save'
 ) == 1, 'd r227 kept'
 assert s.count(
-    '#include "rules/uailspells6.h"'
+    '#include "rules/ua/uailspells6.h"'
 ) == 1, 'd new include'
 assert s.count(
-    '#include "rules/uailspells7.h"'
+    '#include "rules/ua/uailspells7.h"'
 ) == 1, 'd new include'
 assert s.count(
-    '#include "rules/uailacquisition.h"'
+    '#include "rules/ua/uailacquisition.h"'
 ) == 1, 'd new include'
 assert s.count(
-    '#include "rules/uaspellcost.h"'
+    '#include "rules/ua/uaspellcost.h"'
 ) == 1, 'd new include'
 assert s.count(
-    '#include "rules/uailcantrips.h"'
+    '#include "rules/ua/uailcantrips.h"'
 ) == 1, 'd il include'
 assert s.count(
-    '#include "rules/uailspells1.h"'
+    '#include "rules/ua/uailspells1.h"'
 ) == 1, 'd il include'
 assert s.count(
-    '#include "rules/uailspells2.h"'
+    '#include "rules/ua/uailspells2.h"'
 ) == 1, 'd il include'
 assert s.count(
-    '#include "rules/uailspells3.h"'
+    '#include "rules/ua/uailspells3.h"'
 ) == 1, 'd il include'
 assert s.count(
-    '#include "rules/uailspells4.h"'
+    '#include "rules/ua/uailspells4.h"'
 ) == 1, 'd il include'
 assert s.count(
-    '#include "rules/uailspells5.h"'
+    '#include "rules/ua/uailspells5.h"'
 ) == 1, 'd il include'
 for i in range(1, 10):
     assert s.count(

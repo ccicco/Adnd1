@@ -2,7 +2,7 @@
  "round": 763,
  "title": "OA SETTING - the island of Wa: the unified military state of the shogun",
  "prefix": "dly",
- "header_file": "rules/oa134wa.h",
+ "header_file": "rules/oa/oa134wa.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA SETTING - THE ISLAND OF WA, printed capture p. 304 - the unified military state of the shogun",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 216 closed, 19 open - the Wa box flips (census 685 -> 686); NEXT - R764: Kozakura (capture p. 304), prefix dlz (verify free at the landing), audit \"R764 OA Kozakura audit\", include after rules/oa134wa.h"
+  "sentinel": "the gap census after this round: 216 closed, 19 open - the Wa box flips (census 685 -> 686); NEXT - R764: Kozakura (capture p. 304), prefix dlz (verify free at the landing), audit \"R764 OA Kozakura audit\", include after rules/oa/oa134wa.h"
  },
  "consts": [
   {
@@ -278,7 +278,7 @@
   "open": 19
  },
  "include_comment": "the OA Wa pins",
- "include_after": "#include \"rules/oa133tulung.h\"  // R762: the OA Tu Lung pins",
+ "include_after": "#include \"rules/oa/oa133tulung.h\"  // R762: the OA Tu Lung pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R762 LANDED 2026-10-22: commit",
@@ -288,7 +288,7 @@
   "  (census 684 -> 685, pushed acfc953..4b3029b),",
   "  OA SETTING, the Tu Lung empire (capture",
   "  pp. 303-304, the section running into",
-  "  p. 304), header rules/oa133tulung.h,",
+  "  p. 304), header rules/oa/oa133tulung.h,",
   "  prefix dlx (verified free at acfc953), one",
   "  gap flip (the Tu Lung box, single-line),",
   "  gap census now 215 closed / 20 open.",
@@ -337,6 +337,6 @@
   "  NEXT - R763: Wa (capture p. 304),",
   "  prefix dly (verify free at the landing),",
   "  audit \"R763 OA Wa audit\", include",
-  "  after rules/oa133tulung.h."
+  "  after rules/oa/oa133tulung.h."
  ]
 }

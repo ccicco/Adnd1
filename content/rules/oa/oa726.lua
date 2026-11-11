@@ -1,11 +1,11 @@
--- oa726: promoted from rules/oa97naturespirit.h (the OA MONSTERS - THE NATURE SPIRITS, printed capture pp. 278-279 - the);
+-- oa726: promoted from rules/oa/oa97naturespirit.h (the OA MONSTERS - THE NATURE SPIRITS, printed capture pp. 278-279 - the);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 726,
   "prefix" = "oa726",
   "banner" = {
       "title" = "OA MONSTERS - THE NATURE SPIRITS, printed capture pp. 278-279 - the",
-      "provenance" = "lifeforce round census 648 -> 649.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 179 closed, 56 open - the nature spirits box flips (census 648 -> 649); NEXT - R727: the Ningyo (capture p. 279), prefix dko (verify free at the landing), audit \"R727 OA monsters Ningyo audit\", include after rules/oa97naturespirit.h",
+      "provenance" = "lifeforce round census 648 -> 649.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 179 closed, 56 open - the nature spirits box flips (census 648 -> 649); NEXT - R727: the Ningyo (capture p. 279), prefix dko (verify free at the landing), audit \"R727 OA monsters Ningyo audit\", include after rules/oa/oa97naturespirit.h",
     },
   "consts" = { {
       "name" = "dknNSCount",

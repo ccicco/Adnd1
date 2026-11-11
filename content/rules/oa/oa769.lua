@@ -1,11 +1,11 @@
--- oa769: promoted from rules/oa140names.h (the OA DAILY LIFE - NAMES, printed capture pp. 312-313 - the thirteen name);
+-- oa769: promoted from rules/oa/oa140names.h (the OA DAILY LIFE - NAMES, printed capture pp. 312-313 - the thirteen name);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 769,
   "prefix" = "oa769",
   "banner" = {
       "title" = "OA DAILY LIFE - NAMES, printed capture pp. 312-313 - the thirteen name",
-      "provenance" = "types of the Oriental world census 691 -> 692.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 222 closed, 13 open - the Names box flips (census 691 -> 692); NEXT - R770: Back matter (capture pp. 313-314, the bibliography and the closing page), prefix dmf (verify free at the landing), audit \"R770 OA Back matter audit\", include after rules/oa140names.h",
+      "provenance" = "types of the Oriental world census 691 -> 692.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 222 closed, 13 open - the Names box flips (census 691 -> 692); NEXT - R770: Back matter (capture pp. 313-314, the bibliography and the closing page), prefix dmf (verify free at the landing), audit \"R770 OA Back matter audit\", include after rules/oa/oa140names.h",
     },
   "consts" = { {
       "name" = "dmeMinimumLifelongNames",

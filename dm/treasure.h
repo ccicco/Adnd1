@@ -20,7 +20,7 @@
 
 #pragma once
 
-#include "../rules/dice.h"
+#include "../rules/engine/dice.h"
 
 #include <string>
 #include <vector>

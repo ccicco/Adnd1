@@ -1,11 +1,11 @@
--- ua370: promoted from rules/uasmalls1.h (the The UA DM-SECTION SMALLS, part 1,);
+-- ua370: promoted from rules/ua/uasmalls1.h (the The UA DM-SECTION SMALLS, part 1,);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 370,
   "prefix" = "ua370",
   "banner" = {
       "title" = "The UA DM-SECTION SMALLS, part 1,",
-      "provenance" = "R370: three items - Method V (p. 74), the starting hit-point minimums (p. 74), the warhorses and barding movement rate table (p. 76).  Pin-era pattern (R322): pinned data only - no engine site exists. The R368 seam cross-checks the cavalier starting floor against the level-1 d10 pin (rules/uacavtable.h).  JUDGMENTs (the decode method): - the Method V prose prints clean (the humans-only class-first read, the best-three-of-N roll, the minimum and maximum clamps, the 9d6 fighter strength example); the dice-count table body extracts EMPTY - every cell a hole, flagged pending the PDF. - the starting hit-point minimums print clean - the 12 class floors, the multi-class average rounded up with the fighter/magic-user 5 example, the constitution adjustment with the con-17 fighter 9 example. - R394: the clean PDF read fills the Method V dice-count table (the 12 x 7 matrix cell by cell) and repins the barding columns - the R370 labels sat one column off: light leather 21 scale 15 chain NA, medium 17/15/12, heavy leather 15 scale 14 chain 13 plate 12.",
+      "provenance" = "R370: three items - Method V (p. 74), the starting hit-point minimums (p. 74), the warhorses and barding movement rate table (p. 76).  Pin-era pattern (R322): pinned data only - no engine site exists. The R368 seam cross-checks the cavalier starting floor against the level-1 d10 pin (rules/ua/uacavtable.h).  JUDGMENTs (the decode method): - the Method V prose prints clean (the humans-only class-first read, the best-three-of-N roll, the minimum and maximum clamps, the 9d6 fighter strength example); the dice-count table body extracts EMPTY - every cell a hole, flagged pending the PDF. - the starting hit-point minimums print clean - the 12 class floors, the multi-class average rounded up with the fighter/magic-user 5 example, the constitution adjustment with the con-17 fighter 9 example. - R394: the clean PDF read fills the Method V dice-count table (the 12 x 7 matrix cell by cell) and repins the barding columns - the R370 labels sat one column off: light leather 21 scale 15 chain NA, medium 17/15/12, heavy leather 15 scale 14 chain 13 plate 12.",
     },
   "consts" = { {
       "name" = "uasm1MethodVFighterStrengthDice",

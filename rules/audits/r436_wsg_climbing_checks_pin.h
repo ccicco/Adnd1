@@ -4,7 +4,7 @@
     // 100 percent no-fall and 5 percent floor rules, the other modifiers (the
     // encumbrance, race, armor, strength and hands rules), the thief
     // modifiers (the +30 auto rule, the double and quadruple falling chances)
-    // and the initial, intermediate and final check rules (rules/wsgcheck.h,
+    // and the initial, intermediate and final check rules (rules/wsg/wsgcheck.h,
     // prefix wck); census 360 -> 361.
     {
         using namespace rules;

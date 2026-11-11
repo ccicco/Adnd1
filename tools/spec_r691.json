@@ -2,7 +2,7 @@
  "round": 691,
  "title": "OA TABLE 69 - the martial style combinations: the three forms and eight principal methods with their AC, attack and damage mods and the coded body parts",
  "prefix": "dje",
- "header_file": "rules/oa69combos.h",
+ "header_file": "rules/oa/oa69combos.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA TABLE 69, printed capture p. 226 - the martial style combinations round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift. THE FORM ROWS: Hard the AC 1, attack 1, damage 4 - the muscles and bones for power; Soft the AC 3, attack 0 - the only zero of the grid, damage 2 - the inner power; Hard/Soft the 2/1/3 of the best practices from each. THE METHOD ROWS: Kick the 1/1/4 of the Foot; Lock the 1/1/2 of the Body; Movement the 2/1/2 of the Legs; Push the 2/1/1 of the Hand; Strike the 1/1/1 of the Hand; Throw the 1/1/2 of the whole Body; Vital Area the 2/1/1 of the Hand and Foot; Weapon the 1/1 of the Hand and Arm, the damage BY WEAPON - pinned 0, not a mod, the R662 convention. THE USE: the mods totaled per the R690 mechanics - the AC from the 10, the attacks style-specific, the damage rounded up to the die, the body part free; the derived examples prove it within the round - Hard plus Kick the AC 8, attacks 2, damage 8; Soft plus Movement the damage 4. The grid codifies per the R431 calculus",
-  "sentinel": "the gap census after this round: 144 closed, 91 open - the Table 69 box flips (census 613 -> 614); NEXT - R692: Table 70 the martial arts special maneuvers grid (capture p. 227), prefix djf (verify free at the landing), audit \"R692 OA special maneuvers audit\", include after rules/oa69combos.h"
+  "sentinel": "the gap census after this round: 144 closed, 91 open - the Table 69 box flips (census 613 -> 614); NEXT - R692: Table 70 the martial arts special maneuvers grid (capture p. 227), prefix djf (verify free at the landing), audit \"R692 OA special maneuvers audit\", include after rules/oa/oa69combos.h"
  },
  "consts": [
   {
@@ -167,7 +167,7 @@
   "open": 91
  },
  "include_comment": "the OA Table 69 style combinations pins",
- "include_after": "#include \"rules/oacreatestyle.h\"  // R690: the OA creating a style pins",
+ "include_after": "#include \"rules/oa/oacreatestyle.h\"  // R690: the OA creating a style pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R690 LANDED 2026-10-20: commit",
@@ -178,7 +178,7 @@
   "  OA CREATING A STYLE - the style-",
   "  construction doctrine, capture pp.",
   "  225-227 prose (Table 69 itself the next",
-  "  gap item): rules/oacreatestyle.h,",
+  "  gap item): rules/oa/oacreatestyle.h,",
   "  prefix djd (verified free at 8d86b06),",
   "  ONE gap flip, 5 consts + 21 bools (26",
   "  inlines, no table), gap census 142/93 ->",
@@ -221,6 +221,6 @@
   "  combinations grid (capture p. 226),",
   "  prefix dje (verify free at 5b21b32),",
   "  audit \"R691 OA style combinations",
-  "  audit\", include after rules/oacreatestyle.h"
+  "  audit\", include after rules/oa/oacreatestyle.h"
  ]
 }

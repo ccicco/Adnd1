@@ -1,11 +1,11 @@
 {
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
- "audit_comment": "The WSG swimmer's motion-chain fold, the second seam round after gap closure: no new book pages, the R499 pattern applied to the water chapter. One swimmer state flows through five landed headers: the swimming rates (rules/wsgswim.h R450: 40 feet base, the 2/3 subsurface cut, the 2x high speed with the 1/10 endurance cut, the 3-per-turn rest regain, the 1-3/4-6 inch current ranges), the dive leg (rules/wsgdive.h R452: the 2 inch or 20 foot base, doubled moderate and tripled heavy), the surfacing leg (rules/wsgbreath.h R454: the same 2 inch base, the 5 foot inert buoyancy rise), the moving-water hazards (rules/wsgmwater.h R451: the 1-10 stream rating, the two-round hold cadence, the 40/100 foot waterfall thresholds, the half and tenth damage divisors) and the treading economy (rules/wsgtread.h R453: 2 turns per endurance point, 1 round per strength point, the +1 check ladder). The findings: the vertical rates equal each other and are half the horizontal base; the Table 24 dive column matches the dive prose exactly; the encumbrance paradox (the same weight that halves speed doubles the sink rate); the forty-foot agreement between the dive falling-damage threshold and the waterfall save threshold; and the two different cumulative check ladders (+2 breath, +1 treading).",
+ "audit_comment": "The WSG swimmer's motion-chain fold, the second seam round after gap closure: no new book pages, the R499 pattern applied to the water chapter. One swimmer state flows through five landed headers: the swimming rates (rules/wsg/wsgswim.h R450: 40 feet base, the 2/3 subsurface cut, the 2x high speed with the 1/10 endurance cut, the 3-per-turn rest regain, the 1-3/4-6 inch current ranges), the dive leg (rules/wsg/wsgdive.h R452: the 2 inch or 20 foot base, doubled moderate and tripled heavy), the surfacing leg (rules/wsg/wsgbreath.h R454: the same 2 inch base, the 5 foot inert buoyancy rise), the moving-water hazards (rules/wsg/wsgmwater.h R451: the 1-10 stream rating, the two-round hold cadence, the 40/100 foot waterfall thresholds, the half and tenth damage divisors) and the treading economy (rules/wsg/wsgtread.h R453: 2 turns per endurance point, 1 round per strength point, the +1 check ladder). The findings: the vertical rates equal each other and are half the horizontal base; the Table 24 dive column matches the dive prose exactly; the encumbrance paradox (the same weight that halves speed doubles the sink rate); the forty-foot agreement between the dive falling-damage threshold and the waterfall save threshold; and the two different cumulative check ladders (+2 breath, +1 treading).",
  "audit_label": "R500 WSG swimmer motion fold audit",
  "banner": {
   "provenance": "No new book pages: every value is the landed original re-read from its header (wsmHumanSwimRateFt, wsmSubsurfaceNum, wsmHighSpeedMult, wsmRestRegainPerTurn, wdvBaseDownRateIn, wdvModEncMult, wdvHeavyEncMult, whbBaseSurfRateIn, whbInertRiseFt, wmwFallSaveMinFt, wmwHoldCheckPeriod, wtwProfTurnsPerEndPt, wtwCumCheckStep and kin) and re-pinned on the fold side so the boundary identities compile and ride the mutant battery. The findings: the vertical rates equal each other (both 2 inches) and are half the horizontal base (20 vs 40 feet); the Table 24 dive column matches the dive prose (x2 moderate, x3 heavy and severe); the encumbrance paradox (the moderate speed denominator 2 equals the moderate dive multiplier 2 - opposite meanings); the forty-foot agreement (the dive falling-damage threshold equals the waterfall save threshold); the mercy drift cap equals the light-current range; and the breath Con Checks step +2 while the treading Str Checks step +1.",
   "sentinel": "THE SETTLE: census 424 -> 425; the gap report stays 186 closed / 0 open (closed - no flips this round); the swimmer's chain has no gaps.",
-  "title": "The WSG SWIMMER'S MOTION-CHAIN FOLD, R500: the second seam round after gap closure. The swimming rates (rules/wsgswim.h), the dive leg (rules/wsgdive.h), the surfacing and breath rules (rules/wsgbreath.h), the moving-water hazards (rules/wsgmwater.h) and the treading economy (rules/wsgtread.h) reconciled as one system: one swimmer, one chain, every rate and threshold cross-checked between its headers."
+  "title": "The WSG SWIMMER'S MOTION-CHAIN FOLD, R500: the second seam round after gap closure. The swimming rates (rules/wsg/wsgswim.h), the dive leg (rules/wsg/wsgdive.h), the surfacing and breath rules (rules/wsg/wsgbreath.h), the moving-water hazards (rules/wsg/wsgmwater.h) and the treading economy (rules/wsg/wsgtread.h) reconciled as one system: one swimmer, one chain, every rate and threshold cross-checked between its headers."
  },
  "bools": [
   {
@@ -334,7 +334,7 @@
  },
  "gap_flips": [],
  "gap_report": "tools/wsg_gap_report.md",
- "header_file": "rules/wsgswimfold.h",
+ "header_file": "rules/wsg/wsgswimfold.h",
  "header_sections": {
   "the breath side": [
    {
@@ -545,7 +545,7 @@
    }
   ]
  },
- "include_after": "#include \"rules/wsgtempfold.h\"  // R499: the WSG temperature-chain fold pins",
+ "include_after": "#include \"rules/wsg/wsgtempfold.h\"  // R499: the WSG temperature-chain fold pins",
  "include_comment": "the WSG swimmer's motion-chain fold pins",
  "inline_count": 49,
  "prefix": "wmf",
@@ -553,12 +553,12 @@
   "- R499 LANDED 2026-10-16: commit bcaa323 (census 424,",
   "  pushed d4f30ee..bcaa323), the WSG TEMPERATURE-CHAIN FOLD -",
   "  THE FIRST SEAM ROUND after the gap report closed at 186/0:",
-  "  no new book pages. The dressing columns (rules/wsgdress.h",
+  "  no new book pages. The dressing columns (rules/wsg/wsgdress.h",
   "  wsdColForTemp), the Table 9 heat bands and frostbite",
-  "  threshold (rules/wsgheat.h wshHeatBandFor), the weather",
-  "  letter codes (rules/wsgweather.h wwsTempCodeHi) and the R498",
-  "  survival shifts (rules/wsgprofd.h) reconciled as one",
-  "  system. Pinned as rules/wsgtempfold.h (prefix wtf, 37",
+  "  threshold (rules/wsg/wsgheat.h wshHeatBandFor), the weather",
+  "  letter codes (rules/wsg/wsgweather.h wwsTempCodeHi) and the R498",
+  "  survival shifts (rules/wsg/wsgprofd.h) reconciled as one",
+  "  system. Pinned as rules/wsg/wsgtempfold.h (prefix wtf, 37",
   "  inlines: 27 consts + 10 bools, no grids, NO gap flips - the",
   "  report stays 186/0). THE FOLD PATTERN (NEW, load-bearing):",
   "  R317/R401 predate the spec engine - no reusable fold spec",

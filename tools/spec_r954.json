@@ -7,7 +7,7 @@
   "title": "The Dragon issue-24 opener part one - the variant triptych",
   "provenance": "The opener of the issue-24 four-round shape - three of the fourteen Curtiss-called chains pinned as the variant triptych, the alignment pantheon riding its own part-two table round, the ten-chain commentary set at part three and the flip to follow. All pinned from The Dragon Vol. III No. 10 (April 1979) print 5-11 at extract/dragon/024, PRINT FOLIO = PDF PAGE this issue, the single-voice transcript of the Curtiss-provided scan - the issue runs 48 pages, the Kask editorial printing the paper-strike economy cut from 56. The intake seats the gap report and all forty-eight transcripts; the two inherited watches - the Sullin levels 7-9 and the brawling long-term-effects sequel - print nowhere in issue 24 and ride to TD 25."
  },
- "header_file": "rules/t24.h",
+ "header_file": "rules/dragon/issue024_opener1.h",
  "audit_file": "rules/audits/r954_batch.h",
  "audit_label": "R954 issue-24 variant triptych audit",
  "audit_anchor": "#include \"rules/audits/r953_batch.h\"  // R953: R953 Dragon issue-23 closure audit",
@@ -18,7 +18,7 @@
   "open": 0
  },
  "gap_flips": [],
- "include_after": "#include \"rules/l23.h\"  // R953: the Dragon issue-23 box closing round, the second four-round walk complete",
+ "include_after": "#include \"rules/dragon/issue023_close.h\"  // R953: the Dragon issue-23 box closing round, the second four-round walk complete",
  "include_comment": "the Dragon issue-24 opener part one, the three-chain variant round",
  "header_sections": {
   "the lost civilizations Source of the Nile variant (print 5-6)": [

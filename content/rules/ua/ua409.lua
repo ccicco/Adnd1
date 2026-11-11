@@ -1,4 +1,4 @@
--- ua: promoted from rules/uasstatlines.h (the The UA APPENDIX S STAT LINES);
+-- ua: promoted from rules/ua/uasstatlines.h (the The UA APPENDIX S STAT LINES);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 409,

@@ -57,7 +57,7 @@ SEED_ENTRY = NL.join([
     '- R389 landed 2026-10-12: commit',
     '  b20764a, census 316, the UA',
     '  weaponless combat appendix Q',
-    '  pin round (rules/uaappendq.h):',
+    '  pin round (rules/ua/uaappendq.h):',
     '  the pp. 106-108 stretch, 207',
     '  uaq pins, six items pin -',
     '  one fully clean (the',
@@ -337,13 +337,13 @@ assert s.count(
 assert len(applied) + len(already) == 1, 'a count'
 
 
-# ---- (b) NEW rules/uaappendr.h ----
-P = 'rules/uaappendr.h'
+# ---- (b) NEW rules/ua/uaappendr.h ----
+P = 'rules/ua/uaappendr.h'
 if os.path.exists(P) and 'R390' in rd(P):
     already.append('uaappendr.h: the pins')
 else:
     HDR = r"""// ==========================================================================
-// Adnd1 - rules/uaappendr.h
+// Adnd1 - rules/ua/uaappendr.h
 // The UA APPENDIX R: NON-LETHAL
 // COMBAT pins, R390: the pp.
 // 109-110 stretch - seven items,
@@ -869,7 +869,7 @@ else:
     NEW = OLD + NL + NL.join([
         '      - AMENDED R390: the UA',
         '        non-lethal combat appendix',
-        '        R pin round (rules/uaappendr.h)',
+        '        R pin round (rules/ua/uaappendr.h)',
         '        - the pp. 109-110 stretch,',
         '        SEVEN items pin: TWO fully',
         '        clean (the subdual',
@@ -997,52 +997,52 @@ assert s.count(
     'AMENDED R375'
 ) == 1, 'c r375 amendment kept'
 assert s.count(
-    '(rules/uaappendr.h)'
+    '(rules/ua/uaappendr.h)'
 ) == 1, 'c note kept'
 assert s.count(
-    '(rules/uaappendq.h)'
+    '(rules/ua/uaappendq.h)'
 ) == 1, 'c note kept'
 assert s.count(
-    '(rules/uamweapprose.h)'
+    '(rules/ua/uamweapprose.h)'
 ) == 1, 'c note kept'
 assert s.count(
-    '(rules/uaarmprose.h)'
+    '(rules/ua/uaarmprose.h)'
 ) == 1, 'c note kept'
 assert s.count(
-    '(rules/uamiscprose6.h)'
+    '(rules/ua/uamiscprose6.h)'
 ) == 1, 'c note kept'
 assert s.count(
-    '(rules/uamiscprose5.h)'
+    '(rules/ua/uamiscprose5.h)'
 ) == 1, 'c note kept'
 assert s.count(
-    '(rules/uamiscprose4.h)'
+    '(rules/ua/uamiscprose4.h)'
 ) == 1, 'c note kept'
 assert s.count(
-    '(rules/uamiscprose3.h)'
+    '(rules/ua/uamiscprose3.h)'
 ) == 1, 'c note kept'
 assert s.count(
-    '(rules/uamiscprose2.h)'
+    '(rules/ua/uamiscprose2.h)'
 ) == 1, 'c note kept'
 assert s.count(
-    '(rules/uamiscprose1.h)'
+    '(rules/ua/uamiscprose1.h)'
 ) == 1, 'c note kept'
 assert s.count(
-    '(rules/uawandprose.h)'
+    '(rules/ua/uawandprose.h)'
 ) == 1, 'c note kept'
 assert s.count(
-    '(rules/uarodstave.h)'
+    '(rules/ua/uarodstave.h)'
 ) == 1, 'c note kept'
 assert s.count(
-    '(rules/uaringprose.h)'
+    '(rules/ua/uaringprose.h)'
 ) == 1, 'c note kept'
 assert s.count(
-    '(rules/uaprotscr.h)'
+    '(rules/ua/uaprotscr.h)'
 ) == 1, 'c note kept'
 assert s.count(
-    '(rules/uapotprose.h)'
+    '(rules/ua/uapotprose.h)'
 ) == 1, 'c note kept'
 assert s.count(
-    '(rules/uadetskel.h)'
+    '(rules/ua/uadetskel.h)'
 ) == 1, 'c note kept'
 assert s.count(
     'DECIDED R374'
@@ -1061,11 +1061,11 @@ s = rd(RT)
 if 'R390 UA non-lethal combat pin audit' in s:
     already.append('regtest.cpp: the R390 audit')
 else:
-    INC_ANCH = ('#include "rules/uaappendq.h"  // '
+    INC_ANCH = ('#include "rules/ua/uaappendq.h"  // '
         'R389: the UA weaponless combat')
     INC_NEW = NL.join([
         INC_ANCH,
-        '#include "rules/uaappendr.h"  // R390: the UA '
+        '#include "rules/ua/uaappendr.h"  // R390: the UA '
         'non-lethal combat'
     ])
     AUD_ANCH = '    // ---- R227: the wis mental save wiring audit ----'
@@ -1324,57 +1324,57 @@ assert s.count(
     'R227: the wis mental save'
 ) == 1, 'd r227 kept'
 assert s.count(
-    '#include "rules/uaappendr.h"'
+    '#include "rules/ua/uaappendr.h"'
 ) == 1, 'd new include'
 assert s.count(
-    '#include "rules/uaappendq.h"'
+    '#include "rules/ua/uaappendq.h"'
 ) == 1, 'd r389 include kept'
 assert s.count(
-    '#include "rules/uamweapprose.h"'
+    '#include "rules/ua/uamweapprose.h"'
 ) == 1, 'd r388 include kept'
 assert s.count(
-    '#include "rules/uaarmprose.h"'
+    '#include "rules/ua/uaarmprose.h"'
 ) == 1, 'd r387 include kept'
 assert s.count(
-    '#include "rules/uamiscprose6.h"'
+    '#include "rules/ua/uamiscprose6.h"'
 ) == 1, 'd kept include'
 for h in (
         'rules/cavalier.h',
         'rules/classtables.h',
-        'rules/uabirth.h',
-        'rules/uasocialclass.h',
-        'rules/uaspellbooks.h',
-        'rules/uaspellcomment.h',
-        'rules/uauwspelluse.h',
-        'rules/uadarkness.h',
-        'rules/uacavtable.h',
-        'rules/uacantacq.h',
-        'rules/uasmalls1.h',
-        'rules/uailacquisition.h',
+        'rules/ua/uabirth.h',
+        'rules/ua/uasocialclass.h',
+        'rules/ua/uaspellbooks.h',
+        'rules/ua/uaspellcomment.h',
+        'rules/ua/uauwspelluse.h',
+        'rules/ua/uadarkness.h',
+        'rules/ua/uacavtable.h',
+        'rules/ua/uacantacq.h',
+        'rules/ua/uasmalls1.h',
+        'rules/ua/uailacquisition.h',
         'rules/thiefarmor.h',
         'rules/armorratings.h',
         'rules/comeliness.h',
-        'rules/uaweapontable.h',
-        'rules/uamissile.h',
-        'rules/uanewweapons.h',
-        'rules/uafollowers.h',
-        'rules/uacomnote.h',
-        'rules/uatreasuredial.h',
-        'rules/uadetskel.h',
-        'rules/uapotprose.h',
-        'rules/uaprotscr.h',
-        'rules/uaringprose.h',
-        'rules/uarodstave.h',
-        'rules/uawandprose.h',
-        'rules/uamiscprose1.h',
-        'rules/uamiscprose2.h',
-        'rules/uamiscprose3.h',
-        'rules/uamiscprose4.h',
-        'rules/uamiscprose5.h',
-        'rules/uamiscprose6.h',
-        'rules/uaarmprose.h',
-        'rules/uamweapprose.h',
-        'rules/uaappendq.h',
+        'rules/ua/uaweapontable.h',
+        'rules/ua/uamissile.h',
+        'rules/ua/uanewweapons.h',
+        'rules/ua/uafollowers.h',
+        'rules/ua/uacomnote.h',
+        'rules/ua/uatreasuredial.h',
+        'rules/ua/uadetskel.h',
+        'rules/ua/uapotprose.h',
+        'rules/ua/uaprotscr.h',
+        'rules/ua/uaringprose.h',
+        'rules/ua/uarodstave.h',
+        'rules/ua/uawandprose.h',
+        'rules/ua/uamiscprose1.h',
+        'rules/ua/uamiscprose2.h',
+        'rules/ua/uamiscprose3.h',
+        'rules/ua/uamiscprose4.h',
+        'rules/ua/uamiscprose5.h',
+        'rules/ua/uamiscprose6.h',
+        'rules/ua/uaarmprose.h',
+        'rules/ua/uamweapprose.h',
+        'rules/ua/uaappendq.h',
         'rules/treasdet.h',
         'rules/hoard.h',
 ):

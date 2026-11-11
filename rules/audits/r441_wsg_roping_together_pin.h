@@ -3,7 +3,7 @@
     // successful check earlier in the same round), the end/middle faller
     // rules, the -10%-per-extra-faller cascade penalty ladder
     // (0/10/20/30/40), the last-pair extra check and the
-    // 50-feet-per-character tie capacity (rules/wsgtog.h, prefix wrp); census
+    // 50-feet-per-character tie capacity (rules/wsg/wsgtog.h, prefix wrp); census
     // 365 -> 366.
     {
         using namespace rules;

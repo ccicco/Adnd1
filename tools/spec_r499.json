@@ -1,11 +1,11 @@
 {
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
- "audit_comment": "The WSG temperature-chain fold, the first seam round after gap closure: no new book pages. Every pinned value is a landed original re-read from its header and pinned again on the fold side, so each identity compiles and rides the mutant battery. The chain: one wilderness temperature feeds the dress Table 3 column dispatch (rules/wsgdress.h wsdColForTemp, boundaries below 0, 0-30, 31-75, 76 plus), the Table 9 damage band dispatch (rules/wsgheat.h wshHeatBandFor, 25 bands, no-damage band 16 at 31-84, frostbite threshold 0), the weather letter codes (rules/wsgweather.h wwsTempCodeHi, D tops at 0, H at 30) and the R498 survival shifts (plus 20 at 30 or lower, minus 20 at 80 or higher). Three boundary alignments are true (31 with 31, 30 with 30, 0 with 0); one is a deliberate non-alignment (the hot column opens at 76, eight degrees inside the no-damage band - attire adjusts before damage resumes at 85); the protected no-damage span is wider on both ends (6 through 89).",
+ "audit_comment": "The WSG temperature-chain fold, the first seam round after gap closure: no new book pages. Every pinned value is a landed original re-read from its header and pinned again on the fold side, so each identity compiles and rides the mutant battery. The chain: one wilderness temperature feeds the dress Table 3 column dispatch (rules/wsg/wsgdress.h wsdColForTemp, boundaries below 0, 0-30, 31-75, 76 plus), the Table 9 damage band dispatch (rules/wsg/wsgheat.h wshHeatBandFor, 25 bands, no-damage band 16 at 31-84, frostbite threshold 0), the weather letter codes (rules/wsg/wsgweather.h wwsTempCodeHi, D tops at 0, H at 30) and the R498 survival shifts (plus 20 at 30 or lower, minus 20 at 80 or higher). Three boundary alignments are true (31 with 31, 30 with 30, 0 with 0); one is a deliberate non-alignment (the hot column opens at 76, eight degrees inside the no-damage band - attire adjusts before damage resumes at 85); the protected no-damage span is wider on both ends (6 through 89).",
  "audit_label": "R499 WSG temperature fold audit",
  "banner": {
   "provenance": "No new book pages: every value is the landed original re-read from its header (wsdColForTemp, wshHeatBandFor, wshFrostbiteTempMax, wshT9DashUnprotCensus, wwsTempCodeHi, wpdSurvColdEffShift and kin) and re-pinned on the fold side so the boundary identities compile and ride the mutant battery. The findings: the three true alignments (the moderate column and band 16 open at the same 31; band 15 and the cold column top at the same 30; the frostbite threshold equals the below-0 boundary value), the deliberate non-alignment (the hot column opens at 76 inside the 31-84 no-damage band), the finer dress grid (moderate tops at 75, no-damage runs to 84) and the protected widening (6 through 89).",
   "sentinel": "THE SETTLE: census 423 -> 424; the gap report stays 186 closed / 0 open (closed - no flips this round); the chain has no gaps.",
-  "title": "The WSG TEMPERATURE-CHAIN FOLD, R499: the first seam round after the gap report closed at 186/0. The dressing columns (rules/wsgdress.h), the heat bands and the frostbite threshold (rules/wsgheat.h), the weather letter codes (rules/wsgweather.h) and the survival shifts (rules/wsgprofd.h) reconciled as one system: every wilderness temperature flows from one generated number through exactly one dress column and exactly one heat band."
+  "title": "The WSG TEMPERATURE-CHAIN FOLD, R499: the first seam round after the gap report closed at 186/0. The dressing columns (rules/wsg/wsgdress.h), the heat bands and the frostbite threshold (rules/wsg/wsgheat.h), the weather letter codes (rules/wsg/wsgweather.h) and the survival shifts (rules/wsg/wsgprofd.h) reconciled as one system: every wilderness temperature flows from one generated number through exactly one dress column and exactly one heat band."
  },
  "bools": [
   {
@@ -262,7 +262,7 @@
  },
  "gap_flips": [],
  "gap_report": "tools/wsg_gap_report.md",
- "header_file": "rules/wsgtempfold.h",
+ "header_file": "rules/wsg/wsgtempfold.h",
  "header_sections": {
   "the dressing side": [
    {
@@ -423,7 +423,7 @@
    }
   ]
  },
- "include_after": "#include \"rules/wsgprofd.h\"  // R498: the WSG proficiencies prose pins",
+ "include_after": "#include \"rules/wsg/wsgprofd.h\"  // R498: the WSG proficiencies prose pins",
  "include_comment": "the WSG temperature-chain fold pins",
  "inline_count": 37,
  "prefix": "wtf",
@@ -433,7 +433,7 @@
   "  PROSE, printed pp. 11-17 (pdf 12-18) - THE WSG GAP",
   "  CLOSURE ROUND: the gap report lands at 186 closed /",
   "  0 open; THE ENTIRE WILDERNESS SURVIVAL GUIDE IS",
-  "  PINNED, cover to cover. Pinned as rules/wsgprofd.h",
+  "  PINNED, cover to cover. Pinned as rules/wsg/wsgprofd.h",
   "  (prefix wpd, 157 inlines: 85 consts + 72 bools, no",
   "  grids). The R425 check/improving/expanding system and",
   "  the Table 1/2 grids stay as seams; this round pins",

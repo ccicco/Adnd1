@@ -43,9 +43,9 @@
 
 #pragma once
 
-#include "character.h"
-#include "classes.h"
-#include "races.h"
+#include "engine/character.h"
+#include "engine/classes.h"
+#include "engine/races.h"
 #include "subclasses.h"
 
 #include <cstdint>

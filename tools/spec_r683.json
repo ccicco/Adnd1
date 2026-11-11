@@ -2,7 +2,7 @@
  "round": 683,
  "title": "OA TABLE 67 - the horseback bowfire modifiers: the three speed bands with their to-hit penalties, the 30-degree turn limit and the horse-like creatures clause",
  "prefix": "diw",
- "header_file": "rules/oa67bowfire.h",
+ "header_file": "rules/oa/oa67bowfire.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA TABLE 67, printed capture p. 220 - the horseback bowfire modifiers round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift. THE GRID: the animal's current movement read as eighths of its normal movement - less than 1/2 the -1, 1/2 to less than 3/4 the -3, 3/4 to maximum speed the -5 - the modifiers cumulative with those for range, weapon versus armor type, etc. THE TURN LIMIT: during the round in which he fires, the character cannot perform maneuvers with his mount except for slight turning - the most 30 degrees to either side of its current direction, sharper turns and maneuvers preventing the bowfire. THE HORSE-LIKE CLAUSE: the firing also performed mounted on any horse-like creature to which the horsemanship proficiency applies. The grid codifies per the R431 calculus",
-  "sentinel": "the gap census after this round: 136 closed, 99 open - the Table 67 box flips (census 605 -> 606); NEXT - R684: the Unhorsing doctrine (capture p. 220), prefix dix (verify free at the landing - diu, div and diw TAKEN by the R681-R683 call families), audit \"R684 OA unhorsing audit\", include after rules/oa67bowfire.h"
+  "sentinel": "the gap census after this round: 136 closed, 99 open - the Table 67 box flips (census 605 -> 606); NEXT - R684: the Unhorsing doctrine (capture p. 220), prefix dix (verify free at the landing - diu, div and diw TAKEN by the R681-R683 call families), audit \"R684 OA unhorsing audit\", include after rules/oa/oa67bowfire.h"
  },
  "consts": [
   {
@@ -149,7 +149,7 @@
   "open": 99
  },
  "include_comment": "the OA Table 67 bowfire modifier pins",
- "include_after": "#include \"rules/oahorsefire.h\"  // R682: the OA mounted bowfire pins",
+ "include_after": "#include \"rules/oa/oahorsefire.h\"  // R682: the OA mounted bowfire pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R682 LANDED 2026-10-20: commit",
@@ -159,7 +159,7 @@
   "  (census 604 -> 605, pushed eb63a12..4080171),",
   "  OA COMBAT PROCEDURES - the missile fire",
   "  from horseback doctrine, capture p.",
-  "  219: rules/oahorsefire.h, prefix div",
+  "  219: rules/oa/oahorsefire.h, prefix div",
   "  (verified free at eb63a12 - zero engine",
   "  gate hits), ONE gap flip, 5 consts + 6",
   "  bools (11 inlines, no table), gap census",
@@ -193,6 +193,6 @@
   "  (capture p. 220), prefix diw (verified",
   "  free at 4080171 - zero repo hits), audit",
   "  \"R683 OA horseback bowfire modifiers",
-  "  audit\", include after rules/oahorsefire.h"
+  "  audit\", include after rules/oa/oahorsefire.h"
  ]
 }

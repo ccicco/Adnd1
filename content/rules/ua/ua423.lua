@@ -1,4 +1,4 @@
--- ua: promoted from rules/uapantheon.h (the The UA APPENDIX S PANTHEON);
+-- ua: promoted from rules/ua/uapantheon.h (the The UA APPENDIX S PANTHEON);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 423,
@@ -357,6 +357,6 @@ return {
     } },
   "audit" = {
       "label" = "R423: the UA appendix S pantheon prose pin audit",
-      "comment" = "The five intro sections pin (rules/uapantheon.h, prefix uapn) with the censuses cross-checked LIVE against the R405 seam: the five described counts mirror nhdPantheonSize row for row and the sum mirrors the 23 deity census; the Moradin height, the size minimum, the never-living symbols and the dual charismas mirror their seam functions.",
+      "comment" = "The five intro sections pin (rules/ua/uapantheon.h, prefix uapn) with the censuses cross-checked LIVE against the R405 seam: the five described counts mirror nhdPantheonSize row for row and the sum mirrors the 23 deity census; the Moradin height, the size minimum, the never-living symbols and the dual charismas mirror their seam functions.",
     },
 }

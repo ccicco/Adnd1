@@ -654,7 +654,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R333 landed 2026-10-11: commit
   458c831, census 260, the UA
   ranger expansion pin round
-  (rules/uaranger.h): the tracking
+  (rules/ua/uaranger.h): the tracking
   base and terrain ladders, the
   indoor reads, the identification
   ladder, the giant-class roster
@@ -707,7 +707,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R337 landed 2026-10-11: commit
   924e41d, census 264, the UA
   weight and damage pin round
-  (rules/uaweapontable.h): the
+  (rules/ua/uaweapontable.h): the
   67-row roster, all 50 PHB rows
   cell-verified against the R189
   seam (the hyphen-loss pattern
@@ -723,7 +723,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R338 landed 2026-10-11: commit
   1775600, census 265, the UA
   missile data pin round
-  (rules/uamissile.h): the 24-row
+  (rules/ua/uamissile.h): the 24-row
   roster, the range column decoded
   as the long range in tens of feet
   (PHB-seam verified), the
@@ -736,7 +736,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R339 landed 2026-10-11: commit
   a701ba9, census 266, the UA
   proficiency pin round
-  (rules/uaprof.h): the 14-row
+  (rules/ua/uaprof.h): the 14-row
   roster, seven rows cell-verified
   against the R297 PHB seam, the
   attributed fragment rows
@@ -748,7 +748,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R340 landed 2026-10-11: commit
   1288a5c, census 267, the UA new
   weapons prose pin round
-  (rules/uanewweapons.h): the 16
+  (rules/ua/uanewweapons.h): the 16
   printed descriptions, every
   readable number pinned, the
   khopesh slash-loss and whip 3d6
@@ -759,7 +759,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R341 landed 2026-10-11: commit
   d619290, census 268, the UA spell
   tables pin round, part 1
-  (rules/uaspelltables.h): the
+  (rules/ua/uaspelltables.h): the
   cleric 1st-3rd table (20 rows,
   seam-verified against the R80
   registry), the cleric 4th-7th
@@ -775,7 +775,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   3bba003, census 269, the UA
   spell tables pin round,
   part 2
-  (rules/uaspelltables2.h):
+  (rules/ua/uaspelltables2.h):
   the MU 1st-5th columns
   (35/30/28/28/28 readable
   names, every garble
@@ -798,7 +798,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   46c65dc, census 270, the UA
   new cleric spells pin round,
   the 1st level
-  (rules/uaclericspells1.h):
+  (rules/ua/uaclericspells1.h):
   ceremony (the ten varieties and
   the Sth-cell decodes), combine,
   endure cold/heat, penetrate
@@ -819,7 +819,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   7734ea9, census 271, the UA
   new cleric spells pin round,
   the 2nd level
-  (rules/uaclericspells2.h):
+  (rules/ua/uaclericspells2.h):
   aid, detect life, dust devil,
   enthrall, holy symbol,
   messenger, withdraw and
@@ -841,7 +841,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   9988376, census 272, the UA
   new cleric spells pin round,
   the 3rd level
-  (rules/uaclericspells3.h):
+  (rules/ua/uaclericspells3.h):
   cloudburst, death's door,
   flame walk, magical vestment,
   meld into stone, negative
@@ -861,7 +861,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   942031f, census 273, the UA
   new cleric spells pin round,
   the 4th level
-  (rules/uaclericspells4.h):
+  (rules/ua/uaclericspells4.h):
   abjure with the implore
   reverse, cloak of fear with
   the bravery reverse, giant
@@ -891,7 +891,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   ed961b6, census 274, the UA
   new cleric spells pin round,
   the 5th level
-  (rules/uaclericspells5.h):
+  (rules/ua/uaclericspells5.h):
   air walk with the ascent and
   descent ladder and the gust
   interplay, animate dead
@@ -921,7 +921,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   f9e1522, census 275, the UA
   new cleric spells pin round,
   the 6th level
-  (rules/uaclericspells6.h):
+  (rules/ua/uaclericspells6.h):
   forbiddance (the name header
   never prints - identified by
   the near-verbatim 2e
@@ -942,7 +942,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R349 landed 2026-10-11: commit
   ba3dc04, census 276, the UA
   new cleric 7th level spells pin
-  round (rules/uaclericspells7.h):
+  round (rules/ua/uaclericspells7.h):
   exaction (the alignment gates
   and the bargain consequences)
   and succor (the prepared-object
@@ -965,7 +965,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R350 landed 2026-10-11: commit
   037cdf6, census 277, the UA
   new druid 1st level spells pin
-  round (rules/uadruidspells1.h):
+  round (rules/ua/uadruidspells1.h):
   ceremony (the nine varieties
   with the cast-out permission
   ladder), detect balance, detect
@@ -985,7 +985,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R351 landed 2026-10-11: commit
   4f47d8a, census 278, the UA
   new druid 2nd level spells pin
-  round (rules/uadruidspells2.h):
+  round (rules/ua/uadruidspells2.h):
   flame blade (the undead and
   fire damage modifiers), the
   goodberry reverse (the name
@@ -1004,7 +1004,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R352 landed 2026-10-11: commit
   849d516, census 279, the UA
   new druid 3rd level spells pin
-  round (rules/uadruidspells3.h):
+  round (rules/ua/uadruidspells3.h):
   cloudburst (the stat-block
   interleave decoded with the
   call lightning exclusion),
@@ -1027,7 +1027,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R353 landed 2026-10-11: commit
   cef4de6, census 280, the UA
   new druid 5th level spells pin
-  round (rules/uadruidspells5.h):
+  round (rules/ua/uadruidspells5.h):
   moonbeam (the movable spotlight
   beam with the color and vision
   effects) and spike stones
@@ -1043,7 +1043,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R354 landed 2026-10-11: commit
   ae75dd2, census 281, the UA
   new druid 6th level spells pin
-  round (rules/uadruidspells6.h):
+  round (rules/ua/uadruidspells6.h):
   liveoak (the triggered treant
   with the 3-inch movement
   interleave decode) and water
@@ -1063,7 +1063,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R355 landed 2026-10-11: commit
   a70626d, census 282, the UA
   new druid 7th level spells pin
-  round (rules/uadruidspells7.h):
+  round (rules/ua/uadruidspells7.h):
   changestaff (the lost name
   header, the hit-die ladder with
   the wish-only recovery) and
@@ -1078,7 +1078,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R356 landed 2026-10-11: commit
   79cb0ce, census 283, the UA
   new magic-user 1st level spells
-  pin round (rules/uamuspells1.h):
+  pin round (rules/ua/uamuspells1.h):
   the ten spell descriptions
   (alarm, armor, firewater,
   grease, melt, mount,
@@ -1093,7 +1093,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R357 landed 2026-10-11: commit
   46924c5, census 284, the UA
   new magic-user 2nd level spells
-  pin round (rules/uamuspells2.h):
+  pin round (rules/ua/uamuspells2.h):
   the twelve spell descriptions
   (bind, deeppockets behind the
   lost name header, flaming
@@ -1113,7 +1113,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R358 landed 2026-10-11: commit
   8db9ec7, census 285, the UA
   new magic-user 3rd level spells
-  pin round (rules/uamuspells3.h):
+  pin round (rules/ua/uamuspells3.h):
   the eight spell descriptions
   (cloudburst seam-checking the
   R352 druid pin minus the holy
@@ -1134,7 +1134,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R359 landed 2026-10-11: commit
   97e1ff2, census 286, the UA
   new magic-user 4th level spells
-  pin round (rules/uamuspells4.h):
+  pin round (rules/ua/uamuspells4.h):
   the eight spell descriptions
   (dispel illusion behind the lost
   name tail and the garbled
@@ -1163,8 +1163,8 @@ R172 were already dropped at the R171b/R172 era cut; git
   follow-up, census 287, the
   UA new magic-user 5th and
   6th level spells pin round
-  (rules/uamuspells5.h and
-  rules/uamuspells6.h): the
+  (rules/ua/uamuspells5.h and
+  rules/ua/uamuspells6.h): the
   twelve spell descriptions
   (avoidance behind the lost
   name header, dismissal
@@ -1203,7 +1203,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R361 landed 2026-10-11: commit
   5c52199, census 288, the UA
   new magic-user 7th level spells
-  pin round (rules/uamuspells7.h):
+  pin round (rules/ua/uamuspells7.h):
   the eight spell descriptions
   (banishment behind the scrambled
   stat head with the range
@@ -1230,8 +1230,8 @@ R172 were already dropped at the R171b/R172 era cut; git
   f9ef2b6, census 289, the UA new
   magic-user 8th and 9th level
   spells pin round
-  (rules/uamuspells8.h and
-  rules/uamuspells9.h): the four
+  (rules/ua/uamuspells8.h and
+  rules/ua/uamuspells9.h): the four
   8th-level descriptions (binding
   with the lost range and duration
   cells and the six forms with the
@@ -1261,9 +1261,9 @@ R172 were already dropped at the R171b/R172 era cut; git
   3737448, census 290, the UA new
   illusionist cantrips and 1st/2nd
   level spells pin round
-  (rules/uailcantrips.h,
-  rules/uailspells1.h and
-  rules/uailspells2.h): the eight
+  (rules/ua/uailcantrips.h,
+  rules/ua/uailspells1.h and
+  rules/ua/uailspells2.h): the eight
   cantrip descriptions (colored
   lights with the globe ladder, dim,
   haze, mask, mirage, noise, rainbow
@@ -1285,9 +1285,9 @@ R172 were already dropped at the R171b/R172 era cut; git
   141fbcb, census 291, the UA new
   illusionist 3rd/4th/5th level
   spells pin round
-  (rules/uailspells3.h,
-  rules/uailspells4.h and
-  rules/uailspells5.h): delude
+  (rules/ua/uailspells3.h,
+  rules/ua/uailspells4.h and
+  rules/ua/uailspells5.h): delude
   and wraithform at the printed
   3rd, phantom steed and phantom
   wind pinned as the print adds
@@ -1305,10 +1305,10 @@ R172 were already dropped at the R171b/R172 era cut; git
   d7bb603, census 292, the UA new
   illusionist 6th/7th levels,
   acquisition and cost pin round
-  (rules/uailspells6.h,
-  rules/uailspells7.h,
-  rules/uailacquisition.h and
-  rules/uaspellcost.h): death fog,
+  (rules/ua/uailspells6.h,
+  rules/ua/uailspells7.h,
+  rules/ua/uailacquisition.h and
+  rules/ua/uaspellcost.h): death fog,
   mislead, phantasmagoria and the
   mirage arcane at the printed 6th
   (the item-list 7th divergence
@@ -1322,10 +1322,10 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R366 landed 2026-10-12: commit
   3e742b3, census 293, the UA
   DM-section spells pin round
-  (rules/uaspellbooks.h,
-  rules/uaspellcomment.h,
-  rules/uauwspelluse.h and
-  rules/uadarkness.h): the MU
+  (rules/ua/uaspellbooks.h,
+  rules/ua/uaspellcomment.h,
+  rules/ua/uauwspelluse.h and
+  rules/ua/uadarkness.h): the MU
   spell book rules (the
   capacities and costs, the
   physical aspects, the values,
@@ -1343,8 +1343,8 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R367 landed 2026-10-12: commit
   6047766, census 294, the UA
   campaign social class and birth
-  pin round (rules/uasocialclass.h
-  and rules/uabirth.h): the
+  pin round (rules/ua/uasocialclass.h
+  and rules/ua/uabirth.h): the
   nine-band Social Class Table
   with the 68-entry occupation
   rosters, the starting-money
@@ -1362,7 +1362,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   run.- R368 landed 2026-10-12: commit
   37c7f1a, census 295, the UA
   Cavaliers Table I pin round
-  (rules/uacavtable.h): the two
+  (rules/ua/uacavtable.h): the two
   0-level rows, the 1st-level
   footnote, the printed XP bands
   (the level-11 band decoded), the
@@ -1380,7 +1380,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   on the second run, after the fix.- R369 landed 2026-10-12: commit
   41ca7f2, census 296, the UA
   cantrip acquisition pin round
-  (rules/uacantacq.h): the five
+  (rules/ua/uacantacq.h): the five
   random known-count bands
   (reversed 2-8, legerdemain 2-5,
   person-affecting 2-8, personal
@@ -1400,7 +1400,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   first run.- R370 landed 2026-10-12: commit
   4571cf3, census 297, the UA
   DM-section smalls part 1 pin
-  round (rules/uasmalls1.h):
+  round (rules/ua/uasmalls1.h):
   Method V (the class-first prose
   clean, the dice table cells a
   flagged hole), the 12 starting
@@ -1415,7 +1415,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   floor; GREEN on the first run.- R371 landed 2026-10-12: commit
   cfa4ec9, census 298, the UA
   expanded armor pin round
-  (rules/uaarmor.h): the armor and
+  (rules/ua/uaarmor.h): the armor and
   encumbrance table rows (the
   banded, bronze plate, field
   plate, full plate, ring, scale,
@@ -1437,7 +1437,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   first run.- R372 landed 2026-10-12: commit
   25881ba, census 299, the UA
   cavalier followers pin round
-  (rules/uafollowers.h): the
+  (rules/ua/uafollowers.h): the
   men-at-arms dice ladder (all d4,
   non-cumulative, the no-gain
   rule), the four equipment
@@ -1457,7 +1457,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   GREEN on the first run.- R373 landed 2026-10-12: commit
   7893f9c, census 300, the UA
   comeliness note pin round
-  (rules/uacomnote.h): the DM
+  (rules/ua/uacomnote.h): the DM
   pointer to pages 6 and 7, the
   characteristic read, the
   effects on viewers and
@@ -1476,7 +1476,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   first run.- R374 landed 2026-10-12: commit
   1e9af1d, census 301, the UA
   treasure dial decision round
-  (rules/uatreasuredial.h): THE
+  (rules/ua/uatreasuredial.h): THE
   DECISION resolved RUN BOTH -
   the DMG and UA tables ride as
   switchable alternatives behind
@@ -1491,7 +1491,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   first run.- R375 landed 2026-10-12: commit
   23efe0c, census 302, the UA
   determination skeleton pin
-  round (rules/uadetskel.h): the
+  round (rules/ua/uadetskel.h): the
   eight category bands and the
   sub-table splits pin clean (the
   misc magic carries SEVEN
@@ -1508,7 +1508,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   run.- R376 landed 2026-10-12: commit
   be2766f, census 303, the UA
   new potions prose part 1
-  round (rules/uapotprose.h):
+  round (rules/ua/uapotprose.h):
   twelve of the nineteen
   new-potion descriptions pin
   clean (the four elixirs,
@@ -1525,7 +1525,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   first run.- R377 landed 2026-10-12: commit
   fe06b2c, census 304, the UA
   new scrolls protection prose
-  pin round (rules/uaprotscr.h):
+  pin round (rules/ua/uaprotscr.h):
   eleven of the fifteen
   protection-scroll types pin
   clean (acid, breath weapons,
@@ -1543,7 +1543,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   GREEN on the first run.- R378 landed 2026-10-12: commit
   a414462, census 305, the UA
   new rings prose pin round
-  (rules/uaringprose.h): six
+  (rules/ua/uaringprose.h): six
   of the thirteen new-ring
   descriptions pin clean
   (animal friendship,
@@ -1562,7 +1562,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   GREEN on the first run.- R379 landed 2026-10-12: commit
   1b76292, census 306, the UA
   new rods staves prose pin
-  round (rules/uarodstave.h):
+  round (rules/ua/uarodstave.h):
   four of the eleven new
   descriptions pin clean
   (the rod of alertness, the
@@ -1582,7 +1582,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   run.- R380 landed 2026-10-12: commit
   867e10a, census 307, the UA
   new wands prose pin round
-  (rules/uawandprose.h): seven
+  (rules/ua/uawandprose.h): seven
   of the twelve wand types pin
   - five fully clean
   (anything, fireballs, flame
@@ -1601,7 +1601,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   GREEN on the first run.- R381 landed 2026-10-12: commit
   1ae8f21, census 308, the UA
   misc magic prose part 1 pin
-  round (rules/uamiscprose1.h):
+  round (rules/ua/uamiscprose1.h):
   thirteen A-C items pin -
   eight fully clean (beads of
   force, boots of the north,
@@ -1625,7 +1625,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   run.- R382 landed 2026-10-12: commit
   471ff43, census 309, the UA
   misc magic prose part 2 pin
-  round (rules/uamiscprose2.h):
+  round (rules/ua/uamiscprose2.h):
   eight D-E items pin - one
   fully clean (the dust of
   tracelessness) plus seven
@@ -1646,7 +1646,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   ride the fixers.- R383 landed 2026-10-12: commit
   1dbe6a0, census 310, the UA
   misc magic prose part 3 pin
-  round (rules/uamiscprose3.h):
+  round (rules/ua/uamiscprose3.h):
   eleven G-H items pin - two
   fully clean (the gloves of
   missile snaring, the hat of
@@ -1669,7 +1669,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   GREEN on the first run.- R384 landed 2026-10-12: commit
   876adbc, census 311, the UA
   misc magic prose part 4 pin
-  round (rules/uamiscprose4.h):
+  round (rules/ua/uamiscprose4.h):
   nine I-P items pin - five
   fully clean (the iron bands
   of Bilarro, the lens of
@@ -1693,7 +1693,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   first run.- R385 landed 2026-10-12: commit
   cc5a2bc, census 312, the UA
   misc magic prose part 5 pin
-  round (rules/uamiscprose5.h):
+  round (rules/ua/uamiscprose5.h):
   eleven Q-S items pin - seven
   fully clean (the robe of
   stars, the scarab versus
@@ -1717,7 +1717,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   GREEN on the first run.- R386 landed 2026-10-12: commit
   e84e770, census 313, the UA
   misc magic prose part 6 pin
-  round (rules/uamiscprose6.h):
+  round (rules/ua/uamiscprose6.h):
   five S-Z items pin - two
   fully clean (the wind fan,
   Zagyg's flowing flagon) plus
@@ -1737,7 +1737,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   first run.- R387 landed 2026-10-12: commit
   5f9b91e, census 314, the UA
   armor and swords prose pin
-  round (rules/uaarmprose.h):
+  round (rules/ua/uaarmprose.h):
   the pp. 104-105 stretch,
   eight items pin - four fully
   clean (the anything armor,
@@ -1762,7 +1762,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   the first run.- R388 landed 2026-10-12: commit
   cc2a141, census 315, the UA
   misc weapons prose pin round
-  (rules/uamweapprose.h): the
+  (rules/ua/uamweapprose.h): the
   pp. 105-106 stretch, nine
   items pin - six fully clean
   (the bullet of impact, the
@@ -1788,7 +1788,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   the first run.- R389 landed 2026-10-12: commit
   b20764a, census 316, the UA
   weaponless combat appendix Q
-  pin round (rules/uaappendq.h):
+  pin round (rules/ua/uaappendq.h):
   the pp. 106-108 stretch, 207
   uaq pins, six items pin -
   one fully clean (the
@@ -1809,7 +1809,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   printf-label fix.- R390 landed 2026-10-12: commit
   ade8785, census 317, the UA
   non-lethal combat appendix R
-  pin round (rules/uaappendr.h):
+  pin round (rules/ua/uaappendr.h):
   the pp. 109-110 stretch, 85
   uanl pins, seven items pin -
   two fully clean (the subdual
@@ -1836,7 +1836,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   census 318, the UA
   Appendix T pole-arm
   nomenclature pin round
-  (rules/uaappendt.h): the pp.
+  (rules/ua/uaappendt.h): the pp.
   123-129 stretch, seven
   items - two fully clean (the
   spear family, the axe family)
@@ -1946,7 +1946,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   body of all TWENTY-ONE tables
   (573 rows, perfect 1-100
   contiguity) - NEW
-  rules/uadetrows.h (23
+  rules/ua/uadetrows.h (23
   accessors, flattened arrays:
   dice bands, names, marks,
   the x.p./g.p. columns as lo/
@@ -2007,14 +2007,14 @@ R172 were already dropped at the R171b/R172 era cut; git
   fills the four PDF-gated
   treasure items - the four
   scroll types
-  (rules/uaprotscr.h), the
+  (rules/ua/uaprotscr.h), the
   seven rings
-  (rules/uaringprose.h), the
+  (rules/ua/uaringprose.h), the
   seven rods and staves
-  (rules/uarodstave.h), the
+  (rules/ua/uarodstave.h), the
   two wand holes and five
   garbled wands
-  (rules/uawandprose.h); all
+  (rules/ua/uawandprose.h); all
   four gap items flip
   AMENDED R397: closed -
   every UA treasure
@@ -2033,9 +2033,9 @@ R172 were already dropped at the R171b/R172 era cut; git
   98-104 read fills all 33
   flagged holes the six misc
   magic prose parts carry
-  (rules/uamiscprose1.h
+  (rules/ua/uamiscprose1.h
   through
-  rules/uamiscprose6.h) -
+  rules/ua/uamiscprose6.h) -
   every part ledger runs
   clean, the four
   provisional pins correct
@@ -2125,7 +2125,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   treasure system dial - the
   R374 RUN BOTH decision wires:
   the runtime dial layer rides
-  rules/uatreasuredial.h (the
+  rules/ua/uatreasuredial.h (the
   mode static, the
   validity-gated setter, the
   mode names, the dial-landed
@@ -2225,7 +2225,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   Appendix S stat blocks -
   the first ungated data round
   riding the R405 seam;
-  rules/uaappends.h (prefix uas)
+  rules/ua/uaappends.h (prefix uas)
   - the 23 blocks pin the
   scan-clean numerics, the
   tier/rating censuses live
@@ -2243,7 +2243,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   commit a3570fb (census 334,
   preflight GREEN), the UA
   Appendix S clerical charts -
-  rules/uascharts.h (prefix usc)
+  rules/ua/uascharts.h (prefix usc)
   - the five 8-column charts,
   23 rows, the 13 sacred
   animals, the gender reads,
@@ -2259,7 +2259,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   commit cee2979 (census 335,
   preflight GREEN), the UA p. 26
   armor class table -
-  rules/uaac26.h (prefix uacr)
+  rules/ua/uaac26.h (prefix uacr)
   - the 11 composite rows, 28
   composites, the
   R191/R371/R392 cross-checks
@@ -2272,7 +2272,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   commit bac456b (census 336,
   preflight GREEN), the UA
   Appendix S stat lines -
-  rules/uasstatlines.h (prefix
+  rules/ua/uasstatlines.h (prefix
   usl) - the 23
   S/I/W/D/C/CH/CM rows, the
   R153/R322 cross-checks live,
@@ -2286,7 +2286,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   commit e98c880 (census 337,
   preflight GREEN), the UA
   Appendix S class lines -
-  rules/uasclasslines.h (prefix
+  rules/ua/uasclasslines.h (prefix
   uascl) - the 23 blocks x 6
   printed lines, the Nil
   census 29, the psionic lines
@@ -2301,7 +2301,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   commit 94e9302 (census 338,
   preflight GREEN), the UA
   Appendix S MOVE values -
-  rules/uamoves.h (prefix umv)
+  rules/ua/uamoves.h (prefix umv)
   - the 23 rates, the five
   alternates, the Aerdrie
   flight-only flag; the Shargaas
@@ -2321,7 +2321,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   rounds; the R363 precedent
   rides; the casting-time family
   records as holes pending the
-  PDF read. rules/uacantrips1.h
+  PDF read. rules/ua/uacantrips1.h
   (prefix ucn): the 20 useful
   cantrips in roster order, the
   school census 7/4/7/2, the 14
@@ -2392,7 +2392,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   the precedents ride; the
   casting-time family records
   as holes pending the PDF
-  read. rules/uacantrips3.h
+  read. rules/ua/uacantrips3.h
   (prefix ucl): the 6
   legerdemain cantrips in
   roster order, the school
@@ -2490,7 +2490,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   DESCRIPTIONS (pp. 50-51) -
   the LAST of the six MU cantrip
   description rounds; ALL SIX
-  now stand. rules/uacantrips6.h
+  now stand. rules/ua/uacantrips6.h
   (prefix uch): the 8 haunting-
   sound cantrips in roster
   order, the school census
@@ -2655,7 +2655,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   PROSE - the five pantheon
   intro sections (pp. 110-120,
   the clean OCR read) pin as
-  rules/uapantheon.h (NEW,
+  rules/ua/uapantheon.h (NEW,
   prefix uapn), the censuses
   cross-checked live against
   the R405 seam (the described
@@ -2711,7 +2711,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   8e710fb..f313aa1), the
   WSG ARC OPENER - the
   wilderness proficiencies.
-  rules/wsgprof.h (NEW, 33
+  rules/wsg/wsgprof.h (NEW, 33
   inlines, prefix wsg): the
   Proficiency Check system
   (1d20 vs the Appropriate
@@ -2762,7 +2762,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   WHOLE - the first WSG
   pin round after the arc
   opener.
-  rules/wsgdress.h (NEW, 54
+  rules/wsg/wsgdress.h (NEW, 54
   inlines, prefix wsd): the
   four clothing categories
   (very cold below 0, cold
@@ -2829,7 +2829,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   fractions round up, the damage floor 1, the greater of the two move
   reductions, perpendicular one band lower) and the precipitation shifts
   (moderate +1 band, heavy +2, capped at the bottom 80+ line).
-  rules/wsgenvfx.h NEW (38 inlines, prefix wse), verified cell for cell
+  rules/wsg/wsgenvfx.h NEW (38 inlines, prefix wse), verified cell for cell
   three-way (the page image vs the text layer vs the book own examples: 105
   deg band 10, -30 LM 1/2, 35 mph melee -2, 85/40 the greater reduction 2/3,
   the 90-mph cap). tools/wsg_gap_report.md flips 5: post-state 16 closed, 170
@@ -2844,7 +2844,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   round: build_spec_r429.py (Vibe side) is only the ground-truth tables +
   labels over build_spec_general; zero engine changes (Table 6 doubled to
   half-points, Table 7 0/1/2 = -/D/X, Table 8 the 1dN die size, all sentinel
-  0). rules/wsgsplwx.h NEW (70 inlines, prefix wsw) - Table 6 hurricane
+  0). rules/wsg/wsgsplwx.h NEW (70 inlines, prefix wsw) - Table 6 hurricane
   damage, Table 7 tornado codes (incl. the Wood and stone row), Table 8
   hailstorm dice, plus the hurricane, gale, tornado, sandstorm and hailstorm
   prose pins (45 consts, 11 bools, the hailstone-size chain). Ground truth
@@ -2865,14 +2865,14 @@ R172 were already dropped at the R171b/R172 era cut; git
   Hands 8; the four combination-row cells BLANK IN PRINT, settled by the USER
   EYE-READ after the archive scan blurred them and vision reads confabulated;
   the user own copy upload agreed) plus the damage and Con-check adjustments,
-  hypothermia, frostbite and heatstroke prose. rules/wsgheat.h NEW (72
+  hypothermia, frostbite and heatstroke prose. rules/wsg/wsgheat.h NEW (72
   inlines, prefix wsh) - the heatstroke worked example pins as three checks
   (2+6 = 8, 2-1 = 1, 2/3 of 10 rounded up = 7). rverify GREEN: 215 mutants, 0
   missed. The nano-paste md5 matched the PREDICTED value exactly (the
   deterministic md5 convention working). Census 354 -> 355.
 - R431 landed 2026-10-14: commit 0d22d27 (census 356, pushed ae2a14c..0d22d27,
   preflight GREEN from a real compiled binary), the WSG EQUIPMENT EFFECTS data
-  slice, printed pp. 28-29 - the FIRST PURE-PROSE round (rules/wsgequip.h, 30
+  slice, printed pp. 28-29 - the FIRST PURE-PROSE round (rules/wsg/wsgequip.h, 30
   inlines, prefix weq): the water and rust rules (dry metal every 2 days, oil
   every 2 weeks, the armor crack on an unmodified 20 for over 4 damage at
   1-in-3, the shield near-miss split at 50 percent, the weapon break on an
@@ -2893,7 +2893,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   12 (the encumbrance category x the terrain class, the normal and the
   accelerated miles per half-day) with the bulk rule-of-thumb (x1 non-bulky,
   x2-3 bulky, x5 very bulky, 10 gp = 1 lb), the terrain definitions and the
-  large-scale overland movement rules. rules/wsgencum.h NEW (54 inlines,
+  large-scale overland movement rules. rules/wsg/wsgencum.h NEW (54 inlines,
   prefix wem). The round ALSO carried the rverify chain-limit fix (the leaked
   loop variable read the last chain last limit - masked in R430 by its single
   chain, exposed here by the two). rverify GREEN: 153 mutants, 0 missed.
@@ -2907,7 +2907,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   (the hours equal half the current rate, capped at 12; the cumulative fatigue
   chance 20/35/50 percent by terrain; the book own warhorse examples pinned)
   and the accelerated no-rest +1/3 spillover (written division-free - the
-  float/int division class the sim exists to catch). rules/wsganimal.h NEW (28
+  float/int division class the sim exists to catch). rules/wsg/wsganimal.h NEW (28
   inlines, prefix wam). Ground truth three-way verified; the Sheep, Yak and
   light-war very-rugged cells absent from the djvu text layer were settled by
   the IIIF full-resolution eye-reads. rverify GREEN: 164 mutants, 0 missed.
@@ -2922,7 +2922,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   one-category-worse rule and the lightly-forested example). Key pins: the
   small cart/pony 8/4/3500, the medium cart/pony cannot go rugged (0), the
   large chariot/heavy horses fastest at 16/10, the large wagon/heavy horses
-  hauling the most at 15000 gp. rules/wsgvehicle.h NEW (15 inlines, prefix
+  hauling the most at 15000 gp. rules/wsg/wsgvehicle.h NEW (15 inlines, prefix
   wvv, checked free). Ground truth three-way verified (the djvu garbled four
   rows settled by the IIIF full-res eye-reads; the compiled-tables copy reads
   the cart medium/pony rugged cell as 6 - a djvu OCR error, the body text and
@@ -2948,7 +2948,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   the mountaineer-with-tools 80 on restricted surfaces, the d100 roll
   at-or-under succeeds). Key pins: the rough gentle slope 90/60/30, every
   cliff cell restricted, the cliff smooth no-ledges row 10*/5*/5*.
-  rules/wsgclimb.h NEW (43 inlines, prefix wcs - wcl was NOT free, hits wclass
+  rules/wsg/wsgclimb.h NEW (43 inlines, prefix wcs - wcl was NOT free, hits wclass
   in regtest; checked). Ground truth three-way verified (the cliff smooth
   with-ledges non-slippery cell: the djvu reads 16*, two eye-reads settle
   15*). Gap 33/153 -> 35/151; census 359 -> 360. rverify GREEN: 115 mutants, 0
@@ -2966,7 +2966,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   no-fall and 5 percent floor rules, the other modifiers (encumbrance, race,
   armor, strength and hands), the thief modifiers (the +30 auto rule, the
   doubled and quadrupled falling chances, the shared 5 percent floor) and the
-  initial, intermediate and final check rules. rules/wsgcheck.h NEW (49
+  initial, intermediate and final check rules. rules/wsg/wsgcheck.h NEW (49
   inlines, prefix wck, checked free). Ground truth three-way verified (the
   djvu was missing the normal moderate, normal severe and both cliff smooth
   rows and garbled the smooth gentle row; four IIIF full-res eye-reads matched
@@ -2991,7 +2991,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   round), the 1d6-cumulative-per-10-feet basis, the figures applying to free
   fall AND tumbling down a severe slope, the smooth/slippery abrasion note and
   the unimpeded rates (1000 feet per round free fall, 600-800 feet per round
-  down a severe slope). rules/wsgfall.h NEW (14 inlines, prefix wdf, checked
+  down a severe slope). rules/wsg/wsgfall.h NEW (14 inlines, prefix wdf, checked
   free). Ground truth three-way verified (the 11-20 feet dice cell MISSING
   from the djvu; two eye-reads settled 3d6, matching the user copy). Gap
   37/149 -> 39/147; census 361 -> 362. rverify GREEN on the FIRST build: 24
@@ -3009,7 +3009,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   worst-case and gradual-stop impact rules, the flat-terrain extra abrasion
   and the tumble rates; the book own worked example (the smooth moderate
   slightly-slippery 40/3/20 cell) pinned as two division-free examples.
-  rules/wsgtumble.h NEW (26 inlines, prefix wdt, checked free). Ground truth
+  rules/wsg/wsgtumble.h NEW (26 inlines, prefix wdt, checked free). Ground truth
   three-way verified (the two normal-row slippery cells settled by two IIIF
   eye-reads, matching the user copy). NOTE: the first build had a row-index
   slip in the worked example - the sim caught the two TRUE-on-healthy
@@ -3029,7 +3029,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   2/3-1/2-1/4, cliff 1/2-1/4-dash) encoded as a 6-column numerator/
   denominator table with the one-attempt rule, the 50/75/100-foot windows, the
   protrusion requirement and the slope-self-halt rule; all fraction
-  comparisons written cross-multiplied, division-free. rules/wsgstop.h NEW (20
+  comparisons written cross-multiplied, division-free. rules/wsg/wsgstop.h NEW (20
   inlines, prefix wsf - wsp was NOT free). Ground truth three-way verified
   (the djvu table zone heavily garbled; two IIIF eye-reads matched the user
   copy exactly). Gap 40/146 -> 42/144; census 363 -> 364. rverify GREEN on the
@@ -3050,7 +3050,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   is cumulative - 10 percent after one turn of strain, 30 after two, 60 after
   three, 100 after four (the wsrWeakenPct switch ladder); a weakened rope
   breaks the next time it supports more than its limit at 40 percent per turn
-  non-cumulative. rules/wsgrope.h NEW (12 inlines, prefix wsr - wro was NOT
+  non-cumulative. rules/wsg/wsgrope.h NEW (12 inlines, prefix wsr - wro was NOT
   free; wsr checked free in all three TUs). Ground truth CLEAN two-way (the
   user copy OCR vs the djvu word layer - the section reads clean in the djvu,
   every number matched, no eye-reads needed). Gap 42/144 -> 43/143; census 364
@@ -3069,7 +3069,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   the wrpCascadePenaltyPct switch ladder 0/10/20/30/40 - a -10% step per
   fallen character beyond the first (the five-character example on a 200-foot
   rope cascades -10, -20, -30); the last-pair extra check; the tie capacity -
-  50 feet ties two, one more per additional 50 feet. rules/wsgtog.h NEW (11
+  50 feet ties two, one more per additional 50 feet. rules/wsg/wsgtog.h NEW (11
   inlines, prefix wrp - checked free in all three TUs). Ground truth CLEAN
   two-way (the user copy OCR vs the djvu word layer Guide_0037 - every number
   matched, no eye-reads). Gap 43/143 -> 44/142; census 365 -> 366. rverify:
@@ -3090,7 +3090,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   grip is lost - the character hangs upside down, spinning, until rescued or a
   successful Dexterity Check (once per round); the free-hanging variant (no
   surface to brace against) at +30% instead of +50%, with a +2 Dexterity
-  modifier on a failed check. rules/wsgrapp.h NEW (9 inlines, prefix wrl -
+  modifier on a failed check. rules/wsg/wsgrapp.h NEW (9 inlines, prefix wrl -
   checked free in all three TUs). Ground truth CLEAN two-way (the user copy
   OCR vs the djvu word layer Guide_0037 - every number matched, no eye-reads).
   Gap 44/142 -> 45/141; census 366 -> 367. rverify GREEN on the FIRST build: 9
@@ -3113,7 +3113,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   cannot belay, leader cannot be belayed, one belay at a time, no climbing
   while belaying, the middle faller drags none below, the failed belayer can
   be saved by the character above, the first faller is unhelpable - only two
-  per rope). rules/wsgbelay.h NEW (23 inlines, prefix wbl - checked free in
+  per rope). rules/wsg/wsgbelay.h NEW (23 inlines, prefix wbl - checked free in
   all three TUs). Ground truth CLEAN two-way (the user copy OCR vs the djvu
   word layer Guide_0037 with the Guide_0038 head continuation - every number
   matched, no eye-reads). Gap 45/141 -> 46/140; census 367 -> 368. rverify
@@ -3135,7 +3135,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   protrusion pair and the three catch chances, the last eye-read row 80/90
   with 92/99/99); the solid vs not-solid procedure (solid holds indefinitely,
   not-solid gives way after 1d6 rounds of climbing); the recheck-after-10-feet
-  rule. rules/wsggrap.h NEW (31 inlines, prefix wgh - checked free in all
+  rule. rules/wsg/wsggrap.h NEW (31 inlines, prefix wgh - checked free in all
   three TUs). Ground truth THREE-WAY (the djvu garbled at the last Table 20
   row, the strength fraction and the climb bonus; two independent IIIF
   eye-reads per zone matched the user copy exactly). Gap 46/140 -> 47/139;
@@ -3162,7 +3162,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   halving conditions (precip, wind over 20 mph, hampered visibility); the
   both-ends-anchored rule with the near-side protrusion; the 30-feet-per-round
   hand-over-hand crossing rate with the +2 Dex check for multiple hangers.
-  rules/wsgchasm.h NEW (18 inlines, prefix wcx - checked free in all three
+  rules/wsg/wsgchasm.h NEW (18 inlines, prefix wcx - checked free in all three
   TUs). Ground truth CLEAN two-way (the user copy OCR vs the djvu word layer
   Guide_0038 with the Guide_0039 head - every number matched, no eye-reads).
   Gap 47/139 -> 48/138; census 369 -> 370. rverify GREEN after one
@@ -3188,7 +3188,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   point); the piton loosen rules (a 10% come-loose chance, checked the first
   time it supports 100 pounds or more - pulling the rope does not count; a
   passed check stays lodged until a mountaineer dislodges it; a 10% chance a
-  secured piton cannot be dislodged and must be left behind). rules/wsgmntnr.h
+  secured piton cannot be dislodged and must be left behind). rules/wsg/wsgmntnr.h
   NEW (12 inlines, prefix wmt - checked free in all three TUs). Ground truth
   CLEAN two-way (the user copy OCR vs the djvu word layer Guide_0039 - every
   number matched, no eye-reads). Gap 48/138 -> 49/137; census 370 -> 371.
@@ -3216,7 +3216,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   segments, even in a straight line); the half-rate free turn (turns need no
   check at half the full normal movement rate); the full-round speed-change
   exemption (a full round to slow down or speed up, full movement to
-  standstill or vice versa, needs no check). rules/wsgslip.h NEW (8 inlines,
+  standstill or vice versa, needs no check). rules/wsg/wsgslip.h NEW (8 inlines,
   prefix wsl - checked free in all three TUs). Ground truth CLEAN two-way (the
   user copy OCR vs the djvu word layer Guide_0039 - every number matched, no
   eye-reads). Gap 49/137 -> 50/136; census 371 -> 372. rverify GREEN on the
@@ -3259,7 +3259,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   die and plus); the cumulative modifiers (moderate -1, heavy -2 and cannot
   high jump, severe cannot jump at all, halfling -1 broad only, gnome/dwarf -2
   broad and -1 high) with the 2-foot broad and 1-foot high floors.
-  rules/wsgjump.h NEW (28 inlines, prefix wjp - checked free in all three
+  rules/wsg/wsgjump.h NEW (28 inlines, prefix wjp - checked free in all three
   TUs). Ground truth: the prose CLEAN two-way (the user copy OCR vs the djvu
   word layer Guide_0039/Guide_0040); the Table 22 grid GARBLED in the djvu
   word layer, so every cell was confirmed by TWO independent IIIF eye-reads of
@@ -3306,7 +3306,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   rows - daylight, moonlight, darkness - x the five conditions - clear,
   moderate fog, heavy fog or snow, heavy snow with wind, blowing sand or dust
   - from 1/1 down to 1/8, each cell split into numerator and denominator).
-  rules/wsgvis.h NEW (21 inlines, prefix wsv - checked free in all three TUs).
+  rules/wsg/wsgvis.h NEW (21 inlines, prefix wsv - checked free in all three TUs).
   Ground truth: the prose CLEAN two-way (the user copy OCR vs the djvu word
   layer Guide_0040/Guide_0041 - the 2x cap and the 1/8 sandstorm-in-darkness
   example matched); the Table 23 grid GARBLED in the djvu word layer, so every
@@ -3357,7 +3357,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   light 1-3 and strong 4-6 current modifiers, the 0-inch hold position at
   endurance cost, the mercy-of-the-current backward drift 1-3 inches, the
   DM-determined currents with the gentle 1-2 and mountain 5-6 examples, the
-  surface-only high speed halved at a 0 rate). rules/wsgswim.h NEW (38
+  surface-only high speed halved at a 0 rate). rules/wsg/wsgswim.h NEW (38
   inlines, prefix wsm - the FIRST CHOICE wsw was TAKEN by the R429 hurricane
   pins; wsm checked free in all three TUs). Ground truth: the
   intro/Endurance/Speed prose CLEAN two-way (the user copy OCR vs the djvu
@@ -3402,7 +3402,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   damage, a save vs breath weapon allowed - success at 40-100 feet = no
   damage, success beyond 100 feet = one-tenth rounded up, under 40 feet = no
   falling damage, treated as a normal dive; rocks at the base void the mercy -
-  damage assessed as a fall through the air). rules/wsgmwater.h NEW (20
+  damage assessed as a fall through the air). rules/wsg/wsgmwater.h NEW (20
   inlines, prefix wmw - checked free in all three TUs). Ground truth CLEAN
   two-way (the user copy OCR vs the djvu word layer Guide_0042 - every number
   matched, no eye-reads). Gap 53/133 -> 54/132; census 375 -> 376. rverify
@@ -3442,7 +3442,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   first round of a dive), the 5-inch cap beyond 40
   feet regardless of height, and the
   falling-damage risk on a dive from 40 feet or
-  more per the waterfall text. rules/wsgdive.h NEW
+  more per the waterfall text. rules/wsg/wsgdive.h NEW
   (14 inlines: 7 consts + 5 bools + the 2-column
   table, prefix wdv - checked free in all three
   TUs). Ground truth CLEAN three-way: the user copy
@@ -3502,7 +3502,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   the proficient hold-position effectively
   swimming with endurance assessed, the
   nonproficient sinking immediately if he
-  resists). rules/wsgtread.h NEW (15 inlines: 6
+  resists). rules/wsg/wsgtread.h NEW (15 inlines: 6
   consts + 9 bools, prefix wtw - checked free in
   all three TUs). Ground truth CLEAN two-way
   (the user copy OCR page 44 vs the djvu word
@@ -3565,7 +3565,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   addition with the penalties applied after, and
   the hold-before-affected gas rules (a small
   dose as harmful as an extended one).
-  rules/wsgbreath.h NEW (31 inlines: 13 consts
+  rules/wsg/wsgbreath.h NEW (31 inlines: 13 consts
   + 18 bools, prefix whb - checked free in all
   three TUs). Ground truth CLEAN two-way (the
   user copy OCR page 44 vs the djvu word layer
@@ -3624,7 +3624,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   forced one-turn exhaustion - and the
   shorthanded proportional rowing with the
   3-rowers large-rowboat example: 6 of 8
-  miles, 45 of 60 feet). rules/wsgvessels.h NEW
+  miles, 45 of 60 feet). rules/wsg/wsgvessels.h NEW
   (55 inlines: 17 consts + 16 bools + the
   22-column grid split into Table 25a the
   characteristics / 25b the rates, prefix wvb -
@@ -3695,7 +3695,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   the wind velocity, the 30% furled-sail
   reduction, the poor-rigging upward
   adjustment, the hourly check).
-  rules/wsgcapsizing.h NEW (32 inlines: 16
+  rules/wsg/wsgcapsizing.h NEW (32 inlines: 16
   consts + 12 bools + the 4-column grid,
   prefix wcp - checked free in all three
   TUs). Ground truth CLEAN three-way: the
@@ -3758,7 +3758,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   movement penalties) and the sail-crew
   minimums (two characters for the large
   rowboat, small barge and large barge, one
-  for all the rest). rules/wsgboat.h NEW
+  for all the rest). rules/wsg/wsgboat.h NEW
   (18 inlines: 6 consts + 9 bools + the
   synthesized 3-column grid - the
   movement-fraction num/den and the sail
@@ -3818,7 +3818,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   the portage move rate (3 inches, 3
   miles in eight hours, 30 feet per
   round, regardless of terrain or overall
-  encumbrance status). rules/wsgportage.h
+  encumbrance status). rules/wsg/wsgportage.h
   NEW (16 inlines: 6 consts + 8 bools +
   the synthesized 2-column portage-crew
   grid C28, prefix wpg, checked free in
@@ -3883,7 +3883,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   rules (exceeding the weight limit or
   uneven distribution sinks the craft
   too far below to be usable).
-  rules/wsgcapsized.h NEW (13 inlines:
+  rules/wsg/wsgcapsized.h NEW (13 inlines:
   5 consts + 8 bools, prefix wcv,
   checked free in all three TUs). Ground
   truth CLEAN two-way: the user copy OCR
@@ -3944,13 +3944,13 @@ R172 were already dropped at the R171b/R172 era cut; git
   unreducible, the over-load stamina cut), the solid-form footnote, the
   listing criteria, the training and willingness rules, the triple-to-fifty
   rations feeding and the even-distribution encumbrance with the 2:1 doubling.
-  rules/wsgflymounts.h NEW (60 inlines, prefix wfm, checked free in all three
+  rules/wsg/wsgflymounts.h NEW (60 inlines, prefix wfm, checked free in all three
   TUs). Gap 62/124 -> 63/123; census 384 -> 385. The next round closes Chapter
   5: the fall chance and the airborne riding proficiency on printed pp. 48-49.
 - R461 landed 2026-10-14: commit 1745169 (census 386, pushed
   cf8c4a5..1745169, preflight GREEN first run), the WSG CHAPTER 5 CLOSER - the
   airborne fall chance (printed p. 48) and the proficiency in airborne riding
-  (printed p. 49) in one round, rules/wsgfallair.h NEW (31 inlines: 20 consts
+  (printed p. 49) in one round, rules/wsg/wsgfallair.h NEW (31 inlines: 20 consts
   + 11 bools, prefix wfa, checked free in all three TUs), both gap items
   flipped in one commit (gap 63/123 -> 65/121). Ground truth clean two-way
   (the 8d6a65a0 OCR pages 49-50 vs the second OCR copy, the sign convention
@@ -3975,7 +3975,7 @@ fractions, the pack arithmetic, the 1:2 meat-vegetable ratio, the two-meal
 cadence, the half-ration cheat) and of water (the Table 29 4x4 pint grid, the
 1/4 elf and 1/3 demihuman reductions, the 1/4-1/3 high-water-food credit, the
 1/2/4-hour activity thresholds, the 7-gallon cubic foot, the waterskin and
-encumbrance arithmetic). rules/wsgfood.h NEW (101 inlines: 76 consts + 17
+encumbrance arithmetic). rules/wsg/wsgfood.h NEW (101 inlines: 76 consts + 17
 bools + 2 chains + 6 table columns, prefix wnf, checked free in all three
 TUs). Ground truth three-way (the Drive PDF OCR vs djvu vs the IIIF eye-reads;
 both text layers garble Table 28 - the eye-read settled the ladder, confirmed
@@ -3994,7 +3994,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   hp/turn, the 1d4/hour rest-plus-water regain, the save halves, slow poison
   stacks to one-fourth, neutralize halts but no prior damage; 2-4 tainted
   half-strength 1d10 rounds/turns 1d2 hp/turn; 5-8 no food value). The
-  when-not-to-use-the-table judgment pins as bools. rules/wsgforage.h NEW (83
+  when-not-to-use-the-table judgment pins as bools. rules/wsg/wsgforage.h NEW (83
   inlines: 28 consts + 14 bools + 1 chain + 40 table columns, prefix wfg,
   checked free in all three TUs). GROUND TRUTH: the biggest OCR fight of the
   arc - the two text layers (djvu vs pdfy) disagree or drop the Tem-F winter,
@@ -4038,7 +4038,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   1d4 direction band and the 20-foot kill range, the
   first-miss escape) and Table 31 (all 132 cells:
   the 33-row terrain-by-season grid, Arctic 5 rows,
-  the others 7). rules/wsghunt.h NEW (30 inlines:
+  the others 7). rules/wsg/wsghunt.h NEW (30 inlines:
   14 consts + 5 bools + 1 chain + 1 switch + 9 table
   columns, prefix whn, checked free in all three
   TUs). GROUND TRUTH: the vision sheets made two
@@ -4093,7 +4093,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   mid-water beats shore, swamp/bog and stagnant shallow creek poor, shaded
   spots fair or good) and Table 32 (the 3x3 spot-by-time dice grid: Poor
   1d4-2/1d4/1d4+2, Fair 1d6-2/1d6-1/1d6+2, Good 1d8-2/1d6+2/1d8+2).
-  rules/wsgfish.h NEW (29 inlines: 8 consts + 14 bools + 1 switch + 6 table
+  rules/wsg/wsgfish.h NEW (29 inlines: 8 consts + 14 bools + 1 switch + 6 table
   columns, prefix wfs, checked free in all three TUs). GROUND TRUTH - the
   hardest pixel fight since R463: the OCR DROPPED the Fair-Day cell and
   garbled four Good cells; the native decode of the printed p. 57 image (a
@@ -4153,7 +4153,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   hour to recover, tainted food still a full ration); a second failed check
   obviously spoils (CON check +10, penalties at least 24 hours if stricken,
   else a 50% chance of the full or half ration value, otherwise no nourishment
-  at all). rules/wsgcarry.h NEW (47 inlines: 20 consts + 17 bools + 10 table
+  at all). rules/wsg/wsgcarry.h NEW (47 inlines: 20 consts + 17 bools + 10 table
   columns, prefix wcc - wfs was taken by R465; checked free in all three TUs).
   GROUND TRUTH - the table rounds hit a new reader: the printed p. 58 image
   shows scanner DOUBLE-IMAGING (a ghost copy about 12 pixels below the true
@@ -4204,7 +4204,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   subarctic/temperate/subtropical/tropical D/F/H/M/P/Sw - each cell the
   find%/taint% pair by season; the swamp rows top the find chances, the desert
   rows bottom them, the tropical swamp spring 90/75 the only taint value in
-  the table not ending in 0). rules/wsgwater.h NEW (27 inlines: 5 consts + 14
+  the table not ending in 0). rules/wsg/wsgwater.h NEW (27 inlines: 5 consts + 14
   bools + 8 table columns, prefix wfw - wsw taken by R450; checked free in all
   three TUs). GROUND TRUTH - the NEW WORKFLOW, user decision this round, a
   proven success: the user ran tesseract ON TERMUX (pkg install poppler
@@ -4281,7 +4281,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   keeping many desert travelers from dying of thirst,
   the drought plains and
   hills plants, the DM availability-and-quantity
-  ruling). rules/wsgwhere.h
+  ruling). rules/wsg/wsgwhere.h
   NEW (18 inlines: 4 consts - wwfLowElevMinFt
   1, wwfLowElevMaxFt 2,
   wwfHighElevMinFt 24, wwfHighElevMaxFt 100 - plus
@@ -4395,7 +4395,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   harvest sentence
   seaming from the p. 59 right-column tail
   onto the p. 60 top right).
-  rules/wsgdesert.h NEW (15
+  rules/wsg/wsgdesert.h NEW (15
   inlines: 5 consts - wdsDigFindPct 40,
   wdsNoWaterPct 60,
   wdsProfFindPct 80, wdsDepthMinFt 5, wdsDepthMaxFt 15 -
@@ -4508,7 +4508,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   different
   source; even without detect poison, caution and common
   sense
-  go a long way). rules/wsgpurify.h NEW (23 inlines:
+  go a long way). rules/wsg/wsgpurify.h NEW (23 inlines:
   11 consts -
   wpuBoilTaintRemainPct 10, wpuBoilRoundsMin 2,
   wpuBoilRoundsMax 5,
@@ -4597,7 +4597,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   adequate or perhaps good; the lee side of a large rock:
   good wind but only adequate-or-poor precip protection -
   the prose seams mid-sentence onto p. 62 at the cave
-  sentence). rules/wsgshelter.h NEW (31 inlines: 11 consts
+  sentence). rules/wsg/wsgshelter.h NEW (31 inlines: 11 consts
   - wnsTerrainCount 6, the 3/8 forest band, the 2/1 helper
   reductions with the 3-turn floor and the 2-helper lash
   cap, the 6-turn lashing, the 7/12 plains band, the
@@ -4677,7 +4677,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   GOOD LARGE 1d4+2 OUTLIER breaking the 1d3+ pattern of
   its band, verified in all three readers; moisture light/
   moderate/heavy/downpour; wind 20/30/40/50 pct; life span
-  40/80/120/180 days). rules/wsgtents.h NEW (27 inlines: 8
+  40/80/120/180 days). rules/wsg/wsgtents.h NEW (27 inlines: 8
   consts - the 6/10 pole band, the 30/45 pitch band, the
   3-piece pole cap, the 4-band x 3-size x 12-row geometry -
   plus 12 bools plus the seven Table 36 column switches -
@@ -4735,7 +4735,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   columns: Dex 1/2/3/4/5, Str 0/1/2/3/4, Wis 0/0/1/2/3,
   Con 0/0/0/1/2, to-hit 0/-1/-1/-2/-3, climb
   0/0/-10/-20/-30, move 0/0/-25/-33/-50, weight multiple
-  0/0/0/50/100). rules/wsgsleep.h NEW (77 inlines: 41
+  0/0/0/50/100). rules/wsg/wsgsleep.h NEW (77 inlines: 41
   consts + 28 bools + the eight Table 37 column switches,
   prefix wrs - checked free in regtest.cpp and the game
   sources; wsl was TAKEN, the R369 wsgslip.h lesson).
@@ -4806,7 +4806,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   80/60/40/30/20/10/0/0; Large dash, dash, then
   80/60/40/30/20/10/0 - the three printed dashes pinned as
   the 999 no-warmth sentinel, the R472 wsgtents moisture
-  precedent). rules/wsgfire.h NEW (65 inlines: 25 consts +
+  precedent). rules/wsg/wsgfire.h NEW (65 inlines: 25 consts +
   23 bools + the 17 grid columns across the two tables,
   prefix wgf - checked free in regtest.cpp and the game
   sources). GROUND TRUTH two-way on the prose and the
@@ -4886,7 +4886,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   precautions and perils (no safe fire, no fire on
   combustibles, 1-3 turns to clear, sparks 100 feet in a
   strong wind). 81 inlines (43 consts, 30 bools, 8 grid
-  columns) pin as rules/wsgfuel.h; census 399 -> 400; gap
+  columns) pin as rules/wsg/wsgfuel.h; census 399 -> 400; gap
   99/87 -> 101/85 (precautions and perils p. 66 + Table 39
   p. 66 boxes; next: uncontrollable fires p. 67). md5 pair:
   authored no-nl f4470756732fb40eacc929649e1d0fcb, as-built
@@ -4924,7 +4924,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   uncontrollable-fire spread prose (rough circle stringing out
   into a wind-driven wall of fire; animals and wise
   characters flee ahead). 46 inlines (25 consts, 21 bools)
-  pin as rules/wsgblaze.h; census 400 -> 401; gap 101/85 ->
+  pin as rules/wsg/wsgblaze.h; census 400 -> 401; gap 101/85 ->
   102/84 (uncontrollable fires p. 67 box; next: damage from
   fire p. 68). md5 pair: authored no-nl
   f4bc46529ddbdd42609b752ab7561c10, as-built
@@ -4963,7 +4963,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   counts as 120 degrees or higher per the Temperature Damage
   to Characters Table, with the activity-level adjustments
   waived). 38 inlines (17 consts, 21 bools) pin as
-  rules/wsgdmg.h with prefix wdm (wdf collided in
+  rules/wsg/wsgdmg.h with prefix wdm (wdf collided in
   regtest.cpp); census 401 -> 402; gap 102/84 -> 103/83
   (damage from fire p. 68 box; next: medicine and first aid
   pp. 69-71, starting with availability of medicinal plants
@@ -5021,7 +5021,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   way, the no-vegetation bar, the greater-chance-in-greenery
   rule, and the pointer to the Wilderness Proficiencies
   section for the benefits), prefix plr, pinned as
-  rules/wsglore.h with the include after wsgmed.h at line
+  rules/wsg/wsglore.h with the include after wsgmed.h at line
   184. THE SETTLE: two-way clean on the FIRST pass - the
   tesseract full-text and the pdfy layout read agree word
   for word, no contested cells, no vision reads needed; the
@@ -5042,7 +5042,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   8089f20..414dbb3), the WSG INJURIES AND TREATMENT slice,
   printed p. 70 - the tenth camping-arc round, a pure
   prose round with NO table: the five specific injuries
-  and treatments pinned as rules/wsginj.h with the include
+  and treatments pinned as rules/wsg/wsginj.h with the include
   after wsglore.h at line 185 (prefix wtr, free in all four
   files). The frame: first-aid skills are common knowledge,
   useful only when the DM rules with proper reason that a
@@ -5083,7 +5083,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   414dbb3..5fe385c), the WSG FIRST AID EQUIPMENT slice,
   printed p. 71 - the eleventh camping-arc round, CLOSING
   the medicine chapter, a pure prose round with NO table:
-  the four essentials pinned as rules/wsgfae.h with the
+  the four essentials pinned as rules/wsg/wsgfae.h with the
   include after wsginj.h at line 186 (prefix wfe - free,
   but the FIRST FOUR candidates fae/wfa/fad/aeq ALL
   collided, needing fourteen probes). Bandages: several
@@ -5123,7 +5123,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   5fe385c..c221b26), the WSG NORMAL VISION slice, printed
   p. 72 - the first vision-and-visibility round, a pure
   prose round with NO table (Table 41 waits at p. 73):
-  pinned as rules/wsgnvis.h with the include after wsgfae.h
+  pinned as rules/wsg/wsgnvis.h with the include after wsgfae.h
   at line 187 (prefix wnv, free; nvi and vis both collided).
   The chapter frame: as many as three visual senses -
   normal vision, infravision, ultravision - each with
@@ -5198,7 +5198,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   19d5d92..b800d4a), the WSG ULTRAVISION and infravision
   effectiveness slice, printed p. 74 - the third vision round,
   a prose round with a pin-table interior (no printed grid):
-  pinned as rules/wsgultra.h with the include after wsginfra.h
+  pinned as rules/wsg/wsgultra.h with the include after wsginfra.h
   at line 189 (prefix wuv, free on the first probe). The daylight
   bar: infravision is useless in daylight or artificial
   illumination stronger than moonlight, the visible light
@@ -5247,7 +5247,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   b800d4a..e9d27ae), the WSG ARTIFICIAL ILLUMINATION slice,
   printed pp. 74-75 - the fourth and final vision round,
   CLOSING the vision and visibility chapter (R482-R485), a
-  pure prose round with NO table: pinned as rules/wsglight.h
+  pure prose round with NO table: pinned as rules/wsg/wsglight.h
   with the include after wsgultra.h at line 190 (prefix wli,
   free on the first probe; wai/wal/wil/art all collided). The
   twilight frame: the section supplements the PHB p. 102
@@ -5302,7 +5302,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   e9d27ae..908b31b), the WSG NATURAL HAZARDS opener slice,
   printed pp. 76-79 - the FIRST content-density round (the
   post-R485 scope decision): four pages in one round, pinned
-  as rules/wsghazd.h with the include after wsglight.h at
+  as rules/wsg/wsghazd.h with the include after wsglight.h at
   line 191 (prefix whz, free on the first probe across all
   277 rules headers, regtest, both caller TUs, the seed and
   the gap report). The volcano frame: three eruption types -
@@ -5379,7 +5379,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
 - R487 LANDED 2026-10-16: commit 5fa9bdf (census 412,
   pushed 908b31b..5fa9bdf), the WSG NATURAL HAZARDS CLOSER
   slice, printed pp. 80-83 - the chapter CLOSED in two
-  content-density rounds. Pinned as rules/wsghazd2.h with
+  content-density rounds. Pinned as rules/wsg/wsghazd2.h with
   the include after wsghazd.h at line 192 (prefix whz2 -
   free on the first probe; the natural first choice wfl
   collided with the R475 fire-fuel round, so the wsghazd2
@@ -5473,7 +5473,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   pushed 5fa9bdf..1ac64e0), the WSG WILDERNESS COMBAT
   opener slice, printed pp. 84-87 - OPENING the wilderness
   combat chapter, the last WSG chapter. Pinned as
-  rules/wsgfight.h with the include after wsghazd2.h at
+  rules/wsg/wsgfight.h with the include after wsghazd2.h at
   line 193 (prefix wfc - free on the first probe), 145
   inlines: 68 consts + 77 bools in nine sections - the
   chapter opener with the DSG pp. 30-34 cross-reference,
@@ -5554,7 +5554,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   slice, printed pp. 87-89 - CLOSING the wilderness
   combat chapter with its dismount tail and LANDING
   the full fatigue and exhaustion chapter. Pinned as
-  rules/wsgfatig.h with the include after
+  rules/wsg/wsgfatig.h with the include after
   wsgfight.h at line 194 (prefix wft - free on the
   first probe), 120 inlines: 65 consts + 55 bools in
   five sections - the chapter opener, the p. 87
@@ -5649,7 +5649,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
 - R490 LANDED 2026-10-16: commit 86a2308 (census 415,
   pushed c11cbe1..86a2308), the WSG MOUNTS AND BEASTS
   OF BURDEN chapter slice, printed pp. 90-94 - CLOSING
-  the chapter. Pinned as rules/wsgmount.h with the
+  the chapter. Pinned as rules/wsg/wsgmount.h with the
   include after wsgfatig.h at line 195 (prefix wmb -
   free on the first probe), 185 inlines: 80 consts +
   90 bools + the 15 Table 42 switch columns in
@@ -5736,7 +5736,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
 - R491 LANDED 2026-10-16: commit 4e07d5d (census 416,
   pushed 86a2308..4e07d5d), the WSG MAGIC IN THE
   WILDERNESS chapter slice, printed pp. 95-101 - CLOSING
-  the chapter. Pinned as rules/wsgmagic.h with the
+  the chapter. Pinned as rules/wsg/wsgmagic.h with the
   include after wsgmount.h at line 196 (prefix wmg - free
   on the first probe), 241 inlines: 90 consts + 150
   bools + the wmgWebThickBand chain in twelve sections -
@@ -5827,7 +5827,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
 - R492 LANDED 2026-10-16: commit e84e00a (census 417,
   pushed 4e07d5d..e84e00a), the WSG DUNGEON MASTER
   SECTION slice, printed pp. 103-106 - CLOSING the
-  section. Pinned as rules/wsgdm.h with the include
+  section. Pinned as rules/wsg/wsgdm.h with the include
   after wsgmagic.h at line 197 (prefix wmd - free on
   the first probe; wdm is taken), 91 inlines: 27
   consts + 64 bools in ten sections - the opener,
@@ -5900,7 +5900,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   appendix part 1 of 2, printed pp. 107-111 plus the
   extraordinary-precipitation tail from the top-left
   of printed p. 112 - the weather GENERATION system.
-  Pinned as rules/wsgweather.h with the include after
+  Pinned as rules/wsg/wsgweather.h with the include after
   wsgdm.h at regtest.cpp line 198 (prefixes wwx for
   the pins and wws for the table switch columns -
   both free on the first probe), 170 inlines: 61
@@ -5954,7 +5954,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   pushed ceaff98..7dd2f3f), the WSG WORLD OF WEATHER
   appendix part 2 of 2 - the weather EFFECTS system
   and the optional rules, printed pp. 112-119. Pinned
-  as rules/wsgweathx.h with the include after
+  as rules/wsg/wsgweathx.h with the include after
   wsgweather.h (prefixes wwy for the pins and wwt for
   the table switch columns), 340 inlines: 220 consts +
   63 bools + 1 chain (wwyCycloneDriftFor, limits 6/7,
@@ -6020,7 +6020,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   the play-session reprint section, printed pp. 120-123
   (pdf 121-124), THE ARC-COMPLETION ROUND: every section of
   the Wilderness Survival Guide is now pinned. Pinned as
-  rules/wsgtables.h with the include after wsgweathx.h
+  rules/wsg/wsgtables.h with the include after wsgweathx.h
   (prefix wct), a manifest round: 56 consts + 40 bools, no
   new grids (96 inlines) - the table data lives in the
   original headers; this round pins the compilation itself.
@@ -6031,7 +6031,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   print discrepancy is compiled Table 32 (fishing success)
   - Fair daytime 1d6-3 vs the original 1d6-2 and Good
   daytime 1d6-2 vs the original 1d8-2 - pinned
-  compiled-side as the errata record (rules/wsgfish.h keeps
+  compiled-side as the errata record (rules/wsg/wsgfish.h keeps
   the original readings); Night and Dawn-Dusk unchanged.
   Table 4's OCR-shredded attack cells (90-99 = -1,
   100-109 = -2) confirmed by user eyeball and match the
@@ -6062,7 +6062,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   pushed 88c0739..bd58585), the WSG GAP RECONCILIATION -
   the bookkeeping round: twenty-four boxes that were
   already pinned by earlier rounds flip in one commit.
-  NO new book material; pinned as rules/wsgrecon.h
+  NO new book material; pinned as rules/wsg/wsgrecon.h
   (prefix wgr, 37 inlines: 13 consts + 24 bools). Eleven
   chapter parents flip, every child closed by R427-R491
   (env effects, encumbrance/movement, food/water,
@@ -6094,7 +6094,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   pushed bd58585..6276205), the WSG OVERVIEW OF THE
   WILDERNESS, printed pp. 7-10 (pdf 8-11) - the terrain
   types, the hierarchy, the bodies of water and the
-  climate zones. Pinned as rules/wsgoverview.h (prefix
+  climate zones. Pinned as rules/wsg/wsgoverview.h (prefix
   wov, 85 inlines: 27 consts + 58 bools, no grids).
   Load-bearing pins: the desert under-10-inches rainfall
   definition with the 70-foot dune cap (draa beyond),
@@ -6130,7 +6130,7 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   PROSE, printed pp. 11-17 (pdf 12-18) - THE WSG GAP
   CLOSURE ROUND: the gap report lands at 186 closed /
   0 open; THE ENTIRE WILDERNESS SURVIVAL GUIDE IS
-  PINNED, cover to cover. Pinned as rules/wsgprofd.h
+  PINNED, cover to cover. Pinned as rules/wsg/wsgprofd.h
   (prefix wpd, 157 inlines: 85 consts + 72 bools, no
   grids). The R425 check/improving/expanding system and
   the Table 1/2 grids stay as seams; this round pins
@@ -6168,12 +6168,12 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
 - R499 LANDED 2026-10-16: commit bcaa323 (census 424,
   pushed d4f30ee..bcaa323), the WSG TEMPERATURE-CHAIN FOLD -
   THE FIRST SEAM ROUND after the gap report closed at 186/0:
-  no new book pages. The dressing columns (rules/wsgdress.h
+  no new book pages. The dressing columns (rules/wsg/wsgdress.h
   wsdColForTemp), the Table 9 heat bands and frostbite
-  threshold (rules/wsgheat.h wshHeatBandFor), the weather
-  letter codes (rules/wsgweather.h wwsTempCodeHi) and the R498
-  survival shifts (rules/wsgprofd.h) reconciled as one
-  system. Pinned as rules/wsgtempfold.h (prefix wtf, 37
+  threshold (rules/wsg/wsgheat.h wshHeatBandFor), the weather
+  letter codes (rules/wsg/wsgweather.h wwsTempCodeHi) and the R498
+  survival shifts (rules/wsg/wsgprofd.h) reconciled as one
+  system. Pinned as rules/wsg/wsgtempfold.h (prefix wtf, 37
   inlines: 27 consts + 10 bools, no grids, NO gap flips - the
   report stays 186/0). THE FOLD PATTERN (NEW, load-bearing):
   R317/R401 predate the spec engine - no reusable fold spec
@@ -6215,11 +6215,11 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   FOLD - the second seam round, the R499 fold pattern
   applied to the water chapter: one swimmer state flows
   through five landed headers - the swimming rates
-  (rules/wsgswim.h R450), the moving-water hazards
-  (rules/wsgmwater.h R451), the dive leg (rules/wsgdive.h
-  R452), the treading economy (rules/wsgtread.h R453) and
-  the surfacing/breath rules (rules/wsgbreath.h R454).
-  Pinned as rules/wsgswimfold.h (prefix wmf, 49 inlines:
+  (rules/wsg/wsgswim.h R450), the moving-water hazards
+  (rules/wsg/wsgmwater.h R451), the dive leg (rules/wsg/wsgdive.h
+  R452), the treading economy (rules/wsg/wsgtread.h R453) and
+  the surfacing/breath rules (rules/wsg/wsgbreath.h R454).
+  Pinned as rules/wsg/wsgswimfold.h (prefix wmf, 49 inlines:
   39 consts + 10 bools, no grids, NO gap flips - the
   report stays 186/0). FINDINGS: the vertical rates equal
   each other (dive base and surface base both 2 inches) and
@@ -6258,13 +6258,13 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
   FOLD - the third seam round, the R499 fold pattern
   applied to the climbing-and-falling chapter: one
   falling character flows through seven landed headers -
-  the climbing ratings (rules/wsgclimb.h R435), the Table
-  17 fall ladder (rules/wsgfall.h R437), the tumble rates
-  (rules/wsgtumble.h R438), the stop windows
-  (rules/wsgstop.h R439), the slippery-surface cadence
-  (rules/wsgslip.h R447), the jump floors
-  (rules/wsgjump.h R448) and the airborne fall chance
-  (rules/wsgfallair.h R461). Pinned as rules/wsgmovefold.h
+  the climbing ratings (rules/wsg/wsgclimb.h R435), the Table
+  17 fall ladder (rules/wsg/wsgfall.h R437), the tumble rates
+  (rules/wsg/wsgtumble.h R438), the stop windows
+  (rules/wsg/wsgstop.h R439), the slippery-surface cadence
+  (rules/wsg/wsgslip.h R447), the jump floors
+  (rules/wsg/wsgjump.h R448) and the airborne fall chance
+  (rules/wsg/wsgfallair.h R461). Pinned as rules/wsg/wsgmovefold.h
   (prefix wmv, 49 inlines: 39 consts + 10 bools, no grids,
   NO gap flips - the report stays 186/0). FINDINGS: the
   Table 17 dice are the TRIANGULAR numbers 1, 3, 6, 10,
@@ -6299,11 +6299,11 @@ R463 - food gathering, foraging, Table 30 and the inedible plants (printed pp.
 - R502 LANDED 2026-10-16: commit 4681d11 (census 427, pushed
 77d39de..4681d11), the WSG CAMP-CHAIN FOLD - the fourth seam round, the R499
 fold pattern applied to the camp chapter: one campsite flows through six
-landed headers - the rest quality and Table 38 fire (rules/wsgfire.h R474),
-the fire starting and fuel rules (rules/wsgfuel.h R475), the wildfire rules
-(rules/wsgblaze.h R476), the tent quality system (rules/wsgsleep.h R473), the
-natural shelters (rules/wsgshelter.h R471) and the R499 temperature chain
-re-read for the seam. Pinned as rules/wsgcampfold.h (prefix wmc, 63 inlines:
+landed headers - the rest quality and Table 38 fire (rules/wsg/wsgfire.h R474),
+the fire starting and fuel rules (rules/wsg/wsgfuel.h R475), the wildfire rules
+(rules/wsg/wsgblaze.h R476), the tent quality system (rules/wsg/wsgsleep.h R473), the
+natural shelters (rules/wsg/wsgshelter.h R471) and the R499 temperature chain
+re-read for the seam. Pinned as rules/wsg/wsgcampfold.h (prefix wmc, 63 inlines:
 53 consts + 10 bools, no grids, NO gap flips - the report stays 186/0).
 FINDINGS: the wildfire hour (the 6-turn uncontrollable bar equals the 6 turns
 per hour - a fire left alone for exactly one hour becomes uncontrollable); the
@@ -6332,7 +6332,7 @@ the next book, opening a fresh pin arc with its own gap report.
 - R503 LANDED 2026-10-16: commit c8ec2d1 (census 428, pushed
 0e8907a..c8ec2d1), the DSG OVERVIEW OF THE UNDERDARK, printed pp. 7-11 (pdf
 8-12) - the arc first content round, the R497 pattern. Pinned as
-rules/dsgoverview.h (prefix dov, 58 inlines: 8 consts + 50 bools, no grids).
+rules/dsg/dsgoverview.h (prefix dov, 58 inlines: 8 consts + 50 bools, no grids).
 Load-bearing pins: the pdf = printed + 1 offset (opener on pdf 7 for printed
 6); the three-cave taxonomy; molten lava 1,800 F killing non-fire-resistant on
 contact; the 10-foot dirt shoring; the realms-deeper-than-a-mile rule; the
@@ -6355,7 +6355,7 @@ chapter (printed pp. 12-22, pdf 13-23): the BIG cross-book seam
 - R504 LANDED 2026-10-16: commit e4f8c16 (census 429, pushed
 a8c86de..e4f8c16), the DSG MOVEMENT CHAPTER PART I, printed pp. 12-19 (pdf
 13-20): the check frames, swimming, breath, moving water, climbing,
-rappelling, jumping and the rope system. Pinned as rules/dsgmove.h (prefix
+rappelling, jumping and the rope system. Pinned as rules/dsg/dsgmove.h (prefix
 dmv, 234 inlines: 119 consts + 91 bools + 2 chains + 6 tables/22 cols; 29
 examples, 8 table_checks). Gap 5/150 -> 27/128: 16 chapter boxes (the check
 frames through roping together) + the manifest tables 1-6; the movement parent
@@ -6384,7 +6384,7 @@ when both halves land.
   PART II - printed pp. 19-22 (pdf 20-23): bridges,
   falling expanded, spelunking, excavation, fatigue,
   darkness and slippery surfaces. Pinned as
-  rules/dsgmove2.h (prefix dmx, 130 inlines: 85 consts
+  rules/dsg/dsgmove2.h (prefix dmx, 130 inlines: 85 consts
   + 40 bools + 3 tables/5 cols; 22 examples, 8
   table_checks). Gap 27/128 -> 38/117: 11 flips - the
   movement PARENT box, 7 chapter boxes (Bridges,
@@ -6414,7 +6414,7 @@ when both halves land.
   the check system and Table 10, the slot economy, the
   artisans and NPC training, the optional bonuses, the
   craftsman and adventuring lists with Tables 11-13,
-  and the XP option. Pinned as rules/dsgprof.h
+  and the XP option. Pinned as rules/dsg/dsgprof.h
   (prefix dnp, verified free; 208 inlines: 125 consts +
   68 bools + 4 tables/15 cols; 23 examples, 7
   table_checks). Gap 38/117 -> 50/105: 12 flips - the
@@ -6455,7 +6455,7 @@ when both halves land.
   spanning it; the gap-report child page labels are the
   TOC's approximations (water/narrow/darkness print on
   p. 32, mounted runs to p. 33) and flipped as-is. Pinned
-  as rules/dsgfight.h (prefix dnq, verified free; 216
+  as rules/dsg/dsgfight.h (prefix dnq, verified free; 216
   inlines: 69 consts + 145 bools + Table 14's 2 cols;
   34 examples, 2 table_checks). Gap 50/105 -> 60/95:
   10 flips - the combat PARENT, 8 children, manifest
@@ -6531,7 +6531,7 @@ when both halves land.
   60-dice orc example, 4d8 mud fall, 1% base + 4%
   cumulative per sub-25 survived d100, the heavy-unit
   13-to-26 doubling and the direct-hit/adjacent-collapse
-  doublings). Pinned as rules/dsgbatt.h (prefix dnr,
+  doublings). Pinned as rules/dsg/dsgbatt.h (prefix dnr,
   verified free; 145 inlines: 57 consts + 88 bools, no
   grids; 22 examples). Gap 60/95 -> 69/86: 9 flips -
   the PARENT + 8 children. Garbles settled dual-read:
@@ -6577,7 +6577,7 @@ when both halves land.
   exhausts, gases 2-5h (1d4+1); none: full smoke rate,
   gases 24h unless heavier than air; sealed: finite air,
   smoke lingers 1d6h, gases until vented, spells normal).
-  Pinned as rules/dsgair.h (prefix dna, verified free;
+  Pinned as rules/dsg/dsgair.h (prefix dna, verified free;
   98 inlines: 49 consts + 49 bools, no grids; 18 examples).
   Gap 69/86 -> 73/82: 4 child flips - the Ventilation box
   EXISTS as its own child (line 107; the earlier extraction
@@ -6617,7 +6617,7 @@ when both halves land.
   appendix reprint vs the design ladder -> 0, -4, -8,
   dash. STANDING METHOD: the appendix reprint is the
   third read for disputed cells. Pinned as
-  rules/dsgodor.h (prefix dnv, verified free; 51
+  rules/dsg/dsgodor.h (prefix dnv, verified free; 51
   inlines: 15 consts + 27 bools + the two grids; 11
   examples + 5 table checks; 7 header sections). Gap
   73/82 -> 76/79: 3 flips - the Odor detection child
@@ -6662,7 +6662,7 @@ when both halves land.
   settled by the Acrobat-Capture layer; Table 17
   confirmed THREE-WAY (chapter djvu + the compiled-
   tables appendix reprint + Capture). Pinned as
-  rules/dsgcavein.h (prefix dnw, verified free; 50
+  rules/dsg/dsgcavein.h (prefix dnw, verified free; 50
   inlines: 17 consts + 30 bools + 3 T17 cols). Gap
   76/79 -> 79/76: 3 flips - the Causes and Random
   occurrences children + the Table 17 manifest line.
@@ -6717,7 +6717,7 @@ when both halves land.
   15559, garble 4896 = 48%) + Capture idx 52; the
   djvu garbles 648 = 6d8 and 114damage = 1/4 settled
   by the Capture layer. Pinned as
-  rules/dsgcavein2.h (prefix dnx, verified free;
+  rules/dsg/dsgcavein2.h (prefix dnx, verified free;
   66 inlines: 31 consts + 32 bools + 3 T18 cols).
   Gap 79/76 -> 82/73: 3 flips - the chain reactions
   and Effects children + the Table 18 manifest line.
@@ -6765,7 +6765,7 @@ when both halves land.
   drop of Stalactite on the small-8 row settled by
   the chapter); hypothermia numbers dual-confirmed
   on Capture idx 56-57. Pinned as
-  rules/dsgdpv.h (prefix dny, verified free; 27
+  rules/dsg/dsgdpv.h (prefix dny, verified free; 27
   inlines: 9 consts + 16 bools + 2 T19 cols; the
   loss/recovery 1d6 dice+sides consts per the R508
   convention). Gap 82/73 -> 85/70: 3 flips - the
@@ -6818,7 +6818,7 @@ when both halves land.
   (Capture) and ih place = in place (appendix)
   settled; Table 20 confirmed THREE-WAY (chapter +
   appendix reprint + Capture idx 62). Pinned as
-  rules/dsglode.h (prefix dnz, verified free; 45
+  rules/dsg/dsglode.h (prefix dnz, verified free; 45
   inlines: 15 consts + 27 bools + 3 T20 cols). Gap
   85/70 -> 88/67: 3 flips - the Lodestone and NPC
   reactions children + the Table 20 manifest line.
@@ -6839,7 +6839,7 @@ when both halves land.
 - R515b LANDED 2026-10-17: commit b987ddb (census stays
   439 - a TOOL ROUND, not a splice; pushed 8bd8a0d..
   b987ddb after the 8bd8a0d mishap), the regtest/preflight
-  CLEANUP: (a) rules/character.cpp AbilityScores::set()
+  CLEANUP: (a) rules/engine/character.cpp AbilityScores::set()
   gains default: break - the -Wswitch warning dies;
   (b) regtest.cpp R320 statusName becomes a std::strcmp -
   the -Wstring-compare warning dies AND the latent
@@ -6878,7 +6878,7 @@ when both halves land.
   with the roll-1 = 20-year max and roll-6 = 120-year
   examples, the stress check (garble 4100 = d100)) with
   census_before 439, the next free dn-prefix (verify in
-  regtest.cpp), header rules/dsgdecay.h, include_after =
+  regtest.cpp), header rules/dsg/dsgdecay.h, include_after =
   the R514 dsglode.h include line.
 - R516 LANDED 2026-10-17: commit 10723f2 (census 439 -> 440,
   pushed b987ddb..10723f2), the DSG STRUCTURAL DECAY, printed
@@ -6892,7 +6892,7 @@ when both halves land.
   roll with the roll-1 20-year max (100%) and roll-6 120-year
   examples, the check on unusual stress, and the d100 check
   roll (djvu garble 4100 = d100). Pinned as
-  rules/dsgdecay.h (prefix dns, verified free; 14 inlines:
+  rules/dsg/dsgdecay.h (prefix dns, verified free; 14 inlines:
   8 consts + 6 bools; the 1d6 onset as dice+sides consts per
   the R508 convention; no table - gap 88/67 -> 89/66, the
   child flip only). PREV_RECORD CARRIED TWO ENTRIES: R514 +
@@ -6941,7 +6941,7 @@ when both halves land.
   garbles: 10096 = 100% flow, "flow rate - 2-6" = 2-6
   (Capture settled), plus a stray STRUCTGRAL DECAY heading
   interrupting the waterways opener in djvu (Capture
-  clean). Pinned as rules/dsgwater.h (prefix dnt, verified
+  clean). Pinned as rules/dsg/dsgwater.h (prefix dnt, verified
   free; 110 inlines: 70 consts + 40 bools - the biggest
   header since R509; every die as dice+sides consts per the
   R508 convention). STANDING DESIGN NOTE: the flow bands
@@ -6990,7 +6990,7 @@ when both halves land.
   Tm coordinates - the standard dual-read fallback when
   both layers garble a column layout. Tables 21-24 share
   one boat key order (noted in the sentinel). Pinned as
-  rules/dsgboat.h (prefix dnu, verified free; 71 inlines:
+  rules/dsg/dsgboat.h (prefix dnu, verified free; 71 inlines:
   29 consts + 30 bools + 12 table cols; every effect die
   as dice+sides consts per the R508 convention). Gap
   90/65 -> 97/58: 7 flips - the water-travel child + all
@@ -7032,7 +7032,7 @@ when both halves land.
   trading more work for much greater wealth, the rules
   dealing primarily with tunnel mining. Numbers dual-read on
   Capture idx 66 (clean both layers; no garbles this round).
-  Pinned as rules/dsgmine.h (prefix dnm, verified free; 26
+  Pinned as rules/dsg/dsgmine.h (prefix dnm, verified free; 26
   inlines: 6 consts + 20 bools; no tables). Gap 97/58 ->
   99/56: 2 flips - the two mining child lines, no manifest
   lines. DELIVERY: canvas r519-splice, authored md5 7705e796
@@ -7072,7 +7072,7 @@ when both halves land.
   in the 10x10 tunnel, four man-hours per set, the
   carpenter/stonemason/miner proficiencies, and the
   18/50-strength solo-moving threshold. Pinned as
-  rules/dsgmine2.h (prefix dnf, verified free; 43 inlines -
+  rules/dsg/dsgmine2.h (prefix dnf, verified free; 43 inlines -
   21 consts, 15 bools, 7 table cols; Tables 27/28/29). Spec
   26,060 bytes, authored md5 e1b54aa9 (user-side identical -
   no ./bn rewrite this round). Engine applied 10 then
@@ -7117,7 +7117,7 @@ when both halves land.
   (standing rule, now exercised once). The 1d10 mithril
   check pins as dice + sides consts (the djvu "1410" and
   Capture "ldlO" garbles both read as 1d10); the 00 bands
-  pin as roll 100. Pinned as rules/dsgmine3.h (prefix dnpr,
+  pin as roll 100. Pinned as rules/dsg/dsgmine3.h (prefix dnpr,
   4-char because every dn? 3-char slot is taken; 23
   inlines - 8 consts, 9 bools, 6 table cols; Tables 30/31/
   32). Spec 19,747 bytes, md5 fc81fc406623a27aa608873b0bc8a678
@@ -7185,7 +7185,7 @@ when both halves land.
   lesson, twice exercised). NOTE: amber appears in Table
   34 but not in Table 32's gemstone list - pinned as
   printed per the R517 never-repair lesson. Pinned as
-  rules/dsgmine4.h (prefix dnqt, verified free; 38 inlines
+  rules/dsg/dsgmine4.h (prefix dnqt, verified free; 38 inlines
   - 14 consts, 12 bools, 12 table cols; Table 33 as a 10x5
   metal grid, Table 34 as a 17x7 numeric encoding of count
   dice/sides/divisor and value add/mult/dice/sides).
@@ -7253,7 +7253,7 @@ when both halves land.
   between the R521 products child and the R522 quality
   child) - it rode this round under the Finishing child
   flip, keeping the report lossless. Pinned as
-  rules/dsgmine5.h (prefix dnrv, verified free; 48 inlines
+  rules/dsg/dsgmine5.h (prefix dnrv, verified free; 48 inlines
   - 16 consts, 32 bools, no tables - a pure prose round).
   Spec 31,199 bytes, md5 4f1f2cdcd01ef0ff85637b692d6603b5
   (user-side identical - no ./bn rewrite). Engine applied
@@ -7310,7 +7310,7 @@ when both halves land.
   chapter (pp. 36-55) - the chapter parent line is closeable
   at the next census check. SEAMS: DMG p. 36 loyalty, R520
   shoring (the 10-ft intervals match), R511 chain
-  reactions, R518 water travel. Pinned as rules/dsgmine6.h
+  reactions, R518 water travel. Pinned as rules/dsg/dsgmine6.h
   (prefix dnsw, verified free; 38 inlines - 18 consts, 20
   bools, no tables - a pure prose round). Spec 24,783
   bytes, md5 1f37314d48a5eb0cbb1ca2024922da41 (user-side
@@ -7376,7 +7376,7 @@ when both halves land.
   bytes appended after the closing brace (23257 vs 23255,
   JSON 'Extra data'), diagnosed via wc -c + tail and fixed
   with truncate -s 23255 - the md5-vs-authored check caught
-  it before the engine ran. Pinned as rules/dsgequip.h
+  it before the engine ran. Pinned as rules/dsg/dsgequip.h
   (prefix dnta, verified free; 17 inlines - 5 consts, 8
   bools, 4 table cols; Table 35 as a 24x2 grid normalized to
   copper-piece costs and gp coin weights, the proficiencies
@@ -7443,7 +7443,7 @@ when both halves land.
   CLOSED. SEAMS: air supply p. 36, hypothermia p. 42, the
   movement p. 21 passage width, R520 pickaxe/shovel rates,
   the climbing crampons/hooks. Pinned as
-  rules/dsgequip2.h (prefix dnet, verified free; 80 inlines
+  rules/dsg/dsgequip2.h (prefix dnet, verified free; 80 inlines
   - 54 consts, 26 bools, no tables). Spec 37,748 bytes, md5
   fdf6297d5d25e2f005d0ff5d91abeac1 (user-side identical).
   Engine applied 6 then 0/6. Gap 124/31 -> 126/29 (2 flips:
@@ -7499,7 +7499,7 @@ when both halves land.
   already-flipped Equipment-for-proficiencies child 140,
   zero gap flips, the census unchanged at 126/29, and the
   git add drops dsg_gap_report.md (untouched). Pinned as
-  rules/dsgequip3.h (prefix dnep, verified free; 16
+  rules/dsg/dsgequip3.h (prefix dnep, verified free; 16
   inlines - 1 const, 15 bools, no tables). Spec 16,269
   bytes, md5 d68d54037abe6e14a75dd0aa90edc32e (user-side
   identical). Engine applied 4 then 0/4. NEXT - R528: the
@@ -7565,7 +7565,7 @@ when both halves land.
   content-density rule: children 142-144 this round, R529
   takes 145-150 (fighting effectively, diversions,
   speeding play, creative spell use, languages, mapping).
-  Pinned as rules/dsgplay.h (prefix dnip, verified free;
+  Pinned as rules/dsg/dsgplay.h (prefix dnip, verified free;
   43 inlines - 19 consts, 24 bools, no tables). Spec
   26,644 bytes, md5 06727a4b26c3fa0bb2391f12336267b5
   (user-side identical). Engine applied 7 then 0/7. Gap
@@ -7617,7 +7617,7 @@ when both halves land.
   the improving-play opener (parent 141 now closed),
   Monster Manual ranger infravision, R80 spell
   silences/darkness/telekinesis/shatter/charm. Pinned
-  as rules/dsgplay2.h (prefix dnpm, verified free;
+  as rules/dsg/dsgplay2.h (prefix dnpm, verified free;
   41 inlines - 7 consts, 34 bools, no tables). Spec
   32,472 bytes, md5 c02b4014ca43344f088fcfcac54114a9
   (user-side identical). Engine applied 10 then
@@ -7686,7 +7686,7 @@ when both halves land.
   number (djvu ~lines 8226-8860, Capture idx 149-162).
   SEAMS: Monster Manual burrowers and underground
   cultures, DMG inner planes, the R503 re-grain. Pinned
-  as rules/dsgenv.h (prefix dnug, verified free; 51
+  as rules/dsg/dsgenv.h (prefix dnug, verified free; 51
   inlines - 4 consts, 47 bools, no tables). Spec 31,639
   bytes, md5 cfcb3916edb3d7ca26cea790296e1c73
   (user-side identical). Engine applied 5 then 0/5,
@@ -7748,7 +7748,7 @@ when both halves land.
   8902-9268, Capture idx 163-168). SEAMS: R530
   environment, R521-R524 mining, Monster Manual
   cultures, DMG inner planes, the R503 re-grain. Pinned
-  as rules/dsggeo.h (prefix dngr, verified free; 42
+  as rules/dsg/dsggeo.h (prefix dngr, verified free; 42
   inlines - 3 consts, 39 bools, no tables). Spec 29,092
   bytes, md5 ebc40e269c3b9a8778f5e102cf4093b1 (user-side
   identical). Engine applied 6 then 0/6, audit mirror
@@ -7830,7 +7830,7 @@ when both halves land.
   chapter context). SEAMS: Fiend Folio drow and kuo-toa,
   Monster Manual II duergar, aboleth, derro and cloakers,
   Monster Manual mind flayer, R530-R531 environment and
-  geography, the R503 re-grain. Pinned as rules/dsgcult.h
+  geography, the R503 re-grain. Pinned as rules/dsg/dsgcult.h
   (prefix dncu, verified free; 42 inlines - 5 consts, 37
   bools, no tables). Spec 29,999 bytes, md5
   35e679031b2e4ff3d16bf4ce8e742d00 (user-side identical).
@@ -7953,7 +7953,7 @@ when both halves land.
   of force and permanence, R521-R522 mining, the R503
   re-grain. A ZERO-FLIP ROUND: the pp. 75-98 Deepearth
   child remains open (the R527/R533 precedent - the gap
-  report NOT in the git add). Pinned as rules/dsgarea1.h
+  report NOT in the git add). Pinned as rules/dsg/dsgarea1.h
   (prefix dnar, verified free; 44 inlines - 26 consts,
   18 bools, no tables). Spec 26,829 bytes, md5
   39a292cc94236a717a1acb8cef31b173 (user-side identical).
@@ -8007,7 +8007,7 @@ when both halves land.
   trailing newline so the md5s match as-delivered. A
   ZERO-FLIP ROUND: the pp. 75-98 Deepearth child remains
   open (the R527/R533/R534 precedent - the gap report NOT
-  in the git add). Pinned as rules/dsgarea2.h (prefix dnac,
+  in the git add). Pinned as rules/dsg/dsgarea2.h (prefix dnac,
   verified free; 58 inlines - 33 consts, 25 bools, no
   tables). Spec 28,871 bytes landed (28,870 + newline),
   user-side md5 c3b23233763d24f02f83aebf9465426a,
@@ -8056,7 +8056,7 @@ when both halves land.
   the staging md5 exactly (spec 24,304 bytes). A ZERO-FLIP
   ROUND: the pp. 75-98 Deepearth child remains open (the
   R527/R533/R534/R535 precedent - the gap report NOT in
-  the git add). Pinned as rules/dsgarea3.h (prefix dnae,
+  the git add). Pinned as rules/dsg/dsgarea3.h (prefix dnae,
   verified free; 43 inlines - 30 consts, 13 bools, no
   tables). Engine applied 4 then 0/4, audit mirror clean.
   Gap unchanged 139/16. PREFLIGHT GREEN with census 460
@@ -8111,7 +8111,7 @@ when both halves land.
   delete it before the R538 round (no R538 spec exists
   yet). A ZERO-FLIP ROUND: the pp. 75-98 Deepearth child
   remains open (the R527/R533-R536 precedent - the gap
-  report NOT in the git add). Pinned as rules/dsgarea4.h
+  report NOT in the git add). Pinned as rules/dsg/dsgarea4.h
   (prefix dnaf, verified free; 44 inlines - 26 consts,
   18 bools, no tables; 1d3x10 pinned as a count-sides-
   multiplier triple). Engine applied 4 then 0/4, audit
@@ -8162,7 +8162,7 @@ when both halves land.
   aad28123 matched exactly (spec 23,088 bytes). A
   ZERO-FLIP ROUND: the pp. 75-98 Deepearth child remains
   open (the R527/R533-R537 precedent - the gap report NOT
-  in the git add). Pinned as rules/dsgarea5.h (prefix dnag,
+  in the git add). Pinned as rules/dsg/dsgarea5.h (prefix dnag,
   verified free; 37 inlines - 19 consts, 18 bools, no
   tables; 3d6 pinned as a count-sides pair). Engine applied
   4 then 0/4, audit mirror clean. Gap unchanged 139/16.
@@ -8205,7 +8205,7 @@ when both halves land.
   exactly (spec 19,844 bytes). A ZERO-FLIP ROUND: the
   pp. 75-98 Deepearth child remains open (the
   R527/R533-R538 precedent - the gap report NOT in the
-  git add). Pinned as rules/dsgarea6.h (prefix dnah,
+  git add). Pinned as rules/dsg/dsgarea6.h (prefix dnah,
   verified free; 32 inlines - 20 consts, 12 bools, no
   tables; 2d6x1,000 pinned as a count-sides-multiplier
   triple). Engine applied 4 then 0/4, audit mirror clean.
@@ -8263,7 +8263,7 @@ when both halves land.
   25,408 bytes). A ZERO-FLIP ROUND: the pp. 75-98
   Deepearth child remains open (the R527/R533-R539
   precedent - the gap report NOT in the git add). Pinned
-  as rules/dsgarea7.h (prefix dnai, verified free; 43
+  as rules/dsg/dsgarea7.h (prefix dnai, verified free; 43
   inlines - 22 consts, 21 bools, no tables; 1d6 pinned as
   a count-sides pair). Engine applied 4 then 0/4, audit
   mirror clean. Gap unchanged 139/16. PREFLIGHT GREEN
@@ -8316,7 +8316,7 @@ when both halves land.
   agree on every number (djvu ~lines 11260-11493, capture
   idx 400-412; the capture '1dlO + 10' settled by the djvu
   as 1d10 + 10). 60 inlines (44 consts + 16 bools), header
-  rules/dsgarea8.h, prefix dnaj, no table. DELIVERY clean
+  rules/dsg/dsgarea8.h, prefix dnaj, no table. DELIVERY clean
   md5-exact on the first try (the bn-free ritual): authored
   md5 6b5948ecc46381e012c183769e582bc4 matched exactly
   (spec 30,365 bytes), engine applied 4 then 0/4, preflight
@@ -8374,7 +8374,7 @@ when both halves land.
   and '346 ft' settled by the capture as 2% and 3d6
   ft, the capture 'ld6/ld4/ld20+20' settled by the
   djvu). 73 inlines (33 consts + 40 bools), header
-  rules/dsgarea9.h, prefix dnak, no table. DELIVERY
+  rules/dsg/dsgarea9.h, prefix dnak, no table. DELIVERY
   clean md5-exact on the first try: authored md5
   0ec642173140657e1f13d7fdc81388e2 matched exactly
   (spec 29,735 bytes) - the paste carried a stray
@@ -8431,7 +8431,7 @@ when both halves land.
   '5096' settled by the capture as 8d8 and 50%, the
   capture 'ld6' and 'ajarge' settled by the djvu). 63
   inlines (31 consts + 32 bools), header
-  rules/dsgarea10.h, prefix dnal, no table. DELIVERY
+  rules/dsg/dsgarea10.h, prefix dnal, no table. DELIVERY
   clean md5-exact on the first try: authored md5
   7032f70119bc39639f21e53aa2fd03b5 matched exactly
   (spec 28,396 bytes); engine applied 4 then 0/4,
@@ -8485,7 +8485,7 @@ when both halves land.
   number (djvu ~lines 11935-12079, capture idx 212
   = the p. 93 area-22 tail window, idx 214 head =
   area 23). 45 inlines (21 consts + 24 bools),
-  header rules/dsgarea11.h, prefix dnam, no table,
+  header rules/dsg/dsgarea11.h, prefix dnam, no table,
   no dice. DELIVERY clean md5-exact on the first
   try: authored md5 022290ff9f29d2aae50abe8b916988
   38 matched exactly (spec 21,657 bytes); engine
@@ -8549,7 +8549,7 @@ when both halves land.
   capture ld6/2d6/ld4+1/ld12 settled by the djvu,
   the djvu 'realms o!' settled by the capture). 52
   inlines (31 consts + 21 bools), header
-  rules/dsgarea12.h, prefix dnan, no table.
+  rules/dsg/dsgarea12.h, prefix dnan, no table.
   DELIVERY clean md5-exact on the first try:
   authored md5 3739256c26c405c05ba60d9cbf2d1df2
   matched exactly (spec 25,012 bytes); engine
@@ -8606,7 +8606,7 @@ when both halves land.
   the djvu '17 + 1410' and '8096' settled by the
   capture as 17+1d10 and 80%, the capture 'ld12'
   settled by the djvu as 1d12). 29 inlines (9 consts
-  + 20 bools), header rules/dsgarea13.h, prefix
+  + 20 bools), header rules/dsg/dsgarea13.h, prefix
   dnao, no table. DELIVERY clean md5-exact on the
   first try: authored md5 927d5aaaae30248de10f7240
   671b45b8 matched exactly (spec 17,026 bytes);
@@ -8668,7 +8668,7 @@ when both halves land.
   (djvu ~lines 12362-12554, capture idx 216 tail +
   idx 220 + idx 225 head; the djvu Cyrillic-The and
   '/evitation' settled by the capture). 35 inlines
-  (6 consts + 29 bools), header rules/dsgarea14.h,
+  (6 consts + 29 bools), header rules/dsg/dsgarea14.h,
   prefix dnap, no table, no dice. DELIVERY clean
   md5-exact on the first try: authored md5
   9cb59d911ef52b45a1f742b1363d1e0e matched exactly
@@ -8705,7 +8705,7 @@ when both halves land.
   aboleth cities, the capital 3x usual size with 36
   towers against the standard 6). Prose-only round;
   12 consts + 24 bools, prefix dnaq, header
-  rules/dsgarea15.h, spec 21,385 bytes, 36 inlines;
+  rules/dsg/dsgarea15.h, spec 21,385 bytes, 36 inlines;
   djvu lines ~12557-12709 with capture idx 229
   cross-read (garbles: seerns->seems, var-dig->
   vardigg); first try: authored md5 cf3257a8e48110
@@ -8729,7 +8729,7 @@ when both halves land.
   Deepearth child finally flips [x] - the gap
   census moves 139/16 -> 140/15. The child closes
   against work already landed and verified: R533
-  the opener (rules/dsgland.h - the setting frame,
+  the opener (rules/dsg/dsgland.h - the setting frame,
   the connecting-passage generation, the
   area-details framework; the pp. 76-77 map plates
   graphics, pinning nothing) and R534-R548 the
@@ -8742,7 +8742,7 @@ when both halves land.
   lands in full". Prefix dnas (NOTE: the summary
   list of used dna* prefixes missed dnar - the
   R533 opener itself; verified free against
-  regtest before use), header rules/dsgdeep.h
+  regtest before use), header rules/dsg/dsgdeep.h
   (empty namespace, banner only), spec 4,960
   bytes, md5 015111a42b8d9e84708cb051b1f4b3b3
   matched exactly first try; engine applied 5
@@ -8791,7 +8791,7 @@ when both halves land.
   whole with the break noted). Prose-only round: 1
   const + 60 bools, prefix dcc (NEW FAMILY - the
   campaign chapter leaves the dna* Deepearth run
-  behind; verified free), header rules/dsgcamp.h,
+  behind; verified free), header rules/dsg/dsgcamp.h,
   spec 26,449 bytes, md5 dad51b1ab207aecca09f6432
   b55367b5 matched exactly first try, 61 inlines;
   djvu lines 12711-13012 with the Capture-layer
@@ -8847,7 +8847,7 @@ when both halves land.
   style, the unusual names, the new architecture
   and plant forms, the faithful-recreation
   exception). PURE-PROSE ROUND: 0 consts + 37
-  bools, prefix dcd, header rules/dsgcamp2.h,
+  bools, prefix dcd, header rules/dsg/dsgcamp2.h,
   spec 22,397 bytes, md5 7f95ce1627720d18ed4aab
   b6b61387ed2 matched exactly first try, 37
   inlines; djvu lines 13013-13326 with the Capture
@@ -8922,7 +8922,7 @@ when both halves land.
   invitation - the section crossing the pp.
   106-107 boundary, its tail completing next
   round). 3 consts + 52 bools, prefix dce, header
-  rules/dsgcamp3.h, spec 30,736 bytes, md5
+  rules/dsg/dsgcamp3.h, spec 30,736 bytes, md5
   6a580bd99a3334f53888eef48f924fae matched
   exactly first try, 55 inlines; djvu lines
   13327-13752 with the Capture pdf 104-107
@@ -9012,7 +9012,7 @@ when both halves land.
   ire; the accomplishment-merits-reward moral;
   the story-for-a-moral with its "It's not wise
   to fool the king" exemplars). 3 consts + 60
-  bools, prefix dcf, header rules/dsgcamp4.h,
+  bools, prefix dcf, header rules/dsg/dsgcamp4.h,
   spec 33,231 bytes, md5
   c98d9512e5416158760d59a26e9e7464 matched
   exactly first try, 63 inlines; djvu lines
@@ -9105,7 +9105,7 @@ when both halves land.
   splinters; the NPC voices from the old men to
   the heroic leaders, augmented by the facial
   expressions and gestures). 3 consts + 54
-  bools, prefix dcg, header rules/dsgcamp5.h,
+  bools, prefix dcg, header rules/dsg/dsgcamp5.h,
   spec 30,673 bytes, md5
   edc1eafae5becf409320a0893bedcd41 matched
   exactly first try, 57 inlines; djvu lines
@@ -9170,7 +9170,7 @@ when both halves land.
   stocked campaign - the assumed blacksmith, the
   probability by community size and
   availability). 24 bools, prefix dch, header
-  rules/dsgcamp6.h, spec 19,562 bytes, md5
+  rules/dsg/dsgcamp6.h, spec 19,562 bytes, md5
   97f2392b1a2706da56f0a3ee896e881a matched
   exactly first try, 24 inlines; djvu lines
   14726-14879 with the Capture pdf 113-114
@@ -9192,15 +9192,15 @@ when both halves land.
   by the audit block alone. The pp. 99-113
   Campaign Considerations child flips [x]
   against the six landed rounds: R550 the
-  campaign opener pp. 99-100 (rules/dsgcamp.h),
+  campaign opener pp. 99-100 (rules/dsg/dsgcamp.h),
   R551 the worlds of adventure pp. 101-103
-  (rules/dsgcamp2.h), R552 the plot and
-  counterplot pp. 103-106 (rules/dsgcamp3.h),
+  (rules/dsg/dsgcamp2.h), R552 the plot and
+  counterplot pp. 103-106 (rules/dsg/dsgcamp3.h),
   R553 the story elements tail pp. 107-108
-  (rules/dsgcamp4.h), R554 the techniques of
+  (rules/dsg/dsgcamp4.h), R554 the techniques of
   story and campaign design pp. 109-112
-  (rules/dsgcamp5.h) and R555 the help from the
-  players p. 113 (rules/dsgcamp6.h) - census
+  (rules/dsg/dsgcamp5.h) and R555 the help from the
+  players p. 113 (rules/dsg/dsgcamp6.h) - census
   473 -> 479 through the run, each round
   double-run and preflight GREEN. The gap
   census moves 140/15 -> 141/14; the gap
@@ -9208,7 +9208,7 @@ when both halves land.
   7,723 bytes, md5
   3980db479aef06079847c605fdbb627d matched
   exactly first try, 0 inlines, header
-  rules/dsgcamp7.h, prefix dci. No book text
+  rules/dsg/dsgcamp7.h, prefix dci. No book text
   pinned; no authoring catches. NEXT - R557:
   the mapping your settings chapter pp. 114-117
   (basic mapping considerations, perspective
@@ -9244,7 +9244,7 @@ when both halves land.
   generation, the d3/d4/d6 placement rolls, the
   unnoticed matches and dead-end mismatches, the
   variety hiding revisits). 8 consts + 35
-  bools, prefix dcj, header rules/dsgmap.h,
+  bools, prefix dcj, header rules/dsg/dsgmap.h,
   spec 24,770 bytes, md5
   06ca8c8c0975a49990958655599be5d5 matched
   exactly first try, 43 inlines; djvu lines
@@ -9280,7 +9280,7 @@ when both halves land.
   the tree branches (01-66/67-70/71-00) rows are
   new pins. Tables 10-14 are not reprinted. 9
   consts + 14 bools, prefix dck, header
-  rules/dsgtabs.h, spec 15,083 bytes, md5
+  rules/dsg/dsgtabs.h, spec 15,083 bytes, md5
   a975c81c3b81f2be0903514d73dcd691 matched
   exactly first try, 23 inlines; djvu lines
   15340-15800 with the Capture pdf 121-123
@@ -9304,7 +9304,7 @@ when both halves land.
   The pp. 124-127 plates are graphics - the
   perspective grids, the horizon lines, and the
   printed 3-D symbol sheets serving the R557
-  mapping doctrine (rules/dsgmap.h) - and pin
+  mapping doctrine (rules/dsg/dsgmap.h) - and pin
   nothing (the R549 Deepearth map-plate
   precedent applied to the DM-section plates;
   djvu lines 15810-15950 show zero prose cells,
@@ -9314,7 +9314,7 @@ when both halves land.
   Spec 5,867 bytes, md5
   185397cb1e3c194ac6bd2e719090a48d matched
   exactly first try, 0 inlines, header
-  rules/dsgplate.h, prefix dcl. No authoring
+  rules/dsg/dsgplate.h, prefix dcl. No authoring
   catches. NEXT - R560: the index p. 128 (a
   roster round against the landing pattern it
   references), then the DM-section parent, the
@@ -9327,7 +9327,7 @@ when both halves land.
   back matter: the alphabetical topic list whose
   every page reference lands on a chapter this
   arc already pinned. 4 consts + 4 bools, prefix
-  dcm, header rules/dsgindex.h: the Ability Check
+  dcm, header rules/dsg/dsgindex.h: the Ability Check
   roster head p. 12, Mapping p. 114 (the R557
   chapter), the story-elements moral p. 109 (the
   R553 tail), the four underdark theories p. 71,
@@ -9364,7 +9364,7 @@ when both halves land.
   Spec 4,484 bytes, md5
   1ec18c627956f1221982d0b596b8c930 matched
   exactly first try, 0 inlines, header
-  rules/dsgdmsec.h, prefix dcp. No authoring
+  rules/dsg/dsgdmsec.h, prefix dcp. No authoring
   catches. NEXT - R562: the front-matter chapter
   p. 6 (the "what is it?" frame with its five
   sub-items - the mystery, the new rules, the
@@ -9385,7 +9385,7 @@ when both halves land.
   story conflicts) and the using-this-information
   player/DM split (the Forbidden Territory). 4
   consts + 4 bools, prefix dcq, header
-  rules/dsgintro.h. A FLIP round, six flips: gap
+  rules/dsg/dsgintro.h. A FLIP round, six flips: gap
   census 146/9 -> 152/3; the gap report WAS in
   the git add (5 files). Spec 9,188 bytes, md5
   cec1797e10bf47169e2f6fbffb8f4171 matched
@@ -9424,7 +9424,7 @@ when both halves land.
   6,403 bytes, md5
   821a635256c0a34dce2b79f5b7b36e17 matched
   exactly first try, 0 inlines, header
-  rules/dsgfin.h, prefix dcr; the gap report
+  rules/dsg/dsgfin.h, prefix dcr; the gap report
   WAS in the git add (5 files). Landed via rn
   (the second live run, flawless). No authoring
   catches. NEXT - R564: the first round AFTER
@@ -9444,7 +9444,7 @@ when both halves land.
   Astral 365000:1), the natives-unaffected
   rule, the Astral spell exemption, the
   combined-spell both-limits rule. 4 consts +
-  4 bools, prefix dcs, header rules/motpintro.h
+  4 bools, prefix dcs, header rules/mop/motpintro.h
   (MotP prefixes restart at dcs - dcm/dcn/dco/
   dcp were the DSG index/DM-section/arc pins).
   THIS ROUND LANDED A NEW GAP REPORT
@@ -9488,7 +9488,7 @@ when both halves land.
   5/55 -> 6/54. Spec 7,107 bytes, md5
   8422b07ffd8aca8dedb4adebff1cf3ff matched
   exactly first try, 5 inlines, header
-  rules/motpspell.h. NEXT - R566: the Ethereal
+  rules/mop/motpspell.h. NEXT - R566: the Ethereal
   chapter (pp. 11-21) - the proto-matter nature,
   the Border Ethereal, survival, encounters,
   combat, magic, the player characters and the
@@ -9504,7 +9504,7 @@ when both halves land.
   subsumed, the lossless convention demanded
   every one its own line item, the census grew
   60 -> 90 boxes. 13 pins, prefix dcu, header
-  rules/motpeth.h: the Border/Deep split, the
+  rules/mop/motpeth.h: the Border/Deep split, the
   10x subjective time with subjective aging,
   100-yard vision, the 1-round fade (the phase
   spider pattern), the 1-in-10 Deep check,
@@ -9546,7 +9546,7 @@ when both halves land.
   ultravision failing, the unguided
   random-direction rule, and the elemental
   home-immunity. 7 consts + 7 bools, prefix
-  dcv, header rules/motpinner.h. THREE flips:
+  dcv, header rules/mop/motpinner.h. THREE flips:
   gap census 18/72 -> 21/69. Authoring catch
   (mine, caught by the engine in the mirror):
   a const value as string ('4') - the engine
@@ -9579,7 +9579,7 @@ when both halves land.
   landholds, and the features (Yan-C-Bin,
   Akadi, Bahamut's citadel, hooks and
   bubbles). 8 consts + 4 bools, prefix dcw,
-  header rules/motpair.h. FOUR flips: gap
+  header rules/mop/motpair.h. FOUR flips: gap
   census 21/69 -> 25/65. Spec 11,054 bytes,
   md5 d005297a5d545a7ca4e8a772330183d7
   matched exactly first try, 12 inlines. NEXT -
@@ -9609,7 +9609,7 @@ when both halves land.
   Kossuth, the 40-mile City of Brass, the
   azer towers of Amaimon, the spiraling-flame
   artifact). 8 consts + 5 bools, prefix dcx,
-  header rules/motpfire.h. THREE flips: gap
+  header rules/mop/motpfire.h. THREE flips: gap
   census 25/65 -> 28/62. Spec 11,621 bytes,
   md5 eb56ba89eb9c9a1a7f95c79d29409846
   matched exactly first try, 13 inlines. NEXT -
@@ -9727,7 +9727,7 @@ when both halves land.
   features (the xeg-ya/xeg-yi with their
   2d6-8 guide roll, the trilloch, the undead
   Negative link). 5 consts + 6 bools, prefix
-  ddb, header rules/motpenergy.h. TWO flips:
+  ddb, header rules/mop/motpenergy.h. TWO flips:
   gap census 34/56 -> 36/54. Spec 9,917
   bytes, md5 a7730e54aefc3f80de43b43a172c62e3
   matched exactly first try, 11 inlines. NOTE
@@ -9758,7 +9758,7 @@ when both halves land.
   tower ring, the gem economy with the 1-in-100
   survival, and the fossilization (the 80/20
   split, the 99% crumble). 9 consts + 5 bools,
-  prefix ddc, header rules/motpquasipos.h.
+  prefix ddc, header rules/mop/motpquasipos.h.
   THREE flips: gap census 36/54 -> 39/51. Spec
   12,801 bytes, md5 c43582f4e09062cc7a28d72877b
   6eb02 matched exactly first try, 14 inlines.
@@ -9785,7 +9785,7 @@ when both halves land.
   encounter frequency corrected against the
   source - 1 in 10 per 12 hours, not the
   report's 1-in-20. 9 consts + 7 bools,
-  prefix ddd, header rules/motpquasineg.h.
+  prefix ddd, header rules/mop/motpquasineg.h.
   THREE flips: gap census 39/51 -> 42/48 -
   THE INNER HALF IS CLOSED. Spec 13,798
   bytes, md5 17dcea0954b0b6edf591dfdbc0164033
@@ -10626,7 +10626,7 @@ when both halves land.
   and magic adaptation, and the (5,-4,5)
   20th-century example. 6 consts + 7
   bools, prefix ddx, header
-  rules/appendixiprimes.h. THREE flips:
+  rules/mop/appendixiprimes.h. THREE flips:
   gap census 83/7 -> 86/4 (the appendix,
   the physical-factor table, the
   encounter rules). Spec 18,935 bytes,
@@ -10687,7 +10687,7 @@ when both halves land.
   low-intelligence protection, the
   elemental-pocket equivalence). 5 consts
   + 7 bools, prefix ddy, header
-  rules/appendixiiinnercreatures.h. ONE
+  rules/mop/appendixiiinnercreatures.h. ONE
   flip: gap census 86/4 -> 87/3. Spec
   18,793 bytes, md5 fcc089f865cbde82aff
   4858c316045b7 matched exactly first
@@ -10810,7 +10810,7 @@ when both halves land.
   the Prime fallback saves, the
   inner-plane Border stop, the
   demi-plane of Time caveat. Header
-  rules/motpethcyclone.h, prefix
+  rules/mop/motpethcyclone.h, prefix
   ded, 17 inlines (11 consts 6
   bools), one NEW gap box (not a
   flip): census grows 90 -> 91 boxes,
@@ -10858,7 +10858,7 @@ when both halves land.
   paladin), the foreword previews (the
   true dweomers as 10th-level spells,
   the auto-fail foreshadow). Header
-  rules/dmomaxims.h, prefix deg, 13
+  rules/dmo/dmomaxims.h, prefix deg, 13
   inlines (8 consts 5 bools), SIX
   flips: gap census 6/90 (the front
   matter, the Chapter 1 parent, the
@@ -10915,7 +10915,7 @@ when both halves land.
   the share-responsibility doctrines
   (the players as the cadre, the goals,
   the allies ledger, the personality
-  profile). Header rules/dmocampaign.h,
+  profile). Header rules/dmo/dmocampaign.h,
   prefix dej, 29 inlines (12 consts
   17 bools). FIVE flips: gap census
   11/85 - CHAPTER 1 IS CLOSED. Spec
@@ -10965,7 +10965,7 @@ when both halves land.
   band; the polymorphed-lich rules
   springboard with its 60-turn/10-
   hour renewal). Header
-  rules/dmoadventures.h, prefix dek,
+  rules/dmo/dmoadventures.h, prefix dek,
   34 inlines (14 consts 20 bools).
   THREE flips: gap census 14/82 - the
   doctrine half of Chapter 2 closed.
@@ -11010,7 +11010,7 @@ when both halves land.
   size, severe/hostile/deadly period
   codes 1-day 2-hour 3-round; the
   poison save row). Header
-  rules/dmoworlds.h, prefix del, 63
+  rules/dmo/dmoworlds.h, prefix del, 63
   inlines (38 consts, 12 bools, 13
   table columns). FIVE flips: gap
   census 19/77 - the rating tables
@@ -11068,7 +11068,7 @@ when both halves land.
   1d10+8, 1d10+8, 1d8+10) and power
   counts (2-3, 3-4, 3-5, 4-6, 5-7)
   pinned as consts. Header
-  rules/dmomonsters.h, prefix den (dem
+  rules/dmo/dmomonsters.h, prefix den (dem
   was NOT free - the demiHumanTroops
   collision), 167 inlines (75 consts,
   14 bools, 78 table columns, 17
@@ -11115,7 +11115,7 @@ when both halves land.
   sphere cap and withering
   ladders), the item-use
   doctrines. Header
-  rules/dmospells.h, prefix deq
+  rules/dmo/dmospells.h, prefix deq
   (dep NOT free - the depthFt
   collision; dem precedent),
   157 inlines (114 consts, 33
@@ -11145,7 +11145,7 @@ when both halves land.
   (nine children + parent; gap
   census now 52 closed / 44 open)
   - the item-creation economy:
-  rules/dmoitems.h, prefix der,
+  rules/dmo/dmoitems.h, prefix der,
   179 inlines (117 consts, 47
   bools, 15 table columns), 3
   grids (T34 the Table 23
@@ -11203,7 +11203,7 @@ when both halves land.
   boxes flip (sixteen children +
   parent; gap census now 69 closed
   / 27 open) - the dueling system:
-  rules/dmoduels.h, prefix det (des
+  rules/dmo/dmoduels.h, prefix det (des
   NOT free - 7 collisions), 295
   inlines (146 consts, 126 bools,
   22 table columns, 1 chain), 5
@@ -11260,7 +11260,7 @@ when both halves land.
   children + parent; gap census now
   79 closed / 17 open) - the
   10th-level spell system:
-  rules/dmodweomers.h, prefix dev,
+  rules/dmo/dmodweomers.h, prefix dev,
   238 inlines (180 consts, 42
   bools, 16 table columns), 8
   grids (T42 Table 28 true dweomers
@@ -11305,7 +11305,7 @@ when both halves land.
   prefix free (likely dew family).
   Audit: "R607 DMO true-dweomers
   audit"; include after
-  rules/dmoduels.h.
+  rules/dmo/dmoduels.h.
 - R608 LANDED 2026-10-18: commit
   a3960f01c2812e4a8bacf4acc691e6b
   979f99444 (census 530 -> 531,
@@ -11316,7 +11316,7 @@ when both halves land.
   boxes flip (all children; the Chapter 7
   parent stays open until R612; gap
   census now 84 closed / 12 open):
-  rules/dmohighlevel.h, prefix dew
+  rules/dmo/dmohighlevel.h, prefix dew
   (verified free; only regtest hit was
   the word dewberry), 51 inlines (27
   consts, 15 bools, 5 chains, 4 table
@@ -11350,7 +11350,7 @@ when both halves land.
   at HEAD a3960f0; verify next prefix
   free (dex family next). Audit:
   "R609 DMO high-level skills audit";
-  include after rules/dmohighlevel.h.
+  include after rules/dmo/dmohighlevel.h.
 - R609 LANDED 2026-10-18: commit
   d92d4d53d94bb405374b2c76163eddad
   1a52c051 (census 531 -> 532,
@@ -11362,7 +11362,7 @@ when both halves land.
   Table 41, Warriors; the Chapter 7
   parent stays open until R612; gap
   census now 87 closed / 9 open):
-  rules/dmohighskills.h, prefix dey
+  rules/dmo/dmohighskills.h, prefix dey
   (verified free), 293 inlines (110
   consts, 164 bools, 7 chains, 12
   table columns), 3 grids (T40 roster
@@ -11394,7 +11394,7 @@ when both halves land.
   HEAD d92d4d5; verify next prefix
   free (dez family next). Audit:
   "R610 DMO wizard-priest audit";
-  include after rules/dmohighskills.h.
+  include after rules/dmo/dmohighskills.h.
 - R610 LANDED 2026-10-18: commit
   74d21c689276b8ae13e9a406cecab0e
   880c76c8e (census 532 -> 533,
@@ -11405,7 +11405,7 @@ when both halves land.
   split plan - TWO boxes flip
   (Wizards, Priests; gap census
   now 89 closed / 7 open):
-  rules/dmohighwizpri.h, prefix
+  rules/dmo/dmohighwizpri.h, prefix
   dez (verified free), 390
   inlines (167 consts, 184
   bools, 7 chains, 32 table
@@ -11447,7 +11447,7 @@ when both halves land.
   free (dfa family next).
   Audit: "R611 DMO rogues
   audit"; include after
-  rules/dmohighwizpri.h.
+  rules/dmo/dmohighwizpri.h.
 - R611 LANDED 2026-10-18: commit
   1de9c4b4e71c072964a9c667e08c13db
   2e96a250 (census 533 -> 534,
@@ -11457,7 +11457,7 @@ when both halves land.
   the split plan - ONE box flips
   (Rogues; gap census now 90 closed
   / 6 open):
-  rules/dmohighrogues.h, prefix dfa
+  rules/dmo/dmohighrogues.h, prefix dfa
   (verified free), 273 inlines (111
   consts, 117 bools, 6 chains, 39
   table columns), 9 grids (T47r
@@ -11511,7 +11511,7 @@ when both halves land.
   1de9c4b; verify next prefix free
   (dfb family next). Audit: "R612
   DMO demihumans-ascension audit";
-  include after rules/dmohighrogues.h.
+  include after rules/dmo/dmohighrogues.h.
 - R612 LANDED 2026-10-18: commit
   2ff6ba87f1715469ed87c8d6492a93be
   25c1f6b3 (census 534 -> 535,
@@ -11523,7 +11523,7 @@ when both halves land.
   Ascension, AND the Chapter 7 PARENT;
   gap census now 93 closed / 3 open;
   Chapter 7 fully closed across
-  R608-R612): rules/dmohighascend.h,
+  R608-R612): rules/dmo/dmohighascend.h,
   prefix dfb (verified free), 54
   inlines (10 consts, 44 bools, no
   chains or grids - a prose-only round;
@@ -11562,7 +11562,7 @@ when both halves land.
   verify next prefix free (dfc family
   next). Audit: "R613 DMO dueling
   appendix audit"; include after
-  rules/dmohighascend.h.
+  rules/dmo/dmohighascend.h.
 - R613 LANDED 2026-10-18: commit
   0f6f8e3d01558f33ba2f87e11a66fe46
   8c2966bd (census 535 -> 536,
@@ -11604,7 +11604,7 @@ when both halves land.
   report lands with the opener
   (the R564 pattern); prefix dga;
   include after
-  rules/dmoduelroster.h; audit
+  rules/dmo/dmoduelroster.h; audit
   "R614 OA opener audit".
 - R614 LANDED 2026-10-18: commit
   a7019b4ad63e23afa1a01698d19d1f5
@@ -11627,7 +11627,7 @@ when both halves land.
   working-tree mode only - the
   sha restore deletes the new
   report (the R564 lesson).
-  PINS: rules/oacreating.h,
+  PINS: rules/oa/oacreating.h,
   prefix dga (verified free), 22
   inlines (7 consts, 15 bools):
   the front-matter doctrine (the
@@ -11654,7 +11654,7 @@ when both halves land.
   prefix dgb (verify free), audit
   "R615 OA ability tables audit",
   include after
-  rules/oacreating.h.
+  rules/oa/oacreating.h.
 - R615 LANDED 2026-10-18: commit
   79bfb8dba8895ad96d5fa7d9c8c1
   88dc0850b2f (census 537 -> 538,
@@ -11726,14 +11726,14 @@ when both halves land.
   10, 12 and 13, prefix dgd
   (verify free), audit "R617 OA
   class combos audit", include
-  after rules/oaabilityprose.h.
+  after rules/oa/oaabilityprose.h.
 - R617 LANDED 2026-10-18: commit
   0659a83e5b54c666c68e9f764bcee24
   fe9bd34f1 (census 539 -> 540,
   pushed 5aee136..0659a83), CLASS
   AND RACE COMBINATIONS, capture
   pp. 16-23 - the Chapter 2
-  opener: rules/oaclasscombos.h,
+  opener: rules/oa/oaclasscombos.h,
   prefix dgd (verified free), 65
   inlines (26 consts, 11 bools, 28
   table columns): the combos
@@ -11764,7 +11764,7 @@ when both halves land.
   e28547c (census 540 -> 541,
   pushed 0659a83..7305a1f), THE
   ORIENTAL RACES, capture pp. 17-22:
-  rules/oaraces.h, prefix dge, 70
+  rules/oa/oaraces.h, prefix dge, 70
   inlines - the korobokuru, hengeyokai
   (T11 12x10) and the three spirit folk
   with their life-force ties. THE 4 1/2
@@ -11787,7 +11787,7 @@ when both halves land.
   Barbarian and Bushi with Tables
   14-17, prefix dgf (verify free),
   audit "R619 OA barbarian bushi
-  audit", include after rules/oaraces.h.
+  audit", include after rules/oa/oaraces.h.
 - R619 LANDED 2026-10-18: commit
   96b0682cda3a7922e2a427ca4994e45d1
   3f7bf90 (census 541 -> 542,
@@ -11811,7 +11811,7 @@ when both halves land.
   (the v2). THE AMENDMENT IS RE-APPLIED
   TO THE WORKING TREE AND MUST RIDE THE
   R620 PUSH - EXPLICITLY git add
-  tools/spec_r618.json rules/oaraces.h
+  tools/spec_r618.json rules/oa/oaraces.h
   (a PRIOR-ROUND-FILE fold does not
   happen by itself). Battery 227 mutants,
   0 missed; gap census 27/208 -> 33/202.
@@ -11826,7 +11826,7 @@ when both halves land.
   2c812df (census 542 -> 543,
   pushed 96b0682..36f2d5c), THE
   KENSAI, capture pp. 28-31 - the
-  sword saint: rules/oakensai.h,
+  sword saint: rules/oa/oakensai.h,
   prefix dgg (verified free), 58
   inlines (34 consts, 16 bools, 8
   table columns): the Wis/Dex dual
@@ -11880,7 +11880,7 @@ when both halves land.
   9ae052e37815d0baa1accd52e83af4ba914d4b5f
   (census 543 -> 544, pushed
   17d2892..9ae052e), THE MONK, capture
-  pp. 31-35: rules/oamonk.h, prefix
+  pp. 31-35: rules/oa/oamonk.h, prefix
   dgh (verified free), 93 inlines (59
   consts, 20 bools, 14 table columns):
   the Str/Wis/Dex 15 and Con 11 minima
@@ -11933,7 +11933,7 @@ when both halves land.
   7efe429eae3143fb3b5e6203f56172fc69089e58
   (census 544 -> 545, pushed
   9ae052e..7efe429), THE NINJA, capture
-  pp. 35-39: rules/oaninja.h, prefix
+  pp. 35-39: rules/oa/oaninja.h, prefix
   dgi (verified free), 100 inlines (44
   consts, 37 bools, 19 table columns):
   the human-only split class (Dex 14,
@@ -11987,7 +11987,7 @@ when both halves land.
   666c85abf6e556a7e86397ed8caf700d09342c76
   (census 545 -> 546, pushed
   7efe429..666c85a), THE SAMURAI, capture
-  pp. 39-42: rules/oasamurai.h, prefix
+  pp. 39-42: rules/oa/oasamurai.h, prefix
   dgj (verified free), 76 inlines (45
   consts, 27 bools, 4 table columns):
   the Str/Wis/Con 13 and Int 14 minima
@@ -12037,13 +12037,13 @@ when both halves land.
   pp. 42-45, Tables 26, 27 and 28,
   prefix dgk (verify free), audit "R624
   OA shukenja audit", include after
-  rules/oasamurai.h.
+  rules/oa/oasamurai.h.
 - R624 LANDED 2026-10-18: commit
   7bbb728da165260b0eb07f84aa32dd9d44b943c1
   (census 546 -> 547, pushed
   666c85a..7bbb728), THE
   SHUKENJA, capture pp. 42-45:
-  rules/oashukenja.h, prefix dgk
+  rules/oa/oashukenja.h, prefix dgk
   (verified free), 63 inlines (31
   consts, 19 bools, 13 table columns):
   the Wis 12 and Str/Con 9 minima
@@ -12097,7 +12097,7 @@ when both halves land.
   9204c4c58ed247ce08775d243de60aeddbfa58bd
   (census 547 -> 548, pushed
   7bbb728..9204c4c), THE SOHEI, capture
-  pp. 45-47: rules/oasohei.h, prefix
+  pp. 45-47: rules/oa/oasohei.h, prefix
   dgl (verified free), 53 inlines (33
   consts, 12 bools, 7 table columns):
   the Str 13 and Wis/Con 10 minima
@@ -12151,7 +12151,7 @@ when both halves land.
   5f23689fda6387c0a263f0dd0220183ce5b706a6
   (census 548 -> 549, pushed
   9204c4c..5f23689), THE WU JEN, capture
-  pp. 47-51: rules/oawujen.h, prefix
+  pp. 47-51: rules/oa/oawujen.h, prefix
   dgm (verified free), 60 inlines (31
   consts, 14 bools, 15 table columns):
   the Int 13 minimum with the Int-15 xp
@@ -12207,7 +12207,7 @@ when both halves land.
   db94e62fd73176ba4f77cba6dbda777e63f4a535
   (census 549 -> 550, pushed
   5f23689..db94e62), THE YAKUZA, capture
-  pp. 51-54: rules/oayakuza.h, prefix
+  pp. 51-54: rules/oa/oayakuza.h, prefix
   dgn (verified free), 62 inlines (36
   consts, 21 bools, 5 table columns):
   the Str 11/Int 15/Dex 15/Cha 16 minima
@@ -12266,13 +12266,13 @@ when both halves land.
   Tables 36 (Multiple Attacks), prefix
   dgo (verify free), audit "R628 OA
   character abilities audit", include
-  after rules/oayakuza.h.
+  after rules/oa/oayakuza.h.
 - R628 LANDED 2026-10-19: commit
   1b788fead1df9e688032cc6327bbe177b41630c7
   (census 550 -> 551, pushed
   db94e62..1b788fe), THE CHARACTER
   ABILITIES chapter opener, capture
-  pp. 55-59: rules/oacharab.h, prefix
+  pp. 55-59: rules/oa/oacharab.h, prefix
   dgo (verified free), 47 inlines (10
   consts, 32 bools, 5 table columns):
   the multiple attacks doctrine (beyond
@@ -12333,14 +12333,14 @@ when both halves land.
   Table 38 (Character Birth), prefix
   dgp (verify free), audit "R629 OA
   families audit", include after
-  rules/oacharab.h.
+  rules/oa/oacharab.h.
 - R629 LANDED 2026-10-19: commit
   681a99f54cf86a496ac25f9d008ffb438c7b4ba8
   (census 551 -> 552, pushed
   1b788fe..681a99f), THE CHAPTER 3
   opener - the family doctrine, the
   birth rank and the caste doctrine,
-  capture pp. 60-62: rules/oabirth.h,
+  capture pp. 60-62: rules/oa/oabirth.h,
   prefix dgp (verified free), 35
   inlines (10 consts, 12 bools, 10
   table columns): the family doctrine
@@ -12403,14 +12403,14 @@ when both halves land.
   position doctrine, prefix dgq (verify
   free), audit "R630 OA family
   structures audit", include after
-  rules/oabirth.h.
+  rules/oa/oabirth.h.
 - R630 LANDED 2026-10-19: commit
   9fbb97306d976609d17d947c15ed5f0411ef00b6
   (census 552 -> 553, pushed
   681a99f..9fbb973), THE FAMILY
   STRUCTURE prose - the additional family
   structures, capture pp. 62-64:
-  rules/oafamstr.h, prefix dgq
+  rules/oa/oafamstr.h, prefix dgq
   (verified free), 37 inlines (14
   consts, 23 bools, no tables): the
   1d8-minus-2 children per space with
@@ -12472,13 +12472,13 @@ when both halves land.
   pp. 64-65, Table 39 (Ancestry),
   prefix dgr (verify free), audit
   "R631 OA ancestry audit", include
-  after rules/oafamstr.h.
+  after rules/oa/oafamstr.h.
 - R631 LANDED 2026-10-19: commit
   f0a630e9d7907375267d65357683c9c90a8d4fc8
   (census 553 -> 554, pushed
   9fbb973..f0a630e), THE MASTER FAMILY
   CHART and ANCESTRY, capture pp. 64-65:
-  rules/oaanc.h, prefix dgr (verified
+  rules/oa/oaanc.h, prefix dgr (verified
   free), 29 inlines (13 consts, 12
   bools, 4 table columns): the master
   family chart doctrine (the DM chart of
@@ -12536,13 +12536,13 @@ when both halves land.
   head-of-family rule and the NPC-only
   holdings, prefix dgs (verify free),
   audit "R632 OA holdings audit",
-  include after rules/oaanc.h.
+  include after rules/oa/oaanc.h.
 - R632 LANDED 2026-10-19: commit
   bb00f5aeca9115cc74140583b9c06e63b30130d7
   (census 554 -> 555, pushed
   f0a630e..bb00f5a), THE ASSIGNING
   ANCESTRAL HOLDINGS prose, capture pp.
-  67-68: rules/oahold.h, prefix dgs
+  67-68: rules/oa/oahold.h, prefix dgs
   (verified free), 11 inlines (11
   bools, no consts, no tables): the
   holdings as the Table 39 property
@@ -12581,13 +12581,13 @@ when both halves land.
   cash-string doctrines, prefix dgt
   (verify free), audit "R633 OA
   birthrights audit", include after
-  rules/oahold.h.
+  rules/oa/oahold.h.
 - R633 LANDED 2026-10-19: commit
   91502ba33b87772847a90b3ca77ace2fa69ae287
   (census 555 -> 556, pushed
   bb00f5a..91502ba), BIRTHRIGHTS and
   TABLE 40, capture pp. 68-69:
-  rules/oabr.h (oabirth.h is taken by
+  rules/oa/oabr.h (oabirth.h is taken by
   R629), prefix dgt (verified free), 30
   inlines (6 consts, 20 bools, 4 table
   columns): the clan-virtue doctrine
@@ -12643,14 +12643,14 @@ when both halves land.
   prose and Table 41 (Initial Honor),
   capture pp. 69-70, prefix dgu
   (verify free), audit "R634 OA honor
-  audit", include after rules/oabr.h.
+  audit", include after rules/oa/oabr.h.
 - R634 LANDED 2026-10-19: commit
   0d6f2cbd6eaf635ab035d2dd9a72bb5c9ead043f
   (census 556 -> 557, pushed
   91502ba..0d6f2cb), HONOR - the
   chapter opener, the starting honor
   doctrine and Table 41, capture pp.
-  69-70: rules/oahonor.h, prefix dgu
+  69-70: rules/oa/oahonor.h, prefix dgu
   (verified free), 21 inlines (2
   consts, 17 bools, 2 table columns):
   the opener doctrine (the family
@@ -12706,14 +12706,14 @@ when both halves land.
   reaction doctrine, prefix dgv
   (verify free), audit "R635 OA
   effects of honor audit", include
-  after rules/oahonor.h.
+  after rules/oa/oahonor.h.
 - R635 LANDED 2026-10-19: commit
   6d3f2b767d379c76eb5e2b7179ea6cd950dbf6b4
   (census 557 -> 558, pushed
   0d6f2cb..6d3f2b7), ALTERING FAMILY
   HONOR, THE EFFECTS OF HONOR and
   TABLE 42, capture pp. 70-72:
-  rules/oaeff.h, prefix dgv (verified
+  rules/oa/oaeff.h, prefix dgv (verified
   free), 41 inlines (19 consts, 20
   bools, 2 table columns): the family
   ledger (the 10-point raise step with
@@ -12776,14 +12776,14 @@ when both halves land.
   Table 44 (Barter Units), capture
   pp. 73-75, prefix dgw (verify
   free), audit "R636 OA money audit",
-  include after rules/oaeff.h.
+  include after rules/oa/oaeff.h.
 - R636 LANDED 2026-10-19: commit
   482dad2bf247794c9abfa32c3bb33c617e51e610
   (census 558 -> 559, pushed
   6d3f2b7..482dad2), MONEY - the chapter
   opener, the currency systems and Tables
   43-44, capture pp. 73-75:
-  rules/oamoney.h, prefix dgw (verified
+  rules/oa/oamoney.h, prefix dgw (verified
   free), 32 inlines (17 consts, 13
   bools, 2 table columns): the gold-not-
   currency read (copper, silver and
@@ -12833,13 +12833,13 @@ when both halves land.
   Funds), capture pp. 75-76, the class
   funds dice, prefix dgx (verify free),
   audit "R637 OA starting money audit",
-  include after rules/oamoney.h.
+  include after rules/oa/oamoney.h.
 - R637 LANDED 2026-10-19: commit
   1cd70755ae0991a0d8381646c02e37f01d68d2ed
   (census 559 -> 560, pushed
   482dad2..1cd7075), STARTING MONEY - the
   class funds dice and Table 45, capture
-  pp. 75-76: rules/oastart.h, prefix dgx
+  pp. 75-76: rules/oa/oastart.h, prefix dgx
   (verified free), 13 inlines (1 const
   dgxT45RowCount=10, 4 bools, 8 table
   columns): the Starting Money opener
@@ -12876,13 +12876,13 @@ when both halves land.
   the real-value and exchange-rate
   doctrine, prefix dgy (verify free),
   audit "R638 OA exchange audit",
-  include after rules/oastart.h.
+  include after rules/oa/oastart.h.
 - R638 LANDED 2026-10-19: commit
   6580845aae3991ceb742dc6190e5e89ced932de8
   (census 560 -> 561, pushed
   1cd7075..6580845), EXCHANGE - the gajin
   rates and Table 46, capture pp. 76-77:
-  rules/oaexch.h, prefix dgy (verified
+  rules/oa/oaexch.h, prefix dgy (verified
   free), 27 inlines (9 consts, 14 bools,
   4 table columns): the gajin-contact
   exchange need, the caravan-route and
@@ -12931,13 +12931,13 @@ when both halves land.
   pp. 77-84, the eight cost lists, prefix
   dgz (verify free), audit "R639 OA
   equipment audit", include after
-  rules/oaexch.h.
+  rules/oa/oaexch.h.
 - R639 LANDED 2026-10-19: commit
   f81fe22d0c20e2e355e596145d3e4c008ae2ac7f
   (census 561 -> 562, pushed
   6580845..f81fe22), EQUIPMENT - the
   equipping doctrine and Table 47, capture
-  pp. 76-78: rules/oaequip.h, prefix dgz
+  pp. 76-78: rules/oa/oaequip.h, prefix dgz
   (verified free), 50 inlines (11 consts,
   30 table columns, 9 bools): the
   equipping prose (equip-after-creation,
@@ -12993,7 +12993,7 @@ when both halves land.
   Type), capture pp. 79-80, the weapon
   equivalents doctrine, prefix dha
   (verify free), audit "R640 OA weapons
-  audit", include after rules/oaequip.h.
+  audit", include after rules/oa/oaequip.h.
 - R640 LANDED 2026-10-19: commit
   baac37c95564540d3dd84ab9f6064ead6a93c888
   (census 562 -> 563, pushed
@@ -13002,7 +13002,7 @@ when both halves land.
   weapon-equivalents prose, Table 48
   (Weapon Equivalents) and Table 49
   (Weight and Damage by Weapon Type),
-  capture pp. 79-80: rules/oaweapon.h,
+  capture pp. 79-80: rules/oa/oaweapon.h,
   prefix dha (verified free), 26
   inlines (2 consts, 10 table columns,
   14 bools): the equivalents doctrine
@@ -13057,14 +13057,14 @@ when both halves land.
   hand-held AC-adjustment grid, prefix
   dhb (verify free), audit "R641 OA
   handheld audit", include after
-  rules/oaweapon.h.
+  rules/oa/oaweapon.h.
 - R641 LANDED 2026-10-19: commit
   739dd573f81b4c839a535ceb98d901e63161de59
   (census 563 -> 564, pushed
   baac37c..739dd57), HAND HELD WEAPONS -
   Table 50 (Hand Held Weapons, General
   Data and To Hit Adjustments), capture
-  p. 80: rules/oahandheld.h, prefix dhb
+  p. 80: rules/oa/oahandheld.h, prefix dhb
   (verified free), 17 inlines (2 consts,
   14 table columns, 1 bool): the 49-row
   hand-held grid - the speed factor
@@ -13121,14 +13121,14 @@ when both halves land.
   hurled-missile fire-rate and
   AC-adjustment grid, prefix dhc (verify
   free), audit "R642 OA hurled audit",
-  include after rules/oahandheld.h.
+  include after rules/oa/oahandheld.h.
 - R642 LANDED 2026-10-19: commit
   b784a11e74a769a9413c240f29cfc643f5ab6145
   (census 564 -> 565, pushed
   739dd57..b784a11), HURLED WEAPONS AND
   MISSILES - Table 51 (Hurled Weapons and
   Missiles), capture pp. 80-81:
-  rules/oahurled.h, prefix dhc (verified
+  rules/oa/oahurled.h, prefix dhc (verified
   free), 20 inlines (4 consts, 13 table
   columns, 3 bools): the 28-row hurled grid
   - the eleven-column AC 0-10 to-hit
@@ -13147,7 +13147,7 @@ when both halves land.
   pass's OCR dropped entirely were recovered
   from the compressed capture and
   corroborated by the UA sibling doctrine
-  (rules/uamissile.h - the aklys feet note,
+  (rules/ua/uamissile.h - the aklys feet note,
   the medium -2 and long -5): the star feet
   note, the double-star see-description
   note, the short-range basis note, and the
@@ -13184,13 +13184,13 @@ when both halves land.
   R643: Table 52 (Armor Class Table), capture
   p. 94, the armor-class grid, prefix dhd
   (verify free), audit "R643 OA armor audit",
-  include after rules/oahurled.h.
+  include after rules/oa/oahurled.h.
 - R643 LANDED 2026-10-19: commit
   86110ce4a39d218d2a260ceca762f7b298337e47
   (census 565 -> 566, pushed
   b784a11..86110ce), ARMOR CLASS TABLE -
   Table 52 (Armor Class Table), capture p.
-  94: rules/oaarmor.h, prefix dhd (verified
+  94: rules/oa/oaarmor.h, prefix dhd (verified
   free), 2 inlines (1 const, 1 table
   column): the 8-row suit grid - the armor
   class rating ladder, 10 through 3 one
@@ -13236,13 +13236,13 @@ when both halves land.
   Class), capture p. 95, the laced-armor
   piece class steps, prefix dhe (verify
   free), audit "R644 OA piece armor audit",
-  include after rules/oaarmor.h.
+  include after rules/oa/oaarmor.h.
 - R644 LANDED 2026-10-19: commit
   91f1d9505802772b1598a46222ca7a77f88735cd
   (census 566 -> 567, pushed
   86110ce..91f1d95), PIECE ARMOR -
   Table 53 (Individual Piece Armor
-  Class), capture p. 95: rules/oapiece.h,
+  Class), capture p. 95: rules/oa/oapiece.h,
   prefix dhe (verified free), 5 inlines
   (2 consts, 2 table columns, 1 bool):
   the 9-row laced-armor piece grid - the
@@ -13282,13 +13282,13 @@ when both halves land.
   armor bulk/weight/movement grid,
   prefix dhf (verify free), audit "R645
   OA encumbrance audit", include after
-  rules/oapiece.h.
+  rules/oa/oapiece.h.
 - R645 LANDED 2026-10-19: commit
   50ada1ab00a3541f1c9f3e3581f9df3c9c592be4
   (census 567 -> 568, pushed
   91f1d95..50ada1a), ARMOR ENCUMBRANCE -
   Table 54 (Types of Armor & Encumbrance),
-  capture p. 95: rules/oaencumb.h, prefix
+  capture p. 95: rules/oa/oaencumb.h, prefix
   dhf (verified free), 3 inlines (1 const,
   2 table columns): the 23-row armor type
   grid - the base weight column (pounds,
@@ -13326,7 +13326,7 @@ when both halves land.
   Movement Rates), capture p. 98, the
   barding movement grid, prefix dhg
   (verify free), audit "R646 OA barding
-  audit", include after rules/oaencumb.h -
+  audit", include after rules/oa/oaencumb.h -
   the misc equipment and barding prose
   boxes stay open.
 - R646 LANDED 2026-10-19: commit
@@ -13334,7 +13334,7 @@ when both halves land.
   (census 568 -> 569, pushed
   50ada1a..6ad968b), BARDING - Table 55
   (Barded Warhorse Base Movement Rates),
-  capture p. 98: rules/oabarding.h, prefix
+  capture p. 98: rules/oa/oabarding.h, prefix
   dhg (verified free), 10 inlines (2 consts,
   6 table columns, 2 bools): the 4-row
   barded warhorse grid - the full/half
@@ -13372,7 +13372,7 @@ when both halves land.
   Descriptions prose box (capture p. 98),
   the grenades prose, prefix dhh (verify
   free), audit "R647 OA misc equipment
-  audit", include after rules/oabarding.h -
+  audit", include after rules/oa/oabarding.h -
   the barding prose box stays open beside
   it.
 - R647 LANDED 2026-10-19: commit
@@ -13381,7 +13381,7 @@ when both halves land.
   6ad968b..9a2f19d), MISC EQUIPMENT - the
   grenades prose of the equipment
   descriptions, capture p. 98:
-  rules/oagrenade.h, prefix dhh (verified
+  rules/oa/oagrenade.h, prefix dhh (verified
   free), 20 inlines (13 consts, 7 bools,
   no table): the four grenade kinds with
   the save-vs doctrine - pepper (single
@@ -13418,7 +13418,7 @@ when both halves land.
   (capture p. 98), the barding AC-factor
   and weight paragraph, prefix dhi (verify
   free), audit "R648 OA barding prose
-  audit", include after rules/oagrenade.h -
+  audit", include after rules/oa/oagrenade.h -
   the armor descriptions box stays open
   beside it.
 - R648 LANDED 2026-10-19: commit
@@ -13426,7 +13426,7 @@ when both halves land.
   (census 570 -> 571, pushed
   9a2f19d..22d52ad), BARDING PROSE - the
   barding AC factors and weight doctrine,
-  capture pp. 98-99: rules/oabardprose.h,
+  capture pp. 98-99: rules/oa/oabardprose.h,
   prefix dhi (verified free), 13 inlines
   (8 consts, 5 bools, no table): the
   barding AC-factor ladder (leather or
@@ -13460,12 +13460,12 @@ when both halves land.
   entries, prefix dhj (verify free),
   audit "R649 OA armor descriptions
   audit", include after
-  rules/oabardprose.h - the last
+  rules/oa/oabardprose.h - the last
   Chapter 5 box.
 - R649 LANDED 2026-10-19: commit ffef1f8ff283803a88a8ccab17d5b8de848cf110
   (census 571 -> 572, pushed 22d52ad..ffef1f8), ARMOR PROSE AND DESCRIPTIONS -
   the suits-and-pieces doctrine and the armor description entries, capture pp.
-  93-98: rules/oaarmordesc.h, prefix dhj (verified free), 40 inlines (13
+  93-98: rules/oa/oaarmordesc.h, prefix dhj (verified free), 40 inlines (13
   consts, 27 bools, no table): the two-group suits-and-pieces doctrine with
   the common, rare and virtually-unknown suit lists as counts (the names
   riding the comments), the corselet-AC-7 example equal to studded leather and
@@ -13493,12 +13493,12 @@ when both halves land.
   canvas md5 10f15d4495d1829913a815e7912e6653). NEXT - R650: the Chapter 6
   Proficiencies arc begins - the weapon proficiencies and weapon
   specialization prose (capture pp. 100-101), prefix dhk (verify free), audit
-  "R650 OA proficiencies audit", include after rules/oaarmordesc.h - the
+  "R650 OA proficiencies audit", include after rules/oa/oaarmordesc.h - the
   Chapter 6 boxes at HEAD name the exact labels
 - R650 LANDED 2026-10-19: commit 689abc769fdd33a284bc877400722a3c0d510a30
   (census 572 -> 573, pushed ffef1f8..689abc7), WEAPON PROFICIENCIES AND
   SPECIALIZATION - the Chapter 6 opener with the slot doctrine and the
-  specialist bonuses, capture pp. 99-101: rules/oaweaponspec.h, prefix dhk
+  specialist bonuses, capture pp. 99-101: rules/oa/oaweaponspec.h, prefix dhk
   (verified free), 47 inlines (30 consts, 17 bools, no table). THE ARC-OPENER
   PRECEDENT APPLIED: per the R636 pattern the Chapter 6 parent box opens this
   round alongside the first child - two gap flips (the parent with the
@@ -13530,11 +13530,11 @@ when both halves land.
   canvas md5 6030c661d4703ac2207bfb626512eb3a). NEXT - R651: Table 57 (Missile
   Weapon Specializations), capture p. 100, the specialist attacks-per-round
   grid, prefix dhl (verify free), audit "R651 OA missile specializations
-  audit", include after rules/oaweaponspec.h
+  audit", include after rules/oa/oaweaponspec.h
 - R651 LANDED 2026-10-19: commit 4cfbabe427dd5f88becb74d482c7090eeef2f605
   (census 573 -> 574, pushed 689abc7..4cfbabe), TABLE 57 MISSILE
   SPECIALIZATIONS - the specialist attacks-per-round grid, capture p. 100:
-  rules/oamslspec.h, prefix dhl (verified free), 17 inlines (3 consts, 14
+  rules/oa/oamslspec.h, prefix dhl (verified free), 17 inlines (3 consts, 14
   table columns, no bools): the grid per the T55 pair precedent - each printed
   num/den attacks pair a numerator and denominator column across the three
   level bands (the band bounds as consts - three bands, tops at 6 and 12), the
@@ -13558,11 +13558,11 @@ when both halves land.
   Proficiencies prose with the optional peaceful proficiency bonuses, the
   success-and-failure doctrine and the contests (capture pp. 101-103), prefix
   dhm (verify free), audit "R652 OA non-weapon proficiencies audit", include
-  after rules/oamslspec.h
+  after rules/oa/oamslspec.h
 - R652 LANDED 2026-10-19: commit 125647b399484360b77fcc815dfb7182d8a40ef6
   (census 574 -> 575, pushed 4cfbabe..125647b), NON-WEAPON
   PROFICIENCIES - the peaceful-arts prose, capture pp. 101-103:
-  rules/oanwprof.h, prefix dhm (verified free), 33 inlines (12
+  rules/oa/oanwprof.h, prefix dhm (verified free), 33 inlines (12
   consts, 21 bools, no tables): the four categories (Common,
   Artisan, Court, Barbarian) with the only-barbarians rule and the
   category learning environments, the no-required-study-times and
@@ -13590,11 +13590,11 @@ when both halves land.
   5d3d530d16625de243c26b249ecc8479). NEXT - R653: Table 56
   (Character Proficiencies), capture p. 99, prefix dhn (verify
   free), audit "R653 OA character proficiencies audit", include
-  after rules/oanwprof.h
+  after rules/oa/oanwprof.h
 - R653 LANDED 2026-10-19: commit f96f0da050e1cc80244a8f8c0cdf7f78d542024b
   (census 575 -> 576, pushed 125647b..f96f0da), TABLE 56
   CHARACTER PROFICIENCIES - the class grid with the ninja
-  rule, capture p. 99: rules/oacharprof.h, prefix dhn
+  rule, capture p. 99: rules/oa/oacharprof.h, prefix dhn
   (verified free), 5 inlines (1 const, 1 bool, 3 table
   columns, tag T56Data): the eight class rows (samurai,
   shukenja, sohei, kensai, o. barbarian, bushi, wu jen,
@@ -13620,12 +13620,12 @@ when both halves land.
   0cd79fd5a24f9d9e41d90efa2a8582ba). NEXT - R654: Table 58
   (Artisan Proficiencies), capture p. 103, prefix dho
   (verify free), audit "R654 OA artisan proficiencies
-  audit", include after rules/oacharprof.h
+  audit", include after rules/oa/oacharprof.h
 - R654 LANDED 2026-10-19: commit b7a45cc8a6edae052ee3a230369b1f7123deadc6
   (census 576 -> 577, pushed f96f0da..b7a45cc), TABLE 58
   ARTISAN PROFICIENCIES - the artisan grid with the slot
   costs, base chances and always-roll markers, capture
-  p. 103: rules/oaartprof.h, prefix dho (verified
+  p. 103: rules/oa/oaartprof.h, prefix dho (verified
   free), 4 inlines (1 const, 3 table columns, tag
   T58Data, no bools): the eighteen artisan rows (armorer
   through weaver) riding the first column comment, with
@@ -13653,12 +13653,12 @@ when both halves land.
   27d134328268eeb917aa60e611ae4beb). NEXT - R655: Table
   59 (Barbarian Proficiencies), capture p. 104, prefix
   dhp (verify free), audit "R655 OA barbarian
-  proficiencies audit", include after rules/oaartprof.h
+  proficiencies audit", include after rules/oa/oaartprof.h
 - R655 LANDED 2026-10-19: commit 0a7ef34bcaadeae7469d2956773922ef5a1f82f9
   (census 577 -> 578, pushed b7a45cc..0a7ef34), TABLE 59
   BARBARIAN PROFICIENCIES - the barbarian grid with the
   slot costs, base chances and always-roll markers,
-  capture p. 104: rules/oabarbprof.h, prefix dhp
+  capture p. 104: rules/oa/oabarbprof.h, prefix dhp
   (verified free), 4 inlines (1 const, 3 table columns,
   tag T59Data, no bools): the eight barbarian rows
   (chanting through tracking) riding the first column
@@ -13688,12 +13688,12 @@ when both halves land.
   8d4d37c92f79ca10d33fda8c949b0092). NEXT - R656: Table
   60 (Common Proficiencies), capture p. 106, prefix dhq
   (verify free), audit "R656 OA common proficiencies
-  audit", include after rules/oabarbprof.h
+  audit", include after rules/oa/oabarbprof.h
 - R656 LANDED 2026-10-19: commit 19aa44bba03af6497ec88eb0e4c3a4beb57903a3
   (census 578 -> 579, pushed 0a7ef34..19aa44b), TABLE 60
   COMMON PROFICIENCIES - the common grid with the slot
   costs, base chances and always-roll markers, capture
-  p. 106: rules/oacomprof.h, prefix dhq (verified
+  p. 106: rules/oa/oacomprof.h, prefix dhq (verified
   free), 4 inlines (1 const, 3 table columns, tag
   T60Data, no bools): the seventeen common rows
   (agriculture through swimming) riding the first
@@ -13730,12 +13730,12 @@ when both halves land.
   5c879c09825e8920c01aa432d64bdcb2). NEXT - R657: Table
   61 (Court Proficiencies), capture p. 108, prefix dhr
   (verify free), audit "R657 OA court proficiencies
-  audit", include after rules/oacomprof.h
+  audit", include after rules/oa/oacomprof.h
 - R657 LANDED 2026-10-19: commit 88168f07084ae63c68066fe079985f9fd6fa60eb
   (census 579 -> 580, pushed 19aa44b..88168f0), TABLE 61
   COURT PROFICIENCIES - the court grid with the slot
   costs, base chances and always-roll markers, capture
-  p. 108: rules/oacourtprof.h, prefix dhr (verified
+  p. 108: rules/oa/oacourtprof.h, prefix dhr (verified
   free), 4 inlines (1 const, 3 table columns, tag
   T61Data, no bools): the twelve court rows
   (calligraphy through tea ceremony) riding the first
@@ -13766,13 +13766,13 @@ when both halves land.
   Chapter 7 parent opens - Table 62 (Shukenja Spells),
   capture p. 112, the full spell list by level, prefix
   dhs (verify free), audit "R658 OA shukenja spells
-  audit", include after rules/oacourtprof.h
+  audit", include after rules/oa/oacourtprof.h
 - R658 LANDED 2026-10-19: commit 15eda016e1bd92154ee09d20cd55b907829bf4d7
   (census 580 -> 581, pushed 88168f0..15eda01), TABLE 62
   SHUKENJA SPELLS - the spell list by level with the
   sohei and reversible markers, capture p. 112, plus
   the Chapter 7 parent open - the first parent-open
-  flip since R650: rules/oashkspells.h, prefix dhs
+  flip since R650: rules/oa/oashkspells.h, prefix dhs
   (verified free), TWO gap flips this round (parent
   2-line top-level label, no checkbox indent, 2-space
   continuation; child 2-line label), 10 consts, 24
@@ -13800,11 +13800,11 @@ when both halves land.
   44e99ad7644eed23305c7e5467ea8547). NEXT - R659:
   First Level Spells (capture pp. 112-119), prefix dht
   (verify free), audit "R659 OA first level spells
-  audit", include after rules/oashkspells.h
+  audit", include after rules/oa/oashkspells.h
 - R659 LANDED 2026-10-19: commit e95ea548a13790f5627dbfbd78e241c741c2da16
   (census 581 -> 582, pushed 15eda01..e95ea54), FIRST
   LEVEL SPELLS - the 20 first level shukenja spell
-  stat blocks, capture pp. 112-119: rules/oal1spells.h,
+  stat blocks, capture pp. 112-119: rules/oa/oal1spells.h,
   prefix dht (verified free), ONE gap flip (single-line
   child label, the R656 fix), 11 consts, 17 inlines
   (grid tag L1Data, 20 rows x 6 cols - school,
@@ -13835,11 +13835,11 @@ when both halves land.
   949ca5665fdc3f8829d0239b81b560a3). NEXT - R660:
   Second Level Spells (capture pp. 119-126), prefix
   dhu (verify free), audit "R660 OA second level
-  spells audit", include after rules/oal1spells.h
+  spells audit", include after rules/oa/oal1spells.h
 - R660 LANDED 2026-10-19: commit 350c96b770e0913a8ccef2a8fcd673fa016b6a88
   (census 582 -> 583, pushed e95ea54..350c96b), SECOND
   LEVEL SPELLS - the 20 second level shukenja spell
-  stat blocks, capture pp. 119-126: rules/oal2spells.h,
+  stat blocks, capture pp. 119-126: rules/oa/oal2spells.h,
   prefix dhu (verified free), ONE gap flip (single-line
   child label), 15 consts, 21 inlines (grid tag L2Data,
   20 rows x 6 cols - school with the abjuration code 7
@@ -13871,11 +13871,11 @@ when both halves land.
   18bdea9643625324578df542cf7d6ae7). NEXT - R661:
   Third Level Spells (capture pp. 126-132), prefix
   dhv (verify free), audit "R661 OA third level
-  spells audit", include after rules/oal2spells.h
+  spells audit", include after rules/oa/oal2spells.h
 - R661 LANDED 2026-10-19: commit 4590ae7c255039908d6d52aab848ac6bc2cb58c1
   (census 583 -> 584, pushed 350c96b..4590ae7), THIRD
   LEVEL SPELLS - the 20 third level shukenja spell
-  stat blocks, capture pp. 126-132: rules/oal3spells.h,
+  stat blocks, capture pp. 126-132: rules/oa/oal3spells.h,
   prefix dhv (verified free), ONE gap flip (single-line
   child label), 19 consts, 25 inlines (grid tag L3Data,
   20 rows x 6 cols - school with invocation 8 and
@@ -13907,11 +13907,11 @@ when both halves land.
   2a03522fad1f8872d77d680a2c48eeb6). NEXT - R662:
   Fourth Level Spells (capture pp. 132-140), prefix
   dhw (verify free), audit "R662 OA fourth level
-  spells audit", include after rules/oal3spells.h
+  spells audit", include after rules/oa/oal3spells.h
 - R662 LANDED 2026-10-19: commit bf5257b872279240b0a96730a05cee7e323578a3
   (census 584 -> 585, pushed 4590ae7..bf5257b), FOURTH
   LEVEL SPELLS - the 20 fourth level shukenja spell
-  stat blocks, capture pp. 132-140: rules/oal4spells.h,
+  stat blocks, capture pp. 132-140: rules/oa/oal4spells.h,
   prefix dhw (verified free), ONE gap flip (single-line
   child label), 20 consts, 26 inlines (grid tag L4Data,
   20 rows x 6 cols - school, components bitmask,
@@ -13945,11 +13945,11 @@ when both halves land.
   d679d57d6a7b2ccd82408ed43a6eec60). NEXT - R663:
   Fifth Level Spells (capture pp. 140-143), prefix
   dhx (verify free), audit "R663 OA fifth level
-  spells audit", include after rules/oal4spells.h
+  spells audit", include after rules/oa/oal4spells.h
 - R663 LANDED 2026-10-19: commit 28d59514e9c97f9a0bc3e775eb1f99420b74eaa4
   (census 585 -> 586, pushed bf5257b..28d5951), FIFTH
   LEVEL SPELLS - the 12 fifth level shukenja spell
-  stat blocks, capture pp. 140-143: rules/oal5spells.h,
+  stat blocks, capture pp. 140-143: rules/oa/oal5spells.h,
   prefix dhx (verified free), ONE gap flip (single-line
   child label), 18 consts, 24 inlines (grid tag
   L5Data, 12 rows x 6 cols - the level sizes dropping
@@ -13981,12 +13981,12 @@ when both halves land.
   b8d1f22985fc9db1fd47ae52743b0c97). NEXT - R664:
   Sixth Level Spells (capture pp. 143-147), prefix
   dhy (verify free), audit "R664 OA sixth level
-  spells audit", include after rules/oal5spells.h
+  spells audit", include after rules/oa/oal5spells.h
 - R664 LANDED 2026-10-19: commit c0a5a683535eb2e0028617c47e90969f84983893
   (census 586 -> 587, pushed 28d5951..c0a5a68),
   SIXTH LEVEL SPELLS - the 12 sixth
   level shukenja spell stat blocks,
-  capture pp. 143-147: rules/oal6spells.h,
+  capture pp. 143-147: rules/oa/oal6spells.h,
   prefix dhy (verified free), ONE gap flip
   (single-line child label), 15 consts,
   21 inlines (grid tag L6Data, 12 rows x
@@ -14025,12 +14025,12 @@ when both halves land.
   (capture pp. 147-152), prefix dhz
   (verify free), audit "R665 OA seventh
   level spells audit", include after
-  rules/oal6spells.h
+  rules/oa/oal6spells.h
 - R665 LANDED 2026-10-19: commit f5652858ad7f7ce01928dba09f90067828dfa29b
   (census 587 -> 588, pushed c0a5a68..f565285),
   SEVENTH LEVEL SPELLS - the 12 seventh
   level shukenja spell stat blocks,
-  capture pp. 147-152: rules/oal7spells.h,
+  capture pp. 147-152: rules/oa/oal7spells.h,
   prefix dhz (verified free at c0a5a68), ONE
   gap flip (single-line child label), 16
   consts, 22 inlines (grid tag L7Data, 12
@@ -14078,7 +14078,7 @@ when both halves land.
   (census 588 -> 589, pushed f565285..633d0d8),
   TABLE 63 DIVINATION RESULTS - the
   five omen bands, capture p. 117:
-  rules/oat63divination.h, prefix dia
+  rules/oa/oat63divination.h, prefix dia
   (the NEW FAMILY - dh exhausted at
   R665; verified free at f565285 by the
   engine's own call-site check), ONE gap
@@ -14125,7 +14125,7 @@ when both halves land.
   (print p. 132), prefix dib (verify
   free), audit "R667 OA speak with dead
   audit", include after
-  rules/oat63divination.h; then Table 65
+  rules/oa/oat63divination.h; then Table 65
   Fate (print p. 135), then the wu jen
   spell chapter (Chapter 8: Table 66
   and L1-L9)
@@ -14133,7 +14133,7 @@ when both halves land.
   (census 589 -> 590, pushed 633d0d8..eb88e69),
   TABLE 64 SPEAK WITH DEAD - the six
   shukenja level bands, capture p. 132:
-  rules/oat64speakdead.h, prefix dib
+  rules/oa/oat64speakdead.h, prefix dib
   (verified free at 633d0d8), ONE gap flip
   (single-line child label), 9 consts,
   1 chain, 13 inlines (grid tag T64Data,
@@ -14173,14 +14173,14 @@ when both halves land.
   NEXT - R668: Table 65 Fate (print
   p. 135), prefix did (verified free - dic is NOT free: the dice() helpers),
   audit "R668 OA fate audit", include
-  after rules/oat64speakdead.h; then the
+  after rules/oa/oat64speakdead.h; then the
   wu jen spell chapter (Chapter 8: Table
   66 and L1-L9)
 - R668 LANDED 2026-10-20: commit f2ddaaaf29a2e3f0ff642ba408e997403d50babb
   (census 590 -> 591, pushed eb88e69..f2ddaaa),
   TABLE 65 FATE - the twelve fate bands of
   the 1d20 roll, capture p. 135:
-  rules/oat65fate.h, prefix did (the
+  rules/oa/oat65fate.h, prefix did (the
   dic GUESS WAS WRONG - the dice()
   helpers occupy it, caught by the
   engine's prefix gate at the first run;
@@ -14231,12 +14231,12 @@ when both halves land.
   call-site regex, not just whole-word
   grep), audit "R669 OA wu jen spell
   list audit", include after
-  rules/oat65fate.h
+  rules/oa/oat65fate.h
 - R669 LANDED 2026-10-20: commit f0cdd266503487243703bb2393e29dbfca59ca13
   (census 591 -> 592, pushed f2ddaaa..f0cdd26),
   TABLE 66 WU JEN SPELLS - the full
   wu jen spell list by level, capture
-  pp. 153-155: rules/oawjspelllist.h,
+  pp. 153-155: rules/oa/oawjspelllist.h,
   prefix die (verified free at f2ddaaa -
   only comment-word matches, the engine's
   call-site check governs), ONE gap flip
@@ -14294,13 +14294,13 @@ when both halves land.
   riding the R669 grid), prefix dif
   (verify free), audit "R670 OA wu jen
   first level spells audit", include
-  after rules/oawjspelllist.h
+  after rules/oa/oawjspelllist.h
 - R670 LANDED 2026-10-20: commit d50aeaf87b9292c4d97ecf84b2527d45badfc29d
   (census 592 -> 593, pushed f0cdd26..d50aeaf),
   WU JEN FIRST LEVEL SPELLS - the 30
   first level wu jen spell stat
   blocks, capture pp. 155-165:
-  rules/oawjl1spells.h, prefix dif
+  rules/oa/oawjl1spells.h, prefix dif
   (verified free at f0cdd26), ONE gap
   flip (single-line child label), 18
   consts, 24 inlines (grid tag
@@ -14359,13 +14359,13 @@ when both halves land.
   the 30 stat blocks), prefix dig
   (verify free), audit "R671 OA wu
   jen second level spells audit",
-  include after rules/oawjl1spells.h
+  include after rules/oa/oawjl1spells.h
 - R671 LANDED 2026-10-20: commit 234a53ba34a0be22ad9a93f1b963225802137cb3
   (census 593 -> 594, pushed d50aeaf..234a53b),
   WU JEN SECOND LEVEL SPELLS - the 30
   second level wu jen spell stat
   blocks, capture pp. 165-173:
-  rules/oawjl2spells.h, prefix dig
+  rules/oa/oawjl2spells.h, prefix dig
   (verified free at d50aeaf), ONE gap
   flip (single-line child label), 20
   consts, 26 inlines (grid tag
@@ -14419,13 +14419,13 @@ when both halves land.
   stat blocks), prefix dih (verified
   free at 234a53b), audit "R672 OA wu
   jen third level spells audit",
-  include after rules/oawjl2spells.h
+  include after rules/oa/oawjl2spells.h
 - R672 LANDED 2026-10-20: commit f6b10e54b3174de9a64fc7f1ddfdc0047b775102
   (census 594 -> 595, pushed 234a53b..f6b10e5),
   WU JEN THIRD LEVEL SPELLS - the 24
   third level wu jen spell stat
   blocks, capture pp. 173-181:
-  rules/oawjl3spells.h, prefix dih
+  rules/oa/oawjl3spells.h, prefix dih
   (verified free at 234a53b), ONE gap
   flip (single-line child label), 20
   consts, 26 inlines (grid tag
@@ -14492,13 +14492,13 @@ when both halves land.
   (verified free at f6b10e5), audit
   "R673 OA wu jen fourth level spells
   audit", include after
-  rules/oawjl3spells.h
+  rules/oa/oawjl3spells.h
 - R673 LANDED 2026-10-20: commit fba4d3493287cee1363dc6c74ea0358ce879d100
   (census 595 -> 596, pushed f6b10e5..fba4d34),
   WU JEN FOURTH LEVEL SPELLS - the 24
   fourth level wu jen spell stat
   blocks, capture pp. 181-188:
-  rules/oawjl4spells.h, prefix dii
+  rules/oa/oawjl4spells.h, prefix dii
   (verified free at f6b10e5), ONE gap
   flip (single-line child label), 21
   consts, 27 inlines (grid tag
@@ -14562,13 +14562,13 @@ when both halves land.
   (verified free at fba4d34), audit
   "R674 OA wu jen fifth level spells
   audit", include after
-  rules/oawjl4spells.h
+  rules/oa/oawjl4spells.h
 - R674 LANDED 2026-10-20: commit 7cf655dd2108b7f795f94244f18fd14636b90759
   (census 596 -> 597, pushed fba4d34..7cf655d),
   WU JEN FIFTH LEVEL SPELLS - the 24
   fifth level wu jen spell stat
   blocks, capture pp. 189-196:
-  rules/oawjl5spells.h, prefix dij
+  rules/oa/oawjl5spells.h, prefix dij
   (verified free at fba4d34), ONE gap
   flip (single-line child label), 18
   consts, 24 inlines (grid tag
@@ -14642,13 +14642,13 @@ when both halves land.
   the comment-word dikes, the R669
   die precedent), audit "R675 OA wu
   jen sixth level spells audit",
-  include after rules/oawjl5spells.h
+  include after rules/oa/oawjl5spells.h
 - R675 LANDED 2026-10-20: commit b23dcfea241d5382ce4597804d7a77bfe112b4fc
   (census 597 -> 598, pushed 7cf655d..b23dcfe),
   WU JEN SIXTH LEVEL SPELLS - the 24
   sixth level wu jen spell stat
   blocks, capture pp. 196-203:
-  rules/oawjl6spells.h, prefix dik
+  rules/oa/oawjl6spells.h, prefix dik
   (verified free at 7cf655d - only
   the comment-word dikes), ONE gap
   flip (single-line child label), 18
@@ -14724,14 +14724,14 @@ when both halves land.
   dill, the R669 die precedent),
   audit "R676 OA wu jen seventh
   level spells audit", include after
-  rules/oawjl6spells.h
+  rules/oa/oawjl6spells.h
 - R676 LANDED 2026-10-20: commit
   343227ea7198171f40c7c1ead459933d87e1a28f
   (census 598 -> 599, pushed b23dcfe..343227e),
   WU JEN SEVENTH LEVEL SPELLS - the
   12 seventh level wu jen spell stat
   blocks, capture pp. 203-207:
-  rules/oawjl7spells.h, prefix dil
+  rules/oa/oawjl7spells.h, prefix dil
   (verified free at b23dcfe - only
   the string-literal dill, the R669
   die precedent), ONE gap flip
@@ -14810,14 +14810,14 @@ when both halves land.
   the R669 die precedent), audit
   "R677 OA wu jen eighth level
   spells audit", include after
-  rules/oawjl7spells.h
+  rules/oa/oawjl7spells.h
 - R677 LANDED 2026-10-20: commit
   3039a769ba35e237e1b93dbc96c9895560b528dd
   (census 599 -> 600, pushed 9525d0c..3039a76),
   WU JEN EIGHTH LEVEL SPELLS - the
   14 eighth level wu jen spell stat
   blocks, capture pp. 207-213:
-  rules/oawjl8spells.h, prefix dim
+  rules/oa/oawjl8spells.h, prefix dim
   (verified free at 9525d0c - only
   comment-words, the R669 die
   precedent), ONE gap flip
@@ -14893,7 +14893,7 @@ when both halves land.
   prefix dio (verified free at
   3039a76), audit "R678 OA wu jen
   ninth level spells audit", include
-  after rules/oawjl8spells.h
+  after rules/oa/oawjl8spells.h
 - R678 LANDED 2026-10-20: commit
   b44639162fbf8227a45070dfd3b28dcf0f059e89
   (census 600 -> 601, pushed 3039a76..b446391),
@@ -14903,7 +14903,7 @@ when both halves land.
   WU JEN SPELL BOOK GRID CLOSED -
   all nine levels pinned (R670-R678,
   197 stat blocks).
-  rules/oawjl9spells.h, prefix dio
+  rules/oa/oawjl9spells.h, prefix dio
   (din TAKEN - the dinosaurSubBands
   call collides with the engine
   paren gate, the first prefix lost
@@ -14961,13 +14961,13 @@ when both halves land.
   b446391 - only comment-word dips,
   the R669 die precedent), audit
   "R679 OA combat sequence audit",
-  include after rules/oawjl9spells.h
+  include after rules/oa/oawjl9spells.h
 - R679 LANDED 2026-10-20: commit
   8bd8801808b4c0fe016925c0c937f72424572b5e
   (census 601 -> 602, pushed b446391..8bd8801),
   OA COMBAT SEQUENCE - the Summary of
   the Combat Sequence, capture p.
-  218: rules/oacombatseq.h, prefix
+  218: rules/oa/oacombatseq.h, prefix
   dip (verified free at b446391),
   ONE gap flip, 6 consts + 10 bools
   (16 inlines, no table - the first
@@ -15017,13 +15017,13 @@ when both halves land.
   (verified free at 8bd8801 - zero
   repo hits), audit "R680 OA
   iaijutsu surprise audit", include
-  after rules/oacombatseq.h
+  after rules/oa/oacombatseq.h
 - R680 LANDED 2026-10-20: commit
   9f5856273ca8c769b02d43dd362665669c1ec602
   (census 602 -> 603, pushed 8bd8801..9f58562),
   OA SURPRISE AND IAIJUTSU - the
   dueling draw doctrine, capture p.
-  218: rules/oaiaijutsu.h, prefix
+  218: rules/oa/oaiaijutsu.h, prefix
   diq (verified free at 8bd8801 -
   zero repo hits), ONE gap flip, 2
   consts + 6 bools (8 inlines, no
@@ -15070,13 +15070,13 @@ when both halves land.
   the engine paren gate), audit
   "R681 OA initiative modifiers
   audit", include after
-  rules/oaiaijutsu.h
+  rules/oa/oaiaijutsu.h
 - R681 LANDED 2026-10-20: commit
   eb63a121c4cebd133926e5c810daf9b02f09cc19
   (census 603 -> 604, pushed 9f58562..eb63a12),
   OA INITIATIVE MODIFIERS - the
   quickness doctrine, capture pp.
-  218-219: rules/oainitmods.h, prefix
+  218-219: rules/oa/oainitmods.h, prefix
   diu (verified free at 9f58562), ONE
   gap flip, 5 consts + 8 bools (13
   inlines, no table), gap census
@@ -15117,13 +15117,13 @@ when both halves land.
   (capture p. 219), prefix div
   (verify free at eb63a12), audit
   "R682 OA combat procedures audit",
-  include after rules/oainitmods.h
+  include after rules/oa/oainitmods.h
 - R682 LANDED 2026-10-20: commit
   4080171dd4a20735c444d1691600ac9c8064e6ef
   (census 604 -> 605, pushed eb63a12..4080171),
   OA COMBAT PROCEDURES - the missile fire
   from horseback doctrine, capture p.
-  219: rules/oahorsefire.h, prefix div
+  219: rules/oa/oahorsefire.h, prefix div
   (verified free at eb63a12 - zero engine
   gate hits), ONE gap flip, 5 consts + 6
   bools (11 inlines, no table), gap census
@@ -15157,13 +15157,13 @@ when both halves land.
   (capture p. 220), prefix diw (verified
   free at 4080171 - zero repo hits), audit
   "R683 OA horseback bowfire modifiers
-  audit", include after rules/oahorsefire.h
+  audit", include after rules/oa/oahorsefire.h
 - R683 LANDED 2026-10-20: commit
   cefc1ba03050db726113124162d8b5df3d6b823b
   (census 605 -> 606, pushed 4080171..cefc1ba),
   OA TABLE 67 - the horseback bowfire
   modifiers, capture p. 220:
-  rules/oa67bowfire.h, prefix diw
+  rules/oa/oa67bowfire.h, prefix diw
   (verified free at 4080171), ONE gap
   flip, 2 consts + 3 bools (8 inlines,
   3x3 grid tag OA67Data), gap census
@@ -15208,12 +15208,12 @@ when both halves land.
   p. 220), prefix dix (verified free at
   cefc1ba - zero engine-gate hits), audit
   "R684 OA unhorsing audit", include
-  after rules/oa67bowfire.h
+  after rules/oa/oa67bowfire.h
 - R684 LANDED 2026-10-20: commit
   5e63625cea248cd415357c5ab2f9220155fd5270
   (census 606 -> 607, pushed cefc1ba..5e63625),
   OA UNHORSING - the dismount doctrine,
-  capture pp. 220-221: rules/oaunhorsing.h,
+  capture pp. 220-221: rules/oa/oaunhorsing.h,
   prefix dix (verified free at cefc1ba),
   ONE gap flip, 22 consts + 12 bools (34
   inlines, no table), gap census 136/99 ->
@@ -15248,12 +15248,12 @@ when both halves land.
   - R685: the Disarming doctrine (capture
   p. 221), prefix diy (verify free at
   5e63625), audit "R685 OA disarming
-  audit", include after rules/oaunhorsing.h
+  audit", include after rules/oa/oaunhorsing.h
 - R685 LANDED 2026-10-20: commit
   e0bebcbc3a59ac9bcec564dfb9682f5436e5d874
   (census 607 -> 608, pushed 5e63625..e0bebcb),
   OA DISARMING - the disarm doctrine,
-  capture p. 221: rules/oadisarming.h,
+  capture p. 221: rules/oa/oadisarming.h,
   prefix diy (verified free at 5e63625),
   ONE gap flip, 4 consts + 7 bools (11
   inlines, no table), gap census 137/98 ->
@@ -15287,14 +15287,14 @@ when both halves land.
   from R687 the dj- family opens (djf first
   free if dja through dje collide), audit
   "R686 OA subduing audit", include after
-  rules/oadisarming.h
+  rules/oa/oadisarming.h
 - R686 LANDED 2026-10-20: commit
   c553d0303b1888b87d210c8a446b952d6fd27233
   (census 608 -> 609, pushed e0bebcb..c553d03),
   OA SUBDUING OPPONENTENTS - the subdual
   doctrine, capture pp. 221-222 (the
   section ran past its gap-item page):
-  rules/oasubdual.h, prefix diz (verified
+  rules/oa/oasubdual.h, prefix diz (verified
   free at e0bebcb) - THE LAST di- PREFIX,
   ONE gap flip, 4 consts + 13 bools (17
   inlines, no table), gap census 138/97 ->
@@ -15328,12 +15328,12 @@ when both halves land.
   222-223), prefix dja (verify free at
   c553d03) - THE dj- FAMILY OPENS, audit
   "R687 OA psychic duel audit", include
-  after rules/oasubdual.h
+  after rules/oa/oasubdual.h
 - R687 LANDED 2026-10-20: commit
   4c558a35c3afe3b3b8e3d79a85cb33e04ffa9e70
   (census 609 -> 610, pushed c553d03..4c558a3),
   OA THE PSYCHIC DUEL - the wills contest,
-  capture pp. 222-223: rules/oapsychicduel.h,
+  capture pp. 222-223: rules/oa/oapsychicduel.h,
   prefix dja (verified free at c553d03) -
   THE FIRST dj- PREFIX, the family opened
   after diz closed the di- line at R686,
@@ -15369,13 +15369,13 @@ when both halves land.
   (capture pp. 223-224), prefix djb
   (verify free at 4c558a3), audit "R688 OA
   martial arts opener audit", include
-  after rules/oapsychicduel.h
+  after rules/oa/oapsychicduel.h
 - R688 LANDED 2026-10-20: commit
   5d2af58dbe52e06aa64f38cc0fd840ced0adad90
   (census 610 -> 611, pushed 4c558a3..5d2af58),
   OA MARTIAL ARTS OPENER - the doctrine
   prose through the Styles intro, capture
-  pp. 223-225: rules/oamartialopen.h,
+  pp. 223-225: rules/oa/oamartialopen.h,
   prefix djb (verified free at 4c558a3),
   ONE gap flip, 1 const + 18 bools (19
   inlines, no table), gap census 140/95 ->
@@ -15413,12 +15413,12 @@ when both halves land.
   styles grid (capture p. 224), prefix djc
   (verify free at 5d2af58), audit "R689 OA
   common martial styles audit", include
-  after rules/oamartialopen.h
+  after rules/oa/oamartialopen.h
 - R689 LANDED 2026-10-20: commit
   8d86b06610e73f32e992bb2f9ec0248836efdd26
   (census 611 -> 612, pushed 5d2af58..8d86b06),
   OA TABLE 68 - the common martial styles,
-  capture pp. 224-225: rules/oa68styles.h,
+  capture pp. 224-225: rules/oa/oa68styles.h,
   prefix djc (verified free at 5d2af58),
   ONE gap flip, 1 const + 5 bools (12
   inlines, 4x6 grid tag OA68Data - the
@@ -15447,14 +15447,14 @@ when both halves land.
   (capture pp. 225-228), prefix djd
   (verify free at 8d86b06), audit "R690 OA
   creating a style audit", include after
-  rules/oa68styles.h
+  rules/oa/oa68styles.h
 - R690 LANDED 2026-10-20: commit
   5b21b324e337b519e3a3be167260d774abe3fe27
   (census 612 -> 613, pushed 8d86b06..5b21b32),
   OA CREATING A STYLE - the style-
   construction doctrine, capture pp.
   225-227 prose (Table 69 itself the next
-  gap item): rules/oacreatestyle.h,
+  gap item): rules/oa/oacreatestyle.h,
   prefix djd (verified free at 8d86b06),
   ONE gap flip, 5 consts + 21 bools (26
   inlines, no table), gap census 142/93 ->
@@ -15497,13 +15497,13 @@ when both halves land.
   combinations grid (capture p. 226),
   prefix dje (verify free at 5b21b32),
   audit "R691 OA style combinations
-  audit", include after rules/oacreatestyle.h
+  audit", include after rules/oa/oacreatestyle.h
 - R691 LANDED 2026-10-20: commit
   3a019a93b8145cb4fdd1760fcecb778ac
   396168b (census 613 -> 614, pushed
   5b21b32..3a019a9), OA TABLE 69 - the
   martial style combinations, capture p.
-  226 print: rules/oa69combos.h, prefix
+  226 print: rules/oa/oa69combos.h, prefix
   dje (verified free at 5b21b32), ONE gap
   flip, gap census 143/92 -> 144/91. The
   11x4 grid OA69Data: three forms (Hard
@@ -15534,13 +15534,13 @@ when both halves land.
   grid (capture p. 227), prefix djf
   (verified free at 3a019a9), audit
   "R692 OA special maneuvers audit",
-  include after rules/oa69combos.h
+  include after rules/oa/oa69combos.h
 - R692 LANDED 2026-10-20: commit
   1393818055009697f6597b226615c76e
   fe60ff6a (census 614 -> 615, pushed
   3a019a9..1393818), OA TABLE 70 - the
   martial arts special maneuvers, capture
-  p. 227 print: rules/oa70maneuvers.h,
+  p. 227 print: rules/oa/oa70maneuvers.h,
   prefix djf (verified free at 3a019a9),
   ONE gap flip, gap census 144/91 ->
   145/90. The 36x3 grid OA70Data across
@@ -15587,14 +15587,14 @@ when both halves land.
   228-232), prefix djg (verified free at
   1393818), audit "R693 OA principal
   methods audit", include after
-  rules/oa70maneuvers.h
+  rules/oa/oa70maneuvers.h
 - R693 LANDED 2026-10-20: commit
   269b6c083bc75dc62eea0f766e9a730c9
   da84b78 (census 615 -> 616, pushed
   1393818..269b6c0), OA PRINCIPAL
   METHODS - the eight method
   descriptions, capture pp. 228-232
-  print: rules/oamethods.h, prefix djg
+  print: rules/oa/oamethods.h, prefix djg
   (verified free at 1393818), ONE gap
   flip, gap census 145/90 -> 146/89. 42
   consts + 46 bools (88 inlines, no
@@ -15661,7 +15661,7 @@ when both halves land.
   232-233), prefix djh (verified free
   at 269b6c0), audit "R694 OA mental
   and physical training audit",
-  include after rules/oamethods.h
+  include after rules/oa/oamethods.h
 - R694 LANDED 2026-10-20: commit
   e9a5608056da7e6942124195ef1fc903c
   063d053 (census 616 -> 617, pushed
@@ -15669,7 +15669,7 @@ when both halves land.
   PHYSICAL TRAINING - the any-style
   training maneuvers with the stunning
   and incapacitating rules, capture pp.
-  232-233 print: rules/oatrain.h,
+  232-233 print: rules/oa/oatrain.h,
   prefix djh (verified free at 269b6c0),
   ONE gap flip, gap census 146/89 ->
   147/88. 11 consts + 17 bools (28
@@ -15720,7 +15720,7 @@ when both halves land.
   at e9a5608 - only djinn prose in
   old headers, no identifiers), audit
   "R695 OA learning martial arts
-  audit", include after rules/oatrain.h
+  audit", include after rules/oa/oatrain.h
 - R695 LANDED 2026-10-20: commit
   61d0647bb81a15e75f68845a7a8b724a
   12daaa9d (census 617 -> 618, pushed
@@ -15730,7 +15730,7 @@ when both halves land.
   and slot costs, with the multiple
   styles and the combining of styles,
   capture pp. 233-235 print:
-  rules/oalearn.h, prefix dji
+  rules/oa/oalearn.h, prefix dji
   (verified free at e9a5608 - only
   djinn prose in old headers, no
   identifiers), ONE gap flip, gap
@@ -15790,7 +15790,7 @@ when both halves land.
   prose (capture p. 236), prefix djj
   (verified free at 61d0647), audit
   "R696 OA calendar audit", include
-  after rules/oalearn.h
+  after rules/oa/oalearn.h
 - R696 LANDED 2026-10-20: commit
   918b6cbad0a1f723e64f90febfdaaba
   d30980961 (census 618 -> 619, pushed
@@ -15798,7 +15798,7 @@ when both halves land.
   the twelve months of the Shou Lung
   calendar with their day counts and
   festival counts, capture pp. 236-237
-  print: rules/oacalendar.h, prefix
+  print: rules/oa/oacalendar.h, prefix
   djj (verified free at 61d0647), ONE
   gap flip, gap census 148/87 ->
   149/86. 2 consts + 7 bools + the
@@ -15840,13 +15840,13 @@ when both halves land.
   events grid (capture p. 237), prefix
   djk (verified free at 918b6cb),
   audit "R697 OA yearly events audit",
-  include after rules/oacalendar.h
+  include after rules/oa/oacalendar.h
 - R697 LANDED 2026-10-20: commit
   491c0a60cea1d054dfd64749ab74777588
   341675 (census 619 -> 620, pushed
   918b6cb..491c0a6), OA TABLE 71 - the
   yearly events, capture p. 237 print:
-  rules/oa71yearly.h, prefix djk
+  rules/oa/oa71yearly.h, prefix djk
   (verified free at 918b6cb), ONE gap
   flip, gap census 149/86 -> 150/85. 3
   consts + 3 bools + the 19x2 grid
@@ -15887,10 +15887,10 @@ when both halves land.
   and explanations (capture pp. 237-243),
   prefix djl (verified free at 491c0a6),
   audit "R698 OA yearly events prose
-  audit", include after rules/oa71yearly.h
+  audit", include after rules/oa/oa71yearly.h
 - R698 LANDED 2026-10-21: commit c729f3c4a30e83ba6823f77949ccd5b10bdc55b9
   (census 620 -> 621, pushed 491c0a6..c729f3c), OA EXPLANATION OF YEARLY
-  EVENTS, capture pp. 240-243 print: rules/oa71explain.h, prefix djl (verified
+  EVENTS, capture pp. 240-243 print: rules/oa/oa71explain.h, prefix djl (verified
   free at 491c0a6), ONE gap flip, gap census 150/85 -> 151/84. 65 consts + 27
   bools (92 inlines): the nineteen Table 71 events explained with their
   durations, chances and effects (the Ambassador 3d10-month stay, 10% gaijin,
@@ -15915,10 +15915,10 @@ when both halves land.
   4229b67f406e80f9fae96f39ff3c6386 - the value the ritual gated and matched;
   canvas md5 16ab54c79da166edfaa3c4c27fa720de). NEXT - R699: Table 72 the
   monthly events grid (capture p. 238), prefix djm (verified free at c729f3c),
-  audit "R699 OA monthly events audit", include after rules/oa71explain.h
+  audit "R699 OA monthly events audit", include after rules/oa/oa71explain.h
 - R699 LANDED 2026-10-21: commit 11ae6a806d4d410734972a3c17a0e33a78192eb9
   (census 621 -> 622, pushed c729f3c..11ae6a8), OA TABLE 72 - the monthly
-  events, capture p. 238 print: rules/oa72monthly.h, prefix djm (verified free
+  events, capture p. 238 print: rules/oa/oa72monthly.h, prefix djm (verified free
   at c729f3c), ONE gap flip, gap census 151/84 -> 152/83. 8 consts + 3 bools +
   the 40x5 grid djmOA72Grid (16 inlines): the forty die-range rows of the
   percentile die contiguous 1-100 across the three columns - the war months
@@ -15954,10 +15954,10 @@ when both halves land.
   matched; canvas md5 ac636264943d5a59da573a41ee58577a). NEXT - R700: the
   Monthly Events prose and explanations (capture pp. 238-247), prefix djn
   (verified free at 11ae6a8), audit "R700 OA monthly events prose audit",
-  include after rules/oa72monthly.h
+  include after rules/oa/oa72monthly.h
 - R700 LANDED 2026-10-21: commit 7ffe0952a0d3974369d3ec4ffb66a1c961ffa4e1
   (census 622 -> 623, pushed 11ae6a8..7ffe095), OA EXPLANATION OF MONTHLY
-  EVENTS, capture pp. 243-247 print: rules/oa72explain.h, prefix djn (verified
+  EVENTS, capture pp. 243-247 print: rules/oa/oa72explain.h, prefix djn (verified
   free at 11ae6a8), ONE gap flip, gap census 152/83 -> 153/82. 66 consts + 46
   bools (112 inlines): the twenty-eight monthly events explained (the Accident
   DM-chose; the Bad Harvest 25% income, 5% famine, 50% food, the blamed ruler;
@@ -15989,10 +15989,10 @@ when both halves land.
   d15b11329269a6d086c1018ac7b2b633 - the value the ritual gated and matched;
   canvas md5 073e8da443d5134acb3121991f153b4e). NEXT - R701: Table 73 the
   daily events grid (capture p. 247), prefix djo (verified free at 7ffe095),
-  audit "R701 OA daily events audit", include after rules/oa72explain.h
+  audit "R701 OA daily events audit", include after rules/oa/oa72explain.h
 - R701 LANDED 2026-10-21: commit 708d6810f25d3f621de7880d158fab619da85cc7
   (census 623 -> 624, pushed 7ffe095..708d681), OA TABLE 73 - the daily
-  events, capture pp. 247-248 print: rules/oa73daily.h, prefix djo (verified
+  events, capture pp. 247-248 print: rules/oa/oa73daily.h, prefix djo (verified
   free at 7ffe095), ONE gap flip, gap census 153/82 -> 154/81. 9 consts +
   3 bools + 7 grid cols (19 inlines): the twenty-eight die-range rows of
   the percentile die across the five location columns (the court, the
@@ -16015,10 +16015,10 @@ when both halves land.
   17bae81bb5a657f6a543948f73594e63). NEXT - R702: the Daily Events prose
   and explanations (capture pp. 247-251), prefix djp (verified free at
   708d681), audit "R702 OA daily events prose audit", include after
-  rules/oa73daily.h
+  rules/oa/oa73daily.h
 - R702 LANDED 2026-10-21: commit eb09e6093e81b7ec6fbf4e0243afd3216eea39cb
   (census 624 -> 625, pushed 708d681..eb09e60), OA EXPLANATION OF DAILY
-  EVENTS, capture pp. 247-251 print: rules/oa73explain.h, prefix djp
+  EVENTS, capture pp. 247-251 print: rules/oa/oa73explain.h, prefix djp
   (verified free at 708d681), ONE gap flip, gap census 154/81 -> 155/80.
   59 consts + 34 bools (93 inlines): the daily frame (the three events
   max per day, the providers of the action); the twenty-nine events
@@ -16053,11 +16053,11 @@ when both halves land.
   columns of the 2-20 roll grid; the climate groupings box follows),
   prefix djq (verified
   free at eb09e60), audit "R703 OA terrain encounter tables audit",
-  include after rules/oa73explain.h
+  include after rules/oa/oa73explain.h
 - R703 LANDED 2026-10-21: commit f4c28d73ff909f45d67bc550dea1b3f0f1363155
   (census 625 -> 626, pushed eb09e60..f4c28d7), OA CHAPTER 11 - the
   terrain encounter tables, capture pp. 251-252 print:
-  rules/oa74terrain.h, prefix djq (verified free at eb09e60), ONE gap
+  rules/oa/oa74terrain.h, prefix djq (verified free at eb09e60), ONE gap
   flip, gap census 155/80 -> 156/79. 16 grid cols + 5 consts + 2
   bools (23 inlines): the sixteen terrain columns of the 2-20 roll
   grid (the City/Town, the T/S Mountains, the T/S Ocean, the
@@ -16085,10 +16085,10 @@ when both halves land.
   7c54d716b555430ba28042d46042c4e0). NEXT - R704: the Climate
   Groupings with Creatures from Previous Books (capture p. 252),
   prefix djr (verified free at f4c28d7), audit "R704 OA climate
-  groupings audit", include after rules/oa74terrain.h
+  groupings audit", include after rules/oa/oa74terrain.h
 - R704 LANDED 2026-10-21: commit 966d0e6d759e77210f9cd8f4635535e73dd64aea
   (census 626 -> 627, pushed f4c28d7..966d0e6), OA CLIMATE
-  GROUPINGS, capture pp. 252-253 print: rules/oa75climate.h,
+  GROUPINGS, capture pp. 252-253 print: rules/oa/oa75climate.h,
   prefix djr (verified free at f4c28d7), ONE gap flip, gap
   census 156/79 -> 157/78. 14 consts + 8 bools (22 inlines):
   the seven climate groupings with the game creature counts
@@ -16114,11 +16114,11 @@ when both halves land.
   Chapter 12 monster roster opener - the Bajang, Lesser
   Spirit (capture pp. 253-254), prefix djs (verified free
   at 966d0e6), audit "R705 OA monsters Bajang audit",
-  include after rules/oa75climate.h
+  include after rules/oa/oa75climate.h
 - R705 LANDED 2026-10-21: commit 2b9c1e303628193089e6cf104ef7e30419eef700
   (census 627 -> 628, pushed 966d0e6..2b9c1e3), OA MONSTERS - the
   Bajang, the lesser spirit, capture pp. 253-254 print:
-  rules/oa76bajang.h, prefix djs (verified free at 966d0e6), ONE
+  rules/oa/oa76bajang.h, prefix djs (verified free at 966d0e6), ONE
   gap flip, gap census 157/78 -> 158/77. 19 consts + 9 bools (28
   inlines): the stat block (the very rare, the 1, the AC 2, the
   move 12, the HD 6, the 20% lair, the treasure P, the 2 claws of
@@ -16143,10 +16143,10 @@ when both halves land.
   a79fd647104bc81e545e273eeb9fdf14). NEXT - R706: the Bakemono
   (capture pp. 254-255), prefix djt (verified free at 2b9c1e3),
   audit "R706 OA monsters Bakemono audit", include after
-  rules/oa76bajang.h
+  rules/oa/oa76bajang.h
 - R706 LANDED 2026-10-21: commit 393b41b6aff2613cdb33b5c70c03c175696883f4
   (census 628 -> 629, pushed 2b9c1e3..393b41b), OA MONSTERS - the
-  Bakemono, capture pp. 254-255 print: rules/oa77bakemono.h,
+  Bakemono, capture pp. 254-255 print: rules/oa/oa77bakemono.h,
   prefix djt (verified free at 2b9c1e3), ONE gap flip, gap census
   158/77 -> 159/76. 28 consts + 10 bools (38 inlines): the stat
   block (the 1-100 frequency, the AC 6, the move 6, the HD 1-1,
@@ -16165,11 +16165,11 @@ when both halves land.
   byte-exact; canvas md5 912e819173622fef6d9dc2e0ccf767a9).
   NEXT - R707: the Bisan, Lesser Spirit (capture pp. 255-256),
   prefix dju (verified free at 393b41b), audit "R707 OA monsters
-  Bisan audit", include after rules/oa77bakemono.h.
+  Bisan audit", include after rules/oa/oa77bakemono.h.
 - R707 LANDED 2026-10-21: commit 2a2f67aa2c0b9d5bf48e21de5c697cee00870e82
   (census 629 -> 630, pushed 393b41b..2a2f67a), OA MONSTERS - the
   Bisan, Lesser Spirit, capture pp. 255-256 print:
-  rules/oa78bisan.h, prefix dju (verified free at 393b41b), ONE
+  rules/oa/oa78bisan.h, prefix dju (verified free at 393b41b), ONE
   gap flip, gap census 159/76 -> 160/75. 17 consts + 25 bools
   (42 inlines): the stat block (the very rare, the 1, the AC 0,
   the move 24, the HD 10, the 100% lair, the Q T, the 1 attack
@@ -16192,10 +16192,10 @@ when both halves land.
   NEXT - R708: the Buso (capture pp. 256-257), prefix djv
   (verified free at 2a2f67a - only lowercase djvu prose, no
   pins), audit "R708 OA monsters Buso audit", include after
-  rules/oa78bisan.h.
+  rules/oa/oa78bisan.h.
 - R708 LANDED 2026-10-21: commit 8361dca91baf5ef64f20c5bfb672692fa245b4ca
   (census 630 -> 631, pushed 2a2f67a..8361dca), OA MONSTERS - the
-  Buso, capture pp. 256-257 print: rules/oa79buso.h, prefix djv
+  Buso, capture pp. 256-257 print: rules/oa/oa79buso.h, prefix djv
   (verified free at 2a2f67a), ONE gap flip, gap census 161/74
   (the engine counts every checkbox occurrence - the pre-flip
   160/75 went to 161/74, not the 161/75 first guessed; the R708
@@ -16225,10 +16225,10 @@ when both halves land.
   byte-exact; canvas md5 94313a263837d5020ca2b6fdca4bc554).
   NEXT - R709: the Carp, Giant (capture p. 257), prefix djw
   (verified free at 8361dca), audit "R709 OA monsters Giant
-  Carp audit", include after rules/oa79buso.h.
+  Carp audit", include after rules/oa/oa79buso.h.
 - R709 LANDED 2026-10-21: commit b7a2dad2e184a8cf83d1600dc0d68e9638614a71
   (census 631 -> 632, pushed 8361dca..b7a2dad), OA MONSTERS - the
-  Carp, Giant, capture pp. 257-258 print: rules/oa80carp.h,
+  Carp, Giant, capture pp. 257-258 print: rules/oa/oa80carp.h,
   prefix djw (verified free at 8361dca), ONE gap flip, gap
   census 162/73. 28 consts + 19 bools (47 inlines): the stat
   block (the uncommon, the 1-4, the AC 6, the move 18, the
@@ -16253,11 +16253,11 @@ when both halves land.
   be1cf09bb972c8d2db2e3824aed5b634). NEXT - R710: the
   Con-Tinh, Lesser Spirit (capture pp. 258-259), prefix djx
   (verified free at b7a2dad), audit "R710 OA monsters Con-Tinh
-  audit", include after rules/oa80carp.h.
+  audit", include after rules/oa/oa80carp.h.
 - R710 LANDED 2026-10-21: commit b200a70c8f3ef318cbb47dec313e9eef57fa3833
   (census 632 -> 633, pushed b7a2dad..b200a70), OA MONSTERS - the
   Con-Tinh, Lesser Spirit, capture pp. 258-259 print:
-  rules/oa81continh.h, prefix djx (verified free at b7a2dad),
+  rules/oa/oa81continh.h, prefix djx (verified free at b7a2dad),
   ONE gap flip, gap census 163/72. 16 consts + 26 bools (42
   inlines): the stat block (the rare, the 1-2, the AC 7, the
   move 12, the HD 6, the 100% lair, the treasure I, the 1
@@ -16279,11 +16279,11 @@ when both halves land.
   d0a1bea4300e873d62245c76d827710b). NEXT - R711: the
   Doc Cu'o'c, Greater Spirit (capture p. 259), prefix djy
   (verified free at b200a70), audit "R711 OA monsters Doc
-  Cu'o'c audit", include after rules/oa81continh.h.
+  Cu'o'c audit", include after rules/oa/oa81continh.h.
 - R711 LANDED 2026-10-21: commit 878365a250e4ddb0f492a2013a590dba74b05782
   (census 633 -> 634, pushed b200a70..878365a), OA MONSTERS - the
   Doc Cu'o'c, Greater Spirit, capture p. 259 print:
-  rules/oa82doccuoc.h, prefix djy (verified free at b200a70),
+  rules/oa/oa82doccuoc.h, prefix djy (verified free at b200a70),
   ONE gap flip, gap census 164/71. 16 consts + 22 bools (38
   inlines): the stat block (the very rare, the 1, the AC -3,
   the move 24, the HD 10, the 10% lair, the treasure G, the
@@ -16307,11 +16307,11 @@ when both halves land.
   NEXT - R712: the Oriental Dragons (capture pp. 259-260),
   prefix djz (verified free at 878365a), audit "R712 OA
   monsters Oriental Dragons audit", include after
-  rules/oa82doccuoc.h.
+  rules/oa/oa82doccuoc.h.
 - R712 LANDED 2026-10-21: commit 683d2c6d6f9fc2b22e3f8a53cbf75d53d22a81e5
   (census 634 -> 635, pushed 878365a..683d2c6), OA MONSTERS - the
   Oriental Dragons, capture pp. 259-262 print:
-  rules/oa83dragons.h, prefix djz (verified free at 878365a),
+  rules/oa/oa83dragons.h, prefix djz (verified free at 878365a),
   ONE gap flip, gap census 165/70 - the whole six-dragon box
   rides one flip (the four FF Tome types are cross-refs). 58
   consts + 51 bools (109 inlines, the largest round of the
@@ -16346,11 +16346,11 @@ when both halves land.
   4755c5a24ed838bb7afcfe0183eb3254). NEXT - R713: the Gaki,
   Lesser Spirit (capture pp. 262-263), prefix dka (verified
   free at 683d2c6), audit "R713 OA monsters Gaki audit",
-  include after rules/oa83dragons.h.
+  include after rules/oa/oa83dragons.h.
 - R713 LANDED 2026-10-21: commit 0124fd4ca300c5abf57005f5bedc018b4b1f0947
   (census 635 -> 636, pushed 683d2c6..0124fd4), OA MONSTERS - the
   Gaki, Lesser Spirit, capture pp. 262-263 print:
-  rules/oa84gaki.h, prefix dka (verified free at 683d2c6), ONE
+  rules/oa/oa84gaki.h, prefix dka (verified free at 683d2c6), ONE
   gap flip, gap census 166/69 - OA round one hundred, the
   four hungry spirits riding one flip. 56 consts + 42 bools
   (98 inlines): the shared doctrine (the spirits of the
@@ -16379,10 +16379,10 @@ when both halves land.
   byte-exact; canvas md5 4230843d82b31ded684dffaaa2c24e5e).
   NEXT - R714: the Gargantua (capture pp. 263-265), prefix
   dkb (verified free at 0124fd4), audit "R714 OA monsters
-  Gargantua audit", include after rules/oa84gaki.h.
+  Gargantua audit", include after rules/oa/oa84gaki.h.
 - R714 LANDED 2026-10-21: commit 9f0a277da0798dcf5e5c1e10de8ef51af01448f3
   (census 636 -> 637, pushed 0124fd4..9f0a277), OA MONSTERS - the
-  Gargantua, capture pp. 263-265 print: rules/oa85gargantua.h,
+  Gargantua, capture pp. 263-265 print: rules/oa/oa85gargantua.h,
   prefix dkb (verified free at 0124fd4), ONE gap flip, gap
   census 167/68 - the kaiju round, the three behemoths riding
   one flip. 66 consts + 42 bools (108 inlines): the shared
@@ -16412,11 +16412,11 @@ when both halves land.
   NEXT - R715: the Generals of the Animal Kings, Greater
   Spirits (capture p. 265), prefix dkc (verified free at
   9f0a277), audit "R715 OA monsters Animal Generals audit",
-  include after rules/oa85gargantua.h.
+  include after rules/oa/oa85gargantua.h.
 - R715 LANDED 2026-10-21: commit 1669743004a121807de54b6430f0bd5250658af2
   (census 637 -> 638, pushed 9f0a277..1669743), OA MONSTERS - the
   Generals of the Animal Kings, Greater Spirits (capture pp.
-  265-266 print): rules/oa86generals.h, prefix dkc (verified
+  265-266 print): rules/oa/oa86generals.h, prefix dkc (verified
   free at 9f0a277), ONE gap flip, gap census 168/67 - the
   animal generals box, the three commanders riding one flip.
   62 consts + 23 bools (85 inlines): the shared doctrine (the
@@ -16442,10 +16442,10 @@ when both halves land.
   byte-exact; canvas md5 2ef459de722a16d1de59f69196b38cac).
   NEXT - R716: the Goblin Rat (capture p. 266), prefix dkd
   (verified free at 1669743), audit "R716 OA monsters Goblin
-  Rat audit", include after rules/oa86generals.h.
+  Rat audit", include after rules/oa/oa86generals.h.
 - R716 LANDED 2026-10-21: commit 91bfd2404a253ff1842ac0c22616361c5f30a604
   (census 638 -> 639, pushed 1669743..91bfd24), OA MONSTERS - the
-  Goblin Rat (capture pp. 266-267 print): rules/oa87goblinrat.h,
+  Goblin Rat (capture pp. 266-267 print): rules/oa/oa87goblinrat.h,
   prefix dkd (verified free at 1669743), ONE gap flip, gap
   census 169/66 - the goblin rat box. 24 consts + 37 bools
   (61 inlines): the stat block (the rare 1-20, the AC 7, the
@@ -16470,7 +16470,7 @@ when both halves land.
   byte-exact; canvas md5 2e808dd7e25c9475cbbe96320c903d5e).
   NEXT - R717: the Goblin Spider (capture p. 267), prefix
   dke (verified free at 91bfd24), audit "R717 OA monsters
-  Goblin Spider audit", include after rules/oa87goblinrat.h.
+  Goblin Spider audit", include after rules/oa/oa87goblinrat.h.
 - R717 LANDED 2026-10-21: commit 658be4c4d62f071a2ecbf496ce8d6dee87fe1d10
   (census 639 -> 640, pushed 91bfd24..658be4c), OA MONSTERS - the
   Goblin Spider (capture pp. 267-268 print): rules/
@@ -16500,10 +16500,10 @@ when both halves land.
   d3ba7e1b576afadf5f1bcc6017f1e849). NEXT - R718: the
   Hai Nu (capture p. 268), prefix dkf (verified free at
   658be4c), audit "R718 OA monsters Hai Nu audit",
-  include after rules/oa88goblinspider.h.
+  include after rules/oa/oa88goblinspider.h.
 - R718 LANDED 2026-10-21: commit d4c68bd064af867cd154b484afdd24755688fd80
   (census 640 -> 641, pushed 658be4c..d4c68bd), OA MONSTERS - the
-  Hai Nu (capture pp. 268-269 print): rules/oa89hainu.h,
+  Hai Nu (capture pp. 268-269 print): rules/oa/oa89hainu.h,
   prefix dkf (verified free at 658be4c), ONE gap flip, gap
   census 171/64 - the hai nu box. A TABLES round. 29
   consts + 30 bools + 1 table col (60 inlines): the stat
@@ -16537,10 +16537,10 @@ when both halves land.
   a893a00a8ed07946f03926c014d53b2a). NEXT - R719: the
   Hsing-Sing (capture p. 269), prefix dkg (verified
   free at d4c68bd), audit "R719 OA monsters Hsing-Sing
-  audit", include after rules/oa89hainu.h.
+  audit", include after rules/oa/oa89hainu.h.
 - R719 LANDED 2026-10-21: commit de4c144fa311638060787782e08ec55dc34f94ca
   (census 641 -> 642, pushed d4c68bd..de4c144), OA MONSTERS - the
-  Hsing-Sing (capture p. 269 print): rules/oa90hsingsing.h,
+  Hsing-Sing (capture p. 269 print): rules/oa/oa90hsingsing.h,
   prefix dkg (verified free at d4c68bd), ONE gap flip, gap
   census 172/63 - the hsing-sing box. 25 consts + 40 bools
   (65 inlines): the stat block (the rare 2-20, the AC 6, the
@@ -16567,7 +16567,7 @@ when both halves land.
   db359f792c38c5eb2a4e528d4a132221). NEXT - R720: the
   Hu Hsien, Lesser Spirit (capture pp. 269-272), prefix
   dkh (verified free at de4c144), audit "R720 OA monsters
-  Hu Hsien audit", include after rules/oa90hsingsing.h.
+  Hu Hsien audit", include after rules/oa/oa90hsingsing.h.
 - R720 LANDED 2026-10-21: commit 5058dcf91e073706a6e6ebbaae88f615ea4d4113
   (census 642 -> 643, pushed de4c144..5058dcf), OA MONSTERS,
   the Hu Hsien box (capture pp. 269-272 print): rules/
@@ -16609,10 +16609,10 @@ when both halves land.
   71ae8572b5c060f753a385fd321c1b83). NEXT - R721: the
   Kala (capture p. 272), prefix dki (verified free at
   5058dcf), audit "R721 OA monsters Kala audit", include
-  after rules/oa91huhuien.h.
+  after rules/oa/oa91huhuien.h.
 - R721 LANDED 2026-10-21: commit 7c917a1cd39e05d6d131af74552e5256e1ccd585
   (census 643 -> 644, pushed 5058dcf..7c917a1), OA MONSTERS,
-  the Kala (capture pp. 272-273 print): rules/oa92kala.h,
+  the Kala (capture pp. 272-273 print): rules/oa/oa92kala.h,
   prefix dki (verified free at 5058dcf), ONE gap flip, gap
   census 174/61 - the kala box. A TABLES round. 17
   consts + 29 bools + 8 table cols (54 inlines): the
@@ -16645,10 +16645,10 @@ when both halves land.
   6c15e56670933aaf3a7036fa55f4581a). NEXT - R722: the
   Kappa (capture p. 273), prefix dkj (verified free
   at 7c917a1), audit "R722 OA monsters Kappa audit",
-  include after rules/oa92kala.h.
+  include after rules/oa/oa92kala.h.
 - R722 LANDED 2026-10-21: commit 29b807ea99a6b6643cd5f1a101c3c608444832d5
   (census 644 -> 645, pushed 7c917a1..29b807e), OA MONSTERS,
-  the Kappa (capture pp. 273-274 print): rules/oa93kappa.h,
+  the Kappa (capture pp. 273-274 print): rules/oa/oa93kappa.h,
   prefix dkj (verified free at 7c917a1), ONE gap flip, gap
   census 175/60 - the kappa box. A TABLES round. 18
   consts + 50 bools + 9 table cols (77 inlines): the
@@ -16687,12 +16687,12 @@ when both halves land.
   d32407eee144c143225d9f4f84e89620). NEXT - R723: the
   Kuei, Lesser Spirit (capture p. 274), prefix dkk
   (verified free at 29b807e), audit "R723 OA monsters
-  Kuei audit", include after rules/oa93kappa.h.
+  Kuei audit", include after rules/oa/oa93kappa.h.
 - R723 LANDED 2026-10-21: commit
   a4ed27f5cf39a0b1d743ff1af2c340620c5db5d5
   (census 645 -> 646, pushed 29b807e..a4ed27f), OA
   MONSTERS, the Kuei (capture pp. 274-275 print):
-  rules/oa94kuei.h, prefix dkk (verified free at
+  rules/oa/oa94kuei.h, prefix dkk (verified free at
   29b807e), ONE gap flip, gap census 176/59 - the kuei
   box. A TABLES round. 18 consts + 39 bools + 3 table
   cols (60 inlines): the stat block (the rare 1, the
@@ -16722,12 +16722,12 @@ when both halves land.
   Men Wako, the Sea Pirate (capture p. 275), prefix
   dkl (verified free at a4ed27f), audit "R724 OA
   monsters Men Wako audit", include after
-  rules/oa94kuei.h.
+  rules/oa/oa94kuei.h.
 - R724 LANDED 2026-10-21: commit
   fc2b428dbb81f386b2ffb7909257b2f38b0afd48
   (census 646 -> 647, pushed a4ed27f..fc2b428), OA
   MONSTERS, the Men Wako, the Sea Pirate (capture
-  pp. 275-276 print): rules/oa95menwako.h, prefix
+  pp. 275-276 print): rules/oa/oa95menwako.h, prefix
   dkl (verified free at a4ed27f), ONE gap flip, gap
   census 177/58 - the men wako box. A TABLES
   round. 26 consts + 26 bools + 1 table col (53
@@ -16770,12 +16770,12 @@ when both halves land.
   the Nat, the Lesser Spirit (capture
   pp. 276-278), prefix dkm (verified free at
   fc2b428), audit "R725 OA monsters Nat audit",
-  include after rules/oa95menwako.h.
+  include after rules/oa/oa95menwako.h.
 - R725 LANDED 2026-10-21: commit
   16cefa355bb4155ea4d1e917d4e031d462781a4e
   (census 647 -> 648, pushed fc2b428..16cefa3), OA
   MONSTERS, the Nat, Lesser Spirit (capture
-  pp. 276-278 print): rules/oa96nat.h, prefix dkm
+  pp. 276-278 print): rules/oa/oa96nat.h, prefix dkm
   (verified free at fc2b428), ONE gap flip, gap
   census 178/57 - the nat box. A TABLES round.
   10 consts + 77 bools + 11 table cols (98
@@ -16833,13 +16833,13 @@ when both halves land.
   Greater (capture pp. 278-279), prefix dkn
   (verified free at 16cefa3), audit "R726 OA
   monsters Nature Spirits audit", include after
-  rules/oa96nat.h.
+  rules/oa/oa96nat.h.
 - R726 LANDED 2026-10-21: commit
   15687f2876a2145464a99aae14b259f29a769622
   (census 648 -> 649, pushed 16cefa3..15687f2), OA
   MONSTERS, the Nature Spirits, the Lesser and
   the Greater (capture pp. 278-279 print):
-  rules/oa97naturespirit.h, prefix dkn
+  rules/oa/oa97naturespirit.h, prefix dkn
   (verified free at 16cefa3), ONE gap flip, gap
   census 179/56 - the nature spirits box (its
   two-line wrap handled, the from spanned both
@@ -16894,12 +16894,12 @@ when both halves land.
   R727: the Ningyo (capture p. 279), prefix dko
   (verified free at 15687f2), audit "R727 OA
   monsters Ningyo audit", include after
-  rules/oa97naturespirit.h.
+  rules/oa/oa97naturespirit.h.
 - R727 LANDED 2026-10-21: commit
   d583601b54e40af14622c60d70e6a6051a862fda
   (census 649 -> 650, pushed 15687f2..d583601), OA
   MONSTERS, the Ningyo (capture pp. 279-280
-  print): rules/oa98ningyo.h, prefix dko
+  print): rules/oa/oa98ningyo.h, prefix dko
   (verified free at 15687f2), ONE gap flip, gap
   census 180/55 - the ningyo box. A consts round.
   17 consts + 25 bools (42 inlines): the stat
@@ -16933,12 +16933,12 @@ when both halves land.
   R728: the Oni, the Lesser Spirit (capture
   pp. 280-281), prefix dkp (verified free at
   d583601), audit "R728 OA monsters Oni audit",
-  include after rules/oa98ningyo.h.
+  include after rules/oa/oa98ningyo.h.
 - R728 LANDED 2026-10-21: commit
   a20e85ab9c8a965673ee32a5f1f96c202b17df17
   (census 650 -> 651, pushed d583601..a20e85a), OA
   MONSTERS, the Oni, Lesser Spirit (capture
-  pp. 280-281 print): rules/oa99oni.h, prefix
+  pp. 280-281 print): rules/oa/oa99oni.h, prefix
   dkp (verified free at d583601), ONE gap flip,
   gap census 181/54 - the oni box. A TABLES
   round. 11 consts + 56 bools + 10 table cols
@@ -17009,12 +17009,12 @@ when both halves land.
   R729: the P oh, the Lesser Spirit (capture
   pp. 281-282), prefix dkq (verified free at
   a20e85a), audit "R729 OA monsters P oh
-  audit", include after rules/oa99oni.h.
+  audit", include after rules/oa/oa99oni.h.
 - R729 LANDED 2026-10-21: commit
   96a5de9fee7516f2ec6b53665622cb2eaead84b9
   (census 651 -> 652, pushed a20e85a..96a5de9), OA
   MONSTERS, the P oh, the Lesser Spirit (capture
-  pp. 281-282 print): rules/oa100poh.h, prefix
+  pp. 281-282 print): rules/oa/oa100poh.h, prefix
   dkq (verified free at a20e85a), ONE gap flip,
   gap census 182/53 - the p oh box (the
   apostrophe of the print kept to the gap box
@@ -17053,12 +17053,12 @@ when both halves land.
   R730: the Shan Sao (capture pp. 282-283),
   prefix dkr (verified free at 96a5de9), audit
   "R730 OA monsters Shan Sao audit", include
-  after rules/oa100poh.h.
+  after rules/oa/oa100poh.h.
 - R730 LANDED 2026-10-21: commit
   981038137da8b53d3f3d0b37c29883de5b0fa34b
   (census 652 -> 653, pushed 96a5de9..9810381), OA
   MONSTERS, the Shan Sao (capture pp. 282-283
-  print): rules/oa101shansao.h, prefix dkr
+  print): rules/oa/oa101shansao.h, prefix dkr
   (verified free at 96a5de9), ONE gap flip, gap
   census 183/52 - the shan sao box. A consts
   round. 29 consts + 29 bools (58 inlines): the
@@ -17098,13 +17098,13 @@ when both halves land.
   Spirit (capture pp. 283-284), prefix dks
   (verified free at 9810381), audit "R731 OA
   monsters Shirokinukatsukami audit", include
-  after rules/oa101shansao.h.
+  after rules/oa/oa101shansao.h.
 - R731 LANDED 2026-10-21: commit
   a6d8c5540b8e5f59eddffb0feb14b5811486ab75
   (census 653 -> 654, pushed 9810381..a6d8c55), OA
   MONSTERS, the Shirokinukatsukami, Greater
   Spirit (capture pp. 283-284 print):
-  rules/oa102shiro.h, prefix dks (verified free
+  rules/oa/oa102shiro.h, prefix dks (verified free
   at 9810381), ONE gap flip, gap census 184/51 -
   the shirokinukatsukami box (its two-line wrap
   handled, the from spanned both lines). A
@@ -17154,12 +17154,12 @@ when both halves land.
   R732: the Tengu (capture p. 284), prefix dkt
   (verified free at a6d8c55), audit "R732 OA
   monsters Tengu audit", include after
-  rules/oa102shiro.h.
+  rules/oa/oa102shiro.h.
 - R732 LANDED 2026-10-21: commit
   d8cf893886be07623a596e599f8969c484d9fd6a
   (census 654 -> 655, pushed a6d8c55..d8cf893), OA
   MONSTERS, the Tengu, capture pp. 284-285,
-  header rules/oa103tengu.h, prefix dkt
+  header rules/oa/oa103tengu.h, prefix dkt
   (verified free at a6d8c55), one gap flip
   (the Tengu box, capture p. 284), gap census
   now 185 closed / 50 open. Round type: the
@@ -17185,14 +17185,14 @@ when both halves land.
   table (capture p. 285), prefix dku
   (verify free at the landing), audit "R733
   OA treasure class usage audit", include
-  after rules/oa103tengu.h.
+  after rules/oa/oa103tengu.h.
 - R733 LANDED 2026-10-21: commit
   943ff7ecc6fa96607f5b43d4d9697e6ac20917b4
   (census 655 -> 656, pushed d8cf893..943ff7e),
   OA TREASURE, the Chapter 13 opener, the
   Magical Items Usable by Character Class
   table (capture p. 285), header
-  rules/oa104classuse.h, prefix dku
+  rules/oa/oa104classuse.h, prefix dku
   (verified free at d8cf893), one gap flip
   (the class usage box, its two-line wrap
   handled), gap census now 186 closed /
@@ -17219,13 +17219,13 @@ when both halves land.
   pp. 285-286), prefix dkv (verify free at
   the landing), audit "R734 OA random
   treasure prose audit", include after
-  rules/oa104classuse.h.
+  rules/oa/oa104classuse.h.
 - R734 LANDED 2026-10-21: commit
   dd3890cd09de8839cb0e9c9e5e688f1abc07a63b
   (census 656 -> 657, pushed 943ff7e..dd3890c),
   OA TREASURE, the Random Treasure
   Determination prose (capture p. 285), header
-  rules/oa105randtres.h, prefix dkv
+  rules/oa/oa105randtres.h, prefix dkv
   (verified free at 943ff7e), one gap flip
   (the random treasure prose box, its
   two-line wrap handled), gap census now
@@ -17251,13 +17251,13 @@ when both halves land.
   p. 286), prefix dkw (verify free at the
   landing), audit "R735 OA Table 74
   monetary treasure audit", include after
-  rules/oa105randtres.h.
+  rules/oa/oa105randtres.h.
 - R735 LANDED 2026-10-21: commit
   7d24d471ec7a2754367fb14362a3ed129d140cd9
   (census 657 -> 658, pushed dd3890c..7d24d47),
   OA TREASURE, Table 74, Monetary Treasure
   And Magical Items (capture p. 286), header
-  rules/oa106table74.h, prefix dkw
+  rules/oa/oa106table74.h, prefix dkw
   (verified free at dd3890c), one gap flip
   (the Table 74 box, its two-line wrap
   handled), gap census now 188 closed /
@@ -17290,14 +17290,14 @@ when both halves land.
   prefix dkx (verify free at the landing),
   audit "R736 OA Table II.A. Orient
   monetary treasure audit", include after
-  rules/oa106table74.h.
+  rules/oa/oa106table74.h.
 - R736 LANDED 2026-10-21: commit
   ec8606c43955b2b66f93f50fc4e3262c445a413c
   (census 658 -> 659, pushed 7d24d47..ec8606c),
   OA TREASURE, Table II.A. (Orient):
   Monetary Treasure (capture pp. 286-287,
   the table spans the page break), header
-  rules/oa107tableiia.h, prefix dkx
+  rules/oa/oa107tableiia.h, prefix dkx
   (verified free at 7d24d47), one gap flip
   (the Table II.A. box, its two-line wrap
   handled), gap census now 189 closed /
@@ -17330,13 +17330,13 @@ when both halves land.
   dky (verify free at the landing), audit
   "R737 OA Table III Orient audit" (the
   label must stay under the width gate),
-  include after rules/oa107tableiia.h.
+  include after rules/oa/oa107tableiia.h.
 - R737 LANDED 2026-10-21: commit
   5b369f6be34c573c900cb1ff931bfb143d9df3fe
   (census 659 -> 660, pushed ec8606c..5b369f6),
   OA TREASURE, Table III. (Orient): Magical
   Items (capture p. 287), header
-  rules/oa108tableiii.h, prefix dky
+  rules/oa/oa108tableiii.h, prefix dky
   (verified free at ec8606c), one gap flip
   (the Table III box, its two-line wrap
   handled), gap census now 190 closed /
@@ -17366,13 +17366,13 @@ when both halves land.
   p. 286), prefix dkz (verify free at the
   landing), audit "R738 OA standard item
   mods audit", include after
-  rules/oa108tableiii.h.
+  rules/oa/oa108tableiii.h.
 - R738 LANDED 2026-10-21: commit
   cf2f96110f54aff3f0c10d10e3bfab7051b7a8bf
   (census 660 -> 661, pushed 5b369f6..cf2f961),
   OA TREASURE, the Modifications to Standard
   Magical Items prose (capture p. 286), header
-  rules/oa109itemmods.h, prefix dkz
+  rules/oa/oa109itemmods.h, prefix dkz
   (verified free at 5b369f6), one gap flip
   (the item mods box, its two-line wrap
   handled), gap census now 191 closed /
@@ -17406,7 +17406,7 @@ when both halves land.
   call check - the 15 substring hits are
   woodland words in comments and strings),
   audit "R739 OA potions audit", include
-  after rules/oa109itemmods.h.
+  after rules/oa/oa109itemmods.h.
 - R739 LANDED 2026-10-22: commit
   f599f7abb830d9c4b96e1d18ad9a6df69244c457
   (census 661 -> 662, pushed cf2f961..f599f7a),
@@ -17414,7 +17414,7 @@ when both halves land.
   pp. 287-288, the section runs onto p. 288
   for the human control table and the
   undead note, no other box covers them),
-  header rules/oa110potions.h, prefix dla
+  header rules/oa/oa110potions.h, prefix dla
   (verified free at cf2f961; the 15 plain
   substring hits are woodland words), one
   gap flip (the potions box, single-line),
@@ -17457,12 +17457,12 @@ when both halves land.
   43f. NEXT - R740: Scrolls (capture
   p. 288), prefix dlb (verify free at the
   landing), audit "R740 OA scrolls audit",
-  include after rules/oa110potions.h.
+  include after rules/oa/oa110potions.h.
 - R740 LANDED 2026-10-22: commit
   eaf2529cc0547e4b4ad12c7f7f9ccddd7bd1d3ce
   (census 662 -> 663, pushed f599f7a..eaf2529),
   OA TREASURE, Scrolls (capture p. 288), header
-  rules/oa111scrolls.h, prefix dlb
+  rules/oa/oa111scrolls.h, prefix dlb
   (verified free at f599f7a), one gap flip
   (the scrolls box, single-line), gap census
   now 193 closed / 42 open. Round type: the
@@ -17488,7 +17488,7 @@ when both halves land.
   (capture p. 288), prefix dlc (verify free
   at the landing), audit "R741 OA rods
   staves wands audit", include after
-  rules/oa111scrolls.h. The Rod of
+  rules/oa/oa111scrolls.h. The Rod of
   Resurrection charge table - class base
   charges (samurai 3, shukenja 1, bushi 2,
   ninja 4, wu jen 3, kensai 2, sohei 1,
@@ -17501,7 +17501,7 @@ when both halves land.
   (census 663 -> 664, pushed eaf2529..1f4bad3),
   OA TREASURE, Rods, Staves, and Wands - the
   Rod of Resurrection charge table (capture
-  p. 288), header rules/oa112rods.h, prefix
+  p. 288), header rules/oa/oa112rods.h, prefix
   dlc (verified free at eaf2529), one gap
   flip (the rods box, single-line), gap
   census now 194 closed / 41 open. Round
@@ -17528,7 +17528,7 @@ when both halves land.
   (capture pp. 288-289), prefix dld (verify
   free at the landing), audit "R742 OA misc
   magic audit", include after
-  rules/oa112rods.h. The boots of elvenkind
+  rules/oa/oa112rods.h. The boots of elvenkind
   and both brooms rerolled, Bucknard's
   everful purse contents, and the item
   notes running onto p. 289.
@@ -17536,7 +17536,7 @@ when both halves land.
   c367366a87f57a54f0ebf400e97a79d792ab0026
   (census 664 -> 665, pushed 1f4bad3..c367366),
   OA TREASURE, Miscellaneous Magic (capture
-  pp. 288-289), header rules/oa113miscmagic.h,
+  pp. 288-289), header rules/oa/oa113miscmagic.h,
   prefix dld (verified free at 1f4bad3), one
   gap flip (the misc magic box, its
   two-line wrap handled), gap census now
@@ -17567,7 +17567,7 @@ when both halves land.
   (capture pp. 289-291), prefix dle (verify
   free at the landing), audit "R743 OA
   armor shield audit", include after
-  rules/oa113miscmagic.h. Scope carefully:
+  rules/oa/oa113miscmagic.h. Scope carefully:
   the box covers the section prose (the
   roll-or-select instruction, Table 75 for
   the type then Tables 76 + 77 for the
@@ -17579,7 +17579,7 @@ when both halves land.
   OA TREASURE, the Armor and Shield prose
   (capture p. 289, the box spanning
   pp. 289-291 for the section), header
-  rules/oa114armorprose.h, prefix dle
+  rules/oa/oa114armorprose.h, prefix dle
   (verified free at c367366), one gap flip
   (the armor prose box, single-line), gap
   census now 196 closed / 39 open. Round
@@ -17606,7 +17606,7 @@ when both halves land.
   Armor (capture p. 289), prefix dlf
   (verify free at the landing), audit "R744
   OA Table 75 armor audit", include after
-  rules/oa114armorprose.h. A 23-band d100
+  rules/oa/oa114armorprose.h. A 23-band d100
   armor-type grid (banded through gajin
   armor), with two capture quirks to pin:
   the 87 Sode pair row before the 86-92
@@ -17618,7 +17618,7 @@ when both halves land.
   (census 666 -> 667, pushed d8ba982..c335e9a),
   OA TREASURE, Table 75: Magical Armor
   (capture p. 289), header
-  rules/oa115table75.h, prefix dlf
+  rules/oa/oa115table75.h, prefix dlf
   (verified free at d8ba982), one gap flip
   (the Table 75 box, single-line), gap
   census now 197 closed / 38 open. Round
@@ -17648,7 +17648,7 @@ when both halves land.
   caption prints a period), prefix dlg
   (verify free at the landing), audit "R745
   OA Table 76 properties audit", include
-  after rules/oa115table75.h. The
+  after rules/oa/oa115table75.h. The
   properties grid runs onto p. 290 - the
   armor of quality through the
   special-property reroll on Table 77.
@@ -17658,7 +17658,7 @@ when both halves land.
   OA TREASURE, Table 76. Magical Armor
   Properties (capture pp. 289-290, the grid
   spans the page break, the caption prints
-  a period), header rules/oa116table76.h,
+  a period), header rules/oa/oa116table76.h,
   prefix dlg (verified free at c335e9a),
   one gap flip (the Table 76 box, its
   two-line wrap handled), gap census now
@@ -17694,7 +17694,7 @@ when both halves land.
   Properties (capture p. 290), prefix dlh
   (verify free at the landing), audit "R746
   OA Table 77 special audit", include after
-  rules/oa116table76.h. The special-property
+  rules/oa/oa116table76.h. The special-property
   grid - etherealness through blending,
   presence, fear, missile attraction,
   vulnerability, and the 91-95 possession,
@@ -17705,7 +17705,7 @@ when both halves land.
   (census 668 -> 669, pushed 28aaef1..d329a5c),
   OA TREASURE, Table 77: Special Properties
   (capture p. 290), header
-  rules/oa117table77.h, prefix dlh
+  rules/oa/oa117table77.h, prefix dlh
   (verified free at 28aaef1), one gap flip
   (the Table 77 box, single-line), gap
   census now 199 closed / 36 open. Round
@@ -17734,7 +17734,7 @@ when both halves land.
   Properties (capture p. 290), prefix dli
   (verify free at the landing), audit "R747
   OA armor explanation audit", include
-  after rules/oa117table77.h. The big
+  after rules/oa/oa117table77.h. The big
   prose round - the armor of quality (one
   encumbrance class less, the 2d4 times
   value), the etherealness, the
@@ -17752,7 +17752,7 @@ when both halves land.
   (census 669 -> 670, pushed d329a5c..a6ba40c),
   OA TREASURE, the Explanation of Armor
   Properties (capture pp. 290-291), header
-  rules/oa118armorexpl.h, prefix dli
+  rules/oa/oa118armorexpl.h, prefix dli
   (verified free at d329a5c), one gap flip
   (the explanation box, its two-line wrap
   handled), gap census now 200 closed /
@@ -17799,7 +17799,7 @@ when both halves land.
   pp. 291-294), prefix dlj (verify free at
   the landing), audit "R748 OA weapons
   prose audit", include after
-  rules/oa118armorexpl.h. The Weapons
+  rules/oa/oa118armorexpl.h. The Weapons
   section intro and prose - the Table
   78/79/80/81 flow (the weapons type, the
   properties, the sword class, the bow
@@ -17811,7 +17811,7 @@ when both halves land.
   OA TREASURE, the Weapons prose (capture
   p. 291, the box spanning pp. 291-294 for
   the section), header
-  rules/oa119weaponsprose.h, prefix dlj
+  rules/oa/oa119weaponsprose.h, prefix dlj
   (verified free at a6ba40c), one gap flip
   (the weapons prose box, single-line),
   gap census now 201 closed / 34 open.
@@ -17837,7 +17837,7 @@ when both halves land.
   Weapons (capture p. 291), prefix dlk
   (verify free at the landing), audit "R749
   OA Table 78 weapons audit", include after
-  rules/oa119weaponsprose.h. The six-band
+  rules/oa/oa119weaponsprose.h. The six-band
   d100 weapon-class grid: the sword 01-40,
   the bow crossbow sling 41-52, the
   miscellaneous melee 53-68, the missile
@@ -17847,7 +17847,7 @@ when both halves land.
   b1e5d05349bcf08b04cd7e1db7410d0a9da53f9f
   (census 671 -> 672, pushed c00afcf..b1e5d05),
   OA TREASURE, Table 78: Magical Weapons
-  (capture p. 291), header rules/oa120table78.h,
+  (capture p. 291), header rules/oa/oa120table78.h,
   prefix dlk (verified free at c00afcf), one
   gap flip (the Table 78 box, single-line),
   gap census now 202 closed / 33 open.
@@ -17874,7 +17874,7 @@ when both halves land.
   onto p. 292), prefix dll (verify free at
   the landing), audit "R750 OA Table 79
   properties audit", include after
-  rules/oa120table78.h. A dense round - the
+  rules/oa/oa120table78.h. A dense round - the
   20-band d100 grid x 5 weapon-type columns
   (bow, missile, melee, martial arts,
   ninja): the quality, the +1/+2/+3 to-hit
@@ -17889,7 +17889,7 @@ when both halves land.
   OA TREASURE, Table 79: Weapon Properties
   (capture pp. 291-292, the grid spanning
   the page break), header
-  rules/oa121table79.h, prefix dll
+  rules/oa/oa121table79.h, prefix dll
   (verified free at b1e5d05), one gap flip
   (the Table 79 box, single-line), gap
   census now 203 closed / 32 open. Round
@@ -17922,12 +17922,12 @@ when both halves land.
   (capture p. 292), prefix dlm (verify free
   at the landing), audit "R751 OA Table 80
   sword audit", include after
-  rules/oa121table79.h.
+  rules/oa/oa121table79.h.
 - R751 LANDED 2026-10-22: commit
   5296a8ea6c1cfe6d91f6101b96977df9044d68f6
   (census 673 -> 674, pushed 797c191..5296a8e),
   OA TREASURE, Table 80: Sword Class (capture
-  p. 292), header rules/oa122table80.h,
+  p. 292), header rules/oa/oa122table80.h,
   prefix dlm (verified free at 797c191), one
   gap flip (the Table 80 box, single-line),
   gap census now 204 closed / 31 open.
@@ -17954,13 +17954,13 @@ when both halves land.
   And Sling Class (capture p. 292), prefix
   dln (verify free at the landing), audit
   "R752 OA Table 81 bow class audit",
-  include after rules/oa122table80.h.
+  include after rules/oa/oa122table80.h.
 - R752 LANDED 2026-10-22: commit
   689bb6422ad7e983b6485091b5435bf5210ca279
   (census 674 -> 675, pushed 5296a8e..689bb64),
   OA TREASURE, Table 81: Bow, Crossbow, And
   Sling Class (capture p. 292), header
-  rules/oa123table81.h, prefix dln
+  rules/oa/oa123table81.h, prefix dln
   (verified free at 5296a8e), one gap flip
   (the Table 81 box, its two-line wrap
   handled), gap census now 205 closed /
@@ -17989,13 +17989,13 @@ when both halves land.
   (capture p. 292), prefix dlo (verify free
   at the landing), audit "R753 OA Table 82
   misc melee audit", include after
-  rules/oa123table81.h.
+  rules/oa/oa123table81.h.
 - R753 LANDED 2026-10-22: commit
   3c6a44d2e6f29ce9dae0f352ea0e6682e29d72f8
   (census 675 -> 676, pushed 689bb64..3c6a44d),
   OA TREASURE, Table 82: Miscellaneous (capture
   pp. 292-293, the grid spanning the page
-  break), header rules/oa124table82.h,
+  break), header rules/oa/oa124table82.h,
   prefix dlo (verified free at 689bb64),
   one gap flip (the Table 82 box,
   single-line), gap census now 206 closed /
@@ -18030,13 +18030,13 @@ when both halves land.
   (capture p. 293), prefix dlp (verify free
   at the landing), audit "R754 OA Table 83
   missile audit", include after
-  rules/oa124table82.h.
+  rules/oa/oa124table82.h.
 - R754 LANDED 2026-10-22: commit
   845fca45a2b64ed0ad1ae6c3e4573bb529e641fd
   (census 676 -> 677, pushed 3c6a44d..845fca4),
   OA TREASURE, Table 83: Missile Class
   (capture p. 293), header
-  rules/oa125table83.h, prefix dlp
+  rules/oa/oa125table83.h, prefix dlp
   (verified free at 3c6a44d), one gap flip
   (the Table 83 box, single-line), gap
   census now 207 closed / 28 open. Round
@@ -18071,13 +18071,13 @@ when both halves land.
   prefix dlq (verify free at the landing),
   audit "R755 OA Table 84 martial arts
   audit", include after
-  rules/oa125table83.h.
+  rules/oa/oa125table83.h.
 - R755 LANDED 2026-10-22: commit
   d98830e7eee131d23898fd67b2005d002b33da93
   (census 677 -> 678, pushed 845fca4..d98830e),
   OA TREASURE, Table 84: Martial Arts Class
   (capture p. 293), header
-  rules/oa126table84.h, prefix dlq
+  rules/oa/oa126table84.h, prefix dlq
   (verified free at 845fca4), one gap flip
   (the Table 84 box, single-line), gap
   census now 208 closed / 27 open. Round
@@ -18106,13 +18106,13 @@ when both halves land.
   Class (capture p. 293), prefix dlr
   (verify free at the landing), audit "R756
   OA Table 85 ninja audit", include after
-  rules/oa126table84.h.
+  rules/oa/oa126table84.h.
 - R756 LANDED 2026-10-22: commit
   eff02a834ef262691988d7ea5f99642c236c842e
   (census 678 -> 679, pushed d98830e..eff02a8),
   OA TREASURE, Table 85: Ninja Class (capture
   pp. 293-294, the grid spanning the page
-  break), header rules/oa127table85.h, prefix
+  break), header rules/oa/oa127table85.h, prefix
   dlr (verified free at d98830e), one gap flip
   (the Table 85 box, single-line), gap census
   now 209 closed / 26 open. Round type: the
@@ -18143,7 +18143,7 @@ when both halves land.
   Properties (capture p. 294), prefix dls
   (verify free at the landing), audit "R757
   OA weapon explanation audit", include after
-  rules/oa127table85.h. The big prose round -
+  rules/oa/oa127table85.h. The big prose round -
   the weapons of quality by class, the +1/ +2/
   +3 and damage/to-hit splits, the vs S and vs
   L, the -1 cursed, and the special properties
@@ -18156,7 +18156,7 @@ when both halves land.
   (census 679 -> 680, pushed eff02a8..b346bda),
   OA TREASURE, the Explanation of Weapon
   Properties (capture pp. 294-296), header
-  rules/oa128weaponexpl.h, prefix dls
+  rules/oa/oa128weaponexpl.h, prefix dls
   (verified free at eff02a8), one gap flip
   (the explanation box, its two-line wrap
   handled), gap census now 210 closed /
@@ -18213,7 +18213,7 @@ when both halves land.
   prefix dlt (verify free at the landing),
   audit "R758 OA magical items prose
   audit", include after
-  rules/oa128weaponexpl.h. The last big
+  rules/oa/oa128weaponexpl.h. The last big
   stretch of Chapter 13 - the Table 86
   d100 grid of oriental magical items and
   the long item descriptions running to
@@ -18223,7 +18223,7 @@ when both halves land.
   (census 680 -> 681, pushed b346bda..afdfa13),
   OA TREASURE, the Oriental Magical Items
   prose (capture pp. 296-301), header
-  rules/oa129magitemsprose.h, prefix dlt
+  rules/oa/oa129magitemsprose.h, prefix dlt
   (verified free at b346bda), one gap flip
   (the magical items prose box, its
   two-line wrap handled), gap census now
@@ -18277,7 +18277,7 @@ when both halves land.
   onto p. 297), prefix dlu (verify free at
   the landing), audit "R759 OA Table 86
   items audit", include after
-  rules/oa129magitemsprose.h. The d100 grid
+  rules/oa/oa129magitemsprose.h. The d100 grid
   of the thirty-four items - NOTE: the
   capture prints the 95-96 Wheels of Fire
   and the 91-100 Wondrous Writing Set,
@@ -18288,7 +18288,7 @@ when both halves land.
   OA TREASURE, Table 86: Oriental Magical
   Items (capture pp. 296-297, the grid
   spanning the page break), header
-  rules/oa130table86.h, prefix dlu
+  rules/oa/oa130table86.h, prefix dlu
   (verified free at afdfa13), one gap flip
   (the Table 86 box, its two-line wrap
   handled), gap census now 212 closed /
@@ -18328,7 +18328,7 @@ when both halves land.
   Population prose (capture pp. 301-302),
   prefix dlv (verify free at the landing),
   audit "R760 OA Kara-Tur overview audit",
-  include after rules/oa130table86.h - the
+  include after rules/oa/oa130table86.h - the
   setting chapter, advisory prose closing
   on doctrine pins.
 - R760 LANDED 2026-10-22: commit
@@ -18337,7 +18337,7 @@ when both halves land.
   OA SETTING, the Chapter 14 intro, the
   Geography prose, and the Population prose
   (capture pp. 301-303), header
-  rules/oa131karaturintro.h, prefix dlv
+  rules/oa/oa131karaturintro.h, prefix dlv
   (verified free at afa8e95), one gap flip
   (the Population box, single-line), gap
   census now 213 closed / 22 open.
@@ -18375,12 +18375,12 @@ when both halves land.
   87b. NEXT - R761: Shou Lung (capture
   p. 303), prefix dlw (verify free at the
   landing), audit "R761 OA Shou Lung audit",
-  include after rules/oa131karaturintro.h.
+  include after rules/oa/oa131karaturintro.h.
 - R761 LANDED 2026-10-22: commit
   acfc953de72a37480529bbde071ab63211f571b2
   (census 683 -> 684, pushed 97f4373..acfc953),
   OA SETTING, the Shou Lung empire (capture
-  p. 303), header rules/oa132shoulung.h,
+  p. 303), header rules/oa/oa132shoulung.h,
   prefix dlw (verified free at 97f4373), one
   gap flip (the Shou Lung box, its
   two-line wrap handled), gap census now
@@ -18436,13 +18436,13 @@ when both halves land.
   p. 303, the section running into p. 304),
   prefix dlx (verify free at the landing),
   audit "R762 OA Tu Lung audit", include
-  after rules/oa132shoulung.h.
+  after rules/oa/oa132shoulung.h.
 - R762 LANDED 2026-10-22: commit
   4b3029bcd3a3cb65a0108626227f133b9ed04765
   (census 684 -> 685, pushed acfc953..4b3029b),
   OA SETTING, the Tu Lung empire (capture
   pp. 303-304, the section running into
-  p. 304), header rules/oa133tulung.h,
+  p. 304), header rules/oa/oa133tulung.h,
   prefix dlx (verified free at acfc953), one
   gap flip (the Tu Lung box, single-line),
   gap census now 215 closed / 20 open.
@@ -18491,12 +18491,12 @@ when both halves land.
   NEXT - R763: Wa (capture p. 304),
   prefix dly (verify free at the landing),
   audit "R763 OA Wa audit", include
-  after rules/oa133tulung.h.
+  after rules/oa/oa133tulung.h.
 - R763 LANDED 2026-10-22: commit
   6a93395ac445732e1ffe01c28a5333de7f65fd1f
   (census 685 -> 686, pushed 4b3029b..6a93395),
   OA SETTING, the island of Wa (capture
-  p. 304), header rules/oa134wa.h,
+  p. 304), header rules/oa/oa134wa.h,
   prefix dly (91 substring hits in regtest
   but ZERO call-site dly\w*( collisions -
   the R669 die precedent; the engine gate
@@ -18544,12 +18544,12 @@ when both halves land.
   NEXT - R764: Kozakura (capture p. 304),
   prefix dlz (verify free at the landing),
   audit "R764 OA Kozakura audit", include
-  after rules/oa134wa.h.
+  after rules/oa/oa134wa.h.
 - R764 LANDED 2026-10-22: commit
   345ec5c683c24b5041c661cd02a3ee63f16a9fcb
   (census 686 -> 687, pushed 6a93395..345ec5c),
   OA SETTING, the island of Kozakura (capture
-  p. 304), header rules/oa135kozakura.h,
+  p. 304), header rules/oa/oa135kozakura.h,
   prefix dlz (fully free at 6a93395 - zero
   substring hits, zero call-site dlz\w*(
   collisions), one gap flip (the Kozakura
@@ -18586,7 +18586,7 @@ when both halves land.
   NEXT - R765: Gajin (capture p. 304),
   prefix dma (verify free at the landing),
   audit "R765 OA Gajin audit", include
-  after rules/oa135kozakura.h.
+  after rules/oa/oa135kozakura.h.
 - R765 LANDED 2026-10-22: commit
   2343f9ba170b9d254dfc53e89082cdfbd774c99d
   (census 687 -> 688, pushed 345ec5c..2343f9b),
@@ -18594,7 +18594,7 @@ when both halves land.
   p. 304, the text cutting off mid-sentence
   into p. 305 - the pins cover only what
   the p. 304 capture holds), header
-  rules/oa136gajin.h, prefix dma (zero
+  rules/oa/oa136gajin.h, prefix dma (zero
   call-site dma\w*( collisions at 345ec5c),
   one gap flip (the Gajin box, two-line), gap
   census now 218 closed / 17 open. Round
@@ -18634,7 +18634,7 @@ when both halves land.
   Chapter 15 daily-life opener), prefix dmb
   (verify free at the landing), audit "R766
   OA Daily Life Food audit", include
-  after rules/oa136gajin.h.
+  after rules/oa/oa136gajin.h.
 - R766 LANDED 2026-10-22: commit
   220526cdeee6c3b1aea073f51a26fa0531519420
   (census 688 -> 689, pushed 2343f9b..220526c),
@@ -18644,7 +18644,7 @@ when both halves land.
   day's meals - runs onto p. 308, outside
   the box scope, pinned p. 307 only per the
   R765 box-scope precedent), header
-  rules/oa137food.h, prefix dmb (fully free
+  rules/oa/oa137food.h, prefix dmb (fully free
   at 2343f9b - zero substring hits, zero
   call-site dmb\w*( collisions), one gap
   flip (the Food box, single-line), gap
@@ -18700,7 +18700,7 @@ when both halves land.
   308-312), prefix dmc (verify free at the
   landing), audit "R767 OA Daily Life
   Buildings audit", include
-  after rules/oa137food.h.
+  after rules/oa/oa137food.h.
 - R767 LANDED 2026-10-22: commit
   a73ac2aa4cfbf8574993c20d65c343ff566bba18
   (census 689 -> 690, pushed 220526c..a73ac2a),
@@ -18710,7 +18710,7 @@ when both halves land.
   drinks, the town and travel meals -
   FOLDED IN per the user call after the
   R766 handoff flagged it), header
-  rules/oa138buildings.h, prefix dmc (fully
+  rules/oa/oa138buildings.h, prefix dmc (fully
   free at 220526c - zero substring hits,
   zero call-site dmc\w*( collisions), one
   gap flip (the Buildings box, single-line),
@@ -18764,12 +18764,12 @@ when both halves land.
   NEXT - R768: Manners (capture p. 312),
   prefix dmd (verify free at the landing),
   audit "R768 OA Daily Life Manners audit",
-  include after rules/oa138buildings.h.
+  include after rules/oa/oa138buildings.h.
 - R768 LANDED 2026-10-22: commit
   2725a47efffedf7d139183f9e10ba3fb4670302f
   (census 690 -> 691, pushed a73ac2a..2725a47),
   OA DAILY LIFE, Manners (capture p. 312),
-  header rules/oa139manners.h, prefix dmd
+  header rules/oa/oa139manners.h, prefix dmd
   (fully free at a73ac2a - zero substring
   hits, zero call-site dmd\w*( collisions),
   one gap flip (the Manners box,
@@ -18814,13 +18814,13 @@ when both halves land.
   NEXT - R769: Names (capture pp. 312-313),
   prefix dme (verify free at the landing),
   audit "R769 OA Daily Life Names audit",
-  include after rules/oa139manners.h.
+  include after rules/oa/oa139manners.h.
 - R769 LANDED 2026-10-22: commit
   643d70e2c4f25399bc4f322656f12d63d4efe7fa
   (census 691 -> 692, pushed 2725a47..643d70e),
   OA DAILY LIFE, Names (capture pp. 312-313,
   the Chapter 15 closer), header
-  rules/oa140names.h, prefix dme (zero
+  rules/oa/oa140names.h, prefix dme (zero
   call-site dme\w*( collisions at 2725a47),
   one gap flip (the Names box, single-line),
   gap census now 222 closed / 13 open.
@@ -18864,13 +18864,13 @@ when both halves land.
   pp. 313-314, the bibliography and the
   closing page), prefix dmf (verify free at
   the landing), audit "R770 OA Back matter
-  audit", include after rules/oa140names.h.
+  audit", include after rules/oa/oa140names.h.
 - R770 LANDED 2026-10-22: commit
   b4fd255a7cc7d48d44f7c4b5a71117586fd9eba9
   (census 692 -> 693, pushed 643d70e..b4fd255),
   OA BACK MATTER, the bibliography (capture
   pp. 313-314, the book's closing page),
-  header rules/oa141backmatter.h, prefix dmf
+  header rules/oa/oa141backmatter.h, prefix dmf
   (fully free at 643d70e - zero substring
   hits, zero call-site dmf\w*( collisions),
   THREE gap flips (the Back matter box; the
@@ -18917,7 +18917,7 @@ when both halves land.
   authoring, prefix dng (verify free at the
   landing), audit "R771 OA open boxes
   audit", include after
-  rules/oa141backmatter.h.
+  rules/oa/oa141backmatter.h.
 - R771 LANDED 2026-10-22: commit
   7616bb590986b92f5a18d96ece96b4ad2e9ecda0
   (census 693 -> 694, pushed b4fd255..7616bb5),
@@ -18927,7 +18927,7 @@ when both halves land.
   of the f9e32d73 OCR - the compressed-3
   re-upload is a 145-page 1:1 scan whose
   numbering differs from the gap-report
-  cites), header rules/oa142celestial.h,
+  cites), header rules/oa/oa142celestial.h,
   prefix dnh (fully free at b4fd255), NINE
   gap flips (the Celestial Emperor child
   box plus the eight missed chapter parents
@@ -18964,7 +18964,7 @@ when both halves land.
   into per-weapon rounds before authoring;
   prefix dnj (verified free at b4fd255),
   audit "R772 OA Weapons prose audit",
-  include after rules/oa142celestial.h.
+  include after rules/oa/oa142celestial.h.
 - R772 LANDED 2026-10-22: commit
   4ece40f6ccfd652916d9d5e7b3225f851a55edeb
   (census 694 -> 695, pushed 7616bb5..4ece40f),
@@ -18972,7 +18972,7 @@ when both halves land.
   descriptions (capture pp. 84-93, the
   descriptions re-captured at pp. 42-51 of
   the f9e32d73 OCR), header
-  rules/oa143weaponsprose.h, prefix dnj
+  rules/oa/oa143weaponsprose.h, prefix dnj
   (fully free at 7616bb5), ONE gap flip
   (the Weapons prose box, the LAST open
   box), gap census now 235 closed / 0 open
@@ -19029,7 +19029,7 @@ when both halves land.
   p. 310, and pp. 310-312; re-captured at
   pp. 139-142 of the f9e32d73 OCR and pp.
   305-312 of the original-scan OCR),
-  header rules/oa144dailylife.h, prefix dmk
+  header rules/oa/oa144dailylife.h, prefix dmk
   (fully free at 4ece40f). THE AUDIT ROUND:
   the post-OA maintenance audit (the book
   TOC and prose vs the repo and the gap
@@ -19104,7 +19104,7 @@ when both halves land.
   R563 check showed every prior round was a
   normal pin round; no round had ever extended
   the ritual itself), header
-  rules/filepatchseam.h, prefix dnl (fully
+  rules/meta/file_patch_seam.h, prefix dnl (fully
   free at 7c7acd4). THE CARGO: the new optional
   spec key file_patches (a list of
   {file, note, from, to}) - the engine applies
@@ -19166,7 +19166,7 @@ when both halves land.
   (census 697 -> 698, pushed 5ddec12..98236d9),
   THE RT FILE-PATCH FIX - the seam upgrades
   itself, the SECOND TOOLING ROUND, header
-  rules/rtseam.h, prefix dnb (fully free at
+  rules/meta/rt_seam.h, prefix dnb (fully free at
   5ddec12). THE TRIGGER: designing the R775
   mount site exposed the CLOBBER CLASS in
   the R774 seam - the engine's (f) section
@@ -19644,7 +19644,7 @@ when both halves land.
   the three refusing prints pinned as they
   stand (Arvoreen +8/no paren, Bahgtru +15
   vs the S +14, Solonor S +9/no bonus). ONE
-  FILE PATCH: the rules/uaappends.h R406
+  FILE PATCH: the rules/ua/uaappends.h R406
   comment strike - the messy reads now pin in
   deitylines.h, the prose alone stays open.
   rverify GREEN (591 mutants, 0 missed), ONE
@@ -19689,7 +19689,7 @@ when both halves land.
   the cleric-gender grid (12 males-only, the
   lone Berronar females-only, 10 either with
   the Luthic exception). THE STRINGS: the
-  printed site phrases ride rules/uascharts.h
+  printed site phrases ride rules/ua/uascharts.h
   (the uscWorshipSite accessor) with a live
   regtest strings block walking all 23 rows
   (the R782 site-block precedent, printf
@@ -19719,7 +19719,7 @@ when both halves land.
   repair (Curtiss's "stay in covered books" call),
   sourced from the archive.org full-text OCR of
   the continued table. REPAIRED ROSTERS (the
-  string arrays ride rules/uaspelltables2.h):
+  string arrays ride rules/ua/uaspelltables2.h):
   6th = 17 (the column reads at last - the twelve
   readable cells, Chain Lightning, Ensnarement,
   Mordenkainen's Lucubration, Death Spell and
@@ -19797,7 +19797,7 @@ when both halves land.
   silver rings at 10", the 5 percent
   paladin grant 3-6 days once per 10
   years). THE PINS: header
-  rules/uadeityprose1.h, prefix udp (free
+  rules/ua/uadeityprose1.h, prefix udp (free
   at 2969a86), 43 consts + 60 bools (103
   inline), no tables - pure prose data; the
   stat-block numerics stay R406/R783, the
@@ -19840,7 +19840,7 @@ when both halves land.
   stasis one per round range 12", age up
   to 100 years, slow/haste 18", the 1
   percent age-undo. THE PINS: header
-  rules/uadeityprose2.h, prefix udp2 (free
+  rules/ua/uadeityprose2.h, prefix udp2 (free
   at 323dca5), 47 consts + 54 bools (101
   inline), no tables - pure prose data; the
   stat-block numerics stay R406/R783. TWO
@@ -19897,7 +19897,7 @@ when both halves land.
   percent-per-level 11th-level thief
   meeting, identity only after and only
   to followers). THE PINS: header
-  rules/uadeityprose3.h, prefix udp3
+  rules/ua/uadeityprose3.h, prefix udp3
   (free at c98bd6a), 53 consts + 52
   bools (105 inline), no tables - pure
   prose data; the stat-block numerics
@@ -19962,7 +19962,7 @@ when both halves land.
   workshop, the smith and fighter/cleric
   followings with the flaming-hammer
   spell). THE PINS: header
-  rules/uadeityprose4.h, prefix udp4 (free
+  rules/ua/uadeityprose4.h, prefix udp4 (free
   at 8f3ce80), 40 consts + 55 bools (95
   inline), no tables - pure prose data;
   the stat-block numerics stay R406/R783.
@@ -20031,7 +20031,7 @@ when both halves land.
   (patched to || dvpProseStaysOpen(), the
   one and only call site - verified before
   handoff). THE PINS: header
-  rules/uadeityprose5.h, prefix udp5 (free
+  rules/ua/uadeityprose5.h, prefix udp5 (free
   at 7ab9174), 32 consts + 51 bools (83
   inline), 7 examples with full coverage,
   no tables. FOUR FILE PATCHES (the most of
@@ -20066,7 +20066,7 @@ when both halves land.
   it in (proven by the scratch-tree
   simulation), so the tooling landed alone
   and R792 rides the extension. Header
-  rules/lreg.h, prefix lreg (rgp was taken
+  rules/meta/registry_promotion_wiring.h, prefix lreg (rgp was taken
   in regtest), 10 consts + 10 bools (20
   inline) - the doctrine pins: 65 defs in
   one R792 pass (39 OA + 18 WSG + 8 MOP),
@@ -20141,10 +20141,10 @@ when both halves land.
   reads all five through the defensive coercers,
   and the regtest xp-audit allowed-source list
   gains oa_print, wsg_print, mop_print. Header
-  rules/prg.h, prefix prg (free at b33e362), 13
+  rules/meta/registry_promotion_defs.h, prefix prg (free at b33e362), 13
   consts + 14 bools (27 inline), audit "R792
   registry promotion defs audit", include after
-  lreg.h; the lreg 65/473 pins stand superseded,
+  rules/meta/registry_promotion_wiring.h; the lreg 65/473 pins stand superseded,
   the reconciliation carried in the prg banner.
   Engine double-run applied 80/already 0 ->
   0/80; rverify GREEN (27 mutants, 0 missed) -
@@ -20201,10 +20201,10 @@ when both halves land.
   the registry reads 481 -> 478 live -
   SUPERSEDING the prg 481 pin (the prg
   record stays landed; the reconciliation
-  in the prf banner). Header rules/prf.h,
+  in the prf banner). Header rules/meta/registry_def_name_fix.h,
   prefix prf, 12 consts + 12 bools (24
   inline), audit "R793 registry promotion
-  def name fix audit", include after prg.h.
+  def name fix audit", include after rules/meta/registry_promotion_defs.h.
   CAUGHT IN AUTHORING: the reused R792
   archon_tome entry was that spec's final
   array element (closing brace, no comma)
@@ -20258,10 +20258,10 @@ when both halves land.
   so the double-run gate covers every
   emitted file. splice_engine.py UNTOUCHED
   (the R791 engine-extends-itself lesson
-  holds). Header rules/rtk.h, prefix rtk,
+  holds). Header rules/meta/tooling_datafiles_adaptation.h, prefix rtk,
   10 consts + 10 bools (20 inline), audit
   "R794 tooling data files git add audit",
-  include after prf.h. FIRST FULLY LOCAL
+  include after rules/meta/registry_def_name_fix.h. FIRST FULLY LOCAL
   VERIFICATION since the R791 split: the
   authoring environment fetched the whole
   repo tree, ran the engine double-run
@@ -20332,11 +20332,11 @@ when both halves land.
   DFILES handling rides along). ONE
   PATCH on rn (the guard block after set
   -eu). splice_engine.py and rverify.py
-  UNTOUCHED. Header rules/rns.h, prefix
+  UNTOUCHED. Header rules/meta/rn_selfpatch_guard.h, prefix
   rns (verified free), 8 consts + 8
   bools (16 inline), audit "R795 rn
   self-patch guard audit", include after
-  rtk.h. FULLY LOCAL VERIFICATION: the
+  rules/meta/tooling_datafiles_adaptation.h. FULLY LOCAL VERIFICATION: the
   authoring environment ran the engine
   double-run (5/0 -> 0/5), rverify
   GREEN (16 mutants, 0 missed), bash -n,
@@ -20390,7 +20390,7 @@ when both halves land.
   Entries doctrine (pp. 5-6), and
   the Special Entries doctrine (pp.
   6-7) - 5 closed, 32 open. Header
-  rules/mma.h, prefix mma. Engine
+  rules/mm/mm2_arc_opener.h, prefix mma. Engine
   double-run applied 9/already 0 ->
   0/9 (the seed record, the header,
   the 5 flips, the include, the
@@ -20403,7 +20403,7 @@ when both halves land.
   once, all bad 0; build 0
   warnings; preflight GREEN, first
   pass of the landing run. Commit 5
-  files, 874 insertions (mma.h, the
+  files, 874 insertions (rules/mm/mm2_arc_opener.h, the
   gap report, and the spec created;
   the seed and regtest patched).
   THE AUTHORED-POST-FLIP LESSON
@@ -20497,7 +20497,7 @@ when both halves land.
   "Nil" -> 9, and its unprinted
   combat lines read the azer kind
   defaults). Registry 478 -> 491.
-  Header rules/mm2a.h, prefix mm2a;
+  Header rules/mm/mm2a.h, prefix mm2a;
   138 consts + 71 bools + 4 tables
   (AStats 12x9, AntLionItems 6x3,
   AspisLarvaXp 4x3, AzerBrackets
@@ -20603,7 +20603,7 @@ when both halves land.
   two or three ways, so FORTY-THREE
   .lua defs ride the R791 data_files
   extension, registry 491 -> 534.
-  Header rules/mm2bc.h, prefix mm2bc,
+  Header rules/mm/mm2bc.h, prefix mm2bc,
   391 consts + 202 bools + 7 tables
   (the 26x9 BStats and 17x9 CStats
   grids, the barghest growth
@@ -20713,7 +20713,7 @@ when both halves land.
   in D part 1, so twenty-nine .lua
   defs ride the R791 data_files
   extension, registry 534 -> 563.
-  Header rules/mm2dp.h, prefix
+  Header rules/mm/mm2dp.h, prefix
   mm2dp, 351 consts + 147 bools + 2
   tables (the 29x9 DpStats grid, the
   12x4 CambionParentage printed
@@ -20798,7 +20798,7 @@ when both halves land.
   data_files extension, registry
   563 -> 566 - the smallest MM2
   round so far, a single family
-  walk. Header rules/mm2dv.h,
+  walk. Header rules/mm/mm2dv.h,
   prefix mm2dv, 53 consts + 42
   bools + the 3x10 DevaStats grid
   (armor class, hit dice, bonus,
@@ -20883,7 +20883,7 @@ when both halves land.
   5 ways (the aspis precedent) so
   SEVENTEEN .lua defs ride the
   data_files extension, registry
-  566 -> 583. Header rules/mm2df.h,
+  566 -> 583. Header rules/mm/mm2df.h,
   prefix mm2df, 136 consts + 74
   bools + three grids: the 17x10
   DevilStats (armor class, hit
@@ -20975,7 +20975,7 @@ when both halves land.
   Tennodontosaurus). TWENTY .lua defs
   ride the R791 data_files extension,
   registry 583 -> 603. Header
-  rules/mm2dn.h, prefix mm2dn, 97
+  rules/mm/mm2dn.h, prefix mm2dn, 97
   consts + 26 bools + the 20x10
   DinoStats grid (armor class, hit
   dice, bonus, avgHp, attacks, xp,
@@ -21084,7 +21084,7 @@ when both halves land.
   duergar and the dustdigger). TWELVE
   .lua defs ride the R791 data_files
   extension, registry 603 -> 615. Header
-  rules/mm2dg.h, prefix mm2dg, 203
+  rules/mm/mm2dg.h, prefix mm2dg, 203
   consts + 52 bools + THREE grids (the
   12x10 DgStats stat grid, the 8x3 faerie
   color grid by age color, the 8x3 faerie
@@ -21193,7 +21193,7 @@ when both halves land.
   hood on p. 64. SEVEN .lua defs
   ride the R791 data_files extension,
   registry 615 -> 622. Header
-  rules/mm2de.h, prefix mm2de, 111
+  rules/mm/mm2de.h, prefix mm2de, 111
   consts + 28 bools + ONE grid (the
   7x10 EgStats stat grid) = 149
   inline. THE E-FLIP: the Letter E
@@ -21308,7 +21308,7 @@ when both halves land.
   and firbolg in f/, verbeeg and
   varrdig in v/, chaggrin in c/,
   harginn in h/, ildriss in i/).
-  Header rules/mm2fg.h, prefix
+  Header rules/mm/mm2fg.h, prefix
   mm2fg, 293 consts + 15 bools +
   ONE grid (the 28x10 FgStats stat
   grid) = 318 inline. THE FG-FLIP:
@@ -21433,7 +21433,7 @@ when both halves land.
   hybsil on p. 77. FIVE .lua defs
   ride the R791 data_files extension,
   registry 650 -> 655. Header
-  rules/mm2hi.h, prefix mm2hi, 129
+  rules/mm/mm2hi.h, prefix mm2hi, 129
   consts + 14 bools + ONE grid (the
   5x10 HhStats stat grid) = 153
   inline. THE HI-FLIP: BOTH the
@@ -21549,7 +21549,7 @@ when both halves land.
   genie-kin census pins 5 (the jann the weakest elemental humanoid, the
   weakest of the genie kin). SIX .lua defs ride the R791 data_files
   extension, registry 655 -> 661 (the mustard jelly in m/, the rest in j/
-  and k/). Header rules/mm2jk.h, prefix mm2jk, 125 consts + 20 bools + ONE
+  and k/). Header rules/mm/mm2jk.h, prefix mm2jk, 125 consts + 20 bools + ONE
   grid (the 6x10 JkStats stat grid) = 155 inline. THE JK-FLIP: BOTH the
   Letter J and the Letter K gap boxes flip to closed - 16 closed 21 open.
   THE SETTLED READS (capture primary, transcription and djvu the cross-check
@@ -21601,7 +21601,7 @@ when both halves land.
   pp. 92-95, the nereid and the narwhale p. 95.
   Thirty-eight .lua defs ride the R791 data_files
   extension, registry 661 -> 699. Header
-  rules/mm2lmn.h, prefix mm2lmn, 348 consts + 82
+  rules/mm/mm2lmn.h, prefix mm2lmn, 348 consts + 82
   bools + three grids (the 38x10 LmStats stat
   grid, the 29x3 MinimalStats grid, the 9x2
   TelepathyMiles grid) = 445 inline. THE
@@ -21641,7 +21641,7 @@ when both halves land.
   the ogre, the ogre magi, the oni, the ornitholestes,
   the otyugh and the owlbear prints. Seven .lua defs
   ride the R791 data_files extension, registry 699 ->
-  706. Header rules/mm2o.h, prefix mm2o, 96 consts +
+  706. Header rules/mm/mm2o.h, prefix mm2o, 96 consts +
   23 bools + the 7x10 OStats grid = 129 inline. THE
   O-FLIP: the Letter O gap box flips to closed - 20
   closed 17 open. The settled reads: the merrow 3 or
@@ -21676,7 +21676,7 @@ when both halves land.
   SEVENTEEN .lua defs ride the R791 data_files extension, registry
   706 -> 723; ONE doctrine-only family head (the PARA-ELEMENTAL
   summoning doctrine rides as consts - the R808 lycanthrope
-  precedent). Header rules/mm2p.h, prefix mm2p, 142 consts + 49
+  precedent). Header rules/mm/mm2p.h, prefix mm2p, 142 consts + 49
   bools + ONE grid (the 17x10 PStats stat grid) = 201 inline. THE
   P-FLIP: the Letter P gap box flips to closed - 21 closed 16 open.
   The settled reads: the pyrolisk 4+3 (the capture 43 the OCR
@@ -21714,7 +21714,7 @@ THE PIN-TIME WALK: THREE entries on pp. 103-104 - the quasi-elemental
   lightning p. 103, the quickling pp. 103-104, the quickwood (spy tree) p.
   104. No doctrine-only heads; no prior-owned entries (the MM1 quasit is an
   MM1 print, not a box entry). THREE .lua defs ride the R791 data_files
-  extension, registry 723 -> 726. Header rules/mm2q.h, prefix mm2q, 71
+  extension, registry 723 -> 726. Header rules/mm/mm2q.h, prefix mm2q, 71
   consts + 18 bools + ONE grid (the 3x10 QStats stat grid) = 99 inline. THE
   Q-FLIP: the Letter Q gap box flips to closed - 22 closed 15 open.
 THE SETTLED READS (capture primary, the 1eonline transcription the cross-
@@ -21761,7 +21761,7 @@ THE PIN-TIME WALK: FOUR entries carrying SEVEN stat blocks on pp. 105-106 -
   heads; no prior-owned entries (the r/ MM1 prints - rakshasa, ram, red
   dragon, remorhaz, roc, roper, rot grub, rust monster and the rest - are
   MM1 prints, not MM2 box entries). SEVEN .lua defs ride the R791 data_files
-  extension, registry 726 -> 733. Header rules/mm2r.h, prefix mm2r, 63
+  extension, registry 726 -> 733. Header rules/mm/mm2r.h, prefix mm2r, 63
   consts + 15 bools + ONE grid (the 7x10 RStats stat grid) = 88 inline. THE
   R-FLIP: the Letter R gap box flips to closed - 23 closed 14 open.
 THE SETTLED READS (capture primary, the 1eonline transcription the cross-
@@ -21827,7 +21827,7 @@ THE PIN-TIME WALK: THIRTY-THREE new defs on
   stegocentipede, stench kow, stone guardian,
   storoper, giant sundew, swan, swanmay, sword-
   fish, taer) ride the R791 data_files extension,
-  registry 733 -> 766. Header rules/mm2s.h,
+  registry 733 -> 766. Header rules/mm/mm2s.h,
   prefix mm2s, 245 consts + 40 bools + ONE grid
   (the 33x10 SStats stat grid) = 295 inline.
   THE S-FLIP: the Letter S gap box flips to
@@ -21920,7 +21920,7 @@ PREFLIGHT GREEN (the repair cut, first pass):
   ZERO prior-owned, ZERO doctrine-only.
   TWENTY-SIX .lua defs ride the R791
   data_files extension, registry 766 ->
-  792. Header rules/mm2tuv.h, prefix
+  792. Header rules/mm/mm2tuv.h, prefix
   mm2tuv, 267 consts + 49 bools + ONE
   grid (the 26x10 TUVStats stat grid) =
   326 inline. THE TUV-FLIP: the Letter
@@ -22040,7 +22040,7 @@ PREFLIGHT GREEN (the repair cut, first pass):
   yeth hound, yochlol, yuan ti, juju zombie,
   monster zombie, zorbo, zygom) ride the R791
   data_files extension, registry 792 -> 809.
-  Header rules/mm2wxyz.h, prefix mm2wxyz,
+  Header rules/mm/mm2wxyz.h, prefix mm2wxyz,
   200 consts + 35 bools + ONE grid (the 17x10
   WXYZStats stat grid, emitted as the
   switch-accessor family mm2wxyzWXYZStat*) =
@@ -22129,7 +22129,7 @@ PREFLIGHT GREEN (the repair cut, first pass):
   at dies 2,3,19,20. Src census MM1 89 MM2
   63 FF 26 ALL 2 party 10; the FF rows carry
   no walk keys (no defs). Header
-  rules/mm2encd.h, prefix mm2encd, 33 consts
+  rules/mm/mm2encd.h, prefix mm2encd, 33 consts
   + 13 bools + 10 tables (96 inline). THE
   REGTEST WALK: kEncD[10][19] key grid plus
   SIX accessor helpers (encDie/encSrc/
@@ -22245,7 +22245,7 @@ PREFLIGHT GREEN (the repair cut, first pass):
   ride keyless (no FF defs in the registry),
   unresolved 1 (the Pterodactyl, Small cell -
   no def survives anywhere, physical-copy
-  flag). Header rules/mm2enco.h, prefix
+  flag). Header rules/mm/mm2enco.h, prefix
   mm2enco, 57 consts (incl. the 36 per-grid
   Count accessors) + 12 bools + 36 tables
   (177 inline). THE SETTLED READS (the
@@ -22543,7 +22543,7 @@ PREFLIGHT GREEN (the repair cut, first pass):
   CSW 8-28), 50 percent holy word,
   spell-like ability level 12 (as
   HD), dwell with 6 or more ordinary
-  lammasu. Header rules/lmp.h, prefix
+  lammasu. Header rules/mm/mm2_lammasu_promotion.h, prefix
   lmp (free at 52a015a), 25 consts +
   10 bools (inline 35), audit "R820
   lammasu promotion audit", 6 file
@@ -22592,7 +22592,7 @@ scaly command 4-40 x age level, no water fire, the tribute demand; the shen
 lung no breath weapon, bless/curse 1/day each, control weather and ice storm
 3/day each, no lightning damage but double fire damage, water fire 2-12,
 immune to poison, no insect within 60', MC E, the language shared with the pan
-lung. Header rules/lungp.h, prefix lungp (free at 8bf462f), 40 consts + 13
+lung. Header rules/ff/lung_dragons_promotion.h, prefix lungp (free at 8bf462f), 40 consts + 13
 bools (inline 53), audit "R821 lung promotion audit", 10 file patches + 2 data
 files (the .lua defs), 9 examples, applied 16. GATES: engine double-run 16/0
 -> 0/16; rverify GREEN vs 8bf462f (53 mutants, 0 missed); offline anchors
@@ -22631,7 +22631,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   inline (old way), the engine can never
   consume its own extension in the run that
   patches it in, and the FIRST audit-file
-  round is the next one. Header rules/afw.h,
+  round is the next one. Header rules/engine/audit_wiring.h,
   prefix afw (verified free at 951b962 via
   code search - only dnafWaterCaverns
   case-slices, no \bafw match), 10 consts +
@@ -22713,7 +22713,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   tooling lands alone - R823's own
   audit landed inline (old way), no
   block moved in this round. Header
-  rules/migw.h, prefix migw (verified
+  rules/meta/migration_wiring.h, prefix migw (verified
   free at 55c3b0d via code search, 0
   hits), 10 consts + 10 bools
   (inline 20), 4 examples, the R822
@@ -22798,7 +22798,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   audit rode rules/audits/r824_pilot.h
   at the R227 anchor - the FIRST REAL
   USE of the R822 audit_file wiring.
-  Header rules/pmb.h, prefix pmb
+  Header rules/meta/migration_batch_pilot.h, prefix pmb
   (verified free at 90670bf, 0 hits),
   6 consts + 4 bools (inline 10), 4
   examples, the R823 record seated
@@ -22860,7 +22860,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   magic aging) migrated as separate
   blocks - the label, not the round
   number, is the migration key. Header
-  rules/nmb.h, prefix nmb (verified
+  rules/meta/migration_batch_dmg_appendix.h, prefix nmb (verified
   free at 0f7f233, 0 hits), 6 consts +
   4 bools (inline 10), 4 examples, the
   R824 record seated into the seed, NO
@@ -22917,7 +22917,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   rules/audits/r826_batch.h. The
   R178c class proves the migration
   key handles letter-suffixed round
-  numbers. Header rules/tmb.h,
+  numbers. Header rules/meta/migration_batch_dmg_tables.h,
   prefix tmb (verified free at
   6491e17, 0 hits), 6 consts + 4
   bools (inline 10), 4 examples, the
@@ -22967,7 +22967,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   r245_iii_d_staves_explanation.h).
   R827's own audit rode
   rules/audits/r827_batch.h. Header
-  rules/qmb.h, prefix qmb (verified
+  rules/meta/migration_batch_subclass.h, prefix qmb (verified
   free at 76ebfa2, 0 hits), 6 consts +
   4 bools (inline 10), 4 examples, the
   R826 record seated into the seed,
@@ -23023,7 +23023,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   through r356_ua_mu_1st_level.h).
   R828's own audit rode
   rules/audits/r828_batch.h. Header
-  rules/zmb.h, prefix zmb (verified
+  rules/meta/migration_batch_hundred.h, prefix zmb (verified
   free at 2fea2ce, 0 hits), 6 consts
   + 4 bools (inline 10), 4 examples,
   the R827 record seated into the
@@ -23085,7 +23085,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   (r357_ua_mu_2nd_level.h through
   r458_wsg_portaging.h). R829's own
   audit rode rules/audits/r829_batch.h.
-  Header rules/vmb.h, prefix vmb
+  Header rules/meta/migration_batch_ua_wsg.h, prefix vmb
   (verified free at 508fc72, 0
   hits), 6 consts + 4 bools (inline
   10), 4 examples, the R828 record
@@ -23131,7 +23131,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   r561_dsg_dm_section.h). R830's
   own audit rode
   rules/audits/r830_batch.h. Header
-  rules/xmb.h, prefix xmb (verified
+  rules/meta/migration_batch_wsg_tail_dsg.h, prefix xmb (verified
   free at 895e032, 0 hits), 6 consts
   + 4 bools (inline 10), 4 examples,
   the R829 record seated into the
@@ -23185,7 +23185,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   r671_oa_wu_jen_second_level.h).
   R831's own audit rode
   rules/audits/r831_batch.h. Header
-  rules/kmb.h, prefix kmb (verified
+  rules/meta/migration_batch_planes_oa.h, prefix kmb (verified
   free at 3a97646, 0 hits), 6 consts
   + 4 bools (inline 10), 4 examples,
   the R830 record seated into the
@@ -23244,7 +23244,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   through r771_oa_open_boxes.h).
   R832's own audit rode
   rules/audits/r832_batch.h.
-  Header rules/jmb.h, prefix jmb
+  Header rules/meta/migration_batch_oa_tail.h, prefix jmb
   (verified free at 475a610, 0
   hits), 6 consts + 4 bools (inline
   10), 4 examples, the R831 record
@@ -23297,7 +23297,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   r113_class_matrix.h). R833's
   own audit rode
   rules/audits/r833_batch.h.
-  Header rules/fmb.h, prefix fmb -
+  Header rules/meta/migration_batch_final_digest.h, prefix fmb -
   NOTE: imb was drafted first and
   turned out TAKEN (400 hits);
   the prefix-free check now re-
@@ -23360,7 +23360,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   blocks). NO BLOCK MOVES THIS
   ROUND - the R791 lesson binds:
   tooling lands alone. Header
-  rules/hmb.h, prefix hmb (verified
+  rules/meta/tooling_holdback_patch.h, prefix hmb (verified
   free at 93ecec9, 0 hits), 10
   consts + 10 bools (inline 20), 4
   examples, the R833 record seated
@@ -23448,7 +23448,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   rules/audits/r835_batch.h at the
   R834 include anchor (the R834
   anchor discovery carried
-  forward). Header rules/ymb.h,
+  forward). Header rules/meta/migration_batch_final_holdback.h,
   prefix ymb (verified free at
   cff3ab1, 0 hits), 6 consts + 4
   bools (inline 10), 4 examples,
@@ -23522,7 +23522,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   the registry 812 -> 837, the ff
   def census 2 -> 27; NO gap boxes
   flip (MM2 stays 37 closed 0 open).
-  Header rules/ffp.h, prefix ffp
+  Header rules/ff/promo_batch1.h, prefix ffp
   (16 consts + 4 bools, inline 20),
   the standing pace pinned at 25
   defs per promotion round; audit
@@ -23530,14 +23530,14 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   rode rules/audits/r836_batch.h;
   the R835 record seated into the
   seed; file patches on regtest.cpp,
-  mm2enca.h, mm2enco.h, lmp.h,
-  lungp.h and the audits
+  mm2enca.h, mm2enco.h, rules/mm/mm2_lammasu_promotion.h,
+  rules/ff/lung_dragons_promotion.h and the audits
   r817/r818/r820/r821 (the walk-key
   census chains). THE PACE IS
   USER-SET: 25 defs walking per
   promotion round (2026-10-25,
   Curtiss's call after the R836
-  landing) - also pinned in ffp.h
+  landing) - also pinned in rules/ff/promo_batch1.h
   as ffpDefsPerRound; each batch
   sizes to 25 defs unless Curtiss
   calls a different slice. NEXT:
@@ -23600,7 +23600,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   -> 52; NO gap boxes
   flip (MM2 stays 37
   closed 0 open). Header
-  rules/ffs.h, prefix
+  rules/ff/promo_batch2.h, prefix
   ffs (17 consts + 4
   bools, inline 21),
   audit "R837 second FF
@@ -23610,7 +23610,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   into the seed; file
   patches on regtest.cpp
   (39 rekey patches),
-  mm2enco.h, lmp.h and
+  mm2enco.h, rules/mm/mm2_lammasu_promotion.h and
   the audits r817/r820
   (the walk-key census
   chains). NOTABLE BUGS
@@ -23676,8 +23676,8 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   xvart) - the R836/R837 def shape with
   the print-fidelity pin headers. THE
   REWIRE: the outdoor rekeys ride
-  rules/mm2enco.h with the walk-key
-  census chains patched through lmp.h
+  rules/mm/mm2enco.h with the walk-key
+  census chains patched through rules/mm/mm2_lammasu_promotion.h
   and the audits r817_mm2_outdoor_
   encounter.h and r820_lammasu_
   promotion.h (the R837 pattern); the
@@ -23687,7 +23687,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   round's own audit rode
   rules/audits/r838_batch.h; file
   patches: regtest.cpp (13 patches),
-  mm2enco.h, lmp.h, r817/r820 audit
+  mm2enco.h, rules/mm/mm2_lammasu_promotion.h, r817/r820 audit
   fragments. Spec tools/spec_r838.json,
   md5 28cc388610c6aefe78e8b353847e7905.
   GATES (per the pasted landing):
@@ -23762,7 +23762,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   887 -> 912, the ff def census 77
   -> 102; NO gap boxes flip (MM2
   stays 37 closed 0 open). Header
-  rules/ffu.h, prefix ffu (23
+  rules/ff/promo_batch4.h, prefix ffu (23
   consts + 5 bools, inline 28),
   audit "R839 fourth FF promotion
   audit", rode
@@ -23819,7 +23819,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   19; the registry 912 -> 913, the
   ff def census 102 -> 103; NO gap
   boxes flip (MM2 stays 37 closed 0
-  open). Header rules/ffh.h, prefix
+  open). Header rules/ff/hornet_promotion.h, prefix
   ffh (20 consts + 4 bools, inline
   24), audit "R840 hornet promotion
   audit", rode
@@ -23915,12 +23915,12 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   913 -> 938, the ff def census
   103 -> 128, the missing print
   census 82 -> 57. Header
-  rules/ffj.h, prefix ffj (free;
+  rules/ff/promo_batch5.h, prefix ffj (free;
   16 consts + 5 bools, inline 21),
   audit "R842 fifth FF promotion
   audit", rode
   rules/audits/r842_batch.h
-  (include after the ffik.h R841
+  (include after the rules/ff/index_walk.h R841
   index-line include); the R841
   record seated into the seed.
   DATA VOICES: the three-voice
@@ -23978,12 +23978,12 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   registry 938 -> 963, the ff def
   census 128 -> 153, the missing
   print census 57 -> 32. Header
-  rules/ffk.h, prefix ffk (free;
+  rules/ff/promo_batch6.h, prefix ffk (free;
   16 consts + 6 bools, inline 22),
   audit "R843 sixth FF promotion
   audit", rode
   rules/audits/r843_batch.h
-  (include above the ffj.h R842
+  (include above the rules/ff/promo_batch5.h R842
   index-line include); the R842
   record seated into the seed.
   DATA VOICES: the three-voice
@@ -24058,12 +24058,12 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   - the registry 963 -> 988, the ff
   def census 153 -> 178, the missing
   print census 32 -> 7. Header
-  rules/ffl.h, prefix ffl (free;
+  rules/ff/promo_batch7.h, prefix ffl (free;
   17 consts + 7 bools, inline 24),
   audit "R844 seventh FF promotion
   audit", rode
   rules/audits/r844_batch.h
-  (include above the ffk.h R843
+  (include above the rules/ff/promo_batch6.h R843
   index-line include); the R843
   record seated into the seed.
   DATA VOICES: the three-voice
@@ -24145,14 +24145,14 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   - the registry 988 -> 995, the ff
   def census 178 -> 185, the missing
   print census 7 -> 0. Header
-  rules/ffm.h, prefix ffm (free;
+  rules/ff/promo_batch8.h, prefix ffm (free;
   16 consts + 6 bools, inline 22),
   audit "R845 eighth FF promotion
   audit", rode
   rules/audits/r845_batch.h
   (include above the r844_batch.h
   index-line include; the data
-  include rides the ffl.h
+  include rides the rules/ff/promo_batch7.h
   index-line include); the R844
   record seated into the seed.
   DATA VOICES: the three-voice
@@ -24297,7 +24297,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   variants (Anhkheg, Korn, XIII...)
   pin as scanned with the roster
   riding the cleaned names.
-  Header rules/ffn.h (63 consts +
+  Header rules/ff/monster_level_tables.h (63 consts +
   17 bools + 134 table cols,
   inline 214), audit "R846 FF
   monster level tables audit",
@@ -24408,7 +24408,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   PAnanggalan, Quaggoth and the rest)
   pin as scanned with the roster
   riding the cleaned print names.
-  Header rules/ffo.h (42 consts + 14
+  Header rules/ff/encounter_listings.h (42 consts + 14
   bools + 267 table cols, inline 323),
   audit "R847 FF encounter listings
   audit", rode rules/audits/
@@ -24432,7 +24432,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   requirements). THE SHAPE: 9 grids + 1 chain (61 grid rows:
   Str/Wis/Int/Dex/Con/Cha 7 rows each, the horror table -1 to -7, the psionic
   classes I-VI, the intervention modifiers), the monster intelligence ladder
-  to godlike; header rules/dga.h (inline 237), prefix dga; audit "R849 DDG
+  to godlike; header rules/ddg/ddg_frontmatter.h (inline 237), prefix dga; audit "R849 DDG
   front matter audit", rode rules/audits/r849_batch.h; 19 examples. ZERO
   registry defs touched - the floor holds at 995. THE ADJUDICATIONS
   (physical-copy eyeball, the extract primary): the strength 23 damage +11
@@ -24452,7 +24452,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   Stoneribs, the Thunder Bird, Yanauluha, Tobadzistsini), the pantheon-wide
   cleric doctrine and the sacred bundle. THE SHAPE: 4 grids (combat, class,
   ability, roster; 36 cols, 14 rows each - one row per being), 93 consts + 103
-  bools + 25 examples, inline 232; header rules/dgb.h, prefix dgb; audit "R850
+  bools + 25 examples, inline 232; header rules/ddg/mythos_american_indian.h, prefix dgb; audit "R850
   American Indian mythos audit", rode rules/audits/r850_batch.h. ZERO registry
   defs touched - the floor holds at 995. THE ADJUDICATIONS (the four-voice
   collation): Heng/Hotoru/Yanauluha attacks printed 3/2 (the 47-48px
@@ -24482,7 +24482,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   file doc/data/ddg_arthurian_knights.txt.
   THE SHAPE: 4 grids x 15 rows (combat, class,
   ability, roster), 52 consts + 89 bools + 38
-  table cols, inline 179; header rules/dgc.h,
+  table cols, inline 179; header rules/ddg/mythos_arthurian.h,
   prefix dgc; audit "R851 Arthurian mythos
   audit", rode rules/audits/r851_batch.h; 25
   examples. ZERO registry defs touched - the
@@ -24528,7 +24528,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   kilt and the tithe. THE SHAPE: 4 grids
   x 10 rows (combat, class, ability,
   roster; 38 cols), 73 consts + 114 bools,
-  inline 225; header rules/dgd.h, prefix
+  inline 225; header rules/ddg/mythos_babylonian.h, prefix
   dgd; audit "R852 Babylonian mythos
   audit", rode rules/audits/r852_batch.h;
   34 examples. The roster grid carries
@@ -24580,7 +24580,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   in-each flag; Move 0 = printed Variable,
   Cls 99 = printed See below), 135 consts
   + 151 bools + 38 table cols, inline
-  324; 43 examples; header rules/dge.h,
+  324; 43 examples; header rules/ddg/mythos_celtic.h,
   prefix dge; audit "R853 Celtic mythos
   audit", rode rules/audits/r853_batch.h.
   THE ADJUDICATIONS (the IA 1st-print
@@ -24636,7 +24636,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   col 8 as the in-each flag; Move -1 =
   printed Infinite), 70 consts + 127
   bools + 38 table cols, inline 235; 30
-  examples; header rules/dgf.h, prefix
+  examples; header rules/ddg/mythos_central_american.h, prefix
   dgf; audit "R854 Central American
   mythos audit", rode
   rules/audits/r854_batch.h. THE
@@ -24693,7 +24693,7 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   Dancing Sword of Lightning, Fire Gems, Giant Black
   Pearl). THE SHAPE: 132 consts + 109 bools + 4
   grids (38 table cols), 279 inlines, 28 examples;
-  header rules/dgg.h, prefix dgg; audit "R855
+  header rules/ddg/mythos_chinese.h, prefix dgg; audit "R855
   Chinese mythos audit", rode
   rules/audits/r855_batch.h. THE ADJUDICATIONS (IA
   1st-print djvu.xml geometry at 600dpi over the
@@ -24737,10 +24737,10 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   THE SHAPE: 168 consts + 124 bools + 4 grids (38
   table cols - the roster col 9 repurposed as the
   Shub-Niggurath d6 summon-list flag), 330 inlines,
-  29 examples; header rules/cth.h, prefix cth; audit
+  29 examples; header rules/ddg/mythos_cthulhu.h, prefix cth; audit
   "R856 Cthulhu mythos audit", rode
   rules/audits/r856_batch.h. THE PREFIX CATCH: dgh
-  was NOT free - rules/oamonk.h owns dghMonkMinStr,
+  was NOT free - rules/oa/oamonk.h owns dghMonkMinStr,
   and the OA book burned dgb through dgz; R856 rode
   the mnemonic prefix cth, verified free repo-wide
   before authoring. STANDING RULE: the prefix
@@ -25196,7 +25196,7 @@ trappings list (01-05 altar through 99-00 vestments)
 as the round's one grid (40 rows, Ord/Low/High) with
 the 40-label roster riding the round's data file
 doc/data/ddg_temple_trappings.txt; prefix tpl
-(full-repo scan clean); header rules/tpl.h; audit
+(full-repo scan clean); header rules/ddg/appendix2_temple_trappings.h; audit
 "R868 temple trappings audit", rode
 rules/audits/r868_batch.h. THE HEADLINE
 ADJUDICATIONS: the print reads CHOIR AREA (two
@@ -25246,7 +25246,7 @@ Celtic (12) - as the round's one grid (29 rows, 13 cols:
 Ord, the nine string-field roster ordinals, the M/F/N-H
 flags) with the nine per-column rosters riding
 doc/data/ddg_clerical_chart_1.txt; prefix cqc (full-repo
-scan clean); header rules/cqc.h; audit "R869 clerical
+scan clean); header rules/ddg/cqc_batch1.h; audit "R869 clerical
 chart batch one audit", rode rules/audits/r869_batch.h. NO
 GAP FLIP - the App 3 box stays open until the last chart
 batch (the first no-flip round; gap_flips: [] is legal,
@@ -25301,7 +25301,7 @@ Chinese (15) and Cthulhu (8) deity rows as the round's one
 grid (35 rows, 13 cols: Ord, the nine string-field roster
 ordinals, the M/F/N-H flags) with the nine per-column
 rosters riding doc/data/ddg_clerical_chart_2.txt; prefix
-cqc2 (full-repo scan clean); header rules/cqc2.h; audit
+cqc2 (full-repo scan clean); header rules/ddg/cqc_batch2.h; audit
 "R870 clerical chart batch two audit", rode
 rules/audits/r870_batch.h. NO GAP FLIP - the App 3 box
 stays open until the last chart batch (the R869 no-flip
@@ -25349,7 +25349,7 @@ Finnish (11) deity rows as the round's one grid (28 rows,
 13 cols: Ord, the nine string-field roster ordinals, the
 M/F/N-H flags) with the nine per-column rosters riding
 doc/data/ddg_clerical_chart_3.txt; prefix cqc3 (full-repo
-scan clean); header rules/cqc3.h; audit "R871 clerical
+scan clean); header rules/ddg/cqc_batch3.h; audit "R871 clerical
 chart batch three audit", rode rules/audits/r871_batch.h.
 NO GAP FLIP - the App 3 box stays open until the last
 chart batch (the R869 no-flip precedent; gap census 20/4
@@ -25391,7 +25391,7 @@ twenty-four, print pp. 139-140: the Greek (18) and Indian
 Ord, the nine string-field roster ordinals, the M/F/N-H
 flags) with the nine per-column rosters riding
 doc/data/ddg_clerical_chart_4.txt; prefix cqc4 (full-repo
-scan clean); header rules/cqc4.h; audit "R872 clerical
+scan clean); header rules/ddg/cqc_batch4.h; audit "R872 clerical
 chart batch four audit", rode rules/audits/r872_batch.h.
 NO GAP FLIP - the App 3 box stays open until the last
 chart batch (the R869 no-flip precedent; gap census 20/4
@@ -25435,7 +25435,7 @@ Melnibonean (15) deity rows as the round's one grid (25
 rows, 13 cols: Ord, the nine string-field roster ordinals,
 the M/F/N-H flags) with the nine per-column rosters riding
 doc/data/ddg_clerical_chart_5.txt; prefix cqc5 (full-repo
-scan clean); header rules/cqc5.h; audit "R873 clerical
+scan clean); header rules/ddg/cqc_batch5.h; audit "R873 clerical
 chart batch five audit", rode rules/audits/r873_batch.h.
 NO GAP FLIP - the App 3 box stays open until the last
 chart batch (the R869 no-flip precedent; gap census 20/4
@@ -25480,7 +25480,7 @@ as the round's one grid (13 rows, 13 cols: Ord, the nine
 string-field roster ordinals, the M/F/N-H flags) with the
 nine per-column rosters riding
 doc/data/ddg_clerical_chart_6.txt; prefix cqc6 (full-repo
-scan clean); header rules/cqc6.h; audit "R874 clerical
+scan clean); header rules/ddg/cqc_batch6.h; audit "R874 clerical
 chart batch six audit", rode rules/audits/r874_batch.h. NO
 GAP FLIP - the App 3 box stays open until the last chart
 batch (the R869 no-flip precedent; gap census 20/4
@@ -25527,7 +25527,7 @@ rows as the round's one grid (24 rows, 13 cols: Ord, the
 nine string-field roster ordinals, the M/F/N-H flags) with
 the nine per-column rosters riding
 doc/data/ddg_clerical_chart_7.txt; prefix cqc7 (full-repo
-scan clean); header rules/cqc7.h; audit "R875 clerical
+scan clean); header rules/ddg/cqc_batch7.h; audit "R875 clerical
 chart batch seven audit", rode rules/audits/r875_batch.h.
 NO GAP FLIP - the App 3 box stays open until the last
 chart batch (the R869 no-flip precedent; gap census 20/4
@@ -25577,7 +25577,7 @@ round's one grid (28 rows, 13 cols: Ord, the nine string-
 field roster ordinals, the M/F/N-H flags) with the nine
 per-column rosters riding
 doc/data/ddg_clerical_chart_8.txt; prefix cqc8 (full-repo
-scan clean); header rules/cqc8.h; audit "R876 clerical
+scan clean); header rules/ddg/cqc_batch8.h; audit "R876 clerical
 chart batch eight audit", rode rules/audits/r876_batch.h.
 NO GAP FLIP - the App 3 flip was HELD at the R876 scoping
 per Curtiss ("hold the no-flip precedent one more round"):
@@ -25681,7 +25681,7 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   TwoVolumes, NoDate); the rosters ride
   doc/data/ddg_index.txt and doc/data/
   ddg_app4.txt; prefix idx (full-repo scan clean);
-  header rules/idx.h; audit "R877 Appendix 4 and
+  header rules/ddg/appendix4_index.h; audit "R877 Appendix 4 and
   index audit" rode rules/audits/r877_batch.h;
   regtest.cpp +2 include lines. ZERO registry
   defs touched - the floor holds at 995. Spec
@@ -25699,11 +25699,11 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   - a spec change needs a fresh pristine tree
   re-extract. rverify double-run GREEN, 4,457
   mutants 0 missed; statics clean (audits dir
-  799 = 798+1, idx.h maxwidth 92 opener-only,
+  799 = 798+1, rules/ddg/appendix4_index.h maxwidth 92 opener-only,
   r877_batch.h 78 chars char-based - an earlier
   "80" was awk counting UTF-8 bytes of the right
   single quote; zero True/False tokens; quote
-  parity even, idx.h zero double quotes; hyphen
+  parity even, rules/ddg/appendix4_index.h zero double quotes; hyphen
   scan clean); the R876 record seated in the
   seed at line 25569; the canvas spec-r877 gated
   byte-exact (frontmatter + spec bytes, no extra
@@ -25749,7 +25749,7 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   15, Ord 2 at 16, Ord 17 center at 0); the
   rosters ride doc/data/ddg_fig4.txt and
   doc/data/ddg_fig5.txt; prefix afg (full-repo
-  scan clean); header rules/afg.h; audit "R878
+  scan clean); header rules/ddg/alignment_figures.h; audit "R878
   alignment figures audit" rode
   rules/audits/r878_batch.h; regtest.cpp +2
   include lines; 19 consts, 18 bools, 5 cols, 6
@@ -25769,7 +25769,7 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   authoritative transit, all eight files
   cmp-clean, zero strays). rverify GREEN, 98
   mutants 0 missed; statics clean (audits dir
-  800 = 799+1, afg.h maxwidth 92 opener-only,
+  800 = 799+1, rules/ddg/alignment_figures.h maxwidth 92 opener-only,
   r878_batch.h 78 chars char-based, zero
   True/False tokens in the emitted C++ files,
   quote parity even, hyphen scan clean - the
@@ -25816,7 +25816,7 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   (pony, ape, mule) - the anchor catch of the
   round.
   THE MECHANICS: prefix rsc (full-repo scan clean),
-  header rules/rsc.h (maxwidth 92 opener-only),
+  header rules/meta/registry_schema.h (maxwidth 92 opener-only),
   audit "R879 registry schema audit" rode
   rules/audits/r879_batch.h (78 char-based); 10
   consts, 9 bools, 2 grids (books 6x2, keys 57x7
@@ -25880,7 +25880,7 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   eleven fixed-damage rows but the grid and audit
   pin ten - the grid wins.
   THE MECHANICS: prefix dpe (full-repo scan clean),
-  header rules/dpe.h (92 opener-only), audit "R880
+  header rules/ddg/lua_promo_batch1.h (92 opener-only), audit "R880
   DDG promotion audit" rode
   rules/audits/r880_batch.h (801 -> 802 audit
   files); 12 consts, 10 bools, 2 grids (mythoi 4x4,
@@ -25940,7 +25940,7 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   Kuan Yin 60 inches decodes M (5'); the Hastur
   distant-future plane qualifier dropped per grid.
   THE MECHANICS: prefix dpt (full-repo scan clean),
-  header rules/dpt.h, audit R881 DDG promotion
+  header rules/ddg/lua_promo_batch2.h, audit R881 DDG promotion
   audit rode rules/audits/r881_batch.h (802 -> 803
   audit files); 12 consts, 10 bools, 2 grids
   (mythoi 4x4, key-fill 57x2), 7 examples, inline
@@ -25992,7 +25992,7 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   (117,796 bytes); the canvas spec-r882 gated
   byte-exact; rverify 144 mutants 0 missed;
   the land verified byte-exact against the
-  fresh-tarball rebuild (1178 defs, dpu.h,
+  fresh-tarball rebuild (1178 defs, rules/ddg/lua_promo_batch3.h,
   audit, census, seed, regtest identical;
   engine idempotent applied 66 / already 66).
   NEXT: the promotion continues print-order -
@@ -26038,7 +26038,7 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   (71,581 bytes); the canvas spec-r883 gated
   byte-exact; rverify 144 mutants 0 missed;
   the land verified byte-exact against the
-  fresh-tarball rebuild (1209 defs, dpw.h,
+  fresh-tarball rebuild (1209 defs, rules/ddg/lua_promo_batch4.h,
   audit, census, seed, regtest, spec
   identical; engine idempotent applied 37 /
   already 37). NEXT: the promotion continues
@@ -26083,7 +26083,7 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   bytes); the canvas spec-r884 gated
   byte-exact; rverify 140 mutants 0 missed;
   the land verified byte-exact against the
-  fresh-tarball rebuild (1242 defs, dpx.h,
+  fresh-tarball rebuild (1242 defs, rules/ddg/lua_promo_batch5.h,
   audit, census, seed, regtest, spec
   identical; engine idempotent applied 39 /
   already 39). NEXT: the promotion continues
@@ -26141,7 +26141,7 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   the canvas spec-r885 gated byte-exact; rverify
   144 mutants 0 missed; the land verified
   byte-exact against the fresh-tarball rebuild
-  (1291 defs, dpy.h, audit, census, seed, regtest,
+  (1291 defs, rules/ddg/lua_promo_batch6.h, audit, census, seed, regtest,
   spec identical; engine idempotent applied 55 /
   already 55). NEXT: the promotion tail - Norse,
   then Sumerian. WAIT FOR GO.
@@ -26205,7 +26205,7 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   bytes); the canvas spec-r886 gated
   byte-exact; rverify 144 mutants 0 missed;
   the land verified byte-exact against the
-  fresh-tarball rebuild (1333 defs, dpz.h,
+  fresh-tarball rebuild (1333 defs, rules/ddg/lua_promo_batch7.h,
   audit, census, seed, regtest, spec
   identical; engine idempotent applied 48 /
   already 48). NEXT: the per-book
@@ -26219,7 +26219,7 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   the Wesley D. Ives non-prime-requisite
   adjudication system, the arc's first
   VARIANT-layer pin). THE SHAPE: prefix ivs
-  (full-repo scan clean), header rules/ivs.h
+  (full-repo scan clean), header rules/dragon/issue001_ives_tables.h
   (92 opener-only), the die-band chain (the
   d100-plus-score total picks the d4-d12
   band), the exceptional-strength ladder
@@ -26273,7 +26273,7 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   THE DRAGON SMALL VARIANTS - ROUND B of the
   Dragon Magazine walk (issue #1, folios 9-10,
   30, 19). THE SHAPE: prefix drg (full-repo
-  scan clean - dgn was TAKEN by rules/oayakuza.h,
+  scan clean - dgn was TAKEN by rules/oa/oayakuza.h,
   the R856 catch held), header rules/drg.h
   (16 inline), audit "R888 Dragon small
   variants audit" at rules/audits/r888_batch.h,
@@ -26317,7 +26317,7 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   of the Dragon Magazine walk, issue #1
   (folios 23-25, DELTAS ONLY). THE SHAPE:
   prefix arn (full-repo scan clean), header
-  rules/arn.h (14 inline), audit "R889
+  rules/dragon/aronson_illusionist_deltas.h (14 inline), audit "R889
   Aronson deltas audit" at
   rules/audits/r889_batch.h, 9 consts + 5
   bools, 12 examples, 3 header_sections, no
@@ -26363,7 +26363,7 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   (Round A of issue 2, The Dragon Vol. 1 No.
   2, August 1976, folio 21). THE SHAPE:
   prefix rmz (full-repo scan clean), header
-  rules/rmz.h (21 inline), audit "R890
+  rules/dragon/issue002_remorhaz_lore.h (21 inline), audit "R890
   Remorhaz lore audit" at
   rules/audits/r890_batch.h, 18 consts + 3
   bools, 12 examples, 3 header_sections, no
@@ -26421,7 +26421,7 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   user's COMPLETE mandate held - class,
   progression, potions, poisons, no
   cherry-picking). THE SHAPE: prefix alc
-  (regtest-scan clean), header rules/alc.h
+  (regtest-scan clean), header rules/dragon/class_alchemist.h
   (102 inline - the LESSON: the inline-count
   gate counts the switch and table-column
   emitters too, consts+bools+switch+10
@@ -26476,7 +26476,7 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   THE FISCHER HINTS MAGIC ITEMS - ROUND C of
   issue 2 (Joe Fischer, folios 12-13, 26,
   the judge toybox). THE SHAPE: prefix fch
-  (regtest-scan clean), header rules/fch.h
+  (regtest-scan clean), header rules/dragon/fischer_hints_magic_items.h
   (56 inline), audit "R892 Fischer items
   audit" at rules/audits/r892_batch.h, 44
   consts + 12 bools, 26 examples, 4
@@ -26533,11 +26533,11 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   (Pickens' Weapon Damage expertise, folio 30;
   Seaton's Monkish promotion combat, folios
   4-5). THE SHAPE: prefix sys (regtest-scan
-  clean), header rules/sys.h (66 inline: 29
+  clean), header rules/dragon/systems_round.h (66 inline: 29
   consts + 14 bools + 2 tables), audit "R893
   systems audit" at rules/audits/r893_batch.h,
   32 examples, 3 header_sections, include after
-  fch.h, gap flip of the Fischer box (issue-2
+  rules/dragon/fischer_hints_magic_items.h, gap flip of the Fischer box (issue-2
   report 3 closed / 1 open). THE INK:
   sysWeaponGrid 17 rows x 5 cols
   (normalMin/Max, expertMin/Max, spaceFeet from
@@ -26585,7 +26585,7 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   + 2 tables / 14 columns), audit "R894
   Artificer audit" at
   rules/audits/r894_batch.h, 28 examples, 3
-  header_sections, include after sys.h. THE
+  header_sections, include after rules/dragon/systems_round.h. THE
   PINS: the pistol frame (2-inch sphere, 50
   yards max, six color-coded types),
   artSphereGrid 6 rows x 3 cols (CONVERTED
@@ -26642,7 +26642,7 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   reviews, letters save the Eldar deltas. FOLIO
   = PDF PAGE verified (3, 7, 14, 22, 30). THE
   SHAPE: prefix wmn (regtest-scan clean),
-  header rules/wmn.h (128 inline: 87 consts +
+  header rules/dragon/issue003_women_magic_notes.h (128 inline: 87 consts +
   10 bools + 8 tables / 31 columns), audit
   "R895 women magic audit" at
   rules/audits/r895_batch.h, 48 examples, 4
@@ -26699,11 +26699,11 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   round: Hettlestad's Healer (folios 22-23) +
   Mumper's Scribe (folios 23, 25), from Dragon
   #3. THE SHAPE: prefix spr (regtest-scan clean),
-  header rules/spr.h (57 inline: 33 consts + 7
+  header rules/dragon/specialists_healers_scribes.h (57 inline: 33 consts + 7
   bools + 3 tables / 17 columns), audit "R896
   specialists audit" at
   rules/audits/r896_batch.h, 31 examples, 2
-  header_sections, include after wmn.h,
+  header_sections, include after rules/dragon/issue003_women_magic_notes.h,
   prev_seed_key the R895 record. THE PINS: the
   Healer ladder sprHealLadder 25 rows x 10 cols -
   Xp, hit base and bonus SPLIT from the printed
@@ -26749,11 +26749,11 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   classes round: Childers/Kay's Samurai (folio
   25) + Pickens' Berserker (folio 27), from
   Dragon #3. THE SHAPE: prefix fsc (regtest-scan
-  clean), header rules/fsc.h (133 inline: 74
+  clean), header rules/dragon/fighting_subclasses.h (133 inline: 74
   consts + 25 bools + 8 tables / 34 columns),
   audit "R897 fighting sub-classes audit" at
   rules/audits/r897_batch.h, 62 examples, 2
-  header_sections, include after spr.h,
+  header_sections, include after rules/dragon/specialists_healers_scribes.h,
   prev_seed_key the R896 record. THE PINS: the
   Samurai - dexterity-above-15 pinned as 16, any
   alignment tending neutral, the daisho/yumi
@@ -26840,12 +26840,12 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   the Pulsipher Eldar deltas (folios 20-21)
   against the R888 Smith pin, from Dragon #3. THE
   SHAPE: prefix chr (regtest-scan clean), header
-  rules/chr.h (294 inline: 112 consts + 46 bools
+  rules/dragon/dwarves_birth_eldar.h (294 inline: 112 consts + 46 bools
   + 36 tables / 136 columns - the biggest inline
   count since the v3 fresh start), audit "R898
   character round audit" at
   rules/audits/r898_batch.h, 244 examples, 3
-  header_sections, include after fsc.h,
+  header_sections, include after rules/dragon/fighting_subclasses.h,
   prev_seed_key the R897 record. THE PINS: the
   Dwarves - the nine-level Fighting Man ladder
   (Dwarf 1+2 fighting as Man+2 through Dwarf King
@@ -26952,12 +26952,12 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   28) + Carner, Cannon and Simon's Jester (folios
   28-29) + Cline's dexterity combat mods (folio
   30), from Dragon #3. THE SHAPE: prefix cmv
-  (regtest-scan clean), header rules/cmv.h (205
+  (regtest-scan clean), header rules/dragon/idiot_jester_dex_mods.h (205
   inline: 147 consts + 18 bools + 8 tables / 40
   columns), audit "R899 comedy and small-variants
   audit" at rules/audits/r899_batch.h, 95
   examples, 3 header_sections, include after
-  chr.h, prev_seed_key the R898 record. THE PINS:
+  rules/dragon/dwarves_birth_eldar.h, prev_seed_key the R898 record. THE PINS:
   the Idiot - the 160-gold hire with the 50
   percent city chance, the 200-gold midget adding
   5 percent, the confusion purpose with 3 melee
@@ -27026,7 +27026,7 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   exist; the Remorhaz lore-against-def precedent
   does not apply), from Dragon #4 (the
   archive.org scan). THE SHAPE: prefix cfe
-  (regtest-scan clean), header rules/cfe.h (72
+  (regtest-scan clean), header rules/dragon/issue004_creature_features.h (72
   inline: 49 consts + 20 bools + 1 table / 3
   columns), audit "R900 Dragon Creature Features
   audit" at rules/audits/r900_batch.h, 23
@@ -27111,7 +27111,7 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   Features box closing round: Curtiss's
   adjudication - a PURE box-closing round, no new
   print ink. THE SHAPE: prefix cfc (regtest-scan
-  clean), header rules/cfc.h (10 inline: 6 consts
+  clean), header rules/dragon/issue004_close.h (10 inline: 6 consts
   + 4 bools, no tables), audit "R901 Creature
   Features closure audit" at
   rules/audits/r901_batch.h, 3 examples, 2
@@ -27154,7 +27154,7 @@ engine-relevant chains in one round (a first),
 from Dragon #5, March 1977 (the archive.org
 scan, accessory-dragon-magazine-006). THE
 SHAPE: prefix wch (regtest-scan clean), header
-rules/wch.h (151 inline: 115 consts + 23 bools
+rules/dragon/issue005_opener.h (151 inline: 115 consts + 23 bools
 + 3 tables / 13 cols), audit "R902 Dragon
 issue-5 audit" at rules/audits/r902_batch.h, 62
 examples, 6 header_sections, ZERO file_patches,
@@ -27218,7 +27218,7 @@ f751304aeee3c7e2acdc9b0a0ef17164b2cca5aa (base
 47aacae, census 825 -> 826), the Dragon issue-5
 box closing round: the pure flip, no new ink -
 the R901 precedent shape. THE SHAPE: prefix cwx
-(regtest-scan clean), header rules/cwx.h (9
+(regtest-scan clean), header rules/dragon/issue005_close.h (9
 inline: 6 consts + 3 bools, no tables), audit
 "R903 Dragon issue-5 closure audit" at
 rules/audits/r903_batch.h, 3 examples, 2
@@ -27254,7 +27254,7 @@ adjudication of the issue-5 cross-check fallout
 - the folio-4 grid the DjVu OCR garbled, made
 legible by the chat-side upload cross-check
 (Dragon_Magazine_005.pdf). THE SHAPE: prefix
-wwt (regtest-scan clean), header rules/wwt.h
+wwt (regtest-scan clean), header rules/dragon/witchcraft_wilderness_table.h
 (13 inline: 10 consts + 3 bools + 1 table / 2
 cols), audit "R904 wilderness encounter table
 audit" at rules/audits/r904_batch.h, 7
@@ -27291,7 +27291,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   - R905 LANDED 2026-10-29: commit
   60fbce733bb6fb96738aec414cf1ef62eeeeb19c
   (census 828). The might-be-usable micro-round:
-  prefix wrm, header rules/wrm.h, 80 inline (49
+  prefix wrm, header rules/dragon/witch_remainders_elf_subraces.h, 80 inline (49
   consts + 29 bools + 1 table/2 cols), 19
   examples, 4 header_sections, zero
   file_patches/data_files, gap report 005
@@ -27329,7 +27329,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   - R906 LANDED 2026-10-29: commit
   1a6baa30d990b0ea779d9545fcd94c7fc917b9a1 (base
   60fbce7, census 828 -> 829), the Dragon issue-6
-  opener: prefix dso, header rules/dso.h, 105
+  opener: prefix dso, header rules/dragon/issue006_opener.h, 105
   inline (60 consts + 28 bools + 17 table cols),
   19 examples + 6 table_checks, 4
   header_sections, 34 data_files (the
@@ -27399,7 +27399,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   1a6baa3, census 829 -> 830), the Dragon issue-6
   box closing round: the pure flip, no new ink -
   the R903 precedent shape. THE SHAPE: prefix csx
-  (regtest-scan clean), header rules/csx.h (11
+  (regtest-scan clean), header rules/dragon/issue006_close.h (11
   inline: 7 consts + 4 bools, no tables), audit
   "R907 Dragon issue-6 closure audit" at
   rules/audits/r907_batch.h, 3 examples, 2
@@ -27439,7 +27439,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   opener: the THIN SINGLE-CHAIN HARVEST - the
   Prowler (folio 24) was the only engine-relevant
   ink in issue #7. THE SHAPE: prefix pwl
-  (regtest-scan clean), header rules/pwl.h (25
+  (regtest-scan clean), header rules/dragon/issue007_prowler.h (25
   inline: 18 consts + 7 bools, no tables), audit
   "R908 Prowler opener audit" at
   rules/audits/r908_batch.h, 5 examples, 1
@@ -27506,7 +27506,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   box closing round: the pure flip, no new ink -
   the R903/R907 precedent shape. THE SHAPE:
   prefix cpx (regtest-scan clean), header
-  rules/cpx.h (11 inline: 7 consts + 4 bools, no
+  rules/dragon/issue007_close.h (11 inline: 7 consts + 4 bools, no
   tables), audit "R909 Dragon issue-7 closure
   audit" at rules/audits/r909_batch.h, 3
   examples, 2 header_sections, ZERO file_patches
@@ -27536,7 +27536,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   7b77edc22aafb2639065acaee614291e6a2b6dca (base
   86956d0, census 832 -> 833), the Dragon issue-8
   opener: THREE CHAINS, prefix dgo, header
-  rules/dgo.h, 66 inline (41 consts + 15 bools +
+  rules/dragon/issue008_opener.h, 66 inline (41 consts + 15 bools +
   10 table cols), 9 examples + 7 table_checks, 3
   header_sections, 33 data_files (gap report 008
   pre-flip + 32 issue-8 transcripts), ZERO
@@ -27613,7 +27613,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   4081a693829d9f205b7fe824d7b7abfe845a0624 (base
   7b77edc, census 833 -> 834), the Dragon issue-8
   closure/flip round: prefix cgx, header
-  rules/cgx.h, audit rules/audits/r911_batch.h
+  rules/dragon/issue008_close.h, audit rules/audits/r911_batch.h
   ("R911 Dragon issue-8 closure audit"), 11
   inline (7 consts + 4 bools), 3 examples, 2
   header_sections, ZERO file_patches/data_files,
@@ -27631,7 +27631,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   b78fe961c138f54d7259a77f3f33b2d8910b3091 (base
   4081a69, census 834 -> 835), the Dragon issue-9
   opener: TWO CHAINS, prefix dgn, header
-  rules/dgn.h, audit rules/audits/r912_batch.h
+  rules/dragon/issue009_opener.h, audit rules/audits/r912_batch.h
   ("R912 issue-9 opener audit"), 51 inline (13
   consts + 21 bools + 4 chains + 13 table cols),
   4 examples + 5 table_checks, 2 header_sections,
@@ -27653,7 +27653,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   - R913 LANDED 2026-10-29: commit
   17dbf8c0ef6ffe8985358d24040ac69dc2b61008 (base
   b78fe96, census 835 -> 836), the Dragon issue-9
-  flip: prefix dnp, header rules/dnp.h, audit
+  flip: prefix dnp, header rules/dragon/issue009_close.h, audit
   rules/audits/r913_batch.h ("R913 Dragon issue-9
   closure audit"), 13 inline (8 consts + 5
   bools), 3 examples, 2 header_sections, ZERO
@@ -27671,7 +27671,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   e1dcd30942ca36ce230806119a6c8299afebdfe4 (base
   17dbf8c, census 836 -> 837), the Dragon
   issue-10 opener PART ONE: THREE CHAINS, prefix
-  dtn, header rules/dtn.h, audit
+  dtn, header rules/dragon/issue010_opener1.h, audit
   rules/audits/r914_batch.h ("R914 issue-10
   opener audit"), 75 inline (33 consts + 20 bools
   + 18 chains + 4 table cols), 8 examples + 4
@@ -27702,7 +27702,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   9cc793ba9f4721f507349d6fb80ed714e8900e72 (base
   e1dcd30, census 837 -> 838), the Dragon
   issue-10 opener PART TWO: THREE CHAINS + the
-  part-one flip, prefix dte, header rules/dte.h,
+  part-one flip, prefix dte, header rules/dragon/issue010_opener2.h,
   audit rules/audits/r915_batch.h ("R915 issue-10
   opener audit"), 79 inline (32 consts + 27 bools
   + 9 chains + 11 table cols), 8 examples + 5
@@ -27733,7 +27733,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   30a102e7622482e94cf84e63854973af318602cf (base
   9cc793b, census 838 -> 839), the Dragon
   issue-10 box CLOSING round, prefix dfp, header
-  rules/dfp.h, audit rules/audits/r916_batch.h
+  rules/dragon/issue010_close.h, audit rules/audits/r916_batch.h
   ("R916 Dragon issue-10 closure audit"), 15
   inline (9 consts + 6 bools), 3 examples, 2
   header_sections (walk bookkeeping + registry
@@ -27746,7 +27746,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   9641e8887391618aafcec087ddbef8160598d902 (base
   30a102e, census 839 -> 840), the Dragon
   issue-11 opener: TWO CHAINS, prefix brw, header
-  rules/brw.h, audit rules/audits/r917_batch.h
+  rules/dragon/issue011_opener.h, audit rules/audits/r917_batch.h
   ("R917 issue-11 opener audit"), 66 inline (33
   consts + 16 bools + 1 chain + 16 table cols),
   11 examples + 3 table_checks, 2
@@ -27813,7 +27813,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   issue-11 box CLOSING round: the pure flip, no
   new ink - the R903/R907/R911/R913/R916
   precedent shape. THE SHAPE: prefix bfx
-  (regtest-scan clean), header rules/bfx.h (17
+  (regtest-scan clean), header rules/dragon/issue011_close.h (17
   inline: 10 consts + 7 bools, no tables), audit
   "R918 Dragon issue-11 closure audit" at
   rules/audits/r918_batch.h, 3 examples, 2
@@ -27938,7 +27938,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   and Aizen bar-garble AC cells on sentinel), 6
   treasures, 11 prose-only Other Shinto gods
   riding transcript. NEW PRECEDENT: the jpn
-  prefix was TAKEN (rules/jpn.h at R861) - the
+  prefix was TAKEN (rules/ddg/mythos_japanese.h at R861) - the
   free-prefix scan had been wrong; kmy re-
   verified free and used. Ryujin AC -1 collides
   with the -1 sentinel - pinned as kmyRyujinAc
@@ -28026,7 +28026,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   2500 XP, the 10x8 grid (row-4 1000 vs example
   10000, as-scanned), predominance 10-01, change-
   time halves. 23 inline (14 consts + 9 bools),
-  no tables, no data files; header rules/f14.h,
+  no tables, no data files; header rules/dragon/issue014_close.h,
   audit rules/audits/r926_batch.h, 3 examples.
   Census 848->849; rverify GREEN 23 mutants 0
   missed; round-trip 12314 bytes md5
@@ -28108,7 +28108,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   (print 5), the Random Events Table for
   Settlements (print 5). 25 inline bookkeeping
   only (15 consts + 10 bools), no tables, no data
-  files; header rules/f15.h, audit
+  files; header rules/dragon/issue015_close.h, audit
   rules/audits/r928_batch.h, 3 examples. Issues
   2-15 ALL CLOSED. The issue-15 walk completes in
   TWO rounds (R927 opener carrying all five
@@ -28175,7 +28175,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   f16IssueSixteenBoxes=2, chains=2, rounds=2,
   issue-closed consts 15..6, registry
   1313/1338/25, walk-complete bools 6..16), no
-  tables, no data files; header rules/f16.h,
+  tables, no data files; header rules/dragon/issue016_close.h,
   audit rules/audits/r930_batch.h, 3 examples.
   Issues 2-16 ALL CLOSED. The issue-16 walk
   completes in TWO rounds (R929 opener carrying
@@ -28267,7 +28267,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   sentinel value, the census of 1 locks it.
   233 inline (113 consts + 89 bools + 30
   table cols + the chain), 6 examples, 6
-  table_checks; header rules/jou.h, audit
+  table_checks; header rules/dragon/issue017_opener1.h, audit
   rules/audits/r931_batch.h "R931 issue-17
   opener part one audit". data_files 41: the
   pre-flip gap report 017 (2 boxes open, 0
@@ -28318,7 +28318,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   fire +1-per-die ball and the 10-die wall, the
   movement negates and the 20-being mass
   teleport), 11 examples, 5 table_checks; header
-  rules/wzd.h (prefix wzd verified free at
+  rules/dragon/issue017_opener2.h (prefix wzd verified free at
   c6446ee, full-repo scan), audit
   rules/audits/r932_batch.h "R932 issue-17
   wizard article part two audit". data_files 1:
@@ -28362,7 +28362,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   issue-closed consts 16..6, registry
   1313/1338/25, walk-complete bools
   6..17), no tables, no data files; header
-  rules/f17.h (prefix f17 verified free at
+  rules/dragon/issue017_close.h (prefix f17 verified free at
   c0ef298), audit rules/audits/r933_batch.h
   "R933 Dragon issue-17 closure audit", 3
   examples. ISSUES 2-17 ALL CLOSED. Registry
@@ -28401,7 +28401,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   (psySave 9x6 tag Ps, psyPride 9x6 tag
   Pp, psyGreed 11x3 tag Pg, sentinel
   -99), 8 examples, 3 table_checks; header
-  rules/psy.h (prefix psy verified free
+  rules/dragon/issue018_opener1.h (prefix psy verified free
   at 528873f - npc taken, 15 cpp hits),
   audit rules/audits/r934_batch.h "R934
   issue-18 opener part one audit".
@@ -28451,7 +28451,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   [0,0,0,0,0,1,1,1] for the never-printed
   poison A unconscious cells), 9
   examples, 3 table_checks; header
-  rules/mkn.h (prefix mkn verified free
+  rules/dragon/issue018_opener2.h (prefix mkn verified free
   at 73145ba - psn is TAKEN, the
   r410_splice.py identifiers), audit
   rules/audits/r935_batch.h "R935
@@ -28507,7 +28507,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   down to 7, registry 1313/1338/25,
   walk-complete bools 7 through 18), no
   tables, no data files; header
-  rules/f18.h (prefix f18 verified free
+  rules/dragon/issue018_close.h (prefix f18 verified free
   at 143d91d), audit rules/audits/
   r936_batch.h "R936 Dragon issue-18
   closure audit", 3 examples. ISSUES
@@ -28554,7 +28554,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   sentinel -99, sentinel_census [4,8] the
   unprinted counts and requisites), 9
   examples, 4 table_checks; header
-  rules/dws.h (prefix dws verified free
+  rules/dragon/issue019_opener1.h (prefix dws verified free
   at 995b3db full-repo scan), audit
   rules/audits/r937_batch.h "R937
   issue-19 opener part one audit". 37
@@ -28620,7 +28620,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   cols), 12 tables all sentinel 0 (no
   sentinel census - the grids are pure
   band rows), 10 examples, 5
-  table_checks; header rules/sdm.h
+  table_checks; header rules/dragon/issue019_opener2.h
   (prefix sdm verified free at 9a5a2c5
   full-repo scan), audit rules/audits/
   r938_batch.h "R938 issue-19 opener
@@ -28669,7 +28669,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   consts 7 through 18, registry
   1313/1338/25, walk-complete bools 7
   through 19), no tables, no data
-  files; header rules/d19.h (prefix d19
+  files; header rules/dragon/issue019_close.h (prefix d19
   verified free at 9c618bb full-repo
   scan - f19 is TAKEN, 4 files), audit
   rules/audits/r939_batch.h "R939
@@ -28706,7 +28706,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   cols), 7 tables (t20Myth 29x7 tag My, t20Heroes 10x7 tag He with the Kariki
   -99 no-roll sentinel, t20WitchLevels 18x9 tag Wl, t20WitchSpells 8x2 tag Ws,
   t20DemonNames 9x1 tag Dn, t20DemonAchieved 7x6 tag Da, t20DemonFailure 6x3
-  tag Df, all sentinel -99), 11 examples, 7 table_checks; header rules/t20.h
+  tag Df, all sentinel -99), 11 examples, 7 table_checks; header rules/dragon/issue020_opener1.h
   (prefix t20 verified free at 7354593 full-repo scan - d20 is TAKEN, 9
   files), audit rules/audits/r940_batch.h R940 issue-20 opener part one audit.
   38 data files rode the round: gap report 020 authored pre-flip (2 boxes 0
@@ -28742,7 +28742,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   wraith and spectre turning mirrors) and the 55-25-20 victim ladder with the
   remove-cure and wish save levels (13th and 9th, princes plus two). 68 inline
   (39 consts + 27 bools + 2 table cols), 1 table (dstDeaths 31x2 tag De
-  sentinel -99), 10 examples, 1 table_check; header rules/dst.h (prefix dst
+  sentinel -99), 10 examples, 1 table_check; header rules/dragon/issue020_opener2.h (prefix dst
   verified free at be49d0a full-repo scan), audit rules/audits/r941_batch.h
   R941 issue-20 opener part two audit. No data files this round - the 36 TD-20
   transcripts and gap report 020 rode R940; the gap-020 check rode 0 closed 2
@@ -28768,7 +28768,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   consts + 14 bools mirroring the f17/f18/d19 closers: d2cIssueTwentyBoxes=2,
   chains=5, rounds=3 - the fourth three-round issue shape; issue-closed consts
   7 through 19, registry 1313/1338/25, walk-complete bools 7 through 20), no
-  tables, no data files; header rules/d2c.h (prefix d2c verified free at
+  tables, no data files; header rules/dragon/issue020_close.h (prefix d2c verified free at
   e164043 full-repo scan - d20, t20 and dst are TAKEN), audit
   rules/audits/r942_batch.h R942 Dragon issue-20 closure audit, 3 examples.
   ISSUES 2-20 ALL CLOSED. Registry ground truth unchanged: 1313 loaded / 1338
@@ -28800,7 +28800,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   contagion, the 60-foot non-directional option, three inches of lead, the
   33 percent voyeur Eye, the fifteen-dice Kobold fireball Helm trick, the
   medallion blue-movies bool. 64 inline (30 consts + 23 bools + 11 col
-  accessors), header rules/t21.h (prefix t21 verified free at ee361d0
+  accessors), header rules/dragon/issue021_opener1.h (prefix t21 verified free at ee361d0
   full-repo scan), audit rules/audits/r943_batch.h R943 issue-21 opener part
   one audit, 10 examples + 1 table check. Numbering print catches pinned as
   scanned, conversion noted: the masthead prints Vol. 111 for III, November
@@ -28841,7 +28841,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   kit (print 7, PDF 9): the ten-column chart against the seven-column prose
   walk (print catch), the 20th-level Rogor example and the delete-embellish
   doctrine. 66 inline (31 consts + 32 bools + 3 col switches), header
-  rules/g21.h (prefix g21 verified free at 21c9900 full-repo scan), audit
+  rules/dragon/issue021_opener2.h (prefix g21 verified free at 21c9900 full-repo scan), audit
   rules/audits/r944_batch.h R944 issue-21 opener part two audit, 12
   examples + 1 table check. Print catches pinned as scanned: the question
   header prints WIZARD for the M-U contents line; the kit spellings print
@@ -28870,7 +28870,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   bools mirroring the R942 d2c closer: d21IssueTwentyOneBoxes=2, chains=7,
   rounds=3; issue-closed consts 7 through 20, issue 20 marked closed since
   the R942 d2c flip; registry 1313/1338/25 unchanged; walk-complete bools 7
-  through 21), no tables, no data files; header rules/d21.h (prefix d21
+  through 21), no tables, no data files; header rules/dragon/issue021_close.h (prefix d21
   verified free at 631da4d full-repo scan), audit rules/audits/r945_batch.h
   R945 Dragon issue-21 closure audit, 3 examples. No new print catches at
   the flip - all issue-21 quirks rode the two opener records. Registry
@@ -31054,7 +31054,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     the landed bytes), 59,870 bytes
     of repaired Lua, prefix pm1
     (free; mop is taken by
-    mop_print), header rules/pm1.h
+    mop_print), header rules/meta/promotions_mop_batch1.h
     (7 consts + 3 bools), audit
     "R1006 promotions mop round one
     audit" above r1005_batch.h, the
@@ -31142,9 +31142,9 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     unchanged
     (440886d92c761f6edab6778233dc895e).
     Prefix pm2, header
-    rules/pm2.h (8 consts + 3
+    rules/meta/promotions_mop_batch2.h (8 consts + 3
     bools), the include at regtest
-    line 711 right after pm1.h, the
+    line 711 right after rules/meta/promotions_mop_batch1.h, the
     r1007_batch.h audit at line
     4821 above r1006_batch.h.
     THE MOP REMAINING: the
@@ -31192,11 +31192,11 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     glyph windows, every one simulated
     green and idempotent, plus the 2
     text completions), prefix pm3
-    (verified free), header rules/pm3.h
+    (verified free), header rules/meta/promotions_mop_batch3.h
     (9 consts + 3 bools), audit
     rules/audits/r1008_batch.h above
     r1007_batch.h, include after
-    pm2.h, the seed seats the R1007
+    rules/meta/promotions_mop_batch2.h, the seed seats the R1007
     LANDED record (61 lines) before
     the LAST Knowledge maintenance
     anchor. LANDED: pushed
@@ -31205,8 +31205,8 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     3025a975 verified - 444/444
     patches applied (to present),
     residual glyph census 0, the
-    includes ordered (pm3.h after
-    pm2.h, r1008_batch.h above
+    includes ordered (rules/meta/promotions_mop_batch3.h after
+    rules/meta/promotions_mop_batch2.h, r1008_batch.h above
     r1007_batch.h), the seed seated,
     the gap report byte-identical
     base-to-HEAD (mm2 37/0), spec md5
@@ -31272,8 +31272,8 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     1db6e8c43baebb23e9abf96336
     78c556 unchanged, every to
     present, engine all-already
-    545, mn1.h included after
-    pm3.h, r1009_batch.h above
+    545, rules/mm/mm1_normalization_batch1.h included after
+    rules/meta/promotions_mop_batch3.h, r1009_batch.h above
     r1008_batch.h, the R1008
     LANDED record seated
     verbatim before the last
@@ -31316,7 +31316,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     806578529cee6bb434de9447a0
     89fde9 unchanged, every to
     present, engine all-already
-    493, mn2.h after mn1.h,
+    493, rules/mm/mm1_normalization_batch2.h after rules/mm/mm1_normalization_batch1.h,
     r1010_batch.h above
     r1009_batch.h, the R1009
     LANDED record seated
@@ -31356,7 +31356,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     present, engine all-already
     466, rverify GREEN at the
     base sha (13 mutants 0
-    missed), mn3.h after mn2.h,
+    missed), rules/mm/mm1_normalization_batch3.h after rules/mm/mm1_normalization_batch2.h,
     r1011_batch.h above
     r1010_batch.h, the R1010
     LANDED record seated
@@ -31402,7 +31402,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     present, engine all-already
     321, rverify GREEN at the
     base sha (13 mutants 0
-    missed), mn4.h after mn3.h,
+    missed), rules/mm/mm1_normalization_batch4.h after rules/mm/mm1_normalization_batch3.h,
     r1012_batch.h above
     r1011_batch.h, the R1011
     LANDED record seated
@@ -31442,7 +31442,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     present, engine all-already
     212, rverify GREEN at the
     base sha (13 mutants 0
-    missed), mn5.h after mn4.h,
+    missed), rules/mm/mm1_normalization_batch5.h after rules/mm/mm1_normalization_batch4.h,
     r1013_batch.h above
     r1012_batch.h, the R1012
     LANDED record seated
@@ -31489,7 +31489,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     present, engine all-already
     203, rverify GREEN at the
     base sha (13 mutants 0
-    missed), mn6.h after mn5.h,
+    missed), rules/mm/mm1_normalization_batch6.h after rules/mm/mm1_normalization_batch5.h,
     r1014_batch.h above
     r1013_batch.h, the R1013
     LANDED record seated
@@ -31530,7 +31530,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     present, engine all-already
     99, rverify GREEN at the
     base sha (7 mutants 0
-    missed), oa9.h after mn6.h,
+    missed), oa9.h after rules/mm/mm1_normalization_batch6.h,
     r1015_batch.h above
     r1014_batch.h, the R1014
     LANDED record seated verbatim
@@ -31614,7 +31614,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     engine all-already 591,
     rverify GREEN at the base sha
     033179f2 (13 mutants 0
-    missed), mq1.h after
+    missed), rules/mm/mm2_normalization_batch1.h after
     oap1.h, r1017_batch.h above
     r1016_batch.h, the R1016
     LANDED record seated verbatim
@@ -31687,7 +31687,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     rows -1, the mongrelman and
     myconid by_level cells still
     0 until their own batches,
-    mq2.h after mq1.h,
+    rules/mm/mm2_normalization_batch2.h after rules/mm/mm2_normalization_batch1.h,
     r1018_batch.h above
     r1017_batch.h, the R1017
     LANDED record seated verbatim
@@ -31762,7 +31762,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     mongrelman and myconid
     cells and fragment rows
     -1, the russet mold cells
-    0, mq3.h after mq2.h,
+    0, rules/mm/mm2_normalization_batch3.h after rules/mm/mm2_normalization_batch2.h,
     r1019_batch.h above
     r1018_batch.h, the R1018
     LANDED record seated
@@ -31826,8 +31826,8 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     HdBonus/AvgHp/LairPct(14)
     pins), the neighbors
     (juju zombie 13, zorbo
-    15) intact, mq4.h after
-    mq3.h, r1020_batch.h
+    15) intact, rules/mm/mm2_normalization_batch4.h after
+    rules/mm/mm2_normalization_batch3.h, r1020_batch.h
     above r1019_batch.h in
     regtest.cpp, the R1019
     LANDED record seated
@@ -31880,8 +31880,8 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     twice, FF 71/71 canonical
     byte-exact against the
     landed normalizer (114
-    sparse confirmed), fq1.h
-    after mq4.h, r1021_batch.h
+    sparse confirmed), rules/ff/normalization_batch1.h
+    after rules/mm/mm2_normalization_batch4.h, r1021_batch.h
     above r1020_batch.h, the
     R1020 LANDED record
     seated verbatim in the
@@ -31923,8 +31923,8 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     against the landed
     normalizer (the 60 h-r
     defs 60/60, the 54 s-z
-    sparse confirmed), fq2.h
-    after fq1.h, r1022_batch.h
+    sparse confirmed), rules/ff/normalization_batch2.h
+    after rules/ff/normalization_batch1.h, r1022_batch.h
     above r1021_batch.h, the
     R1021 LANDED record seated
     verbatim in the seed. THE
@@ -31965,8 +31965,8 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     canonical byte-exact
     against the landed
     normalizer (the 54 s-z
-    defs 54/54), fq3.h after
-    fq2.h, r1023_batch.h
+    defs 54/54), rules/ff/normalization_batch3.h after
+    rules/ff/normalization_batch2.h, r1023_batch.h
     above r1022_batch.h, the
     R1022 LANDED record seated
     verbatim in the seed. THE
@@ -32004,7 +32004,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     twice, WSG+MOP 23/23
     canonical byte-exact against
     the landed normalizer,
-    wt1.h after fq3.h,
+    wt1.h after rules/ff/normalization_batch3.h,
     r1024_batch.h above
     r1023_batch.h, the R1023
     LANDED record seated
@@ -32030,7 +32030,7 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     normalization batch (census 948), THE REGISTRY
     CLOSES. Landed verification at the fresh tarball:
     spec md5 c6a0cbf8f37ebc6d70908b160b0c89c6
-    unchanged, engine all-already 40 twice, dq1.h
+    unchanged, engine all-already 40 twice, rules/dragon/registry_normalization.h
     at regtest 729 after wt1.h at 728, r1025_batch.h
     at 4839 above r1024_batch.h at 4840, the R1024
     LANDED record seated in the seed, and the census

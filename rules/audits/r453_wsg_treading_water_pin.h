@@ -8,7 +8,7 @@
     // example), and the current rules (carried at the current speed modified
     // for encumbrance, the proficient hold-position effectively swimming with
     // endurance assessed, the nonproficient sinking immediately if he
-    // resists) (rules/wsgtread.h, prefix wtw); census 377 -> 378.
+    // resists) (rules/wsg/wsgtread.h, prefix wtw); census 377 -> 378.
     {
         using namespace rules;
         int bad = 0;

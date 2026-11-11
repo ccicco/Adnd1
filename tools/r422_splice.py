@@ -6,7 +6,7 @@
 # read of the printed p. 109
 # (file page 110) resolves the
 # five R390 flagged holes in
-# rules/uaappendr.h.
+# rules/ua/uaappendr.h.
 #
 # 1. The subdual supercedes
 #    sentence prints whole
@@ -119,7 +119,7 @@ def pair(path, old, new, label):
     applied.append(label)
 
 
-AR = 'rules/uaappendr.h'
+AR = 'rules/ua/uaappendr.h'
 RT = 'regtest.cpp'
 GP = 'tools/ua_gap_report.md'
 SD = ('doc/vibe/'
@@ -185,7 +185,7 @@ else:
     wr(SD, s)
     applied.append('seed: the R421 record')
 
-# ======== (b) rules/uaappendr.h ========
+# ======== (b) rules/ua/uaappendr.h ========
 
 # the top comment bullet
 pair(AR,
@@ -720,7 +720,7 @@ if (h.count('uanlPartFlaggedCount()'
 # the include line (the R390
 # lesson): the uaappendr include
 # comment must stay whole
-if s.count('#include "rules/uaappendr.h"'
+if s.count('#include "rules/ua/uaappendr.h"'
           '  // R390: the UA non-lethal'
           ' combat') != 1:
     die('the uaappendr include line')

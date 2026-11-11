@@ -11,7 +11,7 @@
     // subsurface cut rounded up, the strength ladder +1/+2/+3, the light 1-3
     // and strong 4-6 current modifiers, the 0-inch hold position, the
     // mercy-of-the-current drift at 1-3 inches, and the surface-only high
-    // speed halved at a 0 rate) (rules/wsgswim.h, prefix wsm); census 374 ->
+    // speed halved at a 0 rate) (rules/wsg/wsgswim.h, prefix wsm); census 374 ->
     // 375.
     {
         using namespace rules;

@@ -1,4 +1,4 @@
--- oa666: promoted from rules/oat63divination.h (the TABLE 63 DIVINATION RESULTS, printed capture p. 117 - the OA divination);
+-- oa666: promoted from rules/oa/oat63divination.h (the TABLE 63 DIVINATION RESULTS, printed capture p. 117 - the OA divination);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 666,

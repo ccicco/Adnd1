@@ -2,7 +2,7 @@
  "round": 671,
  "title": "WU JEN SECOND LEVEL SPELLS - the 30 second level wu jen spells with the school, component, casting time, saving throw, reversible and element codes",
  "prefix": "dig",
- "header_file": "rules/oawjl2spells.h",
+ "header_file": "rules/oa/oawjl2spells.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -534,7 +534,7 @@
   "open": 111
  },
  "include_comment": "the OA wu jen second level spells pins",
- "include_after": "#include \"rules/oawjl1spells.h\"  // R670: the OA wu jen first level spells pins",
+ "include_after": "#include \"rules/oa/oawjl1spells.h\"  // R670: the OA wu jen first level spells pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R670 LANDED 2026-10-20: commit d50aeaf87b9292c4d97ecf84b2527d45badfc29d",
@@ -544,7 +544,7 @@
   "  WU JEN FIRST LEVEL SPELLS - the 30",
   "  first level wu jen spell stat",
   "  blocks, capture pp. 155-165:",
-  "  rules/oawjl1spells.h, prefix dif",
+  "  rules/oa/oawjl1spells.h, prefix dif",
   "  (verified free at f0cdd26), ONE gap",
   "  flip (single-line child label), 18",
   "  consts, 24 inlines (grid tag",
@@ -603,6 +603,6 @@
   "  the 30 stat blocks), prefix dig",
   "  (verify free), audit \"R671 OA wu",
   "  jen second level spells audit\",",
-  "  include after rules/oawjl1spells.h"
+  "  include after rules/oa/oawjl1spells.h"
  ]
 }

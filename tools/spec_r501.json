@@ -1,11 +1,11 @@
 {
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
- "audit_comment": "The WSG movement/fall-chain fold, the third seam round after gap closure: no new book pages, the R499 pattern applied to the climbing-and-falling chapter. One falling character flows through seven landed headers: the climbing ratings (rules/wsgclimb.h R435: the 40 percent non-thief, the 80 percent mountaineer, the fall chance as 100 minus the rating), the Table 17 fall ladder (rules/wsgfall.h R437: the six bands 1, 3, 6, 10, 15, 20 dice, the 1000-foot free-fall rate, the 600-800 severe slope), the tumble rates (rules/wsgtumble.h R438: the 10-foot abrasion granularity, the 100-300 gentle and 300-500 moderate rates), the stop windows (rules/wsgstop.h R439: 50 feet cliff or severe, 75 moderate, 100 gentle), the jump floors (rules/wsgjump.h R448: the 2-foot broad and 1-foot high floors, the 20-foot run, the 1d3 heap at 5 feet), the slippery-surface cadence (rules/wsgslip.h R447: the five-segment run check, the half-rate caution) and the airborne fall chance (rules/wsgfallair.h R461: the zero base, the -200/-150 straps, the -50 proficiency, the -10 saddle and stirrups). The findings: the Table 17 dice are the triangular numbers (increments 2, 3, 4, 5) and the 51-or-more band caps at 20d6 ONE DIE SHORT of the pure sequence value 21; the prose linear 1d6-per-10-feet understates the printed table (3d6 at 20 feet, not 2d6); the cliff/severe stop window of 50 feet is exactly the top of the 41-50 damage band; the gentle stop window equals the gentle tumble rate minimum; the rate ladder is contiguous (100-300, 300-500, 600-800, 1000); and the horizontal slip deals no direct damage while the inclined tumble abrasion kills.",
+ "audit_comment": "The WSG movement/fall-chain fold, the third seam round after gap closure: no new book pages, the R499 pattern applied to the climbing-and-falling chapter. One falling character flows through seven landed headers: the climbing ratings (rules/wsg/wsgclimb.h R435: the 40 percent non-thief, the 80 percent mountaineer, the fall chance as 100 minus the rating), the Table 17 fall ladder (rules/wsg/wsgfall.h R437: the six bands 1, 3, 6, 10, 15, 20 dice, the 1000-foot free-fall rate, the 600-800 severe slope), the tumble rates (rules/wsg/wsgtumble.h R438: the 10-foot abrasion granularity, the 100-300 gentle and 300-500 moderate rates), the stop windows (rules/wsg/wsgstop.h R439: 50 feet cliff or severe, 75 moderate, 100 gentle), the jump floors (rules/wsg/wsgjump.h R448: the 2-foot broad and 1-foot high floors, the 20-foot run, the 1d3 heap at 5 feet), the slippery-surface cadence (rules/wsg/wsgslip.h R447: the five-segment run check, the half-rate caution) and the airborne fall chance (rules/wsg/wsgfallair.h R461: the zero base, the -200/-150 straps, the -50 proficiency, the -10 saddle and stirrups). The findings: the Table 17 dice are the triangular numbers (increments 2, 3, 4, 5) and the 51-or-more band caps at 20d6 ONE DIE SHORT of the pure sequence value 21; the prose linear 1d6-per-10-feet understates the printed table (3d6 at 20 feet, not 2d6); the cliff/severe stop window of 50 feet is exactly the top of the 41-50 damage band; the gentle stop window equals the gentle tumble rate minimum; the rate ladder is contiguous (100-300, 300-500, 600-800, 1000); and the horizontal slip deals no direct damage while the inclined tumble abrasion kills.",
  "audit_label": "R501 WSG movement fall fold audit",
  "banner": {
   "provenance": "No new book pages: every value is the landed original re-read from its header (wdfFallDice, wdfFreeFallRate, wdtAbrasionPerFt, wdtGentleRateMin, wsfAttemptCliffSevereFt, wcsNonThiefRating, wcsFallBase, wjpStandFloorFt, wslRunCheckSegs, wfaStrapFullBodyPct and kin) and re-pinned on the fold side so the boundary identities compile and ride the mutant battery. The findings: the triangular dice ladder with the cap breaking the sequence at the top; the prose-vs-table tension (the linear formula understates every band past the first); the stop windows pinned to the damage-band top and the tumble-rate minimum; the contiguous rate ladder; and the slip-to-tumble seam between the harmless horizontal fall and the killing inclined tumble.",
   "sentinel": "THE SETTLE: census 425 -> 426; the gap report stays 186 closed / 0 open (closed - no flips this round); the falling chain has no gaps.",
-  "title": "The WSG MOVEMENT/FALL-CHAIN FOLD, R501: the third seam round after gap closure. The climbing ratings (rules/wsgclimb.h), the Table 17 fall ladder (rules/wsgfall.h), the tumble rates (rules/wsgtumble.h), the stop windows (rules/wsgstop.h), the jump floors (rules/wsgjump.h), the slippery-surface cadence (rules/wsgslip.h) and the airborne fall chance (rules/wsgfallair.h) reconciled as one system: one falling character, one chain, every rate and threshold cross-checked between its headers."
+  "title": "The WSG MOVEMENT/FALL-CHAIN FOLD, R501: the third seam round after gap closure. The climbing ratings (rules/wsg/wsgclimb.h), the Table 17 fall ladder (rules/wsg/wsgfall.h), the tumble rates (rules/wsg/wsgtumble.h), the stop windows (rules/wsg/wsgstop.h), the jump floors (rules/wsg/wsgjump.h), the slippery-surface cadence (rules/wsg/wsgslip.h) and the airborne fall chance (rules/wsg/wsgfallair.h) reconciled as one system: one falling character, one chain, every rate and threshold cross-checked between its headers."
  },
  "bools": [
   {
@@ -318,7 +318,7 @@
  },
  "gap_flips": [],
  "gap_report": "tools/wsg_gap_report.md",
- "header_file": "rules/wsgmovefold.h",
+ "header_file": "rules/wsg/wsgmovefold.h",
  "header_sections": {
   "the climb side": [
    {
@@ -531,7 +531,7 @@
    }
   ]
  },
- "include_after": "#include \"rules/wsgswimfold.h\"  // R500: the WSG swimmer's motion-chain fold pins",
+ "include_after": "#include \"rules/wsg/wsgswimfold.h\"  // R500: the WSG swimmer's motion-chain fold pins",
  "include_comment": "the WSG movement/fall-chain fold pins",
  "inline_count": 49,
  "prefix": "wmv",
@@ -541,11 +541,11 @@
   "  FOLD - the second seam round, the R499 fold pattern",
   "  applied to the water chapter: one swimmer state flows",
   "  through five landed headers - the swimming rates",
-  "  (rules/wsgswim.h R450), the moving-water hazards",
-  "  (rules/wsgmwater.h R451), the dive leg (rules/wsgdive.h",
-  "  R452), the treading economy (rules/wsgtread.h R453) and",
-  "  the surfacing/breath rules (rules/wsgbreath.h R454).",
-  "  Pinned as rules/wsgswimfold.h (prefix wmf, 49 inlines:",
+  "  (rules/wsg/wsgswim.h R450), the moving-water hazards",
+  "  (rules/wsg/wsgmwater.h R451), the dive leg (rules/wsg/wsgdive.h",
+  "  R452), the treading economy (rules/wsg/wsgtread.h R453) and",
+  "  the surfacing/breath rules (rules/wsg/wsgbreath.h R454).",
+  "  Pinned as rules/wsg/wsgswimfold.h (prefix wmf, 49 inlines:",
   "  39 consts + 10 bools, no grids, NO gap flips - the",
   "  report stays 186/0). FINDINGS: the vertical rates equal",
   "  each other (dive base and surface base both 2 inches) and",

@@ -11,25 +11,25 @@
 # description the extract
 # garbled:
 #
-# 1. rules/uaprotscr.h (R377):
+# 1. rules/ua/uaprotscr.h (R377):
 #    the cold, electricity and
 #    two weapons scrolls pin;
 #    the ledger flips 11/4 ->
 #    15/0.
-# 2. rules/uaringprose.h (R378):
+# 2. rules/ua/uaringprose.h (R378):
 #    boccob, chameleon power,
 #    clumsiness, faerie, ram,
 #    shocking grasp,
 #    sustenance pin; 6/7 ->
 #    13/0.
-# 3. rules/uarodstave.h (R379):
+# 3. rules/ua/uarodstave.h (R379):
 #    flailing, passage,
 #    splendor, staff-spear,
 #    swarming insects,
 #    thunder and lightning,
 #    woodlands pin; 4/7 ->
 #    11/0.
-# 4. rules/uawandprose.h (R380):
+# 4. rules/ua/uawandprose.h (R380):
 #    the two flagged holes
 #    (defoliation's opening,
 #    metal command's verb)
@@ -1335,10 +1335,10 @@ if s.count('## Knowledge maintenance') != 1:
     die('the seed maintenance head')
 
 # ============ (b) the four headers ============
-SCR = 'rules/uaprotscr.h'
-RIN = 'rules/uaringprose.h'
-ROD = 'rules/uarodstave.h'
-WAN = 'rules/uawandprose.h'
+SCR = 'rules/ua/uaprotscr.h'
+RIN = 'rules/ua/uaringprose.h'
+ROD = 'rules/ua/uarodstave.h'
+WAN = 'rules/ua/uawandprose.h'
 LED = '// ---- the extract ledger ----'
 
 pair(SCR, B(
@@ -1602,7 +1602,7 @@ pair(GP, B(
     '        large-missile',
     '        exemption) - all',
     '        fifteen types pin',
-    '        (rules/uaprotscr.h).',
+    '        (rules/ua/uaprotscr.h).',
     '- [ ] **The new rings**'
  ' (pp. 92-94).').rstrip(NL),
     'gap: the new-scrolls item')
@@ -1644,7 +1644,7 @@ pair(GP, B(
     '        eight sleep, the',
     '        reattune week) - all',
     '        thirteen descriptions',
-    '        pin (rules/uaringprose.h).',
+    '        pin (rules/ua/uaringprose.h).',
     '- [ ] **The new rods and staves**'
  ' (pp.').rstrip(NL),
     'gap: the new-rings item')
@@ -1687,7 +1687,7 @@ pair(GP, B(
     '        the +1-to-+4 ladder,',
     '        the d4 even chances) -',
     '        all eleven descriptions',
-    '        pin (rules/uarodstave.h).',
+    '        pin (rules/ua/uarodstave.h).',
     '- [ ] **The new wands**'
  ' (pp. 96-97).').rstrip(NL),
     'gap: the new-rods item')
@@ -1728,7 +1728,7 @@ pair(GP, B(
     '        dice decay, the 4-6-8',
     '        fog cloud) - all twelve',
     '        types pin',
-    '        (rules/uawandprose.h).',
+    '        (rules/ua/uawandprose.h).',
     '- [ ] **The new miscellaneous magic').rstrip(NL),
     'gap: the new-wands item')
 

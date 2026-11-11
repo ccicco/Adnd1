@@ -1,7 +1,7 @@
     // ---- R423: the UA appendix S
     // pantheon prose pin audit ----
     // The five intro sections pin
-    // (rules/uapantheon.h, prefix
+    // (rules/ua/uapantheon.h, prefix
     // uapn) with the censuses
     // cross-checked LIVE against
     // the R405 seam: the five

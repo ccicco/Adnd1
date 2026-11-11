@@ -2,7 +2,7 @@
  "round": 761,
  "title": "OA SETTING - the Shou Lung empire: the largest and most powerful empire of Kara-Tur",
  "prefix": "dlw",
- "header_file": "rules/oa132shoulung.h",
+ "header_file": "rules/oa/oa132shoulung.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA SETTING - THE SHOU LUNG EMPIRE, printed capture p. 303 - the largest and most powerful empire of Kara-Tur",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 214 closed, 21 open - the Shou Lung box flips (census 683 -> 684); NEXT - R762: Tu Lung (capture p. 303), prefix dlx (verify free at the landing), audit \"R762 OA Tu Lung audit\", include after rules/oa132shoulung.h"
+  "sentinel": "the gap census after this round: 214 closed, 21 open - the Shou Lung box flips (census 683 -> 684); NEXT - R762: Tu Lung (capture p. 303), prefix dlx (verify free at the landing), audit \"R762 OA Tu Lung audit\", include after rules/oa/oa132shoulung.h"
  },
  "consts": [
   {
@@ -232,7 +232,7 @@
   "open": 21
  },
  "include_comment": "the OA Shou Lung pins",
- "include_after": "#include \"rules/oa131karaturintro.h\"  // R760: the OA Kara-Tur overview pins",
+ "include_after": "#include \"rules/oa/oa131karaturintro.h\"  // R760: the OA Kara-Tur overview pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R760 LANDED 2026-10-22: commit",
@@ -243,7 +243,7 @@
   "  OA SETTING, the Chapter 14 intro, the",
   "  Geography prose, and the Population prose",
   "  (capture pp. 301-303), header",
-  "  rules/oa131karaturintro.h, prefix dlv",
+  "  rules/oa/oa131karaturintro.h, prefix dlv",
   "  (verified free at afa8e95), one gap flip",
   "  (the Population box, single-line), gap",
   "  census now 213 closed / 22 open.",
@@ -281,6 +281,6 @@
   "  87b. NEXT - R761: Shou Lung (capture",
   "  p. 303), prefix dlw (verify free at the",
   "  landing), audit \"R761 OA Shou Lung audit\",",
-  "  include after rules/oa131karaturintro.h."
+  "  include after rules/oa/oa131karaturintro.h."
  ]
 }

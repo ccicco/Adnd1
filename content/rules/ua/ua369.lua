@@ -1,11 +1,11 @@
--- ua369: promoted from rules/uacantacq.h (the The UA ACQUISITION OF CANTRIPS,);
+-- ua369: promoted from rules/ua/uacantacq.h (the The UA ACQUISITION OF CANTRIPS,);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 369,
   "prefix" = "ua369",
   "banner" = {
       "title" = "The UA ACQUISITION OF CANTRIPS,",
-      "provenance" = "MAGIC-USERS (p. 79) pins, R369: the known-count rules - the useful category one known per point of intelligence by free choice, the five random categories (reversed 2-8, legerdemain 2-5, person-affecting 2-8, personal 2-8, haunting-sound 2-5), the three developed cantrips cap with the DM review, and the read-as-spell / recorded-as-spell notes.  Pin-era pattern (R322): pinned data only - no engine site exists. Cross-checks the landed R365 seam (rules/uailacquisition.h - the illusionist bands deliberately differ, the documented divergence) and the R366 spell-book seam (cantrips count as 1st-level spells).  JUDGMENTs (the decode method): - the useful-per-intelligence sentence garbles in the extract; the read - one known per point of intelligence, free choice - is decoded from the surviving fragments and matches the gap report standing reading; flagged pending the PDF. - the five random bands and the developed-cap sentence print clean. - the 0-level per-day tier (p. 45) rides its own item (the cantrips category); no pin here.",
+      "provenance" = "MAGIC-USERS (p. 79) pins, R369: the known-count rules - the useful category one known per point of intelligence by free choice, the five random categories (reversed 2-8, legerdemain 2-5, person-affecting 2-8, personal 2-8, haunting-sound 2-5), the three developed cantrips cap with the DM review, and the read-as-spell / recorded-as-spell notes.  Pin-era pattern (R322): pinned data only - no engine site exists. Cross-checks the landed R365 seam (rules/ua/uailacquisition.h - the illusionist bands deliberately differ, the documented divergence) and the R366 spell-book seam (cantrips count as 1st-level spells).  JUDGMENTs (the decode method): - the useful-per-intelligence sentence garbles in the extract; the read - one known per point of intelligence, free choice - is decoded from the surviving fragments and matches the gap report standing reading; flagged pending the PDF. - the five random bands and the developed-cap sentence print clean. - the 0-level per-day tier (p. 45) rides its own item (the cantrips category); no pin here.",
     },
   "consts" = { {
       "name" = "uacaqUsefulPerIntelligencePoint",

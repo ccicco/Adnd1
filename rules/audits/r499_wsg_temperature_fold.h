@@ -3,11 +3,11 @@
     // no new book pages. Every pinned value is a landed original re-read from
     // its header and pinned again on the fold side, so each identity compiles
     // and rides the mutant battery. The chain: one wilderness temperature
-    // feeds the dress Table 3 column dispatch (rules/wsgdress.h
+    // feeds the dress Table 3 column dispatch (rules/wsg/wsgdress.h
     // wsdColForTemp, boundaries below 0, 0-30, 31-75, 76 plus), the Table 9
-    // damage band dispatch (rules/wsgheat.h wshHeatBandFor, 25 bands,
+    // damage band dispatch (rules/wsg/wsgheat.h wshHeatBandFor, 25 bands,
     // no-damage band 16 at 31-84, frostbite threshold 0), the weather letter
-    // codes (rules/wsgweather.h wwsTempCodeHi, D tops at 0, H at 30) and the
+    // codes (rules/wsg/wsgweather.h wwsTempCodeHi, D tops at 0, H at 30) and the
     // R498 survival shifts (plus 20 at 30 or lower, minus 20 at 80 or
     // higher). Three boundary alignments are true (31 with 31, 30 with 30, 0
     // with 0); one is a deliberate non-alignment (the hot column opens at 76,

@@ -10,7 +10,7 @@
     // precipitation, wind over 20 mph, hampered visibility), the
     // both-ends-anchored rule with the near-side protrusion requirement, and
     // the 30-feet-per-round hand-over-hand crossing rate with the +2
-    // Dexterity check for multiple simultaneous hangers (rules/wsgchasm.h,
+    // Dexterity check for multiple simultaneous hangers (rules/wsg/wsgchasm.h,
     // prefix wcx); census 369 -> 370.
     {
         using namespace rules;

@@ -1,11 +1,11 @@
--- oa719: promoted from rules/oa90hsingsing.h (the OA MONSTERS - THE HSING-SING, printed capture p. 269 - the war-season round);
+-- oa719: promoted from rules/oa/oa90hsingsing.h (the OA MONSTERS - THE HSING-SING, printed capture p. 269 - the war-season round);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 719,
   "prefix" = "oa719",
   "banner" = {
       "title" = "OA MONSTERS - THE HSING-SING, printed capture p. 269 - the war-season round",
-      "provenance" = "census 641 -> 642.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 172 closed, 63 open - the hsing-sing box flips (census 641 -> 642); NEXT - R720: the Hu Hsien, Lesser Spirit (capture pp. 269-272), prefix dkh (verify free at the landing), audit \"R720 OA monsters Hu Hsien audit\", include after rules/oa90hsingsing.h",
+      "provenance" = "census 641 -> 642.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 172 closed, 63 open - the hsing-sing box flips (census 641 -> 642); NEXT - R720: the Hu Hsien, Lesser Spirit (capture pp. 269-272), prefix dkh (verify free at the landing), audit \"R720 OA monsters Hu Hsien audit\", include after rules/oa/oa90hsingsing.h",
     },
   "consts" = { {
       "name" = "dkgAppearMin",

@@ -1,4 +1,4 @@
--- ua349: promoted from rules/uaclericspells7.h (the The UA NEW CLERIC SPELLS (p. 42) pins, R349: the 7th-level);
+-- ua349: promoted from rules/ua/uaclericspells7.h (the The UA NEW CLERIC SPELLS (p. 42) pins, R349: the 7th-level);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 349,

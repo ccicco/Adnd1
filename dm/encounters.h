@@ -18,8 +18,8 @@
 #pragma once
 
 #include "../monsters/MonsterRegistry.h"
-#include "../rules/classes.h"
-#include "../rules/dice.h"
+#include "../rules/engine/classes.h"
+#include "../rules/engine/dice.h"
 #include "treasure.h"   // R74: Hoard (encounters::rollEncounter)
 
 #include <string>

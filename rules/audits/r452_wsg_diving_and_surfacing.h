@@ -5,7 +5,7 @@
     // dive column carries), the leap-height extra-depth ladder (at least
     // 5/15/25/35/40 feet -> 1/2/3/4/5 inches on the first round), the 5-inch
     // cap beyond 40 feet regardless of height, and the falling-damage risk on
-    // a dive from 40 feet or more (rules/wsgdive.h, prefix wdv); census 376
+    // a dive from 40 feet or more (rules/wsg/wsgdive.h, prefix wdv); census 376
     // -> 377.
     {
         using namespace rules;

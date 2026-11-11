@@ -2,7 +2,7 @@
  "round": 697,
  "title": "OA TABLE 71 - the yearly events: the nineteen events of the percentile die with their contiguous ranges 1-100",
  "prefix": "djk",
- "header_file": "rules/oa71yearly.h",
+ "header_file": "rules/oa/oa71yearly.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA TABLE 71, printed capture p. 237 - the yearly events round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift. THE GRID: the nineteen yearly events across the percentile die, the ranges contiguous and complete - Ambassador 1-10; Assassination of a Lord 11-15; Birth 16-30; Comet the lone 31; Death of a Lord 32-40; Earthquake Major 41-43; Famine 44-47; Fire Major 48-52; Flood 53-57; Incursion Major the lone 58; Marriage 59-68; New Religion the lone 69; Plague 70-74; Political Plot 75-78; Rebellion 79-85; Tsunami the lone 86; Visitation the lone 87; Volcano the lone 88; War the 89-100 - the widest range, war the likeliest of the year. THE USE: the yearly event determined FIRST, one only in a given year, remaining in effect for the entire year and often determining the type of the monthly events; the occurrence month the 1d12 roll; the scope the campaign area alone, or one event per land when the player characters travel or spread. The grid codifies per the R431 calculus",
-  "sentinel": "the gap census after this round: 150 closed, 85 open - the Table 71 box flips (census 619 -> 620); NEXT - R698: the Yearly Events prose and explanations (capture pp. 237-243), prefix djl (verify free at the landing), audit \"R698 OA yearly events prose audit\", include after rules/oa71yearly.h"
+  "sentinel": "the gap census after this round: 150 closed, 85 open - the Table 71 box flips (census 619 -> 620); NEXT - R698: the Yearly Events prose and explanations (capture pp. 237-243), prefix djl (verify free at the landing), audit \"R698 OA yearly events prose audit\", include after rules/oa/oa71yearly.h"
  },
  "consts": [
   {
@@ -215,7 +215,7 @@
   "open": 85
  },
  "include_comment": "the OA Table 71 yearly events pins",
- "include_after": "#include \"rules/oacalendar.h\"  // R696: the OA calendar pins",
+ "include_after": "#include \"rules/oa/oacalendar.h\"  // R696: the OA calendar pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R696 LANDED 2026-10-20: commit",
@@ -227,7 +227,7 @@
   "  the twelve months of the Shou Lung",
   "  calendar with their day counts and",
   "  festival counts, capture pp. 236-237",
-  "  print: rules/oacalendar.h, prefix",
+  "  print: rules/oa/oacalendar.h, prefix",
   "  djj (verified free at 61d0647), ONE",
   "  gap flip, gap census 148/87 ->",
   "  149/86. 2 consts + 7 bools + the",
@@ -269,6 +269,6 @@
   "  events grid (capture p. 237), prefix",
   "  djk (verified free at 918b6cb),",
   "  audit \"R697 OA yearly events audit\",",
-  "  include after rules/oacalendar.h"
+  "  include after rules/oa/oacalendar.h"
  ]
 }

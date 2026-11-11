@@ -2,7 +2,7 @@
  "round": 634,
  "title": "HONOR - the chapter opener, the starting honor doctrine, Table 41",
  "prefix": "dgu",
- "header_file": "rules/oahonor.h",
+ "header_file": "rules/oa/oahonor.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "THE HONOR OPENER AND TABLE 41, printed capture pp. 69-70 - the OA honor round",
   "provenance": "pinned from the 2018 print capture alone for this range (the settling authority): the first Mistral-OCR capture session is unavailable above p. 33, so the cross-capture agreement check is impossible. No contested cells detected within the single source: the T41 rows are five fixed base honors plus the single die-roll row (the yakuza 1d20 + 20 read pins as the 21-40 bounds; the class row order pins as the 0-6 code: shukenja, sohei, kensai, bushi, hengeyokai, wu jen, yakuza). The T41 base-honor column pins as the lo and hi bounds. OCR normalization: none required for this range beyond the yakuza die read - the honor opener prose carries the printed em dashes. The Altering Family Honor and Effects of Honor prose and Table 42 (capture pp. 70-72) are deliberately left for the next rounds",
-  "sentinel": "the gap census after this round: 76 closed, 159 open - the Gaining and Losing Honor prose and Table 41 boxes flip (census 556 -> 557); NEXT - R635: the Altering Family Honor prose and the Effects of Honor prose with Table 42, capture pp. 70-72, the family ledger and the reaction doctrine, prefix dgv (verify free), audit \"R635 OA effects of honor audit\", include after rules/oahonor.h"
+  "sentinel": "the gap census after this round: 76 closed, 159 open - the Gaining and Losing Honor prose and Table 41 boxes flip (census 556 -> 557); NEXT - R635: the Altering Family Honor prose and the Effects of Honor prose with Table 42, capture pp. 70-72, the family ledger and the reaction doctrine, prefix dgv (verify free), audit \"R635 OA effects of honor audit\", include after rules/oa/oahonor.h"
  },
  "consts": [
   {
@@ -384,7 +384,7 @@
   "open": 159
  },
  "include_comment": "the OA honor pins",
- "include_after": "#include \"rules/oabr.h\"  // R633: the OA birthrights pins",
+ "include_after": "#include \"rules/oa/oabr.h\"  // R633: the OA birthrights pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R633 LANDED 2026-10-19: commit",
@@ -394,7 +394,7 @@
   "  (census 555 -> 556, pushed",
   "  bb00f5a..91502ba), BIRTHRIGHTS and",
   "  TABLE 40, capture pp. 68-69:",
-  "  rules/oabr.h (oabirth.h is taken by",
+  "  rules/oa/oabr.h (oabirth.h is taken by",
   "  R629), prefix dgt (verified free), 30",
   "  inlines (6 consts, 20 bools, 4 table",
   "  columns): the clan-virtue doctrine",
@@ -450,6 +450,6 @@
   "  prose and Table 41 (Initial Honor),",
   "  capture pp. 69-70, prefix dgu",
   "  (verify free), audit \"R634 OA honor",
-  "  audit\", include after rules/oabr.h."
+  "  audit\", include after rules/oa/oabr.h."
  ]
 }

@@ -2,7 +2,7 @@
  "round": 630,
  "title": "THE FAMILY STRUCTURE prose - the additional family structures: the marriages, the adoptions, the polygamy, the interrelated characters, the deaths ladder",
  "prefix": "dgq",
- "header_file": "rules/oafamstr.h",
+ "header_file": "rules/oa/oafamstr.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "FAMILY STRUCTURE AND ADDITIONAL FAMILY STRUCTURES, printed capture pp. 62-64 - the OA family structures round",
   "provenance": "pinned from the 2018 print capture alone for this range (the settling authority per the R629 ruling): the first Mistral-OCR capture session is no longer available above p. 33, so the cross-capture agreement check is impossible for pp. 62-64. No tables this round, so no contested cells. Cites are the capture pp. 62-64 range (the per-fact printed pages cannot be isolated without the first capture). OCR normalization: splinterhood reads as spinsterhood; the deaths bad-feelings sentence appears twice in the 2018 print (the second occurrence stands as printed); the Master Family Chart prose (capture pp. 64-65) is deliberately left for the next round",
-  "sentinel": "the gap census after this round: 68 closed, 167 open - the Family Structure + Additional Family Structures box flips (census 552 -> 553); NEXT - R631: the Master Family Chart and Ancestry prose, capture pp. 64-65, Table 39 (Ancestry), prefix dgr (verify free), audit \"R631 OA ancestry audit\", include after rules/oafamstr.h"
+  "sentinel": "the gap census after this round: 68 closed, 167 open - the Family Structure + Additional Family Structures box flips (census 552 -> 553); NEXT - R631: the Master Family Chart and Ancestry prose, capture pp. 64-65, Table 39 (Ancestry), prefix dgr (verify free), audit \"R631 OA ancestry audit\", include after rules/oa/oafamstr.h"
  },
  "consts": [
   {
@@ -552,7 +552,7 @@
   "open": 167
  },
  "include_comment": "the OA family structures pins",
- "include_after": "#include \"rules/oabirth.h\"  // R629: the OA families pins",
+ "include_after": "#include \"rules/oa/oabirth.h\"  // R629: the OA families pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R629 LANDED 2026-10-19: commit",
@@ -563,7 +563,7 @@
   "  1b788fe..681a99f), THE CHAPTER 3",
   "  opener - the family doctrine, the",
   "  birth rank and the caste doctrine,",
-  "  capture pp. 60-62: rules/oabirth.h,",
+  "  capture pp. 60-62: rules/oa/oabirth.h,",
   "  prefix dgp (verified free), 35",
   "  inlines (10 consts, 12 bools, 10",
   "  table columns): the family doctrine",
@@ -626,6 +626,6 @@
   "  position doctrine, prefix dgq (verify",
   "  free), audit \"R630 OA family",
   "  structures audit\", include after",
-  "  rules/oabirth.h."
+  "  rules/oa/oabirth.h."
  ]
 }

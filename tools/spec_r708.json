@@ -2,7 +2,7 @@
  "round": 708,
  "title": "OA MONSTERS - the Buso: the two-column stat block, the tigbanua fear aura, and the tagamaling disease",
  "prefix": "djv",
- "header_file": "rules/oa79buso.h",
+ "header_file": "rules/oa/oa79buso.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA MONSTERS - THE BUSO, printed capture pp. 256-257 - the two-type ghoul round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 161 closed, 74 open - the Buso box flips (census 630 -> 631); NEXT - R709: the Carp, Giant (capture p. 257), prefix djw (verify free at the landing), audit \"R709 OA monsters Giant Carp audit\", include after rules/oa79buso.h"
+  "sentinel": "the gap census after this round: 161 closed, 74 open - the Buso box flips (census 630 -> 631); NEXT - R709: the Carp, Giant (capture p. 257), prefix djw (verify free at the landing), audit \"R709 OA monsters Giant Carp audit\", include after rules/oa/oa79buso.h"
  },
  "consts": [
   {
@@ -541,7 +541,7 @@
   "open": 74
  },
  "include_comment": "the OA Buso pins",
- "include_after": "#include \"rules/oa78bisan.h\"  // R707: the OA Bisan pins",
+ "include_after": "#include \"rules/oa/oa78bisan.h\"  // R707: the OA Bisan pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R707 LANDED 2026-10-21: commit",
@@ -549,7 +549,7 @@
   "- R707 LANDED 2026-10-21: commit 2a2f67aa2c0b9d5bf48e21de5c697cee00870e82",
   "  (census 629 -> 630, pushed 393b41b..2a2f67a), OA MONSTERS - the",
   "  Bisan, Lesser Spirit, capture pp. 255-256 print:",
-  "  rules/oa78bisan.h, prefix dju (verified free at 393b41b), ONE",
+  "  rules/oa/oa78bisan.h, prefix dju (verified free at 393b41b), ONE",
   "  gap flip, gap census 159/76 -> 160/75. 17 consts + 25 bools",
   "  (42 inlines): the stat block (the very rare, the 1, the AC 0,",
   "  the move 24, the HD 10, the 100% lair, the Q T, the 1 attack",
@@ -572,6 +572,6 @@
   "  NEXT - R708: the Buso (capture pp. 256-257), prefix djv",
   "  (verified free at 2a2f67a - only lowercase djvu prose, no",
   "  pins), audit \"R708 OA monsters Buso audit\", include after",
-  "  rules/oa78bisan.h."
+  "  rules/oa/oa78bisan.h."
  ]
 }

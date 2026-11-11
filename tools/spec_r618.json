@@ -2,7 +2,7 @@
  "round": 618,
  "title": "THE ORIENTAL RACES - korobokuru, hengeyokai and spirit folk: the korobokuru save ladders and score modifications, the hengeyokai three-form doctrine with Table 11 Hengeyokai Creatures, and the bamboo, river and sea spirit folk powers",
  "prefix": "dge",
- "header_file": "rules/oaraces.h",
+ "header_file": "rules/oa/oaraces.h",
  "regtest": "regtest.cpp",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "gap_report": "tools/oa_gap_report.md",
@@ -15,7 +15,7 @@
   "  pushed 5aee136..0659a83), CLASS",
   "  AND RACE COMBINATIONS, capture",
   "  pp. 16-23 - the Chapter 2",
-  "  opener: rules/oaclasscombos.h,",
+  "  opener: rules/oa/oaclasscombos.h,",
   "  prefix dgd (verified free), 65",
   "  inlines (26 consts, 11 bools, 28",
   "  table columns): the combos",
@@ -46,7 +46,7 @@
  "audit_label": "R618 OA races audit",
  "audit_comment": "OA round five (capture pp. 17-22): the three nonhuman races - the korobokuru save ladders and ability modifications, the hengeyokai form doctrine with the Table 11 twelve-creature grid, and the three spirit folk powers with their life-force ties.",
  "census_before": 540,
- "include_after": "#include \"rules/oaclasscombos.h\"  // R617: the OA class combos pins",
+ "include_after": "#include \"rules/oa/oaclasscombos.h\"  // R617: the OA class combos pins",
  "include_comment": "the OA races pins",
  "caller_files": [],
  "switches": [],
@@ -1103,6 +1103,6 @@
  "banner": {
   "title": "THE ORIENTAL RACES, printed capture pp. 17-22 - the OA races round",
   "provenance": "verified against capture pp. 17-22 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages). OCR NORMALIZATIONS: the capture prints infraction for infravision - the physical copy confirms the clean infravision (a pure OCR garble); the korobokuru save ladder - the physical-copy capture (the 2018 print) reads 4 1/2 CLEAN, the 41h was a transcription artifact of the first capture; pinned as the divisor 2, the flag RESOLVED; the percent signs garble as 7596, 5094 and -2096 - read clean as 75, 50 and -20; the hare prints as here. BOOK QUIRK: the prose cites a badger hengeyokai though badger is not among the twelve Table 11 forms (the evil forms are fox, raccoon dog and rat) - pinned as printed, flagged. The Table 11 modifications pin as four columns: the plus, its ability code (ST 0, DE 1, CO 2, IN 3, WI 4, CH 5), the minus and its code.",
-  "sentinel": "the gap census after this round: 27 closed, 208 open - the three races and Table 11 flip; the races run of Chapter 2 is done, the ten classes begin next (census 540 -> 541); NEXT - R619: the Oriental Barbarian and Bushi - the class doctrines, Tables 14, 15, 16 and 17, prefix dgf (verify free), audit \"R619 OA barbarian bushi audit\", include after rules/oaraces.h"
+  "sentinel": "the gap census after this round: 27 closed, 208 open - the three races and Table 11 flip; the races run of Chapter 2 is done, the ten classes begin next (census 540 -> 541); NEXT - R619: the Oriental Barbarian and Bushi - the class doctrines, Tables 14, 15, 16 and 17, prefix dgf (verify free), audit \"R619 OA barbarian bushi audit\", include after rules/oa/oaraces.h"
  }
 }

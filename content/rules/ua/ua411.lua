@@ -1,4 +1,4 @@
--- ua: promoted from rules/uamoves.h (the The UA APPENDIX S MOVE values);
+-- ua: promoted from rules/ua/uamoves.h (the The UA APPENDIX S MOVE values);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 411,

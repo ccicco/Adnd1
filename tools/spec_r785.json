@@ -8,7 +8,7 @@
   "census_before": 707,
   "title": "the UA spell table ledger",
   "audit_label": "R785 UA spell table ledger audit",
-  "audit_comment": "THE UA SPELL TABLE LEDGER - the R342 PDF-ledger holes close (Curtiss's \"stay in covered books\" call). The archive.org full-text OCR reads the continued table: the 6th-level column repairs (17 names), the drifted cells re-seat, Clone and Otiluke's Telekinetic Sphere newly read, and the fragment holes resolve against the UA-new description rosters and the R80 registry. Glassteel and Power Word Kill stay open holes. THIRTEEN consts + TWENTY bools + the 4 x 3 ledger grid; the string rosters ride 13 file patches (7 on rules/uaspelltables2.h, 6 on regtest.cpp including the R361/R362 seam reversals).",
+  "audit_comment": "THE UA SPELL TABLE LEDGER - the R342 PDF-ledger holes close (Curtiss's \"stay in covered books\" call). The archive.org full-text OCR reads the continued table: the 6th-level column repairs (17 names), the drifted cells re-seat, Clone and Otiluke's Telekinetic Sphere newly read, and the fragment holes resolve against the UA-new description rosters and the R80 registry. Glassteel and Power Word Kill stay open holes. THIRTEEN consts + TWENTY bools + the 4 x 3 ledger grid; the string rosters ride 13 file patches (7 on rules/ua/uaspelltables2.h, 6 on regtest.cpp including the R361/R362 seam reversals).",
   "include_comment": "the UA spell table ledger",
   "include_after": "#include \"rules/worshipsites.h\"  // R784: the worship sites",
   "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
@@ -50,7 +50,7 @@
     "  the cleric-gender grid (12 males-only, the",
     "  lone Berronar females-only, 10 either with",
     "  the Luthic exception). THE STRINGS: the",
-    "  printed site phrases ride rules/uascharts.h",
+    "  printed site phrases ride rules/ua/uascharts.h",
     "  (the uscWorshipSite accessor) with a live",
     "  regtest strings block walking all 23 rows",
     "  (the R782 site-block precedent, printf",
@@ -117,27 +117,27 @@
     {
       "name": "sldIl3rdNewCount",
       "value": 4,
-      "comment": "The UA-new illusionist 3rd-level census (rules/uailspells3.h): Delude, Phantom Steed, Phantom Wind, Wraithform"
+      "comment": "The UA-new illusionist 3rd-level census (rules/ua/uailspells3.h): Delude, Phantom Steed, Phantom Wind, Wraithform"
     },
     {
       "name": "sldIl4thNewCount",
       "value": 4,
-      "comment": "The UA-new illusionist 4th-level census (rules/uailspells4.h): Dispel Magic, Rainbow Pattern, Solid Fog, Vacancy"
+      "comment": "The UA-new illusionist 4th-level census (rules/ua/uailspells4.h): Dispel Magic, Rainbow Pattern, Solid Fog, Vacancy"
     },
     {
       "name": "sldIl5thNewCount",
       "value": 4,
-      "comment": "The UA-new illusionist 5th-level census (rules/uailspells5.h): Advanced Illusion, Dream, Magic Mirror, Tempus Fugit"
+      "comment": "The UA-new illusionist 5th-level census (rules/ua/uailspells5.h): Advanced Illusion, Dream, Magic Mirror, Tempus Fugit"
     },
     {
       "name": "sldIl6thNewCount",
       "value": 4,
-      "comment": "The UA-new illusionist 6th-level census (rules/uailspells6.h): Death Fog, Mislead, Phantasmagoria, Mirage Arcane"
+      "comment": "The UA-new illusionist 6th-level census (rules/ua/uailspells6.h): Death Fog, Mislead, Phantasmagoria, Mirage Arcane"
     },
     {
       "name": "sldIl7thNewCount",
       "value": 2,
-      "comment": "The UA-new illusionist 7th-level census (rules/uailspells7.h): Shadow Walk, Weird"
+      "comment": "The UA-new illusionist 7th-level census (rules/ua/uailspells7.h): Shadow Walk, Weird"
     },
     {
       "name": "sldIlNewTotalCount",
@@ -478,48 +478,48 @@
     "open": 0
   },
   "caller_files": [
-    "rules/uaspelltables2.h"
+    "rules/ua/uaspelltables2.h"
   ],
   "inline_count": 36,
   "file_patches": [
     {
-      "file": "rules/uaspelltables2.h",
+      "file": "rules/ua/uaspelltables2.h",
       "note": "the 7th roster repair (16 names)",
       "from": "// ---- the MU continued table (7th-9th; the 6th column is lost) ----\n// The readable 7th-level fragments (7 names; the numerals of\n// Monster Summoning and Drawmij's Instant [Summons] are lost).\ninline int uas2Mu7thCount()\n    { return 7; }\n\ninline const char* uas2Mu7thName(int i) {\n    static const char* const k[7] = {\n        \"Drawmij's Instant\", \"Invisible Stalker\",\n        \"Legend Lore\", \"Lower Water\",\n        \"Monster Summoning\",\n        \"Otiluke's Freezing Sphere\", \"Part Water\",\n    };\n    if (i < 0) i = 0;\n    if (i > 6) i = 6;\n    return k[i];\n}\n\n",
       "to": "// ---- the MU continued table (6th-9th; the R785\n// ledger repair rides rules/spelltableledger.h) ----\n// The repaired 7th-level roster (16 names: the nine\n// readable print cells - including the numeral\n// restorations Monster Summoning V and Drawmij's\n// Instant Summons and the Reverse Gravity tail - the\n// six UA-new description-roster names, and the\n// registry row Limited Wish).\ninline int uas2Mu7thCount()\n    { return 16; }\n\ninline const char* uas2Mu7thName(int i) {\n    static const char* const k[16] = {\n        \"Banishment\", \"Charm Plants\",\n        \"Delayed Blast Fireball\",\n        \"Drawmij's Instant Summons\", \"Forcecage\",\n        \"Legend Lore\", \"Limited Wish\",\n        \"Monster Summoning V\",\n        \"Mordenkainen's Magnificent Mansion\",\n        \"Reverse Gravity\", \"Sequester\",\n        \"Teleport Without Error\", \"Torment\",\n        \"Truename\", \"Vanish\", \"Volley\",\n    };\n    if (i < 0) i = 0;\n    if (i > 15) i = 15;\n    return k[i];\n}\n\n"
     },
     {
-      "file": "rules/uaspelltables2.h",
+      "file": "rules/ua/uaspelltables2.h",
       "note": "the 8th roster repair (10 names)",
       "from": "// The readable 8th-level names (11).\ninline int uas2Mu8thCount()\n    { return 11; }\n\ninline const char* uas2Mu8thName(int i) {\n    static const char* const k[11] = {\n        \"Demand\", \"Glassteel\", \"Mass Invisibility\",\n        \"Mind Blank\", \"Monster Summoning VI\",\n        \"Power Word Blind\", \"Power Word Kill\",\n        \"Serten's Spell Immunity\", \"Sink\",\n        \"Tenser's Transformation\",\n        \"Transmute Water To Dust\",\n    };\n    if (i < 0) i = 0;\n    if (i > 10) i = 10;\n    return k[i];\n}\n\n",
       "to": "// The repaired 8th-level roster (10 names: the nine\n// readable print cells - including the newly-read\n// Clone and Otiluke's Telekinetic Sphere - and the\n// UA-new Binding; Glassteel and Power Word Kill stay\n// OPEN holes; Tenser's Transformation and Transmute\n// Water To Dust re-seat to the 6th column).\ninline int uas2Mu8thCount()\n    { return 10; }\n\ninline const char* uas2Mu8thName(int i) {\n    static const char* const k[10] = {\n        \"Binding\", \"Clone\", \"Demand\",\n        \"Mass Invisibility\", \"Mind Blank\",\n        \"Monster Summoning VI\",\n        \"Otiluke's Telekinetic Sphere\",\n        \"Power Word Blind\", \"Serten's Spell Immunity\",\n        \"Sink\",\n    };\n    if (i < 0) i = 0;\n    if (i > 9) i = 9;\n    return k[i];\n}\n\n"
     },
     {
-      "file": "rules/uaspelltables2.h",
+      "file": "rules/ua/uaspelltables2.h",
       "note": "the 9th roster repair (8 names)",
       "from": "// The readable 9th-level names (2; the header's \"th Level\" cell\n// prints the 9 lost).\ninline int uas2Mu9thCount()\n    { return 2; }\n\ninline const char* uas2Mu9thName(int i) {\n    static const char* const k[2] = {\n        \"Prismatic Sphere\", \"Shape Change\",\n    };\n    if (i < 0) i = 0;\n    if (i > 1) i = 1;\n    return k[i];\n}\n\n",
       "to": "// The repaired 9th-level roster (8 names: the five\n// readable print cells - Energy Drain, Gate, Prismatic\n// Sphere, Shape Change, Wish - and the UA-new\n// Crystalbrittle, Mordenkainen's Disjunction, and\n// Succor, its level seam-proven by the section\n// heading; the \"th Level\" print stands).\ninline int uas2Mu9thCount()\n    { return 8; }\n\ninline const char* uas2Mu9thName(int i) {\n    static const char* const k[8] = {\n        \"Crystalbrittle\", \"Energy Drain\", \"Gate\",\n        \"Mordenkainen's Disjunction\",\n        \"Prismatic Sphere\", \"Shape Change\",\n        \"Succor\", \"Wish\",\n    };\n    if (i < 0) i = 0;\n    if (i > 7) i = 7;\n    return k[i];\n}\n\n"
     },
     {
-      "file": "rules/uaspelltables2.h",
+      "file": "rules/ua/uaspelltables2.h",
       "note": "the 6th column repair (the 17-name accessor; the loss flag flips)",
       "from": "// The 6th-level column is wholly lost (the registry rows Death\n// Spell and Disintegrate prove it existed).\ninline bool uas2MuSixthLevelColumnLost()\n    { return true; }\n\n",
       "to": "// R785: the 6th-level column - the archive.org\n// full-text OCR reads the continued table, and the\n// cells the R342 read had drifted into the 7th and\n// 8th blocks re-seat here. The repaired roster (17\n// names: the twelve readable cells, the three UA-new\n// description-roster names - Chain Lightning,\n// Ensnarement, Mordenkainen's Lucubration - and the\n// two registry rows Death Spell and Disintegrate).\ninline int uas2Mu6thCount()\n    { return 17; }\n\ninline const char* uas2Mu6thName(int i) {\n    static const char* const k[17] = {\n        \"Chain Lightning\", \"Contingency\",\n        \"Control Weather\", \"Death Spell\",\n        \"Disintegrate\", \"Ensnarement\", \"Eyebite\",\n        \"Geas\", \"Invisible Stalker\", \"Lower Water\",\n        \"Mordenkainen's Lucubration\",\n        \"Otiluke's Freezing Sphere\", \"Part Water\",\n        \"Project Image\", \"Stone To Flesh\",\n        \"Tenser's Transformation\",\n        \"Transmute Water To Dust\",\n    };\n    if (i < 0) i = 0;\n    if (i > 16) i = 16;\n    return k[i];\n}\n\n// R785: the sixth column reads (the loss flag flips).\ninline bool uas2MuSixthLevelColumnLost()\n    { return false; }\n"
     },
     {
-      "file": "rules/uaspelltables2.h",
+      "file": "rules/ua/uaspelltables2.h",
       "note": "the header OCR-holes resolution (the MU side)",
       "from": "// OCR holes (the item closes; these stay on the PDF ledger): the 6th-\n// level column is wholly lost (the printed table runs 1st-5th, the\n// continued table 7th-9th; the registry rows Death Spell and\n// Disintegrate prove it existed); the fragment cells read as holes -\n// \"pid\" (1st), \"A >\", \"Flaming\" and \"Protection From\" (2nd), \"Detect\",\n// \"Item\" and \"Material\" (3rd), \"Dispel\" (4th), \"Dolor\" (5th), \"i\n// last\", \"Truename\", \"ish\" and \"888\" (7th-9th), \"To Flesh\" and the\n// tail of \"Otiluke's\" (8th); the continued header prints \"th Level\"\n// (the 9 lost); the registry rows absent from the print (Shield,\n// Sleep, Web, Whispering Wind, Monster Summoning II, Limited Wish,\n// Alter Reality, Wish, Gate) read as lost rows - noted, not pinned;\n",
       "to": "// R785 RESOLUTIONS (the PDF ledger closes; the ledger\n// census pins in rules/spelltableledger.h): the\n// archive.org full-text OCR reads the continued table;\n// the 6th-level column REPAIRS (17 names, uas2Mu6thName)\n// and the drifted cells re-seat - Tenser's\n// Transformation and Transmute Water To Dust belong\n// to the 6th column, and the four other drifted 6th\n// cells read in their own column; Clone and Otiluke's\n// Telekinetic Sphere newly read; the fragment holes\n// resolve against the UA-new description rosters and\n// the R80 registry (Flaming = Flaming Sphere,\n// Protection From = the cantrips tail, Detect = Detect\n// Illusion, Item and Material resolve, Dispel = Dispel\n// Illusion, Dolor resolves, Truename resolves, Gravity =\n// the Reverse Gravity tail, Project Im = Project\n// Image); Glassteel and Power Word Kill stay OPEN\n// holes (absent from the print, the descriptions, and\n// the registry); the \"th Level\" print stands (the 9\n// stays lost); the row numbers stay unreliable (the\n// alphabetical order contradicts them); the registry\n// rows absent from the print stay noted, not pinned;\n"
     },
     {
-      "file": "rules/uaspelltables2.h",
+      "file": "rules/ua/uaspelltables2.h",
       "note": "the header OCR-holes resolution (the illusionist side)",
       "from": "// the illusionist 3rd-6th columns are\n// wholly lost (the cantrip column\n// RESOLVES - the R421 clean p. 31\n// read); the illusionist 2nd-level brace-garbage cell and\n// the \"Phantom Wind\" fragment read as holes (the \"Mirror\" tail\n// seam-decodes as Mirror Image).",
       "to": "// the illusionist 3rd-6th columns resolve on the\n// UA-new side (the R364-R368 description rosters,\n// rules/uailspells3-7.h, carry 4/4/4/4 new names plus\n// the 7th-level pair Shadow Walk and Weird); the\n// PHB-side rows of those columns stay lost; the\n// \"Phantom Wind\" fragment resolves (the UA-new 3rd\n// roster carries it); the \"Mirror\" tail seam-decode\n// stands (Mirror Image).\n"
     },
     {
-      "file": "rules/uaspelltables2.h",
+      "file": "rules/ua/uaspelltables2.h",
       "note": "the Whip doubt strike",
       "from": "//   - the \"Whip\" cell: pinned as printed (verbatim). It sorts where\n//     the PHB's Whispering Wind would sit; likely its garble - the\n//     identity stays pending the PDF.\n",
       "to": "//   - R785: the \"Whip\" doubt STRIKES - the\n//     uam2WhipName pin (\"Whip (Evocation)\", p. 52)\n//     proves the cell reads a real UA 2nd-level\n//     spell, not a garble.\n"

@@ -2,7 +2,7 @@
  "round": 757,
  "title": "OA TREASURE - the Explanation of Weapon Properties: the quality grades, cursed weapons, and the specials",
  "prefix": "dls",
- "header_file": "rules/oa128weaponexpl.h",
+ "header_file": "rules/oa/oa128weaponexpl.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA TREASURE - THE EXPLANATION OF WEAPON PROPERTIES, printed capture pp. 294-296 - the big weapons prose round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 210 closed, 25 open - the explanation box flips (census 679 -> 680); NEXT - R758: Oriental Magical Items prose with Table 86 and the item descriptions (capture pp. 296-301), prefix dlt (verify free at the landing), audit \"R758 OA magical items prose audit\", include after rules/oa128weaponexpl.h"
+  "sentinel": "the gap census after this round: 210 closed, 25 open - the explanation box flips (census 679 -> 680); NEXT - R758: Oriental Magical Items prose with Table 86 and the item descriptions (capture pp. 296-301), prefix dlt (verify free at the landing), audit \"R758 OA magical items prose audit\", include after rules/oa/oa128weaponexpl.h"
  },
  "consts": [
   {
@@ -662,7 +662,7 @@
   "open": 25
  },
  "include_comment": "the OA weapon explanation pins",
- "include_after": "#include \"rules/oa127table85.h\"  // R756: the OA Table 85 pins",
+ "include_after": "#include \"rules/oa/oa127table85.h\"  // R756: the OA Table 85 pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R756 LANDED 2026-10-22: commit",
@@ -672,7 +672,7 @@
   "  (census 678 -> 679, pushed d98830e..eff02a8),",
   "  OA TREASURE, Table 85: Ninja Class (capture",
   "  pp. 293-294, the grid spanning the page",
-  "  break), header rules/oa127table85.h, prefix",
+  "  break), header rules/oa/oa127table85.h, prefix",
   "  dlr (verified free at d98830e), one gap flip",
   "  (the Table 85 box, single-line), gap census",
   "  now 209 closed / 26 open. Round type: the",
@@ -703,7 +703,7 @@
   "  Properties (capture p. 294), prefix dls",
   "  (verify free at the landing), audit \"R757",
   "  OA weapon explanation audit\", include after",
-  "  rules/oa127table85.h. The big prose round -",
+  "  rules/oa/oa127table85.h. The big prose round -",
   "  the weapons of quality by class, the +1/ +2/",
   "  +3 and damage/to-hit splits, the vs S and vs",
   "  L, the -1 cursed, and the special properties",

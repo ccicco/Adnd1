@@ -2,7 +2,7 @@
  "round": 740,
  "title": "OA TREASURE - Scrolls: the type determination and the protection scroll notes",
  "prefix": "dlb",
- "header_file": "rules/oa111scrolls.h",
+ "header_file": "rules/oa/oa111scrolls.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA TREASURE - SCROLLS, printed capture p. 288 - the scroll notes round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 193 closed, 42 open - the scrolls box flips (census 662 -> 663); NEXT - R741: Rods, Staves, and Wands (capture p. 288), prefix dlc (verify free at the landing), audit \"R741 OA rods staves wands audit\", include after rules/oa111scrolls.h"
+  "sentinel": "the gap census after this round: 193 closed, 42 open - the scrolls box flips (census 662 -> 663); NEXT - R741: Rods, Staves, and Wands (capture p. 288), prefix dlc (verify free at the landing), audit \"R741 OA rods staves wands audit\", include after rules/oa/oa111scrolls.h"
  },
  "consts": [
   {
@@ -144,7 +144,7 @@
   "open": 42
  },
  "include_comment": "the OA scrolls pins",
- "include_after": "#include \"rules/oa110potions.h\"  // R739: the OA potions pins",
+ "include_after": "#include \"rules/oa/oa110potions.h\"  // R739: the OA potions pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R739 LANDED 2026-10-22: commit",
@@ -156,7 +156,7 @@
   "  pp. 287-288, the section runs onto p. 288",
   "  for the human control table and the",
   "  undead note, no other box covers them),",
-  "  header rules/oa110potions.h, prefix dla",
+  "  header rules/oa/oa110potions.h, prefix dla",
   "  (verified free at cf2f961; the 15 plain",
   "  substring hits are woodland words), one",
   "  gap flip (the potions box, single-line),",
@@ -199,6 +199,6 @@
   "  43f. NEXT - R740: Scrolls (capture",
   "  p. 288), prefix dlb (verify free at the",
   "  landing), audit \"R740 OA scrolls audit\",",
-  "  include after rules/oa110potions.h."
+  "  include after rules/oa/oa110potions.h."
  ]
 }

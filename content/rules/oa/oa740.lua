@@ -1,11 +1,11 @@
--- oa740: promoted from rules/oa111scrolls.h (the OA TREASURE - SCROLLS, printed capture p. 288 - the scroll notes round);
+-- oa740: promoted from rules/oa/oa111scrolls.h (the OA TREASURE - SCROLLS, printed capture p. 288 - the scroll notes round);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 740,
   "prefix" = "oa740",
   "banner" = {
       "title" = "OA TREASURE - SCROLLS, printed capture p. 288 - the scroll notes round",
-      "provenance" = "census 662 -> 663.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 193 closed, 42 open - the scrolls box flips (census 662 -> 663); NEXT - R741: Rods, Staves, and Wands (capture p. 288), prefix dlc (verify free at the landing), audit \"R741 OA rods staves wands audit\", include after rules/oa111scrolls.h",
+      "provenance" = "census 662 -> 663.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 193 closed, 42 open - the scrolls box flips (census 662 -> 663); NEXT - R741: Rods, Staves, and Wands (capture p. 288), prefix dlc (verify free at the landing), audit \"R741 OA rods staves wands audit\", include after rules/oa/oa111scrolls.h",
     },
   "consts" = { {
       "name" = "dlbUseStandardDMGRules",

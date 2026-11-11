@@ -42,10 +42,10 @@ SEED_ENTRY = NL.join([
     '- R366 landed 2026-10-12: commit',
     '  3e742b3, census 293, the UA',
     '  DM-section spells pin round',
-    '  (rules/uaspellbooks.h,',
-    '  rules/uaspellcomment.h,',
-    '  rules/uauwspelluse.h and',
-    '  rules/uadarkness.h): the MU',
+    '  (rules/ua/uaspellbooks.h,',
+    '  rules/ua/uaspellcomment.h,',
+    '  rules/ua/uauwspelluse.h and',
+    '  rules/ua/uadarkness.h): the MU',
     '  spell book rules (the',
     '  capacities and costs, the',
     '  physical aspects, the values,',
@@ -135,13 +135,13 @@ assert s.count(
 assert len(applied) + len(already) == 1, 'a count'
 
 
-# ---- (b) NEW rules/uasocialclass.h ----
-P = 'rules/uasocialclass.h'
+# ---- (b) NEW rules/ua/uasocialclass.h ----
+P = 'rules/ua/uasocialclass.h'
 if os.path.exists(P) and 'R367' in rd(P):
     already.append('uasocialclass: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uasocialclass.h
+// Adnd1 - rules/ua/uasocialclass.h
 // The UA SOCIAL CLASS AND RANK (p. 82 print) pins,
 // R367: the Social Class Table (the nine-band dice
 // ladder), the occupation rosters, the starting-money
@@ -424,13 +424,13 @@ assert 'uabk' not in s, 'b no uabk ref'
 assert len(applied) + len(already) == 2, 'b count'
 
 
-# ---- (b2) NEW rules/uabirth.h ----
-P = 'rules/uabirth.h'
+# ---- (b2) NEW rules/ua/uabirth.h ----
+P = 'rules/ua/uabirth.h'
 if os.path.exists(P) and 'R367' in rd(P):
     already.append('uabirth: the pins')
 else:
     HDR = r"""// ===========================================================================
-// Adnd1 - rules/uabirth.h
+// Adnd1 - rules/ua/uabirth.h
 // The UA CIRCUMSTANCES OF BIRTH (p. 83 print) pins,
 // R367: the Birth Table (the 12-child ladder with
 // the only-child row), the Parents' Marital Status
@@ -607,7 +607,7 @@ else:
         '      - the Social Class Table; extends',
         '      the R208 tables.',
         '      - CLOSED R367: the pin round',
-        '        (rules/uasocialclass.h) - the',
+        '        (rules/ua/uasocialclass.h) - the',
         '        nine-band dice ladder with the',
         '        occupation rosters per band, the',
         '        no-effect-on-starting-money note',
@@ -649,7 +649,7 @@ else:
         '      one-class-lower read for the',
         '      unmarried).',
         '      - CLOSED R367: the pin round',
-        '        (rules/uabirth.h) - the 13-row',
+        '        (rules/ua/uabirth.h) - the 13-row',
         '        birth ladder, the marital',
         '        status split with the',
         '        one-class-below-the-father',
@@ -674,8 +674,8 @@ assert s.count(
 assert s.count(
     '- [x] **Circumstances of birth**'
 ) == 1, 'c2 flip'
-assert s.count('(rules/uasocialclass.h) - the') == 1, 'c1 note'
-assert s.count('(rules/uabirth.h) - the') == 1, 'c2 note'
+assert s.count('(rules/ua/uasocialclass.h) - the') == 1, 'c1 note'
+assert s.count('(rules/ua/uabirth.h) - the') == 1, 'c2 note'
 assert s.count(
     '- [x] **The effects of darkness**'
 ) == 1, 'c r366 kept'
@@ -704,12 +704,12 @@ s = rd(RT)
 if 'R367 UA social/birth pin audit' in s:
     already.append('regtest.cpp: the R367 audit')
 else:
-    INC_ANCH = ('#include "rules/uadarkness.h"  // '
+    INC_ANCH = ('#include "rules/ua/uadarkness.h"  // '
         'R366: the UA effects of darkness')
     INC_NEW = NL.join([
-        '#include "rules/uadarkness.h"  // R366: the UA effects of darkness',
-        '#include "rules/uasocialclass.h"  // R367: the UA social class',
-        '#include "rules/uabirth.h"  // R367: the UA circumstances of birth',
+        '#include "rules/ua/uadarkness.h"  // R366: the UA effects of darkness',
+        '#include "rules/ua/uasocialclass.h"  // R367: the UA social class',
+        '#include "rules/ua/uabirth.h"  // R367: the UA circumstances of birth',
     ])
     AUD_ANCH = '    // ---- R227: the wis mental save wiring audit ----'
     AUDIT = r"""    // ---- R367: the UA campaign social
@@ -935,15 +935,15 @@ assert s.count(
     'R227: the wis mental save'
 ) == 1, 'd r227 kept'
 assert s.count(
-    '#include "rules/uasocialclass.h"'
+    '#include "rules/ua/uasocialclass.h"'
 ) == 1, 'd new include'
 assert s.count(
-    '#include "rules/uabirth.h"'
+    '#include "rules/ua/uabirth.h"'
 ) == 1, 'd new include'
-for h in ('rules/uaspellbooks.h',
-        'rules/uaspellcomment.h',
-        'rules/uauwspelluse.h',
-        'rules/uadarkness.h',
+for h in ('rules/ua/uaspellbooks.h',
+        'rules/ua/uaspellcomment.h',
+        'rules/ua/uauwspelluse.h',
+        'rules/ua/uadarkness.h',
         'rules/cavmoney.h',
         'rules/socialrank.h'):
     assert s.count(

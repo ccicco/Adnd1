@@ -5,7 +5,7 @@
     // one-attempt-only rule, the 50/75/100-foot attempt windows, the
     // protrusion requirement on cliff and severe, the slope-self-halt rule on
     // moderate and gentle, the damage-still-applies rule and the
-    // halt-before-damage possibility (rules/wsgstop.h, prefix wsf); census
+    // halt-before-damage possibility (rules/wsg/wsgstop.h, prefix wsf); census
     // 363 -> 364.
     {
         using namespace rules;

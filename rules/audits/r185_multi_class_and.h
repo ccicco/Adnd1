@@ -123,5 +123,5 @@
         printf("R185 multi-class and dual-class audit: bad %d\n", bad);
         if (bad) return 1;
     }
-    #include "rules/audits/r186_bard.h"  // R827: migrated
-    #include "rules/audits/r187_per_subclass_specials.h"  // R827: migrated
+    #include "r186_bard.h"  // R827: migrated
+    #include "r187_per_subclass_specials.h"  // R827: migrated

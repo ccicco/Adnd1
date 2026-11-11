@@ -1,16 +1,16 @@
 {
  "round": 788,
  "prefix": "udp3",
- "header_file": "rules/uadeityprose3.h",
+ "header_file": "rules/ua/uadeityprose3.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "census_before": 710,
  "title": "the halfling deity prose",
  "audit_label": "R788 halfling deity prose audit",
- "audit_comment": "THE HALFLING DEITY PROSE - part 3 of the Appendix S description-paragraph close. The archive.org full-text OCR of pp. 116-118 reads the four halfling blocks scan-clean: the Sheela festivals and the entangle craft, the Arvoreen unseen summons of halfling heroes, the Cyrrollalee furniture animation and home trust, and the Brandobaris dust sling, escape dagger, and reward risks. The stat-block numerics stay R406/R783; the paragraph facts ride rules/uadeityprose3.h.",
+ "audit_comment": "THE HALFLING DEITY PROSE - part 3 of the Appendix S description-paragraph close. The archive.org full-text OCR of pp. 116-118 reads the four halfling blocks scan-clean: the Sheela festivals and the entangle craft, the Arvoreen unseen summons of halfling heroes, the Cyrrollalee furniture animation and home trust, and the Brandobaris dust sling, escape dagger, and reward risks. The stat-block numerics stay R406/R783; the paragraph facts ride rules/ua/uadeityprose3.h.",
  "include_comment": "the halfling deity prose",
- "include_after": "#include \"rules/uadeityprose2.h\"  // R787: the elven deity prose",
+ "include_after": "#include \"rules/ua/uadeityprose2.h\"  // R787: the elven deity prose",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R787 LANDED 2026-10-23: commit",
@@ -42,7 +42,7 @@
   "  stasis one per round range 12\", age up",
   "  to 100 years, slow/haste 18\", the 1",
   "  percent age-undo. THE PINS: header",
-  "  rules/uadeityprose2.h, prefix udp2 (free",
+  "  rules/ua/uadeityprose2.h, prefix udp2 (free",
   "  at 323dca5), 47 consts + 54 bools (101",
   "  inline), no tables - pure prose data; the",
   "  stat-block numerics stay R406/R783. TWO",
@@ -1056,7 +1056,7 @@
  },
  "caller_files": [
   "rules/deitylines.h",
-  "rules/uaappends.h"
+  "rules/ua/uaappends.h"
  ],
  "inline_count": 105,
  "file_patches": [
@@ -1067,7 +1067,7 @@
    "to": "// R786-R788: the dwarven, elven, and\n// halfling paragraphs pin (rules/\n// uadeityprose1-3.h); the gnomes' and\n// orcs' prose stays open - the lines\n// pin, the paragraphs do not (yet)\n"
   },
   {
-   "file": "rules/uaappends.h",
+   "file": "rules/ua/uaappends.h",
    "note": "the uaappends prose note strike (part 3)",
    "from": "// stat lines) in rules/deitylines.h; the dwarven\n// and elven prose pin in rules/uadeityprose1-2.h\n// (R786/R787); the other pantheons' prose\n// stays open.\n",
    "to": "// stat lines) in rules/deitylines.h; the dwarven,\n// elven, and halfling prose pin in rules/\n// uadeityprose1-3.h (R786-R788); the gnomes'\n// and orcs' prose stays open.\n"

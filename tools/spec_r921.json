@@ -30,9 +30,9 @@
   "  brawling long-term-effects sequel may harvest).",
   "  WAIT FOR GO."
  ],
- "include_after": "#include \"rules/myt.h\"  // R920: the Dragon issue-12 opener part two, the Persian Mythos and the Lovecraftian Mythos",
+ "include_after": "#include \"rules/dragon/issue012_opener2.h\"  // R920: the Dragon issue-12 opener part two, the Persian Mythos and the Lovecraftian Mythos",
  "include_comment": "the Dragon issue-12 box closing round, the four-chain walk complete",
- "header_file": "rules/fcl.h",
+ "header_file": "rules/dragon/issue012_close.h",
  "audit_file": "rules/audits/r921_batch.h",
  "audit_label": "R921 Dragon issue-12 closure audit",
  "audit_anchor": "#include \"rules/audits/r920_batch.h\"  // R920: R920 issue-12 opener part two audit",

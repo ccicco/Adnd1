@@ -1,6 +1,6 @@
 #include "appstate.h"
-#include "rules/startmoney.h"   // R303: the passerby purse
-#include "rules/thieffunc.h"    // R303: the pockets roll
+#include "../rules/startmoney.h"   // R303: the passerby purse
+#include "../rules/thieffunc.h"    // R303: the pockets roll
 
 // ---- enterSea ----
 void AppState::enterSea(){

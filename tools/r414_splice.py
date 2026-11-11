@@ -57,7 +57,7 @@
 # capacity + the tankard
 # exhaustion.
 
-# 1. rules/uacantrips3.h (NEW,
+# 1. rules/ua/uacantrips3.h (NEW,
 #    prefix ucl - verified no
 #    collision): the 6
 #    legerdemain cantrips in
@@ -239,12 +239,12 @@ if s.count('R413 landed 2026-10-13') != 1:
 if s.count('## Knowledge maintenance') != 1:
     die('the seed maintenance head')
 
-# ========= (b) rules/uacantrips3.h =========
-UC = 'rules/uacantrips3.h'
+# ========= (b) rules/ua/uacantrips3.h =========
+UC = 'rules/ua/uacantrips3.h'
 
 HDR = E(
     '// ===========================================================================',
-    '// Adnd1 - rules/uacantrips3.h',
+    '// Adnd1 - rules/ua/uacantrips3.h',
     '// The UA MAGIC-USER CANTRIP',
     '// DESCRIPTIONS, part 3 (R414):',
     '// the LEGERDEMAIN category',
@@ -501,14 +501,14 @@ newfile(UC, HDR + NL,
 RT = 'regtest.cpp'
 
 pair(RT,
-     '#include "rules/uacantrips2.h"  '
+     '#include "rules/ua/uacantrips2.h"  '
      '// R413: the UA reversed'
      ' cantrips',
      E(
-    '#include "rules/uacantrips2.h"  '
+    '#include "rules/ua/uacantrips2.h"  '
     '// R413: the UA reversed'
     ' cantrips',
-    '#include "rules/uacantrips3.h"  '
+    '#include "rules/ua/uacantrips3.h"  '
     '// R414: the UA legerdemain'
     ' cantrips'),
      'regtest: the legerdemain'
@@ -671,7 +671,7 @@ GP = 'tools/ua_gap_report.md'
 pair(GP, E(
     '      - AMENDED R413: the reversed',
     '        category descriptions land',
-    '        (rules/uacantrips2.h) - the',
+    '        (rules/ua/uacantrips2.h) - the',
     '        12 blocks pin schools (the',
     '        3/0/7/2 census), ALL 12',
     '        areas print clean (ZERO',
@@ -697,7 +697,7 @@ pair(GP, E(
     E(
     '      - AMENDED R414: the',
     '        legerdemain descriptions',
-    '        land (rules/uacantrips3.h)',
+    '        land (rules/ua/uacantrips3.h)',
     '        - the 6 blocks pin schools',
     '        (the 0/0/3/1/2 census -',
     '        Illusion a NEW school',
@@ -730,7 +730,7 @@ pair(GP, E(
     '        descriptions stay open.',
     '      - AMENDED R413: the reversed',
     '        category descriptions land',
-    '        (rules/uacantrips2.h) - the',
+    '        (rules/ua/uacantrips2.h) - the',
     '        12 blocks pin schools (the',
     '        3/0/7/2 census), ALL 12',
     '        areas print clean (ZERO',

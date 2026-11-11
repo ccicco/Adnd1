@@ -2,7 +2,7 @@
  "round": 687,
  "title": "OA THE PSYCHIC DUEL - the wills contest: the special circumstances, the save-versus-death resolution with the kensai bonus, and the honor awards with the loser options",
  "prefix": "dja",
- "header_file": "rules/oapsychicduel.h",
+ "header_file": "rules/oa/oapsychicduel.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA THE PSYCHIC DUEL, printed capture pp. 222-223 - the wills contest round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift. THE FRAME: the psychic duel a type of mental combat practiced by any character race or class, requiring no psionic talent - the test of the wills, the invisible fight revealed by the grimace, the eyelid, the tic; the wise man admitting defeat before it occurs. THE CIRCUMSTANCES: only on or by intelligent human or humanoid creatures, strictly one-on-one - never between friends (3 points of honor), never with crossed weapons, never under outside attack: the pre-battle challenge or the swaggering bully. THE RESOLUTION: the round spent within 10 feet concentrating the will, each saving throw vs. death - the kensai +2 against non-kensai; one makes one wins, both fail inconclusive, both make locked for another round; the breaker the loser, his nerve broken. THE HONOR: 2 points beating a higher level, 1 the equal, none the lower. THE LOSER: retreat losing the equal honor, or attack at -1 on initiative, to hit and saves throughout, no surprise - both sides prepared. The prose codifies per the R431 calculus",
-  "sentinel": "the gap census after this round: 140 closed, 95 open - the Psychic Duel box flips (census 609 -> 610); NEXT - R688: the Martial Arts doctrine opener (capture pp. 223-224), prefix djb (verify free at the landing), audit \"R688 OA martial arts opener audit\", include after rules/oapsychicduel.h"
+  "sentinel": "the gap census after this round: 140 closed, 95 open - the Psychic Duel box flips (census 609 -> 610); NEXT - R688: the Martial Arts doctrine opener (capture pp. 223-224), prefix djb (verify free at the landing), audit \"R688 OA martial arts opener audit\", include after rules/oa/oapsychicduel.h"
  },
  "consts": [
   {
@@ -258,7 +258,7 @@
   "open": 95
  },
  "include_comment": "the OA psychic duel pins",
- "include_after": "#include \"rules/oasubdual.h\"  // R686: the OA subduing pins",
+ "include_after": "#include \"rules/oa/oasubdual.h\"  // R686: the OA subduing pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R686 LANDED 2026-10-20: commit",
@@ -269,7 +269,7 @@
   "  OA SUBDUING OPPONENTENTS - the subdual",
   "  doctrine, capture pp. 221-222 (the",
   "  section ran past its gap-item page):",
-  "  rules/oasubdual.h, prefix diz (verified",
+  "  rules/oa/oasubdual.h, prefix diz (verified",
   "  free at e0bebcb) - THE LAST di- PREFIX,",
   "  ONE gap flip, 4 consts + 13 bools (17",
   "  inlines, no table), gap census 138/97 ->",
@@ -303,6 +303,6 @@
   "  222-223), prefix dja (verify free at",
   "  c553d03) - THE dj- FAMILY OPENS, audit",
   "  \"R687 OA psychic duel audit\", include",
-  "  after rules/oasubdual.h"
+  "  after rules/oa/oasubdual.h"
  ]
 }

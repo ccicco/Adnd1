@@ -2,7 +2,7 @@
     // The third FLIP-ONLY round: zero consts, zero bools, zero tables - the
     // census advances by the audit block alone. The pp. 124-127 Perspective
     // maps child closes against work already landed and verified: the R557
-    // mapping chapter (rules/dsgmap.h) pinned the whole doctrine the plates
+    // mapping chapter (rules/dsg/dsgmap.h) pinned the whole doctrine the plates
     // serve - the grid-selection craft, the photocopy and tracing techniques
     // with the personal-use photocopying permission, the control square, the
     // splitting methods, the horizon lines the plates carry, and the printed

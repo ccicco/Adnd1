@@ -1,11 +1,11 @@
--- oa751: promoted from rules/oa122table80.h (the OA TREASURE - TABLE 80, SWORD CLASS, printed capture p. 292 - the sword);
+-- oa751: promoted from rules/oa/oa122table80.h (the OA TREASURE - TABLE 80, SWORD CLASS, printed capture p. 292 - the sword);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 751,
   "prefix" = "oa751",
   "banner" = {
       "title" = "OA TREASURE - TABLE 80, SWORD CLASS, printed capture p. 292 - the sword",
-      "provenance" = "type grid round census 673 -> 674.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 204 closed, 31 open - the Table 80 box flips (census 673 -> 674); NEXT - R752: Table 81: Bow, Crossbow, And Sling Class (capture p. 292), prefix dln (verify free at the landing), audit \"R752 OA Table 81 bow class audit\", include after rules/oa122table80.h",
+      "provenance" = "type grid round census 673 -> 674.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 204 closed, 31 open - the Table 80 box flips (census 673 -> 674); NEXT - R752: Table 81: Bow, Crossbow, And Sling Class (capture p. 292), prefix dln (verify free at the landing), audit \"R752 OA Table 81 bow class audit\", include after rules/oa/oa122table80.h",
     },
   "consts" = { {
       "name" = "dlmSwordRowCount",

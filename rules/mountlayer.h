@@ -40,7 +40,7 @@
 //      horsemanship ladder, the
 //      steed hp and worth)
 //   5: R356 the mount spell
-//      (rules/uamuspells1.h - the
+//      (rules/ua/uamuspells1.h - the
 //      summoned steed ladder)
 // The R403 audit cross-checks
 // every feeder live; the charge

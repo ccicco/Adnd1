@@ -2,7 +2,7 @@
  "round": 641,
  "title": "HAND HELD WEAPONS - Table 50, the general data and to-hit adjustments",
  "prefix": "dhb",
- "header_file": "rules/oahandheld.h",
+ "header_file": "rules/oa/oahandheld.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "TABLE 50 (HAND HELD WEAPONS, GENERAL DATA AND TO HIT ADJUSTMENTS), printed capture p. 80 - the OA hand-held weapons round",
   "provenance": "pinned from the 2018 print capture (the settling authority), with the cross-capture check available for the first time above p. 33: the compressed-print capture OCR'd full this turn gives a second independent read of the page - the 49-row grid cross-checked cell-by-cell between the two passes; four cells contest and all settle per the print capture (the katana AC-8, sword-short AC-8 and tui-fa AC-9 cells read +1 in the print against the compressed -1, a non-monotonic dip that contradicts its own ladder - the R622 doctrine kills the compressed class; the jo-stick AC-5 cell reads -1 in the print against the compressed -2 - both ladder-consistent, the settling print read stands, the cell flags for the physical-copy check). T50 pins as the 49-row hand-held grid: the speed factor bounds (the lone numbers as lo=hi; the chijiriki-spear, spear and trident 6-8 and the whip 5-8 as printed ranges), the eleven-column AC 0-10 to-hit adjustment ladder, the footnote letters as the R640 bitmask (the mace h 128, the tetsu-bishi d 8), and the chijiriki-chain row - its printed dashes pin as -99 and its (see chain) cross-reference pins as a bool; the length and space-required columns are textual and ride the column comments per the T48 doctrine. The footnote texts are not re-pinned: the block printed under T50 serves both tables and was pinned in R640; the d and h lines reprint under the T50 tail serving the two marker rows. OCR normalizations: the names and lengths pin as printed (the kawanga spelling per the R640 settle; the compressed pass's 2* tetsu-bishi length reads as 2'; the plus-after-prime cells print as N + and pin as printed; the half-foot glyph rides the comment). The weapons descriptions prose box stays open; Table 51 (capture pp. 80-81) is deliberately left for the next round",
-  "sentinel": "the gap census after this round: 92 closed, 143 open - the Table 50 box flips (census 563 -> 564); NEXT - R642: Table 51 (Hurled Weapons and Missiles), capture pp. 80-81, the hurled-missile fire-rate and AC-adjustment grid, prefix dhc (verify free), audit \"R642 OA hurled audit\", include after rules/oahandheld.h"
+  "sentinel": "the gap census after this round: 92 closed, 143 open - the Table 50 box flips (census 563 -> 564); NEXT - R642: Table 51 (Hurled Weapons and Missiles), capture pp. 80-81, the hurled-missile fire-rate and AC-adjustment grid, prefix dhc (verify free), audit \"R642 OA hurled audit\", include after rules/oa/oahandheld.h"
  },
  "consts": [
   {
@@ -993,7 +993,7 @@
   "open": 143
  },
  "include_comment": "the OA hand-held pins",
- "include_after": "#include \"rules/oaweapon.h\"  // R640: the OA weapons pins",
+ "include_after": "#include \"rules/oa/oaweapon.h\"  // R640: the OA weapons pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R640 LANDED 2026-10-19: commit",
@@ -1006,7 +1006,7 @@
   "  weapon-equivalents prose, Table 48",
   "  (Weapon Equivalents) and Table 49",
   "  (Weight and Damage by Weapon Type),",
-  "  capture pp. 79-80: rules/oaweapon.h,",
+  "  capture pp. 79-80: rules/oa/oaweapon.h,",
   "  prefix dha (verified free), 26",
   "  inlines (2 consts, 10 table columns,",
   "  14 bools): the equivalents doctrine",
@@ -1061,6 +1061,6 @@
   "  hand-held AC-adjustment grid, prefix",
   "  dhb (verify free), audit \"R641 OA",
   "  handheld audit\", include after",
-  "  rules/oaweapon.h."
+  "  rules/oa/oaweapon.h."
  ]
 }

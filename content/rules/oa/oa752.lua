@@ -1,11 +1,11 @@
--- oa752: promoted from rules/oa123table81.h (the OA TREASURE - TABLE 81, BOW, CROSSBOW, AND SLING CLASS, printed capture p.);
+-- oa752: promoted from rules/oa/oa123table81.h (the OA TREASURE - TABLE 81, BOW, CROSSBOW, AND SLING CLASS, printed capture p.);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 752,
   "prefix" = "oa752",
   "banner" = {
       "title" = "OA TREASURE - TABLE 81, BOW, CROSSBOW, AND SLING CLASS, printed capture p.",
-      "provenance" = "292 - the bow class grid round census 674 -> 675.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 205 closed, 30 open - the Table 81 box flips (census 674 -> 675); NEXT - R753: Table 82: Miscellaneous (capture p. 292), prefix dlo (verify free at the landing), audit \"R753 OA Table 82 misc melee audit\", include after rules/oa123table81.h",
+      "provenance" = "292 - the bow class grid round census 674 -> 675.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 205 closed, 30 open - the Table 81 box flips (census 674 -> 675); NEXT - R753: Table 82: Miscellaneous (capture p. 292), prefix dlo (verify free at the landing), audit \"R753 OA Table 82 misc melee audit\", include after rules/oa/oa123table81.h",
     },
   "consts" = { {
       "name" = "dlnBowRowCount",

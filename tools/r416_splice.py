@@ -72,7 +72,7 @@
 # distraction + the INT 7
 # threshold + 3d6.
 
-# 1. rules/uacantrips5.h (NEW,
+# 1. rules/ua/uacantrips5.h (NEW,
 #    prefix uco - verified no
 #    collision): the 10 personal
 #    cantrips in R341/R401
@@ -266,12 +266,12 @@ if s.count('R415 landed 2026-10-13') != 1:
 if s.count('## Knowledge maintenance') != 1:
     die('the seed maintenance head')
 
-# ========= (b) rules/uacantrips5.h =========
-UC = 'rules/uacantrips5.h'
+# ========= (b) rules/ua/uacantrips5.h =========
+UC = 'rules/ua/uacantrips5.h'
 
 HDR = E(
     '// ===========================================================================',
-    '// Adnd1 - rules/uacantrips5.h',
+    '// Adnd1 - rules/ua/uacantrips5.h',
     '// The UA MAGIC-USER CANTRIP',
     '// DESCRIPTIONS, part 5 (R416):',
     '// the PERSONAL category',
@@ -602,14 +602,14 @@ newfile(UC, HDR + NL,
 RT = 'regtest.cpp'
 
 pair(RT,
-     '#include "rules/uacantrips4.h"  '
+     '#include "rules/ua/uacantrips4.h"  '
      '// R415: the UA person-'
      'affecting cantrips',
      E(
-    '#include "rules/uacantrips4.h"  '
+    '#include "rules/ua/uacantrips4.h"  '
     '// R415: the UA person-'
     'affecting cantrips',
-    '#include "rules/uacantrips5.h"  '
+    '#include "rules/ua/uacantrips5.h"  '
     '// R416: the UA personal'
     ' cantrips'),
      'regtest: the personal'
@@ -833,7 +833,7 @@ pair(GP, E(
     E(
     '      - AMENDED R416: the',
     '        personal descriptions land',
-    '        (rules/uacantrips5.h) - the',
+    '        (rules/ua/uacantrips5.h) - the',
     '        10 blocks pin schools (the',
     '        1/0/1/0/0/0/5/3 census -',
     '        Summoning and Conjuration',

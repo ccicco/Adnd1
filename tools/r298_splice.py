@@ -22,7 +22,7 @@
 #       carries a decimal from the 11th level,
 #       99.1% reads 991; the read languages
 #       dash at levels 1-3 reads 0), the six
-#       racial rows keyed to the rules/races.h
+#       racial rows keyed to the rules/engine/races.h
 #       enum (the human prints no row and
 #       reads 0), DEX Table II (below the 9
 #       reads the 9 row, above the 18 the 18
@@ -109,7 +109,7 @@ HEADER = NL.join([
     '// elf, gnome, half-elf, halfling, half-orc;',
     '// the human prints no row and reads 0),',
     '// keyed to the engine race enum',
-    '// (rules/races.h, the printed order).',
+    '// (rules/engine/races.h, the printed order).',
     '//',
     '// Conventions:',
     '//   - the BASE CHANCES are pinned in TENTHS',
@@ -196,7 +196,7 @@ HEADER = NL.join([
     'inline int thfRaceAdj(int race, int fn) {',
     '    // the six printed racial adjustment rows',
     '    // (upload lines 1645-1650) in whole',
-    '    // percent, keyed to the rules/races.h enum',
+    '    // percent, keyed to the rules/engine/races.h enum',
     '    // (the human prints no row and reads 0);',
     '    // fn clamps 0..7',
     '    if (race < 0) race = 0;',
@@ -391,7 +391,7 @@ AUDIT = NL.join([
     '            rules::thfTakeTenths(7, -3) != 0 ||',
     '            rules::thfTakeTenths(7, 20) != 800) ++bad;',
     '        // the printed racial rows (upload lines',
-    '        // 1645-1650), keyed to the rules/races.h',
+    '        // 1645-1650), keyed to the rules/engine/races.h',
     '        // enum order',
     '        static const int kRace[7][8] = {',
     '            {   0,   0,   0,   0,   0,   0,   0,   0 },  // human',
@@ -561,7 +561,7 @@ ITEM_NEW = NL.join([
     '      reads 0); the six racial adjustment',
     '      rows beneath (upload lines 1645-1650;',
     '      the human default reads 0) keyed to',
-    '      the rules/races.h enum; and DEXTERITY',
+    '      the rules/engine/races.h enum; and DEXTERITY',
     '      TABLE II (upload line 400), the five',
     '      thief adjustment columns for scores 9',
     '      through 18 (below the 9 reads the 9',

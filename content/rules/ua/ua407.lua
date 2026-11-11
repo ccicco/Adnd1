@@ -1,4 +1,4 @@
--- ua: promoted from rules/uascharts.h (the The UA APPENDIX S clerical);
+-- ua: promoted from rules/ua/uascharts.h (the The UA APPENDIX S clerical);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 407,

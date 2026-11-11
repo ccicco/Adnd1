@@ -3,7 +3,7 @@
   "title": "the final holdback batch",
   "prefix": "ymb",
   "regtest": "regtest.cpp",
-  "header_file": "rules/ymb.h",
+  "header_file": "rules/meta/migration_batch_final_holdback.h",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
   "gap_report": "tools/mm2_gap_report.md",
   "banner": {
@@ -135,7 +135,7 @@
   "audit_file": "rules/audits/r835_batch.h",
   "audit_anchor": "#include \"rules/audits/r834_batch.h\"  // R834: R834 holdback tooling patch audit",
   "include_comment": "the final holdback batch",
-  "include_after": "#include \"rules/hmb.h\"  // R834: the holdback tooling patch",
+  "include_after": "#include \"rules/meta/tooling_holdback_patch.h\"  // R834: the holdback tooling patch",
   "seed_anchor": "## Knowledge maintenance",
   "prev_seed_key": "- R834 LANDED 2026-10-25: commit",
   "prev_record": [
@@ -163,7 +163,7 @@
     "  blocks). NO BLOCK MOVES THIS",
     "  ROUND - the R791 lesson binds:",
     "  tooling lands alone. Header",
-    "  rules/hmb.h, prefix hmb (verified",
+    "  rules/meta/tooling_holdback_patch.h, prefix hmb (verified",
     "  free at 93ecec9, 0 hits), 10",
     "  consts + 10 bools (inline 20), 4",
     "  examples, the R833 record seated",

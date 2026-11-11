@@ -1,4 +1,4 @@
--- ua373: promoted from rules/uacomnote.h (the The UA COMELINESS CREATION NOTE);
+-- ua373: promoted from rules/ua/uacomnote.h (the The UA COMELINESS CREATION NOTE);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 373,

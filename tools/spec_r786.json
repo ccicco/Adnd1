@@ -1,14 +1,14 @@
 {
   "round": 786,
   "prefix": "udp",
-  "header_file": "rules/uadeityprose1.h",
+  "header_file": "rules/ua/uadeityprose1.h",
   "regtest": "regtest.cpp",
   "gap_report": "tools/oa_gap_report.md",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
   "census_before": 708,
   "title": "the dwarven deity prose",
   "audit_label": "R786 dwarven deity prose audit",
-  "audit_comment": "THE DWARVEN DEITY PROSE - part 1 of the Appendix S description-paragraph pins (the prose alone stays open no more, the dwarves open it). The archive.org full-text OCR of pp. 110-113 reads the five dwarven blocks scan-clean: the Clanggedin fortress and anti-giant methods, the Vergadain con-games and treasure-sensing sword, the Dumathoin veins and earth elementals, the Abbathor greed mechanics and level-draining dagger, the Berronar braid-of-gold and the paladin grant. The stat-block lines stay R406/R783; these paragraphs ride rules/uadeityprose1.h.",
+  "audit_comment": "THE DWARVEN DEITY PROSE - part 1 of the Appendix S description-paragraph pins (the prose alone stays open no more, the dwarves open it). The archive.org full-text OCR of pp. 110-113 reads the five dwarven blocks scan-clean: the Clanggedin fortress and anti-giant methods, the Vergadain con-games and treasure-sensing sword, the Dumathoin veins and earth elementals, the Abbathor greed mechanics and level-draining dagger, the Berronar braid-of-gold and the paladin grant. The stat-block lines stay R406/R783; these paragraphs ride rules/ua/uadeityprose1.h.",
   "include_comment": "the dwarven deity prose",
   "include_after": "#include \"rules/spelltableledger.h\"  // R785: the UA spell table ledger",
   "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
@@ -22,7 +22,7 @@
     "  repair (Curtiss's \"stay in covered books\" call),",
     "  sourced from the archive.org full-text OCR of",
     "  the continued table. REPAIRED ROSTERS (the",
-    "  string arrays ride rules/uaspelltables2.h):",
+    "  string arrays ride rules/ua/uaspelltables2.h):",
     "  6th = 17 (the column reads at last - the twelve",
     "  readable cells, Chain Lightning, Ensnarement,",
     "  Mordenkainen's Lucubration, Death Spell and",
@@ -1047,7 +1047,7 @@
   },
   "caller_files": [
     "rules/deitylines.h",
-    "rules/uaappends.h"
+    "rules/ua/uaappends.h"
   ],
   "inline_count": 103,
   "file_patches": [
@@ -1055,13 +1055,13 @@
       "file": "rules/deitylines.h",
       "note": "the stat-block prose note strike (the dwarven part pins)",
       "from": "// The stat-block prose stays open - the lines pin, the paragraphs do not\ninline bool dvpProseStaysOpen()\n    { return true; }\n",
-      "to": "// R786: the dwarven paragraphs pin\n// (rules/uadeityprose1.h); the other\n// pantheons' prose stays open - the lines\n// pin, the paragraphs do not (yet)\ninline bool dvpProseStaysOpen()\n    { return true; }\n"
+      "to": "// R786: the dwarven paragraphs pin\n// (rules/ua/uadeityprose1.h); the other\n// pantheons' prose stays open - the lines\n// pin, the paragraphs do not (yet)\ninline bool dvpProseStaysOpen()\n    { return true; }\n"
     },
     {
-      "file": "rules/uaappends.h",
+      "file": "rules/ua/uaappends.h",
       "note": "the uaappends prose note strike",
       "from": "// stat lines) in rules/deitylines.h;\n// the prose alone stays open.\n",
-      "to": "// stat lines) in rules/deitylines.h; the dwarven\n// prose pins in rules/uadeityprose1.h (R786); the\n// other pantheons' prose stays open.\n"
+      "to": "// stat lines) in rules/deitylines.h; the dwarven\n// prose pins in rules/ua/uadeityprose1.h (R786); the\n// other pantheons' prose stays open.\n"
     }
   ]
 }

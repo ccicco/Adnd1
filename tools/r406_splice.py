@@ -7,7 +7,7 @@
 # stat-line numerics pin; the
 # messy reads stay open.
 #
-# 1. rules/uaappends.h (NEW,
+# 1. rules/ua/uaappends.h (NEW,
 #    prefix uas, 10 inline
 #    functions + the 23-row
 #    stat table): the tier
@@ -157,12 +157,12 @@ if s.count('R405 landed 2026-10-13') != 1:
 if s.count('## Knowledge maintenance') != 1:
     die('the seed maintenance head')
 
-# ========= (b) rules/uaappends.h =========
-AS = 'rules/uaappends.h'
+# ========= (b) rules/ua/uaappends.h =========
+AS = 'rules/ua/uaappends.h'
 
 ASBODY = E(
     '// ===========================================================================',
-    '// Adnd1 - rules/uaappends.h',
+    '// Adnd1 - rules/ua/uaappends.h',
     '// The UA APPENDIX S stat blocks,',
     '// R406: the 23 non-human deity',
     '// stat blocks (pp. 110-120) - the',
@@ -462,7 +462,7 @@ pair(RT,
      E(
     '#include "rules/deities.h"  '
     '// R405: the deity layer seam',
-    '#include "rules/uaappends.h"  '
+    '#include "rules/ua/uaappends.h"  '
     '// R406: the UA Appendix S stat blocks'),
      'regtest: the stat blocks include')
 
@@ -644,7 +644,7 @@ pair(GP, E(
     '      layer is engineerable (the',
     '      mission: everything includeable).',
     '      - AMENDED R406: the stat blocks',
-    '        pin round (rules/uaappends.h)',
+    '        pin round (rules/ua/uaappends.h)',
     '        - the 23 blocks pin their',
     '        scan-clean numerics (tier, AC,',
     '        HP, MR, rating, size, attacks',
@@ -676,7 +676,7 @@ pair(GP, E(
     '    the seam as its own ungated data',
     '    round.',
     '  - AMENDED R406: the stat block',
-    '    numerics land (rules/uaappends.h)',
+    '    numerics land (rules/ua/uaappends.h)',
     '    - the class lines, MOVE, stat',
     '    lines, prose and the charts stay',
     '    open.'),

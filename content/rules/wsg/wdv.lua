@@ -88,6 +88,6 @@ return {
     } },
   "audit" = {
       "label" = "R452 WSG diving and surfacing pin audit",
-      "comment" = "The diving and surfacing slice pins the base downward swim rate (2 inches, 20 feet per round), the encumbrance multipliers (doubled for moderate, tripled for heavy or severe - the same x2/x3/x3 the Table 24 dive column carries), the leap-height extra-depth ladder (at least 5/15/25/35/40 feet -> 1/2/3/4/5 inches on the first round), the 5-inch cap beyond 40 feet regardless of height, and the falling-damage risk on a dive from 40 feet or more (rules/wsgdive.h, prefix wdv); census 376 -> 377.",
+      "comment" = "The diving and surfacing slice pins the base downward swim rate (2 inches, 20 feet per round), the encumbrance multipliers (doubled for moderate, tripled for heavy or severe - the same x2/x3/x3 the Table 24 dive column carries), the leap-height extra-depth ladder (at least 5/15/25/35/40 feet -> 1/2/3/4/5 inches on the first round), the 5-inch cap beyond 40 feet regardless of height, and the falling-damage risk on a dive from 40 feet or more (rules/wsg/wsgdive.h, prefix wdv); census 376 -> 377.",
     },
 }

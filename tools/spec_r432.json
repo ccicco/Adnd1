@@ -2,7 +2,7 @@
  "round": 432,
  "title": "the WSG encumbrance and movement - Table 11 (the encumbrance limits) and Table 12 (the character movement on foot)",
  "prefix": "wem",
- "header_file": "rules/wsgencum.h",
+ "header_file": "rules/wsg/wsgencum.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -13,7 +13,7 @@
  "census_before": 356,
  "inline_count": 54,
  "audit_label": "R432 WSG encumbrance pin audit",
- "audit_comment": "The encumbrance and movement slice pins Table 11 (the 14 strength rows x the Light/Moderate/Heavy/Severe gp limits), Table 12 (the encumbrance category x the terrain class, the normal and the accelerated rates), the bulk rule-of-thumb, the terrain definitions and the large-scale overland movement rules (rules/wsgencum.h, prefix wem); census 356 -> 357.",
+ "audit_comment": "The encumbrance and movement slice pins Table 11 (the 14 strength rows x the Light/Moderate/Heavy/Severe gp limits), Table 12 (the encumbrance category x the terrain class, the normal and the accelerated rates), the bulk rule-of-thumb, the terrain definitions and the large-scale overland movement rules (rules/wsg/wsgencum.h, prefix wem); census 356 -> 357.",
  "banner": {
   "title": "The WSG ENCUMBRANCE AND MOVEMENT, R432: Table 11 (the encumbrance limits for characters - the 14 strength rows x the Light/Moderate/Heavy/Severe ranges, each category begins at the previous one over) and Table 12 (the character movement on foot - the encumbrance category x the normal/rugged/very-rugged terrain class, the normal and the accelerated miles per half-day) with the bulk rule-of-thumb, the terrain definitions and the large-scale overland movement rules - the round opens the encumbrance-and-movement chapter. Census 356 -> 357.",
   "provenance": "the WSG scan (archive.org item pdfy-B3Fz83tZ3TV7zOc8), printed pp. 30-31; the user own copy OCR cross-checked against the archive djvu word layer and the IIIF eye-read; the disputed 18/01-50 severe cell read 1751-2500 at full resolution (the half-resolution vision 2250 was the artifact); every number matched.",
@@ -686,7 +686,7 @@
  "gap_flips": [
   {
    "from": "  - [ ] Encumbrance of characters (p. 30)",
-   "to": "  - [x] Encumbrance of characters (p. 30) - R432: the gp-per-pound conversion, the bulk rule-of-thumb and Table 11 pin as rules/wsgencum.h",
+   "to": "  - [x] Encumbrance of characters (p. 30) - R432: the gp-per-pound conversion, the bulk rule-of-thumb and Table 11 pin as rules/wsg/wsgencum.h",
    "note": "encumbrance of characters"
   },
   {
@@ -720,14 +720,14 @@
   "open": 157
  },
  "include_comment": "the WSG encumbrance and movement",
- "include_after": "#include \"rules/wsgequip.h\"  // R431: the WSG effects on equipment",
+ "include_after": "#include \"rules/wsg/wsgequip.h\"  // R431: the WSG effects on equipment",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R431 landed 2026-10-14: commit 0d22d27 (census 356, pushed ae2a14c..0d22d27,",
  "prev_record": [
   "- R431 landed 2026-10-14: commit 0d22d27 (census 356, pushed ae2a14c..0d22d27,",
   "  preflight GREEN from a real compiled binary), the WSG EQUIPMENT EFFECTS data",
-  "  slice, printed pp. 28-29 - the FIRST PURE-PROSE round (rules/wsgequip.h, 30",
+  "  slice, printed pp. 28-29 - the FIRST PURE-PROSE round (rules/wsg/wsgequip.h, 30",
   "  inlines, prefix weq): the water and rust rules (dry metal every 2 days, oil",
   "  every 2 weeks, the armor crack on an unmodified 20 for over 4 damage at",
   "  1-in-3, the shield near-miss split at 50 percent, the weapon break on an",

@@ -3,7 +3,7 @@
 # divergence 4 of the R177 founding read -
 # the LAST founding-read divergence).
 #
-# rules/character.cpp: intExtraLanguages
+# rules/engine/character.cpp: intExtraLanguages
 # repinned to the printed INTELLIGENCE
 # TABLE I additional-languages column (3-7
 # none, 8-9 one, 10-11 two, 12-13 three,
@@ -56,10 +56,10 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/character.cpp - the intExtraLanguages repin
+# Patch 1: rules/engine/character.cpp - the intExtraLanguages repin
 # ---------------------------------------------------------------------------
 
-patch('rules/character.cpp',
+patch('rules/engine/character.cpp',
       'if (int_ <= 7)  return 0;   // R195: was 2 at 6-8',
       '// INT (PHB p.10): number of additional languages beyond native tongue'
       + NL + '//   3: none; 4-5: +1; 6-8: +2; 9-12: +3 (bonus language allowed);'
@@ -162,7 +162,7 @@ box_old = ('- [~] 4. **INT Table I, additional languages (the'
 
 box_new = ('- [x] 4. **INT Table I, additional languages (the'
            + NL + '      INTELLIGENCE TABLE I page)** -'
-           + NL + '      CLOSED R195: rules/character.cpp'
+           + NL + '      CLOSED R195: rules/engine/character.cpp'
            + NL + '      intExtraLanguages repinned to the print (3-7'
            + NL + '      none, 8-9 one, 10-11 two, 12-13 three, 14-15'
            + NL + '      four, 16 five, 17 six, 18 seven). The engine'
@@ -177,13 +177,13 @@ box_new = ('- [x] 4. **INT Table I, additional languages (the'
            + NL + '      INT R195, WIS R194, CHA R193).')
 
 t2 = rd('tools/phb_gap_report.md')
-if 'CLOSED R195: rules/character.cpp' not in t2:
+if 'CLOSED R195: rules/engine/character.cpp' not in t2:
     assert t2.count(box_old) == 1, 'R195 box anchor not unique'
 else:
     assert t2.count(box_old) == 0, 'R195 box old text lingers'
 
 patch('tools/phb_gap_report.md',
-      'CLOSED R195: rules/character.cpp',
+      'CLOSED R195: rules/engine/character.cpp',
       box_old,
       box_new)
 
@@ -210,7 +210,7 @@ patch('tools/dmg_gap_report.md',
       'assembles). New R194 battery audit; census 111. Next:'
       + NL + 'the last PHB divergence, 4 (INT languages).'
       + NL + 'R195 landed the INT languages repin (the LAST'
-      + NL + 'founding-read divergence, 4): rules/character.cpp'
+      + NL + 'founding-read divergence, 4): rules/engine/character.cpp'
       + NL + 'intExtraLanguages repinned to the printed'
       + NL + 'INTELLIGENCE TABLE I column (3-7 none through 18'
       + NL + 'seven); the engine convention diverged at every'

@@ -2,7 +2,7 @@
  "round": 704,
  "title": "OA CLIMATE GROUPINGS - the seven climate groupings with the game creatures and the Creatures from Previous Books cross-reference",
  "prefix": "djr",
- "header_file": "rules/oa75climate.h",
+ "header_file": "rules/oa/oa75climate.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA CLIMATE GROUPINGS, printed capture pp. 252-253 - the climate doctrine and cross-reference round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift. THE SEVEN GROUPINGS: the Sub-Arctic Forests (the 18 creatures - bear, carp, deer through tiger, wolf, wolverine); the Temperate Plain/Forest (the 20 - badger through wolverine); the Steppelands (the 13 - the Bactrian camel through wolf); the Sub-Tropical Forest (the 18 - alligator through wolf); the Tropical Forest (the 18 - badger through wild boar); the Cold Oceans (the 6 - cod through seal); the Warm Oceans (the 4 - dolphin through shark); the 61 distinct creatures across the seven. THE DOCTRINE: the creatures unique to Kara-Tur; the common creatures held at bay by stormy oceans, grim mountain ranges, and scalding deserts; the grouping by geography and climate; the common and game creatures off the encounter tables. THE CROSS-REFERENCE: the Creatures from Previous Books - 124 entries alphabetical, the MMI 59, the FF 18, the MMII 46, the LL 1; the list aids the DM and is not exclusive - the listed are those most likely to fit the mythos. THE CELESTIAL BUREAUCRACY: the Celestial Emperor heads the government of the spirits; the officials can be corrupt, disobedient, just, or incompetent, replaced after the yearly examination of their activities. The prose codifies per the R431 calculus",
-  "sentinel": "the gap census after this round: 157 closed, 78 open - the Climate Groupings box flips (census 626 -> 627); NEXT - R705: the Chapter 12 monster roster opener - the Bajang (capture pp. 253-254), prefix djs (verify free at the landing), audit \"R705 OA monsters Bajang audit\", include after rules/oa75climate.h"
+  "sentinel": "the gap census after this round: 157 closed, 78 open - the Climate Groupings box flips (census 626 -> 627); NEXT - R705: the Chapter 12 monster roster opener - the Bajang (capture pp. 253-254), prefix djs (verify free at the landing), audit \"R705 OA monsters Bajang audit\", include after rules/oa/oa75climate.h"
  },
  "consts": [
   {
@@ -256,7 +256,7 @@
   "open": 78
  },
  "include_comment": "the OA climate groupings pins",
- "include_after": "#include \"rules/oa74terrain.h\"  // R703: the OA Chapter 11 terrain encounter tables pins",
+ "include_after": "#include \"rules/oa/oa74terrain.h\"  // R703: the OA Chapter 11 terrain encounter tables pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R703 LANDED 2026-10-21: commit",
@@ -264,7 +264,7 @@
   "- R703 LANDED 2026-10-21: commit f4c28d73ff909f45d67bc550dea1b3f0f1363155",
   "  (census 625 -> 626, pushed eb09e60..f4c28d7), OA CHAPTER 11 - the",
   "  terrain encounter tables, capture pp. 251-252 print:",
-  "  rules/oa74terrain.h, prefix djq (verified free at eb09e60), ONE gap",
+  "  rules/oa/oa74terrain.h, prefix djq (verified free at eb09e60), ONE gap",
   "  flip, gap census 155/80 -> 156/79. 16 grid cols + 5 consts + 2",
   "  bools (23 inlines): the sixteen terrain columns of the 2-20 roll",
   "  grid (the City/Town, the T/S Mountains, the T/S Ocean, the",
@@ -292,6 +292,6 @@
   "  7c54d716b555430ba28042d46042c4e0). NEXT - R704: the Climate",
   "  Groupings with Creatures from Previous Books (capture p. 252),",
   "  prefix djr (verified free at f4c28d7), audit \"R704 OA climate",
-  "  groupings audit\", include after rules/oa74terrain.h"
+  "  groupings audit\", include after rules/oa/oa74terrain.h"
  ]
 }

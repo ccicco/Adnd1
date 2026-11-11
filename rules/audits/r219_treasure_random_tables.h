@@ -160,16 +160,16 @@
         printf("R219 treasure random determination tables audit: bad %d\n", bad);
         if (bad) return 1;
     }
-    #include "rules/audits/r220_combined_hoard_table.h"  // R827: migrated
-    #include "rules/audits/r221_iii_a_potions.h"  // R827: migrated
-    #include "rules/audits/r222_iii_b_scrolls.h"  // R827: migrated
-    #include "rules/audits/r223_iii_c_rings_footnote.h"  // R827: migrated
-    #include "rules/audits/r224_iii_d_rods_staves_wands.h"  // R827: migrated
-    #include "rules/audits/r225_iii_e_table_1.h"  // R827: migrated
-    #include "rules/audits/r226_iii_e_table_2.h"  // R827: migrated
-    #include "rules/audits/r237_iii_e_table_3.h"  // R827: migrated
-    #include "rules/audits/r238_iii_e_table_4.h"  // R827: migrated
-    #include "rules/audits/r239_iii_e_table_5.h"  // R827: migrated
-    #include "rules/audits/r240_iii_e_special_artifacts.h"  // R827: migrated
-    #include "rules/audits/r241_iii_f_armor_and_shield.h"  // R827: migrated
-    #include "rules/audits/r242_iii_g_swords.h"  // R827: migrated
+    #include "r220_combined_hoard_table.h"  // R827: migrated
+    #include "r221_iii_a_potions.h"  // R827: migrated
+    #include "r222_iii_b_scrolls.h"  // R827: migrated
+    #include "r223_iii_c_rings_footnote.h"  // R827: migrated
+    #include "r224_iii_d_rods_staves_wands.h"  // R827: migrated
+    #include "r225_iii_e_table_1.h"  // R827: migrated
+    #include "r226_iii_e_table_2.h"  // R827: migrated
+    #include "r237_iii_e_table_3.h"  // R827: migrated
+    #include "r238_iii_e_table_4.h"  // R827: migrated
+    #include "r239_iii_e_table_5.h"  // R827: migrated
+    #include "r240_iii_e_special_artifacts.h"  // R827: migrated
+    #include "r241_iii_f_armor_and_shield.h"  // R827: migrated
+    #include "r242_iii_g_swords.h"  // R827: migrated

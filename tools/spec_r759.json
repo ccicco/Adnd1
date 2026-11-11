@@ -2,7 +2,7 @@
  "round": 759,
  "title": "OA TREASURE - Table 86: Oriental Magical Items: the d100 item grid with the overlap quirk",
  "prefix": "dlu",
- "header_file": "rules/oa130table86.h",
+ "header_file": "rules/oa/oa130table86.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA TREASURE - TABLE 86, ORIENTAL MAGICAL ITEMS, printed capture pp. 296-297 - the item grid round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 212 closed, 23 open - the Table 86 box flips (census 681 -> 682); CHAPTER 13 COMPLETE - NEXT - R760: Chapter 14 An Overview of Kara-Tur, the chapter intro and the Population prose (capture pp. 301-302), prefix dlv (verify free at the landing), audit \"R760 OA Kara-Tur overview audit\", include after rules/oa130table86.h - the setting chapter, advisory prose closing on doctrine pins"
+  "sentinel": "the gap census after this round: 212 closed, 23 open - the Table 86 box flips (census 681 -> 682); CHAPTER 13 COMPLETE - NEXT - R760: Chapter 14 An Overview of Kara-Tur, the chapter intro and the Population prose (capture pp. 301-302), prefix dlv (verify free at the landing), audit \"R760 OA Kara-Tur overview audit\", include after rules/oa/oa130table86.h - the setting chapter, advisory prose closing on doctrine pins"
  },
  "consts": [
   {
@@ -296,7 +296,7 @@
   "open": 23
  },
  "include_comment": "the OA Table 86 pins",
- "include_after": "#include \"rules/oa129magitemsprose.h\"  // R758: the OA magical items prose pins",
+ "include_after": "#include \"rules/oa/oa129magitemsprose.h\"  // R758: the OA magical items prose pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R758 LANDED 2026-10-22: commit",
@@ -306,7 +306,7 @@
   "  (census 680 -> 681, pushed b346bda..afdfa13),",
   "  OA TREASURE, the Oriental Magical Items",
   "  prose (capture pp. 296-301), header",
-  "  rules/oa129magitemsprose.h, prefix dlt",
+  "  rules/oa/oa129magitemsprose.h, prefix dlt",
   "  (verified free at b346bda), one gap flip",
   "  (the magical items prose box, its",
   "  two-line wrap handled), gap census now",
@@ -360,7 +360,7 @@
   "  onto p. 297), prefix dlu (verify free at",
   "  the landing), audit \"R759 OA Table 86",
   "  items audit\", include after",
-  "  rules/oa129magitemsprose.h. The d100 grid",
+  "  rules/oa/oa129magitemsprose.h. The d100 grid",
   "  of the thirty-four items - NOTE: the",
   "  capture prints the 95-96 Wheels of Fire",
   "  and the 91-100 Wondrous Writing Set,",

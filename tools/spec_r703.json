@@ -2,7 +2,7 @@
  "round": 703,
  "title": "OA CHAPTER 11 - the terrain encounter tables: the sixteen terrain columns of the 2-20 roll grid with the encounter names by ordinal",
  "prefix": "djq",
- "header_file": "rules/oa74terrain.h",
+ "header_file": "rules/oa/oa74terrain.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA CHAPTER 11, printed capture pp. 251-252 - the terrain encounter tables round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift. THE GRID: the sixteen terrain columns of the encounter tables, each column the nineteen rolls 2-20, one roll per band - the City/Town, the Tropical/Sub-tropical Mountains, the Tropical/Sub-tropical Ocean, the Temperate Swamp, the Rural, the Tropical/Sub-tropical Forest, the Temperate Mountain, the Temperate Freshwater, the Steppes, the Tropical/Sub-tropical Swamp, the Temperate Forest, the Temperate Ocean, the Aerial, the Tropical/Sub-tropical Freshwater, the Temperate Plain, the Cold Regions (the all-terrain-types column). THE 164 NAMES by ordinal: Afanc the 1; Bajang the 2; Bakemono the 3; Baku or lycanthrope, weretiger the 4; Bandits the 5; Bat, giant the 6; Bear, black the 7; Bear, northern the 8; Bee, giant bumble bee or crane, giant the 9; Bee, giant soldier or vulture, giant the 10; Beetle, giant water the 11; Behemoth the 12; Bisan the 13; Brigands the 14; Brigands or merchant the 15; Buffalo the 16; Buso, tagamaling the 17; Buso, tigbauna the 18; Carp, giant the 19; Cat lord the 20; Catfish, giant the 21; Centipede, giant the 22; Centipede, huge the 23; Centipede, megalo- the 24; Crab, giant the 25; Crane, giant the 26; Crayfish, giant the 27; Crocodile, normal the 28; Doc cu'o'c the 29; Dragon horse the 30; Dragon turtle the 31; Dragon, chiang lung the 32; Dragon, cloud or dragon, gold the 33; Dragon, gold the 34; Dragon, li lung the 35; Dragon, lung wang the 36; Dragon, mist the 37; Dragon, pan lung the 38; Dragon, shen lung the 39; Dragon, tun mi lung the 40; Dragon, tun mi lung or elemental, air the 41; Dragon, turtle the 42; Dragon, yu lung the 43; Dragonfly, giant the 44; Dragonfly, giant or dragon horse the 45; Eagle the 46; Eagle or bee, giant worker the 47; Eblis the 48; Elemental, water the 49; Falcon, large the 50; Falcon, small the 51; Falcon, small or owl, giant the 52; Falcon, small or vulture, ordinary the 53; Frog, giant the 54; Gaijin character party the 55; Gaijin NPC party the 56; Game animals the 57; Gargantua, humanoid the 58; Gargantua, insectoid the 59; Gargantua, insectoid or owl, giant the 60; Gargantua, reptilian the 61; Ghost the 62; Giant, hill the 63; Giant, mountain the 64; Goblin rat the 65; Goblin spider the 66; Hai nu the 67; Hengeyokai the 68; Herd animal the 69; Hippopotamus the 70; Hoarfox the 71; Horse, wild the 72; Hsing-sing the 73; Hu hsien the 74; Hu hsien or ogre the 75; Ikiryo the 76; Jiki-ketsu-gaki the 77; Jiki-niku-gaki the 78; Jinki-niku-gaki the 79; Jishin mushi the 80; Jishin mushi or doc cu'o'c the 81; Kala, cave the 82; Kala, earth the 83; Kech the 84; Kenku the 85; Ki-rin the 86; Ki-rin or phoenix the 87; Kuei the 88; Leech, giant the 89; Lycanthrope, foxwoman the 90; Lycanthrope, wereshark the 91; Lycanthrope, weretiger the 92; Mantis, giant the 93; Men, gajin buccaneers the 94; Men, wako the 95; Merchant the 96; Merman the 97; Naga, water the 98; Nat, hkum yeng the 99; Nat, lu the 100; Nature spirit, greater the 101; Nature spirit, lesser the 102; Ningyo the 103; Noble the 104; Nomads the 105; Octopus, giant the 106; Ogre the 107; Ogre mage the 108; Ogre magi the 109; Ogre, aquatic the 110; Oni the 111; Oriental character party the 112; Oriental NPC party the 113; Oriental NPC party or brigands the 114; Owl the 115; Owl, giant the 116; P'oh the 117; Phantom the 118; Phoenix the 119; Pilgrim the 120; Pilgrims the 121; Quicksand the 122; Rakshasa the 123; Ram the 124; Rat, giant the 125; Rat, ordinary the 126; Raven, giant the 127; Raven, huge or raven, giant the 128; Raven, ordinary the 129; School of fish the 130; Scorpion, giant the 131; Scorpion, huge the 132; Scorpion, large the 133; Seawolf the 134; Shan sao the 135; Shikko-gaki the 136; Shinen-gaki the 137; Skeleton the 138; Snake, constrictor the 139; Snake, giant constrictor the 140; Snake, giant poisonous the 141; Snake, giant spitting the 142; Snake, poisonous the 143; Snake, sea the 144; Spider, giant the 145; Spider, giant marine the 146; Spider, giant water the 147; Spider, huge the 148; Spirits of the air or dragon, t'ien lung the 149; Squid, giant the 150; Stag the 151; Stag, giant the 152; Tasloi the 153; Tengu the 154; Termite, giant harvester the 155; Tribesmen the 156; Troll, marine the 157; Turtle, giant sea the 158; Utoyasukata the 159; Verme the 160; Vulture, giant the 161; Weasel the 162; Yellow musk creeper the 163; Yuan ti the 164. THE OCR REPAIRS: the City/Town 15 Busho read as the Buso, tigbauna (the monster of the T/S Forest 7 and the Temperate Mountain 8); the Temperate Mountain 9 Giang read as the Giant, hill (the Giant, mountain at 19 the sibling); the hai nu capitalization normalized at both ocean 16s. AS PRINTED: the Temperate Ocean School of fish at both 10 and 12, the Men, wako at both 7 and 14. The grid codifies per the R431 calculus",
-  "sentinel": "the gap census after this round: 156 closed, 79 open - the terrain encounter tables box flips (census 625 -> 626); NEXT - R704: the Climate Groupings with Creatures from Previous Books (capture p. 252), prefix djr (verify free at the landing), audit \"R704 OA climate groupings audit\", include after rules/oa74terrain.h"
+  "sentinel": "the gap census after this round: 156 closed, 79 open - the terrain encounter tables box flips (census 625 -> 626); NEXT - R704: the Climate Groupings with Creatures from Previous Books (capture p. 252), prefix djr (verify free at the landing), audit \"R704 OA climate groupings audit\", include after rules/oa/oa74terrain.h"
  },
  "consts": [
   {
@@ -532,14 +532,14 @@
   "open": 79
  },
  "include_comment": "the OA Chapter 11 terrain encounter tables pins",
- "include_after": "#include \"rules/oa73explain.h\"  // R702: the OA daily events explanation pins",
+ "include_after": "#include \"rules/oa/oa73explain.h\"  // R702: the OA daily events explanation pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R702 LANDED 2026-10-21: commit",
  "prev_record": [
   "- R702 LANDED 2026-10-21: commit eb09e6093e81b7ec6fbf4e0243afd3216eea39cb",
   "  (census 624 -> 625, pushed 708d681..eb09e60), OA EXPLANATION OF DAILY",
-  "  EVENTS, capture pp. 247-251 print: rules/oa73explain.h, prefix djp",
+  "  EVENTS, capture pp. 247-251 print: rules/oa/oa73explain.h, prefix djp",
   "  (verified free at 708d681), ONE gap flip, gap census 154/81 -> 155/80.",
   "  59 consts + 34 bools (93 inlines): the daily frame (the three events",
   "  max per day, the providers of the action); the twenty-nine events",
@@ -574,6 +574,6 @@
   "  columns of the 2-20 roll grid; the climate groupings box follows),",
   "  prefix djq (verified",
   "  free at eb09e60), audit \"R703 OA terrain encounter tables audit\",",
-  "  include after rules/oa73explain.h"
+  "  include after rules/oa/oa73explain.h"
  ]
 }

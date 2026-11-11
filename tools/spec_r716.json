@@ -2,7 +2,7 @@
  "round": 716,
  "title": "OA MONSTERS - the Goblin Rat: the shapechanging ratman",
  "prefix": "dkd",
- "header_file": "rules/oa87goblinrat.h",
+ "header_file": "rules/oa/oa87goblinrat.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA MONSTERS - THE GOBLIN RAT, printed capture p. 266 - the shapechanger round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 169 closed, 66 open - the goblin rat box flips (census 638 -> 639); NEXT - R717: the Goblin Spider (capture p. 267), prefix dke (verify free at the landing), audit \"R717 OA monsters Goblin Spider audit\", include after rules/oa87goblinrat.h"
+  "sentinel": "the gap census after this round: 169 closed, 66 open - the goblin rat box flips (census 638 -> 639); NEXT - R717: the Goblin Spider (capture p. 267), prefix dke (verify free at the landing), audit \"R717 OA monsters Goblin Spider audit\", include after rules/oa/oa87goblinrat.h"
  },
  "consts": [
   {
@@ -625,7 +625,7 @@
   "open": 66
  },
  "include_comment": "the OA Goblin Rat pins",
- "include_after": "#include \"rules/oa86generals.h\"  // R715: the OA Animal Generals pins",
+ "include_after": "#include \"rules/oa/oa86generals.h\"  // R715: the OA Animal Generals pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R715 LANDED 2026-10-21: commit",
@@ -633,7 +633,7 @@
   "- R715 LANDED 2026-10-21: commit 1669743004a121807de54b6430f0bd5250658af2",
   "  (census 637 -> 638, pushed 9f0a277..1669743), OA MONSTERS - the",
   "  Generals of the Animal Kings, Greater Spirits (capture pp.",
-  "  265-266 print): rules/oa86generals.h, prefix dkc (verified",
+  "  265-266 print): rules/oa/oa86generals.h, prefix dkc (verified",
   "  free at 9f0a277), ONE gap flip, gap census 168/67 - the",
   "  animal generals box, the three commanders riding one flip.",
   "  62 consts + 23 bools (85 inlines): the shared doctrine (the",
@@ -659,6 +659,6 @@
   "  byte-exact; canvas md5 2ef459de722a16d1de59f69196b38cac).",
   "  NEXT - R716: the Goblin Rat (capture p. 266), prefix dkd",
   "  (verified free at 1669743), audit \"R716 OA monsters Goblin",
-  "  Rat audit\", include after rules/oa86generals.h."
+  "  Rat audit\", include after rules/oa/oa86generals.h."
  ]
 }

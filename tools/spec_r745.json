@@ -2,7 +2,7 @@
  "round": 745,
  "title": "OA TREASURE - Table 76. Magical Armor Properties: the d100 property grid",
  "prefix": "dlg",
- "header_file": "rules/oa116table76.h",
+ "header_file": "rules/oa/oa116table76.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -14,7 +14,7 @@
  "banner": {
   "title": "OA TREASURE - TABLE 76, MAGICAL ARMOR PROPERTIES, printed capture pp. 289-290 - the property grid round",
   "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
-  "sentinel": "the gap census after this round: 198 closed, 37 open - the Table 76 box flips (census 667 -> 668); NEXT - R746: Table 77: Special Properties (capture p. 290), prefix dlh (verify free at the landing), audit \"R746 OA Table 77 special audit\", include after rules/oa116table76.h"
+  "sentinel": "the gap census after this round: 198 closed, 37 open - the Table 76 box flips (census 667 -> 668); NEXT - R746: Table 77: Special Properties (capture p. 290), prefix dlh (verify free at the landing), audit \"R746 OA Table 77 special audit\", include after rules/oa/oa116table76.h"
  },
  "consts": [
   {
@@ -170,7 +170,7 @@
   "open": 37
  },
  "include_comment": "the OA Table 76 pins",
- "include_after": "#include \"rules/oa115table75.h\"  // R744: the OA Table 75 pins",
+ "include_after": "#include \"rules/oa/oa115table75.h\"  // R744: the OA Table 75 pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R744 LANDED 2026-10-22: commit",
@@ -180,7 +180,7 @@
   "  (census 666 -> 667, pushed d8ba982..c335e9a),",
   "  OA TREASURE, Table 75: Magical Armor",
   "  (capture p. 289), header",
-  "  rules/oa115table75.h, prefix dlf",
+  "  rules/oa/oa115table75.h, prefix dlf",
   "  (verified free at d8ba982), one gap flip",
   "  (the Table 75 box, single-line), gap",
   "  census now 197 closed / 38 open. Round",
@@ -210,7 +210,7 @@
   "  caption prints a period), prefix dlg",
   "  (verify free at the landing), audit \"R745",
   "  OA Table 76 properties audit\", include",
-  "  after rules/oa115table75.h. The",
+  "  after rules/oa/oa115table75.h. The",
   "  properties grid runs onto p. 290 - the",
   "  armor of quality through the",
   "  special-property reroll on Table 77."

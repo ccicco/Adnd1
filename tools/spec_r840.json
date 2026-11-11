@@ -3,7 +3,7 @@
  "title": "the hornet promotion",
  "prefix": "ffh",
  "regtest": "regtest.cpp",
- "header_file": "rules/ffh.h",
+ "header_file": "rules/ff/hornet_promotion.h",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "gap_report": "tools/mm2_gap_report.md",
  "banner": {
@@ -280,7 +280,7 @@
  "audit_comment": "the hornet promotion wave of the ff arc: the one def (the FF p. 52 stat block), the one cell (the die 14 Monster Level IV row), the dungeon walk-key census re-pinned, the registry and ff def censuses carried, the keyless FF census drained to the Elemental Prince row alone; the constants check themselves",
  "audit_file": "rules/audits/r840_batch.h",
  "audit_anchor": "#include \"rules/audits/r839_batch.h\"  // R839: R839 fourth FF promotion audit",
- "include_after": "#include \"rules/ffu.h\"  // R839: the fourth FF promotion batch",
+ "include_after": "#include \"rules/ff/promo_batch4.h\"  // R839: the fourth FF promotion batch",
  "include_comment": "the hornet promotion",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R839 LANDED 2026-10-25: commit",
@@ -325,7 +325,7 @@
   "  887 -> 912, the ff def census 77",
   "  -> 102; NO gap boxes flip (MM2",
   "  stays 37 closed 0 open). Header",
-  "  rules/ffu.h, prefix ffu (23",
+  "  rules/ff/promo_batch4.h, prefix ffu (23",
   "  consts + 5 bools, inline 28),",
   "  audit \"R839 fourth FF promotion",
   "  audit\", rode",
@@ -367,7 +367,7 @@
    "to": "                \"gargoyle\",\n                \"hornet_giant\",\n                \"hydra\","
   },
   {
-   "file": "rules/mm2encd.h",
+   "file": "rules/mm/mm2encd.h",
    "note": "the dungeon walk-key census re-pins 171",
    "from": "// The keyed rows (the MM1, MM2, ALL and promoted FF defs the\n// registry owns; the R839 FF promotion rewired\n// 24 blank cells, 146 -> 170; the two\n// FF rows left keyless: the Elemental\n// Prince row (no print def) and the\n// Hornet, Giant row (the FF p. 52 def\n// rides a future promotion))\ninline int mm2encdWalkKeyRows()\n    { return 170; }",
    "to": "// The keyed rows (the MM1, MM2, ALL and promoted FF defs the\n// registry owns; the R839 FF promotion rewired\n// 24 blank cells, 146 -> 170; the R840\n// hornet promotion rekeyed\n// 1 more, 170 -> 171; the one\n// FF row left keyless: the Elemental\n// Prince row (no print def))\ninline int mm2encdWalkKeyRows()\n    { return 171; }"

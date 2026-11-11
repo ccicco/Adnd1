@@ -2,7 +2,7 @@
  "round": 464,
  "title": "the WSG hunting and stalking slice - hunting, stalking a wounded animal and Table 31, printed p. 55, with the game-encounter list of p. 56",
  "prefix": "whn",
- "header_file": "rules/wsghunt.h",
+ "header_file": "rules/wsg/wsghunt.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -640,22 +640,22 @@
   {
    "note": "hunting",
    "from": "  - [ ] Hunting (p. 55)",
-   "to": "  - [x] Hunting (p. 55) - R464: the four-turn check with the party and midday modifiers, the missile-weapon requirement and the 1d10 hit procedure pin as rules/wsghunt.h"
+   "to": "  - [x] Hunting (p. 55) - R464: the four-turn check with the party and midday modifiers, the missile-weapon requirement and the 1d10 hit procedure pin as rules/wsg/wsghunt.h"
   },
   {
    "note": "stalking a wounded animal",
    "from": "  - [ ] Stalking a wounded animal (p. 55)",
-   "to": "  - [x] Stalking a wounded animal (p. 55) - R464: the enraged size L charge (the 50% 1d8 predamage, the closest-character charge) and the panicked size M flight (the 18-inch rate, the 1d4 direction, the 20-foot kill range) pin as rules/wsghunt.h"
+   "to": "  - [x] Stalking a wounded animal (p. 55) - R464: the enraged size L charge (the 50% 1d8 predamage, the closest-character charge) and the panicked size M flight (the 18-inch rate, the 1d4 direction, the 20-foot kill range) pin as rules/wsg/wsghunt.h"
   },
   {
    "note": "Table 31",
    "from": "- [ ] **Table 31: hunting success** (p. 55)",
-   "to": "- [x] **Table 31: hunting success** (p. 55) - R464: the 33-row terrain-by-season grid over the five climate regions, all 132 cells pixel-verified, with the p. 56 game-encounter list pin as rules/wsghunt.h"
+   "to": "- [x] **Table 31: hunting success** (p. 55) - R464: the 33-row terrain-by-season grid over the five climate regions, all 132 cells pixel-verified, with the p. 56 game-encounter list pin as rules/wsg/wsghunt.h"
   },
   {
    "note": "the post-state line",
-   "from": "Post-state at R463: 76 closed, 110 open (the R463 round continues the chapter - food gathering, foraging, the inedible plants and Table 30 pin as rules/wsgforage.h; the next round continues - hunting, stalking a wounded animal and Table 31).",
-   "to": "Post-state at R464: 79 closed, 107 open (the R464 round continues the chapter - hunting, stalking a wounded animal and Table 31 pin as rules/wsghunt.h; the next round continues - the hunting proficiency, and then Table 32 and the food gathering of the water chapter close)."
+   "from": "Post-state at R463: 76 closed, 110 open (the R463 round continues the chapter - food gathering, foraging, the inedible plants and Table 30 pin as rules/wsg/wsgforage.h; the next round continues - hunting, stalking a wounded animal and Table 31).",
+   "to": "Post-state at R464: 79 closed, 107 open (the R464 round continues the chapter - hunting, stalking a wounded animal and Table 31 pin as rules/wsg/wsghunt.h; the next round continues - the hunting proficiency, and then Table 32 and the food gathering of the water chapter close)."
   }
  ],
  "gap_census": {
@@ -663,7 +663,7 @@
   "open": 107
  },
  "include_comment": "the WSG hunting, stalking and Table 31",
- "include_after": "#include \"rules/wsgforage.h\"  // R463: the WSG food gathering, foraging and Table 30",
+ "include_after": "#include \"rules/wsg/wsgforage.h\"  // R463: the WSG food gathering, foraging and Table 30",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R463 LANDED 2026-10-15: commit 86421cd (census 388, pushed",
@@ -679,7 +679,7 @@
   "  hp/turn, the 1d4/hour rest-plus-water regain, the save halves, slow poison",
   "  stacks to one-fourth, neutralize halts but no prior damage; 2-4 tainted",
   "  half-strength 1d10 rounds/turns 1d2 hp/turn; 5-8 no food value). The",
-  "  when-not-to-use-the-table judgment pins as bools. rules/wsgforage.h NEW (83",
+  "  when-not-to-use-the-table judgment pins as bools. rules/wsg/wsgforage.h NEW (83",
   "  inlines: 28 consts + 14 bools + 1 chain + 40 table columns, prefix wfg,",
   "  checked free in all three TUs). GROUND TRUTH: the biggest OCR fight of the",
   "  arc - the two text layers (djvu vs pdfy) disagree or drop the Tem-F winter,",

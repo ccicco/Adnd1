@@ -2,7 +2,7 @@
  "round": 488,
  "title": "the WSG wilderness combat opener slice - the combat rules for wilderness play with the fighting while climbing, precariously balanced, in water and in poor visibility rules, the inclement weather note, the melee and missile combat from a mount rules and the forcing-opponents-to-dismount rules through the p. 87 cut, printed pp. 84-87, OPENING the wilderness combat chapter",
  "prefix": "wfc",
- "header_file": "rules/wsgfight.h",
+ "header_file": "rules/wsg/wsgfight.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -1414,44 +1414,44 @@
   {
    "note": "the fighting while climbing box",
    "from": "  - [ ] Fighting while climbing (p. 84)",
-   "to": "  - [x] Fighting while climbing (p. 84) - R488: the cliff-face and severe-slope penalties with the elevation adjustments and the damage-triggered Climbing Checks pin as rules/wsgfight.h"
+   "to": "  - [x] Fighting while climbing (p. 84) - R488: the cliff-face and severe-slope penalties with the elevation adjustments and the damage-triggered Climbing Checks pin as rules/wsg/wsgfight.h"
   },
   {
    "note": "the fighting precariously balanced box",
    "from": "  - [ ] Fighting while precariously balanced (p. 84)",
-   "to": "  - [x] Fighting while precariously balanced (p. 84) - R488: the miss Dex Check with the -1 to -4 circumstance modifiers and the edge-distance and suffocation rules pin as rules/wsgfight.h"
+   "to": "  - [x] Fighting while precariously balanced (p. 84) - R488: the miss Dex Check with the -1 to -4 circumstance modifiers and the edge-distance and suffocation rules pin as rules/wsg/wsgfight.h"
   },
   {
    "note": "the fighting in water box",
    "from": "  - [ ] Fighting in water (p. 85)",
-   "to": "  - [x] Fighting in water (p. 85) - R488: the -1 to -4 depth penalties with the attacker-share rule and the swimming-proficiency relief pin as rules/wsgfight.h"
+   "to": "  - [x] Fighting in water (p. 85) - R488: the -1 to -4 depth penalties with the attacker-share rule and the swimming-proficiency relief pin as rules/wsg/wsgfight.h"
   },
   {
    "note": "the fighting in poor visibility box",
    "from": "  - [ ] Fighting in poor visibility (p. 86)",
-   "to": "  - [x] Fighting in poor visibility (p. 86) - R488: the moonlight, natural-darkness and total-darkness penalties with the wild-swing rules and the darkness climbing and precarious adjustments pin as rules/wsgfight.h"
+   "to": "  - [x] Fighting in poor visibility (p. 86) - R488: the moonlight, natural-darkness and total-darkness penalties with the wild-swing rules and the darkness climbing and precarious adjustments pin as rules/wsg/wsgfight.h"
   },
   {
    "note": "the melee combat from a mount box",
    "from": "  - [ ] Melee combat from a mount (p. 86)",
-   "to": "  - [x] Melee combat from a mount (p. 86) - R488: the size bonuses and penalties with the airborne and swooping adjustments and the braced-defense rules pin as rules/wsgfight.h"
+   "to": "  - [x] Melee combat from a mount (p. 86) - R488: the size bonuses and penalties with the airborne and swooping adjustments and the braced-defense rules pin as rules/wsg/wsgfight.h"
   },
   {
    "note": "the missile combat from a mount box",
    "from": "  - [ ] Missile combat from a mount (p. 86)",
-   "to": "  - [x] Missile combat from a mount (p. 86) - R488: the riding-proficiency requirement with the rate-of-fire scale reduction and the mount-speed penalties pin as rules/wsgfight.h"
+   "to": "  - [x] Missile combat from a mount (p. 86) - R488: the riding-proficiency requirement with the rate-of-fire scale reduction and the mount-speed penalties pin as rules/wsg/wsgfight.h"
   },
   {
    "note": "the post-state line",
-   "from": "Post-state at R487: 122 closed, 64 open (the R487 round CLOSES the natural hazards chapter - the tidal wave death rules, floods and flash floods, avalanches, rockfalls and mudslides, and quicksand pin as rules/wsghazd2.h; the next round opens the wilderness combat chapter - fighting while climbing (p. 84)).",
-   "to": "Post-state at R488: 128 closed, 58 open (the R488 round OPENS the wilderness combat chapter - the fighting while climbing, precariously balanced, in water and in poor visibility rules, the inclement weather note and the melee and missile combat from a mount rules pin as rules/wsgfight.h; the forcing opponents to dismount box stays open - the section tail rides from the p. 87 cut; the next round lands the dismount tail and closes the combat chapter (p. 88))."
+   "from": "Post-state at R487: 122 closed, 64 open (the R487 round CLOSES the natural hazards chapter - the tidal wave death rules, floods and flash floods, avalanches, rockfalls and mudslides, and quicksand pin as rules/wsg/wsghazd2.h; the next round opens the wilderness combat chapter - fighting while climbing (p. 84)).",
+   "to": "Post-state at R488: 128 closed, 58 open (the R488 round OPENS the wilderness combat chapter - the fighting while climbing, precariously balanced, in water and in poor visibility rules, the inclement weather note and the melee and missile combat from a mount rules pin as rules/wsg/wsgfight.h; the forcing opponents to dismount box stays open - the section tail rides from the p. 87 cut; the next round lands the dismount tail and closes the combat chapter (p. 88))."
   }
  ],
  "gap_census": {
   "closed": 128,
   "open": 58
  },
- "include_after": "#include \"rules/wsghazd2.h\"  // R487: the WSG flood, avalanche, mudslide and quicksand hazard rules",
+ "include_after": "#include \"rules/wsg/wsghazd2.h\"  // R487: the WSG flood, avalanche, mudslide and quicksand hazard rules",
  "include_comment": "the WSG wilderness combat rules",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
@@ -1460,7 +1460,7 @@
   "- R487 LANDED 2026-10-16: commit 5fa9bdf (census 412,",
   "  pushed 908b31b..5fa9bdf), the WSG NATURAL HAZARDS CLOSER",
   "  slice, printed pp. 80-83 - the chapter CLOSED in two",
-  "  content-density rounds. Pinned as rules/wsghazd2.h with",
+  "  content-density rounds. Pinned as rules/wsg/wsghazd2.h with",
   "  the include after wsghazd.h at line 192 (prefix whz2 -",
   "  free on the first probe; the natural first choice wfl",
   "  collided with the R475 fire-fuel round, so the wsghazd2",

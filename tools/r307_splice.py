@@ -225,7 +225,7 @@ PHB_D_NEW = NL.join([
     'end-of-book INITIATIVE reads carry the',
     'DMG-side pins (the turn clock p.38,',
     'the R158 speed factors, the',
-    'rules/turn.h round and segment',
+    'rules/engine/turn.h round and segment',
     'conventions); the reference-sheet',
     'repeats of the pinned tables read as',
     'copies; the paladin Furthermore list',

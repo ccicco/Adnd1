@@ -1,11 +1,11 @@
--- oa767: promoted from rules/oa138buildings.h (the OA DAILY LIFE - BUILDINGS, printed capture pp. 308-309 (with the food tail);
+-- oa767: promoted from rules/oa/oa138buildings.h (the OA DAILY LIFE - BUILDINGS, printed capture pp. 308-309 (with the food tail);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 767,
   "prefix" = "oa767",
   "banner" = {
       "title" = "OA DAILY LIFE - BUILDINGS, printed capture pp. 308-309 (with the food tail",
-      "provenance" = "of p. 308) - the three building types of Kara-Tur census 689 -> 690.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 220 closed, 15 open - the Buildings box flips (census 689 -> 690); NEXT - R768: Manners (capture p. 312), prefix dmd (verify free at the landing), audit \"R768 OA Daily Life Manners audit\", include after rules/oa138buildings.h",
+      "provenance" = "of p. 308) - the three building types of Kara-Tur census 689 -> 690.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 220 closed, 15 open - the Buildings box flips (census 689 -> 690); NEXT - R768: Manners (capture p. 312), prefix dmd (verify free at the landing), audit \"R768 OA Daily Life Manners audit\", include after rules/oa/oa138buildings.h",
     },
   "consts" = { {
       "name" = "dmcTownMealsCount",

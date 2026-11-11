@@ -1,11 +1,11 @@
--- oa764: promoted from rules/oa135kozakura.h (the OA SETTING - THE ISLAND OF KOZAKURA, printed capture p. 304 - the turbulent);
+-- oa764: promoted from rules/oa/oa135kozakura.h (the OA SETTING - THE ISLAND OF KOZAKURA, printed capture p. 304 - the turbulent);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 764,
   "prefix" = "oa764",
   "banner" = {
       "title" = "OA SETTING - THE ISLAND OF KOZAKURA, printed capture p. 304 - the turbulent",
-      "provenance" = "land of the daimyo wars census 686 -> 687.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 217 closed, 18 open - the Kozakura box flips (census 686 -> 687); NEXT - R765: Gajin (capture p. 304), prefix dma (verify free at the landing), audit \"R765 OA Gajin audit\", include after rules/oa135kozakura.h",
+      "provenance" = "land of the daimyo wars census 686 -> 687.  pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift  the gap census after this round: 217 closed, 18 open - the Kozakura box flips (census 686 -> 687); NEXT - R765: Gajin (capture p. 304), prefix dma (verify free at the landing), audit \"R765 OA Gajin audit\", include after rules/oa/oa135kozakura.h",
     },
   "consts" = { {
       "name" = "dlzLittleCherryBlossomName",

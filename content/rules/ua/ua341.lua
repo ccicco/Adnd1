@@ -1,4 +1,4 @@
--- ua341: promoted from rules/uaspelltables.h (the The UA SPELL TABLES (pp. 28-31) pins, part 1 (R341): the cleric);
+-- ua341: promoted from rules/ua/uaspelltables.h (the The UA SPELL TABLES (pp. 28-31) pins, part 1 (R341): the cleric);
 -- DO NOT hand-edit; the pin header stays the adjudicated record.
 return {
   "round" = 341,

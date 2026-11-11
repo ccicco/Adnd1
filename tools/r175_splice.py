@@ -9,9 +9,9 @@
 # COMPLETE table on its conjure-animals page, so the
 # finding is payable now:
 #
-#   (a) rules/klm.h header comment - the OCR-debt
+#   (a) rules/dmg_appendices_klm.h header comment - the OCR-debt
 #       JUDGMENT wording closes.
-#   (b) rules/klm.h - the 20-name roster accessors
+#   (b) rules/dmg_appendices_klm.h - the 20-name roster accessors
 #       are replaced by the full banded table: hit
 #       dice categories 5-14, 26 rows cell by cell
 #       (the banded categories 5, 6, 7, 8, 10 and 12
@@ -74,7 +74,7 @@ def patch(p, old, new, tag, expect=1, marker=None):
     wr(p, s.replace(old, new))
     applied.append(tag)
 
-# ---- (1) the klm.h header comment ----
+# ---- (1) the rules/dmg_appendices_klm.h header comment ----
 p1_old = NL.join([
     '// source, the R146 precedent); the Appendix L',
     '// 5-and-up band columns are OCR debt (open finding) -',
@@ -89,7 +89,7 @@ p1_new = NL.join([
     '// water note are pinned; the Appendix M water tables for',
 ])
 
-# ---- (2) the klm.h roster block -> the full table ----
+# ---- (2) the rules/dmg_appendices_klm.h roster block -> the full table ----
 p2_old = NL.join([
     '// The 5-and-up roster: the printed animal names.',
     '// The band columns of this section are OCR debt',
@@ -413,7 +413,7 @@ p5_new = NL.join([
     'absent) - replaced by the full table; the',
     'compilation spelling woolly corrects the',
     'pinned wooly; the bandless rows pin as lo/hi',
-    '0 (the printed dash). rules/klm.h; the R175',
+    '0 (the printed dash). rules/dmg_appendices_klm.h; the R175',
     'battery audit carries the cell-by-cell check.',
     'Census 93.',
     '',
@@ -445,13 +445,13 @@ p7_new = NL.join([
 ])
 
 # ---- run ----
-patch("rules/klm.h", p1_old, p1_new,
-      "klm.h: header comment closed",
+patch("rules/dmg_appendices_klm.h", p1_old, p1_new,
+      "rules/dmg_appendices_klm.h: header comment closed",
       marker="pinned R175 (the full table")
 assert len(applied) + len(already) == 1
 
-patch("rules/klm.h", p2_old, p2_new,
-      "klm.h: the full 5-and-up table",
+patch("rules/dmg_appendices_klm.h", p2_old, p2_new,
+      "rules/dmg_appendices_klm.h: the full 5-and-up table",
       marker="klmConjHigherRow(int i)")
 assert len(applied) + len(already) == 2
 

@@ -37,8 +37,8 @@ def replace_exact(old_text, anchor, replacement, what):
 def main():
     changed = False
 
-    # ---- 1. rules/combat.h: the turning API ----
-    h = read("rules/combat.h")
+    # ---- 1. rules/engine/combat.h: the turning API ----
+    h = read("rules/engine/combat.h")
     old_h = """// ----------------------------------------------------------------------------
 // Turning undead (DMG p.75). The cleric turn matrix by cleric level
 // vs undead type. Result:
@@ -116,11 +116,11 @@ int rollTurnCount(Dice& dice, const TurnAttempt& t);
 """
     h, did = replace_exact(h, old_h, new_h, "combat.h turning API")
     if did:
-        write("rules/combat.h", h)
+        write("rules/engine/combat.h", h)
     changed = changed or did
 
-    # ---- 2. rules/combat.cpp: the matrix and mechanics ----
-    c = read("rules/combat.cpp")
+    # ---- 2. rules/engine/combat.cpp: the matrix and mechanics ----
+    c = read("rules/engine/combat.cpp")
     old_c = """// ----------------------------------------------------------------------------
 // Turning undead (DMG p.75 matrix)
 // Cleric level rows 1..8+ (row "C" columns skeleton..special):
@@ -274,7 +274,7 @@ int rollTurnCount(Dice& dice, const TurnAttempt& t) {
 """
     c, did = replace_exact(c, old_c, new_c, "combat.cpp matrix III")
     if did:
-        write("rules/combat.cpp", c)
+        write("rules/engine/combat.cpp", c)
     changed = changed or did
 
     # ---- 3. regtest.cpp: the R109 turn audit ----
@@ -283,7 +283,7 @@ int rollTurnCount(Dice& dice, const TurnAttempt& t) {
 #include "spells/spells.h"
 """
     new_r = """#include "game/party.h"
-#include "rules/combat.h"
+#include "rules/engine/combat.h"
 #include "spells/spells.h"
 """
     r, did = replace_exact(r, old_r, new_r, "regtest combat.h include")

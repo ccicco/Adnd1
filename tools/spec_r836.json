@@ -3,7 +3,7 @@
   "title": "the first FF promotion batch",
   "prefix": "ffp",
   "regtest": "regtest.cpp",
-  "header_file": "rules/ffp.h",
+  "header_file": "rules/ff/promo_batch1.h",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
   "gap_report": "tools/mm2_gap_report.md",
   "banner": {
@@ -225,7 +225,7 @@
   "audit_file": "rules/audits/r836_batch.h",
   "audit_anchor": "#include \"rules/audits/r835_batch.h\"  // R835: R835 final holdback batch audit",
   "include_comment": "the first FF promotion batch",
-  "include_after": "#include \"rules/ymb.h\"  // R835: the final holdback batch",
+  "include_after": "#include \"rules/meta/migration_batch_final_holdback.h\"  // R835: the final holdback batch",
   "seed_anchor": "## Knowledge maintenance",
   "prev_seed_key": "- R835 LANDED 2026-10-25: commit",
   "prev_record": [
@@ -259,7 +259,7 @@
     "  rules/audits/r835_batch.h at the",
     "  R834 include anchor (the R834",
     "  anchor discovery carried",
-    "  forward). Header rules/ymb.h,",
+    "  forward). Header rules/meta/migration_batch_final_holdback.h,",
     "  prefix ymb (verified free at",
     "  cff3ab1, 0 hits), 6 consts + 4",
     "  bools (inline 10), 4 examples,",
@@ -489,25 +489,25 @@
       "to": "                \"moon_dog\",\n                \"dune_stalker\","
     },
     {
-      "file": "rules/mm2enca.h",
+      "file": "rules/mm/mm2enca.h",
       "note": "the mm2enca walk-key census 192 -> 211",
       "from": "// The keyed rows (the MM1, MM2, and promoted FF defs the\n// registry owns; the R821 lung promotion rewired the 3\n// keyless lung dragon cells, 189 -> 192)\ninline int mm2encaWalkKeyRows()\n    { return 192; }",
       "to": "// The keyed rows (the MM1, MM2, and promoted FF defs the\n// registry owns; the R821 lung promotion rewired the 3\n// keyless lung dragon cells, 189 -> 192; the R836 FF\n// promotion rewired 19 more, 192 -> 211)\ninline int mm2encaWalkKeyRows()\n    { return 211; }"
     },
     {
-      "file": "rules/mm2enco.h",
+      "file": "rules/mm/mm2enco.h",
       "note": "the mm2enco walk-key census 572 -> 590",
       "from": "// The rows with a registry walk key (the MM1 and MM2 defs the\n// registry owns; the R820 lammasu promotion rewired the 2\n// keyless cells, 570 -> 572)\ninline int mm2encoWalkKeyRows()\n    { return 572; }",
       "to": "// The rows with a registry walk key (the MM1 and MM2 defs the\n// registry owns; the R820 lammasu promotion rewired the 2\n// keyless cells, 570 -> 572; the R836 FF promotion rewired\n// 18 more, 572 -> 590)\ninline int mm2encoWalkKeyRows()\n    { return 590; }"
     },
     {
-      "file": "rules/lungp.h",
+      "file": "rules/ff/lung_dragons_promotion.h",
       "note": "the lungp walk-key after census 192 -> 211",
       "from": "inline int lungpWalkKeyRowsAfter()\n    { return 192; }",
       "to": "inline int lungpWalkKeyRowsAfter()\n    { return 211; }"
     },
     {
-      "file": "rules/lmp.h",
+      "file": "rules/mm/mm2_lammasu_promotion.h",
       "note": "the lmp walk-key after census 572 -> 590",
       "from": "inline int lmpWalkKeyRowsAfter()\n    { return 572; }",
       "to": "inline int lmpWalkKeyRowsAfter()\n    { return 590; }"

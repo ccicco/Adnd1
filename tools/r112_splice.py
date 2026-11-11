@@ -31,20 +31,20 @@ def replace_exact(text, old, new, label):
 def main():
     changed = False
 
-    c = read("rules/combat.cpp")
+    c = read("rules/engine/combat.cpp")
     if "int attackMatrixMonster(" in c:
         print("already applied: combat.cpp matrix II")
     else:
         c, did = replace_exact(c, CPP_OLD, CPP_NEW, "combat.cpp matrix II")
         changed = changed or did
-    write("rules/combat.cpp", c)
+    write("rules/engine/combat.cpp", c)
 
-    h = read("rules/combat.h")
+    h = read("rules/engine/combat.h")
     h, did = replace_exact(h, HMON_OLD, HMON_NEW, "combat.h source note")
     changed = changed or did
     h, did = replace_exact(h, HDECL_OLD, HDECL_NEW, "combat.h monster decl")
     changed = changed or did
-    write("rules/combat.h", h)
+    write("rules/engine/combat.h", h)
 
     a = read("ai/actor.cpp")
     a, did = replace_exact(a, AHIT_OLD, AHIT_NEW, "actor.cpp monster toHit")
@@ -176,7 +176,7 @@ int attackMatrixMonster(float hitDice, int ac);
 
 // Monster effective level (DMG p.86 guard rule): hit dice to a level
 // for guard strength and similar non-combat uses. NOT used for
-// attacks (matrix II) or saves (monsterSaveLevel, rules/saves.h).
+// attacks (matrix II) or saves (monsterSaveLevel, rules/engine/saves.h).
 """
 
 AHIT_OLD = """    return rules::attackMatrixFighter(
