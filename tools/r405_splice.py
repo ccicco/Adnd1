@@ -8,7 +8,7 @@
 # and the clerical charts stay
 # open:
 #
-# 1. rules/deities.h (NEW,
+# 1. rules/seams/deities.h (NEW,
 #    prefix nhd, 24 inline
 #    functions): the layer
 #    contract (no deity actor
@@ -164,12 +164,12 @@ if s.count('R404 landed 2026-10-13') != 1:
 if s.count('## Knowledge maintenance') != 1:
     die('the seed maintenance head')
 
-# ========= (b) rules/deities.h =========
-DH = 'rules/deities.h'
+# ========= (b) rules/seams/deities.h =========
+DH = 'rules/seams/deities.h'
 
 DHBODY = E(
     '// ===========================================================================',
-    '// Adnd1 - rules/deities.h',
+    '// Adnd1 - rules/seams/deities.h',
     '// The DEITY LAYER SEAM (R405) - the',
     '// last in-scope seam lands. The R404',
     '// psionics precedent rides: the pins',
@@ -277,7 +277,7 @@ DHBODY = E(
     '//      demi-human pantheons map to',
     '//      their subrace parents)',
     '//   3: R404 the psionics seam',
-    '//      (rules/psionics.h - the PC',
+    '//      (rules/seams/psionics.h - the PC',
     '//      psionic reads stay PC-side:',
     '//      the duergar doubled chance,',
     '//      the svirfneblin ban)',
@@ -449,7 +449,7 @@ pair(RT,
      E(
     '#include "rules/dmg/humrpref.h"  // R169:'
     ' p.106 humanoid racial preferences',
-    '#include "rules/deities.h"  '
+    '#include "rules/seams/deities.h"  '
     '// R405: the deity layer seam'),
      'regtest: the deities include')
 
@@ -619,7 +619,7 @@ pair(GP, E(
     '      S.'),
     E(
     '- [x] The deity layer -',
-    '      CLOSED R405 (rules/deities.h;',
+    '      CLOSED R405 (rules/seams/deities.h;',
     '      the R405 seam audit, census 332):',
     '      the layer contract (no deity',
     '      actor site - the pins precede',
@@ -653,7 +653,7 @@ pair(GP, E(
     '- DEFERRED: Appendix S (a deity layer;',
     '  see the appendices item).',
     '  - AMENDED R405: the layer lands -',
-    '    rules/deities.h pins the Appendix S',
+    '    rules/seams/deities.h pins the Appendix S',
     '    contract, source, census and',
     '    dwarven reads (the clean djvu',
     '    scan); the 23 deity stat blocks',

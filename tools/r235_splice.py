@@ -89,10 +89,10 @@ seam_new = [
 
 # ---- 2: the party.h include ----
 inc_old = [
-    '#include "../rules/multiclass.h"  // R233: the multi-class engine',
+    '#include "../rules/phb/multiclass.h"  // R233: the multi-class engine',
 ]
 inc_new = [
-    '#include "../rules/multiclass.h"  // R233: the multi-class engine',
+    '#include "../rules/phb/multiclass.h"  // R233: the multi-class engine',
     '#include "../rules/phb/bard.h"  // R235: the bard engine',
 ]
 

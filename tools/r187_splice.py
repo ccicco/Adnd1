@@ -7,7 +7,7 @@
 # surprise numbers and the paladin turn-undead
 # ladder.
 #
-# rules/subclassspecials.h is CREATED: the
+# rules/phb/subclassspecials.h is CREATED: the
 # MINIMUM FEES FOR ASSASSINATION table (15
 # rows x 8 victim bands, every printed cell;
 # dashes pin as 0), the disguise spotting
@@ -98,7 +98,7 @@ def create(path, marker, content):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/subclassspecials.h CREATED
+# Patch 1: rules/phb/subclassspecials.h CREATED
 # ---------------------------------------------------------------------------
 
 # the fee table: assassin levels 1-15 x the
@@ -244,7 +244,7 @@ hdr = []
 a = hdr.append
 
 a('// ============================================================================')
-a('// Adnd1 - rules/subclassspecials.h')
+a('// Adnd1 - rules/phb/subclassspecials.h')
 a('// The per-subclass specials (R187): the assassin')
 a('// fees and disguise layer, the monk special')
 a('// abilities, backstab, the thief-skill sharing,')
@@ -633,7 +633,7 @@ a('}')
 a('')
 a('} // namespace rules')
 
-create('rules/subclassspecials.h',
+create('rules/phb/subclassspecials.h',
        'The per-subclass specials (R187)',
        NL.join(hdr) + NL)
 
@@ -642,10 +642,10 @@ create('rules/subclassspecials.h',
 # ---------------------------------------------------------------------------
 
 patch('regtest.cpp',
-      'rules/subclassspecials.h',
+      'rules/phb/subclassspecials.h',
       '#include "rules/phb/bard.h"  // R186: the bard (Appendix II)',
       '#include "rules/phb/bard.h"  // R186: the bard (Appendix II)'
-      + NL + '#include "rules/subclassspecials.h"  // R187: the per-subclass specials')
+      + NL + '#include "rules/phb/subclassspecials.h"  // R187: the per-subclass specials')
 
 # ---------------------------------------------------------------------------
 # Patch 3: regtest.cpp - the R187 battery audit (census 104)
@@ -912,7 +912,7 @@ box_old = ('- R187+ the per-subclass specials that remain -'
            + NL + '      assassin, thief-skill sharing.')
 
 box_new = ('- [x] R187 the per-subclass specials - PINNED:'
-           + NL + '      rules/subclassspecials.h CREATED: the'
+           + NL + '      rules/phb/subclassspecials.h CREATED: the'
            + NL + '      MINIMUM FEES FOR ASSASSINATION table (15'
            + NL + '      rows x 8 victim bands, every cell, dashes'
            + NL + '      as 0; the noble-victim multiplier is a'
@@ -969,7 +969,7 @@ patch('tools/dmg_gap_report.md',
       'census 103. Next: the gap report names the'
       + NL + 'next round.'
       + NL + 'R187 landed the per-subclass specials:'
-      + NL + 'rules/subclassspecials.h CREATED (the fee table,'
+      + NL + 'rules/phb/subclassspecials.h CREATED (the fee table,'
       + NL + 'the disguise layer, backstab, the skill sharing,'
       + NL + 'the monk specials A-K with stun/kill and the'
       + NL + 'quivering palm, the ranger surprise numbers, the'
@@ -984,7 +984,7 @@ patch('tools/dmg_gap_report.md',
 assert applied + already == 5, 'patch count drift: ' + str(applied) + ' + ' + str(already)
 print('R187 splice: ALL OK (applied %d, already %d)' % (applied, already))
 print('R187 note: 5 patches; census 104 (one new audit);')
-print('real gate: md5sum rules/subclassspecials.h')
+print('real gate: md5sum rules/phb/subclassspecials.h')
 print('commit: R187: the per-subclass specials pinned - the fees, the')
 print('disguise, the monk specials and the records (census 104)')
 

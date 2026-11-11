@@ -1055,13 +1055,13 @@
   "open": 0
  },
  "caller_files": [
-  "rules/deitylines.h",
+  "rules/seams/deitylines.h",
   "rules/ua/uaappends.h"
  ],
  "inline_count": 105,
  "file_patches": [
   {
-   "file": "rules/deitylines.h",
+   "file": "rules/seams/deitylines.h",
    "note": "the prose note strike (the dwarven, elven, and halfling parts pin)",
    "from": "// R786/R787: the dwarven and elven\n// paragraphs pin (rules/uadeityprose1-2.h);\n// the other pantheons' prose stays open -\n// the lines pin, the paragraphs do not (yet)\n",
    "to": "// R786-R788: the dwarven, elven, and\n// halfling paragraphs pin (rules/\n// uadeityprose1-3.h); the gnomes' and\n// orcs' prose stays open - the lines\n// pin, the paragraphs do not (yet)\n"
@@ -1069,8 +1069,8 @@
   {
    "file": "rules/ua/uaappends.h",
    "note": "the uaappends prose note strike (part 3)",
-   "from": "// stat lines) in rules/deitylines.h; the dwarven\n// and elven prose pin in rules/uadeityprose1-2.h\n// (R786/R787); the other pantheons' prose\n// stays open.\n",
-   "to": "// stat lines) in rules/deitylines.h; the dwarven,\n// elven, and halfling prose pin in rules/\n// uadeityprose1-3.h (R786-R788); the gnomes'\n// and orcs' prose stays open.\n"
+   "from": "// stat lines) in rules/seams/deitylines.h; the dwarven\n// and elven prose pin in rules/uadeityprose1-2.h\n// (R786/R787); the other pantheons' prose\n// stays open.\n",
+   "to": "// stat lines) in rules/seams/deitylines.h; the dwarven,\n// elven, and halfling prose pin in rules/\n// uadeityprose1-3.h (R786-R788); the gnomes'\n// and orcs' prose stays open.\n"
   }
  ]
 }

@@ -299,7 +299,7 @@ log_lines = [
     '      arrive. Census 143.',
     '- [ ] R228 the druid and illusionist rosters',
     '      join the SpellId registry (139 spells,',
-    '      rules/druidspells.h + illusionspells.h',
+    '      rules/phb/druidspells.h + illusionspells.h',
     '      are dead data today) - the largest item,',
     '      may split.',
     '- [ ] the subclass creation gates - no',

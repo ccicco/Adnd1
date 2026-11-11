@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/lancecharge.h
+// Adnd1 - rules/seams/lancecharge.h
 // THE LANCE CHARGE - the R189 feeder goes live, the three lances ride the
 // registry
 // census 701 -> 702.

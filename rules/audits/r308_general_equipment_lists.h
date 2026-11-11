@@ -1,6 +1,6 @@
     // ---- R308: the general equipment lists audit ----
     // The EIGHT printed general lists (the
-    // rules/equipcosts.h general section) walked cell
+    // rules/phb/equipcosts.h general section) walked cell
     // for cell against this local ground truth: the
     // row count, the list boundaries, the three coin
     // columns, the coin identity (exactly one nonzero

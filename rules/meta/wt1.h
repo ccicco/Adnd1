@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/wt1.h
+// Adnd1 - rules/meta/wt1.h
 // The WSG+MOP normalization tail batch - the 23 defs (15 WSG, 8 MOP)
 // rewritten to the full-field 57-key emission
 // census 946 -> 947.

@@ -267,7 +267,7 @@ inline bool uscGnomishClericsAllMale()
 // place-of-worship reads, the prose under the
 // five clerical charts (pp. 121-122). The kind
 // codes and the cleric-gender grid pin in
-// rules/worshipsites.h; the strings ride here,
+// rules/seams/worshipsites.h; the strings ride here,
 // one row per deity in the registry order. The
 // compilation's Hanali row carries Solonor's
 // cells wholesale; the print's fountain-or-spring

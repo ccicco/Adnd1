@@ -13,7 +13,7 @@
  "audit_label": "R1025 DRG normalization audit",
  "audit_comment": "THE REGISTRY CLOSES - the five Dragon magazine defs (death angel, mihalli, prowler, qu'uni, vriyagga) rewritten to the full-field 57-key emission, byte-exact against the landed normalize_registry.py, the registry 1338 of 1338 canonical; thirty anchored sentinel inserts and the first five comma-site whole-line rewrites of the arc (the DRG text fields lacked the Lua-optional trailing comma).",
  "audit_anchor": "#include \"rules/audits/r1024_batch.h\"  // R1024: R1024 WSG+MOP normalization audit",
- "include_after": "#include \"rules/wt1.h\"  // R1024: the WSG+MOP normalization tail batch",
+ "include_after": "#include \"rules/meta/wt1.h\"  // R1024: the WSG+MOP normalization tail batch",
  "include_comment": "the DRG normalization batch",
  "regtest": "regtest.cpp",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",

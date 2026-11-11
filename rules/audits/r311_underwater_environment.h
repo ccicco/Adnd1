@@ -1,6 +1,6 @@
     // ---- R311: the underwater environment audit ----
     // The DMG UNDERWATER ADVENTURES section
-    // (rules/underwater.h) walked cell for cell
+    // (rules/seams/underwater.h) walked cell for cell
     // against this local ground truth: the
     // surface swim constants with the drown walk,
     // the movement pins with the cap walk, the

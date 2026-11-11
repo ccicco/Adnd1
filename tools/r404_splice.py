@@ -6,7 +6,7 @@
 # the psionic-combat charge
 # stays open:
 #
-# 1. rules/psionics.h (NEW,
+# 1. rules/seams/psionics.h (NEW,
 #    prefix psx, 15 inline
 #    functions): the layer
 #    contract (no psionic
@@ -150,12 +150,12 @@ if s.count('R403 landed 2026-10-13') != 1:
 if s.count('## Knowledge maintenance') != 1:
     die('the seed maintenance head')
 
-# ========= (b) rules/psionics.h =========
-PS = 'rules/psionics.h'
+# ========= (b) rules/seams/psionics.h =========
+PS = 'rules/seams/psionics.h'
 
 PSBODY = E(
     '// ===========================================================================',
-    '// Adnd1 - rules/psionics.h',
+    '// Adnd1 - rules/seams/psionics.h',
     '// The PSIONICS SEAM (R404) - the',
     '// deferred engine seam lands. The',
     '// R403 mount precedent rides: the',
@@ -310,7 +310,7 @@ pair(RT,
      E(
     '#include "rules/dmg/insanity.h"  // R166:'
     ' pp.82-83 intoxication and insanity',
-    '#include "rules/psionics.h"  '
+    '#include "rules/seams/psionics.h"  '
     '// R404: the psionics seam'),
      'regtest: the psionics include')
 
@@ -420,7 +420,7 @@ pair(GP, E(
     '      psionic expansions.'),
     E(
     '- [x] The psionics seam -',
-    '      CLOSED R404 (rules/psionics.h;',
+    '      CLOSED R404 (rules/seams/psionics.h;',
     '      the R404 seam audit, census 331):',
     '      the layer contract (no psionic',
     '      site - the pins precede the',
@@ -450,7 +450,7 @@ pair(GP, E(
     '  psionics seam; the duergar doubled',
     '  chance rides it).',
     '  - AMENDED R404: the seam lands -',
-    '    rules/psionics.h pins the duergar',
+    '    rules/seams/psionics.h pins the duergar',
     '    doubled chance and the',
     '    svirfneblin PC ban (the clean',
     '    UA pp. 10-11 scan); the psionic',

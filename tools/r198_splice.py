@@ -75,7 +75,7 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/weapontables.h - the class allowlists (the print cell)
+# Patch 1: rules/phb/weapontables.h - the class allowlists (the print cell)
 # ---------------------------------------------------------------------------
 
 comment = ('// ----------------------------------------------------------------------------'
@@ -205,7 +205,7 @@ old_hdr = ('inline int weaponStunnedProneMotionlessBonus() {'
            + NL
            + NL + '} // namespace rules')
 
-patch('rules/weapontables.h',
+patch('rules/phb/weapontables.h',
       'R198: the class weapon allowlists',
       old_hdr,
       new_hdr)

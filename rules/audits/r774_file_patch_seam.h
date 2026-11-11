@@ -8,7 +8,7 @@
     // idempotent by to-presence, counted in the applied/already census),
     // rverify restores and counts the patch targets, and ./rn derives the
     // extra git-add paths from the spec. The pins below codify the seam
-    // contract; the demo patch rides rules/mountlayer.h (comment-only - the
+    // contract; the demo patch rides rules/seams/mountlayer.h (comment-only - the
     // R403 audit at 43208 requires the charge open until R775).
     {
         using namespace rules;

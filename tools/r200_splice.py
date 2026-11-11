@@ -62,7 +62,7 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/subclassspecials.h - the falling-while-climbing ladder
+# Patch 1: rules/phb/subclassspecials.h - the falling-while-climbing ladder
 # (anchored between the monkThiefAbilityName close and the surprise
 # ladder comment - a comment landmark, never a function opening line)
 # ---------------------------------------------------------------------------
@@ -117,7 +117,7 @@ new1 = ('    if (i > 5) i = 5;'
         + NL
         + NL + '// ---- the monk surprise ladder ----')
 
-patch('rules/subclassspecials.h',
+patch('rules/phb/subclassspecials.h',
       'R200: the falling-while-climbing ladder',
       old1,
       new1)

@@ -1,5 +1,5 @@
     // ---- R309: the hirelings cost tables audit ----
-    // The two DMG HIRELINGS tables (rules/hirelings.h)
+    // The two DMG HIRELINGS tables (rules/dmg/hirelings.h)
     // walked cell for cell against this local ground
     // truth: the standard daily and monthly columns
     // (the monthly coin identity), the craft percent

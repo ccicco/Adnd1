@@ -1,7 +1,7 @@
 {
  "round": 779,
  "prefix": "lnc",
- "header_file": "rules/lancecharge.h",
+ "header_file": "rules/seams/lancecharge.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -10,7 +10,7 @@
  "audit_label": "R779 lance charge audit",
  "audit_comment": "THE LANCE CHARGE - the R189 feeder goes live. The three lances (light, medium, heavy horse - the chart rows 24-26) join the weapon registry riding the pinned R189 cells (the weights and dice), the one printed arms price (6 g.p., the equipcosts row) shared by all three; the combat Actor carries the mount field and toActor copies it; the rider's round-one lance strike doubles its damage (the chart asterisk). The p.38 weapon-vs-AC chart lists no lance - the zero adjustment row is the no-adjustment JUDGMENT (the R145 audit rows extended). The R158 speed ladder names no lance - the speed rides the unknown default, contract-side. The spear set-to-receive needs a charging FOE - no monster charge concept exists; the R189 double-asterisk pin stays contract-side",
  "include_comment": "the lance charge pins",
- "include_after": "#include \"rules/mountmove.h\"  // R778: the mounted movement pins",
+ "include_after": "#include \"rules/seams/mountmove.h\"  // R778: the mounted movement pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R778 LANDED 2026-10-22: commit",
@@ -20,7 +20,7 @@
   "  (census 700 -> 701, pushed eb399ab..f5a953c),",
   "  THE MOUNTED MOVEMENT CHARGE - the R123 feeder goes",
   "  live, the warhorse kinds ride, header",
-  "  rules/mountmove.h, prefix mvm (fully free at",
+  "  rules/seams/mountmove.h, prefix mvm (fully free at",
   "  eb399ab). FIVE FILE PATCHES over three files (the",
   "  fp_txt chaining carries two patches on saddle.h",
   "  and two on party.h): the saddle header gains its",
@@ -243,7 +243,7 @@
    "file": "ai/actor.cpp",
    "note": "the lancecharge.h include (the R400 lesson - the fold calls the multiplier)",
    "from": "#include \"../rules/dmg/uwfight.h\"  // R313: the underwater strike gate\n",
-   "to": "#include \"../rules/dmg/uwfight.h\"  // R313: the underwater strike gate\n#include \"../rules/lancecharge.h\"  // R779: the charge multiplier\n"
+   "to": "#include \"../rules/dmg/uwfight.h\"  // R313: the underwater strike gate\n#include \"../rules/seams/lancecharge.h\"  // R779: the charge multiplier\n"
   },
   {
    "file": "ai/actor.cpp",

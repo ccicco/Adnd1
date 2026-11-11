@@ -6,7 +6,7 @@
 # engine pins the subclass alignment gates
 # (subclassgates.h: monk LAWFUL_ONLY) but not
 # the NPC generation split. Engine shape in
-# rules/subclassspecials.h: three percent
+# rules/phb/subclassspecials.h: three percent
 # accessors plus the cumulative dice-range
 # helpers for a d100 roll - monkNpcAlignLawful-
 # GoodPercent 50, monkNpcAlignLawfulNeutral-
@@ -55,7 +55,7 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/subclassspecials.h - the NPC alignment split
+# Patch 1: rules/phb/subclassspecials.h - the NPC alignment split
 # (anchored between the falling-ladder close and the surprise
 # ladder comment - a comment landmark, never an opening line)
 # ---------------------------------------------------------------------------
@@ -75,7 +75,7 @@ new1 = ('inline bool monkWallAssistedFallRequiresContact() {'
         + NL + '// The monk prose pin: non-player character monks'
         + NL + '// align 50% lawful good, 35% lawful neutral, 15%'
         + NL + '// lawful evil. The PC gate stays SUB_ALIGN_LAWFUL_'
-        + NL + '// ONLY (rules/subclassgates.h); this split is NPC'
+        + NL + '// ONLY (rules/phb/subclassgates.h); this split is NPC'
         + NL + '// generation data.'
         + NL + 'inline int monkNpcAlignLawfulGoodPercent() { return 50; }'
         + NL
@@ -98,7 +98,7 @@ new1 = ('inline bool monkWallAssistedFallRequiresContact() {'
         + NL
         + NL + '// ---- the monk surprise ladder ----')
 
-patch('rules/subclassspecials.h',
+patch('rules/phb/subclassspecials.h',
       'R201: the NPC monk alignment split',
       old1,
       new1)

@@ -4,7 +4,7 @@
 # The R182 roster was identity-only dead
 # data; this round makes the 77 druid spells
 # REAL registry spells: the parameter seam
-# (rules/druidspells.h, eight clamped
+# (rules/phb/druidspells.h, eight clamped
 # accessors - the evaluable audit_eval
 # subset), SPELL_DRUID + 77 DR_ ids
 # (spells.h), 77 kSpells rows + the
@@ -247,7 +247,7 @@ def cstr(s):
     return DQ + s + DQ
 
 # ---- the pre-assert: DATA matches the R182 roster ----
-hdr = rd('rules/druidspells.h')
+hdr = rd('rules/phb/druidspells.h')
 roster = []
 for ln in hdr.split(NL):
     ln = ln.strip()
@@ -349,10 +349,10 @@ id_new = ('    CL_RESURRECTION,     // CL 7; caster ages 3 (p.14)' + NL
 
 inc_old = '#include ' + DQ + '../rules/phb/wisdom.h' + DQ + '  // R192: Wisdom Tables I and II'
 inc_new = (inc_old + NL
-          + '#include ' + DQ + '../rules/druidspells.h' + DQ + '  // R228: the druid roster + parameter seam')
+          + '#include ' + DQ + '../rules/phb/druidspells.h' + DQ + '  // R228: the druid roster + parameter seam')
 
 row_lines = ['    // ---- R228: the druid roster (77 spells; parameters per',
-    '    // the rules/druidspells.h R228 seam - the PHB spell',
+    '    // the rules/phb/druidspells.h R228 seam - the PHB spell',
     '    // description headers; effects stay known, cast',
     '    // pending per the R80 utility convention) ----']
 for nm, lv, ct, rg, du, ao, sv, tg, rv in zip(names, lvls, cts, rngs, durs, aoes, saves, tgts, revs):
@@ -408,7 +408,7 @@ r80d_new = ('        printf(' + DQ + 'R80 spells audit: %d spells (MU %d, CL %d,
 
 audit_lines = [
     '    // ---- R228: the druid registry parameters audit ----',
-    '    // The evaluable seam walk: the rules/druidspells.h',
+    '    // The evaluable seam walk: the rules/phb/druidspells.h',
     '    // R228 parameter tables vs the book-pin arrays (the',
     '    // PHB spell description headers). The registry rows',
     '    // themselves are walked by the extended R80 battery',
@@ -466,7 +466,7 @@ audit_new = audit_block + audit_old
 
 gap_old = ('- [ ] R228 the druid and illusionist rosters'
            + NL + '      join the SpellId registry (139 spells,'
-           + NL + '      rules/druidspells.h + illusionspells.h'
+           + NL + '      rules/phb/druidspells.h + illusionspells.h'
            + NL + '      are dead data today) - the largest item,'
            + NL + '      may split.')
 gap_new = NL.join([
@@ -484,7 +484,7 @@ gap_new = NL.join([
     '      gives a circle, diameter halved round-up;',
     '      paths/cubes/miles pin 0); the parameters',
     '      also land as the evaluable seam in',
-    '      rules/druidspells.h (eight clamped accessors,',
+    '      rules/phb/druidspells.h (eight clamped accessors,',
     '      the grenade.h pattern) and',
     '      spellSlots(SPELL_DRUID, ...) delegates to',
     '      the R182 druidSpellSlots (levels 1-14,',
@@ -512,7 +512,7 @@ gap_new = NL.join([
 ])
 
 # ---- the 12 patches ----
-patch('rules/druidspells.h', 'R228: the registry parameter seam',
+patch('rules/phb/druidspells.h', 'R228: the registry parameter seam',
       seam_anchor_old, seam_anchor_new)
 patch('spells/spells.h', 'SPELL_DRUID,   // R228: the druid roster',
       sc_old, sc_new)

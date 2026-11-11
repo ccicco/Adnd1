@@ -225,8 +225,8 @@
 #include "../rules/engine/dice.h"
 #include "../rules/engine/character.h"
 #include "../rules/engine/classes.h"
-#include "../rules/subclasses.h"  // R230: the subclass registry
-#include "../rules/subclassgates.h"  // R230: the creation gates
+#include "../rules/phb/subclasses.h"  // R230: the subclass registry
+#include "../rules/phb/subclassgates.h"  // R230: the creation gates
 #include "../rules/engine/races.h"   // R154: Race Tables I-III
 #include "../rules/ua/subraces.h"  // R326: the sub-race picker
 #include "../rules/engine/saves.h"   // R45: trap saves

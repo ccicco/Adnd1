@@ -1,5 +1,5 @@
 // ===========================================================================
-// Adnd1 - rules/deities.h
+// Adnd1 - rules/seams/deities.h
 // The DEITY LAYER SEAM (R405) - the
 // last in-scope seam lands. The R404
 // psionics precedent rides: the pins
@@ -107,7 +107,7 @@
 //      demi-human pantheons map to
 //      their subrace parents)
 //   3: R404 the psionics seam
-//      (rules/psionics.h - the PC
+//      (rules/seams/psionics.h - the PC
 //      psionic reads stay PC-side:
 //      the duergar doubled chance,
 //      the svirfneblin ban)

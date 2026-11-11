@@ -1,6 +1,6 @@
     // ---- R300: the equipment costs engine audit ----
     // The items costGp column repinned to the printed tables
-    // (rules/equipcosts.h): every engine weapon and armor id
+    // (rules/phb/equipcosts.h): every engine weapon and armor id
     // maps to its printed row - the printed-table-wins debt
     // paid. The recorded conventions: the quarterstaff and
     // club are not in the print (0 stays the engine

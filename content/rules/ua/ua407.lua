@@ -66,7 +66,7 @@ return {
       "body" = "int n = 0; for (int i = 0; i < 23; ++i) if (uscStrEq(uscChartRow(i).freq, freq)) ++n; return n;",
     }, {
       "name" = "uscWorshipSite",
-      "comment" = "R784: the worship-site strings - the print's place-of-worship reads, the prose under the five clerical charts (pp. 121-122). The kind codes and the cleric-gender grid pin in rules/worshipsites.h; the strings ride here, one row per deity in the registry order. The compilation's Hanali row carries Solonor's cells wholesale; the print's fountain-or-spring stands. Erevan's read rides the print's own \"can by worshiped\" typo in the prose.",
+      "comment" = "R784: the worship-site strings - the print's place-of-worship reads, the prose under the five clerical charts (pp. 121-122). The kind codes and the cleric-gender grid pin in rules/seams/worshipsites.h; the strings ride here, one row per deity in the registry order. The compilation's Hanali row carries Solonor's cells wholesale; the print's fountain-or-spring stands. Erevan's read rides the print's own \"can by worshiped\" typo in the prose.",
       "kind" = "string array",
       "count" = 23,
       "values" = { "battlefield", "underground temple", "underground temple", "underground temple", "underground temple", "open hilltops", "never the same place twice", "deep forest", "by a fountain or spring", "small grove", "open field", "anywhere", "the home", "anywhere", "forest clearing", "underground cavern", "subterranean temple", "underground forge", "battlefield", "anywhere", "anywhere", "underground crypt", "in a temple within a cave", "" },

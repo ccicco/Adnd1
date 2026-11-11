@@ -1,5 +1,5 @@
     // ---- R228: the druid registry parameters audit ----
-    // The evaluable seam walk: the rules/druidspells.h
+    // The evaluable seam walk: the rules/phb/druidspells.h
     // R228 parameter tables vs the book-pin arrays (the
     // PHB spell description headers). The registry rows
     // themselves are walked by the extended R80 battery

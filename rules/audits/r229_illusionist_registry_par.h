@@ -1,5 +1,5 @@
     // ---- R229: the illusionist registry parameters audit ----
-    // The evaluable seam walk: the rules/illusionspells.h
+    // The evaluable seam walk: the rules/phb/illusionspells.h
     // R229 parameter tables vs the book-pin arrays (the
     // PHB illusionist spell description headers; the
     // OCR-scattered blocks pinned as JUDGMENTs). The

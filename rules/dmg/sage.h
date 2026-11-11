@@ -1,5 +1,5 @@
 // ===========================================================================
-// Adnd1 - rules/sage.h
+// Adnd1 - rules/dmg/sage.h
 // The sage subsection (R310).
 //
 // The DMG SAGE subsection (upload line 2110):

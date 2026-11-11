@@ -27,7 +27,7 @@
 #   (a) doc/vibe/adnd1_knowledge_seed_v2.md -
 #       the R320 round-state entry (commit
 #       94ca1df, census 247, the guard lessons).
-#   (b) rules/aerial.h - NEW FILE: the pp.49-53
+#   (b) rules/seams/aerial.h - NEW FILE: the pp.49-53
 #       pins (the OUT reversal header).
 #   (c) spelleffects/spelleffects.h -
 #       STATUS_FLYING before STATUS_COUNT.
@@ -49,7 +49,7 @@
 #       edit (the aerial reversal recorded).
 #   (l) tools/dmg_gap_report.md - the R321
 #       chronicle paragraph.
-#   (m) regtest.cpp - the rules/aerial.h
+#   (m) regtest.cpp - the rules/seams/aerial.h
 #       include and the R321 audit (the pins,
 #       the status, the wing fold, the dry
 #       gate, the claim, the name array -
@@ -158,10 +158,10 @@ assert s.count(
     'Knowledge maintenance') == 1, 'a doc intact'
 assert len(applied) + len(already) == 1, 'patch a count wrong'
 
-# ---- (b) rules/aerial.h: the pp.49-53 pins ----
+# ---- (b) rules/seams/aerial.h: the pp.49-53 pins ----
 AR_HEAD = NL.join([
     '// ===========================================================================',
-    '// Adnd1 - rules/aerial.h',
+    '// Adnd1 - rules/seams/aerial.h',
     '// The aerial environment (R321).',
     '//',
     '// The DMG AERIAL COMBAT section (pp.49-53)',
@@ -272,7 +272,7 @@ AR_FILE = (AR_HEAD + 'namespace rules {' + NL + NL +
            AR_FUNCS + NL + '}' + NL)
 clean(AR_FILE, 78)
 
-p = 'rules/aerial.h'
+p = 'rules/seams/aerial.h'
 if os.path.exists(os.path.join(ROOT, p)):
     already.append('aerial.h: the pp.49-53 pins')
 else:
@@ -692,7 +692,7 @@ GO_OLD = NL.join([
 GO_NEW = NL.join([
     '- OUT: naval combat systems, siege and',
     '  war-machine rules (the aerial chapter',
-    '  reversed R321 - the rules/aerial.h pins',
+    '  reversed R321 - the rules/seams/aerial.h pins',
     '  and the fly seams; the hex and',
     '  written-orders methods stay OUT - no',
     '  position or altitude layer), stronghold',
@@ -730,7 +730,7 @@ GC_NEW = NL.join([
     'R321 the aerial chapter: the OUT',
     'reversal (the R172 appendix J',
     'precedent) - the DMG pp.49-53 pins',
-    '(rules/aerial.h: the maneuver classes',
+    '(rules/seams/aerial.h: the maneuver classes',
     'A-E with the turn degrees, the',
     'full-speed times and the hover; the',
     'climb-dive-ceiling, missile and',
@@ -775,7 +775,7 @@ IN_OLD = NL.join([
 IN_NEW = NL.join([
     '#include ' + DQ + 'rules/dmg/uwspells.h' + DQ +
     '  // R168: p.57 underwater spell use',
-    '#include ' + DQ + 'rules/aerial.h' + DQ +
+    '#include ' + DQ + 'rules/seams/aerial.h' + DQ +
     '  // R321: pp.49-53 aerial combat',
 ])
 RT_OLD = NL.join([
@@ -795,7 +795,7 @@ RT_NEW = NL.join([
     '    // ---- R321: the aerial chapter audit ----',
     '    // The OUT reversal (the R172 appendix',
     '    // J precedent): the DMG pp.49-53 pins',
-    '    // (rules/aerial.h) and the fly seams -',
+    '    // (rules/seams/aerial.h) and the fly seams -',
     '    // the STATUS_FLYING mark, the wing',
     '    // fold, the potion claim. No aerial',
     '    // fight site exists - the prints are',
@@ -1020,7 +1020,7 @@ else:
     applied.append('regtest.cpp: the include and the R321 audit')
 
 s = rd(p)
-assert s.count('#include ' + DQ + 'rules/aerial.h' + DQ) == 1, 'm include'
+assert s.count('#include ' + DQ + 'rules/seams/aerial.h' + DQ) == 1, 'm include'
 assert s.count('R321 aerial chapter audit') == 1, 'm audit'
 assert s.count('STATUS_FLYING)') == 2, 'm kind refs'
 assert s.count('R320 breathing aids audit') == 1, 'm r320 intact'
@@ -1039,7 +1039,7 @@ print('R321 splice: ALL OK (applied '
       + str(len(already)) + ')')
 print('R321 note: 13 patches; the aerial')
 print('chapter OUT reversal (the pp.49-53')
-print('pins in rules/aerial.h; the fly spell')
+print('pins in rules/seams/aerial.h; the fly spell')
 print('and the potion seams; the R320 seed')
 print('entry rides as the first patch); the')
 print('battery census moves 247 -> 248')

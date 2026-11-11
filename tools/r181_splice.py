@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # R181 splice: attacks per melee round.
 #
-# rules/attacksround.h is CREATED: the fighters,
+# rules/phb/attacksround.h is CREATED: the fighters,
 # paladins and rangers attacks-per-melee-round table
 # (with any thrusting or striking weapon), the
 # under-one-hit-die note (one attack per fighter
@@ -74,14 +74,14 @@ def create(path, marker, content):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/attacksround.h CREATED
+# Patch 1: rules/phb/attacksround.h CREATED
 # ---------------------------------------------------------------------------
 
 hdr = []
 a = hdr.append
 
 a('// ============================================================================')
-a('// Adnd1 - rules/attacksround.h')
+a('// Adnd1 - rules/phb/attacksround.h')
 a('// Attacks per melee round (R181).')
 a('//')
 a('// The fighters, paladins and rangers attacks-per-melee-round')
@@ -217,7 +217,7 @@ a('}')
 a('')
 a('} // namespace rules')
 
-create('rules/attacksround.h',
+create('rules/phb/attacksround.h',
        'Attacks per melee round (R181)',
        NL.join(hdr) + NL)
 
@@ -226,10 +226,10 @@ create('rules/attacksround.h',
 # ---------------------------------------------------------------------------
 
 patch('regtest.cpp',
-      'rules/attacksround.h',
-      '#include "rules/subclassgates.h"  // R180: the qualification and race gates',
-      '#include "rules/subclassgates.h"  // R180: the qualification and race gates'
-      + NL + '#include "rules/attacksround.h"  // R181: attacks per melee round')
+      'rules/phb/attacksround.h',
+      '#include "rules/phb/subclassgates.h"  // R180: the qualification and race gates',
+      '#include "rules/phb/subclassgates.h"  // R180: the qualification and race gates'
+      + NL + '#include "rules/phb/attacksround.h"  // R181: attacks per melee round')
 
 # ---------------------------------------------------------------------------
 # Patch 3: regtest.cpp - the R181 battery audit (census 98)
@@ -338,10 +338,10 @@ patch('regtest.cpp',
 # ---------------------------------------------------------------------------
 
 patch('rules/engine/turn.cpp',
-      'R181: the fighter-group print consults rules/attacksround.h',
+      'R181: the fighter-group print consults rules/phb/attacksround.h',
       '#include "turn.h"',
       '#include "turn.h"'
-      + NL + '#include "attacksround.h"  // R181: the fighter-group print consults rules/attacksround.h')
+      + NL + '#include "attacksround.h"  // R181: the fighter-group print consults rules/phb/attacksround.h')
 
 # ---------------------------------------------------------------------------
 # Patch 5: rules/engine/turn.cpp - the meleeAttacksPerRound repin
@@ -366,7 +366,7 @@ patch('rules/engine/turn.cpp',
       + NL + '    // 1 below the 3/2 band, 2 in the 3/2 and 2/1 bands. The'
       + NL + '    // full printed rates (and the ranger band edges, which'
       + NL + '    // need the subclass id this base-class function does not'
-      + NL + '    // carry) live in rules/attacksround.h.'
+      + NL + '    // carry) live in rules/phb/attacksround.h.'
       + NL + '    if (classIndex == 0) {'
       + NL + '        rules::AtkRate r = rules::fighterGroupAttacks(0, level);'
       + NL + '        return (r.attacks >= 2) ? 2 : 1;'
@@ -389,7 +389,7 @@ patch('rules/engine/turn.h',
       + NL + '// initiative+5 segments by convention. Fighters gain the second'
       + NL + '// routine in the printed 3/2 band (R181: the 3/2 band opens at 7th'
       + NL + '// level for the fighter base class; the printed rates live in'
-      + NL + '// rules/attacksround.h).')
+      + NL + '// rules/phb/attacksround.h).')
 
 # ---------------------------------------------------------------------------
 # Patch 7: tools/phb_gap_report.md - the R181 box flipped
@@ -402,7 +402,7 @@ patch('tools/phb_gap_report.md',
       + NL + '      item above); the monk unarmed ladder and the'
       + NL + '      under-one-hit-die note.',
       '- [x] R181 the attacks per melee round - PINNED:'
-      + NL + '      rules/attacksround.h CREATED: the fighters,'
+      + NL + '      rules/phb/attacksround.h CREATED: the fighters,'
       + NL + '      paladins and rangers table (1/1, 3/2 at the'
       + NL + '      mid band, 2/1 at the high band; fighter and'
       + NL + '      paladin 7/13 edges, ranger 8/15 edges, any'
@@ -441,7 +441,7 @@ patch('tools/phb_gap_report.md',
       '- [x] **Fighter attacks per melee round (the class'
       + NL + '      tables section)** - PINNED R181: the engine'
       + NL + '      convention verified and repinned - the printed'
-      + NL + '      bands now live in rules/attacksround.h and'
+      + NL + '      bands now live in rules/phb/attacksround.h and'
       + NL + '      rules/engine/turn.cpp (meleeAttacksPerRound was the'
       + NL + '      unsourced level-8+ original note).')
 
@@ -454,7 +454,7 @@ patch('tools/dmg_gap_report.md',
       'Next: R181 attacks per melee round.',
       'Next: R181 attacks per melee round.'
       + NL + 'R181 landed the attacks per melee round:'
-      + NL + 'rules/attacksround.h CREATED (the fighter-group'
+      + NL + 'rules/phb/attacksround.h CREATED (the fighter-group'
       + NL + 'bands with the printed level edges, the'
       + NL + 'under-one-hit-die note, the monk unarmed ladder'
       + NL + 'cell by cell, the monk weapon-damage bonus).'
@@ -471,7 +471,7 @@ patch('tools/dmg_gap_report.md',
 assert applied + already == 9, 'patch count drift: ' + str(applied) + ' + ' + str(already)
 print('R181 splice: ALL OK (applied %d, already %d)' % (applied, already))
 print('R181 note: 9 patches; census 98 (one new audit);')
-print('real gate: md5sum rules/attacksround.h')
+print('real gate: md5sum rules/phb/attacksround.h')
 print('commit: R181: the attacks per melee round pinned -')
 print('the fighter-group bands, the monk unarmed ladder (census 98)')
 

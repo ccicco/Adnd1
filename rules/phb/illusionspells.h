@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 - rules/illusionspells.h
+// Adnd1 - rules/phb/illusionspells.h
 // The illusionist spell layer (R183).
 //
 // The SPELLS USABLE BY CLASS AND LEVEL - ILLUSIONISTS table

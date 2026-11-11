@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/worshipsites.h
+// Adnd1 - rules/seams/worshipsites.h
 // THE WORSHIP SITES - the last unpinned Appendix S chart read: the
 // place-of-worship kinds, the cleric-gender grid, and the print verdict on
 // the contaminated chart rows

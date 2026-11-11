@@ -4,7 +4,7 @@
 // ============================================================================
 
 #include "turn.h"
-#include "../attacksround.h"  // R181: the fighter-group print consults rules/attacksround.h
+#include "../phb/attacksround.h"  // R181: the fighter-group print consults rules/phb/attacksround.h
 
 #include <algorithm>
 
@@ -137,7 +137,7 @@ int meleeAttacksPerRound(int classIndex, int level) {
     // 1 below the 3/2 band, 2 in the 3/2 and 2/1 bands. The
     // full printed rates (and the ranger band edges, which
     // need the subclass id this base-class function does not
-    // carry) live in rules/attacksround.h.
+    // carry) live in rules/phb/attacksround.h.
     if (classIndex == 0) {
         rules::AtkRate r = rules::fighterGroupAttacks(0, level);
         return (r.attacks >= 2) ? 2 : 1;

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # R230 splice: the subclass creation gates. A character
 # can now BE a paladin, ranger, druid, illusionist,
-# assassin or monk at creation: rules/subclassgates.h
+# assassin or monk at creation: rules/phb/subclassgates.h
 # gains the creation seam (the runtime base-class map,
 # the con class, the starting-age band, the two-dice
 # flag, the subclass hit die, the player-eligibility
@@ -58,7 +58,7 @@ def lines(ls):
 
 
 PATCHES = [
-    ('rules/subclassgates.h',
+    ('rules/phb/subclassgates.h',
      'inline int subclassRuntimeBase(int sub) {',
      lines([
          '} // namespace rules',
@@ -194,14 +194,14 @@ PATCHES = [
          '} // namespace rules',
      ])),
     ('game/appstate.h',
-     '#include "../rules/subclassgates.h"',
+     '#include "../rules/phb/subclassgates.h"',
      lines([
          '#include "../rules/engine/classes.h"',
      ]),
      lines([
          '#include "../rules/engine/classes.h"',
-         '#include "../rules/subclasses.h"  // R230: the subclass registry',
-         '#include "../rules/subclassgates.h"  // R230: the creation gates',
+         '#include "../rules/phb/subclasses.h"  // R230: the subclass registry',
+         '#include "../rules/phb/subclassgates.h"  // R230: the creation gates',
      ])),
     ('game/appstate.h',
      '    CR_SUBCLASS,   // R230: the subclass offer stage',
@@ -711,7 +711,7 @@ PATCHES = [
      ]),
      lines([
          '- [x] R230 the subclass creation gates -',
-         '      WIRED: rules/subclassgates.h gains the',
+         '      WIRED: rules/phb/subclassgates.h gains the',
          '      creation seam (the runtime base-class map -',
          '      the monk rides fighter, the JUDGMENT - the',
          '      con class, the starting-age band, the',

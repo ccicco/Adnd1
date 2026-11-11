@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/deitylines.h
+// Adnd1 - rules/seams/deitylines.h
 // THE DEITY STAT LINES - the R406 messy reads pin: the class/level lines, the
 // MOVE rates, the seven ability lines, the damage bonuses
 // census 705 -> 706.

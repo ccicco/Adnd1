@@ -62,15 +62,15 @@
 #include "actor.h"
 
 #include "../dm/encounters.h"   // R147: dm::NpcRace ints
-#include "../rules/subclasses.h"  // R232: the subclass ids
-#include "../rules/attacksround.h"  // R232: the monk ladder
-#include "../rules/subclassspecials.h"  // R232: backstab
-#include "../rules/palrangerspells.h"  // R232: the giant-class roster
+#include "../rules/phb/subclasses.h"  // R232: the subclass ids
+#include "../rules/phb/attacksround.h"  // R232: the monk ladder
+#include "../rules/phb/subclassspecials.h"  // R232: backstab
+#include "../rules/phb/palrangerspells.h"  // R232: the giant-class roster
 #include "../rules/phb/bard.h"  // R236: the poetics ferocity
 #include "../rules/phb/weaponprof.h"  // R297: the proficiency table
 #include "../rules/phb/thieffunc.h"  // R302: the silence percentile
 #include "../rules/dmg/uwfight.h"  // R313: the underwater strike gate
-#include "../rules/lancecharge.h"  // R779: the charge multiplier
+#include "../rules/seams/lancecharge.h"  // R779: the charge multiplier
 #include "../rules/dmg/weaponspeed.h"  // R158: the p.66 speed helpers
 #include "../rules/dmg/spearset.h"  // R781: the receive double
 

@@ -1013,7 +1013,7 @@ for f in ('nhdPantheonSize',
           'nhdDwarfSymbolNeverLiving',
           'nhdDwarfDeityDualCharisma'):
     if f not in s or f not in rd(
-            'rules/deities.h'):
+            'rules/seams/deities.h'):
         die('the %s seam function' % f)
 
 # the gap censuses: 101 closed,

@@ -677,7 +677,7 @@ repinned -1, and the unsourced poison-save
 accessor retired. New R178c battery audit;
 census 95.
 R179 PINNED the six subclass foundations (the
-arc registry round): rules/subclasses.h CREATED,
+arc registry round): rules/phb/subclasses.h CREATED,
 data-driven - the six PHB subclasses with the
 base-class map, caps, hit dice, the XP attain
 rows and title ladders from the printed tables,
@@ -686,7 +686,7 @@ the adders, and the two-dice first levels
 96. The wiring rounds follow (qualification,
 attacks, spells, multi-class, the bard).
 R179b FIXED the R179 build: regtest.cpp now
-includes rules/subclasses.h (the R179 audit
+includes rules/phb/subclasses.h (the R179 audit
 referenced the registry without the include -
 preflight failed with 20 errors and the census
 failed downstream of the missing binary).
@@ -696,7 +696,7 @@ round adds code that regtest includes - a
 header verified in isolation is not a build.
 Census stays 96 (no new audit).
 R180 landed the qualification and race gates:
-rules/subclassgates.h CREATED (the ability
+rules/phb/subclassgates.h CREATED (the ability
 minimums, the Table I alignment letters, the XP
 bonus rules, Race Table I and Race Table II cell
 by cell, the halfling-druid NPC-only (6), the
@@ -707,7 +707,7 @@ assassin XP bonus pinned NONE - the class text
 prints no bonus despite the thief-group pattern.
 Next: R181 attacks per melee round.
 R181 landed the attacks per melee round:
-rules/attacksround.h CREATED (the fighter-group
+rules/phb/attacksround.h CREATED (the fighter-group
 bands with the printed level edges, the
 under-one-hit-die note, the monk unarmed ladder
 cell by cell, the monk weapon-damage bonus).
@@ -717,7 +717,7 @@ level-8+ original note replaced by the print (the
 full rates in the header). New R181 battery audit;
 census 98. Next: R182 the druid spell layer.
 R182 landed the druid spell layer:
-rules/druidspells.h CREATED (the 14x7
+rules/phb/druidspells.h CREATED (the 14x7
 spells-usable table cell by cell, the 77-
 spell roster with the reversible flags;
 the printed dash pins as 0, past-14th
@@ -725,14 +725,14 @@ clamps to the 14th row). New R182 battery
 audit; census 99. Next: R183 the illusionist
 spell layer.
 R183 landed the illusionist spell layer:
-rules/illusionspells.h CREATED (the 26x7
+rules/phb/illusionspells.h CREATED (the 26x7
 spells-usable table cell by cell, the 61-
 spell roster in the printed book order; no
 reversible flags - the section prints none).
 New R183 battery audit; census 100. Next:
 R184 the paladin and ranger spell layers.
 R184 landed the paladin and ranger spell
-layers: rules/palrangerspells.h CREATED (the
+layers: rules/phb/palrangerspells.h CREATED (the
 paladin 9-20 x 4 progression, the ranger 8-17
 x 5 progression, the shared-list wiring, lay
 on hands, cure disease, the giant-class
@@ -740,7 +740,7 @@ roster and bonus). New R184 battery audit;
 census 101. Next: R185 multi-class and
 dual-class.
 R185 landed the multi-class and dual-class
-rules: rules/multiclass.h CREATED (the 22
+rules: rules/phb/multiclass.h CREATED (the 22
 per-race combos, the hit-point quotient, the
 even XP split, the stalled hit dice, the
 thief and cleric allowances, the half-elf
@@ -756,7 +756,7 @@ item bonuses). New R186 battery audit;
 census 103. Next: the gap report names the
 next round.
 R187 landed the per-subclass specials:
-rules/subclassspecials.h CREATED (the fee table,
+rules/phb/subclassspecials.h CREATED (the fee table,
 the disguise layer, backstab, the skill sharing,
 the monk specials A-K with stun/kill and the
 quivering palm, the ranger surprise numbers, the
@@ -764,7 +764,7 @@ paladin turn ladder). New R187 battery audit;
 census 104. Next: the gap report names the next
 round.
 R188 landed the prime requisite XP adjustment:
-rules/xpadjust.h CREATED (the printed per-class
+rules/phb/xpadjust.h CREATED (the printed per-class
 +10% gates, the worked-example rounding), and the
 character.cpp comment now records the verify - the
 engine +5/0/-10/-20 rungs are unsourced convention
@@ -772,7 +772,7 @@ engine +5/0/-10/-20 rungs are unsourced convention
 R188 battery audit; census 105. Next: the gap report
 names the next round.
 R189 landed the weapon tables verify:
-rules/weapontables.h CREATED (the 50-row weight and
+rules/phb/weapontables.h CREATED (the 50-row weight and
 damage chart, the speed cross-verify - all 18
 readable cells confirm the R158 ladder - and the
 printed notes; the R144/R145 AC standing note closes
@@ -860,7 +860,7 @@ registry rows arrive. New R197 battery audit; census 114.
 Next: the gap report names the next round.
 R198 landed the class weapon allowlists - the CHARACTER
 CLASSES TABLE II weapons column, the monk list home:
-rules/weapontables.h pins classUsesAnyWeapon (fighter,
+rules/phb/weapontables.h pins classUsesAnyWeapon (fighter,
 paladin, ranger, assassin), the limited lists (cleric 7
 chart rows, druid 9, MU/illusionist 3, thief 8, monk 24)
 and weaponAllowedForClass. JUDGMENTs: the family words
@@ -891,13 +891,13 @@ print rows under the thief-ability paragraph): 4th
 (Master) 30 within 4, 13th (Master of Winter) any
 distance within 8, with the wall-contact rule (damage-
 free only when periodic contact is possible; tree trunk,
-cliff face serve). rules/subclassspecials.h:
+cliff face serve). rules/phb/subclassspecials.h:
 monkWallAssistedFallFeet (0/20/30/-1-any), the proximity
 column (0/1/4/8), the contact rule. New R200 battery
 audit; census 117. Next: the NPC monk alignment split.
 R201 landed the NPC monk alignment split (the monk prose
 pin: NPC monks align 50% lawful good, 35% lawful
-neutral, 15% lawful evil): rules/subclassspecials.h -
+neutral, 15% lawful evil): rules/phb/subclassspecials.h -
 the three percent accessors plus monkNpcAlignRollRange
 (the cumulative d100 bands: LG 1-50, LN 51-85, LE
 86-100; out-of-range index the 0-100 miss band). The PC
@@ -1240,7 +1240,7 @@ the fire columns; the 1eonline compilation
 R209/R210 rule) and matches the upload cell
 values everywhere else - both sources agree
 on the attack matrix and the defensive
-tables. rules/siegefire.h (the grenade.h
+tables. rules/dmg/siegefire.h (the grenade.h
 pattern): the six firing devices (field of
 fire 45/15/30/-/-/10 degrees, ranges in
 quarter-inch units, S-M and L damage edges,
@@ -7091,7 +7091,7 @@ the battery census stays 231.
 
 R309 the hirelings cost tables pin (an
 engine round): the first R307 open box
-paid. rules/hirelings.h (the grenade.h
+paid. rules/dmg/hirelings.h (the grenade.h
 pattern): the STANDARD table - 10 rows,
 every daily cost in silver, every
 monthly cost in its printed coin
@@ -7116,7 +7116,7 @@ the R309 audit.
 
 R310 the sage subsection pin (the
 last R307 open box paid - the dmg
-ledger clears): rules/sage.h (the
+ledger clears): rules/dmg/sage.h (the
 grenade.h pattern): the
 fields-count table (6 dice bands);
 the fields of study - 7 fields
@@ -7153,7 +7153,7 @@ the battery census moves 233 ->
 
 R311 the underwater environment pin
 (the first round past the closed dmg
-ledger): rules/underwater.h (the
+ledger): rules/seams/underwater.h (the
 grenade.h pattern): the surface
 swimming paragraph (metal armor
 impossible except magic armor - the
@@ -7380,7 +7380,7 @@ R320 audit.
 R321 the aerial chapter: the OUT
 reversal (the R172 appendix J
 precedent) - the DMG pp.49-53 pins
-(rules/aerial.h: the maneuver classes
+(rules/seams/aerial.h: the maneuver classes
 A-E with the turn degrees, the
 full-speed times and the hover; the
 climb-dive-ceiling, missile and
@@ -8506,7 +8506,7 @@ cityRuffianKind), audited by the
       the EXPERT HIRELINGS TABLE OF
       MONTHLY COSTS IN GOLD PIECES,
       upload line 1873) - PINNED R309:**
-      rules/hirelings.h (the R300
+      rules/dmg/hirelings.h (the R300
       pattern): the standard table -
       10 rows, the daily costs in
       silver, the monthly costs in the
@@ -8536,7 +8536,7 @@ cityRuffianKind), audited by the
       ledger holds ONE open item.
 - [x] **The sage subsection (upload
       line 2110) - PINNED R310:**
-      rules/sage.h (the grenade.h
+      rules/dmg/sage.h (the grenade.h
       pattern): the fields-count
       table - 6 dice bands; the
       fields of study - 7 fields
@@ -8584,7 +8584,7 @@ cityRuffianKind), audited by the
 
 - OUT: naval combat systems, siege and
   war-machine rules (the aerial chapter
-  reversed R321 - the rules/aerial.h pins
+  reversed R321 - the rules/seams/aerial.h pins
   and the fly seams; the hex and
   written-orders methods stay OUT - no
   position or altitude layer), stronghold

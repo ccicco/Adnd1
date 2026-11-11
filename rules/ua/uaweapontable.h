@@ -9,7 +9,7 @@
 //   - the roster: 67 rows in the printed order. The OCR merges
 //     and garbles several rows; every row is attributed by data,
 //     not guesswork: the 50 PHB weapons (the R189 chart,
-//     rules/weapontables.h) match cell for cell -
+//     rules/phb/weapontables.h) match cell for cell -
 //     uawtPhbSeamIndex maps each row to its chart row. The
 //     merged Jo Stick/Javelin, Long/Short Sword and Lance
 //     (heavy)/Lasso rows split by seam.

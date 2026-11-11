@@ -1276,11 +1276,11 @@ assert len(applied) + len(already) == 3, 'patch c count wrong'
 # ---- (d) regtest.cpp: the include and the R322 audit ----
 BSN = BS + 'n'
 IN_OLD = NL.join([
-    '#include ' + DQ + 'rules/aerial.h' + DQ +
+    '#include ' + DQ + 'rules/seams/aerial.h' + DQ +
     '  // R321: pp.49-53 aerial combat',
 ])
 IN_NEW = NL.join([
-    '#include ' + DQ + 'rules/aerial.h' + DQ +
+    '#include ' + DQ + 'rules/seams/aerial.h' + DQ +
     '  // R321: pp.49-53 aerial combat',
     '#include ' + DQ + 'rules/ua/comeliness.h' + DQ +
     '  // R322: UA comeliness pins',

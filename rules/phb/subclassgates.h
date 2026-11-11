@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 - rules/subclassgates.h
+// Adnd1 - rules/phb/subclassgates.h
 // The qualification and race gates (R180).
 //
 // The printed gates for the six registry subclasses: the
@@ -43,9 +43,9 @@
 
 #pragma once
 
-#include "engine/character.h"
-#include "engine/classes.h"
-#include "engine/races.h"
+#include "../engine/character.h"
+#include "../engine/classes.h"
+#include "../engine/races.h"
 #include "subclasses.h"
 
 #include <cstdint>

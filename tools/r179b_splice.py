@@ -12,7 +12,7 @@
 # it - the gap is recorded as a lesson.
 #
 #   (a) regtest.cpp - the include block gains
-#       rules/subclasses.h (after the R173 secondary
+#       rules/phb/subclasses.h (after the R173 secondary
 #       include, the R179 comment).
 #   (b) tools/dmg_gap_report.md - the round-note
 #       chain gains the R179b note with the lesson.
@@ -61,7 +61,7 @@ p1_old = NL.join([
 ])
 p1_new = NL.join([
     '#include "rules/dmg/secondary.h"  // R173: p.12 secondary skills',
-    '#include "rules/subclasses.h"  // R179: the subclass registry',
+    '#include "rules/phb/subclasses.h"  // R179: the subclass registry',
 ])
 
 # ---- (2) the dmg round note ----
@@ -73,7 +73,7 @@ p2_new = NL.join([
     '96. The wiring rounds follow (qualification,',
     'attacks, spells, multi-class, the bard).',
     'R179b FIXED the R179 build: regtest.cpp now',
-    'includes rules/subclasses.h (the R179 audit',
+    'includes rules/phb/subclasses.h (the R179 audit',
     'referenced the registry without the include -',
     'preflight failed with 20 errors and the census',
     'failed downstream of the missing binary).',
@@ -87,7 +87,7 @@ p2_new = NL.join([
 # ---- run ----
 patch("regtest.cpp", p1_old, p1_new,
       "regtest.cpp: the subclasses include",
-      marker='#include "rules/subclasses.h"')
+      marker='#include "rules/phb/subclasses.h"')
 assert len(applied) + len(already) == 1
 
 patch("tools/dmg_gap_report.md", p2_old, p2_new,

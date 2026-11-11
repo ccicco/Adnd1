@@ -61,7 +61,7 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/weapontables.h - the oil and poison columns
+# Patch 1: rules/phb/weapontables.h - the oil and poison columns
 # ---------------------------------------------------------------------------
 
 comment = ('// ----------------------------------------------------------------------------'
@@ -138,7 +138,7 @@ new_tail = ('    return false;'
             + NL
             + NL + '} // namespace rules')
 
-patch('rules/weapontables.h',
+patch('rules/phb/weapontables.h',
       'R199: the oil and poison columns',
       tail,
       new_tail)

@@ -5,8 +5,8 @@
 
 #include "spells.h"
 #include "../rules/phb/wisdom.h"  // R192: Wisdom Tables I and II
-#include "../rules/druidspells.h"  // R228: the druid roster + parameter seam
-#include "../rules/illusionspells.h"  // R229: the illusionist roster + parameter seam
+#include "../rules/phb/druidspells.h"  // R228: the druid roster + parameter seam
+#include "../rules/phb/illusionspells.h"  // R229: the illusionist roster + parameter seam
 
 namespace spells {
 
@@ -95,7 +95,7 @@ static const SpellDef kSpells[SPELL_COUNT] = {
     { "Restoration",      SPELL_CLERIC,  7,  8,  0,  0,  -1, TARGET_SELF, 0, 0, 0, false },
     { "Resurrection",     SPELL_CLERIC,  7,  8,  0,  0,  -1, TARGET_SELF, 0, 0, 0, false },
     // ---- R228: the druid roster (77 spells; parameters per
-    // the rules/druidspells.h R228 seam - the PHB spell
+    // the rules/phb/druidspells.h R228 seam - the PHB spell
     // description headers; effects stay known, cast
     // pending per the R80 utility convention) ----
     { "Animal Friendship", SPELL_DRUID, 1, 360, 1, 0, 4, TARGET_CREATURE, 0, 0, 0, false },
@@ -176,7 +176,7 @@ static const SpellDef kSpells[SPELL_COUNT] = {
     { "Reincarnate", SPELL_DRUID, 7, 60, 0, 0, -1, TARGET_CREATURE, 0, 0, 0, false },
     { "Transmute Metal To Wood", SPELL_DRUID, 7, 9, 8, 0, -1, TARGET_SPECIAL, 0, 0, 0, false },
     // ---- R229: the illusionist roster (61 spells;
-    // parameters per the rules/illusionspells.h R229
+    // parameters per the rules/phb/illusionspells.h R229
     // seam - the PHB illusionist spell description
     // headers; effects stay known, cast pending per
     // the R80 utility convention) ----

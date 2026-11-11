@@ -250,7 +250,7 @@ PHB_D_NEW = NL.join([
     '      livestock, the provisions and the',
     '      transport costs - mounts, tack',
     '      and vehicles). A data candidate:',
-    '      rules/equipcosts.h grows the rows',
+    '      rules/phb/equipcosts.h grows the rows',
     '      (the R300 pattern; the',
     '      reference-sheet copies resolve any',
     '      ambiguous cell). The judgment',

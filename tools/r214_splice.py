@@ -21,7 +21,7 @@
 # the fire columns - the 1eonline compilation
 # cross-read (seadow.htm) is the recovery source
 # and matches the upload everywhere else.
-# Patches: 4 (new rules/siegefire.h, regtest
+# Patches: 4 (new rules/dmg/siegefire.h, regtest
 # include, audit block, gap-report log entry).
 # Census 129 -> 130.
 
@@ -68,12 +68,12 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/siegefire.h - the new header
+# Patch 1: rules/dmg/siegefire.h - the new header
 # ---------------------------------------------------------------------------
 
 hdr_lines = [
 '// ====================================================================',
-'// Adnd1 - rules/siegefire.h',
+'// Adnd1 - rules/dmg/siegefire.h',
 '// R214: the war machine fire tables, the',
 '// siege attack values, and the construction',
 '// defensive values (DMG pp.108-110, the',
@@ -694,7 +694,7 @@ hdr_lines = [
 ]
 hdr = NL.join(hdr_lines) + NL
 
-patch('rules/siegefire.h',
+patch('rules/dmg/siegefire.h',
       'R214: the war machine fire tables, the',
       None,
       hdr)
@@ -708,7 +708,7 @@ patch('rules/siegefire.h',
 old2 = '#include "rules/dmg/construct.h"  // R213: pp.106-108 construction and siege economics'
 
 new2 = ('#include "rules/dmg/construct.h"  // R213: pp.106-108 construction and siege economics'
-        + NL + '#include "rules/siegefire.h"  // R214: pp.108-110 war machine fire, siege attack, defensive values')
+        + NL + '#include "rules/dmg/siegefire.h"  // R214: pp.108-110 war machine fire, siege attack, defensive values')
 
 patch('regtest.cpp',
       'R214: pp.108-110 war machine fire, siege attack, defensive values',
@@ -997,7 +997,7 @@ log_lines = [
 'R209/R210 rule) and matches the upload cell',
 'values everywhere else - both sources agree',
 'on the attack matrix and the defensive',
-'tables. rules/siegefire.h (the grenade.h',
+'tables. rules/dmg/siegefire.h (the grenade.h',
 'pattern): the six firing devices (field of',
 'fire 45/15/30/-/-/10 degrees, ranges in',
 'quarter-inch units, S-M and L damage edges,',

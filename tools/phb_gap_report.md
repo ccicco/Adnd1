@@ -168,7 +168,7 @@ tables now read the print.
 ## Open items (worth having)
 
 - [x] **Prime requisite XP adjustment - PINNED R188:**
-      rules/xpadjust.h CREATED: the printed per-class
+      rules/phb/xpadjust.h CREATED: the printed per-class
       +10% of earned experience gates (fighter STR,
       magic-user INT, cleric WIS, thief DEX; paladin
       STR and WIS, ranger STR INT and WIS, druid WIS
@@ -186,7 +186,7 @@ tables now read the print.
       audit walks every gate and the rounding. Census
       105.
 - [x] **The PHB book-verify pass for the weapon tables -
-      PINNED R189:** rules/weapontables.h CREATED:
+      PINNED R189:** rules/phb/weapontables.h CREATED:
       the WEIGHT AND DAMAGE BY WEAPON TYPE chart (50
       rows, every cell: the weight in gold pieces,
       the S/M and L damage ranges; the spear weight
@@ -252,7 +252,7 @@ tables now read the print.
 - [x] **Fighter attacks per melee round (the class
       tables section)** - PINNED R181: the engine
       convention verified and repinned - the printed
-      bands now live in rules/attacksround.h and
+      bands now live in rules/phb/attacksround.h and
       rules/engine/turn.cpp (meleeAttacksPerRound was the
       unsourced level-8+ original note).
 - [x] **Wisdom Table II, cleric bonus spells and
@@ -314,7 +314,7 @@ same commit, and adds its battery audit - the
 census grows with the arc):
 
 - [x] R179 the six subclass foundations - PINNED:
-      rules/subclasses.h CREATED (the data-driven
+      rules/phb/subclasses.h CREATED (the data-driven
       registry - a future class lands as one
       appended row): struct SubclassDef with the
       base-class map (paladin/ranger fighter,
@@ -338,7 +338,7 @@ census grows with the arc):
       returned). The R179 battery audit walks
       every row, title, cap and clamp. Census 96.
 - [x] R180 the qualification and race gates - PINNED:
-      rules/subclassgates.h CREATED: the ability
+      rules/phb/subclassgates.h CREATED: the ability
       minimums (paladin 12/9/13/-/9/17, ranger
       13/13/14/-/14/-, druid WIS 12 CHA 15,
       illusionist INT 15 DEX 16, assassin
@@ -363,7 +363,7 @@ census grows with the arc):
       walks every cell, the footnote and the
       meets-min and bonus probes. Census 97.
 - [x] R181 the attacks per melee round - PINNED:
-      rules/attacksround.h CREATED: the fighters,
+      rules/phb/attacksround.h CREATED: the fighters,
       paladins and rangers table (1/1, 3/2 at the
       mid band, 2/1 at the high band; fighter and
       paladin 7/13 edges, ranger 8/15 edges, any
@@ -388,7 +388,7 @@ census grows with the arc):
       The R181 battery audit walks every band, every
       monk cell and the repin. Census 98.
 - [x] R182 the druid spell layer - PINNED:
-      rules/druidspells.h CREATED: the SPELLS
+      rules/phb/druidspells.h CREATED: the SPELLS
       USABLE BY CLASS AND LEVEL - DRUIDS table
       (14 druid levels x 7 spell levels, every
       printed cell: level 1 reads two first-
@@ -405,7 +405,7 @@ census grows with the arc):
       audit walks every slot cell, every roster
       row and name spot-checks. Census 99.
 - [x] R183 the illusionist spell layer - PINNED:
-      rules/illusionspells.h CREATED: the SPELLS
+      rules/phb/illusionspells.h CREATED: the SPELLS
       USABLE BY CLASS AND LEVEL - ILLUSIONISTS
       table (26 illusionist levels x 7 spell
       levels, every printed cell: level 1 reads
@@ -423,7 +423,7 @@ census grows with the arc):
       walks every slot cell, every roster row and
       name spot-checks. Census 100.
 - [x] R184 the paladin and ranger spell layers - PINNED:
-      rules/palrangerspells.h CREATED: the
+      rules/phb/palrangerspells.h CREATED: the
       SPELLS USABLE BY CLASS AND LEVEL - PALADINS
       table (levels 9-20 x 4 clerical spell
       levels, every cell: 9th 1/1st, the 20th
@@ -448,7 +448,7 @@ census grows with the arc):
       recorded for R187+. The R184 battery audit
       walks every cell and ladder. Census 101.
 - [x] R185 multi-class and dual-class - PINNED:
-      rules/multiclass.h CREATED: the per-race
+      rules/phb/multiclass.h CREATED: the per-race
       MULTI-CLASS combination table (dwarf 1,
       elf 4, gnome 3, half-elf 8, halfling 1,
       half-orc 5, human 0 - every printed combo
@@ -503,7 +503,7 @@ census grows with the arc):
       battery audit walks every cell of both
       tables. Census 103.
 - [x] R187 the per-subclass specials - PINNED:
-      rules/subclassspecials.h CREATED: the
+      rules/phb/subclassspecials.h CREATED: the
       MINIMUM FEES FOR ASSASSINATION table (15
       rows x 8 victim bands, every cell, dashes
       as 0; the noble-victim multiplier is a
@@ -591,7 +591,7 @@ arc boxes:
       gives a circle, diameter halved round-up;
       paths/cubes/miles pin 0); the parameters
       also land as the evaluable seam in
-      rules/druidspells.h (eight clamped accessors,
+      rules/phb/druidspells.h (eight clamped accessors,
       the grenade.h pattern) and
       spellSlots(SPELL_DRUID, ...) delegates to
       the R182 druidSpellSlots (levels 1-14,
@@ -621,7 +621,7 @@ arc boxes:
       illusionist spell-description header parameters
       (the R228 druid conventions); the parameters
       also land as the evaluable seam in
-      rules/illusionspells.h (seven clamped accessors -
+      rules/phb/illusionspells.h (seven clamped accessors -
       no reversible markers in the illusionist print)
       and spellSlots(SPELL_ILLUSIONIST, ...) delegates
       to the R183 illusionistSpellSlots (levels 1-26,
@@ -637,7 +637,7 @@ arc boxes:
       Illusionary Script 3, Improved Invisibility 4,
       Massmorph 4) - the printed TABLE wins. Census 145.
 - [x] R230 the subclass creation gates -
-      WIRED: rules/subclassgates.h gains the
+      WIRED: rules/phb/subclassgates.h gains the
       creation seam (the runtime base-class map -
       the monk rides fighter, the JUDGMENT - the
       con class, the starting-age band, the
@@ -664,7 +664,7 @@ arc boxes:
       and multi/dual-class are the next arc
       items. Census 146.
 - [x] R231 the subclass leveling wire - WIRED:
-      rules/subclassgates.h gains the leveling seam
+      rules/phb/subclassgates.h gains the leveling seam
       (subclassXpToAttain - the printed XP attain
       rows with the adders, a private flat copy
       per the R230 EVAL NOTE; subclassFixedHpLevel;
@@ -1234,7 +1234,7 @@ found and opened below.
       EQUIPMENT AND SUPPLIES COSTS tables,
       upload line 2113; the reference-sheet
       repeats at upload line 13432)** - PINNED
-      R300: rules/equipcosts.h CREATED - the
+      R300: rules/phb/equipcosts.h CREATED - the
       52 arms rows and the 14 armor rows
       pinned cell by cell (eqcArmsGold,
       eqcArmsSilver, eqcArmorGold and the
@@ -1318,7 +1318,7 @@ the battery census stays 231.
       Transport; upload lines 2344-2437
       with the reference-sheet repeats
       at 13473-13541) - PINNED R308:**
-      rules/equipcosts.h grows the
+      rules/phb/equipcosts.h grows the
       general section: 99 rows across
       the EIGHT printed lists (11, 3,
       21, 29, 10, 6, 9 and 10), every

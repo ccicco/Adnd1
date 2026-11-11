@@ -457,10 +457,10 @@ newfile(AS, ASBODY + NL,
 RT = 'regtest.cpp'
 
 pair(RT,
-     '#include "rules/deities.h"  '
+     '#include "rules/seams/deities.h"  '
      '// R405: the deity layer seam',
      E(
-    '#include "rules/deities.h"  '
+    '#include "rules/seams/deities.h"  '
     '// R405: the deity layer seam',
     '#include "rules/ua/uaappends.h"  '
     '// R406: the UA Appendix S stat blocks'),

@@ -54,14 +54,14 @@ SD_OLD = NL.join([
 ])
 SD_NEW = NL.join([
     '#include "rules/dmg/swimcross.h"  // R312: the flooded crossing',
-    '#include "rules/underwater.h"  // R311: the drown percent',
+    '#include "rules/seams/underwater.h"  // R311: the drown percent',
 ])
 clean(SD_OLD, 78)
 clean(SD_NEW, 78)
 
 p = 'game/state_dungeon.cpp'
 s = rd(p)
-if '#include "rules/underwater.h"' in s:
+if '#include "rules/seams/underwater.h"' in s:
     already.append('state_dungeon.cpp: the include')
 else:
     assert s.count(SD_OLD) == 1, 'include anchor not unique'
@@ -71,7 +71,7 @@ else:
     applied.append('state_dungeon.cpp: the include')
 
 s = rd(p)
-assert s.count('#include "rules/underwater.h"') == 1, 'b include'
+assert s.count('#include "rules/seams/underwater.h"') == 1, 'b include'
 assert s.count('#include "rules/dmg/swimcross.h"') == 1, 'b swimcross'
 assert s.count('#include "rules/dmg/doorforce.h"') == 1, 'b anchor'
 assert s.count('uwSurfaceDrownPct') == 1, 'b the call site'

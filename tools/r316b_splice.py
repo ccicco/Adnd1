@@ -6,7 +6,7 @@
 # entry rides as the first patch).
 #
 # The charge: the DMG UNDERWATER ADVENTURES
-# vision paragraph (rules/underwater.h,
+# vision paragraph (rules/seams/underwater.h,
 # R311) - the base distance, fresh 50 feet -
 # now folds at the R313 water fight as the
 # first ENGINE vision state (the seam the
@@ -38,7 +38,7 @@
 #   (d) rules/dmg/swimcross.h - the seam note:
 #       MOVEMENT and COMBAT charged R313,
 #       VISION charges R316.
-#   (e) rules/underwater.h - the recorded
+#   (e) rules/seams/underwater.h - the recorded
 #       notes: the vision distances now
 #       charge the seam.
 #   (f) regtest.cpp - the R316 seam audit
@@ -284,7 +284,7 @@ _o, _c, _o2, _c2 = counts(s)
 assert _o == _c and _o2 == _c2, 'patch d balance'
 assert len(applied) + len(already) == 4, 'patch d count wrong'
 
-# ---- (e) rules/underwater.h: the recorded notes ----
+# ---- (e) rules/seams/underwater.h: the recorded notes ----
 UW_OLD = NL.join([
     '// allowance accessor exists); the rest rides',
     '// no engine layer yet (a state seam is the',
@@ -303,7 +303,7 @@ for _t in (UW_OLD, UW_NEW):
     clean(_t, 78)
 assert Q not in UW_NEW, 'e apostrophe'
 
-p = 'rules/underwater.h'
+p = 'rules/seams/underwater.h'
 s = rd(p)
 if 'Encounter vision state' in s:
     already.append('underwater.h: the recorded notes')

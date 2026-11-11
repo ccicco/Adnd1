@@ -535,7 +535,7 @@ ITEM_OLD = NL.join([
     '      through 18. The engine carries the six',
     '      shared ability names and the',
     '      monk/assassin level-sharing rules',
-    '      (rules/subclassspecials.h) but performs',
+    '      (rules/phb/subclassspecials.h) but performs',
     '      no thief rolls. A DATA-ONLY pin',
     '      candidate (the R186 poetics precedent),',
     '      not gameplay wiring. The R298 candidate.',

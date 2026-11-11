@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 - rules/multiclass.h
+// Adnd1 - rules/phb/multiclass.h
 // The multi-class and dual-class rules (R185).
 //
 // The per-race MULTI-CLASS combination table (the

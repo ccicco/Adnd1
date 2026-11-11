@@ -1,5 +1,5 @@
 // ===========================================================================
-// Adnd1 - rules/psionics.h
+// Adnd1 - rules/seams/psionics.h
 // The PSIONICS SEAM (R404) - the
 // deferred engine seam lands. The
 // R403 mount precedent rides: the

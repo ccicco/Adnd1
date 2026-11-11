@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # R182 splice: the druid spell layer.
 #
-# rules/druidspells.h is CREATED: the druid
+# rules/phb/druidspells.h is CREATED: the druid
 # spells-usable-by-class-and-level table (14 druid
 # levels x 7 spell levels, every printed cell) and
 # the full druid spell roster - 77 spells with the
@@ -64,7 +64,7 @@ def create(path, marker, content):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/druidspells.h CREATED
+# Patch 1: rules/phb/druidspells.h CREATED
 # ---------------------------------------------------------------------------
 
 # the roster: (level, name, reversible)
@@ -181,7 +181,7 @@ hdr = []
 a = hdr.append
 
 a('// ============================================================================')
-a('// Adnd1 - rules/druidspells.h')
+a('// Adnd1 - rules/phb/druidspells.h')
 a('// The druid spell layer (R182).')
 a('//')
 a('// The SPELLS USABLE BY CLASS AND LEVEL - DRUIDS table')
@@ -261,7 +261,7 @@ a('}')
 a('')
 a('} // namespace rules')
 
-create('rules/druidspells.h',
+create('rules/phb/druidspells.h',
        'The druid spell layer (R182)',
        NL.join(hdr) + NL)
 
@@ -270,10 +270,10 @@ create('rules/druidspells.h',
 # ---------------------------------------------------------------------------
 
 patch('regtest.cpp',
-      'rules/druidspells.h',
-      '#include "rules/attacksround.h"  // R181: attacks per melee round',
-      '#include "rules/attacksround.h"  // R181: attacks per melee round'
-      + NL + '#include "rules/druidspells.h"  // R182: the druid spell layer')
+      'rules/phb/druidspells.h',
+      '#include "rules/phb/attacksround.h"  // R181: attacks per melee round',
+      '#include "rules/phb/attacksround.h"  // R181: attacks per melee round'
+      + NL + '#include "rules/phb/druidspells.h"  // R182: the druid spell layer')
 
 # ---------------------------------------------------------------------------
 # Patch 3: regtest.cpp - the R182 battery audit (census 99)
@@ -384,7 +384,7 @@ patch('tools/phb_gap_report.md',
       + NL + '      joins the registry with its own'
       + NL + '      spells-usable-by-level table.',
       '- [x] R182 the druid spell layer - PINNED:'
-      + NL + '      rules/druidspells.h CREATED: the SPELLS'
+      + NL + '      rules/phb/druidspells.h CREATED: the SPELLS'
       + NL + '      USABLE BY CLASS AND LEVEL - DRUIDS table'
       + NL + '      (14 druid levels x 7 spell levels, every'
       + NL + '      printed cell: level 1 reads two first-'
@@ -410,7 +410,7 @@ patch('tools/dmg_gap_report.md',
       'census 98. Next: R182 the druid spell layer.',
       'census 98. Next: R182 the druid spell layer.'
       + NL + 'R182 landed the druid spell layer:'
-      + NL + 'rules/druidspells.h CREATED (the 14x7'
+      + NL + 'rules/phb/druidspells.h CREATED (the 14x7'
       + NL + 'spells-usable table cell by cell, the 77-'
       + NL + 'spell roster with the reversible flags;'
       + NL + 'the printed dash pins as 0, past-14th'
@@ -425,7 +425,7 @@ patch('tools/dmg_gap_report.md',
 assert applied + already == 5, 'patch count drift: ' + str(applied) + ' + ' + str(already)
 print('R182 splice: ALL OK (applied %d, already %d)' % (applied, already))
 print('R182 note: 5 patches; census 99 (one new audit);')
-print('real gate: md5sum rules/druidspells.h')
+print('real gate: md5sum rules/phb/druidspells.h')
 print('commit: R182: the druid spell layer pinned - the slots')
 print('table and the 77-spell roster (census 99)')
 

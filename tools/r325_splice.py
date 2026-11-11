@@ -723,7 +723,7 @@ cleanNB(PARTY_FOLD, 78)
 if 'uaLevelCap' in s:
     already.append('party.h: the field and the folds')
 else:
-    MC_INC = ('#include "../rules/multiclass.h"'
+    MC_INC = ('#include "../rules/phb/multiclass.h"'
               '  // R233: the multi-class engine')
     assert s.count(MC_INC) == 1, 'c include anchor'
     s = s.replace(MC_INC, MC_INC + NL + PARTY_INC)

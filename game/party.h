@@ -29,15 +29,15 @@
 #include "../rules/engine/dice.h"
 #include "../rules/engine/character.h"
 #include "../rules/engine/classes.h"
-#include "../rules/subclassgates.h"  // R231: the subclass leveling seam
-#include "../rules/multiclass.h"  // R233: the multi-class engine
+#include "../rules/phb/subclassgates.h"  // R231: the subclass leveling seam
+#include "../rules/phb/multiclass.h"  // R233: the multi-class engine
 #include "../rules/ua/subracecap.h"  // R325: the Race Table II fold
 #include "../rules/phb/bard.h"  // R235: the bard engine
 #include "../items/items.h"
 #include "../ai/actor.h"
 #include "../dm/dm.h"
 #include "../dm/outdoormove.h"   // R123: pp.58-59 daily rates
-#include "../rules/saddle.h"  // R777: the sdd kind ladder
+#include "../rules/seams/saddle.h"  // R777: the sdd kind ladder
 #include "messagelog.h"
 #include "../spells/spells.h"
 

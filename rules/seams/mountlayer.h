@@ -1,5 +1,5 @@
 // ===========================================================================
-// Adnd1 - rules/mountlayer.h
+// Adnd1 - rules/seams/mountlayer.h
 // The MOUNT LAYER (R403) - the
 // deferred engine seam lands. The
 // OUT reversal rides the R321
@@ -25,12 +25,12 @@
 //      animals and mounts tables,
 //      the paladin warhorse)
 //   2: R189 the charge damage
-//      (rules/weapontables.h - the
+//      (rules/phb/weapontables.h - the
 //      three lances double from a
 //      charging mount, the spear
 //      set receives)
 //   3: R321 the aerial environment
-//      (rules/aerial.h - the
+//      (rules/seams/aerial.h - the
 //      flying steed climbs at
 //      half and dives at double)
 //   4: R328 the cavalier mounted

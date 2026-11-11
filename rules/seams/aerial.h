@@ -1,5 +1,5 @@
 // ===========================================================================
-// Adnd1 - rules/aerial.h
+// Adnd1 - rules/seams/aerial.h
 // The aerial environment (R321).
 //
 // The DMG AERIAL COMBAT section (pp.49-53)

@@ -25,7 +25,7 @@
 # two OSRIC-sourced rows (cook, groom) -
 # excluded per the R211 ground-truth rule.
 #
-#   (a) rules/hirelings.h - CREATED (the
+#   (a) rules/dmg/hirelings.h - CREATED (the
 #       grenade.h pattern; the R300 shape).
 #   (b) regtest.cpp - the include line.
 #   (c) regtest.cpp - the R309 battery audit
@@ -169,10 +169,10 @@ def namelines(names, indent):
         out.append(indent + DQ + n + DQ + ',')
     return out
 
-# ---- (a) rules/hirelings.h CREATED ----
+# ---- (a) rules/dmg/hirelings.h CREATED ----
 HB = NL.join(
     ['// ===========================================================================',
-     '// Adnd1 - rules/hirelings.h',
+     '// Adnd1 - rules/dmg/hirelings.h',
      '// The hirelings cost tables (R309).',
      '//',
      '// The DMG HIRELINGS section (the STANDARD HIRELINGS',
@@ -372,7 +372,7 @@ HB = NL.join(
 clean(HB, 78)
 assert Q not in HB, 'apostrophe in header'
 
-p = 'rules/hirelings.h'
+p = 'rules/dmg/hirelings.h'
 if os.path.exists(os.path.join(ROOT, p)):
     s = rd(p)
     if 'inline int hireStdCount() {' in s:
@@ -401,18 +401,18 @@ assert len(applied) + len(already) == 1, 'patch a count wrong'
 
 # ---- (b) regtest.cpp: the include line ----
 INC_OLD = NL.join([
-    '#include "rules/equipcosts.h"  // R300: the equipment cost columns',
+    '#include "rules/phb/equipcosts.h"  // R300: the equipment cost columns',
 ])
 INC_NEW = NL.join([
-    '#include "rules/equipcosts.h"  // R300: the equipment cost columns',
-    '#include "rules/hirelings.h"  // R309: the hirelings cost tables',
+    '#include "rules/phb/equipcosts.h"  // R300: the equipment cost columns',
+    '#include "rules/dmg/hirelings.h"  // R309: the hirelings cost tables',
 ])
 clean(INC_OLD, 76)
 clean(INC_NEW, 76)
 
 p = 'regtest.cpp'
 s = rd(p)
-if '#include "rules/hirelings.h"' in s:
+if '#include "rules/dmg/hirelings.h"' in s:
     already.append('regtest.cpp: the include line')
 else:
     assert s.count(INC_OLD) == 1, 'include anchor not unique'
@@ -422,8 +422,8 @@ else:
     applied.append('regtest.cpp: the include line')
 
 s = rd(p)
-assert s.count('#include "rules/hirelings.h"') == 1, 'patch b include'
-assert s.count('#include "rules/equipcosts.h"') == 1, 'patch b intact'
+assert s.count('#include "rules/dmg/hirelings.h"') == 1, 'patch b include'
+assert s.count('#include "rules/phb/equipcosts.h"') == 1, 'patch b intact'
 assert len(applied) + len(already) == 2, 'patch b count wrong'
 
 # ---- (c) regtest.cpp: the audit block ----
@@ -435,7 +435,7 @@ RT_TAIL = NL.join([
 ])
 RT_AUD = NL.join(
     ['    // ---- R309: the hirelings cost tables audit ----',
-     '    // The two DMG HIRELINGS tables (rules/hirelings.h)',
+     '    // The two DMG HIRELINGS tables (rules/dmg/hirelings.h)',
      '    // walked cell for cell against this local ground',
      '    // truth: the standard daily and monthly columns',
      '    // (the monthly coin identity), the craft percent',
@@ -597,7 +597,7 @@ assert s.count('audit: bad') == 233, 'patch c census wrong'
 assert s.count('R309 hirelings cost tables audit') == 1, 'c label'
 assert s.count('R308 general equipment lists audit') == 1, 'c r308 tail'
 assert s.count('R227: the wis mental save wiring audit') == 1, 'c head'
-assert s.count('rules/hirelings.h') == 2, 'c references'
+assert s.count('rules/dmg/hirelings.h') == 2, 'c references'
 assert s.count('{') == s.count('}'), 'rt brace balance'
 assert s.count('(') == s.count(')'), 'rt paren balance'
 assert len(applied) + len(already) == 3, 'patch c count wrong'
@@ -613,7 +613,7 @@ CH_NEW = NL.join([
     '',
     'R309 the hirelings cost tables pin (an',
     'engine round): the first R307 open box',
-    'paid. rules/hirelings.h (the grenade.h',
+    'paid. rules/dmg/hirelings.h (the grenade.h',
     'pattern): the STANDARD table - 10 rows,',
     'every daily cost in silver, every',
     'monthly cost in its printed coin',
@@ -689,7 +689,7 @@ BX_NEW = NL.join([
     '      the EXPERT HIRELINGS TABLE OF',
     '      MONTHLY COSTS IN GOLD PIECES,',
     '      upload line 1873) - PINNED R309:**',
-    '      rules/hirelings.h (the R300',
+    '      rules/dmg/hirelings.h (the R300',
     '      pattern): the standard table -',
     '      10 rows, the daily costs in',
     '      silver, the monthly costs in the',

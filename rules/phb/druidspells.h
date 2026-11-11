@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 - rules/druidspells.h
+// Adnd1 - rules/phb/druidspells.h
 // The druid spell layer (R182).
 //
 // The SPELLS USABLE BY CLASS AND LEVEL - DRUIDS table

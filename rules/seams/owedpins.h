@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/owedpins.h
+// Adnd1 - rules/seams/owedpins.h
 // THE OWED PINS AND THE DEITY SITE - four feeds in one round: the lance
 // lengths, the spear spread, the Appendix S bridge, the closing bar
 // census 704 -> 705.

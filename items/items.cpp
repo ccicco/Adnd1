@@ -12,7 +12,7 @@ namespace items {
 // Weapons (PHB p.37 table; damage vs S/M and L, missile data)
 // Weight in gp units (1 gp = 1/10 lb). R300: the costGp
 // column repinned to the printed BASIC EQUIPMENT AND SUPPLIES
-// COSTS tables (rules/equipcosts.h) - the printed-table-wins
+// COSTS tables (rules/phb/equipcosts.h) - the printed-table-wins
 // debt paid. The rows NOT in the print (quarterstaff, club)
 // keep 0 as ENGINE CONVENTION; the sling keeps the 2 g.p.
 // engine price (the print prices the dozen sling and bullets

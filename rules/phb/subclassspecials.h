@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 - rules/subclassspecials.h
+// Adnd1 - rules/phb/subclassspecials.h
 // The per-subclass specials (R187): the assassin
 // fees and disguise layer, the monk special
 // abilities, backstab, the thief-skill sharing,
@@ -267,7 +267,7 @@ inline bool monkWallAssistedFallRequiresContact() {
 // The monk prose pin: non-player character monks
 // align 50% lawful good, 35% lawful neutral, 15%
 // lawful evil. The PC gate stays SUB_ALIGN_LAWFUL_
-// ONLY (rules/subclassgates.h); this split is NPC
+// ONLY (rules/phb/subclassgates.h); this split is NPC
 // generation data.
 inline int monkNpcAlignLawfulGoodPercent() { return 50; }
 

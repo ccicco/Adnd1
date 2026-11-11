@@ -4,7 +4,7 @@
 # appended after DR_TRANSMUTE_METAL_TO_WOOD, 61 kSpells rows
 # (PHB illusionist spell description header parameters in the
 # R228 conventions), the seven-accessor parameter seam in
-# rules/illusionspells.h (the grenade.h/druidspells.h
+# rules/phb/illusionspells.h (the grenade.h/druidspells.h
 # pattern; the illusionist print carries no reversible
 # markers), spellSlots(SPELL_ILLUSIONIST, ...) delegates to
 # the R183 slot table, the R80 battery walk extends to the
@@ -125,7 +125,7 @@ def lit(l):
 
 
 # ---- the pre-assert: DATA matches the R183 roster ----
-h = open('rules/illusionspells.h').read()
+h = open('rules/phb/illusionspells.h').read()
 sec = h[h.index('kIllusionistSpells[61] = {'):]
 sec = sec[:sec.index('};')]
 roster = []
@@ -141,7 +141,7 @@ assert [r[1] for r in roster] == [r[0] for r in DATA], 'name drift'
 assert [r[0] for r in roster] == [r[1] for r in DATA], 'level drift'
 assert len(DATA) == 61
 
-# ---- 1: the parameter seam in rules/illusionspells.h ----
+# ---- 1: the parameter seam in rules/phb/illusionspells.h ----
 seam_lines = [
     '// ---------------------------------------------------------------------------',
     '// R229: the registry parameter seam. The R183 roster carries',
@@ -288,7 +288,7 @@ seam_lines = [
     '}'
 ]
 seam_block = NL.join(seam_lines)
-patch('rules/illusionspells.h', 'R229: the registry parameter seam',
+patch('rules/phb/illusionspells.h', 'R229: the registry parameter seam',
       '    return kByLevel[spellLevel - 1];' + NL + '}' + NL + NL
       + '} // namespace rules',
       '    return kByLevel[spellLevel - 1];' + NL + '}' + NL + NL
@@ -317,16 +317,16 @@ patch('spells/spells.h', 'IL_AUDIBLE_GLAMER,',
 
 # ---- 4: the include ----
 patch('spells/spells.cpp', 'R229: the illusionist roster + parameter seam',
-      '#include ' + DQ + '../rules/druidspells.h' + DQ
+      '#include ' + DQ + '../rules/phb/druidspells.h' + DQ
       + '  // R228: the druid roster + parameter seam',
-      '#include ' + DQ + '../rules/druidspells.h' + DQ
+      '#include ' + DQ + '../rules/phb/druidspells.h' + DQ
       + '  // R228: the druid roster + parameter seam' + NL
-      + '#include ' + DQ + '../rules/illusionspells.h' + DQ
+      + '#include ' + DQ + '../rules/phb/illusionspells.h' + DQ
       + '  // R229: the illusionist roster + parameter seam')
 
 # ---- 5: the 61 registry rows ----
 row_lines = ['    // ---- R229: the illusionist roster (61 spells;',
-            '    // parameters per the rules/illusionspells.h R229',
+            '    // parameters per the rules/phb/illusionspells.h R229',
             '    // seam - the PHB illusionist spell description',
             '    // headers; effects stay known, cast pending per',
             '    // the R80 utility convention) ----']
@@ -470,7 +470,7 @@ patch('regtest.cpp', 'il != 61',
 # ---- 10: the R229 audit block ----
 audit_lines = [
     '    // ---- R229: the illusionist registry parameters audit ----',
-    '    // The evaluable seam walk: the rules/illusionspells.h',
+    '    // The evaluable seam walk: the rules/phb/illusionspells.h',
     '    // R229 parameter tables vs the book-pin arrays (the',
     '    // PHB illusionist spell description headers; the',
     '    // OCR-scattered blocks pinned as JUDGMENTs). The',
@@ -591,7 +591,7 @@ gap_lines = [
     '      illusionist spell-description header parameters',
     '      (the R228 druid conventions); the parameters',
     '      also land as the evaluable seam in',
-    '      rules/illusionspells.h (seven clamped accessors -',
+    '      rules/phb/illusionspells.h (seven clamped accessors -',
     '      no reversible markers in the illusionist print)',
     '      and spellSlots(SPELL_ILLUSIONIST, ...) delegates',
     '      to the R183 illusionistSpellSlots (levels 1-26,',

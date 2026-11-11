@@ -4,7 +4,7 @@
 # R311 underwater pins charge).
 #
 # The pin charge: the DMG surface SWIMMING
-# paragraph (rules/underwater.h, R311) -
+# paragraph (rules/seams/underwater.h, R311) -
 # swimming impossible in metal armor except
 # magic armor (the dog paddle only); leather
 # and padded swim at 5 percent drown per
@@ -202,7 +202,7 @@ SB = NL.join(
      '// Adnd1 - rules/dmg/swimcross.h',
      '// R312: the DMG surface SWIMMING',
      '// paragraph (the R311 pins,',
-     '// rules/underwater.h) WIRED as the',
+     '// rules/seams/underwater.h) WIRED as the',
      '// flooded crossing - the first ENGINE',
      '// site the underwater data charges.',
      '//',
@@ -682,10 +682,10 @@ assert len(applied) + len(already) == 6, 'patch f count wrong'
 
 # ---- (g) regtest.cpp: the include line ----
 RG_I_OLD = NL.join([
-    '#include "rules/underwater.h"  // R311: the underwater environment',
+    '#include "rules/seams/underwater.h"  // R311: the underwater environment',
 ])
 RG_I_NEW = NL.join([
-    '#include "rules/underwater.h"  // R311: the underwater environment',
+    '#include "rules/seams/underwater.h"  // R311: the underwater environment',
     '#include "rules/dmg/swimcross.h"  // R312: the flooded crossing',
 ])
 for _t in (RG_I_OLD, RG_I_NEW):
@@ -705,7 +705,7 @@ else:
 
 s = rd(p)
 assert s.count('#include "rules/dmg/swimcross.h"') == 1, 'g include'
-assert s.count('#include "rules/underwater.h"') == 1, 'g anchor'
+assert s.count('#include "rules/seams/underwater.h"') == 1, 'g anchor'
 assert len(applied) + len(already) == 7, 'patch g count wrong'
 
 # ---- (h) regtest.cpp: the audit blocks ----

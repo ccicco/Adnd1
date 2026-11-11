@@ -1,6 +1,6 @@
 #include "appstate.h"
-#include "../rules/equipcosts.h"  // R777: the stable reads the pinned cells
-#include "../rules/saddle.h"     // R777: the sdd kind ladder
+#include "../rules/phb/equipcosts.h"  // R777: the stable reads the pinned cells
+#include "../rules/seams/saddle.h"     // R777: the sdd kind ladder
 
 // ---- enterTown ----
 void AppState::enterTown(){

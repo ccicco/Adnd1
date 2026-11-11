@@ -882,19 +882,19 @@
   "open": 0
  },
  "caller_files": [
-  "rules/deitylines.h",
+  "rules/seams/deitylines.h",
   "rules/ua/uaappends.h"
  ],
  "inline_count": 83,
  "file_patches": [
   {
-   "file": "rules/deitylines.h",
+   "file": "rules/seams/deitylines.h",
    "note": "the prose note strike (the five-part close is complete)",
    "from": "// R786-R789: the dwarven, elven,\n// halfling, and gnomish paragraphs pin\n// (rules/uadeityprose1-4.h); the orcs'\n// prose stays open - the lines pin, the\n// paragraphs do not (yet)\n",
    "to": "// R786-R790: the dwarven, elven,\n// halfling, gnomish, and orcish\n// paragraphs pin (rules/uadeityprose1-5.h);\n// the prose close is complete - every\n// Appendix S description paragraph pins\n"
   },
   {
-   "file": "rules/deitylines.h",
+   "file": "rules/seams/deitylines.h",
    "note": "THE PIN FLIP: dvpProseStaysOpen goes false (the close is complete)",
    "from": "inline bool dvpProseStaysOpen()\n    { return true; }\n",
    "to": "inline bool dvpProseStaysOpen()\n    { return false; }\n"
@@ -902,8 +902,8 @@
   {
    "file": "rules/ua/uaappends.h",
    "note": "the uaappends prose note strike (part 5, the finale)",
-   "from": "// stat lines) in rules/deitylines.h; the dwarven,\n// elven, halfling, and gnomish prose pin in\n// rules/uadeityprose1-4.h (R786-R789); the\n// orcs' prose stays open.\n",
-   "to": "// stat lines) in rules/deitylines.h; the dwarven,\n// elven, halfling, gnomish, and orcish prose\n// pin in rules/uadeityprose1-5.h (R786-R790);\n// the Appendix S description-paragraph close\n// is complete.\n"
+   "from": "// stat lines) in rules/seams/deitylines.h; the dwarven,\n// elven, halfling, and gnomish prose pin in\n// rules/uadeityprose1-4.h (R786-R789); the\n// orcs' prose stays open.\n",
+   "to": "// stat lines) in rules/seams/deitylines.h; the dwarven,\n// elven, halfling, gnomish, and orcish prose\n// pin in rules/uadeityprose1-5.h (R786-R790);\n// the Appendix S description-paragraph close\n// is complete.\n"
   },
   {
    "file": "regtest.cpp",

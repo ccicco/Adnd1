@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 - rules/xpadjust.h
+// Adnd1 - rules/phb/xpadjust.h
 // The prime requisite XP adjustment (R188).
 //
 // The printed per-class +10% of earned experience gates,
@@ -45,7 +45,7 @@
 
 #pragma once
 
-#include "engine/classes.h"
+#include "../engine/classes.h"
 #include "subclasses.h"
 
 #include <cstdint>

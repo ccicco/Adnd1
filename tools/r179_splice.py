@@ -6,7 +6,7 @@
 # per the standing scope - a future class lands as
 # one appended row):
 #
-#   (a) rules/subclasses.h CREATED - the subclass
+#   (a) rules/phb/subclasses.h CREATED - the subclass
 #       registry: struct SubclassDef (base class,
 #       group, level cap, fixed hp past the cap,
 #       hit die, the XP attain rows, the per-level
@@ -61,10 +61,10 @@ def wr(p, s):
     with open(os.path.join(ROOT, p), "w", encoding="ascii") as f:
         f.write(s)
 
-# ---- (a) rules/subclasses.h CREATED ----
+# ---- (a) rules/phb/subclasses.h CREATED ----
 HEADER = NL.join([
     "// ============================================================================",
-    "// Adnd1 - rules/subclasses.h",
+    "// Adnd1 - rules/phb/subclasses.h",
     "// The subclass registry (R179, the arc foundations).",
     "//",
     "// The six PHB subclasses pinned from the printed class",
@@ -312,18 +312,18 @@ HEADER = NL.join([
 ])
 
 def patch_create():
-    p = os.path.join(ROOT, "rules/subclasses.h")
+    p = os.path.join(ROOT, "rules/phb/subclasses.h")
     if os.path.exists(p):
         with open(p, encoding="ascii") as f:
             s = f.read()
         if "R179, the arc foundations" in s:
-            already.append("rules/subclasses.h created")
+            already.append("rules/phb/subclasses.h created")
         else:
-            fails.append("rules/subclasses.h exists without "
+            fails.append("rules/phb/subclasses.h exists without "
                          "the R179 marker")
         return
-    wr("rules/subclasses.h", HEADER)
-    applied.append("rules/subclasses.h created")
+    wr("rules/phb/subclasses.h", HEADER)
+    applied.append("rules/phb/subclasses.h created")
 
 patch_create()
 assert len(applied) + len(already) == 1
@@ -478,7 +478,7 @@ p3_old = NL.join([
 ])
 p3_new = NL.join([
     '- [x] R179 the six subclass foundations - PINNED:',
-    '      rules/subclasses.h CREATED (the data-driven',
+    '      rules/phb/subclasses.h CREATED (the data-driven',
     '      registry - a future class lands as one',
     '      appended row): struct SubclassDef with the',
     '      base-class map (paladin/ranger fighter,',
@@ -504,7 +504,7 @@ p3_new = NL.join([
 ])
 
 s = rd("tools/phb_gap_report.md")
-if "PINNED:" + NL + "      rules/subclasses.h CREATED" in s:
+if "PINNED:" + NL + "      rules/phb/subclasses.h CREATED" in s:
     already.append("phb report: R179 box flipped")
 else:
     n = s.count(p3_old)
@@ -525,7 +525,7 @@ p4_new = NL.join([
     'accessor retired. New R178c battery audit;',
     'census 95.',
     'R179 PINNED the six subclass foundations (the',
-    'arc registry round): rules/subclasses.h CREATED,',
+    'arc registry round): rules/phb/subclasses.h CREATED,',
     'data-driven - the six PHB subclasses with the',
     'base-class map, caps, hit dice, the XP attain',
     'rows and title ladders from the printed tables,',
@@ -567,7 +567,7 @@ else:
     print("R179 splice: ALL OK (applied " + str(len(applied))
           + ", already " + str(len(already)) + ")")
 print("R179 note: 4 patches; census 96 (one new audit);")
-print("real gate: md5sum rules/subclasses.h")
+print("real gate: md5sum rules/phb/subclasses.h")
 print("commit: R179: the six subclass foundations pinned -")
 print("the registry round (census 96)")
 

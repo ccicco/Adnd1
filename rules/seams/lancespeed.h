@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/lancespeed.h
+// Adnd1 - rules/seams/lancespeed.h
 // THE LANCE SPEED FACTORS - the three lances ride the R158 ladder
 // census 702 -> 703.
 //

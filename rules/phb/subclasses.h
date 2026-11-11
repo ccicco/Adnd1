@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 - rules/subclasses.h
+// Adnd1 - rules/phb/subclasses.h
 // The subclass registry (R179, the arc foundations).
 //
 // The six PHB subclasses pinned from the printed class

@@ -2,7 +2,7 @@
 # R189 splice: the PHB book-verify pass for the
 # weapon tables (the queued box).
 #
-# rules/weapontables.h is CREATED: the WEIGHT
+# rules/phb/weapontables.h is CREATED: the WEIGHT
 # AND DAMAGE BY WEAPON TYPE chart (50 rows,
 # every printed cell: the approximate weight
 # in gold pieces, the damage vs. size S or M
@@ -87,7 +87,7 @@ def create(path, marker, content):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/weapontables.h CREATED
+# Patch 1: rules/phb/weapontables.h CREATED
 # ---------------------------------------------------------------------------
 
 # the WEIGHT AND DAMAGE BY WEAPON TYPE chart:
@@ -201,7 +201,7 @@ hdr = []
 a = hdr.append
 
 a('// ============================================================================')
-a('// Adnd1 - rules/weapontables.h')
+a('// Adnd1 - rules/phb/weapontables.h')
 a('// The weapon weight and damage table (R189).')
 a('//')
 a('// The PHB WEIGHT AND DAMAGE BY WEAPON TYPE chart (50 rows,')
@@ -391,7 +391,7 @@ a('}')
 a('')
 a('} // namespace rules')
 
-create('rules/weapontables.h',
+create('rules/phb/weapontables.h',
        'The weapon weight and damage table (R189)',
        NL.join(hdr) + NL)
 
@@ -400,10 +400,10 @@ create('rules/weapontables.h',
 # ---------------------------------------------------------------------------
 
 patch('regtest.cpp',
-      'rules/weapontables.h',
-      '#include "rules/xpadjust.h"  // R188: the prime requisite XP adjustment',
-      '#include "rules/xpadjust.h"  // R188: the prime requisite XP adjustment'
-      + NL + '#include "rules/weapontables.h"  // R189: the weapon weight and damage table')
+      'rules/phb/weapontables.h',
+      '#include "rules/phb/xpadjust.h"  // R188: the prime requisite XP adjustment',
+      '#include "rules/phb/xpadjust.h"  // R188: the prime requisite XP adjustment'
+      + NL + '#include "rules/phb/weapontables.h"  // R189: the weapon weight and damage table')
 
 # ---------------------------------------------------------------------------
 # Patch 3: regtest.cpp - the R189 battery audit (census 106)
@@ -545,7 +545,7 @@ box_old = ('- [ ] **The PHB book-verify pass for the weapon'
            + NL + '      the standing compile-vs-print note.')
 
 box_new = ('- [x] **The PHB book-verify pass for the weapon tables -'
-           + NL + '      PINNED R189:** rules/weapontables.h CREATED:'
+           + NL + '      PINNED R189:** rules/phb/weapontables.h CREATED:'
            + NL + '      the WEIGHT AND DAMAGE BY WEAPON TYPE chart (50'
            + NL + '      rows, every cell: the weight in gold pieces,'
            + NL + '      the S/M and L damage ranges; the spear weight'
@@ -576,7 +576,7 @@ else:
     assert t2.count(box_old) == 0, 'R189 box old text lingers'
 
 patch('tools/phb_gap_report.md',
-      'PINNED R189:** rules/weapontables.h CREATED',
+      'PINNED R189:** rules/phb/weapontables.h CREATED',
       box_old,
       box_new)
 
@@ -591,7 +591,7 @@ patch('tools/dmg_gap_report.md',
       'R188 battery audit; census 105. Next: the gap report'
       + NL + 'names the next round.'
       + NL + 'R189 landed the weapon tables verify:'
-      + NL + 'rules/weapontables.h CREATED (the 50-row weight and'
+      + NL + 'rules/phb/weapontables.h CREATED (the 50-row weight and'
       + NL + 'damage chart, the speed cross-verify - all 18'
       + NL + 'readable cells confirm the R158 ladder - and the'
       + NL + 'printed notes; the R144/R145 AC standing note closes'
@@ -606,7 +606,7 @@ patch('tools/dmg_gap_report.md',
 assert applied + already == 5, 'patch count drift: ' + str(applied) + ' + ' + str(already)
 print('R189 splice: ALL OK (applied %d, already %d)' % (applied, already))
 print('R189 note: 5 patches; census 106 (one new audit);')
-print('real gate: md5sum rules/weapontables.h')
+print('real gate: md5sum rules/phb/weapontables.h')
 print('commit: R189: the weapon tables verify pinned - the weight and')
 print('damage chart, the speed cross-verify and the notes (census 106)')
 

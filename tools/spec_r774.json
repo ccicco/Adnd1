@@ -8,7 +8,7 @@
  "census_before": 696,
  "title": "the file-patch seam - the ritual tooling extension",
  "audit_label": "R774 file-patch seam audit",
- "audit_comment": "THE TOOLING ROUND - the R775 mount site needs spec-declared extra-file patches (game/party.h, game/state_combat.cpp, and the R403 charge conditions in regtest), which the ritual could not land: the engine patched only seed, header, gap flips, include, and audit, and ./rn git-added only those five. R774 extends the three tools - the engine gains the file_patches spec key (byte-exact from, one replace, idempotent by to-presence, counted in the applied/already census), rverify restores and counts the patch targets, and ./rn derives the extra git-add paths from the spec. The pins below codify the seam contract; the demo patch rides rules/mountlayer.h (comment-only - the R403 audit at 43208 requires the charge open until R775).",
+ "audit_comment": "THE TOOLING ROUND - the R775 mount site needs spec-declared extra-file patches (game/party.h, game/state_combat.cpp, and the R403 charge conditions in regtest), which the ritual could not land: the engine patched only seed, header, gap flips, include, and audit, and ./rn git-added only those five. R774 extends the three tools - the engine gains the file_patches spec key (byte-exact from, one replace, idempotent by to-presence, counted in the applied/already census), rverify restores and counts the patch targets, and ./rn derives the extra git-add paths from the spec. The pins below codify the seam contract; the demo patch rides rules/seams/mountlayer.h (comment-only - the R403 audit at 43208 requires the charge open until R775).",
  "include_comment": "the file-patch seam tooling pins",
  "include_after": "#include \"rules/oa/oa144dailylife.h\"  // R773: the OA daily-life misses pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
@@ -93,7 +93,7 @@
  ],
  "banner": {
   "title": "THE FILE-PATCH SEAM - the ritual tooling extension: the spec-declared extra-file patches",
-  "provenance": "The R775 mounted-combat engine site (the last ungated UA deferred item) touches game/party.h and game/state_combat.cpp, and the R403 charge conditions in regtest must flip with the site - none of them land through the ritual as it stood. This round extends the engine (the file_patches spec key, gap-flip semantics: byte-exact anchors, one replace, idempotent, counted in the applied/already census), rverify (restore + count the patch targets at the base sha), and ./rn (the extra git-add paths derived from the spec). The three tools land by hand this once (the bootstrap note): the tool files cannot patch themselves; after R774 every file-patch round lands through the ritual like any other. The demo patch is comment-only in rules/mountlayer.h - the charge stays open until the site lands R775.",
+  "provenance": "The R775 mounted-combat engine site (the last ungated UA deferred item) touches game/party.h and game/state_combat.cpp, and the R403 charge conditions in regtest must flip with the site - none of them land through the ritual as it stood. This round extends the engine (the file_patches spec key, gap-flip semantics: byte-exact anchors, one replace, idempotent, counted in the applied/already census), rverify (restore + count the patch targets at the base sha), and ./rn (the extra git-add paths derived from the spec). The three tools land by hand this once (the bootstrap note): the tool files cannot patch themselves; after R774 every file-patch round lands through the ritual like any other. The demo patch is comment-only in rules/seams/mountlayer.h - the charge stays open until the site lands R775.",
   "sentinel": "No book pages this round: the provenance is the tooling itself (the R428 one-command-harness precedent)."
  },
  "consts": [
@@ -105,7 +105,7 @@
   {
    "name": "dnlFirstFilePatchRound",
    "value": 774,
-   "comment": "R774 is the first round carrying the file_patches spec key - the demo patch rides rules/mountlayer.h."
+   "comment": "R774 is the first round carrying the file_patches spec key - the demo patch rides rules/seams/mountlayer.h."
   },
   {
    "name": "dnlMountSiteRound",
@@ -190,7 +190,7 @@
  "inline_count": 8,
  "file_patches": [
   {
-   "file": "rules/mountlayer.h",
+   "file": "rules/seams/mountlayer.h",
    "note": "the mountlayer charge comment notes the R775 site seam",
    "from": "// The charge (the mount actor,\n// the mounted resolution) stays\n// open after the seam lands.",
    "to": "// The charge (the mount actor,\n// the mounted resolution) stays\n// open after the seam lands; the\n// site lands R775 through the\n// R774 file-patch seam."

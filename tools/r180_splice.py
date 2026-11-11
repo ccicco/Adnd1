@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # R180 splice: the qualification and race gates pinned.
 #
-# rules/subclassgates.h is CREATED: the class-section
+# rules/phb/subclassgates.h is CREATED: the class-section
 # ability minimums, the alignment requirements, the
 # XP bonus rules, Race Table I (class limitations) and
 # Race Table II (the level caps, parentheses = NPC-only)
@@ -64,14 +64,14 @@ def create(path, marker, content):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/subclassgates.h CREATED
+# Patch 1: rules/phb/subclassgates.h CREATED
 # ---------------------------------------------------------------------------
 
 hdr = []
 a = hdr.append
 
 a('// ============================================================================')
-a('// Adnd1 - rules/subclassgates.h')
+a('// Adnd1 - rules/phb/subclassgates.h')
 a('// The qualification and race gates (R180).')
 a('//')
 a('// The printed gates for the six registry subclasses: the')
@@ -290,7 +290,7 @@ a('}')
 a('')
 a('} // namespace rules')
 
-create('rules/subclassgates.h',
+create('rules/phb/subclassgates.h',
        'The qualification and race gates (R180)',
        NL.join(hdr) + NL)
 
@@ -299,10 +299,10 @@ create('rules/subclassgates.h',
 # ---------------------------------------------------------------------------
 
 patch('regtest.cpp',
-       'rules/subclassgates.h',
-       '#include "rules/subclasses.h"  // R179: the subclass registry',
-       '#include "rules/subclasses.h"  // R179: the subclass registry'
-       + NL + '#include "rules/subclassgates.h"  // R180: the qualification and race gates')
+       'rules/phb/subclassgates.h',
+       '#include "rules/phb/subclasses.h"  // R179: the subclass registry',
+       '#include "rules/phb/subclasses.h"  // R179: the subclass registry'
+       + NL + '#include "rules/phb/subclassgates.h"  // R180: the qualification and race gates')
 
 # ---------------------------------------------------------------------------
 # Patch 3: regtest.cpp - the R180 battery audit (census 97)
@@ -451,7 +451,7 @@ patch('tools/phb_gap_report.md',
       + NL + '      Race Table I class limitations and the Race'
       + NL + '      Table II level caps for the new classes.',
       '- [x] R180 the qualification and race gates - PINNED:'
-      + NL + '      rules/subclassgates.h CREATED: the ability'
+      + NL + '      rules/phb/subclassgates.h CREATED: the ability'
       + NL + '      minimums (paladin 12/9/13/-/9/17, ranger'
       + NL + '      13/13/14/-/14/-, druid WIS 12 CHA 15,'
       + NL + '      illusionist INT 15 DEX 16, assassin'
@@ -485,7 +485,7 @@ patch('tools/dmg_gap_report.md',
       'Census stays 96 (no new audit).',
       'Census stays 96 (no new audit).'
       + NL + 'R180 landed the qualification and race gates:'
-      + NL + 'rules/subclassgates.h CREATED (the ability'
+      + NL + 'rules/phb/subclassgates.h CREATED (the ability'
       + NL + 'minimums, the Table I alignment letters, the XP'
       + NL + 'bonus rules, Race Table I and Race Table II cell'
       + NL + 'by cell, the halfling-druid NPC-only (6), the'
@@ -503,7 +503,7 @@ patch('tools/dmg_gap_report.md',
 assert applied + already == 5, 'patch count drift: ' + str(applied) + ' + ' + str(already)
 print('R180 splice: ALL OK (applied %d, already %d)' % (applied, already))
 print('R180 note: 5 patches; census 97 (one new audit);')
-print('real gate: md5sum rules/subclassgates.h')
+print('real gate: md5sum rules/phb/subclassgates.h')
 print('commit: R180: the qualification and race gates pinned -')
 print('the subclass entry gates (census 97)')
 

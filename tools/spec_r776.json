@@ -1,7 +1,7 @@
 {
  "round": 776,
  "prefix": "dno",
- "header_file": "rules/mountcombat.h",
+ "header_file": "rules/seams/mountcombat.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -71,13 +71,13 @@
   "  NEXT - R776: the mounted-combat engine",
   "  site through the seam (game/party.h mount",
   "  actor, game/state_combat.cpp mounted",
-  "  resolution, the rules/mountlayer.h charge",
+  "  resolution, the rules/seams/mountlayer.h charge",
   "  flips, and the R403 condition flips at",
   "  regtest 43207/43210)."
  ],
  "banner": {
   "title": "THE MOUNTED-COMBAT ENGINE SITE - the R403 charge lands: the mount actor, the mounted resolution, and the charge closed",
-  "provenance": "The last ungated deferred item: the R403 mount layer consolidated six feeder seams and left the charge open because the engine had no mount actor. The site lands through the R774/R775 file-patch seam as five spec-declared patches: the Character mount field in game/party.h (0 = afoot, the v1-save default), the beginCombat mounted read in game/state_combat.cpp (the first living members riding report the company mounted - the combat open prints the riders), the rules/mountlayer.h contract flip (ONE span patch: the site exists, the charge closed), and the regtest.cpp R403 span flip (one byte-exact block carrying both conditions - the audit now fails if the site goes missing or the charge reopens). The state_combat TU is in the preflight build, so the site is compile-gated like every audit block. The mount field is a seam, not a save line: nothing writes mountKind yet (a later round may carry the saddle acquisition and the save line).",
+  "provenance": "The last ungated deferred item: the R403 mount layer consolidated six feeder seams and left the charge open because the engine had no mount actor. The site lands through the R774/R775 file-patch seam as five spec-declared patches: the Character mount field in game/party.h (0 = afoot, the v1-save default), the beginCombat mounted read in game/state_combat.cpp (the first living members riding report the company mounted - the combat open prints the riders), the rules/seams/mountlayer.h contract flip (ONE span patch: the site exists, the charge closed), and the regtest.cpp R403 span flip (one byte-exact block carrying both conditions - the audit now fails if the site goes missing or the charge reopens). The state_combat TU is in the preflight build, so the site is compile-gated like every audit block. The mount field is a seam, not a save line: nothing writes mountKind yet (a later round may carry the saddle acquisition and the save line).",
   "sentinel": "Zero book pages: the provenance is the engine site (the R403 seam closing against its already-landed feeders)."
  },
  "consts": [
@@ -177,7 +177,7 @@
    "to": "        combat.start(partyActors(), std::move(foes),\n                     rng.below(0x7FFFFFFF));\n        // R776: the mounted-combat site - the\n        // R403 mount layer charges the engine:\n        // the Character carries a mount and\n        // the combat open reads it (the\n        // mounted resolution).\n        int mountedRiders = 0;\n        for (const auto& c : party.members)\n            if (c.hp > 0 && c.mountKind)\n                ++mountedRiders;\n        if (mountedRiders) {\n            char mbuf[64];\n            snprintf(mbuf, sizeof mbuf,\n                     \"%d rider(s) meet the foes \"\n                     \"from the saddle.\",\n                     mountedRiders);\n            log.add(mbuf);\n        }"
   },
   {
-   "file": "rules/mountlayer.h",
+   "file": "rules/seams/mountlayer.h",
    "note": "the layer contract flips with the site (the site-exists bool flips true, the charge-open bool flips false - ONE span patch: one file, one patch this round)",
    "from": "// The engine has no mount actor\n// (the pins precede any site).\ninline bool mmlMountActorSiteExists()\n    { return false; }\n\ninline bool mmlPinsPrecedeSite()\n    { return true; }\n\n// The seam gates the\n// mounted-combat charge.\ninline bool mmlGatesMountedCombatCharge()\n    { return true; }\n\n// The charge (the mount actor,\n// the mounted resolution) stays\n// open after the seam lands; the\n// site lands R775 through the\n// R774 file-patch seam.\ninline bool mmlMountedCombatChargeOpen()\n    { return true; }",
    "to": "// The R776 site landed: the\n// Character carries a mount and\n// beginCombat reads it.\ninline bool mmlMountActorSiteExists()\n    { return true; }\n\ninline bool mmlPinsPrecedeSite()\n    { return true; }\n\n// The seam gates the\n// mounted-combat charge.\ninline bool mmlGatesMountedCombatCharge()\n    { return true; }\n\n// The charge landed R776 through\n// the file-patch seam: the site\n// exists, the mounted resolution\n// rides game/state_combat.cpp.\ninline bool mmlMountedCombatChargeOpen()\n    { return false; }"

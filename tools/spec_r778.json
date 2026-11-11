@@ -1,7 +1,7 @@
 {
  "round": 778,
  "prefix": "mvm",
- "header_file": "rules/mountmove.h",
+ "header_file": "rules/seams/mountmove.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -10,7 +10,7 @@
  "audit_label": "R778 mounted movement audit",
  "audit_comment": "THE MOUNTED MOVEMENT CHARGE (the R778 repair carries the saddle header's classic include guard) - the R123 feeder goes live, warhorse kinds 2-4 only (Curtiss's call). The grid mirrors the p.58-59 mounted rows the R123 audit already pins (dm/outdoormove.h); the site reads the dm rows through the sdd kind mapping (warhorseDmKind), never a hardcoded rate. The honest boundary: the draft is a cart animal and the riding horse and pony walk this round; the grant steeds stay contract-side (no cavalier class). The henchman walks; the fallen are carried",
  "include_comment": "the mounted movement pins",
- "include_after": "#include \"rules/saddle.h\"  // R777: the saddle acquisition pins",
+ "include_after": "#include \"rules/seams/saddle.h\"  // R777: the saddle acquisition pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R777 LANDED 2026-10-22: commit",
@@ -19,7 +19,7 @@
   "  eb399abe9697a63d4b8d7df4bd53ac35447d75f4",
   "  (census 699 -> 700, pushed f520395..eb399ab),",
   "  THE SADDLE ACQUISITION - the stable writes",
-  "  the mount. Header rules/saddle.h, prefix",
+  "  the mount. Header rules/seams/saddle.h, prefix",
   "  sdd (fully free at f520395). SEVEN FILE",
   "  PATCHES over six files (multi-patch per",
   "  file now rides the R776 fp_txt chaining",
@@ -130,7 +130,7 @@
   {
    "name": "mvmSaddleLadderFeedsMapping",
    "value": true,
-   "comment": "The kind mapping reads the sdd ladder consts (rules/saddle.h), never raw ints."
+   "comment": "The kind mapping reads the sdd ladder consts (rules/seams/saddle.h), never raw ints."
   },
   {
    "name": "mvmSaddleHeaderGuarded",
@@ -256,13 +256,13 @@
  "inline_count": 15,
  "file_patches": [
   {
-   "file": "rules/saddle.h",
+   "file": "rules/seams/saddle.h",
    "note": "the include guard opens on the saddle header (the R778 repair: the party.h include opened a second inclusion path in state_core, state_town and regtest - 36 redefinitions at the Termux preflight; classic #ifndef guard, the wisdom.h house style, never pragma once)",
    "from": "namespace rules {",
    "to": "#ifndef RULES_SADDLE_H\n#define RULES_SADDLE_H\n\nnamespace rules {"
   },
   {
-   "file": "rules/saddle.h",
+   "file": "rules/seams/saddle.h",
    "note": "the include guard closes at the saddle header's tail",
    "from": "}   // namespace rules",
    "to": "}   // namespace rules\n\n#endif // RULES_SADDLE_H"
@@ -271,7 +271,7 @@
    "file": "game/party.h",
    "note": "the saddle.h include lands in party.h (the R400 lesson - the rider helper reads the sdd kind ladder)",
    "from": "#include \"../dm/outdoormove.h\"   // R123: pp.58-59 daily rates\n#include \"messagelog.h\"",
-   "to": "#include \"../dm/outdoormove.h\"   // R123: pp.58-59 daily rates\n#include \"../rules/saddle.h\"  // R777: the sdd kind ladder\n#include \"messagelog.h\""
+   "to": "#include \"../dm/outdoormove.h\"   // R123: pp.58-59 daily rates\n#include \"../rules/seams/saddle.h\"  // R777: the sdd kind ladder\n#include \"messagelog.h\""
   },
   {
    "file": "game/party.h",

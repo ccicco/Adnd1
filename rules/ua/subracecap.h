@@ -21,8 +21,8 @@
 #pragma once
 
 #include "subracelevels.h"   // the columns
-#include "../subclasses.h"      // the registry ids
-#include "../multiclass.h"      // the combo bits
+#include "../phb/subclasses.h"      // the registry ids
+#include "../phb/multiclass.h"      // the combo bits
 
 namespace rules {
 

@@ -12,7 +12,7 @@
 # level EXCEEDS the old - then the new-class hit
 # die per level and the functions may mix freely.
 #
-# The engine seam in rules/multiclass.h (pure
+# The engine seam in rules/phb/multiclass.h (pure
 # expressions - the evaluable-subset convention):
 # the exceeded boundary (dualClassNewDieDue) and
 # the XP negation (dualClassXpNegated); the R185
@@ -37,7 +37,7 @@
 
 import sys
 
-MC   = 'rules/multiclass.h'
+MC   = 'rules/phb/multiclass.h'
 PAR  = 'game/party.h'
 APP  = 'game/appstate.h'
 TOWN = 'game/state_town.cpp'

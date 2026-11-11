@@ -1,5 +1,5 @@
 // ===========================================================================
-// Adnd1 - rules/hirelings.h
+// Adnd1 - rules/dmg/hirelings.h
 // The hirelings cost tables (R309).
 //
 // The DMG HIRELINGS section (the STANDARD HIRELINGS

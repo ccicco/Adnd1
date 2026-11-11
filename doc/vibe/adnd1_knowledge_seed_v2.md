@@ -128,7 +128,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 
 ## Current state (the seam era)
 
-- R311 landed: rules/underwater.h - the DMG UNDERWATER
+- R311 landed: rules/seams/underwater.h - the DMG UNDERWATER
   ADVENTURES pins (surface swim, movement, vision, combat) as
   data; the spell lists ride R168 (rules/dmg/uwspells.h).
 - R312 + R312b landed 2026-10-10: commit 8661437, census 237,
@@ -19119,7 +19119,7 @@ when both halves land.
   game/state_combat.cpp + the R403 charge
   conditions at regtest 43205/43208, which no
   prior round could land). The DEMO PATCH is
-  comment-only in rules/mountlayer.h (the
+  comment-only in rules/seams/mountlayer.h (the
   charge comment now notes the site lands
   R775) - comment-only BY DESIGN because the
   R403 audit at 43208 requires
@@ -19217,7 +19217,7 @@ when both halves land.
   NEXT - R776: the mounted-combat engine
   site through the seam (game/party.h mount
   actor, game/state_combat.cpp mounted
-  resolution, the rules/mountlayer.h charge
+  resolution, the rules/seams/mountlayer.h charge
   flips, and the R403 condition flips at
   regtest 43207/43210).
 - R776 LANDED 2026-10-22: commit
@@ -19225,7 +19225,7 @@ when both halves land.
   (census 698 -> 699, pushed 98236d9..f520395),
   THE MOUNTED-COMBAT ENGINE SITE - the R403
   charge lands, THE LAST UNGATED UA DEFERRED
-  ITEM, header rules/mountcombat.h, prefix
+  ITEM, header rules/seams/mountcombat.h, prefix
   dno (fully free at 98236d9). THE SITE, five
   file patches, one per file: the mount actor
   (game/party.h - Character.mountKind, 0 =
@@ -19236,7 +19236,7 @@ when both halves land.
   prints them at the combat open; the TU is
   in the preflight battery build, so the
   site is compile-gated), the layer contract
-  flip (rules/mountlayer.h - ONE span patch:
+  flip (rules/seams/mountlayer.h - ONE span patch:
   mmlMountActorSiteExists true,
   mmlMountedCombatChargeOpen false), the R403
   audit span flip (regtest.cpp 43208/43211 -
@@ -19250,7 +19250,7 @@ when both halves land.
   first flip to the stale re-read - the (f)
   section re-read each target while writes
   were deferred, RT (R775) and non-RT alike
-  (rules/mountlayer.h). THE FIX: the fp_txt
+  (rules/seams/mountlayer.h). THE FIX: the fp_txt
   per-file working-text cache - every patch
   builds on the previous patch's text, and
   the last write per file carries every
@@ -19284,7 +19284,7 @@ when both halves land.
   eb399abe9697a63d4b8d7df4bd53ac35447d75f4
   (census 699 -> 700, pushed f520395..eb399ab),
   THE SADDLE ACQUISITION - the stable writes
-  the mount. Header rules/saddle.h, prefix
+  the mount. Header rules/seams/saddle.h, prefix
   sdd (fully free at f520395). SEVEN FILE
   PATCHES over six files (multi-patch per
   file now rides the R776 fp_txt chaining
@@ -19338,7 +19338,7 @@ when both halves land.
   (census 700 -> 701, pushed eb399ab..f5a953c),
   THE MOUNTED MOVEMENT CHARGE - the R123 feeder goes
   live, the warhorse kinds ride, header
-  rules/mountmove.h, prefix mvm (fully free at
+  rules/seams/mountmove.h, prefix mvm (fully free at
   eb399ab). FIVE FILE PATCHES over three files (the
   fp_txt chaining carries two patches on saddle.h
   and two on party.h): the saddle header gains its
@@ -19400,7 +19400,7 @@ when both halves land.
   (census 701 -> 702, pushed f5a953c..0e87814),
   THE LANCE CHARGE - the R189 feeder goes
   live, the three lances ride the registry,
-  header rules/lancecharge.h, prefix lnc
+  header rules/seams/lancecharge.h, prefix lnc
   (fully free at f5a953c). SEVEN FILE PATCHES
   over five files (the fp_txt chaining carries
   two patches on ai/actor.cpp): the three
@@ -19448,7 +19448,7 @@ when both halves land.
   (census 702 -> 703, pushed 0e87814..7073581),
   THE LANCE SPEED FACTORS - the three lances
   ride the R158 ladder, header
-  rules/lancespeed.h, prefix lsp (fully free at
+  rules/seams/lancespeed.h, prefix lsp (fully free at
   0e87814). TWO FILE PATCHES over two files:
   the three lance rows join weaponSpeedFactor in
   rules/dmg/weaponspeed.h after the pike row - the
@@ -19553,7 +19553,7 @@ when both halves land.
   (census 704 -> 705, pushed 1501749..02ca879),
   THE OWED PINS AND THE DEITY SITE - four feeds
   in one round (Curtiss's all-four pick), header
-  rules/owedpins.h, prefix owd (free at 1501749).
+  rules/seams/owedpins.h, prefix owd (free at 1501749).
   FIFTEEN FILE PATCHES over five files: (1) the
   lance printed cells the R780 boundary owed -
   the lengths 10/12/14 feet and the 1-foot
@@ -19607,7 +19607,7 @@ when both halves land.
   (census 705 -> 706, pushed 02ca879..23f196e),
   THE DEITY STAT LINES - the R406 messy reads
   pin at last (Curtiss's Appendix S pick),
-  header rules/deitylines.h, prefix dvp (free
+  header rules/seams/deitylines.h, prefix dvp (free
   at 02ca879). TWO GRIDS, not one: the first
   cut carried a 23 x 25 grid whose audit rows
   blew the 78-col engine gate, so the emit
@@ -19671,7 +19671,7 @@ when both halves land.
   sphere cell prints Erevan's; the Arvoreen,
   Segojan, and Aerdrie rows carry spelling
   variants), so no chart repair was owed. THE
-  PINS (header rules/worshipsites.h, prefix
+  PINS (header rules/seams/worshipsites.h, prefix
   plc, free at 23f196e): the two per-row
   reads R407 left unpinned - the
   place-of-worship kinds (23 x 2 grid, tag

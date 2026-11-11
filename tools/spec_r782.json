@@ -1,7 +1,7 @@
 {
   "round": 782,
   "prefix": "owd",
-  "header_file": "rules/owedpins.h",
+  "header_file": "rules/seams/owedpins.h",
   "regtest": "regtest.cpp",
   "gap_report": "tools/oa_gap_report.md",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -334,7 +334,7 @@
   "caller_files": [
     "ai/actor.cpp",
     "rules/dmg/weaponspeed.h",
-    "rules/deities.h"
+    "rules/seams/deities.h"
   ],
   "inline_count": 24,
   "file_patches": [
@@ -345,13 +345,13 @@
       "to": "inline void spearSpeedFactorRange(int& lo, int& hi) {\n    lo = 6; hi = 8;   // the printed 5-13+ foot length spread\n}\n\n// ----------------------------------------------------------------------------\n// R782: the spear length spread - the R158 boundary closes.\n// The printed speed cells keyed on the shaft length in feet:\n// 5 feet and under reads 6, 13 feet and over reads 8, the\n// middle lengths keep the R158 default 7 (the name-keyed\n// ladder keeps its default for the bare spear name).\ninline int spearSpeedFactorByLengthFt(int lengthFt) {\n    if (lengthFt <= 5) return 6;\n    if (lengthFt >= 13) return 8;\n    return 7;\n}"
     },
     {
-      "file": "rules/deities.h",
+      "file": "rules/seams/deities.h",
       "note": "the deity site exists - the R405 no-site contract is STRUCK (the R782 bridge)",
       "from": "// ---- the layer contract ----\n// The engine has no deity actor site\n// (the pins precede any charge).\ninline bool nhdDeitySiteExists()\n    { return false; }",
       "to": "// ---- the layer contract ----\n// R782 STRUCK: the deity actor site exists now -\n// the bridge copies the Appendix S stat block onto\n// the Actor contract (ai::toDeityActor).\ninline bool nhdDeitySiteExists()\n    { return true; }"
     },
     {
-      "file": "rules/deities.h",
+      "file": "rules/seams/deities.h",
       "note": "the Appendix S stat-block charge closes (the 23 blocks ride the R782 bridge site block)",
       "from": "// The Appendix S charge (the 23\n// stat blocks, the five charts) stays\n// open after the seam lands.\ninline bool nhdStatBlocksOpen()\n    { return true; }",
       "to": "// R782: the Appendix S stat-block charge\n// closes - the 23 blocks ride the bridge\n// site block (the five charts stay their\n// own seam).\ninline bool nhdStatBlocksOpen()\n    { return false; }"

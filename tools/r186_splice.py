@@ -523,8 +523,8 @@ create('rules/phb/bard.h',
 
 patch('regtest.cpp',
       'rules/phb/bard.h',
-      '#include "rules/multiclass.h"  // R185: the multi-class and dual-class rules',
-      '#include "rules/multiclass.h"  // R185: the multi-class and dual-class rules'
+      '#include "rules/phb/multiclass.h"  // R185: the multi-class and dual-class rules',
+      '#include "rules/phb/multiclass.h"  // R185: the multi-class and dual-class rules'
       + NL + '#include "rules/phb/bard.h"  // R186: the bard (Appendix II)')
 
 # ---------------------------------------------------------------------------

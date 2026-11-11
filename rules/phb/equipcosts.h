@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 - rules/equipcosts.h
+// Adnd1 - rules/phb/equipcosts.h
 // The equipment cost columns (R300; the
 // general lists R308).
 //

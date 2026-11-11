@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/mountmove.h
+// Adnd1 - rules/seams/mountmove.h
 // THE MOUNTED MOVEMENT CHARGE - the R123 feeder goes live, the warhorse kinds
 // ride
 // census 700 -> 701.
@@ -121,7 +121,7 @@ inline bool mvmHenchmanWalksTheMountedRound()
 inline bool mvmRatesRideThePinnedData()
     { return true; }
 
-// The kind mapping reads the sdd ladder consts (rules/saddle.h), never raw
+// The kind mapping reads the sdd ladder consts (rules/seams/saddle.h), never raw
 // ints.
 inline bool mvmSaddleLadderFeedsMapping()
     { return true; }

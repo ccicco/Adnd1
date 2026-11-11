@@ -31,7 +31,7 @@
 #       block (the party best, the R154
 #       data; the light-spell and helm
 #       multiples stay recorded).
-#   (c) rules/underwater.h - the recorded
+#   (c) rules/seams/underwater.h - the recorded
 #       notes: the infravision print
 #       charges R317.
 #   (d) regtest.cpp - the R317 audit (the
@@ -205,7 +205,7 @@ _o, _c, _o2, _c2 = counts(s)
 assert _o == _c and _o2 == _c2, 'patch b balance'
 assert len(applied) + len(already) == 2, 'patch b count wrong'
 
-# ---- (c) rules/underwater.h: the recorded notes ----
+# ---- (c) rules/seams/underwater.h: the recorded notes ----
 UW_OLD = NL.join([
     '// depth layer exists); the rest rides no',
     '// engine layer yet (a state seam is the',
@@ -223,7 +223,7 @@ for _t in (UW_OLD, UW_NEW):
     clean(_t, 78)
 assert Q not in UW_NEW, 'c apostrophe'
 
-p = 'rules/underwater.h'
+p = 'rules/seams/underwater.h'
 s = rd(p)
 if 'print charges R317' in s:
     already.append('underwater.h: the recorded notes')

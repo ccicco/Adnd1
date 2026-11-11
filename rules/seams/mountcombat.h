@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/mountcombat.h
+// Adnd1 - rules/seams/mountcombat.h
 // THE MOUNTED-COMBAT ENGINE SITE - the R403 charge lands: the mount actor,
 // the mounted resolution, and the charge closed
 // census 698 -> 699.
@@ -10,7 +10,7 @@
 // spec-declared patches: the Character mount field in game/party.h (0 =
 // afoot, the v1-save default), the beginCombat mounted read in
 // game/state_combat.cpp (the first living members riding report the company
-// mounted - the combat open prints the riders), the rules/mountlayer.h
+// mounted - the combat open prints the riders), the rules/seams/mountlayer.h
 // contract flip (ONE span patch: the site exists, the charge closed), and the
 // regtest.cpp R403 span flip (one byte-exact block carrying both conditions -
 // the audit now fails if the site goes missing or the charge reopens). The

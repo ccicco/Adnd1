@@ -38,7 +38,7 @@
   "  game/state_combat.cpp + the R403 charge",
   "  conditions at regtest 43205/43208, which no",
   "  prior round could land). The DEMO PATCH is",
-  "  comment-only in rules/mountlayer.h (the",
+  "  comment-only in rules/seams/mountlayer.h (the",
   "  charge comment now notes the site lands",
   "  R775) - comment-only BY DESIGN because the",
   "  R403 audit at 43208 requires",

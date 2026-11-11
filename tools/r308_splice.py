@@ -3,7 +3,7 @@
 # equipment lists pinned (the R307 open item
 # paid; the R300 successor - the eight printed
 # general lists join the arms and armor columns
-# in rules/equipcosts.h).
+# in rules/phb/equipcosts.h).
 #
 # The pin: 99 rows across the EIGHT printed
 # lists - clothing 11, herbs 3, livestock 21,
@@ -22,7 +22,7 @@
 # R300 silver one: 10 c.p. = 1 s.p. and
 # 200 c.p. = 1 g.p.
 #
-#   (a) rules/equipcosts.h - the head line
+#   (a) rules/phb/equipcosts.h - the head line
 #       amended, the out-of-scope note amended
 #       (the R307 open item supersedes it) and
 #       the general section grown (the count,
@@ -243,7 +243,7 @@ def namelines(names, indent):
         out.append(indent + DQ + n + DQ + ',')
     return out
 
-# ---- (a1) rules/equipcosts.h: the head line ----
+# ---- (a1) rules/phb/equipcosts.h: the head line ----
 EQ_A1_OLD = NL.join([
     '// The equipment cost columns (R300).',
 ])
@@ -254,7 +254,7 @@ EQ_A1_NEW = NL.join([
 clean(EQ_A1_OLD, 78)
 clean(EQ_A1_NEW, 78)
 
-# ---- (a2) rules/equipcosts.h: the scope note ----
+# ---- (a2) rules/phb/equipcosts.h: the scope note ----
 EQ_A2_OLD = NL.join([
     '// armor id to its printed row. The general equipment rows',
     '// (clothing, herbs, livestock, provisions, religious items,',
@@ -272,7 +272,7 @@ EQ_A2_NEW = NL.join([
 clean(EQ_A2_OLD, 78)
 clean(EQ_A2_NEW, 78)
 
-# ---- (a3) rules/equipcosts.h: the general section ----
+# ---- (a3) rules/phb/equipcosts.h: the general section ----
 EQ_A3_OLD = NL.join([
     '// The monetary-system pin: 20 silver pieces = 1 gold',
     '// piece (the upload MONETARY SYSTEM section).',
@@ -402,7 +402,7 @@ clean(EQ_A3_OLD, 78)
 clean(EQ_A3_NEW, 78)
 
 # ---- apply: the equipcosts.h patches ----
-p = 'rules/equipcosts.h'
+p = 'rules/phb/equipcosts.h'
 s = rd(p)
 if 'general lists R308).' in s:
     already.append('equipcosts.h: the head line')
@@ -455,7 +455,7 @@ RT_TAIL = NL.join([
 RT_AUD = NL.join(
     ['    // ---- R308: the general equipment lists audit ----',
      '    // The EIGHT printed general lists (the',
-     '    // rules/equipcosts.h general section) walked cell',
+     '    // rules/phb/equipcosts.h general section) walked cell',
      '    // for cell against this local ground truth: the',
      '    // row count, the list boundaries, the three coin',
      '    // columns, the coin identity (exactly one nonzero',
@@ -600,7 +600,7 @@ PHB_C_OLD = NL.join([
     '      livestock, the provisions and the',
     '      transport costs - mounts, tack',
     '      and vehicles). A data candidate:',
-    '      rules/equipcosts.h grows the rows',
+    '      rules/phb/equipcosts.h grows the rows',
     '      (the R300 pattern; the',
     '      reference-sheet copies resolve any',
     '      ambiguous cell). The judgment',
@@ -616,7 +616,7 @@ PHB_C_NEW = NL.join([
     '      Transport; upload lines 2344-2437',
     '      with the reference-sheet repeats',
     '      at 13473-13541) - PINNED R308:**',
-    '      rules/equipcosts.h grows the',
+    '      rules/phb/equipcosts.h grows the',
     '      general section: 99 rows across',
     '      the EIGHT printed lists (11, 3,',
     '      21, 29, 10, 6, 9 and 10), every',

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # R231 splice: the subclass leveling wire. A registry
 # subclass member now levels on the printed subclass XP
-# ladder: rules/subclassgates.h gains the leveling seam
+# ladder: rules/phb/subclassgates.h gains the leveling seam
 # (subclassXpToAttain - the printed attain rows with
 # the adders, a private flat copy per the R230 EVAL
 # NOTE; subclassFixedHpLevel; subclassHpBeyondFixed;
@@ -66,7 +66,7 @@ def lines(ls):
 
 
 PATCHES = [
-    ('rules/subclassgates.h',
+    ('rules/phb/subclassgates.h',
      'inline int subclassXpToAttain(int sub, int level) {',
      lines([
          '} // namespace rules',
@@ -198,7 +198,7 @@ PATCHES = [
      ]),
      lines([
          '#include "../rules/engine/classes.h"',
-         '#include "../rules/subclassgates.h"  // R231: the subclass leveling seam',
+         '#include "../rules/phb/subclassgates.h"  // R231: the subclass leveling seam',
      ])),
     ('game/party.h',
      'rules::subclassXpBonusEarned(c.subclass,',
@@ -532,7 +532,7 @@ PATCHES = [
      ]),
      lines([
          '- [x] R231 the subclass leveling wire - WIRED:',
-         '      rules/subclassgates.h gains the leveling seam',
+         '      rules/phb/subclassgates.h gains the leveling seam',
          '      (subclassXpToAttain - the printed XP attain',
          '      rows with the adders, a private flat copy',
          '      per the R230 EVAL NOTE; subclassFixedHpLevel;',

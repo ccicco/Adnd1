@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # R184 splice: the paladin and ranger spell layers.
 #
-# rules/palrangerspells.h is CREATED: the SPELLS
+# rules/phb/palrangerspells.h is CREATED: the SPELLS
 # USABLE BY CLASS AND LEVEL - PALADINS table (12
 # rows, paladin levels 9-20 x 4 clerical spell
 # levels, every printed cell) and the RANGERS
@@ -71,7 +71,7 @@ def create(path, marker, content):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/palrangerspells.h CREATED
+# Patch 1: rules/phb/palrangerspells.h CREATED
 # ---------------------------------------------------------------------------
 
 # the paladin slots: paladin levels 9-20 x clerical
@@ -121,7 +121,7 @@ hdr = []
 a = hdr.append
 
 a('// ============================================================================')
-a('// Adnd1 - rules/palrangerspells.h')
+a('// Adnd1 - rules/phb/palrangerspells.h')
 a('// The paladin and ranger spell layers (R184).')
 a('//')
 a('// The SPELLS USABLE BY CLASS AND LEVEL - PALADINS table')
@@ -290,7 +290,7 @@ if '#include <string>' not in NL.join(hdr):
     hdr.insert(hdr.index('#include <cstdint>') + 1,
                '#include <string>')
 
-create('rules/palrangerspells.h',
+create('rules/phb/palrangerspells.h',
        'The paladin and ranger spell layers (R184)',
        NL.join(hdr) + NL)
 
@@ -299,10 +299,10 @@ create('rules/palrangerspells.h',
 # ---------------------------------------------------------------------------
 
 patch('regtest.cpp',
-      'rules/palrangerspells.h',
-      '#include "rules/illusionspells.h"  // R183: the illusionist spell layer',
-      '#include "rules/illusionspells.h"  // R183: the illusionist spell layer'
-      + NL + '#include "rules/palrangerspells.h"  // R184: the paladin and ranger spell layers')
+      'rules/phb/palrangerspells.h',
+      '#include "rules/phb/illusionspells.h"  // R183: the illusionist spell layer',
+      '#include "rules/phb/illusionspells.h"  // R183: the illusionist spell layer'
+      + NL + '#include "rules/phb/palrangerspells.h"  // R184: the paladin and ranger spell layers')
 
 # ---------------------------------------------------------------------------
 # Patch 3: regtest.cpp - the R184 battery audit (census 101)
@@ -434,7 +434,7 @@ patch('tools/phb_gap_report.md',
       + NL + '      wiring (lay on hands, curing, the ranger'
       + NL + '      giant-kind bonuses follow here).',
       '- [x] R184 the paladin and ranger spell layers - PINNED:'
-      + NL + '      rules/palrangerspells.h CREATED: the'
+      + NL + '      rules/phb/palrangerspells.h CREATED: the'
       + NL + '      SPELLS USABLE BY CLASS AND LEVEL - PALADINS'
       + NL + '      table (levels 9-20 x 4 clerical spell'
       + NL + '      levels, every cell: 9th 1/1st, the 20th'
@@ -470,7 +470,7 @@ patch('tools/dmg_gap_report.md',
       'New R183 battery audit; census 100. Next:'
       + NL + 'R184 the paladin and ranger spell layers.'
       + NL + 'R184 landed the paladin and ranger spell'
-      + NL + 'layers: rules/palrangerspells.h CREATED (the'
+      + NL + 'layers: rules/phb/palrangerspells.h CREATED (the'
       + NL + 'paladin 9-20 x 4 progression, the ranger 8-17'
       + NL + 'x 5 progression, the shared-list wiring, lay'
       + NL + 'on hands, cure disease, the giant-class'
@@ -485,7 +485,7 @@ patch('tools/dmg_gap_report.md',
 assert applied + already == 5, 'patch count drift: ' + str(applied) + ' + ' + str(already)
 print('R184 splice: ALL OK (applied %d, already %d)' % (applied, already))
 print('R184 note: 5 patches; census 101 (one new audit);')
-print('real gate: md5sum rules/palrangerspells.h')
+print('real gate: md5sum rules/phb/palrangerspells.h')
 print('commit: R184: the paladin and ranger spell layers pinned -')
 print('the progressions, the wiring and the specials (census 101)')
 

@@ -4,7 +4,7 @@
 #include "../rules/dmg/locktime.h"   // R304: the lock time draw
 #include "../rules/dmg/doorforce.h"  // R305: the door force folds
 #include "../rules/dmg/swimcross.h"  // R312: the flooded crossing
-#include "../rules/underwater.h"  // R311: the drown percent
+#include "../rules/seams/underwater.h"  // R311: the drown percent
 #include "../rules/dmg/uwfight.h"  // R313: the crossing cap
 #include "../rules/ua/comeliness.h"  // R400: the parley gate
 

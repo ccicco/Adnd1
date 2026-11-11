@@ -3,7 +3,7 @@
 # environment pinned (the first round past the
 # closed dmg ledger).
 #
-# The pin (rules/underwater.h, the grenade.h
+# The pin (rules/seams/underwater.h, the grenade.h
 # pattern): the DMG UNDERWATER ADVENTURES
 # section minus the spell lists (those ride
 # R168, rules/dmg/uwspells.h) - the surface
@@ -35,7 +35,7 @@
 # special crossbow at 10x price and half
 # range).
 #
-#   (a) rules/underwater.h - CREATED.
+#   (a) rules/seams/underwater.h - CREATED.
 #   (b) regtest.cpp - the include line.
 #   (c) regtest.cpp - the R311 battery audit
 #       (the battery census 234 -> 235): the
@@ -183,10 +183,10 @@ def _calls_in(text):
         out.add(_rest[:_j])
     return out
 
-# ---- (a) rules/underwater.h CREATED ----
+# ---- (a) rules/seams/underwater.h CREATED ----
 SB = NL.join(
     ['// ===========================================================================',
-     '// Adnd1 - rules/underwater.h',
+     '// Adnd1 - rules/seams/underwater.h',
      '// The underwater environment (R311).',
      '//',
      '// The DMG UNDERWATER ADVENTURES section (upload',
@@ -565,7 +565,7 @@ SB = NL.join(
 clean(SB, 78)
 assert Q not in SB, 'apostrophe in header'
 
-p = 'rules/underwater.h'
+p = 'rules/seams/underwater.h'
 if os.path.exists(os.path.join(ROOT, p)):
     s = rd(p)
     if 'inline int uwSurfaceHighWindMph() {' in s:
@@ -593,18 +593,18 @@ assert len(applied) + len(already) == 1, 'patch a count wrong'
 
 # ---- (b) regtest.cpp: the include line ----
 INC_OLD = NL.join([
-    '#include "rules/sage.h"  // R310: the sage subsection',
+    '#include "rules/dmg/sage.h"  // R310: the sage subsection',
 ])
 INC_NEW = NL.join([
-    '#include "rules/sage.h"  // R310: the sage subsection',
-    '#include "rules/underwater.h"  // R311: the underwater environment',
+    '#include "rules/dmg/sage.h"  // R310: the sage subsection',
+    '#include "rules/seams/underwater.h"  // R311: the underwater environment',
 ])
 clean(INC_OLD, 76)
 clean(INC_NEW, 76)
 
 p = 'regtest.cpp'
 s = rd(p)
-if '#include "rules/underwater.h"' in s:
+if '#include "rules/seams/underwater.h"' in s:
     already.append('regtest.cpp: the include line')
 else:
     assert s.count(INC_OLD) == 1, 'include anchor not unique'
@@ -615,8 +615,8 @@ else:
     applied.append('regtest.cpp: the include line')
 
 s = rd(p)
-assert s.count('#include "rules/underwater.h"') == 1, 'patch b include'
-assert s.count('#include "rules/sage.h"') == 1, 'patch b anchor'
+assert s.count('#include "rules/seams/underwater.h"') == 1, 'patch b include'
+assert s.count('#include "rules/dmg/sage.h"') == 1, 'patch b anchor'
 assert s.count('#include "rules/dmg/uwspells.h"') == 1, 'patch b r168 intact'
 assert len(applied) + len(already) == 2, 'patch b count wrong'
 
@@ -630,7 +630,7 @@ RT_TAIL = NL.join([
 RT_AUD = NL.join(
     ['    // ---- R311: the underwater environment audit ----',
      '    // The DMG UNDERWATER ADVENTURES section',
-     '    // (rules/underwater.h) walked cell for cell',
+     '    // (rules/seams/underwater.h) walked cell for cell',
      '    // against this local ground truth: the',
      '    // surface swim constants with the drown walk,',
      '    // the movement pins with the cap walk, the',
@@ -834,7 +834,7 @@ for _t in (RT_OLD, RT_NEW, RT_AUD):
             assert BS not in _ln, 'stray backslash in audit'
 _calls = _calls_in(RT_AUD)
 assert len(_calls) == 49, 'audit call coverage'
-_hx = _accs(rd('rules/underwater.h'))
+_hx = _accs(rd('rules/seams/underwater.h'))
 assert _calls <= set(_hx), 'audit calls unknown accessor'
 
 p = 'regtest.cpp'
@@ -857,7 +857,7 @@ assert s.count('audit: bad') == 235, 'patch c census wrong'
 assert s.count('R311 underwater environment audit') == 1, 'c label'
 assert s.count('R310 sage subsection audit') == 1, 'c r310 tail'
 assert s.count('R227: the wis mental save wiring audit') == 1, 'c head'
-assert s.count('rules/underwater.h') == 2, 'c references'
+assert s.count('rules/seams/underwater.h') == 2, 'c references'
 assert s.count('{') == s.count('}'), 'rt brace balance'
 assert s.count('(') == s.count(')'), 'rt paren balance'
 assert len(applied) + len(already) == 3, 'patch c count wrong'
@@ -873,7 +873,7 @@ CH_NEW = NL.join([
     '',
     'R311 the underwater environment pin',
     '(the first round past the closed dmg',
-    'ledger): rules/underwater.h (the',
+    'ledger): rules/seams/underwater.h (the',
     'grenade.h pattern): the surface',
     'swimming paragraph (metal armor',
     'impossible except magic armor - the',

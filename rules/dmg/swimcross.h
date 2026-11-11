@@ -2,7 +2,7 @@
 // Adnd1 - rules/dmg/swimcross.h
 // R312: the DMG surface SWIMMING
 // paragraph (the R311 pins,
-// rules/underwater.h) WIRED as the
+// rules/seams/underwater.h) WIRED as the
 // flooded crossing - the first ENGINE
 // site the underwater data charges.
 //

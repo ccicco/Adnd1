@@ -1,7 +1,7 @@
 {
  "round": 777,
  "prefix": "sdd",
- "header_file": "rules/saddle.h",
+ "header_file": "rules/seams/saddle.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -10,7 +10,7 @@
  "audit_label": "R777 saddle audit",
  "audit_comment": "THE SADDLE ACQUISITION - the R776 site gets its writer. The town stable sells the R300 livestock horse rows best-affordable-first (the price reads the pinned equipcosts cells by NAME plus the tack saddle row, never a hardcode), the save carries the optional \"mount\" line (v1 saves load as afoot), and the party.h comment flips from the seam promise to the wiring fact. The steed GRANT ladder stays book-side: the engine has no cavalier or paladin class to key a grant on, so the mml/cavalier grant pins stay contract-side. The kind ladder rides this header (the sdd consts) and the state TUs read it through explicit includes (the R400 lesson)",
  "include_comment": "the saddle acquisition pins",
- "include_after": "#include \"rules/mountcombat.h\"  // R776: the mount site pins",
+ "include_after": "#include \"rules/seams/mountcombat.h\"  // R776: the mount site pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R776 LANDED 2026-10-22: commit",
@@ -20,7 +20,7 @@
   "  (census 698 -> 699, pushed 98236d9..f520395),",
   "  THE MOUNTED-COMBAT ENGINE SITE - the R403",
   "  charge lands, THE LAST UNGATED UA DEFERRED",
-  "  ITEM, header rules/mountcombat.h, prefix",
+  "  ITEM, header rules/seams/mountcombat.h, prefix",
   "  dno (fully free at 98236d9). THE SITE, five",
   "  file patches, one per file: the mount actor",
   "  (game/party.h - Character.mountKind, 0 =",
@@ -31,7 +31,7 @@
   "  prints them at the combat open; the TU is",
   "  in the preflight battery build, so the",
   "  site is compile-gated), the layer contract",
-  "  flip (rules/mountlayer.h - ONE span patch:",
+  "  flip (rules/seams/mountlayer.h - ONE span patch:",
   "  mmlMountActorSiteExists true,",
   "  mmlMountedCombatChargeOpen false), the R403",
   "  audit span flip (regtest.cpp 43208/43211 -",
@@ -45,7 +45,7 @@
   "  first flip to the stale re-read - the (f)",
   "  section re-read each target while writes",
   "  were deferred, RT (R775) and non-RT alike",
-  "  (rules/mountlayer.h). THE FIX: the fp_txt",
+  "  (rules/seams/mountlayer.h). THE FIX: the fp_txt",
   "  per-file working-text cache - every patch",
   "  builds on the previous patch's text, and",
   "  the last write per file carries every",
@@ -220,7 +220,7 @@
    "file": "game/state_core.cpp",
    "note": "the saddle.h include (the R400 lesson - the load gate reads sddMountKindCount)",
    "from": "#include \"appstate.h\"\n",
-   "to": "#include \"appstate.h\"\n#include \"../rules/saddle.h\"   // R777: the sdd kind ladder (the mount save line)\n"
+   "to": "#include \"appstate.h\"\n#include \"../rules/seams/saddle.h\"   // R777: the sdd kind ladder (the mount save line)\n"
   },
   {
    "file": "game/state_core.cpp",
@@ -238,7 +238,7 @@
    "file": "game/state_town.cpp",
    "note": "the equipcosts and saddle includes (the R400 lesson)",
    "from": "#include \"appstate.h\"\n",
-   "to": "#include \"appstate.h\"\n#include \"../rules/equipcosts.h\"  // R777: the stable reads the pinned cells\n#include \"../rules/saddle.h\"     // R777: the sdd kind ladder\n"
+   "to": "#include \"appstate.h\"\n#include \"../rules/phb/equipcosts.h\"  // R777: the stable reads the pinned cells\n#include \"../rules/seams/saddle.h\"     // R777: the sdd kind ladder\n"
   },
   {
    "file": "game/state_town.cpp",

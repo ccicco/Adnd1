@@ -25,10 +25,10 @@
 #include "rules/dmg/assassinate.h"  // R164: p.75 the assassination table
 #include "rules/dmg/miscibility.h"  // R165: p.119 potion miscibility
 #include "rules/dmg/insanity.h"  // R166: pp.82-83 intoxication and insanity
-#include "rules/psionics.h"  // R404: the psionics seam
+#include "rules/seams/psionics.h"  // R404: the psionics seam
 #include "rules/dmg/disease.h"  // R167: pp.13-14 disease and parasitic infestation
 #include "rules/dmg/uwspells.h"  // R168: p.57 underwater spell use
-#include "rules/aerial.h"  // R321: pp.49-53 aerial combat
+#include "rules/seams/aerial.h"  // R321: pp.49-53 aerial combat
 #include "rules/ua/comeliness.h"  // R322: UA comeliness pins
 #include "rules/ua/subraces.h"  // R323: UA subrace layer
 #include "rules/ua/subracelevels.h"  // R324: UA Race Table II
@@ -123,7 +123,7 @@
 #include "rules/ua/uacantrips5.h"  // R416: the UA personal cantrips
 #include "rules/ua/uacantrips6.h"  // R417: the UA haunting-sound cantrips
 #include "rules/dmg/humrpref.h"  // R169: p.106 humanoid racial preferences
-#include "rules/deities.h"  // R405: the deity layer seam
+#include "rules/seams/deities.h"  // R405: the deity layer seam
 #include "rules/ua/uaappends.h"  // R406: the UA Appendix S stat blocks
 #include "rules/ua/uasstatlines.h"  // R409: the UA Appendix S stat lines
 #include "rules/ua/uasclasslines.h"  // R410: the UA Appendix S class lines
@@ -477,15 +477,15 @@
 #include "rules/oa/oa144dailylife.h"  // R773: the OA daily-life misses pins
 #include "rules/meta/file_patch_seam.h"  // R774: the file-patch seam tooling pins
 #include "rules/meta/rt_seam.h"  // R775: the RT seam fix pins
-#include "rules/mountcombat.h"  // R776: the mount site pins
-#include "rules/saddle.h"  // R777: the saddle acquisition pins
-#include "rules/mountmove.h"  // R778: the mounted movement pins
-#include "rules/lancecharge.h"  // R779: the lance charge pins
-#include "rules/lancespeed.h"  // R780: the lance speed pins
+#include "rules/seams/mountcombat.h"  // R776: the mount site pins
+#include "rules/seams/saddle.h"  // R777: the saddle acquisition pins
+#include "rules/seams/mountmove.h"  // R778: the mounted movement pins
+#include "rules/seams/lancecharge.h"  // R779: the lance charge pins
+#include "rules/seams/lancespeed.h"  // R780: the lance speed pins
 #include "rules/dmg/spearset.h"  // R781: the set spear pins
-#include "rules/owedpins.h"  // R782: the owed pins
-#include "rules/deitylines.h"  // R783: the deity stat lines
-#include "rules/worshipsites.h"  // R784: the worship sites
+#include "rules/seams/owedpins.h"  // R782: the owed pins
+#include "rules/seams/deitylines.h"  // R783: the deity stat lines
+#include "rules/seams/worshipsites.h"  // R784: the worship sites
 #include "rules/ua/spelltableledger.h"  // R785: the UA spell table ledger
 #include "rules/ua/uadeityprose1.h"  // R786: the dwarven deity prose
 #include "rules/ua/uadeityprose2.h"  // R787: the elven deity prose
@@ -725,7 +725,7 @@
 #include "rules/ff/normalization_batch1.h"  // R1021: the FF normalization batch one
 #include "rules/ff/normalization_batch2.h"  // R1022: the FF normalization batch two
 #include "rules/ff/normalization_batch3.h"  // R1023: the FF normalization batch three
-#include "rules/wt1.h"  // R1024: the WSG+MOP normalization tail batch
+#include "rules/meta/wt1.h"  // R1024: the WSG+MOP normalization tail batch
 #include "rules/dragon/registry_normalization.h"  // R1025: the DRG normalization batch
 #include "rules/ddg/legends_lore_parity.h"  // R1026: the deity seam close
 #include "rules/ua/uascharts.h"  // R407: the UA Appendix S clerical charts
@@ -733,18 +733,18 @@
 #include "rules/dmg/dmg_appendices_klm.h"  // R171: pp.221-224 appendices K L and M
 #include "rules/dmg/herbs.h"  // R172: p.220 appendix J herbs spices and medicinal vegetables
 #include "rules/dmg/secondary.h"  // R173: p.12 secondary skills
-#include "rules/subclasses.h"  // R179: the subclass registry
-#include "rules/subclassgates.h"  // R180: the qualification and race gates
-#include "rules/attacksround.h"  // R181: attacks per melee round
-#include "rules/druidspells.h"  // R182: the druid spell layer
-#include "rules/illusionspells.h"  // R183: the illusionist spell layer
-#include "rules/palrangerspells.h"  // R184: the paladin and ranger spell layers
-#include "rules/multiclass.h"  // R185: the multi-class and dual-class rules
+#include "rules/phb/subclasses.h"  // R179: the subclass registry
+#include "rules/phb/subclassgates.h"  // R180: the qualification and race gates
+#include "rules/phb/attacksround.h"  // R181: attacks per melee round
+#include "rules/phb/druidspells.h"  // R182: the druid spell layer
+#include "rules/phb/illusionspells.h"  // R183: the illusionist spell layer
+#include "rules/phb/palrangerspells.h"  // R184: the paladin and ranger spell layers
+#include "rules/phb/multiclass.h"  // R185: the multi-class and dual-class rules
 #include "rules/phb/bard.h"  // R186: the bard (Appendix II)
-#include "rules/subclassspecials.h"  // R187: the per-subclass specials
-#include "rules/xpadjust.h"  // R188: the prime requisite XP adjustment
-#include "rules/weapontables.h"  // R189: the weapon weight and damage table
-#include "rules/mountlayer.h"  // R403: the mount layer seam
+#include "rules/phb/subclassspecials.h"  // R187: the per-subclass specials
+#include "rules/phb/xpadjust.h"  // R188: the prime requisite XP adjustment
+#include "rules/phb/weapontables.h"  // R189: the weapon weight and damage table
+#include "rules/seams/mountlayer.h"  // R403: the mount layer seam
 #include "rules/phb/startmoney.h"  // R190: the starting money by class
 #include "rules/phb/armorratings.h"  // R191: the armor class ratings
 #include "rules/phb/wisdom.h"  // R192: Wisdom Tables I and II
@@ -758,7 +758,7 @@
 #include "rules/dmg/npcbody.h"  // R211: pp.115-116 height, weight, languages
 #include "rules/dmg/hirecost.h"  // R212: pp.116-118 hire spell costs, troop control
 #include "rules/dmg/construct.h"  // R213: pp.106-108 construction and siege economics
-#include "rules/siegefire.h"  // R214: pp.108-110 war machine fire, siege attack, defensive values
+#include "rules/dmg/siegefire.h"  // R214: pp.108-110 war machine fire, siege attack, defensive values
 #include "rules/dmg/conduct.h"  // R215: pp.110-112 conducting the game pins
 #include "rules/dmg/magres.h"  // R216: pp.114-119 magical research pins
 #include "rules/dmg/scrollfab.h"  // R217: pp.118-121 scroll manufacture and fabrication pins
@@ -819,10 +819,10 @@
 #include "rules/phb/thieffunc.h"  // R298: the thief function take table and DEX Table II
 #include "rules/dmg/locktime.h"  // R304: the DMG lock time pins
 #include "rules/dmg/doorforce.h"  // R305: the DMG door force pins
-#include "rules/equipcosts.h"  // R300: the equipment cost columns
-#include "rules/hirelings.h"  // R309: the hirelings cost tables
-#include "rules/sage.h"  // R310: the sage subsection
-#include "rules/underwater.h"  // R311: the underwater environment
+#include "rules/phb/equipcosts.h"  // R300: the equipment cost columns
+#include "rules/dmg/hirelings.h"  // R309: the hirelings cost tables
+#include "rules/dmg/sage.h"  // R310: the sage subsection
+#include "rules/seams/underwater.h"  // R311: the underwater environment
 #include "rules/dmg/swimcross.h"  // R312: the flooded crossing
 #include "rules/dmg/uwfight.h"  // R313: the underwater fight
 #include <cstdio>

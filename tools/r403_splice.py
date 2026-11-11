@@ -9,7 +9,7 @@
 # resolution) charges the
 # engine later:
 #
-# 1. rules/mountlayer.h (NEW,
+# 1. rules/seams/mountlayer.h (NEW,
 #    prefix mml, 10 inline
 #    functions): the layer
 #    contract (no mount actor
@@ -150,12 +150,12 @@ if s.count('R402 landed 2026-10-13') != 1:
 if s.count('## Knowledge maintenance') != 1:
     die('the seed maintenance head')
 
-# ========= (b) rules/mountlayer.h =========
-MT = 'rules/mountlayer.h'
+# ========= (b) rules/seams/mountlayer.h =========
+MT = 'rules/seams/mountlayer.h'
 
 MTBODY = E(
     '// ===========================================================================',
-    '// Adnd1 - rules/mountlayer.h',
+    '// Adnd1 - rules/seams/mountlayer.h',
     '// The MOUNT LAYER (R403) - the',
     '// deferred engine seam lands. The',
     '// OUT reversal rides the R321',
@@ -181,12 +181,12 @@ MTBODY = E(
     '//      animals and mounts tables,',
     '//      the paladin warhorse)',
     '//   2: R189 the charge damage',
-    '//      (rules/weapontables.h - the',
+    '//      (rules/phb/weapontables.h - the',
     '//      three lances double from a',
     '//      charging mount, the spear',
     '//      set receives)',
     '//   3: R321 the aerial environment',
-    '//      (rules/aerial.h - the',
+    '//      (rules/seams/aerial.h - the',
     '//      flying steed climbs at',
     '//      half and dives at double)',
     '//   4: R328 the cavalier mounted',
@@ -279,14 +279,14 @@ newfile(MT, MTBODY + NL,
 RT = 'regtest.cpp'
 
 pair(RT,
-     '#include "rules/weapontables.h"'
+     '#include "rules/phb/weapontables.h"'
      '  // R189: the weapon weight'
      ' and damage table',
      E(
-    '#include "rules/weapontables.h"  '
+    '#include "rules/phb/weapontables.h"  '
     '// R189: the weapon weight and'
     ' damage table',
-    '#include "rules/mountlayer.h"  '
+    '#include "rules/seams/mountlayer.h"  '
     '// R403: the mount layer seam'),
      'regtest: the mount layer include')
 
@@ -406,7 +406,7 @@ pair(GP, E(
     '      mounted-combat rules.'),
     E(
     '- [x] The mount layer -',
-    '      CLOSED R403 (rules/mountlayer.h;',
+    '      CLOSED R403 (rules/seams/mountlayer.h;',
     '      the R403 seam audit, census 330):',
     '      the layer contract (no mount',
     '      actor site - the pins precede',
@@ -439,7 +439,7 @@ pair(GP, E(
     '  mount layer; the R321 aerial precedent',
     '  - the pins would precede any site).',
     '  - AMENDED R403: the layer lands -',
-    '    rules/mountlayer.h carries the',
+    '    rules/seams/mountlayer.h carries the',
     '    contract and the six-feeder',
     '    registry; the mounted-combat',
     '    charge stays open as its own',

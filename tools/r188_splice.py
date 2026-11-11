@@ -2,7 +2,7 @@
 # R188 splice: the prime requisite XP adjustment
 # (the verify round for the queued box).
 #
-# rules/xpadjust.h is CREATED: the printed
+# rules/phb/xpadjust.h is CREATED: the printed
 # per-class +10% of earned experience gates,
 # every one from the PHB class sections:
 # fighter STR 16+; magic-user INT 16+; cleric
@@ -82,7 +82,7 @@ def create(path, marker, content):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/xpadjust.h CREATED
+# Patch 1: rules/phb/xpadjust.h CREATED
 # ---------------------------------------------------------------------------
 
 # the printed gates, pre-asserted here:
@@ -153,7 +153,7 @@ hdr = []
 a = hdr.append
 
 a('// ============================================================================')
-a('// Adnd1 - rules/xpadjust.h')
+a('// Adnd1 - rules/phb/xpadjust.h')
 a('// The prime requisite XP adjustment (R188).')
 a('//')
 a('// The printed per-class +10% of earned experience gates,')
@@ -278,7 +278,7 @@ a('}')
 a('')
 a('} // namespace rules')
 
-create('rules/xpadjust.h',
+create('rules/phb/xpadjust.h',
        'The prime requisite XP adjustment (R188)',
        NL.join(hdr) + NL)
 
@@ -287,10 +287,10 @@ create('rules/xpadjust.h',
 # ---------------------------------------------------------------------------
 
 patch('regtest.cpp',
-      'rules/xpadjust.h',
-      '#include "rules/subclassspecials.h"  // R187: the per-subclass specials',
-      '#include "rules/subclassspecials.h"  // R187: the per-subclass specials'
-      + NL + '#include "rules/xpadjust.h"  // R188: the prime requisite XP adjustment')
+      'rules/phb/xpadjust.h',
+      '#include "rules/phb/subclassspecials.h"  // R187: the per-subclass specials',
+      '#include "rules/phb/subclassspecials.h"  // R187: the per-subclass specials'
+      + NL + '#include "rules/phb/xpadjust.h"  // R188: the prime requisite XP adjustment')
 
 # ---------------------------------------------------------------------------
 # Patch 3: regtest.cpp - the R188 battery audit (census 105)
@@ -411,7 +411,7 @@ patch('rules/engine/character.cpp',
       + NL + '// EXPERIENCE POINTS section has no prime-requisite ladder,'
       + NL + '// and the phrase prime requisite does not appear in the DMG'
       + NL + '// at all. The printed per-class gates and the worked-example'
-      + NL + '// rounding (975 -> +98 -> 1073) live in rules/xpadjust.h.')
+      + NL + '// rounding (975 -> +98 -> 1073) live in rules/phb/xpadjust.h.')
 
 # ---------------------------------------------------------------------------
 # Patch 5: tools/phb_gap_report.md - the R188 box flipped
@@ -427,7 +427,7 @@ box_old = ('- [ ] **Prime requisite XP adjustment (the class'
            + NL + '      record as convention.')
 
 box_new = ('- [x] **Prime requisite XP adjustment - PINNED R188:**'
-           + NL + '      rules/xpadjust.h CREATED: the printed per-class'
+           + NL + '      rules/phb/xpadjust.h CREATED: the printed per-class'
            + NL + '      +10% of earned experience gates (fighter STR,'
            + NL + '      magic-user INT, cleric WIS, thief DEX; paladin'
            + NL + '      STR and WIS, ranger STR INT and WIS, druid WIS'
@@ -467,7 +467,7 @@ patch('tools/dmg_gap_report.md',
       'census 104. Next: the gap report names the next'
       + NL + 'round.'
       + NL + 'R188 landed the prime requisite XP adjustment:'
-      + NL + 'rules/xpadjust.h CREATED (the printed per-class'
+      + NL + 'rules/phb/xpadjust.h CREATED (the printed per-class'
       + NL + '+10% gates, the worked-example rounding), and the'
       + NL + 'character.cpp comment now records the verify - the'
       + NL + 'engine +5/0/-10/-20 rungs are unsourced convention'
@@ -482,7 +482,7 @@ patch('tools/dmg_gap_report.md',
 assert applied + already == 6, 'patch count drift: ' + str(applied) + ' + ' + str(already)
 print('R188 splice: ALL OK (applied %d, already %d)' % (applied, already))
 print('R188 note: 6 patches; census 105 (one new audit);')
-print('real gate: md5sum rules/xpadjust.h')
+print('real gate: md5sum rules/phb/xpadjust.h')
 print('commit: R188: the prime requisite XP adjustment pinned - the printed')
 print('gates and the convention record (census 105)')
 

@@ -1046,13 +1046,13 @@
     "open": 0
   },
   "caller_files": [
-    "rules/deitylines.h",
+    "rules/seams/deitylines.h",
     "rules/ua/uaappends.h"
   ],
   "inline_count": 103,
   "file_patches": [
     {
-      "file": "rules/deitylines.h",
+      "file": "rules/seams/deitylines.h",
       "note": "the stat-block prose note strike (the dwarven part pins)",
       "from": "// The stat-block prose stays open - the lines pin, the paragraphs do not\ninline bool dvpProseStaysOpen()\n    { return true; }\n",
       "to": "// R786: the dwarven paragraphs pin\n// (rules/ua/uadeityprose1.h); the other\n// pantheons' prose stays open - the lines\n// pin, the paragraphs do not (yet)\ninline bool dvpProseStaysOpen()\n    { return true; }\n"
@@ -1060,8 +1060,8 @@
     {
       "file": "rules/ua/uaappends.h",
       "note": "the uaappends prose note strike",
-      "from": "// stat lines) in rules/deitylines.h;\n// the prose alone stays open.\n",
-      "to": "// stat lines) in rules/deitylines.h; the dwarven\n// prose pins in rules/ua/uadeityprose1.h (R786); the\n// other pantheons' prose stays open.\n"
+      "from": "// stat lines) in rules/seams/deitylines.h;\n// the prose alone stays open.\n",
+      "to": "// stat lines) in rules/seams/deitylines.h; the dwarven\n// prose pins in rules/ua/uadeityprose1.h (R786); the\n// other pantheons' prose stays open.\n"
     }
   ]
 }

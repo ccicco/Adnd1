@@ -1,5 +1,5 @@
 #include "appstate.h"
-#include "../rules/saddle.h"   // R777: the sdd kind ladder (the mount save line)
+#include "../rules/seams/saddle.h"   // R777: the sdd kind ladder (the mount save line)
 
 // ---- newDungeon ----
 void AppState::newDungeon(uint64_t s){

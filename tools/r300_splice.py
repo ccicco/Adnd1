@@ -10,7 +10,7 @@
 # costGp column carried a verification debt.
 # This round pays it:
 #
-#   (a) rules/equipcosts.h CREATED - the 52
+#   (a) rules/phb/equipcosts.h CREATED - the 52
 #       arms rows and the 14 armor rows pinned
 #       cell by cell (the gold and silver
 #       columns - exactly one unit nonzero per
@@ -71,10 +71,10 @@ def clean(s, limit):
         assert all(ord(c) < 128 for c in ln), 'non-ascii line'
         assert len(ln) <= limit, 'line too long: ' + ln
 
-# ---- (a) rules/equipcosts.h: the printed columns ----
+# ---- (a) rules/phb/equipcosts.h: the printed columns ----
 EQUIPCOSTS = NL.join([
     '// ============================================================================',
-    '// Adnd1 - rules/equipcosts.h',
+    '// Adnd1 - rules/phb/equipcosts.h',
     '// The equipment cost columns (R300).',
     '//',
     '// The PHB BASIC EQUIPMENT AND SUPPLIES COSTS tables (the',
@@ -275,7 +275,7 @@ EQUIPCOSTS = NL.join([
 ])
 clean(EQUIPCOSTS, 100)
 
-p = 'rules/equipcosts.h'
+p = 'rules/phb/equipcosts.h'
 if os.path.exists(os.path.join(ROOT, p)):
     s = rd(p)
     if 'The equipment cost columns (R300)' in s:
@@ -300,7 +300,7 @@ IT_NOTE_OLD = NL.join([
 IT_NOTE_NEW = NL.join([
     '// Weight in gp units (1 gp = 1/10 lb). R300: the costGp',
     '// column repinned to the printed BASIC EQUIPMENT AND SUPPLIES',
-    '// COSTS tables (rules/equipcosts.h) - the printed-table-wins',
+    '// COSTS tables (rules/phb/equipcosts.h) - the printed-table-wins',
     '// debt paid. The rows NOT in the print (quarterstaff, club)',
     '// keep 0 as ENGINE CONVENTION; the sling keeps the 2 g.p.',
     '// engine price (the print prices the dozen sling and bullets',
@@ -359,12 +359,12 @@ assert len(applied) + len(already) == 2, 'patch b count wrong'
 REG_INC_OLD = '#include "rules/phb/thieffunc.h"  // R298: the thief function take table and DEX Table II'
 REG_INC_NEW = NL.join([
     '#include "rules/phb/thieffunc.h"  // R298: the thief function take table and DEX Table II',
-    '#include "rules/equipcosts.h"  // R300: the equipment cost columns',
+    '#include "rules/phb/equipcosts.h"  // R300: the equipment cost columns',
 ])
 SEAM_AUDIT = NL.join([
     '    // ---- R300a: the equipment cost columns seam audit ----',
     '    // The printed BASIC EQUIPMENT AND SUPPLIES COSTS tables',
-    '    // (rules/equipcosts.h) walked cell for cell against this',
+    '    // (rules/phb/equipcosts.h) walked cell for cell against this',
     '    // local ground truth, the clamps, the coin-unit identity',
     '    // (exactly one of the gold and silver columns nonzero on',
     '    // every arms row), the six silver ammo rows and the',
@@ -434,7 +434,7 @@ SEAM_AUDIT = NL.join([
 ENGINE_AUDIT = NL.join([
     '    // ---- R300: the equipment costs engine audit ----',
     '    // The items costGp column repinned to the printed tables',
-    '    // (rules/equipcosts.h): every engine weapon and armor id',
+    '    // (rules/phb/equipcosts.h): every engine weapon and armor id',
     '    // maps to its printed row - the printed-table-wins debt',
     '    // paid. The recorded conventions: the quarterstaff and',
     '    // club are not in the print (0 stays the engine',
@@ -553,7 +553,7 @@ assert s.count('R300 equipment costs engine audit') == 1, 'patch c engine'
 assert s.count('audit: bad') == 219, 'census is not 219'
 assert 'R299 party kit recordings engine audit' in s, 'patch c ate R299'
 assert '// ---- R227: the wis mental save wiring audit ----' in s, 'patch c ate R227'
-assert '#include "rules/equipcosts.h"' in s, 'patch c include missing'
+assert '#include "rules/phb/equipcosts.h"' in s, 'patch c include missing'
 assert 'R298 thief function take table pins audit' in s, 'patch c ate R298'
 assert len(applied) + len(already) == 3, 'patch c count wrong'
 
@@ -582,7 +582,7 @@ G_ITEM_NEW = NL.join([
     '      EQUIPMENT AND SUPPLIES COSTS tables,',
     '      upload line 2113; the reference-sheet',
     '      repeats at upload line 13432)** - PINNED',
-    '      R300: rules/equipcosts.h CREATED - the',
+    '      R300: rules/phb/equipcosts.h CREATED - the',
     '      52 arms rows and the 14 armor rows',
     '      pinned cell by cell (eqcArmsGold,',
     '      eqcArmsSilver, eqcArmorGold and the',
@@ -675,6 +675,6 @@ print('R300 splice: ALL OK (applied '
       + str(len(already)) + ')')
 print('R300 note: 4 patches; the battery census 217 -> 219;')
 print('the phb ledger holds ZERO open items')
-print('real gate: md5sum rules/equipcosts.h')
+print('real gate: md5sum rules/phb/equipcosts.h')
 print('commit: R300: the equipment cost columns pinned and the engine costs repinned (census 219)')
 

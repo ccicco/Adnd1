@@ -1,7 +1,7 @@
 {
   "round": 784,
   "prefix": "plc",
-  "header_file": "rules/worshipsites.h",
+  "header_file": "rules/seams/worshipsites.h",
   "regtest": "regtest.cpp",
   "gap_report": "tools/oa_gap_report.md",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -10,7 +10,7 @@
   "audit_label": "R784 worship sites audit",
   "audit_comment": "THE WORSHIP SITES - the last unpinned Appendix S chart read (Curtiss's five-chart-rows call, resolved by the print). The R783 handoff flagged the five clerical chart rows blocked on extraction contamination; this round re-read the chart three ways - the 1eonline.info compilation pages, the R407 pins, and the print itself (the archive.org full-text OCR of pp. 121-122) - and the verdict is clean: EVERY R407 PIN STANDS. The contamination rides the compilation side, not the repo: the site's Hanali row carries Solonor's cells wholesale (sphere, animal, raiment, colors, form, and site - the deep forest), Labelas's sphere cell prints Erevan's sphere, and the Arvoreen, Segojan, and Aerdrie rows carry site-side spelling variants (defence, Nature, sky-blue, semi-annually). THE GRID: 23 x 2 - the place-of-worship kinds (16 distinct codes: the two battlefield rows, the four dwarven underground temples, Aerdrie's open hilltops, Hanali's fountain or spring, Labelas's small grove, Solonor's deep forest, Erevan's never-the-same-place-twice, Sheela's open field, Cyrrollalee's the home, the four anywhere rows, Baervan's forest clearing, Urdlen's cavern, Segojan's subterranean temple, Flandal's underground forge, Yurtrus's crypt, Luthic's cave temple) and the cleric-gender reads (12 males-only rows, the lone Berronar females-only row, 10 either-gender rows with the Luthic exception). THE STRINGS: the printed site phrases ride rules/ua/uascharts.h (the uscWorshipSite accessor) with a live regtest strings block checking all 23 row for row (the R782 site-block precedent). Honest boundaries: the M, F, and N-H columns on the compilation pages are the compilation's own additions, not print chart columns - they stay contract-side; the print's own typos (\"can by worshiped\", the one-r Cyrollalee) ride the prose; the pantheon prose stays open (R423 stands)",
   "include_comment": "the worship sites",
-  "include_after": "#include \"rules/deitylines.h\"  // R783: the deity stat lines",
+  "include_after": "#include \"rules/seams/deitylines.h\"  // R783: the deity stat lines",
   "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
   "seed_anchor": "## Knowledge maintenance",
   "prev_seed_key": "- R783 LANDED 2026-10-23: commit",
@@ -20,7 +20,7 @@
     "  (census 705 -> 706, pushed 02ca879..23f196e),",
     "  THE DEITY STAT LINES - the R406 messy reads",
     "  pin at last (Curtiss's Appendix S pick),",
-    "  header rules/deitylines.h, prefix dvp (free",
+    "  header rules/seams/deitylines.h, prefix dvp (free",
     "  at 02ca879). TWO GRIDS, not one: the first",
     "  cut carried a 23 x 25 grid whose audit rows",
     "  blew the 78-col engine gate, so the emit",
@@ -426,7 +426,7 @@
       "file": "rules/ua/uascharts.h",
       "note": "the worship-site strings land in uascharts.h (the uscWorshipSite accessor, one printed string per row)",
       "from": "inline bool uscGnomishClericsAllMale()\n    { return true; }\n\n}   // namespace rules\n\n",
-      "to": "inline bool uscGnomishClericsAllMale()\n    { return true; }\n\n// R784: the worship-site strings - the print's\n// place-of-worship reads, the prose under the\n// five clerical charts (pp. 121-122). The kind\n// codes and the cleric-gender grid pin in\n// rules/worshipsites.h; the strings ride here,\n// one row per deity in the registry order. The\n// compilation's Hanali row carries Solonor's\n// cells wholesale; the print's fountain-or-spring\n// stands. Erevan's read rides the print's own\n// \"can by worshiped\" typo in the prose.\ninline const char* uscWorshipSite(int i) {\n    static const char* const W[23] = {\n        \"battlefield\",   // Clangeddin\n        \"underground temple\",   // Vergadain\n        \"underground temple\",   // Dumathoin\n        \"underground temple\",   // Abbathor\n        \"underground temple\",   // Berronar\n        \"open hilltops\",   // Aerdrie\n        \"never the same place twice\",   // Erevan\n        \"deep forest\",   // Solonor\n        \"by a fountain or spring\",   // Hanali\n        \"small grove\",   // Labelas\n        \"open field\",   // Sheela\n        \"anywhere\",   // Arvoreen\n        \"the home\",   // Cyrrollalee\n        \"anywhere\",   // Brandobaris\n        \"forest clearing\",   // Baervan\n        \"underground cavern\",   // Urdlen\n        \"subterranean temple\",   // Segojan\n        \"underground forge\",   // Flandal\n        \"battlefield\",   // Bahgtru\n        \"anywhere\",   // Shargaas\n        \"anywhere\",   // Ilneval\n        \"underground crypt\",   // Yurtrus\n        \"in a temple within a cave\",   // Luthic\n    };\n    if (i < 0) i = 0;\n    if (i > 22) i = 22;\n    return W[i];\n}\n}   // namespace rules\n\n"
+      "to": "inline bool uscGnomishClericsAllMale()\n    { return true; }\n\n// R784: the worship-site strings - the print's\n// place-of-worship reads, the prose under the\n// five clerical charts (pp. 121-122). The kind\n// codes and the cleric-gender grid pin in\n// rules/seams/worshipsites.h; the strings ride here,\n// one row per deity in the registry order. The\n// compilation's Hanali row carries Solonor's\n// cells wholesale; the print's fountain-or-spring\n// stands. Erevan's read rides the print's own\n// \"can by worshiped\" typo in the prose.\ninline const char* uscWorshipSite(int i) {\n    static const char* const W[23] = {\n        \"battlefield\",   // Clangeddin\n        \"underground temple\",   // Vergadain\n        \"underground temple\",   // Dumathoin\n        \"underground temple\",   // Abbathor\n        \"underground temple\",   // Berronar\n        \"open hilltops\",   // Aerdrie\n        \"never the same place twice\",   // Erevan\n        \"deep forest\",   // Solonor\n        \"by a fountain or spring\",   // Hanali\n        \"small grove\",   // Labelas\n        \"open field\",   // Sheela\n        \"anywhere\",   // Arvoreen\n        \"the home\",   // Cyrrollalee\n        \"anywhere\",   // Brandobaris\n        \"forest clearing\",   // Baervan\n        \"underground cavern\",   // Urdlen\n        \"subterranean temple\",   // Segojan\n        \"underground forge\",   // Flandal\n        \"battlefield\",   // Bahgtru\n        \"anywhere\",   // Shargaas\n        \"anywhere\",   // Ilneval\n        \"underground crypt\",   // Yurtrus\n        \"in a temple within a cave\",   // Luthic\n    };\n    if (i < 0) i = 0;\n    if (i > 22) i = 22;\n    return W[i];\n}\n}   // namespace rules\n\n"
     },
     {
       "file": "regtest.cpp",

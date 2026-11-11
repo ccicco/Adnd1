@@ -3088,7 +3088,7 @@ section own index, one item each:
   psionics seam; the duergar doubled
   chance rides it).
   - AMENDED R404: the seam lands -
-    rules/psionics.h pins the duergar
+    rules/seams/psionics.h pins the duergar
     doubled chance and the
     svirfneblin PC ban (the clean
     UA pp. 10-11 scan); the psionic
@@ -3103,7 +3103,7 @@ section own index, one item each:
   mount layer; the R321 aerial precedent
   - the pins would precede any site).
   - AMENDED R403: the layer lands -
-    rules/mountlayer.h carries the
+    rules/seams/mountlayer.h carries the
     contract and the six-feeder
     registry; the mounted-combat
     charge stays open as its own
@@ -3111,7 +3111,7 @@ section own index, one item each:
 - DEFERRED: Appendix S (a deity layer;
   see the appendices item).
   - AMENDED R405: the layer lands -
-    rules/deities.h pins the Appendix S
+    rules/seams/deities.h pins the Appendix S
     contract, source, census and
     dwarven reads (the clean djvu
     scan); the 23 deity stat blocks
@@ -3186,7 +3186,7 @@ lands before the items it gates.
       landed DMG audits stay
       authoritative.
 - [x] The deity layer -
-      CLOSED R405 (rules/deities.h;
+      CLOSED R405 (rules/seams/deities.h;
       the R405 seam audit, census 332):
       the layer contract (no deity
       actor site - the pins precede
@@ -3212,7 +3212,7 @@ lands before the items it gates.
       stat blocks and the five charts
       stay open - a new ungated item.
 - [x] The psionics seam -
-      CLOSED R404 (rules/psionics.h;
+      CLOSED R404 (rules/seams/psionics.h;
       the R404 seam audit, census 331):
       the layer contract (no psionic
       site - the pins precede the
@@ -3232,7 +3232,7 @@ lands before the items it gates.
       psionic-combat charge stays
       open - a new ungated item.
 - [x] The mount layer -
-      CLOSED R403 (rules/mountlayer.h;
+      CLOSED R403 (rules/seams/mountlayer.h;
       the R403 seam audit, census 330):
       the layer contract (no mount
       actor site - the pins precede

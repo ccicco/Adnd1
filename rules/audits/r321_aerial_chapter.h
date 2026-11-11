@@ -1,7 +1,7 @@
     // ---- R321: the aerial chapter audit ----
     // The OUT reversal (the R172 appendix
     // J precedent): the DMG pp.49-53 pins
-    // (rules/aerial.h) and the fly seams -
+    // (rules/seams/aerial.h) and the fly seams -
     // the STATUS_FLYING mark, the wing
     // fold, the potion claim. No aerial
     // fight site exists - the prints are

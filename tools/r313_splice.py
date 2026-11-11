@@ -5,7 +5,7 @@
 #
 # The pin charge: the DMG UNDERWATER
 # ADVENTURES movement and combat paragraphs
-# (rules/underwater.h, R311) - the 20-pound
+# (rules/seams/underwater.h, R311) - the 20-pound
 # equipment cap moved 1 pound per 100 g.p.
 # of strength weight allowance, only
 # thrusting weapons strike underwater
@@ -173,7 +173,7 @@ UF = NL.join(
      '// Adnd1 - rules/dmg/uwfight.h',
      '// R313: the DMG UNDERWATER ADVENTURES',
      '// movement and combat pins (R311,',
-     '// rules/underwater.h) folded for the',
+     '// rules/seams/underwater.h) folded for the',
      '// flooded crossing (R312,',
      '// rules/dmg/swimcross.h) - the seam the',
      '// crossing site charges.',
@@ -227,7 +227,7 @@ UF = NL.join(
      '',
      '#pragma once',
      '',
-     '#include "rules/underwater.h"  // R311: the cap pin',
+     '#include "rules/seams/underwater.h"  // R311: the cap pin',
      '',
      'namespace rules {',
      '',
@@ -298,10 +298,10 @@ assert len(applied) + len(already) == 1, 'patch a count wrong'
 
 # ---- (b) game/state_dungeon.cpp: the include, the load gate ----
 SD_I_OLD = NL.join([
-    '#include "rules/underwater.h"  // R311: the drown percent',
+    '#include "rules/seams/underwater.h"  // R311: the drown percent',
 ])
 SD_I_NEW = NL.join([
-    '#include "rules/underwater.h"  // R311: the drown percent',
+    '#include "rules/seams/underwater.h"  // R311: the drown percent',
     '#include "rules/dmg/uwfight.h"  // R313: the crossing cap',
 ])
 SD_OLD = NL.join([

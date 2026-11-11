@@ -100,10 +100,10 @@ pins_new = [
 
 # ---- 1: the actor.cpp include ----
 inc_old = [
-    '#include "../rules/palrangerspells.h"  // R232: the giant-class roster',
+    '#include "../rules/phb/palrangerspells.h"  // R232: the giant-class roster',
 ]
 inc_new = [
-    '#include "../rules/palrangerspells.h"  // R232: the giant-class roster',
+    '#include "../rules/phb/palrangerspells.h"  // R232: the giant-class roster',
     '#include "../rules/phb/bard.h"  // R236: the poetics ferocity',
 ]
 

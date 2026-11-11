@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 - rules/palrangerspells.h
+// Adnd1 - rules/phb/palrangerspells.h
 // The paladin and ranger spell layers (R184).
 //
 // The SPELLS USABLE BY CLASS AND LEVEL - PALADINS table
@@ -42,7 +42,7 @@
 
 #pragma once
 
-#include "engine/classes.h"
+#include "../engine/classes.h"
 
 #include <cstdint>
 #include <string>

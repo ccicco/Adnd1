@@ -211,8 +211,8 @@ create('rules/phb/startmoney.h',
 
 patch('regtest.cpp',
       'rules/phb/startmoney.h',
-      '#include "rules/weapontables.h"  // R189: the weapon weight and damage table',
-      '#include "rules/weapontables.h"  // R189: the weapon weight and damage table'
+      '#include "rules/phb/weapontables.h"  // R189: the weapon weight and damage table',
+      '#include "rules/phb/weapontables.h"  // R189: the weapon weight and damage table'
       + NL + '#include "rules/phb/startmoney.h"  // R190: the starting money by class')
 
 # ---------------------------------------------------------------------------

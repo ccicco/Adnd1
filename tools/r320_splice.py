@@ -50,7 +50,7 @@
 #       draught claim route.
 #   (j) game/state_combat.cpp - the pool
 #       fight draught print.
-#   (k) rules/underwater.h - the
+#   (k) rules/seams/underwater.h - the
 #       recorded-notes truth-up.
 #   (l) regtest.cpp - the R320 audit (the
 #       status, the cast fold, the dry gate,
@@ -644,7 +644,7 @@ UN_NEW = NL.join([
 clean(UN_OLD, 78)
 clean(UN_NEW, 78)
 
-p = 'rules/underwater.h'
+p = 'rules/seams/underwater.h'
 s = rd(p)
 if 'R319/' + NL + '// R320 seams' in s:
     already.append('underwater.h: the truth-up')

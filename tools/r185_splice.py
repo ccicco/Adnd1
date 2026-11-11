@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # R185 splice: the multi-class and dual-class rules.
 #
-# rules/multiclass.h is CREATED: the per-race
+# rules/phb/multiclass.h is CREATED: the per-race
 # MULTI-CLASS combination table (every printed
 # combo as a class bitmask: dwarf fighter/thief;
 # elf fighter/magic-user, fighter/thief,
@@ -81,7 +81,7 @@ def create(path, marker, content):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/multiclass.h CREATED
+# Patch 1: rules/phb/multiclass.h CREATED
 # ---------------------------------------------------------------------------
 
 # the class bits (the combo alphabet)
@@ -134,7 +134,7 @@ hdr = []
 a = hdr.append
 
 a('// ============================================================================')
-a('// Adnd1 - rules/multiclass.h')
+a('// Adnd1 - rules/phb/multiclass.h')
 a('// The multi-class and dual-class rules (R185).')
 a('//')
 a('// The per-race MULTI-CLASS combination table (the')
@@ -333,7 +333,7 @@ a('// consume these mechanics.)')
 a('')
 a('} // namespace rules')
 
-create('rules/multiclass.h',
+create('rules/phb/multiclass.h',
        'The multi-class and dual-class rules (R185)',
        NL.join(hdr) + NL)
 
@@ -342,10 +342,10 @@ create('rules/multiclass.h',
 # ---------------------------------------------------------------------------
 
 patch('regtest.cpp',
-      'rules/multiclass.h',
-      '#include "rules/palrangerspells.h"  // R184: the paladin and ranger spell layers',
-      '#include "rules/palrangerspells.h"  // R184: the paladin and ranger spell layers'
-      + NL + '#include "rules/multiclass.h"  // R185: the multi-class and dual-class rules')
+      'rules/phb/multiclass.h',
+      '#include "rules/phb/palrangerspells.h"  // R184: the paladin and ranger spell layers',
+      '#include "rules/phb/palrangerspells.h"  // R184: the paladin and ranger spell layers'
+      + NL + '#include "rules/phb/multiclass.h"  // R185: the multi-class and dual-class rules')
 
 # ---------------------------------------------------------------------------
 # Patch 3: regtest.cpp - the R185 battery audit (census 102)
@@ -518,7 +518,7 @@ patch('tools/phb_gap_report.md',
       + NL + '      hit-point conventions, and the two-class'
       + NL + '      rules.',
       '- [x] R185 multi-class and dual-class - PINNED:'
-      + NL + '      rules/multiclass.h CREATED: the per-race'
+      + NL + '      rules/phb/multiclass.h CREATED: the per-race'
       + NL + '      MULTI-CLASS combination table (dwarf 1,'
       + NL + '      elf 4, gnome 3, half-elf 8, halfling 1,'
       + NL + '      half-orc 5, human 0 - every printed combo'
@@ -551,7 +551,7 @@ patch('tools/dmg_gap_report.md',
       'census 101. Next: R185 multi-class and'
       + NL + 'dual-class.'
       + NL + 'R185 landed the multi-class and dual-class'
-      + NL + 'rules: rules/multiclass.h CREATED (the 22'
+      + NL + 'rules: rules/phb/multiclass.h CREATED (the 22'
       + NL + 'per-race combos, the hit-point quotient, the'
       + NL + 'even XP split, the stalled hit dice, the'
       + NL + 'thief and cleric allowances, the half-elf'
@@ -566,7 +566,7 @@ patch('tools/dmg_gap_report.md',
 assert applied + already == 5, 'patch count drift: ' + str(applied) + ' + ' + str(already)
 print('R185 splice: ALL OK (applied %d, already %d)' % (applied, already))
 print('R185 note: 5 patches; census 102 (one new audit);')
-print('real gate: md5sum rules/multiclass.h')
+print('real gate: md5sum rules/phb/multiclass.h')
 print('commit: R185: the multi-class and dual-class rules pinned -')
 print('the combos, the quotient and the gates (census 102)')
 

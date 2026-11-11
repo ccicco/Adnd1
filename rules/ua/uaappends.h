@@ -10,7 +10,7 @@
 // pin; the R783 round pins the messy
 // reads (the class/level lines, the
 // MOVE values, the S/I/W/D/C/CH/CM
-// stat lines) in rules/deitylines.h; the dwarven,
+// stat lines) in rules/seams/deitylines.h; the dwarven,
 // elven, halfling, gnomish, and orcish prose
 // pin in rules/uadeityprose1-5.h (R786-R790);
 // the Appendix S description-paragraph close

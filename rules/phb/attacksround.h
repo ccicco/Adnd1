@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 - rules/attacksround.h
+// Adnd1 - rules/phb/attacksround.h
 // Attacks per melee round (R181).
 //
 // The fighters, paladins and rangers attacks-per-melee-round
@@ -38,7 +38,7 @@
 
 #pragma once
 
-#include "engine/classes.h"
+#include "../engine/classes.h"
 #include "subclasses.h"
 
 #include <cstdint>

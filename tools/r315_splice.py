@@ -3,7 +3,7 @@
 # of the waterborne table.
 #
 # The charge: the DMG UNDERWATER ADVENTURES
-# net paragraph (rules/underwater.h, R311) -
+# net paragraph (rules/seams/underwater.h, R311) -
 # the underwater races throw nets an average
 # of 15 feet, the sahuagin 20 - now folded
 # at the R314 waterborne encounter. The MM
@@ -24,7 +24,7 @@
 #       throwers (the R37 key-list pattern;
 #       the water gate mirrors the R312
 #       crossing check two lines below).
-#   (b) rules/underwater.h - the recorded
+#   (b) rules/seams/underwater.h - the recorded
 #       notes: the net throw is now charged;
 #       the untrained -4 and the strength-
 #       point range stay recorded (no party
@@ -156,7 +156,7 @@ _o, _c, _o2, _c2 = counts(s)
 assert _o == _c and _o2 == _c2, 'patch a balance'
 assert len(applied) + len(already) == 1, 'patch a count wrong'
 
-# ---- (b) rules/underwater.h: the recorded notes ----
+# ---- (b) rules/seams/underwater.h: the recorded notes ----
 UW_OLD = NL.join([
     '// for bows, scrolls and books. No engine site',
     '// charges any of this yet (no underwater game',
@@ -179,7 +179,7 @@ for _t in (UW_OLD, UW_NEW):
     clean(_t, 78)
 assert Q not in UW_NEW, 'apostrophe in uw header'
 
-p = 'rules/underwater.h'
+p = 'rules/seams/underwater.h'
 s = rd(p)
 if 'R315 - the state_combat' in s:
     already.append('underwater.h: the recorded notes')

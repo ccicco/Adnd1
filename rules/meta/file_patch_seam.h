@@ -14,7 +14,7 @@
 // the spec). The three tools land by hand this once (the bootstrap note): the
 // tool files cannot patch themselves; after R774 every file-patch round lands
 // through the ritual like any other. The demo patch is comment-only in
-// rules/mountlayer.h - the charge stays open until the site lands R775.
+// rules/seams/mountlayer.h - the charge stays open until the site lands R775.
 //
 // No book pages this round: the provenance is the tooling itself (the R428
 // one-command-harness precedent).
@@ -30,7 +30,7 @@ inline int dnlPatchedToolCount()
     { return 3; }
 
 // R774 is the first round carrying the file_patches spec key - the demo patch
-// rides rules/mountlayer.h.
+// rides rules/seams/mountlayer.h.
 inline int dnlFirstFilePatchRound()
     { return 774; }
 

@@ -370,9 +370,9 @@ patch('rules/dmg/conduct.h',
 # Patch 2: regtest.cpp - the include
 # ---------------------------------------------------------------------------
 
-old2 = '#include "rules/siegefire.h"  // R214: pp.108-110 war machine fire, siege attack, defensive values'
+old2 = '#include "rules/dmg/siegefire.h"  // R214: pp.108-110 war machine fire, siege attack, defensive values'
 
-new2 = ('#include "rules/siegefire.h"  // R214: pp.108-110 war machine fire, siege attack, defensive values'
+new2 = ('#include "rules/dmg/siegefire.h"  // R214: pp.108-110 war machine fire, siege attack, defensive values'
         + NL + '#include "rules/dmg/conduct.h"  // R215: pp.110-112 conducting the game pins')
 
 patch('regtest.cpp',

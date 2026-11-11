@@ -1,5 +1,5 @@
     // ---- R310: the sage subsection audit ----
-    // The DMG SAGE subsection (rules/sage.h)
+    // The DMG SAGE subsection (rules/dmg/sage.h)
     // walked cell for cell against this local
     // ground truth: the fields-count bands, the
     // seven fields with their 68 special

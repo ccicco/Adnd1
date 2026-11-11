@@ -145,7 +145,7 @@ private:
 // initiative+5 segments by convention. Fighters gain the second
 // routine in the printed 3/2 band (R181: the 3/2 band opens at 7th
 // level for the fighter base class; the printed rates live in
-// rules/attacksround.h).
+// rules/phb/attacksround.h).
 // ----------------------------------------------------------------------------
 int meleeAttacksPerRound(int classIndex, int level);
 

@@ -1,5 +1,5 @@
 // ====================================================================
-// Adnd1 - rules/siegefire.h
+// Adnd1 - rules/dmg/siegefire.h
 // R214: the war machine fire tables, the
 // siege attack values, and the construction
 // defensive values (DMG pp.108-110, the

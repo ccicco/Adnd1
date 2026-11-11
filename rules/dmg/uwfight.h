@@ -2,7 +2,7 @@
 // Adnd1 - rules/dmg/uwfight.h
 // R313: the DMG UNDERWATER ADVENTURES
 // movement and combat pins (R311,
-// rules/underwater.h) folded for the
+// rules/seams/underwater.h) folded for the
 // flooded crossing (R312,
 // rules/dmg/swimcross.h) - the seam the
 // crossing site charges.
@@ -58,7 +58,7 @@
 
 #pragma once
 
-#include "../underwater.h"  // R311: the cap pin
+#include "../seams/underwater.h"  // R311: the cap pin
 
 namespace rules {
 

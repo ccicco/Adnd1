@@ -1,5 +1,5 @@
 // ============================================================================
-// Adnd1 - rules/weapontables.h
+// Adnd1 - rules/phb/weapontables.h
 // The weapon weight and damage table (R189).
 //
 // The PHB WEIGHT AND DAMAGE BY WEAPON TYPE chart (50 rows,

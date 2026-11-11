@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # R183 splice: the illusionist spell layer.
 #
-# rules/illusionspells.h is CREATED: the
+# rules/phb/illusionspells.h is CREATED: the
 # SPELLS USABLE BY CLASS AND LEVEL - ILLUSIONISTS
 # table (26 illusionist levels x 7 spell levels,
 # every printed cell) and the full illusionist
@@ -64,7 +64,7 @@ def create(path, marker, content):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/illusionspells.h CREATED
+# Patch 1: rules/phb/illusionspells.h CREATED
 # ---------------------------------------------------------------------------
 
 # the roster: (level, name) - the printed book order;
@@ -179,7 +179,7 @@ hdr = []
 a = hdr.append
 
 a('// ============================================================================')
-a('// Adnd1 - rules/illusionspells.h')
+a('// Adnd1 - rules/phb/illusionspells.h')
 a('// The illusionist spell layer (R183).')
 a('//')
 a('// The SPELLS USABLE BY CLASS AND LEVEL - ILLUSIONISTS table')
@@ -258,7 +258,7 @@ a('}')
 a('')
 a('} // namespace rules')
 
-create('rules/illusionspells.h',
+create('rules/phb/illusionspells.h',
        'The illusionist spell layer (R183)',
        NL.join(hdr) + NL)
 
@@ -267,10 +267,10 @@ create('rules/illusionspells.h',
 # ---------------------------------------------------------------------------
 
 patch('regtest.cpp',
-      'rules/illusionspells.h',
-      '#include "rules/druidspells.h"  // R182: the druid spell layer',
-      '#include "rules/druidspells.h"  // R182: the druid spell layer'
-      + NL + '#include "rules/illusionspells.h"  // R183: the illusionist spell layer')
+      'rules/phb/illusionspells.h',
+      '#include "rules/phb/druidspells.h"  // R182: the druid spell layer',
+      '#include "rules/phb/druidspells.h"  // R182: the druid spell layer'
+      + NL + '#include "rules/phb/illusionspells.h"  // R183: the illusionist spell layer')
 
 # ---------------------------------------------------------------------------
 # Patch 3: regtest.cpp - the R183 battery audit (census 100)
@@ -393,7 +393,7 @@ patch('tools/phb_gap_report.md',
       '- R183 the illusionist spell layer - the'
       + NL + '      illusionist list likewise.',
       '- [x] R183 the illusionist spell layer - PINNED:'
-      + NL + '      rules/illusionspells.h CREATED: the SPELLS'
+      + NL + '      rules/phb/illusionspells.h CREATED: the SPELLS'
       + NL + '      USABLE BY CLASS AND LEVEL - ILLUSIONISTS'
       + NL + '      table (26 illusionist levels x 7 spell'
       + NL + '      levels, every printed cell: level 1 reads'
@@ -422,7 +422,7 @@ patch('tools/dmg_gap_report.md',
       'audit; census 99. Next: R183 the illusionist'
       + NL + 'spell layer.'
       + NL + 'R183 landed the illusionist spell layer:'
-      + NL + 'rules/illusionspells.h CREATED (the 26x7'
+      + NL + 'rules/phb/illusionspells.h CREATED (the 26x7'
       + NL + 'spells-usable table cell by cell, the 61-'
       + NL + 'spell roster in the printed book order; no'
       + NL + 'reversible flags - the section prints none).'
@@ -436,7 +436,7 @@ patch('tools/dmg_gap_report.md',
 assert applied + already == 5, 'patch count drift: ' + str(applied) + ' + ' + str(already)
 print('R183 splice: ALL OK (applied %d, already %d)' % (applied, already))
 print('R183 note: 5 patches; census 100 (one new audit);')
-print('real gate: md5sum rules/illusionspells.h')
+print('real gate: md5sum rules/phb/illusionspells.h')
 print('commit: R183: the illusionist spell layer pinned - the')
 print('slots table and the 61-spell roster (census 100)')
 

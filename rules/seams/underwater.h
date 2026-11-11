@@ -1,5 +1,5 @@
 // ===========================================================================
-// Adnd1 - rules/underwater.h
+// Adnd1 - rules/seams/underwater.h
 // The underwater environment (R311).
 //
 // The DMG UNDERWATER ADVENTURES section (upload

@@ -1,7 +1,7 @@
 {
   "round": 783,
   "prefix": "dvp",
-  "header_file": "rules/deitylines.h",
+  "header_file": "rules/seams/deitylines.h",
   "regtest": "regtest.cpp",
   "gap_report": "tools/oa_gap_report.md",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -10,7 +10,7 @@
   "audit_label": "R783 deity stat lines audit",
   "audit_comment": "THE DEITY STAT LINES - the R406 messy reads pin at last (Curtiss's Appendix S pick). The 23 blocks ride the 1eonline.info compilation pages (the repo-trusted source the R189 duty reads), row-verified against the R406 pins (armor class, hit points, magic resistance, attack halves, damage spans - every row cross-matched; where the compilation fills a hole the print pins stand: Hanali's 99, Brandobaris's unrecorded damage, Shargaas's attack hole). THE GRID: 23 x 12 plus 23 x 13 - the five class/level lines (every Nil reads zero, the halfling titles read as levels, the \"in each\" fills both columns, all five orc FIGHTER lines read as monsters, the print's own Dumathoin typo rides verbatim), the MOVE rates (base + the parenthetical second rate; Aerdrie's flight-only phrase carries no number), the seven ability lines (signed - Yurtrus -4/-25; the 18/00 and 18/01 slash prints split to the pct column; the CH/Com parentheticals with Hanali's special sentinel), and the DAMAGE/ATTACK bonus (the see-below sentinel for Labelas and Yurtrus). THE CROSS-CHECK: the damage bonus equals the S parenthetical damage bonus on all 15 rows that print both - and the three prints that refuse the pattern pin as they stand (Arvoreen +8 with no S parenthetical, Bahgtru +15 against the S +14, Solonor's S +9 with no damage bonus). Honest boundaries: the parenthetical reads and the special/see-text levels ride contract-side (the prose is the prose), the Yurtrus destructive-spells-only qualifier and Cyrrollalee's by-weapon-type damage ride contract-side, and the stat-block prose alone stays open",
   "include_comment": "the deity stat lines",
-  "include_after": "#include \"rules/owedpins.h\"  // R782: the owed pins",
+  "include_after": "#include \"rules/seams/owedpins.h\"  // R782: the owed pins",
   "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
   "seed_anchor": "## Knowledge maintenance",
   "prev_seed_key": "- R782 LANDED 2026-10-23: commit",
@@ -20,7 +20,7 @@
     "  (census 704 -> 705, pushed 1501749..02ca879),",
     "  THE OWED PINS AND THE DEITY SITE - four feeds",
     "  in one round (Curtiss's all-four pick), header",
-    "  rules/owedpins.h, prefix owd (free at 1501749).",
+    "  rules/seams/owedpins.h, prefix owd (free at 1501749).",
     "  FIFTEEN FILE PATCHES over five files: (1) the",
     "  lance printed cells the R780 boundary owed -",
     "  the lengths 10/12/14 feet and the 1-foot",
@@ -1048,7 +1048,7 @@
       "file": "rules/ua/uaappends.h",
       "note": "the R406 messy-reads boundary closes - the stat lines pin in deitylines.h, the prose alone stays open",
       "from": "// the scan-clean stat-line numerics\n// pin; the messy reads stay open\n// (the six class/level lines, the\n// MOVE values, the S/I/W/D/C/CH/CM\n// stat lines, the prose).",
-      "to": "// the scan-clean stat-line numerics\n// pin; the R783 round pins the messy\n// reads (the class/level lines, the\n// MOVE values, the S/I/W/D/C/CH/CM\n// stat lines) in rules/deitylines.h;\n// the prose alone stays open."
+      "to": "// the scan-clean stat-line numerics\n// pin; the R783 round pins the messy\n// reads (the class/level lines, the\n// MOVE values, the S/I/W/D/C/CH/CM\n// stat lines) in rules/seams/deitylines.h;\n// the prose alone stays open."
     }
   ]
 }

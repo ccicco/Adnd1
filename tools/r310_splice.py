@@ -3,7 +3,7 @@
 # subsection pinned (the LAST R307 DMG open
 # item paid - the dmg ledger clears).
 #
-# The pin (rules/sage.h, the grenade.h
+# The pin (rules/dmg/sage.h, the grenade.h
 # pattern): the fields-count table - 6 dice
 # bands; the SAGE FIELDS OF STUDY - 7 fields
 # carrying 68 special knowledge categories
@@ -24,7 +24,7 @@
 # free-spread thresholds, the 51-100 unknown
 # band at half cost).
 #
-#   (a) rules/sage.h - CREATED.
+#   (a) rules/dmg/sage.h - CREATED.
 #   (b) regtest.cpp - the include line.
 #   (c) regtest.cpp - the R310 battery audit
 #       (the battery census 233 -> 234): every
@@ -362,10 +362,10 @@ def _calls_in(text):
         out.add(_rest[:_j])
     return out
 
-# ---- (a) rules/sage.h CREATED ----
+# ---- (a) rules/dmg/sage.h CREATED ----
 SB = NL.join(
     ['// ===========================================================================',
-     '// Adnd1 - rules/sage.h',
+     '// Adnd1 - rules/dmg/sage.h',
      '// The sage subsection (R310).',
      '//',
      '// The DMG SAGE subsection (upload line 2110):',
@@ -981,7 +981,7 @@ SB = NL.join(
 clean(SB, 78)
 assert Q not in SB, 'apostrophe in header'
 
-p = 'rules/sage.h'
+p = 'rules/dmg/sage.h'
 if os.path.exists(os.path.join(ROOT, p)):
     s = rd(p)
     if 'inline int sageFieldCount() {' in s:
@@ -1012,18 +1012,18 @@ assert len(applied) + len(already) == 1, 'patch a count wrong'
 
 # ---- (b) regtest.cpp: the include line ----
 INC_OLD = NL.join([
-    '#include "rules/hirelings.h"  // R309: the hirelings cost tables',
+    '#include "rules/dmg/hirelings.h"  // R309: the hirelings cost tables',
 ])
 INC_NEW = NL.join([
-    '#include "rules/hirelings.h"  // R309: the hirelings cost tables',
-    '#include "rules/sage.h"  // R310: the sage subsection',
+    '#include "rules/dmg/hirelings.h"  // R309: the hirelings cost tables',
+    '#include "rules/dmg/sage.h"  // R310: the sage subsection',
 ])
 clean(INC_OLD, 76)
 clean(INC_NEW, 76)
 
 p = 'regtest.cpp'
 s = rd(p)
-if '#include "rules/sage.h"' in s:
+if '#include "rules/dmg/sage.h"' in s:
     already.append('regtest.cpp: the include line')
 else:
     assert s.count(INC_OLD) == 1, 'include anchor not unique'
@@ -1033,8 +1033,8 @@ else:
     applied.append('regtest.cpp: the include line')
 
 s = rd(p)
-assert s.count('#include "rules/sage.h"') == 1, 'patch b include'
-assert s.count('#include "rules/hirelings.h"') == 1, 'patch b anchor'
+assert s.count('#include "rules/dmg/sage.h"') == 1, 'patch b include'
+assert s.count('#include "rules/dmg/hirelings.h"') == 1, 'patch b anchor'
 assert len(applied) + len(already) == 2, 'patch b count wrong'
 
 # ---- (c) regtest.cpp: the audit block ----
@@ -1046,7 +1046,7 @@ RT_TAIL = NL.join([
 ])
 RT_AUD = NL.join(
     ['    // ---- R310: the sage subsection audit ----',
-     '    // The DMG SAGE subsection (rules/sage.h)',
+     '    // The DMG SAGE subsection (rules/dmg/sage.h)',
      '    // walked cell for cell against this local',
      '    // ground truth: the fields-count bands, the',
      '    // seven fields with their 68 special',
@@ -1443,7 +1443,7 @@ for _t in (RT_OLD, RT_NEW, RT_AUD):
             assert BS not in _ln, 'stray backslash in audit'
 _calls = _calls_in(RT_AUD)
 assert len(_calls) == 58, 'audit call coverage'
-_hx = _accs(rd('rules/sage.h'))
+_hx = _accs(rd('rules/dmg/sage.h'))
 assert _calls <= set(_hx), 'audit calls unknown accessor'
 
 p = 'regtest.cpp'
@@ -1465,7 +1465,7 @@ assert s.count('audit: bad') == 234, 'patch c census wrong'
 assert s.count('R310 sage subsection audit') == 1, 'c label'
 assert s.count('R309 hirelings cost tables audit') == 1, 'c r309 tail'
 assert s.count('R227: the wis mental save wiring audit') == 1, 'c head'
-assert s.count('rules/sage.h') == 2, 'c references'
+assert s.count('rules/dmg/sage.h') == 2, 'c references'
 assert s.count('{') == s.count('}'), 'rt brace balance'
 assert s.count('(') == s.count(')'), 'rt paren balance'
 assert len(applied) + len(already) == 3, 'patch c count wrong'
@@ -1481,7 +1481,7 @@ CH_NEW = NL.join([
     '',
     'R310 the sage subsection pin (the',
     'last R307 open box paid - the dmg',
-    'ledger clears): rules/sage.h (the',
+    'ledger clears): rules/dmg/sage.h (the',
     'grenade.h pattern): the',
     'fields-count table (6 dice bands);',
     'the fields of study - 7 fields',
@@ -1554,7 +1554,7 @@ BX_OLD = NL.join([
 BX_NEW = NL.join([
     '- [x] **The sage subsection (upload',
     '      line 2110) - PINNED R310:**',
-    '      rules/sage.h (the grenade.h',
+    '      rules/dmg/sage.h (the grenade.h',
     '      pattern): the fields-count',
     '      table - 6 dice bands; the',
     '      fields of study - 7 fields',

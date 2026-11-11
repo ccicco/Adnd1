@@ -1,6 +1,6 @@
     // ---- R300a: the equipment cost columns seam audit ----
     // The printed BASIC EQUIPMENT AND SUPPLIES COSTS tables
-    // (rules/equipcosts.h) walked cell for cell against this
+    // (rules/phb/equipcosts.h) walked cell for cell against this
     // local ground truth, the clamps, the coin-unit identity
     // (exactly one of the gold and silver columns nonzero on
     // every arms row), the six silver ammo rows and the

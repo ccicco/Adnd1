@@ -98,7 +98,7 @@ else:
 '// acrobat as-thief-plus row. The weapon',
 '// and oil/poison columns of the ten',
 '// landed classes ride the R198/R199',
-'// pins (rules/weapontables.h) - not',
+'// pins (rules/phb/weapontables.h) - not',
 '// re-pinned here.',
 '//',
 '// Pin-era pattern (R322): pinned data',

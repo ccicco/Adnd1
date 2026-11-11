@@ -5,7 +5,7 @@
 # a multi-class combination. The dual-class runtime (the
 # human class change) stays the next arc box.
 #
-# The engine seam in rules/multiclass.h (plain ints - the
+# The engine seam in rules/phb/multiclass.h (plain ints - the
 # R230 evaluable-subset convention): the combo bit count,
 # the ordered bit scan (the fighter bit first - the
 # primary-class order), and the bit -> base-class /
@@ -44,7 +44,7 @@
 
 import sys
 
-MC   = 'rules/multiclass.h'
+MC   = 'rules/phb/multiclass.h'
 PAR  = 'game/party.h'
 APP  = 'game/appstate.h'
 AD   = 'adnd1.cpp'
@@ -165,11 +165,11 @@ mc_new = [
 
 # ---- 2: party.h include ----
 inc_old = [
-    '#include "../rules/subclassgates.h"  // R231: the subclass leveling seam',
+    '#include "../rules/phb/subclassgates.h"  // R231: the subclass leveling seam',
 ]
 inc_new = [
-    '#include "../rules/subclassgates.h"  // R231: the subclass leveling seam',
-    '#include "../rules/multiclass.h"  // R233: the multi-class engine',
+    '#include "../rules/phb/subclassgates.h"  // R231: the subclass leveling seam',
+    '#include "../rules/phb/multiclass.h"  // R233: the multi-class engine',
 ]
 
 # ---- 3: the Character field ----
