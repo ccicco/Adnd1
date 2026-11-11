@@ -8,7 +8,7 @@
 # and the RANDOM LANGUAGE DETERMINATION TABLE
 # (100 faces, 55 kinds: brownie through xorn,
 # 86-00 human foreign or other). Patches: 4
-# (new rules/npcbody.h, regtest include, audit
+# (new rules/dmg/npcbody.h, regtest include, audit
 # block, gap-report log entry). Census 126 -> 127.
 
 BS = chr(92)
@@ -54,12 +54,12 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/npcbody.h - the new header
+# Patch 1: rules/dmg/npcbody.h - the new header
 # ---------------------------------------------------------------------------
 
 hdr_lines = [
 '// ====================================================================',
-'// Adnd1 - rules/npcbody.h',
+'// Adnd1 - rules/dmg/npcbody.h',
 '// R211: the NPC height and weight tables',
 '// and the language determination (DMG',
 '// pp.115-116, the personae chapter tail) -',
@@ -393,7 +393,7 @@ hdr_lines = [
 ]
 hdr = NL.join(hdr_lines) + NL
 
-patch('rules/npcbody.h',
+patch('rules/dmg/npcbody.h',
       'R211: the NPC height and weight tables',
       None,
       hdr)
@@ -404,10 +404,10 @@ patch('rules/npcbody.h',
 # Patch 2: regtest.cpp - the include
 # ---------------------------------------------------------------------------
 
-old2 = '#include "rules/npctraits.h"  // R210: pp.115-116 NPC personae traits'
+old2 = '#include "rules/dmg/npctraits.h"  // R210: pp.115-116 NPC personae traits'
 
-new2 = ('#include "rules/npctraits.h"  // R210: pp.115-116 NPC personae traits'
-        + NL + '#include "rules/npcbody.h"  // R211: pp.115-116 height, weight, languages')
+new2 = ('#include "rules/dmg/npctraits.h"  // R210: pp.115-116 NPC personae traits'
+        + NL + '#include "rules/dmg/npcbody.h"  // R211: pp.115-116 height, weight, languages')
 
 patch('regtest.cpp',
       'R211: pp.115-116 height, weight, languages',
@@ -691,7 +691,7 @@ log_lines = [
 'tables and the language determination',
 '(DMG pp.115-116, the personae chapter',
 'tail) - a seam with zero prior coverage.',
-'rules/npcbody.h (the grenade.h pattern):',
+'rules/dmg/npcbody.h (the grenade.h pattern):',
 'the MALES and FEMALES height/weight',
 'tables (7 races: the averages, the under',
 'and over dice - the print range cells',

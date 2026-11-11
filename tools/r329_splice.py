@@ -71,21 +71,21 @@ assert s.count('R327 landed') == 1, 'a r327 kept'
 assert s.count('## Knowledge maintenance') == 1, 'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
-# ---- (b) NEW rules/paladin.h ----
-PL = 'rules/paladin.h'
+# ---- (b) NEW rules/ua/paladin.h ----
+PL = 'rules/ua/paladin.h'
 if os.path.exists(PL) and 'R329' in rd(PL):
     already.append('paladin.h: the pins')
 else:
     HDR = NL.join([
     '// ===========================================================================',
-    '// Adnd1 - rules/paladin.h',
+    '// Adnd1 - rules/ua/paladin.h',
     '// The UA paladin re-parented under the',
     '// cavalier (p. 16) pins (R329).',
     '//',
     '// Pin-era pattern (R322): pinned data only - no engine site exists. The',
     '// paladin is no longer a sub-class of the fighter but of the cavalier:',
     '// the requisites, the social-station gate and the 0-level track delegate',
-    '// to the R328 pins (rules/cavalier.h); the PHB powers ride the R184',
+    '// to the R328 pins (rules/ua/cavalier.h); the PHB powers ride the R184',
     '// spell layers. The book\'s second column here is OCR-scrambled in the',
     '// extract - the 0-level and no-prime reads are fragment-verified (the',
     '// oracle documents each fragment); the retainer cross-reference is the',
@@ -235,7 +235,7 @@ else:
     ])
     CLOSE = NL.join([
     '      - CLOSED R329: the pin round',
-    '      (rules/paladin.h): the',
+    '      (rules/ua/paladin.h): the',
     '      re-parenting (cavalier',
     '      sub-class, no longer',
     '      fighter), the minima (the',
@@ -277,11 +277,11 @@ s = rd(RT)
 if 'R329 paladin reparent pin audit' in s:
     already.append('regtest.cpp: the R329 audit')
 else:
-    INC_ANCH = ('#include "rules/cavalier.h"'
+    INC_ANCH = ('#include "rules/ua/cavalier.h"'
                 '  // R328: the UA cavalier')
     INC_NEW = NL.join([
     INC_ANCH,
-    '#include "rules/paladin.h"'
+    '#include "rules/ua/paladin.h"'
     '  // R329: the paladin reparent'])
     AUD_ANCH = ('    // ---- R227: the wis mental'
                 ' save wiring audit ----')
@@ -424,7 +424,7 @@ assert s.count(
 assert s.count('R227: the wis mental save') == 1, \
     'd r227 kept'
 assert s.count(
-    '#include "rules/paladin.h"') == 1, \
+    '#include "rules/ua/paladin.h"') == 1, \
     'd include'
 assert len(applied) + len(already) == 4, 'd count'
 

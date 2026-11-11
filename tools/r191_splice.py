@@ -14,7 +14,7 @@
 # 8, studded 7, ring 7, scale 6, chain 5,
 # splinted 4, banded 4, plate 3.
 #
-# rules/armorratings.h is CREATED: the printed
+# rules/phb/armorratings.h is CREATED: the printed
 # composite ladder (11 rows: none 10 through
 # plate 3 with every printed combination), the
 # shield step (one class better), the magic rule
@@ -83,7 +83,7 @@ def create(path, marker, content):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/armorratings.h CREATED
+# Patch 1: rules/phb/armorratings.h CREATED
 # ---------------------------------------------------------------------------
 
 # the printed ARMOR CLASS TABLE, the per-type
@@ -106,7 +106,7 @@ t = [
 hdr = []
 a = hdr.append
 
-a('// rules/armorratings.h - the Armor Class table')
+a('// rules/phb/armorratings.h - the Armor Class table')
 a('// (the PHB COMBAT section ARMOR CLASS TABLE, R191).')
 a('//')
 a('// The printed ratings, every row: none 10,')
@@ -210,7 +210,7 @@ a('} // namespace rules')
 a('')
 a('#endif // RULES_ARMORRATINGS_H')
 
-create('rules/armorratings.h',
+create('rules/phb/armorratings.h',
        '#ifndef RULES_ARMORRATINGS_H',
        NL.join(hdr) + NL)
 
@@ -242,10 +242,10 @@ patch('items/items.h',
 # ---------------------------------------------------------------------------
 
 patch('regtest.cpp',
-      'rules/armorratings.h',
-      '#include "rules/startmoney.h"  // R190: the starting money by class',
-      '#include "rules/startmoney.h"  // R190: the starting money by class'
-      + NL + '#include "rules/armorratings.h"  // R191: the armor class ratings')
+      'rules/phb/armorratings.h',
+      '#include "rules/phb/startmoney.h"  // R190: the starting money by class',
+      '#include "rules/phb/startmoney.h"  // R190: the starting money by class'
+      + NL + '#include "rules/phb/armorratings.h"  // R191: the armor class ratings')
 
 # ---------------------------------------------------------------------------
 # Patch 5: regtest.cpp - the R191 battery audit (census 108)
@@ -371,7 +371,7 @@ box_old = ('- [ ] **Armor Class table (the ARMOR section)** -'
            + NL + '      items armor rows (R101 pinned the plate kit).')
 
 box_new = ('- [x] **Armor Class table (the ARMOR section) -'
-           + NL + '      PINNED R191:** rules/armorratings.h CREATED -'
+           + NL + '      PINNED R191:** rules/phb/armorratings.h CREATED -'
            + NL + '      the printed ARMOR CLASS TABLE ladder (none 10,'
            + NL + '      shield only 9, through plate mail + shield 2),'
            + NL + '      the shield step, the magic rule (each +1'
@@ -401,7 +401,7 @@ else:
     assert t2.count(box_old) == 0, 'R191 box old text lingers'
 
 patch('tools/phb_gap_report.md',
-      'PINNED R191:** rules/armorratings.h CREATED',
+      'PINNED R191:** rules/phb/armorratings.h CREATED',
       box_old,
       box_new)
 
@@ -416,7 +416,7 @@ patch('tools/dmg_gap_report.md',
       '(pcMonthlySupportCost). New R190 battery audit; census'
       + NL + '107. Next: the gap report names the next round.'
       + NL + 'R191 landed the armor class ratings:'
-      + NL + 'rules/armorratings.h CREATED (the printed ARMOR'
+      + NL + 'rules/phb/armorratings.h CREATED (the printed ARMOR'
       + NL + 'CLASS TABLE ladder, the shield step, the magic rule'
       + NL + 'and the printed notes). The verify found ONE'
       + NL + 'divergence: the engine None armor row read 9 against'
@@ -433,7 +433,7 @@ patch('tools/dmg_gap_report.md',
 assert applied + already == 7, 'patch count drift: ' + str(applied) + ' + ' + str(already)
 print('R191 splice: ALL OK (applied %d, already %d)' % (applied, already))
 print('R191 note: 7 patches; census 108 (one new audit);')
-print('real gate: md5sum rules/armorratings.h')
+print('real gate: md5sum rules/phb/armorratings.h')
 print('commit: R191: the armor class ratings pinned - the ladder,')
 print('the magic rule and the None repin (census 108)')
 

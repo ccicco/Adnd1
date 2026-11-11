@@ -16,7 +16,7 @@
 # The row NAMES were already pinned by the R122
 # line-diff audit; this round pins the sale
 # values, band edges and the value conventions.
-# Patches: 4 (new rules/specart.h, the regtest
+# Patches: 4 (new rules/dmg/specart.h, the regtest
 # include, the audit block, the dmg-gap-report
 # log entry). Census 158 -> 159.
 #
@@ -24,7 +24,7 @@
 
 import sys
 
-SA   = 'rules/specart.h'
+SA   = 'rules/dmg/specart.h'
 REG  = 'regtest.cpp'
 GAP  = 'tools/dmg_gap_report.md'
 
@@ -43,7 +43,7 @@ if t.count('audit: bad ') != 158 and t.count('audit: bad ') != 159:
 # ---- the new header ----
 hdr_lines = [
     '// ====================================================================',
-    '// Adnd1 - rules/specart.h',
+    '// Adnd1 - rules/dmg/specart.h',
     '// R240: the III.E Special artifacts pins',
     '// (DMG p.130-131) - the g.p. sale value',
     '// table that closes the III.E magic item',
@@ -182,11 +182,11 @@ hdr_text = NL.join(hdr_lines) + NL
 
 # ---- the regtest include ----
 inc_old = [
-    '#include "rules/miscmagic5.h"  // R239: p.130 the misc table 5 pins',
+    '#include "rules/dmg/miscmagic5.h"  // R239: p.130 the misc table 5 pins',
 ]
 inc_new = [
-    '#include "rules/miscmagic5.h"  // R239: p.130 the misc table 5 pins',
-    '#include "rules/specart.h"  // R240: p.130-131 the III.E Special artifacts pins',
+    '#include "rules/dmg/miscmagic5.h"  // R239: p.130 the misc table 5 pins',
+    '#include "rules/dmg/specart.h"  // R240: p.130-131 the III.E Special artifacts pins',
 ]
 
 # ---- the R240 audit block ----
@@ -301,7 +301,7 @@ gap_new = [
     'block, TABLE (III.E.) Special.: 29 rows',
     'in kArtifacts order, the Axe of the',
     'Dwarvish Lords 01 through the Wand of',
-    'Orcus 00 (band 100). rules/specart.h',
+    'Orcus 00 (band 100). rules/dmg/specart.h',
     '(the grenade.h pattern): the printed',
     'sale values (26 single-value rows,',
     'saSaleGp); the Orb of the Dragonkind',
@@ -340,7 +340,7 @@ try:
     if marker in t:
         already += 1
     else:
-        print('R240 FAIL: rules/specart.h exists without the marker')
+        print('R240 FAIL: rules/dmg/specart.h exists without the marker')
         sys.exit(1)
 except IOError:
     with open(SA, 'w') as f:
@@ -380,7 +380,7 @@ if applied + already == 4:
     if t.count('R240 special artifacts pins audit') != 1:
         print('R240 FAIL: the R240 audit line must appear once')
         sys.exit(1)
-    if t.count('rules/specart.h') != 1:
+    if t.count('rules/dmg/specart.h') != 1:
         print('R240 FAIL: the specart include must appear once')
         sys.exit(1)
     g = open(GAP).read()

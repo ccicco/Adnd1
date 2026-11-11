@@ -38,7 +38,7 @@
 # 100 gp or fraction one day, no-XP base
 # 200 gp, assassin poison 9th level, the
 # delusion failure option 5-20 percent).
-# Patches: 4 (new rules/magres.h, regtest
+# Patches: 4 (new rules/dmg/magres.h, regtest
 # include, audit block, gap-report log
 # entry). Census 131 -> 132.
 
@@ -85,12 +85,12 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/magres.h - the new header
+# Patch 1: rules/dmg/magres.h - the new header
 # ---------------------------------------------------------------------------
 
 hdr_lines = [
 '// ====================================================================',
-'// Adnd1 - rules/magres.h',
+'// Adnd1 - rules/dmg/magres.h',
 '// R216: the magical research pins (DMG',
 '// pp.114-119) - the holy/unholy water',
 '// receptacles, the spell research',
@@ -437,7 +437,7 @@ hdr_lines = [
 ]
 hdr = NL.join(hdr_lines) + NL
 
-patch('rules/magres.h',
+patch('rules/dmg/magres.h',
       'R216: the magical research pins',
       None,
       hdr)
@@ -448,10 +448,10 @@ patch('rules/magres.h',
 # Patch 2: regtest.cpp - the include
 # ---------------------------------------------------------------------------
 
-old2 = '#include "rules/conduct.h"  // R215: pp.110-112 conducting the game pins'
+old2 = '#include "rules/dmg/conduct.h"  // R215: pp.110-112 conducting the game pins'
 
-new2 = ('#include "rules/conduct.h"  // R215: pp.110-112 conducting the game pins'
-        + NL + '#include "rules/magres.h"  // R216: pp.114-119 magical research pins')
+new2 = ('#include "rules/dmg/conduct.h"  // R215: pp.110-112 conducting the game pins'
+        + NL + '#include "rules/dmg/magres.h"  // R216: pp.114-119 magical research pins')
 
 patch('regtest.cpp',
       'R216: pp.114-119 magical research pins',
@@ -575,7 +575,7 @@ log_lines = [
 '(DMG pp.114-119) - the holy/unholy',
 'water receptacles, the spell research',
 'economics, the manufacture gates and',
-'the potion rules. rules/magres.h (the',
+'the potion rules. rules/dmg/magres.h (the',
 'grenade.h pattern): the five metals',
 '(copper, silver, electrum, gold,',
 'platinum) with vial capacity 6/10/18/',

@@ -22,7 +22,7 @@
 # table). Keyed to the 35 die bands of the
 # engine III.E.5 table; the row VALUES were
 # already pinned by R122.
-# Patches: 4 (new rules/miscmagic5.h, the
+# Patches: 4 (new rules/dmg/miscmagic5.h, the
 # regtest include, the audit block, the
 # dmg-gap-report log entry). Census 157 -> 158.
 #
@@ -30,7 +30,7 @@
 
 import sys
 
-MM5  = 'rules/miscmagic5.h'
+MM5  = 'rules/dmg/miscmagic5.h'
 REG  = 'regtest.cpp'
 GAP  = 'tools/dmg_gap_report.md'
 
@@ -49,7 +49,7 @@ if t.count('audit: bad ') != 157 and t.count('audit: bad ') != 158:
 # ---- the new header ----
 hdr_lines = [
     '// ====================================================================',
-    '// Adnd1 - rules/miscmagic5.h',
+    '// Adnd1 - rules/dmg/miscmagic5.h',
     '// R239: the III.E table 5 footnote pins',
     '// (DMG p.130) - the class marks that frame',
     '// TABLE (III.E.) 5 of the miscellaneous',
@@ -198,11 +198,11 @@ hdr_text = NL.join(hdr_lines) + NL
 
 # ---- the regtest include ----
 inc_old = [
-    '#include "rules/miscmagic4.h"  // R238: p.129-130 the misc table 4 pins',
+    '#include "rules/dmg/miscmagic4.h"  // R238: p.129-130 the misc table 4 pins',
 ]
 inc_new = [
-    '#include "rules/miscmagic4.h"  // R238: p.129-130 the misc table 4 pins',
-    '#include "rules/miscmagic5.h"  // R239: p.130 the misc table 5 pins',
+    '#include "rules/dmg/miscmagic4.h"  // R238: p.129-130 the misc table 4 pins',
+    '#include "rules/dmg/miscmagic5.h"  // R239: p.130 the misc table 5 pins',
 ]
 
 # ---- the R239 audit ----
@@ -343,7 +343,7 @@ gap_new = [
     'pins (DMG p.130, upload lines ~9898-9915)',
     '- the class marks that frame TABLE',
     '(III.E.) 5, the LAST of the miscellaneous',
-    'magic sub-tables. rules/miscmagic5.h (the',
+    'magic sub-tables. rules/dmg/miscmagic5.h (the',
     'grenade.h pattern), keyed to the 35 die',
     'bands of the engine III.E.5 table in',
     'kMisc5 order: the (M) marks (the Robe of',
@@ -390,7 +390,7 @@ try:
     if marker in t:
         already += 1
     else:
-        print('R239 FAIL: rules/miscmagic5.h exists without the marker')
+        print('R239 FAIL: rules/dmg/miscmagic5.h exists without the marker')
         sys.exit(1)
 except IOError:
     with open(MM5, 'w') as f:
@@ -430,7 +430,7 @@ if applied + already == 4:
     if t.count('R239 misc table 5 pins audit') != 1:
         print('R239 FAIL: the R239 audit line must appear once')
         sys.exit(1)
-    if t.count('rules/miscmagic5.h') != 1:
+    if t.count('rules/dmg/miscmagic5.h') != 1:
         print('R239 FAIL: the miscmagic5 include must appear once')
         sys.exit(1)
     g = open(GAP).read()

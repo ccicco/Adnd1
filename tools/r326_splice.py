@@ -31,7 +31,7 @@ SEED_ENTRY = NL.join([
 '- R325 landed 2026-10-11: commit',
 '  2592126, census 252, the UA',
 '  Race Table II caller round',
-'  (rules/subracecap.h): the',
+'  (rules/ua/subracecap.h): the',
 '  uaLevelCap fold at the gainXp',
 '  queue and the trainer, the',
 '  uaSubrace field with its save',
@@ -72,8 +72,8 @@ assert s.count('R324 landed') == 1, 'a r324 kept'
 assert s.count('## Knowledge maintenance') == 1, 'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
-# ---- (b) rules/subracecap.h: the female leg ----
-SC = 'rules/subracecap.h'
+# ---- (b) rules/ua/subracecap.h: the female leg ----
+SC = 'rules/ua/subracecap.h'
 s = rd(SC)
 if 'int female = 0' in s:
     already.append('subracecap.h: the female leg')
@@ -161,7 +161,7 @@ else:
                 '   // R154: Race Tables I-III')
     INC_NEW = NL.join([
     INC_ANCH,
-    '#include "../rules/subraces.h"'
+    '#include "../rules/ua/subraces.h"'
     '  // R326: the sub-race picker'])
     ENUM_ANCH = ('    CR_RACE,'
                  '    // R154: the racial stock stage')

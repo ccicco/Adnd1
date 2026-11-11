@@ -4,7 +4,7 @@
 # attack saving throw adjustment ladder had
 # ZERO callers: spellSaveModWis existed but no
 # save roll ever paid it. This round wires it:
-#   - rules/wisdom.h gains wisMentalSaveAdj,
+#   - rules/phb/wisdom.h gains wisMentalSaveAdj,
 #     the mental-form gate seam (0 on
 #     non-mental forms);
 #   - spells::spellSaveModWis delegates to it;
@@ -64,7 +64,7 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/wisdom.h - the mental-form gate seam
+# Patch 1: rules/phb/wisdom.h - the mental-form gate seam
 # ---------------------------------------------------------------------------
 
 old1 = ('    return  4;   // 18' + NL + '}' + NL + NL +
@@ -91,7 +91,7 @@ new1 = ('    return  4;   // 18' + NL + '}' + NL + NL +
         '}' + NL + NL +
         '// The Table I high-circle gates: the minimum')
 
-patch('rules/wisdom.h',
+patch('rules/phb/wisdom.h',
       'R227: the mental-form gate - the Wisdom',
       old1,
       new1)
@@ -107,7 +107,7 @@ old2 = ('int spellSaveModWis(SpellId id, uint8_t wis) {' + NL +
 
 new2 = ('int spellSaveModWis(SpellId id, uint8_t wis) {' + NL +
         '    // R227: delegates to the mental-form gate' + NL +
-        '    // seam (rules/wisdom.h) - the same' + NL +
+        '    // seam (rules/phb/wisdom.h) - the same' + NL +
         '    // ladder, now wired into the spelleffects' + NL +
         '    // save chokepoint.' + NL +
         '    return rules::wisMentalSaveAdj(wis, spellIsMentalForm(id));' + NL +
@@ -278,7 +278,7 @@ log_lines = [
     'arc boxes:',
     '',
     '- [x] R227 the Wisdom Table I save wire - WIRED:',
-    '      rules/wisdom.h gains the mental-form',
+    '      rules/phb/wisdom.h gains the mental-form',
     '      gate seam wisMentalSaveAdj (the gated',
     '      ladder, flat 0 on non-mental forms);',
     '      spells::spellSaveModWis delegates to it',

@@ -67,7 +67,7 @@
  ],
  "include_after": "#include \"rules/dragon/issue001_ives_tables.h\"  // R887: the Ives attribute tables, the Dragon opener",
  "include_comment": "the Dragon small-variant set",
- "header_file": "rules/drg.h",
+ "header_file": "rules/dragon/issue001_small_variants.h",
  "audit_file": "rules/audits/r888_batch.h",
  "audit_label": "R888 Dragon small variants audit",
  "audit_anchor": "#include \"rules/audits/r887_batch.h\"  // R887: R887 Ives attribute audit",

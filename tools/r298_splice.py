@@ -16,7 +16,7 @@
 # five thief adjustment columns for scores 9
 # through 18. This round pins them:
 #
-#   (a) rules/thieffunc.h CREATED - the
+#   (a) rules/phb/thieffunc.h CREATED - the
 #       printed take table (pinned in TENTHS
 #       of a percent: the climb walls column
 #       carries a decimal from the 11th level,
@@ -86,10 +86,10 @@ def clean(s, limit):
         assert all(ord(c) < 128 for c in ln), 'non-ascii line'
         assert len(ln) <= limit, 'line too long: ' + ln
 
-# ---- (a) rules/thieffunc.h CREATED ----
+# ---- (a) rules/phb/thieffunc.h CREATED ----
 HEADER = NL.join([
     '// ====================================================================',
-    '// Adnd1 - rules/thieffunc.h',
+    '// Adnd1 - rules/phb/thieffunc.h',
     '// R298: the PHB Thief Function Take table',
     '// (the THIEF section, Premium 1e OCR',
     '// upload line 1620) and DEXTERITY TABLE II',
@@ -306,7 +306,7 @@ HEADER = NL.join([
 ])
 clean(HEADER, 100)
 
-p = 'rules/thieffunc.h'
+p = 'rules/phb/thieffunc.h'
 if os.path.exists(os.path.join(ROOT, p)):
     s = rd(p)
     if 'R298: the PHB Thief Function Take table' in s:
@@ -322,10 +322,10 @@ assert s.count('inline int thf') == 12, 'accessor count wrong'
 assert len(applied) + len(already) == 1, 'patch a count wrong'
 
 # ---- (b) regtest.cpp: the include + the audit block ----
-REG_INC_OLD = '#include "rules/weaponprof.h"  // R297: the PHB Weapon Proficiency Table'
+REG_INC_OLD = '#include "rules/phb/weaponprof.h"  // R297: the PHB Weapon Proficiency Table'
 REG_INC_NEW = NL.join([
-    '#include "rules/weaponprof.h"  // R297: the PHB Weapon Proficiency Table',
-    '#include "rules/thieffunc.h"  // R298: the thief function take table and DEX Table II',
+    '#include "rules/phb/weaponprof.h"  // R297: the PHB Weapon Proficiency Table',
+    '#include "rules/phb/thieffunc.h"  // R298: the thief function take table and DEX Table II',
 ])
 AUDIT = NL.join([
     '    // ---- R298: the thief function take table pins audit ----',
@@ -513,7 +513,7 @@ else:
 s = rd(p)
 assert s.count('R298 thief function take table pins audit') == 1, 'patch b failed'
 assert s.count('audit: bad') == 215, 'census is not 215'
-assert s.count('#include "rules/thieffunc.h"') == 1, 'patch b include'
+assert s.count('#include "rules/phb/thieffunc.h"') == 1, 'patch b include'
 assert 'R297 weapon proficiency table pins audit' in s, 'patch b ate R297'
 assert '// ---- R227: the wis mental save wiring audit ----' in s, 'patch b ate R227'
 assert len(applied) + len(already) == 2, 'patch b count wrong'
@@ -544,7 +544,7 @@ ITEM_NEW = NL.join([
     '- [x] **Thief Function Take table and DEXTERITY',
     '      TABLE II (the THIEF and DEXTERITY',
     '      sections) - PINNED R298:**',
-    '      rules/thieffunc.h CREATED (a DATA-ONLY',
+    '      rules/phb/thieffunc.h CREATED (a DATA-ONLY',
     '      pin, the R186 poetics precedent - the',
     '      engine performs no thief rolls; the',
     '      seam waits for a future roll round) -',
@@ -622,6 +622,6 @@ print('R298 splice: ALL OK (applied '
       + str(len(already)) + ')')
 print('R298 note: 3 patches; the battery census 214 -> 215;')
 print('the phb ledger now holds ZERO open items')
-print('real gate: md5sum rules/thieffunc.h')
+print('real gate: md5sum rules/phb/thieffunc.h')
 print('commit: R298: the thief function take table and DEX Table II pinned (data-only, census 215)')
 

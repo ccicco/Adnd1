@@ -14,7 +14,7 @@
 # residents, tithe the religious levy, toll
 # for road/bridge/ferry use), then gives the
 # example system this round pins:
-#   - rules/taxation.h (new file, the
+#   - rules/dmg/taxation.h (new file, the
 #     grenade.h pattern: pure data + helpers,
 #     header-only)
 #   - the import duty: 1 percent on normal
@@ -110,12 +110,12 @@ def newfile(path, marker, text):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/taxation.h (new file)
+# Patch 1: rules/dmg/taxation.h (new file)
 # ---------------------------------------------------------------------------
 
 h = [
     '// ====================================================================',
-    '// Adnd1 - rules/taxation.h',
+    '// Adnd1 - rules/dmg/taxation.h',
     '// R207: the town taxation system (DMG p.90,',
     '// DUTIES, EXCISES, FEES, TARIFFS, TAXES,',
     '// TITHES, AND TOLLS) - the print worked',
@@ -277,7 +277,7 @@ h = [
     '',
 ]
 
-newfile('rules/taxation.h',
+newfile('rules/dmg/taxation.h',
         'R207: the town taxation system (DMG p.90,',
         NL.join(h))
 
@@ -285,11 +285,11 @@ newfile('rules/taxation.h',
 # Patch 2: regtest.cpp - the include
 # ---------------------------------------------------------------------------
 
-old2 = ('#include "rules/pursuit.h"  // R206: pp.67-69 pursuit and evasion'
+old2 = ('#include "rules/dmg/pursuit.h"  // R206: pp.67-69 pursuit and evasion'
         + NL + '#include <cstdio>')
 
-new2 = ('#include "rules/pursuit.h"  // R206: pp.67-69 pursuit and evasion'
-        + NL + '#include "rules/taxation.h"  // R207: p.90 the town taxation system'
+new2 = ('#include "rules/dmg/pursuit.h"  // R206: pp.67-69 pursuit and evasion'
+        + NL + '#include "rules/dmg/taxation.h"  // R207: p.90 the town taxation system'
         + NL + '#include <cstdio>')
 
 patch('regtest.cpp',
@@ -400,7 +400,7 @@ entry = (
     + NL + 'p.90, DUTIES, EXCISES, FEES, TARIFFS,'
     + NL + 'TAXES, TITHES, AND TOLLS) - the print'
     + NL + 'worked example town, a seam with zero'
-    + NL + 'prior coverage. rules/taxation.h (the'
+    + NL + 'prior coverage. rules/dmg/taxation.h (the'
     + NL + 'grenade.h pattern): the seven named tax'
     + NL + 'kinds defined in place; the import duty'
     + NL + '(1 percent, doubled for foreigners),'

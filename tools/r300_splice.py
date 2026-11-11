@@ -356,9 +356,9 @@ assert s.count('costGp') == 2, 'patch b field comment count wrong'
 assert len(applied) + len(already) == 2, 'patch b count wrong'
 
 # ---- (c) regtest.cpp: the include + the R300 audit pair ----
-REG_INC_OLD = '#include "rules/thieffunc.h"  // R298: the thief function take table and DEX Table II'
+REG_INC_OLD = '#include "rules/phb/thieffunc.h"  // R298: the thief function take table and DEX Table II'
 REG_INC_NEW = NL.join([
-    '#include "rules/thieffunc.h"  // R298: the thief function take table and DEX Table II',
+    '#include "rules/phb/thieffunc.h"  // R298: the thief function take table and DEX Table II',
     '#include "rules/equipcosts.h"  // R300: the equipment cost columns',
 ])
 SEAM_AUDIT = NL.join([

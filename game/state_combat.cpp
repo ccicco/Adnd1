@@ -1,6 +1,6 @@
 #include "appstate.h"
-#include "../rules/uwfight.h"  // R313: the underwater bars
-#include "../rules/comeliness.h"  // R400: the wandering gate
+#include "../rules/dmg/uwfight.h"  // R313: the underwater bars
+#include "../rules/ua/comeliness.h"  // R400: the wandering gate
 
 // ---- partyActors ----
 std::vector<ai::Actor> AppState::partyActors() const{
@@ -461,7 +461,7 @@ void AppState::kitNpc(ai::Actor& a, const dm::PartyMember& m){
         }
         // R297: the kit weapon is the chosen
         // proficiency (the PHB Weapon Proficiency
-        // Table - rules/weaponprof.h; the initial
+        // Table - rules/phb/weaponprof.h; the initial
         // and added slots size the full list at a
         // future choice round)
         a.profWeaponIds.push_back(a.weapon.id);

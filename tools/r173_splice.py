@@ -2,10 +2,10 @@
 # (DMG p.12) - the player character non-professional
 # skills: the 23-band SECONDARY SKILLS TABLE and the
 # when-to-use guidance for PC backgrounds. A new
-# header-only layer, rules/secondary.h (the grenade.h
+# header-only layer, rules/dmg/secondary.h (the grenade.h
 # pattern: the caller rolls and selects).
 #
-# (1) rules/secondary.h: the table cell by cell - the
+# (1) rules/dmg/secondary.h: the table cell by cell - the
 #     21 skills (Armorer 01-02 through Woodworker/
 #     cabinetmaker 65-67), the NO SKILL OF MEASURABLE
 #     WORTH band (68-85) and the ROLL TWICE IGNORING
@@ -99,10 +99,10 @@ def create(p, text, tag, marker):
     wr(p, text)
     applied.append(tag)
 
-# ---- patch 1: rules/secondary.h (new file) ----
+# ---- patch 1: rules/dmg/secondary.h (new file) ----
 p1_text = NL.join([
     "// ====================================================================",
-    "// Adnd1 - rules/secondary.h",
+    "// Adnd1 - rules/dmg/secondary.h",
     "// R173: Secondary skills (DMG p.12) - the player",
     "// character non-professional skills: the 23-band",
     "// SECONDARY SKILLS TABLE and the when-to-use",
@@ -254,16 +254,16 @@ p1_text = NL.join([
     "}  // namespace rules",
     "",
     ""])
-create("rules/secondary.h", p1_text,
-      "rules/secondary.h",
+create("rules/dmg/secondary.h", p1_text,
+      "rules/dmg/secondary.h",
       marker="R173: Secondary skills (DMG p.12)")
 assert len(applied) + len(already) == 1
 
 # ---- patch 2: the regtest include ----
-p2_old = '#include "rules/herbs.h"  // R172: p.220 appendix J herbs spices and medicinal vegetables'
+p2_old = '#include "rules/dmg/herbs.h"  // R172: p.220 appendix J herbs spices and medicinal vegetables'
 p2_new = NL.join([
-    '#include "rules/herbs.h"  // R172: p.220 appendix J herbs spices and medicinal vegetables',
-    '#include "rules/secondary.h"  // R173: p.12 secondary skills'])
+    '#include "rules/dmg/herbs.h"  // R172: p.220 appendix J herbs spices and medicinal vegetables',
+    '#include "rules/dmg/secondary.h"  // R173: p.12 secondary skills'])
 patch("regtest.cpp", p2_old, p2_new,
       "regtest.cpp: R173 include",
       marker="R173: p.12 secondary skills")
@@ -362,7 +362,7 @@ p4_new = NL.join([
     '(user-authorized). Census 90.',
     'R173 PINNED Secondary skills (DMG p.12) - the',
     'player character non-professional skills -',
-    'rules/secondary.h: the 23-band SECONDARY SKILLS',
+    'rules/dmg/secondary.h: the 23-band SECONDARY SKILLS',
     'TABLE cell by cell (the 21 named skills Armorer',
     '01-02 through Woodworker/cabinetmaker 65-67, the',
     'NO SKILL OF MEASURABLE WORTH band 68-85 and the',
@@ -387,11 +387,11 @@ p5_old = NL.join([
     '      when-to-use guidance for PC backgrounds.'])
 p5_new = NL.join([
     '- [x] **Secondary skills (p.12)** - PINNED R173:',
-    '      rules/secondary.h (the 23-band table cell by',
+    '      rules/dmg/secondary.h (the 23-band table cell by',
     '      cell; the when-to-use guidance).'])
 patch("tools/dmg_gap_report.md", p5_old, p5_new,
       "gap report: secondary skills box closed",
-      marker="rules/secondary.h (the 23-band table cell")
+      marker="rules/dmg/secondary.h (the 23-band table cell")
 assert len(applied) + len(already) == 5
 
 # ---- R173 fails/tail ----

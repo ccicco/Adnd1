@@ -68,14 +68,14 @@ assert s.count('R328 landed') == 1, 'a r328 kept'
 assert s.count('## Knowledge maintenance') == 1, 'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
-# ---- (b) NEW rules/hierophant.h ----
-HP = 'rules/hierophant.h'
+# ---- (b) NEW rules/ua/hierophant.h ----
+HP = 'rules/ua/hierophant.h'
 if os.path.exists(HP) and 'R330' in rd(HP):
     already.append('hierophant.h: the pins')
 else:
     HDR = NL.join([
     '// ===========================================================================',
-    '// Adnd1 - rules/hierophant.h',
+    '// Adnd1 - rules/ua/hierophant.h',
     '// The UA druid hierophant ladder',
     '// (pp. 16-18) pins (R330).',
     '//',
@@ -511,7 +511,7 @@ else:
     ])
     CLOSE = NL.join([
     '      - CLOSED R330: the pin round',
-    '      (rules/hierophant.h): the',
+    '      (rules/ua/hierophant.h): the',
     '      hierarchy (Great Druid 14th,',
     '      Grand Druid 15th with the',
     '      9 attendants and the 6',
@@ -557,11 +557,11 @@ s = rd(RT)
 if 'R330 druid hierophant pin audit' in s:
     already.append('regtest.cpp: the R330 audit')
 else:
-    INC_ANCH = ('#include "rules/paladin.h"'
+    INC_ANCH = ('#include "rules/ua/paladin.h"'
                 '  // R329: the paladin reparent')
     INC_NEW = NL.join([
     INC_ANCH,
-    '#include "rules/hierophant.h"'
+    '#include "rules/ua/hierophant.h"'
     '  // R330: the UA druid hierophant'])
     AUD_ANCH = ('    // ---- R227: the wis mental'
                 ' save wiring audit ----')
@@ -839,7 +839,7 @@ assert s.count(
 assert s.count('R227: the wis mental save') == 1, \
     'd r227 kept'
 assert s.count(
-    '#include "rules/hierophant.h"') == 1, \
+    '#include "rules/ua/hierophant.h"') == 1, \
     'd include'
 assert len(applied) + len(already) == 4, 'd count'
 

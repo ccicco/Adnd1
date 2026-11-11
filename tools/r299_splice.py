@@ -12,7 +12,7 @@
 # added-slot choices stay a future round).
 # This round wires it:
 #
-#   (a) rules/weaponprof.h - the R299 seam:
+#   (a) rules/phb/weaponprof.h - the R299 seam:
 #       wpfKitRecordsMelee (every kit carries
 #       a melee arm), wpfKitRecordsRanged (the
 #       thief-base kits carry the sling - the
@@ -86,7 +86,7 @@ def clean(s, limit):
         assert all(ord(c) < 128 for c in ln), 'non-ascii line'
         assert len(ln) <= limit, 'line too long: ' + ln
 
-# ---- (a) rules/weaponprof.h: the seam + the note amend ----
+# ---- (a) rules/phb/weaponprof.h: the seam + the note amend ----
 WPF_NOTE_OLD = NL.join([
     '//   - the slot COUNTS are data (the engine',
     '//     records no weapon choices yet beyond the',
@@ -143,7 +143,7 @@ clean(WPF_NOTE_OLD, 100)
 clean(WPF_NOTE_NEW, 100)
 clean(WPF_SEAM, 100)
 
-p = 'rules/weaponprof.h'
+p = 'rules/phb/weaponprof.h'
 s = rd(p)
 if 'wpfKitGrantCount' in s:
     already.append('weaponprof.h: the R299 seam')
@@ -442,7 +442,7 @@ assert len(applied) + len(already) == 5, 'patch e count wrong'
 SEAM_AUDIT = NL.join([
     '    // ---- R299a: the party kit recordings seam audit ----',
     '    // The kit-grant recording convention (the R299',
-    '    // rules/weaponprof.h seam): the melee slot',
+    '    // rules/phb/weaponprof.h seam): the melee slot',
     '    // records with every class kit, the ranged slot',
     '    // where the kit carries a missile (the thief',
     '    // rows - the R28 sling pin), the grant count',
@@ -797,7 +797,7 @@ G_SECTION = NL.join([
     '      empty-list convention. The rules seam',
     '      (wpfKitRecordsMelee,',
     '      wpfKitRecordsRanged, wpfKitGrantCount -',
-    '      rules/weaponprof.h) pins the slot-count',
+    '      rules/phb/weaponprof.h) pins the slot-count',
     '      convention; the R299 battery audit pair',
     '      walks the seam (evaluable) and the',
     '      engine wiring (the R233a/R233',
@@ -904,6 +904,6 @@ print('R299 splice: ALL OK (applied '
       + str(len(already)) + ')')
 print('R299 note: 7 patches; the battery census 215 -> 217;')
 print('the phb ledger holds ONE open item (the R300 candidate)')
-print('real gate: md5sum rules/weaponprof.h')
+print('real gate: md5sum rules/phb/weaponprof.h')
 print('commit: R299: the party kit weapon recordings wired and the third scope pass (census 217)')
 

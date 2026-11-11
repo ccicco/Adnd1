@@ -40,7 +40,7 @@ SEED_ENTRY = NL.join([
     '- R332 landed 2026-10-11: commit',
     '  b5380bd, census 259, the UA',
     '  barbarian pin round',
-    '  (rules/barbarian.h): the',
+    '  (rules/ua/barbarian.h): the',
     '  requirements and the wisdom',
     '  maximum, Barbarians Table I, the',
     '  magic detestation (the award tail',
@@ -354,7 +354,7 @@ s = rd(RT)
 if 'R333 ranger expansion pin audit' in s:
     already.append('regtest.cpp: the R333 audit')
 else:
-    INC_ANCH = ('#include "rules/barbarian.h"'
+    INC_ANCH = ('#include "rules/ua/barbarian.h"'
                 '  // R332: the UA barbarian')
     INC_NEW = NL.join([
     INC_ANCH,

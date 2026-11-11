@@ -5,7 +5,7 @@
 // ladder), the occupation rosters, the starting-money
 // note, the non-human placements and the profession
 // rule. Extends the landed R208 DMG structure header
-// (rules/socialrank.h), which pins the government
+// (rules/dmg/socialrank.h), which pins the government
 // forms and the town structure but no random class
 // table - the UA print adds the dice table.
 //

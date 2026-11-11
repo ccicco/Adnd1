@@ -5,7 +5,7 @@
 # (R157) named this lane and deferred it - the item-save
 # break rule borrowed two cells (ceramic 18/12, crystal
 # 19/14) without carrying the matrix. This round pins it:
-#   - rules/itemsavethrow.h (new file, the grenade.h
+#   - rules/dmg/itemsavethrow.h (new file, the grenade.h
 #     pattern: pure data + helpers, header-only) - the
 #     14 material rows x 11 attack forms, cell for cell,
 #     cross-verified against the upload OCR and the R157
@@ -76,12 +76,12 @@ def newfile(path, marker, text):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/itemsavethrow.h (new file)
+# Patch 1: rules/dmg/itemsavethrow.h (new file)
 # ---------------------------------------------------------------------------
 
 h = [
     '// ====================================================================',
-    '// Adnd1 - rules/itemsavethrow.h',
+    '// Adnd1 - rules/dmg/itemsavethrow.h',
     '// R204: the Item Saving Throw Matrix (DMG p.80,',
     '// matrix III - saving throw matrix for magical and',
     '// non-magical items): the 14 material rows x 11',
@@ -287,7 +287,7 @@ h = [
     '',
 ]
 
-newfile('rules/itemsavethrow.h',
+newfile('rules/dmg/itemsavethrow.h',
         'R204: the Item Saving Throw Matrix (DMG p.80,',
         NL.join(h))
 
@@ -295,11 +295,11 @@ newfile('rules/itemsavethrow.h',
 # Patch 2: regtest.cpp - the include
 # ---------------------------------------------------------------------------
 
-old2 = ('#include "rules/wisdom.h"  // R192: Wisdom Tables I and II'
+old2 = ('#include "rules/phb/wisdom.h"  // R192: Wisdom Tables I and II'
         + NL + '#include <cstdio>')
 
-new2 = ('#include "rules/wisdom.h"  // R192: Wisdom Tables I and II'
-        + NL + '#include "rules/itemsavethrow.h"  // R204: p.80 item saving throw matrix'
+new2 = ('#include "rules/phb/wisdom.h"  // R192: Wisdom Tables I and II'
+        + NL + '#include "rules/dmg/itemsavethrow.h"  // R204: p.80 item saving throw matrix'
         + NL + '#include <cstdio>')
 
 patch('regtest.cpp',
@@ -443,7 +443,7 @@ entry = (
     'R204 landed the item saving throw matrix (DMG p.80,'
     + NL + 'matrix III, magical and non-magical items) - the'
     + NL + 'DMG-only sweep seam grenade.h named and deferred:'
-    + NL + 'rules/itemsavethrow.h (the grenade.h pattern), the'
+    + NL + 'rules/dmg/itemsavethrow.h (the grenade.h pattern), the'
     + NL + '14 material rows x 11 attack forms cell for cell,'
     + NL + 'the ceramic 18/12 and crystal 19/14 BLOW cells'
     + NL + 'independently confirmed by the R157 break-save pins.'

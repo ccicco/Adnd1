@@ -85,7 +85,7 @@ else:
         '// The UA WEAPON PROFICIENCY TABLE (p. 26) pins (R339).',
         '//',
         '// Pin-era pattern (R322): pinned data only - no engine site exists.',
-        '// The R297 PHB pin (rules/weaponprof.h) is the decode seam.',
+        '// The R297 PHB pin (rules/phb/weaponprof.h) is the decode seam.',
         '//',
         '// JUDGMENTs:',
         '//   - the roster: 14 rows in the printed order. Seven rows match',

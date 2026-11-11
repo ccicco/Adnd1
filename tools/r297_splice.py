@@ -8,7 +8,7 @@
 # upload line 2499) as the R297 candidate. This
 # round pins it and wires the penalty:
 #
-#   (a) rules/weaponprof.h CREATED - the ten
+#   (a) rules/phb/weaponprof.h CREATED - the ten
 #       printed rows (the initial slots 2, 2, 4,
 #       3, 3, 1, 1, 2, 3, 1; the non-proficiency
 #       penalty magnitudes 3, 4, 2, 2, 2, 5, 5, 3,
@@ -83,10 +83,10 @@ def clean(s, limit):
         assert all(ord(c) < 128 for c in ln), 'non-ascii line'
         assert len(ln) <= limit, 'line too long: ' + ln
 
-# ---- (a) rules/weaponprof.h CREATED ----
+# ---- (a) rules/phb/weaponprof.h CREATED ----
 HEADER = NL.join([
     '// ====================================================================',
-    '// Adnd1 - rules/weaponprof.h',
+    '// Adnd1 - rules/phb/weaponprof.h',
     '// R297: the PHB Weapon Proficiency Table',
     '// (the WEAPONS section, Premium 1e OCR',
     '// upload line 2499) - the ten printed class',
@@ -270,7 +270,7 @@ HEADER = NL.join([
 ])
 clean(HEADER, 100)
 
-p = 'rules/weaponprof.h'
+p = 'rules/phb/weaponprof.h'
 if os.path.exists(os.path.join(ROOT, p)):
     s = rd(p)
     if 'R297: the PHB Weapon Proficiency Table' in s:
@@ -288,7 +288,7 @@ assert len(applied) + len(already) == 1, 'patch a count wrong'
 # ---- (b) ai/actor.h: the recorded slot list ----
 ACTH_NEW = NL.join([
     '    // R297: the weapon proficiency slots (the PHB',
-    '    // Weapon Proficiency Table, rules/weaponprof.h).',
+    '    // Weapon Proficiency Table, rules/phb/weaponprof.h).',
     '    // The RECORDED weapon ids the character chose.',
     '    // EMPTY = proficiency unrecorded: the pre-R297',
     '    // convention holds (the held weapon is treated',
@@ -332,8 +332,8 @@ assert len(applied) + len(already) == 2, 'patch b count wrong'
 
 # ---- (c) ai/actor.cpp: the include + the fold ----
 INC_NEW = NL.join([
-    '#include "../rules/bard.h"  // R236: the poetics ferocity',
-    '#include "../rules/weaponprof.h"  // R297: the proficiency table',
+    '#include "../rules/phb/bard.h"  // R236: the poetics ferocity',
+    '#include "../rules/phb/weaponprof.h"  // R297: the proficiency table',
 ])
 FOLD_OLD = NL.join([
     '        return items::attackAdjustment(weapon, exStr, str,',
@@ -369,7 +369,7 @@ s = rd(p)
 if 'R297: the PHB Weapon Proficiency Table - a' in s:
     already.append('actor.cpp: the fold')
 else:
-    a1 = '#include "../rules/bard.h"  // R236: the poetics ferocity'
+    a1 = '#include "../rules/phb/bard.h"  // R236: the poetics ferocity'
     assert s.count(a1) == 1, 'actor.cpp include anchor not unique'
     assert s.count(FOLD_OLD) == 1, 'actor.cpp fold anchor not unique'
     s = s.replace(a1, INC_NEW)
@@ -403,7 +403,7 @@ KIT_NEW = NL.join([
     '        }',
     '        // R297: the kit weapon is the chosen',
     '        // proficiency (the PHB Weapon Proficiency',
-    '        // Table - rules/weaponprof.h; the initial',
+    '        // Table - rules/phb/weaponprof.h; the initial',
     '        // and added slots size the full list at a',
     '        // future choice round)',
     '        a.profWeaponIds.push_back(a.weapon.id);',
@@ -425,10 +425,10 @@ assert 'void AppState::kitNpc' in s, 'patch d ate kitNpc'
 assert len(applied) + len(already) == 4, 'patch d count wrong'
 
 # ---- (e) regtest.cpp: the include + the audit block ----
-REG_INC_OLD = '#include "rules/specartprose2.h"  // R281: the III.E Special artifacts explanation prose part 2 pins'
+REG_INC_OLD = '#include "rules/dmg/specartprose2.h"  // R281: the III.E Special artifacts explanation prose part 2 pins'
 REG_INC_NEW = NL.join([
-    '#include "rules/specartprose2.h"  // R281: the III.E Special artifacts explanation prose part 2 pins',
-    '#include "rules/weaponprof.h"  // R297: the PHB Weapon Proficiency Table',
+    '#include "rules/dmg/specartprose2.h"  // R281: the III.E Special artifacts explanation prose part 2 pins',
+    '#include "rules/phb/weaponprof.h"  // R297: the PHB Weapon Proficiency Table',
 ])
 AUDIT = NL.join([
     '    // ---- R297: the weapon proficiency table pins audit ----',
@@ -597,7 +597,7 @@ else:
 s = rd(p)
 assert s.count('R297 weapon proficiency table pins audit') == 1, 'patch e failed'
 assert s.count('audit: bad') == 214, 'census is not 214'
-assert s.count('#include "rules/weaponprof.h"') == 1, 'patch e include'
+assert s.count('#include "rules/phb/weaponprof.h"') == 1, 'patch e include'
 assert 'R295 special artifacts prose part 16' in s, 'patch e ate R295'
 assert '// ---- R227: the wis mental save wiring audit ----' in s, 'patch e ate R227'
 assert len(applied) + len(already) == 5, 'patch e count wrong'
@@ -632,7 +632,7 @@ ITEM_OLD = NL.join([
 ITEM_NEW = NL.join([
     '- [x] **Weapon Proficiency Table (the WEAPONS',
     '      section) - PINNED R297:**',
-    '      rules/weaponprof.h CREATED - the ten',
+    '      rules/phb/weaponprof.h CREATED - the ten',
     '      printed rows (the initial slots, the',
     '      non-proficiency penalty, the added-slot',
     '      cadence) with the engine mapping',
@@ -704,6 +704,6 @@ print('R297 splice: ALL OK (applied '
       + str(len(applied)) + ', already '
       + str(len(already)) + ')')
 print('R297 note: 6 patches; the battery census 213 -> 214;')
-print('real gate: md5sum rules/weaponprof.h')
+print('real gate: md5sum rules/phb/weaponprof.h')
 print('commit: R297: the weapon proficiency table pinned and wired - the penalty reaches the to-hit path (census 214)')
 

@@ -22,7 +22,7 @@
 # rampart combination, the battlement
 # composition, the buttress count, and the
 # 12-row siege engine costs. Patches: 4
-# (new rules/construct.h, regtest include,
+# (new rules/dmg/construct.h, regtest include,
 # audit block, gap-report log entry). Census
 # 128 -> 129.
 
@@ -69,12 +69,12 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/construct.h - the new header
+# Patch 1: rules/dmg/construct.h - the new header
 # ---------------------------------------------------------------------------
 
 hdr_lines = [
 '// ====================================================================',
-'// Adnd1 - rules/construct.h',
+'// Adnd1 - rules/dmg/construct.h',
 '// R213: the construction and siege',
 '// economics (DMG pp.106-108) - the',
 '// mining tables, the construction time',
@@ -570,7 +570,7 @@ hdr_lines = [
 ]
 hdr = NL.join(hdr_lines) + NL
 
-patch('rules/construct.h',
+patch('rules/dmg/construct.h',
       'R213: the construction and siege',
       None,
       hdr)
@@ -581,10 +581,10 @@ patch('rules/construct.h',
 # Patch 2: regtest.cpp - the include
 # ---------------------------------------------------------------------------
 
-old2 = '#include "rules/hirecost.h"  // R212: pp.116-118 hire spell costs, troop control'
+old2 = '#include "rules/dmg/hirecost.h"  // R212: pp.116-118 hire spell costs, troop control'
 
-new2 = ('#include "rules/hirecost.h"  // R212: pp.116-118 hire spell costs, troop control'
-        + NL + '#include "rules/construct.h"  // R213: pp.106-108 construction and siege economics')
+new2 = ('#include "rules/dmg/hirecost.h"  // R212: pp.116-118 hire spell costs, troop control'
+        + NL + '#include "rules/dmg/construct.h"  // R213: pp.106-108 construction and siege economics')
 
 patch('regtest.cpp',
       'R213: pp.106-108 construction and siege economics',
@@ -842,7 +842,7 @@ log_lines = [
 'economics (DMG pp.106-108, the CONSTRUCTION',
 '& SIEGE head) - a seam with zero prior',
 'coverage (only incidental castle-artillery',
-'counts elsewhere). rules/construct.h (the',
+'counts elsewhere). rules/dmg/construct.h (the',
 'grenade.h pattern): the MINING cubic volume',
 'table (8 miner groups x 3 rock types,',
 'cubic feet per 8 hours per miner - stone',

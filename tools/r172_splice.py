@@ -1,10 +1,10 @@
 # tools/r172_splice.py - R172, 6 patches: Appendix J (DMG
 # p.220) - herbs, spices and medicinal vegetables. A new
-# header-only layer, rules/herbs.h (the grenade.h pattern:
+# header-only layer, rules/dmg/herbs.h (the grenade.h pattern:
 # the caller rolls and selects; a support table for the
 # potion, scroll ink and magic item flavor).
 #
-# (1) rules/herbs.h: the alphabetical plant and uses table,
+# (1) rules/dmg/herbs.h: the alphabetical plant and uses table,
 #     171 rows, abscess root (sweet root) through white
 #     bryony (mandragora), cell by cell - including the
 #     10 rows the book leaves with unknown uses (bay leaf,
@@ -97,10 +97,10 @@ def create(p, text, tag, marker):
     applied.append(tag)
 
 
-# ---- patch 1: rules/herbs.h (new file) ----
+# ---- patch 1: rules/dmg/herbs.h (new file) ----
 p1_text = NL.join([
     '// ====================================================================',
-    '// Adnd1 - rules/herbs.h',
+    '// Adnd1 - rules/dmg/herbs.h',
     '// R172: Appendix J (DMG p.220) - herbs, spices and',
     '// medicinal vegetables: the alphabetical plant and',
     '// uses table, 171 rows.',
@@ -403,16 +403,16 @@ p1_text = NL.join([
     '}  // namespace rules',
     '',
 ])
-create("rules/herbs.h", p1_text,
-      "rules/herbs.h",
+create("rules/dmg/herbs.h", p1_text,
+      "rules/dmg/herbs.h",
       marker="R172: Appendix J (DMG p.220)")
 assert len(applied) + len(already) == 1
 
 # ---- patch 2: the regtest include ----
-p2_old = '#include "rules/dmg_appendices_klm.h"  // R171: pp.221-224 appendices K L and M'
+p2_old = '#include "rules/dmg/dmg_appendices_klm.h"  // R171: pp.221-224 appendices K L and M'
 p2_new = NL.join([
-    '#include "rules/dmg_appendices_klm.h"  // R171: pp.221-224 appendices K L and M',
-    '#include "rules/herbs.h"  // R172: p.220 appendix J herbs spices and medicinal vegetables'
+    '#include "rules/dmg/dmg_appendices_klm.h"  // R171: pp.221-224 appendices K L and M',
+    '#include "rules/dmg/herbs.h"  // R172: p.220 appendix J herbs spices and medicinal vegetables'
 ])
 patch("regtest.cpp", p2_old, p2_new,
       "regtest.cpp: R172 include",
@@ -834,7 +834,7 @@ p4_old = NL.join([
 p4_new = NL.join([
     'box). The caller rolls and selects. Census 89.',
     'R172 PINNED Appendix J (DMG p.220) - herbs, spices',
-    'and medicinal vegetables - rules/herbs.h: the',
+    'and medicinal vegetables - rules/dmg/herbs.h: the',
     'alphabetical plant and uses table, 171 rows, cell',
     'by cell (the compilation drops the turnip row and',
     'truncates the celery uses - both restored from the',
@@ -881,7 +881,7 @@ p6_new = NL.join([
     '',
     '- [x] **Appendix J: herbs, spices and medicinal',
     '      vegetables (p.220)** - PINNED R172:',
-    '      rules/herbs.h (the 171-row plant and uses',
+    '      rules/dmg/herbs.h (the 171-row plant and uses',
     '      table cell by cell; the turnip row the',
     '      compilation drops restored).',
     '',

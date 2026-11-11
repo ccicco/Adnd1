@@ -1,5 +1,5 @@
     // ---- R325: the Race Table II fold audit ----
-    // The caller seam (rules/subracecap.h):
+    // The caller seam (rules/ua/subracecap.h):
     // the vital-ability read, the column
     // key build, the +2 eligibility, the
     // derived cap - and the live level-up

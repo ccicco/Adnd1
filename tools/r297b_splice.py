@@ -15,7 +15,7 @@
 #     pays the 5. The audit is correct and
 #     unchanged; every other assertion in the
 #     block checks against the print.
-# Patches: 1 (rules/taxation.h, the entry fee
+# Patches: 1 (rules/dmg/taxation.h, the entry fee
 # helper). Census stays 123.
 
 NL = chr(10)
@@ -51,7 +51,7 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/taxation.h - the entry fee
+# Patch 1: rules/dmg/taxation.h - the entry fee
 # polarity repin (the flag is nonCitizen: the
 # convention of the duty helper, true pays 5)
 # ---------------------------------------------------------------------------
@@ -65,7 +65,7 @@ new1 = ('inline int taxEntryFeeCopper(bool nonCitizen) {'
         + NL + '    return nonCitizen ? 5 : 1;'
         + NL + '}')
 
-patch('rules/taxation.h',
+patch('rules/dmg/taxation.h',
       'R207b: true = the 5 cp non-citizen fee',
       old1,
       new1)

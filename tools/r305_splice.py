@@ -13,7 +13,7 @@
 # breaking a metal-bound wooden door takes a
 # full turn and at least 3 noise checks, and
 # metal doors need the knock spell. This round
-# pins the prose (rules/doorforce.h, the
+# pins the prose (rules/dmg/doorforce.h, the
 # grenade.h pattern - the typical band, the
 # halves and the break lane stay data) and
 # wires the width and simultaneous folds at
@@ -24,7 +24,7 @@
 # once ever per door) while two simultaneous 1s
 # tear the lock out.
 #
-#   (a) rules/doorforce.h CREATED - the DMG
+#   (a) rules/dmg/doorforce.h CREATED - the DMG
 #       forcing prose pins (nine helpers).
 #   (b) game/appstate.h - the LockedDoor
 #       exTried flag and the declaration.
@@ -89,10 +89,10 @@ def clean(s, limit, allow_apos=False):
         assert all(ord(c) < 128 for c in ln), 'non-ascii line'
         assert len(ln) <= limit, 'line too long: ' + ln
 
-# ---- (a) rules/doorforce.h CREATED ----
+# ---- (a) rules/dmg/doorforce.h CREATED ----
 DF = NL.join([
     '// ====================================================================',
-    '// Adnd1 - rules/doorforce.h',
+    '// Adnd1 - rules/dmg/doorforce.h',
     '// R305: the DMG FIRST DUNGEON ADVENTURE',
     '// doors prose - the forcing pins - a DATA',
     '// pin (the grenade.h pattern), WIRED R305:',
@@ -180,7 +180,7 @@ DF = NL.join([
 ])
 clean(DF, 78)
 
-p = 'rules/doorforce.h'
+p = 'rules/dmg/doorforce.h'
 if os.path.exists(os.path.join(ROOT, p)):
     s = rd(p)
     if 'R305: the DMG FIRST DUNGEON ADVENTURE' in s:
@@ -258,11 +258,11 @@ assert len(applied) + len(already) == 2, 'patch b count wrong'
 
 # ---- (c) game/state_dungeon.cpp: the site ----
 SD_INC_OLD = NL.join([
-    '#include "rules/locktime.h"   // R304: the lock time draw',
+    '#include "rules/dmg/locktime.h"   // R304: the lock time draw',
 ])
 SD_INC_NEW = NL.join([
-    '#include "rules/locktime.h"   // R304: the lock time draw',
-    '#include "rules/doorforce.h"  // R305: the door force folds',
+    '#include "rules/dmg/locktime.h"   // R304: the lock time draw',
+    '#include "rules/dmg/doorforce.h"  // R305: the door force folds',
 ])
 SD_SITE_OLD = NL.join([
     '        // the turn spent can draw a wanderer',
@@ -377,7 +377,7 @@ else:
     wr(p, s)
     applied.append('state_dungeon.cpp: the site')
 s = rd(p)
-assert s.count('#include "rules/doorforce.h"') == 1, 'patch c include'
+assert s.count('#include "rules/dmg/doorforce.h"') == 1, 'patch c include'
 assert s.count('void AppState::forceLockedDoor') == 1, 'patch c site'
 assert s.count('// ---- searchExplore ----') == 1, 'patch c search head'
 assert s.count('// ---- bumpLockedDoor ----') == 1, 'patch c bump head'
@@ -446,11 +446,11 @@ assert len(applied) + len(already) == 4, 'patch d count wrong'
 
 # ---- (e) regtest.cpp: the include + the audit pair ----
 RT_INC_OLD = NL.join([
-    '#include "rules/locktime.h"  // R304: the DMG lock time pins',
+    '#include "rules/dmg/locktime.h"  // R304: the DMG lock time pins',
 ])
 RT_INC_NEW = NL.join([
-    '#include "rules/locktime.h"  // R304: the DMG lock time pins',
-    '#include "rules/doorforce.h"  // R305: the DMG door force pins',
+    '#include "rules/dmg/locktime.h"  // R304: the DMG lock time pins',
+    '#include "rules/dmg/doorforce.h"  // R305: the DMG door force pins',
 ])
 RT_AUD_OLD = NL.join([
     '        printf("R304 thief locks engine audit: bad %d'
@@ -466,7 +466,7 @@ RT_AUD_NEW = NL.join([
     '    }',
     '    // ---- R305a: the door force seam audit ----',
     '    // The DMG FIRST DUNGEON ADVENTURE doors',
-    '    // prose (rules/doorforce.h, the grenade.h',
+    '    // prose (rules/dmg/doorforce.h, the grenade.h',
     '    // pattern) - the forcing pins and their',
     '    // folds - verified by audit_eval.',
     '    {',
@@ -818,7 +818,7 @@ assert s.count('audit: bad') == 229, 'patch e census wrong'
 assert s.count('R305a door force seam audit') == 1, 'patch e seam label'
 assert s.count('R305 door force engine audit') == 1, \
     'patch e engine label'
-assert s.count('#include "rules/doorforce.h"') == 1, 'patch e include'
+assert s.count('#include "rules/dmg/doorforce.h"') == 1, 'patch e include'
 assert s.count('R304 thief locks engine audit') == 1, 'patch e r304 tail'
 assert s.count('R227: the wis mental save wiring audit') == 1, \
     'patch e r227 head'
@@ -841,7 +841,7 @@ GR153_NEW = NL.join([
     '      WIRED R305: the open-doors-locked',
     '      parentheticals now force the R304 lock',
     '      (the forcing prose pins in',
-    '      rules/doorforce.h).',
+    '      rules/dmg/doorforce.h).',
 ])
 GR_INS_OLD = NL.join([
     '      the draws first). Census 227. The',
@@ -853,7 +853,7 @@ GR_BOX = NL.join([
     '- [x] **The locked door forced - WIRED',
     '      R305:** the STR Table II open-doors',
     '      parentheticals gain their first engine',
-    '      site. rules/doorforce.h CREATED (the',
+    '      site. rules/dmg/doorforce.h CREATED (the',
     '      grenade.h pattern): the DMG FIRST',
     '      DUNGEON ADVENTURE forcing prose - the',
     '      typical 1-2 d6 band, the heavy-door',
@@ -933,7 +933,7 @@ DMG_NEW = NL.join([
     'census moves 225 -> 227).',
     '',
     'R305 PINNED the DMG FIRST DUNGEON ADVENTURE',
-    'forcing prose: rules/doorforce.h, the',
+    'forcing prose: rules/dmg/doorforce.h, the',
     'grenade.h pattern - the typical 1-2 d6',
     'band, the very-heavy halves, the',
     'simultaneous-1s locked rule (the print',

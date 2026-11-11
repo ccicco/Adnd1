@@ -3,7 +3,7 @@
 # pp.67-69) - a whole seam the repo never
 # touched: no coverage in any rules/ file, no
 # mention in either gap report. The print:
-#   - rules/pursuit.h (new file, the grenade.h
+#   - rules/dmg/pursuit.h (new file, the grenade.h
 #     pattern: pure data + helpers, header-only)
 #   - underground: the pursuit likelihood ladder
 #     (stated certain; semi-intelligent or under
@@ -96,12 +96,12 @@ def newfile(path, marker, text):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/pursuit.h (new file)
+# Patch 1: rules/dmg/pursuit.h (new file)
 # ---------------------------------------------------------------------------
 
 h = [
     '// ====================================================================',
-    '// Adnd1 - rules/pursuit.h',
+    '// Adnd1 - rules/dmg/pursuit.h',
     '// R206: pursuit and evasion of pursuit (DMG',
     '// pp.67-69) - the underground and outdoor',
     '// pursuit machinery. A seam with no prior',
@@ -410,7 +410,7 @@ h = [
     '',
 ]
 
-newfile('rules/pursuit.h',
+newfile('rules/dmg/pursuit.h',
         'R206: pursuit and evasion of pursuit (DMG',
         NL.join(h))
 
@@ -418,11 +418,11 @@ newfile('rules/pursuit.h',
 # Patch 2: regtest.cpp - the include
 # ---------------------------------------------------------------------------
 
-old2 = ('#include "rules/spying.h"  // R205: pp.19-20 the spying tables'
+old2 = ('#include "rules/dmg/spying.h"  // R205: pp.19-20 the spying tables'
         + NL + '#include <cstdio>')
 
-new2 = ('#include "rules/spying.h"  // R205: pp.19-20 the spying tables'
-        + NL + '#include "rules/pursuit.h"  // R206: pp.67-69 pursuit and evasion'
+new2 = ('#include "rules/dmg/spying.h"  // R205: pp.19-20 the spying tables'
+        + NL + '#include "rules/dmg/pursuit.h"  // R206: pp.67-69 pursuit and evasion'
         + NL + '#include <cstdio>')
 
 patch('regtest.cpp',
@@ -638,7 +638,7 @@ entry = (
     'R206 landed pursuit and evasion of pursuit'
     + NL + '(DMG pp.67-69) - a seam with no prior'
     + NL + 'coverage in any rules/ file and no mention'
-    + NL + 'in either gap report. rules/pursuit.h'
+    + NL + 'in either gap report. rules/dmg/pursuit.h'
     + NL + '(the grenade.h pattern): underground,'
     + NL + 'the pursuit likelihood ladder (semi-'
     + NL + 'intelligent motivated 80 percent; low'

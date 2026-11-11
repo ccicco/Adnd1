@@ -35,11 +35,11 @@ def wr(p, s):
     f.write(s)
     f.close()
 
-# ---- patch 1: rules/miscprose11.h ----
-P1 = 'rules/miscprose11.h'
+# ---- patch 1: rules/dmg/miscprose11.h ----
+P1 = 'rules/dmg/miscprose11.h'
 HDR = [
     '// ====================================================================',
-    '// Adnd1 - rules/miscprose11.h',
+    '// Adnd1 - rules/dmg/miscprose11.h',
     '// R267: the III.E misc magic explanation prose part 11',
     '// (DMG p.136-137) - Flask of Curses through the Girdle',
     '// of Giant Strength, part2 lines 481-530 (global =',
@@ -456,9 +456,9 @@ assert rd(P1).count(
     'R267: the III.E misc magic explanation prose part 11') == 1
 
 # ---- patch 2: the regtest include ----
-INC_OLD = ('#include "rules/miscprose10.h"  // R266: the III.E misc'
+INC_OLD = ('#include "rules/dmg/miscprose10.h"  // R266: the III.E misc'
            ' magic explanation prose part 10 pins')
-INC_NEW = ('#include "rules/miscprose11.h"  // R267: the III.E misc'
+INC_NEW = ('#include "rules/dmg/miscprose11.h"  // R267: the III.E misc'
            ' magic explanation prose part 11 pins')
 RG = rd('regtest.cpp')
 if INC_NEW in RG:

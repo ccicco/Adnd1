@@ -20,7 +20,7 @@
 #
 # Patch (idempotent; guarded and
 # re-runnable):
-#   (a) rules/subracelevels.h - the
+#   (a) rules/ua/subracelevels.h - the
 #       case SUB_ELF_WILD: line
 #       joins the shared elf block
 #       of subraceLevelGates (the
@@ -63,7 +63,7 @@ def clean(s, limit):
         assert len(ln) <= limit, 'line too long: ' + ln
 
 # ---- (a) the gates case list ----
-SL = 'rules/subracelevels.h'
+SL = 'rules/ua/subracelevels.h'
 s = rd(SL)
 ANCH = (
     '        case SUB_ELF_VALLEY:' + NL
@@ -105,7 +105,7 @@ print('the wild-elf druid CHA gates and the')
 print('shared assassin gates read again')
 print('the R324 audit goes bad 2 -> bad 0')
 print('census stays 251; amend the round:')
-print('git add rules/subracelevels.h')
+print('git add rules/ua/subracelevels.h')
 print('git commit --amend --no-edit')
 print('then ./tools/preflight.sh && git push')
 

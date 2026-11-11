@@ -1917,7 +1917,7 @@ above this header stays the R848 content, unchanged.
   doc/data/ddg_planes_encounters.txt (the
   39-label creature roster + both printed
   encounter tables); prefix pln (full-repo
-  scan clean); header rules/pln.h; audit
+  scan clean); header rules/ddg/appendix1_known_planes.h; audit
   "R867 known planes audit", rode
   rules/audits/r867_batch.h. THE HEADLINE
   ADJUDICATIONS: the wind-table 13-16 garble
@@ -2626,10 +2626,10 @@ above this header stays the R848 content, unchanged.
   ELYSIUM top, HADES bottom; the cycle reads the
   p. 129 print list order CLOCKWISE; the figure
   spells TARTARUS where the p. 129 list reads
-  Tarterus (the pln.h pin) - the figure-vs-list
+  Tarterus (the rules/ddg/appendix1_known_planes.h pin) - the figure-vs-list
   delta pinned both as printed, TARTARUS
   eyeball-confirmed by Curtiss; the wheel matches
-  the pln.h seventeen-planes pin. THE SHAPE:
+  the rules/ddg/appendix1_known_planes.h seventeen-planes pin. THE SHAPE:
   afgG4 one row per alignment (9 rows, cols
   Ord/Pos/Desc, 0-sentinel), afgG5 one row per
   plane (17 rows, cols Ord/Pos - the positions

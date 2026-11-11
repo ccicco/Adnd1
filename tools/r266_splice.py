@@ -36,11 +36,11 @@ def wr(p, s):
     f.write(s)
     f.close()
 
-# ---- patch 1: rules/miscprose10.h ----
-P1 = 'rules/miscprose10.h'
+# ---- patch 1: rules/dmg/miscprose10.h ----
+P1 = 'rules/dmg/miscprose10.h'
 HDR = [
     '// ====================================================================',
-    '// Adnd1 - rules/miscprose10.h',
+    '// Adnd1 - rules/dmg/miscprose10.h',
     '// R266: the III.E misc magic explanation prose part 10',
     '// (DMG p.135-136) - Figurines of Wondrous Power, part2',
     '// lines 433-479 (global = 11065 + part2 line). ONE page',
@@ -545,9 +545,9 @@ assert rd(P1).count(
     'R266: the III.E misc magic explanation prose part 10') == 1
 
 # ---- patch 2: the regtest include ----
-INC_OLD = ('#include "rules/miscprose9.h"  // R265: the III.E misc'
+INC_OLD = ('#include "rules/dmg/miscprose9.h"  // R265: the III.E misc'
            ' magic explanation prose part 9 pins')
-INC_NEW = ('#include "rules/miscprose10.h"  // R266: the III.E misc'
+INC_NEW = ('#include "rules/dmg/miscprose10.h"  // R266: the III.E misc'
            ' magic explanation prose part 10 pins')
 RG = rd('regtest.cpp')
 if INC_NEW in RG:

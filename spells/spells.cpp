@@ -4,7 +4,7 @@
 // ============================================================================
 
 #include "spells.h"
-#include "../rules/wisdom.h"  // R192: Wisdom Tables I and II
+#include "../rules/phb/wisdom.h"  // R192: Wisdom Tables I and II
 #include "../rules/druidspells.h"  // R228: the druid roster + parameter seam
 #include "../rules/illusionspells.h"  // R229: the illusionist roster + parameter seam
 
@@ -260,7 +260,7 @@ SpellClass spellClass(SpellId id) { return spell(id).sclass; }
 // cleric to L29; beyond the printed rows the final row holds
 // (the compilation prints no further spell rows - the xp
 // line keeps advancing, the spell rows do not). The printed
-// wisdom footnotes are wired R192 (rules/wisdom.h and
+// wisdom footnotes are wired R192 (rules/phb/wisdom.h and
 // clericSpellSlotsWithWis: the 6th needs Wis 17, the 7th
 // Wis 18 - Wisdom Table I; the printed ** puts a Wis-18
 // cleric's first 7th at 16, which the L16 table row
@@ -481,7 +481,7 @@ bool spellIsMentalForm(SpellId id) {
 // (rules/engine/saves.h); callers call this.
 int spellSaveModWis(SpellId id, uint8_t wis) {
     // R227: delegates to the mental-form gate
-    // seam (rules/wisdom.h) - the same
+    // seam (rules/phb/wisdom.h) - the same
     // ladder, now wired into the spelleffects
     // save chokepoint.
     return rules::wisMentalSaveAdj(wis, spellIsMentalForm(id));

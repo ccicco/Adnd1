@@ -705,9 +705,9 @@ patch('rules/siegefire.h',
 # Patch 2: regtest.cpp - the include
 # ---------------------------------------------------------------------------
 
-old2 = '#include "rules/construct.h"  // R213: pp.106-108 construction and siege economics'
+old2 = '#include "rules/dmg/construct.h"  // R213: pp.106-108 construction and siege economics'
 
-new2 = ('#include "rules/construct.h"  // R213: pp.106-108 construction and siege economics'
+new2 = ('#include "rules/dmg/construct.h"  // R213: pp.106-108 construction and siege economics'
         + NL + '#include "rules/siegefire.h"  // R214: pp.108-110 war machine fire, siege attack, defensive values')
 
 patch('regtest.cpp',

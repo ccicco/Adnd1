@@ -180,7 +180,7 @@ to-hit throw itself stays in the missile-fire lane; poison
 damage stays print-special (the caller holds the poison
 lane). Census 75.
 R158 PINNED weapon speed factors in initiative (DMG
-p.66 + the PHB p.38 factor column) - rules/weaponspeed.h:
+p.66 + the PHB p.38 factor column) - rules/dmg/weaponspeed.h:
 the named factor table (fist 1 through pike 13; the spear
 prints 6-8 and defaults 7, footman/horseman mace and
 flail named per the print), the simultaneous-initiative
@@ -197,7 +197,7 @@ fireball example (sword 5 vs casting 3, dagger 2 vs 3,
 the two-handed no-chance) is pinned in the audit.
 Census 76.
 R159 PINNED striking to subdue (DMG p.67 + the MM
-dragon rules) - rules/subdue.h: the flat/butt/haft/
+dragon rules) - rules/dmg/subdue.h: the flat/butt/haft/
 pommel strike (otherwise a normal attack), the 75/25
 accounting (the print example 40 subdual = 10 real,
 cumulative, floored), applicability (MM-stated or
@@ -213,7 +213,7 @@ ratio with halves up (the MM example 44/88 = 50, 67/88
 100-800 gp per hit point d8 sale price, and the ridden
 convention. Census 77.
 R160 PINNED weaponless combat (DMG pp.72-73) -
-rules/weaponless.h: PUMMEL, GRAPPLE, OVERBEAR - the
+rules/dmg/weaponless.h: PUMMEL, GRAPPLE, OVERBEAR - the
 shared variable (attacker column + d6, defender column +
 d4, spent on the base chance or the attack score,
 unconscious parties get none), the initiative priority
@@ -230,7 +230,7 @@ the general notes (behind negates shield+dex, the
 weapon wielder fends first unless surprised, monster
 mode selection, bears grapple, monks unimpeded).
 R161 PINNED attacks with two weapons (DMG p.70) -
-rules/twoweapon.h: one weapon in each hand (the shield
+rules/dmg/twoweapon.h: one weapon in each hand (the shield
 option discarded), the second weapon a dagger or hand
 axe only, the penalty ladder (primary -2, secondary
 -4; eased above dex 15 - 16: -1/-3, 17: 0/-2, 18:
@@ -267,7 +267,7 @@ diverged above that) - CLOSED R176: the rows
 repinned to the print cell by cell.
 Census 80.
 R163 PINNED the poison table (DMG p.20) -
-rules/poison.h: the purchased-poison types,
+rules/dmg/poison.h: the purchased-poison types,
 ingestive A-E and insinuative A-D, each with
 cost per dose (5-1,000 gp ingestive, 10-1,500
 insinuative), onset time with its unit (rounds,
@@ -287,7 +287,7 @@ third, +4 on saves once decayed. The caller
 holds the save roll (the monster venom layer
 keeps its per-monster saves). Census 81.
 R164 PINNED the assassination table (DMG p.75) -
-rules/assassinate.h: the assassins table for
+rules/dmg/assassinate.h: the assassins table for
 assassinations, 15 rows (assassin level 1-15)
 against 10 victim bands (0-1 through 18+), every
 printed cell pinned; the printed dashes read as no
@@ -304,7 +304,7 @@ assassination roll fails (caller-side). The
 percentile roll is caller-side (the grenade.h
 pattern). Census 82.
 R165 PINNED potion miscibility (DMG p.119) -
-rules/miscibility.h: test whenever two potions are
+rules/dmg/miscibility.h: test whenever two potions are
 intermingled or one is consumed while another is
 still in effect (the roll made secretly). The d100
 bands: 01 explosion (internal 6-60 hp; an
@@ -332,7 +332,7 @@ options, the print marking them as the DMs own
 decisions. The d100 roll and all damage and
 duration bookkeeping are caller-side. Census 83.
 R166 PINNED intoxication and insanity (DMG
-pp.82-83) - rules/insanity.h: the intoxication
+pp.82-83) - rules/dmg/insanity.h: the intoxication
 table (bravery +1/+2/+4, morale +5/+10/+15
 percent, intelligence -1/-3/-6, wisdom
 -1/-4/-7, dexterity 0/-2/-5, charisma 0/-1/-4,
@@ -366,7 +366,7 @@ catatonia 1 percent cumulative per round). The
 behavioral prose is caller-side - the caller plays
 the insane character. Census 84.
 R167 PINNED PC disease and parasitic infestation
-(DMG pp.13-14) - rules/disease.h: the monthly
+(DMG pp.13-14) - rules/dmg/disease.h: the monthly
 contraction check (weekly when favorable, on
 every carrier exposure) with the 2 percent disease
 base and its eleven printed modifiers and the 3
@@ -398,7 +398,7 @@ by any curative). The monster-borne layer
 (mummy rot) stays as wired; the caller rolls
 the dice and tracks the disability. Census 85.
 R168 PINNED underwater spell use (DMG p.57) -
-rules/uwspells.h: the general limits (spell
+rules/dmg/uwspells.h: the general limits (spell
 ranges and distances as in dungeons, material
 components altered by water, fire-based spells do
 not function except within an airy water radius,
@@ -444,7 +444,7 @@ clerical spell). The caller decides casting;
 the encounter tables stay pinned R60/R127.
 Census 86.
 R169 PINNED the humanoid racial preferences table
-(DMG p.106) - rules/humrpref.h: the nine-race
+(DMG p.106) - rules/dmg/humrpref.h: the nine-race
 basic acceptability matrix (bugbear, gnoll,
 goblin, hill giant, hobgoblin, kobold, ogre,
 orc, troll - each rated against the same nine),
@@ -473,7 +473,7 @@ probe matched. The caller reads the letter
 and plays the troops. Census 87.
 R170 PINNED followers for upper level player
 characters by class (DMG pp.16-18) -
-rules/followers.h: the cleric 7-category list
+rules/dmg/followers.h: the cleric 7-category list
 (roll for each, all 0 level men-at-arms, every
 armor and weapon string pinned); the fighter
 leader and troops bands (levels 5/6/6/7 with
@@ -513,7 +513,7 @@ the printed asterisks ride as flags. The
 caller rolls the dice and builds the
 rosters. Census 88.
 R171 PINNED Appendices K, L and M (DMG
-pp.221-224) - rules/dmg_appendices_klm.h: Appendix K - the
+pp.221-224) - rules/dmg/dmg_appendices_klm.h: Appendix K - the
 appearance and consistency list (10), the
 transparency list (10 with the printed
 parentheticals, four asking the reader to
@@ -552,7 +552,7 @@ material interleaved in the upload K region
 belongs to Appendix J (p.220, a separate open
 box). The caller rolls and selects. Census 89.
 R172 PINNED Appendix J (DMG p.220) - herbs, spices
-and medicinal vegetables - rules/herbs.h: the
+and medicinal vegetables - rules/dmg/herbs.h: the
 alphabetical plant and uses table, 171 rows, cell
 by cell (the compilation drops the turnip row and
 truncates the celery uses - both restored from the
@@ -571,7 +571,7 @@ OUT of scope by design until this round reversed it
 (user-authorized). Census 90.
 R173 PINNED Secondary skills (DMG p.12) - the
 player character non-professional skills -
-rules/secondary.h: the 23-band SECONDARY SKILLS
+rules/dmg/secondary.h: the 23-band SECONDARY SKILLS
 TABLE cell by cell (the 21 named skills Armorer
 01-02 through Woodworker/cabinetmaker 65-67, the
 NO SKILL OF MEASURABLE WORTH band 68-85 and the
@@ -613,7 +613,7 @@ giant, lion, bear cave and boar giant were
 absent) - replaced by the full table; the
 compilation spelling woolly corrects the
 pinned wooly; the bandless rows pin as lo/hi
-0 (the printed dash). rules/dmg_appendices_klm.h; the R175
+0 (the printed dash). rules/dmg/dmg_appendices_klm.h; the R175
 battery audit carries the cell-by-cell check.
 R176 PINNED the printed XP tables (PHB pp.20-31
 class tables) - the R162 FINDING closed: the PHB
@@ -747,7 +747,7 @@ thief and cleric allowances, the half-elf
 cleric WIS 13, the dual-class gates). New
 R185 battery audit; census 102. Next: R186
 the bard (Appendix II).
-R186 landed the bard: rules/bard.h CREATED
+R186 landed the bard: rules/phb/bard.h CREATED
 (the progression gates, the ability and
 race minimums, Bards Table I, Table II and
 Table III, the druid cast cap, the poetics
@@ -780,7 +780,7 @@ with the OCR limitation recorded). New R189 battery
 audit; census 106. Next: the gap report names the next
 round.
 R190 landed the starting money by class:
-rules/startmoney.h CREATED (the PHB STARTING MONEY
+rules/phb/startmoney.h CREATED (the PHB STARTING MONEY
 table - cleric 3d6, fighter 5d4, magic-user 2d4,
 thief 2d6, all x10 gp; the monk row 5d4 with NO x10,
 the DMG MONEY-section ascetic note) and the DMG
@@ -789,7 +789,7 @@ not less than 100 gp per level per month
 (pcMonthlySupportCost). New R190 battery audit; census
 107. Next: the gap report names the next round.
 R191 landed the armor class ratings:
-rules/armorratings.h CREATED (the printed ARMOR
+rules/phb/armorratings.h CREATED (the printed ARMOR
 CLASS TABLE ladder, the shield step, the magic rule
 and the printed notes). The verify found ONE
 divergence: the engine None armor row read 9 against
@@ -798,7 +798,7 @@ worked examples already said unarmored AC 10); the
 other nine rows verified cell for cell. New R191
 battery audit; census 108. Next: the gap report names
 the next round.
-R192 landed the wisdom wiring: rules/wisdom.h
+R192 landed the wisdom wiring: rules/phb/wisdom.h
 CREATED (Wisdom Table I - the magical attack ladder
 and the Wis 17/18 high-circle gates; Wisdom Table II -
 the cumulative cleric bonus-spell ladder and the
@@ -926,7 +926,7 @@ tables still unpinned.
 R204 landed the item saving throw matrix (DMG p.80,
 matrix III, magical and non-magical items) - the
 DMG-only sweep seam grenade.h named and deferred:
-rules/itemsavethrow.h (the grenade.h pattern), the
+rules/dmg/itemsavethrow.h (the grenade.h pattern), the
 14 material rows x 11 attack forms cell for cell,
 the ceramic 18/12 and crystal 19/14 BLOW cells
 independently confirmed by the R157 break-save pins.
@@ -941,8 +941,8 @@ d20 + adj >= cell. New R204 battery audit; census
 
 R205 landed the spying tables (DMG pp.19-20,
 the SPYING section after the assassin guild
-tables) - the lane rules/assassinate.h
-named and deferred in R164. rules/spying.h
+tables) - the lane rules/dmg/assassinate.h
+named and deferred in R164. rules/dmg/spying.h
 (the grenade.h pattern): the ASSASSIN SPYING
 TABLE (spy level 1-17 x simple/difficult/
 extraordinary, all 51 cells), the mission
@@ -968,7 +968,7 @@ the DMG-only sweep continues.
 R206 landed pursuit and evasion of pursuit
 (DMG pp.67-69) - a seam with no prior
 coverage in any rules/ file and no mention
-in either gap report. rules/pursuit.h
+in either gap report. rules/dmg/pursuit.h
 (the grenade.h pattern): underground,
 the pursuit likelihood ladder (semi-
 intelligent motivated 80 percent; low
@@ -998,7 +998,7 @@ R207 landed the town taxation system (DMG
 p.90, DUTIES, EXCISES, FEES, TARIFFS,
 TAXES, TITHES, AND TOLLS) - the print
 worked example town, a seam with zero
-prior coverage. rules/taxation.h (the
+prior coverage. rules/dmg/taxation.h (the
 grenade.h pattern): the seven named tax
 kinds defined in place; the import duty
 (1 percent, doubled for foreigners),
@@ -1051,7 +1051,7 @@ the DMG-only sweep continues.
 R209 landed the NPC personae facts
 tables (DMG pp.114-115, PERSONAE OF
 NON-PLAYER CHARACTERS) - a seam with
-zero prior coverage. rules/npcpersonae.h
+zero prior coverage. rules/dmg/npcpersonae.h
 (the grenade.h pattern): the classed NPC
 ability dice adjustments (cleric wisdom
 +2; the as-fighter ranger and paladin
@@ -1085,7 +1085,7 @@ traits tables.
 R210 landed the NPC personae traits
 tables (DMG pp.115-116, TRAITS TABLES) -
 a seam with zero prior coverage.
-rules/npctraits.h (the grenade.h pattern):
+rules/dmg/npctraits.h (the grenade.h pattern):
 the 24 General Tendencies (the d12 with the
 d6 half split: 1-3 the first twelve, 4-6 the
 second), the three-column Personality (d8
@@ -1115,7 +1115,7 @@ R211 landed the NPC height and weight
 tables and the language determination
 (DMG pp.115-116, the personae chapter
 tail) - a seam with zero prior coverage.
-rules/npcbody.h (the grenade.h pattern):
+rules/dmg/npcbody.h (the grenade.h pattern):
 the MALES and FEMALES height/weight
 tables (7 races: the averages, the under
 and over dice - the print range cells
@@ -1145,7 +1145,7 @@ spells, monsters and organization.
 R212 landed the NPC hire spell prices
 and the non-human troop control table
 (DMG pp.116-118) - a seam with zero
-prior coverage. rules/hirecost.h (the
+prior coverage. rules/dmg/hirecost.h (the
 grenade.h pattern): the 40 cleric spell
 hire prices (the 18-row first table
 astral spell through earthquake plus
@@ -1183,7 +1183,7 @@ R213 landed the construction and siege
 economics (DMG pp.106-108, the CONSTRUCTION
 & SIEGE head) - a seam with zero prior
 coverage (only incidental castle-artillery
-counts elsewhere). rules/construct.h (the
+counts elsewhere). rules/dmg/construct.h (the
 grenade.h pattern): the MINING cubic volume
 table (8 miner groups x 3 rock types,
 cubic feet per 8 hours per miner - stone
@@ -1283,7 +1283,7 @@ area, upload lines ~8560+).
 R215 landed the conducting the game pins
 (DMG pp.110-112) - a prose-heavy chapter
 whose numeric bones are now pinned.
-rules/conduct.h (the grenade.h pattern):
+rules/dmg/conduct.h (the grenade.h pattern):
 the divine intervention procedure (the
 exemplary first-time asker 10 percent
 creature-sent chance; the 00 roll with the
@@ -1327,7 +1327,7 @@ R216 landed the magical research pins
 (DMG pp.114-119) - the holy/unholy
 water receptacles, the spell research
 economics, the manufacture gates and
-the potion rules. rules/magres.h (the
+the potion rules. rules/dmg/magres.h (the
 grenade.h pattern): the five metals
 (copper, silver, electrum, gold,
 platinum) with vial capacity 6/10/18/
@@ -1375,7 +1375,7 @@ R217 landed the scroll manufacture and
 fabrication pins (DMG pp.118-121) - the
 MANUFACTURE OF SCROLLS seam and the
 FABRICATION material that follows it.
-rules/scrollfab.h (the grenade.h pattern):
+rules/dmg/scrollfab.h (the grenade.h pattern):
 the inscription gates (cleric, druid,
 magic-user, illusionist at 7th or higher,
 the spell one the inscriber can employ;
@@ -1438,7 +1438,7 @@ ENERGY DRAINING BY UNDEAD OR DEVICE
 section that follows it (the potion
 miscibility table between them is already
 pinned by R165 and stays out).
-rules/energydrain.h (the grenade.h pattern):
+rules/dmg/energydrain.h (the grenade.h pattern):
 drinking potions (one segment to open and
 consume, then a d4+1 = 2-5 segment delay
 to full effect), applying oils (one segment
@@ -1492,7 +1492,7 @@ claim that dm/treasure.cpp implements the
 map/monetary/magic structure referred to
 the lair-type coin bundles, and these
 determination tables existed nowhere).
-rules/treasdet.h (the grenade.h pattern):
+rules/dmg/treasdet.h (the grenade.h pattern):
 Table I map or magic (01-10 the map table,
 11-00 the magic items table), Table II the
 map table (01-05 false, 06-70 monetary,
@@ -1538,7 +1538,7 @@ leads, DMG p.123).
 R220 landed the combined hoard table pins
 (DMG p.123, upload lines ~9430-9470) - the
 II.C COMBINED HOARD table, the R219
-companion. rules/hoard.h (the grenade.h
+companion. rules/dmg/hoard.h (the grenade.h
 pattern): the ten percentile bands (01-20,
 21-40, 41-55, 56-65, 66-75, 76-80, 81-85,
 86-90, 91-96, 97-00) with their on-hand
@@ -1575,7 +1575,7 @@ III.A-H surrounding prose seam.
 R221 landed the III.A potions prose pins
 (DMG pp.125-126, upload lines ~9480-9520)
 - the three footnotes that frame the
-III.A POTIONS table. rules/potions.h
+III.A POTIONS table. rules/dmg/potions.h
 (the grenade.h pattern), keyed to the 35
 die bands of the engine III.A table in
 kPotions order: the * control potions
@@ -1607,7 +1607,7 @@ surrounding prose seam.
 R222 landed the III.B scrolls prose pins
 (DMG pp.126-127, upload lines ~9532-9595)
 - the structure and prose of the III.B
-SCROLLS table. rules/scrollpins.h (the
+SCROLLS table. rules/dmg/scrollpins.h (the
 grenade.h pattern): the 16 spell-scroll
 rows (dice bands 01-60, spell counts and
 level ranges re-pinned, plus the printed
@@ -1654,7 +1654,7 @@ un-pinned III.A-H surrounding prose seam.
 R223 landed the III.C rings footnote pins
 (DMG p.127, upload lines ~9596-9623) - the
 two footnotes that frame the III.C RINGS
-table. rules/rings.h (the grenade.h
+table. rules/dmg/rings.h (the grenade.h
 pattern), keyed to the 24 die bands of the
 engine III.C table in kRings order: the
 double-dagger charge-limited rings (Djinni
@@ -1685,7 +1685,7 @@ footnote pins (DMG pp.127-128, upload
 lines ~9625-9658) - the class-usable
 marks and the full-charges asterisk that
 frame the III.D RODS, STAVES, & WANDS
-table. rules/rodswands.h (the grenade.h
+table. rules/dmg/rodswands.h (the grenade.h
 pattern), keyed to the 30 die bands of the
 engine III.D table in kRods order: the (C)
 cleric-only, (M) magic-user-only, (F)
@@ -1715,7 +1715,7 @@ un-pinned III.A-H surrounding prose seam.
 R225 landed the III.E table 1 footnote
 pins (DMG p.128, upload lines ~9674-9722)
 - the class marks and special rows that
-frame TABLE (III.E.) 1. rules/miscmagic1.h
+frame TABLE (III.E.) 1. rules/dmg/miscmagic1.h
 (the grenade.h pattern), keyed to the 33
 die bands of the engine III.E.1 table in
 kMisc1 order: the (C) marks (Book of
@@ -1747,7 +1747,7 @@ un-pinned III.A-H surrounding prose seam.
 R226 landed the III.E table 2 footnote
 pins (DMG p.128, upload lines ~9724-9760)
 - the class marks and asterisk rows that
-frame TABLE (III.E.) 2. rules/miscmagic2.h
+frame TABLE (III.E.) 2. rules/dmg/miscmagic2.h
 (the grenade.h pattern), keyed to the 30
 die bands of the engine III.E.2 table in
 kMisc2 order: the (C) mark (Candle of
@@ -1777,7 +1777,7 @@ R237 landed the III.E table 3 footnote
 pins (DMG p.129, upload lines ~9765-9825)
 - the class marks and the asterisk ladder
 that frame TABLE (III.E.) 3.
-rules/miscmagic3.h (the grenade.h
+rules/dmg/miscmagic3.h (the grenade.h
 pattern), keyed to the 33 die bands of
 the engine III.E.3 table in kMisc3
 order: the (C, F, T) marks (Gauntlets of
@@ -1825,7 +1825,7 @@ pins (DMG p.129-130, upload lines
 ~9817-9898) - the class marks, the
 asterisk ladder and the dual-value rows
 that frame TABLE (III.E.) 4.
-rules/miscmagic4.h (the grenade.h
+rules/dmg/miscmagic4.h (the grenade.h
 pattern), keyed to the 36 die bands of
 the engine III.E.4 table in kMisc4 order:
 the (M) marks (the three Librams, the
@@ -1875,7 +1875,7 @@ R239 landed the III.E table 5 footnote
 pins (DMG p.130, upload lines ~9898-9915)
 - the class marks that frame TABLE
 (III.E.) 5, the LAST of the miscellaneous
-magic sub-tables. rules/miscmagic5.h (the
+magic sub-tables. rules/dmg/miscmagic5.h (the
 grenade.h pattern), keyed to the 35 die
 bands of the engine III.E.5 table in
 kMisc5 order: the (M) marks (the Robe of
@@ -1917,7 +1917,7 @@ table that closes the III.E magic item
 block, TABLE (III.E.) Special.: 29 rows
 in kArtifacts order, the Axe of the
 Dwarvish Lords 01 through the Wand of
-Orcus 00 (band 100). rules/specart.h
+Orcus 00 (band 100). rules/dmg/specart.h
 (the grenade.h pattern): the printed
 sale values (26 single-value rows,
 saSaleGp); the Orb of the Dragonkind
@@ -1947,7 +1947,7 @@ III.A-H surrounding prose seam.
 R241 landed the III.F armor and shield
 pins (DMG p.129-130, upload lines
 ~9870-9902, the RIGHT column of the
-two-column layout). rules/armorshield.h
+two-column layout). rules/dmg/armorshield.h
 (the grenade.h pattern, as prefix):
 26 rows in kArmor order, Chain Mail +1
 01-05 through Shield -1 missile
@@ -1983,7 +1983,7 @@ surrounding prose seam.
 R242 landed the III.G swords pins (DMG
 p.131, upload lines ~9906-9947, the
 RIGHT column of the two-column print).
-rules/swords.h (the grenade.h pattern,
+rules/dmg/swords.h (the grenade.h pattern,
 sw prefix): 26 rows in kSwords order,
 Sword +1 01-25 through Sword, Cursed
 Berserking 96-00 (band 100) - the x.p.
@@ -2022,7 +2022,7 @@ R243 landed the III.H misc weapons pins
 (DMG p.131-132, upload lines ~9949-9987)
 - the miscellaneous weapons table, the
 LAST of the III.A-H magic item tables.
-rules/mweapons.h (the grenade.h pattern,
+rules/dmg/mweapons.h (the grenade.h pattern,
 mw prefix): 36 rows in kWeapons order,
 Arrow +1 01-08 through Trident (Military
 Fork) +3 00 (band 100) - the x.p. point
@@ -2065,7 +2065,7 @@ prose pins (DMG pp.141-142, upload
 lines ~10562-10687 - the FIRST prose
 round of the EXPLANATIONS AND
 DESCRIPTIONS section, upload ~9996+).
-rules/rodsprose.h (the grenade.h
+rules/dmg/rodsprose.h (the grenade.h
 pattern, rp prefix): the section
 conventions (rods 50 charges minus
 0-9/d10-1, staves 25 minus 0-5/d6-1,
@@ -2179,7 +2179,7 @@ misc magic item explanations
 R246 landed the III.D wands
 explanation prose pins, part 1 of 3
 (DMG pp.143-144, upload lines
-~10786-10826). rules/wandsprose.h
+~10786-10826). rules/dmg/wandsprose.h
 (the grenade.h pattern, wd prefix,
 65 scalar accessors - no arrays
 this round): the section
@@ -2243,7 +2243,7 @@ remain open after that.
 R247 landed the III.D wands
 explanation prose pins, part 2 of 3
 (DMG pp.144-145, upload lines
-~10828-10865). rules/wandsprose2.h
+~10828-10865). rules/dmg/wandsprose2.h
 (the grenade.h pattern, wd prefix,
 73 scalar accessors - no arrays
 this round): the remaining TEN
@@ -2311,7 +2311,7 @@ effect table pins (DMG p.145, upload
 lines ~10867-10947) - the round that
 CLOSES the III.D wands arc (rods
 R244, staves R245, wands R246-R247,
-wonder R248). rules/wonder.h (the
+wonder R248). rules/dmg/wonder.h (the
 grenade.h pattern, wonder prefix, 42
 accessors - the 19-band table plus
 39 scalar effect facts, the first
@@ -2372,7 +2372,7 @@ headings inside this seam are the
 book running page headers, not
 tables - the III.A/B/C tables were
 pinned by R122/R221-R224 long ago.
-rules/potionsprose.h (the grenade.h
+rules/dmg/potionsprose.h (the grenade.h
 pattern, pot prefix - distinct from
 the R221 potion prefix - 56
 accessors, of which 5 are array
@@ -2424,7 +2424,7 @@ explanation prose pins, part 2 of 3
 (DMG pp.134-136, upload lines
 ~10063-10128) - potions 10 through
 19 of the EXPLANATIONS section.
-rules/potionsprose2.h (the
+rules/dmg/potionsprose2.h (the
 wandsprose2.h part-2 pattern, the
 pot prefix continues - 53 accessors,
 of which 15 are array walkers):
@@ -2485,7 +2485,7 @@ Water Breathing. THIS CLOSES THE
 III.A POTIONS ARC END TO END (the
 R249 conventions through the R251
 final row, engine bands 01-100).
-rules/potionsprose3.h (the part-3
+rules/dmg/potionsprose3.h (the part-3
 pattern, the pot prefix continues -
 69 accessors, of which 5 are array
 walkers): Invulnerability (fewer
@@ -2639,7 +2639,7 @@ explanation prose part 1 of 3
 mechanics and the four lead
 rings: Contrariness, Delusion,
 Djinni Summoning, Elemental
-Command. rules/ringsprose.h (the
+Command. rules/dmg/ringsprose.h (the
 grenade.h pattern, the rgp
 prefix - distinct from the R223
 ring prefix - 47 accessors, of
@@ -2709,7 +2709,7 @@ explanation prose part 2 of 3
 (DMG pp.138-139, upload lines
 ~10393-10457) - Feather Falling
 through Shooting Stars.
-rules/ringsprose2.h (the rgp
+rules/dmg/ringsprose2.h (the rgp
 prefix, part 2 - 67 accessors,
 of which 6 are array walkers):
 Feather Falling (5 feet),
@@ -2863,7 +2863,7 @@ explanation prose part 3 of 3
 (DMG pp.139-140, upload lines
 ~10458-10561) - Spell Storing
 through X-Ray Vision.
-rules/ringsprose3.h (the rgp
+rules/dmg/ringsprose3.h (the rgp
 prefix, part 3 - 89 accessors:
 78 scalars + 11 array walkers):
 Spell Storing (2-5 d4+1, the
@@ -2948,7 +2948,7 @@ magic explanation prose part 1
 (part1 10949-11065 stitched
 into part2 at line 3 - the
 FIRST TWO-PART-FILE round).
-rules/miscprose1.h (the mmp
+rules/dmg/miscprose1.h (the mmp
 prefix, 65 accessors: 60
 scalars + 5 array walkers):
 the section intro (not more
@@ -3025,7 +3025,7 @@ magic explanation prose part 2
 (part2 lines 5-66; global =
 11065 + part2 line; no page
 headers inside the slice).
-rules/miscprose2.h (the mmp
+rules/dmg/miscprose2.h (the mmp
 prefix again, 83 accessors: 74
 scalars + 9 array walkers): Bag
 of Holding (the 4-row quality
@@ -3098,7 +3098,7 @@ line 104 continues ROUND
 (MINUTE); the stray table-title
 line 83 is a duplicated header,
 noted not pinned).
-rules/miscprose3.h (the mmp
+rules/dmg/miscprose3.h (the mmp
 prefix again, 76 accessors: 73
 scalars + 3 array walkers): Book
 of Infinite Spells (5-20 hp,
@@ -3165,7 +3165,7 @@ splits the Bracers of
 Defense AC table from
 Bracers of Defenselessness -
 no mid-sentence seam this
-time. rules/miscprose4.h
+time. rules/dmg/miscprose4.h
 (the mmp prefix again, 53
 accessors: 48 scalars + 5
 array walkers, no name
@@ -3285,7 +3285,7 @@ Cloak of Displacement (line
 180 ends with such as
 spells,, line 185 continues
 gaze weapon attacks).
-rules/miscprose5.h (the mmp
+rules/dmg/miscprose5.h (the mmp
 prefix again, 60 accessors:
 50 scalars + 10 array
 walkers, no name collisions
@@ -7021,7 +7021,7 @@ battery census stays 213.
 
 R304 PINNED the DMG THIEF ABILITIES time
 figures and the FIRST DUNGEON ADVENTURE
-doors prose: rules/locktime.h, the
+doors prose: rules/dmg/locktime.h, the
 grenade.h pattern - the lock-pick time
 band (1-10 rounds on the complexity,
 most locks 1-4), the traps-time-rides-
@@ -7036,7 +7036,7 @@ carries the round box; the battery
 census moves 225 -> 227).
 
 R305 PINNED the DMG FIRST DUNGEON ADVENTURE
-forcing prose: rules/doorforce.h, the
+forcing prose: rules/dmg/doorforce.h, the
 grenade.h pattern - the typical 1-2 d6
 band, the very-heavy halves, the
 simultaneous-1s locked rule (the print
@@ -7187,14 +7187,14 @@ per strength point, the races 15,
 sahuagin 20, untrained -4; missiles
 out except the special crossbow at
 10x price and half range). The spell
-lists ride R168 (rules/uwspells.h).
+lists ride R168 (rules/dmg/uwspells.h).
 No engine site charges any of this
 yet; the battery census moves 234 ->
 235 with the R311 audit.
 
 R312 the flooded crossing (the first
 engine site the R311 underwater pins
-charge): rules/swimcross.h (the seam -
+charge): rules/dmg/swimcross.h (the seam -
 swimArmorSwims and swimCanSwim with
 the magic-armor dog paddle, the load
 beyond the armor in pounds, the
@@ -8381,30 +8381,30 @@ Categories:
       rows keep their own R55 magic ladder (a different
       print; not conflated).
 - [x] **Grenade-like missiles + holy/unholy water
-      (pp.64-65)** - pinned by R157: rules/grenade.h, the
+      (pp.64-65)** - pinned by R157: rules/dmg/grenade.h, the
       header-only flask layer (sizes, effect dice, range
       bands, item-save breaks, the d8 direction cone,
       holy/unholy targeting, oil crossing, vial cost,
       boulder drops); the throw itself rides the
       missile-fire lane.
 - [x] **Weapon speed factors in initiative (p.66)** - pinned
-      by R158: rules/weaponspeed.h (the p.38 factor table,
+      by R158: rules/dmg/weaponspeed.h (the p.38 factor table,
       the tie order, the extra-attack windows, the
       weapon-vs-spell strike segment); rules/turn verified
       first and deliberately untouched - the print applies
       factors only in caller-detected cases.
 - [x] **Striking to subdue (p.67)** - pinned by R159:
-      rules/subdue.h (the 75/25 accounting, applicability,
+      rules/dmg/subdue.h (the 75/25 accounting, applicability,
       the knockout threshold, and the MM dragon capture:
       the kind table, the int gate, the percent ratio,
       the automatic subdual, the sale price).
 - [x] **Weaponless combat (pp.72-73)** - pinned by R160:
-      rules/weaponless.h (the shared variable, the
+      rules/dmg/weaponless.h (the shared variable, the
       initiative priority, the 25/25/50 accounting, the
       base scores, every modifier, the three tables, the
       hold ladder, the general notes).
 - [x] **Attacks with two weapons (p.70)** - pinned by
-      R161: rules/twoweapon.h (the dagger/hand-axe
+      R161: rules/dmg/twoweapon.h (the dagger/hand-axe
       gate, the penalty ladder with the dex easing,
       the low-dex add-to-each rule, no shield or
       parry from the second weapon).
@@ -8414,32 +8414,32 @@ Categories:
       cell carries Curate down; the XP-row divergence is
       CLOSED R176 - the rows repinned to the print).
 - [x] **The poison table (p.20)** - pinned by R163:
-      rules/poison.h (the ingestive/insinuative grade
+      rules/dmg/poison.h (the ingestive/insinuative grade
       table with cost, onset, damage classes, save
       bonuses and detection chances; the efficiency
       ladder; the blade-venom decay).
 - [x] **The assassination table (p.75)** - pinned by
-      R164: rules/assassinate.h (the 15x10 odds matrix
+      R164: rules/dmg/assassinate.h (the 15x10 odds matrix
       with the dashes as no chance, the band mapping,
       the level clamps, the helpless-opponents
       footnote).
 - [x] **Potion miscibility (p.119)** - pinned by R165:
-      rules/miscibility.h (the d100 band table with the
+      rules/dmg/miscibility.h (the d100 band table with the
       explosion, poison and boost numbers; the trigger
       conditions; the named campaign options).
 - [x] **Intoxication and insanity (pp.82-83)** - pinned
-      by R166: rules/insanity.h (the intoxication and
+      by R166: rules/dmg/insanity.h (the intoxication and
       recovery tables; the 20 insanity types with
       the mild-star, the duration classes and the
       per-form numbers).
 - [x] **PC disease + parasitic infestation (pp.13-14)**
-      - pinned by R167: rules/disease.h (the
+      - pinned by R167: rules/dmg/disease.h (the
       contraction chances with every modifier, the
       occurrence and severity tables cell by cell,
       the die roll adjustments, the per-area
       losses, the death relapse).
 - [x] **Underwater spell use (p.57)** - PINNED
-      R168: rules/uwspells.h (the cannot-cast and
+      R168: rules/dmg/uwspells.h (the cannot-cast and
       altered spell lists cell by cell, the general
       limits, the altered-effect numerics).
 - [x] **Chances of becoming lost (p.49)** - PINNED
@@ -8450,11 +8450,11 @@ Categories:
       are the callers. The R123 movement rates next to
       it are the same outdoor march this check gates.
 - [x] **Humanoid racial preferences (p.106)** - PINNED
-      R169: rules/humrpref.h (the 81-cell matrix with
+      R169: rules/dmg/humrpref.h (the 81-cell matrix with
       the star marks, the letter key, the usage and
       the compatibility prose).
 - [x] **Appendices K + L + M (pp.221-224)** - PINNED
-      R171: rules/dmg_appendices_klm.h (the substance word lists, the
+      R171: rules/dmg/dmg_appendices_klm.h (the substance word lists, the
       conjured animals categories, the 20 summoned
       monsters tables; the Appendix L 5-and-up band
       columns were the OCR-debt finding, CLOSED
@@ -8481,13 +8481,13 @@ Categories:
       locked-door parentheticals and the
       one-attempt-ever footnote are pinned with it.
 - [x] **Followers by class (pp.16-18)** - PINNED
-      R170: rules/followers.h (the cleric, fighter,
+      R170: rules/dmg/followers.h (the cleric, fighter,
       ranger, thief and assassin recruitment tables
       cell by cell, the multi-class tables, the
       Grandfather ladder, the arrival timing and
       the paladin warhorse).
 - [x] **Secondary skills (p.12)** - PINNED R173:
-      rules/secondary.h (the 23-band table cell by
+      rules/dmg/secondary.h (the 23-band table cell by
       cell; the when-to-use guidance).
 - [x] **R146 fiction (the named omissions)** - CLOSED
       R174: the noble gender coin (nobleman 75% /
@@ -8621,7 +8621,7 @@ cityRuffianKind), audited by the
 
 - [x] **Appendix J: herbs, spices and medicinal
       vegetables (p.220)** - PINNED R172:
-      rules/herbs.h (the 171-row plant and uses
+      rules/dmg/herbs.h (the 171-row plant and uses
       table cell by cell; the turnip row the
       compilation drops restored).
 

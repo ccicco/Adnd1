@@ -11,7 +11,7 @@
 # WANDS table. Keyed to the 30 die bands
 # of the engine III.D table; the row
 # VALUES were already pinned by R122.
-# Patches: 4 (new rules/rodswands.h,
+# Patches: 4 (new rules/dmg/rodswands.h,
 # regtest include, audit block,
 # gap-report log entry). Census 139 -> 140.
 
@@ -58,12 +58,12 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/rodswands.h - the new header
+# Patch 1: rules/dmg/rodswands.h - the new header
 # ---------------------------------------------------------------------------
 
 hdr_lines = [
     '// ====================================================================',
-    '// Adnd1 - rules/rodswands.h',
+    '// Adnd1 - rules/dmg/rodswands.h',
     '// R224: the III.D rods/staves/wands',
     '// footnote pins (DMG pp.127-128) - the',
     '// class-usable marks and the',
@@ -198,7 +198,7 @@ hdr_lines = [
 ]
 hdr = NL.join(hdr_lines) + NL
 
-patch('rules/rodswands.h',
+patch('rules/dmg/rodswands.h',
       'R224: the III.D rods/staves/wands',
       None,
       hdr)
@@ -209,10 +209,10 @@ patch('rules/rodswands.h',
 # Patch 2: regtest.cpp - the include
 # ---------------------------------------------------------------------------
 
-old2 = '#include "rules/rings.h"  // R223: p.127 the rings footnote pins'
+old2 = '#include "rules/dmg/rings.h"  // R223: p.127 the rings footnote pins'
 
-new2 = ('#include "rules/rings.h"  // R223: p.127 the rings footnote pins'
-        + NL + '#include "rules/rodswands.h"  // R224: pp.127-128 the rods/staves/wands pins')
+new2 = ('#include "rules/dmg/rings.h"  // R223: p.127 the rings footnote pins'
+        + NL + '#include "rules/dmg/rodswands.h"  // R224: pp.127-128 the rods/staves/wands pins')
 
 patch('regtest.cpp',
       'R224: pp.127-128 the rods/staves/wands pins',
@@ -347,7 +347,7 @@ log_lines = [
     'lines ~9625-9658) - the class-usable',
     'marks and the full-charges asterisk that',
     'frame the III.D RODS, STAVES, & WANDS',
-    'table. rules/rodswands.h (the grenade.h',
+    'table. rules/dmg/rodswands.h (the grenade.h',
     'pattern), keyed to the 30 die bands of the',
     'engine III.D table in kRods order: the (C)',
     'cleric-only, (M) magic-user-only, (F)',

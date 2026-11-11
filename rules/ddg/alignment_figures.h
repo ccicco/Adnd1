@@ -16,7 +16,7 @@
 // circle; the FIG. 5 wheel (Elysium top, Hades bottom, Concordant Opposition
 // center, the p. 129 list order clockwise); the TARTARUS figure spelling vs
 // the Tarterus list (the eyeball confirmation, both pinned); the wheel
-// matches the pln.h seventeen-planes pin. The FIG. 4 roster rides
+// matches the rules/ddg/appendix1_known_planes.h seventeen-planes pin. The FIG. 4 roster rides
 // doc/data/ddg_fig4.txt; the FIG. 5 roster rides doc/data/ddg_fig5.txt.
 //
 namespace rules {
@@ -176,7 +176,7 @@ inline bool afgG5TartarusSpelling()
     { return true; }
 
 // the wheel matches the Appendix 1 seventeen-planes pin (the
-// plnOutSeventeenCount doctrine, rules/pln.h)
+// plnOutSeventeenCount doctrine, rules/ddg/appendix1_known_planes.h)
 inline bool afgG5SeventeenMatch()
     { return true; }
 

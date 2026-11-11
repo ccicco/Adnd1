@@ -192,14 +192,14 @@ PSBODY = E(
     '// The feeders the corpus already',
     '// pinned:',
     '//   0: R166 the insanity seam',
-    '//      (rules/insanity.h - the four',
+    '//      (rules/dmg/insanity.h - the four',
     '//      MILD forms subject to psionic',
     '//      attack, the duration classes)',
     '//   1: R323 the subrace layer',
-    '//      (rules/subraces.h - the',
+    '//      (rules/ua/subraces.h - the',
     '//      svirfneblin noPsionics trait)',
     '//   2: R328 the cavalier mind',
-    '//      powers (rules/cavalier.h - the',
+    '//      powers (rules/ua/cavalier.h - the',
     '//      90 percent resistance, the',
     '//      psionic mind blast roster',
     '//      entry)',
@@ -304,11 +304,11 @@ newfile(PS, PSBODY + NL,
 RT = 'regtest.cpp'
 
 pair(RT,
-     '#include "rules/insanity.h"  '
+     '#include "rules/dmg/insanity.h"  '
      '// R166: pp.82-83 intoxication'
      ' and insanity',
      E(
-    '#include "rules/insanity.h"  // R166:'
+    '#include "rules/dmg/insanity.h"  // R166:'
     ' pp.82-83 intoxication and insanity',
     '#include "rules/psionics.h"  '
     '// R404: the psionics seam'),

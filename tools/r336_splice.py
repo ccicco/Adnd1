@@ -39,7 +39,7 @@ SEED_ENTRY = NL.join([
     '- R335 landed 2026-10-11: commit',
     '  ef84109, census 262, the UA',
     '  thief-acrobat pin round',
-    '  (rules/acrobat.h): the split class',
+    '  (rules/ua/acrobat.h): the split class',
     '  at 6th, Table I, the Function',
     '  Table columns (the tumbling',
     '  attack and evasion ladders',
@@ -70,14 +70,14 @@ assert s.count('## Knowledge maintenance') == 1, \
     'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
-# ---- (b) NEW rules/cavmoney.h ----
-CM = 'rules/cavmoney.h'
+# ---- (b) NEW rules/ua/cavmoney.h ----
+CM = 'rules/ua/cavmoney.h'
 if os.path.exists(CM) and 'R336' in rd(CM):
     already.append('cavmoney.h: the pins')
 else:
     HDR = NL.join([
     '// ===========================================================================',
-    '// Adnd1 - rules/cavmoney.h',
+    '// Adnd1 - rules/ua/cavmoney.h',
     '// The UA Starting Money and Equipment for Cavaliers (p. 25) pins',
     '// (R336).',
     '//',
@@ -297,7 +297,7 @@ else:
     assert s.count(TAIL_OLD) == 1, 'c tail'
     CLOSE = NL.join([
     '      - CLOSED R336: the pin round',
-    '        (rules/cavmoney.h) - the six',
+    '        (rules/ua/cavmoney.h) - the six',
     '        stations in social-ladder',
     '        order, the gold ranges, the',
     '        printed formulas verified',
@@ -338,11 +338,11 @@ s = rd(RT)
 if 'R336 cavalier money pin audit' in s:
     already.append('regtest.cpp: the R336 audit')
 else:
-    INC_ANCH = ('#include "rules/acrobat.h"'
+    INC_ANCH = ('#include "rules/ua/acrobat.h"'
                 '  // R335: the UA thief-acrobat')
     INC_NEW = NL.join([
     INC_ANCH,
-    '#include "rules/cavmoney.h"'
+    '#include "rules/ua/cavmoney.h"'
     '  // R336: the UA cavalier money',
     ])
     AUD_ANCH = ('    // ---- R227: the wis mental'
@@ -538,7 +538,7 @@ assert s.count(
     == 1, 'd r334 kept'
 assert s.count('R227: the wis mental save') == 1, \
     'd r227 kept'
-assert s.count('#include "rules/cavmoney.h"') == 1, \
+assert s.count('#include "rules/ua/cavmoney.h"') == 1, \
     'd include'
 assert len(applied) + len(already) == 4, 'd count'
 

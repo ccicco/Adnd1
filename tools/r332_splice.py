@@ -40,7 +40,7 @@ SEED_ENTRY = NL.join([
     '- R331 landed 2026-10-11: commit',
     '  ae61566, census 258, the UA weapon',
     '  specialization prose pin round',
-    '  (rules/weaponspec.h): the class gate,',
+    '  (rules/ua/weaponspec.h): the class gate,',
     '  the slot costs, the melee and',
     '  point-blank reads, the double, the',
     '  table structure with the cleanly',
@@ -74,19 +74,19 @@ assert s.count('## Knowledge maintenance') == 1, \
     'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
-# ---- (b) NEW rules/barbarian.h ----
-BH = 'rules/barbarian.h'
+# ---- (b) NEW rules/ua/barbarian.h ----
+BH = 'rules/ua/barbarian.h'
 if os.path.exists(BH) and 'R332' in rd(BH):
     already.append('barbarian.h: the pins')
 else:
     HDR = NL.join([
     '// ===========================================================================',
-    '// Adnd1 - rules/barbarian.h',
+    '// Adnd1 - rules/ua/barbarian.h',
     '// The UA barbarian class (pp. 18-21) pins (R332).',
     '//',
     '// Pin-era pattern (R322): pinned data only - no engine site exists.',
     '// The registry rows and the creation-flow gates ride their own rounds.',
-    '// The d12 hit die rides the R327 pin (rules/classtables.h); the',
+    '// The d12 hit die rides the R327 pin (rules/ua/classtables.h); the',
     '// weapon specialization exclusion rides the R331 pin (the gate',
     '// returns false for the barbarian).',
     '//',
@@ -428,7 +428,7 @@ else:
                 ' (pp. 18-21) -')
     CLOSE = NL.join([
     '      - CLOSED R332: the pin round',
-    '      (rules/barbarian.h) - the',
+    '      (rules/ua/barbarian.h) - the',
     '      requirements and the wisdom',
     '      maximum, Barbarians Table I, the',
     '      magic detestation, the natural',
@@ -464,11 +464,11 @@ s = rd(RT)
 if 'R332 barbarian pin audit' in s:
     already.append('regtest.cpp: the R332 audit')
 else:
-    INC_ANCH = ('#include "rules/weaponspec.h"'
+    INC_ANCH = ('#include "rules/ua/weaponspec.h"'
                 '  // R331: the UA weapon spec')
     INC_NEW = NL.join([
     INC_ANCH,
-    '#include "rules/barbarian.h"'
+    '#include "rules/ua/barbarian.h"'
     '  // R332: the UA barbarian',
     ])
     AUD_ANCH = ('    // ---- R227: the wis mental'
@@ -714,7 +714,7 @@ assert s.count('R330 druid hierophant pin audit: bad ')\
     == 1, 'd r330 kept'
 assert s.count('R227: the wis mental save') == 1, \
     'd r227 kept'
-assert s.count('#include "rules/barbarian.h"') == 1, \
+assert s.count('#include "rules/ua/barbarian.h"') == 1, \
     'd include'
 assert len(applied) + len(already) == 4, 'd count'
 

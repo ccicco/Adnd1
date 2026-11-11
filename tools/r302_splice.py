@@ -12,7 +12,7 @@
 # reached it and no thief roll ran. This
 # round wires both:
 #
-#   (a) rules/thieffunc.h - the
+#   (a) rules/phb/thieffunc.h - the
 #       surprise-site helpers:
 #       thfSilenceSurpriseAdj (one roll
 #       step of the DMG p.62 2d6 ladder -
@@ -84,7 +84,7 @@ def clean(s, limit):
         assert all(ord(c) < 128 for c in ln), 'non-ascii line'
         assert len(ln) <= limit, 'line too long: ' + ln
 
-# ---- (a) rules/thieffunc.h: the site helpers ----
+# ---- (a) rules/phb/thieffunc.h: the site helpers ----
 TF_TOP_OLD = NL.join([
     '// trap site (the thfAttemptSucceeds seam);',
     '// the other functions wait for engine sites',
@@ -154,7 +154,7 @@ for t in (TF_TOP_OLD, TF_TOP_NEW, TF_SEAM_OLD, TF_SEAM_NEW,
           TF_TAIL_OLD, TF_TAIL_NEW):
     clean(t, 78)
 
-p = 'rules/thieffunc.h'
+p = 'rules/phb/thieffunc.h'
 s = rd(p)
 if 'thfSilenceSurpriseAdj' in s:
     already.append('thieffunc.h: the site helpers')
@@ -239,11 +239,11 @@ assert len(applied) + len(already) == 2, 'patch b count wrong'
 
 # ---- (c) ai/actor.cpp: the roll + the wire ----
 AC_INC_OLD = NL.join([
-    '#include "../rules/weaponprof.h"  // R297: the proficiency table',
+    '#include "../rules/phb/weaponprof.h"  // R297: the proficiency table',
 ])
 AC_INC_NEW = NL.join([
-    '#include "../rules/weaponprof.h"  // R297: the proficiency table',
-    '#include "../rules/thieffunc.h"  // R302: the silence percentile',
+    '#include "../rules/phb/weaponprof.h"  // R297: the proficiency table',
+    '#include "../rules/phb/thieffunc.h"  // R302: the silence percentile',
 ])
 AC_DEF_OLD = NL.join([
     'int Encounter::stepRound() {',
@@ -312,7 +312,7 @@ else:
 s = rd(p)
 assert s.count('rollSurpriseWired') == 2, 'patch c def + call'
 assert 'rules::rollSurprise(m_dice, 0, 0' not in s, 'patch c left the zeros'
-assert s.count('rules/thieffunc.h') == 1, 'patch c include'
+assert s.count('rules/phb/thieffunc.h') == 1, 'patch c include'
 assert s.count('int Encounter::stepRound() {') == 1, 'patch c ate stepRound'
 assert s.count('rollSurpriseWired(pSurp, mSurp);') == 1, 'patch c call'
 assert 'The party is surprised' in s, 'patch c ate the log line'
@@ -575,7 +575,7 @@ assert 'R300 equipment costs engine audit' in s, 'patch e ate R300'
 assert 'R299a party kit recordings seam audit' in s, 'patch e ate R299a'
 assert s.count('THF_MOVE_SILENTLY') == 9, 'patch e probe count'
 assert s.count('silScenario(pt,') == 8, 'patch e scenario count'
-assert 'rules/thieffunc.h' in s, 'patch e include'
+assert 'rules/phb/thieffunc.h' in s, 'patch e include'
 assert len(applied) + len(already) == 5, 'patch e count wrong'
 
 # ---- (f) tools/phb_gap_report.md: the wiring-arc box ----
@@ -600,7 +600,7 @@ GR_BOX = NL.join([
     '      R302:** the move silently column',
     '      gains its first engine site - the',
     '      encounter surprise roll.',
-    '      rules/thieffunc.h gains',
+    '      rules/phb/thieffunc.h gains',
     '      thfSilenceSurpriseAdj (the SILENT',
     '      MOVEMENT print: success means an',
     '      improved chance to surprise; the',

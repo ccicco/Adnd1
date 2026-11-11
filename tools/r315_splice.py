@@ -30,7 +30,7 @@
 #       point range stay recorded (no party
 #       net exists - the PHB p.38 table
 #       carries no net row).
-#   (c) rules/uwfight.h - the NOT CHARGED
+#   (c) rules/dmg/uwfight.h - the NOT CHARGED
 #       list updates the same way.
 #   (d) regtest.cpp - the R315 engine audit
 #       (six scenarios, draw-independent
@@ -199,7 +199,7 @@ _o, _c, _o2, _c2 = counts(s)
 assert _o == _c and _o2 == _c2, 'patch b balance'
 assert len(applied) + len(already) == 2, 'patch b count wrong'
 
-# ---- (c) rules/uwfight.h: the NOT CHARGED list ----
+# ---- (c) rules/dmg/uwfight.h: the NOT CHARGED list ----
 UF_OLD = NL.join([
     '// pin, not data): the net throw prose,',
     '// the free',
@@ -215,7 +215,7 @@ for _t in (UF_OLD, UF_NEW):
     clean(_t, 78)
 assert Q not in UF_NEW, 'apostrophe in uwfight header'
 
-p = 'rules/uwfight.h'
+p = 'rules/dmg/uwfight.h'
 s = rd(p)
 if 'R315 - the state_combat volley fold' in s:
     already.append('uwfight.h: the not-charged list')

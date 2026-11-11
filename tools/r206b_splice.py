@@ -15,7 +15,7 @@
 #     over-24-pursuers band; the R206 comment
 #     arithmetic dropped it), so the pinned
 #     value is 10, not 0.
-# The header (rules/pursuit.h) is unchanged -
+# The header (rules/dmg/pursuit.h) is unchanged -
 # both bugs lived in the audit block only.
 # Patches: 1 (regtest.cpp, the two assertions
 # and the assembly comment). Census stays 122.

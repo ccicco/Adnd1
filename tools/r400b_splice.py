@@ -6,7 +6,7 @@
 # callers) wires the R322 and
 # R117 pins:
 #
-# 1. rules/comeliness.h: the
+# 1. rules/ua/comeliness.h: the
 #    site layer - the score
 #    helper (the raw 3d6 base
 #    roll + the charisma ladder;
@@ -144,8 +144,8 @@ if s.count('R399 landed 2026-10-13') != 1:
 if s.count('## Knowledge maintenance') != 1:
     die('the seed maintenance head')
 
-# ========= (b) rules/comeliness.h =========
-CM = 'rules/comeliness.h'
+# ========= (b) rules/ua/comeliness.h =========
+CM = 'rules/ua/comeliness.h'
 
 pair(CM, E(
     '// Pinned data only - no engine site exists',
@@ -355,22 +355,22 @@ pair(AS, E(
 # ===== (f) the parley-gate reaction callers =====
 # R400 RED fix (first run on Termux):
 # the two game TUs do not pull
-# rules/comeliness.h transitively
+# rules/ua/comeliness.h transitively
 # (regtest does; the engine
 # callers do not) - the include
 # rides before the callers.
 pair('game/state_dungeon.cpp', E(
-    '#include "rules/uwfight.h"  // R313: the crossing cap'),
+    '#include "rules/dmg/uwfight.h"  // R313: the crossing cap'),
     E(
-    '#include "rules/uwfight.h"  // R313: the crossing cap',
-    '#include "rules/comeliness.h"  // R400: the parley gate'),
+    '#include "rules/dmg/uwfight.h"  // R313: the crossing cap',
+    '#include "rules/ua/comeliness.h"  // R400: the parley gate'),
     'state_dungeon: the include')
 
 pair('game/state_combat.cpp', E(
-    '#include "../rules/uwfight.h"  // R313: the underwater bars'),
+    '#include "../rules/dmg/uwfight.h"  // R313: the underwater bars'),
     E(
-    '#include "../rules/uwfight.h"  // R313: the underwater bars',
-    '#include "../rules/comeliness.h"  // R400: the wandering gate'),
+    '#include "../rules/dmg/uwfight.h"  // R313: the underwater bars',
+    '#include "../rules/ua/comeliness.h"  // R400: the wandering gate'),
     'state_combat: the include')
 
 CALLER_OLD = E(

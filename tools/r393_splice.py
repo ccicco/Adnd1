@@ -8,12 +8,12 @@
 # flagged "stays open pending the
 # PDF read":
 #
-# 1. rules/weaponspec.h (R331): the
+# 1. rules/ua/weaponspec.h (R331): the
 #    Weapon Specialization Table - all
 #    24 cells now read (the six
 #    fragment cells seam-agree row for
 #    row); the superseding note pins.
-# 2. rules/thiefarmor.h (R334): the
+# 2. rules/ua/thiefarmor.h (R334): the
 #    Thieves Table II holes (the Open
 #    Locks cells, the no-armor dashes)
 #    fill; the attacks band-2 rate
@@ -143,8 +143,8 @@ if s.count('R392 landed 2026-10-12') != 1:
 if s.count('## Knowledge maintenance') != 1:
     die('the seed maintenance head')
 
-# ============ (b) rules/weaponspec.h ============
-WS = 'rules/weaponspec.h'
+# ============ (b) rules/ua/weaponspec.h ============
+WS = 'rules/ua/weaponspec.h'
 
 pair(WS,
      B('// The Weapon Specialization Table: the',
@@ -243,8 +243,8 @@ pair(WS,
        '    { return true; }').rstrip(NL),
      'weaponspec.h: the 24-cell table')
 
-# ============ (c) rules/thiefarmor.h ============
-TA = 'rules/thiefarmor.h'
+# ============ (c) rules/ua/thiefarmor.h ============
+TA = 'rules/ua/thiefarmor.h'
 
 pair(TA,
      B('//   - the attacks table: the band row'
@@ -959,7 +959,7 @@ pair(GP,
        '      no pole arms or two-handed sword);',
        '      the bonuses are not magical.',
        '      - R331: the prose pinned',
-       '      (rules/weaponspec.h) - the',
+       '      (rules/ua/weaponspec.h) - the',
        '      class gate, the slot costs,',
        '      the melee/bow/crossbow',
        '      reads, the double, the table',
@@ -990,7 +990,7 @@ pair(GP,
        '      no pole arms or two-handed sword);',
        '      the bonuses are not magical.',
        '      - AMENDED R393: closed - the R331',
-       '      pin (rules/weaponspec.h); the R393',
+       '      pin (rules/ua/weaponspec.h); the R393',
        '      clean PDF read fills all 24 table',
        '      cells (the six fragment cells',
        '      seam-agree row for row) and pins',
@@ -1006,7 +1006,7 @@ pair(GP,
        '      **Attacks Per Melee Round Table**',
        '      (p. 22) pairs with it.',
        '      - R334: the fragment-verified',
-       '      cells pinned (rules/thiefarmor.h)',
+       '      cells pinned (rules/ua/thiefarmor.h)',
        '      - the armor columns, the eight',
        '      functions, the sign-carries-',
        '      column decode, the footnotes,',
@@ -1025,7 +1025,7 @@ pair(GP,
        '      **Attacks Per Melee Round Table**',
        '      (p. 22) pairs with it.',
        '      - AMENDED R393: closed - the R334',
-       '      pin (rules/thiefarmor.h); the R393',
+       '      pin (rules/ua/thiefarmor.h); the R393',
        '      clean PDF read fills the Open Locks',
        '      cells (0/-5/-10), the no-armor',
        '      dashes, the attacks high-band rate',

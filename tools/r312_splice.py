@@ -13,7 +13,7 @@
 # the flooded crossing, one water pool per
 # delve (the R304 one-per-delve convention).
 #
-#   (a) rules/swimcross.h - CREATED (the
+#   (a) rules/dmg/swimcross.h - CREATED (the
 #       seam, the grenade.h evaluable
 #       subset): the armor gate with the
 #       magic exception, the load beyond the
@@ -196,10 +196,10 @@ def _sanity():
             'drown roll seed ' + str(_s))
 _sanity()
 
-# ---- (a) rules/swimcross.h CREATED ----
+# ---- (a) rules/dmg/swimcross.h CREATED ----
 SB = NL.join(
     ['// ====================================================================',
-     '// Adnd1 - rules/swimcross.h',
+     '// Adnd1 - rules/dmg/swimcross.h',
      '// R312: the DMG surface SWIMMING',
      '// paragraph (the R311 pins,',
      '// rules/underwater.h) WIRED as the',
@@ -231,7 +231,7 @@ SB = NL.join(
      '// MOVEMENT, VISION and COMBAT paragraphs',
      '// stay data (no underwater combat layer',
      '// exists - a future seam); the spell',
-     '// lists ride R168 (rules/uwspells.h).',
+     '// lists ride R168 (rules/dmg/uwspells.h).',
      '//',
      '// The armor ids read plain ints (the',
      '// items::ArmorId order): 0 none, 1',
@@ -311,7 +311,7 @@ SB = NL.join(
 clean(SB, 78)
 assert Q not in SB, 'apostrophe in header'
 
-p = 'rules/swimcross.h'
+p = 'rules/dmg/swimcross.h'
 if os.path.exists(os.path.join(ROOT, p)):
     s = rd(p)
     if 'inline int swimArmorSwims(int armorId) {' in s:
@@ -464,11 +464,11 @@ assert len(applied) + len(already) == 4, 'patch d count wrong'
 
 # ---- (e) game/state_dungeon.cpp: the site ----
 SD_I_OLD = NL.join([
-    '#include "rules/doorforce.h"  // R305: the door force folds',
+    '#include "rules/dmg/doorforce.h"  // R305: the door force folds',
 ])
 SD_I_NEW = NL.join([
-    '#include "rules/doorforce.h"  // R305: the door force folds',
-    '#include "rules/swimcross.h"  // R312: the flooded crossing',
+    '#include "rules/dmg/doorforce.h"  // R305: the door force folds',
+    '#include "rules/dmg/swimcross.h"  // R312: the flooded crossing',
 ])
 SD_M_OLD = NL.join([
     '        // the turn spent can draw a wanderer',
@@ -686,7 +686,7 @@ RG_I_OLD = NL.join([
 ])
 RG_I_NEW = NL.join([
     '#include "rules/underwater.h"  // R311: the underwater environment',
-    '#include "rules/swimcross.h"  // R312: the flooded crossing',
+    '#include "rules/dmg/swimcross.h"  // R312: the flooded crossing',
 ])
 for _t in (RG_I_OLD, RG_I_NEW):
     clean(_t, 76)
@@ -694,7 +694,7 @@ for _t in (RG_I_OLD, RG_I_NEW):
 
 p = 'regtest.cpp'
 s = rd(p)
-if '#include "rules/swimcross.h"' in s:
+if '#include "rules/dmg/swimcross.h"' in s:
     already.append('regtest.cpp: the include line')
 else:
     assert 'swimcross' not in s, 'include marker collision'
@@ -704,7 +704,7 @@ else:
     applied.append('regtest.cpp: the include line')
 
 s = rd(p)
-assert s.count('#include "rules/swimcross.h"') == 1, 'g include'
+assert s.count('#include "rules/dmg/swimcross.h"') == 1, 'g include'
 assert s.count('#include "rules/underwater.h"') == 1, 'g anchor'
 assert len(applied) + len(already) == 7, 'patch g count wrong'
 
@@ -721,7 +721,7 @@ RT_NEXT = NL.join([
 RT_AUD_A = NL.join(
     ['    // ---- R312a: the flooded crossing seam audit ----',
      '    // The DMG surface SWIMMING paragraph folds',
-     '    // (rules/swimcross.h, the grenade.h pattern)',
+     '    // (rules/dmg/swimcross.h, the grenade.h pattern)',
      '    // against the R311 drown pin - verified by',
      '    // audit_eval. The armor ids read the plain',
      '    // items::ArmorId order (0 none through 9',
@@ -1034,7 +1034,7 @@ CH_NEW = NL.join([
     '',
     'R312 the flooded crossing (the first',
     'engine site the R311 underwater pins',
-    'charge): rules/swimcross.h (the seam -',
+    'charge): rules/dmg/swimcross.h (the seam -',
     'swimArmorSwims and swimCanSwim with',
     'the magic-armor dog paddle, the load',
     'beyond the armor in pounds, the',

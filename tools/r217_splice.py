@@ -53,7 +53,7 @@
 # gp), and the charmed or enslaved
 # magic-user rule (totally unable to
 # fabricate any magic item). Patches: 4
-# (new rules/scrollfab.h, regtest include,
+# (new rules/dmg/scrollfab.h, regtest include,
 # audit block, gap-report log entry).
 # Census 132 -> 133.
 
@@ -100,12 +100,12 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/scrollfab.h - the new header
+# Patch 1: rules/dmg/scrollfab.h - the new header
 # ---------------------------------------------------------------------------
 
 hdr_lines = [
 '// ====================================================================',
-'// Adnd1 - rules/scrollfab.h',
+'// Adnd1 - rules/dmg/scrollfab.h',
 '// R217: the scroll manufacture and',
 '// fabrication pins (DMG pp.118-121) -',
 '// the scroll inscription rules and',
@@ -514,7 +514,7 @@ hdr_lines = [
 ]
 hdr = NL.join(hdr_lines) + NL
 
-patch('rules/scrollfab.h',
+patch('rules/dmg/scrollfab.h',
       'R217: the scroll manufacture and',
       None,
       hdr)
@@ -525,10 +525,10 @@ patch('rules/scrollfab.h',
 # Patch 2: regtest.cpp - the include
 # ---------------------------------------------------------------------------
 
-old2 = '#include "rules/magres.h"  // R216: pp.114-119 magical research pins'
+old2 = '#include "rules/dmg/magres.h"  // R216: pp.114-119 magical research pins'
 
-new2 = ('#include "rules/magres.h"  // R216: pp.114-119 magical research pins'
-        + NL + '#include "rules/scrollfab.h"  // R217: pp.118-121 scroll manufacture and fabrication pins')
+new2 = ('#include "rules/dmg/magres.h"  // R216: pp.114-119 magical research pins'
+        + NL + '#include "rules/dmg/scrollfab.h"  // R217: pp.118-121 scroll manufacture and fabrication pins')
 
 patch('regtest.cpp',
       'R217: pp.118-121 scroll manufacture and fabrication pins',
@@ -642,7 +642,7 @@ log_lines = [
 'fabrication pins (DMG pp.118-121) - the',
 'MANUFACTURE OF SCROLLS seam and the',
 'FABRICATION material that follows it.',
-'rules/scrollfab.h (the grenade.h pattern):',
+'rules/dmg/scrollfab.h (the grenade.h pattern):',
 'the inscription gates (cleric, druid,',
 'magic-user, illusionist at 7th or higher,',
 'the spell one the inscriber can employ;',

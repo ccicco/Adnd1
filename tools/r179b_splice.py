@@ -57,10 +57,10 @@ def patch(p, old, new, tag, expect=1, marker=None):
 
 # ---- (1) the include ----
 p1_old = NL.join([
-    '#include "rules/secondary.h"  // R173: p.12 secondary skills',
+    '#include "rules/dmg/secondary.h"  // R173: p.12 secondary skills',
 ])
 p1_new = NL.join([
-    '#include "rules/secondary.h"  // R173: p.12 secondary skills',
+    '#include "rules/dmg/secondary.h"  // R173: p.12 secondary skills',
     '#include "rules/subclasses.h"  // R179: the subclass registry',
 ])
 

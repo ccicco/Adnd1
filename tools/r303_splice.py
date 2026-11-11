@@ -15,7 +15,7 @@
 # worked example: 120 cut to 75 by a 12th
 # level victim, noticed from 96).
 #
-#   (a) rules/thieffunc.h - the
+#   (a) rules/phb/thieffunc.h - the
 #       street-site seams:
 #       thfPocketsChanceTenths (the
 #       victim cut fold; the cut may
@@ -94,7 +94,7 @@ def clean(s, limit, allow_apos=False):
         assert all(ord(c) < 128 for c in ln), 'non-ascii line'
         assert len(ln) <= limit, 'line too long: ' + ln
 
-# ---- (a) rules/thieffunc.h: the street-site seams ----
+# ---- (a) rules/phb/thieffunc.h: the street-site seams ----
 TF_HEAD_OLD = NL.join([
     '// R302: the move silently roll now runs at',
     '// the surprise site; the other functions',
@@ -180,7 +180,7 @@ for t in (TF_HEAD_OLD, TF_HEAD_NEW, TF_SEAM_OLD, TF_SEAM_NEW,
           TF_TAIL_OLD, TF_TAIL_NEW):
     clean(t, 78)
 
-p = 'rules/thieffunc.h'
+p = 'rules/phb/thieffunc.h'
 s = rd(p)
 if 'thfPocketsChanceTenths' in s:
     already.append('thieffunc.h: the street-site seams')
@@ -252,8 +252,8 @@ SS_INC_OLD = NL.join([
 ])
 SS_INC_NEW = NL.join([
     '#include "appstate.h"',
-    '#include "rules/startmoney.h"   // R303: the passerby purse',
-    '#include "rules/thieffunc.h"    // R303: the pockets roll',
+    '#include "rules/phb/startmoney.h"   // R303: the passerby purse',
+    '#include "rules/phb/thieffunc.h"    // R303: the pockets roll',
 ])
 SS_CITY_OLD = NL.join([
     '        log.add("[1] by day  [2] by night  [B] back to town.");',
@@ -359,8 +359,8 @@ s = rd(p)
 assert s.count('void AppState::cityPickPockets(){') == 1, 'patch c method'
 assert 'rules::thfPocketsChanceTenths(' in s, 'patch c chance seam'
 assert 'rules::thfPocketsVictimNotices(roll, chance)' in s, 'patch c notice seam'
-assert s.count('rules/startmoney.h') == 1, 'patch c startmoney include'
-assert s.count('rules/thieffunc.h') == 1, 'patch c thieffunc include'
+assert s.count('rules/phb/startmoney.h') == 1, 'patch c startmoney include'
+assert s.count('rules/phb/thieffunc.h') == 1, 'patch c thieffunc include'
 assert '[P] pick ' in s, 'patch c key line'
 assert s.count('log.add(line);') == 1, 'patch c ate the flavor tail'
 assert 'rollCityEncounter' in s, 'patch c ate the excursion'
@@ -698,7 +698,7 @@ assert s.count('R302 thief silence engine audit') == 1, 'patch e ate R302'
 assert 'R301 thief trap rolls engine audit' in s, 'patch e ate R301'
 assert s.count('st.cityPickPockets();') == 6, 'patch e call count'
 assert s.count('thfPocketsChanceTenths(12, 4, 18, 12)') == 1, 'patch e example'
-assert s.count('rules/thieffunc.h') >= 1, 'patch e the include'
+assert s.count('rules/phb/thieffunc.h') >= 1, 'patch e the include'
 assert len(applied) + len(already) == 5, 'patch e count wrong'
 
 # ---- (f) tools/phb_gap_report.md: the wiring-arc box ----
@@ -724,7 +724,7 @@ GR_BOX = NL.join([
     '      R303:** the pick pockets column gains',
     '      its first engine site - the city',
     '      streets command ([P], the R70 shell).',
-    '      rules/thieffunc.h gains',
+    '      rules/phb/thieffunc.h gains',
     '      thfPocketsChanceTenths (the printed',
     '      base folded with the printed victim',
     '      cut - the potential victim reduces',

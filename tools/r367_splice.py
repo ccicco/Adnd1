@@ -147,7 +147,7 @@ else:
 // ladder), the occupation rosters, the starting-money
 // note, the non-human placements and the profession
 // rule. Extends the landed R208 DMG structure header
-// (rules/socialrank.h), which pins the government
+// (rules/dmg/socialrank.h), which pins the government
 // forms and the town structure but no random class
 // table - the UA print adds the dice table.
 //
@@ -944,8 +944,8 @@ for h in ('rules/ua/uaspellbooks.h',
         'rules/ua/uaspellcomment.h',
         'rules/ua/uauwspelluse.h',
         'rules/ua/uadarkness.h',
-        'rules/cavmoney.h',
-        'rules/socialrank.h'):
+        'rules/ua/cavmoney.h',
+        'rules/dmg/socialrank.h'):
     assert s.count(
         '#include "' + h + '"'
         ) == 1, 'd kept include'

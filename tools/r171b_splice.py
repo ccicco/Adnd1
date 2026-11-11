@@ -15,7 +15,7 @@
 # rebuild eliminates the problem: it EXTRACTS the
 # broken block from regtest.cpp at runtime and
 # rebuilds the correct 98-entry list from the
-# rules/dmg_appendices_klm.h ground truth (the committed land
+# rules/dmg/dmg_appendices_klm.h ground truth (the committed land
 # rows, evil alternates included). No long
 # literals to paste, nothing to drift.
 #
@@ -30,7 +30,7 @@
 # unique bracketing elements and rebuilt from the
 # same ground truth, so a fresh clone can never
 # regenerate the fault. The audit logic, the
-# rules/dmg_appendices_klm.h layer and the gap report are
+# rules/dmg/dmg_appendices_klm.h layer and the gap report are
 # unchanged (census stays 89).
 #
 # Idempotent: safe to run twice; a silent run means the
@@ -57,13 +57,13 @@ def wr(p, s):
     with open(os.path.join(ROOT, p), "w", encoding="latin-1") as f:
         f.write(s)
 
-# ---- the ground truth: the 98 land rows of rules/dmg_appendices_klm.h ----
+# ---- the ground truth: the 98 land rows of rules/dmg/dmg_appendices_klm.h ----
 # Each row line holds two or four double quotes; the evil
 # alternate (where present) sits between quotes 3 and 4.
-h = rd("rules/dmg_appendices_klm.h")
+h = rd("rules/dmg/dmg_appendices_klm.h")
 a = h.find("static const SummonedMonsterRow k[98] = {")
 if a < 0:
-    print("R171b splice: FAIL - land rows not found in rules/dmg_appendices_klm.h")
+    print("R171b splice: FAIL - land rows not found in rules/dmg/dmg_appendices_klm.h")
     sys.exit(1)
 b = h.find(NL + "    };", a)
 land_evils = []
@@ -77,7 +77,7 @@ for ln in h[a:b].split(NL):
     elif len(parts) == 5:
         land_evils.append(parts[3])
     else:
-        print("R171b splice: FAIL - unparseable rules/dmg_appendices_klm.h row: " + s)
+        print("R171b splice: FAIL - unparseable rules/dmg/dmg_appendices_klm.h row: " + s)
         sys.exit(1)
 if len(land_evils) != 98:
     print("R171b splice: FAIL - expected 98 land rows, counted " + str(len(land_evils)))
@@ -85,7 +85,7 @@ if len(land_evils) != 98:
 if (land_evils[1] != "dwarf" or land_evils[25] != "blink dog"
         or land_evils[51] != "lammasu" or land_evils[64] != "couatl"
         or land_evils[90] != "shedu"):
-    print("R171b splice: FAIL - rules/dmg_appendices_klm.h land evils fail the sanity gate")
+    print("R171b splice: FAIL - rules/dmg/dmg_appendices_klm.h land evils fail the sanity gate")
     sys.exit(1)
 
 # the corrected 98-entry block, four entries per line
@@ -119,7 +119,7 @@ else:
             wr("regtest.cpp", src.replace(old_block, new_block))
             applied.append("regtest.cpp: the kLdEvil 98-entry fix")
             print("R171b found the broken block: " + str(n_old)
-                  + " of 98 entries; replaced with the rules/dmg_appendices_klm.h truth")
+                  + " of 98 entries; replaced with the rules/dmg/dmg_appendices_klm.h truth")
 assert len(applied) + len(already) == 1
 
 # ---- patch 2: tools/r171_splice.py (the p3_new element run) ----

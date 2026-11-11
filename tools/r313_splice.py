@@ -14,7 +14,7 @@
 # specially-made crossbow - now charged at
 # the R312 flooded crossing site.
 #
-#   (a) rules/uwfight.h - CREATED (the
+#   (a) rules/dmg/uwfight.h - CREATED (the
 #       seam, the grenade.h evaluable
 #       subset): the strength-fed crossing
 #       cap (a cross-call onto the R311
@@ -167,15 +167,15 @@ def _sanity():
     assert _Rep(2).below(100) == 30, 'hold seed 2'
 _sanity()
 
-# ---- (a) rules/uwfight.h CREATED ----
+# ---- (a) rules/dmg/uwfight.h CREATED ----
 UF = NL.join(
     ['// ====================================================================',
-     '// Adnd1 - rules/uwfight.h',
+     '// Adnd1 - rules/dmg/uwfight.h',
      '// R313: the DMG UNDERWATER ADVENTURES',
      '// movement and combat pins (R311,',
      '// rules/underwater.h) folded for the',
      '// flooded crossing (R312,',
-     '// rules/swimcross.h) - the seam the',
+     '// rules/dmg/swimcross.h) - the seam the',
      '// crossing site charges.',
      '//',
      '// The print (the MOVEMENT paragraph):',
@@ -272,7 +272,7 @@ UF = NL.join(
 clean(UF, 78)
 assert Q not in UF, 'apostrophe in header'
 
-p = 'rules/uwfight.h'
+p = 'rules/dmg/uwfight.h'
 if os.path.exists(os.path.join(ROOT, p)):
     s = rd(p)
     if 'inline int uwMissileBarred() {' in s:
@@ -302,7 +302,7 @@ SD_I_OLD = NL.join([
 ])
 SD_I_NEW = NL.join([
     '#include "rules/underwater.h"  // R311: the drown percent',
-    '#include "rules/uwfight.h"  // R313: the crossing cap',
+    '#include "rules/dmg/uwfight.h"  // R313: the crossing cap',
 ])
 SD_OLD = NL.join([
     '                return false;',
@@ -366,7 +366,7 @@ else:
     applied.append('state_dungeon.cpp: the load gate')
 
 s = rd(p)
-assert s.count('#include "rules/uwfight.h"') == 1, 'b include'
+assert s.count('#include "rules/dmg/uwfight.h"') == 1, 'b include'
 assert s.count('uwCrossLoadBars') == 1, 'b gate call'
 assert s.count('too laden to swim') == 1, 'b laden print'
 assert s.count('rules::strWeightAllowGp(') == 1, 'b ladder feed'
@@ -445,11 +445,11 @@ assert len(applied) + len(already) == 3, 'patch c count wrong'
 
 # ---- (d) ai/actor.cpp: the include, the probe, the gate ----
 AC_I_OLD = NL.join([
-    '#include "../rules/thieffunc.h"  // R302: the silence percentile',
+    '#include "../rules/phb/thieffunc.h"  // R302: the silence percentile',
 ])
 AC_I_NEW = NL.join([
-    '#include "../rules/thieffunc.h"  // R302: the silence percentile',
-    '#include "../rules/uwfight.h"  // R313: the underwater strike gate',
+    '#include "../rules/phb/thieffunc.h"  // R302: the silence percentile',
+    '#include "../rules/dmg/uwfight.h"  // R313: the underwater strike gate',
 ])
 AC_P_OLD = NL.join([
     'int Encounter::resolveMelee(Actor& attacker, Actor& defender) {',
@@ -457,7 +457,7 @@ AC_P_OLD = NL.join([
 AC_P_NEW = NL.join([
     '// ---- waterStrikeAllowed ----',
     '// R313: the R311 underwater strike pin',
-    '// probe (the seam, rules/uwfight.h) - the',
+    '// probe (the seam, rules/dmg/uwfight.h) - the',
     '// gate decision for one attacker (see',
     '// actor.h).',
     'bool Encounter::waterStrikeAllowed(const Actor& a) const{',
@@ -514,7 +514,7 @@ else:
     applied.append('actor.cpp: the probe and the gate')
 
 s = rd(p)
-assert s.count('#include "../rules/uwfight.h"') == 1, 'd include'
+assert s.count('#include "../rules/dmg/uwfight.h"') == 1, 'd include'
 assert s.count('Encounter::waterStrikeAllowed') == 1, 'd probe def'
 assert s.count('if (!waterStrikeAllowed(attacker))') == 1, 'd gate call'
 assert s.count('the water turns the stroke') == 1, 'd stroke print'
@@ -530,7 +530,7 @@ SC_I_OLD = NL.join([
 ])
 SC_I_NEW = NL.join([
     '#include "appstate.h"',
-    '#include "../rules/uwfight.h"  // R313: the underwater bars',
+    '#include "../rules/dmg/uwfight.h"  // R313: the underwater bars',
     '',
     '// ---- partyActors ----',
 ])
@@ -620,11 +620,11 @@ assert len(applied) + len(already) == 5, 'patch e count wrong'
 
 # ---- (f) regtest.cpp: the include line ----
 RG_I_OLD = NL.join([
-    '#include "rules/swimcross.h"  // R312: the flooded crossing',
+    '#include "rules/dmg/swimcross.h"  // R312: the flooded crossing',
 ])
 RG_I_NEW = NL.join([
-    '#include "rules/swimcross.h"  // R312: the flooded crossing',
-    '#include "rules/uwfight.h"  // R313: the underwater fight',
+    '#include "rules/dmg/swimcross.h"  // R312: the flooded crossing',
+    '#include "rules/dmg/uwfight.h"  // R313: the underwater fight',
 ])
 for _t in (RG_I_OLD, RG_I_NEW):
     clean(_t, 76)
@@ -632,7 +632,7 @@ for _t in (RG_I_OLD, RG_I_NEW):
 
 p = 'regtest.cpp'
 s = rd(p)
-if '#include "rules/uwfight.h"' in s:
+if '#include "rules/dmg/uwfight.h"' in s:
     already.append('regtest.cpp: the include line')
 else:
     assert 'uwfight' not in s, 'include marker collision'
@@ -642,8 +642,8 @@ else:
     applied.append('regtest.cpp: the include line')
 
 s = rd(p)
-assert s.count('#include "rules/uwfight.h"') == 1, 'f include'
-assert s.count('#include "rules/swimcross.h"') == 1, 'f anchor'
+assert s.count('#include "rules/dmg/uwfight.h"') == 1, 'f include'
+assert s.count('#include "rules/dmg/swimcross.h"') == 1, 'f anchor'
 assert len(applied) + len(already) == 6, 'patch f count wrong'
 
 # ---- (g) regtest.cpp: the audit blocks ----

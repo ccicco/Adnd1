@@ -1790,7 +1790,7 @@ O_GP_1 = r"""
 N_GP_1 = r"""
 - [x] Attacks Per Melee Round Table (p.
       22).
-      - AMENDED R392: closed - the R334 bands (rules/thiefarmor.h);
+      - AMENDED R392: closed - the R334 bands (rules/ua/thiefarmor.h);
         the R392 clean print confirms
 """[1:-1]
 
@@ -1801,7 +1801,7 @@ O_GP_2 = r"""
 N_GP_2 = r"""
 - [x] Barbarians (Fighters) Table I (p.
       19).
-      - AMENDED R392: closed - the R332 pin (rules/barbarian.h)
+      - AMENDED R392: closed - the R332 pin (rules/ua/barbarian.h)
 """[1:-1]
 
 O_GP_3 = r"""
@@ -1819,7 +1819,7 @@ O_GP_4 = r"""
 N_GP_4 = r"""
 - [x] Character Class Limitations
       (Character Race Table I) (p. 7).
-      - AMENDED R392: closed - the R323 pin (rules/subraces.h)
+      - AMENDED R392: closed - the R323 pin (rules/ua/subraces.h)
 """[1:-1]
 
 O_GP_5 = r"""
@@ -1831,7 +1831,7 @@ N_GP_5 = r"""
 - [x] Character Level Limitations
       (Character Race Table II) (pp.
       8-9, the six sub-tables).
-      - AMENDED R392: closed - the R324 pin (rules/subracelevels.h)
+      - AMENDED R392: closed - the R324 pin (rules/ua/subracelevels.h)
 """[1:-1]
 
 O_GP_6 = r"""
@@ -1843,7 +1843,7 @@ N_GP_6 = r"""
 - [x] Character Hit Dice, Spell Ability,
       Class Level Limit (Character
       Classes Table I) (p. 12).
-      - AMENDED R392: closed - the R327 pin (rules/classtables.h)
+      - AMENDED R392: closed - the R327 pin (rules/ua/classtables.h)
 """[1:-1]
 
 O_GP_7 = r"""
@@ -1855,7 +1855,7 @@ N_GP_7 = r"""
 - [x] Character Armor and Weapons
       Permitted (Character Classes Table
       II) (p. 13).
-      - AMENDED R392: closed - the R327 pin (rules/classtables.h)
+      - AMENDED R392: closed - the R327 pin (rules/ua/classtables.h)
 """[1:-1]
 
 O_GP_8 = r"""
@@ -1863,7 +1863,7 @@ O_GP_8 = r"""
 """[1:-1]
 N_GP_8 = r"""
 - [x] Druids (Clerics) Table I (p. 17).
-      - AMENDED R392: closed - the R330 pin (rules/hierophant.h)
+      - AMENDED R392: closed - the R330 pin (rules/ua/hierophant.h)
 """[1:-1]
 
 O_GP_9 = r"""
@@ -1882,7 +1882,7 @@ O_GP_10 = r"""
 """[1:-1]
 N_GP_10 = r"""
 - [x] Racial Preferences Table (p. 12).
-      - AMENDED R392: closed - the R323 pin (rules/subraces.h)
+      - AMENDED R392: closed - the R323 pin (rules/ua/subraces.h)
 """[1:-1]
 
 O_GP_11 = r"""
@@ -1905,7 +1905,7 @@ O_GP_12 = r"""
 N_GP_12 = r"""
 - [x] Thief-Acrobat Function Table (p.
       24).
-      - AMENDED R392: closed - the R335 pin (rules/acrobat.h)
+      - AMENDED R392: closed - the R335 pin (rules/ua/acrobat.h)
 """[1:-1]
 
 O_GP_13 = r"""
@@ -1917,7 +1917,7 @@ N_GP_13 = r"""
 - [x] Thief-Acrobat Table I (p. 23),
       Table II (p. 25), Table III (p.
       25), Table IV (p. 25).
-      - AMENDED R392: closed - the R335 pin (rules/acrobat.h)
+      - AMENDED R392: closed - the R335 pin (rules/ua/acrobat.h)
 """[1:-1]
 
 O_GP_14 = r"""
@@ -1925,7 +1925,7 @@ O_GP_14 = r"""
 """[1:-1]
 N_GP_14 = r"""
 - [x] Thieves Table II (p. 22).
-      - AMENDED R392: closed - the R334 pin (rules/thiefarmor.h)
+      - AMENDED R392: closed - the R334 pin (rules/ua/thiefarmor.h)
 """[1:-1]
 
 O_GP_15 = r"""
@@ -1946,7 +1946,7 @@ O_GP_16 = r"""
 N_GP_16 = r"""
 - [x] Weapon Specialization Table for
       Fighters and Rangers (p. 18).
-      - AMENDED R392: closed - the R331 pin (rules/weaponspec.h)
+      - AMENDED R392: closed - the R331 pin (rules/ua/weaponspec.h)
 """[1:-1]
 
 O_GP_17 = r"""

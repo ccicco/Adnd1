@@ -13,7 +13,7 @@
 # BOTH marks. Keyed to the 24 die bands of
 # the engine III.C table; the row VALUES
 # were already pinned by R122. Patches: 4
-# (new rules/rings.h, regtest include,
+# (new rules/dmg/rings.h, regtest include,
 # audit block, gap-report log entry).
 # Census 138 -> 139.
 
@@ -60,12 +60,12 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/rings.h - the new header
+# Patch 1: rules/dmg/rings.h - the new header
 # ---------------------------------------------------------------------------
 
 hdr_lines = [
     '// ====================================================================',
-    '// Adnd1 - rules/rings.h',
+    '// Adnd1 - rules/dmg/rings.h',
     '// R223: the III.C rings footnote pins',
     '// (DMG p.127) - the two footnotes that',
     '// frame the III.C RINGS table:',
@@ -169,7 +169,7 @@ hdr_lines = [
 ]
 hdr = NL.join(hdr_lines) + NL
 
-patch('rules/rings.h',
+patch('rules/dmg/rings.h',
       'R223: the III.C rings footnote pins',
       None,
       hdr)
@@ -180,10 +180,10 @@ patch('rules/rings.h',
 # Patch 2: regtest.cpp - the include
 # ---------------------------------------------------------------------------
 
-old2 = '#include "rules/scrollpins.h"  // R222: pp.126-127 the scrolls prose pins'
+old2 = '#include "rules/dmg/scrollpins.h"  // R222: pp.126-127 the scrolls prose pins'
 
-new2 = ('#include "rules/scrollpins.h"  // R222: pp.126-127 the scrolls prose pins'
-        + NL + '#include "rules/rings.h"  // R223: p.127 the rings footnote pins')
+new2 = ('#include "rules/dmg/scrollpins.h"  // R222: pp.126-127 the scrolls prose pins'
+        + NL + '#include "rules/dmg/rings.h"  // R223: p.127 the rings footnote pins')
 
 patch('regtest.cpp',
       'R223: p.127 the rings footnote pins',
@@ -297,7 +297,7 @@ log_lines = [
     'R223 landed the III.C rings footnote pins',
     '(DMG p.127, upload lines ~9596-9623) - the',
     'two footnotes that frame the III.C RINGS',
-    'table. rules/rings.h (the grenade.h',
+    'table. rules/dmg/rings.h (the grenade.h',
     'pattern), keyed to the 24 die bands of the',
     'engine III.C table in kRings order: the',
     'double-dagger charge-limited rings (Djinni',

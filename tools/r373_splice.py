@@ -601,8 +601,8 @@ assert s.count(
     '#include "rules/ua/uacomnote.h"'
 ) == 1, 'd new include'
 for h in (
-        'rules/cavalier.h',
-        'rules/classtables.h',
+        'rules/ua/cavalier.h',
+        'rules/ua/classtables.h',
         'rules/ua/uabirth.h',
         'rules/ua/uasocialclass.h',
         'rules/ua/uaspellbooks.h',
@@ -613,9 +613,9 @@ for h in (
         'rules/ua/uacantacq.h',
         'rules/ua/uasmalls1.h',
         'rules/ua/uailacquisition.h',
-        'rules/thiefarmor.h',
-        'rules/armorratings.h',
-        'rules/comeliness.h',
+        'rules/ua/thiefarmor.h',
+        'rules/phb/armorratings.h',
+        'rules/ua/comeliness.h',
         'rules/ua/uaweapontable.h',
         'rules/ua/uamissile.h',
         'rules/ua/uanewweapons.h',

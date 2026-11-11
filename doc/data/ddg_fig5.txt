@@ -30,7 +30,7 @@ both pinned as printed):
 16. Arcadia - segment 14
 17. Concordant Opposition - the center (segment 0)
 
-The wheel matches the Appendix 1 seventeen-planes pin (rules/pln.h,
+The wheel matches the Appendix 1 seventeen-planes pin (rules/ddg/appendix1_known_planes.h,
 the plnOutSeventeenCount doctrine): the alignment bands follow the
 FIG. 4 compass - the lawful planes upper-left, the chaotic
 upper-right, the good pole up, the evil pole down.

@@ -1,7 +1,7 @@
 {
  "round": 596,
  "prefix": "dec",
- "header_file": "rules/indices.h",
+ "header_file": "rules/mop/indices.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/motp_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",

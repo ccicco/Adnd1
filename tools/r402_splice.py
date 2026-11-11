@@ -94,7 +94,7 @@ SEED_ENTRY = E(
     '  preflight GREEN), the UA',
     '  cantrip tier seam - the',
     '  sub-1st registry tier closes:',
-    '  rules/cantriptier.h (prefix',
+    '  rules/ua/cantriptier.h (prefix',
     '  cant, 31 inline functions) -',
     '  the p. 45 tier traits, the',
     '  0-level per-day xp ladder',

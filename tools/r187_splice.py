@@ -643,8 +643,8 @@ create('rules/subclassspecials.h',
 
 patch('regtest.cpp',
       'rules/subclassspecials.h',
-      '#include "rules/bard.h"  // R186: the bard (Appendix II)',
-      '#include "rules/bard.h"  // R186: the bard (Appendix II)'
+      '#include "rules/phb/bard.h"  // R186: the bard (Appendix II)',
+      '#include "rules/phb/bard.h"  // R186: the bard (Appendix II)'
       + NL + '#include "rules/subclassspecials.h"  // R187: the per-subclass specials')
 
 # ---------------------------------------------------------------------------

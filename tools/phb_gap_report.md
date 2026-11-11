@@ -47,7 +47,7 @@ tables now read the print.
       WIRED R305: the open-doors-locked
       parentheticals now force the R304 lock
       (the forcing prose pins in
-      rules/doorforce.h).
+      rules/dmg/doorforce.h).
 - [x] **Race Tables I-III (pp.15-18)** - pinned
       R154: class limitations, the footnoted level
       caps, ability minimums and maximums (male and
@@ -210,7 +210,7 @@ tables now read the print.
       battery audit walks all 50 rows and the speed
       cross-verify. Census 106.
 - [x] **Starting money by class (the MONEY section) -
-      PINNED R190:** rules/startmoney.h CREATED -
+      PINNED R190:** rules/phb/startmoney.h CREATED -
       the printed STARTING MONEY table: cleric 3d6
       (30-180 gp), fighter 5d4 (50-200), magic-user
       2d4 (20-80), thief 2d6 (20-120), every class
@@ -227,7 +227,7 @@ tables now read the print.
       battery audit walks all five rows. Census
       107.
 - [x] **Armor Class table (the ARMOR section) -
-      PINNED R191:** rules/armorratings.h CREATED -
+      PINNED R191:** rules/phb/armorratings.h CREATED -
       the printed ARMOR CLASS TABLE ladder (none 10,
       shield only 9, through plate mail + shield 2),
       the shield step, the magic rule (each +1
@@ -256,7 +256,7 @@ tables now read the print.
       rules/engine/turn.cpp (meleeAttacksPerRound was the
       unsourced level-8+ original note).
 - [x] **Wisdom Table II, cleric bonus spells and
-      spell failure - PINNED R192:** rules/wisdom.h
+      spell failure - PINNED R192:** rules/phb/wisdom.h
       CREATED - Wisdom Table I (the magical attack
       adjustment ladder 3 -3 through 18 +4, mental
       attack forms only; the high-circle gates - 17
@@ -470,7 +470,7 @@ census grows with the arc):
       The R185 battery audit walks every combo
       cell, ladder and gate. Census 102.
 - [x] R186 the bard (Appendix II) - PINNED:
-      rules/bard.h CREATED: the gates (fighter
+      rules/phb/bard.h CREATED: the gates (fighter
       5th-7th, thief 5th-9th, then the druid
       studies; STR WIS DEX CHA 15+, INT 12,
       CON 10; human or half-elf; always
@@ -558,7 +558,7 @@ multi/dual-class layers data-only. The
 arc boxes:
 
 - [x] R227 the Wisdom Table I save wire - WIRED:
-      rules/wisdom.h gains the mental-form
+      rules/phb/wisdom.h gains the mental-form
       gate seam wisMentalSaveAdj (the gated
       ladder, flat 0 on non-mental forms);
       spells::spellSaveModWis delegates to it
@@ -843,7 +843,7 @@ census stays 213.
 
 - [x] **Weapon Proficiency Table (the WEAPONS
       section) - PINNED R297:**
-      rules/weaponprof.h CREATED - the ten
+      rules/phb/weaponprof.h CREATED - the ten
       printed rows (the initial slots, the
       non-proficiency penalty, the added-slot
       cadence) with the engine mapping
@@ -879,7 +879,7 @@ census stays 213.
 - [x] **Thief Function Take table and DEXTERITY
       TABLE II (the THIEF and DEXTERITY
       sections) - PINNED R298:**
-      rules/thieffunc.h CREATED (a DATA-ONLY
+      rules/phb/thieffunc.h CREATED (a DATA-ONLY
       pin, the R186 poetics precedent - WIRED
       R301: the trap site now rolls the seam;
       R302: the surprise site rolls the
@@ -929,7 +929,7 @@ census stays 213.
       R301:** the R298 seam gains its first
       callers and the R45 springTrap its
       first caller ever.
-      rules/thieffunc.h gains
+      rules/phb/thieffunc.h gains
       thfPercentileSucceeds (the printed
       equal-or-less convention on the 0-999
       tenths band - a whole-percent chance
@@ -967,7 +967,7 @@ census stays 213.
       R302:** the move silently column
       gains its first engine site - the
       encounter surprise roll.
-      rules/thieffunc.h gains
+      rules/phb/thieffunc.h gains
       thfSilenceSurpriseAdj (the SILENT
       MOVEMENT print: success means an
       improved chance to surprise; the
@@ -1019,7 +1019,7 @@ census stays 213.
       R303:** the pick pockets column gains
       its first engine site - the city
       streets command ([P], the R70 shell).
-      rules/thieffunc.h gains
+      rules/phb/thieffunc.h gains
       thfPocketsChanceTenths (the printed
       base folded with the printed victim
       cut - the potential victim reduces
@@ -1067,7 +1067,7 @@ census stays 213.
 - [x] **The thief locks wired - WIRED
       R304:** the open locks column gains
       its first engine site - the locked
-      door. rules/locktime.h CREATED (the
+      door. rules/dmg/locktime.h CREATED (the
       grenade.h pattern): the DMG THIEF
       ABILITIES time pins (the pick takes
       1-10 rounds on the complexity, most
@@ -1107,7 +1107,7 @@ census stays 213.
 - [x] **The locked door forced - WIRED
       R305:** the STR Table II open-doors
       parentheticals gain their first engine
-      site. rules/doorforce.h CREATED (the
+      site. rules/dmg/doorforce.h CREATED (the
       grenade.h pattern): the DMG FIRST
       DUNGEON ADVENTURE forcing prose - the
       typical 1-2 d6 band, the heavy-door
@@ -1138,7 +1138,7 @@ census stays 213.
 - [x] **The thief functions wired - WIRED
       R306:** the last three take-table
       columns gain their engine sites.
-      rules/thieffunc.h grows the site pins:
+      rules/phb/thieffunc.h grows the site pins:
       the observed-hide note (the DMG
       commentary print - never under direct
       observation; the engine runs
@@ -1208,7 +1208,7 @@ proficiency choice set:
       empty-list convention. The rules seam
       (wpfKitRecordsMelee,
       wpfKitRecordsRanged, wpfKitGrantCount -
-      rules/weaponprof.h) pins the slot-count
+      rules/phb/weaponprof.h) pins the slot-count
       convention; the R299 battery audit pair
       walks the seam (evaluable) and the
       engine wiring (the R233a/R233

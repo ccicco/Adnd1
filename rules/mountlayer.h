@@ -21,7 +21,7 @@
 //      the road-only cart and
 //      wagon)
 //   1: R170 the followers mounts
-//      (rules/followers.h - the
+//      (rules/dmg/followers.h - the
 //      animals and mounts tables,
 //      the paladin warhorse)
 //   2: R189 the charge damage
@@ -34,7 +34,7 @@
 //      flying steed climbs at
 //      half and dives at double)
 //   4: R328 the cavalier mounted
-//      reads (rules/cavalier.h -
+//      reads (rules/ua/cavalier.h -
 //      the human +1 level mounted,
 //      the 85 percent saddle, the
 //      horsemanship ladder, the

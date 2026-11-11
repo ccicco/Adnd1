@@ -891,7 +891,7 @@ return {
     }, {
       "name" = "uaqR160DmgSystemStaysDefault",
       "value" = true,
-      "comment" = "The R160 reconciliation: the DMG pp. 72-73 system (rules/weaponless.h) stays the engine default;",
+      "comment" = "The R160 reconciliation: the DMG pp. 72-73 system (rules/dmg/weaponless.h) stays the engine default;",
     }, {
       "name" = "uaqR160DivergentSystemsRunBoth",
       "value" = true,

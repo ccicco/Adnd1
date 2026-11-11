@@ -7,7 +7,7 @@
 # printed Wisdom Table I ladder (3 -3, 4
 # -2, 5-7 -1, 8-14 0, 15 +1, 16 +2, 17 +3,
 # 18 +4) - by DELEGATING to rules::
-# wisMagicalAttackAdj (rules/wisdom.h, the
+# wisMagicalAttackAdj (rules/phb/wisdom.h, the
 # R192 print pin): one ladder, not two.
 # The block comment repins with it.
 #

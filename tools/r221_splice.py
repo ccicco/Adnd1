@@ -19,7 +19,7 @@
 # JUDGMENTS: Plant Control prints with NO
 # star (pinned as printed); Giant Strength
 # prints BOTH * and (F). Patches: 4 (new
-# rules/potions.h, regtest include, audit
+# rules/dmg/potions.h, regtest include, audit
 # block, gap-report log entry). Census
 # 136 -> 137.
 
@@ -66,12 +66,12 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/potions.h - the new header
+# Patch 1: rules/dmg/potions.h - the new header
 # ---------------------------------------------------------------------------
 
 hdr_lines = [
     '// ====================================================================',
-    '// Adnd1 - rules/potions.h',
+    '// Adnd1 - rules/dmg/potions.h',
     '// R221: the III.A potions prose pins',
     '// (DMG pp.125-126) - the three footnotes',
     '// that frame the III.A POTIONS table:',
@@ -214,7 +214,7 @@ hdr_lines = [
 ]
 hdr = NL.join(hdr_lines) + NL
 
-patch('rules/potions.h',
+patch('rules/dmg/potions.h',
       'R221: the III.A potions prose pins',
       None,
       hdr)
@@ -225,10 +225,10 @@ patch('rules/potions.h',
 # Patch 2: regtest.cpp - the include
 # ---------------------------------------------------------------------------
 
-old2 = '#include "rules/hoard.h"  // R220: p.123 the combined hoard table'
+old2 = '#include "rules/dmg/hoard.h"  // R220: p.123 the combined hoard table'
 
-new2 = ('#include "rules/hoard.h"  // R220: p.123 the combined hoard table'
-        + NL + '#include "rules/potions.h"  // R221: pp.125-126 the potions prose pins')
+new2 = ('#include "rules/dmg/hoard.h"  // R220: p.123 the combined hoard table'
+        + NL + '#include "rules/dmg/potions.h"  // R221: pp.125-126 the potions prose pins')
 
 patch('regtest.cpp',
       'R221: pp.125-126 the potions prose pins',
@@ -341,7 +341,7 @@ log_lines = [
     'R221 landed the III.A potions prose pins',
     '(DMG pp.125-126, upload lines ~9480-9520)',
     '- the three footnotes that frame the',
-    'III.A POTIONS table. rules/potions.h',
+    'III.A POTIONS table. rules/dmg/potions.h',
     '(the grenade.h pattern), keyed to the 35',
     'die bands of the engine III.A table in',
     'kPotions order: the * control potions',

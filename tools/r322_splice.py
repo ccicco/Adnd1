@@ -65,7 +65,7 @@
 #       the R321 round-state entry (commit
 #       cd6dc78, census 248, the
 #       self-referential-assert lessons).
-#   (b) rules/comeliness.h - NEW FILE: the
+#   (b) rules/ua/comeliness.h - NEW FILE: the
 #       comeliness pins.
 #   (c) tools/ua_gap_report.md - NEW FILE:
 #       the LOSSLESS whole-book UA gap
@@ -87,7 +87,7 @@
 #       the DEFERRED list and the
 #       deferred-seams dependency graph
 #       (the logging layers included).
-#   (d) regtest.cpp - the rules/comeliness.h
+#   (d) regtest.cpp - the rules/ua/comeliness.h
 #       include and the R322 audit (the
 #       charisma ladder, the racial
 #       adjustments, the band edges, the
@@ -201,10 +201,10 @@ assert s.count(
     'Knowledge maintenance') == 1, 'a doc intact'
 assert len(applied) + len(already) == 1, 'patch a count wrong'
 
-# ---- (b) rules/comeliness.h: the pins ----
+# ---- (b) rules/ua/comeliness.h: the pins ----
 CM_FILE = NL.join([
     '// ===========================================================================',
-    '// Adnd1 - rules/comeliness.h',
+    '// Adnd1 - rules/ua/comeliness.h',
     '// The UA comeliness pins (R322 - the arc',
     '// opener).',
     '//',
@@ -378,7 +378,7 @@ CM_FILE = NL.join([
 ])
 clean(CM_FILE, 78)
 
-p = 'rules/comeliness.h'
+p = 'rules/ua/comeliness.h'
 if os.path.exists(os.path.join(ROOT, p)):
     already.append('comeliness.h: the pins')
 else:
@@ -488,7 +488,7 @@ GP_FILE = NL.join([
     '      two-point and the shapechange',
     '      full-form read; the 3d6 order roll;',
     '      the point-for-point charisma',
-    '      coupling. rules/comeliness.h,',
+    '      coupling. rules/ua/comeliness.h,',
     '      pinned data only - no engine site',
     '      exists (no comeliness field; the',
     '      R117 reaction table has no callers)',
@@ -1282,7 +1282,7 @@ IN_OLD = NL.join([
 IN_NEW = NL.join([
     '#include ' + DQ + 'rules/aerial.h' + DQ +
     '  // R321: pp.49-53 aerial combat',
-    '#include ' + DQ + 'rules/comeliness.h' + DQ +
+    '#include ' + DQ + 'rules/ua/comeliness.h' + DQ +
     '  // R322: UA comeliness pins',
 ])
 RT_OLD = NL.join([
@@ -1301,7 +1301,7 @@ RT_NEW = NL.join([
     '    }',
     '    // ---- R322: the comeliness pins audit ----',
     '    // The UA arc opener: the comeliness',
-    '    // pins (rules/comeliness.h) - pinned',
+    '    // pins (rules/ua/comeliness.h) - pinned',
     '    // data only, no engine site (the',
     '    // pin-era pattern). Draw-independent:',
     '    // every pin reads fixed.',
@@ -1512,7 +1512,7 @@ else:
 
 s = rd(p)
 assert s.count(
-    '#include ' + DQ + 'rules/comeliness.h' + DQ) == 1, 'd include'
+    '#include ' + DQ + 'rules/ua/comeliness.h' + DQ) == 1, 'd include'
 assert s.count('R322 comeliness pins audit') == 1, 'd audit'
 assert s.count('R321 aerial chapter audit') == 1, 'd r321 intact'
 _o, _c, _o2, _c2 = counts(s)

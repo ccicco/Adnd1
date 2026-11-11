@@ -19,7 +19,7 @@
 # prince per the print table) with the German
 # equivalents, and the 20 Asian titles.
 # A seam with no prior coverage. Patches: 4 (new
-# rules/socialrank.h, regtest include, audit block,
+# rules/dmg/socialrank.h, regtest include, audit block,
 # gap-report log entry). Census 123 -> 124.
 
 BS = chr(92)
@@ -65,12 +65,12 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/socialrank.h - the new header
+# Patch 1: rules/dmg/socialrank.h - the new header
 # ---------------------------------------------------------------------------
 
 hdr_lines = [
 '// ====================================================================',
-'// Adnd1 - rules/socialrank.h',
+'// Adnd1 - rules/dmg/socialrank.h',
 '// R208: the social class and rank system (DMG',
 '// pp.88-89, SOCIAL CLASS AND RANK IN',
 '// ADVANCED DUNGEONS AND DRAGONS) - the',
@@ -426,7 +426,7 @@ hdr_lines = [
 ]
 hdr = NL.join(hdr_lines) + NL
 
-patch('rules/socialrank.h',
+patch('rules/dmg/socialrank.h',
       'R208: the social class and rank system (DMG',
       None,
       hdr)
@@ -437,10 +437,10 @@ patch('rules/socialrank.h',
 # Patch 2: regtest.cpp - the include
 # ---------------------------------------------------------------------------
 
-old2 = '#include "rules/taxation.h"  // R207: p.90 the town taxation system'
+old2 = '#include "rules/dmg/taxation.h"  // R207: p.90 the town taxation system'
 
-new2 = ('#include "rules/taxation.h"  // R207: p.90 the town taxation system'
-        + NL + '#include "rules/socialrank.h"  // R208: pp.88-89 social class and rank')
+new2 = ('#include "rules/dmg/taxation.h"  // R207: p.90 the town taxation system'
+        + NL + '#include "rules/dmg/socialrank.h"  // R208: pp.88-89 social class and rank')
 
 patch('regtest.cpp',
       'R208: pp.88-89 social class and rank',

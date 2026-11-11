@@ -19,7 +19,7 @@
 # a retry waits for a higher level thief (the
 # printed note).
 #
-#   (a) rules/locktime.h CREATED - the DMG THIEF
+#   (a) rules/dmg/locktime.h CREATED - the DMG THIEF
 #       ABILITIES time pins (the pick takes
 #       1-10 rounds on the complexity, most
 #       locks 1-4; the traps roll rides the
@@ -87,10 +87,10 @@ def clean(s, limit, allow_apos=False):
         assert all(ord(c) < 128 for c in ln), 'non-ascii line'
         assert len(ln) <= limit, 'line too long: ' + ln
 
-# ---- (a) rules/locktime.h CREATED ----
+# ---- (a) rules/dmg/locktime.h CREATED ----
 LT = NL.join([
     '// ====================================================================',
-    '// Adnd1 - rules/locktime.h',
+    '// Adnd1 - rules/dmg/locktime.h',
     '// R304: the DMG THIEF ABILITIES time pins',
     '// and the FIRST DUNGEON ADVENTURE doors',
     '// prose - a DATA pin (the grenade.h',
@@ -168,7 +168,7 @@ LT = NL.join([
 ])
 clean(LT, 78)
 
-p = 'rules/locktime.h'
+p = 'rules/dmg/locktime.h'
 if os.path.exists(os.path.join(ROOT, p)):
     s = rd(p)
     if 'R304: the DMG THIEF ABILITIES time pins' in s:
@@ -272,11 +272,11 @@ assert len(applied) + len(already) == 2, 'patch b count wrong'
 
 # ---- (c) game/state_dungeon.cpp: the include + the site ----
 SD_INC_OLD = NL.join([
-    '#include "rules/thieffunc.h"   // R301: the thief trap rolls',
+    '#include "rules/phb/thieffunc.h"   // R301: the thief trap rolls',
 ])
 SD_INC_NEW = NL.join([
-    '#include "rules/thieffunc.h"   // R301: the thief trap rolls',
-    '#include "rules/locktime.h"   // R304: the lock time draw',
+    '#include "rules/phb/thieffunc.h"   // R301: the thief trap rolls',
+    '#include "rules/dmg/locktime.h"   // R304: the lock time draw',
 ])
 SD_SITE_OLD = NL.join([
     '            secretDoors.push_back(d);',
@@ -422,7 +422,7 @@ else:
     wr(p, s)
     applied.append('state_dungeon.cpp: the site')
 s = rd(p)
-assert s.count('#include "rules/locktime.h"') == 1, 'patch c include'
+assert s.count('#include "rules/dmg/locktime.h"') == 1, 'patch c include'
 assert s.count('void AppState::placeLockedDoors') == 1, 'patch c place'
 assert s.count('AppState::lockedDoorAt') == 1, 'patch c lookup'
 assert s.count('void AppState::bumpLockedDoor') == 1, 'patch c bump'
@@ -498,13 +498,13 @@ assert len(applied) + len(already) == 5, 'patch e count wrong'
 
 # ---- (f) regtest.cpp: the include + the audit pair ----
 RT_INC_OLD = NL.join([
-    '#include "rules/thieffunc.h"  // R298: the thief function take table'
+    '#include "rules/phb/thieffunc.h"  // R298: the thief function take table'
     ' and DEX Table II',
 ])
 RT_INC_NEW = NL.join([
-    '#include "rules/thieffunc.h"  // R298: the thief function take table'
+    '#include "rules/phb/thieffunc.h"  // R298: the thief function take table'
     ' and DEX Table II',
-    '#include "rules/locktime.h"  // R304: the DMG lock time pins',
+    '#include "rules/dmg/locktime.h"  // R304: the DMG lock time pins',
 ])
 RT_AUD_OLD = NL.join([
     '        printf("R303 thief pockets engine audit: bad %d'
@@ -520,7 +520,7 @@ RT_AUD_NEW = NL.join([
     '    }',
     '    // ---- R304a: the thief locks seam audit ----',
     '    // The DMG THIEF ABILITIES time pins and',
-    '    // the doors prose (rules/locktime.h, the',
+    '    // the doors prose (rules/dmg/locktime.h, the',
     '    // grenade.h pattern) plus the open locks',
     '    // percentile boundary walk against the',
     '    // R298 tables - verified by audit_eval.',
@@ -770,7 +770,7 @@ s = rd(p)
 assert s.count('audit: bad') == 227, 'patch f census wrong'
 assert s.count('R304a thief locks seam audit') == 1, 'patch f seam label'
 assert s.count('R304 thief locks engine audit') == 1, 'patch f engine label'
-assert s.count('#include "rules/locktime.h"') == 1, 'patch f include'
+assert s.count('#include "rules/dmg/locktime.h"') == 1, 'patch f include'
 assert s.count('R303 thief pockets engine audit') == 1, 'patch f r303 tail'
 assert s.count('R227: the wis mental save wiring audit') == 1, \
     'patch f r227 head'
@@ -799,7 +799,7 @@ GR_BOX = NL.join([
     '- [x] **The thief locks wired - WIRED',
     '      R304:** the open locks column gains',
     '      its first engine site - the locked',
-    '      door. rules/locktime.h CREATED (the',
+    '      door. rules/dmg/locktime.h CREATED (the',
     '      grenade.h pattern): the DMG THIEF',
     '      ABILITIES time pins (the pick takes',
     '      1-10 rounds on the complexity, most',
@@ -889,7 +889,7 @@ DMG_NEW = NL.join([
     '',
     'R304 PINNED the DMG THIEF ABILITIES time',
     'figures and the FIRST DUNGEON ADVENTURE',
-    'doors prose: rules/locktime.h, the',
+    'doors prose: rules/dmg/locktime.h, the',
     'grenade.h pattern - the lock-pick time',
     'band (1-10 rounds on the complexity,',
     'most locks 1-4), the traps-time-rides-',

@@ -23,7 +23,7 @@
 # finds; combined hoards should be hidden,
 # trapped and guarded, and located in
 # distant places). Patches: 4 (new
-# rules/hoard.h, regtest include, audit
+# rules/dmg/hoard.h, regtest include, audit
 # block, gap-report log entry). Census
 # 135 -> 136.
 
@@ -70,12 +70,12 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/hoard.h - the new header
+# Patch 1: rules/dmg/hoard.h - the new header
 # ---------------------------------------------------------------------------
 
 hdr_lines = [
 '// ====================================================================',
-'// Adnd1 - rules/hoard.h',
+'// Adnd1 - rules/dmg/hoard.h',
 '// R220: the combined hoard table pins',
 '// (DMG p.123) - the II.C COMBINED HOARD table, the',
 '// R219 companion: the ten percentile bands and their',
@@ -335,7 +335,7 @@ hdr_lines = [
 ]
 hdr = NL.join(hdr_lines) + NL
 
-patch('rules/hoard.h',
+patch('rules/dmg/hoard.h',
       'R220: the combined hoard table pins',
       None,
       hdr)
@@ -346,10 +346,10 @@ patch('rules/hoard.h',
 # Patch 2: regtest.cpp - the include
 # ---------------------------------------------------------------------------
 
-old2 = '#include "rules/treasdet.h"  // R219: pp.120-123 treasure random determination tables'
+old2 = '#include "rules/dmg/treasdet.h"  // R219: pp.120-123 treasure random determination tables'
 
-new2 = ('#include "rules/treasdet.h"  // R219: pp.120-123 treasure random determination tables'
-        + NL + '#include "rules/hoard.h"  // R220: p.123 the combined hoard table')
+new2 = ('#include "rules/dmg/treasdet.h"  // R219: pp.120-123 treasure random determination tables'
+        + NL + '#include "rules/dmg/hoard.h"  // R220: p.123 the combined hoard table')
 
 patch('regtest.cpp',
       'R220: p.123 the combined hoard table',
@@ -505,7 +505,7 @@ log_lines = [
 'R220 landed the combined hoard table pins',
 '(DMG p.123, upload lines ~9430-9470) - the',
 'II.C COMBINED HOARD table, the R219',
-'companion. rules/hoard.h (the grenade.h',
+'companion. rules/dmg/hoard.h (the grenade.h',
 'pattern): the ten percentile bands (01-20,',
 '21-40, 41-55, 56-65, 66-75, 76-80, 81-85,',
 '86-90, 91-96, 97-00) with their on-hand',

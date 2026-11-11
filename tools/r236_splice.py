@@ -24,7 +24,7 @@
 
 import sys
 
-BRD  = 'rules/bard.h'
+BRD  = 'rules/phb/bard.h'
 ACT  = 'ai/actor.cpp'
 APP  = 'game/appstate.h'
 TOWN = 'game/state_town.cpp'
@@ -104,7 +104,7 @@ inc_old = [
 ]
 inc_new = [
     '#include "../rules/palrangerspells.h"  // R232: the giant-class roster',
-    '#include "../rules/bard.h"  // R236: the poetics ferocity',
+    '#include "../rules/phb/bard.h"  // R236: the poetics ferocity',
 ]
 
 # ---- 2: the resolveMelee poetics hook ----

@@ -172,9 +172,9 @@ else:
 //
 // Pin-era pattern (R322): pinned data only - no engine
 // site exists. Cross-checks the landed R191 seam
-// (rules/armorratings.h - the plate mail AC 3 the
+// (rules/phb/armorratings.h - the plate mail AC 3 the
 // bronze plate reads one worse than), the R334 seam
-// (rules/thiefarmor.h - the elfin chain rows) and the
+// (rules/ua/thiefarmor.h - the elfin chain rows) and the
 // R370 seam (the elfin-chain barding weight read).
 //
 // JUDGMENTs (the decode method):
@@ -770,8 +770,8 @@ assert s.count(
     '#include "rules/ua/uaarmor.h"'
 ) == 1, 'd new include'
 for h in (
-        'rules/cavalier.h',
-        'rules/classtables.h',
+        'rules/ua/cavalier.h',
+        'rules/ua/classtables.h',
         'rules/ua/uabirth.h',
         'rules/ua/uasocialclass.h',
         'rules/ua/uaspellbooks.h',
@@ -782,8 +782,8 @@ for h in (
         'rules/ua/uacantacq.h',
         'rules/ua/uasmalls1.h',
         'rules/ua/uailacquisition.h',
-        'rules/thiefarmor.h',
-        'rules/armorratings.h'):
+        'rules/ua/thiefarmor.h',
+        'rules/phb/armorratings.h'):
     assert s.count(
         '#include "' + h + '"'
         ) == 1, 'd kept include'

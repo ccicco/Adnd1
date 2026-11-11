@@ -9,7 +9,7 @@
 // horse 7, medium horse 6, heavy horse 8. The medium-horse 6 outrunning the
 // light-horse 7 is no OCR slip - both compilation pages print it
 // cell-for-cell, and the engine follows the print exactly as it followed the
-// spear 6-8 spread. The rows land in rules/weaponspeed.h - the R158
+// spear 6-8 spread. The rows land in rules/dmg/weaponspeed.h - the R158
 // name-keyed ladder, still pure data: the DMG p.66 three caller-detected
 // cases (tie order, the extra-attack windows, the weapon-vs-spell segment)
 // gained no engine caller here; the R158 audit itself gains the three checks
@@ -53,7 +53,7 @@ inline int lspMediumLanceSpeedFactor()
 inline int lspHeavyLanceSpeedFactor()
     { return 8; }
 
-// The three rows land in rules/weaponspeed.h weaponSpeedFactor: lance, light
+// The three rows land in rules/dmg/weaponspeed.h weaponSpeedFactor: lance, light
 // horse 7; lance, medium horse 6; lance, heavy horse 8.
 inline bool lspLancesRideTheR158Ladder()
     { return true; }

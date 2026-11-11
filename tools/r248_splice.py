@@ -33,7 +33,7 @@
 # row 30 (dm/treasure.cpp kRods, bands 95-100) -
 # cross-checked against the R224 rodswands.h pins in
 # the audit.
-# Patches: 4 (new rules/wonder.h, the regtest include,
+# Patches: 4 (new rules/dmg/wonder.h, the regtest include,
 # the audit block, the dmg-gap-report log entry).
 # Census 166 -> 167.
 #
@@ -41,7 +41,7 @@
 
 import sys
 
-WD   = 'rules/wonder.h'
+WD   = 'rules/dmg/wonder.h'
 REG  = 'regtest.cpp'
 GAP  = 'tools/dmg_gap_report.md'
 
@@ -59,7 +59,7 @@ if t.count('audit: bad ') != 166 and t.count('audit: bad ') != 167:
 # ---- the new header ----
 hdr_lines = [
     '// ====================================================================',
-    '// Adnd1 - rules/wonder.h',
+    '// Adnd1 - rules/dmg/wonder.h',
     '// R248: the III.D wand of wonder effect',
     '// table pins (DMG p.145) - the 19 die',
     '// bands 01-10 through 98-00 and the',
@@ -365,11 +365,11 @@ hdr_text = NL.join(hdr_lines) + NL
 
 # ---- the regtest include ----
 inc_old = [
-    '#include "rules/wandsprose2.h"  // R247: pp.144-145 the III.D wands prose part 2 pins',
+    '#include "rules/dmg/wandsprose2.h"  // R247: pp.144-145 the III.D wands prose part 2 pins',
 ]
 inc_new = [
-    '#include "rules/wandsprose2.h"  // R247: pp.144-145 the III.D wands prose part 2 pins',
-    '#include "rules/wonder.h"  // R248: p.145 the III.D wand of wonder effect table pins',
+    '#include "rules/dmg/wandsprose2.h"  // R247: pp.144-145 the III.D wands prose part 2 pins',
+    '#include "rules/dmg/wonder.h"  // R248: p.145 the III.D wand of wonder effect table pins',
 ]
 
 # ---- the regtest audit block ----
@@ -477,7 +477,7 @@ gap_new = [
     'lines ~10867-10947) - the round that',
     'CLOSES the III.D wands arc (rods',
     'R244, staves R245, wands R246-R247,',
-    'wonder R248). rules/wonder.h (the',
+    'wonder R248). rules/dmg/wonder.h (the',
     'grenade.h pattern, wonder prefix, 42',
     'accessors - the 19-band table plus',
     '39 scalar effect facts, the first',
@@ -540,7 +540,7 @@ try:
     if marker in t:
         already += 1
     else:
-        print('R248 FAIL: rules/wonder.h exists without the marker')
+        print('R248 FAIL: rules/dmg/wonder.h exists without the marker')
         sys.exit(1)
 except IOError:
     with open(WD, 'w') as f:
@@ -580,7 +580,7 @@ if applied + already == 4:
     if t.count('R248 wand of wonder effect table pins audit') != 1:
         print('R248 FAIL: the R248 audit line must appear once')
         sys.exit(1)
-    if t.count('rules/wonder.h') != 1:
+    if t.count('rules/dmg/wonder.h') != 1:
         print('R248 FAIL: the wonder include must appear once')
         sys.exit(1)
     g = open(GAP).read()

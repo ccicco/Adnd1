@@ -38,7 +38,7 @@ SEED_ENTRY = NL.join([
     '- R327 landed 2026-10-11: commit',
     '  47dce47, census 254, the UA',
     '  Classes Tables I and II pin',
-    '  round (rules/classtables.h):',
+    '  round (rules/ua/classtables.h):',
     '  the hit-die column, the',
     '  two-dice first levels, the',
     '  note-1 social-standing',
@@ -72,14 +72,14 @@ assert s.count('R326 landed') == 1, 'a r326 kept'
 assert s.count('## Knowledge maintenance') == 1, 'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
-# ---- (b) NEW rules/cavalier.h ----
-CV = 'rules/cavalier.h'
+# ---- (b) NEW rules/ua/cavalier.h ----
+CV = 'rules/ua/cavalier.h'
 if os.path.exists(CV) and 'R328' in rd(CV):
     already.append('cavalier.h: the pins')
 else:
     HDR = NL.join([
     '// ===========================================================================',
-    '// Adnd1 - rules/cavalier.h',
+    '// Adnd1 - rules/ua/cavalier.h',
     '// The UA cavalier class (pp. 14-16) pins (R328).',
     '//',
     '// Pin-era pattern (R322): pinned data only - no engine site exists.',
@@ -130,7 +130,7 @@ else:
     '// Upper Class enters directly as a 1st-level Armiger (1d10+3); the',
     '// sponsored lower classes ride the track: Horseman at -1500, Lancer',
     '// at -500, Armiger at 0. The hp generators (3d4+1 vs d10+3) ride',
-    '// the R327 pins (rules/classtables.h); the class abilities begin at',
+    '// the R327 pins (rules/ua/classtables.h); the class abilities begin at',
     '// Armiger.',
     'inline int cavalierHorsemanXp()',
     '    { return -1500; }',
@@ -466,7 +466,7 @@ else:
     ])
     CLOSE = NL.join([
     '      - CLOSED R328: the pin round',
-    '      (rules/cavalier.h): the minima,',
+    '      (rules/ua/cavalier.h): the minima,',
     '      the good-alignment gate, the',
     '      0-level track, the race gate,',
     '      the weapons-of-choice ladder',
@@ -508,11 +508,11 @@ s = rd(RT)
 if 'R328 cavalier pin audit' in s:
     already.append('regtest.cpp: the R328 audit')
 else:
-    INC_ANCH = ('#include "rules/classtables.h"'
+    INC_ANCH = ('#include "rules/ua/classtables.h"'
                 '  // R327: UA Classes Tables I-II')
     INC_NEW = NL.join([
     INC_ANCH,
-    '#include "rules/cavalier.h"'
+    '#include "rules/ua/cavalier.h"'
     '  // R328: the UA cavalier'])
     AUD_ANCH = ('    // ---- R227: the wis mental'
                 ' save wiring audit ----')
@@ -844,7 +844,7 @@ assert s.count(
 assert s.count('R227: the wis mental save') == 1, \
     'd r227 kept'
 assert s.count(
-    '#include "rules/cavalier.h"') == 1, \
+    '#include "rules/ua/cavalier.h"') == 1, \
     'd include'
 assert len(applied) + len(already) == 4, 'd count'
 

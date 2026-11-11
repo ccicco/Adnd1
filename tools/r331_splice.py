@@ -38,7 +38,7 @@ SEED_ENTRY = NL.join([
     '- R330 landed 2026-10-11: commit',
     '  76df31d, census 257, the UA',
     '  druid hierophant ladder pin',
-    '  round (rules/hierophant.h): the',
+    '  round (rules/ua/hierophant.h): the',
     '  hierarchy, the abdication, the',
     '  Table I ladder, the spell',
     '  abilities, the 16th-23rd',
@@ -74,14 +74,14 @@ assert s.count('R329 landed') == 1, 'a r329 kept'
 assert s.count('## Knowledge maintenance') == 1, 'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
-# ---- (b) NEW rules/weaponspec.h ----
-WS = 'rules/weaponspec.h'
+# ---- (b) NEW rules/ua/weaponspec.h ----
+WS = 'rules/ua/weaponspec.h'
 if os.path.exists(WS) and 'R331' in rd(WS):
     already.append('weaponspec.h: the pins')
 else:
     HDR = NL.join([
     '// ===========================================================================',
-    '// Adnd1 - rules/weaponspec.h',
+    '// Adnd1 - rules/ua/weaponspec.h',
     '// The UA weapon specialization prose',
     '// (pp. 18-19) pins (R331).',
     '//',
@@ -391,7 +391,7 @@ else:
     ])
     NOTE = NL.join([
     '      - R331: the prose pinned',
-    '      (rules/weaponspec.h) - the',
+    '      (rules/ua/weaponspec.h) - the',
     '      class gate, the slot costs,',
     '      the melee/bow/crossbow',
     '      reads, the double, the table',
@@ -424,11 +424,11 @@ s = rd(RT)
 if 'R331 weapon spec prose pin audit' in s:
     already.append('regtest.cpp: the R331 audit')
 else:
-    INC_ANCH = ('#include "rules/hierophant.h"'
+    INC_ANCH = ('#include "rules/ua/hierophant.h"'
                 '  // R330: the UA druid hierophant')
     INC_NEW = NL.join([
     INC_ANCH,
-    '#include "rules/weaponspec.h"'
+    '#include "rules/ua/weaponspec.h"'
     '  // R331: the UA weapon spec'])
     AUD_ANCH = ('    // ---- R227: the wis mental'
                 ' save wiring audit ----')
@@ -652,7 +652,7 @@ assert s.count(
 assert s.count('R227: the wis mental save') == 1, \
     'd r227 kept'
 assert s.count(
-    '#include "rules/weaponspec.h"') == 1, \
+    '#include "rules/ua/weaponspec.h"') == 1, \
     'd include'
 assert len(applied) + len(already) == 4, 'd count'
 

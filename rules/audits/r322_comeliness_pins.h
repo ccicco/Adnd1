@@ -1,6 +1,6 @@
     // ---- R322: the comeliness pins audit ----
     // The UA arc opener: the comeliness
-    // pins (rules/comeliness.h) - pinned
+    // pins (rules/ua/comeliness.h) - pinned
     // data only, no engine site (the
     // pin-era pattern). Draw-independent:
     // every pin reads fixed.

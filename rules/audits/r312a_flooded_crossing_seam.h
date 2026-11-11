@@ -1,6 +1,6 @@
     // ---- R312a: the flooded crossing seam audit ----
     // The DMG surface SWIMMING paragraph folds
-    // (rules/swimcross.h, the grenade.h pattern)
+    // (rules/dmg/swimcross.h, the grenade.h pattern)
     // against the R311 drown pin - verified by
     // audit_eval. The armor ids read the plain
     // items::ArmorId order (0 none through 9

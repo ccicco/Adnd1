@@ -6,7 +6,7 @@
 # R341 roster decode corrects
 # from the clean p. 30 table:
 #
-# 1. rules/cantriptier.h (NEW,
+# 1. rules/ua/cantriptier.h (NEW,
 #    the seam layer, prefix
 #    cant): the tier traits (0
 #    level, the 1" range, the
@@ -119,7 +119,7 @@ SEED_ENTRY = E(
     '  R322 and R117 pins. The first',
     '  R400 body failed the Termux',
     '  compile (the game TUs do not',
-    '  pull rules/comeliness.h',
+    '  pull rules/ua/comeliness.h',
     '  transitively) - no commit',
     '  landed, the preflight RED gate',
     '  held, and the fix body rode as',
@@ -145,12 +145,12 @@ if s.count('R400b landed 2026-10-13') != 1:
 if s.count('## Knowledge maintenance') != 1:
     die('the seed maintenance head')
 
-# ========= (b) rules/cantriptier.h =========
-CT = 'rules/cantriptier.h'
+# ========= (b) rules/ua/cantriptier.h =========
+CT = 'rules/ua/cantriptier.h'
 
 CTBODY = E(
     '// ===========================================================================',
-    '// Adnd1 - rules/cantriptier.h',
+    '// Adnd1 - rules/ua/cantriptier.h',
     '// The UA cantrip TIER SEAM (p. 45), R401: the',
     '// sub-1st registry tier - a category of its own',
     '// by standing decision (the R322 deferred-seams',
@@ -393,7 +393,7 @@ pair(RT, E(
     '#include "rules/ua/uahandheld.h"  // R392: the UA hand-held data'),
     E(
     '#include "rules/ua/uahandheld.h"  // R392: the UA hand-held data',
-    '#include "rules/cantriptier.h"  // R401: the UA cantrip tier'),
+    '#include "rules/ua/cantriptier.h"  // R401: the UA cantrip tier'),
     'regtest: the include')
 
 pair(RT, E(
@@ -617,7 +617,7 @@ pair(GP, E(
     '      cantrip category.'),
     E(
     '- [x] The cantrip tier seam -',
-    '      CLOSED R401 (rules/cantriptier.h;',
+    '      CLOSED R401 (rules/ua/cantriptier.h;',
     '      the R401 seam audit, census 328):',
     '      the p. 45 tier traits, the 0-level',
     '      per-day ladder by xp band, the',
@@ -689,7 +689,7 @@ pair(GP, E(
     '        are pinned.',
     '      - AMENDED R401: the cantrip',
     '        tier seam CLOSED',
-    '        (rules/cantriptier.h) - the',
+    '        (rules/ua/cantriptier.h) - the',
     '        tier gate drops; the box',
     '        stays open only on the',
     '        casting-time fraction holes',
@@ -701,7 +701,7 @@ pair(GP, E(
     '      named: chill, clean, color,'),
     E(
     '      - AMENDED R401: the tier seam',
-    '      closed (rules/cantriptier.h);',
+    '      closed (rules/ua/cantriptier.h);',
     '      the clean p. 30 read confirms',
     '      the roster (Tangle reversed row',
     '      9, Tweak personal row 9, 66',

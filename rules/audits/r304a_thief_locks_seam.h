@@ -1,6 +1,6 @@
     // ---- R304a: the thief locks seam audit ----
     // The DMG THIEF ABILITIES time pins and
-    // the doors prose (rules/locktime.h, the
+    // the doors prose (rules/dmg/locktime.h, the
     // grenade.h pattern) plus the open locks
     // percentile boundary walk against the
     // R298 tables - verified by audit_eval.

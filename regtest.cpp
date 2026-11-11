@@ -16,33 +16,33 @@
 #include "spells/spells.h"
 #include "abilities/abilities.h"
 #include "rules/engine/races.h"   // R154: pp.15-18 Race Tables I-III
-#include "rules/grenade.h"  // R157: pp.64-65 grenade-like missiles
-#include "rules/weaponspeed.h"  // R158: p.66 weapon speed factors
-#include "rules/subdue.h"  // R159: p.67 striking to subdue
-#include "rules/weaponless.h"  // R160: pp.72-73 weaponless combat
-#include "rules/twoweapon.h"  // R161: p.70 attacks with two weapons
-#include "rules/poison.h"  // R163: p.20 the poison table
-#include "rules/assassinate.h"  // R164: p.75 the assassination table
-#include "rules/miscibility.h"  // R165: p.119 potion miscibility
-#include "rules/insanity.h"  // R166: pp.82-83 intoxication and insanity
+#include "rules/dmg/grenade.h"  // R157: pp.64-65 grenade-like missiles
+#include "rules/dmg/weaponspeed.h"  // R158: p.66 weapon speed factors
+#include "rules/dmg/subdue.h"  // R159: p.67 striking to subdue
+#include "rules/dmg/weaponless.h"  // R160: pp.72-73 weaponless combat
+#include "rules/dmg/twoweapon.h"  // R161: p.70 attacks with two weapons
+#include "rules/dmg/poison.h"  // R163: p.20 the poison table
+#include "rules/dmg/assassinate.h"  // R164: p.75 the assassination table
+#include "rules/dmg/miscibility.h"  // R165: p.119 potion miscibility
+#include "rules/dmg/insanity.h"  // R166: pp.82-83 intoxication and insanity
 #include "rules/psionics.h"  // R404: the psionics seam
-#include "rules/disease.h"  // R167: pp.13-14 disease and parasitic infestation
-#include "rules/uwspells.h"  // R168: p.57 underwater spell use
+#include "rules/dmg/disease.h"  // R167: pp.13-14 disease and parasitic infestation
+#include "rules/dmg/uwspells.h"  // R168: p.57 underwater spell use
 #include "rules/aerial.h"  // R321: pp.49-53 aerial combat
-#include "rules/comeliness.h"  // R322: UA comeliness pins
-#include "rules/subraces.h"  // R323: UA subrace layer
-#include "rules/subracelevels.h"  // R324: UA Race Table II
-#include "rules/subracecap.h"  // R325: UA Race Table II fold
-#include "rules/classtables.h"  // R327: UA Classes Tables I-II
-#include "rules/cavalier.h"  // R328: the UA cavalier
-#include "rules/paladin.h"  // R329: the paladin reparent
-#include "rules/hierophant.h"  // R330: the UA druid hierophant
-#include "rules/weaponspec.h"  // R331: the UA weapon spec
-#include "rules/barbarian.h"  // R332: the UA barbarian
+#include "rules/ua/comeliness.h"  // R322: UA comeliness pins
+#include "rules/ua/subraces.h"  // R323: UA subrace layer
+#include "rules/ua/subracelevels.h"  // R324: UA Race Table II
+#include "rules/ua/subracecap.h"  // R325: UA Race Table II fold
+#include "rules/ua/classtables.h"  // R327: UA Classes Tables I-II
+#include "rules/ua/cavalier.h"  // R328: the UA cavalier
+#include "rules/ua/paladin.h"  // R329: the paladin reparent
+#include "rules/ua/hierophant.h"  // R330: the UA druid hierophant
+#include "rules/ua/weaponspec.h"  // R331: the UA weapon spec
+#include "rules/ua/barbarian.h"  // R332: the UA barbarian
 #include "rules/ua/uaranger.h"  // R333: the UA ranger expansion
-#include "rules/thiefarmor.h"  // R334: the UA thief armor and attacks
-#include "rules/acrobat.h"  // R335: the UA thief-acrobat
-#include "rules/cavmoney.h"  // R336: the UA cavalier money
+#include "rules/ua/thiefarmor.h"  // R334: the UA thief armor and attacks
+#include "rules/ua/acrobat.h"  // R335: the UA thief-acrobat
+#include "rules/ua/cavmoney.h"  // R336: the UA cavalier money
 #include "rules/ua/uaweapontable.h"  // R337: the UA weight and damage
 #include "rules/ua/uamissile.h"  // R338: the UA hurled and missile data
 #include "rules/ua/uaprof.h"  // R339: the UA weapon proficiency
@@ -115,14 +115,14 @@
 #include "rules/ua/uaequip26.h"  // R392: the UA equipment costs
 #include "rules/ua/uaac26.h"  // R408: the UA p. 26 AC table
 #include "rules/ua/uahandheld.h"  // R392: the UA hand-held data
-#include "rules/cantriptier.h"  // R401: the UA cantrip tier
+#include "rules/ua/cantriptier.h"  // R401: the UA cantrip tier
 #include "rules/ua/uacantrips1.h"  // R412: the UA useful cantrips
 #include "rules/ua/uacantrips2.h"  // R413: the UA reversed cantrips
 #include "rules/ua/uacantrips3.h"  // R414: the UA legerdemain cantrips
 #include "rules/ua/uacantrips4.h"  // R415: the UA person-affecting cantrips
 #include "rules/ua/uacantrips5.h"  // R416: the UA personal cantrips
 #include "rules/ua/uacantrips6.h"  // R417: the UA haunting-sound cantrips
-#include "rules/humrpref.h"  // R169: p.106 humanoid racial preferences
+#include "rules/dmg/humrpref.h"  // R169: p.106 humanoid racial preferences
 #include "rules/deities.h"  // R405: the deity layer seam
 #include "rules/ua/uaappends.h"  // R406: the UA Appendix S stat blocks
 #include "rules/ua/uasstatlines.h"  // R409: the UA Appendix S stat lines
@@ -278,27 +278,27 @@
 #include "rules/mop/motpenergy.h"  // R573: the MotP energy planes pins
 #include "rules/mop/motpquasipos.h"  // R574: the MotP positive quasi-planes pins
 #include "rules/mop/motpquasineg.h"  // R575: the MotP negative quasi-planes pins
-#include "rules/astralplane.h"  // R576: the Astral Plane pins
-#include "rules/outerplanes.h"  // R577: the outer planes general pins
-#include "rules/nirvanaarcadia.h"  // R578: the Nirvana and Arcadia pins
-#include "rules/heavenstwins.h"  // R579: the Seven Heavens and Twin Paradises pins
-#include "rules/elysiumbeasts.h"  // R580: the Elysium and Beastlands pins
-#include "rules/olympusgladsheim.h"  // R581: the Olympus and Gladsheim pins
-#include "rules/limbopandemonium.h"  // R582: the Limbo and Pandemonium pins
-#include "rules/abyss.h"  // R583: the Abyss pins
-#include "rules/tarterus.h"  // R584: the Tarterus pins
-#include "rules/hades.h"  // R585: the Hades pins
-#include "rules/gehenna.h"  // R586: the Gehenna pins
-#include "rules/ninehells.h"  // R587: the Nine Hells pins
-#include "rules/acheron.h"  // R588: the Acheron pins
-#include "rules/concordantopposition.h"  // R589: the Concordant Opposition pins
-#include "rules/beyondouterplanes.h"  // R590: the Beyond the outer planes pins
-#include "rules/outerplanesseal.h"  // R591: the Outer Planes chapter seal pins
+#include "rules/mop/astralplane.h"  // R576: the Astral Plane pins
+#include "rules/mop/outerplanes.h"  // R577: the outer planes general pins
+#include "rules/mop/nirvanaarcadia.h"  // R578: the Nirvana and Arcadia pins
+#include "rules/mop/heavenstwins.h"  // R579: the Seven Heavens and Twin Paradises pins
+#include "rules/mop/elysiumbeasts.h"  // R580: the Elysium and Beastlands pins
+#include "rules/mop/olympusgladsheim.h"  // R581: the Olympus and Gladsheim pins
+#include "rules/mop/limbopandemonium.h"  // R582: the Limbo and Pandemonium pins
+#include "rules/mop/abyss.h"  // R583: the Abyss pins
+#include "rules/mop/tarterus.h"  // R584: the Tarterus pins
+#include "rules/mop/hades.h"  // R585: the Hades pins
+#include "rules/mop/gehenna.h"  // R586: the Gehenna pins
+#include "rules/mop/ninehells.h"  // R587: the Nine Hells pins
+#include "rules/mop/acheron.h"  // R588: the Acheron pins
+#include "rules/mop/concordantopposition.h"  // R589: the Concordant Opposition pins
+#include "rules/mop/beyondouterplanes.h"  // R590: the Beyond the outer planes pins
+#include "rules/mop/outerplanesseal.h"  // R591: the Outer Planes chapter seal pins
 #include "rules/mop/appendixiprimes.h"  // R592: the Appendix I Prime Material Planes pins
 #include "rules/mop/appendixiiinnercreatures.h"  // R593: the Appendix II inner creatures pins
 #include "rules/mop/appendixiiioutercreatures.h"  // R594: the Appendix III outer creatures pins
 #include "rules/mop/appendixivabilitiespowers.h"  // R595: the Appendix IV Powers abilities pins
-#include "rules/indices.h"  // R596: the Indices closing pins
+#include "rules/mop/indices.h"  // R596: the Indices closing pins
 #include "rules/mop/motpethcyclone.h"  // R598: the MotP Ether cyclone pins
 #include "rules/dmo/dmomaxims.h"  // R599: the DMO arc opener pins
 #include "rules/dmo/dmocampaign.h"  // R600: the DMO maxim-doctrine pins
@@ -482,11 +482,11 @@
 #include "rules/mountmove.h"  // R778: the mounted movement pins
 #include "rules/lancecharge.h"  // R779: the lance charge pins
 #include "rules/lancespeed.h"  // R780: the lance speed pins
-#include "rules/spearset.h"  // R781: the set spear pins
+#include "rules/dmg/spearset.h"  // R781: the set spear pins
 #include "rules/owedpins.h"  // R782: the owed pins
 #include "rules/deitylines.h"  // R783: the deity stat lines
 #include "rules/worshipsites.h"  // R784: the worship sites
-#include "rules/spelltableledger.h"  // R785: the UA spell table ledger
+#include "rules/ua/spelltableledger.h"  // R785: the UA spell table ledger
 #include "rules/ua/uadeityprose1.h"  // R786: the dwarven deity prose
 #include "rules/ua/uadeityprose2.h"  // R787: the elven deity prose
 #include "rules/ua/uadeityprose3.h"  // R788: the halfling deity prose
@@ -568,7 +568,7 @@
 #include "rules/ddg/nonhumans_deities.h"  // R864: the Nonhumans' Deities
 #include "rules/ddg/mythos_norse.h"  // R865: the Norse mythos
 #include "rules/ddg/mythos_sumerian.h"  // R866: the Sumerian mythos
-#include "rules/pln.h"  // R867: the known planes of existence
+#include "rules/ddg/appendix1_known_planes.h"  // R867: the known planes of existence
 #include "rules/ddg/appendix2_temple_trappings.h"  // R868: temple trappings
 #include "rules/ddg/cqc_batch1.h"  // R869: the clerical chart, batch one
 #include "rules/ddg/cqc_batch2.h"  // R870: the clerical chart, batch two
@@ -589,13 +589,13 @@
 #include "rules/ddg/lua_promo_batch6.h"  // R885: the DDG lua promotion, batch six
 #include "rules/ddg/lua_promo_batch7.h"  // R886: the DDG lua promotion, batch seven
 #include "rules/dragon/issue001_ives_tables.h"  // R887: the Ives attribute tables, the Dragon opener
-#include "rules/drg.h"  // R888: the Dragon small-variant set
+#include "rules/dragon/issue001_small_variants.h"  // R888: the Dragon small-variant set
 #include "rules/dragon/aronson_illusionist_deltas.h"  // R889: the Aronson illusionist deltas
 #include "rules/dragon/issue002_remorhaz_lore.h"  // R890: the Remorhaz lore, the issue-2 opener
 #include "rules/dragon/class_alchemist.h"  // R891: the Alchemist class
 #include "rules/dragon/fischer_hints_magic_items.h"  // R892: the Fischer Hints magic items
 #include "rules/dragon/systems_round.h"  // R893: the systems round
-#include "rules/art.h"  // R894: the Ward Artificer devices items sweep
+#include "rules/dragon/artificer_devices.h"  // R894: the Ward Artificer devices items sweep
 #include "rules/dragon/issue003_women_magic_notes.h"  // R895: the Lakofka women round
 #include "rules/dragon/specialists_healers_scribes.h"  // R896: the Healer and Scribe specialists round
 #include "rules/dragon/fighting_subclasses.h"  // R897: the Samurai and Berserker fighting sub-classes round
@@ -729,10 +729,10 @@
 #include "rules/dragon/registry_normalization.h"  // R1025: the DRG normalization batch
 #include "rules/ddg/legends_lore_parity.h"  // R1026: the deity seam close
 #include "rules/ua/uascharts.h"  // R407: the UA Appendix S clerical charts
-#include "rules/followers.h"  // R170: pp.16-18 followers by class
-#include "rules/dmg_appendices_klm.h"  // R171: pp.221-224 appendices K L and M
-#include "rules/herbs.h"  // R172: p.220 appendix J herbs spices and medicinal vegetables
-#include "rules/secondary.h"  // R173: p.12 secondary skills
+#include "rules/dmg/followers.h"  // R170: pp.16-18 followers by class
+#include "rules/dmg/dmg_appendices_klm.h"  // R171: pp.221-224 appendices K L and M
+#include "rules/dmg/herbs.h"  // R172: p.220 appendix J herbs spices and medicinal vegetables
+#include "rules/dmg/secondary.h"  // R173: p.12 secondary skills
 #include "rules/subclasses.h"  // R179: the subclass registry
 #include "rules/subclassgates.h"  // R180: the qualification and race gates
 #include "rules/attacksround.h"  // R181: attacks per melee round
@@ -740,91 +740,91 @@
 #include "rules/illusionspells.h"  // R183: the illusionist spell layer
 #include "rules/palrangerspells.h"  // R184: the paladin and ranger spell layers
 #include "rules/multiclass.h"  // R185: the multi-class and dual-class rules
-#include "rules/bard.h"  // R186: the bard (Appendix II)
+#include "rules/phb/bard.h"  // R186: the bard (Appendix II)
 #include "rules/subclassspecials.h"  // R187: the per-subclass specials
 #include "rules/xpadjust.h"  // R188: the prime requisite XP adjustment
 #include "rules/weapontables.h"  // R189: the weapon weight and damage table
 #include "rules/mountlayer.h"  // R403: the mount layer seam
-#include "rules/startmoney.h"  // R190: the starting money by class
-#include "rules/armorratings.h"  // R191: the armor class ratings
-#include "rules/wisdom.h"  // R192: Wisdom Tables I and II
-#include "rules/itemsavethrow.h"  // R204: p.80 item saving throw matrix
-#include "rules/spying.h"  // R205: pp.19-20 the spying tables
-#include "rules/pursuit.h"  // R206: pp.67-69 pursuit and evasion
-#include "rules/taxation.h"  // R207: p.90 the town taxation system
-#include "rules/socialrank.h"  // R208: pp.88-89 social class and rank
-#include "rules/npcpersonae.h"  // R209: pp.114-115 NPC personae facts
-#include "rules/npctraits.h"  // R210: pp.115-116 NPC personae traits
-#include "rules/npcbody.h"  // R211: pp.115-116 height, weight, languages
-#include "rules/hirecost.h"  // R212: pp.116-118 hire spell costs, troop control
-#include "rules/construct.h"  // R213: pp.106-108 construction and siege economics
+#include "rules/phb/startmoney.h"  // R190: the starting money by class
+#include "rules/phb/armorratings.h"  // R191: the armor class ratings
+#include "rules/phb/wisdom.h"  // R192: Wisdom Tables I and II
+#include "rules/dmg/itemsavethrow.h"  // R204: p.80 item saving throw matrix
+#include "rules/dmg/spying.h"  // R205: pp.19-20 the spying tables
+#include "rules/dmg/pursuit.h"  // R206: pp.67-69 pursuit and evasion
+#include "rules/dmg/taxation.h"  // R207: p.90 the town taxation system
+#include "rules/dmg/socialrank.h"  // R208: pp.88-89 social class and rank
+#include "rules/dmg/npcpersonae.h"  // R209: pp.114-115 NPC personae facts
+#include "rules/dmg/npctraits.h"  // R210: pp.115-116 NPC personae traits
+#include "rules/dmg/npcbody.h"  // R211: pp.115-116 height, weight, languages
+#include "rules/dmg/hirecost.h"  // R212: pp.116-118 hire spell costs, troop control
+#include "rules/dmg/construct.h"  // R213: pp.106-108 construction and siege economics
 #include "rules/siegefire.h"  // R214: pp.108-110 war machine fire, siege attack, defensive values
-#include "rules/conduct.h"  // R215: pp.110-112 conducting the game pins
-#include "rules/magres.h"  // R216: pp.114-119 magical research pins
-#include "rules/scrollfab.h"  // R217: pp.118-121 scroll manufacture and fabrication pins
-#include "rules/energydrain.h"  // R218: pp.119-122 use of magic items and energy draining pins
-#include "rules/treasdet.h"  // R219: pp.120-123 treasure random determination tables
-#include "rules/hoard.h"  // R220: p.123 the combined hoard table
-#include "rules/potions.h"  // R221: pp.125-126 the potions prose pins
-#include "rules/scrollpins.h"  // R222: pp.126-127 the scrolls prose pins
-#include "rules/rings.h"  // R223: p.127 the rings footnote pins
-#include "rules/rodswands.h"  // R224: pp.127-128 the rods/staves/wands pins
-#include "rules/miscmagic1.h"  // R225: p.128 the misc table 1 pins
-#include "rules/miscmagic2.h"  // R226: p.128 the misc table 2 pins
-#include "rules/miscmagic3.h"  // R237: p.129 the misc table 3 pins
-#include "rules/miscmagic4.h"  // R238: p.129-130 the misc table 4 pins
-#include "rules/miscmagic5.h"  // R239: p.130 the misc table 5 pins
-#include "rules/specart.h"  // R240: p.130-131 the III.E Special artifacts pins
-#include "rules/armorshield.h"  // R241: p.129-130 the III.F armor and shield pins
-#include "rules/swords.h"  // R242: p.131 the III.G swords pins
-#include "rules/mweapons.h"  // R243: p.131-132 the III.H misc weapons pins
-#include "rules/rodsprose.h"  // R244: pp.141-142 the III.D rods prose pins
-#include "rules/stavesprose.h"  // R245: pp.142-143 the III.D staves prose pins
-#include "rules/wandsprose.h"  // R246: pp.143-144 the III.D wands prose pins
-#include "rules/wandsprose2.h"  // R247: pp.144-145 the III.D wands prose part 2 pins
-#include "rules/wonder.h"  // R248: p.145 the III.D wand of wonder effect table pins
-#include "rules/potionsprose.h"  // R249: pp.133-134 the III.A potions prose part 1 pins
-#include "rules/potionsprose2.h"  // R250: pp.134-136 the III.A potions prose part 2 pins
-#include "rules/potionsprose3.h"  // R251: pp.136-137 the III.A potions prose part 3 pins
-#include "rules/scrollsprose.h"  // R252: pp.137-139 the III.B scrolls explanation prose pins
-#include "rules/ringsprose.h"  // R253: pp.137-138 the III.C rings explanation prose part 1 pins
-#include "rules/ringsprose2.h"  // R254: pp.138-139 the III.C rings explanation prose part 2 pins
-#include "rules/ringsprose3.h"  // R256: pp.139-140 the III.C rings explanation prose part 3 pins
-#include "rules/miscprose1.h"  // R257: the III.E misc magic explanation prose part 1 pins
-#include "rules/miscprose2.h"  // R258: the III.E misc magic explanation prose part 2 pins
-#include "rules/miscprose3.h"  // R259: the III.E misc magic explanation prose part 3 pins
-#include "rules/miscprose4.h"  // R260: the III.E misc magic explanation prose part 4 pins
-#include "rules/miscprose5.h"  // R261: the III.E misc magic explanation prose part 5 pins
-#include "rules/miscprose6.h"  // R262: the III.E misc magic explanation prose part 6 pins
-#include "rules/miscprose7.h"  // R263: the III.E misc magic explanation prose part 7 pins
-#include "rules/miscprose8.h"  // R264: the III.E misc magic explanation prose part 8 pins
-#include "rules/miscprose9.h"  // R265: the III.E misc magic explanation prose part 9 pins
-#include "rules/miscprose10.h"  // R266: the III.E misc magic explanation prose part 10 pins
-#include "rules/miscprose11.h"  // R267: the III.E misc magic explanation prose part 11 pins
-#include "rules/miscprose12.h"  // R268: the III.E misc magic explanation prose part 12 pins
-#include "rules/miscprose13.h"  // R269: the III.E misc magic explanation prose part 13 pins
-#include "rules/miscprose14.h"  // R270: the III.E misc magic explanation prose part 14 pins
-#include "rules/miscprose15.h"  // R271: the III.E misc magic explanation prose part 15 pins
-#include "rules/miscprose16.h"  // R272: the III.E misc magic explanation prose part 16 pins
-#include "rules/miscprose17.h"  // R273: the III.E misc magic explanation prose part 17 pins
-#include "rules/miscprose18.h"  // R274: the III.E misc magic explanation prose part 18 pins
-#include "rules/miscprose19.h"  // R275: the III.E misc magic explanation prose part 19 pins
-#include "rules/miscprose20.h"  // R276: the III.E misc magic explanation prose part 20 pins
-#include "rules/miscprose21.h"  // R277: the III.E misc magic explanation prose part 21 pins
-#include "rules/miscprose22.h"  // R278: the III.E misc magic explanation prose part 22 pins
-#include "rules/miscprose23.h"  // R279: the III.E misc magic explanation prose part 23 pins
-#include "rules/specartprose.h"  // R280: the III.E Special artifacts explanation prose part 1 pins
-#include "rules/specartprose2.h"  // R281: the III.E Special artifacts explanation prose part 2 pins
-#include "rules/weaponprof.h"  // R297: the PHB Weapon Proficiency Table
-#include "rules/thieffunc.h"  // R298: the thief function take table and DEX Table II
-#include "rules/locktime.h"  // R304: the DMG lock time pins
-#include "rules/doorforce.h"  // R305: the DMG door force pins
+#include "rules/dmg/conduct.h"  // R215: pp.110-112 conducting the game pins
+#include "rules/dmg/magres.h"  // R216: pp.114-119 magical research pins
+#include "rules/dmg/scrollfab.h"  // R217: pp.118-121 scroll manufacture and fabrication pins
+#include "rules/dmg/energydrain.h"  // R218: pp.119-122 use of magic items and energy draining pins
+#include "rules/dmg/treasdet.h"  // R219: pp.120-123 treasure random determination tables
+#include "rules/dmg/hoard.h"  // R220: p.123 the combined hoard table
+#include "rules/dmg/potions.h"  // R221: pp.125-126 the potions prose pins
+#include "rules/dmg/scrollpins.h"  // R222: pp.126-127 the scrolls prose pins
+#include "rules/dmg/rings.h"  // R223: p.127 the rings footnote pins
+#include "rules/dmg/rodswands.h"  // R224: pp.127-128 the rods/staves/wands pins
+#include "rules/dmg/miscmagic1.h"  // R225: p.128 the misc table 1 pins
+#include "rules/dmg/miscmagic2.h"  // R226: p.128 the misc table 2 pins
+#include "rules/dmg/miscmagic3.h"  // R237: p.129 the misc table 3 pins
+#include "rules/dmg/miscmagic4.h"  // R238: p.129-130 the misc table 4 pins
+#include "rules/dmg/miscmagic5.h"  // R239: p.130 the misc table 5 pins
+#include "rules/dmg/specart.h"  // R240: p.130-131 the III.E Special artifacts pins
+#include "rules/dmg/armorshield.h"  // R241: p.129-130 the III.F armor and shield pins
+#include "rules/dmg/swords.h"  // R242: p.131 the III.G swords pins
+#include "rules/dmg/mweapons.h"  // R243: p.131-132 the III.H misc weapons pins
+#include "rules/dmg/rodsprose.h"  // R244: pp.141-142 the III.D rods prose pins
+#include "rules/dmg/stavesprose.h"  // R245: pp.142-143 the III.D staves prose pins
+#include "rules/dmg/wandsprose.h"  // R246: pp.143-144 the III.D wands prose pins
+#include "rules/dmg/wandsprose2.h"  // R247: pp.144-145 the III.D wands prose part 2 pins
+#include "rules/dmg/wonder.h"  // R248: p.145 the III.D wand of wonder effect table pins
+#include "rules/dmg/potionsprose.h"  // R249: pp.133-134 the III.A potions prose part 1 pins
+#include "rules/dmg/potionsprose2.h"  // R250: pp.134-136 the III.A potions prose part 2 pins
+#include "rules/dmg/potionsprose3.h"  // R251: pp.136-137 the III.A potions prose part 3 pins
+#include "rules/dmg/scrollsprose.h"  // R252: pp.137-139 the III.B scrolls explanation prose pins
+#include "rules/dmg/ringsprose.h"  // R253: pp.137-138 the III.C rings explanation prose part 1 pins
+#include "rules/dmg/ringsprose2.h"  // R254: pp.138-139 the III.C rings explanation prose part 2 pins
+#include "rules/dmg/ringsprose3.h"  // R256: pp.139-140 the III.C rings explanation prose part 3 pins
+#include "rules/dmg/miscprose1.h"  // R257: the III.E misc magic explanation prose part 1 pins
+#include "rules/dmg/miscprose2.h"  // R258: the III.E misc magic explanation prose part 2 pins
+#include "rules/dmg/miscprose3.h"  // R259: the III.E misc magic explanation prose part 3 pins
+#include "rules/dmg/miscprose4.h"  // R260: the III.E misc magic explanation prose part 4 pins
+#include "rules/dmg/miscprose5.h"  // R261: the III.E misc magic explanation prose part 5 pins
+#include "rules/dmg/miscprose6.h"  // R262: the III.E misc magic explanation prose part 6 pins
+#include "rules/dmg/miscprose7.h"  // R263: the III.E misc magic explanation prose part 7 pins
+#include "rules/dmg/miscprose8.h"  // R264: the III.E misc magic explanation prose part 8 pins
+#include "rules/dmg/miscprose9.h"  // R265: the III.E misc magic explanation prose part 9 pins
+#include "rules/dmg/miscprose10.h"  // R266: the III.E misc magic explanation prose part 10 pins
+#include "rules/dmg/miscprose11.h"  // R267: the III.E misc magic explanation prose part 11 pins
+#include "rules/dmg/miscprose12.h"  // R268: the III.E misc magic explanation prose part 12 pins
+#include "rules/dmg/miscprose13.h"  // R269: the III.E misc magic explanation prose part 13 pins
+#include "rules/dmg/miscprose14.h"  // R270: the III.E misc magic explanation prose part 14 pins
+#include "rules/dmg/miscprose15.h"  // R271: the III.E misc magic explanation prose part 15 pins
+#include "rules/dmg/miscprose16.h"  // R272: the III.E misc magic explanation prose part 16 pins
+#include "rules/dmg/miscprose17.h"  // R273: the III.E misc magic explanation prose part 17 pins
+#include "rules/dmg/miscprose18.h"  // R274: the III.E misc magic explanation prose part 18 pins
+#include "rules/dmg/miscprose19.h"  // R275: the III.E misc magic explanation prose part 19 pins
+#include "rules/dmg/miscprose20.h"  // R276: the III.E misc magic explanation prose part 20 pins
+#include "rules/dmg/miscprose21.h"  // R277: the III.E misc magic explanation prose part 21 pins
+#include "rules/dmg/miscprose22.h"  // R278: the III.E misc magic explanation prose part 22 pins
+#include "rules/dmg/miscprose23.h"  // R279: the III.E misc magic explanation prose part 23 pins
+#include "rules/dmg/specartprose.h"  // R280: the III.E Special artifacts explanation prose part 1 pins
+#include "rules/dmg/specartprose2.h"  // R281: the III.E Special artifacts explanation prose part 2 pins
+#include "rules/phb/weaponprof.h"  // R297: the PHB Weapon Proficiency Table
+#include "rules/phb/thieffunc.h"  // R298: the thief function take table and DEX Table II
+#include "rules/dmg/locktime.h"  // R304: the DMG lock time pins
+#include "rules/dmg/doorforce.h"  // R305: the DMG door force pins
 #include "rules/equipcosts.h"  // R300: the equipment cost columns
 #include "rules/hirelings.h"  // R309: the hirelings cost tables
 #include "rules/sage.h"  // R310: the sage subsection
 #include "rules/underwater.h"  // R311: the underwater environment
-#include "rules/swimcross.h"  // R312: the flooded crossing
-#include "rules/uwfight.h"  // R313: the underwater fight
+#include "rules/dmg/swimcross.h"  // R312: the flooded crossing
+#include "rules/dmg/uwfight.h"  // R313: the underwater fight
 #include <cstdio>
 #include <cstring>  // R327: the acrobat name reads
 #include <string>

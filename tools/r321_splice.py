@@ -769,11 +769,11 @@ assert len(applied) + len(already) == 12, 'patch l count wrong'
 
 # ---- (m) regtest.cpp: the include and the R321 audit ----
 IN_OLD = NL.join([
-    '#include ' + DQ + 'rules/uwspells.h' + DQ +
+    '#include ' + DQ + 'rules/dmg/uwspells.h' + DQ +
     '  // R168: p.57 underwater spell use',
 ])
 IN_NEW = NL.join([
-    '#include ' + DQ + 'rules/uwspells.h' + DQ +
+    '#include ' + DQ + 'rules/dmg/uwspells.h' + DQ +
     '  // R168: p.57 underwater spell use',
     '#include ' + DQ + 'rules/aerial.h' + DQ +
     '  // R321: pp.49-53 aerial combat',

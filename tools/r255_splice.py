@@ -9,8 +9,8 @@
 # ringChargeLimitedCount comment already names Mammal
 # Control. This round swaps rows 9 and 11 everywhere
 # the divergence lives:
-#   - rules/rings.h: the array (comment names the fix)
-#   - rules/ringsprose2.h: the three divergence
+#   - rules/dmg/rings.h: the array (comment names the fix)
+#   - rules/dmg/ringsprose2.h: the three divergence
 #     comments now record the resolution
 #   - regtest.cpp: the R223 audit kChg array + the
 #     truthy/negative per-index asserts, and the R254
@@ -23,8 +23,8 @@
 
 import sys
 
-RH  = 'rules/rings.h'
-R2  = 'rules/ringsprose2.h'
+RH  = 'rules/dmg/rings.h'
+R2  = 'rules/dmg/ringsprose2.h'
 REG = 'regtest.cpp'
 GAP = 'tools/dmg_gap_report.md'
 

@@ -21,7 +21,7 @@
 
 import sys
 
-BRD  = 'rules/bard.h'
+BRD  = 'rules/phb/bard.h'
 PAR  = 'game/party.h'
 ACT  = 'ai/actor.h'
 APP  = 'game/appstate.h'
@@ -67,7 +67,7 @@ pins_new = [
     '};',
 ]
 
-# ---- 1: the rules/bard.h career seam ----
+# ---- 1: the rules/phb/bard.h career seam ----
 seam_old = [
     '// The wiring: combat at the fighter level',
 ]
@@ -93,7 +93,7 @@ inc_old = [
 ]
 inc_new = [
     '#include "../rules/multiclass.h"  // R233: the multi-class engine',
-    '#include "../rules/bard.h"  // R235: the bard engine',
+    '#include "../rules/phb/bard.h"  // R235: the bard engine',
 ]
 
 # ---- 3: the Character bard field ----
@@ -675,7 +675,7 @@ gap_new = [
 PATCHES = [
     (BRD,  'enum BardPins', pins_old, pins_new),
     (BRD,  'bardCareerGate', seam_old, seam_new),
-    (PAR,  'rules/bard.h', inc_old, inc_new),
+    (PAR,  'rules/phb/bard.h', inc_old, inc_new),
     (PAR,  'bool bard = false;', fld_old, fld_new),
     (PAR,  'a.bard        = bard;', toa_old, toa_new),
     (PAR,  'bool canBeginBardStudies() const', meth_old, meth_new),

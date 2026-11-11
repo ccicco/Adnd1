@@ -1,12 +1,12 @@
 #include "appstate.h"
 #include "../abilities/abilities.h"   // R120: listening (p.60)
-#include "../rules/thieffunc.h"   // R301: the thief trap rolls
-#include "../rules/locktime.h"   // R304: the lock time draw
-#include "../rules/doorforce.h"  // R305: the door force folds
-#include "../rules/swimcross.h"  // R312: the flooded crossing
+#include "../rules/phb/thieffunc.h"   // R301: the thief trap rolls
+#include "../rules/dmg/locktime.h"   // R304: the lock time draw
+#include "../rules/dmg/doorforce.h"  // R305: the door force folds
+#include "../rules/dmg/swimcross.h"  // R312: the flooded crossing
 #include "../rules/underwater.h"  // R311: the drown percent
-#include "../rules/uwfight.h"  // R313: the crossing cap
-#include "../rules/comeliness.h"  // R400: the parley gate
+#include "../rules/dmg/uwfight.h"  // R313: the crossing cap
+#include "../rules/ua/comeliness.h"  // R400: the parley gate
 
 // ---- restExplore ----
 void AppState::restExplore(){
@@ -260,7 +260,7 @@ void AppState::springTrap(int roomIndex){
             // R301: the printed find roll - percentile
             // dice at or below the adjusted find/remove
             // traps chance (the R298 tables; the draw
-            // runs in tenths, rules/thieffunc.h)
+            // runs in tenths, rules/phb/thieffunc.h)
             int find = (int)rng.below(1000);
             if (!rules::thfAttemptSucceeds(find,
                     rules::THF_TRAPS, c.level,

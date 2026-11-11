@@ -15,7 +15,7 @@
 # ADJUSTMENTS percent table (the print one;
 # the compilation annotations excluded).
 # A seam with no prior coverage. Patches: 4
-# (new rules/npctraits.h, regtest include,
+# (new rules/dmg/npctraits.h, regtest include,
 # audit block, gap-report log entry). Census
 # 125 -> 126.
 
@@ -62,12 +62,12 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/npctraits.h - the new header
+# Patch 1: rules/dmg/npctraits.h - the new header
 # ---------------------------------------------------------------------------
 
 hdr_lines = [
 '// ====================================================================',
-'// Adnd1 - rules/npctraits.h',
+'// Adnd1 - rules/dmg/npctraits.h',
 '// R210: the NPC personae traits tables (DMG',
 '// pp.115-116, TRAITS TABLES) - the general',
 '// tendencies, personality, interests and the',
@@ -109,7 +109,7 @@ hdr_lines = [
 '',
 '#pragma once',
 '',
-'#include "rules/npcpersonae.h"  // R209: the d10 face clamp',
+'#include "rules/dmg/npcpersonae.h"  // R209: the d10 face clamp',
 '',
 'namespace rules {',
 '',
@@ -631,7 +631,7 @@ hdr_lines = [
 ]
 hdr = NL.join(hdr_lines) + NL
 
-patch('rules/npctraits.h',
+patch('rules/dmg/npctraits.h',
       'R210: the NPC personae traits tables (DMG',
       None,
       hdr)
@@ -642,10 +642,10 @@ patch('rules/npctraits.h',
 # Patch 2: regtest.cpp - the include
 # ---------------------------------------------------------------------------
 
-old2 = '#include "rules/npcpersonae.h"  // R209: pp.114-115 NPC personae facts'
+old2 = '#include "rules/dmg/npcpersonae.h"  // R209: pp.114-115 NPC personae facts'
 
-new2 = ('#include "rules/npcpersonae.h"  // R209: pp.114-115 NPC personae facts'
-        + NL + '#include "rules/npctraits.h"  // R210: pp.115-116 NPC personae traits')
+new2 = ('#include "rules/dmg/npcpersonae.h"  // R209: pp.114-115 NPC personae facts'
+        + NL + '#include "rules/dmg/npctraits.h"  // R210: pp.115-116 NPC personae traits')
 
 patch('regtest.cpp',
       'R210: pp.115-116 NPC personae traits',
@@ -871,7 +871,7 @@ log_lines = [
 'R210 landed the NPC personae traits',
 'tables (DMG pp.115-116, TRAITS TABLES) -',
 'a seam with zero prior coverage.',
-'rules/npctraits.h (the grenade.h pattern):',
+'rules/dmg/npctraits.h (the grenade.h pattern):',
 'the 24 General Tendencies (the d12 with the',
 'd6 half split: 1-3 the first twelve, 4-6 the',
 'second), the three-column Personality (d8',

@@ -147,7 +147,7 @@ struct Actor {
     // flag in the registry, so check hasRangedWeapon() instead.
     items::WeaponInstance rangedWeapon;
     // R297: the weapon proficiency slots (the PHB
-    // Weapon Proficiency Table, rules/weaponprof.h).
+    // Weapon Proficiency Table, rules/phb/weaponprof.h).
     // The RECORDED weapon ids the character chose.
     // EMPTY = proficiency unrecorded: the pre-R297
     // convention holds (the held weapon is treated

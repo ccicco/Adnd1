@@ -1,5 +1,5 @@
     // ---- R323: the subrace layer seam audit ----
-    // The UA subrace seam (rules/subraces.h):
+    // The UA subrace seam (rules/ua/subraces.h):
     // the 17 racial types, Race Table I
     // with the alignment column, the
     // Racial Preferences matrix, the

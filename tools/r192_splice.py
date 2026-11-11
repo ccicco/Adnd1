@@ -3,7 +3,7 @@
 # bonus spells and spell failure wiring (the
 # last queued PHB box).
 #
-# rules/wisdom.h is CREATED: Wisdom Table I
+# rules/phb/wisdom.h is CREATED: Wisdom Table I
 # (the magical attack adjustment ladder 3 -3
 # through 18 +4, applying only to mental
 # attack forms involving will force; the
@@ -83,7 +83,7 @@ def create(path, marker, content):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/wisdom.h CREATED
+# Patch 1: rules/phb/wisdom.h CREATED
 # ---------------------------------------------------------------------------
 
 # Wisdom Table I: the magical attack
@@ -115,7 +115,7 @@ bonus = [
 hdr = []
 a = hdr.append
 
-a('// rules/wisdom.h - Wisdom Tables I and II (the')
+a('// rules/phb/wisdom.h - Wisdom Tables I and II (the')
 a('// PHB CHARACTER ABILITIES wisdom section, R192).')
 a('//')
 a('// Wisdom Table I: the magical attack')
@@ -214,7 +214,7 @@ a('} // namespace rules')
 a('')
 a('#endif // RULES_WISDOM_H')
 
-create('rules/wisdom.h',
+create('rules/phb/wisdom.h',
        '#ifndef RULES_WISDOM_H',
        NL.join(hdr) + NL)
 
@@ -223,10 +223,10 @@ create('rules/wisdom.h',
 # ---------------------------------------------------------------------------
 
 patch('spells/spells.cpp',
-      '#include "../rules/wisdom.h"',
+      '#include "../rules/phb/wisdom.h"',
       '#include "spells.h"',
       '#include "spells.h"'
-      + NL + '#include "../rules/wisdom.h"  // R192: Wisdom Tables I and II')
+      + NL + '#include "../rules/phb/wisdom.h"  // R192: Wisdom Tables I and II')
 
 # ---------------------------------------------------------------------------
 # Patch 3: spells/spells.cpp - the wiring functions
@@ -299,7 +299,7 @@ patch('spells/spells.cpp',
       + NL + '// gates put 7th at 17; documented engine limits. Values ride'
       + NL + '// the file' + Q + 's standing verification debt - the printed tables'
       + NL + '// win when the PDF is re-uploaded.)',
-      '// wisdom footnotes are wired R192 (rules/wisdom.h and'
+      '// wisdom footnotes are wired R192 (rules/phb/wisdom.h and'
       + NL + '// clericSpellSlotsWithWis: the 6th needs Wis 17, the 7th'
       + NL + '// Wis 18 - Wisdom Table I; the printed ** puts a Wis-18'
       + NL + '// cleric' + Q + 's first 7th at 16, which the L16 table row'
@@ -331,7 +331,7 @@ patch('spells/spells.h',
       + NL + '// at cleric 16) are not modeled - the level-only gates are'
       + NL + '// documented engine limits.',
       '// printed wisdom footnotes wired R192: the wisdom gates ride'
-      + NL + '// rules/wisdom.h and clericSpellSlotsWithWis (6th: Wis 17;'
+      + NL + '// rules/phb/wisdom.h and clericSpellSlotsWithWis (6th: Wis 17;'
       + NL + '// 7th: Wis 18 - Wisdom Table I; the bonus spells and spell'
       + NL + '// failure ride the same header).')
 
@@ -361,10 +361,10 @@ patch('spells/spells.h',
 # ---------------------------------------------------------------------------
 
 patch('regtest.cpp',
-      '#include "rules/wisdom.h"',
-      '#include "rules/armorratings.h"  // R191: the armor class ratings',
-      '#include "rules/armorratings.h"  // R191: the armor class ratings'
-      + NL + '#include "rules/wisdom.h"  // R192: Wisdom Tables I and II')
+      '#include "rules/phb/wisdom.h"',
+      '#include "rules/phb/armorratings.h"  // R191: the armor class ratings',
+      '#include "rules/phb/armorratings.h"  // R191: the armor class ratings'
+      + NL + '#include "rules/phb/wisdom.h"  // R192: Wisdom Tables I and II')
 
 # ---------------------------------------------------------------------------
 # Patch 9: regtest.cpp - the R192 battery audit (census 109)
@@ -520,7 +520,7 @@ box_old = ('- [ ] **Wisdom Table II, cleric bonus spells and'
            + NL + '      if engine scope wants it.')
 
 box_new = ('- [x] **Wisdom Table II, cleric bonus spells and'
-           + NL + '      spell failure - PINNED R192:** rules/wisdom.h'
+           + NL + '      spell failure - PINNED R192:** rules/phb/wisdom.h'
            + NL + '      CREATED - Wisdom Table I (the magical attack'
            + NL + '      adjustment ladder 3 -3 through 18 +4, mental'
            + NL + '      attack forms only; the high-circle gates - 17'
@@ -563,7 +563,7 @@ patch('tools/dmg_gap_report.md',
       'other nine rows verified cell for cell. New R191'
       + NL + 'battery audit; census 108. Next: the gap report names'
       + NL + 'the next round.'
-      + NL + 'R192 landed the wisdom wiring: rules/wisdom.h'
+      + NL + 'R192 landed the wisdom wiring: rules/phb/wisdom.h'
       + NL + 'CREATED (Wisdom Table I - the magical attack ladder'
       + NL + 'and the Wis 17/18 high-circle gates; Wisdom Table II -'
       + NL + 'the cumulative cleric bonus-spell ladder and the'
@@ -580,7 +580,7 @@ patch('tools/dmg_gap_report.md',
 assert applied + already == 11, 'patch count drift: ' + str(applied) + ' + ' + str(already)
 print('R192 splice: ALL OK (applied %d, already %d)' % (applied, already))
 print('R192 note: 11 patches; census 109 (one new audit);')
-print('real gate: md5sum rules/wisdom.h')
+print('real gate: md5sum rules/phb/wisdom.h')
 print('commit: R192: the wisdom tables pinned - the bonus spells,')
 print('the spell failure and the high-circle gates wired (census 109)')
 

@@ -260,7 +260,7 @@ DHBODY = E(
     '// The feeders the corpus already',
     '// pinned:',
     '//   0: R169 the humanoid racial',
-    '//      preferences (rules/humrpref.h -',
+    '//      preferences (rules/dmg/humrpref.h -',
     '//      the nine-race matrix: the orc',
     '//      row carries no elf column, so',
     '//      the Appendix S Gruumsh/Corellon',
@@ -269,11 +269,11 @@ DHBODY = E(
     '//      is the sole cross-pantheon',
     '//      site)',
     '//   1: R322 the comeliness seam',
-    '//      (rules/comeliness.h - the',
+    '//      (rules/ua/comeliness.h - the',
     '//      bands the parenthesized CM',
     '//      values ride)',
     '//   2: R323 the subrace layer',
-    '//      (rules/subraces.h - the four',
+    '//      (rules/ua/subraces.h - the four',
     '//      demi-human pantheons map to',
     '//      their subrace parents)',
     '//   3: R404 the psionics seam',
@@ -443,11 +443,11 @@ newfile(DH, DHBODY + NL,
 RT = 'regtest.cpp'
 
 pair(RT,
-     '#include "rules/humrpref.h"  '
+     '#include "rules/dmg/humrpref.h"  '
      '// R169: p.106 humanoid racial'
      ' preferences',
      E(
-    '#include "rules/humrpref.h"  // R169:'
+    '#include "rules/dmg/humrpref.h"  // R169:'
     ' p.106 humanoid racial preferences',
     '#include "rules/deities.h"  '
     '// R405: the deity layer seam'),

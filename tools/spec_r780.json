@@ -66,7 +66,7 @@
  ],
  "banner": {
   "title": "THE LANCE SPEED FACTORS - the three lances ride the R158 ladder",
-  "provenance": "R779 left the lance speed contract-side (the R158 ladder names no lance); R780 pins the three printed cells. The PHB p.38 WEAPON TYPES speed column, read from the 1eonline.info compilation (the repo-trusted source): light horse 7, medium horse 6, heavy horse 8. The medium-horse 6 outrunning the light-horse 7 is no OCR slip - both compilation pages print it cell-for-cell, and the engine follows the print exactly as it followed the spear 6-8 spread. The rows land in rules/weaponspeed.h - the R158 name-keyed ladder, still pure data: the DMG p.66 three caller-detected cases (tie order, the extra-attack windows, the weapon-vs-spell segment) gained no engine caller here; the R158 audit itself gains the three checks against the R780 header pins, so a mutant in either the ladder row or the pin dies at the preflight. Honest boundaries: the printed lengths and space-required cells ride no engine concept, and the standing pragma once in weaponspeed.h stays untouched - the R778 guard rule governs new guards only",
+  "provenance": "R779 left the lance speed contract-side (the R158 ladder names no lance); R780 pins the three printed cells. The PHB p.38 WEAPON TYPES speed column, read from the 1eonline.info compilation (the repo-trusted source): light horse 7, medium horse 6, heavy horse 8. The medium-horse 6 outrunning the light-horse 7 is no OCR slip - both compilation pages print it cell-for-cell, and the engine follows the print exactly as it followed the spear 6-8 spread. The rows land in rules/dmg/weaponspeed.h - the R158 name-keyed ladder, still pure data: the DMG p.66 three caller-detected cases (tie order, the extra-attack windows, the weapon-vs-spell segment) gained no engine caller here; the R158 audit itself gains the three checks against the R780 header pins, so a mutant in either the ladder row or the pin dies at the preflight. Honest boundaries: the printed lengths and space-required cells ride no engine concept, and the standing pragma once in weaponspeed.h stays untouched - the R778 guard rule governs new guards only",
   "sentinel": "Zero new book pages: the three speed cells ride the 1eonline.info compilation the R189 speed-verify duty already trusts"
  },
  "consts": [
@@ -105,7 +105,7 @@
   {
    "name": "lspLancesRideTheR158Ladder",
    "value": true,
-   "comment": "The three rows land in rules/weaponspeed.h weaponSpeedFactor: lance, light horse 7; lance, medium horse 6; lance, heavy horse 8."
+   "comment": "The three rows land in rules/dmg/weaponspeed.h weaponSpeedFactor: lance, light horse 7; lance, medium horse 6; lance, heavy horse 8."
   },
   {
    "name": "lspMediumOutrunsTheLight",
@@ -181,7 +181,7 @@
  "inline_count": 10,
  "file_patches": [
   {
-   "file": "rules/weaponspeed.h",
+   "file": "rules/dmg/weaponspeed.h",
    "note": "the three lance rows join the R158 ladder after the pike row (the PHB p.38 speed cells)",
    "from": "        { \"pike\",             13 },  // the DMG p.66 example\n    };",
    "to": "        { \"pike\",             13 },  // the DMG p.66 example\n        // R780: the three lances ride the ladder -\n        // the PHB p.38 speed column cells (the medium\n        // horse 6 outruns the light horse 7 - the print\n        // is the print)\n        { \"lance, medium horse\", 6 },\n        { \"lance, light horse\",  7 },\n        { \"lance, heavy horse\",  8 },\n    };"

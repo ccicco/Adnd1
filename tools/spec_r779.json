@@ -242,8 +242,8 @@
   {
    "file": "ai/actor.cpp",
    "note": "the lancecharge.h include (the R400 lesson - the fold calls the multiplier)",
-   "from": "#include \"../rules/uwfight.h\"  // R313: the underwater strike gate\n",
-   "to": "#include \"../rules/uwfight.h\"  // R313: the underwater strike gate\n#include \"../rules/lancecharge.h\"  // R779: the charge multiplier\n"
+   "from": "#include \"../rules/dmg/uwfight.h\"  // R313: the underwater strike gate\n",
+   "to": "#include \"../rules/dmg/uwfight.h\"  // R313: the underwater strike gate\n#include \"../rules/lancecharge.h\"  // R779: the charge multiplier\n"
   },
   {
    "file": "ai/actor.cpp",

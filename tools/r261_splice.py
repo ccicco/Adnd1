@@ -32,10 +32,10 @@ def wr(p, s):
     f.write(s)
     f.close()
 
-# ---- patch 1: rules/miscprose5.h ----
+# ---- patch 1: rules/dmg/miscprose5.h ----
 HDR = [
     '// ====================================================================',
-    '// Adnd1 - rules/miscprose5.h',
+    '// Adnd1 - rules/dmg/miscprose5.h',
     '// R261: the III.E misc magic explanation prose part 5',
     '// (DMG p.132) - Candle of Invocation through Cloak',
     '// of Protection, part2 lines 155-220 (global =',
@@ -413,7 +413,7 @@ HDR = [
     '} // namespace rules',
     '',
 ]
-P1 = 'rules/miscprose5.h'
+P1 = 'rules/dmg/miscprose5.h'
 if os.path.exists(os.path.join(ROOT, P1)):
     already += 1
     assert rd(P1) == NL.join(HDR), P1 + ' exists but differs'
@@ -425,9 +425,9 @@ assert rd(P1).count(
     'R261: the III.E misc magic explanation prose part 5') == 1
 
 # ---- patch 2: the regtest include ----
-INC_OLD = ('#include "rules/miscprose4.h"  // R260: the III.E misc'
+INC_OLD = ('#include "rules/dmg/miscprose4.h"  // R260: the III.E misc'
            ' magic explanation prose part 4 pins')
-INC_NEW = ('#include "rules/miscprose5.h"  // R261: the III.E misc'
+INC_NEW = ('#include "rules/dmg/miscprose5.h"  // R261: the III.E misc'
            ' magic explanation prose part 5 pins')
 RG = rd('regtest.cpp')
 if INC_NEW in RG:
@@ -619,7 +619,7 @@ GAP = [
     '180 ends with such as',
     'spells,, line 185 continues',
     'gaze weapon attacks).',
-    'rules/miscprose5.h (the mmp',
+    'rules/dmg/miscprose5.h (the mmp',
     'prefix again, 60 accessors:',
     '50 scalars + 10 array',
     'walkers, no name collisions',

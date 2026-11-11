@@ -6,7 +6,7 @@
 # The pin (rules/underwater.h, the grenade.h
 # pattern): the DMG UNDERWATER ADVENTURES
 # section minus the spell lists (those ride
-# R168, rules/uwspells.h) - the surface
+# R168, rules/dmg/uwspells.h) - the surface
 # SWIMMING paragraph (metal armor impossible
 # except magic armor - the dog paddle only;
 # leather and padded at 5 percent drown per
@@ -195,7 +195,7 @@ SB = NL.join(
      '// terms, the underwater movement, vision and',
      '// combat. The underwater spell use lists and',
      '// the fire and electrical facts ride R168',
-     '// (rules/uwspells.h) - this header does not',
+     '// (rules/dmg/uwspells.h) - this header does not',
      '// re-pin them.',
      '//',
      '// The surface swim: swimming impossible in any',
@@ -617,7 +617,7 @@ else:
 s = rd(p)
 assert s.count('#include "rules/underwater.h"') == 1, 'patch b include'
 assert s.count('#include "rules/sage.h"') == 1, 'patch b anchor'
-assert s.count('#include "rules/uwspells.h"') == 1, 'patch b r168 intact'
+assert s.count('#include "rules/dmg/uwspells.h"') == 1, 'patch b r168 intact'
 assert len(applied) + len(already) == 2, 'patch b count wrong'
 
 # ---- (c) regtest.cpp: the audit block ----
@@ -907,7 +907,7 @@ CH_NEW = NL.join([
     'sahuagin 20, untrained -4; missiles',
     'out except the special crossbow at',
     '10x price and half range). The spell',
-    'lists ride R168 (rules/uwspells.h).',
+    'lists ride R168 (rules/dmg/uwspells.h).',
     'No engine site charges any of this',
     'yet; the battery census moves 234 ->',
     '235 with the R311 audit.',

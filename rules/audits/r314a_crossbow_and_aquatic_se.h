@@ -1,6 +1,6 @@
     // ---- R314a: the crossbow and the aquatic
     // first strike seam audit ----
-    // The R314 pins (rules/uwfight.h, the
+    // The R314 pins (rules/dmg/uwfight.h, the
     // grenade.h pattern): the deep crossbow
     // (the R311 specially-made crossbow -
     // the missile bar lifts for it alone),

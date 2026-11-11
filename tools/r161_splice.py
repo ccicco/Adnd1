@@ -1,9 +1,9 @@
 # tools/r161_splice.py - R161, 5 patches: attacks with
 # two weapons (DMG p.70) - the two-weapon conventions for
-# attack and armor class. rules/twoweapon.h is the
+# attack and armor class. rules/dmg/twoweapon.h is the
 # header-only layer (the grenade.h pattern).
 #
-# (1) rules/twoweapon.h: the p.70 print - a character
+# (1) rules/dmg/twoweapon.h: the p.70 print - a character
 #     normally using a single weapon may use one in each
 #     hand, discarding the shield option; the second
 #     weapon must be a dagger or hand axe; employment is
@@ -67,17 +67,17 @@ def create(p, text, tag, marker):
     wr(p, text)
     applied.append(tag)
 
-p1_text = NL.join(['// ====================================================================', '// Adnd1 - rules/twoweapon.h', '// R161: attacks with two weapons (DMG p.70) - the', '// two-weapon conventions for attack and armor class.', '//', '// Header-only (the grenade.h pattern): the caller', '// decides to fight two-handed and carries the flag.', '//', '// The p.70 print:', '//   - A character normally using a single weapon may', '//     choose to use one in each hand, discarding the', '//     option of using a shield.', '//   - The second weapon must be either a dagger or a', '//     hand axe.', '//   - Employment of a second weapon is always at a', '//     penalty: primary weapon -2, secondary -4.', '//   - If the user dexterity is BELOW 6, the PHB', '//     Reaction/Attacking Adjustment penalties are', '//     added to EACH weapon attack (caller-side).', '//   - If the user dexterity is ABOVE 15, the penalties', '//     ease: at 16 the secondary/primary penalty is', '//     -3/-1, at 17 -2/0, at 18 -1/0 - and this never', '//     gives a positive (bonus) rating.', '//   - The secondary weapon does not act as a shield or', '//     parrying device in any event.', '// ====================================================================', '', '#pragma once', '', '#include <cstring>', '', 'namespace rules {', '', '// The second weapon gate: dagger or hand axe only.', 'inline bool twoWeaponSecondaryAllowed(const char* name) {', '    return std::strcmp(name, "dagger") == 0', '        || std::strcmp(name, "hand axe") == 0;', '}', '', '// The penalty ladder. Primary -2, secondary -4; dex', '// above 15 eases both by (dex - 15) points, clamped so', '// the primary never goes positive (the print: 16 gives', '// -1/-3, 17 0/-2, 18 0/-1).', 'inline int twoWeaponPrimaryPenalty(int dex) {', '    int adj = (dex > 15) ? (dex - 15) : 0;', '    int p = -2 + adj;', '    return (p > 0) ? 0 : p;', '}', '', 'inline int twoWeaponSecondaryPenalty(int dex) {', '    int adj = (dex > 15) ? (dex - 15) : 0;', '    return -4 + adj;   // max -1 at dex 18: no clamp', '}', '', '// Dex below 6: the PHB Reaction/Attacking Adjustment', '// penalties are added to EACH weapon attack (the', '// caller adds its table value to both).', 'inline bool twoWeaponLowDexAddsToEach(int dex) {', '    return dex < 6;', '}', '', '// The secondary weapon never shields or parries.', 'inline bool twoWeaponSecondaryParries() {', '    return false;', '}', '', '// Fighting with a weapon in each hand discards the', '// shield option (the off hand holds the second weapon).', 'inline bool twoWeaponAllowsShield() {', '    return false;', '}', '', '} // namespace rules', ''])
-create("rules/twoweapon.h", p1_text,
+p1_text = NL.join(['// ====================================================================', '// Adnd1 - rules/dmg/twoweapon.h', '// R161: attacks with two weapons (DMG p.70) - the', '// two-weapon conventions for attack and armor class.', '//', '// Header-only (the grenade.h pattern): the caller', '// decides to fight two-handed and carries the flag.', '//', '// The p.70 print:', '//   - A character normally using a single weapon may', '//     choose to use one in each hand, discarding the', '//     option of using a shield.', '//   - The second weapon must be either a dagger or a', '//     hand axe.', '//   - Employment of a second weapon is always at a', '//     penalty: primary weapon -2, secondary -4.', '//   - If the user dexterity is BELOW 6, the PHB', '//     Reaction/Attacking Adjustment penalties are', '//     added to EACH weapon attack (caller-side).', '//   - If the user dexterity is ABOVE 15, the penalties', '//     ease: at 16 the secondary/primary penalty is', '//     -3/-1, at 17 -2/0, at 18 -1/0 - and this never', '//     gives a positive (bonus) rating.', '//   - The secondary weapon does not act as a shield or', '//     parrying device in any event.', '// ====================================================================', '', '#pragma once', '', '#include <cstring>', '', 'namespace rules {', '', '// The second weapon gate: dagger or hand axe only.', 'inline bool twoWeaponSecondaryAllowed(const char* name) {', '    return std::strcmp(name, "dagger") == 0', '        || std::strcmp(name, "hand axe") == 0;', '}', '', '// The penalty ladder. Primary -2, secondary -4; dex', '// above 15 eases both by (dex - 15) points, clamped so', '// the primary never goes positive (the print: 16 gives', '// -1/-3, 17 0/-2, 18 0/-1).', 'inline int twoWeaponPrimaryPenalty(int dex) {', '    int adj = (dex > 15) ? (dex - 15) : 0;', '    int p = -2 + adj;', '    return (p > 0) ? 0 : p;', '}', '', 'inline int twoWeaponSecondaryPenalty(int dex) {', '    int adj = (dex > 15) ? (dex - 15) : 0;', '    return -4 + adj;   // max -1 at dex 18: no clamp', '}', '', '// Dex below 6: the PHB Reaction/Attacking Adjustment', '// penalties are added to EACH weapon attack (the', '// caller adds its table value to both).', 'inline bool twoWeaponLowDexAddsToEach(int dex) {', '    return dex < 6;', '}', '', '// The secondary weapon never shields or parries.', 'inline bool twoWeaponSecondaryParries() {', '    return false;', '}', '', '// Fighting with a weapon in each hand discards the', '// shield option (the off hand holds the second weapon).', 'inline bool twoWeaponAllowsShield() {', '    return false;', '}', '', '} // namespace rules', ''])
+create("rules/dmg/twoweapon.h", p1_text,
       "twoweapon.h: the two-weapon layer",
       marker='twoWeaponSecondaryPenalty')
 assert len(applied) + len(already) == 1
 
-p2_old = NL.join(['#include "rules/weaponless.h"  // R160: pp.72-73 weaponless combat'])
-p2_new = NL.join(['#include "rules/weaponless.h"  // R160: pp.72-73 weaponless combat', '#include "rules/twoweapon.h"  // R161: p.70 attacks with two weapons'])
+p2_old = NL.join(['#include "rules/dmg/weaponless.h"  // R160: pp.72-73 weaponless combat'])
+p2_new = NL.join(['#include "rules/dmg/weaponless.h"  // R160: pp.72-73 weaponless combat', '#include "rules/dmg/twoweapon.h"  // R161: p.70 attacks with two weapons'])
 patch("regtest.cpp", p2_old, p2_new,
       "regtest.cpp: twoweapon include",
-      marker='rules/twoweapon.h"  // R161')
+      marker='rules/dmg/twoweapon.h"  // R161')
 assert len(applied) + len(already) == 2
 
 p3_old = NL.join(['        printf("R160 weaponless combat audit: bad %d' + BS + 'n", bad);', '        if (bad) return 1;', '    }', '    // ---- R146: city flavor subtables audit ----'])
@@ -88,14 +88,14 @@ patch("regtest.cpp", p3_old, p3_new,
 assert len(applied) + len(already) == 3
 
 p4_old = NL.join(['mode selection, bears grapple, monks unimpeded).', 'Census 78.', '', 'Categories:'])
-p4_new = NL.join(['mode selection, bears grapple, monks unimpeded).', 'R161 PINNED attacks with two weapons (DMG p.70) -', 'rules/twoweapon.h: one weapon in each hand (the shield', 'option discarded), the second weapon a dagger or hand', 'axe only, the penalty ladder (primary -2, secondary', '-4; eased above dex 15 - 16: -1/-3, 17: 0/-2, 18:', '0/-1 - never a positive rating), dex below 6 adding', 'the PHB Reaction/Attacking Adjustment to EACH attack', '(caller-side), and the secondary weapon never acting', 'as a shield or parrying device. Census 79.', '', 'Categories:'])
+p4_new = NL.join(['mode selection, bears grapple, monks unimpeded).', 'R161 PINNED attacks with two weapons (DMG p.70) -', 'rules/dmg/twoweapon.h: one weapon in each hand (the shield', 'option discarded), the second weapon a dagger or hand', 'axe only, the penalty ladder (primary -2, secondary', '-4; eased above dex 15 - 16: -1/-3, 17: 0/-2, 18:', '0/-1 - never a positive rating), dex below 6 adding', 'the PHB Reaction/Attacking Adjustment to EACH attack', '(caller-side), and the secondary weapon never acting', 'as a shield or parrying device. Census 79.', '', 'Categories:'])
 patch("tools/dmg_gap_report.md", p4_old, p4_new,
       "gap report: R161 header note",
       marker='R161 PINNED attacks with two weapons')
 assert len(applied) + len(already) == 4
 
 p5_old = NL.join(['- [ ] **Attacks with two weapons (p.70)** - the R7', '      double-attack named leader: the two-weapon', '      conventions for attack and armor class.'])
-p5_new = NL.join(['- [x] **Attacks with two weapons (p.70)** - pinned by', '      R161: rules/twoweapon.h (the dagger/hand-axe', '      gate, the penalty ladder with the dex easing,', '      the low-dex add-to-each rule, no shield or', '      parry from the second weapon).'])
+p5_new = NL.join(['- [x] **Attacks with two weapons (p.70)** - pinned by', '      R161: rules/dmg/twoweapon.h (the dagger/hand-axe', '      gate, the penalty ladder with the dex easing,', '      the low-dex add-to-each rule, no shield or', '      parry from the second weapon).'])
 patch("tools/dmg_gap_report.md", p5_old, p5_new,
       "gap report: two weapons box closed",
       marker='Attacks with two weapons (p.70)** - pinned by')

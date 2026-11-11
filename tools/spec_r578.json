@@ -1,7 +1,7 @@
 {
   "round": 578,
   "prefix": "ddg",
-  "header_file": "rules/nirvanaarcadia.h",
+  "header_file": "rules/mop/nirvanaarcadia.h",
   "regtest": "regtest.cpp",
   "gap_report": "tools/motp_gap_report.md",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -10,7 +10,7 @@
   "audit_label": "R578 Nirvana-Arcadia audit",
   "audit_comment": "NIRVANA and ARCADIA, printed pp. 84-87, the first two named planes of the Planes of Power in one round: Nirvana the clockwork plane of ultimate Law (the infinite interlocking disks at 500 miles plus, the per-disk gravity with the walk-over-the-edge rule, the air-filled void, the 1/100-turn realm pull, the light-green and deep-red portals cycling once per disk revolution at 20 days on Primus's plane, the always-open Concordant Opposition portal beneath Primus's disk, the no-illusion rule - phantasms as thin smoke fooling no one, Primus the One and Prime with the modrons and Anu's Way, and the pantheons - Anu, Shang-Ti with the peaches and the library of lost knowledge, Shan-Hai Ching, Varuna, Rudra and Yama, Horus, Utu and Enki); and Arcadia the orchard plane of law for the common good (the half-radiant half-black day sphere with its dawnless Prime-length day, the three layers, the metallic trees with double-strength potion fruit spoiling in 1-10 days, the pupilless-eyed watch beasts immune to Prime spells, the ivory and steel archway portals with the 1-in-10 mist and the 90/10 sides rule, the spirit-folk militias with their divination over the static, and the Powers - Marduk the Valiant with the kirdari, and Clanggedin Silverbeard the dwarven Father of Battle with his fortress mountain and his Acheron raids).",
   "include_comment": "the Nirvana and Arcadia pins",
-  "include_after": "#include \"rules/outerplanes.h\"  // R577: the outer planes general pins",
+  "include_after": "#include \"rules/mop/outerplanes.h\"  // R577: the outer planes general pins",
   "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
   "seed_anchor": "## Knowledge maintenance",
   "prev_seed_key": "- R577 LANDED 2026-10-17: commit 0cbff953202c7fc848eee",

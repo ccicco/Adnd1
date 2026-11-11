@@ -130,10 +130,10 @@ R172 were already dropped at the R171b/R172 era cut; git
 
 - R311 landed: rules/underwater.h - the DMG UNDERWATER
   ADVENTURES pins (surface swim, movement, vision, combat) as
-  data; the spell lists ride R168 (rules/uwspells.h).
+  data; the spell lists ride R168 (rules/dmg/uwspells.h).
 - R312 + R312b landed 2026-10-10: commit 8661437, census 237,
   THE FLOODED CROSSING - the first ENGINE SITE the underwater
-  pins charge: rules/swimcross.h (the seam: swimArmorSwims 0/1/2
+  pins charge: rules/dmg/swimcross.h (the seam: swimArmorSwims 0/1/2
   swim with studded leather reading METAL, the JUDGMENT;
   swimMagicArmorSwims the dog paddle; swimCanSwim plus > 0 dog
   paddles; swimLoadBeyondArmorLbs 1 lb = 10 g.p. with the worn
@@ -165,7 +165,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   conventions.
 - R313 landed 2026-10-10: commit e6751ff, census 239, THE
   UNDERWATER FIGHT (every chargeable open thread at once):
-  rules/uwfight.h (the seam - uwCrossCapLbs the R311 20-lb cap
+  rules/dmg/uwfight.h (the seam - uwCrossCapLbs the R311 20-lb cap
   fed by the R153 strWeightAllowGp ladder, un-caller-fed;
   uwCrossLoadBars; uwStrikeAllowed thrusting-only;
   uwMissileBarred total - no special crossbow pinned) wired at
@@ -378,7 +378,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R322 landed 2026-10-11: commit
   f83e11b, census 249, the UA arc
   opener: the comeliness pins
-  (rules/comeliness.h) and the
+  (rules/ua/comeliness.h) and the
   lossless ua gap report
   (tools/ua_gap_report.md) with the
   DEFERRED ontology (OUT nearly
@@ -410,7 +410,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 
 - R323 landed 2026-10-11: commit
   fe259f1, census 250, the UA
-  subrace layer (rules/subraces.h):
+  subrace layer (rules/ua/subraces.h):
   the CharSubRace and UaClass
   enums, Race Table I with the
   alignment column, the 17x17
@@ -449,7 +449,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R324 landed 2026-10-11: commit
   a7a6a5c, census 251, the UA
   Character Race Table II
-  (rules/subracelevels.h): the six
+  (rules/ua/subracelevels.h): the six
   sub-tables (II.A dwarves, II.B
   gnomes, II.C elves both printed
   blocks, II.D half-elves, II.E
@@ -495,7 +495,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R325 landed 2026-10-11: commit
   2592126, census 252, the UA
   Race Table II caller round
-  (rules/subracecap.h): the
+  (rules/ua/subracecap.h): the
   uaLevelCap fold at the gainXp
   queue and the trainer, the
   uaSubrace field with its save
@@ -541,7 +541,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R327 landed 2026-10-11: commit
   47dce47, census 254, the UA
   Classes Tables I and II pin
-  round (rules/classtables.h):
+  round (rules/ua/classtables.h):
   the hit-die column, the
   two-dice first levels, the
   note-1 social-standing
@@ -599,7 +599,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R330 landed 2026-10-11: commit
   76df31d, census 257, the UA
   druid hierophant ladder pin
-  round (rules/hierophant.h): the
+  round (rules/ua/hierophant.h): the
   hierarchy, the abdication, the
   Table I ladder, the spell
   abilities, the 16th-23rd
@@ -621,7 +621,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R331 landed 2026-10-11: commit
   ae61566, census 258, the UA weapon
   specialization prose pin round
-  (rules/weaponspec.h): the class gate,
+  (rules/ua/weaponspec.h): the class gate,
   the slot costs, the melee and
   point-blank reads, the double, the
   table structure with the cleanly
@@ -639,7 +639,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R332 landed 2026-10-11: commit
   b5380bd, census 259, the UA
   barbarian pin round
-  (rules/barbarian.h): the
+  (rules/ua/barbarian.h): the
   requirements and the wisdom
   maximum, Barbarians Table I, the
   magic detestation (the award tail
@@ -667,7 +667,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R334 landed 2026-10-11: commit
   a22d9a1, census 261, the UA
   Thieves Table II pin round
-  (rules/thiefarmor.h): the armor
+  (rules/ua/thiefarmor.h): the armor
   categories, the eight functions,
   the verified cells and holes, the
   footnotes; the paired attacks
@@ -679,7 +679,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R335 landed 2026-10-11: commit
   ef84109, census 262, the UA
   thief-acrobat pin round
-  (rules/acrobat.h): the split class
+  (rules/ua/acrobat.h): the split class
   at 6th, Table I, the Function
   Table columns (the tumbling
   attack and evasion ladders
@@ -692,7 +692,7 @@ R172 were already dropped at the R171b/R172 era cut; git
 - R336 landed 2026-10-11: commit
   74ebf6a, census 263, the UA
   cavalier money pin round
-  (rules/cavmoney.h): the six
+  (rules/ua/cavmoney.h): the six
   stations in social-ladder
   order, the gold ranges, the
   printed formulas verified
@@ -2082,7 +2082,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   R322 and R117 pins. The first
   R400 body failed the Termux
   compile (the game TUs do not
-  pull rules/comeliness.h
+  pull rules/ua/comeliness.h
   transitively) - no commit
   landed, the preflight RED gate
   held, and the fix body rode as
@@ -2095,7 +2095,7 @@ R172 were already dropped at the R171b/R172 era cut; git
   preflight GREEN), the UA
   cantrip tier seam - the
   sub-1st registry tier closes:
-  rules/cantriptier.h (prefix
+  rules/ua/cantriptier.h (prefix
   cant, 31 inline functions) -
   the p. 45 tier traits, the
   0-level per-day xp ladder
@@ -9835,7 +9835,7 @@ when both halves land.
   githyanki silver swords at AC 0 and 20%, the
   lich-queen, the fixed portals, Yggdrasil and
   Mount Olympus). 15 consts + 12 bools,
-  prefix dde, header rules/astralplane.h.
+  prefix dde, header rules/mop/astralplane.h.
   ELEVEN flips (the chapter parent + eight
   children + the encounter check + the sample
   charts): gap census 42/48 -> 53/37. Spec
@@ -9843,7 +9843,7 @@ when both halves land.
   322d5ce matched exactly first try, 27
   inlines. NOTE (engine write-order lesson,
   caught locally pre-ritual): the first run
-  aborted writing rules/astralplane.h into a
+  aborted writing rules/mop/astralplane.h into a
   missing rules/ dir AFTER the seed patch was
   staged - restored seed and report from the
   R575 sha and re-ran clean; the staging step
@@ -9931,7 +9931,7 @@ when both halves land.
   spirit-folk militias, and the Powers -
   Marduk and Clanggedin Silverbeard). 6
   consts + 8 bools, prefix ddg, header
-  rules/nirvanaarcadia.h. TWO flips: gap
+  rules/mop/nirvanaarcadia.h. TWO flips: gap
   census 59/31 -> 61/29. Spec 14,927 bytes,
   md5 432a571b019f6cb763e1cdf5b60bb1fc
   matched exactly first try, 14 inlines -
@@ -9974,7 +9974,7 @@ when both halves land.
   pantheon with Whisperleaf, Ukko's
   blizzards, the wandering titan
   Epinetheus). 4 consts + 7 bools, prefix
-  ddh, header rules/heavenstwins.h. TWO
+  ddh, header rules/mop/heavenstwins.h. TWO
   flips: gap census 61/29 -> 63/27. Spec
   13,772 bytes, md5 2d41b06c644350cd6b43f89c
   66c7f9f7 matched exactly first try, 11
@@ -10045,7 +10045,7 @@ when both halves land.
   giant casters at 1-in-4/1-in-10/1-in-20,
   and the full Asgard realm census). 5
   consts + 7 bools, prefix ddj, header
-  rules/olympusgladsheim.h. TWO flips: gap
+  rules/mop/olympusgladsheim.h. TWO flips: gap
   census 66/24 -> 68/22. Spec 15,347 bytes,
   md5 891c83e48d7256cdaedcb5c92ea1fabd
   matched exactly first try, 12 inlines.
@@ -10085,7 +10085,7 @@ when both halves land.
   shortcut, Tuonela and the desire-draining
   Manala, retired Anshar, Hruggek's
   bugbears). 6 consts + 9 bools, prefix ddk,
-  header rules/limbopandemonium.h. THREE
+  header rules/mop/limbopandemonium.h. THREE
   flips: gap census 68/22 -> 71/19. Spec
   17,325 bytes, md5 1262c19cf6d7e6870f3f7
   bcc6cede55a matched exactly first try, 15
@@ -10133,7 +10133,7 @@ when both halves land.
   Yueh's Feng-Tu up the How Nai-ho fork
   of the Styx through the Kuei-Men-Kuan,
   Kali's blood-red layer). 7 consts + 6
-  bools, prefix ddl, header rules/abyss.h.
+  bools, prefix ddl, header rules/mop/abyss.h.
   TWO flips: gap census 71/19 -> 73/17
   (the Abyss box and the Abyssal-layers
   terrain table). Spec 19,586 bytes, md5
@@ -10187,7 +10187,7 @@ when both halves land.
   winds of gout ulcers and plague,
   Grolantor and his feared giant-spirit
   armies). 6 consts + 6 bools, prefix
-  ddm, header rules/tarterus.h. ONE
+  ddm, header rules/mop/tarterus.h. ONE
   flip: gap census 73/17 -> 74/16. Spec
   16,076 bytes, md5
   2fd82abe1e6a7758bf0164e177cc219e
@@ -10243,7 +10243,7 @@ when both halves land.
   Abbathor's Glitterhell with its rumored
   Niflheim barrier, and silent Yurtrus of
   the orcs). 6 consts + 6 bools, prefix
-  ddn, header rules/hades.h. ONE flip:
+  ddn, header rules/mop/hades.h. ONE flip:
   gap census 74/16 -> 75/15. Spec 16,397
   bytes, md5 f9072114d726c48bf15e36150
   d802e1e matched exactly first try, 12
@@ -10290,7 +10290,7 @@ when both halves land.
   the only one who might know whether
   Gehenna goes deeper). 5 consts + 6
   bools, prefix ddo, header
-  rules/gehenna.h. ONE flip: gap census
+  rules/mop/gehenna.h. ONE flip: gap census
   75/15 -> 76/14. Spec 15,492 bytes, md5
   f65eeddfdfd829397c9af318b1e6548b
   matched exactly first try, 11 inlines.
@@ -10359,7 +10359,7 @@ when both halves land.
   the moving thief No Cha, and the
   false-name devils Dagon and Nergal).
   6 consts + 6 bools, prefix ddp, header
-  rules/ninehells.h. ONE flip: gap
+  rules/mop/ninehells.h. ONE flip: gap
   census 76/14 -> 77/13. Spec 22,244
   bytes, md5 931e05e67130b6259d7a157cc
   376e8d1 matched exactly first try, 12
@@ -10423,7 +10423,7 @@ when both halves land.
   the everlasting war most deities cite
   as the folly of violence for its own
   end). 4 consts + 6 bools, prefix ddr,
-  header rules/acheron.h. ONE flip: gap
+  header rules/mop/acheron.h. ONE flip: gap
   census 77/13 -> 78/12. Spec 17,147
   bytes, md5 d3f41796cdd8c4f4d97245d0
   cc9ee591 matched exactly first try,
@@ -10490,7 +10490,7 @@ when both halves land.
   Peryroyal, Dumathoin, and Vergadain
   the Bes-similar luck-god). 6 consts +
   6 bools, prefix dds, header
-  rules/concordantopposition.h. THREE
+  rules/mop/concordantopposition.h. THREE
   flips: gap census 78/12 -> 81/9 (the
   plane, the center table, the
   chaotic-destination table) - THE
@@ -10536,7 +10536,7 @@ when both halves land.
   the only limitation the imagination of
   those involved. 0 consts + 6 bools,
   prefix ddt, header
-  rules/beyondouterplanes.h. ONE flip:
+  rules/mop/beyondouterplanes.h. ONE flip:
   gap census 81/9 -> 82/8 (Beyond the
   outer planes) - THE MANUAL OF THE
   PLANES IS FULLY CLOSED: every plane,
@@ -10572,7 +10572,7 @@ when both halves land.
   R578-R589 (with the Beastlands casting
   reattribution), and the closing essay
   of R590. 1 const + 2 bools, prefix
-  ddu, header rules/outerplanesseal.h.
+  ddu, header rules/mop/outerplanesseal.h.
   ONE flip: gap census 82/8 -> 83/7
   (the chapter umbrella) - THE OUTER
   PLANES CHAPTER IS SEALED. Spec 8,009
@@ -10775,7 +10775,7 @@ when both halves land.
   the 89-spell index with its
   unusual-notes purpose, from the
   airy quintet and plane shift to
-  the wish. Header rules/indices.h,
+  the wish. Header rules/mop/indices.h,
   prefix dec, 8 inlines (5 consts
   3 bools), one gap flip (Indices)
   closing the MotP gap report at
@@ -19451,7 +19451,7 @@ when both halves land.
   rules/lancespeed.h, prefix lsp (fully free at
   0e87814). TWO FILE PATCHES over two files:
   the three lance rows join weaponSpeedFactor in
-  rules/weaponspeed.h after the pike row - the
+  rules/dmg/weaponspeed.h after the pike row - the
   PHB p.38 speed column cells (the
   1eonline.info compilation, the repo-trusted
   source): light horse 7, medium horse 6, heavy
@@ -19496,7 +19496,7 @@ when both halves land.
   (census 703 -> 704, pushed 7073581..1501749),
   THE SET SPEAR AND THE SPEED SEAM - three
   feeds in one round (Curtiss's all-three
-  pick), header rules/spearset.h, prefix sps
+  pick), header rules/dmg/spearset.h, prefix sps
   (fully free at 7073581). EIGHTEEN FILE
   PATCHES over seven files: (1) the R189 set-
   spear asterisk goes live - the S command
@@ -19738,7 +19738,7 @@ when both halves land.
   stays unpinned; the "Whip" doubt STRIKES
   (uam2WhipName); the illusionist UA-new
   censuses pin at 4/4/4/4/2 = 18. THE PINS:
-  header rules/spelltableledger.h, prefix sld,
+  header rules/ua/spelltableledger.h, prefix sld,
   13 consts + 20 bools + the 4 x 3 ledger grid
   (tag MuLedger), 13 file patches (7 on
   uaspelltables2.h, 6 on regtest). TWO SEAM
@@ -25151,7 +25151,7 @@ random bands (13 rows) and the outer-plane random bands
 (18 rows) - plus the round's data file doc/data/
 ddg_planes_encounters.txt (the 39-label creature roster
 + both printed encounter tables); prefix pln (full-repo
-scan clean); header rules/pln.h; audit "R867 known planes
+scan clean); header rules/ddg/appendix1_known_planes.h; audit "R867 known planes
 audit", rode rules/audits/r867_batch.h. THE HEADLINE
 ADJUDICATIONS: the wind-table 13-16 garble
 "Blocwozr;tfefr;:ourse" = "Blows off course" (the L&L
@@ -25738,10 +25738,10 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   ELYSIUM top, HADES bottom; the cycle reads the
   p. 129 print list order CLOCKWISE; the figure
   spells TARTARUS where the p. 129 list reads
-  Tarterus (the pln.h pin) - the figure-vs-list
+  Tarterus (the rules/ddg/appendix1_known_planes.h pin) - the figure-vs-list
   delta pinned both as printed, TARTARUS
   eyeball-confirmed by Curtiss; the wheel matches
-  the pln.h seventeen-planes pin. THE SHAPE:
+  the rules/ddg/appendix1_known_planes.h seventeen-planes pin. THE SHAPE:
   afgG4 one row per alignment (9 rows, cols
   Ord/Pos/Desc, 0-sentinel), afgG5 one row per
   plane (17 rows, cols Ord/Pos - the positions
@@ -26274,7 +26274,7 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   Dragon Magazine walk (issue #1, folios 9-10,
   30, 19). THE SHAPE: prefix drg (full-repo
   scan clean - dgn was TAKEN by rules/oa/oayakuza.h,
-  the R856 catch held), header rules/drg.h
+  the R856 catch held), header rules/dragon/issue001_small_variants.h
   (16 inline), audit "R888 Dragon small
   variants audit" at rules/audits/r888_batch.h,
   8 consts + 8 bools, 11 examples, 3
@@ -26581,7 +26581,7 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   No. 1, folios 8 and 10 - the chain runs 8 ->
   10 past Gold's Languages on 9). THE SHAPE:
   prefix art (regtest-scan clean), header
-  rules/art.h (36 inline: 11 consts + 11 bools
+  rules/dragon/artificer_devices.h (36 inline: 11 consts + 11 bools
   + 2 tables / 14 columns), audit "R894
   Artificer audit" at
   rules/audits/r894_batch.h, 28 examples, 3
@@ -26646,7 +26646,7 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   10 bools + 8 tables / 31 columns), audit
   "R895 women magic audit" at
   rules/audits/r895_batch.h, 48 examples, 4
-  header_sections, include after art.h. THE
+  header_sections, include after rules/dragon/artificer_devices.h. THE
   PINS: the 32 voice pages committed as
   extract/dragon/003/pNNN_full.txt (the page
   transform verified byte-exact against the

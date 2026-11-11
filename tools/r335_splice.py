@@ -40,7 +40,7 @@ SEED_ENTRY = NL.join([
     '- R334 landed 2026-10-11: commit',
     '  a22d9a1, census 261, the UA',
     '  Thieves Table II pin round',
-    '  (rules/thiefarmor.h): the armor',
+    '  (rules/ua/thiefarmor.h): the armor',
     '  categories, the eight functions,',
     '  the verified cells and holes, the',
     '  footnotes; the paired attacks',
@@ -68,14 +68,14 @@ assert s.count('## Knowledge maintenance') == 1, \
     'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
-# ---- (b) NEW rules/acrobat.h ----
-AH = 'rules/acrobat.h'
+# ---- (b) NEW rules/ua/acrobat.h ----
+AH = 'rules/ua/acrobat.h'
 if os.path.exists(AH) and 'R335' in rd(AH):
     already.append('acrobat.h: the pins')
 else:
     HDR = NL.join([
     '// ===========================================================================',
-    '// Adnd1 - rules/acrobat.h',
+    '// Adnd1 - rules/ua/acrobat.h',
     '// The UA thief-acrobat (pp. 23-25) pins (R335).',
     '//',
     '// Pin-era pattern (R322): pinned data only - no engine site exists.',
@@ -512,7 +512,7 @@ else:
     assert s.count(TAIL_OLD) == 1, 'c tail'
     CLOSE = NL.join([
     '      - CLOSED R335: the pin round',
-    '        (rules/acrobat.h) - the split',
+    '        (rules/ua/acrobat.h) - the split',
     '        class at 6th, the Function',
     '        Table columns (the tumbling',
     '        attack and evasion ladders',
@@ -552,12 +552,12 @@ s = rd(RT)
 if 'R335 thief-acrobat pin audit' in s:
     already.append('regtest.cpp: the R335 audit')
 else:
-    INC_ANCH = ('#include "rules/thiefarmor.h"'
+    INC_ANCH = ('#include "rules/ua/thiefarmor.h"'
                 '  // R334: the UA thief armor'
                 ' and attacks')
     INC_NEW = NL.join([
     INC_ANCH,
-    '#include "rules/acrobat.h"'
+    '#include "rules/ua/acrobat.h"'
     '  // R335: the UA thief-acrobat',
     ])
     AUD_ANCH = ('    // ---- R227: the wis mental'
@@ -901,7 +901,7 @@ assert s.count(
     == 1, 'd r333 kept'
 assert s.count('R227: the wis mental save') == 1, \
     'd r227 kept'
-assert s.count('#include "rules/acrobat.h"') == 1, \
+assert s.count('#include "rules/ua/acrobat.h"') == 1, \
     'd include'
 assert len(applied) + len(already) == 4, 'd count'
 

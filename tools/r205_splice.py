@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # R205 splice: the spying tables (DMG pp.19-20,
 # the SPYING section after the assassin guild
-# tables) - the lane rules/assassinate.h named
+# tables) - the lane rules/dmg/assassinate.h named
 # and deferred in R164: "the p.19-20 spying
 # rules stay as wired (the spy)". The guild
 # block around it is pinned (R170 - the race,
 # level, multi-class and Grandfather tables);
 # this round pins the mission machinery:
-#   - rules/spying.h (new file, the grenade.h
+#   - rules/dmg/spying.h (new file, the grenade.h
 #     pattern: pure data + helpers, header-only)
 #   - the ASSASSIN SPYING TABLE: assassin/spy
 #     level 1-17 x the three mission categories
@@ -95,15 +95,15 @@ def newfile(path, marker, text):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/spying.h (new file)
+# Patch 1: rules/dmg/spying.h (new file)
 # ---------------------------------------------------------------------------
 
 h = [
     '// ====================================================================',
-    '// Adnd1 - rules/spying.h',
+    '// Adnd1 - rules/dmg/spying.h',
     '// R205: the spying tables (DMG pp.19-20, the',
     '// SPYING section after the assassin guild',
-    '// tables) - the lane rules/assassinate.h',
+    '// tables) - the lane rules/dmg/assassinate.h',
     '// named and deferred in R164.',
     '//',
     '// Pure data + helpers, header-only (the',
@@ -336,7 +336,7 @@ h = [
     '',
 ]
 
-newfile('rules/spying.h',
+newfile('rules/dmg/spying.h',
         'R205: the spying tables (DMG pp.19-20, the',
         NL.join(h))
 
@@ -344,11 +344,11 @@ newfile('rules/spying.h',
 # Patch 2: regtest.cpp - the include
 # ---------------------------------------------------------------------------
 
-old2 = ('#include "rules/itemsavethrow.h"  // R204: p.80 item saving throw matrix'
+old2 = ('#include "rules/dmg/itemsavethrow.h"  // R204: p.80 item saving throw matrix'
         + NL + '#include <cstdio>')
 
-new2 = ('#include "rules/itemsavethrow.h"  // R204: p.80 item saving throw matrix'
-        + NL + '#include "rules/spying.h"  // R205: pp.19-20 the spying tables'
+new2 = ('#include "rules/dmg/itemsavethrow.h"  // R204: p.80 item saving throw matrix'
+        + NL + '#include "rules/dmg/spying.h"  // R205: pp.19-20 the spying tables'
         + NL + '#include <cstdio>')
 
 patch('regtest.cpp',
@@ -513,8 +513,8 @@ patch('regtest.cpp',
 entry = (
     'R205 landed the spying tables (DMG pp.19-20,'
     + NL + 'the SPYING section after the assassin guild'
-    + NL + 'tables) - the lane rules/assassinate.h'
-    + NL + 'named and deferred in R164. rules/spying.h'
+    + NL + 'tables) - the lane rules/dmg/assassinate.h'
+    + NL + 'named and deferred in R164. rules/dmg/spying.h'
     + NL + '(the grenade.h pattern): the ASSASSIN SPYING'
     + NL + 'TABLE (spy level 1-17 x simple/difficult/'
     + NL + 'extraordinary, all 51 cells), the mission'

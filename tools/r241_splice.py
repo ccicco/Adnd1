@@ -16,7 +16,7 @@
 # already pinned by the R122 line-diff audit; this
 # round pins the values, band edges and the size
 # footnote.
-# Patches: 4 (new rules/armorshield.h, the regtest
+# Patches: 4 (new rules/dmg/armorshield.h, the regtest
 # include, the audit block, the dmg-gap-report log
 # entry). Census 159 -> 160.
 #
@@ -24,7 +24,7 @@
 
 import sys
 
-ASH  = 'rules/armorshield.h'
+ASH  = 'rules/dmg/armorshield.h'
 REG  = 'regtest.cpp'
 GAP  = 'tools/dmg_gap_report.md'
 
@@ -43,7 +43,7 @@ if t.count('audit: bad ') != 159 and t.count('audit: bad ') != 160:
 # ---- the new header ----
 hdr_lines = [
     '// ====================================================================',
-    '// Adnd1 - rules/armorshield.h',
+    '// Adnd1 - rules/dmg/armorshield.h',
     '// R241: the III.F armor and shield pins',
     '// (DMG p.129-130) - the magic armor and',
     '// shield table (the RIGHT column of the',
@@ -163,11 +163,11 @@ hdr_text = NL.join(hdr_lines) + NL
 
 # ---- the regtest include ----
 inc_old = [
-    '#include "rules/specart.h"  // R240: p.130-131 the III.E Special artifacts pins',
+    '#include "rules/dmg/specart.h"  // R240: p.130-131 the III.E Special artifacts pins',
 ]
 inc_new = [
-    '#include "rules/specart.h"  // R240: p.130-131 the III.E Special artifacts pins',
-    '#include "rules/armorshield.h"  // R241: p.129-130 the III.F armor and shield pins',
+    '#include "rules/dmg/specart.h"  // R240: p.130-131 the III.E Special artifacts pins',
+    '#include "rules/dmg/armorshield.h"  // R241: p.129-130 the III.F armor and shield pins',
 ]
 
 # ---- the R241 audit block ----
@@ -274,7 +274,7 @@ gap_new = [
     'R241 landed the III.F armor and shield',
     'pins (DMG p.129-130, upload lines',
     '~9870-9902, the RIGHT column of the',
-    'two-column layout). rules/armorshield.h',
+    'two-column layout). rules/dmg/armorshield.h',
     '(the grenade.h pattern, as prefix):',
     '26 rows in kArmor order, Chain Mail +1',
     '01-05 through Shield -1 missile',
@@ -319,7 +319,7 @@ try:
     if marker in t:
         already += 1
     else:
-        print('R241 FAIL: rules/armorshield.h exists without the marker')
+        print('R241 FAIL: rules/dmg/armorshield.h exists without the marker')
         sys.exit(1)
 except IOError:
     with open(ASH, 'w') as f:
@@ -359,7 +359,7 @@ if applied + already == 4:
     if t.count('R241 armor and shield pins audit') != 1:
         print('R241 FAIL: the R241 audit line must appear once')
         sys.exit(1)
-    if t.count('rules/armorshield.h') != 1:
+    if t.count('rules/dmg/armorshield.h') != 1:
         print('R241 FAIL: the armorshield include must appear once')
         sys.exit(1)
     g = open(GAP).read()

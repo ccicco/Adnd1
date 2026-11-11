@@ -11,7 +11,7 @@
 //
 // Pin-era pattern (R322): pinned data only - no engine
 // site exists. Cross-checks the landed R328 seam
-// (rules/cavalier.h - the XP ladder and the known
+// (rules/ua/cavalier.h - the XP ladder and the known
 // title cells) and the R327 d10 hit die.
 //
 // JUDGMENTs (the decode method):

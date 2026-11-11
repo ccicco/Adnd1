@@ -32,7 +32,7 @@
   "  10 bools + 8 tables / 31 columns), audit",
   "  \"R895 women magic audit\" at",
   "  rules/audits/r895_batch.h, 48 examples, 4",
-  "  header_sections, include after art.h. THE",
+  "  header_sections, include after rules/dragon/artificer_devices.h. THE",
   "  PINS: the 32 voice pages committed as",
   "  extract/dragon/003/pNNN_full.txt (the page",
   "  transform verified byte-exact against the",

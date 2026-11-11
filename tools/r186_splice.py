@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # R186 splice: the bard (Appendix II).
 #
-# rules/bard.h is CREATED: Bards Table I (23
+# rules/phb/bard.h is CREATED: Bards Table I (23
 # levels, bard XP only: the thresholds, the
 # level titles Rhymer through M. Bard 23rd,
 # the 6-sided accumulated hit dice 0* then 1
@@ -84,7 +84,7 @@ def create(path, marker, content):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/bard.h CREATED
+# Patch 1: rules/phb/bard.h CREATED
 # ---------------------------------------------------------------------------
 
 # Bards Table I: 23 rows.
@@ -178,7 +178,7 @@ hdr = []
 a = hdr.append
 
 a('// ============================================================================')
-a('// Adnd1 - rules/bard.h')
+a('// Adnd1 - rules/phb/bard.h')
 a('// The bard, PHB Appendix II (R186).')
 a('//')
 a('// Bards Table I (23 levels, bard XP only), Bards')
@@ -513,7 +513,7 @@ if '#include <string>' not in NL.join(hdr):
     hdr.insert(hdr.index('#include <cstdint>') + 1,
                '#include <string>')
 
-create('rules/bard.h',
+create('rules/phb/bard.h',
        'The bard, PHB Appendix II (R186)',
        NL.join(hdr) + NL)
 
@@ -522,10 +522,10 @@ create('rules/bard.h',
 # ---------------------------------------------------------------------------
 
 patch('regtest.cpp',
-      'rules/bard.h',
+      'rules/phb/bard.h',
       '#include "rules/multiclass.h"  // R185: the multi-class and dual-class rules',
       '#include "rules/multiclass.h"  // R185: the multi-class and dual-class rules'
-      + NL + '#include "rules/bard.h"  // R186: the bard (Appendix II)')
+      + NL + '#include "rules/phb/bard.h"  // R186: the bard (Appendix II)')
 
 # ---------------------------------------------------------------------------
 # Patch 3: regtest.cpp - the R186 battery audit (census 103)
@@ -782,7 +782,7 @@ box_old = ('- R186 the bard (Appendix II) - the progression'
            + NL + '      the dual-class machinery.')
 
 box_new = ('- [x] R186 the bard (Appendix II) - PINNED:'
-           + NL + '      rules/bard.h CREATED: the gates (fighter'
+           + NL + '      rules/phb/bard.h CREATED: the gates (fighter'
            + NL + '      5th-7th, thief 5th-9th, then the druid'
            + NL + '      studies; STR WIS DEX CHA 15+, INT 12,'
            + NL + '      CON 10; human or half-elf; always'
@@ -836,7 +836,7 @@ patch('tools/dmg_gap_report.md',
       + NL + 'the bard (Appendix II).',
       'R185 battery audit; census 102. Next: R186'
       + NL + 'the bard (Appendix II).'
-      + NL + 'R186 landed the bard: rules/bard.h CREATED'
+      + NL + 'R186 landed the bard: rules/phb/bard.h CREATED'
       + NL + '(the progression gates, the ability and'
       + NL + 'race minimums, Bards Table I, Table II and'
       + NL + 'Table III, the druid cast cap, the poetics'
@@ -852,7 +852,7 @@ patch('tools/dmg_gap_report.md',
 assert applied + already == 5, 'patch count drift: ' + str(applied) + ' + ' + str(already)
 print('R186 splice: ALL OK (applied %d, already %d)' % (applied, already))
 print('R186 note: 5 patches; census 103 (one new audit);')
-print('real gate: md5sum rules/bard.h')
+print('real gate: md5sum rules/phb/bard.h')
 print('commit: R186: the bard (Appendix II) pinned - the tables,')
 print('the gates and the specials (census 103)')
 

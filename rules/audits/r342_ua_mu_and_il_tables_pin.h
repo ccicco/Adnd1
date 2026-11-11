@@ -9,7 +9,7 @@
     // illusionist table (5/4/1, the cantrip column
     // resolved, the 3rd-6th columns resolved on the
     // UA-new side). The R342 ledger holes close; the
-    // ledger census pins in rules/spelltableledger.h.
+    // ledger census pins in rules/ua/spelltableledger.h.
     {
         using namespace rules;
         int bad = 0;

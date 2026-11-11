@@ -66,14 +66,14 @@ assert s.count('R325 landed') == 1, 'a r325 kept'
 assert s.count('## Knowledge maintenance') == 1, 'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
-# ---- (b) NEW rules/classtables.h ----
-CT = 'rules/classtables.h'
+# ---- (b) NEW rules/ua/classtables.h ----
+CT = 'rules/ua/classtables.h'
 if os.path.exists(CT) and 'R327' in rd(CT):
     already.append('classtables.h: the pins')
 else:
     HDR = NL.join([
 '// ===========================================================================',
-'// Adnd1 - rules/classtables.h',
+'// Adnd1 - rules/ua/classtables.h',
 '// The UA Character Classes Tables I and',
 '// II (pp. 12-13) pins (R327).',
 '//',
@@ -300,7 +300,7 @@ else:
     '      and weapons permitted per class,',
     '      with the cavalier/paladin station',
     '      notes) - CLOSED R327: the pin round',
-    '      (rules/classtables.h): the',
+    '      (rules/ua/classtables.h): the',
     '      hit-die column with the two-dice',
     '      first levels, the note-1',
     '      social-standing generators (3d4+1',
@@ -338,11 +338,11 @@ s = rd(RT)
 if 'R327 class tables pin audit' in s:
     already.append('regtest.cpp: the R327 audit')
 else:
-    INC_ANCH = ('#include "rules/subracecap.h"'
+    INC_ANCH = ('#include "rules/ua/subracecap.h"'
                 '  // R325: UA Race Table II fold')
     INC_NEW = NL.join([
     INC_ANCH,
-    '#include "rules/classtables.h"'
+    '#include "rules/ua/classtables.h"'
     '  // R327: UA Classes Tables I-II'])
     STD_ANCH = '#include <cstdio>'
     STD_NEW = NL.join([

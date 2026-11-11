@@ -8,7 +8,7 @@
 # The one compile error: game/state_dungeon.cpp
 # calls rules::uwSurfaceDrownPct (the R311
 # drown pin) inside enterWater, but the TU
-# includes only rules/swimcross.h - appstate.h
+# includes only rules/dmg/swimcross.h - appstate.h
 # does NOT carry underwater.h transitively.
 # LESSON (the R179/R180b rule, generalized):
 # every rules:: accessor the new code calls
@@ -20,7 +20,7 @@
 # prints; ZERO literal backslash bytes; no
 # apostrophe inside single-quoted content.
 # The R312 census is unchanged (237) and
-# rules/swimcross.h is untouched (md5
+# rules/dmg/swimcross.h is untouched (md5
 # 8b07825b2ff60746f5bd0fe1d3688ea0 still the
 # real gate). Commit rides the R312 commit:
 # "R312: the flooded crossing wired
@@ -50,10 +50,10 @@ def clean(s, limit):
 
 # ---- the include line ----
 SD_OLD = NL.join([
-    '#include "rules/swimcross.h"  // R312: the flooded crossing',
+    '#include "rules/dmg/swimcross.h"  // R312: the flooded crossing',
 ])
 SD_NEW = NL.join([
-    '#include "rules/swimcross.h"  // R312: the flooded crossing',
+    '#include "rules/dmg/swimcross.h"  // R312: the flooded crossing',
     '#include "rules/underwater.h"  // R311: the drown percent',
 ])
 clean(SD_OLD, 78)
@@ -72,8 +72,8 @@ else:
 
 s = rd(p)
 assert s.count('#include "rules/underwater.h"') == 1, 'b include'
-assert s.count('#include "rules/swimcross.h"') == 1, 'b swimcross'
-assert s.count('#include "rules/doorforce.h"') == 1, 'b anchor'
+assert s.count('#include "rules/dmg/swimcross.h"') == 1, 'b swimcross'
+assert s.count('#include "rules/dmg/doorforce.h"') == 1, 'b anchor'
 assert s.count('uwSurfaceDrownPct') == 1, 'b the call site'
 assert s.count('AppState::enterWater') == 1, 'b site intact'
 assert s.count('{') == s.count('}'), 'b brace balance'

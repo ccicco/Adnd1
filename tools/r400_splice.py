@@ -6,7 +6,7 @@
 # callers) wires the R322 and
 # R117 pins:
 #
-# 1. rules/comeliness.h: the
+# 1. rules/ua/comeliness.h: the
 #    site layer - the score
 #    helper (the raw 3d6 base
 #    roll + the charisma ladder;
@@ -144,8 +144,8 @@ if s.count('R399 landed 2026-10-13') != 1:
 if s.count('## Knowledge maintenance') != 1:
     die('the seed maintenance head')
 
-# ========= (b) rules/comeliness.h =========
-CM = 'rules/comeliness.h'
+# ========= (b) rules/ua/comeliness.h =========
+CM = 'rules/ua/comeliness.h'
 
 pair(CM, E(
     '// Pinned data only - no engine site exists',

@@ -17,9 +17,9 @@
 //
 // Pin-era pattern (R322): pinned data only - no engine
 // site exists. Cross-checks the landed R191 seam
-// (rules/armorratings.h - the plate mail AC 3 the
+// (rules/phb/armorratings.h - the plate mail AC 3 the
 // bronze plate reads one worse than), the R334 seam
-// (rules/thiefarmor.h - the elfin chain rows) and the
+// (rules/ua/thiefarmor.h - the elfin chain rows) and the
 // R370 seam (the elfin-chain barding weight read).
 //
 // JUDGMENTs (the decode method):

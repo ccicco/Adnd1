@@ -41,7 +41,7 @@
 # 48-94); the wand of wonder rows begin at band 95 -
 # cross-checked against the R224 rodswands.h bands in
 # the audit.
-# Patches: 4 (new rules/wandsprose2.h, the regtest
+# Patches: 4 (new rules/dmg/wandsprose2.h, the regtest
 # include, the audit block, the dmg-gap-report log
 # entry). Census 165 -> 166.
 #
@@ -49,7 +49,7 @@
 
 import sys
 
-WD   = 'rules/wandsprose2.h'
+WD   = 'rules/dmg/wandsprose2.h'
 REG  = 'regtest.cpp'
 GAP  = 'tools/dmg_gap_report.md'
 
@@ -67,7 +67,7 @@ if t.count('audit: bad ') != 165 and t.count('audit: bad ') != 166:
 # ---- the new header ----
 hdr_lines = [
     '// ====================================================================',
-    '// Adnd1 - rules/wandsprose2.h',
+    '// Adnd1 - rules/dmg/wandsprose2.h',
     '// R247: the III.D wands explanation prose',
     '// pins, part 2 (DMG pp.144-145) - the',
     '// remaining TEN wands of the RODS, et al.',
@@ -561,11 +561,11 @@ hdr_text = NL.join(hdr_lines) + NL
 
 # ---- the regtest include ----
 inc_old = [
-    '#include "rules/wandsprose.h"  // R246: pp.143-144 the III.D wands prose pins',
+    '#include "rules/dmg/wandsprose.h"  // R246: pp.143-144 the III.D wands prose pins',
 ]
 inc_new = [
-    '#include "rules/wandsprose.h"  // R246: pp.143-144 the III.D wands prose pins',
-    '#include "rules/wandsprose2.h"  // R247: pp.144-145 the III.D wands prose part 2 pins',
+    '#include "rules/dmg/wandsprose.h"  // R246: pp.143-144 the III.D wands prose pins',
+    '#include "rules/dmg/wandsprose2.h"  // R247: pp.144-145 the III.D wands prose part 2 pins',
 ]
 
 # ---- the regtest audit block ----
@@ -689,7 +689,7 @@ gap_new = [
     'R247 landed the III.D wands',
     'explanation prose pins, part 2 of 3',
     '(DMG pp.144-145, upload lines',
-    '~10828-10865). rules/wandsprose2.h',
+    '~10828-10865). rules/dmg/wandsprose2.h',
     '(the grenade.h pattern, wd prefix,',
     '73 scalar accessors - no arrays',
     'this round): the remaining TEN',
@@ -764,7 +764,7 @@ try:
     if marker in t:
         already += 1
     else:
-        print('R247 FAIL: rules/wandsprose2.h exists without the marker')
+        print('R247 FAIL: rules/dmg/wandsprose2.h exists without the marker')
         sys.exit(1)
 except IOError:
     with open(WD, 'w') as f:
@@ -804,7 +804,7 @@ if applied + already == 4:
     if t.count('R247 wands prose part 2 pins audit') != 1:
         print('R247 FAIL: the R247 audit line must appear once')
         sys.exit(1)
-    if t.count('rules/wandsprose2.h') != 1:
+    if t.count('rules/dmg/wandsprose2.h') != 1:
         print('R247 FAIL: the wandsprose2 include must appear once')
         sys.exit(1)
     g = open(GAP).read()

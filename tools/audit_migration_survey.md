@@ -7,7 +7,7 @@
 - 'audit: bad' occurrences: 745 (the census)
 - 'audit: bad ' (trailing space) occurrences: 745
 - include lines: 623
-- last include line: 623: #include "rules/uwfight.h"  // R313: the underwater fight
+- last include line: 623: #include "rules/dmg/uwfight.h"  // R313: the underwater fight
 - R227 anchor line: 139952:     // ---- R227: the wis mental save wiring audit ----
 
 ## Segmentation

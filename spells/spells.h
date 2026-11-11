@@ -280,7 +280,7 @@ SpellClass spellClass(SpellId id);
 // notes rows 7-12 were corrected to the printed values (rows 1-6
 // matched). Beyond the printed rows the final row holds. The
 // printed wisdom footnotes wired R192: the wisdom gates ride
-// rules/wisdom.h and clericSpellSlotsWithWis (6th: Wis 17;
+// rules/phb/wisdom.h and clericSpellSlotsWithWis (6th: Wis 17;
 // 7th: Wis 18 - Wisdom Table I; the bonus spells and spell
 // failure ride the same header).
 // ----------------------------------------------------------------------------

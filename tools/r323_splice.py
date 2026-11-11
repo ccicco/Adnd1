@@ -9,7 +9,7 @@
 #       paste-safe lesson, the md5/newline
 #       lesson, the OUT/DEFERRED axis
 #       lesson).
-#   (b) rules/subraces.h - NEW FILE: the
+#   (b) rules/ua/subraces.h - NEW FILE: the
 #       subrace seam - the CharSubRace
 #       enum (the 17 racial types), the
 #       UaClass enum and Race Table I
@@ -73,7 +73,7 @@ def cleanNB(s, limit):
 
 SR_FILE = NL.join([
     '// ===========================================================================',
-    '// Adnd1 - rules/subraces.h',
+    '// Adnd1 - rules/ua/subraces.h',
     '// The UA subrace layer (R323) - the seam that',
     '// opens the UA races section. Header-only',
     '// pins, the humrpref.h / comeliness.h',
@@ -797,7 +797,7 @@ SR_FILE = NL.join([
 
 AUD_BLOCK = NL.join([
     '    // ---- R323: the subrace layer seam audit ----',
-    '    // The UA subrace seam (rules/subraces.h):',
+    '    // The UA subrace seam (rules/ua/subraces.h):',
     '    // the 17 racial types, Race Table I',
     '    // with the alignment column, the',
     '    // Racial Preferences matrix, the',
@@ -1151,7 +1151,7 @@ GP_EDITS = [
       '      - CLOSED R323: the CharSubRace\n' 
       '      and UaClass enums, the matrix\n' 
       '      and the alignment-requirements\n' 
-      '      column, rules/subraces.h; the\n' 
+      '      column, rules/ua/subraces.h; the\n' 
       '      R323 seam audit.'),
     ('      single-class +2 level bonus rule\n' 
       '      ride with them.',     '      single-class +2 level bonus rule\n' 
@@ -1195,7 +1195,7 @@ GP_EDITS = [
       '      ancestries with the grugach\n' 
       '      no-instances read; the halfling\n' 
       '      strains with the mixed-blood\n' 
-      '      stout read - rules/subraces.h.'),
+      '      stout read - rules/ua/subraces.h.'),
     ('- [ ] **The Racial Preferences matrix**\n' 
       '      (p. 12) - reads clean (the P/G/T/\n' 
       '      N/A/H codes, 17x17); depends on the\n' 
@@ -1209,13 +1209,13 @@ GP_EDITS = [
       '      half-elf footnote (elves react as\n' 
       '      the worse of half-elf or the\n' 
       '      ancestor) named for the caller;\n' 
-      '      rules/subraces.h; pin-only until\n' 
+      '      rules/ua/subraces.h; pin-only until\n' 
       '      the reaction site exists.'),
     ('- [ ] The subrace layer - gates Race\n' 
       '      Table I, Race Table II, the\n' 
       '      sub-race mechanics, the Racial\n' 
       '      Preferences matrix.',     '- [x] The subrace layer - CLOSED R323\n' 
-      '      (rules/subraces.h; the R323 seam\n' 
+      '      (rules/ua/subraces.h; the R323 seam\n' 
       '      audit, census 250). Race Table\n' 
       '      II and the wiring (the race\n' 
       '      selection site, the R117\n' 
@@ -1233,7 +1233,7 @@ SEED_ENTRY = NL.join([
     '- R322 landed 2026-10-11: commit',
     '  f83e11b, census 249, the UA arc',
     '  opener: the comeliness pins',
-    '  (rules/comeliness.h) and the',
+    '  (rules/ua/comeliness.h) and the',
     '  lossless ua gap report',
     '  (tools/ua_gap_report.md) with the',
     '  DEFERRED ontology (OUT nearly',
@@ -1282,8 +1282,8 @@ assert s.count('- R322 landed 2026-10-11: commit') == 1, 'a once'
 assert s.count('- R321 landed 2026-10-11: commit') == 1, 'a r321 kept'
 assert len(applied) + len(already) == 1, 'patch a count wrong'
 
-# ---- (b) rules/subraces.h: the seam ----
-SR = 'rules/subraces.h'
+# ---- (b) rules/ua/subraces.h: the seam ----
+SR = 'rules/ua/subraces.h'
 cleanNB(SR_FILE, 78)
 if os.path.exists(os.path.join(ROOT, SR)):
     already.append('subraces.h: the seam')
@@ -1327,10 +1327,10 @@ assert len(applied) + len(already) == 3, 'patch c count wrong'
 # ---- (d) regtest.cpp: the include and the audit ----
 RG = 'regtest.cpp'
 s = rd(RG)
-INC_OLD = (NL + '#include "rules/comeliness.h"'
+INC_OLD = (NL + '#include "rules/ua/comeliness.h"'
            '  // R322: UA comeliness pins')
 INC_NEW = (INC_OLD + NL
-           + '#include "rules/subraces.h"'
+           + '#include "rules/ua/subraces.h"'
            '  // R323: UA subrace layer')
 cleanNB(INC_NEW, 76)
 AUD_ANCH = ('    // ---- R227: the wis mental'
@@ -1348,7 +1348,7 @@ else:
 s = rd(RG)
 assert s.count('audit: bad') == 250, 'd census count'
 assert s.count('R323 subrace layer seam audit') == 1, 'd print once'
-assert s.count('rules/subraces.h') == 2, 'd include refs'
+assert s.count('rules/ua/subraces.h') == 2, 'd include refs'
 assert len(applied) + len(already) == 4, 'patch d count wrong'
 
 if len(applied) + len(already) != 4:

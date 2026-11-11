@@ -3,7 +3,7 @@
 # EQUIPPING THE CHARACTER section - a queued
 # box).
 #
-# rules/startmoney.h is CREATED: the printed
+# rules/phb/startmoney.h is CREATED: the printed
 # STARTING MONEY table of the PHB MONEY section
 # - cleric 3d6 (30-180 gp), fighter 5d4
 # (50-200), magic-user 2d4 (20-80), thief 2d6
@@ -79,7 +79,7 @@ def create(path, marker, content):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/startmoney.h CREATED
+# Patch 1: rules/phb/startmoney.h CREATED
 # ---------------------------------------------------------------------------
 
 # the printed STARTING MONEY table, in CharClass
@@ -97,7 +97,7 @@ t = [
 hdr = []
 a = hdr.append
 
-a('// rules/startmoney.h - the starting money by')
+a('// rules/phb/startmoney.h - the starting money by')
 a('// class (the PHB MONEY section, R190).')
 a('//')
 a('// The printed STARTING MONEY table: every')
@@ -201,7 +201,7 @@ a('} // namespace rules')
 a('')
 a('#endif // RULES_STARTMONEY_H')
 
-create('rules/startmoney.h',
+create('rules/phb/startmoney.h',
        '#ifndef RULES_STARTMONEY_H',
        NL.join(hdr) + NL)
 
@@ -210,10 +210,10 @@ create('rules/startmoney.h',
 # ---------------------------------------------------------------------------
 
 patch('regtest.cpp',
-      'rules/startmoney.h',
+      'rules/phb/startmoney.h',
       '#include "rules/weapontables.h"  // R189: the weapon weight and damage table',
       '#include "rules/weapontables.h"  // R189: the weapon weight and damage table'
-      + NL + '#include "rules/startmoney.h"  // R190: the starting money by class')
+      + NL + '#include "rules/phb/startmoney.h"  // R190: the starting money by class')
 
 # ---------------------------------------------------------------------------
 # Patch 3: regtest.cpp - the R190 battery audit (census 107)
@@ -295,7 +295,7 @@ box_old = ('- [ ] **Starting money by class (the EQUIPPING THE'
            + NL + '      against the print.')
 
 box_new = ('- [x] **Starting money by class (the MONEY section) -'
-           + NL + '      PINNED R190:** rules/startmoney.h CREATED -'
+           + NL + '      PINNED R190:** rules/phb/startmoney.h CREATED -'
            + NL + '      the printed STARTING MONEY table: cleric 3d6'
            + NL + '      (30-180 gp), fighter 5d4 (50-200), magic-user'
            + NL + '      2d4 (20-80), thief 2d6 (20-120), every class'
@@ -319,7 +319,7 @@ else:
     assert t2.count(box_old) == 0, 'R190 box old text lingers'
 
 patch('tools/phb_gap_report.md',
-      'PINNED R190:** rules/startmoney.h CREATED',
+      'PINNED R190:** rules/phb/startmoney.h CREATED',
       box_old,
       box_new)
 
@@ -338,7 +338,7 @@ patch('tools/dmg_gap_report.md',
       + NL + 'audit; census 106. Next: the gap report names the next'
       + NL + 'round.'
       + NL + 'R190 landed the starting money by class:'
-      + NL + 'rules/startmoney.h CREATED (the PHB STARTING MONEY'
+      + NL + 'rules/phb/startmoney.h CREATED (the PHB STARTING MONEY'
       + NL + 'table - cleric 3d6, fighter 5d4, magic-user 2d4,'
       + NL + 'thief 2d6, all x10 gp; the monk row 5d4 with NO x10,'
       + NL + 'the DMG MONEY-section ascetic note) and the DMG'
@@ -354,7 +354,7 @@ patch('tools/dmg_gap_report.md',
 assert applied + already == 5, 'patch count drift: ' + str(applied) + ' + ' + str(already)
 print('R190 splice: ALL OK (applied %d, already %d)' % (applied, already))
 print('R190 note: 5 patches; census 107 (one new audit);')
-print('real gate: md5sum rules/startmoney.h')
+print('real gate: md5sum rules/phb/startmoney.h')
 print('commit: R190: the starting money pinned - the class table,')
 print('the monk row and the support-cost companion (census 107)')
 

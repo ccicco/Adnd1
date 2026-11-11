@@ -31,8 +31,8 @@
 #include "../rules/engine/classes.h"
 #include "../rules/subclassgates.h"  // R231: the subclass leveling seam
 #include "../rules/multiclass.h"  // R233: the multi-class engine
-#include "../rules/subracecap.h"  // R325: the Race Table II fold
-#include "../rules/bard.h"  // R235: the bard engine
+#include "../rules/ua/subracecap.h"  // R325: the Race Table II fold
+#include "../rules/phb/bard.h"  // R235: the bard engine
 #include "../items/items.h"
 #include "../ai/actor.h"
 #include "../dm/dm.h"

@@ -10,7 +10,7 @@
 #       oracle-read-back lesson, the
 #       preflight-ordering lesson, the
 #       replay discipline).
-#   (b) rules/subracecap.h - NEW FILE: the
+#   (b) rules/ua/subracecap.h - NEW FILE: the
 #       caller seam - the vital-ability
 #       read (the p.8 print), the column
 #       key build (the exceptional
@@ -65,7 +65,7 @@ def cleanNB(s, limit):
 
 SR_FILE = NL.join([
     '// ===========================================================================',
-    '// Adnd1 - rules/subracecap.h',
+    '// Adnd1 - rules/ua/subracecap.h',
     '// The UA Race Table II caller seam (R325)',
     '// - the level-up site\'s derived cap read.',
     '//',
@@ -239,7 +239,7 @@ SR_FILE = NL.join([
 
 AUD_BLOCK = NL.join([
     '    // ---- R325: the Race Table II fold audit ----',
-    '    // The caller seam (rules/subracecap.h):',
+    '    // The caller seam (rules/ua/subracecap.h):',
     '    // the vital-ability read, the column',
     '    // key build, the +2 eligibility, the',
     '    // derived cap - and the live level-up',
@@ -566,7 +566,7 @@ GP_ANCHOR = NL.join([
 
 GP_CLOSE = NL.join([
 'leveling wiring CLOSED R325: the',
-'level-up fold (rules/subracecap.h;',
+'level-up fold (rules/ua/subracecap.h;',
 'uaLevelCap at the gainXp queue and',
 'the trainer, the uaSubrace field',
 'with its save line; the R325 audit,',
@@ -578,7 +578,7 @@ SEED_ENTRY = NL.join([
     '- R324 landed 2026-10-11: commit',
     '  a7a6a5c, census 251, the UA',
     '  Character Race Table II',
-    '  (rules/subracelevels.h): the six',
+    '  (rules/ua/subracelevels.h): the six',
     '  sub-tables (II.A dwarves, II.B',
     '  gnomes, II.C elves both printed',
     '  blocks, II.D half-elves, II.E',
@@ -624,7 +624,7 @@ SEED_ENTRY = NL.join([
 ])
 
 PARTY_INC = NL.join([
-'#include "../rules/subracecap.h"  // R325: the Race Table II fold',
+'#include "../rules/ua/subracecap.h"  // R325: the Race Table II fold',
 ])
 
 PARTY_FIELD = NL.join([
@@ -694,8 +694,8 @@ assert s.count('- R323 landed 2026-10-11: commit') == 1, 'a r323 kept'
 assert s.count('- R322 landed 2026-10-11: commit') == 1, 'a r322 kept'
 assert len(applied) + len(already) == 1, 'patch a count wrong'
 
-# ---- (b) rules/subracecap.h: the seam ----
-SC = 'rules/subracecap.h'
+# ---- (b) rules/ua/subracecap.h: the seam ----
+SC = 'rules/ua/subracecap.h'
 cleanNB(SR_FILE, 78)
 if os.path.exists(os.path.join(ROOT, SC)):
     already.append('subracecap.h: the seam')
@@ -804,10 +804,10 @@ assert len(applied) + len(already) == 5, 'patch e count wrong'
 # ---- (f) regtest.cpp: the include and the audit ----
 RG = 'regtest.cpp'
 s = rd(RG)
-INC_OLD = ('#include "rules/subracelevels.h"'
+INC_OLD = ('#include "rules/ua/subracelevels.h"'
            '  // R324: UA Race Table II')
 INC_NEW = (INC_OLD + NL
-           + '#include "rules/subracecap.h"'
+           + '#include "rules/ua/subracecap.h"'
            '  // R325: UA Race Table II fold')
 cleanNB(INC_NEW, 76)
 AUD_ANCH = ('    // ---- R227: the wis mental'
@@ -827,7 +827,7 @@ assert s.count('audit: bad') == 252, 'f census count'
 assert s.count('R325 subrace level cap audit') == 1, 'f print once'
 assert s.count('R324 subrace level limits audit') == 1, 'f r324 kept'
 assert s.count('R323 subrace layer seam audit') == 1, 'f r323 kept'
-assert s.count('rules/subracecap.h') == 2, 'f include refs'
+assert s.count('rules/ua/subracecap.h') == 2, 'f include refs'
 assert len(applied) + len(already) == 6, 'patch f count wrong'
 
 if len(applied) + len(already) != 6:

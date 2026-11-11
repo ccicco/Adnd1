@@ -55,7 +55,7 @@
  ],
  "include_after": "#include \"rules/dragon/systems_round.h\"  // R893: the systems round",
  "include_comment": "the Ward Artificer devices items sweep",
- "header_file": "rules/art.h",
+ "header_file": "rules/dragon/artificer_devices.h",
  "audit_file": "rules/audits/r894_batch.h",
  "audit_label": "R894 Artificer audit",
  "audit_anchor": "#include \"rules/audits/r893_batch.h\"  // R893: R893 systems audit",

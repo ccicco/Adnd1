@@ -40,7 +40,7 @@ SEED_ENTRY = NL.join([
     '- R336 landed 2026-10-11: commit',
     '  74ebf6a, census 263, the UA',
     '  cavalier money pin round',
-    '  (rules/cavmoney.h): the six',
+    '  (rules/ua/cavmoney.h): the six',
     '  stations in social-ladder',
     '  order, the gold ranges, the',
     '  printed formulas verified',
@@ -366,7 +366,7 @@ s = rd(RT)
 if 'R337 UA weight and damage pin audit' in s:
     already.append('regtest.cpp: the R337 audit')
 else:
-    INC_ANCH = ('#include "rules/cavmoney.h"'
+    INC_ANCH = ('#include "rules/ua/cavmoney.h"'
                 '  // R336: the UA cavalier money')
     INC_NEW = NL.join([
     INC_ANCH,

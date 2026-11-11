@@ -42,7 +42,7 @@
 # the magic table is deliberately weighted to
 # keep potent magic rare). The II.C combined
 # hoard table is the R220 candidate. Patches: 4
-# (new rules/treasdet.h, regtest include, audit
+# (new rules/dmg/treasdet.h, regtest include, audit
 # block, gap-report log entry). Census 134 -> 135.
 
 BS = chr(92)
@@ -88,12 +88,12 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/treasdet.h - the new header
+# Patch 1: rules/dmg/treasdet.h - the new header
 # ---------------------------------------------------------------------------
 
 hdr_lines = [
 '// ====================================================================',
-'// Adnd1 - rules/treasdet.h',
+'// Adnd1 - rules/dmg/treasdet.h',
 '// R219: the treasure random determination',
 '// tables pins (DMG pp.120-123) - the top-',
 '// level determination tables: map or magic,',
@@ -560,7 +560,7 @@ hdr_lines = [
 ]
 hdr = NL.join(hdr_lines) + NL
 
-patch('rules/treasdet.h',
+patch('rules/dmg/treasdet.h',
       'R219: the treasure random determination',
       None,
       hdr)
@@ -571,10 +571,10 @@ patch('rules/treasdet.h',
 # Patch 2: regtest.cpp - the include
 # ---------------------------------------------------------------------------
 
-old2 = '#include "rules/energydrain.h"  // R218: pp.119-122 use of magic items and energy draining pins'
+old2 = '#include "rules/dmg/energydrain.h"  // R218: pp.119-122 use of magic items and energy draining pins'
 
-new2 = ('#include "rules/energydrain.h"  // R218: pp.119-122 use of magic items and energy draining pins'
-        + NL + '#include "rules/treasdet.h"  // R219: pp.120-123 treasure random determination tables')
+new2 = ('#include "rules/dmg/energydrain.h"  // R218: pp.119-122 use of magic items and energy draining pins'
+        + NL + '#include "rules/dmg/treasdet.h"  // R219: pp.120-123 treasure random determination tables')
 
 patch('regtest.cpp',
       'R219: pp.120-123 treasure random determination tables',
@@ -775,7 +775,7 @@ log_lines = [
 'map/monetary/magic structure referred to',
 'the lair-type coin bundles, and these',
 'determination tables existed nowhere).',
-'rules/treasdet.h (the grenade.h pattern):',
+'rules/dmg/treasdet.h (the grenade.h pattern):',
 'Table I map or magic (01-10 the map table,',
 '11-00 the magic items table), Table II the',
 'map table (01-05 false, 06-70 monetary,',

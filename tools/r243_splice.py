@@ -17,7 +17,7 @@
 # ride this table. The row NAMES were already pinned by
 # the R122 line-diff audit; this round pins the values,
 # band edges and the quantity ranges.
-# Patches: 4 (new rules/mweapons.h, the regtest
+# Patches: 4 (new rules/dmg/mweapons.h, the regtest
 # include, the audit block, the dmg-gap-report log
 # entry). Census 161 -> 162.
 #
@@ -25,7 +25,7 @@
 
 import sys
 
-MW   = 'rules/mweapons.h'
+MW   = 'rules/dmg/mweapons.h'
 REG  = 'regtest.cpp'
 GAP  = 'tools/dmg_gap_report.md'
 
@@ -44,7 +44,7 @@ if t.count('audit: bad ') != 161 and t.count('audit: bad ') != 162:
 # ---- the new header ----
 hdr_lines = [
     '// ====================================================================',
-    '// Adnd1 - rules/mweapons.h',
+    '// Adnd1 - rules/dmg/mweapons.h',
     '// R243: the III.H misc weapons pins',
     '// (DMG p.131-132) - the miscellaneous',
     '// weapons table, the LAST of the III.A-H',
@@ -180,11 +180,11 @@ hdr_text = NL.join(hdr_lines) + NL
 
 # ---- the regtest include ----
 inc_old = [
-    '#include "rules/swords.h"  // R242: p.131 the III.G swords pins',
+    '#include "rules/dmg/swords.h"  // R242: p.131 the III.G swords pins',
 ]
 inc_new = [
-    '#include "rules/swords.h"  // R242: p.131 the III.G swords pins',
-    '#include "rules/mweapons.h"  // R243: p.131-132 the III.H misc weapons pins',
+    '#include "rules/dmg/swords.h"  // R242: p.131 the III.G swords pins',
+    '#include "rules/dmg/mweapons.h"  // R243: p.131-132 the III.H misc weapons pins',
 ]
 
 # ---- the R243 audit block ----
@@ -319,7 +319,7 @@ gap_new = [
     '(DMG p.131-132, upload lines ~9949-9987)',
     '- the miscellaneous weapons table, the',
     'LAST of the III.A-H magic item tables.',
-    'rules/mweapons.h (the grenade.h pattern,',
+    'rules/dmg/mweapons.h (the grenade.h pattern,',
     'mw prefix): 36 rows in kWeapons order,',
     'Arrow +1 01-08 through Trident (Military',
     'Fork) +3 00 (band 100) - the x.p. point',
@@ -369,7 +369,7 @@ try:
     if marker in t:
         already += 1
     else:
-        print('R243 FAIL: rules/mweapons.h exists without the marker')
+        print('R243 FAIL: rules/dmg/mweapons.h exists without the marker')
         sys.exit(1)
 except IOError:
     with open(MW, 'w') as f:
@@ -409,7 +409,7 @@ if applied + already == 4:
     if t.count('R243 misc weapons pins audit') != 1:
         print('R243 FAIL: the R243 audit line must appear once')
         sys.exit(1)
-    if t.count('rules/mweapons.h') != 1:
+    if t.count('rules/dmg/mweapons.h') != 1:
         print('R243 FAIL: the mweapons include must appear once')
         sys.exit(1)
     g = open(GAP).read()

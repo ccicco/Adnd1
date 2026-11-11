@@ -1,6 +1,6 @@
     // ---- R299a: the party kit recordings seam audit ----
     // The kit-grant recording convention (the R299
-    // rules/weaponprof.h seam): the melee slot
+    // rules/phb/weaponprof.h seam): the melee slot
     // records with every class kit, the ranged slot
     // where the kit carries a missile (the thief
     // rows - the R28 sling pin), the grant count

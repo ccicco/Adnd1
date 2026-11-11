@@ -19,7 +19,7 @@
 # per-facet row. Keyed to the 33 die bands of
 # the engine III.E.3 table; the row VALUES were
 # already pinned by R122.
-# Patches: 4 (new rules/miscmagic3.h, the
+# Patches: 4 (new rules/dmg/miscmagic3.h, the
 # regtest include, the audit block, the
 # dmg-gap-report log entry). Census 155 -> 156.
 #
@@ -27,7 +27,7 @@
 
 import sys
 
-MM3  = 'rules/miscmagic3.h'
+MM3  = 'rules/dmg/miscmagic3.h'
 REG  = 'regtest.cpp'
 GAP  = 'tools/dmg_gap_report.md'
 
@@ -46,7 +46,7 @@ if t.count('audit: bad ') != 155 and t.count('audit: bad ') != 156:
 # ---- the new header ----
 hdr_lines = [
     '// ====================================================================',
-    '// Adnd1 - rules/miscmagic3.h',
+    '// Adnd1 - rules/dmg/miscmagic3.h',
     '// R237: the III.E table 3 footnote pins',
     '// (DMG p.129) - the class marks and the',
     '// asterisk ladder that frame TABLE',
@@ -272,11 +272,11 @@ hdr_text = NL.join(hdr_lines) + NL
 
 # ---- the regtest include ----
 inc_old = [
-    '#include "rules/miscmagic2.h"  // R226: p.128 the misc table 2 pins',
+    '#include "rules/dmg/miscmagic2.h"  // R226: p.128 the misc table 2 pins',
 ]
 inc_new = [
-    '#include "rules/miscmagic2.h"  // R226: p.128 the misc table 2 pins',
-    '#include "rules/miscmagic3.h"  // R237: p.129 the misc table 3 pins',
+    '#include "rules/dmg/miscmagic2.h"  // R226: p.128 the misc table 2 pins',
+    '#include "rules/dmg/miscmagic3.h"  // R237: p.129 the misc table 3 pins',
 ]
 
 # ---- the R237 audit ----
@@ -457,7 +457,7 @@ gap_new = [
     'pins (DMG p.129, upload lines ~9765-9825)',
     '- the class marks and the asterisk ladder',
     'that frame TABLE (III.E.) 3.',
-    'rules/miscmagic3.h (the grenade.h',
+    'rules/dmg/miscmagic3.h (the grenade.h',
     'pattern), keyed to the 33 die bands of',
     'the engine III.E.3 table in kMisc3',
     'order: the (C, F, T) marks (Gauntlets of',
@@ -512,7 +512,7 @@ try:
     if marker in t:
         already += 1
     else:
-        print('R237 FAIL: rules/miscmagic3.h exists without the marker')
+        print('R237 FAIL: rules/dmg/miscmagic3.h exists without the marker')
         sys.exit(1)
 except IOError:
     with open(MM3, 'w') as f:
@@ -552,7 +552,7 @@ if applied + already == 4:
     if t.count('R237 misc table 3 pins audit') != 1:
         print('R237 FAIL: the R237 audit line must appear once')
         sys.exit(1)
-    if t.count('rules/miscmagic3.h') != 1:
+    if t.count('rules/dmg/miscmagic3.h') != 1:
         print('R237 FAIL: the miscmagic3 include must appear once')
         sys.exit(1)
     g = open(GAP).read()

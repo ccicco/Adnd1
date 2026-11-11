@@ -35,7 +35,7 @@
 #       active-light or carried-item layer
 #       exists), the depth decay stays data
 #       (no depth layer).
-#   (d) rules/swimcross.h - the seam note:
+#   (d) rules/dmg/swimcross.h - the seam note:
 #       MOVEMENT and COMBAT charged R313,
 #       VISION charges R316.
 #   (e) rules/underwater.h - the recorded
@@ -239,13 +239,13 @@ _o, _c, _o2, _c2 = counts(s)
 assert _o == _c and _o2 == _c2, 'patch c balance'
 assert len(applied) + len(already) == 3, 'patch c count wrong'
 
-# ---- (d) rules/swimcross.h: the seam note ----
+# ---- (d) rules/dmg/swimcross.h: the seam note ----
 SW_OLD = NL.join([
     '// stairs and the entry. The underwater',
     '// MOVEMENT, VISION and COMBAT paragraphs',
     '// stay data (no underwater combat layer',
     '// exists - a future seam); the spell',
-    '// lists ride R168 (rules/uwspells.h).',
+    '// lists ride R168 (rules/dmg/uwspells.h).',
 ])
 SW_NEW = NL.join([
     '// stairs and the entry. The underwater',
@@ -254,13 +254,13 @@ SW_NEW = NL.join([
     '// fight); VISION charges R316 (the',
     '// Encounter vision state - the',
     '// uwVisionBaseFt fold); the spell',
-    '// lists ride R168 (rules/uwspells.h).',
+    '// lists ride R168 (rules/dmg/uwspells.h).',
 ])
 for _t in (SW_OLD, SW_NEW):
     clean(_t, 78)
 assert Q not in SW_NEW, 'd apostrophe'
 
-p = 'rules/swimcross.h'
+p = 'rules/dmg/swimcross.h'
 s = rd(p)
 if 'VISION charges R316' in s:
     already.append('swimcross.h: the seam note')

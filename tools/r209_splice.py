@@ -17,7 +17,7 @@
 # special characters add +1 to each die under 6) and
 # the no-fewer-than-three General Tendencies rule.
 # A seam with no prior coverage. Patches: 4 (new
-# rules/npcpersonae.h, regtest include, audit block,
+# rules/dmg/npcpersonae.h, regtest include, audit block,
 # gap-report log entry). Census 124 -> 125.
 
 BS = chr(92)
@@ -63,12 +63,12 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/npcpersonae.h - the new header
+# Patch 1: rules/dmg/npcpersonae.h - the new header
 # ---------------------------------------------------------------------------
 
 hdr_lines = [
 '// ====================================================================',
-'// Adnd1 - rules/npcpersonae.h',
+'// Adnd1 - rules/dmg/npcpersonae.h',
 '// R209: the NPC personae facts tables (DMG',
 '// pp.114-115, PERSONAE OF NON-PLAYER',
 '// CHARACTERS) - the ability dice',
@@ -592,7 +592,7 @@ hdr_lines = [
 ]
 hdr = NL.join(hdr_lines) + NL
 
-patch('rules/npcpersonae.h',
+patch('rules/dmg/npcpersonae.h',
       'R209: the NPC personae facts tables (DMG',
       None,
       hdr)
@@ -603,10 +603,10 @@ patch('rules/npcpersonae.h',
 # Patch 2: regtest.cpp - the include
 # ---------------------------------------------------------------------------
 
-old2 = '#include "rules/socialrank.h"  // R208: pp.88-89 social class and rank'
+old2 = '#include "rules/dmg/socialrank.h"  // R208: pp.88-89 social class and rank'
 
-new2 = ('#include "rules/socialrank.h"  // R208: pp.88-89 social class and rank'
-        + NL + '#include "rules/npcpersonae.h"  // R209: pp.114-115 NPC personae facts')
+new2 = ('#include "rules/dmg/socialrank.h"  // R208: pp.88-89 social class and rank'
+        + NL + '#include "rules/dmg/npcpersonae.h"  // R209: pp.114-115 NPC personae facts')
 
 patch('regtest.cpp',
       'R209: pp.114-115 NPC personae facts',
@@ -862,7 +862,7 @@ log_lines = [
 'R209 landed the NPC personae facts',
 'tables (DMG pp.114-115, PERSONAE OF',
 'NON-PLAYER CHARACTERS) - a seam with',
-'zero prior coverage. rules/npcpersonae.h',
+'zero prior coverage. rules/dmg/npcpersonae.h',
 '(the grenade.h pattern): the classed NPC',
 'ability dice adjustments (cleric wisdom',
 '+2; the as-fighter ranger and paladin',

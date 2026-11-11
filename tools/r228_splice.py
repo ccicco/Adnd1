@@ -347,7 +347,7 @@ id_old = '    CL_RESURRECTION,     // CL 7; caster ages 3 (p.14)' + NL + '    SP
 id_new = ('    CL_RESURRECTION,     // CL 7; caster ages 3 (p.14)' + NL
           + enum_block + NL + '    SPELL_COUNT')
 
-inc_old = '#include ' + DQ + '../rules/wisdom.h' + DQ + '  // R192: Wisdom Tables I and II'
+inc_old = '#include ' + DQ + '../rules/phb/wisdom.h' + DQ + '  // R192: Wisdom Tables I and II'
 inc_new = (inc_old + NL
           + '#include ' + DQ + '../rules/druidspells.h' + DQ + '  // R228: the druid roster + parameter seam')
 

@@ -791,8 +791,8 @@ assert s.count(
     '#include "rules/ua/uasmalls1.h"'
 ) == 1, 'd new include'
 for h in (
-        'rules/cavalier.h',
-        'rules/classtables.h',
+        'rules/ua/cavalier.h',
+        'rules/ua/classtables.h',
         'rules/ua/uabirth.h',
         'rules/ua/uasocialclass.h',
         'rules/ua/uaspellbooks.h',

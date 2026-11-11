@@ -9,7 +9,7 @@
 # - the dungeon traps never sprang. This
 # round wires both:
 #
-#   (a) rules/thieffunc.h - the percentile
+#   (a) rules/phb/thieffunc.h - the percentile
 #       seam: thfPercentileSucceeds (the
 #       printed equal-or-less convention on
 #       the tenths band) and thfAttemptSucceeds
@@ -85,7 +85,7 @@ def clean(s, limit, allow_apos=False):
         assert all(ord(c) < 128 for c in ln), 'non-ascii line'
         assert len(ln) <= limit, 'line too long: ' + ln
 
-# ---- (a) rules/thieffunc.h: the seam wired ----
+# ---- (a) rules/phb/thieffunc.h: the seam wired ----
 TF_TOP_OLD = NL.join([
     '// (upload line 400) - a DATA-ONLY pin (the',
     '// R186 poetics precedent): the engine',
@@ -173,7 +173,7 @@ clean(TF_TOP_OLD, 78); clean(TF_TOP_NEW, 78)
 clean(TF_SEAM_OLD, 78); clean(TF_SEAM_NEW, 78)
 clean(TF_TAIL_OLD, 78); clean(TF_TAIL_NEW, 78)
 
-p = 'rules/thieffunc.h'
+p = 'rules/phb/thieffunc.h'
 s = rd(p)
 if 'thfAttemptSucceeds' in s:
     already.append('thieffunc.h: the seam wired')
@@ -204,7 +204,7 @@ SD_INC_OLD = NL.join([
 SD_INC_NEW = NL.join([
     '#include "appstate.h"',
     '#include "abilities/abilities.h"   // R120: listening (p.60)',
-    '#include "rules/thieffunc.h"   // R301: the thief trap rolls',
+    '#include "rules/phb/thieffunc.h"   // R301: the thief trap rolls',
 ])
 SD_HEAD_OLD = NL.join([
     '// ---- springTrap ----',
@@ -240,7 +240,7 @@ SD_LOOP_NEW = NL.join([
     '            // R301: the printed find roll - percentile',
     '            // dice at or below the adjusted find/remove',
     '            // traps chance (the R298 tables; the draw',
-    '            // runs in tenths, rules/thieffunc.h)',
+    '            // runs in tenths, rules/phb/thieffunc.h)',
     '            int find = (int)rng.below(1000);',
     '            if (!rules::thfAttemptSucceeds(find,',
     '                    rules::THF_TRAPS, c.level,',
@@ -811,13 +811,13 @@ assert len(applied) + len(already) == 6, 'patch f count wrong'
 
 # ---- (g) tools/phb_gap_report.md: the wiring-arc box ----
 GR_HEAD_OLD = NL.join([
-    '      rules/thieffunc.h CREATED (a DATA-ONLY',
+    '      rules/phb/thieffunc.h CREATED (a DATA-ONLY',
     '      pin, the R186 poetics precedent - the',
     '      engine performs no thief rolls; the',
     '      seam waits for a future roll round) -',
 ])
 GR_HEAD_NEW = NL.join([
-    '      rules/thieffunc.h CREATED (a DATA-ONLY',
+    '      rules/phb/thieffunc.h CREATED (a DATA-ONLY',
     '      pin, the R186 poetics precedent - WIRED',
     '      R301: the trap site now rolls the seam;',
     '      the other functions stay data) -',
@@ -832,7 +832,7 @@ GR_BOX = NL.join([
     '      R301:** the R298 seam gains its first',
     '      callers and the R45 springTrap its',
     '      first caller ever.',
-    '      rules/thieffunc.h gains',
+    '      rules/phb/thieffunc.h gains',
     '      thfPercentileSucceeds (the printed',
     '      equal-or-less convention on the 0-999',
     '      tenths band - a whole-percent chance',

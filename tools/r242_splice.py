@@ -18,7 +18,7 @@
 # this table. The row NAMES were already pinned by the
 # R122 line-diff audit; this round pins the values,
 # band edges, the size note and the tiered bonuses.
-# Patches: 4 (new rules/swords.h, the regtest
+# Patches: 4 (new rules/dmg/swords.h, the regtest
 # include, the audit block, the dmg-gap-report log
 # entry). Census 160 -> 161.
 #
@@ -26,7 +26,7 @@
 
 import sys
 
-SW   = 'rules/swords.h'
+SW   = 'rules/dmg/swords.h'
 REG  = 'regtest.cpp'
 GAP  = 'tools/dmg_gap_report.md'
 
@@ -45,7 +45,7 @@ if t.count('audit: bad ') != 160 and t.count('audit: bad ') != 161:
 # ---- the new header ----
 hdr_lines = [
     '// ====================================================================',
-    '// Adnd1 - rules/swords.h',
+    '// Adnd1 - rules/dmg/swords.h',
     '// R242: the III.G swords pins',
     '// (DMG p.131) - the magic swords table (the',
     '// RIGHT column of the two-column print):',
@@ -196,11 +196,11 @@ hdr_text = NL.join(hdr_lines) + NL
 
 # ---- the regtest include ----
 inc_old = [
-    '#include "rules/armorshield.h"  // R241: p.129-130 the III.F armor and shield pins',
+    '#include "rules/dmg/armorshield.h"  // R241: p.129-130 the III.F armor and shield pins',
 ]
 inc_new = [
-    '#include "rules/armorshield.h"  // R241: p.129-130 the III.F armor and shield pins',
-    '#include "rules/swords.h"  // R242: p.131 the III.G swords pins',
+    '#include "rules/dmg/armorshield.h"  // R241: p.129-130 the III.F armor and shield pins',
+    '#include "rules/dmg/swords.h"  // R242: p.131 the III.G swords pins',
 ]
 
 # ---- the R242 audit block ----
@@ -322,7 +322,7 @@ gap_new = [
     'R242 landed the III.G swords pins (DMG',
     'p.131, upload lines ~9906-9947, the',
     'RIGHT column of the two-column print).',
-    'rules/swords.h (the grenade.h pattern,',
+    'rules/dmg/swords.h (the grenade.h pattern,',
     'sw prefix): 26 rows in kSwords order,',
     'Sword +1 01-25 through Sword, Cursed',
     'Berserking 96-00 (band 100) - the x.p.',
@@ -369,7 +369,7 @@ try:
     if marker in t:
         already += 1
     else:
-        print('R242 FAIL: rules/swords.h exists without the marker')
+        print('R242 FAIL: rules/dmg/swords.h exists without the marker')
         sys.exit(1)
 except IOError:
     with open(SW, 'w') as f:
@@ -409,7 +409,7 @@ if applied + already == 4:
     if t.count('R242 swords pins audit') != 1:
         print('R242 FAIL: the R242 audit line must appear once')
         sys.exit(1)
-    if t.count('rules/swords.h') != 1:
+    if t.count('rules/dmg/swords.h') != 1:
         print('R242 FAIL: the swords include must appear once')
         sys.exit(1)
     g = open(GAP).read()

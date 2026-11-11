@@ -35,7 +35,7 @@
 #       conditions).
 #   (f) ai/actor.cpp - the resolveMissile
 #       entrap (a net hit entraps, no wound).
-#   (g) rules/uwfight.h - the pin
+#   (g) rules/dmg/uwfight.h - the pin
 #       (uwNetEntrapStrTear, the MM print).
 #   (h) game/state_combat.cpp - the R315
 #       block sets netVolley.
@@ -353,7 +353,7 @@ _o, _c, _o2, _c2 = counts(s)
 assert _o == _c and _o2 == _c2, 'patch f balance'
 assert len(applied) + len(already) == 6, 'patch f count wrong'
 
-# ---- (g) rules/uwfight.h: the entrap pin ----
+# ---- (g) rules/dmg/uwfight.h: the entrap pin ----
 UF_OLD = NL.join([
     'inline int uwDeepCrossbowAllowed() {',
     '    return 1;',
@@ -382,7 +382,7 @@ for _t in (UF_OLD, UF_NEW):
     clean(_t, 78)
 assert Q not in UF_NEW, 'g apostrophe'
 
-p = 'rules/uwfight.h'
+p = 'rules/dmg/uwfight.h'
 s = rd(p)
 if 'uwNetEntrapStrTear' in s:
     already.append('uwfight.h: the entrap pin')

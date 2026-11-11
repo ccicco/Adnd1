@@ -40,7 +40,7 @@
 # upon the destruction of the slayer.
 # The potion miscibility table is already
 # pinned by R165 and stays out. Patches: 4
-# (new rules/energydrain.h, regtest
+# (new rules/dmg/energydrain.h, regtest
 # include, audit block, gap-report log
 # entry). Census 133 -> 134.
 
@@ -87,12 +87,12 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/energydrain.h - the new header
+# Patch 1: rules/dmg/energydrain.h - the new header
 # ---------------------------------------------------------------------------
 
 hdr_lines = [
 '// ====================================================================',
-'// Adnd1 - rules/energydrain.h',
+'// Adnd1 - rules/dmg/energydrain.h',
 '// R218: the use of magic items and',
 '// energy draining pins (DMG pp.119-122) -',
 '// the potion, oil, command word and',
@@ -353,7 +353,7 @@ hdr_lines = [
 ]
 hdr = NL.join(hdr_lines) + NL
 
-patch('rules/energydrain.h',
+patch('rules/dmg/energydrain.h',
       'R218: the use of magic items and',
       None,
       hdr)
@@ -364,10 +364,10 @@ patch('rules/energydrain.h',
 # Patch 2: regtest.cpp - the include
 # ---------------------------------------------------------------------------
 
-old2 = '#include "rules/scrollfab.h"  // R217: pp.118-121 scroll manufacture and fabrication pins'
+old2 = '#include "rules/dmg/scrollfab.h"  // R217: pp.118-121 scroll manufacture and fabrication pins'
 
-new2 = ('#include "rules/scrollfab.h"  // R217: pp.118-121 scroll manufacture and fabrication pins'
-        + NL + '#include "rules/energydrain.h"  // R218: pp.119-122 use of magic items and energy draining pins')
+new2 = ('#include "rules/dmg/scrollfab.h"  // R217: pp.118-121 scroll manufacture and fabrication pins'
+        + NL + '#include "rules/dmg/energydrain.h"  // R218: pp.119-122 use of magic items and energy draining pins')
 
 patch('regtest.cpp',
       'R218: pp.119-122 use of magic items and energy draining pins',
@@ -450,7 +450,7 @@ log_lines = [
 'section that follows it (the potion',
 'miscibility table between them is already',
 'pinned by R165 and stays out).',
-'rules/energydrain.h (the grenade.h pattern):',
+'rules/dmg/energydrain.h (the grenade.h pattern):',
 'drinking potions (one segment to open and',
 'consume, then a d4+1 = 2-5 segment delay',
 'to full effect), applying oils (one segment',

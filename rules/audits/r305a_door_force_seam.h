@@ -1,6 +1,6 @@
     // ---- R305a: the door force seam audit ----
     // The DMG FIRST DUNGEON ADVENTURE doors
-    // prose (rules/doorforce.h, the grenade.h
+    // prose (rules/dmg/doorforce.h, the grenade.h
     // pattern) - the forcing pins and their
     // folds - verified by audit_eval.
     {

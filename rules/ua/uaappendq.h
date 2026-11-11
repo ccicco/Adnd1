@@ -984,7 +984,7 @@ inline int uaqOvbTargetLBySizeL()
 
 // The R160 reconciliation:
 // the DMG pp. 72-73 system
-// (rules/weaponless.h)
+// (rules/dmg/weaponless.h)
 // stays the engine default;
 inline bool uaqR160DmgSystemStaysDefault()
     { return true; }

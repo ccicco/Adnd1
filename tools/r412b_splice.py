@@ -493,10 +493,10 @@ for b in BARE:
 RT = 'regtest.cpp'
 
 pair(RT,
-     '#include "rules/cantriptier.h"  '
+     '#include "rules/ua/cantriptier.h"  '
      '// R401: the UA cantrip tier',
      E(
-    '#include "rules/cantriptier.h"  '
+    '#include "rules/ua/cantriptier.h"  '
     '// R401: the UA cantrip tier',
     '#include "rules/ua/uacantrips1.h"  '
     '// R412: the UA useful cantrips'),

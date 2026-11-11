@@ -5,7 +5,7 @@
 // ============================================================================
 
 #include "character.h"
-#include "../wisdom.h"  // R194: Wisdom Table I (the print pin)
+#include "../phb/wisdom.h"  // R194: Wisdom Table I (the print pin)
 
 namespace rules {
 

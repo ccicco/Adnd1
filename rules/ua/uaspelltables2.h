@@ -54,7 +54,7 @@
 //     pinned verbatim, the numeral loss noted.
 //
 // R785 RESOLUTIONS (the PDF ledger closes; the ledger
-// census pins in rules/spelltableledger.h): the
+// census pins in rules/ua/spelltableledger.h): the
 // archive.org full-text OCR reads the continued table;
 // the 6th-level column REPAIRS (17 names, uas2Mu6thName)
 // and the drifted cells re-seat - Tenser's
@@ -216,7 +216,7 @@ inline const char* uas2Mu5thName(int i) {
 }
 
 // ---- the MU continued table (6th-9th; the R785
-// ledger repair rides rules/spelltableledger.h) ----
+// ledger repair rides rules/ua/spelltableledger.h) ----
 // The repaired 7th-level roster (16 names: the nine
 // readable print cells - including the numeral
 // restorations Monster Summoning V and Drawmij's

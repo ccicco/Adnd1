@@ -23,7 +23,7 @@
 # intervention table and the numeric
 # conventions. The Boot Hill / Gamma World
 # conversion tables (pp.112-114) remain OUT by
-# design. Patches: 4 (new rules/conduct.h,
+# design. Patches: 4 (new rules/dmg/conduct.h,
 # regtest include, audit block, gap-report log
 # entry). Census 130 -> 131.
 
@@ -70,12 +70,12 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/conduct.h - the new header
+# Patch 1: rules/dmg/conduct.h - the new header
 # ---------------------------------------------------------------------------
 
 hdr_lines = [
 '// ====================================================================',
-'// Adnd1 - rules/conduct.h',
+'// Adnd1 - rules/dmg/conduct.h',
 '// R215: the conducting the game pins (DMG',
 '// pp.110-112) - the divine intervention',
 '// procedure and planes rule, the secret',
@@ -359,7 +359,7 @@ hdr_lines = [
 ]
 hdr = NL.join(hdr_lines) + NL
 
-patch('rules/conduct.h',
+patch('rules/dmg/conduct.h',
       'R215: the conducting the game pins',
       None,
       hdr)
@@ -373,7 +373,7 @@ patch('rules/conduct.h',
 old2 = '#include "rules/siegefire.h"  // R214: pp.108-110 war machine fire, siege attack, defensive values'
 
 new2 = ('#include "rules/siegefire.h"  // R214: pp.108-110 war machine fire, siege attack, defensive values'
-        + NL + '#include "rules/conduct.h"  // R215: pp.110-112 conducting the game pins')
+        + NL + '#include "rules/dmg/conduct.h"  // R215: pp.110-112 conducting the game pins')
 
 patch('regtest.cpp',
       'R215: pp.110-112 conducting the game pins',
@@ -480,7 +480,7 @@ log_lines = [
 'R215 landed the conducting the game pins',
 '(DMG pp.110-112) - a prose-heavy chapter',
 'whose numeric bones are now pinned.',
-'rules/conduct.h (the grenade.h pattern):',
+'rules/dmg/conduct.h (the grenade.h pattern):',
 'the divine intervention procedure (the',
 'exemplary first-time asker 10 percent',
 'creature-sent chance; the 00 roll with the',

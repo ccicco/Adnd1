@@ -12,7 +12,7 @@
 # DM-must-convince-read footnote; unread
 # scrolls may fade; the curse is
 # immediate). Patches: 4 (new
-# rules/scrollpins.h, regtest include,
+# rules/dmg/scrollpins.h, regtest include,
 # audit block, gap-report log entry).
 # Census 137 -> 138.
 
@@ -59,12 +59,12 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/scrollpins.h - the new header
+# Patch 1: rules/dmg/scrollpins.h - the new header
 # ---------------------------------------------------------------------------
 
 hdr_lines = [
     '// ====================================================================',
-    '// Adnd1 - rules/scrollpins.h',
+    '// Adnd1 - rules/dmg/scrollpins.h',
     '// R222: the III.B scrolls prose pins',
     '// (DMG pp.126-127) - the structure and',
     '// prose of the III.B SCROLLS table:',
@@ -366,7 +366,7 @@ hdr_lines = [
 ]
 hdr = NL.join(hdr_lines) + NL
 
-patch('rules/scrollpins.h',
+patch('rules/dmg/scrollpins.h',
       'R222: the III.B scrolls prose pins',
       None,
       hdr)
@@ -377,10 +377,10 @@ patch('rules/scrollpins.h',
 # Patch 2: regtest.cpp - the include
 # ---------------------------------------------------------------------------
 
-old2 = '#include "rules/potions.h"  // R221: pp.125-126 the potions prose pins'
+old2 = '#include "rules/dmg/potions.h"  // R221: pp.125-126 the potions prose pins'
 
-new2 = ('#include "rules/potions.h"  // R221: pp.125-126 the potions prose pins'
-        + NL + '#include "rules/scrollpins.h"  // R222: pp.126-127 the scrolls prose pins')
+new2 = ('#include "rules/dmg/potions.h"  // R221: pp.125-126 the potions prose pins'
+        + NL + '#include "rules/dmg/scrollpins.h"  // R222: pp.126-127 the scrolls prose pins')
 
 patch('regtest.cpp',
       'R222: pp.126-127 the scrolls prose pins',
@@ -549,7 +549,7 @@ log_lines = [
     'R222 landed the III.B scrolls prose pins',
     '(DMG pp.126-127, upload lines ~9532-9595)',
     '- the structure and prose of the III.B',
-    'SCROLLS table. rules/scrollpins.h (the',
+    'SCROLLS table. rules/dmg/scrollpins.h (the',
     'grenade.h pattern): the 16 spell-scroll',
     'rows (dice bands 01-60, spell counts and',
     'level ranges re-pinned, plus the printed',

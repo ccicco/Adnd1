@@ -87,7 +87,7 @@ pinned).
       two-point and the shapechange
       full-form read; the 3d6 order roll;
       the point-for-point charisma
-      coupling. rules/comeliness.h,
+      coupling. rules/ua/comeliness.h,
       pinned data only - no engine site
       exists (no comeliness field; the
       R117 reaction table has no callers)
@@ -104,7 +104,7 @@ pinned).
       - CLOSED R323: the CharSubRace
       and UaClass enums, the matrix
       and the alignment-requirements
-      column, rules/subraces.h; the
+      column, rules/ua/subraces.h; the
       R323 seam audit.
 - [x] **Race Table II** (pp. 8-9, the level-limit
 sub-tables) - CLOSED R324: the six sub-tables - II.A
@@ -117,9 +117,9 @@ footnoted ability gates (the ranger INT/ WIS riders with
 the OR footnote, the assassin INT/DEX riders, the druid
 CHA riders) and the escalation riders, the below-
 first-row floor rule, the +2 single-class rule;
-rules/subracelevels.h; the R324 audit (census 251). The
+rules/ua/subracelevels.h; the R324 audit (census 251). The
 leveling wiring CLOSED R325: the
-level-up fold (rules/subracecap.h;
+level-up fold (rules/ua/subracecap.h;
 uaLevelCap at the gainXp queue and
 the trainer, the uaSubrace field
 with its save line; the R325 audit,
@@ -148,7 +148,7 @@ fold; the R326 audit, census 253.
       ancestries with the grugach
       no-instances read; the halfling
       strains with the mixed-blood
-      stout read - rules/subraces.h.
+      stout read - rules/ua/subraces.h.
 - [x] **The Racial Preferences matrix**
       (p. 12) - CLOSED R323: the 17x17
       letter matrix (the P/G/T/N/A/H
@@ -157,7 +157,7 @@ fold; the R326 audit, census 253.
       half-elf footnote (elves react as
       the worse of half-elf or the
       ancestor) named for the caller;
-      rules/subraces.h; pin-only until
+      rules/ua/subraces.h; pin-only until
       the reaction site exists.
 
 ### Character classes (pp. 12-25)
@@ -170,7 +170,7 @@ fold; the R326 audit, census 253.
       and weapons permitted per class,
       with the cavalier/paladin station
       notes) - CLOSED R327: the pin round
-      (rules/classtables.h): the
+      (rules/ua/classtables.h): the
       hit-die column with the two-dice
       first levels, the note-1
       social-standing generators (3d4+1
@@ -255,7 +255,7 @@ fold; the R326 audit, census 253.
       ceremony, the revocation read - the
       weapons of choice survive it).
       - CLOSED R328: the pin round
-      (rules/cavalier.h): the minima,
+      (rules/ua/cavalier.h): the minima,
       the good-alignment gate, the
       0-level track, the race gate,
       the weapons-of-choice ladder
@@ -305,7 +305,7 @@ fold; the R326 audit, census 253.
       75); paladins take no weapon
       specialization.
       - CLOSED R329: the pin round
-      (rules/paladin.h): the
+      (rules/ua/paladin.h): the
       re-parenting (cavalier
       sub-class, no longer
       fighter), the minima (the
@@ -332,7 +332,7 @@ fold; the R326 audit, census 253.
       conjuring tables (the fire/earth/
       water/air dice rows).
       - CLOSED R330: the pin round
-      (rules/hierophant.h): the
+      (rules/ua/hierophant.h): the
       hierarchy (Great Druid 14th,
       Grand Druid 15th with the
       9 attendants and the 6
@@ -374,7 +374,7 @@ fold; the R326 audit, census 253.
       no pole arms or two-handed sword);
       the bonuses are not magical.
       - AMENDED R393: closed - the R331
-      pin (rules/weaponspec.h); the R393
+      pin (rules/ua/weaponspec.h); the R393
       clean PDF read fills all 24 table
       cells (the six fragment cells
       seam-agree row for row) and pins
@@ -414,7 +414,7 @@ fold; the R326 audit, census 253.
       small craft paddled and rowed,
       sound imitation, snare building).
       - CLOSED R332: the pin round
-      (rules/barbarian.h) - the
+      (rules/ua/barbarian.h) - the
       requirements and the wisdom
       maximum, Barbarians Table I, the
       magic detestation, the natural
@@ -452,7 +452,7 @@ fold; the R326 audit, census 253.
       **Attacks Per Melee Round Table**
       (p. 22) pairs with it.
       - AMENDED R393: closed - the R334
-      pin (rules/thiefarmor.h); the R393
+      pin (rules/ua/thiefarmor.h); the R393
       clean PDF read fills the Open Locks
       cells (0/-5/-10), the no-armor
       dashes, the attacks high-band rate
@@ -477,7 +477,7 @@ fold; the R326 audit, census 253.
       recovery bands); the evasion 60
       percent cap.
       - CLOSED R335: the pin round
-        (rules/acrobat.h) - the split
+        (rules/ua/acrobat.h) - the split
         class at 6th, the Function
         Table columns (the tumbling
         attack and evasion ladders
@@ -495,7 +495,7 @@ fold; the R326 audit, census 253.
 - [x] **Money for cavaliers** (p. 25) -
       the starting gear by social class.
       - CLOSED R336: the pin round
-        (rules/cavmoney.h) - the six
+        (rules/ua/cavmoney.h) - the six
         stations in social-ladder
         order, the gold ranges, the
         printed formulas verified
@@ -1359,7 +1359,7 @@ the gateway charge.
         open' tails are the superseded
         strata.
 
-      closed (rules/cantriptier.h);
+      closed (rules/ua/cantriptier.h);
       the clean p. 30 read confirms
       the roster (Tangle reversed row
       9, Tweak personal row 9, 66
@@ -1683,7 +1683,7 @@ the gateway charge.
         are pinned.
       - AMENDED R401: the cantrip
         tier seam CLOSED
-        (rules/cantriptier.h) - the
+        (rules/ua/cantriptier.h) - the
         tier gate drops; the box
         stays open only on the
         casting-time fraction holes
@@ -3010,36 +3010,36 @@ section own index, one item each:
         seam; the R392 clean p. 26 print agrees row for row
 - [x] Attacks Per Melee Round Table (p.
       22).
-      - AMENDED R392: closed - the R334 bands (rules/thiefarmor.h);
+      - AMENDED R392: closed - the R334 bands (rules/ua/thiefarmor.h);
         the R392 clean print confirms
 - [x] Barbarians (Fighters) Table I (p.
       19).
-      - AMENDED R392: closed - the R332 pin (rules/barbarian.h)
+      - AMENDED R392: closed - the R332 pin (rules/ua/barbarian.h)
 - [x] Cavaliers Table I (p. 15).
       - AMENDED R392: closed - the R368 pin (rules/ua/uacavtable.h)
 - [x] Character Class Limitations
       (Character Race Table I) (p. 7).
-      - AMENDED R392: closed - the R323 pin (rules/subraces.h)
+      - AMENDED R392: closed - the R323 pin (rules/ua/subraces.h)
 - [x] Character Level Limitations
       (Character Race Table II) (pp.
       8-9, the six sub-tables).
-      - AMENDED R392: closed - the R324 pin (rules/subracelevels.h)
+      - AMENDED R392: closed - the R324 pin (rules/ua/subracelevels.h)
 - [x] Character Hit Dice, Spell Ability,
       Class Level Limit (Character
       Classes Table I) (p. 12).
-      - AMENDED R392: closed - the R327 pin (rules/classtables.h)
+      - AMENDED R392: closed - the R327 pin (rules/ua/classtables.h)
 - [x] Character Armor and Weapons
       Permitted (Character Classes Table
       II) (p. 13).
-      - AMENDED R392: closed - the R327 pin (rules/classtables.h)
+      - AMENDED R392: closed - the R327 pin (rules/ua/classtables.h)
 - [x] Druids (Clerics) Table I (p. 17).
-      - AMENDED R392: closed - the R330 pin (rules/hierophant.h)
+      - AMENDED R392: closed - the R330 pin (rules/ua/hierophant.h)
 - [x] Equipment and Supplies Costs (p.
       26).
       - AMENDED R392: PINNED R392 (rules/ua/uaequip26.h) - the clean p.
         26 print, four armor rows plus 19 arms rows, no holes
 - [x] Racial Preferences Table (p. 12).
-      - AMENDED R392: closed - the R323 pin (rules/subraces.h)
+      - AMENDED R392: closed - the R323 pin (rules/ua/subraces.h)
 - [x] Spell Tables (pp. 28-31): clerics
       28-29, druids 29, magic-users
       30-31, illusionists 31.
@@ -3047,13 +3047,13 @@ section own index, one item each:
         spell-table rounds)
 - [x] Thief-Acrobat Function Table (p.
       24).
-      - AMENDED R392: closed - the R335 pin (rules/acrobat.h)
+      - AMENDED R392: closed - the R335 pin (rules/ua/acrobat.h)
 - [x] Thief-Acrobat Table I (p. 23),
       Table II (p. 25), Table III (p.
       25), Table IV (p. 25).
-      - AMENDED R392: closed - the R335 pin (rules/acrobat.h)
+      - AMENDED R392: closed - the R335 pin (rules/ua/acrobat.h)
 - [x] Thieves Table II (p. 22).
-      - AMENDED R392: closed - the R334 pin (rules/thiefarmor.h)
+      - AMENDED R392: closed - the R334 pin (rules/ua/thiefarmor.h)
 - [x] Weapon Proficiency Table (p. 26).
       - AMENDED R392: closed - the R339 pin (rules/ua/uaprof.h); the R392
         clean read fills every hole (the cavalier penalty 3, the
@@ -3061,7 +3061,7 @@ section own index, one item each:
         3) and recovers the facing-page notes in full
 - [x] Weapon Specialization Table for
       Fighters and Rangers (p. 18).
-      - AMENDED R392: closed - the R331 pin (rules/weaponspec.h)
+      - AMENDED R392: closed - the R331 pin (rules/ua/weaponspec.h)
 - [x] Weapons, Weight and Damage by
       Type (p. 26).
       - AMENDED R392: closed - the R337 pin (rules/ua/uaweapontable.h);
@@ -3147,14 +3147,14 @@ the items named with it. A seam round
 lands before the items it gates.
 
 - [x] The subrace layer - CLOSED R323
-      (rules/subraces.h; the R323 seam
+      (rules/ua/subraces.h; the R323 seam
       audit, census 250). Race Table
       II and the wiring (the race
       selection site, the R117
       reactions) remain its open
       dependents.
 - [x] The cantrip tier seam -
-      CLOSED R401 (rules/cantriptier.h;
+      CLOSED R401 (rules/ua/cantriptier.h;
       the R401 seam audit, census 328):
       the p. 45 tier traits, the 0-level
       per-day ladder by xp band, the

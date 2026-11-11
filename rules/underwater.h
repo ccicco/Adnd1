@@ -8,7 +8,7 @@
 // terms, the underwater movement, vision and
 // combat. The underwater spell use lists and
 // the fire and electrical facts ride R168
-// (rules/uwspells.h) - this header does not
+// (rules/dmg/uwspells.h) - this header does not
 // re-pin them.
 //
 // The surface swim: swimming impossible in any

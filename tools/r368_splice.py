@@ -160,7 +160,7 @@ else:
 //
 // Pin-era pattern (R322): pinned data only - no engine
 // site exists. Cross-checks the landed R328 seam
-// (rules/cavalier.h - the XP ladder and the known
+// (rules/ua/cavalier.h - the XP ladder and the known
 // title cells) and the R327 d10 hit die.
 //
 // JUDGMENTs (the decode method):
@@ -677,8 +677,8 @@ assert s.count(
 assert s.count(
     '#include "rules/ua/uacavtable.h"'
 ) == 1, 'd new include'
-for h in ('rules/cavalier.h',
-        'rules/classtables.h',
+for h in ('rules/ua/cavalier.h',
+        'rules/ua/classtables.h',
         'rules/ua/uabirth.h',
         'rules/ua/uasocialclass.h',
         'rules/ua/uaspellbooks.h',

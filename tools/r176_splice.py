@@ -276,12 +276,12 @@ p5_new = NL.join([
 
 # ---- (6) the gap report header round note + census ----
 p6_old = NL.join([
-    '0 (the printed dash). rules/dmg_appendices_klm.h; the R175',
+    '0 (the printed dash). rules/dmg/dmg_appendices_klm.h; the R175',
     'battery audit carries the cell-by-cell check.',
     'Census 93.',
 ])
 p6_new = NL.join([
-    '0 (the printed dash). rules/dmg_appendices_klm.h; the R175',
+    '0 (the printed dash). rules/dmg/dmg_appendices_klm.h; the R175',
     'battery audit carries the cell-by-cell check.',
     'R176 PINNED the printed XP tables (PHB pp.20-31',
     'class tables) - the R162 FINDING closed: the PHB',

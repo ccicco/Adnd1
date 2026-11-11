@@ -27,7 +27,7 @@
 # percentile once per delve (success pays
 # the coins cache).
 #
-#   (a) rules/thieffunc.h - the wiring-arc
+#   (a) rules/phb/thieffunc.h - the wiring-arc
 #       head amended and the seven site
 #       pins (the hide note, the wander
 #       pass, the climb note, the haul turn,
@@ -104,7 +104,7 @@ def clean(s, limit, allow_apos=False):
         assert all(ord(c) < 128 for c in ln), 'non-ascii line'
         assert len(ln) <= limit, 'line too long: ' + ln
 
-# ---- (a) rules/thieffunc.h: the head + the pins ----
+# ---- (a) rules/phb/thieffunc.h: the head + the pins ----
 TF_HEAD_OLD = NL.join([
     '// street site; the others wait for engine',
     '// sites that do not exist yet.',
@@ -184,7 +184,7 @@ for t in (TF_HEAD_OLD, TF_HEAD_NEW, TF_PINS,
           TF_CLOSE_OLD, TF_CLOSE_NEW):
     clean(t, 78)
 
-p = 'rules/thieffunc.h'
+p = 'rules/phb/thieffunc.h'
 s = rd(p)
 if 'thfNoteHideObserved' in s:
     already.append('thieffunc.h: the head + the pins')
@@ -1178,7 +1178,7 @@ GR_BOX = NL.join([
     '- [x] **The thief functions wired - WIRED',
     '      R306:** the last three take-table',
     '      columns gain their engine sites.',
-    '      rules/thieffunc.h grows the site pins:',
+    '      rules/phb/thieffunc.h grows the site pins:',
     '      the observed-hide note (the DMG',
     '      commentary print - never under direct',
     '      observation; the engine runs',

@@ -953,8 +953,8 @@ assert s.count(
     '#include "rules/ua/uafollowers.h"'
 ) == 1, 'd new include'
 for h in (
-        'rules/cavalier.h',
-        'rules/classtables.h',
+        'rules/ua/cavalier.h',
+        'rules/ua/classtables.h',
         'rules/ua/uabirth.h',
         'rules/ua/uasocialclass.h',
         'rules/ua/uaspellbooks.h',
@@ -965,8 +965,8 @@ for h in (
         'rules/ua/uacantacq.h',
         'rules/ua/uasmalls1.h',
         'rules/ua/uailacquisition.h',
-        'rules/thiefarmor.h',
-        'rules/armorratings.h'):
+        'rules/ua/thiefarmor.h',
+        'rules/phb/armorratings.h'):
     assert s.count(
         '#include "' + h + '"'
         ) == 1, 'd kept include'

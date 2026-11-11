@@ -31,7 +31,7 @@
 # (dm/treasure.cpp kPotions, bands 01-26, fire
 # resistance from 27) - cross-checked against the
 # R221 potions.h pins in the audit.
-# Patches: 4 (new rules/potionsprose.h, the regtest
+# Patches: 4 (new rules/dmg/potionsprose.h, the regtest
 # include, the audit block, the dmg-gap-report log
 # entry). Census 167 -> 168.
 #
@@ -39,7 +39,7 @@
 
 import sys
 
-WD   = 'rules/potionsprose.h'
+WD   = 'rules/dmg/potionsprose.h'
 REG  = 'regtest.cpp'
 GAP  = 'tools/dmg_gap_report.md'
 
@@ -57,7 +57,7 @@ if t.count('audit: bad ') != 167 and t.count('audit: bad ') != 168:
 # ---- the new header ----
 hdr_lines = [
     '// ====================================================================',
-    '// Adnd1 - rules/potionsprose.h',
+    '// Adnd1 - rules/dmg/potionsprose.h',
     '// R249: the III.A potions explanation prose',
     '// pins, part 1 (DMG pp.133-134) - the general',
     '// conventions and the FIRST NINE potion',
@@ -421,11 +421,11 @@ hdr_text = NL.join(hdr_lines) + NL
 
 # ---- the regtest include ----
 inc_old = [
-    '#include "rules/wonder.h"  // R248: p.145 the III.D wand of wonder effect table pins',
+    '#include "rules/dmg/wonder.h"  // R248: p.145 the III.D wand of wonder effect table pins',
 ]
 inc_new = [
-    '#include "rules/wonder.h"  // R248: p.145 the III.D wand of wonder effect table pins',
-    '#include "rules/potionsprose.h"  // R249: pp.133-134 the III.A potions prose part 1 pins',
+    '#include "rules/dmg/wonder.h"  // R248: p.145 the III.D wand of wonder effect table pins',
+    '#include "rules/dmg/potionsprose.h"  // R249: pp.133-134 the III.A potions prose part 1 pins',
 ]
 
 # ---- the regtest audit block ----
@@ -567,7 +567,7 @@ gap_new = [
     'book running page headers, not',
     'tables - the III.A/B/C tables were',
     'pinned by R122/R221-R224 long ago.',
-    'rules/potionsprose.h (the grenade.h',
+    'rules/dmg/potionsprose.h (the grenade.h',
     'pattern, pot prefix - distinct from',
     'the R221 potion prefix - 56',
     'accessors, of which 5 are array',
@@ -627,7 +627,7 @@ try:
     if marker in t:
         already += 1
     else:
-        print('R249 FAIL: rules/potionsprose.h exists without the marker')
+        print('R249 FAIL: rules/dmg/potionsprose.h exists without the marker')
         sys.exit(1)
 except IOError:
     with open(WD, 'w') as f:
@@ -667,7 +667,7 @@ if applied + already == 4:
     if t.count('R249 potions prose part 1 pins audit') != 1:
         print('R249 FAIL: the R249 audit line must appear once')
         sys.exit(1)
-    if t.count('rules/potionsprose.h') != 1:
+    if t.count('rules/dmg/potionsprose.h') != 1:
         print('R249 FAIL: the potionsprose include must appear once')
         sys.exit(1)
     g = open(GAP).read()

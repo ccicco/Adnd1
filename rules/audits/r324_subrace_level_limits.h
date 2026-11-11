@@ -1,6 +1,6 @@
     // ---- R324: the Race Table II audit ----
     // The UA level-limit sub-tables
-    // (rules/subracelevels.h): the six
+    // (rules/ua/subracelevels.h): the six
     // sub-tables, 47 columns, the
     // footnoted ability gates, the
     // escalation riders, the +2

@@ -68,14 +68,14 @@ assert s.count('## Knowledge maintenance') == 1, \
     'a maint'
 assert len(applied) + len(already) == 1, 'a count'
 
-# ---- (b) NEW rules/thiefarmor.h ----
-TA = 'rules/thiefarmor.h'
+# ---- (b) NEW rules/ua/thiefarmor.h ----
+TA = 'rules/ua/thiefarmor.h'
 if os.path.exists(TA) and 'R334' in rd(TA):
     already.append('thiefarmor.h: the pins')
 else:
     HDR = NL.join([
     '// ===========================================================================',
-    '// Adnd1 - rules/thiefarmor.h',
+    '// Adnd1 - rules/ua/thiefarmor.h',
     '// The UA Thieves Table II (p. 22) pins (R334) - the effects of',
     '// armor on thief functions, plus the paired Attacks Per Melee',
     '// Round Table.',
@@ -365,7 +365,7 @@ else:
     assert s.count(TAIL_OLD) == 1, 'c tail'
     NOTE = NL.join([
     '      - R334: the fragment-verified',
-    '      cells pinned (rules/thiefarmor.h)',
+    '      cells pinned (rules/ua/thiefarmor.h)',
     '      - the armor columns, the eight',
     '      functions, the sign-carries-',
     '      column decode, the footnotes,',
@@ -403,7 +403,7 @@ else:
                 '  // R333: the UA ranger expansion')
     INC_NEW = NL.join([
     INC_ANCH,
-    '#include "rules/thiefarmor.h"'
+    '#include "rules/ua/thiefarmor.h"'
     '  // R334: the UA thief armor and attacks',
     ])
     AUD_ANCH = ('    // ---- R227: the wis mental'
@@ -638,7 +638,7 @@ assert s.count(
     'd r332 kept'
 assert s.count('R227: the wis mental save') == 1, \
     'd r227 kept'
-assert s.count('#include "rules/thiefarmor.h"') == 1, \
+assert s.count('#include "rules/ua/thiefarmor.h"') == 1, \
     'd include'
 assert len(applied) + len(already) == 4, 'd count'
 

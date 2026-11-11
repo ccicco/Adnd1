@@ -17,7 +17,7 @@
 # columns) with the 25% friendly-fight rule
 # and the weak-leader-plus-officers
 # impossibility. Patches: 4 (new
-# rules/hirecost.h, regtest include, audit
+# rules/dmg/hirecost.h, regtest include, audit
 # block, gap-report log entry). Census
 # 127 -> 128.
 
@@ -64,12 +64,12 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/hirecost.h - the new header
+# Patch 1: rules/dmg/hirecost.h - the new header
 # ---------------------------------------------------------------------------
 
 hdr_lines = [
 '// ====================================================================',
-'// Adnd1 - rules/hirecost.h',
+'// Adnd1 - rules/dmg/hirecost.h',
 '// R212: hiring NPCs to cast spells and',
 '// the use of non-human troops (DMG',
 '// pp.116-118) - the cleric spell hire',
@@ -425,7 +425,7 @@ hdr_lines = [
 ]
 hdr = NL.join(hdr_lines) + NL
 
-patch('rules/hirecost.h',
+patch('rules/dmg/hirecost.h',
       'R212: hiring NPCs to cast spells and',
       None,
       hdr)
@@ -436,10 +436,10 @@ patch('rules/hirecost.h',
 # Patch 2: regtest.cpp - the include
 # ---------------------------------------------------------------------------
 
-old2 = '#include "rules/npcbody.h"  // R211: pp.115-116 height, weight, languages'
+old2 = '#include "rules/dmg/npcbody.h"  // R211: pp.115-116 height, weight, languages'
 
-new2 = ('#include "rules/npcbody.h"  // R211: pp.115-116 height, weight, languages'
-        + NL + '#include "rules/hirecost.h"  // R212: pp.116-118 hire spell costs, troop control')
+new2 = ('#include "rules/dmg/npcbody.h"  // R211: pp.115-116 height, weight, languages'
+        + NL + '#include "rules/dmg/hirecost.h"  // R212: pp.116-118 hire spell costs, troop control')
 
 patch('regtest.cpp',
       'R212: pp.116-118 hire spell costs, troop control',
@@ -644,7 +644,7 @@ log_lines = [
 'R212 landed the NPC hire spell prices',
 'and the non-human troop control table',
 '(DMG pp.116-118) - a seam with zero',
-'prior coverage. rules/hirecost.h (the',
+'prior coverage. rules/dmg/hirecost.h (the',
 'grenade.h pattern): the 40 cleric spell',
 'hire prices (the 18-row first table',
 'astral spell through earthquake plus',

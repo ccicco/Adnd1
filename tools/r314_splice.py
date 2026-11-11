@@ -33,7 +33,7 @@
 #       scenario 4 - a member with NO
 #       ranged weapon - still reads the
 #       bar); the throw stays barred.
-#   (e) rules/uwfight.h - the R314 seam
+#   (e) rules/dmg/uwfight.h - the R314 seam
 #       pins (uwAquaticFirstStrikeSegment,
 #       uwCompanyEarliestSegment,
 #       uwWaterborneIsAquatic,
@@ -350,7 +350,7 @@ _o, _c, _o2, _c2 = counts(s)
 assert _o == _c and _o2 == _c2, 'patch d balance'
 assert len(applied) + len(already) == 4, 'patch d count wrong'
 
-# ---- (e) rules/uwfight.h: the R314 pins ----
+# ---- (e) rules/dmg/uwfight.h: the R314 pins ----
 UF_C1_OLD = NL.join([
     '// impossible except the specially-made',
     '// crossbow (10x price, half the dungeon',
@@ -446,7 +446,7 @@ for _t in (UF_C1_OLD, UF_C1_NEW, UF_C2_OLD, UF_C2_NEW,
     clean(_t, 78)
     assert Q not in _t, 'apostrophe in uwfight content'
 
-p = 'rules/uwfight.h'
+p = 'rules/dmg/uwfight.h'
 s = rd(p)
 if 'uwAquaticFirstStrikeSegment' in s:
     already.append('uwfight.h: the R314 pins')
@@ -543,7 +543,7 @@ AC_NEW = NL.join([
     '    // significantly longer; no reach layer',
     '    // exists, so the exception reads data',
     '    // and the fold floors the segments',
-    '    // (rules/uwfight.h).',
+    '    // (rules/dmg/uwfight.h).',
     '    if (m_waterFight && m_aquatic &&',
     '        rules::uwAquaticFirstStrike()) {',
     '        baseSegM = mSurp +',
@@ -681,7 +681,7 @@ RT_NEXT = NL.join([
 RT_AUD_A = NL.join(
     ['    // ---- R314a: the crossbow and the aquatic',
      '    // first strike seam audit ----',
-     '    // The R314 pins (rules/uwfight.h, the',
+     '    // The R314 pins (rules/dmg/uwfight.h, the',
      '    // grenade.h pattern): the deep crossbow',
      '    // (the R311 specially-made crossbow -',
      '    // the missile bar lifts for it alone),',

@@ -15,7 +15,7 @@
   "  Dragon Magazine walk (issue #1, folios 9-10,",
   "  30, 19). THE SHAPE: prefix drg (full-repo",
   "  scan clean - dgn was TAKEN by rules/oa/oayakuza.h,",
-  "  the R856 catch held), header rules/drg.h",
+  "  the R856 catch held), header rules/dragon/issue001_small_variants.h",
   "  (16 inline), audit \"R888 Dragon small",
   "  variants audit\" at rules/audits/r888_batch.h,",
   "  8 consts + 8 bools, 11 examples, 3",
@@ -52,7 +52,7 @@
   "  8=two-colors) with the Round B gap box flip",
   "  -> 2 closed / 1 open. WAIT FOR GO."
  ],
- "include_after": "#include \"rules/drg.h\"  // R888: the Dragon small-variant set",
+ "include_after": "#include \"rules/dragon/issue001_small_variants.h\"  // R888: the Dragon small-variant set",
  "include_comment": "the Aronson illusionist deltas",
  "header_file": "rules/dragon/aronson_illusionist_deltas.h",
  "audit_file": "rules/audits/r889_batch.h",
