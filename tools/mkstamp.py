@@ -21,9 +21,12 @@ STAIR READABILITY (v2 - what makes a flight read as stairs, not stripes):
   - DEPTH GRADIENT: a gentle global brightness ramp along the whole run -
     the top of the staircase is lighter than the bottom (depth_shade
     spread, default 0.26).
-  - LANDING LIPS: each landing's flight band gets a light edge shadow
-    (lip_px, lip_shade) on both edges of the band, so platforms read as
-    framed platforms, not texture patches.
+  - LANDINGS ARE FULL-SQUARE PLATFORMS (v2.2, per his Gemini-reference
+    ruling): a landing occupies its ENTIRE square of the same tread wood
+    (horizontal grain), framed by a dark trim ring (lip_px wide, trim_shade
+    brightness) around all four sides - not a flight band crossing the
+    square. No step edge where a flight meets the platform. Legacy band
+    mode available via compose "landing_mode": "band".
 
 GEOMETRY GUIDE MODE (--guide PATH, v2.1): for image-to-image generation -
 generators paint texture well but cannot follow lattice geometry in prose,
@@ -128,7 +131,9 @@ def main():
     RISER = comp.get("riser_shade", 0.42)          # riser face brightness
     DEPTH = comp.get("depth_shade", 0.26)          # top-light/bottom-dark spread
     LIP_PX = comp.get("lip_px", 3)
-    LIP = comp.get("lip_shade", 0.72)
+    LIP = comp.get("lip_shade", 0.72)          # legacy band-mode edge shade
+    TRIM = comp.get("trim_shade", 0.55)        # landing platform trim ring
+    LANDING = comp.get("landing_mode", "full_square")
 
     squares = []
     segments = []
@@ -161,11 +166,6 @@ def main():
             px = (sx - x0sq) * T
             py = (sy - y0sq) * T
             is_landing = (sx, sy) in landings
-            if is_landing:
-                if ew:
-                    b0 = (T - BAND) // 2
-                else:
-                    b0 = (T - BAND) // 2
             for yy in range(T):
                 for xx in range(T):
                     if seg["dir"] == "E":
@@ -179,15 +179,26 @@ def main():
                     a = travel + o
                     cx, cy = px + xx, py + yy
                     if is_landing:
-                        pos = xx if ew else yy
-                        if b0 <= pos < b0 + BAND:
-                            edge = min(pos - b0, b0 + BAND - 1 - pos)
-                            cls[cy][cx] = C_LLIP if edge < LIP_PX else C_LBAND
+                        if LANDING == "band":
+                            pos = xx if ew else yy
+                            b0 = (T - BAND) // 2
+                            if b0 <= pos < b0 + BAND:
+                                edge = min(pos - b0, b0 + BAND - 1 - pos)
+                                cls[cy][cx] = C_LLIP if edge < LIP_PX else C_LBAND
+                            else:
+                                cls[cy][cx] = C_FLOOR
                         else:
-                            cls[cy][cx] = C_FLOOR
+                            # full-square platform: trim ring on all four sides
+                            edge = min(xx, yy, T - 1 - xx, T - 1 - yy)
+                            cls[cy][cx] = C_LLIP if edge < LIP_PX else C_LBAND
                     else:
                         cls[cy][cx] = C_RISER if a % PITCH >= TREADP else C_TREAD
-                    grain[cy][cx] = 0 if ew else 1
+                    # landings use horizontal-grain planks (his reference);
+                    # flights use the grain that matches their travel axis
+                    if is_landing:
+                        grain[cy][cx] = 0
+                    else:
+                        grain[cy][cx] = 0 if ew else 1
                     atr[cy][cx] = a
             travel += T
 
@@ -241,7 +252,7 @@ def main():
                 if c == C_RISER:
                     f *= RISER
                 elif c == C_LLIP:
-                    f *= LIP
+                    f *= TRIM
                 r, g, b = int(tile[o]*f), int(tile[o+1]*f), int(tile[o+2]*f)
             off = (y * W + x) * 4
             canvas[off] = r; canvas[off+1] = g; canvas[off+2] = b; canvas[off+3] = 255
