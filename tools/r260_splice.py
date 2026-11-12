@@ -34,10 +34,10 @@ def wr(p, s):
     f.write(s)
     f.close()
 
-# ---- patch 1: rules/dmg/miscmagic_explanation_part4.h ----
+# ---- patch 1: rules/dmg/miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.h ----
 HDR = [
     '// ====================================================================',
-    '// Adnd1 - rules/dmg/miscmagic_explanation_part4.h',
+    '// Adnd1 - rules/dmg/miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.h',
     '// R260: the III.E misc magic explanation prose part 4',
     '// (DMG p.132) - Bowl Commanding Water Elementals',
     '// through Bucknard Everfull Purse, part2 lines',
@@ -353,7 +353,7 @@ HDR = [
     '} // namespace rules',
     '',
 ]
-P1 = 'rules/dmg/miscmagic_explanation_part4.h'
+P1 = 'rules/dmg/miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.h'
 if os.path.exists(os.path.join(ROOT, P1)):
     already += 1
     assert rd(P1) == NL.join(HDR), P1 + ' exists but differs'
@@ -365,9 +365,9 @@ assert rd(P1).count(
     'R260: the III.E misc magic explanation prose part 4') == 1
 
 # ---- patch 2: the regtest include ----
-INC_OLD = ('#include "rules/dmg/miscmagic_explanation_part3.h"  // R259: the III.E misc'
+INC_OLD = ('#include "rules/dmg/miscmagic_book_of_infinite_spells_to_boots_of_striding_and_springing.h"  // R259: the III.E misc'
            ' magic explanation prose part 3 pins')
-INC_NEW = ('#include "rules/dmg/miscmagic_explanation_part4.h"  // R260: the III.E misc'
+INC_NEW = ('#include "rules/dmg/miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.h"  // R260: the III.E misc'
            ' magic explanation prose part 4 pins')
 RG = rd('regtest.cpp')
 if INC_NEW in RG:
@@ -588,7 +588,7 @@ GAP = [
     'Defense AC table from',
     'Bracers of Defenselessness -',
     'no mid-sentence seam this',
-    'time. rules/dmg/miscmagic_explanation_part4.h',
+    'time. rules/dmg/miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.h',
     '(the mmp prefix again, 53',
     'accessors: 48 scalars + 5',
     'array walkers, no name',

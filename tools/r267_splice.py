@@ -35,11 +35,11 @@ def wr(p, s):
     f.write(s)
     f.close()
 
-# ---- patch 1: rules/dmg/miscmagic_explanation_part11.h ----
-P1 = 'rules/dmg/miscmagic_explanation_part11.h'
+# ---- patch 1: rules/dmg/miscmagic_flask_of_curses_to_girdle_of_giant_strength.h ----
+P1 = 'rules/dmg/miscmagic_flask_of_curses_to_girdle_of_giant_strength.h'
 HDR = [
     '// ====================================================================',
-    '// Adnd1 - rules/dmg/miscmagic_explanation_part11.h',
+    '// Adnd1 - rules/dmg/miscmagic_flask_of_curses_to_girdle_of_giant_strength.h',
     '// R267: the III.E misc magic explanation prose part 11',
     '// (DMG p.136-137) - Flask of Curses through the Girdle',
     '// of Giant Strength, part2 lines 481-530 (global =',
@@ -456,9 +456,9 @@ assert rd(P1).count(
     'R267: the III.E misc magic explanation prose part 11') == 1
 
 # ---- patch 2: the regtest include ----
-INC_OLD = ('#include "rules/dmg/miscmagic_explanation_part10.h"  // R266: the III.E misc'
+INC_OLD = ('#include "rules/dmg/miscmagic_figurines_of_wondrous_power.h"  // R266: the III.E misc'
            ' magic explanation prose part 10 pins')
-INC_NEW = ('#include "rules/dmg/miscmagic_explanation_part11.h"  // R267: the III.E misc'
+INC_NEW = ('#include "rules/dmg/miscmagic_flask_of_curses_to_girdle_of_giant_strength.h"  // R267: the III.E misc'
            ' magic explanation prose part 11 pins')
 RG = rd('regtest.cpp')
 if INC_NEW in RG:

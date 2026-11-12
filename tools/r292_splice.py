@@ -546,7 +546,7 @@ for fn in sorted(os.listdir(os.path.join(ROOT, 'rules'))):
     pt = open(os.path.join(ROOT, 'rules', fn), encoding='utf-8').read()
     for n in defs:
         assert n not in pt, 'name collision with ' + fn
-s0 = rd('rules/dmg/specart_explanation_part2.h')
+s0 = rd('rules/dmg/specart_axe_of_the_dwarvish_lords_to_codex.h')
 assert 'sapNightingalePowerCount' in s0, 'specartprose2.h missing the R291 accessors'
 assert 'sapOrbMightPowerCount' in s0, 'specartprose2.h missing the R290 accessors'
 assert 'sapOrbGreatSerpentPowerCount' in s0, 'specartprose2.h missing the R289 accessors'
@@ -575,8 +575,8 @@ for frag in ('part 13', 'The Rod of Seven Parts',
              '1677-1707', 'No break absorbed'):
     assert any(frag in el for el in AUDIT), 'audit frag not contiguous: ' + frag
 
-# ---- patch 1: extend rules/dmg/specart_explanation_part2.h ----
-p = 'rules/dmg/specart_explanation_part2.h'
+# ---- patch 1: extend rules/dmg/specart_axe_of_the_dwarvish_lords_to_codex.h ----
+p = 'rules/dmg/specart_axe_of_the_dwarvish_lords_to_codex.h'
 s = rd(p)
 mark = 'inline int sapRodWindDukesMadeIt() {'
 if mark in s:

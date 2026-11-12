@@ -414,7 +414,7 @@ for fn in sorted(os.listdir(os.path.join(ROOT, 'rules'))):
     pt = open(os.path.join(ROOT, 'rules', fn), encoding='utf-8').read()
     for n in defs:
         assert n not in pt, 'name collision with ' + fn
-s0 = rd('rules/dmg/specart_explanation_part2.h')
+s0 = rd('rules/dmg/specart_axe_of_the_dwarvish_lords_to_codex.h')
 assert 'sapCodexPowerCount' in s0, 'specartprose2.h missing the R281 accessors'
 assert s0.count('}  // namespace rules') == 1, 'namespace close not unique'
 for grp in (CROWN, AUDIT, GAP):
@@ -440,8 +440,8 @@ for frag in ('Crown of Might', '1237-1268', 'No seam',
              'DMG p.160'):
     assert any(frag in el for el in AUDIT), 'audit frag not contiguous: ' + frag
 
-# ---- patch 1: extend rules/dmg/specart_explanation_part2.h ----
-p = 'rules/dmg/specart_explanation_part2.h'
+# ---- patch 1: extend rules/dmg/specart_axe_of_the_dwarvish_lords_to_codex.h ----
+p = 'rules/dmg/specart_axe_of_the_dwarvish_lords_to_codex.h'
 s = rd(p)
 mark = 'inline int sapCrownRegaliaSetCount() {'
 if mark in s:

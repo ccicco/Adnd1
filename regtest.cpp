@@ -778,43 +778,43 @@
 #include "rules/dmg/armorshield.h"  // R241: p.129-130 the III.F armor and shield pins
 #include "rules/dmg/swords.h"  // R242: p.131 the III.G swords pins
 #include "rules/dmg/mweapons.h"  // R243: p.131-132 the III.H misc weapons pins
-#include "rules/dmg/rods_explanation.h"  // R244: pp.141-142 the III.D rods prose pins
-#include "rules/dmg/staves_explanation.h"  // R245: pp.142-143 the III.D staves prose pins
-#include "rules/dmg/wands_explanation_part1.h"  // R246: pp.143-144 the III.D wands prose pins
-#include "rules/dmg/wands_explanation_part2.h"  // R247: pp.144-145 the III.D wands prose part 2 pins
+#include "rules/dmg/rods_absorption_to_smiting.h"  // R244: pp.141-142 the III.D rods prose pins
+#include "rules/dmg/staves_command_to_withering.h"  // R245: pp.142-143 the III.D staves prose pins
+#include "rules/dmg/wands_conventions_conjuration_to_fear.h"  // R246: pp.143-144 the III.D wands prose pins
+#include "rules/dmg/wands_illumination_to_secret_door_and_trap_location.h"  // R247: pp.144-145 the III.D wands prose part 2 pins
 #include "rules/dmg/wonder.h"  // R248: p.145 the III.D wand of wonder effect table pins
-#include "rules/dmg/potions_explanation_part1.h"  // R249: pp.133-134 the III.A potions prose part 1 pins
-#include "rules/dmg/potions_explanation_part2.h"  // R250: pp.134-136 the III.A potions prose part 2 pins
-#include "rules/dmg/potions_explanation_part3.h"  // R251: pp.136-137 the III.A potions prose part 3 pins
-#include "rules/dmg/scrolls_explanation.h"  // R252: pp.137-139 the III.B scrolls explanation prose pins
-#include "rules/dmg/rings_explanation_part1.h"  // R253: pp.137-138 the III.C rings explanation prose part 1 pins
-#include "rules/dmg/rings_explanation_part2.h"  // R254: pp.138-139 the III.C rings explanation prose part 2 pins
-#include "rules/dmg/rings_explanation_part3.h"  // R256: pp.139-140 the III.C rings explanation prose part 3 pins
-#include "rules/dmg/miscmagic_explanation_part1.h"  // R257: the III.E misc magic explanation prose part 1 pins
-#include "rules/dmg/miscmagic_explanation_part2.h"  // R258: the III.E misc magic explanation prose part 2 pins
-#include "rules/dmg/miscmagic_explanation_part3.h"  // R259: the III.E misc magic explanation prose part 3 pins
-#include "rules/dmg/miscmagic_explanation_part4.h"  // R260: the III.E misc magic explanation prose part 4 pins
-#include "rules/dmg/miscmagic_explanation_part5.h"  // R261: the III.E misc magic explanation prose part 5 pins
-#include "rules/dmg/miscmagic_explanation_part6.h"  // R262: the III.E misc magic explanation prose part 6 pins
-#include "rules/dmg/miscmagic_explanation_part7.h"  // R263: the III.E misc magic explanation prose part 7 pins
-#include "rules/dmg/miscmagic_explanation_part8.h"  // R264: the III.E misc magic explanation prose part 8 pins
-#include "rules/dmg/miscmagic_explanation_part9.h"  // R265: the III.E misc magic explanation prose part 9 pins
-#include "rules/dmg/miscmagic_explanation_part10.h"  // R266: the III.E misc magic explanation prose part 10 pins
-#include "rules/dmg/miscmagic_explanation_part11.h"  // R267: the III.E misc magic explanation prose part 11 pins
-#include "rules/dmg/miscmagic_explanation_part12.h"  // R268: the III.E misc magic explanation prose part 12 pins
-#include "rules/dmg/miscmagic_explanation_part13.h"  // R269: the III.E misc magic explanation prose part 13 pins
-#include "rules/dmg/miscmagic_explanation_part14.h"  // R270: the III.E misc magic explanation prose part 14 pins
-#include "rules/dmg/miscmagic_explanation_part15.h"  // R271: the III.E misc magic explanation prose part 15 pins
-#include "rules/dmg/miscmagic_explanation_part16.h"  // R272: the III.E misc magic explanation prose part 16 pins
-#include "rules/dmg/miscmagic_explanation_part17.h"  // R273: the III.E misc magic explanation prose part 17 pins
-#include "rules/dmg/miscmagic_explanation_part18.h"  // R274: the III.E misc magic explanation prose part 18 pins
-#include "rules/dmg/miscmagic_explanation_part19.h"  // R275: the III.E misc magic explanation prose part 19 pins
-#include "rules/dmg/miscmagic_explanation_part20.h"  // R276: the III.E misc magic explanation prose part 20 pins
-#include "rules/dmg/miscmagic_explanation_part21.h"  // R277: the III.E misc magic explanation prose part 21 pins
-#include "rules/dmg/miscmagic_explanation_part22.h"  // R278: the III.E misc magic explanation prose part 22 pins
-#include "rules/dmg/miscmagic_explanation_part23.h"  // R279: the III.E misc magic explanation prose part 23 pins
-#include "rules/dmg/specart_explanation_part1.h"  // R280: the III.E Special artifacts explanation prose part 1 pins
-#include "rules/dmg/specart_explanation_part2.h"  // R281: the III.E Special artifacts explanation prose part 2 pins
+#include "rules/dmg/potions_conventions_animal_control_to_extra_healing.h"  // R249: pp.133-134 the III.A potions prose part 1 pins
+#include "rules/dmg/potions_fire_resistance_to_invisibility.h"  // R250: pp.134-136 the III.A potions prose part 2 pins
+#include "rules/dmg/potions_invulnerability_to_water_breathing.h"  // R251: pp.136-137 the III.A potions prose part 3 pins
+#include "rules/dmg/scrolls_mechanics_protection_demons_to_undead.h"  // R252: pp.137-139 the III.B scrolls explanation prose pins
+#include "rules/dmg/rings_mechanics_contrariness_to_elemental_command.h"  // R253: pp.137-138 the III.C rings explanation prose part 1 pins
+#include "rules/dmg/rings_feather_falling_to_shooting_stars.h"  // R254: pp.138-139 the III.C rings explanation prose part 2 pins
+#include "rules/dmg/rings_spell_storing_to_x_ray_vision.h"  // R256: pp.139-140 the III.C rings explanation prose part 3 pins
+#include "rules/dmg/miscmagic_alchemy_jug_to_bag_of_devouring.h"  // R257: the III.E misc magic explanation prose part 1 pins
+#include "rules/dmg/miscmagic_bag_of_holding_to_book_of_exalted_deeds.h"  // R258: the III.E misc magic explanation prose part 2 pins
+#include "rules/dmg/miscmagic_book_of_infinite_spells_to_boots_of_striding_and_springing.h"  // R259: the III.E misc magic explanation prose part 3 pins
+#include "rules/dmg/miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.h"  // R260: the III.E misc magic explanation prose part 4 pins
+#include "rules/dmg/miscmagic_candle_of_invocation_to_cloak_of_protection.h"  // R261: the III.E misc magic explanation prose part 5 pins
+#include "rules/dmg/miscmagic_crystal_balls.h"  // R262: the III.E misc magic explanation prose part 6 pins
+#include "rules/dmg/miscmagic_cube_of_force_to_decanter_of_endless_water.h"  // R263: the III.E misc magic explanation prose part 7 pins
+#include "rules/dmg/miscmagic_deck_of_many_things.h"  // R264: the III.E misc magic explanation prose part 8 pins
+#include "rules/dmg/miscmagic_drums_of_deafening_to_eyes_of_petrification.h"  // R265: the III.E misc magic explanation prose part 9 pins
+#include "rules/dmg/miscmagic_figurines_of_wondrous_power.h"  // R266: the III.E misc magic explanation prose part 10 pins
+#include "rules/dmg/miscmagic_flask_of_curses_to_girdle_of_giant_strength.h"  // R267: the III.E misc magic explanation prose part 11 pins
+#include "rules/dmg/miscmagic_helm_of_brilliance_to_horn_of_bubbles.h"  // R268: the III.E misc magic explanation prose part 12 pins
+#include "rules/dmg/miscmagic_horn_of_collapsing_to_incense_of_meditation.h"  // R269: the III.E misc magic explanation prose part 13 pins
+#include "rules/dmg/miscmagic_incense_of_obsession_to_fochlucan_bandore.h"  // R270: the III.E misc magic explanation prose part 14 pins
+#include "rules/dmg/miscmagic_mac_fuirmidh_cittern_to_instrument_type_table.h"  // R271: the III.E misc magic explanation prose part 15 pins
+#include "rules/dmg/miscmagic_iron_flask_to_keoghtoms_ointment.h"  // R272: the III.E misc magic explanation prose part 16 pins
+#include "rules/dmg/miscmagic_librams_lyre_and_manuals.h"  // R273: the III.E misc magic explanation prose part 17 pins
+#include "rules/dmg/miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.h"  // R274: the III.E misc magic explanation prose part 18 pins
+#include "rules/dmg/miscmagic_necklace_of_prayer_beads_to_periapts.h"  // R275: the III.E misc magic explanation prose part 19 pins
+#include "rules/dmg/miscmagic_phylactery_of_faithfulness_to_feather_token.h"  // R276: the III.E misc magic explanation prose part 20 pins
+#include "rules/dmg/miscmagic_robes.h"  // R277: the III.E misc magic explanation prose part 21 pins
+#include "rules/dmg/miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.h"  // R278: the III.E misc magic explanation prose part 22 pins
+#include "rules/dmg/miscmagic_sphere_of_annihilation_to_wings_of_flying.h"  // R279: the III.E misc magic explanation prose part 23 pins
+#include "rules/dmg/specart_notes_on_artifacts_and_relics.h"  // R280: the III.E Special artifacts explanation prose part 1 pins
+#include "rules/dmg/specart_axe_of_the_dwarvish_lords_to_codex.h"  // R281: the III.E Special artifacts explanation prose part 2 pins
 #include "rules/phb/weaponprof.h"  // R297: the PHB Weapon Proficiency Table
 #include "rules/phb/thieffunc.h"  // R298: the thief function take table and DEX Table II
 #include "rules/dmg/locktime.h"  // R304: the DMG lock time pins

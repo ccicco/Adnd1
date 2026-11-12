@@ -14,7 +14,7 @@
 # table-title line 83 is a duplicated header, noted
 # not pinned.
 #
-# New header rules/dmg/miscmagic_explanation_part3.h (the mmp prefix
+# New header rules/dmg/miscmagic_book_of_infinite_spells_to_boots_of_striding_and_springing.h (the mmp prefix
 # again, 76 accessors: 73 scalars + 3 array
 # walkers), the regtest include, the audit block,
 # the dmg-gap-report log.
@@ -23,7 +23,7 @@
 
 import sys
 
-WD   = 'rules/dmg/miscmagic_explanation_part3.h'
+WD   = 'rules/dmg/miscmagic_book_of_infinite_spells_to_boots_of_striding_and_springing.h'
 REG  = 'regtest.cpp'
 GAP  = 'tools/reports/dmg_gap_report.md'
 
@@ -40,7 +40,7 @@ if t.count('audit: bad ') != 176 and t.count('audit: bad ') != 177:
 # ---- the new header ----
 hdr_lines = [
     '// ====================================================================',
-    '// Adnd1 - rules/dmg/miscmagic_explanation_part3.h',
+    '// Adnd1 - rules/dmg/miscmagic_book_of_infinite_spells_to_boots_of_striding_and_springing.h',
     '// R259: the III.E misc magic explanation prose part 3',
     '// pins - part2 lines 67-108, Book of Infinite Spells',
     '// through Boots of Striding and Springing (global line',
@@ -495,11 +495,11 @@ hdr_text = NL.join(hdr_lines) + NL
 
 # ---- the include patch ----
 inc_old = [
-    '#include "rules/dmg/miscmagic_explanation_part2.h"  // R258: the III.E misc magic explanation prose part 2 pins',
+    '#include "rules/dmg/miscmagic_bag_of_holding_to_book_of_exalted_deeds.h"  // R258: the III.E misc magic explanation prose part 2 pins',
 ]
 inc_new = [
-    '#include "rules/dmg/miscmagic_explanation_part2.h"  // R258: the III.E misc magic explanation prose part 2 pins',
-    '#include "rules/dmg/miscmagic_explanation_part3.h"  // R259: the III.E misc magic explanation prose part 3 pins',
+    '#include "rules/dmg/miscmagic_bag_of_holding_to_book_of_exalted_deeds.h"  // R258: the III.E misc magic explanation prose part 2 pins',
+    '#include "rules/dmg/miscmagic_book_of_infinite_spells_to_boots_of_striding_and_springing.h"  // R259: the III.E misc magic explanation prose part 3 pins',
 ]
 
 # ---- the regtest audit block ----
@@ -665,7 +665,7 @@ gap_new = [
     '(MINUTE); the stray table-title',
     'line 83 is a duplicated header,',
     'noted not pinned).',
-    'rules/dmg/miscmagic_explanation_part3.h (the mmp',
+    'rules/dmg/miscmagic_book_of_infinite_spells_to_boots_of_striding_and_springing.h (the mmp',
     'prefix again, 76 accessors: 73',
     'scalars + 3 array walkers): Book',
     'of Infinite Spells (5-20 hp,',
@@ -729,7 +729,7 @@ try:
     if marker in t:
         already += 1
     else:
-        print('R259 FAIL: rules/dmg/miscmagic_explanation_part3.h exists without the marker')
+        print('R259 FAIL: rules/dmg/miscmagic_book_of_infinite_spells_to_boots_of_striding_and_springing.h exists without the marker')
         sys.exit(1)
 except IOError:
     with open(WD, 'w') as f:
@@ -767,7 +767,7 @@ if applied + already == 4:
     if t.count('R259 misc magic prose part 3 pins audit') != 1:
         print('R259 FAIL: the R259 audit line must appear once')
         sys.exit(1)
-    if t.count('rules/dmg/miscmagic_explanation_part3.h') != 1:
+    if t.count('rules/dmg/miscmagic_book_of_infinite_spells_to_boots_of_striding_and_springing.h') != 1:
         print('R259 FAIL: the miscprose3 include must appear once')
         sys.exit(1)
     g = open(GAP).read()

@@ -36,11 +36,11 @@ def wr(p, s):
     f.write(s)
     f.close()
 
-# ---- patch 1: rules/dmg/miscmagic_explanation_part9.h ----
-P1 = 'rules/dmg/miscmagic_explanation_part9.h'
+# ---- patch 1: rules/dmg/miscmagic_drums_of_deafening_to_eyes_of_petrification.h ----
+P1 = 'rules/dmg/miscmagic_drums_of_deafening_to_eyes_of_petrification.h'
 HDR = [
     '// ====================================================================',
-    '// Adnd1 - rules/dmg/miscmagic_explanation_part9.h',
+    '// Adnd1 - rules/dmg/miscmagic_drums_of_deafening_to_eyes_of_petrification.h',
     '// R265: the III.E misc magic explanation prose part 9',
     '// (DMG p.134-135) - Drums of Deafening through Eyes',
     '// of Petrification plus the eye-mix note, part2',
@@ -323,9 +323,9 @@ assert rd(P1).count(
     'R265: the III.E misc magic explanation prose part 9') == 1
 
 # ---- patch 2: the regtest include ----
-INC_OLD = ('#include "rules/dmg/miscmagic_explanation_part8.h"  // R264: the III.E misc'
+INC_OLD = ('#include "rules/dmg/miscmagic_deck_of_many_things.h"  // R264: the III.E misc'
            ' magic explanation prose part 8 pins')
-INC_NEW = ('#include "rules/dmg/miscmagic_explanation_part9.h"  // R265: the III.E misc'
+INC_NEW = ('#include "rules/dmg/miscmagic_drums_of_deafening_to_eyes_of_petrification.h"  // R265: the III.E misc'
            ' magic explanation prose part 9 pins')
 RG = rd('regtest.cpp')
 if INC_NEW in RG:

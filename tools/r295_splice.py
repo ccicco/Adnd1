@@ -616,7 +616,7 @@ for fn in sorted(os.listdir(os.path.join(ROOT, 'rules'))):
     pt = open(os.path.join(ROOT, 'rules', fn), encoding='utf-8').read()
     for n in defs:
         assert n not in pt, 'name collision with ' + fn
-s0 = rd('rules/dmg/specart_explanation_part2.h')
+s0 = rd('rules/dmg/specart_axe_of_the_dwarvish_lords_to_codex.h')
 assert 'sapToothTableUse' in s0, 'specartprose2.h missing the R294 accessors'
 assert 'sapKasTableUse' in s0, 'specartprose2.h missing the R293 accessors'
 assert 'sapRodJointTable' in s0, 'specartprose2.h missing the R292 accessors'
@@ -645,8 +645,8 @@ for frag in ('part 16', 'The Throne of the Gods',
              'Wand of Orcus', '1782-1814', 'No break absorbed'):
     assert any(frag in el for el in AUDIT), 'audit frag not contiguous: ' + frag
 
-# ---- patch 1: extend rules/dmg/specart_explanation_part2.h ----
-p = 'rules/dmg/specart_explanation_part2.h'
+# ---- patch 1: extend rules/dmg/specart_axe_of_the_dwarvish_lords_to_codex.h ----
+p = 'rules/dmg/specart_axe_of_the_dwarvish_lords_to_codex.h'
 s = rd(p)
 mark = 'inline int sapThroneCarvenMountainHeart() {'
 if mark in s:

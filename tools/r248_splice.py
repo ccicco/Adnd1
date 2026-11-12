@@ -365,10 +365,10 @@ hdr_text = NL.join(hdr_lines) + NL
 
 # ---- the regtest include ----
 inc_old = [
-    '#include "rules/dmg/wands_explanation_part2.h"  // R247: pp.144-145 the III.D wands prose part 2 pins',
+    '#include "rules/dmg/wands_illumination_to_secret_door_and_trap_location.h"  // R247: pp.144-145 the III.D wands prose part 2 pins',
 ]
 inc_new = [
-    '#include "rules/dmg/wands_explanation_part2.h"  // R247: pp.144-145 the III.D wands prose part 2 pins',
+    '#include "rules/dmg/wands_illumination_to_secret_door_and_trap_location.h"  // R247: pp.144-145 the III.D wands prose part 2 pins',
     '#include "rules/dmg/wonder.h"  // R248: p.145 the III.D wand of wonder effect table pins',
 ]
 

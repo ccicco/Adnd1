@@ -56,7 +56,7 @@ def wr(p, s):
 
 HDR = [
     '// ====================================================================',
-    '// Adnd1 - rules/dmg/miscmagic_explanation_part20.h',
+    '// Adnd1 - rules/dmg/miscmagic_phylactery_of_faithfulness_to_feather_token.h',
     '// R276: the III.E misc magic explanation prose part 20',
     '// (DMG p.153-154) - the Phylactery of Faithfulness, the',
     '// Phylactery of Long Years, the Phylactery of Monstrous',
@@ -623,8 +623,8 @@ hfrags = ('part 20', 'rows 30-35', 'no seam', 'III.E.4',
 for frag in hfrags:
     assert any(frag in el for el in HDR), 'header frag not contiguous: ' + frag
 
-# ---- patch 1: create rules/dmg/miscmagic_explanation_part20.h ----
-p = 'rules/dmg/miscmagic_explanation_part20.h'
+# ---- patch 1: create rules/dmg/miscmagic_phylactery_of_faithfulness_to_feather_token.h ----
+p = 'rules/dmg/miscmagic_phylactery_of_faithfulness_to_feather_token.h'
 if os.path.exists(os.path.join(ROOT, p)):
     assert rd(p) == HTEXT, 'miscprose20.h exists but differs'
     already += 1
@@ -636,17 +636,17 @@ assert rd(p) == HTEXT, 'patch 1 failed'
 # ---- patch 2: the regtest include ----
 p = 'regtest.cpp'
 s = rd(p)
-inc = '#include "rules/dmg/miscmagic_explanation_part20.h"  // R276: the III.E misc magic explanation prose part 20 pins'
+inc = '#include "rules/dmg/miscmagic_phylactery_of_faithfulness_to_feather_token.h"  // R276: the III.E misc magic explanation prose part 20 pins'
 if inc in s:
     already += 1
 else:
-    anchor = '#include "rules/dmg/miscmagic_explanation_part19.h"  // R275: the III.E misc magic explanation prose part 19 pins'
+    anchor = '#include "rules/dmg/miscmagic_necklace_of_prayer_beads_to_periapts.h"  // R275: the III.E misc magic explanation prose part 19 pins'
     assert s.count(anchor) == 1, 'include anchor not unique'
     s = s.replace(anchor, anchor + NL + inc, 1)
     wr(p, s)
     applied += 1
 assert inc in rd(p), 'patch 2 failed'
-assert rd(p).count('#include "rules/dmg/miscmagic_explanation_part20.h"') == 1, 'patch 2 doubled'
+assert rd(p).count('#include "rules/dmg/miscmagic_phylactery_of_faithfulness_to_feather_token.h"') == 1, 'patch 2 doubled'
 
 # ---- patch 3: the regtest audit block ----
 p = 'regtest.cpp'

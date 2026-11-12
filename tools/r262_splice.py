@@ -31,10 +31,10 @@ def wr(p, s):
     f.write(s)
     f.close()
 
-# ---- patch 1: rules/dmg/miscmagic_explanation_part6.h ----
+# ---- patch 1: rules/dmg/miscmagic_crystal_balls.h ----
 HDR = [
     '// ====================================================================',
-    '// Adnd1 - rules/dmg/miscmagic_explanation_part6.h',
+    '// Adnd1 - rules/dmg/miscmagic_crystal_balls.h',
     '// R262: the III.E misc magic explanation prose part 6',
     '// (DMG p.132) - Crystal Ball and Crystal Hypnosis',
     '// Ball, part2 lines 222-283 (global = 11065 + part2',
@@ -332,7 +332,7 @@ HDR = [
     '',
     '} // namespace rules',
 ]
-P1 = 'rules/dmg/miscmagic_explanation_part6.h'
+P1 = 'rules/dmg/miscmagic_crystal_balls.h'
 if os.path.exists(os.path.join(ROOT, P1)):
     already += 1
     assert rd(P1) == NL.join(HDR), P1 + ' exists but differs'
@@ -344,9 +344,9 @@ assert rd(P1).count(
     'R262: the III.E misc magic explanation prose part 6') == 1
 
 # ---- patch 2: the regtest include ----
-INC_OLD = ('#include "rules/dmg/miscmagic_explanation_part5.h"  // R261: the III.E misc'
+INC_OLD = ('#include "rules/dmg/miscmagic_candle_of_invocation_to_cloak_of_protection.h"  // R261: the III.E misc'
            ' magic explanation prose part 5 pins')
-INC_NEW = ('#include "rules/dmg/miscmagic_explanation_part6.h"  // R262: the III.E misc'
+INC_NEW = ('#include "rules/dmg/miscmagic_crystal_balls.h"  // R262: the III.E misc'
            ' magic explanation prose part 6 pins')
 RG = rd('regtest.cpp')
 if INC_NEW in RG:

@@ -2065,7 +2065,7 @@ prose pins (DMG pp.141-142, upload
 lines ~10562-10687 - the FIRST prose
 round of the EXPLANATIONS AND
 DESCRIPTIONS section, upload ~9996+).
-rules/dmg/rods_explanation.h (the grenade.h
+rules/dmg/rods_absorption_to_smiting.h (the grenade.h
 pattern, rp prefix): the section
 conventions (rods 50 charges minus
 0-9/d10-1, staves 25 minus 0-5/d6-1,
@@ -2179,7 +2179,7 @@ misc magic item explanations
 R246 landed the III.D wands
 explanation prose pins, part 1 of 3
 (DMG pp.143-144, upload lines
-~10786-10826). rules/dmg/wands_explanation_part1.h
+~10786-10826). rules/dmg/wands_conventions_conjuration_to_fear.h
 (the grenade.h pattern, wd prefix,
 65 scalar accessors - no arrays
 this round): the section
@@ -2243,7 +2243,7 @@ remain open after that.
 R247 landed the III.D wands
 explanation prose pins, part 2 of 3
 (DMG pp.144-145, upload lines
-~10828-10865). rules/dmg/wands_explanation_part2.h
+~10828-10865). rules/dmg/wands_illumination_to_secret_door_and_trap_location.h
 (the grenade.h pattern, wd prefix,
 73 scalar accessors - no arrays
 this round): the remaining TEN
@@ -2372,7 +2372,7 @@ headings inside this seam are the
 book running page headers, not
 tables - the III.A/B/C tables were
 pinned by R122/R221-R224 long ago.
-rules/dmg/potions_explanation_part1.h (the grenade.h
+rules/dmg/potions_conventions_animal_control_to_extra_healing.h (the grenade.h
 pattern, pot prefix - distinct from
 the R221 potion prefix - 56
 accessors, of which 5 are array
@@ -2424,7 +2424,7 @@ explanation prose pins, part 2 of 3
 (DMG pp.134-136, upload lines
 ~10063-10128) - potions 10 through
 19 of the EXPLANATIONS section.
-rules/dmg/potions_explanation_part2.h (the
+rules/dmg/potions_fire_resistance_to_invisibility.h (the
 wandsprose2.h part-2 pattern, the
 pot prefix continues - 53 accessors,
 of which 15 are array walkers):
@@ -2485,7 +2485,7 @@ Water Breathing. THIS CLOSES THE
 III.A POTIONS ARC END TO END (the
 R249 conventions through the R251
 final row, engine bands 01-100).
-rules/dmg/potions_explanation_part3.h (the part-3
+rules/dmg/potions_invulnerability_to_water_breathing.h (the part-3
 pattern, the pot prefix continues -
 69 accessors, of which 5 are array
 walkers): Invulnerability (fewer
@@ -2639,7 +2639,7 @@ explanation prose part 1 of 3
 mechanics and the four lead
 rings: Contrariness, Delusion,
 Djinni Summoning, Elemental
-Command. rules/dmg/rings_explanation_part1.h (the
+Command. rules/dmg/rings_mechanics_contrariness_to_elemental_command.h (the
 grenade.h pattern, the rgp
 prefix - distinct from the R223
 ring prefix - 47 accessors, of
@@ -2709,7 +2709,7 @@ explanation prose part 2 of 3
 (DMG pp.138-139, upload lines
 ~10393-10457) - Feather Falling
 through Shooting Stars.
-rules/dmg/rings_explanation_part2.h (the rgp
+rules/dmg/rings_feather_falling_to_shooting_stars.h (the rgp
 prefix, part 2 - 67 accessors,
 of which 6 are array walkers):
 Feather Falling (5 feet),
@@ -2863,7 +2863,7 @@ explanation prose part 3 of 3
 (DMG pp.139-140, upload lines
 ~10458-10561) - Spell Storing
 through X-Ray Vision.
-rules/dmg/rings_explanation_part3.h (the rgp
+rules/dmg/rings_spell_storing_to_x_ray_vision.h (the rgp
 prefix, part 3 - 89 accessors:
 78 scalars + 11 array walkers):
 Spell Storing (2-5 d4+1, the
@@ -2948,7 +2948,7 @@ magic explanation prose part 1
 (part1 10949-11065 stitched
 into part2 at line 3 - the
 FIRST TWO-PART-FILE round).
-rules/dmg/miscmagic_explanation_part1.h (the mmp
+rules/dmg/miscmagic_alchemy_jug_to_bag_of_devouring.h (the mmp
 prefix, 65 accessors: 60
 scalars + 5 array walkers):
 the section intro (not more
@@ -3025,7 +3025,7 @@ magic explanation prose part 2
 (part2 lines 5-66; global =
 11065 + part2 line; no page
 headers inside the slice).
-rules/dmg/miscmagic_explanation_part2.h (the mmp
+rules/dmg/miscmagic_bag_of_holding_to_book_of_exalted_deeds.h (the mmp
 prefix again, 83 accessors: 74
 scalars + 9 array walkers): Bag
 of Holding (the 4-row quality
@@ -3098,7 +3098,7 @@ line 104 continues ROUND
 (MINUTE); the stray table-title
 line 83 is a duplicated header,
 noted not pinned).
-rules/dmg/miscmagic_explanation_part3.h (the mmp
+rules/dmg/miscmagic_book_of_infinite_spells_to_boots_of_striding_and_springing.h (the mmp
 prefix again, 76 accessors: 73
 scalars + 3 array walkers): Book
 of Infinite Spells (5-20 hp,
@@ -3165,7 +3165,7 @@ splits the Bracers of
 Defense AC table from
 Bracers of Defenselessness -
 no mid-sentence seam this
-time. rules/dmg/miscmagic_explanation_part4.h
+time. rules/dmg/miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.h
 (the mmp prefix again, 53
 accessors: 48 scalars + 5
 array walkers, no name
@@ -3285,7 +3285,7 @@ Cloak of Displacement (line
 180 ends with such as
 spells,, line 185 continues
 gaze weapon attacks).
-rules/dmg/miscmagic_explanation_part5.h (the mmp
+rules/dmg/miscmagic_candle_of_invocation_to_cloak_of_protection.h (the mmp
 prefix again, 60 accessors:
 50 scalars + 10 array
 walkers, no name collisions

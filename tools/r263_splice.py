@@ -32,10 +32,10 @@ def wr(p, s):
     f.write(s)
     f.close()
 
-# ---- patch 1: rules/dmg/miscmagic_explanation_part7.h ----
+# ---- patch 1: rules/dmg/miscmagic_cube_of_force_to_decanter_of_endless_water.h ----
 HDR = [
     '// ====================================================================',
-    '// Adnd1 - rules/dmg/miscmagic_explanation_part7.h',
+    '// Adnd1 - rules/dmg/miscmagic_cube_of_force_to_decanter_of_endless_water.h',
     '// R263: the III.E misc magic explanation prose part 7',
     '// (DMG p.132-133) - Cube of Force through Decanter',
     '// of Endless Water, part2 lines 285-322 (global =',
@@ -298,7 +298,7 @@ HDR = [
     '',
     '} // namespace rules',
 ]
-P1 = 'rules/dmg/miscmagic_explanation_part7.h'
+P1 = 'rules/dmg/miscmagic_cube_of_force_to_decanter_of_endless_water.h'
 if os.path.exists(os.path.join(ROOT, P1)):
     already += 1
     assert rd(P1) == NL.join(HDR), P1 + ' exists but differs'
@@ -310,9 +310,9 @@ assert rd(P1).count(
     'R263: the III.E misc magic explanation prose part 7') == 1
 
 # ---- patch 2: the regtest include ----
-INC_OLD = ('#include "rules/dmg/miscmagic_explanation_part6.h"  // R262: the III.E misc'
+INC_OLD = ('#include "rules/dmg/miscmagic_crystal_balls.h"  // R262: the III.E misc'
            ' magic explanation prose part 6 pins')
-INC_NEW = ('#include "rules/dmg/miscmagic_explanation_part7.h"  // R263: the III.E misc'
+INC_NEW = ('#include "rules/dmg/miscmagic_cube_of_force_to_decanter_of_endless_water.h"  // R263: the III.E misc'
            ' magic explanation prose part 7 pins')
 RG = rd('regtest.cpp')
 if INC_NEW in RG:

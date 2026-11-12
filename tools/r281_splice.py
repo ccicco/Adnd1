@@ -85,7 +85,7 @@ def wr(p, s):
 
 HDR = [
     '// ====================================================================',
-    '// Adnd1 - rules/dmg/specart_explanation_part2.h',
+    '// Adnd1 - rules/dmg/specart_axe_of_the_dwarvish_lords_to_codex.h',
     '// R281: the III.E Special artifacts explanation',
     '// prose part 2 (DMG p.159-160) - the Axe of the',
     '// Dwarvish Lords, the Baba Yaga Hut and the Codex',
@@ -618,8 +618,8 @@ hfrags = ('part 2', 'one seam', 'III.E Special', 'p.159-160',
 for frag in hfrags:
     assert any(frag in el for el in HDR), 'header frag not contiguous: ' + frag
 
-# ---- patch 1: create rules/dmg/specart_explanation_part2.h ----
-p = 'rules/dmg/specart_explanation_part2.h'
+# ---- patch 1: create rules/dmg/specart_axe_of_the_dwarvish_lords_to_codex.h ----
+p = 'rules/dmg/specart_axe_of_the_dwarvish_lords_to_codex.h'
 if os.path.exists(os.path.join(ROOT, p)):
     assert rd(p) == HTEXT, 'specartprose2.h exists but differs'
     already += 1
@@ -631,17 +631,17 @@ assert rd(p) == HTEXT, 'patch 1 failed'
 # ---- patch 2: the regtest include ----
 p = 'regtest.cpp'
 s = rd(p)
-inc = '#include "rules/dmg/specart_explanation_part2.h"  // R281: the III.E Special artifacts explanation prose part 2 pins'
+inc = '#include "rules/dmg/specart_axe_of_the_dwarvish_lords_to_codex.h"  // R281: the III.E Special artifacts explanation prose part 2 pins'
 if inc in s:
     already += 1
 else:
-    anchor = '#include "rules/dmg/specart_explanation_part1.h"  // R280: the III.E Special artifacts explanation prose part 1 pins'
+    anchor = '#include "rules/dmg/specart_notes_on_artifacts_and_relics.h"  // R280: the III.E Special artifacts explanation prose part 1 pins'
     assert s.count(anchor) == 1, 'include anchor not unique'
     s = s.replace(anchor, anchor + NL + inc, 1)
     wr(p, s)
     applied += 1
 assert inc in rd(p), 'patch 2 failed'
-assert rd(p).count('#include "rules/dmg/specart_explanation_part2.h"') == 1, 'patch 2 doubled'
+assert rd(p).count('#include "rules/dmg/specart_axe_of_the_dwarvish_lords_to_codex.h"') == 1, 'patch 2 doubled'
 
 # ---- patch 3: the regtest audit block ----
 p = 'regtest.cpp'

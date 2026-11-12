@@ -468,7 +468,7 @@ for fn in sorted(os.listdir(os.path.join(ROOT, 'rules'))):
     pt = open(os.path.join(ROOT, 'rules', fn), encoding='utf-8').read()
     for n in defs:
         assert n not in pt, 'name collision with ' + fn
-s0 = rd('rules/dmg/specart_explanation_part2.h')
+s0 = rd('rules/dmg/specart_axe_of_the_dwarvish_lords_to_codex.h')
 assert 'sapCrystalOriginUnknown' in s0, 'specartprose2.h missing the R283 accessors'
 assert 'sapCrownRegaliaSetCount' in s0, 'specartprose2.h missing the R282 accessors'
 assert s0.count('}  // namespace rules') == 1, 'namespace close not unique'
@@ -496,8 +496,8 @@ for frag in ('part 5', 'The Eye of Vecna', 'The Hand of Vecna',
              '1318-1357', 'One seam restored'):
     assert any(frag in el for el in AUDIT), 'audit frag not contiguous: ' + frag
 
-# ---- patch 1: extend rules/dmg/specart_explanation_part2.h ----
-p = 'rules/dmg/specart_explanation_part2.h'
+# ---- patch 1: extend rules/dmg/specart_axe_of_the_dwarvish_lords_to_codex.h ----
+p = 'rules/dmg/specart_axe_of_the_dwarvish_lords_to_codex.h'
 s = rd(p)
 mark = 'inline int sapEyeVecnaPhantomRoams() {'
 if mark in s:

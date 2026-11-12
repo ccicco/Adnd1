@@ -44,7 +44,7 @@ def wr(p, s):
 
 HDR = [
     '// ====================================================================',
-    '// Adnd1 - rules/dmg/miscmagic_explanation_part15.h',
+    '// Adnd1 - rules/dmg/miscmagic_mac_fuirmidh_cittern_to_instrument_type_table.h',
     '// R271: the III.E misc magic explanation prose part 15',
     '// (DMG p.142-148) - Mac-Fuirmidh Cittern through the',
     '// general properties and the type table,',
@@ -602,8 +602,8 @@ assert AUDIT[-1] == '    }', 'audit block does not close'
 assert HDR[-1] == '}  // namespace rules', 'header does not close'
 assert ATEXT.count('R271 misc magic prose part 15 pins audit: bad %d' + BS + 'n') == 1, 'audit printf label not unique'
 
-# ---- patch 1: create rules/dmg/miscmagic_explanation_part15.h ----
-p = 'rules/dmg/miscmagic_explanation_part15.h'
+# ---- patch 1: create rules/dmg/miscmagic_mac_fuirmidh_cittern_to_instrument_type_table.h ----
+p = 'rules/dmg/miscmagic_mac_fuirmidh_cittern_to_instrument_type_table.h'
 if os.path.exists(os.path.join(ROOT, p)):
     assert rd(p) == HTEXT, 'miscprose15.h exists but differs'
     already += 1
@@ -615,17 +615,17 @@ assert rd(p) == HTEXT, 'patch 1 failed'
 # ---- patch 2: the regtest include ----
 p = 'regtest.cpp'
 s = rd(p)
-inc = '#include "rules/dmg/miscmagic_explanation_part15.h"  // R271: the III.E misc magic explanation prose part 15 pins'
+inc = '#include "rules/dmg/miscmagic_mac_fuirmidh_cittern_to_instrument_type_table.h"  // R271: the III.E misc magic explanation prose part 15 pins'
 if inc in s:
     already += 1
 else:
-    anchor = '#include "rules/dmg/miscmagic_explanation_part14.h"  // R270: the III.E misc magic explanation prose part 14 pins'
+    anchor = '#include "rules/dmg/miscmagic_incense_of_obsession_to_fochlucan_bandore.h"  // R270: the III.E misc magic explanation prose part 14 pins'
     assert s.count(anchor) == 1, 'include anchor not unique'
     s = s.replace(anchor, anchor + NL + inc, 1)
     wr(p, s)
     applied += 1
 assert inc in rd(p), 'patch 2 failed'
-assert rd(p).count('#include "rules/dmg/miscmagic_explanation_part15.h"') == 1, 'patch 2 doubled'
+assert rd(p).count('#include "rules/dmg/miscmagic_mac_fuirmidh_cittern_to_instrument_type_table.h"') == 1, 'patch 2 doubled'
 
 # ---- patch 3: the regtest audit block ----
 p = 'regtest.cpp'
