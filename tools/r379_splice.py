@@ -961,7 +961,7 @@ for h in (
         'rules/ua/uapotprose.h',
         'rules/ua/uaprotscr.h',
         'rules/ua/uaringprose.h',
-        'rules/dmg/treasdet.h',
+        'rules/dmg/treasure_determination.h',
         'rules/dmg/hoard.h'):
     assert s.count(
         '#include "' + h + '"'

@@ -72,7 +72,7 @@
 #include "../rules/dmg/uwfight.h"  // R313: the underwater strike gate
 #include "../rules/seams/lancecharge.h"  // R779: the charge multiplier
 #include "../rules/dmg/weaponspeed.h"  // R158: the p.66 speed helpers
-#include "../rules/dmg/spearset.h"  // R781: the receive double
+#include "../rules/dmg/set_spear.h"  // R781: the receive double
 
 #include <algorithm>
 #include <cstdio>

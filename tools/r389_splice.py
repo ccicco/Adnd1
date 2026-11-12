@@ -2010,7 +2010,7 @@ for h in (
         'rules/ua/uamiscprose6.h',
         'rules/ua/uaarmprose.h',
         'rules/ua/uamweapprose.h',
-        'rules/dmg/treasdet.h',
+        'rules/dmg/treasure_determination.h',
         'rules/dmg/hoard.h'):
     assert s.count(
         '#include "' + h + '"'

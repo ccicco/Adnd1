@@ -200,8 +200,8 @@ create("rules/dmg/followers.h", p1_text,
       marker="folClericCategoryCount")
 assert len(applied) + len(already) == 1
 
-p2_old = NL.join(['#include "rules/dmg/humrpref.h"  // R169: p.106 humanoid racial preferences'])
-p2_new = NL.join(['#include "rules/dmg/humrpref.h"  // R169: p.106 humanoid racial preferences', '#include "rules/dmg/followers.h"  // R170: pp.16-18 followers by class'])
+p2_old = NL.join(['#include "rules/dmg/humanoid_preferences.h"  // R169: p.106 humanoid racial preferences'])
+p2_new = NL.join(['#include "rules/dmg/humanoid_preferences.h"  // R169: p.106 humanoid racial preferences', '#include "rules/dmg/followers.h"  // R170: pp.16-18 followers by class'])
 patch("regtest.cpp", p2_old, p2_new,
       "regtest.cpp: followers include",
       marker='rules/dmg/followers.h"  // R170')

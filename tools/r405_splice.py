@@ -260,7 +260,7 @@ DHBODY = E(
     '// The feeders the corpus already',
     '// pinned:',
     '//   0: R169 the humanoid racial',
-    '//      preferences (rules/dmg/humrpref.h -',
+    '//      preferences (rules/dmg/humanoid_preferences.h -',
     '//      the nine-race matrix: the orc',
     '//      row carries no elf column, so',
     '//      the Appendix S Gruumsh/Corellon',
@@ -443,11 +443,11 @@ newfile(DH, DHBODY + NL,
 RT = 'regtest.cpp'
 
 pair(RT,
-     '#include "rules/dmg/humrpref.h"  '
+     '#include "rules/dmg/humanoid_preferences.h"  '
      '// R169: p.106 humanoid racial'
      ' preferences',
      E(
-    '#include "rules/dmg/humrpref.h"  // R169:'
+    '#include "rules/dmg/humanoid_preferences.h"  // R169:'
     ' p.106 humanoid racial preferences',
     '#include "rules/seams/deities.h"  '
     '// R405: the deity layer seam'),

@@ -11,7 +11,7 @@
 # as the tiered-values row. Keyed to the 33
 # die bands of the engine III.E.1 table;
 # the row VALUES were already pinned by
-# R122. Patches: 4 (new rules/dmg/miscmagic1.h,
+# R122. Patches: 4 (new rules/dmg/miscmagic_table1_footnotes.h,
 # regtest include, audit block, gap-report
 # log entry). Census 140 -> 141.
 
@@ -58,12 +58,12 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/dmg/miscmagic1.h - the new header
+# Patch 1: rules/dmg/miscmagic_table1_footnotes.h - the new header
 # ---------------------------------------------------------------------------
 
 hdr_lines = [
     '// ====================================================================',
-    '// Adnd1 - rules/dmg/miscmagic1.h',
+    '// Adnd1 - rules/dmg/miscmagic_table1_footnotes.h',
     '// R225: the III.E table 1 footnote pins',
     '// (DMG p.128) - the class marks and the',
     '// special-row footnotes that frame the',
@@ -227,7 +227,7 @@ hdr_lines = [
 ]
 hdr = NL.join(hdr_lines) + NL
 
-patch('rules/dmg/miscmagic1.h',
+patch('rules/dmg/miscmagic_table1_footnotes.h',
       'R225: the III.E table 1 footnote pins',
       None,
       hdr)
@@ -241,7 +241,7 @@ patch('rules/dmg/miscmagic1.h',
 old2 = '#include "rules/dmg/rodswands.h"  // R224: pp.127-128 the rods/staves/wands pins'
 
 new2 = ('#include "rules/dmg/rodswands.h"  // R224: pp.127-128 the rods/staves/wands pins'
-        + NL + '#include "rules/dmg/miscmagic1.h"  // R225: p.128 the misc table 1 pins')
+        + NL + '#include "rules/dmg/miscmagic_table1_footnotes.h"  // R225: p.128 the misc table 1 pins')
 
 patch('regtest.cpp',
       'R225: p.128 the misc table 1 pins',
@@ -376,7 +376,7 @@ log_lines = [
     'R225 landed the III.E table 1 footnote',
     'pins (DMG p.128, upload lines ~9674-9722)',
     '- the class marks and special rows that',
-    'frame TABLE (III.E.) 1. rules/dmg/miscmagic1.h',
+    'frame TABLE (III.E.) 1. rules/dmg/miscmagic_table1_footnotes.h',
     '(the grenade.h pattern), keyed to the 33',
     'die bands of the engine III.E.1 table in',
     'kMisc1 order: the (C) marks (Book of',

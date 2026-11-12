@@ -1871,7 +1871,7 @@ for h in (
         'rules/ua/uamweapprose.h',
         'rules/ua/uaappendq.h',
         'rules/ua/uaappendr.h',
-        'rules/dmg/treasdet.h',
+        'rules/dmg/treasure_determination.h',
         'rules/dmg/hoard.h',
 ):
     assert s.count(

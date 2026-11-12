@@ -34,10 +34,10 @@ def wr(p, s):
     f.write(s)
     f.close()
 
-# ---- patch 1: rules/dmg/miscprose4.h ----
+# ---- patch 1: rules/dmg/miscmagic_prose_part4.h ----
 HDR = [
     '// ====================================================================',
-    '// Adnd1 - rules/dmg/miscprose4.h',
+    '// Adnd1 - rules/dmg/miscmagic_prose_part4.h',
     '// R260: the III.E misc magic explanation prose part 4',
     '// (DMG p.132) - Bowl Commanding Water Elementals',
     '// through Bucknard Everfull Purse, part2 lines',
@@ -353,7 +353,7 @@ HDR = [
     '} // namespace rules',
     '',
 ]
-P1 = 'rules/dmg/miscprose4.h'
+P1 = 'rules/dmg/miscmagic_prose_part4.h'
 if os.path.exists(os.path.join(ROOT, P1)):
     already += 1
     assert rd(P1) == NL.join(HDR), P1 + ' exists but differs'
@@ -365,9 +365,9 @@ assert rd(P1).count(
     'R260: the III.E misc magic explanation prose part 4') == 1
 
 # ---- patch 2: the regtest include ----
-INC_OLD = ('#include "rules/dmg/miscprose3.h"  // R259: the III.E misc'
+INC_OLD = ('#include "rules/dmg/miscmagic_prose_part3.h"  // R259: the III.E misc'
            ' magic explanation prose part 3 pins')
-INC_NEW = ('#include "rules/dmg/miscprose4.h"  // R260: the III.E misc'
+INC_NEW = ('#include "rules/dmg/miscmagic_prose_part4.h"  // R260: the III.E misc'
            ' magic explanation prose part 4 pins')
 RG = rd('regtest.cpp')
 if INC_NEW in RG:
@@ -519,7 +519,7 @@ wr('regtest.cpp', RG)
 # ---- patch 4: the miscmagic1.h per-AC flag fix ----
 BUG_DEC = '0, 0, 0, 0, 0, 0, 1, 0, 0, 0,'
 FIX_DEC = '0, 0, 0, 0, 0, 1, 0, 0, 0, 0,'
-M1 = rd('rules/dmg/miscmagic1.h')
+M1 = rd('rules/dmg/miscmagic_table1_footnotes.h')
 FP = M1.index('inline int m1IsPerAcPointValued')
 FE = M1.index('};', FP)
 BLK = M1[FP:FE]
@@ -534,7 +534,7 @@ else:
     FE2 = M1.index('};', FP2)
     assert M1[FP2:FE2].count(FIX_DEC) == 1, 'm1 flag fix failed'
     assert BUG_DEC not in M1[FP2:FE2], 'm1 flag bug still present'
-wr('rules/dmg/miscmagic1.h', M1)
+wr('rules/dmg/miscmagic_table1_footnotes.h', M1)
 
 # ---- patch 5: the regtest kBrac table fix ----
 RG = rd('regtest.cpp')
@@ -588,7 +588,7 @@ GAP = [
     'Defense AC table from',
     'Bracers of Defenselessness -',
     'no mid-sentence seam this',
-    'time. rules/dmg/miscprose4.h',
+    'time. rules/dmg/miscmagic_prose_part4.h',
     '(the mmp prefix again, 53',
     'accessors: 48 scalars + 5',
     'array walkers, no name',

@@ -38,11 +38,11 @@ def wr(p, s):
     f.write(s)
     f.close()
 
-# ---- patch 1: rules/dmg/miscprose13.h ----
-P1 = 'rules/dmg/miscprose13.h'
+# ---- patch 1: rules/dmg/miscmagic_prose_part13.h ----
+P1 = 'rules/dmg/miscmagic_prose_part13.h'
 HDR = [
     '// ====================================================================',
-    '// Adnd1 - rules/dmg/miscprose13.h',
+    '// Adnd1 - rules/dmg/miscmagic_prose_part13.h',
     '// R269: the III.E misc magic explanation prose part 13',
     '// (DMG p.139-140) - Horn of Collapsing through the',
     '// Incense of Meditation, part2 lines 581-626 (global =',
@@ -916,9 +916,9 @@ assert rd(P1).count(
     'R269: the III.E misc magic explanation prose part 13') == 1
 
 # ---- apply patch 2: the regtest include ----
-INC_OLD = ('#include "rules/dmg/miscprose12.h"  // R268: the III.E misc'
+INC_OLD = ('#include "rules/dmg/miscmagic_prose_part12.h"  // R268: the III.E misc'
            ' magic explanation prose part 12 pins')
-INC_NEW = ('#include "rules/dmg/miscprose13.h"  // R269: the III.E misc'
+INC_NEW = ('#include "rules/dmg/miscmagic_prose_part13.h"  // R269: the III.E misc'
            ' magic explanation prose part 13 pins')
 RG = rd('regtest.cpp')
 if INC_NEW in RG:

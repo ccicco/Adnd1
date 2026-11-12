@@ -90,7 +90,7 @@
 // The feeders the corpus already
 // pinned:
 //   0: R169 the humanoid racial
-//      preferences (rules/dmg/humrpref.h -
+//      preferences (rules/dmg/humanoid_preferences.h -
 //      the nine-race matrix: the orc
 //      row carries no elf column, so
 //      the Appendix S Gruumsh/Corellon

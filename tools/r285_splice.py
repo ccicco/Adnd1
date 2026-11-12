@@ -484,7 +484,7 @@ for fn in sorted(os.listdir(os.path.join(ROOT, 'rules'))):
     pt = open(os.path.join(ROOT, 'rules', fn), encoding='utf-8').read()
     for n in defs:
         assert n not in pt, 'name collision with ' + fn
-s0 = rd('rules/dmg/specartprose2.h')
+s0 = rd('rules/dmg/specart_prose_part2.h')
 assert 'sapEyeVecnaPhantomRoams' in s0, 'specartprose2.h missing the R284 accessors'
 assert 'sapCrystalOriginUnknown' in s0, 'specartprose2.h missing the R283 accessors'
 assert 'sapCrownRegaliaSetCount' in s0, 'specartprose2.h missing the R282 accessors'
@@ -516,8 +516,8 @@ for frag in ('part 6', 'The Mystical Organ of Heward',
              '1359-1403'):
     assert any(frag in el for el in AUDIT), 'audit frag not contiguous: ' + frag
 
-# ---- patch 1: extend rules/dmg/specartprose2.h ----
-p = 'rules/dmg/specartprose2.h'
+# ---- patch 1: extend rules/dmg/specart_prose_part2.h ----
+p = 'rules/dmg/specart_prose_part2.h'
 s = rd(p)
 mark = 'inline int sapOrganPipeCount() {'
 if mark in s:

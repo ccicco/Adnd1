@@ -12,7 +12,7 @@
 #
 # Slice: part1 10949-11065 + part2 lines 1-3 - the
 # section intro plus Alchemy Jug through Bag of
-# Devouring. New header rules/dmg/miscprose1.h (the mmp
+# Devouring. New header rules/dmg/miscmagic_prose_part1.h (the mmp
 # prefix, 65 accessors: 60 scalars + 5 array walkers),
 # the regtest include, the audit block, the
 # dmg-gap-report log.
@@ -21,7 +21,7 @@
 
 import sys
 
-WD   = 'rules/dmg/miscprose1.h'
+WD   = 'rules/dmg/miscmagic_prose_part1.h'
 REG  = 'regtest.cpp'
 GAP  = 'tools/reports/dmg_gap_report.md'
 
@@ -38,7 +38,7 @@ if t.count('audit: bad ') != 174 and t.count('audit: bad ') != 175:
 # ---- the new header ----
 hdr_lines = [
     '// ====================================================================',
-    '// Adnd1 - rules/dmg/miscprose1.h',
+    '// Adnd1 - rules/dmg/miscmagic_prose_part1.h',
     '// R257: the III.E misc magic explanation prose part 1',
     '// pins - the FIRST TWO-PART-FILE round. The III.E',
     '// explanation prose spans the upload seam: part1',
@@ -441,11 +441,11 @@ hdr_text = NL.join(hdr_lines) + NL
 
 # ---- the include patch ----
 inc_old = [
-    '#include "rules/dmg/ringsprose3.h"  // R256: pp.139-140 the III.C rings explanation prose part 3 pins',
+    '#include "rules/dmg/rings_prose_part3.h"  // R256: pp.139-140 the III.C rings explanation prose part 3 pins',
 ]
 inc_new = [
-    '#include "rules/dmg/ringsprose3.h"  // R256: pp.139-140 the III.C rings explanation prose part 3 pins',
-    '#include "rules/dmg/miscprose1.h"  // R257: the III.E misc magic explanation prose part 1 pins',
+    '#include "rules/dmg/rings_prose_part3.h"  // R256: pp.139-140 the III.C rings explanation prose part 3 pins',
+    '#include "rules/dmg/miscmagic_prose_part1.h"  // R257: the III.E misc magic explanation prose part 1 pins',
 ]
 
 # ---- the regtest audit block ----
@@ -605,7 +605,7 @@ gap_new = [
     '(part1 10949-11065 stitched',
     'into part2 at line 3 - the',
     'FIRST TWO-PART-FILE round).',
-    'rules/dmg/miscprose1.h (the mmp',
+    'rules/dmg/miscmagic_prose_part1.h (the mmp',
     'prefix, 65 accessors: 60',
     'scalars + 5 array walkers):',
     'the section intro (not more',
@@ -689,7 +689,7 @@ try:
     if marker in t:
         already += 1
     else:
-        print('R257 FAIL: rules/dmg/miscprose1.h exists without the marker')
+        print('R257 FAIL: rules/dmg/miscmagic_prose_part1.h exists without the marker')
         sys.exit(1)
 except IOError:
     with open(WD, 'w') as f:
@@ -727,7 +727,7 @@ if applied + already == 4:
     if t.count('R257 misc magic prose part 1 pins audit') != 1:
         print('R257 FAIL: the R257 audit line must appear once')
         sys.exit(1)
-    if t.count('rules/dmg/miscprose1.h') != 1:
+    if t.count('rules/dmg/miscmagic_prose_part1.h') != 1:
         print('R257 FAIL: the miscprose1 include must appear once')
         sys.exit(1)
     g = open(GAP).read()

@@ -39,7 +39,7 @@
 # R222 scrollpins.h pins) - cross-checked band by band
 # in the audit. The undead type count cross-pins the
 # R251 potUndeadTypeRowCount (the prose Cf. sanctions
-# it). Patches: 4 (new rules/dmg/scrollsprose.h, the
+# it). Patches: 4 (new rules/dmg/scrolls_prose.h, the
 # regtest include, the audit block, the dmg-gap-report
 # log entry). Census 170 -> 171.
 #
@@ -47,7 +47,7 @@
 
 import sys
 
-WD   = 'rules/dmg/scrollsprose.h'
+WD   = 'rules/dmg/scrolls_prose.h'
 REG  = 'regtest.cpp'
 GAP  = 'tools/reports/dmg_gap_report.md'
 
@@ -65,7 +65,7 @@ if t.count('audit: bad ') != 170 and t.count('audit: bad ') != 171:
 # ---- the new header ----
 hdr_lines = [
     '// ====================================================================',
-    '// Adnd1 - rules/dmg/scrollsprose.h',
+    '// Adnd1 - rules/dmg/scrolls_prose.h',
     '// R252: the III.B scrolls explanation prose',
     '// pins (DMG pp.137-139) - the general',
     '// scroll mechanics and the EIGHT protection',
@@ -637,11 +637,11 @@ hdr_text = NL.join(hdr_lines) + NL
 
 # ---- the regtest include ----
 inc_old = [
-    '#include "rules/dmg/potionsprose3.h"  // R251: pp.136-137 the III.A potions prose part 3 pins',
+    '#include "rules/dmg/potions_prose_part3.h"  // R251: pp.136-137 the III.A potions prose part 3 pins',
 ]
 inc_new = [
-    '#include "rules/dmg/potionsprose3.h"  // R251: pp.136-137 the III.A potions prose part 3 pins',
-    '#include "rules/dmg/scrollsprose.h"  // R252: pp.137-139 the III.B scrolls explanation prose pins',
+    '#include "rules/dmg/potions_prose_part3.h"  // R251: pp.136-137 the III.A potions prose part 3 pins',
+    '#include "rules/dmg/scrolls_prose.h"  // R252: pp.137-139 the III.B scrolls explanation prose pins',
 ]
 
 # ---- the regtest audit block ----
@@ -922,7 +922,7 @@ try:
     if marker in t:
         already += 1
     else:
-        print('R252 FAIL: rules/dmg/scrollsprose.h exists without the marker')
+        print('R252 FAIL: rules/dmg/scrolls_prose.h exists without the marker')
         sys.exit(1)
 except IOError:
     with open(WD, 'w') as f:
@@ -962,7 +962,7 @@ if applied + already == 4:
     if t.count('R252 scrolls prose pins audit') != 1:
         print('R252 FAIL: the R252 audit line must appear once')
         sys.exit(1)
-    if t.count('rules/dmg/scrollsprose.h') != 1:
+    if t.count('rules/dmg/scrolls_prose.h') != 1:
         print('R252 FAIL: the scrollsprose include must appear once')
         sys.exit(1)
     g = open(GAP).read()

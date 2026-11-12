@@ -35,7 +35,7 @@
 # kPotions, bands 55-100, the table closing at 100) -
 # cross-checked band by band against the R221 potions.h
 # pins in the audit. THIS CLOSES THE III.A POTIONS ARC.
-# Patches: 4 (new rules/dmg/potionsprose3.h, the regtest
+# Patches: 4 (new rules/dmg/potions_prose_part3.h, the regtest
 # include, the audit block, the dmg-gap-report log
 # entry). Census 169 -> 170.
 #
@@ -43,7 +43,7 @@
 
 import sys
 
-WD   = 'rules/dmg/potionsprose3.h'
+WD   = 'rules/dmg/potions_prose_part3.h'
 REG  = 'regtest.cpp'
 GAP  = 'tools/reports/dmg_gap_report.md'
 
@@ -61,7 +61,7 @@ if t.count('audit: bad ') != 169 and t.count('audit: bad ') != 170:
 # ---- the new header ----
 hdr_lines = [
     '// ====================================================================',
-    '// Adnd1 - rules/dmg/potionsprose3.h',
+    '// Adnd1 - rules/dmg/potions_prose_part3.h',
     '// R251: the III.A potions explanation prose',
     '// pins, part 3 (DMG pp.136-137) - the final',
     '// SIXTEEN potions of the EXPLANATIONS AND',
@@ -534,11 +534,11 @@ hdr_text = NL.join(hdr_lines) + NL
 
 # ---- the regtest include ----
 inc_old = [
-    '#include "rules/dmg/potionsprose2.h"  // R250: pp.134-136 the III.A potions prose part 2 pins',
+    '#include "rules/dmg/potions_prose_part2.h"  // R250: pp.134-136 the III.A potions prose part 2 pins',
 ]
 inc_new = [
-    '#include "rules/dmg/potionsprose2.h"  // R250: pp.134-136 the III.A potions prose part 2 pins',
-    '#include "rules/dmg/potionsprose3.h"  // R251: pp.136-137 the III.A potions prose part 3 pins',
+    '#include "rules/dmg/potions_prose_part2.h"  // R250: pp.134-136 the III.A potions prose part 2 pins',
+    '#include "rules/dmg/potions_prose_part3.h"  // R251: pp.136-137 the III.A potions prose part 3 pins',
 ]
 
 # ---- the regtest audit block ----
@@ -715,7 +715,7 @@ gap_new = [
     'III.A POTIONS ARC END TO END (the',
     'R249 conventions through the R251',
     'final row, engine bands 01-100).',
-    'rules/dmg/potionsprose3.h (the part-3',
+    'rules/dmg/potions_prose_part3.h (the part-3',
     'pattern, the pot prefix continues -',
     '69 accessors, of which 5 are array',
     'walkers): Invulnerability (fewer',
@@ -795,7 +795,7 @@ try:
     if marker in t:
         already += 1
     else:
-        print('R251 FAIL: rules/dmg/potionsprose3.h exists without the marker')
+        print('R251 FAIL: rules/dmg/potions_prose_part3.h exists without the marker')
         sys.exit(1)
 except IOError:
     with open(WD, 'w') as f:
@@ -835,7 +835,7 @@ if applied + already == 4:
     if t.count('R251 potions prose part 3 pins audit') != 1:
         print('R251 FAIL: the R251 audit line must appear once')
         sys.exit(1)
-    if t.count('rules/dmg/potionsprose3.h') != 1:
+    if t.count('rules/dmg/potions_prose_part3.h') != 1:
         print('R251 FAIL: the potionsprose3 include must appear once')
         sys.exit(1)
     g = open(GAP).read()

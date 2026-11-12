@@ -1,7 +1,7 @@
 {
   "round": 781,
   "prefix": "sps",
-  "header_file": "rules/dmg/spearset.h",
+  "header_file": "rules/dmg/set_spear.h",
   "regtest": "regtest.cpp",
   "gap_report": "tools/reports/oa_gap_report.md",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -253,7 +253,7 @@
       "file": "ai/actor.cpp",
       "note": "the spearset.h include (the receive double pin) plus the weaponspeed.h include the R781 speed fold needs (the R158 helpers)",
       "from": "#include \"../rules/seams/lancecharge.h\"  // R779: the charge multiplier",
-      "to": "#include \"../rules/seams/lancecharge.h\"  // R779: the charge multiplier\n#include \"../rules/dmg/weaponspeed.h\"  // R158: the p.66 speed helpers\n#include \"../rules/dmg/spearset.h\"  // R781: the receive double"
+      "to": "#include \"../rules/seams/lancecharge.h\"  // R779: the charge multiplier\n#include \"../rules/dmg/weaponspeed.h\"  // R158: the p.66 speed helpers\n#include \"../rules/dmg/set_spear.h\"  // R781: the receive double"
     },
     {
       "file": "ai/actor.cpp",

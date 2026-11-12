@@ -536,7 +536,7 @@ for fn in sorted(os.listdir(os.path.join(ROOT, 'rules'))):
     pt = open(os.path.join(ROOT, 'rules', fn), encoding='utf-8').read()
     for n in defs:
         assert n not in pt, 'name collision with ' + fn
-s0 = rd('rules/dmg/specartprose2.h')
+s0 = rd('rules/dmg/specart_prose_part2.h')
 assert 'sapRodJointTable' in s0, 'specartprose2.h missing the R292 accessors'
 assert 'sapNightingalePowerCount' in s0, 'specartprose2.h missing the R291 accessors'
 assert 'sapOrbMightPowerCount' in s0, 'specartprose2.h missing the R290 accessors'
@@ -565,8 +565,8 @@ for frag in ('part 14', 'The Sceptre of Might',
              'Sword of Kas', '1708-1743', 'No break absorbed'):
     assert any(frag in el for el in AUDIT), 'audit frag not contiguous: ' + frag
 
-# ---- patch 1: extend rules/dmg/specartprose2.h ----
-p = 'rules/dmg/specartprose2.h'
+# ---- patch 1: extend rules/dmg/specart_prose_part2.h ----
+p = 'rules/dmg/specart_prose_part2.h'
 s = rd(p)
 mark = 'inline int sapSceptreCount() {'
 if mark in s:

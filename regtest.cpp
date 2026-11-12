@@ -122,7 +122,7 @@
 #include "rules/ua/uacantrips4.h"  // R415: the UA person-affecting cantrips
 #include "rules/ua/uacantrips5.h"  // R416: the UA personal cantrips
 #include "rules/ua/uacantrips6.h"  // R417: the UA haunting-sound cantrips
-#include "rules/dmg/humrpref.h"  // R169: p.106 humanoid racial preferences
+#include "rules/dmg/humanoid_preferences.h"  // R169: p.106 humanoid racial preferences
 #include "rules/seams/deities.h"  // R405: the deity layer seam
 #include "rules/ua/uaappends.h"  // R406: the UA Appendix S stat blocks
 #include "rules/ua/uasstatlines.h"  // R409: the UA Appendix S stat lines
@@ -482,7 +482,7 @@
 #include "rules/seams/mountmove.h"  // R778: the mounted movement pins
 #include "rules/seams/lancecharge.h"  // R779: the lance charge pins
 #include "rules/seams/lancespeed.h"  // R780: the lance speed pins
-#include "rules/dmg/spearset.h"  // R781: the set spear pins
+#include "rules/dmg/set_spear.h"  // R781: the set spear pins
 #include "rules/seams/owedpins.h"  // R782: the owed pins
 #include "rules/seams/deitylines.h"  // R783: the deity stat lines
 #include "rules/seams/worshipsites.h"  // R784: the worship sites
@@ -760,61 +760,61 @@
 #include "rules/dmg/construct.h"  // R213: pp.106-108 construction and siege economics
 #include "rules/dmg/siegefire.h"  // R214: pp.108-110 war machine fire, siege attack, defensive values
 #include "rules/dmg/conduct.h"  // R215: pp.110-112 conducting the game pins
-#include "rules/dmg/magres.h"  // R216: pp.114-119 magical research pins
-#include "rules/dmg/scrollfab.h"  // R217: pp.118-121 scroll manufacture and fabrication pins
+#include "rules/dmg/magic_research.h"  // R216: pp.114-119 magical research pins
+#include "rules/dmg/scroll_manufacture.h"  // R217: pp.118-121 scroll manufacture and fabrication pins
 #include "rules/dmg/energydrain.h"  // R218: pp.119-122 use of magic items and energy draining pins
-#include "rules/dmg/treasdet.h"  // R219: pp.120-123 treasure random determination tables
+#include "rules/dmg/treasure_determination.h"  // R219: pp.120-123 treasure random determination tables
 #include "rules/dmg/hoard.h"  // R220: p.123 the combined hoard table
 #include "rules/dmg/potions.h"  // R221: pp.125-126 the potions prose pins
 #include "rules/dmg/scrollpins.h"  // R222: pp.126-127 the scrolls prose pins
 #include "rules/dmg/rings.h"  // R223: p.127 the rings footnote pins
 #include "rules/dmg/rodswands.h"  // R224: pp.127-128 the rods/staves/wands pins
-#include "rules/dmg/miscmagic1.h"  // R225: p.128 the misc table 1 pins
-#include "rules/dmg/miscmagic2.h"  // R226: p.128 the misc table 2 pins
-#include "rules/dmg/miscmagic3.h"  // R237: p.129 the misc table 3 pins
-#include "rules/dmg/miscmagic4.h"  // R238: p.129-130 the misc table 4 pins
-#include "rules/dmg/miscmagic5.h"  // R239: p.130 the misc table 5 pins
+#include "rules/dmg/miscmagic_table1_footnotes.h"  // R225: p.128 the misc table 1 pins
+#include "rules/dmg/miscmagic_table2_footnotes.h"  // R226: p.128 the misc table 2 pins
+#include "rules/dmg/miscmagic_table3_footnotes.h"  // R237: p.129 the misc table 3 pins
+#include "rules/dmg/miscmagic_table4_footnotes.h"  // R238: p.129-130 the misc table 4 pins
+#include "rules/dmg/miscmagic_table5_footnotes.h"  // R239: p.130 the misc table 5 pins
 #include "rules/dmg/specart.h"  // R240: p.130-131 the III.E Special artifacts pins
 #include "rules/dmg/armorshield.h"  // R241: p.129-130 the III.F armor and shield pins
 #include "rules/dmg/swords.h"  // R242: p.131 the III.G swords pins
 #include "rules/dmg/mweapons.h"  // R243: p.131-132 the III.H misc weapons pins
-#include "rules/dmg/rodsprose.h"  // R244: pp.141-142 the III.D rods prose pins
-#include "rules/dmg/stavesprose.h"  // R245: pp.142-143 the III.D staves prose pins
-#include "rules/dmg/wandsprose.h"  // R246: pp.143-144 the III.D wands prose pins
-#include "rules/dmg/wandsprose2.h"  // R247: pp.144-145 the III.D wands prose part 2 pins
+#include "rules/dmg/rods_prose.h"  // R244: pp.141-142 the III.D rods prose pins
+#include "rules/dmg/staves_prose.h"  // R245: pp.142-143 the III.D staves prose pins
+#include "rules/dmg/wands_prose_part1.h"  // R246: pp.143-144 the III.D wands prose pins
+#include "rules/dmg/wands_prose_part2.h"  // R247: pp.144-145 the III.D wands prose part 2 pins
 #include "rules/dmg/wonder.h"  // R248: p.145 the III.D wand of wonder effect table pins
-#include "rules/dmg/potionsprose.h"  // R249: pp.133-134 the III.A potions prose part 1 pins
-#include "rules/dmg/potionsprose2.h"  // R250: pp.134-136 the III.A potions prose part 2 pins
-#include "rules/dmg/potionsprose3.h"  // R251: pp.136-137 the III.A potions prose part 3 pins
-#include "rules/dmg/scrollsprose.h"  // R252: pp.137-139 the III.B scrolls explanation prose pins
-#include "rules/dmg/ringsprose.h"  // R253: pp.137-138 the III.C rings explanation prose part 1 pins
-#include "rules/dmg/ringsprose2.h"  // R254: pp.138-139 the III.C rings explanation prose part 2 pins
-#include "rules/dmg/ringsprose3.h"  // R256: pp.139-140 the III.C rings explanation prose part 3 pins
-#include "rules/dmg/miscprose1.h"  // R257: the III.E misc magic explanation prose part 1 pins
-#include "rules/dmg/miscprose2.h"  // R258: the III.E misc magic explanation prose part 2 pins
-#include "rules/dmg/miscprose3.h"  // R259: the III.E misc magic explanation prose part 3 pins
-#include "rules/dmg/miscprose4.h"  // R260: the III.E misc magic explanation prose part 4 pins
-#include "rules/dmg/miscprose5.h"  // R261: the III.E misc magic explanation prose part 5 pins
-#include "rules/dmg/miscprose6.h"  // R262: the III.E misc magic explanation prose part 6 pins
-#include "rules/dmg/miscprose7.h"  // R263: the III.E misc magic explanation prose part 7 pins
-#include "rules/dmg/miscprose8.h"  // R264: the III.E misc magic explanation prose part 8 pins
-#include "rules/dmg/miscprose9.h"  // R265: the III.E misc magic explanation prose part 9 pins
-#include "rules/dmg/miscprose10.h"  // R266: the III.E misc magic explanation prose part 10 pins
-#include "rules/dmg/miscprose11.h"  // R267: the III.E misc magic explanation prose part 11 pins
-#include "rules/dmg/miscprose12.h"  // R268: the III.E misc magic explanation prose part 12 pins
-#include "rules/dmg/miscprose13.h"  // R269: the III.E misc magic explanation prose part 13 pins
-#include "rules/dmg/miscprose14.h"  // R270: the III.E misc magic explanation prose part 14 pins
-#include "rules/dmg/miscprose15.h"  // R271: the III.E misc magic explanation prose part 15 pins
-#include "rules/dmg/miscprose16.h"  // R272: the III.E misc magic explanation prose part 16 pins
-#include "rules/dmg/miscprose17.h"  // R273: the III.E misc magic explanation prose part 17 pins
-#include "rules/dmg/miscprose18.h"  // R274: the III.E misc magic explanation prose part 18 pins
-#include "rules/dmg/miscprose19.h"  // R275: the III.E misc magic explanation prose part 19 pins
-#include "rules/dmg/miscprose20.h"  // R276: the III.E misc magic explanation prose part 20 pins
-#include "rules/dmg/miscprose21.h"  // R277: the III.E misc magic explanation prose part 21 pins
-#include "rules/dmg/miscprose22.h"  // R278: the III.E misc magic explanation prose part 22 pins
-#include "rules/dmg/miscprose23.h"  // R279: the III.E misc magic explanation prose part 23 pins
-#include "rules/dmg/specartprose.h"  // R280: the III.E Special artifacts explanation prose part 1 pins
-#include "rules/dmg/specartprose2.h"  // R281: the III.E Special artifacts explanation prose part 2 pins
+#include "rules/dmg/potions_prose_part1.h"  // R249: pp.133-134 the III.A potions prose part 1 pins
+#include "rules/dmg/potions_prose_part2.h"  // R250: pp.134-136 the III.A potions prose part 2 pins
+#include "rules/dmg/potions_prose_part3.h"  // R251: pp.136-137 the III.A potions prose part 3 pins
+#include "rules/dmg/scrolls_prose.h"  // R252: pp.137-139 the III.B scrolls explanation prose pins
+#include "rules/dmg/rings_prose_part1.h"  // R253: pp.137-138 the III.C rings explanation prose part 1 pins
+#include "rules/dmg/rings_prose_part2.h"  // R254: pp.138-139 the III.C rings explanation prose part 2 pins
+#include "rules/dmg/rings_prose_part3.h"  // R256: pp.139-140 the III.C rings explanation prose part 3 pins
+#include "rules/dmg/miscmagic_prose_part1.h"  // R257: the III.E misc magic explanation prose part 1 pins
+#include "rules/dmg/miscmagic_prose_part2.h"  // R258: the III.E misc magic explanation prose part 2 pins
+#include "rules/dmg/miscmagic_prose_part3.h"  // R259: the III.E misc magic explanation prose part 3 pins
+#include "rules/dmg/miscmagic_prose_part4.h"  // R260: the III.E misc magic explanation prose part 4 pins
+#include "rules/dmg/miscmagic_prose_part5.h"  // R261: the III.E misc magic explanation prose part 5 pins
+#include "rules/dmg/miscmagic_prose_part6.h"  // R262: the III.E misc magic explanation prose part 6 pins
+#include "rules/dmg/miscmagic_prose_part7.h"  // R263: the III.E misc magic explanation prose part 7 pins
+#include "rules/dmg/miscmagic_prose_part8.h"  // R264: the III.E misc magic explanation prose part 8 pins
+#include "rules/dmg/miscmagic_prose_part9.h"  // R265: the III.E misc magic explanation prose part 9 pins
+#include "rules/dmg/miscmagic_prose_part10.h"  // R266: the III.E misc magic explanation prose part 10 pins
+#include "rules/dmg/miscmagic_prose_part11.h"  // R267: the III.E misc magic explanation prose part 11 pins
+#include "rules/dmg/miscmagic_prose_part12.h"  // R268: the III.E misc magic explanation prose part 12 pins
+#include "rules/dmg/miscmagic_prose_part13.h"  // R269: the III.E misc magic explanation prose part 13 pins
+#include "rules/dmg/miscmagic_prose_part14.h"  // R270: the III.E misc magic explanation prose part 14 pins
+#include "rules/dmg/miscmagic_prose_part15.h"  // R271: the III.E misc magic explanation prose part 15 pins
+#include "rules/dmg/miscmagic_prose_part16.h"  // R272: the III.E misc magic explanation prose part 16 pins
+#include "rules/dmg/miscmagic_prose_part17.h"  // R273: the III.E misc magic explanation prose part 17 pins
+#include "rules/dmg/miscmagic_prose_part18.h"  // R274: the III.E misc magic explanation prose part 18 pins
+#include "rules/dmg/miscmagic_prose_part19.h"  // R275: the III.E misc magic explanation prose part 19 pins
+#include "rules/dmg/miscmagic_prose_part20.h"  // R276: the III.E misc magic explanation prose part 20 pins
+#include "rules/dmg/miscmagic_prose_part21.h"  // R277: the III.E misc magic explanation prose part 21 pins
+#include "rules/dmg/miscmagic_prose_part22.h"  // R278: the III.E misc magic explanation prose part 22 pins
+#include "rules/dmg/miscmagic_prose_part23.h"  // R279: the III.E misc magic explanation prose part 23 pins
+#include "rules/dmg/specart_prose_part1.h"  // R280: the III.E Special artifacts explanation prose part 1 pins
+#include "rules/dmg/specart_prose_part2.h"  // R281: the III.E Special artifacts explanation prose part 2 pins
 #include "rules/phb/weaponprof.h"  // R297: the PHB Weapon Proficiency Table
 #include "rules/phb/thieffunc.h"  // R298: the thief function take table and DEX Table II
 #include "rules/dmg/locktime.h"  // R304: the DMG lock time pins

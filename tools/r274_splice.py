@@ -53,7 +53,7 @@ def wr(p, s):
 
 HDR = [
     '// ====================================================================',
-    '// Adnd1 - rules/dmg/miscprose18.h',
+    '// Adnd1 - rules/dmg/miscmagic_prose_part18.h',
     '// R274: the III.E misc magic explanation prose part 18',
     '// (DMG p.150-151) - the Manual of Stealthy Pilfering, the',
     '// Mattock and Maul of the Titans, the Medallions of ESP',
@@ -892,8 +892,8 @@ for frag in ('seam restored', 'part 18', 'III.E.4', 'p.150-151',
              'census 192', '67 accessors: 59'):
     assert frag in GJOINED.replace(chr(10), ' '), 'gap frag missing: ' + frag
 
-# ---- patch 1: create rules/dmg/miscprose18.h ----
-p = 'rules/dmg/miscprose18.h'
+# ---- patch 1: create rules/dmg/miscmagic_prose_part18.h ----
+p = 'rules/dmg/miscmagic_prose_part18.h'
 if os.path.exists(os.path.join(ROOT, p)):
     assert rd(p) == HTEXT, 'miscprose18.h exists but differs'
     already += 1
@@ -905,17 +905,17 @@ assert rd(p) == HTEXT, 'patch 1 failed'
 # ---- patch 2: the regtest include ----
 p = 'regtest.cpp'
 s = rd(p)
-inc = '#include "rules/dmg/miscprose18.h"  // R274: the III.E misc magic explanation prose part 18 pins'
+inc = '#include "rules/dmg/miscmagic_prose_part18.h"  // R274: the III.E misc magic explanation prose part 18 pins'
 if inc in s:
     already += 1
 else:
-    anchor = '#include "rules/dmg/miscprose17.h"  // R273: the III.E misc magic explanation prose part 17 pins'
+    anchor = '#include "rules/dmg/miscmagic_prose_part17.h"  // R273: the III.E misc magic explanation prose part 17 pins'
     assert s.count(anchor) == 1, 'include anchor not unique'
     s = s.replace(anchor, anchor + NL + inc, 1)
     wr(p, s)
     applied += 1
 assert inc in rd(p), 'patch 2 failed'
-assert rd(p).count('#include "rules/dmg/miscprose18.h"') == 1, 'patch 2 doubled'
+assert rd(p).count('#include "rules/dmg/miscmagic_prose_part18.h"') == 1, 'patch 2 doubled'
 
 # ---- patch 3: the regtest audit block ----
 p = 'regtest.cpp'

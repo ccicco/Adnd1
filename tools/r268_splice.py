@@ -40,11 +40,11 @@ def wr(p, s):
     f.write(s)
     f.close()
 
-# ---- patch 1: rules/dmg/miscprose12.h ----
-P1 = 'rules/dmg/miscprose12.h'
+# ---- patch 1: rules/dmg/miscmagic_prose_part12.h ----
+P1 = 'rules/dmg/miscmagic_prose_part12.h'
 HDR = [
     '// ====================================================================',
-    '// Adnd1 - rules/dmg/miscprose12.h',
+    '// Adnd1 - rules/dmg/miscmagic_prose_part12.h',
     '// R268: the III.E misc magic explanation prose part 12',
     '// (DMG p.137-139) - Helm of Brilliance through the Horn',
     '// of Bubbles, part2 lines 532-579 (global =',
@@ -1023,9 +1023,9 @@ assert rd(P1).count(
     'R268: the III.E misc magic explanation prose part 12') == 1
 
 # ---- apply patch 2: the regtest include ----
-INC_OLD = ('#include "rules/dmg/miscprose11.h"  // R267: the III.E misc'
+INC_OLD = ('#include "rules/dmg/miscmagic_prose_part11.h"  // R267: the III.E misc'
            ' magic explanation prose part 11 pins')
-INC_NEW = ('#include "rules/dmg/miscprose12.h"  // R268: the III.E misc'
+INC_NEW = ('#include "rules/dmg/miscmagic_prose_part12.h"  // R268: the III.E misc'
            ' magic explanation prose part 12 pins')
 RG = rd('regtest.cpp')
 if INC_NEW in RG:

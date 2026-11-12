@@ -444,7 +444,7 @@ clerical spell). The caller decides casting;
 the encounter tables stay pinned R60/R127.
 Census 86.
 R169 PINNED the humanoid racial preferences table
-(DMG p.106) - rules/dmg/humrpref.h: the nine-race
+(DMG p.106) - rules/dmg/humanoid_preferences.h: the nine-race
 basic acceptability matrix (bugbear, gnoll,
 goblin, hill giant, hobgoblin, kobold, ogre,
 orc, troll - each rated against the same nine),
@@ -1327,7 +1327,7 @@ R216 landed the magical research pins
 (DMG pp.114-119) - the holy/unholy
 water receptacles, the spell research
 economics, the manufacture gates and
-the potion rules. rules/dmg/magres.h (the
+the potion rules. rules/dmg/magic_research.h (the
 grenade.h pattern): the five metals
 (copper, silver, electrum, gold,
 platinum) with vial capacity 6/10/18/
@@ -1375,7 +1375,7 @@ R217 landed the scroll manufacture and
 fabrication pins (DMG pp.118-121) - the
 MANUFACTURE OF SCROLLS seam and the
 FABRICATION material that follows it.
-rules/dmg/scrollfab.h (the grenade.h pattern):
+rules/dmg/scroll_manufacture.h (the grenade.h pattern):
 the inscription gates (cleric, druid,
 magic-user, illusionist at 7th or higher,
 the spell one the inscriber can employ;
@@ -1492,7 +1492,7 @@ claim that dm/treasure.cpp implements the
 map/monetary/magic structure referred to
 the lair-type coin bundles, and these
 determination tables existed nowhere).
-rules/dmg/treasdet.h (the grenade.h pattern):
+rules/dmg/treasure_determination.h (the grenade.h pattern):
 Table I map or magic (01-10 the map table,
 11-00 the magic items table), Table II the
 map table (01-05 false, 06-70 monetary,
@@ -1715,7 +1715,7 @@ un-pinned III.A-H surrounding prose seam.
 R225 landed the III.E table 1 footnote
 pins (DMG p.128, upload lines ~9674-9722)
 - the class marks and special rows that
-frame TABLE (III.E.) 1. rules/dmg/miscmagic1.h
+frame TABLE (III.E.) 1. rules/dmg/miscmagic_table1_footnotes.h
 (the grenade.h pattern), keyed to the 33
 die bands of the engine III.E.1 table in
 kMisc1 order: the (C) marks (Book of
@@ -1747,7 +1747,7 @@ un-pinned III.A-H surrounding prose seam.
 R226 landed the III.E table 2 footnote
 pins (DMG p.128, upload lines ~9724-9760)
 - the class marks and asterisk rows that
-frame TABLE (III.E.) 2. rules/dmg/miscmagic2.h
+frame TABLE (III.E.) 2. rules/dmg/miscmagic_table2_footnotes.h
 (the grenade.h pattern), keyed to the 30
 die bands of the engine III.E.2 table in
 kMisc2 order: the (C) mark (Candle of
@@ -1777,7 +1777,7 @@ R237 landed the III.E table 3 footnote
 pins (DMG p.129, upload lines ~9765-9825)
 - the class marks and the asterisk ladder
 that frame TABLE (III.E.) 3.
-rules/dmg/miscmagic3.h (the grenade.h
+rules/dmg/miscmagic_table3_footnotes.h (the grenade.h
 pattern), keyed to the 33 die bands of
 the engine III.E.3 table in kMisc3
 order: the (C, F, T) marks (Gauntlets of
@@ -1825,7 +1825,7 @@ pins (DMG p.129-130, upload lines
 ~9817-9898) - the class marks, the
 asterisk ladder and the dual-value rows
 that frame TABLE (III.E.) 4.
-rules/dmg/miscmagic4.h (the grenade.h
+rules/dmg/miscmagic_table4_footnotes.h (the grenade.h
 pattern), keyed to the 36 die bands of
 the engine III.E.4 table in kMisc4 order:
 the (M) marks (the three Librams, the
@@ -1875,7 +1875,7 @@ R239 landed the III.E table 5 footnote
 pins (DMG p.130, upload lines ~9898-9915)
 - the class marks that frame TABLE
 (III.E.) 5, the LAST of the miscellaneous
-magic sub-tables. rules/dmg/miscmagic5.h (the
+magic sub-tables. rules/dmg/miscmagic_table5_footnotes.h (the
 grenade.h pattern), keyed to the 35 die
 bands of the engine III.E.5 table in
 kMisc5 order: the (M) marks (the Robe of
@@ -2065,7 +2065,7 @@ prose pins (DMG pp.141-142, upload
 lines ~10562-10687 - the FIRST prose
 round of the EXPLANATIONS AND
 DESCRIPTIONS section, upload ~9996+).
-rules/dmg/rodsprose.h (the grenade.h
+rules/dmg/rods_prose.h (the grenade.h
 pattern, rp prefix): the section
 conventions (rods 50 charges minus
 0-9/d10-1, staves 25 minus 0-5/d6-1,
@@ -2179,7 +2179,7 @@ misc magic item explanations
 R246 landed the III.D wands
 explanation prose pins, part 1 of 3
 (DMG pp.143-144, upload lines
-~10786-10826). rules/dmg/wandsprose.h
+~10786-10826). rules/dmg/wands_prose_part1.h
 (the grenade.h pattern, wd prefix,
 65 scalar accessors - no arrays
 this round): the section
@@ -2243,7 +2243,7 @@ remain open after that.
 R247 landed the III.D wands
 explanation prose pins, part 2 of 3
 (DMG pp.144-145, upload lines
-~10828-10865). rules/dmg/wandsprose2.h
+~10828-10865). rules/dmg/wands_prose_part2.h
 (the grenade.h pattern, wd prefix,
 73 scalar accessors - no arrays
 this round): the remaining TEN
@@ -2372,7 +2372,7 @@ headings inside this seam are the
 book running page headers, not
 tables - the III.A/B/C tables were
 pinned by R122/R221-R224 long ago.
-rules/dmg/potionsprose.h (the grenade.h
+rules/dmg/potions_prose_part1.h (the grenade.h
 pattern, pot prefix - distinct from
 the R221 potion prefix - 56
 accessors, of which 5 are array
@@ -2424,7 +2424,7 @@ explanation prose pins, part 2 of 3
 (DMG pp.134-136, upload lines
 ~10063-10128) - potions 10 through
 19 of the EXPLANATIONS section.
-rules/dmg/potionsprose2.h (the
+rules/dmg/potions_prose_part2.h (the
 wandsprose2.h part-2 pattern, the
 pot prefix continues - 53 accessors,
 of which 15 are array walkers):
@@ -2485,7 +2485,7 @@ Water Breathing. THIS CLOSES THE
 III.A POTIONS ARC END TO END (the
 R249 conventions through the R251
 final row, engine bands 01-100).
-rules/dmg/potionsprose3.h (the part-3
+rules/dmg/potions_prose_part3.h (the part-3
 pattern, the pot prefix continues -
 69 accessors, of which 5 are array
 walkers): Invulnerability (fewer
@@ -2639,7 +2639,7 @@ explanation prose part 1 of 3
 mechanics and the four lead
 rings: Contrariness, Delusion,
 Djinni Summoning, Elemental
-Command. rules/dmg/ringsprose.h (the
+Command. rules/dmg/rings_prose_part1.h (the
 grenade.h pattern, the rgp
 prefix - distinct from the R223
 ring prefix - 47 accessors, of
@@ -2709,7 +2709,7 @@ explanation prose part 2 of 3
 (DMG pp.138-139, upload lines
 ~10393-10457) - Feather Falling
 through Shooting Stars.
-rules/dmg/ringsprose2.h (the rgp
+rules/dmg/rings_prose_part2.h (the rgp
 prefix, part 2 - 67 accessors,
 of which 6 are array walkers):
 Feather Falling (5 feet),
@@ -2863,7 +2863,7 @@ explanation prose part 3 of 3
 (DMG pp.139-140, upload lines
 ~10458-10561) - Spell Storing
 through X-Ray Vision.
-rules/dmg/ringsprose3.h (the rgp
+rules/dmg/rings_prose_part3.h (the rgp
 prefix, part 3 - 89 accessors:
 78 scalars + 11 array walkers):
 Spell Storing (2-5 d4+1, the
@@ -2948,7 +2948,7 @@ magic explanation prose part 1
 (part1 10949-11065 stitched
 into part2 at line 3 - the
 FIRST TWO-PART-FILE round).
-rules/dmg/miscprose1.h (the mmp
+rules/dmg/miscmagic_prose_part1.h (the mmp
 prefix, 65 accessors: 60
 scalars + 5 array walkers):
 the section intro (not more
@@ -3025,7 +3025,7 @@ magic explanation prose part 2
 (part2 lines 5-66; global =
 11065 + part2 line; no page
 headers inside the slice).
-rules/dmg/miscprose2.h (the mmp
+rules/dmg/miscmagic_prose_part2.h (the mmp
 prefix again, 83 accessors: 74
 scalars + 9 array walkers): Bag
 of Holding (the 4-row quality
@@ -3098,7 +3098,7 @@ line 104 continues ROUND
 (MINUTE); the stray table-title
 line 83 is a duplicated header,
 noted not pinned).
-rules/dmg/miscprose3.h (the mmp
+rules/dmg/miscmagic_prose_part3.h (the mmp
 prefix again, 76 accessors: 73
 scalars + 3 array walkers): Book
 of Infinite Spells (5-20 hp,
@@ -3165,7 +3165,7 @@ splits the Bracers of
 Defense AC table from
 Bracers of Defenselessness -
 no mid-sentence seam this
-time. rules/dmg/miscprose4.h
+time. rules/dmg/miscmagic_prose_part4.h
 (the mmp prefix again, 53
 accessors: 48 scalars + 5
 array walkers, no name
@@ -3285,7 +3285,7 @@ Cloak of Displacement (line
 180 ends with such as
 spells,, line 185 continues
 gaze weapon attacks).
-rules/dmg/miscprose5.h (the mmp
+rules/dmg/miscmagic_prose_part5.h (the mmp
 prefix again, 60 accessors:
 50 scalars + 10 array
 walkers, no name collisions
@@ -8450,7 +8450,7 @@ Categories:
       are the callers. The R123 movement rates next to
       it are the same outdoor march this check gates.
 - [x] **Humanoid racial preferences (p.106)** - PINNED
-      R169: rules/dmg/humrpref.h (the 81-cell matrix with
+      R169: rules/dmg/humanoid_preferences.h (the 81-cell matrix with
       the star marks, the letter key, the usage and
       the compatibility prose).
 - [x] **Appendices K + L + M (pp.221-224)** - PINNED

@@ -903,7 +903,7 @@ for h in (
         'rules/ua/uatreasuredial.h',
         'rules/ua/uadetskel.h',
         'rules/ua/uapotprose.h',
-        'rules/dmg/treasdet.h',
+        'rules/dmg/treasure_determination.h',
         'rules/dmg/hoard.h'):
     assert s.count(
         '#include "' + h + '"'

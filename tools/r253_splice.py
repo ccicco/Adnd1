@@ -52,7 +52,7 @@
 # (dm/treasure.cpp kRings, the R223 rings.h band pins)
 # - cross-checked in the audit; the djinni
 # double-dagger cross-pins the R223 ringIsChargeLimited
-# row 2. Patches: 4 (new rules/dmg/ringsprose.h, the
+# row 2. Patches: 4 (new rules/dmg/rings_prose_part1.h, the
 # regtest include, the audit block, the dmg-gap-report
 # log entry). Census 171 -> 172.
 #
@@ -60,7 +60,7 @@
 
 import sys
 
-WD   = 'rules/dmg/ringsprose.h'
+WD   = 'rules/dmg/rings_prose_part1.h'
 REG  = 'regtest.cpp'
 GAP  = 'tools/reports/dmg_gap_report.md'
 
@@ -78,7 +78,7 @@ if t.count('audit: bad ') != 171 and t.count('audit: bad ') != 172:
 # ---- the new header ----
 hdr_lines = [
     '// ====================================================================',
-    '// Adnd1 - rules/dmg/ringsprose.h',
+    '// Adnd1 - rules/dmg/rings_prose_part1.h',
     '// R253: the III.C rings explanation prose',
     '// pins, part 1 of 3 (DMG pp.137-138) - the',
     '// general ring mechanics and the four lead',
@@ -470,11 +470,11 @@ hdr_text = NL.join(hdr_lines) + NL
 
 # ---- the regtest include ----
 inc_old = [
-    '#include "rules/dmg/scrollsprose.h"  // R252: pp.137-139 the III.B scrolls explanation prose pins',
+    '#include "rules/dmg/scrolls_prose.h"  // R252: pp.137-139 the III.B scrolls explanation prose pins',
 ]
 inc_new = [
-    '#include "rules/dmg/scrollsprose.h"  // R252: pp.137-139 the III.B scrolls explanation prose pins',
-    '#include "rules/dmg/ringsprose.h"  // R253: pp.137-138 the III.C rings explanation prose part 1 pins',
+    '#include "rules/dmg/scrolls_prose.h"  // R252: pp.137-139 the III.B scrolls explanation prose pins',
+    '#include "rules/dmg/rings_prose_part1.h"  // R253: pp.137-138 the III.C rings explanation prose part 1 pins',
 ]
 
 # ---- the regtest audit block ----
@@ -612,7 +612,7 @@ gap_new = [
     'mechanics and the four lead',
     'rings: Contrariness, Delusion,',
     'Djinni Summoning, Elemental',
-    'Command. rules/dmg/ringsprose.h (the',
+    'Command. rules/dmg/rings_prose_part1.h (the',
     'grenade.h pattern, the rgp',
     'prefix - distinct from the R223',
     'ring prefix - 47 accessors, of',
@@ -691,7 +691,7 @@ try:
     if marker in t:
         already += 1
     else:
-        print('R253 FAIL: rules/dmg/ringsprose.h exists without the marker')
+        print('R253 FAIL: rules/dmg/rings_prose_part1.h exists without the marker')
         sys.exit(1)
 except IOError:
     with open(WD, 'w') as f:
@@ -731,7 +731,7 @@ if applied + already == 4:
     if t.count('R253 rings prose pins audit') != 1:
         print('R253 FAIL: the R253 audit line must appear once')
         sys.exit(1)
-    if t.count('rules/dmg/ringsprose.h') != 1:
+    if t.count('rules/dmg/rings_prose_part1.h') != 1:
         print('R253 FAIL: the ringsprose include must appear once')
         sys.exit(1)
     g = open(GAP).read()

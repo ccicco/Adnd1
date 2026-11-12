@@ -10,7 +10,7 @@
 # triple star. Keyed to the 30 die bands
 # of the engine III.E.2 table; the row
 # VALUES were already pinned by R122.
-# Patches: 4 (new rules/dmg/miscmagic2.h,
+# Patches: 4 (new rules/dmg/miscmagic_table2_footnotes.h,
 # regtest include, audit block, gap-report
 # log entry). Census 141 -> 142.
 
@@ -57,12 +57,12 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: rules/dmg/miscmagic2.h - the new header
+# Patch 1: rules/dmg/miscmagic_table2_footnotes.h - the new header
 # ---------------------------------------------------------------------------
 
 hdr_lines = [
     '// ====================================================================',
-    '// Adnd1 - rules/dmg/miscmagic2.h',
+    '// Adnd1 - rules/dmg/miscmagic_table2_footnotes.h',
     '// R226: the III.E table 2 footnote pins',
     '// (DMG p.128) - the class marks and the',
     '// asterisk rows that frame TABLE',
@@ -226,7 +226,7 @@ hdr_lines = [
 ]
 hdr = NL.join(hdr_lines) + NL
 
-patch('rules/dmg/miscmagic2.h',
+patch('rules/dmg/miscmagic_table2_footnotes.h',
       'R226: the III.E table 2 footnote pins',
       None,
       hdr)
@@ -237,10 +237,10 @@ patch('rules/dmg/miscmagic2.h',
 # Patch 2: regtest.cpp - the include
 # ---------------------------------------------------------------------------
 
-old2 = '#include "rules/dmg/miscmagic1.h"  // R225: p.128 the misc table 1 pins'
+old2 = '#include "rules/dmg/miscmagic_table1_footnotes.h"  // R225: p.128 the misc table 1 pins'
 
-new2 = ('#include "rules/dmg/miscmagic1.h"  // R225: p.128 the misc table 1 pins'
-        + NL + '#include "rules/dmg/miscmagic2.h"  // R226: p.128 the misc table 2 pins')
+new2 = ('#include "rules/dmg/miscmagic_table1_footnotes.h"  // R225: p.128 the misc table 1 pins'
+        + NL + '#include "rules/dmg/miscmagic_table2_footnotes.h"  // R226: p.128 the misc table 2 pins')
 
 patch('regtest.cpp',
       'R226: p.128 the misc table 2 pins',
@@ -379,7 +379,7 @@ log_lines = [
     'R226 landed the III.E table 2 footnote',
     'pins (DMG p.128, upload lines ~9724-9760)',
     '- the class marks and asterisk rows that',
-    'frame TABLE (III.E.) 2. rules/dmg/miscmagic2.h',
+    'frame TABLE (III.E.) 2. rules/dmg/miscmagic_table2_footnotes.h',
     '(the grenade.h pattern), keyed to the 30',
     'die bands of the engine III.E.2 table in',
     'kMisc2 order: the (C) mark (Candle of',

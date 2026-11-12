@@ -182,10 +182,10 @@ hdr_text = NL.join(hdr_lines) + NL
 
 # ---- the regtest include ----
 inc_old = [
-    '#include "rules/dmg/miscmagic5.h"  // R239: p.130 the misc table 5 pins',
+    '#include "rules/dmg/miscmagic_table5_footnotes.h"  // R239: p.130 the misc table 5 pins',
 ]
 inc_new = [
-    '#include "rules/dmg/miscmagic5.h"  // R239: p.130 the misc table 5 pins',
+    '#include "rules/dmg/miscmagic_table5_footnotes.h"  // R239: p.130 the misc table 5 pins',
     '#include "rules/dmg/specart.h"  // R240: p.130-131 the III.E Special artifacts pins',
 ]
 

@@ -346,9 +346,9 @@ patch('rules/dmg/hoard.h',
 # Patch 2: regtest.cpp - the include
 # ---------------------------------------------------------------------------
 
-old2 = '#include "rules/dmg/treasdet.h"  // R219: pp.120-123 treasure random determination tables'
+old2 = '#include "rules/dmg/treasure_determination.h"  // R219: pp.120-123 treasure random determination tables'
 
-new2 = ('#include "rules/dmg/treasdet.h"  // R219: pp.120-123 treasure random determination tables'
+new2 = ('#include "rules/dmg/treasure_determination.h"  // R219: pp.120-123 treasure random determination tables'
         + NL + '#include "rules/dmg/hoard.h"  // R220: p.123 the combined hoard table')
 
 patch('regtest.cpp',

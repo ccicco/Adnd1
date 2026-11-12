@@ -551,7 +551,7 @@ for fn in sorted(os.listdir(os.path.join(ROOT, 'rules'))):
     pt = open(os.path.join(ROOT, 'rules', fn), encoding='utf-8').read()
     for n in defs:
         assert n not in pt, 'name collision with ' + fn
-s0 = rd('rules/dmg/specartprose2.h')
+s0 = rd('rules/dmg/specart_prose_part2.h')
 assert 'sapCrownRegaliaSetCount' in s0, 'specartprose2.h missing the R282 accessors'
 assert 'sapCodexPowerCount' in s0, 'specartprose2.h missing the R281 accessors'
 assert s0.count('}  // namespace rules') == 1, 'namespace close not unique'
@@ -579,8 +579,8 @@ for frag in ('part 4', 'Crystal of the Ebon', 'and Talisman of Al Akbar',
              '1270-1316', 'No seam'):
     assert any(frag in el for el in AUDIT), 'audit frag not contiguous: ' + frag
 
-# ---- patch 1: extend rules/dmg/specartprose2.h ----
-p = 'rules/dmg/specartprose2.h'
+# ---- patch 1: extend rules/dmg/specart_prose_part2.h ----
+p = 'rules/dmg/specart_prose_part2.h'
 s = rd(p)
 mark = 'inline int sapCrystalOriginUnknown() {'
 if mark in s:

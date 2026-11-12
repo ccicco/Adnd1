@@ -33,7 +33,7 @@
 # the engine kRods rows 8-14, bands 20-33, the wand rows
 # from 34 - cross-checked against the R224 rodswands.h
 # bands in the audit.
-# Patches: 4 (new rules/dmg/stavesprose.h, the regtest
+# Patches: 4 (new rules/dmg/staves_prose.h, the regtest
 # include, the audit block, the dmg-gap-report log
 # entry). Census 163 -> 164.
 #
@@ -41,7 +41,7 @@
 
 import sys
 
-STF  = 'rules/dmg/stavesprose.h'
+STF  = 'rules/dmg/staves_prose.h'
 REG  = 'regtest.cpp'
 GAP  = 'tools/reports/dmg_gap_report.md'
 
@@ -59,7 +59,7 @@ if t.count('audit: bad ') != 163 and t.count('audit: bad ') != 164:
 # ---- the new header ----
 hdr_lines = [
     '// ====================================================================',
-    '// Adnd1 - rules/dmg/stavesprose.h',
+    '// Adnd1 - rules/dmg/staves_prose.h',
     '// R245: the III.D staves explanation prose',
     '// pins (DMG pp.142-143) - the staff',
     '// conventions and the per-item facts of',
@@ -543,11 +543,11 @@ hdr_text = NL.join(hdr_lines) + NL
 
 # ---- the regtest include ----
 inc_old = [
-    '#include "rules/dmg/rodsprose.h"  // R244: pp.141-142 the III.D rods prose pins',
+    '#include "rules/dmg/rods_prose.h"  // R244: pp.141-142 the III.D rods prose pins',
 ]
 inc_new = [
-    '#include "rules/dmg/rodsprose.h"  // R244: pp.141-142 the III.D rods prose pins',
-    '#include "rules/dmg/stavesprose.h"  // R245: pp.142-143 the III.D staves prose pins',
+    '#include "rules/dmg/rods_prose.h"  // R244: pp.141-142 the III.D rods prose pins',
+    '#include "rules/dmg/staves_prose.h"  // R245: pp.142-143 the III.D staves prose pins',
 ]
 
 # ---- the regtest audit block ----
@@ -757,7 +757,7 @@ try:
     if marker in t:
         already += 1
     else:
-        print('R245 FAIL: rules/dmg/stavesprose.h exists without the marker')
+        print('R245 FAIL: rules/dmg/staves_prose.h exists without the marker')
         sys.exit(1)
 except IOError:
     with open(STF, 'w') as f:
@@ -797,7 +797,7 @@ if applied + already == 4:
     if t.count('R245 staves prose pins audit') != 1:
         print('R245 FAIL: the R245 audit line must appear once')
         sys.exit(1)
-    if t.count('rules/dmg/stavesprose.h') != 1:
+    if t.count('rules/dmg/staves_prose.h') != 1:
         print('R245 FAIL: the stavesprose include must appear once')
         sys.exit(1)
     g = open(GAP).read()

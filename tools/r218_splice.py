@@ -364,9 +364,9 @@ patch('rules/dmg/energydrain.h',
 # Patch 2: regtest.cpp - the include
 # ---------------------------------------------------------------------------
 
-old2 = '#include "rules/dmg/scrollfab.h"  // R217: pp.118-121 scroll manufacture and fabrication pins'
+old2 = '#include "rules/dmg/scroll_manufacture.h"  // R217: pp.118-121 scroll manufacture and fabrication pins'
 
-new2 = ('#include "rules/dmg/scrollfab.h"  // R217: pp.118-121 scroll manufacture and fabrication pins'
+new2 = ('#include "rules/dmg/scroll_manufacture.h"  // R217: pp.118-121 scroll manufacture and fabrication pins'
         + NL + '#include "rules/dmg/energydrain.h"  // R218: pp.119-122 use of magic items and energy draining pins')
 
 patch('regtest.cpp',

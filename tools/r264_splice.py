@@ -31,10 +31,10 @@ def wr(p, s):
     f.write(s)
     f.close()
 
-# ---- patch 1: rules/dmg/miscprose8.h ----
+# ---- patch 1: rules/dmg/miscmagic_prose_part8.h ----
 HDR = [
     '// ====================================================================',
-    '// Adnd1 - rules/dmg/miscprose8.h',
+    '// Adnd1 - rules/dmg/miscmagic_prose_part8.h',
     '// R264: the III.E misc magic explanation prose part 8',
     '// (DMG p.133-134) - Deck of Many Things, part2',
     '// lines 324-400 (global = 11065 + part2 line). ONE',
@@ -314,7 +314,7 @@ HDR = [
     '',
     '} // namespace rules',
 ]
-P1 = 'rules/dmg/miscprose8.h'
+P1 = 'rules/dmg/miscmagic_prose_part8.h'
 if os.path.exists(os.path.join(ROOT, P1)):
     already += 1
     assert rd(P1) == NL.join(HDR), P1 + ' exists but differs'
@@ -326,9 +326,9 @@ assert rd(P1).count(
     'R264: the III.E misc magic explanation prose part 8') == 1
 
 # ---- patch 2: the regtest include ----
-INC_OLD = ('#include "rules/dmg/miscprose7.h"  // R263: the III.E misc'
+INC_OLD = ('#include "rules/dmg/miscmagic_prose_part7.h"  // R263: the III.E misc'
            ' magic explanation prose part 7 pins')
-INC_NEW = ('#include "rules/dmg/miscprose8.h"  // R264: the III.E misc'
+INC_NEW = ('#include "rules/dmg/miscmagic_prose_part8.h"  // R264: the III.E misc'
            ' magic explanation prose part 8 pins')
 RG = rd('regtest.cpp')
 if INC_NEW in RG:

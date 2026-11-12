@@ -425,9 +425,9 @@ assert 'void AppState::kitNpc' in s, 'patch d ate kitNpc'
 assert len(applied) + len(already) == 4, 'patch d count wrong'
 
 # ---- (e) regtest.cpp: the include + the audit block ----
-REG_INC_OLD = '#include "rules/dmg/specartprose2.h"  // R281: the III.E Special artifacts explanation prose part 2 pins'
+REG_INC_OLD = '#include "rules/dmg/specart_prose_part2.h"  // R281: the III.E Special artifacts explanation prose part 2 pins'
 REG_INC_NEW = NL.join([
-    '#include "rules/dmg/specartprose2.h"  // R281: the III.E Special artifacts explanation prose part 2 pins',
+    '#include "rules/dmg/specart_prose_part2.h"  // R281: the III.E Special artifacts explanation prose part 2 pins',
     '#include "rules/phb/weaponprof.h"  // R297: the PHB Weapon Proficiency Table',
 ])
 AUDIT = NL.join([

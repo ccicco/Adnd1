@@ -730,7 +730,7 @@ for h in (
         'rules/ua/uafollowers.h',
         'rules/ua/uacomnote.h',
         'rules/ua/uatreasuredial.h',
-        'rules/dmg/treasdet.h',
+        'rules/dmg/treasure_determination.h',
         'rules/dmg/hoard.h'):
     assert s.count(
         '#include "' + h + '"'

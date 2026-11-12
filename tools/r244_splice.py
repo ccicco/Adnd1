@@ -36,7 +36,7 @@
 # seven rows of the engine III.D table (kRods bands
 # 01-19, the staff rows from 20 - cross-checked
 # against the R224 rodswands.h bands in the audit).
-# Patches: 4 (new rules/dmg/rodsprose.h, the regtest
+# Patches: 4 (new rules/dmg/rods_prose.h, the regtest
 # include, the audit block, the dmg-gap-report log
 # entry). Census 162 -> 163.
 #
@@ -44,7 +44,7 @@
 
 import sys
 
-RP   = 'rules/dmg/rodsprose.h'
+RP   = 'rules/dmg/rods_prose.h'
 REG  = 'regtest.cpp'
 GAP  = 'tools/reports/dmg_gap_report.md'
 
@@ -62,7 +62,7 @@ if t.count('audit: bad ') != 162 and t.count('audit: bad ') != 163:
 # ---- the new header ----
 hdr_lines = [
     '// ====================================================================',
-    '// Adnd1 - rules/dmg/rodsprose.h',
+    '// Adnd1 - rules/dmg/rods_prose.h',
     '// R244: the III.D rods explanation prose',
     '// pins (DMG pp.141-142) - the section',
     '// conventions of the RODS, et al. text',
@@ -530,7 +530,7 @@ inc_old = [
 ]
 inc_new = [
     '#include "rules/dmg/mweapons.h"  // R243: p.131-132 the III.H misc weapons pins',
-    '#include "rules/dmg/rodsprose.h"  // R244: pp.141-142 the III.D rods prose pins',
+    '#include "rules/dmg/rods_prose.h"  // R244: pp.141-142 the III.D rods prose pins',
 ]
 
 # ---- the regtest audit block ----
@@ -698,7 +698,7 @@ gap_new = [
     'lines ~10562-10687 - the FIRST prose',
     'round of the EXPLANATIONS AND',
     'DESCRIPTIONS section, upload ~9996+).',
-    'rules/dmg/rodsprose.h (the grenade.h',
+    'rules/dmg/rods_prose.h (the grenade.h',
     'pattern, rp prefix): the section',
     'conventions (rods 50 charges minus',
     '0-9/d10-1, staves 25 minus 0-5/d6-1,',
@@ -763,7 +763,7 @@ try:
     if marker in t:
         already += 1
     else:
-        print('R244 FAIL: rules/dmg/rodsprose.h exists without the marker')
+        print('R244 FAIL: rules/dmg/rods_prose.h exists without the marker')
         sys.exit(1)
 except IOError:
     with open(RP, 'w') as f:
@@ -803,7 +803,7 @@ if applied + already == 4:
     if t.count('R244 rods prose pins audit') != 1:
         print('R244 FAIL: the R244 audit line must appear once')
         sys.exit(1)
-    if t.count('rules/dmg/rodsprose.h') != 1:
+    if t.count('rules/dmg/rods_prose.h') != 1:
         print('R244 FAIL: the rodsprose include must appear once')
         sys.exit(1)
     g = open(GAP).read()
