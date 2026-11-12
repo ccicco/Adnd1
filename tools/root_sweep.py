@@ -6,10 +6,14 @@
 # commit message itself says "extract/g1: map-006 seat"), the R878
 # figure crops (D&DG print p.131, FIG. 4/FIG. 5) seat under
 # extract/ddg/. Deleted (git history preserves them): the
-# reorg.b64 transport file, the ten zero-byte pNNN stubs, and the
-# stale root hallscan.py - the fitted tool already seats at
-# tools/hallscan.py (the root copy is the pre-fit template; its
-# own header says "replace with fit_lattice output").
+# reorg.b64 transport file, the ten zero-byte pNNN stubs, the
+# stale root hallscan.py (the fitted tool already seats at
+# tools/hallscan.py - the root copy is the pre-fit template),
+# and the stale root map-006.jpg (byte-identical duplicate of
+# extract/g1/map-006.jpg, already seated by the seat commit).
+# The "raster": "map-006.jpg" reference in
+# extract/g1/map-006.grid.structure.json is a sibling reference
+# and stays as-is.
 # STAY at root, ritual-anchored: regtest.cpp, adnd1.cpp,
 # treasuresim.cpp, rn, bn, nn (the standing ruling - R369/R372
 # struck their rebuild paths, not their presence). Deletion
@@ -26,7 +30,6 @@ BIN_EXT = (".png", ".jpg", ".jpeg", ".ico", ".pdf", ".xlsx", ".zip",
 
 # --- root moves: old repo path -> new repo path ---------------------------
 MOVES = {
-    "map-006.jpg": "extract/g1/map-006.jpg",
     "map-006.ask.json": "extract/g1/map-006.ask.json",
     "map-006.match.json": "extract/g1/map-006.match.json",
     "exemplars.json": "extract/g1/exemplars.json",
@@ -44,7 +47,7 @@ MOVES = {
 # --- deletions: struck launchers (R369/R372: out of the repo),
 # --- the pass-1 transport file, and the ten zero-byte pNNN stubs.
 DELETES = (
-    "reorg.b64", "hallscan.py",
+    "reorg.b64", "hallscan.py", "map-006.jpg",
     "p081_full.txt", "p081_tsv.tsv",
     "p082_full.txt", "p082_tsv.tsv",
     "p083_full.txt", "p083_tsv.tsv",

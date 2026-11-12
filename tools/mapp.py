@@ -15,7 +15,7 @@ Usage:
            A.extract.json [--lib LIB.json]
   mapp.py --around "x,y" A.extract.json
   mapp.py --rename "OLD:NEW" [--lib LIB.json]
-  mapp.py --import exemplars.json A.extract.json [B...]
+  mapp.py --import extract/g1/exemplars.json A.extract.json [B...]
            [--lib LIB.json]
 Exemplars (legacy): {"label": ["stem:latx,laty", ...]}.
 Answers file = the .ask.json rows with "label" added."""
