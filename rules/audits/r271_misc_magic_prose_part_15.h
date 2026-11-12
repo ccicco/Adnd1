@@ -4,7 +4,7 @@
     // part2 lines 686-764 - the slice closing the
     // kMisc3 row 26 instrument item.
     {
-        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
+        Miscmagic_mac_fuirmidh_cittern_to_instrument_type_table miscmagic;
         Miscmagic_table3_footnotes miscmagic_table3_footnotes;
         int bad = 0;
         if (miscmagic.mmpCitternMisusePct() != 50 ||

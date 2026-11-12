@@ -7,7 +7,7 @@
     // slice pinning the kMisc4 rows 30-35 of the 36-row
     // III.E.4 table (and closing it).
     {
-        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
+        Miscmagic_phylactery_of_faithfulness_to_feather_token miscmagic;
         Miscmagic_table4_footnotes miscmagic_table4_footnotes;
         int bad = 0;
         // the phylactery of long years scalars

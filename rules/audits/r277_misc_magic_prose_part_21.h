@@ -7,7 +7,7 @@
     // pinning the kMisc5 rows 0-5 of the 35-row III.E.5
     // table (and opening it).
     {
-        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
+        Miscmagic_robes miscmagic;
         Miscmagic_table5_footnotes miscmagic_table5_footnotes;
         int bad = 0;
         // the robe of the archmagi scalars

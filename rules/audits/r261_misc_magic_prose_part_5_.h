@@ -6,7 +6,7 @@
     // R226 per-plus asterisk pin verified correct
     // (row 10, 33-55), no off-by-one.
     {
-        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
+        Miscmagic_candle_of_invocation_to_cloak_of_protection miscmagic;
         Miscmagic_table2_footnotes miscmagic_table2_footnotes;
         int bad = 0;
         if (miscmagic.mmpCandleAlignments() != 9 ||

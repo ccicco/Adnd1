@@ -4,7 +4,7 @@
     // the 22-plaque table and the per-plaque
     // explanations, pinning the kMisc2 row 18.
     {
-        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
+        Miscmagic_deck_of_many_things miscmagic;
         Miscmagic_table2_footnotes miscmagic_table2_footnotes;
         int bad = 0;
         if (miscmagic.mmpDeckPlaqueMaterialCount() != 2 ||

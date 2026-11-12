@@ -4,7 +4,7 @@
     // Bubbles, part2 lines 532-579 - the slice
     // pinning the kMisc3 rows 10-17.
     {
-        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
+        Miscmagic_helm_of_brilliance_to_horn_of_bubbles miscmagic;
         Miscmagic_table3_footnotes miscmagic_table3_footnotes;
         int bad = 0;
         if (miscmagic.mmpHelmBrilCommandWordOnly() != 1 ||

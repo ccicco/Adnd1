@@ -1,5 +1,5 @@
 // R-refactor: split from miscmagic_table3_footnotes.h - definitions
-#include "rules/dmg/miscmagic_table3_footnotes.h"
+#include "rules/dmg/misc_magic/miscmagic_table3_footnotes.h"
 
 int Miscmagic_table3_footnotes::m3RowCount() {
     // Figurine through the 93-00 Ointment

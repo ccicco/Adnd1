@@ -1,5 +1,5 @@
 // ====================================================================
-// Adnd1 - rules/dmg/miscmagic_table3_footnotes.h
+// Adnd1 - rules/dmg/misc_magic/miscmagic_table3_footnotes.h
 // R237: the III.E table 3 footnote pins
 // (DMG p.129) - the class marks and the
 // asterisk ladder that frame TABLE

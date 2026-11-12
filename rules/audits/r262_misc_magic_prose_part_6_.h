@@ -6,7 +6,7 @@
     // double-asterisk pin verified correct
     // (row 11, 56-60), no off-by-one.
     {
-        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
+        Miscmagic_crystal_balls miscmagic;
         Miscmagic_table2_footnotes miscmagic_table2_footnotes;
         int bad = 0;
         if (miscmagic.mmpCrystalBallDiameterInches() != 6 ||

@@ -1,5 +1,5 @@
 // R-refactor: split from miscmagic_table2_footnotes.h - definitions
-#include "rules/dmg/miscmagic_table2_footnotes.h"
+#include "rules/dmg/misc_magic/miscmagic_table2_footnotes.h"
 
 int Miscmagic_table2_footnotes::m2RowCount() {
     // Candle through Eyes of Petrification

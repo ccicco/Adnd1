@@ -1,5 +1,5 @@
 // R-refactor: split from miscmagic_table5_footnotes.h - definitions
-#include "rules/dmg/miscmagic_table5_footnotes.h"
+#include "rules/dmg/misc_magic/miscmagic_table5_footnotes.h"
 
 int Miscmagic_table5_footnotes::m5RowCount() {
     // the Archmagi through the Wings of Flying

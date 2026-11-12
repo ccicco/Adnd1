@@ -3,7 +3,7 @@
     // 11065 stitched into part2 line 3 (Bag of
     // Devouring, the seam fact pinned exactly).
     {
-        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
+        Miscmagic_alchemy_jug_to_bag_of_devouring miscmagic;
         Miscmagic_table1_footnotes miscmagic_table1_footnotes;
         int bad = 0;
         // the nine items are the engine kMisc1 rows

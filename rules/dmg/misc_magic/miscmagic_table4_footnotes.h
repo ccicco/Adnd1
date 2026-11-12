@@ -1,5 +1,5 @@
 // ====================================================================
-// Adnd1 - rules/dmg/miscmagic_table4_footnotes.h
+// Adnd1 - rules/dmg/misc_magic/miscmagic_table4_footnotes.h
 // R238: the III.E table 4 footnote pins
 // (DMG p.129-130) - the class marks, the
 // asterisk ladder and the dual-value rows

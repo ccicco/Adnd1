@@ -4,7 +4,7 @@
     // plus the eye-mix note, part2 lines 402-429 -
     // the slice that completes the kMisc2 rows 19-29.
     {
-        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
+        Miscmagic_drums_of_deafening_to_eyes_of_petrification miscmagic;
         Miscmagic_table2_footnotes miscmagic_table2_footnotes;
         int bad = 0;
         if (miscmagic.mmpDrumDeafDeafRangeInches() != 7 ||

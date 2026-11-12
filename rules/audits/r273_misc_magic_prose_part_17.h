@@ -6,7 +6,7 @@
     // Action, part2 lines 806-841 - the slice pinning
     // the kMisc4 rows 0-8 of the 36-row III.E.4 table.
     {
-        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
+        Miscmagic_librams_lyre_and_manuals miscmagic;
         Miscmagic_table4_footnotes miscmagic_table4_footnotes;
         int bad = 0;
         // the libram of gainful conjuration

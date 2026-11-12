@@ -4,7 +4,7 @@
     // lines 766-802 - the slice completing the
     // kMisc3 rows 27-32 (the 33-row III.E.3 table).
     {
-        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
+        Miscmagic_iron_flask_to_keoghtoms_ointment miscmagic;
         Miscmagic_table3_footnotes miscmagic_table3_footnotes;
         int bad = 0;
         // the iron flask

@@ -8,7 +8,7 @@
     // 35-row III.E.5 table (rows 0-5 by part 21 and
     // 6-16 by part 22; the table is complete).
     {
-        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
+        Miscmagic_sphere_of_annihilation_to_wings_of_flying miscmagic;
         Miscmagic_table5_footnotes miscmagic_table5_footnotes;
         int bad = 0;
         // the sphere of annihilation scalars

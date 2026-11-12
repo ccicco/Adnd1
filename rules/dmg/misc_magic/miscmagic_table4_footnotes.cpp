@@ -1,5 +1,5 @@
 // R-refactor: split from miscmagic_table4_footnotes.h - definitions
-#include "rules/dmg/miscmagic_table4_footnotes.h"
+#include "rules/dmg/misc_magic/miscmagic_table4_footnotes.h"
 
 int Miscmagic_table4_footnotes::m4RowCount() {
     // the Librams through the Feather Token

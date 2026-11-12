@@ -1,5 +1,5 @@
 // ====================================================================
-// Adnd1 - rules/dmg/miscmagic_table5_footnotes.h
+// Adnd1 - rules/dmg/misc_magic/miscmagic_table5_footnotes.h
 // R239: the III.E table 5 footnote pins
 // (DMG p.130) - the class marks that frame
 // TABLE (III.E.) 5 of the miscellaneous

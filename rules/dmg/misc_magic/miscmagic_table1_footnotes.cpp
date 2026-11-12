@@ -1,5 +1,5 @@
 // R-refactor: split from miscmagic_table1_footnotes.h - definitions
-#include "rules/dmg/miscmagic_table1_footnotes.h"
+#include "rules/dmg/misc_magic/miscmagic_table1_footnotes.h"
 
 int Miscmagic_table1_footnotes::m1RowCount() {
     // Alchemy Jug through the Everfull Purse

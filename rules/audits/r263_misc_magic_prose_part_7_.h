@@ -6,7 +6,7 @@
     // stretch carries no class marks and no
     // asterisk rows (the negative control slice).
     {
-        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
+        Miscmagic_cube_of_force_to_decanter_of_endless_water miscmagic;
         Miscmagic_table2_footnotes miscmagic_table2_footnotes;
         int bad = 0;
         if (miscmagic.mmpCubeForceWallInches() != 1 ||

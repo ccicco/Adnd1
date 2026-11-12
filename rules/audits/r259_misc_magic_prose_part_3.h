@@ -6,7 +6,7 @@
     // the 102 seam splits the levitation paragraph
     // mid-sentence, pinned exactly.
     {
-        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
+        Miscmagic_book_of_infinite_spells_to_boots_of_striding_and_springing miscmagic;
         Miscmagic_table1_footnotes miscmagic_table1_footnotes;
         int bad = 0;
         // the seven items are the engine kMisc1 rows

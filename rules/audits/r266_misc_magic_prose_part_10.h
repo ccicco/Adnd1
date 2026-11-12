@@ -4,7 +4,7 @@
     // 433-479 - the slice that opens the kMisc3 rows
     // (row 0, the figurine band 01-15).
     {
-        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
+        Miscmagic_figurines_of_wondrous_power miscmagic;
         Miscmagic_table3_footnotes miscmagic_table3_footnotes;
         int bad = 0;
         if (miscmagic.mmpFigTypeCount() != 7 ||

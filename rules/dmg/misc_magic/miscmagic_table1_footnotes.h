@@ -1,5 +1,5 @@
 // ====================================================================
-// Adnd1 - rules/dmg/miscmagic_table1_footnotes.h
+// Adnd1 - rules/dmg/misc_magic/miscmagic_table1_footnotes.h
 // R225: the III.E table 1 footnote pins
 // (DMG p.128) - the class marks and the
 // special-row footnotes that frame the

@@ -8,7 +8,7 @@
     // Defense (engine row 25), not row 26
     // (80-81 Defenselessness).
     {
-        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
+        Miscmagic_bowl_commanding_water_elementals_to_bucknards_purse miscmagic;
         Miscmagic_table1_footnotes miscmagic_table1_footnotes;
         int bad = 0;
         if (miscmagic.mmpBowlCmdHd() != 12 ||

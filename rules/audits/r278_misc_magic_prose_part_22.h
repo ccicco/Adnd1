@@ -9,7 +9,7 @@
     // part2 lines 1054-1081 - the slice pinning the kMisc5
     // rows 6-16 of the 35-row III.E.5 table.
     {
-        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
+        Miscmagic_rope_of_climbing_to_spade_of_colossal_excavation miscmagic;
         Miscmagic_table5_footnotes miscmagic_table5_footnotes;
         int bad = 0;
         // the rope of climbing scalars

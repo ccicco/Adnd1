@@ -9,7 +9,7 @@
     // the kMisc4 rows 19-29 of the 36-row III.E.4
     // table.
     {
-        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
+        Miscmagic_necklace_of_prayer_beads_to_periapts miscmagic;
         Miscmagic_table4_footnotes miscmagic_table4_footnotes;
         int bad = 0;
         // the necklace of prayer beads scalars

@@ -4,7 +4,7 @@
     // part2 line; no page headers inside the
     // slice.
     {
-        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
+        Miscmagic_bag_of_holding_to_book_of_exalted_deeds miscmagic;
         Miscmagic_table1_footnotes miscmagic_table1_footnotes;
         int bad = 0;
         // the six items are the engine kMisc1 rows

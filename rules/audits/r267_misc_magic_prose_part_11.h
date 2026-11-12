@@ -4,7 +4,7 @@
     // Strength, part2 lines 481-530 - the slice
     // pinning the kMisc3 rows 1-9.
     {
-        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
+        Miscmagic_flask_of_curses_to_girdle_of_giant_strength miscmagic;
         Miscmagic_table3_footnotes miscmagic_table3_footnotes;
         int bad = 0;
         if (miscmagic.mmpFlaskCurseOnFirstOpen() != 1 ||

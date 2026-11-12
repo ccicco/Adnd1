@@ -8,7 +8,7 @@
     // part2 lines 843-900 - the slice pinning the
     // kMisc4 rows 9-18 of the 36-row III.E.4 table.
     {
-        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
+        Miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles miscmagic;
         Miscmagic_table4_footnotes miscmagic_table4_footnotes;
         int bad = 0;
         // the manual of stealthy pilfering

@@ -4,7 +4,7 @@
     // Bandore, part2 lines 630-684 - the slice
     // pinning the kMisc3 rows 24-26.
     {
-        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
+        Miscmagic_incense_of_obsession_to_fochlucan_bandore miscmagic;
         Miscmagic_table3_footnotes miscmagic_table3_footnotes;
         int bad = 0;
         if (miscmagic.mmpObsessionDurationHours() != 24 ||

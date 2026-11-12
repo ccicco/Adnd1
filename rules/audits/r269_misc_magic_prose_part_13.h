@@ -4,7 +4,7 @@
     // Meditation, part2 lines 581-626 - the slice
     // pinning the kMisc3 rows 18-23.
     {
-        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
+        Miscmagic_horn_of_collapsing_to_incense_of_meditation miscmagic;
         Miscmagic_table3_footnotes miscmagic_table3_footnotes;
         int bad = 0;
         if (miscmagic.mmpHornCollapseMisfirePct() != 10 ||
