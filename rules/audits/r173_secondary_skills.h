@@ -39,11 +39,11 @@
             "NO SKILL OF MEASURABLE WORTH",
             "ROLL TWICE IGNORING THIS RESULT HEREAFTER"
         };
-        if (secondary.secondaryRowCount() != 23) ++bad;
+        if (secondary.rowCount() != 23) ++bad;
         for (int i = 0; i < 23; ++i) {
             Secondary secondary;
             const SecondarySkillRow& row =
-                secondary.secondaryRow(i);
+                secondary.row(i);
             if (row.lo != kLo[i] || row.hi != kHi[i] ||
                 std::string(row.name) != kName[i])
                 ++bad;
@@ -54,20 +54,20 @@
             if (kHi[i] + 1 != kLo[i + 1]) ++bad;
         if (kHi[22] != 100) ++bad;
         // the special rows
-        if (!secondary.secondaryIsNoSkill(21)) ++bad;
-        if (secondary.secondaryIsNoSkill(20)) ++bad;
-        if (secondary.secondaryIsNoSkill(22)) ++bad;
-        if (!secondary.secondaryIsRollTwice(22)) ++bad;
-        if (secondary.secondaryIsRollTwice(21)) ++bad;
+        if (!secondary.isNoSkill(21)) ++bad;
+        if (secondary.isNoSkill(20)) ++bad;
+        if (secondary.isNoSkill(22)) ++bad;
+        if (!secondary.isRollTwice(22)) ++bad;
+        if (secondary.isRollTwice(21)) ++bad;
         // the intro and adjudication prose
-        if (!secondary.secondaryClassAssumedPriorProfession() ||
-            !secondary.secondaryMinorMundaneKnowledgePossible() ||
-            !secondary.secondaryCampaignAimedAtSkillsUsesTable() ||
-            !secondary.secondaryAssignRandomOrPerBackground() ||
-            !secondary.secondarySecondSkillIfTwoSkills() ||
-            !secondary.secondaryDMAdjudicatesSituations() ||
-            !secondary.secondarySkillGivesWorthSoundnessRepairs() ||
-            !secondary.secondaryAssumeRoleToScaleAbility())
+        if (!secondary.classAssumedPriorProfession() ||
+            !secondary.minorMundaneKnowledgePossible() ||
+            !secondary.campaignAimedAtSkillsUsesTable() ||
+            !secondary.assignRandomOrPerBackground() ||
+            !secondary.secondSkillIfTwoSkills() ||
+            !secondary.DMAdjudicatesSituations() ||
+            !secondary.skillGivesWorthSoundnessRepairs() ||
+            !secondary.assumeRoleToScaleAbility())
             ++bad;
         printf("R173 secondary skills audit: bad %d\n", bad);
         if (bad) return 1;

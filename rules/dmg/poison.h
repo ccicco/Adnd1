@@ -63,20 +63,20 @@ public:
 
 // Grade index: 0 = A ... 4 = E. Grade E exists ingestive
 // only.
-    bool poisonGradeExists(int route, int grade);
+    bool gradeExists(int route, int grade);
 
 
 // ----------------------------------------------------------------------------
 // The p.20 table (cost per dose)
 // ----------------------------------------------------------------------------
-    int poisonCostPerDose(int route, int grade);
+    int costPerDose(int route, int grade);
 
 
 // Onset: minimum and maximum on the printed range plus
 // the unit the row prints in.
-    int poisonOnsetMin(int route, int grade);
-    int poisonOnsetMax(int route, int grade);
-    PoisonUnit poisonOnsetUnit(int route, int grade);
+    int onsetMin(int route, int grade);
+    int onsetMax(int route, int grade);
+    PoisonUnit onsetUnit(int route, int grade);
 
 
 // ----------------------------------------------------------------------------
@@ -85,22 +85,22 @@ public:
 
 // The victim save bonus (the footnotes: +4/+3/+2/+1;
 // E prints none - JUDGMENT: 0).
-    int poisonVictimSaveBonus(int route, int grade);
+    int victimSaveBonus(int route, int grade);
 
 
 // The tasting/smelling/seeing chance (80/65/40/15;
 // E prints none - JUDGMENT: 0).
-    int poisonDetectChance(int route, int grade);
+    int detectChance(int route, int grade);
 
 
 // Damage if the save is made (the ingestive table only;
 // every insinuative row prints 0).
-    int poisonDamageIfSave(int route, int grade);
+    int damageIfSave(int route, int grade);
 
 
 // A failed save: death (true) or the printed damage.
-    bool poisonKillsIfNoSave(int route, int grade);
-    int poisonDamageIfNoSave(int route, int grade);
+    bool killsIfNoSave(int route, int grade);
+    int damageIfNoSave(int route, int grade);
 
 
 // ----------------------------------------------------------------------------
@@ -110,17 +110,17 @@ public:
 // User efficiency: the bonus the VICTIM gets on the save.
 // A studied assassin: none; an unstudied assassin: +1;
 // every other class: +2.
-    int poisonUserEfficiencyAdj( bool assassin, bool studied);
+    int userEfficiencyAdj( bool assassin, bool studied);
 
 
 // Monster poison: all-or-nothing - no damage or death
 // within about a minute.
-    bool poisonMonsterAllOrNothing();
+    bool monsterAllOrNothing();
 
 
 // Monster poison works by ingestion or insinuation alike
 // (dual-use); purchased poison is one route only.
-    bool poisonMonsterDualUse();
+    bool monsterDualUse();
 
 
 // Blade venom (DMG p.28): insinuative. Evaporation and
@@ -128,10 +128,10 @@ public:
 // half the second, gone by the third. The multiplier is
 // 100 for the first, 50 for the second, 0 for the third
 // and beyond.
-    int poisonBladeVenomPotencyPercent(int interval);
+    int bladeVenomPotencyPercent(int interval);
 
 
 // A partially evaporated or used DEATH poison gives the
 // victim +4 on the save.
-    bool poisonBladeVenomDecayedGivesSaveBonus( int interval);
+    bool bladeVenomDecayedGivesSaveBonus( int interval);
 };

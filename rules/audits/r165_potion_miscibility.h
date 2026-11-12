@@ -19,40 +19,40 @@
             else if (r <= 90) want = MISC_COMPATIBLE;
             else if (r <= 99) want = MISC_ONE_BOOSTED;
             else want = MISC_DISCOVERY;
-            if (miscibility.miscibilityRoll(r) != want) ++bad;
+            if (miscibility.roll(r) != want) ++bad;
         }
         // the clamps
-        if (miscibility.miscibilityRoll(0) != MISC_EXPLOSION ||
-            miscibility.miscibilityRoll(-7) != MISC_EXPLOSION ||
-            miscibility.miscibilityRoll(101) != MISC_DISCOVERY ||
-            miscibility.miscibilityRoll(999) != MISC_DISCOVERY)
+        if (miscibility.roll(0) != MISC_EXPLOSION ||
+            miscibility.roll(-7) != MISC_EXPLOSION ||
+            miscibility.roll(101) != MISC_DISCOVERY ||
+            miscibility.roll(999) != MISC_DISCOVERY)
             ++bad;
         // the trigger conditions
-        if (!miscibility.miscibilityTestNeeded(true, false) ||
-            !miscibility.miscibilityTestNeeded(false, true) ||
-            miscibility.miscibilityTestNeeded(false, false)) ++bad;
+        if (!miscibility.testNeeded(true, false) ||
+            !miscibility.testNeeded(false, true) ||
+            miscibility.testNeeded(false, false)) ++bad;
         // the explosion numbers
-        if (miscibility.miscibilityExplosionInternalMin() != 6 ||
-            miscibility.miscibilityExplosionInternalMax() != 60 ||
-            miscibility.miscibilityExplosionBlastNearMin() != 1 ||
-            miscibility.miscibilityExplosionBlastNearMax() != 10 ||
-            miscibility.miscibilityExplosionBlastNearRadius() != 5 ||
-            miscibility.miscibilityExplosionBlastFarMin() != 4 ||
-            miscibility.miscibilityExplosionBlastFarMax() != 24 ||
-            miscibility.miscibilityExplosionBlastFarRadius() != 10)
+        if (miscibility.explosionInternalMin() != 6 ||
+            miscibility.explosionInternalMax() != 60 ||
+            miscibility.explosionBlastNearMin() != 1 ||
+            miscibility.explosionBlastNearMax() != 10 ||
+            miscibility.explosionBlastNearRadius() != 5 ||
+            miscibility.explosionBlastFarMin() != 4 ||
+            miscibility.explosionBlastFarMax() != 24 ||
+            miscibility.explosionBlastFarRadius() != 10)
             ++bad;
         // the mild poison duration and the gas cloud
-        if (miscibility.miscibilityMildPoisonDurationMin() != 5 ||
-            miscibility.miscibilityMildPoisonDurationMax() != 20 ||
-            miscibility.miscibilityGasCloudRadius() != 10) ++bad;
+        if (miscibility.mildPoisonDurationMin() != 5 ||
+            miscibility.mildPoisonDurationMax() != 20 ||
+            miscibility.gasCloudRadius() != 10) ++bad;
         // the boost
-        if (miscibility.miscibilityBoostPercent() != 150) ++bad;
+        if (miscibility.boostPercent() != 150) ++bad;
         // the named campaign options
-        if (!miscibility.miscibilityOptionDelusionMixes() ||
-            !miscibility.miscibilityOptionTreasureFindingLethal() ||
-            miscibility.miscibilityOptionEtherealLostPercent() != 50 ||
-            miscibility.miscibilityOptionEtherealLostMinDays() != 5 ||
-            miscibility.miscibilityOptionEtherealLostMaxDays() != 30)
+        if (!miscibility.optionDelusionMixes() ||
+            !miscibility.optionTreasureFindingLethal() ||
+            miscibility.optionEtherealLostPercent() != 50 ||
+            miscibility.optionEtherealLostMinDays() != 5 ||
+            miscibility.optionEtherealLostMaxDays() != 30)
             ++bad;
         printf("R165 potion miscibility audit: bad %d\n", bad);
         if (bad) return 1;

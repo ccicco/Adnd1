@@ -1,7 +1,7 @@
 // R-refactor: split from miscibility.h - definitions
 #include "rules/dmg/miscibility.h"
 
-MiscibilityResult Miscibility::miscibilityRoll(int d100) {
+MiscibilityResult Miscibility::roll(int d100) {
     if (d100 < 1) d100 = 1;
     if (d100 > 100) d100 = 100;
     if (d100 == 1) return MISC_EXPLOSION;
@@ -15,50 +15,50 @@ MiscibilityResult Miscibility::miscibilityRoll(int d100) {
     return MISC_DISCOVERY;
 }
 
-bool Miscibility::miscibilityTestNeeded( bool intermingled, bool otherStillInEffect) {
+bool Miscibility::testNeeded( bool intermingled, bool otherStillInEffect) {
     return intermingled || otherStillInEffect;
 }
 
-int Miscibility::miscibilityExplosionInternalMin() { return 6; }
+int Miscibility::explosionInternalMin() { return 6; }
 
-int Miscibility::miscibilityExplosionInternalMax() { return 60; }
+int Miscibility::explosionInternalMax() { return 60; }
 
-int Miscibility::miscibilityExplosionBlastNearMin() { return 1; }
+int Miscibility::explosionBlastNearMin() { return 1; }
 
-int Miscibility::miscibilityExplosionBlastNearMax() { return 10; }
+int Miscibility::explosionBlastNearMax() { return 10; }
 
-int Miscibility::miscibilityExplosionBlastNearRadius() { return 5; }
+int Miscibility::explosionBlastNearRadius() { return 5; }
 
-int Miscibility::miscibilityExplosionBlastFarMin() { return 4; }
+int Miscibility::explosionBlastFarMin() { return 4; }
 
-int Miscibility::miscibilityExplosionBlastFarMax() { return 24; }
+int Miscibility::explosionBlastFarMax() { return 24; }
 
-int Miscibility::miscibilityExplosionBlastFarRadius() { return 10; }
+int Miscibility::explosionBlastFarRadius() { return 10; }
 
-int Miscibility::miscibilityMildPoisonDurationMin() { return 5; }
+int Miscibility::mildPoisonDurationMin() { return 5; }
 
-int Miscibility::miscibilityMildPoisonDurationMax() { return 20; }
+int Miscibility::mildPoisonDurationMax() { return 20; }
 
-int Miscibility::miscibilityGasCloudRadius() { return 10; }
+int Miscibility::gasCloudRadius() { return 10; }
 
-int Miscibility::miscibilityBoostPercent() { return 150; }
+int Miscibility::boostPercent() { return 150; }
 
-bool Miscibility::miscibilityOptionDelusionMixes() {
+bool Miscibility::optionDelusionMixes() {
     return true;
 }
 
-bool Miscibility::miscibilityOptionTreasureFindingLethal() {
+bool Miscibility::optionTreasureFindingLethal() {
     return true;
 }
 
-int Miscibility::miscibilityOptionEtherealLostPercent() {
+int Miscibility::optionEtherealLostPercent() {
     return 50;
 }
 
-int Miscibility::miscibilityOptionEtherealLostMinDays() {
+int Miscibility::optionEtherealLostMinDays() {
     return 5;
 }
 
-int Miscibility::miscibilityOptionEtherealLostMaxDays() {
+int Miscibility::optionEtherealLostMaxDays() {
     return 30;
 }

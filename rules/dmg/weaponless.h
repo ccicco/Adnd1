@@ -107,8 +107,8 @@ public:
 // The shared variable: the attacker column + d6, the
 // defender column + d4. The caller decides the spend.
 // ----------------------------------------------------------------------------
-    int weaponlessVariable(Dice& dice, int column, bool attacker);
-    bool weaponlessUnconsciousGetsVariable();
+    int variable(Dice& dice, int column, bool attacker);
+    bool unconsciousGetsVariable();
 
 
 // ----------------------------------------------------------------------------
@@ -117,24 +117,24 @@ public:
 // -1 if the attacker is first, 1 if the defender is
 // first, 0 if tied.
 // ----------------------------------------------------------------------------
-    int weaponlessInitiativeFirst(bool attackerSurprise, bool defenderSurprise, bool attackerCharging, bool defenderCharging, int dexA, int dexB, int rollA, int rollB);
+    int initiativeFirst(bool attackerSurprise, bool defenderSurprise, bool attackerCharging, bool defenderCharging, int dexA, int dexB, int rollA, int rollB);
 
 
 // ----------------------------------------------------------------------------
 // Damage accounting
 // ----------------------------------------------------------------------------
-    int weaponlessActualPct(WeaponlessKind k);
-    int weaponlessHealPerRound();
+    int actualPct(WeaponlessKind k);
+    int healPerRound();
 
 
 // 0 hit points = unconscious: 1 round plus 1 round per
 // point beyond 0 (the print example: 4 beyond = 5 rounds).
-    int weaponlessUnconsciousRounds(int hpBeyondZero);
-    int weaponlessTrussRounds();
+    int unconsciousRounds(int hpBeyondZero);
+    int trussRounds();
 
 
 // Two pummeling attacks per round (p.72).
-    int weaponlessPummelAttacksPerRound();
+    int pummelAttacksPerRound();
 
 
 // Grapple: an attack and a counter each round; an
@@ -235,9 +235,9 @@ public:
 // over 18; opponent dex -2% per point over 14;
 // opponent braced -10%.
     int overbearAdj(int attackerStr, int strPctOver18, bool oppSlowedOrOneFootHeld, bool rushingOrLeaping, bool oppStunnedOrBothFeetHeld, int weightPctDiff, int heightPctDiff, int oppStrOver14, int oppStrPctOver18, int oppDexOver14, bool oppBraced);
-    const WeaponlessTier* weaponlessTiers( WeaponlessKind k, int& count);
-    int weaponlessTierIndex(WeaponlessKind k, int adjustedScore);
-    int weaponlessTierDamage(WeaponlessKind k, int idx);
+    const WeaponlessTier* tiers( WeaponlessKind k, int& count);
+    int tierIndex(WeaponlessKind k, int adjustedScore);
+    int tierDamage(WeaponlessKind k, int idx);
 
 
 // ----------------------------------------------------------------------------
@@ -248,12 +248,12 @@ public:
 // attacker has surprise; a surprised weapon wielder has
 // no fending strike unless the attacker must spend all
 // surprise segments closing.
-    bool weaponlessWeaponWielderFirst( bool attackerHasSurprise);
+    bool weaponWielderFirst( bool attackerHasSurprise);
 
 
 // Attack from behind negates the shield and dexterity
 // components of the defending creature.
-    bool weaponlessBehindNegatesShieldAndDex();
+    bool behindNegatesShieldAndDex();
 
 
 // Monsters choose the most effective mode if human or
@@ -261,7 +261,7 @@ public:
 // creatures that do not use weapons always overbear,
 // except bears and similar hugging monsters (grapple).
     bool bearLikeHuggerGrappples();
-    bool weaponlessMonsterOverbears();
+    bool monsterOverbears();
 
 
 // Monks conduct open hand combat normally even if

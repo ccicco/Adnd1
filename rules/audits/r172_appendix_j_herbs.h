@@ -352,44 +352,44 @@
             "blood tonic (anemia)",
             "cathartic, respiratory diseases, heart, kidneys",
         };
-        if (herbs.herbsRowCount() != 171) ++bad;
+        if (herbs.rowCount() != 171) ++bad;
         for (int i = 0; i < 171; ++i) {
             Herbs herbs;
-            if (std::string(herbs.herbsRow(i).plant)
+            if (std::string(herbs.row(i).plant)
                     != jP[i])
                 ++bad;
-            if (std::string(herbs.herbsRow(i).uses)
+            if (std::string(herbs.row(i).uses)
                     != jU[i])
                 ++bad;
         }
         // the rows the book leaves with unknown uses
         int unknowns = 0;
         for (int i = 0; i < 171; ++i)
-            if (std::string(herbs.herbsRow(i).uses) == "?")
+            if (std::string(herbs.row(i).uses) == "?")
                 ++unknowns;
         if (unknowns != 10) ++bad;
-        if (herbs.herbsUnknownUsesCount() != 10) ++bad;
+        if (herbs.unknownUsesCount() != 10) ++bad;
         // the one cross-reference row (blueberry)
         int crossrefs = 0;
         for (int i = 0; i < 171; ++i)
-            if (herbs.herbsIsCrossReference(i))
+            if (herbs.isCrossReference(i))
                 ++crossrefs;
         if (crossrefs != 1) ++bad;
-        if (!herbs.herbsIsCrossReference(49)) ++bad;
-        if (std::string(herbs.herbsRow(49).plant)
+        if (!herbs.isCrossReference(49)) ++bad;
+        if (std::string(herbs.row(49).plant)
                 != "blueberry - see bilberry")
             ++bad;
-        if (std::string(herbs.herbsRow(49).uses)
+        if (std::string(herbs.row(49).uses)
                 != "")
             ++bad;
         // the intro and closing prose
-        if (!herbs.herbsIntroHundredsReputedMedicinalAndMagic() ||
-            !herbs.herbsIntroNotWithinScopeToDetailAll() ||
-            !herbs.herbsIntroAlphabeticalOneOrTwoComments() ||
-            !herbs.herbsIntroHerbologistPursuesScholarlyTexts() ||
-            !herbs.herbsClosingGuideForPotionsInksItems() ||
-            !herbs.herbsClosingAddOrDeleteAsDesired() ||
-            !herbs.herbsClosingFolkUsesMagicDMPurview())
+        if (!herbs.introHundredsReputedMedicinalAndMagic() ||
+            !herbs.introNotWithinScopeToDetailAll() ||
+            !herbs.introAlphabeticalOneOrTwoComments() ||
+            !herbs.introHerbologistPursuesScholarlyTexts() ||
+            !herbs.closingGuideForPotionsInksItems() ||
+            !herbs.closingAddOrDeleteAsDesired() ||
+            !herbs.closingFolkUsesMagicDMPurview())
             ++bad;
         printf("R172 appendix J herbs audit: bad %d\n", bad);
         if (bad) return 1;

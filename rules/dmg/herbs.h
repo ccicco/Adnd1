@@ -39,60 +39,60 @@ struct HerbRow {
 // R-refactor: namespace rules -> class Herbs (instance methods)
 class Herbs {
 public:
-    int herbsRowCount();
+    int rowCount();
 
 
 // The rows: the uses and/or powers column exactly as
 // printed. The blueberry row is a printed cross-reference
 // to bilberry with an empty uses cell.
-    const HerbRow& herbsRow(int i);
+    const HerbRow& row(int i);
 
 
 // The rows the book leaves with unknown uses ("?").
-    int herbsUnknownUsesCount();
+    int unknownUsesCount();
 
 
 // True only for the one printed cross-reference row
 // (blueberry - see bilberry, index 49).
-    bool herbsIsCrossReference(int i);
+    bool isCrossReference(int i);
 
 
 // The intro prose: hundreds of different vegetable
 // flavorings and seasonings were or are reputed to have
 // medicinal and/or magic properties.
-    bool herbsIntroHundredsReputedMedicinalAndMagic();
+    bool introHundredsReputedMedicinalAndMagic();
 
 
 // It is not within the scope of this work to detail all
 // of these herbs and spices, particularly as regards
 // their description, habitat, and the many uses claimed
 // for most.
-    bool herbsIntroNotWithinScopeToDetailAll();
+    bool introNotWithinScopeToDetailAll();
 
 
 // An alphabetical listing with one or two comments on
 // each is presented.
-    bool herbsIntroAlphabeticalOneOrTwoComments();
+    bool introAlphabeticalOneOrTwoComments();
 
 
 // The dedicated herbologist will have to pursue his or
 // her research in scholarly texts.
-    bool herbsIntroHerbologistPursuesScholarlyTexts();
+    bool introHerbologistPursuesScholarlyTexts();
 
 
 // The closing prose: use the list as a guide to which
 // herbs, spices or vegetables are required for various
 // magical effects desired from potions, scroll inks and
 // other magic items.
-    bool herbsClosingGuideForPotionsInksItems();
+    bool closingGuideForPotionsInksItems();
 
 
 // You may add to or delete from the list as you desire.
-    bool herbsClosingAddOrDeleteAsDesired();
+    bool closingAddOrDeleteAsDesired();
 
 
 // Reputed folk uses are not detailed with respect to
 // magic in most cases, as this decision is the purview
 // of the DM.
-    bool herbsClosingFolkUsesMagicDMPurview();
+    bool closingFolkUsesMagicDMPurview();
 };

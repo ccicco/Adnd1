@@ -51,14 +51,14 @@ enum GrenadeKind {
 // R-refactor: namespace rules -> class Grenade (instance methods)
 class Grenade {
 public:
-    GrenadeKind grenadeClamp(GrenadeKind k);
-    const char* grenadeName(GrenadeKind k);
+    GrenadeKind clamp(GrenadeKind k);
+    const char* name(GrenadeKind k);
 
 
 // container size in fluid ounces (the printed Size list:
 // acid half pint, holy/unholy water quarter pint, oil a
 // pint, poison quarter pint)
-    int grenadeSizeOz(GrenadeKind k);
+    int sizeOz(GrenadeKind k);
 
 
 // ----------------------------------------------------------------------------
@@ -68,22 +68,22 @@ public:
 // special). Oil: the second-round burn and the segment burn
 // ride their own helpers.
 // ----------------------------------------------------------------------------
-    void grenadeDirectHit(GrenadeKind k, int& lo, int& hi);
-    void grenadeSplashDamage(GrenadeKind k, int& lo, int& hi);
-    int grenadeSplashDiameterFeet(GrenadeKind k);
+    void directHit(GrenadeKind k, int& lo, int& hi);
+    void splashDamage(GrenadeKind k, int& lo, int& hi);
+    int splashDiameterFeet(GrenadeKind k);
     int rollGrenadeDirectHit(rules::Dice& dice, GrenadeKind k);
     int rollGrenadeSplashDamage(rules::Dice& dice, GrenadeKind k);
 
 
 // alight oil, direct hit: 2-12 the first round and 1-6 more
 // the second, then burns out
-    void grenadeOilSecondRound(int& lo, int& hi);
+    void oilSecondRound(int& lo, int& hi);
     int rollGrenadeOilSecondRound(rules::Dice& dice);
 
 
 // alight-oil splash: burns 1-3 segments at 1 hp per segment
-    int grenadeOilBurnSegmentsMax();
-    int grenadeOilBurnDamagePerSegment();
+    int oilBurnSegmentsMax();
+    int oilBurnDamagePerSegment();
 
 
 // ----------------------------------------------------------------------------
@@ -92,7 +92,7 @@ public:
 // SAVE_DEATH_POISON category) or is splashed with the
 // contents.
 // ----------------------------------------------------------------------------
-    int grenadeSplashRadiusFeet();
+    int splashRadiusFeet();
 
 
 // ----------------------------------------------------------------------------
@@ -100,8 +100,8 @@ public:
 // is short (no adjustment), beyond 1" medium (-2), beyond
 // 2" long (-5).
 // ----------------------------------------------------------------------------
-    int grenadeRangeMaxInches();
-    int grenadeRangeToHitAdj(int inches);
+    int rangeMaxInches();
+    int rangeToHitAdj(int inches);
 
 
 // ----------------------------------------------------------------------------
@@ -110,8 +110,8 @@ public:
 // against-hard-surface case) for the BLOW, CRUSHING column;
 // the poison-into-orifice case reads BLOW, NORMAL.
 // ----------------------------------------------------------------------------
-    int grenadeBreakSaveCrushing(GrenadeKind k);
-    int grenadeBreakSaveNormal(GrenadeKind k);
+    int breakSaveCrushing(GrenadeKind k);
+    int breakSaveNormal(GrenadeKind k);
 
 
 // ----------------------------------------------------------------------------
@@ -119,9 +119,9 @@ public:
 // off target, and the d8 direction cone - long read as
 // high, short as low when hurled at a plane.
 // ----------------------------------------------------------------------------
-    int grenadeMissDistance(rules::Dice& dice, bool shortRange);
-    int grenadeMissDirection(rules::Dice& dice);
-    const char* grenadeMissDirectionName(int dir);
+    int missDistance(rules::Dice& dice, bool shortRange);
+    int missDirection(rules::Dice& dice);
+    const char* missDirectionName(int dir);
 
 
 // ----------------------------------------------------------------------------
@@ -151,8 +151,8 @@ public:
 // The empty blessed/cursed crystal vial: 2-5 gold pieces
 // (the vial-cost print; the font lane is elsewhere).
 // ----------------------------------------------------------------------------
-    int grenadeVialCostLo();
-    int grenadeVialCostHi();
+    int vialCostLo();
+    int vialCostHi();
 
 
 // ----------------------------------------------------------------------------
@@ -164,7 +164,7 @@ public:
 // JUDGMENT: a drop under 10 feet reads at the 10-foot
 // window edge (the print caps only the far end).
 // ----------------------------------------------------------------------------
-    int grenadeBoulderDiameterFeet(bool siege);
-    int grenadeBoulderDropDamage(int weightLbs, int feetDropped);
+    int boulderDiameterFeet(bool siege);
+    int boulderDropDamage(int weightLbs, int feetDropped);
     int rollGrenadeBoulderFlatDamage(rules::Dice& dice, int weightLbs);
 };

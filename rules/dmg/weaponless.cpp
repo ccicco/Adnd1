@@ -1,16 +1,16 @@
 // R-refactor: split from weaponless.h - definitions
 #include "rules/dmg/weaponless.h"
 
-int Weaponless::weaponlessVariable(Dice& dice, int column, bool attacker) {
+int Weaponless::variable(Dice& dice, int column, bool attacker) {
     int d = attacker ? (int)dice.d6() : (int)dice.d4();
     return column + d;
 }
 
-bool Weaponless::weaponlessUnconsciousGetsVariable() {
+bool Weaponless::unconsciousGetsVariable() {
     return false;
 }
 
-int Weaponless::weaponlessInitiativeFirst(bool attackerSurprise, bool defenderSurprise, bool attackerCharging, bool defenderCharging, int dexA, int dexB, int rollA, int rollB) {
+int Weaponless::initiativeFirst(bool attackerSurprise, bool defenderSurprise, bool attackerCharging, bool defenderCharging, int dexA, int dexB, int rollA, int rollB) {
     if (attackerSurprise != defenderSurprise)
         return attackerSurprise ? -1 : 1;
     if (attackerCharging != defenderCharging)
@@ -20,20 +20,20 @@ int Weaponless::weaponlessInitiativeFirst(bool attackerSurprise, bool defenderSu
     return 0;
 }
 
-int Weaponless::weaponlessActualPct(WeaponlessKind k) {
+int Weaponless::actualPct(WeaponlessKind k) {
     return (k == WL_OVERBEAR) ? 50 : 25;
 }
 
-int Weaponless::weaponlessHealPerRound() { return 1; }
+int Weaponless::healPerRound() { return 1; }
 
-int Weaponless::weaponlessUnconsciousRounds(int hpBeyondZero) {
+int Weaponless::unconsciousRounds(int hpBeyondZero) {
     if (hpBeyondZero < 0) hpBeyondZero = 0;
     return 1 + hpBeyondZero;
 }
 
-int Weaponless::weaponlessTrussRounds() { return 1; }
+int Weaponless::trussRounds() { return 1; }
 
-int Weaponless::weaponlessPummelAttacksPerRound() { return 2; }
+int Weaponless::pummelAttacksPerRound() { return 2; }
 
 bool Weaponless::grappleAttackAndCounterPerRound() { return true; }
 
@@ -139,7 +139,7 @@ int Weaponless::overbearAdj(int attackerStr, int strPctOver18, bool oppSlowedOrO
     return a;
 }
 
-const WeaponlessTier* Weaponless::weaponlessTiers( WeaponlessKind k, int& count) {
+const WeaponlessTier* Weaponless::tiers( WeaponlessKind k, int& count) {
     static const WeaponlessTier pummel[] = {
         { "blow misses, opponent may counter", -1000,   0,  0 },
         { "ineffective blow, strike again",       1,  20,  0 },
@@ -174,33 +174,33 @@ const WeaponlessTier* Weaponless::weaponlessTiers( WeaponlessKind k, int& count)
     }
 }
 
-int Weaponless::weaponlessTierIndex(WeaponlessKind k, int adjustedScore) {
+int Weaponless::tierIndex(WeaponlessKind k, int adjustedScore) {
     int n = 0;
-    const WeaponlessTier* t = weaponlessTiers(k, n);
+    const WeaponlessTier* t = tiers(k, n);
     for (int i = 0; i < n; ++i)
         if (adjustedScore >= t[i].lo && adjustedScore <= t[i].hi)
             return i;
     return (adjustedScore > 0) ? n - 1 : 0;
 }
 
-int Weaponless::weaponlessTierDamage(WeaponlessKind k, int idx) {
+int Weaponless::tierDamage(WeaponlessKind k, int idx) {
     int n = 0;
-    const WeaponlessTier* t = weaponlessTiers(k, n);
+    const WeaponlessTier* t = tiers(k, n);
     if (idx < 0) idx = 0;
     if (idx >= n) idx = n - 1;
     return t[idx].baseDmg;
 }
 
-bool Weaponless::weaponlessWeaponWielderFirst( bool attackerHasSurprise) {
+bool Weaponless::weaponWielderFirst( bool attackerHasSurprise) {
     return !attackerHasSurprise;
 }
 
-bool Weaponless::weaponlessBehindNegatesShieldAndDex() {
+bool Weaponless::behindNegatesShieldAndDex() {
     return true;
 }
 
 bool Weaponless::bearLikeHuggerGrappples() { return true; }
 
-bool Weaponless::weaponlessMonsterOverbears() { return true; }
+bool Weaponless::monsterOverbears() { return true; }
 
 bool Weaponless::monkOpenHandUnimpeded() { return true; }

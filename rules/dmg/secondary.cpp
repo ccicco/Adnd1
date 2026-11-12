@@ -1,9 +1,9 @@
 // R-refactor: split from secondary.h - definitions
 #include "rules/dmg/secondary.h"
 
-int Secondary::secondaryRowCount() { return 23; }
+int Secondary::rowCount() { return 23; }
 
-const SecondarySkillRow& Secondary::secondaryRow(int i) {
+const SecondarySkillRow& Secondary::row(int i) {
     static const SecondarySkillRow k[23] = {
         { 1, 2, "Armorer" },
         { 3, 4, "Bowyer/fletcher" },
@@ -34,42 +34,42 @@ const SecondarySkillRow& Secondary::secondaryRow(int i) {
     return k[i];
 }
 
-bool Secondary::secondaryIsNoSkill(int i) {
+bool Secondary::isNoSkill(int i) {
     return i == 21;
 }
 
-bool Secondary::secondaryIsRollTwice(int i) {
+bool Secondary::isRollTwice(int i) {
     return i == 22;
 }
 
-bool Secondary::secondaryClassAssumedPriorProfession() {
+bool Secondary::classAssumedPriorProfession() {
     return true;
 }
 
-bool Secondary::secondaryMinorMundaneKnowledgePossible() {
+bool Secondary::minorMundaneKnowledgePossible() {
     return true;
 }
 
-bool Secondary::secondaryCampaignAimedAtSkillsUsesTable() {
+bool Secondary::campaignAimedAtSkillsUsesTable() {
     return true;
 }
 
-bool Secondary::secondaryAssignRandomOrPerBackground() {
+bool Secondary::assignRandomOrPerBackground() {
     return true;
 }
 
-bool Secondary::secondarySecondSkillIfTwoSkills() {
+bool Secondary::secondSkillIfTwoSkills() {
     return true;
 }
 
-bool Secondary::secondaryDMAdjudicatesSituations() {
+bool Secondary::DMAdjudicatesSituations() {
     return true;
 }
 
-bool Secondary::secondarySkillGivesWorthSoundnessRepairs() {
+bool Secondary::skillGivesWorthSoundnessRepairs() {
     return true;
 }
 
-bool Secondary::secondaryAssumeRoleToScaleAbility() {
+bool Secondary::assumeRoleToScaleAbility() {
     return true;
 }

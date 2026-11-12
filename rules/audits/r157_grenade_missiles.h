@@ -15,9 +15,9 @@
         static const int kOz[5] = { 8, 4, 4, 16, 4 };
         for (int k = 0; k < 5; ++k) {
             Grenade grenade;
-            if (grenade.grenadeSizeOz((GrenadeKind)k)
+            if (grenade.sizeOz((GrenadeKind)k)
                 != kOz[k]) ++bad;
-            if (!*grenade.grenadeName((GrenadeKind)k))
+            if (!*grenade.name((GrenadeKind)k))
                 ++bad;
         }
         // the effect table
@@ -29,36 +29,36 @@
         for (int k = 0; k < 5; ++k) {
             Grenade grenade;
             int lo, hi;
-            grenade.grenadeDirectHit((GrenadeKind)k, lo, hi);
+            grenade.directHit((GrenadeKind)k, lo, hi);
             if (lo != kDLo[k] || hi != kDHi[k]) ++bad;
-            grenade.grenadeSplashDamage(
+            grenade.splashDamage(
                 (GrenadeKind)k, lo, hi);
             if (lo != kSLo[k] || hi != kSHi[k]) ++bad;
-            if (grenade.grenadeSplashDiameterFeet(
+            if (grenade.splashDiameterFeet(
                     (GrenadeKind)k) != kDia[k]) ++bad;
         }
         // oil: the second-round burn + the segment burn
         int olo, ohi;
-        grenade.grenadeOilSecondRound(olo, ohi);
+        grenade.oilSecondRound(olo, ohi);
         if (olo != 1 || ohi != 6) ++bad;
-        if (grenade.grenadeOilBurnSegmentsMax() != 3 ||
-            grenade.grenadeOilBurnDamagePerSegment() != 1)
+        if (grenade.oilBurnSegmentsMax() != 3 ||
+            grenade.oilBurnDamagePerSegment() != 1)
             ++bad;
         // the splash-save radius
-        if (grenade.grenadeSplashRadiusFeet() != 3) ++bad;
+        if (grenade.splashRadiusFeet() != 3) ++bad;
         // range bands
-        if (grenade.grenadeRangeMaxInches() != 3) ++bad;
-        if (grenade.grenadeRangeToHitAdj(1) != 0 ||
-            grenade.grenadeRangeToHitAdj(2) != -2 ||
-            grenade.grenadeRangeToHitAdj(3) != -5) ++bad;
+        if (grenade.rangeMaxInches() != 3) ++bad;
+        if (grenade.rangeToHitAdj(1) != 0 ||
+            grenade.rangeToHitAdj(2) != -2 ||
+            grenade.rangeToHitAdj(3) != -5) ++bad;
         // the break saves (the p.80 matrix rows)
         static const int kCrush[5] = { 18, 19, 19, 18, 19 };
         static const int kNorm[5]  = { 12, 14, 14, 12, 14 };
         for (int k = 0; k < 5; ++k) {
             Grenade grenade;
-            if (grenade.grenadeBreakSaveCrushing(
+            if (grenade.breakSaveCrushing(
                     (GrenadeKind)k) != kCrush[k] ||
-                grenade.grenadeBreakSaveNormal(
+                grenade.breakSaveNormal(
                     (GrenadeKind)k) != kNorm[k]) ++bad;
         }
         // the miss tables: distance dice + direction cone
@@ -68,19 +68,19 @@
             rules::Dice diceG(rngG);
             for (int t = 0; t < 500; ++t) {
                 Grenade grenade;
-                int d6 = grenade.grenadeMissDistance(diceG, false);
-                int d4 = grenade.grenadeMissDistance(diceG, true);
-                int dir = grenade.grenadeMissDirection(diceG);
+                int d6 = grenade.missDistance(diceG, false);
+                int d4 = grenade.missDistance(diceG, true);
+                int dir = grenade.missDirection(diceG);
                 if (d6 < 1 || d6 > 6) ++bad;
                 if (d4 < 1 || d4 > 4) ++bad;
                 if (dir < 1 || dir > 8) ++bad;
-                if (!*grenade.grenadeMissDirectionName(dir))
+                if (!*grenade.missDirectionName(dir))
                     ++bad;
             }
-            std::string n1 = grenade.grenadeMissDirectionName(1);
-            std::string n4 = grenade.grenadeMissDirectionName(4);
-            std::string n5 = grenade.grenadeMissDirectionName(5);
-            std::string n8 = grenade.grenadeMissDirectionName(8);
+            std::string n1 = grenade.missDirectionName(1);
+            std::string n4 = grenade.missDirectionName(4);
+            std::string n5 = grenade.missDirectionName(5);
+            std::string n8 = grenade.missDirectionName(8);
             if (n1 != "long right" || n4 != "short (before)" ||
                 n5 != "short left" || n8 != "long (over)")
                 ++bad;
@@ -100,18 +100,18 @@
         int wlo, whi;
         grenade.flamingOilWalkDamage(wlo, whi);
         if (wlo != 1 || whi != 6) ++bad;
-        if (grenade.grenadeVialCostLo() != 2 ||
-            grenade.grenadeVialCostHi() != 5) ++bad;
+        if (grenade.vialCostLo() != 2 ||
+            grenade.vialCostHi() != 5) ++bad;
         // boulders: diameters + the drop window
-        if (grenade.grenadeBoulderDiameterFeet(false) != 1 ||
-            grenade.grenadeBoulderDiameterFeet(true) != 2)
+        if (grenade.boulderDiameterFeet(false) != 1 ||
+            grenade.boulderDiameterFeet(true) != 2)
             ++bad;
-        if (grenade.grenadeBoulderDropDamage(14, 10) != 10 ||
-            grenade.grenadeBoulderDropDamage(14, 60) != 60 ||
-            grenade.grenadeBoulderDropDamage(14, 100) != 60 ||
-            grenade.grenadeBoulderDropDamage(28, 30) != 60 ||
-            grenade.grenadeBoulderDropDamage(14, 5) != 10 ||
-            grenade.grenadeBoulderDropDamage(13, 60) != 0)
+        if (grenade.boulderDropDamage(14, 10) != 10 ||
+            grenade.boulderDropDamage(14, 60) != 60 ||
+            grenade.boulderDropDamage(14, 100) != 60 ||
+            grenade.boulderDropDamage(28, 30) != 60 ||
+            grenade.boulderDropDamage(14, 5) != 10 ||
+            grenade.boulderDropDamage(13, 60) != 0)
             ++bad;
         // roller smoke: bounds sweeps
         {
@@ -122,12 +122,12 @@
                 for (int k = 0; k < 5; ++k) {
                     Grenade grenade;
                     int lo, hi;
-                    grenade.grenadeDirectHit(
+                    grenade.directHit(
                         (GrenadeKind)k, lo, hi);
                     int v = grenade.rollGrenadeDirectHit(
                         diceH, (GrenadeKind)k);
                     if (v < lo || v > hi) ++bad;
-                    grenade.grenadeSplashDamage(
+                    grenade.splashDamage(
                         (GrenadeKind)k, lo, hi);
                     int s = grenade.rollGrenadeSplashDamage(
                         diceH, (GrenadeKind)k);

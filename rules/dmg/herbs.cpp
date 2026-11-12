@@ -1,9 +1,9 @@
 // R-refactor: split from herbs.h - definitions
 #include "rules/dmg/herbs.h"
 
-int Herbs::herbsRowCount() { return 171; }
+int Herbs::rowCount() { return 171; }
 
-const HerbRow& Herbs::herbsRow(int i) {
+const HerbRow& Herbs::row(int i) {
     static const HerbRow k[171] = {
         { "abscess root (sweet root)", "respiratory disorders" },
         { "acacia (Gum Arabic)", "tissue repair" },
@@ -182,9 +182,9 @@ const HerbRow& Herbs::herbsRow(int i) {
     return k[i];
 }
 
-int Herbs::herbsUnknownUsesCount() { return 10; }
+int Herbs::unknownUsesCount() { return 10; }
 
-bool Herbs::herbsIsCrossReference(int i) {
+bool Herbs::isCrossReference(int i) {
     static const bool k[171] = {
         false, false, false, false, false, false, false, false, false, false,
         false, false, false, false, false, false, false, false, false, false,
@@ -210,30 +210,30 @@ bool Herbs::herbsIsCrossReference(int i) {
     return k[i];
 }
 
-bool Herbs::herbsIntroHundredsReputedMedicinalAndMagic() {
+bool Herbs::introHundredsReputedMedicinalAndMagic() {
     return true;
 }
 
-bool Herbs::herbsIntroNotWithinScopeToDetailAll() {
+bool Herbs::introNotWithinScopeToDetailAll() {
     return true;
 }
 
-bool Herbs::herbsIntroAlphabeticalOneOrTwoComments() {
+bool Herbs::introAlphabeticalOneOrTwoComments() {
     return true;
 }
 
-bool Herbs::herbsIntroHerbologistPursuesScholarlyTexts() {
+bool Herbs::introHerbologistPursuesScholarlyTexts() {
     return true;
 }
 
-bool Herbs::herbsClosingGuideForPotionsInksItems() {
+bool Herbs::closingGuideForPotionsInksItems() {
     return true;
 }
 
-bool Herbs::herbsClosingAddOrDeleteAsDesired() {
+bool Herbs::closingAddOrDeleteAsDesired() {
     return true;
 }
 
-bool Herbs::herbsClosingFolkUsesMagicDMPurview() {
+bool Herbs::closingFolkUsesMagicDMPurview() {
     return true;
 }

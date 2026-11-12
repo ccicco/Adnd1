@@ -1,12 +1,12 @@
 // R-refactor: split from hoard.h - definitions
 #include "rules/dmg/hoard.h"
 
-int Hoard::hoardBandCount() {
+int Hoard::bandCount() {
     // 01-20 through 97-00: ten bands
     return 10;
 }
 
-int Hoard::hoardBandOfRoll(int roll) {
+int Hoard::bandOfRoll(int roll) {
     // 01-20 b0, 21-40 b1, 41-55 b2, 56-65 b3,
     // 66-75 b4, 76-80 b5, 81-85 b6, 86-90 b7,
     // 91-96 b8, 97-00 b9
@@ -24,7 +24,7 @@ int Hoard::hoardBandOfRoll(int roll) {
     return 9;
 }
 
-int Hoard::hoardMonetaryRowCount(int band) {
+int Hoard::monetaryRowCount(int band) {
     // b0: 1-2; b1: 6-10; b2: 3-5 and 6-10;
     // b3: 1-2, 3-5 and 6-10; b4: 6-10 and
     // 11-12; b5: 3-5, 6-10, 11-12 and 16-17;
@@ -37,7 +37,7 @@ int Hoard::hoardMonetaryRowCount(int band) {
     return t[band];
 }
 
-int Hoard::hoardMonetaryRow(int band, int i) {
+int Hoard::monetaryRow(int band, int i) {
     // the R219 monetary band indices, in the
     // printed order; i clamps to the count
     if (band < 0) band = 0;
@@ -54,14 +54,14 @@ int Hoard::hoardMonetaryRow(int band, int i) {
         { 0, 0, 0, 0 },
         { 0, 0, 0, 0 },
     };
-    int n = hoardMonetaryRowCount(band);
+    int n = monetaryRowCount(band);
     if (i < 0) i = 0;
     if (i > n - 1) i = n - 1;
     if (i < 0) i = 0;
     return t[band][i];
 }
 
-int Hoard::hoardMagicRowCount(int band) {
+int Hoard::magicRowCount(int band) {
     // b0: 1-5; b1: 1-5; b2: 1-5 and 15-18;
     // b3: 9-12 and 13-14; b4: 6-8 and 15-18;
     // b5: 1-5 and 9-12; b6/b7: none (the
@@ -75,7 +75,7 @@ int Hoard::hoardMagicRowCount(int band) {
     return t[band];
 }
 
-int Hoard::hoardMagicRow(int band, int i) {
+int Hoard::magicRow(int band, int i) {
     // the R219 magic band indices, in the
     // printed order; i clamps to the count
     if (band < 0) band = 0;
@@ -92,14 +92,14 @@ int Hoard::hoardMagicRow(int band, int i) {
         { 6, 6 },
         { 4, 6 },
     };
-    int n = hoardMagicRowCount(band);
+    int n = magicRowCount(band);
     if (i < 0) i = 0;
     if (i > n - 1) i = n - 1;
     if (i < 0) i = 0;
     return t[band][i];
 }
 
-int Hoard::hoardMapsToMonetary(int band) {
+int Hoard::mapsToMonetary(int band) {
     // bands 91-96 and 97-00 map to the
     // monetary treasure
     if (band < 0) band = 0;
@@ -109,7 +109,7 @@ int Hoard::hoardMapsToMonetary(int band) {
     return 0;
 }
 
-int Hoard::hoardMapMonetaryRowCount(int band) {
+int Hoard::mapMonetaryRowCount(int band) {
     // b8 maps to 1-2 and 3-5; b9 maps to
     // 11-12 and 13-15
     if (band < 0) band = 0;
@@ -119,7 +119,7 @@ int Hoard::hoardMapMonetaryRowCount(int band) {
     return 0;
 }
 
-int Hoard::hoardMapMonetaryRow(int band, int i) {
+int Hoard::mapMonetaryRow(int band, int i) {
     // b8: rows 0 and 1; b9: rows 3 and 4
     if (band < 0) band = 0;
     if (band > 9) band = 9;
@@ -135,14 +135,14 @@ int Hoard::hoardMapMonetaryRow(int band, int i) {
         { 0, 1 },
         { 3, 4 },
     };
-    int n = hoardMapMonetaryRowCount(band);
+    int n = mapMonetaryRowCount(band);
     if (i < 0) i = 0;
     if (i > n - 1) i = n - 1;
     if (i < 0) i = 0;
     return t[band][i];
 }
 
-int Hoard::hoardMapsToMagic(int band) {
+int Hoard::mapsToMagic(int band) {
     // bands 81-85 and 86-90 map to the magic
     // treasure
     if (band < 0) band = 0;
@@ -152,7 +152,7 @@ int Hoard::hoardMapsToMagic(int band) {
     return 0;
 }
 
-int Hoard::hoardMapMagicRowCount(int band) {
+int Hoard::mapMagicRowCount(int band) {
     // b6 maps to 1-5 magic; b7 maps to 19
     if (band < 0) band = 0;
     if (band > 9) band = 9;
@@ -161,7 +161,7 @@ int Hoard::hoardMapMagicRowCount(int band) {
     return 0;
 }
 
-int Hoard::hoardMapMagicRow(int band, int i) {
+int Hoard::mapMagicRow(int band, int i) {
     // b6: row 0 (die 1-5); b7: row 7 (die 19)
     if (band < 0) band = 0;
     if (band > 9) band = 9;
@@ -177,20 +177,20 @@ int Hoard::hoardMapMagicRow(int band, int i) {
         { 0, 0 },
         { 0, 0 },
     };
-    int n = hoardMapMagicRowCount(band);
+    int n = mapMagicRowCount(band);
     if (i < 0) i = 0;
     if (i > n - 1) i = n - 1;
     if (i < 0) i = 0;
     return t[band][i];
 }
 
-int Hoard::hoardMustBeHiddenTrappedGuarded() {
+int Hoard::mustBeHiddenTrappedGuarded() {
     // combined hoards should be hidden,
     // trapped and guarded
     return 1;
 }
 
-int Hoard::hoardDistantPlaces() {
+int Hoard::distantPlaces() {
     // they should be located in distant
     // places too
     return 1;

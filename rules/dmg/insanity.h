@@ -115,113 +115,113 @@ public:
 // The 20 named forms, 1-20 in the printed order.
 // 1-4 are MILD (subject to psionic attack); 11-20
 // the print lists under COMBAT (INSANITY).
-    const char* insanityName(int type);
+    const char* name(int type);
 
 
 // The four mild forms (the print star): subject to
 // psionic attack.
-    bool insanityIsMild(int type);
+    bool isMild(int type);
 
 
 // The psionic-section duration classes: permanent
 // (until heal, restoration or wish; TWO forms),
 // temporary (2-12 weeks; otherwise as permanent),
 // mild (1-4 weeks; ONE form).
-    int insanityTemporaryWeeksMin();
-    int insanityTemporaryWeeksMax();
-    int insanityMildWeeksMin();
-    int insanityMildWeeksMax();
+    int temporaryWeeksMin();
+    int temporaryWeeksMax();
+    int mildWeeksMin();
+    int mildWeeksMax();
 
 
 // 1. Dipsomania: drinking until passing out about
 // once per week; 50 percent it continues on waking
 // near alcohol, 10 percent otherwise.
-    int insanityDipsomaniaContinueNearAlcohol();
-    int insanityDipsomaniaContinueOtherwise();
+    int dipsomaniaContinueNearAlcohol();
+    int dipsomaniaContinueOtherwise();
 
 
 // 2. Kleptomania: 90 percent chance of being seen
 // if observed; thieves and assassins steal at -10
 // percent.
-    int insanityKleptomaniaSeenChance();
-    int insanityKleptomaniaThiefPenalty();
+    int kleptomaniaSeenChance();
+    int kleptomaniaThiefPenalty();
 
 
 // 6. Dementia praecox: 25 percent to ignore any
 // situation as meaningless.
-    int insanityDementiaPraecoxIgnoreChance();
+    int dementiaPraecoxIgnoreChance();
 
 
 // 7. Melancholia: 50 percent to ignore a given
 // situation.
-    int insanityMelancholiaIgnoreChance();
+    int melancholiaIgnoreChance();
 
 
 // 10. Schizophrenia: 1-4 personalities; onset 1 in 6
 // per day, checked every round under stress.
-    int insanitySchizophreniaPersonalitiesMin();
-    int insanitySchizophreniaPersonalitiesMax();
-    int insanityOnsetChanceIn6();
+    int schizophreniaPersonalitiesMin();
+    int schizophreniaPersonalitiesMax();
+    int onsetChanceIn6();
 
 
 // 11. Mania: strikes 1 in 6 per turn, lasts 2-12
 // turns, 1 in 6 per turn of return; the d6 strength
 // states 18/50, 18/75, 18/00.
-    int insanityManiaDurationMinTurns();
-    int insanityManiaDurationMaxTurns();
-    int insanityManiaStrengthState(int d6);
+    int maniaDurationMinTurns();
+    int maniaDurationMaxTurns();
+    int maniaStrengthState(int d6);
 
 
 // 14. Manic-depressive: 1-4 day cycle; 90 percent
 // likely to flip on excitement or frustration.
-    int insanityManicDepressiveCycleMinDays();
-    int insanityManicDepressiveCycleMaxDays();
-    int insanityManicDepressiveFlipChance();
+    int manicDepressiveCycleMinDays();
+    int manicDepressiveCycleMaxDays();
+    int manicDepressiveFlipChance();
 
 
 // 15. Hallucinatory insanity: 50 percent normal
 // until stimulated; hallucinations 1-20 turns
 // after the excitement passes.
-    int insanityHallucinatoryNormalChance();
-    int insanityHallucinatoryDurationMinTurns();
-    int insanityHallucinatoryDurationMaxTurns();
+    int hallucinatoryNormalChance();
+    int hallucinatoryDurationMinTurns();
+    int hallucinatoryDurationMaxTurns();
 
 
 // 16. Sado-masochism: normalcy returns 1-3 days
 // after acting out either phase.
-    int insanitySadoMasoNormalMinDays();
-    int insanitySadoMasoNormalMaxDays();
+    int sadoMasoNormalMinDays();
+    int sadoMasoNormalMaxDays();
 
 
 // 17. Homicidal mania: the kill urge on 1-4 day
 // intervals; frustrated killing means mania, then
 // melancholia 1-6 days.
-    int insanityHomicidalIntervalMinDays();
-    int insanityHomicidalIntervalMaxDays();
-    int insanityHomicidalMelancholiaMinDays();
-    int insanityHomicidalMelancholiaMaxDays();
+    int homicidalIntervalMinDays();
+    int homicidalIntervalMaxDays();
+    int homicidalMelancholiaMinDays();
+    int homicidalMelancholiaMaxDays();
 
 
 // 18. Hebephrenia: 75 percent enraged when
 // irritated, else catatonic 1-6 hours.
-    int insanityHebephreniaEnrageChance();
-    int insanityHebephreniaCatatonicMinHours();
-    int insanityHebephreniaCatatonicMaxHours();
+    int hebephreniaEnrageChance();
+    int hebephreniaCatatonicMinHours();
+    int hebephreniaCatatonicMaxHours();
 
 
 // 19. Suicidal mania: a 10-80 percent scale by
 // danger; frustration means mania 2-8 turns,
 // then melancholy 2-12 days.
-    int insanitySuicidalScaleMin();
-    int insanitySuicidalScaleMax();
-    int insanitySuicidalManiaMinTurns();
-    int insanitySuicidalManiaMaxTurns();
-    int insanitySuicidalMelancholyMinDays();
-    int insanitySuicidalMelancholyMaxDays();
+    int suicidalScaleMin();
+    int suicidalScaleMax();
+    int suicidalManiaMinTurns();
+    int suicidalManiaMaxTurns();
+    int suicidalMelancholyMinDays();
+    int suicidalMelancholyMaxDays();
 
 
 // 20. Catatonia: a 1 percent cumulative chance per
 // round of provocation of homicidal mania; the
 // catatonia returns once provocation ceases.
-    int insanityCatatoniaReactionChance();
+    int catatoniaReactionChance();
 };

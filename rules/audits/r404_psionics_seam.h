@@ -57,19 +57,19 @@
         // subject to psionic attack;
         // 5+ are not
         for (int i = 1; i <= 4; ++i)
-            if (!insanity.insanityIsMild(i)) ++bad;
-        if (insanity.insanityIsMild(0)
-                || insanity.insanityIsMild(5)
-                || insanity.insanityIsMild(20)) ++bad;
+            if (!insanity.isMild(i)) ++bad;
+        if (insanity.isMild(0)
+                || insanity.isMild(5)
+                || insanity.isMild(20)) ++bad;
         // the duration classes ride the
         // psionic section (2-12 temporary,
         // 1-4 mild)
-        if (insanity.insanityTemporaryWeeksMin() != 2
-                || insanity.insanityTemporaryWeeksMax()
+        if (insanity.temporaryWeeksMin() != 2
+                || insanity.temporaryWeeksMax()
                     != 12)
             ++bad;
-        if (insanity.insanityMildWeeksMin() != 1
-                || insanity.insanityMildWeeksMax() != 4)
+        if (insanity.mildWeeksMin() != 1
+                || insanity.mildWeeksMax() != 4)
             ++bad;
         // ---- the R323 subrace seam ----
         // the svirfneblin PC ban rides the

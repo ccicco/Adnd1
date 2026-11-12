@@ -48,43 +48,43 @@ public:
 // -----------------------------------------------------------------------
 // The banding.
 // -----------------------------------------------------------------------
-    int hoardBandCount();
-    int hoardBandOfRoll(int roll);
+    int bandCount();
+    int bandOfRoll(int roll);
 
 
 // -----------------------------------------------------------------------
 // The on-hand monetary rows.
 // -----------------------------------------------------------------------
-    int hoardMonetaryRowCount(int band);
-    int hoardMonetaryRow(int band, int i);
+    int monetaryRowCount(int band);
+    int monetaryRow(int band, int i);
 
 
 // -----------------------------------------------------------------------
 // The on-hand magic rows.
 // -----------------------------------------------------------------------
-    int hoardMagicRowCount(int band);
-    int hoardMagicRow(int band, int i);
+    int magicRowCount(int band);
+    int magicRow(int band, int i);
 
 
 // -----------------------------------------------------------------------
 // The map-to-monetary references (bands 8-9).
 // -----------------------------------------------------------------------
-    int hoardMapsToMonetary(int band);
-    int hoardMapMonetaryRowCount(int band);
-    int hoardMapMonetaryRow(int band, int i);
+    int mapsToMonetary(int band);
+    int mapMonetaryRowCount(int band);
+    int mapMonetaryRow(int band, int i);
 
 
 // -----------------------------------------------------------------------
 // The map-to-magic references (bands 6-7).
 // -----------------------------------------------------------------------
-    int hoardMapsToMagic(int band);
-    int hoardMapMagicRowCount(int band);
-    int hoardMapMagicRow(int band, int i);
+    int mapsToMagic(int band);
+    int mapMagicRowCount(int band);
+    int mapMagicRow(int band, int i);
 
 
 // -----------------------------------------------------------------------
 // The design notes.
 // -----------------------------------------------------------------------
-    int hoardMustBeHiddenTrappedGuarded();
-    int hoardDistantPlaces();
+    int mustBeHiddenTrappedGuarded();
+    int distantPlaces();
 };

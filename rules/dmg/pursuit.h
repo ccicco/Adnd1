@@ -96,15 +96,15 @@ public:
 // without a perceptible gain (the pursuer-
 // faster case has no round cap: only the
 // distances and endurance).
-    int pursuitEndSightFeet(PursuitSpeed s);
-    int pursuitEndOutOfSightFeet(PursuitSpeed s);
+    int endSightFeet(PursuitSpeed s);
+    int endOutOfSightFeet(PursuitSpeed s);
 
 
 // The round cap: 5 rounds when the pursued
 // are faster, 1 turn (10 rounds) at equal
 // speed, no cap when the pursuer is faster
 // (-1).
-    int pursuitEndRoundCap(PursuitSpeed s);
+    int endRoundCap(PursuitSpeed s);
 
 
 // Does pursuit end this moment? (in sight,
@@ -112,7 +112,7 @@ public:
 // and lost beyond the out-of-sight
 // distance; past the round cap without a
 // perceptible gain)
-    bool pursuitEnds(PursuitSpeed s, bool inSight, int feetApart, bool outOfSight, int feetWhenLost, int roundsRun, bool gainedPerceptibly);
+    bool ends(PursuitSpeed s, bool inSight, int feetApart, bool outOfSight, int feetWhenLost, int roundsRun, bool gainedPerceptibly);
 
 
 // -----------------------------------------------------------------------
@@ -123,8 +123,8 @@ public:
 // round; contact at 10 feet or less forces
 // confrontation.
 // -----------------------------------------------------------------------
-    int pursuitPhasesPerRound();
-    int pursuitConfrontFeet();
+    int phasesPerRound();
+    int confrontFeet();
 
 
 // -----------------------------------------------------------------------
@@ -161,11 +161,11 @@ public:
 // hears at 90 feet, hard boots 60, quiet
 // movement 30; scent persists for hours.
 // -----------------------------------------------------------------------
-    int pursuitWrongChoiceWays(int ways);
-    int pursuitCornerSightFeet();
-    int pursuitHearingMetalFeet();
-    int pursuitHearingBootsFeet();
-    int pursuitHearingQuietFeet();
+    int wrongChoiceWays(int ways);
+    int cornerSightFeet();
+    int hearingMetalFeet();
+    int hearingBootsFeet();
+    int hearingQuietFeet();
 
 
 // -----------------------------------------------------------------------

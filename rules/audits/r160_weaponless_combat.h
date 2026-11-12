@@ -17,12 +17,12 @@
         static const int kPumDmg[7] = { 0, 0, 2, 4, 6, 8, 10 };
         for (int i = 0; i < 14; ++i) {
             Weaponless weaponless;
-            int idx = weaponless.weaponlessTierIndex(
+            int idx = weaponless.tierIndex(
                 WL_PUMMEL, kPumScores[i]);
             if (idx != kPumIdx[i]) ++bad;
         }
         for (int i = 0; i < 7; ++i)
-            if (weaponless.weaponlessTierDamage(
+            if (weaponless.tierDamage(
                     WL_PUMMEL, i) != kPumDmg[i]) ++bad;
         static const int kGraScores[14] = {
             -5, 20, 21, 40, 41, 55, 56, 70, 71, 85, 86, 95,
@@ -34,12 +34,12 @@
         static const int kGraDmg[7] = { 0, 1, 2, 3, 5, 6, 8 };
         for (int i = 0; i < 14; ++i) {
             Weaponless weaponless;
-            int idx = weaponless.weaponlessTierIndex(
+            int idx = weaponless.tierIndex(
                 WL_GRAPPLE, kGraScores[i]);
             if (idx != kGraIdx[i]) ++bad;
         }
         for (int i = 0; i < 7; ++i)
-            if (weaponless.weaponlessTierDamage(
+            if (weaponless.tierDamage(
                     WL_GRAPPLE, i) != kGraDmg[i]) ++bad;
         static const int kOvbScores[12] = {
             -5, 20, 21, 40, 41, 60, 61, 80, 81, 100, 101, 400
@@ -50,19 +50,19 @@
         static const int kOvbDmg[6] = { 0, 0, 1, 2, 3, 4 };
         for (int i = 0; i < 12; ++i) {
             Weaponless weaponless;
-            int idx = weaponless.weaponlessTierIndex(
+            int idx = weaponless.tierIndex(
                 WL_OVERBEAR, kOvbScores[i]);
             if (idx != kOvbIdx[i]) ++bad;
         }
         for (int i = 0; i < 6; ++i)
-            if (weaponless.weaponlessTierDamage(
+            if (weaponless.tierDamage(
                     WL_OVERBEAR, i) != kOvbDmg[i]) ++bad;
         // tier names non-empty
         for (int k = 0; k < 3; ++k) {
             Weaponless weaponless;
             int n = 0;
             const WeaponlessTier* t =
-                weaponless.weaponlessTiers(
+                weaponless.tiers(
                     (WeaponlessKind)k, n);
             for (int i = 0; i < n; ++i)
                 if (!t[i].name || !*t[i].name) ++bad;
@@ -235,19 +235,19 @@
             weaponless.overbearAdj(0, 0, false, false, false,
                 0, 0, 0, 0, 0, true) != -10) ++bad;
         // the damage accounting
-        if (weaponless.weaponlessActualPct(WL_PUMMEL) != 25
-            || weaponless.weaponlessActualPct(
+        if (weaponless.actualPct(WL_PUMMEL) != 25
+            || weaponless.actualPct(
                    WL_GRAPPLE) != 25
-            || weaponless.weaponlessActualPct(
+            || weaponless.actualPct(
                    WL_OVERBEAR) != 50) ++bad;
-        if (weaponless.weaponlessHealPerRound() != 1) ++bad;
-        if (weaponless.weaponlessUnconsciousRounds(0) != 1 ||
-            weaponless.weaponlessUnconsciousRounds(4) != 5 ||
-            weaponless.weaponlessUnconsciousRounds(7) != 8 ||
-            weaponless.weaponlessUnconsciousRounds(-3) != 1)
+        if (weaponless.healPerRound() != 1) ++bad;
+        if (weaponless.unconsciousRounds(0) != 1 ||
+            weaponless.unconsciousRounds(4) != 5 ||
+            weaponless.unconsciousRounds(7) != 8 ||
+            weaponless.unconsciousRounds(-3) != 1)
             ++bad;
-        if (weaponless.weaponlessTrussRounds() != 1) ++bad;
-        if (weaponless.weaponlessPummelAttacksPerRound() != 2)
+        if (weaponless.trussRounds() != 1) ++bad;
+        if (weaponless.pummelAttacksPerRound() != 2)
             ++bad;
         if (!weaponless.grappleAttackAndCounterPerRound() ||
             !weaponless.grappleHoldActsFirst()) ++bad;
@@ -261,32 +261,32 @@
             rules::Dice diceW(rngW);
             for (int t = 0; t < 500; ++t) {
                 Weaponless weaponless;
-                int av = weaponless.weaponlessVariable(
+                int av = weaponless.variable(
                     diceW, 1, true);
-                int dv = weaponless.weaponlessVariable(
+                int dv = weaponless.variable(
                     diceW, 2, false);
                 if (av < 2 || av > 7) ++bad;
                 if (dv < 3 || dv > 6) ++bad;
             }
         }
-        if (weaponless.weaponlessUnconsciousGetsVariable())
+        if (weaponless.unconsciousGetsVariable())
             ++bad;
         // initiative priority: surprise, charge, dex, roll
-        if (weaponless.weaponlessInitiativeFirst(
+        if (weaponless.initiativeFirst(
                 true, false, false, true, 10, 18, 1, 6) != -1 ||
-            weaponless.weaponlessInitiativeFirst(
+            weaponless.initiativeFirst(
                 false, true, true, false, 18, 10, 6, 1) != 1 ||
-            weaponless.weaponlessInitiativeFirst(
+            weaponless.initiativeFirst(
                 false, false, true, false, 10, 18, 1, 6) != -1 ||
-            weaponless.weaponlessInitiativeFirst(
+            weaponless.initiativeFirst(
                 false, false, false, false, 16, 12, 1, 6) != -1 ||
-            weaponless.weaponlessInitiativeFirst(
+            weaponless.initiativeFirst(
                 false, false, false, false, 12, 16, 1, 6) != 1 ||
-            weaponless.weaponlessInitiativeFirst(
+            weaponless.initiativeFirst(
                 false, false, false, false, 12, 12, 5, 3) != -1 ||
-            weaponless.weaponlessInitiativeFirst(
+            weaponless.initiativeFirst(
                 false, false, false, false, 12, 12, 3, 5) != 1 ||
-            weaponless.weaponlessInitiativeFirst(
+            weaponless.initiativeFirst(
                 false, false, false, false, 12, 12, 4, 4) != 0)
             ++bad;
         // the hold ladder + the stunned counter rule
@@ -296,13 +296,13 @@
             !weaponless.grappleStunnedAllowsImmediateSecond())
             ++bad;
         // the general notes
-        if (!weaponless.weaponlessWeaponWielderFirst(false) ||
-            weaponless.weaponlessWeaponWielderFirst(true))
+        if (!weaponless.weaponWielderFirst(false) ||
+            weaponless.weaponWielderFirst(true))
             ++bad;
-        if (!weaponless.weaponlessBehindNegatesShieldAndDex())
+        if (!weaponless.behindNegatesShieldAndDex())
             ++bad;
         if (!weaponless.bearLikeHuggerGrappples() ||
-            !weaponless.weaponlessMonsterOverbears()) ++bad;
+            !weaponless.monsterOverbears()) ++bad;
         if (!weaponless.monkOpenHandUnimpeded()) ++bad;
         printf("R160 weaponless combat audit: bad %d\n", bad);
         if (bad) return 1;

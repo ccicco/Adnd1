@@ -32,6 +32,7 @@
 // rules/dmg/weaponspeed.h, and the lance vs-AC rows ride the 1eonline.info
 // compilation the R189 speed-verify duty already trusts
 //
+#pragma once
 
 // R-refactor: namespace rules -> class Set_spear (instance methods)
 class Set_spear {

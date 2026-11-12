@@ -46,19 +46,19 @@
         // or unholy water, poison) the crystal row
         if (itemsavethrow.itemSaveTarget(ISM_CERAMIC,
                 ISF_BLOW_CRUSHING)
-                != grenade.grenadeBreakSaveCrushing(
+                != grenade.breakSaveCrushing(
                       GREN_ACID)) ++bad;
         if (itemsavethrow.itemSaveTarget(ISM_CERAMIC,
                 ISF_BLOW_NORMAL)
-                != grenade.grenadeBreakSaveNormal(
+                != grenade.breakSaveNormal(
                       GREN_OIL)) ++bad;
         if (itemsavethrow.itemSaveTarget(ISM_CRYSTAL_VIAL,
                 ISF_BLOW_CRUSHING)
-                != grenade.grenadeBreakSaveCrushing(
+                != grenade.breakSaveCrushing(
                       GREN_HOLY_WATER)) ++bad;
         if (itemsavethrow.itemSaveTarget(ISM_CRYSTAL_VIAL,
                 ISF_BLOW_NORMAL)
-                != grenade.grenadeBreakSaveNormal(
+                != grenade.breakSaveNormal(
                       GREN_POISON)) ++bad;
         // the liquid row: no save vs blow, fall, normal fire
         if (itemsavethrow.itemSaveTarget(ISM_LIQUID,

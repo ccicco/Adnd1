@@ -31,22 +31,22 @@ struct SecondarySkillRow {
 // R-refactor: namespace rules -> class Secondary (instance methods)
 class Secondary {
 public:
-    int secondaryRowCount();
+    int rowCount();
 
 
 // The 23 printed bands: 21 named skills, the NO
 // SKILL OF MEASURABLE WORTH band (68-85) and the
 // ROLL TWICE IGNORING THIS RESULT HEREAFTER band
 // (86-00).
-    const SecondarySkillRow& secondaryRow(int i);
+    const SecondarySkillRow& row(int i);
 
 
 // True for the NO SKILL band row (index 21).
-    bool secondaryIsNoSkill(int i);
+    bool isNoSkill(int i);
 
 
 // True for the ROLL TWICE band row (index 22).
-    bool secondaryIsRollTwice(int i);
+    bool isRollTwice(int i);
 
 
 // The intro prose: when a player character selects
@@ -55,7 +55,7 @@ public:
 // previously, virtually to the exclusion of all
 // other activity - thus the particular individual
 // is at 1st level of ability.
-    bool secondaryClassAssumedPriorProfession();
+    bool classAssumedPriorProfession();
 
 
 // However, some minor knowledge of certain mundane
@@ -64,33 +64,33 @@ public:
 // incidentally picked up while the individual was
 // in apprenticeship learning his or her primary
 // professional skills.
-    bool secondaryMinorMundaneKnowledgePossible();
+    bool minorMundaneKnowledgePossible();
 
 
 // If the particular campaign is aimed at a level
 // of play where secondary skills can be taken
 // into account, then use the table to assign them
 // to player characters, or even to henchmen.
-    bool secondaryCampaignAimedAtSkillsUsesTable();
+    bool campaignAimedAtSkillsUsesTable();
 
 
 // Assign a skill randomly, or select according to
 // the background of the campaign.
-    bool secondaryAssignRandomOrPerBackground();
+    bool assignRandomOrPerBackground();
 
 
 // To determine if a second skill is known, roll on
 // the table, and if the dice indicate a result of
 // TWO SKILLS, then assign a second, appropriate
 // one.
-    bool secondarySecondSkillIfTwoSkills();
+    bool secondSkillIfTwoSkills();
 
 
 // The adjudication prose: when secondary skills
 // are used, it is up to the DM to create and/or
 // adjudicate situations in which these skills are
 // used or useful to the player character.
-    bool secondaryDMAdjudicatesSituations();
+    bool DMAdjudicatesSituations();
 
 
 // As a general rule, having a skill will give the
@@ -100,7 +100,7 @@ public:
 // construct (crude) items - the armorer example:
 // tell the quality of normal armor, repair chain
 // links, or perhaps fashion certain weapons.
-    bool secondarySkillGivesWorthSoundnessRepairs();
+    bool skillGivesWorthSoundnessRepairs();
 
 
 // To determine the extent of knowledge in
@@ -110,5 +110,5 @@ public:
 // done with this knowledge. Use this as a scale
 // to weigh the relative ability of characters
 // with secondary skills.
-    bool secondaryAssumeRoleToScaleAbility();
+    bool assumeRoleToScaleAbility();
 };

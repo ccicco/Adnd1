@@ -75,22 +75,22 @@ public:
 // ----------------------------------------------------------------------------
 // Contraction chances (p.13)
 // ----------------------------------------------------------------------------
-    int diseaseContractBasePercent();
+    int contractBasePercent();
     int parasiteContractBasePercent();
 
 
 // The printed disease modifiers (percent).
-    int diseaseModCurrentlyAfflicted();
-    int diseaseModCrowding();
-    int diseaseModFilth();
-    int diseaseModOld();
-    int diseaseModMarshEnvironment();
-    int diseaseModHotMoist();
-    int diseaseModVenerable();
-    int diseaseModCarrierExposure();
-    int diseaseModCoolClimate();
-    int diseaseModColdHighMountains();
-    int diseaseModShipboardPastTwoWeeks();
+    int modCurrentlyAfflicted();
+    int modCrowding();
+    int modFilth();
+    int modOld();
+    int modMarshEnvironment();
+    int modHotMoist();
+    int modVenerable();
+    int modCarrierExposure();
+    int modCoolClimate();
+    int modColdHighMountains();
+    int modShipboardPastTwoWeeks();
 
 
 // The printed parasite modifiers (percent).
@@ -104,34 +104,34 @@ public:
 
 // The check cadence: monthly, weekly when favorable,
 // and on every carrier exposure.
-    bool diseaseWeeklyCheckWhenFavorable();
-    bool diseaseCheckOnEachCarrierExposure();
+    bool weeklyCheckWhenFavorable();
+    bool checkOnEachCarrierExposure();
 
 
 // ----------------------------------------------------------------------------
 // The disease (or disorder) table (p.14) - 16 areas
 // ----------------------------------------------------------------------------
-    int diseaseAreaCount();
-    const char* diseaseAreaName(int idx);
+    int areaCount();
+    const char* areaName(int idx);
 
 
 // Row index for a d100 score (97-00 reads as 97-100).
-    int diseaseAreaForD100(int d100);
+    int areaForD100(int d100);
 
 
 // Occurrence by d8: acute up to kAcuteHi, chronic
 // from kChronicLo (chronic always runs to 8).
-    int diseaseAcuteHi(int idx);
-    int diseaseChronicLo(int idx);
-    bool diseaseIsAcute(int idx, int d8);
-    bool diseaseIsChronic(int idx, int d8);
+    int acuteHi(int idx);
+    int chronicLo(int idx);
+    bool isAcute(int idx, int d8);
+    bool isChronic(int idx, int d8);
 
 
 // Severity by d8: 0 means the column prints a dash
 // (no terminal result for that area).
-    int diseaseSeverityMildHi(int idx);
-    int diseaseSeveritySevereHi(int idx);
-    int diseaseSeverityTerminalHi(int idx);
+    int severityMildHi(int idx);
+    int severitySevereHi(int idx);
+    int severityTerminalHi(int idx);
 
 
 // ----------------------------------------------------------------------------
@@ -151,32 +151,32 @@ public:
 // ----------------------------------------------------------------------------
 // Severity effects and durations (p.14)
 // ----------------------------------------------------------------------------
-    int diseaseMildWeeksMin();
-    int diseaseMildWeeksMax();
-    int diseaseSevereHitPointPercent();
-    int diseaseSevereDisabledWeeksMin();
-    int diseaseSevereDisabledWeeksMax();
-    int diseaseSevereMildRecoveryWeeksMin();
-    int diseaseSevereMildRecoveryWeeksMax();
-    int diseaseTerminalDaysMin();
-    int diseaseTerminalDaysMax();
-    DiseaseDurationUnit diseaseTerminalUnit(int idx);
+    int mildWeeksMin();
+    int mildWeeksMax();
+    int severeHitPointPercent();
+    int severeDisabledWeeksMin();
+    int severeDisabledWeeksMax();
+    int severeMildRecoveryWeeksMin();
+    int severeMildRecoveryWeeksMax();
+    int terminalDaysMin();
+    int terminalDaysMax();
+    DiseaseDurationUnit terminalUnit(int idx);
 
 
 // The three areas with no terminal column at all
 // (joints, mucous membranes, nose-throat).
-    bool diseaseHasTerminalColumn(int idx);
+    bool hasTerminalColumn(int idx);
 
 
 // Ears terminal: hearing loss in one ear. Eyes
 // terminal: blindness in one or both eyes, 50/50.
-    bool diseaseTerminalIsFunctionLoss(int idx);
-    int diseaseEyesBlindBothChance();
+    bool terminalIsFunctionLoss(int idx);
+    int eyesBlindBothChance();
 
 
 // Connective tissue: terminal treated as chronic
 // severe (it lasts until constitution reaches 0).
-    bool diseaseTerminalTreatedAsChronicSevere( int idx);
+    bool terminalTreatedAsChronicSevere( int idx);
 
 
 // ----------------------------------------------------------------------------
@@ -185,65 +185,65 @@ public:
 
 // Blood: -1 strength and -1 constitution per week
 // until totally cured.
-    int diseaseBloodWeeklyStrLoss();
-    int diseaseBloodWeeklyConLoss();
+    int bloodWeeklyStrLoss();
+    int bloodWeeklyConLoss();
 
 
 // Brain: -1 intelligence and -1 dexterity per
 // occurrence until totally cured.
-    int diseaseBrainIntLoss();
-    int diseaseBrainDexLoss();
+    int brainIntLoss();
+    int brainDexLoss();
 
 
 // Connective tissue: -1 each strength, dexterity,
 // constitution and charisma per month of
 // affliction (permanent).
-    int diseaseConnectiveMonthlyLoss();
+    int connectiveMonthlyLoss();
 
 
 // Gastro-intestinal: -1 strength and -1
 // constitution per occurrence; severe attacks
 // cause the loss permanently.
-    int diseaseGastroStrConLoss();
+    int gastroStrConLoss();
 
 
 // Joints: chronic -1 dexterity per occurrence,
 // severe attacks permanent.
-    int diseaseJointsDexLoss();
+    int jointsDexLoss();
 
 
 // Mucous membranes: chronic -1 constitution,
 // severe attacks permanent.
-    int diseaseMucousConLoss();
+    int mucousConLoss();
 
 
 // Muscles: chronic -1 strength and -1 dexterity;
 // severe attacks 25 percent permanent.
-    int diseaseMuscleStrDexLoss();
-    int diseaseMuscleSeverePermanentChance();
+    int muscleStrDexLoss();
+    int muscleSeverePermanentChance();
 
 
 // Nose-throat: 10 percent of -1 constitution per
 // severe attack.
-    int diseaseNoseThroatSevereConLossChance();
+    int noseThroatSevereConLossChance();
 
 
 // Respiratory: 10 percent of -1 strength and -1
 // constitution (checked separately).
-    int diseaseRespiratoryLossChance();
+    int respiratoryLossChance();
 
 
 // Skin: severe 10 percent permanent -1 charisma;
 // chronic mild 10 percent; chronic severe 25
 // percent.
-    int diseaseSkinSevereChaLossChance();
-    int diseaseSkinChronicMildChance();
-    int diseaseSkinChronicSevereChance();
+    int skinSevereChaLossChance();
+    int skinChronicMildChance();
+    int skinChronicSevereChance();
 
 
 // Urinary: chronic severe 20 percent of -1
 // dexterity and -1 constitution per occurrence.
-    int diseaseUrinaryLossChance();
+    int urinaryLossChance();
 
 
 // ----------------------------------------------------------------------------
@@ -253,25 +253,25 @@ public:
 // The constitution ladder (disease only, NOT
 // parasitic infestation): under 3 +2, 3-5 +1,
 // 6-9 0, 10-12 -1, 13-15 -2, 16-17 -3, 18 -4.
-    int diseaseConRollAdjust(int con);
+    int conRollAdjust(int con);
 
 
 // The three condition modifiers: chronic disease
 // or disorder +1, severe parasitic infestation +1,
 // under 25 percent of normal hit points +1.
-    int diseaseAdjustChronicDisease();
-    int diseaseAdjustSevereInfestation();
-    int diseaseAdjustLowHitPoints();
+    int adjustChronicDisease();
+    int adjustSevereInfestation();
+    int adjustLowHitPoints();
 
 
 // The adjustments never apply to parasitic
 // infestation determination.
-    bool diseaseAdjustmentsApplyToParasites();
+    bool adjustmentsApplyToParasites();
 
 
 // A die score of 0 or less on either roll means the
 // character does not contract.
-    bool diseaseRollMeansNoContraction(int die);
+    bool rollMeansNoContraction(int die);
 
 
 // ----------------------------------------------------------------------------
@@ -282,6 +282,6 @@ public:
 // still suffer the cause unless a curative is
 // used; permanent ability losses are never
 // corrected by any curative.
-    int diseaseDeathRelapseChance();
-    bool diseasePermanentLossFixedByCurative();
+    int deathRelapseChance();
+    bool permanentLossFixedByCurative();
 };

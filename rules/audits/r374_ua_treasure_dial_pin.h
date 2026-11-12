@@ -66,16 +66,16 @@
             // be hidden, trapped and
             // guarded, in distant
             // places
-            if (hoard.hoardBandCount() != 10) ++bad;
-            if (hoard.hoardBandOfRoll(1) != 0) ++bad;
-            if (hoard.hoardBandOfRoll(20) != 0) ++bad;
-            if (hoard.hoardBandOfRoll(21) != 1) ++bad;
-            if (hoard.hoardBandOfRoll(55) != 2) ++bad;
-            if (hoard.hoardBandOfRoll(100) != 9)
+            if (hoard.bandCount() != 10) ++bad;
+            if (hoard.bandOfRoll(1) != 0) ++bad;
+            if (hoard.bandOfRoll(20) != 0) ++bad;
+            if (hoard.bandOfRoll(21) != 1) ++bad;
+            if (hoard.bandOfRoll(55) != 2) ++bad;
+            if (hoard.bandOfRoll(100) != 9)
                 ++bad;
-            if (!hoard.hoardMustBeHiddenTrappedGuarded())
+            if (!hoard.mustBeHiddenTrappedGuarded())
                 ++bad;
-            if (!hoard.hoardDistantPlaces()) ++bad;
+            if (!hoard.distantPlaces()) ++bad;
         printf("R374 UA treasure dial pin audit: bad %d\n", bad);
         if (bad) return 1;
     }

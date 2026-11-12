@@ -1,11 +1,11 @@
 // R-refactor: split from sage.h - definitions
 #include "rules/dmg/sage.h"
 
-int Sage::sageFieldCount() {
+int Sage::fieldCount() {
     return 7;
 }
 
-const char* Sage::sageFieldName(int f) {
+const char* Sage::fieldName(int f) {
     static const char* const kNames[7] = {
         "Humankind",
         "Demi-Humankind",
@@ -20,7 +20,7 @@ const char* Sage::sageFieldName(int f) {
     return kNames[f];
 }
 
-int Sage::sageFieldLo(int f) {
+int Sage::fieldLo(int f) {
     static const int kLo[7] = {
            1,   31,   51,   61,   71,   81,   91,
     };
@@ -29,7 +29,7 @@ int Sage::sageFieldLo(int f) {
     return kLo[f];
 }
 
-int Sage::sageFieldHi(int f) {
+int Sage::fieldHi(int f) {
     static const int kHi[7] = {
           30,   50,   60,   70,   80,   90,  100,
     };
@@ -38,7 +38,7 @@ int Sage::sageFieldHi(int f) {
     return kHi[f];
 }
 
-int Sage::sageFieldCategoryCount(int f) {
+int Sage::fieldCategoryCount(int f) {
     static const int kCount[7] = {
           12,   11,    8,   10,   10,    8,    9,
     };
@@ -47,7 +47,7 @@ int Sage::sageFieldCategoryCount(int f) {
     return kCount[f];
 }
 
-int Sage::sageFieldCategoryFirst(int f) {
+int Sage::fieldCategoryFirst(int f) {
     static const int kFirst[7] = {
            0,   12,   23,   31,   41,   51,   59,
     };
@@ -56,11 +56,11 @@ int Sage::sageFieldCategoryFirst(int f) {
     return kFirst[f];
 }
 
-int Sage::sageCategoryCount() {
+int Sage::categoryCount() {
     return 68;
 }
 
-const char* Sage::sageCategoryName(int i) {
+const char* Sage::categoryName(int i) {
     static const char* const kNames[68] = {
         "Art & Music",
         "Biology",
@@ -136,7 +136,7 @@ const char* Sage::sageCategoryName(int i) {
     return kNames[i];
 }
 
-int Sage::sageCategoryField(int i) {
+int Sage::categoryField(int i) {
     static const int kField[68] = {
            0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
            0,    0,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -151,11 +151,11 @@ int Sage::sageCategoryField(int i) {
     return kField[i];
 }
 
-int Sage::sageFieldsBandCount() {
+int Sage::fieldsBandCount() {
     return 6;
 }
 
-int Sage::sageFieldsBandLo(int b) {
+int Sage::fieldsBandLo(int b) {
     static const int kLo[6] = {
            1,   11,   31,   51,   71,   91,
     };
@@ -164,7 +164,7 @@ int Sage::sageFieldsBandLo(int b) {
     return kLo[b];
 }
 
-int Sage::sageFieldsBandHi(int b) {
+int Sage::fieldsBandHi(int b) {
     static const int kHi[6] = {
           10,   30,   50,   70,   90,  100,
     };
@@ -173,7 +173,7 @@ int Sage::sageFieldsBandHi(int b) {
     return kHi[b];
 }
 
-int Sage::sageFieldsBandMinor(int b) {
+int Sage::fieldsBandMinor(int b) {
     static const int kMinor[6] = {
            1,    1,    1,    2,    2,    2,
     };
@@ -182,7 +182,7 @@ int Sage::sageFieldsBandMinor(int b) {
     return kMinor[b];
 }
 
-int Sage::sageFieldsBandSpecial(int b) {
+int Sage::fieldsBandSpecial(int b) {
     static const int kSpecial[6] = {
            2,    3,    4,    2,    3,    4,
     };
@@ -191,7 +191,7 @@ int Sage::sageFieldsBandSpecial(int b) {
     return kSpecial[b];
 }
 
-int Sage::sageKnowLo(int scope, int nature) {
+int Sage::knowLo(int scope, int nature) {
     static const int kLo[4][3] = {
         {  31,   11,   -1},
         {  46,   31,   11},
@@ -205,7 +205,7 @@ int Sage::sageKnowLo(int scope, int nature) {
     return kLo[scope][nature];
 }
 
-int Sage::sageKnowHi(int scope, int nature) {
+int Sage::knowHi(int scope, int nature) {
     static const int kHi[4][3] = {
         {  50,   20,   -1},
         {  65,   40,   20},
@@ -219,15 +219,15 @@ int Sage::sageKnowHi(int scope, int nature) {
     return kHi[scope][nature];
 }
 
-int Sage::sageKnowNone(int scope, int nature) {
-    return sageKnowLo(scope, nature) < 0;
+int Sage::knowNone(int scope, int nature) {
+    return knowLo(scope, nature) < 0;
 }
 
-int Sage::sageAbilityCount() {
+int Sage::abilityCount() {
     return 6;
 }
 
-int Sage::sageAbilityDice(int a) {
+int Sage::abilityDice(int a) {
     static const int kDice[6] = {
            8,    4,    6,    6,    6,    6,
     };
@@ -236,7 +236,7 @@ int Sage::sageAbilityDice(int a) {
     return kDice[a];
 }
 
-int Sage::sageAbilityDiceCount(int a) {
+int Sage::abilityDiceCount(int a) {
     static const int kCount[6] = {
            1,    1,    1,    3,    2,    2,
     };
@@ -245,7 +245,7 @@ int Sage::sageAbilityDiceCount(int a) {
     return kCount[a];
 }
 
-int Sage::sageAbilityPlus(int a) {
+int Sage::abilityPlus(int a) {
     static const int kPlus[6] = {
            7,   14,   12,    0,    3,    2,
     };
@@ -254,11 +254,11 @@ int Sage::sageAbilityPlus(int a) {
     return kPlus[a];
 }
 
-int Sage::sageAlignBandCount() {
+int Sage::alignBandCount() {
     return 9;
 }
 
-int Sage::sageAlignLo(int b) {
+int Sage::alignLo(int b) {
     static const int kLo[9] = {
            1,    6,   11,   21,   31,   41,   61,   81,   91,
     };
@@ -267,7 +267,7 @@ int Sage::sageAlignLo(int b) {
     return kLo[b];
 }
 
-int Sage::sageAlignHi(int b) {
+int Sage::alignHi(int b) {
     static const int kHi[9] = {
            5,   10,   20,   30,   40,   60,   80,   90,  100,
     };
@@ -276,7 +276,7 @@ int Sage::sageAlignHi(int b) {
     return kHi[b];
 }
 
-const char* Sage::sageAlignName(int b) {
+const char* Sage::alignName(int b) {
     static const char* const kNames[9] = {
         "chaotic evil",
         "chaotic good",
@@ -293,19 +293,19 @@ const char* Sage::sageAlignName(int b) {
     return kNames[b];
 }
 
-int Sage::sageHpDiceCount() {
+int Sage::hpDiceCount() {
     return 8;
 }
 
-int Sage::sageHpDie() {
+int Sage::hpDie() {
     return 4;
 }
 
-int Sage::sageSpellKindCount() {
+int Sage::spellKindCount() {
     return 3;
 }
 
-int Sage::sageSpellKind(int f) {
+int Sage::spellKind(int f) {
     static const int kKind[7] = {
            0,    0,    0,    0,    1,    1,    2,
     };
@@ -314,39 +314,39 @@ int Sage::sageSpellKind(int f) {
     return kKind[f];
 }
 
-int Sage::sageSpellMaxDie() {
+int Sage::spellMaxDie() {
     return 4;
 }
 
-int Sage::sageSpellMaxPlus() {
+int Sage::spellMaxPlus() {
     return 2;
 }
 
-int Sage::sageSpellMaxLo() {
+int Sage::spellMaxLo() {
     return 3;
 }
 
-int Sage::sageSpellMaxHi() {
+int Sage::spellMaxHi() {
     return 6;
 }
 
-int Sage::sageSpellPerLevelLo() {
+int Sage::spellPerLevelLo() {
     return 1;
 }
 
-int Sage::sageSpellPerLevelHi() {
+int Sage::spellPerLevelHi() {
     return 4;
 }
 
-int Sage::sageSpellReadyPerLevel() {
+int Sage::spellReadyPerLevel() {
     return 1;
 }
 
-int Sage::sageOfferCount() {
+int Sage::offerCount() {
     return 3;
 }
 
-int Sage::sageOfferLo(int i) {
+int Sage::offerLo(int i) {
     static const int kLo[3] = {
          200,  200, 20000,
     };
@@ -355,7 +355,7 @@ int Sage::sageOfferLo(int i) {
     return kLo[i];
 }
 
-int Sage::sageOfferHi(int i) {
+int Sage::offerHi(int i) {
     static const int kHi[3] = {
         1200, 1200, 20000,
     };
@@ -364,11 +364,11 @@ int Sage::sageOfferHi(int i) {
     return kHi[i];
 }
 
-int Sage::sageEffMilestoneCount() {
+int Sage::effMilestoneCount() {
     return 3;
 }
 
-int Sage::sageEffMilestoneCost(int i) {
+int Sage::effMilestoneCost(int i) {
     static const int kCost[3] = {
         20000, 60000, 100000,
     };
@@ -377,7 +377,7 @@ int Sage::sageEffMilestoneCost(int i) {
     return kCost[i];
 }
 
-int Sage::sageEffMilestonePercent(int i) {
+int Sage::effMilestonePercent(int i) {
     static const int kPct[3] = {
           50,   90,  100,
     };
@@ -386,19 +386,19 @@ int Sage::sageEffMilestonePercent(int i) {
     return kPct[i];
 }
 
-int Sage::sageEffStepCost() {
+int Sage::effStepCost() {
     return 1000;
 }
 
-int Sage::sageEffHighCostPerPercent() {
+int Sage::effHighCostPerPercent() {
     return 4000;
 }
 
-int Sage::sageImproveCount() {
+int Sage::improveCount() {
     return 4;
 }
 
-int Sage::sageImproveCost(int i) {
+int Sage::improveCost(int i) {
     static const int kCost[4] = {
         5000, 10000, 100000, 200000,
     };
@@ -407,7 +407,7 @@ int Sage::sageImproveCost(int i) {
     return kCost[i];
 }
 
-int Sage::sageImproveMonths(int i) {
+int Sage::improveMonths(int i) {
     static const int kMonths[4] = {
            1,    1,   24,   24,
     };
@@ -416,7 +416,7 @@ int Sage::sageImproveMonths(int i) {
     return kMonths[i];
 }
 
-int Sage::sageImproveMax(int i) {
+int Sage::improveMax(int i) {
     static const int kMax[4] = {
            5,    5,    3,   -1,
     };
@@ -425,7 +425,7 @@ int Sage::sageImproveMax(int i) {
     return kMax[i];
 }
 
-int Sage::sageTimeLo(int scope, int nature) {
+int Sage::timeLo(int scope, int nature) {
     static const int kLo[4][3] = {
         {   1,    2,   -1},
         {   1,    2,    5},
@@ -439,7 +439,7 @@ int Sage::sageTimeLo(int scope, int nature) {
     return kLo[scope][nature];
 }
 
-int Sage::sageTimeHi(int scope, int nature) {
+int Sage::timeHi(int scope, int nature) {
     static const int kHi[4][3] = {
         {   6,   24,   -1},
         {   4,   20,   40},
@@ -453,7 +453,7 @@ int Sage::sageTimeHi(int scope, int nature) {
     return kHi[scope][nature];
 }
 
-int Sage::sageTimeUnit(int scope, int nature) {
+int Sage::timeUnit(int scope, int nature) {
     static const int kUnit[4][3] = {
         {   0,    2,    0},
         {   0,    2,    2},
@@ -467,11 +467,11 @@ int Sage::sageTimeUnit(int scope, int nature) {
     return kUnit[scope][nature];
 }
 
-int Sage::sageTimeNone(int scope, int nature) {
-    return sageTimeLo(scope, nature) < 0;
+int Sage::timeNone(int scope, int nature) {
+    return timeLo(scope, nature) < 0;
 }
 
-int Sage::sageCostPerDay(int scope) {
+int Sage::costPerDay(int scope) {
     static const int kCost[4] = {
          100, 1000,  500,  200,
     };
@@ -480,7 +480,7 @@ int Sage::sageCostPerDay(int scope) {
     return kCost[scope];
 }
 
-int Sage::sageFreeSpreadPercent(int scope) {
+int Sage::freeSpreadPercent(int scope) {
     static const int kFree[4] = {
           20,   20,   20,   80,
     };
@@ -489,30 +489,30 @@ int Sage::sageFreeSpreadPercent(int scope) {
     return kFree[scope];
 }
 
-int Sage::sageUnknownPercentLo() {
+int Sage::unknownPercentLo() {
     return 51;
 }
 
-int Sage::sageUnknownPercentHi() {
+int Sage::unknownPercentHi() {
     return 100;
 }
 
-int Sage::sageUnknownCostDivisor() {
+int Sage::unknownCostDivisor() {
     return 2;
 }
 
-int Sage::sageShortTermCostPerDay() {
+int Sage::shortTermCostPerDay() {
     return 100;
 }
 
-int Sage::sageShortTermMaxDays() {
+int Sage::shortTermMaxDays() {
     return 7;
 }
 
-int Sage::sageShortTermCooldownMonths() {
+int Sage::shortTermCooldownMonths() {
     return 1;
 }
 
-int Sage::sagePermanentHireOnly() {
+int Sage::permanentHireOnly() {
     return 1;
 }

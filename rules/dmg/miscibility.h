@@ -68,46 +68,46 @@ public:
 
 
 // The p.119 d100 bands (a roll of 100 reads 00).
-    MiscibilityResult miscibilityRoll(int d100);
+    MiscibilityResult roll(int d100);
 
 
 // The two trigger conditions: intermingled
 // potions, or a potion consumed while another is
 // still in effect.
-    bool miscibilityTestNeeded( bool intermingled, bool otherStillInEffect);
+    bool testNeeded( bool intermingled, bool otherStillInEffect);
 
 
 // The explosion damage dice (the caller rolls):
 // internal 6-60; an external mix 1-10 within a
 // 5 foot radius, 4-24 in a 10 foot radius, no
 // save for either.
-    int miscibilityExplosionInternalMin();
-    int miscibilityExplosionInternalMax();
-    int miscibilityExplosionBlastNearMin();
-    int miscibilityExplosionBlastNearMax();
-    int miscibilityExplosionBlastNearRadius();
-    int miscibilityExplosionBlastFarMin();
-    int miscibilityExplosionBlastFarMax();
-    int miscibilityExplosionBlastFarRadius();
+    int explosionInternalMin();
+    int explosionInternalMax();
+    int explosionBlastNearMin();
+    int explosionBlastNearMax();
+    int explosionBlastNearRadius();
+    int explosionBlastFarMin();
+    int explosionBlastFarMax();
+    int explosionBlastFarRadius();
 
 
 // The mild poison band: 1 point each of strength
 // and dexterity lost for 5-20 rounds, no saving
 // throw possible; one potion cancelled, the other
 // at half strength and duration (random which).
-    int miscibilityMildPoisonDurationMin();
-    int miscibilityMildPoisonDurationMax();
+    int mildPoisonDurationMin();
+    int mildPoisonDurationMax();
 
 
 // The lethal poison band: the imbiber dead; an
 // external mix a 10 foot poison gas cloud, save
 // versus poison or die.
-    int miscibilityGasCloudRadius();
+    int gasCloudRadius();
 
 
 // The one-boosted band: 150 percent normal
 // efficacy on the randomly determined potion.
-    int miscibilityBoostPercent();
+    int boostPercent();
 
 
 // The named campaign options the print suggests
@@ -116,9 +116,9 @@ public:
 // potion is lethal poison; oil of slipperiness plus
 // oil of etherealness raises the lost-in-the-
 // Ethereal chance to 50 percent for 5-30 days.
-    bool miscibilityOptionDelusionMixes();
-    bool miscibilityOptionTreasureFindingLethal();
-    int miscibilityOptionEtherealLostPercent();
-    int miscibilityOptionEtherealLostMinDays();
-    int miscibilityOptionEtherealLostMaxDays();
+    bool optionDelusionMixes();
+    bool optionTreasureFindingLethal();
+    int optionEtherealLostPercent();
+    int optionEtherealLostMinDays();
+    int optionEtherealLostMaxDays();
 };

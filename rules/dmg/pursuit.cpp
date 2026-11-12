@@ -12,42 +12,42 @@ int Pursuit::pursueLikelihoodLowInt( bool partyOutnumbers, bool partiesAboutEqua
     return 80;
 }
 
-int Pursuit::pursuitEndSightFeet(PursuitSpeed s) {
+int Pursuit::endSightFeet(PursuitSpeed s) {
     static const int k[3] = { 100, 150, 0 };
     if (s < PURS_PURSUED_FASTER) s = PURS_PURSUED_FASTER;
     if (s > PURS_PURSUER_FASTER) s = PURS_PURSUER_FASTER;
     return k[s];
 }
 
-int Pursuit::pursuitEndOutOfSightFeet(PursuitSpeed s) {
+int Pursuit::endOutOfSightFeet(PursuitSpeed s) {
     static const int k[3] = { 50, 80, 200 };
     if (s < PURS_PURSUED_FASTER) s = PURS_PURSUED_FASTER;
     if (s > PURS_PURSUER_FASTER) s = PURS_PURSUER_FASTER;
     return k[s];
 }
 
-int Pursuit::pursuitEndRoundCap(PursuitSpeed s) {
+int Pursuit::endRoundCap(PursuitSpeed s) {
     static const int k[3] = { 5, 10, -1 };
     if (s < PURS_PURSUED_FASTER) s = PURS_PURSUED_FASTER;
     if (s > PURS_PURSUER_FASTER) s = PURS_PURSUER_FASTER;
     return k[s];
 }
 
-bool Pursuit::pursuitEnds(PursuitSpeed s, bool inSight, int feetApart, bool outOfSight, int feetWhenLost, int roundsRun, bool gainedPerceptibly) {
-    if (inSight && feetApart > pursuitEndSightFeet(s))
+bool Pursuit::ends(PursuitSpeed s, bool inSight, int feetApart, bool outOfSight, int feetWhenLost, int roundsRun, bool gainedPerceptibly) {
+    if (inSight && feetApart > endSightFeet(s))
         return true;
     if (outOfSight
-            && feetWhenLost > pursuitEndOutOfSightFeet(s))
+            && feetWhenLost > endOutOfSightFeet(s))
         return true;
-    int cap = pursuitEndRoundCap(s);
+    int cap = endRoundCap(s);
     if (cap > 0 && roundsRun > cap && !gainedPerceptibly)
         return true;
     return false;
 }
 
-int Pursuit::pursuitPhasesPerRound() { return 3; }
+int Pursuit::phasesPerRound() { return 3; }
 
-int Pursuit::pursuitConfrontFeet() { return 10; }
+int Pursuit::confrontFeet() { return 10; }
 
 int Pursuit::foodDistractionPercent(int d10, int intelligence) {
     if (intelligence <= 0) return 100;
@@ -74,17 +74,17 @@ int Pursuit::treasureDistractionValueBonus( int gpValue) {
     return 10 * (gpValue / 100);
 }
 
-int Pursuit::pursuitWrongChoiceWays(int ways) {
+int Pursuit::wrongChoiceWays(int ways) {
     return ways - 1;
 }
 
-int Pursuit::pursuitCornerSightFeet() { return 60; }
+int Pursuit::cornerSightFeet() { return 60; }
 
-int Pursuit::pursuitHearingMetalFeet() { return 90; }
+int Pursuit::hearingMetalFeet() { return 90; }
 
-int Pursuit::pursuitHearingBootsFeet() { return 60; }
+int Pursuit::hearingBootsFeet() { return 60; }
 
-int Pursuit::pursuitHearingQuietFeet() { return 30; }
+int Pursuit::hearingQuietFeet() { return 30; }
 
 int Pursuit::evadeOutdoorBase() { return 80; }
 

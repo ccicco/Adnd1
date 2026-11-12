@@ -122,274 +122,274 @@
               20,   20,   20,   80,
         };
         // the fields of study
-        if (sage.sageFieldCount() != 7) ++bad;
+        if (sage.fieldCount() != 7) ++bad;
         for (int i = 0; i < 7; ++i)
-            if (sage.sageFieldLo(i) != kFieldLo[i] ||
-                sage.sageFieldHi(i) != kFieldHi[i] ||
-                sage.sageFieldCategoryCount(i) !=
+            if (sage.fieldLo(i) != kFieldLo[i] ||
+                sage.fieldHi(i) != kFieldHi[i] ||
+                sage.fieldCategoryCount(i) !=
                     kFieldCat[i] ||
-                sage.sageFieldCategoryFirst(i) !=
+                sage.fieldCategoryFirst(i) !=
                     kFieldFirst[i]) ++bad;
         // the field bands tile 1-100 without gaps
-        if (sage.sageFieldLo(0) != 1 ||
-            sage.sageFieldHi(6) != 100) ++bad;
+        if (sage.fieldLo(0) != 1 ||
+            sage.fieldHi(6) != 100) ++bad;
         for (int i = 0; i < 6; ++i)
-            if (sage.sageFieldHi(i) + 1 !=
-                sage.sageFieldLo(i + 1)) ++bad;
+            if (sage.fieldHi(i) + 1 !=
+                sage.fieldLo(i + 1)) ++bad;
         // the category block boundaries (first(0)
         // is 0; first(6) + count(6) is 68)
-        if (sage.sageFieldCategoryFirst(0) != 0) ++bad;
+        if (sage.fieldCategoryFirst(0) != 0) ++bad;
         for (int i = 0; i < 6; ++i)
-            if (sage.sageFieldCategoryFirst(i) +
-                sage.sageFieldCategoryCount(i) !=
-                sage.sageFieldCategoryFirst(i + 1)) ++bad;
-        if (sage.sageFieldCategoryFirst(6) +
-            sage.sageFieldCategoryCount(6) != 68) ++bad;
+            if (sage.fieldCategoryFirst(i) +
+                sage.fieldCategoryCount(i) !=
+                sage.fieldCategoryFirst(i + 1)) ++bad;
+        if (sage.fieldCategoryFirst(6) +
+            sage.fieldCategoryCount(6) != 68) ++bad;
         // the categories
-        if (sage.sageCategoryCount() != 68) ++bad;
+        if (sage.categoryCount() != 68) ++bad;
         for (int i = 0; i < 68; ++i)
-            if (sage.sageCategoryField(i) !=
+            if (sage.categoryField(i) !=
                 kCatField[i]) ++bad;
         // the category edges sit in their fields
         for (int i = 0; i < 7; ++i)
-            if (sage.sageCategoryField(
-                    sage.sageFieldCategoryFirst(i)) != i ||
-                sage.sageCategoryField(
-                    sage.sageFieldCategoryFirst(i) +
-                    sage.sageFieldCategoryCount(i) -
+            if (sage.categoryField(
+                    sage.fieldCategoryFirst(i)) != i ||
+                sage.categoryField(
+                    sage.fieldCategoryFirst(i) +
+                    sage.fieldCategoryCount(i) -
                     1) != i) ++bad;
         // the field clamps (field -5 humankind,
         // 99 supernatural and unusual)
-        if (sage.sageFieldLo(-5) != 1 ||
-            sage.sageFieldHi(-5) != 30 ||
-            sage.sageFieldLo(99) != 91 ||
-            sage.sageFieldHi(99) != 100 ||
-            sage.sageFieldCategoryCount(-5) != 12 ||
-            sage.sageFieldCategoryCount(99) != 9 ||
-            sage.sageFieldCategoryFirst(-5) != 0 ||
-            sage.sageFieldCategoryFirst(99) != 59 ||
-            sage.sageCategoryField(-5) != 0 ||
-            sage.sageCategoryField(99) != 6) ++bad;
+        if (sage.fieldLo(-5) != 1 ||
+            sage.fieldHi(-5) != 30 ||
+            sage.fieldLo(99) != 91 ||
+            sage.fieldHi(99) != 100 ||
+            sage.fieldCategoryCount(-5) != 12 ||
+            sage.fieldCategoryCount(99) != 9 ||
+            sage.fieldCategoryFirst(-5) != 0 ||
+            sage.fieldCategoryFirst(99) != 59 ||
+            sage.categoryField(-5) != 0 ||
+            sage.categoryField(99) != 6) ++bad;
         // the fields-count table
-        if (sage.sageFieldsBandCount() != 6) ++bad;
+        if (sage.fieldsBandCount() != 6) ++bad;
         for (int i = 0; i < 6; ++i)
-            if (sage.sageFieldsBandLo(i) != kBandLo[i] ||
-                sage.sageFieldsBandHi(i) != kBandHi[i] ||
-                sage.sageFieldsBandMinor(i) !=
+            if (sage.fieldsBandLo(i) != kBandLo[i] ||
+                sage.fieldsBandHi(i) != kBandHi[i] ||
+                sage.fieldsBandMinor(i) !=
                     kBandMinor[i] ||
-                sage.sageFieldsBandSpecial(i) !=
+                sage.fieldsBandSpecial(i) !=
                     kBandSpecial[i]) ++bad;
         // the bands tile 1-100
-        if (sage.sageFieldsBandLo(0) != 1 ||
-            sage.sageFieldsBandHi(5) != 100) ++bad;
+        if (sage.fieldsBandLo(0) != 1 ||
+            sage.fieldsBandHi(5) != 100) ++bad;
         for (int i = 0; i < 5; ++i)
-            if (sage.sageFieldsBandHi(i) + 1 !=
-                sage.sageFieldsBandLo(i + 1)) ++bad;
+            if (sage.fieldsBandHi(i) + 1 !=
+                sage.fieldsBandLo(i + 1)) ++bad;
         // the band clamps
-        if (sage.sageFieldsBandLo(-5) != 1 ||
-            sage.sageFieldsBandHi(-5) != 10 ||
-            sage.sageFieldsBandLo(99) != 91 ||
-            sage.sageFieldsBandHi(99) != 100 ||
-            sage.sageFieldsBandMinor(-5) != 1 ||
-            sage.sageFieldsBandMinor(99) != 2 ||
-            sage.sageFieldsBandSpecial(-5) != 2 ||
-            sage.sageFieldsBandSpecial(99) != 4) ++bad;
+        if (sage.fieldsBandLo(-5) != 1 ||
+            sage.fieldsBandHi(-5) != 10 ||
+            sage.fieldsBandLo(99) != 91 ||
+            sage.fieldsBandHi(99) != 100 ||
+            sage.fieldsBandMinor(-5) != 1 ||
+            sage.fieldsBandMinor(99) != 2 ||
+            sage.fieldsBandSpecial(-5) != 2 ||
+            sage.fieldsBandSpecial(99) != 4) ++bad;
         // the chance-of-knowing bands
         for (int s = 0; s < 4; ++s)
             for (int n = 0; n < 3; ++n)
-                if (sage.sageKnowLo(s, n) !=
+                if (sage.knowLo(s, n) !=
                     kKnowLo[s][n] ||
-                    sage.sageKnowHi(s, n) !=
+                    sage.knowHi(s, n) !=
                     kKnowHi[s][n]) ++bad;
         // the none identity (only the
         // out-of-fields exacting cell prints a
         // dash)
         for (int s = 0; s < 4; ++s)
             for (int n = 0; n < 3; ++n)
-                if ((sage.sageKnowLo(s, n) < 0) !=
-                    (sage.sageKnowNone(s, n) == 1)) ++bad;
+                if ((sage.knowLo(s, n) < 0) !=
+                    (sage.knowNone(s, n) == 1)) ++bad;
         // the real bands have lo below hi
         for (int s = 0; s < 4; ++s)
             for (int n = 0; n < 3; ++n)
                 if (kKnowLo[s][n] >= 0 &&
-                    sage.sageKnowLo(s, n) >=
-                    sage.sageKnowHi(s, n)) ++bad;
+                    sage.knowLo(s, n) >=
+                    sage.knowHi(s, n)) ++bad;
         // the worked rows: the scrambled major
         // row (61-80, 57-60, 26-35) and the
         // special category column
-        if (sage.sageKnowLo(2, 0) != 61 ||
-            sage.sageKnowHi(2, 0) != 80 ||
-            sage.sageKnowLo(2, 1) != 57 ||
-            sage.sageKnowHi(2, 1) != 60 ||
-            sage.sageKnowLo(2, 2) != 26 ||
-            sage.sageKnowHi(2, 2) != 35 ||
-            sage.sageKnowLo(3, 1) != 76 ||
-            sage.sageKnowHi(3, 1) != 96 ||
-            sage.sageKnowNone(0, 2) != 1 ||
-            sage.sageKnowNone(3, 2) != 0) ++bad;
+        if (sage.knowLo(2, 0) != 61 ||
+            sage.knowHi(2, 0) != 80 ||
+            sage.knowLo(2, 1) != 57 ||
+            sage.knowHi(2, 1) != 60 ||
+            sage.knowLo(2, 2) != 26 ||
+            sage.knowHi(2, 2) != 35 ||
+            sage.knowLo(3, 1) != 76 ||
+            sage.knowHi(3, 1) != 96 ||
+            sage.knowNone(0, 2) != 1 ||
+            sage.knowNone(3, 2) != 0) ++bad;
         // the know clamps ((9, 9) the special
         // category exacting cell)
-        if (sage.sageKnowLo(-5, -5) != 31 ||
-            sage.sageKnowHi(-5, -5) != 50 ||
-            sage.sageKnowLo(9, 9) != 61 ||
-            sage.sageKnowHi(9, 9) != 80) ++bad;
+        if (sage.knowLo(-5, -5) != 31 ||
+            sage.knowHi(-5, -5) != 50 ||
+            sage.knowLo(9, 9) != 61 ||
+            sage.knowHi(9, 9) != 80) ++bad;
         // the ability dice rows
-        if (sage.sageAbilityCount() != 6) ++bad;
+        if (sage.abilityCount() != 6) ++bad;
         for (int i = 0; i < 6; ++i)
-            if (sage.sageAbilityDice(i) != kDice[i] ||
-                sage.sageAbilityDiceCount(i) != kCnt[i] ||
-                sage.sageAbilityPlus(i) != kPlus[i]) ++bad;
+            if (sage.abilityDice(i) != kDice[i] ||
+                sage.abilityDiceCount(i) != kCnt[i] ||
+                sage.abilityPlus(i) != kPlus[i]) ++bad;
         // the worked ability rows: STR d8 + 7,
         // INT d4 + 14, WIS d6 + 12, DEX 3d6,
         // CON 2d6 + 3, CHA 2d6 + 2
-        if (sage.sageAbilityDice(0) != 8 ||
-            sage.sageAbilityDiceCount(0) != 1 ||
-            sage.sageAbilityPlus(0) != 7 ||
-            sage.sageAbilityDice(1) != 4 ||
-            sage.sageAbilityPlus(1) != 14 ||
-            sage.sageAbilityDice(2) != 6 ||
-            sage.sageAbilityPlus(2) != 12 ||
-            sage.sageAbilityDiceCount(3) != 3 ||
-            sage.sageAbilityPlus(3) != 0 ||
-            sage.sageAbilityDiceCount(4) != 2 ||
-            sage.sageAbilityPlus(4) != 3 ||
-            sage.sageAbilityPlus(5) != 2) ++bad;
+        if (sage.abilityDice(0) != 8 ||
+            sage.abilityDiceCount(0) != 1 ||
+            sage.abilityPlus(0) != 7 ||
+            sage.abilityDice(1) != 4 ||
+            sage.abilityPlus(1) != 14 ||
+            sage.abilityDice(2) != 6 ||
+            sage.abilityPlus(2) != 12 ||
+            sage.abilityDiceCount(3) != 3 ||
+            sage.abilityPlus(3) != 0 ||
+            sage.abilityDiceCount(4) != 2 ||
+            sage.abilityPlus(4) != 3 ||
+            sage.abilityPlus(5) != 2) ++bad;
         // the ability clamps
-        if (sage.sageAbilityDice(-5) != 8 ||
-            sage.sageAbilityDiceCount(-5) != 1 ||
-            sage.sageAbilityPlus(-5) != 7 ||
-            sage.sageAbilityDice(99) != 6 ||
-            sage.sageAbilityDiceCount(99) != 2 ||
-            sage.sageAbilityPlus(99) != 2) ++bad;
+        if (sage.abilityDice(-5) != 8 ||
+            sage.abilityDiceCount(-5) != 1 ||
+            sage.abilityPlus(-5) != 7 ||
+            sage.abilityDice(99) != 6 ||
+            sage.abilityDiceCount(99) != 2 ||
+            sage.abilityPlus(99) != 2) ++bad;
         // the alignment bands
-        if (sage.sageAlignBandCount() != 9) ++bad;
+        if (sage.alignBandCount() != 9) ++bad;
         for (int i = 0; i < 9; ++i)
-            if (sage.sageAlignLo(i) != kAlignLo[i] ||
-                sage.sageAlignHi(i) != kAlignHi[i]) ++bad;
-        if (sage.sageAlignLo(0) != 1 ||
-            sage.sageAlignHi(8) != 100) ++bad;
+            if (sage.alignLo(i) != kAlignLo[i] ||
+                sage.alignHi(i) != kAlignHi[i]) ++bad;
+        if (sage.alignLo(0) != 1 ||
+            sage.alignHi(8) != 100) ++bad;
         for (int i = 0; i < 8; ++i)
-            if (sage.sageAlignHi(i) + 1 !=
-                sage.sageAlignLo(i + 1)) ++bad;
+            if (sage.alignHi(i) + 1 !=
+                sage.alignLo(i + 1)) ++bad;
         // the alignment clamps (band -5 the
         // chaotic evil, 99 the neutral good)
-        if (sage.sageAlignLo(-5) != 1 ||
-            sage.sageAlignHi(-5) != 5 ||
-            sage.sageAlignLo(99) != 91 ||
-            sage.sageAlignHi(99) != 100) ++bad;
+        if (sage.alignLo(-5) != 1 ||
+            sage.alignHi(-5) != 5 ||
+            sage.alignLo(99) != 91 ||
+            sage.alignHi(99) != 100) ++bad;
         // the hit points: 8d4
-        if (sage.sageHpDiceCount() != 8 ||
-            sage.sageHpDie() != 4) ++bad;
+        if (sage.hpDiceCount() != 8 ||
+            sage.hpDie() != 4) ++bad;
         // the spell kinds and limits
-        if (sage.sageSpellKindCount() != 3) ++bad;
+        if (sage.spellKindCount() != 3) ++bad;
         for (int i = 0; i < 7; ++i)
-            if (sage.sageSpellKind(i) !=
+            if (sage.spellKind(i) !=
                 kSpellKind[i]) ++bad;
-        if (sage.sageSpellMaxDie() != 4 ||
-            sage.sageSpellMaxPlus() != 2 ||
-            sage.sageSpellMaxLo() != 3 ||
-            sage.sageSpellMaxHi() != 6 ||
-            sage.sageSpellPerLevelLo() != 1 ||
-            sage.sageSpellPerLevelHi() != 4 ||
-            sage.sageSpellReadyPerLevel() != 1) ++bad;
+        if (sage.spellMaxDie() != 4 ||
+            sage.spellMaxPlus() != 2 ||
+            sage.spellMaxLo() != 3 ||
+            sage.spellMaxHi() != 6 ||
+            sage.spellPerLevelLo() != 1 ||
+            sage.spellPerLevelHi() != 4 ||
+            sage.spellReadyPerLevel() != 1) ++bad;
         // the spell kind clamps
-        if (sage.sageSpellKind(-5) != 0 ||
-            sage.sageSpellKind(99) != 2) ++bad;
+        if (sage.spellKind(-5) != 0 ||
+            sage.spellKind(99) != 2) ++bad;
         // the offer table
-        if (sage.sageOfferCount() != 3) ++bad;
+        if (sage.offerCount() != 3) ++bad;
         for (int i = 0; i < 3; ++i)
-            if (sage.sageOfferLo(i) != kOfferLo[i] ||
-                sage.sageOfferHi(i) != kOfferHi[i]) ++bad;
+            if (sage.offerLo(i) != kOfferLo[i] ||
+                sage.offerHi(i) != kOfferHi[i]) ++bad;
         // the offer clamps (row 2 the material
         // minimum)
-        if (sage.sageOfferLo(-5) != 200 ||
-            sage.sageOfferHi(-5) != 1200 ||
-            sage.sageOfferLo(99) != 20000 ||
-            sage.sageOfferHi(99) != 20000) ++bad;
+        if (sage.offerLo(-5) != 200 ||
+            sage.offerHi(-5) != 1200 ||
+            sage.offerLo(99) != 20000 ||
+            sage.offerHi(99) != 20000) ++bad;
         // the efficiency milestones and steps
-        if (sage.sageEffMilestoneCount() != 3) ++bad;
+        if (sage.effMilestoneCount() != 3) ++bad;
         for (int i = 0; i < 3; ++i)
-            if (sage.sageEffMilestoneCost(i) !=
+            if (sage.effMilestoneCost(i) !=
                 kEffCost[i] ||
-                sage.sageEffMilestonePercent(i) !=
+                sage.effMilestonePercent(i) !=
                 kEffPct[i]) ++bad;
-        if (sage.sageEffStepCost() != 1000 ||
-            sage.sageEffHighCostPerPercent() != 4000)
+        if (sage.effStepCost() != 1000 ||
+            sage.effHighCostPerPercent() != 4000)
             ++bad;
         // the efficiency clamps (the 100,000
         // g.p. full-cost pin)
-        if (sage.sageEffMilestoneCost(-5) != 20000 ||
-            sage.sageEffMilestonePercent(-5) != 50 ||
-            sage.sageEffMilestoneCost(99) != 100000 ||
-            sage.sageEffMilestonePercent(99) != 100)
+        if (sage.effMilestoneCost(-5) != 20000 ||
+            sage.effMilestonePercent(-5) != 50 ||
+            sage.effMilestoneCost(99) != 100000 ||
+            sage.effMilestonePercent(99) != 100)
             ++bad;
         // the improvement ladder
-        if (sage.sageImproveCount() != 4) ++bad;
+        if (sage.improveCount() != 4) ++bad;
         for (int i = 0; i < 4; ++i)
-            if (sage.sageImproveCost(i) !=
+            if (sage.improveCost(i) !=
                     kImproveCost[i] ||
-                sage.sageImproveMonths(i) !=
+                sage.improveMonths(i) !=
                     kImproveMonths[i] ||
-                sage.sageImproveMax(i) !=
+                sage.improveMax(i) !=
                     kImproveMax[i]) ++bad;
         // the improvement clamps
-        if (sage.sageImproveCost(-5) != 5000 ||
-            sage.sageImproveMonths(-5) != 1 ||
-            sage.sageImproveMax(-5) != 5 ||
-            sage.sageImproveCost(99) != 200000 ||
-            sage.sageImproveMonths(99) != 24 ||
-            sage.sageImproveMax(99) != -1) ++bad;
+        if (sage.improveCost(-5) != 5000 ||
+            sage.improveMonths(-5) != 1 ||
+            sage.improveMax(-5) != 5 ||
+            sage.improveCost(99) != 200000 ||
+            sage.improveMonths(99) != 24 ||
+            sage.improveMax(99) != -1) ++bad;
         // the information discovery time bands
         for (int s = 0; s < 4; ++s)
             for (int n = 0; n < 3; ++n)
-                if (sage.sageTimeLo(s, n) !=
+                if (sage.timeLo(s, n) !=
                     kTimeLo[s][n] ||
-                    sage.sageTimeHi(s, n) !=
+                    sage.timeHi(s, n) !=
                     kTimeHi[s][n] ||
-                    sage.sageTimeUnit(s, n) !=
+                    sage.timeUnit(s, n) !=
                     kTimeUnit[s][n]) ++bad;
         // the time none identity
         for (int s = 0; s < 4; ++s)
             for (int n = 0; n < 3; ++n)
-                if ((sage.sageTimeLo(s, n) < 0) !=
-                    (sage.sageTimeNone(s, n) == 1)) ++bad;
+                if ((sage.timeLo(s, n) < 0) !=
+                    (sage.timeNone(s, n) == 1)) ++bad;
         // the worked time rows: the special
         // category specific band is the lone
         // HOURS cell (1-10); the major exacting
         // is 3-30 days
-        if (sage.sageTimeLo(3, 1) != 1 ||
-            sage.sageTimeHi(3, 1) != 10 ||
-            sage.sageTimeUnit(3, 1) != 1 ||
-            sage.sageTimeLo(2, 2) != 3 ||
-            sage.sageTimeHi(2, 2) != 30 ||
-            sage.sageTimeNone(0, 2) != 1 ||
-            sage.sageTimeNone(3, 2) != 0) ++bad;
+        if (sage.timeLo(3, 1) != 1 ||
+            sage.timeHi(3, 1) != 10 ||
+            sage.timeUnit(3, 1) != 1 ||
+            sage.timeLo(2, 2) != 3 ||
+            sage.timeHi(2, 2) != 30 ||
+            sage.timeNone(0, 2) != 1 ||
+            sage.timeNone(3, 2) != 0) ++bad;
         // the time clamps ((9, 9) the special
         // category exacting cell)
-        if (sage.sageTimeLo(9, 9) != 2 ||
-            sage.sageTimeHi(9, 9) != 12 ||
-            sage.sageTimeUnit(9, 9) != 2 ||
-            sage.sageTimeLo(-5, -5) != 1 ||
-            sage.sageTimeHi(-5, -5) != 6) ++bad;
+        if (sage.timeLo(9, 9) != 2 ||
+            sage.timeHi(9, 9) != 12 ||
+            sage.timeUnit(9, 9) != 2 ||
+            sage.timeLo(-5, -5) != 1 ||
+            sage.timeHi(-5, -5) != 6) ++bad;
         // the cost per day and the free-spread
         // thresholds
         for (int s = 0; s < 4; ++s)
-            if (sage.sageCostPerDay(s) != kCostDay[s] ||
-                sage.sageFreeSpreadPercent(s) !=
+            if (sage.costPerDay(s) != kCostDay[s] ||
+                sage.freeSpreadPercent(s) !=
                 kFree[s]) ++bad;
-        if (sage.sageCostPerDay(-5) != 100 ||
-            sage.sageCostPerDay(99) != 200 ||
-            sage.sageFreeSpreadPercent(-5) != 20 ||
-            sage.sageFreeSpreadPercent(99) != 80) ++bad;
+        if (sage.costPerDay(-5) != 100 ||
+            sage.costPerDay(99) != 200 ||
+            sage.freeSpreadPercent(-5) != 20 ||
+            sage.freeSpreadPercent(99) != 80) ++bad;
         // the unknown band and the short-term
         // terms
-        if (sage.sageUnknownPercentLo() != 51 ||
-            sage.sageUnknownPercentHi() != 100 ||
-            sage.sageUnknownCostDivisor() != 2 ||
-            sage.sageShortTermCostPerDay() != 100 ||
-            sage.sageShortTermMaxDays() != 7 ||
-            sage.sageShortTermCooldownMonths() != 1 ||
-            sage.sagePermanentHireOnly() != 1) ++bad;
+        if (sage.unknownPercentLo() != 51 ||
+            sage.unknownPercentHi() != 100 ||
+            sage.unknownCostDivisor() != 2 ||
+            sage.shortTermCostPerDay() != 100 ||
+            sage.shortTermMaxDays() != 7 ||
+            sage.shortTermCooldownMonths() != 1 ||
+            sage.permanentHireOnly() != 1) ++bad;
         printf("R310 sage subsection audit: bad %d\n", bad);
         if (bad) return 1;
     }

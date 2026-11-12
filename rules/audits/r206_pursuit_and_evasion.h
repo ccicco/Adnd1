@@ -26,51 +26,51 @@
         // the end-condition distances and caps by
         // relative speed: 100/50/5 rounds,
         // 150/80/1 turn, 200/none/no cap
-        if (pursuit.pursuitEndSightFeet(
+        if (pursuit.endSightFeet(
                 PURS_PURSUED_FASTER) != 100 ||
-            pursuit.pursuitEndSightFeet(
+            pursuit.endSightFeet(
                 PURS_EQUAL_SPEED) != 150 ||
-            pursuit.pursuitEndSightFeet(
+            pursuit.endSightFeet(
                 PURS_PURSUER_FASTER) != 0) ++bad;
-        if (pursuit.pursuitEndOutOfSightFeet(
+        if (pursuit.endOutOfSightFeet(
                 PURS_PURSUED_FASTER) != 50 ||
-            pursuit.pursuitEndOutOfSightFeet(
+            pursuit.endOutOfSightFeet(
                 PURS_EQUAL_SPEED) != 80 ||
-            pursuit.pursuitEndOutOfSightFeet(
+            pursuit.endOutOfSightFeet(
                 PURS_PURSUER_FASTER) != 200) ++bad;
-        if (pursuit.pursuitEndRoundCap(
+        if (pursuit.endRoundCap(
                 PURS_PURSUED_FASTER) != 5 ||
-            pursuit.pursuitEndRoundCap(
+            pursuit.endRoundCap(
                 PURS_EQUAL_SPEED) != 10 ||
-            pursuit.pursuitEndRoundCap(
+            pursuit.endRoundCap(
                 PURS_PURSUER_FASTER) != -1) ++bad;
         // the composition: in sight at 101 feet
         // ends the faster-pursued case; 100 does
         // not; out of sight lost at 201 ends the
         // pursuer-faster case; past the round cap
         // without a gain ends it
-        if (!pursuit.pursuitEnds(
+        if (!pursuit.ends(
                 PURS_PURSUED_FASTER, true, 101,
                 false, 0, 0, false)) ++bad;
-        if (pursuit.pursuitEnds(
+        if (pursuit.ends(
                 PURS_PURSUED_FASTER, true, 100,
                 false, 0, 0, false)) ++bad;
-        if (!pursuit.pursuitEnds(
+        if (!pursuit.ends(
                 PURS_PURSUER_FASTER, false, 0,
                 true, 201, 0, false)) ++bad;
-        if (pursuit.pursuitEnds(
+        if (pursuit.ends(
                 PURS_PURSUER_FASTER, false, 0,
                 true, 200, 0, false)) ++bad;
-        if (!pursuit.pursuitEnds(
+        if (!pursuit.ends(
                 PURS_EQUAL_SPEED, false, 0,
                 false, 0, 11, false)) ++bad;
-        if (pursuit.pursuitEnds(
+        if (pursuit.ends(
                 PURS_EQUAL_SPEED, false, 0,
                 false, 0, 11, true)) ++bad;
         // the movement procedure: 3 phases per
         // round, contact at 10 feet
-        if (pursuit.pursuitPhasesPerRound() != 3 ||
-            pursuit.pursuitConfrontFeet() != 10) ++bad;
+        if (pursuit.phasesPerRound() != 3 ||
+            pursuit.confrontFeet() != 10) ++bad;
         // the food distraction: 100 percent for
         // non-intelligent; d10 base + 10 per point
         // below 5; the confirm roll at or under
@@ -102,13 +102,13 @@
             pursuit.treasureDistractionValueBonus(
                 99) != 0) ++bad;
         // the multiple-choice and detection radii
-        if (pursuit.pursuitWrongChoiceWays(3) != 2 ||
-            pursuit.pursuitWrongChoiceWays(2) != 1)
+        if (pursuit.wrongChoiceWays(3) != 2 ||
+            pursuit.wrongChoiceWays(2) != 1)
             ++bad;
-        if (pursuit.pursuitCornerSightFeet() != 60 ||
-            pursuit.pursuitHearingMetalFeet() != 90 ||
-            pursuit.pursuitHearingBootsFeet() != 60 ||
-            pursuit.pursuitHearingQuietFeet() != 30)
+        if (pursuit.cornerSightFeet() != 60 ||
+            pursuit.hearingMetalFeet() != 90 ||
+            pursuit.hearingBootsFeet() != 60 ||
+            pursuit.hearingQuietFeet() != 30)
             ++bad;
         // the outdoor table: base 80, every
         // adjustment row cell for cell

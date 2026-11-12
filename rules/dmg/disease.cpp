@@ -1,31 +1,31 @@
 // R-refactor: split from disease.h - definitions
 #include "rules/dmg/disease.h"
 
-int Disease::diseaseContractBasePercent() { return 2; }
+int Disease::contractBasePercent() { return 2; }
 
 int Disease::parasiteContractBasePercent() { return 3; }
 
-int Disease::diseaseModCurrentlyAfflicted() { return 1; }
+int Disease::modCurrentlyAfflicted() { return 1; }
 
-int Disease::diseaseModCrowding() { return 1; }
+int Disease::modCrowding() { return 1; }
 
-int Disease::diseaseModFilth() { return 1; }
+int Disease::modFilth() { return 1; }
 
-int Disease::diseaseModOld() { return 2; }
+int Disease::modOld() { return 2; }
 
-int Disease::diseaseModMarshEnvironment() { return 2; }
+int Disease::modMarshEnvironment() { return 2; }
 
-int Disease::diseaseModHotMoist() { return 2; }
+int Disease::modHotMoist() { return 2; }
 
-int Disease::diseaseModVenerable() { return 5; }
+int Disease::modVenerable() { return 5; }
 
-int Disease::diseaseModCarrierExposure() { return 10; }
+int Disease::modCarrierExposure() { return 10; }
 
-int Disease::diseaseModCoolClimate() { return -1; }
+int Disease::modCoolClimate() { return -1; }
 
-int Disease::diseaseModColdHighMountains() { return -2; }
+int Disease::modColdHighMountains() { return -2; }
 
-int Disease::diseaseModShipboardPastTwoWeeks() { return -2; }
+int Disease::modShipboardPastTwoWeeks() { return -2; }
 
 int Disease::parasiteModFilth() { return 1; }
 
@@ -39,13 +39,13 @@ int Disease::parasiteModCoolOrDesert() { return -1; }
 
 int Disease::parasiteModColdOrCoolDesert() { return -1; }
 
-bool Disease::diseaseWeeklyCheckWhenFavorable() { return true; }
+bool Disease::weeklyCheckWhenFavorable() { return true; }
 
-bool Disease::diseaseCheckOnEachCarrierExposure() { return true; }
+bool Disease::checkOnEachCarrierExposure() { return true; }
 
-int Disease::diseaseAreaCount() { return 16; }
+int Disease::areaCount() { return 16; }
 
-const char* Disease::diseaseAreaName(int idx) {
+const char* Disease::areaName(int idx) {
     static const char* const k[16] = {
         "blood/blood forming organs",
         "bones",
@@ -69,7 +69,7 @@ const char* Disease::diseaseAreaName(int idx) {
     return k[idx];
 }
 
-int Disease::diseaseAreaForD100(int d100) {
+int Disease::areaForD100(int d100) {
     static const int kLo[16] = {
         1, 4, 5, 6, 8, 10, 13, 19, 41, 43,
         49, 51, 53, 66, 86, 97
@@ -81,7 +81,7 @@ int Disease::diseaseAreaForD100(int d100) {
     return 0;
 }
 
-int Disease::diseaseAcuteHi(int idx) {
+int Disease::acuteHi(int idx) {
     static const int k[16] = {
         3, 1, 6, 3, 1, 7, 7, 6, 2, 4,
         7, 5, 6, 6, 5, 6
@@ -91,19 +91,19 @@ int Disease::diseaseAcuteHi(int idx) {
     return k[idx];
 }
 
-int Disease::diseaseChronicLo(int idx) {
-    return diseaseAcuteHi(idx) + 1;
+int Disease::chronicLo(int idx) {
+    return acuteHi(idx) + 1;
 }
 
-bool Disease::diseaseIsAcute(int idx, int d8) {
-    return d8 <= diseaseAcuteHi(idx);
+bool Disease::isAcute(int idx, int d8) {
+    return d8 <= acuteHi(idx);
 }
 
-bool Disease::diseaseIsChronic(int idx, int d8) {
-    return d8 >= diseaseChronicLo(idx);
+bool Disease::isChronic(int idx, int d8) {
+    return d8 >= chronicLo(idx);
 }
 
-int Disease::diseaseSeverityMildHi(int idx) {
+int Disease::severityMildHi(int idx) {
     static const int k[16] = {
         2, 1, 2, 2, 1, 6, 5, 5, 3, 6,
         6, 5, 6, 5, 5, 5
@@ -113,7 +113,7 @@ int Disease::diseaseSeverityMildHi(int idx) {
     return k[idx];
 }
 
-int Disease::diseaseSeveritySevereHi(int idx) {
+int Disease::severitySevereHi(int idx) {
     static const int k[16] = {
         5, 3, 5, 4, 3, 7, 7, 7, 7, 8,
         8, 7, 8, 7, 7, 7
@@ -123,7 +123,7 @@ int Disease::diseaseSeveritySevereHi(int idx) {
     return k[idx];
 }
 
-int Disease::diseaseSeverityTerminalHi(int idx) {
+int Disease::severityTerminalHi(int idx) {
     static const int k[16] = {
         8, 8, 8, 8, 8, 8, 8, 8, 8, 0,
         0, 8, 0, 8, 8, 8
@@ -179,25 +179,25 @@ int Disease::parasiteSeverityTerminalHi(int idx) {
     return k[idx];
 }
 
-int Disease::diseaseMildWeeksMin() { return 1; }
+int Disease::mildWeeksMin() { return 1; }
 
-int Disease::diseaseMildWeeksMax() { return 3; }
+int Disease::mildWeeksMax() { return 3; }
 
-int Disease::diseaseSevereHitPointPercent() { return 50; }
+int Disease::severeHitPointPercent() { return 50; }
 
-int Disease::diseaseSevereDisabledWeeksMin() { return 1; }
+int Disease::severeDisabledWeeksMin() { return 1; }
 
-int Disease::diseaseSevereDisabledWeeksMax() { return 2; }
+int Disease::severeDisabledWeeksMax() { return 2; }
 
-int Disease::diseaseSevereMildRecoveryWeeksMin() { return 1; }
+int Disease::severeMildRecoveryWeeksMin() { return 1; }
 
-int Disease::diseaseSevereMildRecoveryWeeksMax() { return 2; }
+int Disease::severeMildRecoveryWeeksMax() { return 2; }
 
-int Disease::diseaseTerminalDaysMin() { return 1; }
+int Disease::terminalDaysMin() { return 1; }
 
-int Disease::diseaseTerminalDaysMax() { return 12; }
+int Disease::terminalDaysMax() { return 12; }
 
-DiseaseDurationUnit Disease::diseaseTerminalUnit(int idx) {
+DiseaseDurationUnit Disease::terminalUnit(int idx) {
     // blood and bones: 1-12 weeks; brain: 1-12
     // hours; cardiovascular-renal: 1-12 days;
     // connective tissue: terminal treated as
@@ -217,57 +217,57 @@ DiseaseDurationUnit Disease::diseaseTerminalUnit(int idx) {
     return k[idx];
 }
 
-bool Disease::diseaseHasTerminalColumn(int idx) {
-    return diseaseSeverityTerminalHi(idx) != 0;
+bool Disease::hasTerminalColumn(int idx) {
+    return severityTerminalHi(idx) != 0;
 }
 
-bool Disease::diseaseTerminalIsFunctionLoss(int idx) {
+bool Disease::terminalIsFunctionLoss(int idx) {
     return idx == 5 || idx == 6;
 }
 
-int Disease::diseaseEyesBlindBothChance() { return 50; }
+int Disease::eyesBlindBothChance() { return 50; }
 
-bool Disease::diseaseTerminalTreatedAsChronicSevere( int idx) {
+bool Disease::terminalTreatedAsChronicSevere( int idx) {
     return idx == 4;
 }
 
-int Disease::diseaseBloodWeeklyStrLoss() { return 1; }
+int Disease::bloodWeeklyStrLoss() { return 1; }
 
-int Disease::diseaseBloodWeeklyConLoss() { return 1; }
+int Disease::bloodWeeklyConLoss() { return 1; }
 
-int Disease::diseaseBrainIntLoss() { return 1; }
+int Disease::brainIntLoss() { return 1; }
 
-int Disease::diseaseBrainDexLoss() { return 1; }
+int Disease::brainDexLoss() { return 1; }
 
-int Disease::diseaseConnectiveMonthlyLoss() { return 1; }
+int Disease::connectiveMonthlyLoss() { return 1; }
 
-int Disease::diseaseGastroStrConLoss() { return 1; }
+int Disease::gastroStrConLoss() { return 1; }
 
-int Disease::diseaseJointsDexLoss() { return 1; }
+int Disease::jointsDexLoss() { return 1; }
 
-int Disease::diseaseMucousConLoss() { return 1; }
+int Disease::mucousConLoss() { return 1; }
 
-int Disease::diseaseMuscleStrDexLoss() { return 1; }
+int Disease::muscleStrDexLoss() { return 1; }
 
-int Disease::diseaseMuscleSeverePermanentChance() {
+int Disease::muscleSeverePermanentChance() {
     return 25;
 }
 
-int Disease::diseaseNoseThroatSevereConLossChance() {
+int Disease::noseThroatSevereConLossChance() {
     return 10;
 }
 
-int Disease::diseaseRespiratoryLossChance() { return 10; }
+int Disease::respiratoryLossChance() { return 10; }
 
-int Disease::diseaseSkinSevereChaLossChance() { return 10; }
+int Disease::skinSevereChaLossChance() { return 10; }
 
-int Disease::diseaseSkinChronicMildChance() { return 10; }
+int Disease::skinChronicMildChance() { return 10; }
 
-int Disease::diseaseSkinChronicSevereChance() { return 25; }
+int Disease::skinChronicSevereChance() { return 25; }
 
-int Disease::diseaseUrinaryLossChance() { return 20; }
+int Disease::urinaryLossChance() { return 20; }
 
-int Disease::diseaseConRollAdjust(int con) {
+int Disease::conRollAdjust(int con) {
     if (con <= 2) return 2;
     if (con <= 5) return 1;
     if (con <= 9) return 0;
@@ -277,22 +277,22 @@ int Disease::diseaseConRollAdjust(int con) {
     return -4;
 }
 
-int Disease::diseaseAdjustChronicDisease() { return 1; }
+int Disease::adjustChronicDisease() { return 1; }
 
-int Disease::diseaseAdjustSevereInfestation() { return 1; }
+int Disease::adjustSevereInfestation() { return 1; }
 
-int Disease::diseaseAdjustLowHitPoints() { return 1; }
+int Disease::adjustLowHitPoints() { return 1; }
 
-bool Disease::diseaseAdjustmentsApplyToParasites() {
+bool Disease::adjustmentsApplyToParasites() {
     return false;
 }
 
-bool Disease::diseaseRollMeansNoContraction(int die) {
+bool Disease::rollMeansNoContraction(int die) {
     return die <= 0;
 }
 
-int Disease::diseaseDeathRelapseChance() { return 90; }
+int Disease::deathRelapseChance() { return 90; }
 
-bool Disease::diseasePermanentLossFixedByCurative() {
+bool Disease::permanentLossFixedByCurative() {
     return false;
 }

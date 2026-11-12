@@ -78,71 +78,71 @@ public:
 // ---- the fields of study ----
 
 // The field count (the print: 7 fields).
-    int sageFieldCount();
+    int fieldCount();
 
 
 // The field name at index f (clamped).
-    const char* sageFieldName(int f);
+    const char* fieldName(int f);
 
 
 // The field percent band low (clamped; the
 // seven bands tile 1-100).
-    int sageFieldLo(int f);
+    int fieldLo(int f);
 
 
 // The field percent band high (clamped).
-    int sageFieldHi(int f);
+    int fieldHi(int f);
 
 
 // The special knowledge categories in the
 // field (clamped).
-    int sageFieldCategoryCount(int f);
+    int fieldCategoryCount(int f);
 
 
 // The flat index of the first category in the
 // field (clamped); the categories run field by
 // field in the print order.
-    int sageFieldCategoryFirst(int f);
+    int fieldCategoryFirst(int f);
 
 
 // ---- the special knowledge categories ----
 
 // The category count (the print: 68 categories
 // across the seven fields).
-    int sageCategoryCount();
+    int categoryCount();
 
 
 // The category name at flat index i (clamped).
-    const char* sageCategoryName(int i);
+    const char* categoryName(int i);
 
 
 // The owning field of the category at flat
 // index i (clamped).
-    int sageCategoryField(int i);
+    int categoryField(int i);
 
 
 // ---- the fields-count table ----
 
 // The dice band count.
-    int sageFieldsBandCount();
+    int fieldsBandCount();
 
 
 // The dice band low (clamped; the six bands
 // tile 1-100).
-    int sageFieldsBandLo(int b);
+    int fieldsBandLo(int b);
 
 
 // The dice band high (clamped).
-    int sageFieldsBandHi(int b);
+    int fieldsBandHi(int b);
 
 
 // The minor fields in the band (clamped).
-    int sageFieldsBandMinor(int b);
+    int fieldsBandMinor(int b);
 
 
 // The special categories in the major field
 // (clamped).
-    int sageFieldsBandSpecial(int b);
+    int fieldsBandSpecial(int b);
 
 
 // ---- the chance of knowing an answer ----
@@ -153,87 +153,87 @@ public:
 // 1 specific, 2 exacting. -1 pins the none cell
 // (the print dash - an exacting question out of
 // the fields cannot be answered at all).
-    int sageKnowLo(int scope, int nature);
+    int knowLo(int scope, int nature);
 
 
 // The knowing percent band high (both clamped).
-    int sageKnowHi(int scope, int nature);
+    int knowHi(int scope, int nature);
 
 
 // The none flag: 1 when the cell prints a dash.
-    int sageKnowNone(int scope, int nature);
+    int knowNone(int scope, int nature);
 
 
 // ---- the sage characteristics ----
 
 // The ability row count (0 STR, 1 INT, 2 WIS,
 // 3 DEX, 4 CON, 5 CHA).
-    int sageAbilityCount();
+    int abilityCount();
 
 
 // The ability die (clamped).
-    int sageAbilityDice(int a);
+    int abilityDice(int a);
 
 
 // The ability dice count (clamped).
-    int sageAbilityDiceCount(int a);
+    int abilityDiceCount(int a);
 
 
 // The ability plus (clamped); the score bands
 // run plus + count to plus + count * dice.
-    int sageAbilityPlus(int a);
+    int abilityPlus(int a);
 
 
 // The alignment band count (ascending dice
 // order; the nine bands tile 1-100).
-    int sageAlignBandCount();
+    int alignBandCount();
 
 
 // The alignment band low (clamped).
-    int sageAlignLo(int b);
+    int alignLo(int b);
 
 
 // The alignment band high (clamped).
-    int sageAlignHi(int b);
+    int alignHi(int b);
 
 
 // The alignment band name (clamped).
-    const char* sageAlignName(int b);
+    const char* alignName(int b);
 
 
 // The hit points: 8d4 plus the constitution
 // bonus as applicable.
-    int sageHpDiceCount();
-    int sageHpDie();
+    int hpDiceCount();
+    int hpDie();
 
 
 // ---- the spell skills ----
 
 // The spell kind count.
-    int sageSpellKindCount();
+    int spellKindCount();
 
 
 // The field spell kind (clamped): 0 clerical,
 // 1 druidical, 2 magic-user or illusionist (the
 // art and music and legends and folklore
 // categories read clerical or magic-user).
-    int sageSpellKind(int f);
+    int spellKind(int f);
 
 
 // The maximum spell level: d4 + 2, the 3-6
 // band inclusive.
-    int sageSpellMaxDie();
-    int sageSpellMaxPlus();
-    int sageSpellMaxLo();
-    int sageSpellMaxHi();
+    int spellMaxDie();
+    int spellMaxPlus();
+    int spellMaxLo();
+    int spellMaxHi();
 
 
 // The spells held per level and the ready cap
 // (1-4 per level, no more than 1 of each level
 // available for use at a time).
-    int sageSpellPerLevelLo();
-    int sageSpellPerLevelHi();
-    int sageSpellReadyPerLevel();
+    int spellPerLevelLo();
+    int spellPerLevelHi();
+    int spellReadyPerLevel();
 
 
 // ---- the employment offer ----
@@ -243,40 +243,40 @@ public:
 // research grants per month (2d6 hundred g.p.),
 // row 2 the initial material expenditure (the
 // 20,000 g.p. minimum; lo equals hi).
-    int sageOfferCount();
+    int offerCount();
 
 
 // The offer row low (clamped; g.p. per month).
-    int sageOfferLo(int i);
+    int offerLo(int i);
 
 
 // The offer row high (clamped; g.p. per month).
-    int sageOfferHi(int i);
+    int offerHi(int i);
 
 
 // ---- the efficiency economics ----
 
 // The efficiency milestone count.
-    int sageEffMilestoneCount();
+    int effMilestoneCount();
 
 
 // The milestone cost (clamped): 20,000 g.p.
 // buys 50 percent, 60,000 reaches 90 and
 // 100,000 the full 100 (the specific and
 // exacting areas).
-    int sageEffMilestoneCost(int i);
+    int effMilestoneCost(int i);
 
 
 // The milestone efficiency percent (clamped).
-    int sageEffMilestonePercent(int i);
+    int effMilestonePercent(int i);
 
 
 // The +1 percent step cost to 90 percent.
-    int sageEffStepCost();
+    int effStepCost();
 
 
 // The +1 percent step cost after 90.
-    int sageEffHighCostPerPercent();
+    int effHighCostPerPercent();
 
 
 // ---- the improvement ladder ----
@@ -290,20 +290,20 @@ public:
 // maximum), row 3 an extra major field
 // (200,000 g.p. and two years; -1 pins no
 // stated maximum).
-    int sageImproveCount();
+    int improveCount();
 
 
 // The improvement cost in g.p. (clamped).
-    int sageImproveCost(int i);
+    int improveCost(int i);
 
 
 // The improvement time in months (clamped).
-    int sageImproveMonths(int i);
+    int improveMonths(int i);
 
 
 // The improvement maximum (clamped; -1 pins
 // no stated maximum).
-    int sageImproveMax(int i);
+    int improveMax(int i);
 
 
 // ---- the information discovery table ----
@@ -311,25 +311,25 @@ public:
 // The discovery time band low (both clamped).
 // Scope and nature read as the knowing table;
 // -1 pins the none cell (the print dash).
-    int sageTimeLo(int scope, int nature);
+    int timeLo(int scope, int nature);
 
 
 // The discovery time band high (both clamped).
-    int sageTimeHi(int scope, int nature);
+    int timeHi(int scope, int nature);
 
 
 // The discovery time unit (both clamped):
 // 0 rounds, 1 hours, 2 days (the lone HOURS
 // cell the special-category specific band).
-    int sageTimeUnit(int scope, int nature);
+    int timeUnit(int scope, int nature);
 
 
 // The none flag: 1 when the cell prints a dash.
-    int sageTimeNone(int scope, int nature);
+    int timeNone(int scope, int nature);
 
 
 // The g.p. cost per day for the scope (clamped).
-    int sageCostPerDay(int scope);
+    int costPerDay(int scope);
 
 
 // The free-cost spread threshold (clamped):
@@ -337,28 +337,28 @@ public:
 // the spread means the materials are on hand;
 // the special category widens to the lower 80
 // percent.
-    int sageFreeSpreadPercent(int scope);
+    int freeSpreadPercent(int scope);
 
 
 // The unknown-information band: 51-100
 // percent of the maximum time.
-    int sageUnknownPercentLo();
-    int sageUnknownPercentHi();
+    int unknownPercentLo();
+    int unknownPercentHi();
 
 
 // The unknown-information cost divisor (the
 // costs accrue at half the stated amount).
-    int sageUnknownCostDivisor();
+    int unknownCostDivisor();
 
 
 // The short-term terms: 100 g.p. per day plus
 // the question difficulty, one week maximum,
 // a one-game-month cooldown after.
-    int sageShortTermCostPerDay();
-    int sageShortTermMaxDays();
-    int sageShortTermCooldownMonths();
+    int shortTermCostPerDay();
+    int shortTermMaxDays();
+    int shortTermCooldownMonths();
 
 
 // The permanent offer is lifetime service only.
-    int sagePermanentHireOnly();
+    int permanentHireOnly();
 };

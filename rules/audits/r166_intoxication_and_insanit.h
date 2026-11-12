@@ -83,65 +83,65 @@
             "suicidal mania", "catatonia"
         };
         for (int i = 1; i <= 20; ++i)
-            if (std::string(insanity.insanityName(i))
+            if (std::string(insanity.name(i))
                     != kNames[i - 1]) ++bad;
-        if (std::string(insanity.insanityName(0))
+        if (std::string(insanity.name(0))
                 != kNames[0] ||
-            std::string(insanity.insanityName(21))
+            std::string(insanity.name(21))
                 != kNames[19]) ++bad;
         // the mild star: types 1-4 only
         for (int i = 1; i <= 20; ++i)
-            if (insanity.insanityIsMild(i) != (i <= 4)) ++bad;
+            if (insanity.isMild(i) != (i <= 4)) ++bad;
         // the duration classes
-        if (insanity.insanityTemporaryWeeksMin() != 2 ||
-            insanity.insanityTemporaryWeeksMax() != 12 ||
-            insanity.insanityMildWeeksMin() != 1 ||
-            insanity.insanityMildWeeksMax() != 4) ++bad;
+        if (insanity.temporaryWeeksMin() != 2 ||
+            insanity.temporaryWeeksMax() != 12 ||
+            insanity.mildWeeksMin() != 1 ||
+            insanity.mildWeeksMax() != 4) ++bad;
         // the per-form printed parameters
-        if (insanity.insanityDipsomaniaContinueNearAlcohol() != 50 ||
-            insanity.insanityDipsomaniaContinueOtherwise() != 10 ||
-            insanity.insanityKleptomaniaSeenChance() != 90 ||
-            insanity.insanityKleptomaniaThiefPenalty() != -10 ||
-            insanity.insanityDementiaPraecoxIgnoreChance() != 25 ||
-            insanity.insanityMelancholiaIgnoreChance() != 50)
+        if (insanity.dipsomaniaContinueNearAlcohol() != 50 ||
+            insanity.dipsomaniaContinueOtherwise() != 10 ||
+            insanity.kleptomaniaSeenChance() != 90 ||
+            insanity.kleptomaniaThiefPenalty() != -10 ||
+            insanity.dementiaPraecoxIgnoreChance() != 25 ||
+            insanity.melancholiaIgnoreChance() != 50)
             ++bad;
-        if (insanity.insanitySchizophreniaPersonalitiesMin() != 1 ||
-            insanity.insanitySchizophreniaPersonalitiesMax() != 4 ||
-            insanity.insanityOnsetChanceIn6() != 1 ||
-            insanity.insanityManiaDurationMinTurns() != 2 ||
-            insanity.insanityManiaDurationMaxTurns() != 12)
+        if (insanity.schizophreniaPersonalitiesMin() != 1 ||
+            insanity.schizophreniaPersonalitiesMax() != 4 ||
+            insanity.onsetChanceIn6() != 1 ||
+            insanity.maniaDurationMinTurns() != 2 ||
+            insanity.maniaDurationMaxTurns() != 12)
             ++bad;
         // the mania strength states: 18/50, 18/75,
         // 18/00 - the percent-of-exceptional encoding
-        if (insanity.insanityManiaStrengthState(1) != 50 ||
-            insanity.insanityManiaStrengthState(2) != 75 ||
-            insanity.insanityManiaStrengthState(3) != 100 ||
-            insanity.insanityManiaStrengthState(6) != 100)
+        if (insanity.maniaStrengthState(1) != 50 ||
+            insanity.maniaStrengthState(2) != 75 ||
+            insanity.maniaStrengthState(3) != 100 ||
+            insanity.maniaStrengthState(6) != 100)
             ++bad;
-        if (insanity.insanityManicDepressiveCycleMinDays() != 1 ||
-            insanity.insanityManicDepressiveCycleMaxDays() != 4 ||
-            insanity.insanityManicDepressiveFlipChance() != 90 ||
-            insanity.insanityHallucinatoryNormalChance() != 50 ||
-            insanity.insanityHallucinatoryDurationMinTurns() != 1 ||
-            insanity.insanityHallucinatoryDurationMaxTurns() != 20)
+        if (insanity.manicDepressiveCycleMinDays() != 1 ||
+            insanity.manicDepressiveCycleMaxDays() != 4 ||
+            insanity.manicDepressiveFlipChance() != 90 ||
+            insanity.hallucinatoryNormalChance() != 50 ||
+            insanity.hallucinatoryDurationMinTurns() != 1 ||
+            insanity.hallucinatoryDurationMaxTurns() != 20)
             ++bad;
-        if (insanity.insanitySadoMasoNormalMinDays() != 1 ||
-            insanity.insanitySadoMasoNormalMaxDays() != 3 ||
-            insanity.insanityHomicidalIntervalMinDays() != 1 ||
-            insanity.insanityHomicidalIntervalMaxDays() != 4 ||
-            insanity.insanityHomicidalMelancholiaMinDays() != 1 ||
-            insanity.insanityHomicidalMelancholiaMaxDays() != 6)
+        if (insanity.sadoMasoNormalMinDays() != 1 ||
+            insanity.sadoMasoNormalMaxDays() != 3 ||
+            insanity.homicidalIntervalMinDays() != 1 ||
+            insanity.homicidalIntervalMaxDays() != 4 ||
+            insanity.homicidalMelancholiaMinDays() != 1 ||
+            insanity.homicidalMelancholiaMaxDays() != 6)
             ++bad;
-        if (insanity.insanityHebephreniaEnrageChance() != 75 ||
-            insanity.insanityHebephreniaCatatonicMinHours() != 1 ||
-            insanity.insanityHebephreniaCatatonicMaxHours() != 6 ||
-            insanity.insanitySuicidalScaleMin() != 10 ||
-            insanity.insanitySuicidalScaleMax() != 80 ||
-            insanity.insanitySuicidalManiaMinTurns() != 2 ||
-            insanity.insanitySuicidalManiaMaxTurns() != 8 ||
-            insanity.insanitySuicidalMelancholyMinDays() != 2 ||
-            insanity.insanitySuicidalMelancholyMaxDays() != 12 ||
-            insanity.insanityCatatoniaReactionChance() != 1)
+        if (insanity.hebephreniaEnrageChance() != 75 ||
+            insanity.hebephreniaCatatonicMinHours() != 1 ||
+            insanity.hebephreniaCatatonicMaxHours() != 6 ||
+            insanity.suicidalScaleMin() != 10 ||
+            insanity.suicidalScaleMax() != 80 ||
+            insanity.suicidalManiaMinTurns() != 2 ||
+            insanity.suicidalManiaMaxTurns() != 8 ||
+            insanity.suicidalMelancholyMinDays() != 2 ||
+            insanity.suicidalMelancholyMaxDays() != 12 ||
+            insanity.catatoniaReactionChance() != 1)
             ++bad;
         printf("R166 intoxication and insanity audit: bad %d\n", bad);
         if (bad) return 1;

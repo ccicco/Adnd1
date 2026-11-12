@@ -85,7 +85,7 @@ int Insanity::intoxicationStrongStimulantConLoss() {
     return 1;
 }
 
-const char* Insanity::insanityName(int type) {
+const char* Insanity::name(int type) {
     static const char* const k[21] = {
         "",
         "dipsomania",
@@ -114,91 +114,91 @@ const char* Insanity::insanityName(int type) {
     return k[type];
 }
 
-bool Insanity::insanityIsMild(int type) {
+bool Insanity::isMild(int type) {
     return type >= 1 && type <= 4;
 }
 
-int Insanity::insanityTemporaryWeeksMin() { return 2; }
+int Insanity::temporaryWeeksMin() { return 2; }
 
-int Insanity::insanityTemporaryWeeksMax() { return 12; }
+int Insanity::temporaryWeeksMax() { return 12; }
 
-int Insanity::insanityMildWeeksMin() { return 1; }
+int Insanity::mildWeeksMin() { return 1; }
 
-int Insanity::insanityMildWeeksMax() { return 4; }
+int Insanity::mildWeeksMax() { return 4; }
 
-int Insanity::insanityDipsomaniaContinueNearAlcohol() {
+int Insanity::dipsomaniaContinueNearAlcohol() {
     return 50;
 }
 
-int Insanity::insanityDipsomaniaContinueOtherwise() {
+int Insanity::dipsomaniaContinueOtherwise() {
     return 10;
 }
 
-int Insanity::insanityKleptomaniaSeenChance() { return 90; }
+int Insanity::kleptomaniaSeenChance() { return 90; }
 
-int Insanity::insanityKleptomaniaThiefPenalty() { return -10; }
+int Insanity::kleptomaniaThiefPenalty() { return -10; }
 
-int Insanity::insanityDementiaPraecoxIgnoreChance() { return 25; }
+int Insanity::dementiaPraecoxIgnoreChance() { return 25; }
 
-int Insanity::insanityMelancholiaIgnoreChance() { return 50; }
+int Insanity::melancholiaIgnoreChance() { return 50; }
 
-int Insanity::insanitySchizophreniaPersonalitiesMin() { return 1; }
+int Insanity::schizophreniaPersonalitiesMin() { return 1; }
 
-int Insanity::insanitySchizophreniaPersonalitiesMax() { return 4; }
+int Insanity::schizophreniaPersonalitiesMax() { return 4; }
 
-int Insanity::insanityOnsetChanceIn6() { return 1; }
+int Insanity::onsetChanceIn6() { return 1; }
 
-int Insanity::insanityManiaDurationMinTurns() { return 2; }
+int Insanity::maniaDurationMinTurns() { return 2; }
 
-int Insanity::insanityManiaDurationMaxTurns() { return 12; }
+int Insanity::maniaDurationMaxTurns() { return 12; }
 
-int Insanity::insanityManiaStrengthState(int d6) {
+int Insanity::maniaStrengthState(int d6) {
     static const int k[7] = { 0, 50, 75, 100, 100, 100, 100 };
     if (d6 < 1) d6 = 1;
     if (d6 > 6) d6 = 6;
     return k[d6];
 }
 
-int Insanity::insanityManicDepressiveCycleMinDays() { return 1; }
+int Insanity::manicDepressiveCycleMinDays() { return 1; }
 
-int Insanity::insanityManicDepressiveCycleMaxDays() { return 4; }
+int Insanity::manicDepressiveCycleMaxDays() { return 4; }
 
-int Insanity::insanityManicDepressiveFlipChance() { return 90; }
+int Insanity::manicDepressiveFlipChance() { return 90; }
 
-int Insanity::insanityHallucinatoryNormalChance() { return 50; }
+int Insanity::hallucinatoryNormalChance() { return 50; }
 
-int Insanity::insanityHallucinatoryDurationMinTurns() { return 1; }
+int Insanity::hallucinatoryDurationMinTurns() { return 1; }
 
-int Insanity::insanityHallucinatoryDurationMaxTurns() { return 20; }
+int Insanity::hallucinatoryDurationMaxTurns() { return 20; }
 
-int Insanity::insanitySadoMasoNormalMinDays() { return 1; }
+int Insanity::sadoMasoNormalMinDays() { return 1; }
 
-int Insanity::insanitySadoMasoNormalMaxDays() { return 3; }
+int Insanity::sadoMasoNormalMaxDays() { return 3; }
 
-int Insanity::insanityHomicidalIntervalMinDays() { return 1; }
+int Insanity::homicidalIntervalMinDays() { return 1; }
 
-int Insanity::insanityHomicidalIntervalMaxDays() { return 4; }
+int Insanity::homicidalIntervalMaxDays() { return 4; }
 
-int Insanity::insanityHomicidalMelancholiaMinDays() { return 1; }
+int Insanity::homicidalMelancholiaMinDays() { return 1; }
 
-int Insanity::insanityHomicidalMelancholiaMaxDays() { return 6; }
+int Insanity::homicidalMelancholiaMaxDays() { return 6; }
 
-int Insanity::insanityHebephreniaEnrageChance() { return 75; }
+int Insanity::hebephreniaEnrageChance() { return 75; }
 
-int Insanity::insanityHebephreniaCatatonicMinHours() { return 1; }
+int Insanity::hebephreniaCatatonicMinHours() { return 1; }
 
-int Insanity::insanityHebephreniaCatatonicMaxHours() { return 6; }
+int Insanity::hebephreniaCatatonicMaxHours() { return 6; }
 
-int Insanity::insanitySuicidalScaleMin() { return 10; }
+int Insanity::suicidalScaleMin() { return 10; }
 
-int Insanity::insanitySuicidalScaleMax() { return 80; }
+int Insanity::suicidalScaleMax() { return 80; }
 
-int Insanity::insanitySuicidalManiaMinTurns() { return 2; }
+int Insanity::suicidalManiaMinTurns() { return 2; }
 
-int Insanity::insanitySuicidalManiaMaxTurns() { return 8; }
+int Insanity::suicidalManiaMaxTurns() { return 8; }
 
-int Insanity::insanitySuicidalMelancholyMinDays() { return 2; }
+int Insanity::suicidalMelancholyMinDays() { return 2; }
 
-int Insanity::insanitySuicidalMelancholyMaxDays() { return 12; }
+int Insanity::suicidalMelancholyMaxDays() { return 12; }
 
-int Insanity::insanityCatatoniaReactionChance() { return 1; }
+int Insanity::catatoniaReactionChance() { return 1; }
