@@ -9,10 +9,10 @@
   "provenance": "The OA promotion arc round one, the first rules promotion batch from the pin headers themselves (the promotion-from-headers doctrine): eleven records promoted mechanically from rules/oa{round}.h into content/rules/oa/ - rounds R614 through R624 complete, 778 model items (consts, bools, switches, chains), every record parsed back and compared equal (the lossless proof), the audit conditions converted to bad-detector examples and the local-array audits left behind the C++ pins. This batch is 305671 bytes of Lua. Cumulative eleven of the 160-round OA set, 149 rounds remaining."
  },
  "header_file": "rules/oa/oa1.h",
- "audit_file": "rules/audits/r981_batch.h",
+ "audit_file": "rules/audits/r981_oa_promotion_batch_one.h",
  "audit_label": "R981 OA promotion batch one audit",
  "audit_comment": "the batch one audit - eleven records, 778 model items, rounds R614 through R624 complete, cumulative 11 of the 160-round OA set, the parse-back proof green on every record, every fact fail-on-wrong",
- "audit_anchor": "#include \"rules/audits/r980_batch.h\"  // R980: R980 dragon promotion batch twelve audit",
+ "audit_anchor": "#include \"rules/audits/r980_dragon_promotion_batch_twelve.h\"  // R980: R980 dragon promotion batch twelve audit",
  "include_after": "#include \"rules/dragon/promo_batch12.h\"  // R980: the Dragon promotion batch twelve",
  "include_comment": "the OA promotion batch one",
  "regtest": "regtest.cpp",

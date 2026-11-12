@@ -9,10 +9,10 @@
   "provenance": "The DSG promotion arc round two, the second rules promotion batch from the Dungeoneer Survival Guide pin rounds: sixteen records promoted into content/rules/dsg/ - rounds R511 through R527 complete (R515 is absent from the dsg regtest map), every one from its adjudicated spec JSON per the Dragon spec doctrine, R966, 660 model items (consts, bools, switches, chains), every record parsed back and compared equal (the lossless proof), the audit conditions converted to bad-detector examples. This batch is 306698 bytes of Lua. Cumulative 24 of the 60-round DSG set, 36 rounds remaining."
  },
  "header_file": "rules/dsg/dsg2.h",
- "audit_file": "rules/audits/r995_batch.h",
+ "audit_file": "rules/audits/r995_dsg_promotion_batch_two.h",
  "audit_label": "R995 DSG promotion batch two audit",
  "audit_comment": "the batch two audit - sixteen records, 660 model items, rounds R511 through R527 complete (R515 absent), cumulative 24 of the 60-round DSG set, the parse-back proof green on every record, every fact fail-on-wrong",
- "audit_anchor": "#include \"rules/audits/r994_batch.h\"  // R994: R994 DSG promotion batch one audit",
+ "audit_anchor": "#include \"rules/audits/r994_dsg_promotion_batch_one.h\"  // R994: R994 DSG promotion batch one audit",
  "include_after": "#include \"rules/dsg/dsg1.h\"  // R994: the DSG promotion batch one",
  "include_comment": "the DSG promotion batch two",
  "regtest": "regtest.cpp",

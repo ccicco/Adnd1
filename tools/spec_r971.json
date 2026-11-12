@@ -9,10 +9,10 @@
   "provenance": "The content-structure arc round six, the third rules promotion batch under the R968 format: four records promoted mechanically from their spec JSONs into content/rules/dragon/ - issue 4 complete (chr, cmv, cfe, cfc - the dragon article's combat variants, the cleric/elf variants and their familiar tables), 447 model items, every record parsed back and compared equal (the lossless proof). THE BATCH CEILING RAISED (Curtiss, 2026-10-31): the spec files run small, so whole issue groups ride per round now - this batch is 214984 bytes of Lua in a ~240KB spec, nearly double the R969 precedent. Cumulative 15 of the walked 79-round Dragon set, 64 remaining."
  },
  "header_file": "rules/dragon/promo_batch03.h",
- "audit_file": "rules/audits/r971_batch.h",
+ "audit_file": "rules/audits/r971_dragon_promotion_batch_three.h",
  "audit_label": "R971 dragon promotion batch three audit",
  "audit_comment": "the batch three audit - four records, 447 model items, issue 4 complete, cumulative 15 of the 79-round set, the parse-back proof green on every record, every fact fail-on-wrong",
- "audit_anchor": "#include \"rules/audits/r970_batch.h\"  // R970: R970 dragon promotion batch two audit",
+ "audit_anchor": "#include \"rules/audits/r970_dragon_promotion_batch_two.h\"  // R970: R970 dragon promotion batch two audit",
  "include_after": "#include \"rules/dragon/promo_batch02.h\"  // R970: the Dragon promotion batch two",
  "include_comment": "the Dragon promotion batch three",
  "regtest": "regtest.cpp",

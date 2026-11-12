@@ -8,9 +8,9 @@
   "provenance": "The part-three round of the issue-23 four-round shape - six of the ten Curtiss-called chains pinned as the commentary set: the gaming-hobby trade-show report (print 6), the armor-weights polemic (print 14), the permanent-damage charts (print 19-20), the dungeon-as-prison formula (print 21), the Origins scheduling critique (print 4 and 21) and the Niall sword-and-sorcery tale (print 8-9 and 22-30, Gardner Fox and the witchwoman Sosaria Thota). All pinned from The Dragon Vol. III No. 9 (March 1979) at extract/dragon/023, PRINT FOLIO = PDF PAGE this issue, the transcript of the Curtiss-provided scan. The two inherited watches - the Sullin levels 7-9 and the brawling sequel - print nowhere in issue 23 and ride to TD 24."
  },
  "header_file": "rules/dragon/issue023_opener3.h",
- "audit_file": "rules/audits/r952_batch.h",
+ "audit_file": "rules/audits/r952_issue_23_commentary_set.h",
  "audit_label": "R952 issue-23 commentary set audit",
- "audit_anchor": "#include \"rules/audits/r951_batch.h\"  // R951: R951 issue-23 Lower Planes generation audit",
+ "audit_anchor": "#include \"rules/audits/r951_issue_23_lower_planes_generation.h\"  // R951: R951 issue-23 Lower Planes generation audit",
  "audit_comment": "THE SIX-CHAIN COMMENTARY SET AUDIT - the issue-23 part-three round: the trade-show roster, the armor and sword weights, the permanent-damage charts with their percentile bands, the Elrohir prison formula, the Kask Origins verdict and the Niall tale through the amanatlon device, print 6, 14, 19-20, 21, 4 plus 21 and 8-9 plus 22-30.",
  "gap_report": "tools/dragon_gap_report_023.md",
  "gap_census": {

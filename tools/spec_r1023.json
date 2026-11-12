@@ -9,10 +9,10 @@
   "provenance": "The FF normalization - the per-book schema pass concludes for the Fiend Folio (the R879 normalizer doctrine, the R1009-R1014 MM1 arc, R1016 the OA book close, R1017-R1020 the MM2 arc closed, R1021 the letters a-g, R1022 the letters h-r): the last 54 sparse FF defs (the letters s-z) rewritten to the canonical FIELD_ORDER emission, byte-exact against the landed normalize_registry.py; the FF book closes COMPLETE on both axes - 185 of 185 canonical; all 378 patches are anchored sentinel inserts under the single-line anchor doctrine (the R1021 aarakocra lesson); no reorders, no comma sites, no pin repairs - the FF book carries no fragment grids; the loader reads the sentinels under the R879 uniform coercer doctrine already live on the 787 normalized MM1, MM2 and OA defs"
  },
  "header_file": "rules/ff/normalization_batch3.h",
- "audit_file": "rules/audits/r1023_batch.h",
+ "audit_file": "rules/audits/r1023_ff_normalization.h",
  "audit_label": "R1023 FF normalization audit",
  "audit_comment": "THE FF NORMALIZATION, THE BOOK CLOSER - the letters s-z, the last 54 of 185 defs rewritten to the full-field 57-key emission, byte-exact against the landed normalize_registry.py; the FF book closes COMPLETE; every patch an anchored sentinel insert.",
- "audit_anchor": "#include \"rules/audits/r1022_batch.h\"  // R1022: R1022 FF normalization audit",
+ "audit_anchor": "#include \"rules/audits/r1022_ff_normalization.h\"  // R1022: R1022 FF normalization audit",
  "include_after": "#include \"rules/ff/normalization_batch2.h\"  // R1022: the FF normalization batch two",
  "include_comment": "the FF normalization batch three",
  "regtest": "regtest.cpp",

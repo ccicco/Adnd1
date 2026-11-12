@@ -9,10 +9,10 @@
   "provenance": "The DSG promotion arc round four, the fourth rules promotion batch from the Dungeoneer Survival Guide pin rounds: fifteen records promoted into content/rules/dsg/ - rounds R542 through R556 complete, every one from its adjudicated spec JSON per the Dragon spec doctrine, R966, 630 model items (consts, bools, switches, chains), every record parsed back and compared equal (the lossless proof), the audit conditions converted to bad-detector examples. This batch is 281080 bytes of Lua. Cumulative 53 of the 60-round DSG set, 7 rounds remaining - the set closer rides next."
  },
  "header_file": "rules/dsg/dsg4.h",
- "audit_file": "rules/audits/r997_batch.h",
+ "audit_file": "rules/audits/r997_dsg_promotion_batch_four.h",
  "audit_label": "R997 DSG promotion batch four audit",
  "audit_comment": "the batch four audit - fifteen records, 630 model items, rounds R542 through R556 complete, cumulative 53 of the 60-round DSG set, the parse-back proof green on every record, every fact fail-on-wrong",
- "audit_anchor": "#include \"rules/audits/r996_batch.h\"  // R996: R996 DSG promotion batch three audit",
+ "audit_anchor": "#include \"rules/audits/r996_dsg_promotion_batch_three.h\"  // R996: R996 DSG promotion batch three audit",
  "include_after": "#include \"rules/dsg/dsg3.h\"  // R996: the DSG promotion batch three",
  "include_comment": "the DSG promotion batch four",
  "regtest": "regtest.cpp",

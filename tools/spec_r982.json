@@ -9,10 +9,10 @@
   "provenance": "The OA promotion arc round two, the second rules promotion batch from the pin headers themselves (the promotion-from-headers doctrine, R981): twenty records promoted mechanically from rules/oa{round}.h into content/rules/oa/ - rounds R625 through R644 complete (the sohei, wu jen, yakuza, character birth and family structure, ancestry and holdings, the birthright and honor chapters, the encounter tables, money and starting money, the equipment exchange and the equipment chapters - weapons, handheld, hurled, armor and protective pieces), 618 model items (consts, bools, switches, chains), every record parsed back and compared equal (the lossless proof), the audit conditions converted to bad-detector examples and the local-array audits left behind the C++ pins. This batch is 322857 bytes of Lua. Cumulative thirty-one of the 160-round OA set, 129 rounds remaining."
  },
  "header_file": "rules/oa/oa2.h",
- "audit_file": "rules/audits/r982_batch.h",
+ "audit_file": "rules/audits/r982_oa_promotion_batch_two.h",
  "audit_label": "R982 OA promotion batch two audit",
  "audit_comment": "the batch two audit - twenty records, 618 model items, rounds R625 through R644 complete, cumulative 31 of the 160-round OA set, the parse-back proof green on every record, every fact fail-on-wrong",
- "audit_anchor": "#include \"rules/audits/r981_batch.h\"  // R981: R981 OA promotion batch one audit",
+ "audit_anchor": "#include \"rules/audits/r981_oa_promotion_batch_one.h\"  // R981: R981 OA promotion batch one audit",
  "include_after": "#include \"rules/oa/oa1.h\"  // R981: the OA promotion batch one",
  "include_comment": "the OA promotion batch two",
  "regtest": "regtest.cpp",

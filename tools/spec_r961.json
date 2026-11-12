@@ -9,7 +9,7 @@
  },
  "regtest": "regtest.cpp",
  "header_file": "rules/dragon/issue025_close.h",
- "audit_file": "rules/audits/r961_batch.h",
+ "audit_file": "rules/audits/r961_dragon_issue_25_closure.h",
  "audit_label": "R961 Dragon issue-25 closure audit",
  "audit_comment": "THE DRAGON ISSUE-25 BOX CLOSING ROUND - the pure flip, no new ink. All three report-025 boxes flip at this single round: the part-one opener set (R958, t25), the part-two war game and vampire roster table round (R959, s25) and the part-three commentary set (R960, k25) all checked, gap_census 3 closed 0 open, report-025 joining mm2, ddg and report-024 in the closed state",
  "chains": [],
@@ -39,7 +39,7 @@
  ],
  "include_after": "#include \"rules/dragon/issue025_opener3.h\"  // R960: the Dragon issue-25 opener part three, the three-chain commentary set",
  "include_comment": "the Dragon issue-25 box closing round, the fourth four-round walk complete",
- "audit_anchor": "#include \"rules/audits/r960_batch.h\"  // R960: R960 issue-25 commentary set audit",
+ "audit_anchor": "#include \"rules/audits/r960_issue_25_commentary_set.h\"  // R960: R960 issue-25 commentary set audit",
  "seed_anchor": "## Knowledge maintenance",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "prev_record": [

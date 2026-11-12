@@ -9,10 +9,10 @@
   "provenance": "The UA promotion arc round one, the first rules promotion batch from the Unearthed Arcana pin rounds: thirteen records promoted into content/rules/ua/ - rounds R333 through R348 complete (the ranger and cavalier expansions, the thief-acrobat and the new-class bars, the weapon and the comeliness reads, the clerical spell blocks, the cantrips), one record per round per the OA header-record doctrine (the pin header stays the adjudicated record; the multi-header rounds merge their headers' pools), 970 model items (consts, bools, switches, chains), every record parsed back and compared equal (the lossless proof), the audit conditions converted to bad-detector examples. This batch is 304979 bytes of Lua. Cumulative thirteen of the 76-round UA set, 63 rounds remaining."
  },
  "header_file": "rules/ua/ua1.h",
- "audit_file": "rules/audits/r999_batch.h",
+ "audit_file": "rules/audits/r999_ua_promotion_batch_one.h",
  "audit_label": "R999 UA promotion batch one audit",
  "audit_comment": "the batch one audit - thirteen records, 970 model items, rounds R333 through R348 complete, cumulative 13 of the 76-round UA set, the parse-back proof green on every record, every fact fail-on-wrong",
- "audit_anchor": "#include \"rules/audits/r998_batch.h\"  // R998: R998 DSG promotion batch five audit",
+ "audit_anchor": "#include \"rules/audits/r998_dsg_promotion_batch_five.h\"  // R998: R998 DSG promotion batch five audit",
  "include_after": "#include \"rules/dsg/dsg5.h\"  // R998: the DSG promotion batch five",
  "include_comment": "the UA promotion batch one",
  "regtest": "regtest.cpp",

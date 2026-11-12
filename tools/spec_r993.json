@@ -9,10 +9,10 @@
   "provenance": "The WSG promotion arc round five, the fifth and final rules promotion batch from the Wilderness Survival Guide pin rounds: six records promoted into content/rules/wsg/ - rounds R497 through R502 complete (the wilderness close - the terrain overview, the player-character death system, the weather, the movement, the visibility and the climate), every one from its adjudicated spec JSON per the Dragon spec doctrine, R966, 440 model items (consts, bools, switches, chains), every record parsed back and compared equal (the lossless proof), the audit conditions converted to bad-detector examples. This batch is 128521 bytes of Lua. Cumulative seventy-seven of the 77-round WSG set, zero rounds remaining - THE WSG SET IS FULLY PROMOTED."
  },
  "header_file": "rules/wsg/wsg5.h",
- "audit_file": "rules/audits/r993_batch.h",
+ "audit_file": "rules/audits/r993_wsg_promotion_batch_five.h",
  "audit_label": "R993 WSG promotion batch five audit",
  "audit_comment": "the batch five audit - six records, 440 model items, rounds R497 through R502 complete, cumulative 77 of the 77-round WSG set - the set closer, the parse-back proof green on every record, every fact fail-on-wrong",
- "audit_anchor": "#include \"rules/audits/r992_batch.h\"  // R992: R992 WSG promotion batch four audit",
+ "audit_anchor": "#include \"rules/audits/r992_wsg_promotion_batch_four.h\"  // R992: R992 WSG promotion batch four audit",
  "include_after": "#include \"rules/wsg/wsg4.h\"  // R992: the WSG promotion batch four",
  "include_comment": "the WSG promotion batch five",
  "regtest": "regtest.cpp",

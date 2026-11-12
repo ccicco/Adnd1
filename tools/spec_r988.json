@@ -9,10 +9,10 @@
   "provenance": "The OA promotion arc round eight, the eighth and final rules promotion batch from the pin headers themselves (the promotion-from-headers doctrine, R981): fourteen records promoted mechanically from rules/oa{round}.h into content/rules/oa/ - rounds R760 through R773 complete (the campaign-setting close - the Kara-Tur overview, Shou Lung, Tu Lung, the Wa and Kozakura nations, the Gajin, the Daily Life food, buildings, manners and names, the back matter, the Celestial Emperor, the weapons prose and the daily-life misses), 328 model items (consts, bools, switches, chains), every record parsed back and compared equal (the lossless proof), the audit conditions converted to bad-detector examples and the local-array audits left behind the C++ pins. This batch is 131789 bytes of Lua. Cumulative one hundred sixty of the 160-round OA set, zero rounds remaining - THE OA SET IS FULLY PROMOTED."
  },
  "header_file": "rules/oa/oa8.h",
- "audit_file": "rules/audits/r988_batch.h",
+ "audit_file": "rules/audits/r988_oa_promotion_batch_eight.h",
  "audit_label": "R988 OA promotion batch eight audit",
  "audit_comment": "the batch eight audit - fourteen records, 328 model items, rounds R760 through R773 complete, cumulative 160 of the 160-round OA set - the set closer, the parse-back proof green on every record, every fact fail-on-wrong",
- "audit_anchor": "#include \"rules/audits/r987_batch.h\"  // R987: R987 OA promotion batch seven audit",
+ "audit_anchor": "#include \"rules/audits/r987_oa_promotion_batch_seven.h\"  // R987: R987 OA promotion batch seven audit",
  "include_after": "#include \"rules/oa/oa7.h\"  // R987: the OA promotion batch seven",
  "include_comment": "the OA promotion batch eight",
  "regtest": "regtest.cpp",

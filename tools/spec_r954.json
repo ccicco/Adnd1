@@ -8,9 +8,9 @@
   "provenance": "The opener of the issue-24 four-round shape - three of the fourteen Curtiss-called chains pinned as the variant triptych, the alignment pantheon riding its own part-two table round, the ten-chain commentary set at part three and the flip to follow. All pinned from The Dragon Vol. III No. 10 (April 1979) print 5-11 at extract/dragon/024, PRINT FOLIO = PDF PAGE this issue, the single-voice transcript of the Curtiss-provided scan - the issue runs 48 pages, the Kask editorial printing the paper-strike economy cut from 56. The intake seats the gap report and all forty-eight transcripts; the two inherited watches - the Sullin levels 7-9 and the brawling long-term-effects sequel - print nowhere in issue 24 and ride to TD 25."
  },
  "header_file": "rules/dragon/issue024_opener1.h",
- "audit_file": "rules/audits/r954_batch.h",
+ "audit_file": "rules/audits/r954_issue_24_variant_triptych.h",
  "audit_label": "R954 issue-24 variant triptych audit",
- "audit_anchor": "#include \"rules/audits/r953_batch.h\"  // R953: R953 Dragon issue-23 closure audit",
+ "audit_anchor": "#include \"rules/audits/r953_dragon_issue_23_closure.h\"  // R953: R953 Dragon issue-23 closure audit",
  "audit_comment": "the three-chain variant triptych audit - the lost civilizations supplement, the Chinese dragons roster and the lycanthropy infection types",
  "gap_report": "tools/dragon_gap_report_023.md",
  "gap_census": {

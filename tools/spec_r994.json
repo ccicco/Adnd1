@@ -9,10 +9,10 @@
   "provenance": "The DSG promotion arc round one, the first rules promotion batch from the Dungeoneer Survival Guide pin rounds: eight records promoted into content/rules/dsg/ - rounds R503 through R510 complete (the underdark openers - the natural and unnatural locales, the cave hazards, the underground travel and the campaign intro), every one from its adjudicated spec JSON per the Dragon spec doctrine, R966, 1087 model items (consts, bools, switches, chains), every record parsed back and compared equal (the lossless proof), the audit conditions converted to bad-detector examples. This batch is 313629 bytes of Lua. Cumulative eight of the 60-round DSG set, 52 rounds remaining."
  },
  "header_file": "rules/dsg/dsg1.h",
- "audit_file": "rules/audits/r994_batch.h",
+ "audit_file": "rules/audits/r994_dsg_promotion_batch_one.h",
  "audit_label": "R994 DSG promotion batch one audit",
  "audit_comment": "the batch one audit - eight records, 1087 model items, rounds R503 through R510 complete, cumulative 8 of the 60-round DSG set, the parse-back proof green on every record, every fact fail-on-wrong",
- "audit_anchor": "#include \"rules/audits/r993_batch.h\"  // R993: R993 WSG promotion batch five audit",
+ "audit_anchor": "#include \"rules/audits/r993_wsg_promotion_batch_five.h\"  // R993: R993 WSG promotion batch five audit",
  "include_after": "#include \"rules/wsg/wsg5.h\"  // R993: the WSG promotion batch five",
  "include_comment": "the DSG promotion batch one",
  "regtest": "regtest.cpp",

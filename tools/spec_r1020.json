@@ -9,10 +9,10 @@
   "provenance": "The MM2 normalization - the per-book schema pass concludes for the MM2 book (the R879 normalizer doctrine, the R1009-R1014 MM1 arc, R1016 the OA book close, R1017-R1019 the MM2 arc openers): the last 83 sparse MM2 defs (shator through zygom) rewritten to the full-field 57-key emission of the landed tools/normalize_registry.py - string sentinels n/a, integer sentinels -1 - byte-exact against the normalizer output, the canonical FIELD_ORDER honored; 581 anchored inserts (2258 inserted lines), zero whole-line rewrites, zero move encodings. THE MM2 BOOK CLOSES COMPLETE: 332 of 332 canonical. THE PIN REPAIRS: the monster zombie (the kWXYZ walk index 14) carries hitDiceNum 0 and its mm2_print xp 0/0/0 cells but never carried hitDiceBonus, avgHp or lairPct - the loader read absence as 0 and the WXYZ grid pinned that 0; the canonical emission writes the -1 sentinel, so three pin cells ride this round. The triple-grid shape of this walk: the regtest live-def walk pins the loader members against the grid functions, the migrated R815 fragment pins the grid functions against its hardcoded CWXYZStats copy, AND the fragment carries direct per-cell pins - the row 14 grid copy and the three direct pins all mirror the repair, the avgHp grid comment rides along. The numAttacks/move/magicResistance sentinels are loader-coercer neutral (the n/a strings parse to the same 1/0/0 the pre-round absence defaults read). The yuan ti carries its by_level xp cells - no repair needed. The sweep simulated the fragment (grid copy, direct pins) and the live walk in full before the handoff - all bad 0. THE QUEUE: FF 185, WSG+MOP 23, DRG 5, the deity seam."
  },
  "header_file": "rules/mm/mm2_normalization_batch4.h",
- "audit_file": "rules/audits/r1020_batch.h",
+ "audit_file": "rules/audits/r1020_mm2_normalization.h",
  "audit_label": "R1020 MM2 normalization audit",
  "audit_comment": "THE MM2 NORMALIZATION - the book closes: the last 83 of 332 defs rewritten to the full-field 57-key emission, byte-exact against the landed normalize_registry.py; the monster zombie pin repairs ride the round with their fragment mirrors.",
- "audit_anchor": "#include \"rules/audits/r1019_batch.h\"  // R1019: R1019 MM2 normalization audit",
+ "audit_anchor": "#include \"rules/audits/r1019_mm2_normalization.h\"  // R1019: R1019 MM2 normalization audit",
  "include_after": "#include \"rules/mm/mm2_normalization_batch3.h\"  // R1019: the MM2 normalization batch three",
  "include_comment": "the MM2 normalization batch four",
  "regtest": "regtest.cpp",

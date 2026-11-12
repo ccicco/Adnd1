@@ -9,10 +9,10 @@
   "provenance": "The OA promotion arc round six, the sixth rules promotion batch from the pin headers themselves (the promotion-from-headers doctrine, R981): fourteen records promoted mechanically from rules/oa{round}.h into content/rules/oa/ - rounds R713 through R726 complete (the bestiary continuation - the Gaki, Gargantua, the Animal Generals, the Goblin Rat, the Goblin Spider, the Hai Nu, the Hsing-Sing, the Hu Hsien, the Kala, the Kappa, the Kuei, the Men Wako, the Nat and the Nature Spirits), 1141 model items (consts, bools, switches, chains), every record parsed back and compared equal (the lossless proof), the audit conditions converted to bad-detector examples and the local-array audits left behind the C++ pins. This batch is 319990 bytes of Lua. Cumulative one hundred thirteen of the 160-round OA set, 47 rounds remaining."
  },
  "header_file": "rules/oa/oa6.h",
- "audit_file": "rules/audits/r986_batch.h",
+ "audit_file": "rules/audits/r986_oa_promotion_batch_six.h",
  "audit_label": "R986 OA promotion batch six audit",
  "audit_comment": "the batch six audit - fourteen records, 1141 model items, rounds R713 through R726 complete, cumulative 113 of the 160-round OA set, the parse-back proof green on every record, every fact fail-on-wrong",
- "audit_anchor": "#include \"rules/audits/r985_batch.h\"  // R985: R985 OA promotion batch five audit",
+ "audit_anchor": "#include \"rules/audits/r985_oa_promotion_batch_five.h\"  // R985: R985 OA promotion batch five audit",
  "include_after": "#include \"rules/oa/oa5.h\"  // R985: the OA promotion batch four",
  "include_comment": "the OA promotion batch six",
  "regtest": "regtest.cpp",

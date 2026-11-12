@@ -9,10 +9,10 @@
   "provenance": "The OA promotion arc round four, the fourth rules promotion batch from the pin headers themselves (the promotion-from-headers doctrine, R981): twenty-four records promoted mechanically from rules/oa{round}.h into content/rules/oa/ - rounds R671 through R694 complete (the wu jen second through ninth level spell lists, the combat sequence, the iaijutsu surprise and initiative modifier rounds, the mounted bowfire and unhorsing, the disarming and subduing, the psychic duel, the martial arts opener with the common styles, style creation, the style combinations, the special maneuvers, the principal methods and the mental and physical training), 515 model items (consts, bools, switches, chains), every record parsed back and compared equal (the lossless proof), the audit conditions converted to bad-detector examples and the local-array audits left behind the C++ pins. This batch is 316647 bytes of Lua. Cumulative eighty-one of the 160-round OA set, 79 rounds remaining."
  },
  "header_file": "rules/oa/oa4.h",
- "audit_file": "rules/audits/r984_batch.h",
+ "audit_file": "rules/audits/r984_oa_promotion_batch_four.h",
  "audit_label": "R984 OA promotion batch four audit",
  "audit_comment": "the batch four audit - twenty-four records, 515 model items, rounds R671 through R694 complete, cumulative 81 of the 160-round OA set, the parse-back proof green on every record, every fact fail-on-wrong",
- "audit_anchor": "#include \"rules/audits/r983_batch.h\"  // R983: R983 OA promotion batch three audit",
+ "audit_anchor": "#include \"rules/audits/r983_oa_promotion_batch_three.h\"  // R983: R983 OA promotion batch three audit",
  "include_after": "#include \"rules/oa/oa3.h\"  // R983: the OA promotion batch three",
  "include_comment": "the OA promotion batch four",
  "regtest": "regtest.cpp",

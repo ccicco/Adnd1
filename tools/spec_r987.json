@@ -9,10 +9,10 @@
   "provenance": "The OA promotion arc round seven, the seventh rules promotion batch from the pin headers themselves (the promotion-from-headers doctrine, R981): thirty-three records promoted mechanically from rules/oa{round}.h into content/rules/oa/ - rounds R727 through R759 complete (the bestiary tail - the Ningyo, the Oni, the P Oh, the Shan Sao, the Shirokinukatsukami and the Tengu - and the items-and-tables stretch - the class usage, the random treasure and the Table 74 through Table 86 pins with the item mods, the potions, the scrolls, the rods, the misc magic and the prose), 897 model items (consts, bools, switches, chains), every record parsed back and compared equal (the lossless proof), the audit conditions converted to bad-detector examples and the local-array audits left behind the C++ pins. This batch is 322729 bytes of Lua. Cumulative one hundred forty-six of the 160-round OA set, 14 rounds remaining."
  },
  "header_file": "rules/oa/oa7.h",
- "audit_file": "rules/audits/r987_batch.h",
+ "audit_file": "rules/audits/r987_oa_promotion_batch_seven.h",
  "audit_label": "R987 OA promotion batch seven audit",
  "audit_comment": "the batch seven audit - thirty-three records, 897 model items, rounds R727 through R759 complete, cumulative 146 of the 160-round OA set, the parse-back proof green on every record, every fact fail-on-wrong",
- "audit_anchor": "#include \"rules/audits/r986_batch.h\"  // R986: R986 OA promotion batch six audit",
+ "audit_anchor": "#include \"rules/audits/r986_oa_promotion_batch_six.h\"  // R986: R986 OA promotion batch six audit",
  "include_after": "#include \"rules/oa/oa6.h\"  // R986: the OA promotion batch six",
  "include_comment": "the OA promotion batch seven",
  "regtest": "regtest.cpp",

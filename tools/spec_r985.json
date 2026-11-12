@@ -9,10 +9,10 @@
   "provenance": "The OA promotion arc round five, the fifth rules promotion batch from the pin headers themselves (the promotion-from-headers doctrine, R981): eighteen records promoted mechanically from rules/oa{round}.h into content/rules/oa/ - rounds R695 through R712 complete (the learning of martial arts, the OA calendar, the Table 71-73 yearly, monthly and daily event tables with their explanation rounds, the Chapter 11 terrain encounter tables, the climate groupings, and the bestiary opener set - the Bajang, Bakemono, Bisan, Buso, Giant Carp, Con-Tinh, Doc Cu'o'c and the Oriental Dragons), 825 model items (consts, bools, switches, chains), every record parsed back and compared equal (the lossless proof), the audit conditions converted to bad-detector examples and the local-array audits left behind the C++ pins. This batch is 299242 bytes of Lua. Cumulative ninety-nine of the 160-round OA set, 61 rounds remaining."
  },
  "header_file": "rules/oa/oa5.h",
- "audit_file": "rules/audits/r985_batch.h",
+ "audit_file": "rules/audits/r985_oa_promotion_batch_five.h",
  "audit_label": "R985 OA promotion batch five audit",
  "audit_comment": "the batch five audit - eighteen records, 825 model items, rounds R695 through R712 complete, cumulative 99 of the 160-round OA set, the parse-back proof green on every record, every fact fail-on-wrong",
- "audit_anchor": "#include \"rules/audits/r984_batch.h\"  // R984: R984 OA promotion batch four audit",
+ "audit_anchor": "#include \"rules/audits/r984_oa_promotion_batch_four.h\"  // R984: R984 OA promotion batch four audit",
  "include_after": "#include \"rules/oa/oa4.h\"  // R984: the OA promotion batch four",
  "include_comment": "the OA promotion batch four",
  "regtest": "regtest.cpp",

@@ -9,10 +9,10 @@
   "provenance": "The content-structure arc round eight, the fifth rules promotion batch under the R968 format: seven records promoted mechanically from their spec JSONs into content/rules/dragon/ - issues 8, 9 and 10 complete (dgo the Gygax Planes opener and cgx its box closer, dgn the Gygax alignment opener and dnp its closer, dtn and dte the Orgies Inc. and Gilbert dungeon issue-10 openers, dfp the box closer), 288 model items, every record parsed back and compared equal (the lossless proof). The batch sizing rides the raised ceiling (Curtiss, 2026-10-31): whole issue groups per round - this batch is 104937 bytes of Lua. Cumulative 30 of the walked 79-round Dragon set, 49 remaining."
  },
  "header_file": "rules/dragon/promo_batch05.h",
- "audit_file": "rules/audits/r973_batch.h",
+ "audit_file": "rules/audits/r973_dragon_promotion_batch_five.h",
  "audit_label": "R973 dragon promotion batch five audit",
  "audit_comment": "the batch five audit - seven records, 288 model items, issues 8 through 10 complete, cumulative 30 of the 79-round set, the parse-back proof green on every record, every fact fail-on-wrong",
- "audit_anchor": "#include \"rules/audits/r972_batch.h\"  // R972: R972 dragon promotion batch four audit",
+ "audit_anchor": "#include \"rules/audits/r972_dragon_promotion_batch_four.h\"  // R972: R972 dragon promotion batch four audit",
  "include_after": "#include \"rules/dragon/promo_batch04.h\"  // R972: the Dragon promotion batch four",
  "include_comment": "the Dragon promotion batch five",
  "regtest": "regtest.cpp",

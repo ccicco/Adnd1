@@ -9,7 +9,7 @@
  },
  "regtest": "regtest.cpp",
  "header_file": "rules/dragon/issue024_close.h",
- "audit_file": "rules/audits/r957_batch.h",
+ "audit_file": "rules/audits/r957_dragon_issue_24_closure.h",
  "audit_label": "R957 Dragon issue-24 closure audit",
  "audit_comment": "THE DRAGON ISSUE-24 BOX CLOSING ROUND - the pure flip, no new ink. All three report-024 boxes flip at this single round: the part-one variant triptych (R954, t24), the part-two alignment pantheon (R955, s24) and the part-three ten-chain commentary set (R956, k24). The walk holds issues 2-24 all closed, the four-round shape thrice proven; the Sullin and brawling watches ride to TD 25.",
  "chains": [],
@@ -39,7 +39,7 @@
  ],
  "include_after": "#include \"rules/dragon/issue024_opener3.h\"  // R956: the Dragon issue-24 opener part three, the ten-chain commentary round",
  "include_comment": "the Dragon issue-24 box closing round, the third four-round walk complete",
- "audit_anchor": "#include \"rules/audits/r956_batch.h\"  // R956: R956 issue-24 commentary set audit",
+ "audit_anchor": "#include \"rules/audits/r956_issue_24_commentary_set.h\"  // R956: R956 issue-24 commentary set audit",
  "seed_anchor": "## Knowledge maintenance",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "prev_record": [

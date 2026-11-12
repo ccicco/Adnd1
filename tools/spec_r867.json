@@ -58,9 +58,9 @@
   "App 3 clerical chart pp. 134-142, App 4 + index p. 143, the p.131",
   "alignment-figures pixel work) - WAIT FOR GO."
  ],
- "audit_file": "rules/audits/r867_batch.h",
+ "audit_file": "rules/audits/r867_known_planes.h",
  "audit_label": "R867 known planes audit",
- "audit_anchor": "#include \"rules/audits/r866_batch.h\"  // R866: R866 Sumerian mythos audit",
+ "audit_anchor": "#include \"rules/audits/r866_sumerian_mythos.h\"  // R866: R866 Sumerian mythos audit",
  "audit_comment": "APPENDIX 1: THE KNOWN PLANES OF EXISTENCE - the D&DG walk round nineteen, print pp. 128-133: the inner planes, the ethereal and astral travel-and-combat rules, the seventeen Outer Planes, the two encounter tables, the Ether Cyclone, the psychic wind, the silver-cord doctrine and the character subtable level bands; FIG. 4/5 remain the open pixel-work box.",
  "tables": [
   {

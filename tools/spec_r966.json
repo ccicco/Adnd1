@@ -9,10 +9,10 @@
   "provenance": "The content-structure arc opener - the folder-hierarchy charter adjudicated with Curtiss 2026-10-31: content/ the data root (game data and script code files, C++ never in the tree), the nine domains, the nesting rule with its two precedents (kara-tur under forgottenrealms, artifacts under items), the tile resolutions as manifest fields (dungeon 64, overland 32). The charter document rides doc/content_structure.md."
  },
  "header_file": "rules/meta/content_structure_charter.h",
- "audit_file": "rules/audits/r966_batch.h",
+ "audit_file": "rules/audits/r966_content_structure_charter.h",
  "audit_label": "R966 content structure charter audit",
  "audit_comment": "the charter audit - the frame (nine domains, three worlds, two nesting precedents, the retiring viewport pair), the tile resolutions, and the eleven adjudicated doctrines, every decision fail-on-wrong",
- "audit_anchor": "#include \"rules/audits/r965_batch.h\"  // R965: R965 Dragon issue-26 closure audit",
+ "audit_anchor": "#include \"rules/audits/r965_dragon_issue_26_closure.h\"  // R965: R965 Dragon issue-26 closure audit",
  "include_after": "#include \"rules/dragon/issue026_close.h\"  // R965: the Dragon issue-26 box closing round, the fifth four-round walk complete",
  "include_comment": "the content-structure charter round",
  "regtest": "regtest.cpp",

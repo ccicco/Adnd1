@@ -9,10 +9,10 @@
   "provenance": "The content-structure arc round thirteen, the tenth rules promotion batch under the R968 format: six records promoted mechanically from their spec JSONs into content/rules/dragon/ - issues 19 and 20 complete (dws the wish-spell doctrine opener, sdm the Origins 78 tournament opener, d19 the box closer, t20 the Polynesian pantheon opener, dst the 600-death campaign opener, d2c the box closer), 457 model items, every record parsed back and compared equal (the lossless proof). The batch sizing rides the raised ceiling (Curtiss, 2026-10-31): whole issue groups per round - this batch is 149970 bytes of Lua. Cumulative 56 of the walked 79-round Dragon set, 23 remaining."
  },
  "header_file": "rules/dragon/promo_batch10.h",
- "audit_file": "rules/audits/r978_batch.h",
+ "audit_file": "rules/audits/r978_dragon_promotion_batch_ten.h",
  "audit_label": "R978 dragon promotion batch ten audit",
  "audit_comment": "the batch ten audit - six records, 457 model items, issues 19 through 20 complete, cumulative 56 of the 79-round set, the parse-back proof green on every record, every fact fail-on-wrong",
- "audit_anchor": "#include \"rules/audits/r977_batch.h\"  // R977: R977 dragon promotion batch nine audit",
+ "audit_anchor": "#include \"rules/audits/r977_dragon_promotion_batch_nine.h\"  // R977: R977 dragon promotion batch nine audit",
  "include_after": "#include \"rules/dragon/promo_batch09.h\"  // R977: the Dragon promotion batch nine",
  "include_comment": "the Dragon promotion batch ten",
  "regtest": "regtest.cpp",

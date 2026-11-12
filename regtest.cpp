@@ -4830,207 +4830,207 @@ int main() {
     }
 #include "rules/audits/r824_pilot.h"  // R824: R824 pilot migration audit
 #include "rules/audits/r825_dmg_batch.h"  // R825: R825 DMG batch audit
-#include "rules/audits/r826_batch.h"  // R826: R826 DMG tables batch audit
-#include "rules/audits/r827_batch.h"  // R827: R827 subclass batch audit
-#include "rules/audits/r828_batch.h"  // R828: R828 hundred-block batch audit
-#include "rules/audits/r829_batch.h"  // R829: R829 UA WSG batch audit
-#include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
-#include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
-#include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
-#include "rules/audits/r1026_batch.h"  // R1026: R1026 deity seam close audit
-#include "rules/audits/r1025_batch.h"  // R1025: R1025 DRG normalization audit
-#include "rules/audits/r1024_batch.h"  // R1024: R1024 WSG+MOP normalization audit
-#include "rules/audits/r1023_batch.h"  // R1023: R1023 FF normalization audit
-#include "rules/audits/r1022_batch.h"  // R1022: R1022 FF normalization audit
-#include "rules/audits/r1021_batch.h"  // R1021: R1021 FF normalization audit
-#include "rules/audits/r1020_batch.h"  // R1020: R1020 MM2 normalization audit
-#include "rules/audits/r1019_batch.h"  // R1019: R1019 MM2 normalization audit
-#include "rules/audits/r1018_batch.h"  // R1018: R1018 MM2 normalization audit
-#include "rules/audits/r1017_batch.h"  // R1017: R1017 MM2 normalization audit
-#include "rules/audits/r1016_batch.h"  // R1016: R1016 OA normalization audit
-#include "rules/audits/r1015_batch.h"  // R1015: R1015 OA table promotion batch nine audit
-#include "rules/audits/r1014_batch.h"  // R1014: R1014 MM1 normalization batch six audit
-#include "rules/audits/r1013_batch.h"  // R1013: R1013 MM1 normalization batch five audit
-#include "rules/audits/r1012_batch.h"  // R1012: R1012 MM1 normalization batch four audit
-#include "rules/audits/r1011_batch.h"  // R1011: R1011 MM1 normalization batch three audit
-#include "rules/audits/r1010_batch.h"  // R1010: R1010 MM1 normalization batch two audit
-#include "rules/audits/r1009_batch.h"  // R1009: R1009 MM1 normalization batch one audit
-#include "rules/audits/r1008_batch.h"  // R1008: R1008 promotions mop round three audit
-#include "rules/audits/r1007_batch.h"  // R1007: R1007 promotions mop round two audit
-#include "rules/audits/r1006_batch.h"  // R1006: R1006 promotions mop round one audit
-#include "rules/audits/r1005_batch.h"  // R1005: R1005 UA promotion batch seven audit
-#include "rules/audits/r1004_batch.h"  // R1004: R1004 UA promotion batch six audit
-#include "rules/audits/r1003_batch.h"  // R1003: R1003 UA promotion batch five audit
-#include "rules/audits/r1002_batch.h"  // R1002: R1002 UA promotion batch four audit
-#include "rules/audits/r1001_batch.h"  // R1001: R1001 UA promotion batch three audit
-#include "rules/audits/r1000_batch.h"  // R1000: R1000 UA promotion batch two audit
-#include "rules/audits/r999_batch.h"  // R999: R999 UA promotion batch one audit
-#include "rules/audits/r998_batch.h"  // R998: R998 DSG promotion batch five audit
-#include "rules/audits/r997_batch.h"  // R997: R997 DSG promotion batch four audit
-#include "rules/audits/r996_batch.h"  // R996: R996 DSG promotion batch three audit
-#include "rules/audits/r995_batch.h"  // R995: R995 DSG promotion batch two audit
-#include "rules/audits/r994_batch.h"  // R994: R994 DSG promotion batch one audit
-#include "rules/audits/r993_batch.h"  // R993: R993 WSG promotion batch five audit
-#include "rules/audits/r992_batch.h"  // R992: R992 WSG promotion batch four audit
-#include "rules/audits/r991_batch.h"  // R991: R991 WSG promotion batch three audit
-#include "rules/audits/r990_batch.h"  // R990: R990 WSG promotion batch two audit
-#include "rules/audits/r989_batch.h"  // R989: R989 WSG promotion batch one audit
-#include "rules/audits/r988_batch.h"  // R988: R988 OA promotion batch eight audit
-#include "rules/audits/r987_batch.h"  // R987: R987 OA promotion batch seven audit
-#include "rules/audits/r986_batch.h"  // R986: R986 OA promotion batch six audit
-#include "rules/audits/r985_batch.h"  // R985: R985 OA promotion batch five audit
-#include "rules/audits/r984_batch.h"  // R984: R984 OA promotion batch four audit
-#include "rules/audits/r983_batch.h"  // R983: R983 OA promotion batch three audit
-#include "rules/audits/r982_batch.h"  // R982: R982 OA promotion batch two audit
-#include "rules/audits/r981_batch.h"  // R981: R981 OA promotion batch one audit
-#include "rules/audits/r980_batch.h"  // R980: R980 dragon promotion batch twelve audit
-#include "rules/audits/r979_batch.h"  // R979: R979 dragon promotion batch eleven audit
-#include "rules/audits/r978_batch.h"  // R978: R978 dragon promotion batch ten audit
-#include "rules/audits/r977_batch.h"  // R977: R977 dragon promotion batch nine audit
-#include "rules/audits/r976_batch.h"  // R976: R976 dragon promotion batch eight audit
-#include "rules/audits/r975_batch.h"  // R975: R975 dragon promotion batch seven audit
-#include "rules/audits/r974_batch.h"  // R974: R974 dragon promotion batch six audit
-#include "rules/audits/r973_batch.h"  // R973: R973 dragon promotion batch five audit
-#include "rules/audits/r972_batch.h"  // R972: R972 dragon promotion batch four audit
-#include "rules/audits/r971_batch.h"  // R971: R971 dragon promotion batch three audit
-#include "rules/audits/r970_batch.h"  // R970: R970 dragon promotion batch two audit
-#include "rules/audits/r969_batch.h"  // R969: R969 dragon promotion batch one audit
-#include "rules/audits/r968_batch.h"  // R968: R968 rules record format audit
-#include "rules/audits/r967_batch.h"  // R967: R967 content tree creation audit
-#include "rules/audits/r966_batch.h"  // R966: R966 content structure charter audit
-#include "rules/audits/r965_batch.h"  // R965: R965 Dragon issue-26 closure audit
-#include "rules/audits/r964_batch.h"  // R964: R964 issue-26 commentary set audit
-#include "rules/audits/r963_batch.h"  // R963: R963 issue-26 table round audit
-#include "rules/audits/r962_batch.h"  // R962: R962 issue-26 opener set audit
-#include "rules/audits/r961_batch.h"  // R961: R961 Dragon issue-25 closure audit
-#include "rules/audits/r960_batch.h"  // R960: R960 issue-25 commentary set audit
-#include "rules/audits/r959_batch.h"  // R959: R959 issue-25 table round audit
-#include "rules/audits/r958_batch.h"  // R958: R958 issue-25 opener set audit
-#include "rules/audits/r957_batch.h"  // R957: R957 Dragon issue-24 closure audit
-#include "rules/audits/r956_batch.h"  // R956: R956 issue-24 commentary set audit
-#include "rules/audits/r955_batch.h"  // R955: R955 issue-24 alignment pantheon audit
-#include "rules/audits/r954_batch.h"  // R954: R954 issue-24 variant triptych audit
-#include "rules/audits/r953_batch.h"  // R953: R953 Dragon issue-23 closure audit
-#include "rules/audits/r952_batch.h"  // R952: R952 issue-23 commentary set audit
-#include "rules/audits/r951_batch.h"  // R951: R951 issue-23 Lower Planes generation audit
-#include "rules/audits/r950_batch.h"  // R950: R950 issue-23 variant triptych audit
-#include "rules/audits/r949_batch.h"  // R949: R949 Dragon issue-22 closure audit
-#include "rules/audits/r948_batch.h"  // R948: R948 issue-22 commentary set audit
-#include "rules/audits/r947_batch.h"  // R947: R947 issue-22 sneak preview audit
-#include "rules/audits/r946_batch.h"  // R946: R946 issue-22 opener part one audit
-#include "rules/audits/r945_batch.h"  // R945: R945 Dragon issue-21 closure audit
-#include "rules/audits/r944_batch.h"  // R944: R944 issue-21 opener part two audit
-#include "rules/audits/r943_batch.h"  // R943: R943 issue-21 opener part one audit
-#include "rules/audits/r942_batch.h"  // R942: R942 Dragon issue-20 closure audit
-#include "rules/audits/r941_batch.h"  // R941: R941 issue-20 opener part two audit
-#include "rules/audits/r940_batch.h"  // R940: R940 issue-20 opener part one audit
-#include "rules/audits/r939_batch.h"  // R939: R939 Dragon issue-19 closure audit
-#include "rules/audits/r938_batch.h"  // R938: R938 issue-19 opener part two audit
-#include "rules/audits/r937_batch.h"  // R937: R937 issue-19 opener part one audit
-#include "rules/audits/r936_batch.h"  // R936: R936 Dragon issue-18 closure audit
-#include "rules/audits/r935_batch.h"  // R935: R935 issue-18 opener part two audit
-#include "rules/audits/r934_batch.h"  // R934: R934 issue-18 opener part one audit
-#include "rules/audits/r933_batch.h"  // R933: R933 Dragon issue-17 closure audit
-#include "rules/audits/r932_batch.h"  // R932: R932 issue-17 wizard article part two audit
-#include "rules/audits/r931_batch.h"  // R931: R931 issue-17 opener part one audit
-#include "rules/audits/r930_batch.h"  // R930: R930 Dragon issue-16 closure audit
-#include "rules/audits/r929_batch.h"  // R929: R929 issue-16 opener audit
-#include "rules/audits/r928_batch.h"  // R928: R928 Dragon issue-15 closure audit
-#include "rules/audits/r927_batch.h"  // R927: R927 issue-15 opener audit
-#include "rules/audits/r926_batch.h"  // R926: R926 Dragon issue-14 closure audit
-#include "rules/audits/r925_batch.h"  // R925: R925 issue-14 opener audit
-#include "rules/audits/r924_batch.h"  // R924: R924 Dragon issue-13 closure audit
-#include "rules/audits/r923_batch.h"  // R923: R923 issue-13 opener part two audit
-#include "rules/audits/r922_batch.h"  // R922: R922 issue-13 opener audit
-#include "rules/audits/r921_batch.h"  // R921: R921 Dragon issue-12 closure audit
-#include "rules/audits/r920_batch.h"  // R920: R920 issue-12 opener part two audit
-#include "rules/audits/r919_batch.h"  // R919: R919 issue-12 opener audit
-#include "rules/audits/r918_batch.h"  // R918: R918 Dragon issue-11 closure audit
-#include "rules/audits/r917_batch.h"  // R917: R917 issue-11 opener audit
-#include "rules/audits/r916_batch.h"  // R916: R916 Dragon issue-10 closure audit
-#include "rules/audits/r915_batch.h"  // R915: R915 issue-10 opener audit
-#include "rules/audits/r914_batch.h"  // R914: R914 issue-10 opener audit
-#include "rules/audits/r913_batch.h"  // R913: R913 Dragon issue-9 closure audit
-#include "rules/audits/r912_batch.h"  // R912: R912 issue-9 opener audit
-#include "rules/audits/r911_batch.h"  // R911: R911 Dragon issue-8 closure audit
-#include "rules/audits/r910_batch.h"  // R910: R910 issue-8 opener audit
-#include "rules/audits/r909_batch.h"  // R909: R909 Dragon issue-7 closure audit
-#include "rules/audits/r908_batch.h"  // R908: R908 Prowler opener audit
-#include "rules/audits/r907_batch.h"  // R907: R907 Dragon issue-6 closure audit
-#include "rules/audits/r906_batch.h"  // R906: R906 issue-6 opener audit
-#include "rules/audits/r905_batch.h"  // R905: R905 witch remainders audit
-#include "rules/audits/r904_batch.h"  // R904: R904 wilderness encounter table audit
-#include "rules/audits/r903_batch.h"  // R903: R903 Dragon issue-5 closure audit
-#include "rules/audits/r902_batch.h"  // R902: R902 Dragon issue-5 audit
-#include "rules/audits/r901_batch.h"  // R901: R901 Creature Features closure audit
-#include "rules/audits/r900_batch.h"  // R900: R900 Dragon Creature Features audit
-#include "rules/audits/r899_batch.h"  // R899: R899 comedy and small-variants audit
-#include "rules/audits/r898_batch.h"  // R898: R898 character round audit
-#include "rules/audits/r897_batch.h"  // R897: R897 fighting sub-classes audit
-#include "rules/audits/r896_batch.h"  // R896: R896 specialists audit
-#include "rules/audits/r895_batch.h"  // R895: R895 women magic audit
-#include "rules/audits/r894_batch.h"  // R894: R894 Artificer audit
-#include "rules/audits/r893_batch.h"  // R893: R893 systems audit
-#include "rules/audits/r892_batch.h"  // R892: R892 Fischer items audit
-#include "rules/audits/r891_batch.h"  // R891: R891 Alchemist class audit
-#include "rules/audits/r890_batch.h"  // R890: R890 Remorhaz lore audit
-#include "rules/audits/r889_batch.h"  // R889: R889 Aronson deltas audit
-#include "rules/audits/r888_batch.h"  // R888: R888 Dragon small variants audit
-#include "rules/audits/r887_batch.h"  // R887: R887 Ives attribute audit
-#include "rules/audits/r886_batch.h"  // R886: R886 DDG promotion audit
-#include "rules/audits/r885_batch.h"  // R885: R885 DDG promotion audit
-#include "rules/audits/r884_batch.h"  // R884: R884 DDG promotion audit
-#include "rules/audits/r883_batch.h"  // R883: R883 DDG promotion audit
-#include "rules/audits/r882_batch.h"  // R882: R882 DDG promotion audit
-#include "rules/audits/r881_batch.h"  // R881: R881 DDG promotion audit
-#include "rules/audits/r880_batch.h"  // R880: R880 DDG promotion audit
-#include "rules/audits/r879_batch.h"  // R879: R879 registry schema audit
-#include "rules/audits/r878_batch.h"  // R878: R878 alignment figures audit
-#include "rules/audits/r877_batch.h"  // R877: R877 Appendix 4 and index audit
-#include "rules/audits/r876_batch.h"  // R876: R876 clerical chart batch eight audit
-#include "rules/audits/r875_batch.h"  // R875: R875 clerical chart batch seven audit
-#include "rules/audits/r874_batch.h"  // R874: R874 clerical chart batch six audit
-#include "rules/audits/r873_batch.h"  // R873: R873 clerical chart batch five audit
-#include "rules/audits/r872_batch.h"  // R872: R872 clerical chart batch four audit
-#include "rules/audits/r871_batch.h"  // R871: R871 clerical chart batch three audit
-#include "rules/audits/r870_batch.h"  // R870: R870 clerical chart batch two audit
-#include "rules/audits/r869_batch.h"  // R869: R869 clerical chart batch one audit
-#include "rules/audits/r868_batch.h"  // R868: R868 temple trappings audit
-#include "rules/audits/r867_batch.h"  // R867: R867 known planes audit
-#include "rules/audits/r866_batch.h"  // R866: R866 Sumerian mythos audit
-#include "rules/audits/r865_batch.h"  // R865: R865 Norse mythos audit
-#include "rules/audits/r864_batch.h"  // R864: R864 nonhumans' deities audit
-#include "rules/audits/r863_batch.h"  // R863: R863 Nehwon mythos audit
-#include "rules/audits/r862_batch.h"  // R862: R862 Melnibonean mythos audit
-#include "rules/audits/r861_batch.h"  // R861: R861 Japanese mythos audit
-#include "rules/audits/r860_batch.h"  // R860: R860 Indian mythos audit
-#include "rules/audits/r859_batch.h"  // R859: R859 Greek mythos audit
-#include "rules/audits/r858_batch.h"  // R858: R858 Finnish mythos audit
-#include "rules/audits/r857_batch.h"  // R857: R857 Egyptian mythos audit
-#include "rules/audits/r856_batch.h"  // R856: R856 Cthulhu mythos audit
-#include "rules/audits/r855_batch.h"  // R855: R855 Chinese mythos audit
-#include "rules/audits/r854_batch.h"  // R854: R854 Central American mythos audit
-#include "rules/audits/r853_batch.h"  // R853: R853 Celtic mythos audit
-#include "rules/audits/r852_batch.h"  // R852: R852 Babylonian mythos audit
-#include "rules/audits/r851_batch.h"  // R851: R851 Arthurian mythos audit
-#include "rules/audits/r850_batch.h"  // R850: R850 American Indian mythos audit
-#include "rules/audits/r849_batch.h"  // R849: R849 DDG front matter audit
-#include "rules/audits/r848_batch.h"  // R848: R848 FF magic item tables audit
-#include "rules/audits/r847_batch.h"  // R847: R847 FF encounter listings audit
-#include "rules/audits/r846_batch.h"  // R846: R846 FF monster level tables audit
-#include "rules/audits/r845_batch.h"  // R845: R845 eighth FF promotion audit
-#include "rules/audits/r844_batch.h"  // R844: R844 seventh FF promotion audit
-#include "rules/audits/r843_batch.h"  // R843: R843 sixth FF promotion audit
-#include "rules/audits/r842_batch.h"  // R842: R842 fifth FF promotion audit
-#include "rules/audits/r841_batch.h"  // R841: R841 FF index line walk audit
-#include "rules/audits/r840_batch.h"  // R840: R840 hornet promotion audit
-#include "rules/audits/r839_batch.h"  // R839: R839 fourth FF promotion audit
-#include "rules/audits/r838_batch.h"  // R838: R838 third FF promotion audit
-#include "rules/audits/r837_batch.h"  // R837: R837 second FF promotion audit
-#include "rules/audits/r836_batch.h"  // R836: R836 first FF promotion audit
-#include "rules/audits/r835_batch.h"  // R835: R835 final holdback batch audit
-#include "rules/audits/r834_batch.h"  // R834: R834 holdback tooling patch audit
-#include "rules/audits/r833_batch.h"  // R833: R833 final digest batch audit
+#include "rules/audits/r826_dmg_tables_batch.h"  // R826: R826 DMG tables batch audit
+#include "rules/audits/r827_subclass_batch.h"  // R827: R827 subclass batch audit
+#include "rules/audits/r828_hundred_block_batch.h"  // R828: R828 hundred-block batch audit
+#include "rules/audits/r829_ua_wsg_batch.h"  // R829: R829 UA WSG batch audit
+#include "rules/audits/r830_wsg_dsg_batch.h"  // R830: R830 WSG DSG batch audit
+#include "rules/audits/r831_planes_oa_batch.h"  // R831: R831 planes OA batch audit
+#include "rules/audits/r832_oa_tail_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r1026_deity_seam_close.h"  // R1026: R1026 deity seam close audit
+#include "rules/audits/r1025_drg_normalization.h"  // R1025: R1025 DRG normalization audit
+#include "rules/audits/r1024_wsg_mop_normalization.h"  // R1024: R1024 WSG+MOP normalization audit
+#include "rules/audits/r1023_ff_normalization.h"  // R1023: R1023 FF normalization audit
+#include "rules/audits/r1022_ff_normalization.h"  // R1022: R1022 FF normalization audit
+#include "rules/audits/r1021_ff_normalization.h"  // R1021: R1021 FF normalization audit
+#include "rules/audits/r1020_mm2_normalization.h"  // R1020: R1020 MM2 normalization audit
+#include "rules/audits/r1019_mm2_normalization.h"  // R1019: R1019 MM2 normalization audit
+#include "rules/audits/r1018_mm2_normalization.h"  // R1018: R1018 MM2 normalization audit
+#include "rules/audits/r1017_mm2_normalization.h"  // R1017: R1017 MM2 normalization audit
+#include "rules/audits/r1016_oa_normalization.h"  // R1016: R1016 OA normalization audit
+#include "rules/audits/r1015_oa_table_promotion_batch_nine.h"  // R1015: R1015 OA table promotion batch nine audit
+#include "rules/audits/r1014_mm1_normalization_batch_six.h"  // R1014: R1014 MM1 normalization batch six audit
+#include "rules/audits/r1013_mm1_normalization_batch_five.h"  // R1013: R1013 MM1 normalization batch five audit
+#include "rules/audits/r1012_mm1_normalization_batch_four.h"  // R1012: R1012 MM1 normalization batch four audit
+#include "rules/audits/r1011_mm1_normalization_batch_three.h"  // R1011: R1011 MM1 normalization batch three audit
+#include "rules/audits/r1010_mm1_normalization_batch_two.h"  // R1010: R1010 MM1 normalization batch two audit
+#include "rules/audits/r1009_mm1_normalization_batch_one.h"  // R1009: R1009 MM1 normalization batch one audit
+#include "rules/audits/r1008_promotions_mop_round_three.h"  // R1008: R1008 promotions mop round three audit
+#include "rules/audits/r1007_promotions_mop_round_two.h"  // R1007: R1007 promotions mop round two audit
+#include "rules/audits/r1006_promotions_mop_round_one.h"  // R1006: R1006 promotions mop round one audit
+#include "rules/audits/r1005_ua_promotion_batch_seven.h"  // R1005: R1005 UA promotion batch seven audit
+#include "rules/audits/r1004_ua_promotion_batch_six.h"  // R1004: R1004 UA promotion batch six audit
+#include "rules/audits/r1003_ua_promotion_batch_five.h"  // R1003: R1003 UA promotion batch five audit
+#include "rules/audits/r1002_ua_promotion_batch_four.h"  // R1002: R1002 UA promotion batch four audit
+#include "rules/audits/r1001_ua_promotion_batch_three.h"  // R1001: R1001 UA promotion batch three audit
+#include "rules/audits/r1000_ua_promotion_batch_two.h"  // R1000: R1000 UA promotion batch two audit
+#include "rules/audits/r999_ua_promotion_batch_one.h"  // R999: R999 UA promotion batch one audit
+#include "rules/audits/r998_dsg_promotion_batch_five.h"  // R998: R998 DSG promotion batch five audit
+#include "rules/audits/r997_dsg_promotion_batch_four.h"  // R997: R997 DSG promotion batch four audit
+#include "rules/audits/r996_dsg_promotion_batch_three.h"  // R996: R996 DSG promotion batch three audit
+#include "rules/audits/r995_dsg_promotion_batch_two.h"  // R995: R995 DSG promotion batch two audit
+#include "rules/audits/r994_dsg_promotion_batch_one.h"  // R994: R994 DSG promotion batch one audit
+#include "rules/audits/r993_wsg_promotion_batch_five.h"  // R993: R993 WSG promotion batch five audit
+#include "rules/audits/r992_wsg_promotion_batch_four.h"  // R992: R992 WSG promotion batch four audit
+#include "rules/audits/r991_wsg_promotion_batch_three.h"  // R991: R991 WSG promotion batch three audit
+#include "rules/audits/r990_wsg_promotion_batch_two.h"  // R990: R990 WSG promotion batch two audit
+#include "rules/audits/r989_wsg_promotion_batch_one.h"  // R989: R989 WSG promotion batch one audit
+#include "rules/audits/r988_oa_promotion_batch_eight.h"  // R988: R988 OA promotion batch eight audit
+#include "rules/audits/r987_oa_promotion_batch_seven.h"  // R987: R987 OA promotion batch seven audit
+#include "rules/audits/r986_oa_promotion_batch_six.h"  // R986: R986 OA promotion batch six audit
+#include "rules/audits/r985_oa_promotion_batch_five.h"  // R985: R985 OA promotion batch five audit
+#include "rules/audits/r984_oa_promotion_batch_four.h"  // R984: R984 OA promotion batch four audit
+#include "rules/audits/r983_oa_promotion_batch_three.h"  // R983: R983 OA promotion batch three audit
+#include "rules/audits/r982_oa_promotion_batch_two.h"  // R982: R982 OA promotion batch two audit
+#include "rules/audits/r981_oa_promotion_batch_one.h"  // R981: R981 OA promotion batch one audit
+#include "rules/audits/r980_dragon_promotion_batch_twelve.h"  // R980: R980 dragon promotion batch twelve audit
+#include "rules/audits/r979_dragon_promotion_batch_eleven.h"  // R979: R979 dragon promotion batch eleven audit
+#include "rules/audits/r978_dragon_promotion_batch_ten.h"  // R978: R978 dragon promotion batch ten audit
+#include "rules/audits/r977_dragon_promotion_batch_nine.h"  // R977: R977 dragon promotion batch nine audit
+#include "rules/audits/r976_dragon_promotion_batch_eight.h"  // R976: R976 dragon promotion batch eight audit
+#include "rules/audits/r975_dragon_promotion_batch_seven.h"  // R975: R975 dragon promotion batch seven audit
+#include "rules/audits/r974_dragon_promotion_batch_six.h"  // R974: R974 dragon promotion batch six audit
+#include "rules/audits/r973_dragon_promotion_batch_five.h"  // R973: R973 dragon promotion batch five audit
+#include "rules/audits/r972_dragon_promotion_batch_four.h"  // R972: R972 dragon promotion batch four audit
+#include "rules/audits/r971_dragon_promotion_batch_three.h"  // R971: R971 dragon promotion batch three audit
+#include "rules/audits/r970_dragon_promotion_batch_two.h"  // R970: R970 dragon promotion batch two audit
+#include "rules/audits/r969_dragon_promotion_batch_one.h"  // R969: R969 dragon promotion batch one audit
+#include "rules/audits/r968_rules_record_format.h"  // R968: R968 rules record format audit
+#include "rules/audits/r967_content_tree_creation.h"  // R967: R967 content tree creation audit
+#include "rules/audits/r966_content_structure_charter.h"  // R966: R966 content structure charter audit
+#include "rules/audits/r965_dragon_issue_26_closure.h"  // R965: R965 Dragon issue-26 closure audit
+#include "rules/audits/r964_issue_26_commentary_set.h"  // R964: R964 issue-26 commentary set audit
+#include "rules/audits/r963_issue_26_table_round.h"  // R963: R963 issue-26 table round audit
+#include "rules/audits/r962_issue_26_opener_set.h"  // R962: R962 issue-26 opener set audit
+#include "rules/audits/r961_dragon_issue_25_closure.h"  // R961: R961 Dragon issue-25 closure audit
+#include "rules/audits/r960_issue_25_commentary_set.h"  // R960: R960 issue-25 commentary set audit
+#include "rules/audits/r959_issue_25_table_round.h"  // R959: R959 issue-25 table round audit
+#include "rules/audits/r958_issue_25_opener_set.h"  // R958: R958 issue-25 opener set audit
+#include "rules/audits/r957_dragon_issue_24_closure.h"  // R957: R957 Dragon issue-24 closure audit
+#include "rules/audits/r956_issue_24_commentary_set.h"  // R956: R956 issue-24 commentary set audit
+#include "rules/audits/r955_issue_24_alignment_pantheon.h"  // R955: R955 issue-24 alignment pantheon audit
+#include "rules/audits/r954_issue_24_variant_triptych.h"  // R954: R954 issue-24 variant triptych audit
+#include "rules/audits/r953_dragon_issue_23_closure.h"  // R953: R953 Dragon issue-23 closure audit
+#include "rules/audits/r952_issue_23_commentary_set.h"  // R952: R952 issue-23 commentary set audit
+#include "rules/audits/r951_issue_23_lower_planes_generation.h"  // R951: R951 issue-23 Lower Planes generation audit
+#include "rules/audits/r950_issue_23_variant_triptych.h"  // R950: R950 issue-23 variant triptych audit
+#include "rules/audits/r949_dragon_issue_22_closure.h"  // R949: R949 Dragon issue-22 closure audit
+#include "rules/audits/r948_issue_22_commentary_set.h"  // R948: R948 issue-22 commentary set audit
+#include "rules/audits/r947_issue_22_sneak_preview.h"  // R947: R947 issue-22 sneak preview audit
+#include "rules/audits/r946_issue_22_opener_part_one.h"  // R946: R946 issue-22 opener part one audit
+#include "rules/audits/r945_dragon_issue_21_closure.h"  // R945: R945 Dragon issue-21 closure audit
+#include "rules/audits/r944_issue_21_opener_part_two.h"  // R944: R944 issue-21 opener part two audit
+#include "rules/audits/r943_issue_21_opener_part_one.h"  // R943: R943 issue-21 opener part one audit
+#include "rules/audits/r942_dragon_issue_20_closure.h"  // R942: R942 Dragon issue-20 closure audit
+#include "rules/audits/r941_issue_20_opener_part_two.h"  // R941: R941 issue-20 opener part two audit
+#include "rules/audits/r940_issue_20_opener_part_one.h"  // R940: R940 issue-20 opener part one audit
+#include "rules/audits/r939_dragon_issue_19_closure.h"  // R939: R939 Dragon issue-19 closure audit
+#include "rules/audits/r938_issue_19_opener_part_two.h"  // R938: R938 issue-19 opener part two audit
+#include "rules/audits/r937_issue_19_opener_part_one.h"  // R937: R937 issue-19 opener part one audit
+#include "rules/audits/r936_dragon_issue_18_closure.h"  // R936: R936 Dragon issue-18 closure audit
+#include "rules/audits/r935_issue_18_opener_part_two.h"  // R935: R935 issue-18 opener part two audit
+#include "rules/audits/r934_issue_18_opener_part_one.h"  // R934: R934 issue-18 opener part one audit
+#include "rules/audits/r933_dragon_issue_17_closure.h"  // R933: R933 Dragon issue-17 closure audit
+#include "rules/audits/r932_issue_17_wizard_article_part_two.h"  // R932: R932 issue-17 wizard article part two audit
+#include "rules/audits/r931_issue_17_opener_part_one.h"  // R931: R931 issue-17 opener part one audit
+#include "rules/audits/r930_dragon_issue_16_closure.h"  // R930: R930 Dragon issue-16 closure audit
+#include "rules/audits/r929_issue_16_opener.h"  // R929: R929 issue-16 opener audit
+#include "rules/audits/r928_dragon_issue_15_closure.h"  // R928: R928 Dragon issue-15 closure audit
+#include "rules/audits/r927_issue_15_opener.h"  // R927: R927 issue-15 opener audit
+#include "rules/audits/r926_dragon_issue_14_closure.h"  // R926: R926 Dragon issue-14 closure audit
+#include "rules/audits/r925_issue_14_opener.h"  // R925: R925 issue-14 opener audit
+#include "rules/audits/r924_dragon_issue_13_closure.h"  // R924: R924 Dragon issue-13 closure audit
+#include "rules/audits/r923_issue_13_opener_part_two.h"  // R923: R923 issue-13 opener part two audit
+#include "rules/audits/r922_issue_13_opener.h"  // R922: R922 issue-13 opener audit
+#include "rules/audits/r921_dragon_issue_12_closure.h"  // R921: R921 Dragon issue-12 closure audit
+#include "rules/audits/r920_issue_12_opener_part_two.h"  // R920: R920 issue-12 opener part two audit
+#include "rules/audits/r919_issue_12_opener.h"  // R919: R919 issue-12 opener audit
+#include "rules/audits/r918_dragon_issue_11_closure.h"  // R918: R918 Dragon issue-11 closure audit
+#include "rules/audits/r917_issue_11_opener.h"  // R917: R917 issue-11 opener audit
+#include "rules/audits/r916_dragon_issue_10_closure.h"  // R916: R916 Dragon issue-10 closure audit
+#include "rules/audits/r915_issue_10_opener.h"  // R915: R915 issue-10 opener audit
+#include "rules/audits/r914_issue_10_opener.h"  // R914: R914 issue-10 opener audit
+#include "rules/audits/r913_dragon_issue_9_closure.h"  // R913: R913 Dragon issue-9 closure audit
+#include "rules/audits/r912_issue_9_opener.h"  // R912: R912 issue-9 opener audit
+#include "rules/audits/r911_dragon_issue_8_closure.h"  // R911: R911 Dragon issue-8 closure audit
+#include "rules/audits/r910_issue_8_opener.h"  // R910: R910 issue-8 opener audit
+#include "rules/audits/r909_dragon_issue_7_closure.h"  // R909: R909 Dragon issue-7 closure audit
+#include "rules/audits/r908_prowler_opener.h"  // R908: R908 Prowler opener audit
+#include "rules/audits/r907_dragon_issue_6_closure.h"  // R907: R907 Dragon issue-6 closure audit
+#include "rules/audits/r906_issue_6_opener.h"  // R906: R906 issue-6 opener audit
+#include "rules/audits/r905_witch_remainders.h"  // R905: R905 witch remainders audit
+#include "rules/audits/r904_wilderness_encounter_table.h"  // R904: R904 wilderness encounter table audit
+#include "rules/audits/r903_dragon_issue_5_closure.h"  // R903: R903 Dragon issue-5 closure audit
+#include "rules/audits/r902_dragon_issue_5.h"  // R902: R902 Dragon issue-5 audit
+#include "rules/audits/r901_creature_features_closure.h"  // R901: R901 Creature Features closure audit
+#include "rules/audits/r900_dragon_creature_features.h"  // R900: R900 Dragon Creature Features audit
+#include "rules/audits/r899_comedy_and_small_variants.h"  // R899: R899 comedy and small-variants audit
+#include "rules/audits/r898_character_round.h"  // R898: R898 character round audit
+#include "rules/audits/r897_fighting_sub_classes.h"  // R897: R897 fighting sub-classes audit
+#include "rules/audits/r896_specialists.h"  // R896: R896 specialists audit
+#include "rules/audits/r895_women_magic.h"  // R895: R895 women magic audit
+#include "rules/audits/r894_artificer.h"  // R894: R894 Artificer audit
+#include "rules/audits/r893_systems.h"  // R893: R893 systems audit
+#include "rules/audits/r892_fischer_items.h"  // R892: R892 Fischer items audit
+#include "rules/audits/r891_alchemist_class.h"  // R891: R891 Alchemist class audit
+#include "rules/audits/r890_remorhaz_lore.h"  // R890: R890 Remorhaz lore audit
+#include "rules/audits/r889_aronson_deltas.h"  // R889: R889 Aronson deltas audit
+#include "rules/audits/r888_dragon_small_variants.h"  // R888: R888 Dragon small variants audit
+#include "rules/audits/r887_ives_attribute.h"  // R887: R887 Ives attribute audit
+#include "rules/audits/r886_ddg_promotion.h"  // R886: R886 DDG promotion audit
+#include "rules/audits/r885_ddg_promotion.h"  // R885: R885 DDG promotion audit
+#include "rules/audits/r884_ddg_promotion.h"  // R884: R884 DDG promotion audit
+#include "rules/audits/r883_ddg_promotion.h"  // R883: R883 DDG promotion audit
+#include "rules/audits/r882_ddg_promotion.h"  // R882: R882 DDG promotion audit
+#include "rules/audits/r881_ddg_promotion.h"  // R881: R881 DDG promotion audit
+#include "rules/audits/r880_ddg_promotion.h"  // R880: R880 DDG promotion audit
+#include "rules/audits/r879_registry_schema.h"  // R879: R879 registry schema audit
+#include "rules/audits/r878_alignment_figures.h"  // R878: R878 alignment figures audit
+#include "rules/audits/r877_appendix_4_and_index.h"  // R877: R877 Appendix 4 and index audit
+#include "rules/audits/r876_clerical_chart_batch_eight.h"  // R876: R876 clerical chart batch eight audit
+#include "rules/audits/r875_clerical_chart_batch_seven.h"  // R875: R875 clerical chart batch seven audit
+#include "rules/audits/r874_clerical_chart_batch_six.h"  // R874: R874 clerical chart batch six audit
+#include "rules/audits/r873_clerical_chart_batch_five.h"  // R873: R873 clerical chart batch five audit
+#include "rules/audits/r872_clerical_chart_batch_four.h"  // R872: R872 clerical chart batch four audit
+#include "rules/audits/r871_clerical_chart_batch_three.h"  // R871: R871 clerical chart batch three audit
+#include "rules/audits/r870_clerical_chart_batch_two.h"  // R870: R870 clerical chart batch two audit
+#include "rules/audits/r869_clerical_chart_batch_one.h"  // R869: R869 clerical chart batch one audit
+#include "rules/audits/r868_temple_trappings.h"  // R868: R868 temple trappings audit
+#include "rules/audits/r867_known_planes.h"  // R867: R867 known planes audit
+#include "rules/audits/r866_sumerian_mythos.h"  // R866: R866 Sumerian mythos audit
+#include "rules/audits/r865_norse_mythos.h"  // R865: R865 Norse mythos audit
+#include "rules/audits/r864_nonhumans_deities.h"  // R864: R864 nonhumans' deities audit
+#include "rules/audits/r863_nehwon_mythos.h"  // R863: R863 Nehwon mythos audit
+#include "rules/audits/r862_melnibonean_mythos.h"  // R862: R862 Melnibonean mythos audit
+#include "rules/audits/r861_japanese_mythos.h"  // R861: R861 Japanese mythos audit
+#include "rules/audits/r860_indian_mythos.h"  // R860: R860 Indian mythos audit
+#include "rules/audits/r859_greek_mythos.h"  // R859: R859 Greek mythos audit
+#include "rules/audits/r858_finnish_mythos.h"  // R858: R858 Finnish mythos audit
+#include "rules/audits/r857_egyptian_mythos.h"  // R857: R857 Egyptian mythos audit
+#include "rules/audits/r856_cthulhu_mythos.h"  // R856: R856 Cthulhu mythos audit
+#include "rules/audits/r855_chinese_mythos.h"  // R855: R855 Chinese mythos audit
+#include "rules/audits/r854_central_american_mythos.h"  // R854: R854 Central American mythos audit
+#include "rules/audits/r853_celtic_mythos.h"  // R853: R853 Celtic mythos audit
+#include "rules/audits/r852_babylonian_mythos.h"  // R852: R852 Babylonian mythos audit
+#include "rules/audits/r851_arthurian_mythos.h"  // R851: R851 Arthurian mythos audit
+#include "rules/audits/r850_american_indian_mythos.h"  // R850: R850 American Indian mythos audit
+#include "rules/audits/r849_ddg_front_matter.h"  // R849: R849 DDG front matter audit
+#include "rules/audits/r848_ff_magic_item_tables.h"  // R848: R848 FF magic item tables audit
+#include "rules/audits/r847_ff_encounter_listings.h"  // R847: R847 FF encounter listings audit
+#include "rules/audits/r846_ff_monster_level_tables.h"  // R846: R846 FF monster level tables audit
+#include "rules/audits/r845_eighth_ff_promotion.h"  // R845: R845 eighth FF promotion audit
+#include "rules/audits/r844_seventh_ff_promotion.h"  // R844: R844 seventh FF promotion audit
+#include "rules/audits/r843_sixth_ff_promotion.h"  // R843: R843 sixth FF promotion audit
+#include "rules/audits/r842_fifth_ff_promotion.h"  // R842: R842 fifth FF promotion audit
+#include "rules/audits/r841_ff_index_line_walk.h"  // R841: R841 FF index line walk audit
+#include "rules/audits/r840_hornet_promotion.h"  // R840: R840 hornet promotion audit
+#include "rules/audits/r839_fourth_ff_promotion.h"  // R839: R839 fourth FF promotion audit
+#include "rules/audits/r838_third_ff_promotion.h"  // R838: R838 third FF promotion audit
+#include "rules/audits/r837_second_ff_promotion.h"  // R837: R837 second FF promotion audit
+#include "rules/audits/r836_first_ff_promotion.h"  // R836: R836 first FF promotion audit
+#include "rules/audits/r835_final_holdback_batch.h"  // R835: R835 final holdback batch audit
+#include "rules/audits/r834_holdback_tooling_patch.h"  // R834: R834 holdback tooling patch audit
+#include "rules/audits/r833_final_digest_batch.h"  // R833: R833 final digest batch audit
     #include "rules/audits/r227_wis_mental_save_wiring.h"  // R833: migrated
     #include "rules/audits/r228_druid_registry_parameter.h"  // R833: migrated
     #include "rules/audits/r229_illusionist_registry_par.h"  // R833: migrated

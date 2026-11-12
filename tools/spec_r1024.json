@@ -9,10 +9,10 @@
   "provenance": "The normalization tail - the per-book schema pass enters its tail (the R879 normalizer doctrine, the R1009-R1014 MM1 arc, R1016 the OA book close, R1017-R1020 the MM2 arc closed, R1021-R1023 the FF arc closed): the 15 WSG service animals and the 8 MOP outsider defs rewritten to the canonical FIELD_ORDER emission, byte-exact against the landed normalize_registry.py; the 15 real WSG service role masks ride untouched - only absent keys read the sentinels; all 199 patches are anchored sentinel inserts under the single-line anchor doctrine (the R1021 aarakocra lesson); no reorders, no comma sites, no pin repairs - neither book carries fragment grids; the loader reads the sentinels under the R879 uniform coercer doctrine already live on the 972 normalized MM1, MM2, OA and FF defs"
  },
  "header_file": "rules/meta/wt1.h",
- "audit_file": "rules/audits/r1024_batch.h",
+ "audit_file": "rules/audits/r1024_wsg_mop_normalization.h",
  "audit_label": "R1024 WSG+MOP normalization audit",
  "audit_comment": "THE NORMALIZATION TAIL BATCH - the 23 defs (15 WSG service animals, 8 MOP outsiders) rewritten to the full-field 57-key emission, byte-exact against the landed normalize_registry.py; the 15 real WSG service role masks preserved byte-identical; every patch an anchored sentinel insert.",
- "audit_anchor": "#include \"rules/audits/r1023_batch.h\"  // R1023: R1023 FF normalization audit",
+ "audit_anchor": "#include \"rules/audits/r1023_ff_normalization.h\"  // R1023: R1023 FF normalization audit",
  "include_after": "#include \"rules/ff/normalization_batch3.h\"  // R1023: the FF normalization batch three",
  "include_comment": "the WSG+MOP normalization tail batch",
  "regtest": "regtest.cpp",

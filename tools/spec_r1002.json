@@ -9,10 +9,10 @@
   "provenance": "The UA promotion arc round four, the fourth rules promotion batch from the Unearthed Arcana pin rounds: sixteen records promoted into content/rules/ua/ - rounds R365 through R380 complete (the illusionist 6th/7th spells with the acquisition and cost pins, the DM-section spells, the social class and birth, the cavalier table and followers, the cantrip acquisition, the DM-section smalls, the expanded armor, the comeliness note, the treasure dial, the determination skeleton, and the potions, scrolls, rings, rods, staves and wands prose), one record per round per the OA header-record doctrine (the pin header stays the adjudicated record; the multi-header rounds merge their headers' pools), 1355 model items (consts, bools, switches, chains), every record parsed back and compared equal (the lossless proof), the audit conditions converted to bad-detector examples. This batch is 277802 bytes of Lua. Cumulative forty-five of the 76-round UA set, 31 rounds remaining."
  },
  "header_file": "rules/ua/ua4.h",
- "audit_file": "rules/audits/r1002_batch.h",
+ "audit_file": "rules/audits/r1002_ua_promotion_batch_four.h",
  "audit_label": "R1002 UA promotion batch four audit",
  "audit_comment": "the batch four audit - sixteen records, 1355 model items, rounds R365 through R380 complete, cumulative 45 of the 76-round UA set, the parse-back proof green on every record, every fact fail-on-wrong",
- "audit_anchor": "#include \"rules/audits/r1001_batch.h\"  // R1001: R1001 UA promotion batch three audit",
+ "audit_anchor": "#include \"rules/audits/r1001_ua_promotion_batch_three.h\"  // R1001: R1001 UA promotion batch three audit",
  "include_after": "#include \"rules/ua/ua3.h\"  // R1001: the UA promotion batch three",
  "include_comment": "the UA promotion batch four",
  "regtest": "regtest.cpp",

@@ -25,9 +25,9 @@
  "include_after": "#include \"rules/dragon/issue012_close.h\"  // R921: the Dragon issue-12 box closing round, the four-chain walk complete",
  "include_comment": "the Dragon issue-13 opener part one, the Shlump da Orc giant physics article and the Jon Pickens demon generation article",
  "header_file": "rules/dragon/issue013_opener1.h",
- "audit_file": "rules/audits/r922_batch.h",
+ "audit_file": "rules/audits/r922_issue_13_opener.h",
  "audit_label": "R922 issue-13 opener audit",
- "audit_anchor": "#include \"rules/audits/r921_batch.h\"  // R921: R921 Dragon issue-12 closure audit",
+ "audit_anchor": "#include \"rules/audits/r921_dragon_issue_12_closure.h\"  // R921: R921 Dragon issue-12 closure audit",
  "audit_comment": "THE DRAGON ISSUE-13 OPENER ROUND, PART ONE - the all-usable adjudication, every engine-relevant chain of the issue. The How Heavy Is My Giant article by Shlump da Orc (folios 5-7): the 180-pound 5-foot-8 base man of the formula, the 35-percent torso share, the 47-pounds-per-cubic-foot flesh density, the formula scalars (6.28, 3.12, .5588, .2647, 1728), the 26-row size grid from 5-foot-8 through 30 feet with its pounds column (invisible to the OCR, visually confirmed and anchored by the article 23,660 worked example), the tons column pinned in quarter-ton units with the 5-foot-8 through 8-foot cells blank on the sentinel, the chest and torso columns, the six-step lift ladder, the over-under base-weight rule on the 160-pound reference man, the 47,300 to 71,000 titan press, and the 64-row materials density grid pinned in tenths - the Ice 57.2, Lignum Vitae 73-83 and Mahogany 41 cells resolved at the full-res scan, provenance noted. The Demon Generation article by Jon Pickens (folio 9): the six demon levels, the 50-percent magic resistance plus 5 per level, the power-count grid (visually confirmed against the djvu fragments) with the dash cells pinned as zero, the 12-entry ability slots, the 2-and-3 caster multipliers, the no-fire-and-ice rule, the weapon-vulnerability tiers, the Prince rules (19th-level casters, the 50-percent artifact) and the Level-VI worked constants (8 ten-sided hit dice, the 70-percent Level 3-4 gate). The issue-13 report rides pre-flip; the Japanese Mythos box closes at the part-two round.",
  "gap_report": "tools/dragon_gap_report_012.md",
  "gap_census": {

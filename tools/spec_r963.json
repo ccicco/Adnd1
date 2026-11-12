@@ -9,10 +9,10 @@
   "provenance": "The part-two round of the issue-26 four-round shape - four of the thirteen Curtiss-called chains pinned as the table round: the Chinese Undead roster (print 20-21) with the six undead brackets, the nine-point alignment chart (print 23) with the conduct encodings, the Deck of Fate tarot artifact (print 24-25) with the wheel bands and the arcana, and the strength comparison ladder (print 38) with the giant rungs and the ogre power revision, the five-chain opener set down at part one and the four-chain commentary set plus the flip to follow. All pinned from The Dragon Vol. III No. 12 (June 1979) print 20-25 and 38 at extract/dragon/026 (landed at R962), the single-voice transcript of the Curtiss-provided scan; the four grids carry the printed numbers as scanned, the strength ladder printing its overlapping 18/90 row pinned as scanned. The watches - the Sullin levels 7-9 and the brawling sequel - ride to TD 27 absent a fifth issue."
  },
  "header_file": "rules/dragon/issue026_opener2.h",
- "audit_file": "rules/audits/r963_batch.h",
+ "audit_file": "rules/audits/r963_issue_26_table_round.h",
  "audit_label": "R963 issue-26 table round audit",
  "audit_comment": "the four-chain table round audit - the Chinese Undead roster grid with the six undead brackets, the nine-point alignment chart with the conduct encodings, the Deck of Fate artifact with the wheel bands and the strength ladder with the giant rungs and the ogre power revision",
- "audit_anchor": "#include \"rules/audits/r962_batch.h\"  // R962: R962 issue-26 opener set audit",
+ "audit_anchor": "#include \"rules/audits/r962_issue_26_opener_set.h\"  // R962: R962 issue-26 opener set audit",
  "include_after": "#include \"rules/dragon/issue026_opener1.h\"  // R962: the Dragon issue-26 opener part one, the five-chain opener set",
  "include_comment": "the Dragon issue-26 opener part two, the four-chain table round",
  "regtest": "regtest.cpp",

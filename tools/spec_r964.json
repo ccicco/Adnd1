@@ -9,10 +9,10 @@
   "provenance": "The part-three round of the issue-26 four-round shape - four of the thirteen Curtiss-called chains pinned as the commentary set: the Blueprint for a Lich recipe (print 36), the Lakofka Bazaar of the Bizarre debut with the jar law, the corpse possession ladder and the nine ingredient potion; the impromptu party system (print 37 + 39), the Gygax convention kit with the 4d4 abilities, the level bands, the per class tables and the robe patches; the Dragon Bestiary barghest (print 44), the Gehenna deodand with the whelp feeding and the fire banishment; and the city thief doctrine (print 46), the Stephens disguise, rooftop and scapegoat method. All pinned from The Dragon Vol. III No. 12 (June 1979) print 36-37 + 39 + 44 + 46 at extract/dragon/026 (landed at R962), the single-voice transcript of the Curtiss-provided scan; the Choate thrice print, the Polymorph Serf potions row, the barghest stat block foot mark and PSONIC prints and the Gygas colophon all pinned as scanned. The watches - the Sullin levels 7-9 and the brawling sequel - ride to TD 27 absent a fifth issue."
  },
  "header_file": "rules/dragon/issue026_opener3.h",
- "audit_file": "rules/audits/r964_batch.h",
+ "audit_file": "rules/audits/r964_issue_26_commentary_set.h",
  "audit_label": "R964 issue-26 commentary set audit",
  "audit_comment": "the four-chain commentary set audit - the lich recipe with the jar law and the nine ingredient potion, the impromptu party system with the Gonzo example and the robe patches, the barghest whelp growth and the city thief doctrine",
- "audit_anchor": "#include \"rules/audits/r963_batch.h\"  // R963: R963 issue-26 table round audit",
+ "audit_anchor": "#include \"rules/audits/r963_issue_26_table_round.h\"  // R963: R963 issue-26 table round audit",
  "include_after": "#include \"rules/dragon/issue026_opener2.h\"  // R963: the Dragon issue-26 opener part two, the four-chain table round",
  "include_comment": "the Dragon issue-26 opener part three, the four-chain commentary set",
  "regtest": "regtest.cpp",

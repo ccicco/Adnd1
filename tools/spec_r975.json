@@ -9,10 +9,10 @@
   "provenance": "The content-structure arc round ten, the seventh rules promotion batch under the R968 format: five records promoted mechanically from their spec JSONs into content/rules/dragon/ - issues 13 and 14 complete (dgm the Shlump da Orc opener, kmy the Japanese Mythos opener, icl the box closer, lyc the Name That Monster Contest #1 opener, f14 the box closer), 219 model items, every record parsed back and compared equal (the lossless proof). The batch sizing rides the raised ceiling (Curtiss, 2026-10-31): whole issue groups per round - this batch is 93924 bytes of Lua. Cumulative 40 of the walked 79-round Dragon set, 39 remaining."
  },
  "header_file": "rules/dragon/promo_batch07.h",
- "audit_file": "rules/audits/r975_batch.h",
+ "audit_file": "rules/audits/r975_dragon_promotion_batch_seven.h",
  "audit_label": "R975 dragon promotion batch seven audit",
  "audit_comment": "the batch seven audit - five records, 219 model items, issues 13 through 14 complete, cumulative 40 of the 79-round set, the parse-back proof green on every record, every fact fail-on-wrong",
- "audit_anchor": "#include \"rules/audits/r974_batch.h\"  // R974: R974 dragon promotion batch six audit",
+ "audit_anchor": "#include \"rules/audits/r974_dragon_promotion_batch_six.h\"  // R974: R974 dragon promotion batch six audit",
  "include_after": "#include \"rules/dragon/promo_batch06.h\"  // R974: the Dragon promotion batch six",
  "include_comment": "the Dragon promotion batch seven",
  "regtest": "regtest.cpp",

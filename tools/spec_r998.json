@@ -9,10 +9,10 @@
   "provenance": "The DSG promotion arc round five, the fifth and final rules promotion batch from the Dungeoneer Survival Guide pin rounds: seven records promoted into content/rules/dsg/ - rounds R557 through R563 complete, the underdark close; every one from its adjudicated spec JSON per the Dragon spec doctrine, R966, 82 model items (consts, bools, switches, chains), every record parsed back and compared equal (the lossless proof), the audit conditions converted to bad-detector examples. This batch is 49790 bytes of Lua. Cumulative 60 of the 60-round DSG set - the set is CLOSED."
  },
  "header_file": "rules/dsg/dsg5.h",
- "audit_file": "rules/audits/r998_batch.h",
+ "audit_file": "rules/audits/r998_dsg_promotion_batch_five.h",
  "audit_label": "R998 DSG promotion batch five audit",
  "audit_comment": "the batch five audit - seven records, 82 model items, rounds R557 through R563 complete, cumulative 60 of the 60-round DSG set - the set closer, the parse-back proof green on every record, every fact fail-on-wrong",
- "audit_anchor": "#include \"rules/audits/r997_batch.h\"  // R997: R997 DSG promotion batch four audit",
+ "audit_anchor": "#include \"rules/audits/r997_dsg_promotion_batch_four.h\"  // R997: R997 DSG promotion batch four audit",
  "include_after": "#include \"rules/dsg/dsg4.h\"  // R997: the DSG promotion batch four",
  "include_comment": "the DSG promotion batch five",
  "regtest": "regtest.cpp",

@@ -9,10 +9,10 @@
   "provenance": "The OA promotion arc round three, the third rules promotion batch from the pin headers themselves (the promotion-from-headers doctrine, R981): twenty-six records promoted mechanically from rules/oa{round}.h into content/rules/oa/ - rounds R645 through R670 complete (the encumbrance and barding, the grenade-like weapons, armor descriptions and weapon specializations, the non-weapon and character-class proficiencies, the shukenja spell book, the wu jen level 1-7 spell lists and the Tables 63-65 divination, speak with dead and fate pin rounds, the wu jen spell list with its level one spells), 482 model items (consts, bools, switches, chains), every record parsed back and compared equal (the lossless proof), the audit conditions converted to bad-detector examples and the local-array audits left behind the C++ pins. This batch is 316123 bytes of Lua. Cumulative fifty-seven of the 160-round OA set, 103 rounds remaining."
  },
  "header_file": "rules/oa/oa3.h",
- "audit_file": "rules/audits/r983_batch.h",
+ "audit_file": "rules/audits/r983_oa_promotion_batch_three.h",
  "audit_label": "R983 OA promotion batch three audit",
  "audit_comment": "the batch three audit - twenty-six records, 482 model items, rounds R645 through R670 complete, cumulative 57 of the 160-round OA set, the parse-back proof green on every record, every fact fail-on-wrong",
- "audit_anchor": "#include \"rules/audits/r982_batch.h\"  // R982: R982 OA promotion batch two audit",
+ "audit_anchor": "#include \"rules/audits/r982_oa_promotion_batch_two.h\"  // R982: R982 OA promotion batch two audit",
  "include_after": "#include \"rules/oa/oa2.h\"  // R982: the OA promotion batch two",
  "include_comment": "the OA promotion batch three",
  "regtest": "regtest.cpp",

@@ -9,10 +9,10 @@
   "provenance": "The WSG promotion arc round one, the first rules promotion batch from the Wilderness Survival Guide pin rounds: twenty-nine records promoted into content/rules/wsg/ - rounds R425 through R454 complete (the three pre-spec header-only openers R425-R427 promoted from the pin headers themselves per the promotion-from-headers doctrine, R981, and the twenty-six spec rounds promoted from their adjudicated spec JSONs per the Dragon spec doctrine, R966), 723 model items (consts, bools, switches, chains), every record parsed back and compared equal (the lossless proof), the audit conditions converted to bad-detector examples and the computed-argument fns left behind the C++ pins. This batch is 317767 bytes of Lua. Cumulative twenty-nine of the 77-round WSG set, 48 rounds remaining."
  },
  "header_file": "rules/wsg/wsg1.h",
- "audit_file": "rules/audits/r989_batch.h",
+ "audit_file": "rules/audits/r989_wsg_promotion_batch_one.h",
  "audit_label": "R989 WSG promotion batch one audit",
  "audit_comment": "the batch one audit - twenty-nine records, 723 model items, rounds R425 through R454 complete, cumulative 29 of the 77-round WSG set, the parse-back proof green on every record, every fact fail-on-wrong",
- "audit_anchor": "#include \"rules/audits/r988_batch.h\"  // R988: R988 OA promotion batch eight audit",
+ "audit_anchor": "#include \"rules/audits/r988_oa_promotion_batch_eight.h\"  // R988: R988 OA promotion batch eight audit",
  "include_after": "#include \"rules/oa/oa8.h\"  // R988: the OA promotion batch eight",
  "include_comment": "the WSG promotion batch one",
  "regtest": "regtest.cpp",

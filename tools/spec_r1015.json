@@ -9,10 +9,10 @@
   "provenance": "The OA table promotion - the promotions doctrine continued (the R968 format, continuing the R981-R988 OA set): the promotion is meant for rules AND tables, to alleviate the burden off the C++ pin code, and to place in Lua what originally got placed into C++ code files. The OA monster defs are already in Lua (the 47 registry defs including the 39 Chapter 12 promotions), but the eight R981-R988 promotion batches predate the table promotion - all 160 records shipped tables = {} while the R614-R773 specs declare 139 table grids (the dragon, DSG and WSG promotions carried theirs). This round mechanically re-promotes the tables from the specs into the 94 records that carry them (fix the record from the spec - the promotion doctrine; never hand-edit): 298072 Lua bytes, every record parse-back equal against its spec model, key for key in the spec order, the encoding the R968 record format. The C++ pin headers stay the firewall and the print-fidelity record; the Lua record now carries the table data so the C++ burden can retire. THE TABLE CENSUS: 139 of 139 promoted, 0 remaining - the OA tables gap closed in one round."
  },
  "header_file": "rules/oa/oa9.h",
- "audit_file": "rules/audits/r1015_batch.h",
+ "audit_file": "rules/audits/r1015_oa_table_promotion_batch_nine.h",
  "audit_label": "R1015 OA table promotion batch nine audit",
  "audit_comment": "THE OA TABLE PROMOTION BATCH NINE - the promotions doctrine continued: the 139 table grids the R981-R988 promotion batches left behind in the C++ pins, promoted from the R614-R773 specs into the 94 OA Lua records, every record parse-back equal.",
- "audit_anchor": "#include \"rules/audits/r1014_batch.h\"  // R1014: R1014 MM1 normalization batch six audit",
+ "audit_anchor": "#include \"rules/audits/r1014_mm1_normalization_batch_six.h\"  // R1014: R1014 MM1 normalization batch six audit",
  "include_after": "#include \"rules/mm/mm1_normalization_batch6.h\"  // R1014: the MM1 normalization batch six",
  "include_comment": "the OA table promotion batch nine",
  "regtest": "regtest.cpp",

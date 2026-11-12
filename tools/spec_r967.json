@@ -9,10 +9,10 @@
   "provenance": "The content-structure arc round two: the content/ skeleton lands via thirteen .keep data files (rules, npcs, items, items/artifacts, spells, tables, tiles, objects, world and its three world buckets plus the karatur expansion bucket), and the monster Lua registry moves from monsters/monsters to content/monsters by the user-side git mv - the loader path rewritten in six places (adnd1.cpp the loadDirectory call and its error string, regtest.cpp the loader walk and its R71fix comment, tools/normalize_registry.py its docstring, and the R314 engine audit fragment's letter-dir load). The registry and xp code stays in monsters/ - C++ never enters the content tree (the R966 charter)."
  },
  "header_file": "rules/meta/content_tree_creation.h",
- "audit_file": "rules/audits/r967_batch.h",
+ "audit_file": "rules/audits/r967_content_tree_creation.h",
  "audit_label": "R967 content tree creation audit",
  "audit_comment": "the tree audit - thirteen keeps, the 1338 lua records unchanged by the move, the six rewritten path lines, the four world-tree buckets, the 1313 loaded floor expected at preflight from the new path, every fact fail-on-wrong",
- "audit_anchor": "#include \"rules/audits/r966_batch.h\"  // R966: R966 content structure charter audit",
+ "audit_anchor": "#include \"rules/audits/r966_content_structure_charter.h\"  // R966: R966 content structure charter audit",
  "include_after": "#include \"rules/meta/content_structure_charter.h\"  // R966: the content-structure charter round",
  "include_comment": "the content tree creation round",
  "regtest": "regtest.cpp",

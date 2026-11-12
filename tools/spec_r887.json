@@ -78,9 +78,9 @@
  "include_after": "#include \"rules/ddg/lua_promo_batch7.h\"  // R886: the DDG lua promotion, batch seven",
  "include_comment": "the Ives attribute tables, the Dragon opener",
  "header_file": "rules/dragon/issue001_ives_tables.h",
- "audit_file": "rules/audits/r887_batch.h",
+ "audit_file": "rules/audits/r887_ives_attribute.h",
  "audit_label": "R887 Ives attribute audit",
- "audit_anchor": "#include \"rules/audits/r886_batch.h\"  // R886: R886 DDG promotion audit",
+ "audit_anchor": "#include \"rules/audits/r886_ddg_promotion.h\"  // R886: R886 DDG promotion audit",
  "gap_report": "tools/ddg_gap_report.md",
  "gap_census": {
   "closed": 24,

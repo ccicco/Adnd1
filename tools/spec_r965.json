@@ -9,10 +9,10 @@
   "provenance": "The pure flip, no new ink - all three report-026 boxes check at this single round: the part-one opener set (R962, t26), the part-two table round (R963, s26) and the part-three commentary set (R964, k26). The walk holds issues 2-26 all closed, the four-round shape five times proven at issues 22, 23, 24, 25 and 26; the TD 27 intake stands unadjudicated with the Sullin and brawling watches - absent a sixth issue - riding on to TD 27. Pinned from The Dragon Vol. III No. 12 (June 1979) number 26, the single-voice transcript of the Curtiss-provided scan at extract/dragon/026, landed in the repo at R962."
  },
  "header_file": "rules/dragon/issue026_close.h",
- "audit_file": "rules/audits/r965_batch.h",
+ "audit_file": "rules/audits/r965_dragon_issue_26_closure.h",
  "audit_label": "R965 Dragon issue-26 closure audit",
  "audit_comment": "THE DRAGON ISSUE-26 BOX CLOSING ROUND - the pure flip, no new ink. All three report-026 boxes flip at this single round: the part-one opener set (R962, t26), the part-two table round (R963, s26) and the part-three commentary set (R964, k26) all checked, gap_census 3 closed 0 open, report-026 joining mm2, ddg, report-024 and report-025 in the closed state",
- "audit_anchor": "#include \"rules/audits/r964_batch.h\"  // R964: R964 issue-26 commentary set audit",
+ "audit_anchor": "#include \"rules/audits/r964_issue_26_commentary_set.h\"  // R964: R964 issue-26 commentary set audit",
  "include_after": "#include \"rules/dragon/issue026_opener3.h\"  // R964: the Dragon issue-26 opener part three, the four-chain commentary set",
  "include_comment": "the Dragon issue-26 box closing round, the fifth four-round walk complete",
  "regtest": "regtest.cpp",

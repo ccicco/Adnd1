@@ -9,10 +9,10 @@
   "provenance": "The UA promotion arc round five, the fifth rules promotion batch from the Unearthed Arcana pin rounds: ten records promoted into content/rules/ua/ - rounds R381 through R390 complete (the misc magic items prose parts one through six, the armor and swords prose, the misc weapons prose, the weaponless combat appendix Q, the non-lethal combat appendix R), one record per round per the OA header-record doctrine (the pin header stays the adjudicated record), 1350 model items (consts, bools, switches, chains), every record parsed back and compared equal (the lossless proof), the audit conditions converted to bad-detector examples. This batch is 275277 bytes of Lua. Cumulative fifty-five of the 76-round UA set, 21 rounds remaining."
  },
  "header_file": "rules/ua/ua5.h",
- "audit_file": "rules/audits/r1003_batch.h",
+ "audit_file": "rules/audits/r1003_ua_promotion_batch_five.h",
  "audit_label": "R1003 UA promotion batch five audit",
  "audit_comment": "the batch five audit - ten records, 1350 model items, rounds R381 through R390 complete, cumulative 55 of the 76-round UA set, the parse-back proof green on every record, every fact fail-on-wrong",
- "audit_anchor": "#include \"rules/audits/r1002_batch.h\"  // R1002: R1002 UA promotion batch four audit",
+ "audit_anchor": "#include \"rules/audits/r1002_ua_promotion_batch_four.h\"  // R1002: R1002 UA promotion batch four audit",
  "include_after": "#include \"rules/ua/ua4.h\"  // R1002: the UA promotion batch four",
  "include_comment": "the UA promotion batch five",
  "regtest": "regtest.cpp",

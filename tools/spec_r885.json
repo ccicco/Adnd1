@@ -56,9 +56,9 @@
  "include_after": "#include \"rules/ddg/lua_promo_batch5.h\"  // R884: the DDG lua promotion, batch five",
  "include_comment": "the DDG lua promotion, batch six",
  "header_file": "rules/ddg/lua_promo_batch6.h",
- "audit_file": "rules/audits/r885_batch.h",
+ "audit_file": "rules/audits/r885_ddg_promotion.h",
  "audit_label": "R885 DDG promotion audit",
- "audit_anchor": "#include \"rules/audits/r884_batch.h\"  // R884: R884 DDG promotion audit",
+ "audit_anchor": "#include \"rules/audits/r884_ddg_promotion.h\"  // R884: R884 DDG promotion audit",
  "gap_report": "tools/ddg_gap_report.md",
  "gap_census": {
   "closed": 24,

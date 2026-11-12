@@ -9,7 +9,7 @@
  },
  "regtest": "regtest.cpp",
  "header_file": "rules/dragon/issue024_opener3.h",
- "audit_file": "rules/audits/r956_batch.h",
+ "audit_file": "rules/audits/r956_issue_24_commentary_set.h",
  "audit_label": "R956 issue-24 commentary set audit",
  "audit_comment": "the ten-chain commentary set audit - the magic-user limits, the Roman maniples, the Viking scenarios, the melee rationale, the DUNGEON variations, the Swiss phalanxes, the psionic professions, the disease charts, the Petal Throne name grid and the Monty Haul satire",
  "chains": [],
@@ -23,7 +23,7 @@
  "gap_flips": [],
  "include_after": "#include \"rules/dragon/issue024_opener2.h\"  // R955: the Dragon issue-24 opener part two, the alignment pantheon table round",
  "include_comment": "the Dragon issue-24 opener part three, the ten-chain commentary round",
- "audit_anchor": "#include \"rules/audits/r955_batch.h\"  // R955: R955 issue-24 alignment pantheon audit",
+ "audit_anchor": "#include \"rules/audits/r955_issue_24_alignment_pantheon.h\"  // R955: R955 issue-24 alignment pantheon audit",
  "seed_anchor": "## Knowledge maintenance",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "prev_record": [

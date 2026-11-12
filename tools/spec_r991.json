@@ -9,10 +9,10 @@
   "provenance": "The WSG promotion arc round three, the third rules promotion batch from the Wilderness Survival Guide pin rounds: fifteen records promoted into content/rules/wsg/ - rounds R475 through R489 complete, every one from its adjudicated spec JSON per the Dragon spec doctrine, R966, 960 model items (consts, bools, switches, chains), every record parsed back and compared equal (the lossless proof), the audit conditions converted to bad-detector examples. This batch is 302847 bytes of Lua. Cumulative 64 of the 77-round WSG set, 13 rounds remaining."
  },
  "header_file": "rules/wsg/wsg3.h",
- "audit_file": "rules/audits/r991_batch.h",
+ "audit_file": "rules/audits/r991_wsg_promotion_batch_three.h",
  "audit_label": "R991 WSG promotion batch three audit",
  "audit_comment": "the batch three audit - fifteen records, 960 model items, rounds R475 through R489 complete, cumulative 64 of the 77-round WSG set, the parse-back proof green on every record, every fact fail-on-wrong",
- "audit_anchor": "#include \"rules/audits/r990_batch.h\"  // R990: R990 WSG promotion batch two audit",
+ "audit_anchor": "#include \"rules/audits/r990_wsg_promotion_batch_two.h\"  // R990: R990 WSG promotion batch two audit",
  "include_after": "#include \"rules/wsg/wsg2.h\"  // R990: the WSG promotion batch two",
  "include_comment": "the WSG promotion batch three",
  "regtest": "regtest.cpp",

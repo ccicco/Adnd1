@@ -65,9 +65,9 @@
   "form; a bare not does not translate). NEXT: the D&DG walk continues from the",
   "Sumerian mythos (print pp. 125-127) - WAIT FOR GO."
  ],
- "audit_file": "rules/audits/r866_batch.h",
+ "audit_file": "rules/audits/r866_sumerian_mythos.h",
  "audit_label": "R866 Sumerian mythos audit",
- "audit_anchor": "#include \"rules/audits/r865_batch.h\"  // R865: R865 Norse mythos audit",
+ "audit_anchor": "#include \"rules/audits/r865_norse_mythos.h\"  // R865: R865 Norse mythos audit",
  "audit_comment": "THE SUMERIAN MYTHOS - the D&DG walk round eighteen, print pp. 125-127: seven stat-block rows - the five greater gods (Enlil, Enki, Inanna, Ki, Utu) and the two lesser (Nanna-Sin, Nin-hursag) - plus the city-temple doctrine of the intro and the pantheon-wide cloud chariots doctrine of print p. 127; every one of the seven beings prints armor class -2, the only uniform-AC pantheon of the walk.",
  "tables": [
   {

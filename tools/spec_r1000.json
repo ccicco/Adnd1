@@ -9,10 +9,10 @@
   "provenance": "The UA promotion arc round two, the second rules promotion batch from the Unearthed Arcana pin rounds: eleven records promoted into content/rules/ua/ - rounds R349 through R359 complete (the cleric 7th-level spell block, the druid spell blocks 1st through 7th, the magic-user spell blocks' opening), one record per round per the OA header-record doctrine (the pin header stays the adjudicated record; the multi-header rounds merge their headers' pools), 1201 model items (consts, bools, switches, chains), every record parsed back and compared equal (the lossless proof), the audit conditions converted to bad-detector examples. This batch is 278958 bytes of Lua. Cumulative twenty-four of the 76-round UA set, 52 rounds remaining."
  },
  "header_file": "rules/ua/ua2.h",
- "audit_file": "rules/audits/r1000_batch.h",
+ "audit_file": "rules/audits/r1000_ua_promotion_batch_two.h",
  "audit_label": "R1000 UA promotion batch two audit",
  "audit_comment": "the batch two audit - eleven records, 1201 model items, rounds R349 through R359 complete, cumulative 24 of the 76-round UA set, the parse-back proof green on every record, every fact fail-on-wrong",
- "audit_anchor": "#include \"rules/audits/r999_batch.h\"  // R999: R999 UA promotion batch one audit",
+ "audit_anchor": "#include \"rules/audits/r999_ua_promotion_batch_one.h\"  // R999: R999 UA promotion batch one audit",
  "include_after": "#include \"rules/ua/ua1.h\"  // R999: the UA promotion batch one",
  "include_comment": "the UA promotion batch two",
  "regtest": "regtest.cpp",

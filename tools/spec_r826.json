@@ -132,7 +132,7 @@
   ],
   "audit_label": "R826 DMG tables batch audit",
   "audit_comment": "the third migration batch: the DMG tables and appendix blocks ride the wiring; the batch constants check themselves",
-  "audit_file": "rules/audits/r826_batch.h",
+  "audit_file": "rules/audits/r826_dmg_tables_batch.h",
   "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
   "include_comment": "the DMG tables migration batch",
   "include_after": "#include \"rules/meta/migration_batch_dmg_appendix.h\"  // R825: the DMG appendix migration batch",

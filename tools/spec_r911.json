@@ -89,9 +89,9 @@
  "include_after": "#include \"rules/dragon/issue008_opener.h\"  // R910: the Dragon issue-8 opener, the Gygax Planes article, the Watson towns article and the Kuntz gems re-evaluation",
  "include_comment": "the Dragon issue-8 box closing round, the three-chain walk complete",
  "header_file": "rules/dragon/issue008_close.h",
- "audit_file": "rules/audits/r911_batch.h",
+ "audit_file": "rules/audits/r911_dragon_issue_8_closure.h",
  "audit_label": "R911 Dragon issue-8 closure audit",
- "audit_anchor": "#include \"rules/audits/r910_batch.h\"  // R910: R910 issue-8 opener audit",
+ "audit_anchor": "#include \"rules/audits/r910_issue_8_opener.h\"  // R910: R910 issue-8 opener audit",
  "gap_report": "tools/dragon_gap_report_008.md",
  "gap_census": {
   "closed": 1,
