@@ -2,9 +2,10 @@
     // DMG pp.127-128: the class-usable
     // marks and the full-charges asterisk.
     {
+        Rodswands rodswands;
         int bad = 0;
         // the row identity: the 30 die bands
-        if (rules::rswRowCount() != 30) ++bad;
+        if (rodswands.rswRowCount() != 30) ++bad;
         static const int kLo[30] = {
             1, 4, 5, 15, 17, 18, 19, 20, 21, 23,
             24, 25, 28, 32, 34, 35, 39, 42, 45, 48,
@@ -41,60 +42,60 @@
             0, 0, 1, 1, 1, 1, 0, 0, 1, 1,
         };
         for (int i = 0; i < 30; ++i)
-            if (rules::rswRowLo(i) != kLo[i] ||
-                rules::rswRowHi(i) != kHi[i] ||
-                rules::rswUsableByCleric(i) != kC[i] ||
-                rules::rswUsableByMagicUser(i) != kM[i] ||
-                rules::rswUsableByFighter(i) != kF[i] ||
-                rules::rswUsableByThief(i) != kT[i] ||
-                rules::rswAnyClass(i) != kAny[i]) ++bad;
+            if (rodswands.rswRowLo(i) != kLo[i] ||
+                rodswands.rswRowHi(i) != kHi[i] ||
+                rodswands.rswUsableByCleric(i) != kC[i] ||
+                rodswands.rswUsableByMagicUser(i) != kM[i] ||
+                rodswands.rswUsableByFighter(i) != kF[i] ||
+                rodswands.rswUsableByThief(i) != kT[i] ||
+                rodswands.rswAnyClass(i) != kAny[i]) ++bad;
         for (int i = 1; i < 30; ++i)
-            if (rules::rswRowLo(i) !=
-                rules::rswRowHi(i - 1) + 1) ++bad;
-        if (rules::rswRowLo(-5) != 1 ||
-            rules::rswRowHi(99) != 100) ++bad;
+            if (rodswands.rswRowLo(i) !=
+                rodswands.rswRowHi(i - 1) + 1) ++bad;
+        if (rodswands.rswRowLo(-5) != 1 ||
+            rodswands.rswRowHi(99) != 100) ++bad;
         // every row: the any flag excludes
         // the class marks, and a non-any row
         // carries at least one class mark
         for (int i = 0; i < 30; ++i)
-            if (rules::rswAnyClass(i) &&
-                (rules::rswUsableByCleric(i) ||
-                 rules::rswUsableByMagicUser(i) ||
-                 rules::rswUsableByFighter(i) ||
-                 rules::rswUsableByThief(i))) ++bad;
+            if (rodswands.rswAnyClass(i) &&
+                (rodswands.rswUsableByCleric(i) ||
+                 rodswands.rswUsableByMagicUser(i) ||
+                 rodswands.rswUsableByFighter(i) ||
+                 rodswands.rswUsableByThief(i))) ++bad;
         for (int i = 0; i < 30; ++i)
-            if (!rules::rswAnyClass(i) &&
-                !rules::rswUsableByCleric(i) &&
-                !rules::rswUsableByMagicUser(i) &&
-                !rules::rswUsableByFighter(i) &&
-                !rules::rswUsableByThief(i)) ++bad;
+            if (!rodswands.rswAnyClass(i) &&
+                !rodswands.rswUsableByCleric(i) &&
+                !rodswands.rswUsableByMagicUser(i) &&
+                !rodswands.rswUsableByFighter(i) &&
+                !rodswands.rswUsableByThief(i)) ++bad;
         // the famous rows: Absorption (C, M),
         // Beguiling (C, M, T), Cancellation
         // (any), Lordly Might (F), Smiting
         // (C, F), the Magi (M), Wonder (any)
-        if (!rules::rswUsableByCleric(0) ||
-            !rules::rswUsableByMagicUser(0) ||
-            rules::rswAnyClass(0)) ++bad;
-        if (!rules::rswUsableByThief(1)) ++bad;
-        if (!rules::rswAnyClass(2) ||
-            rules::rswUsableByCleric(2)) ++bad;
-        if (!rules::rswUsableByFighter(3) ||
-            rules::rswUsableByCleric(3) ||
-            rules::rswUsableByMagicUser(3)) ++bad;
-        if (!rules::rswUsableByCleric(6) ||
-            !rules::rswUsableByFighter(6)) ++bad;
-        if (!rules::rswUsableByMagicUser(9) ||
-            rules::rswUsableByCleric(9)) ++bad;
-        if (!rules::rswAnyClass(29) ||
-            rules::rswUsableByThief(29)) ++bad;
+        if (!rodswands.rswUsableByCleric(0) ||
+            !rodswands.rswUsableByMagicUser(0) ||
+            rodswands.rswAnyClass(0)) ++bad;
+        if (!rodswands.rswUsableByThief(1)) ++bad;
+        if (!rodswands.rswAnyClass(2) ||
+            rodswands.rswUsableByCleric(2)) ++bad;
+        if (!rodswands.rswUsableByFighter(3) ||
+            rodswands.rswUsableByCleric(3) ||
+            rodswands.rswUsableByMagicUser(3)) ++bad;
+        if (!rodswands.rswUsableByCleric(6) ||
+            !rodswands.rswUsableByFighter(6)) ++bad;
+        if (!rodswands.rswUsableByMagicUser(9) ||
+            rodswands.rswUsableByCleric(9)) ++bad;
+        if (!rodswands.rswAnyClass(29) ||
+            rodswands.rswUsableByThief(29)) ++bad;
         // clamped flag reads land on
         // Absorption (C, M) and Wonder (any)
-        if (!rules::rswUsableByCleric(-99) ||
-            rules::rswAnyClass(-99) ||
-            rules::rswUsableByCleric(99) ||
-            !rules::rswAnyClass(99)) ++bad;
+        if (!rodswands.rswUsableByCleric(-99) ||
+            rodswands.rswAnyClass(-99) ||
+            rodswands.rswUsableByCleric(99) ||
+            !rodswands.rswAnyClass(99)) ++bad;
         // the full-charges asterisk
-        if (!rules::rswFullChargesAssumed()) ++bad;
+        if (!rodswands.rswFullChargesAssumed()) ++bad;
         printf("R224 rods staves wands pins audit: bad %d\n", bad);
         if (bad) return 1;
     }

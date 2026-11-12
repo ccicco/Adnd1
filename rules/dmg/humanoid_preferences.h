@@ -54,7 +54,6 @@
 
 #pragma once
 
-namespace rules {
 
 enum HumRPrefCode {
     HPREF_P = 0,  // preference
@@ -65,152 +64,43 @@ enum HumRPrefCode {
     HPREF_H       // hatred
 };
 
+// R-refactor: namespace rules -> class Humanoid_preferences (instance methods)
+class Humanoid_preferences {
+public:
+
+
 // ----------------------------------------------------------------------------
 // The nine races (p.106)
 // ----------------------------------------------------------------------------
+    int humRPrefRaceCount();
+    const char* humRPrefRaceName(int i);
 
-inline int humRPrefRaceCount() { return 9; }
-
-inline const char* humRPrefRaceName(int i) {
-    static const char* const k[9] = {
-        "bugbear",
-        "gnoll",
-        "goblin",
-        "hill giant",
-        "hobgoblin",
-        "kobold",
-        "ogre",
-        "orc",
-        "troll"
-    };
-    if (i < 0) i = 0;
-    if (i > 8) i = 8;
-    return k[i];
-}
 
 // A tiny string equality (no library includes
 // in the header).
-inline bool humStrEq(const char* a, const char* b) {
-    int i = 0;
-    while (a[i] != 0 && b[i] != 0) {
-        if (a[i] != b[i]) return false;
-        ++i;
-    }
-    return a[i] == b[i];
-}
+    bool humStrEq(const char* a, const char* b);
+    int humRPrefRaceIndex(const char* name);
 
-inline int humRPrefRaceIndex(const char* name) {
-    for (int i = 0; i < 9; ++i)
-        if (humStrEq(humRPrefRaceName(i), name))
-            return i;
-    return -1;
-}
 
 // ----------------------------------------------------------------------------
 // The matrix (p.106) - 81 cells, row rates column
 // ----------------------------------------------------------------------------
+    HumRPrefCode humRPrefCode(int row, int col);
 
-inline HumRPrefCode humRPrefCode(int row, int col) {
-    static const HumRPrefCode k[9][9] = {
-        // bugbear
-        { HPREF_P, HPREF_T, HPREF_G, HPREF_T,
-          HPREF_A, HPREF_A, HPREF_T, HPREF_A,
-          HPREF_N },
-        // gnoll
-        { HPREF_T, HPREF_P, HPREF_A, HPREF_T,
-          HPREF_N, HPREF_A, HPREF_G, HPREF_T,
-          HPREF_N },
-        // goblin
-        { HPREF_G, HPREF_A, HPREF_P, HPREF_N,
-          HPREF_T, HPREF_G, HPREF_H, HPREF_N,
-          HPREF_A },
-        // hill giant
-        { HPREF_G, HPREF_G, HPREF_A, HPREF_P,
-          HPREF_A, HPREF_A, HPREF_G, HPREF_N,
-          HPREF_T },
-        // hobgoblin
-        { HPREF_T, HPREF_N, HPREF_N, HPREF_N,
-          HPREF_H, HPREF_A, HPREF_A, HPREF_T,
-          HPREF_H },
-        // kobold
-        { HPREF_A, HPREF_H, HPREF_G, HPREF_A,
-          HPREF_A, HPREF_P, HPREF_H, HPREF_A,
-          HPREF_T },
-        // ogre
-        { HPREF_T, HPREF_T, HPREF_A, HPREF_G,
-          HPREF_A, HPREF_A, HPREF_P, HPREF_T,
-          HPREF_T },
-        // orc
-        { HPREF_A, HPREF_N, HPREF_T, HPREF_A,
-          HPREF_N, HPREF_A, HPREF_G, HPREF_H,
-          HPREF_H },
-        // troll
-        { HPREF_A, HPREF_N, HPREF_A, HPREF_T,
-          HPREF_H, HPREF_T, HPREF_N, HPREF_A,
-          HPREF_N }
-    };
-    if (row < 0) row = 0;
-    if (row > 8) row = 8;
-    if (col < 0) col = 0;
-    if (col > 8) col = 8;
-    return k[row][col];
-}
 
 // The star marks: 1 = the single star (the race
 // will bully and harass such humanoids);
 // 2 = the double star (the others of this race
 // are of a rival tribe or family group).
-inline int humRPrefStars(int row, int col) {
-    static const int k[9][9] = {
-        { 0, 1, 0, 0, 1, 1, 0, 1, 0 },
-        { 0, 0, 1, 0, 0, 1, 0, 1, 0 },
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        { 0, 0, 0, 0, 0, 0, 0, 1, 0 },
-        { 0, 0, 1, 0, 2, 1, 0, 1, 0 },
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        { 0, 1, 1, 0, 1, 1, 0, 1, 0 },
-        { 0, 0, 1, 0, 0, 1, 0, 2, 0 },
-        { 0, 0, 0, 0, 0, 0, 0, 0, 2 }
-    };
-    if (row < 0) row = 0;
-    if (row > 8) row = 8;
-    if (col < 0) col = 0;
-    if (col > 8) col = 8;
-    return k[row][col];
-}
+    int humRPrefStars(int row, int col);
+    bool humRPrefBullyMark(int row, int col);
+    bool humRPrefRivalTribe(int row, int col);
 
-inline bool humRPrefBullyMark(int row, int col) {
-    return humRPrefStars(row, col) == 1;
-}
-
-inline bool humRPrefRivalTribe(int row, int col) {
-    return humRPrefStars(row, col) == 2;
-}
 
 // The letter key names.
-inline const char* humRPrefCodeName(HumRPrefCode c) {
-    static const char* const k[6] = {
-        "preference",
-        "goodwill",
-        "tolerate",
-        "neutral negative",
-        "antipathy",
-        "hatred"
-    };
-    if (c < HPREF_P) c = HPREF_P;
-    if (c > HPREF_H) c = HPREF_H;
-    return k[c];
-}
+    const char* humRPrefCodeName(HumRPrefCode c);
+    char humRPrefCodeLetter(HumRPrefCode c);
 
-inline char humRPrefCodeLetter(HumRPrefCode c) {
-    static const char k[6] = {
-        'P', 'G', 'T',
-        'N', 'A', 'H'
-    };
-    if (c < HPREF_P) c = HPREF_P;
-    if (c > HPREF_H) c = HPREF_H;
-    return k[c];
-}
 
 // ----------------------------------------------------------------------------
 // The letter definitions and the usage prose (p.106)
@@ -224,24 +114,18 @@ inline char humRPrefCodeLetter(HumRPrefCode c) {
 // likely to be evident. N: neutral negative
 // feelings; no move to aid them if anything
 // ill befalls.
-inline bool humCodeAllowsCoOperation(HumRPrefCode c) {
-    return c == HPREF_P || c == HPREF_G;
-}
-inline bool humCodeNoHostilityLikely(HumRPrefCode c) {
-    return c == HPREF_T;
-}
-inline bool humCodeNoAidIfIllBefalls(HumRPrefCode c) {
-    return c == HPREF_N;
-}
+    bool humCodeAllowsCoOperation(HumRPrefCode c);
+    bool humCodeNoHostilityLikely(HumRPrefCode c);
+    bool humCodeNoAidIfIllBefalls(HumRPrefCode c);
+
 
 // A: antipathy and active dislike which will
 // break into open hostility if the
 // opportunity presents itself; if leaders or
 // overseers are weak, these creatures will
 // desert.
-inline bool humAntipathyDesertIfLeadersWeak() {
-    return true;
-}
+    bool humAntipathyDesertIfLeadersWeak();
+
 
 // H: hatred, possibly kept in check by fear,
 // which will certainly break into open
@@ -249,12 +133,9 @@ inline bool humAntipathyDesertIfLeadersWeak() {
 // the hating humanoids will desert at the first
 // chance if near a strong body of such hated
 // creatures.
-inline bool humHatredBreaksOutAtFirstOpportunity() {
-    return true;
-}
-inline bool humHatredDesertsNearStrongHatedBody() {
-    return true;
-}
+    bool humHatredBreaksOutAtFirstOpportunity();
+    bool humHatredDesertsNearStrongHatedBody();
+
 
 // Use the table whenever humanoid troops are
 // fighting or even serving side by side (within
@@ -262,12 +143,9 @@ inline bool humHatredDesertsNearStrongHatedBody() {
 // intervening troops or screen so that the other
 // humanoids are visible). Have the troops
 // behave according to the letter key.
-inline int humSideBySideVisibilityRangeInches() {
-    return 12;
-}
-inline bool humInterveningTroopsOrScreenBlocks() {
-    return true;
-}
+    int humSideBySideVisibilityRangeInches();
+    bool humInterveningTroopsOrScreenBlocks();
+
 
 // ----------------------------------------------------------------------------
 // The compatibility prose (p.106)
@@ -276,22 +154,14 @@ inline bool humInterveningTroopsOrScreenBlocks() {
 // The general compatibility of demi-human
 // troop types is the PLAYERS HANDBOOK RACIAL
 // PREFERENCES TABLE.
-inline bool humDemihumanCompatibilityFromPHBTable() {
-    return true;
-}
+    bool humDemihumanCompatibilityFromPHBTable();
+
 
 // Lizard men are hated by all demi-humans and
 // humanoids save kobolds, and even the latter
 // are suspicious of them, just as human troops
 // are.
-inline bool humLizardMenHatedByAllHumanoidsSaveKobolds() {
-    return true;
-}
-inline bool humKoboldsSuspiciousOfLizardMen() {
-    return true;
-}
-inline bool humHumanTroopsSuspiciousOfLizardMen() {
-    return true;
-}
-
-} // namespace rules
+    bool humLizardMenHatedByAllHumanoidsSaveKobolds();
+    bool humKoboldsSuspiciousOfLizardMen();
+    bool humHumanTroopsSuspiciousOfLizardMen();
+};

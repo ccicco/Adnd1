@@ -35,16 +35,17 @@
 
 #pragma once
 
-namespace rules {
+
 
 // ----------------------------------------------------------------------------
 // Routes and grades
 // ----------------------------------------------------------------------------
-
 enum PoisonRoute {
     POISON_INGESTIVE = 0,
     POISON_INSINUATIVE = 1
 };
+
+
 
 // The print counts a segment as 6 seconds and a round as
 // 10; the onset UNIT stays per-row here and the caller
@@ -55,55 +56,28 @@ enum PoisonUnit {
     POISON_UNIT_SEGMENT = 2
 };
 
+// R-refactor: namespace rules -> class Poison (instance methods)
+class Poison {
+public:
+
+
 // Grade index: 0 = A ... 4 = E. Grade E exists ingestive
 // only.
-inline bool poisonGradeExists(int route, int grade) {
-    if (grade < 0 || grade > 4) return false;
-    if (route == POISON_INSINUATIVE) return grade <= 3;
-    return true;
-}
+    bool poisonGradeExists(int route, int grade);
+
 
 // ----------------------------------------------------------------------------
 // The p.20 table (cost per dose)
 // ----------------------------------------------------------------------------
+    int poisonCostPerDose(int route, int grade);
 
-inline int poisonCostPerDose(int route, int grade) {
-    if (!poisonGradeExists(route, grade)) return 0;
-    static const int kIngestive[5] = { 5, 30, 200, 500, 1000 };
-    static const int kInsinuative[4] = { 10, 75, 600, 1500 };
-    if (route == POISON_INSINUATIVE) return kInsinuative[grade];
-    return kIngestive[grade];
-}
 
 // Onset: minimum and maximum on the printed range plus
 // the unit the row prints in.
-inline int poisonOnsetMin(int route, int grade) {
-    static const int kIn[5] = { 2, 2, 1, 1, 1 };
-    static const int kIns[4] = { 2, 1, 1, 1 };
-    if (!poisonGradeExists(route, grade)) return 0;
-    if (route == POISON_INSINUATIVE) return kIns[grade];
-    return kIn[grade];
-}
+    int poisonOnsetMin(int route, int grade);
+    int poisonOnsetMax(int route, int grade);
+    PoisonUnit poisonOnsetUnit(int route, int grade);
 
-inline int poisonOnsetMax(int route, int grade) {
-    static const int kIn[5] = { 8, 5, 2, 1, 4 };
-    static const int kIns[4] = { 5, 3, 1, 1 };
-    if (!poisonGradeExists(route, grade)) return 0;
-    if (route == POISON_INSINUATIVE) return kIns[grade];
-    return kIn[grade];
-}
-
-inline PoisonUnit poisonOnsetUnit(int route, int grade) {
-    // ingestive D: 1 segment; ingestive E: 1-4 turns;
-    // everything else: rounds
-    if (route == POISON_INGESTIVE && grade == 3)
-        return POISON_UNIT_SEGMENT;
-    if (route == POISON_INGESTIVE && grade == 4)
-        return POISON_UNIT_TURN;
-    if (!poisonGradeExists(route, grade))
-        return POISON_UNIT_ROUND;
-    return POISON_UNIT_ROUND;
-}
 
 // ----------------------------------------------------------------------------
 // Damage classes
@@ -111,47 +85,23 @@ inline PoisonUnit poisonOnsetUnit(int route, int grade) {
 
 // The victim save bonus (the footnotes: +4/+3/+2/+1;
 // E prints none - JUDGMENT: 0).
-inline int poisonVictimSaveBonus(int route, int grade) {
-    if (!poisonGradeExists(route, grade)) return 0;
-    if (grade <= 2) return 4 - grade;
-    if (grade == 3) return 1;
-    return 0;
-}
+    int poisonVictimSaveBonus(int route, int grade);
+
 
 // The tasting/smelling/seeing chance (80/65/40/15;
 // E prints none - JUDGMENT: 0).
-inline int poisonDetectChance(int route, int grade) {
-    if (!poisonGradeExists(route, grade)) return 0;
-    static const int k[5] = { 80, 65, 40, 15, 0 };
-    return k[grade];
-}
+    int poisonDetectChance(int route, int grade);
+
 
 // Damage if the save is made (the ingestive table only;
 // every insinuative row prints 0).
-inline int poisonDamageIfSave(int route, int grade) {
-    if (!poisonGradeExists(route, grade)) return -1;
-    if (route == POISON_INSINUATIVE) return 0;
-    static const int k[5] = { 10, 15, 20, 25, 30 };
-    return k[grade];
-}
+    int poisonDamageIfSave(int route, int grade);
+
 
 // A failed save: death (true) or the printed damage.
-inline bool poisonKillsIfNoSave(int route, int grade) {
-    if (!poisonGradeExists(route, grade)) return false;
-    if (route == POISON_INSINUATIVE) return grade == 3;
-    return grade >= 3;
-}
+    bool poisonKillsIfNoSave(int route, int grade);
+    int poisonDamageIfNoSave(int route, int grade);
 
-inline int poisonDamageIfNoSave(int route, int grade) {
-    if (poisonKillsIfNoSave(route, grade)) return -1;
-    if (!poisonGradeExists(route, grade)) return -1;
-    if (route == POISON_INSINUATIVE) {
-        static const int k[4] = { 15, 25, 35, 0 };
-        return k[grade];
-    }
-    static const int k[5] = { 20, 30, 40, 0, 0 };
-    return k[grade];
-}
 
 // ----------------------------------------------------------------------------
 // The class rules around the table
@@ -160,41 +110,28 @@ inline int poisonDamageIfNoSave(int route, int grade) {
 // User efficiency: the bonus the VICTIM gets on the save.
 // A studied assassin: none; an unstudied assassin: +1;
 // every other class: +2.
-inline int poisonUserEfficiencyAdj(
-        bool assassin, bool studied) {
-    if (assassin && studied) return 0;
-    if (assassin) return 1;
-    return 2;
-}
+    int poisonUserEfficiencyAdj( bool assassin, bool studied);
+
 
 // Monster poison: all-or-nothing - no damage or death
 // within about a minute.
-inline bool poisonMonsterAllOrNothing() {
-    return true;
-}
+    bool poisonMonsterAllOrNothing();
+
 
 // Monster poison works by ingestion or insinuation alike
 // (dual-use); purchased poison is one route only.
-inline bool poisonMonsterDualUse() {
-    return true;
-}
+    bool poisonMonsterDualUse();
+
 
 // Blade venom (DMG p.28): insinuative. Evaporation and
 // use decay it identically - full the first day or hit,
 // half the second, gone by the third. The multiplier is
 // 100 for the first, 50 for the second, 0 for the third
 // and beyond.
-inline int poisonBladeVenomPotencyPercent(int interval) {
-    if (interval <= 0) return 100;
-    if (interval == 1) return 50;
-    return 0;
-}
+    int poisonBladeVenomPotencyPercent(int interval);
+
 
 // A partially evaporated or used DEATH poison gives the
 // victim +4 on the save.
-inline bool poisonBladeVenomDecayedGivesSaveBonus(
-        int interval) {
-    return interval >= 1;
-}
-
-} // namespace rules
+    bool poisonBladeVenomDecayedGivesSaveBonus( int interval);
+};

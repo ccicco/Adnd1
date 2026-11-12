@@ -3,35 +3,36 @@
     // cell, the star marks, the letter key and
     // the usage and compatibility prose.
     {
+        Humanoid_preferences humanoid_preferences;
         int bad = 0;
         // the nine race names, in print order
-        if (rules::humRPrefRaceCount() != 9) ++bad;
+        if (humanoid_preferences.humRPrefRaceCount() != 9) ++bad;
         static const char* kRace[9] = {
             "bugbear", "gnoll", "goblin", "hill giant",
             "hobgoblin", "kobold", "ogre", "orc", "troll"
         };
         for (int i = 0; i < 9; ++i)
-            if (std::string(rules::humRPrefRaceName(i))
+            if (std::string(humanoid_preferences.humRPrefRaceName(i))
                     != kRace[i])
                 ++bad;
         // the race index probe, both ways
-        if (rules::humRPrefRaceIndex("hobgoblin") != 4 ||
-            rules::humRPrefRaceIndex("troll") != 8 ||
-            rules::humRPrefRaceIndex("bugbear") != 0 ||
-            rules::humRPrefRaceIndex("purple worm") != -1)
+        if (humanoid_preferences.humRPrefRaceIndex("hobgoblin") != 4 ||
+            humanoid_preferences.humRPrefRaceIndex("troll") != 8 ||
+            humanoid_preferences.humRPrefRaceIndex("bugbear") != 0 ||
+            humanoid_preferences.humRPrefRaceIndex("purple worm") != -1)
             ++bad;
         // the full 81-cell matrix and the star
         // marks, cell by cell
-        static const rules::HumRPrefCode kWant[9][9] = {
-            { rules::HPREF_P, rules::HPREF_T, rules::HPREF_G, rules::HPREF_T, rules::HPREF_A, rules::HPREF_A, rules::HPREF_T, rules::HPREF_A, rules::HPREF_N },
-            { rules::HPREF_T, rules::HPREF_P, rules::HPREF_A, rules::HPREF_T, rules::HPREF_N, rules::HPREF_A, rules::HPREF_G, rules::HPREF_T, rules::HPREF_N },
-            { rules::HPREF_G, rules::HPREF_A, rules::HPREF_P, rules::HPREF_N, rules::HPREF_T, rules::HPREF_G, rules::HPREF_H, rules::HPREF_N, rules::HPREF_A },
-            { rules::HPREF_G, rules::HPREF_G, rules::HPREF_A, rules::HPREF_P, rules::HPREF_A, rules::HPREF_A, rules::HPREF_G, rules::HPREF_N, rules::HPREF_T },
-            { rules::HPREF_T, rules::HPREF_N, rules::HPREF_N, rules::HPREF_N, rules::HPREF_H, rules::HPREF_A, rules::HPREF_A, rules::HPREF_T, rules::HPREF_H },
-            { rules::HPREF_A, rules::HPREF_H, rules::HPREF_G, rules::HPREF_A, rules::HPREF_A, rules::HPREF_P, rules::HPREF_H, rules::HPREF_A, rules::HPREF_T },
-            { rules::HPREF_T, rules::HPREF_T, rules::HPREF_A, rules::HPREF_G, rules::HPREF_A, rules::HPREF_A, rules::HPREF_P, rules::HPREF_T, rules::HPREF_T },
-            { rules::HPREF_A, rules::HPREF_N, rules::HPREF_T, rules::HPREF_A, rules::HPREF_N, rules::HPREF_A, rules::HPREF_G, rules::HPREF_H, rules::HPREF_H },
-            { rules::HPREF_A, rules::HPREF_N, rules::HPREF_A, rules::HPREF_T, rules::HPREF_H, rules::HPREF_T, rules::HPREF_N, rules::HPREF_A, rules::HPREF_N }
+        static const HumRPrefCode kWant[9][9] = {
+            { HPREF_P, HPREF_T, HPREF_G, HPREF_T, HPREF_A, HPREF_A, HPREF_T, HPREF_A, HPREF_N },
+            { HPREF_T, HPREF_P, HPREF_A, HPREF_T, HPREF_N, HPREF_A, HPREF_G, HPREF_T, HPREF_N },
+            { HPREF_G, HPREF_A, HPREF_P, HPREF_N, HPREF_T, HPREF_G, HPREF_H, HPREF_N, HPREF_A },
+            { HPREF_G, HPREF_G, HPREF_A, HPREF_P, HPREF_A, HPREF_A, HPREF_G, HPREF_N, HPREF_T },
+            { HPREF_T, HPREF_N, HPREF_N, HPREF_N, HPREF_H, HPREF_A, HPREF_A, HPREF_T, HPREF_H },
+            { HPREF_A, HPREF_H, HPREF_G, HPREF_A, HPREF_A, HPREF_P, HPREF_H, HPREF_A, HPREF_T },
+            { HPREF_T, HPREF_T, HPREF_A, HPREF_G, HPREF_A, HPREF_A, HPREF_P, HPREF_T, HPREF_T },
+            { HPREF_A, HPREF_N, HPREF_T, HPREF_A, HPREF_N, HPREF_A, HPREF_G, HPREF_H, HPREF_H },
+            { HPREF_A, HPREF_N, HPREF_A, HPREF_T, HPREF_H, HPREF_T, HPREF_N, HPREF_A, HPREF_N }
         };
         static const int kStar[9][9] = {
             { 0, 1, 0, 0, 1, 1, 0, 1, 0 },
@@ -48,27 +49,28 @@
             nA = 0, nH = 0, nSingle = 0, nDouble = 0;
         for (int r = 0; r < 9; ++r) {
             for (int c = 0; c < 9; ++c) {
-                if (rules::humRPrefCode(r, c) != kWant[r][c])
+                Humanoid_preferences humanoid_preferences;
+                if (humanoid_preferences.humRPrefCode(r, c) != kWant[r][c])
                     ++bad;
-                if (rules::humRPrefStars(r, c)
+                if (humanoid_preferences.humRPrefStars(r, c)
                         != kStar[r][c])
                     ++bad;
-                if (rules::humRPrefBullyMark(r, c)
+                if (humanoid_preferences.humRPrefBullyMark(r, c)
                         != (kStar[r][c] == 1))
                     ++bad;
-                if (rules::humRPrefRivalTribe(r, c)
+                if (humanoid_preferences.humRPrefRivalTribe(r, c)
                         != (kStar[r][c] == 2))
                     ++bad;
-                switch (rules::humRPrefCode(r, c)) {
-                case rules::HPREF_P: ++nP; break;
-                case rules::HPREF_G: ++nG; break;
-                case rules::HPREF_T: ++nT; break;
-                case rules::HPREF_N: ++nN; break;
-                case rules::HPREF_A: ++nA; break;
-                case rules::HPREF_H: ++nH; break;
+                switch (humanoid_preferences.humRPrefCode(r, c)) {
+                case HPREF_P: ++nP; break;
+                case HPREF_G: ++nG; break;
+                case HPREF_T: ++nT; break;
+                case HPREF_N: ++nN; break;
+                case HPREF_A: ++nA; break;
+                case HPREF_H: ++nH; break;
                 }
-                if (rules::humRPrefStars(r, c) == 1) ++nSingle;
-                if (rules::humRPrefStars(r, c) == 2) ++nDouble;
+                if (humanoid_preferences.humRPrefStars(r, c) == 1) ++nSingle;
+                if (humanoid_preferences.humRPrefStars(r, c) == 2) ++nDouble;
             }
         }
         // the letter census: P 6, G 10, T 18,
@@ -83,9 +85,10 @@
         // double star (rival tribe or family
         // group)
         for (int i = 0; i < 9; ++i) {
+            Humanoid_preferences humanoid_preferences;
             bool selfP =
-                rules::humRPrefCode(i, i) == rules::HPREF_P;
-            bool rival = rules::humRPrefRivalTribe(i, i);
+                humanoid_preferences.humRPrefCode(i, i) == HPREF_P;
+            bool rival = humanoid_preferences.humRPrefRivalTribe(i, i);
             if (i == 4 || i == 7 || i == 8) {
                 if (selfP || !rival) ++bad;
             } else {
@@ -93,72 +96,72 @@
             }
         }
         // the letter key names and letters
-        if (std::string(rules::humRPrefCodeName(
-                rules::HPREF_P)) != "preference" ||
-            std::string(rules::humRPrefCodeName(
-                rules::HPREF_G)) != "goodwill" ||
-            std::string(rules::humRPrefCodeName(
-                rules::HPREF_T)) != "tolerate" ||
-            std::string(rules::humRPrefCodeName(
-                rules::HPREF_N)) != "neutral negative" ||
-            std::string(rules::humRPrefCodeName(
-                rules::HPREF_A)) != "antipathy" ||
-            std::string(rules::humRPrefCodeName(
-                rules::HPREF_H)) != "hatred" ||
-            rules::humRPrefCodeLetter(rules::HPREF_P) != 'P' ||
-            rules::humRPrefCodeLetter(rules::HPREF_G) != 'G' ||
-            rules::humRPrefCodeLetter(rules::HPREF_T) != 'T' ||
-            rules::humRPrefCodeLetter(rules::HPREF_N) != 'N' ||
-            rules::humRPrefCodeLetter(rules::HPREF_A) != 'A' ||
-            rules::humRPrefCodeLetter(rules::HPREF_H) != 'H')
+        if (std::string(humanoid_preferences.humRPrefCodeName(
+                HPREF_P)) != "preference" ||
+            std::string(humanoid_preferences.humRPrefCodeName(
+                HPREF_G)) != "goodwill" ||
+            std::string(humanoid_preferences.humRPrefCodeName(
+                HPREF_T)) != "tolerate" ||
+            std::string(humanoid_preferences.humRPrefCodeName(
+                HPREF_N)) != "neutral negative" ||
+            std::string(humanoid_preferences.humRPrefCodeName(
+                HPREF_A)) != "antipathy" ||
+            std::string(humanoid_preferences.humRPrefCodeName(
+                HPREF_H)) != "hatred" ||
+            humanoid_preferences.humRPrefCodeLetter(HPREF_P) != 'P' ||
+            humanoid_preferences.humRPrefCodeLetter(HPREF_G) != 'G' ||
+            humanoid_preferences.humRPrefCodeLetter(HPREF_T) != 'T' ||
+            humanoid_preferences.humRPrefCodeLetter(HPREF_N) != 'N' ||
+            humanoid_preferences.humRPrefCodeLetter(HPREF_A) != 'A' ||
+            humanoid_preferences.humRPrefCodeLetter(HPREF_H) != 'H')
             ++bad;
         // the letter semantics
-        if (!rules::humCodeAllowsCoOperation(
-                rules::HPREF_P) ||
-            !rules::humCodeAllowsCoOperation(
-                rules::HPREF_G) ||
-            rules::humCodeAllowsCoOperation(rules::HPREF_T) ||
-            !rules::humCodeNoHostilityLikely(rules::HPREF_T) ||
-            rules::humCodeNoHostilityLikely(rules::HPREF_N) ||
-            !rules::humCodeNoAidIfIllBefalls(rules::HPREF_N) ||
-            rules::humCodeNoAidIfIllBefalls(rules::HPREF_G))
+        if (!humanoid_preferences.humCodeAllowsCoOperation(
+                HPREF_P) ||
+            !humanoid_preferences.humCodeAllowsCoOperation(
+                HPREF_G) ||
+            humanoid_preferences.humCodeAllowsCoOperation(HPREF_T) ||
+            !humanoid_preferences.humCodeNoHostilityLikely(HPREF_T) ||
+            humanoid_preferences.humCodeNoHostilityLikely(HPREF_N) ||
+            !humanoid_preferences.humCodeNoAidIfIllBefalls(HPREF_N) ||
+            humanoid_preferences.humCodeNoAidIfIllBefalls(HPREF_G))
             ++bad;
         // the antipathy and hatred behavior
-        if (!rules::humAntipathyDesertIfLeadersWeak() ||
-            !rules::humHatredBreaksOutAtFirstOpportunity() ||
-            !rules::humHatredDesertsNearStrongHatedBody())
+        if (!humanoid_preferences.humAntipathyDesertIfLeadersWeak() ||
+            !humanoid_preferences.humHatredBreaksOutAtFirstOpportunity() ||
+            !humanoid_preferences.humHatredDesertsNearStrongHatedBody())
             ++bad;
         // the usage prose: side by side within 12
         // inches, no intervening troops or screen
-        if (rules::humSideBySideVisibilityRangeInches() != 12 ||
-            !rules::humInterveningTroopsOrScreenBlocks())
+        if (humanoid_preferences.humSideBySideVisibilityRangeInches() != 12 ||
+            !humanoid_preferences.humInterveningTroopsOrScreenBlocks())
             ++bad;
         // the compatibility prose
-        if (!rules::humDemihumanCompatibilityFromPHBTable() ||
-            !rules::humLizardMenHatedByAllHumanoidsSaveKobolds() ||
-            !rules::humKoboldsSuspiciousOfLizardMen() ||
-            !rules::humHumanTroopsSuspiciousOfLizardMen())
+        if (!humanoid_preferences.humDemihumanCompatibilityFromPHBTable() ||
+            !humanoid_preferences.humLizardMenHatedByAllHumanoidsSaveKobolds() ||
+            !humanoid_preferences.humKoboldsSuspiciousOfLizardMen() ||
+            !humanoid_preferences.humHumanTroopsSuspiciousOfLizardMen())
             ++bad;
         // spot probes of the matrix in print
         // coordinates
-        if (rules::humRPrefCode(0, 2) != rules::HPREF_G ||
-            rules::humRPrefCode(2, 0) != rules::HPREF_G ||
-            rules::humRPrefCode(4, 8) != rules::HPREF_H ||
-            rules::humRPrefCode(8, 4) != rules::HPREF_H ||
-            rules::humRPrefCode(1, 6) != rules::HPREF_G ||
-            rules::humRPrefCode(6, 1) != rules::HPREF_T ||
-            rules::humRPrefCode(5, 1) != rules::HPREF_H ||
-            rules::humRPrefCode(5, 6) != rules::HPREF_H)
+        if (humanoid_preferences.humRPrefCode(0, 2) != HPREF_G ||
+            humanoid_preferences.humRPrefCode(2, 0) != HPREF_G ||
+            humanoid_preferences.humRPrefCode(4, 8) != HPREF_H ||
+            humanoid_preferences.humRPrefCode(8, 4) != HPREF_H ||
+            humanoid_preferences.humRPrefCode(1, 6) != HPREF_G ||
+            humanoid_preferences.humRPrefCode(6, 1) != HPREF_T ||
+            humanoid_preferences.humRPrefCode(5, 1) != HPREF_H ||
+            humanoid_preferences.humRPrefCode(5, 6) != HPREF_H)
             ++bad;
-        if (!rules::humRPrefBullyMark(0, 1) ||
-            !rules::humRPrefBullyMark(0, 4) ||
-            !rules::humRPrefBullyMark(6, 5) ||
-            !rules::humRPrefBullyMark(7, 5) ||
-            !rules::humRPrefBullyMark(3, 7) ||
-            !rules::humRPrefBullyMark(4, 2) ||
-            rules::humRPrefBullyMark(4, 4) ||
-            rules::humRPrefBullyMark(2, 5) ||
-            rules::humRPrefRivalTribe(0, 4))
+        if (!humanoid_preferences.humRPrefBullyMark(0, 1) ||
+            !humanoid_preferences.humRPrefBullyMark(0, 4) ||
+            !humanoid_preferences.humRPrefBullyMark(6, 5) ||
+            !humanoid_preferences.humRPrefBullyMark(7, 5) ||
+            !humanoid_preferences.humRPrefBullyMark(3, 7) ||
+            !humanoid_preferences.humRPrefBullyMark(4, 2) ||
+            humanoid_preferences.humRPrefBullyMark(4, 4) ||
+            humanoid_preferences.humRPrefBullyMark(2, 5) ||
+            humanoid_preferences.humRPrefRivalTribe(0, 4))
             ++bad;
         printf("R169 humanoid racial preferences audit: bad %d\n", bad);
         if (bad) return 1;

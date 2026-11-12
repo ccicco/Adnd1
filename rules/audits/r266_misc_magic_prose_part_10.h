@@ -4,101 +4,103 @@
     // 433-479 - the slice that opens the kMisc3 rows
     // (row 0, the figurine band 01-15).
     {
+        Miscmagic_figurines_of_wondrous_power miscmagic_figurines_of_wondrous_power;
+        Miscmagic_table3_footnotes miscmagic_table3_footnotes;
         int bad = 0;
-        if (rules::mmpFigTypeCount() != 7 ||
-            rules::mmpFigStatuetteInchesHigh() != 1) ++bad;
-        if (rules::mmpFlyAc() != 4 ||
-            rules::mmpFlyHitDiceBase() != 4 ||
-            rules::mmpFlyHitDiceExtra() != 4 ||
-            rules::mmpFlyAirManeuverClass() != 3 ||
-            rules::mmpFlySpeedUnladenInches() != 48 ||
-            rules::mmpFlySpeedLadenInches() != 36 ||
-            rules::mmpFlySpeedMaxLoadInches() != 24 ||
-            rules::mmpFlyLadenMaxPounds() != 210 ||
-            rules::mmpFlyMaxLoadPounds() != 350 ||
-            rules::mmpFlyUsesPerWeek() != 3 ||
-            rules::mmpFlyHoursPerDay() != 12) ++bad;
-        if (rules::mmpLionCount() != 2 ||
-            rules::mmpLionAcFront() != 5 ||
-            rules::mmpLionAcRear() != 6 ||
-            rules::mmpLionHitDiceBase() != 5 ||
-            rules::mmpLionHitDiceExtra() != 2 ||
-            rules::mmpLionSlainReturnWeeks() != 1 ||
-            rules::mmpLionUseDays() != 1) ++bad;
-        if (rules::mmpGoatCount() != 3 ||
-            rules::mmpGoatUsesBeforeBurnout() != 3 ||
-            rules::mmpGoatTravelAc() != 6 ||
-            rules::mmpGoatTravelHp() != 24 ||
-            rules::mmpGoatTravelAttacks() != 2 ||
-            rules::mmpGoatTravelHornDmgMin() != 1 ||
-            rules::mmpGoatTravelHornDmgMax() != 8 ||
-            rules::mmpGoatTravelHitDice() != 4) ++bad;
-        if (rules::mmpGoatTravelMoveInches() != 48 ||
-            rules::mmpGoatTravelMaxLoadPounds() != 280 ||
-            rules::mmpGoatTravelPoundsPerMoveLoss() != 14 ||
-            rules::mmpGoatTravelHoursPerWeek() != 24 ||
-            rules::mmpGoatTravelRestDays() != 1) ++bad;
-        if (rules::mmpGoatTravailHoofDmgMin() != 4 ||
-            rules::mmpGoatTravailHoofDmgMax() != 10 ||
-            rules::mmpGoatTravailBiteDmgMin() != 2 ||
-            rules::mmpGoatTravailBiteDmgMax() != 8 ||
-            rules::mmpGoatTravailHornDmgMin() != 2 ||
-            rules::mmpGoatTravailHornDmgMax() != 12 ||
-            rules::mmpGoatTravailChargeBonus() != 6 ||
-            rules::mmpGoatTravailChargeHornMin() != 8 ||
-            rules::mmpGoatTravailChargeHornMax() != 18) ++bad;
-        if (rules::mmpGoatTravailAc() != 0 ||
-            rules::mmpGoatTravailHp() != 96 ||
-            rules::mmpGoatTravailHitDice() != 16 ||
-            rules::mmpGoatTravailUsesPerMonth() != 1 ||
-            rules::mmpGoatTravailMoveInches() != 24 ||
-            rules::mmpGoatTerrorMoveInches() != 36 ||
-            rules::mmpGoatTerrorAc() != 2 ||
-            rules::mmpGoatTerrorHp() != 48) ++bad;
-        if (rules::mmpGoatTerrorHornSpearBonus() != 3 ||
-            rules::mmpGoatTerrorHornSwordBonus() != 6 ||
-            rules::mmpGoatTerrorRadiusInches() != 3 ||
-            rules::mmpGoatTerrorStrengthLossPct() != 50 ||
-            rules::mmpGoatTerrorHitPenalty() != -3 ||
-            rules::mmpGoatTerrorIntervalWeeks() != 2 ||
-            rules::mmpElephantHoursPerUse() != 24 ||
-            rules::mmpElephantUsesPerMonth() != 4) ++bad;
-        if (rules::mmpSteadGoodRiderPct() != 10 ||
-            rules::mmpSteadHoursPerUse() != 24 ||
-            rules::mmpSteadUsesPerWeek() != 1 ||
-            rules::mmpDogIntMin() != 8 ||
-            rules::mmpDogIntMax() != 10 ||
-            rules::mmpDogScentFreshPct() != 100 ||
-            rules::mmpDogScentFreshHours() != 1 ||
-            rules::mmpDogScentDecayPctPerHour() != 10) ++bad;
-        if (rules::mmpDogInfravisionFeet() != 90 ||
-            rules::mmpDogSpotHiddenPct() != 80 ||
-            rules::mmpDogSpotInvisiblePct() != 65 ||
-            rules::mmpDogSpotPhasedPct() != 50 ||
-            rules::mmpDogHoursPerUse() != 6 ||
-            rules::mmpDogUsesPerWeek() != 1 ||
-            rules::mmpOwlAc() != 7 ||
-            rules::mmpOwlMoveInches() != 24) ++bad;
-        if (rules::mmpOwlHpMin() != 2 ||
-            rules::mmpOwlHpMax() != 4 ||
-            rules::mmpOwlDmgMin() != 1 ||
-            rules::mmpOwlDmgMax() != 2 ||
-            rules::mmpOwlGiantUses() != 3 ||
-            rules::mmpOwlSilencePct() != 95 ||
-            rules::mmpOwlInfravisionFeet() != 90 ||
-            rules::mmpOwlDarkVisionFactor() != 2) ++bad;
-        if (rules::mmpOwlHearMouseFeet() != 60 ||
-            rules::mmpOwlCounterStealthPct() != 50 ||
-            rules::mmpOwlIntMin() != 2 ||
-            rules::mmpOwlIntMax() != 4) ++bad;
+        if (miscmagic_figurines_of_wondrous_power.mmpFigTypeCount() != 7 ||
+            miscmagic_figurines_of_wondrous_power.mmpFigStatuetteInchesHigh() != 1) ++bad;
+        if (miscmagic_figurines_of_wondrous_power.mmpFlyAc() != 4 ||
+            miscmagic_figurines_of_wondrous_power.mmpFlyHitDiceBase() != 4 ||
+            miscmagic_figurines_of_wondrous_power.mmpFlyHitDiceExtra() != 4 ||
+            miscmagic_figurines_of_wondrous_power.mmpFlyAirManeuverClass() != 3 ||
+            miscmagic_figurines_of_wondrous_power.mmpFlySpeedUnladenInches() != 48 ||
+            miscmagic_figurines_of_wondrous_power.mmpFlySpeedLadenInches() != 36 ||
+            miscmagic_figurines_of_wondrous_power.mmpFlySpeedMaxLoadInches() != 24 ||
+            miscmagic_figurines_of_wondrous_power.mmpFlyLadenMaxPounds() != 210 ||
+            miscmagic_figurines_of_wondrous_power.mmpFlyMaxLoadPounds() != 350 ||
+            miscmagic_figurines_of_wondrous_power.mmpFlyUsesPerWeek() != 3 ||
+            miscmagic_figurines_of_wondrous_power.mmpFlyHoursPerDay() != 12) ++bad;
+        if (miscmagic_figurines_of_wondrous_power.mmpLionCount() != 2 ||
+            miscmagic_figurines_of_wondrous_power.mmpLionAcFront() != 5 ||
+            miscmagic_figurines_of_wondrous_power.mmpLionAcRear() != 6 ||
+            miscmagic_figurines_of_wondrous_power.mmpLionHitDiceBase() != 5 ||
+            miscmagic_figurines_of_wondrous_power.mmpLionHitDiceExtra() != 2 ||
+            miscmagic_figurines_of_wondrous_power.mmpLionSlainReturnWeeks() != 1 ||
+            miscmagic_figurines_of_wondrous_power.mmpLionUseDays() != 1) ++bad;
+        if (miscmagic_figurines_of_wondrous_power.mmpGoatCount() != 3 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatUsesBeforeBurnout() != 3 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTravelAc() != 6 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTravelHp() != 24 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTravelAttacks() != 2 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTravelHornDmgMin() != 1 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTravelHornDmgMax() != 8 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTravelHitDice() != 4) ++bad;
+        if (miscmagic_figurines_of_wondrous_power.mmpGoatTravelMoveInches() != 48 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTravelMaxLoadPounds() != 280 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTravelPoundsPerMoveLoss() != 14 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTravelHoursPerWeek() != 24 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTravelRestDays() != 1) ++bad;
+        if (miscmagic_figurines_of_wondrous_power.mmpGoatTravailHoofDmgMin() != 4 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTravailHoofDmgMax() != 10 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTravailBiteDmgMin() != 2 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTravailBiteDmgMax() != 8 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTravailHornDmgMin() != 2 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTravailHornDmgMax() != 12 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTravailChargeBonus() != 6 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTravailChargeHornMin() != 8 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTravailChargeHornMax() != 18) ++bad;
+        if (miscmagic_figurines_of_wondrous_power.mmpGoatTravailAc() != 0 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTravailHp() != 96 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTravailHitDice() != 16 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTravailUsesPerMonth() != 1 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTravailMoveInches() != 24 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTerrorMoveInches() != 36 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTerrorAc() != 2 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTerrorHp() != 48) ++bad;
+        if (miscmagic_figurines_of_wondrous_power.mmpGoatTerrorHornSpearBonus() != 3 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTerrorHornSwordBonus() != 6 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTerrorRadiusInches() != 3 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTerrorStrengthLossPct() != 50 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTerrorHitPenalty() != -3 ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTerrorIntervalWeeks() != 2 ||
+            miscmagic_figurines_of_wondrous_power.mmpElephantHoursPerUse() != 24 ||
+            miscmagic_figurines_of_wondrous_power.mmpElephantUsesPerMonth() != 4) ++bad;
+        if (miscmagic_figurines_of_wondrous_power.mmpSteadGoodRiderPct() != 10 ||
+            miscmagic_figurines_of_wondrous_power.mmpSteadHoursPerUse() != 24 ||
+            miscmagic_figurines_of_wondrous_power.mmpSteadUsesPerWeek() != 1 ||
+            miscmagic_figurines_of_wondrous_power.mmpDogIntMin() != 8 ||
+            miscmagic_figurines_of_wondrous_power.mmpDogIntMax() != 10 ||
+            miscmagic_figurines_of_wondrous_power.mmpDogScentFreshPct() != 100 ||
+            miscmagic_figurines_of_wondrous_power.mmpDogScentFreshHours() != 1 ||
+            miscmagic_figurines_of_wondrous_power.mmpDogScentDecayPctPerHour() != 10) ++bad;
+        if (miscmagic_figurines_of_wondrous_power.mmpDogInfravisionFeet() != 90 ||
+            miscmagic_figurines_of_wondrous_power.mmpDogSpotHiddenPct() != 80 ||
+            miscmagic_figurines_of_wondrous_power.mmpDogSpotInvisiblePct() != 65 ||
+            miscmagic_figurines_of_wondrous_power.mmpDogSpotPhasedPct() != 50 ||
+            miscmagic_figurines_of_wondrous_power.mmpDogHoursPerUse() != 6 ||
+            miscmagic_figurines_of_wondrous_power.mmpDogUsesPerWeek() != 1 ||
+            miscmagic_figurines_of_wondrous_power.mmpOwlAc() != 7 ||
+            miscmagic_figurines_of_wondrous_power.mmpOwlMoveInches() != 24) ++bad;
+        if (miscmagic_figurines_of_wondrous_power.mmpOwlHpMin() != 2 ||
+            miscmagic_figurines_of_wondrous_power.mmpOwlHpMax() != 4 ||
+            miscmagic_figurines_of_wondrous_power.mmpOwlDmgMin() != 1 ||
+            miscmagic_figurines_of_wondrous_power.mmpOwlDmgMax() != 2 ||
+            miscmagic_figurines_of_wondrous_power.mmpOwlGiantUses() != 3 ||
+            miscmagic_figurines_of_wondrous_power.mmpOwlSilencePct() != 95 ||
+            miscmagic_figurines_of_wondrous_power.mmpOwlInfravisionFeet() != 90 ||
+            miscmagic_figurines_of_wondrous_power.mmpOwlDarkVisionFactor() != 2) ++bad;
+        if (miscmagic_figurines_of_wondrous_power.mmpOwlHearMouseFeet() != 60 ||
+            miscmagic_figurines_of_wondrous_power.mmpOwlCounterStealthPct() != 50 ||
+            miscmagic_figurines_of_wondrous_power.mmpOwlIntMin() != 2 ||
+            miscmagic_figurines_of_wondrous_power.mmpOwlIntMax() != 4) ++bad;
         // the arithmetic: the travail charge horn
         // equals the horn plus the charge bonus
-        if (rules::mmpGoatTravailHornDmgMin() +
-            rules::mmpGoatTravailChargeBonus() !=
-            rules::mmpGoatTravailChargeHornMin() ||
-            rules::mmpGoatTravailHornDmgMax() +
-            rules::mmpGoatTravailChargeBonus() !=
-            rules::mmpGoatTravailChargeHornMax()) ++bad;
+        if (miscmagic_figurines_of_wondrous_power.mmpGoatTravailHornDmgMin() +
+            miscmagic_figurines_of_wondrous_power.mmpGoatTravailChargeBonus() !=
+            miscmagic_figurines_of_wondrous_power.mmpGoatTravailChargeHornMin() ||
+            miscmagic_figurines_of_wondrous_power.mmpGoatTravailHornDmgMax() +
+            miscmagic_figurines_of_wondrous_power.mmpGoatTravailChargeBonus() !=
+            miscmagic_figurines_of_wondrous_power.mmpGoatTravailChargeHornMax()) ++bad;
         // the figurine type table bands, static
         static const int kFigLo[7] = {
             1, 16, 31, 41, 56, 66, 86,
@@ -107,11 +109,11 @@
             15, 30, 40, 55, 65, 85, 100,
         };
         for (int i = 0; i < 7; ++i)
-            if (rules::mmpFigTypeLo(i) != kFigLo[i] ||
-                rules::mmpFigTypeHi(i) != kFigHi[i]) ++bad;
+            if (miscmagic_figurines_of_wondrous_power.mmpFigTypeLo(i) != kFigLo[i] ||
+                miscmagic_figurines_of_wondrous_power.mmpFigTypeHi(i) != kFigHi[i]) ++bad;
         for (int i = 0; i < 6; ++i)
-            if (rules::mmpFigTypeLo(i + 1) !=
-                rules::mmpFigTypeHi(i) + 1) ++bad;
+            if (miscmagic_figurines_of_wondrous_power.mmpFigTypeLo(i + 1) !=
+                miscmagic_figurines_of_wondrous_power.mmpFigTypeHi(i) + 1) ++bad;
         // the marble elephant type table bands
         static const int kEleLo[4] = {
             1, 51, 91, 94,
@@ -120,27 +122,27 @@
             50, 90, 93, 100,
         };
         for (int i = 0; i < 4; ++i)
-            if (rules::mmpElephantTypeLo(i) != kEleLo[i] ||
-                rules::mmpElephantTypeHi(i) != kEleHi[i]) ++bad;
+            if (miscmagic_figurines_of_wondrous_power.mmpElephantTypeLo(i) != kEleLo[i] ||
+                miscmagic_figurines_of_wondrous_power.mmpElephantTypeHi(i) != kEleHi[i]) ++bad;
         for (int i = 0; i < 3; ++i)
-            if (rules::mmpElephantTypeLo(i + 1) !=
-                rules::mmpElephantTypeHi(i) + 1) ++bad;
+            if (miscmagic_figurines_of_wondrous_power.mmpElephantTypeLo(i + 1) !=
+                miscmagic_figurines_of_wondrous_power.mmpElephantTypeHi(i) + 1) ++bad;
         // the kMisc3 row this slice pins: row 0,
         // the Figurine band 01-15, no class marks
-        if (rules::m3RowLo(0) != 1 ||
-            rules::m3RowHi(0) != 15 ||
-            rules::m3UsableByCleric(0) ||
-            rules::m3UsableByFighter(0) ||
-            rules::m3UsableByThief(0) ||
-            rules::m3StarCount(0) != 1 ||
-            rules::m3IsPerFacetValued(0)) ++bad;
+        if (miscmagic_table3_footnotes.m3RowLo(0) != 1 ||
+            miscmagic_table3_footnotes.m3RowHi(0) != 15 ||
+            miscmagic_table3_footnotes.m3UsableByCleric(0) ||
+            miscmagic_table3_footnotes.m3UsableByFighter(0) ||
+            miscmagic_table3_footnotes.m3UsableByThief(0) ||
+            miscmagic_table3_footnotes.m3StarCount(0) != 1 ||
+            miscmagic_table3_footnotes.m3IsPerFacetValued(0)) ++bad;
         // the per-hit-die values and the row 4
         // (C, F, T) positive control
-        if (rules::m3FigurinePerHitDieXp() != 100 ||
-            rules::m3FigurinePerHitDieGp() != 1000 ||
-            !rules::m3UsableByCleric(4) ||
-            !rules::m3UsableByFighter(4) ||
-            !rules::m3UsableByThief(4)) ++bad;
+        if (miscmagic_table3_footnotes.m3FigurinePerHitDieXp() != 100 ||
+            miscmagic_table3_footnotes.m3FigurinePerHitDieGp() != 1000 ||
+            !miscmagic_table3_footnotes.m3UsableByCleric(4) ||
+            !miscmagic_table3_footnotes.m3UsableByFighter(4) ||
+            !miscmagic_table3_footnotes.m3UsableByThief(4)) ++bad;
         printf("R266 misc magic prose part 10 pins audit: bad %d\n", bad);
         if (bad) return 1;
     }

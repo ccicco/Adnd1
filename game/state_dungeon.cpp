@@ -1765,10 +1765,11 @@ void AppState::placeSecretDoors(){
 // TILE_DOOR the company sees but cannot
 // pass until a thief works it.
 void AppState::placeLockedDoors(){
+        Locktime locktime;
         lockedDoors.clear();
         int placed = 0;
         int guard = 0;
-        while (placed < rules::doorLockedPerDelveCount() &&
+        while (placed < locktime.doorLockedPerDelveCount() &&
                ++guard < 500) {
             int x = 1 + (int)rng.below(MAP_TILES_X - 2);
             int y = 1 + (int)rng.below(MAP_TILES_Y - 2);
@@ -1835,11 +1836,12 @@ void AppState::bumpLockedDoor(int x, int y){
             log.add("The lock resists - a higher level "
                     "thief must try it.");
         } else {
+            Locktime locktime;
             door->tryLevel = thief->level;
-            int rounds = rules::thfLocksPickRoundsMin() +
+            int rounds = locktime.thfLocksPickRoundsMin() +
                 (int)rng.below(
-                    rules::thfLocksPickRoundsMax() -
-                    rules::thfLocksPickRoundsMin() + 1);
+                    locktime.thfLocksPickRoundsMax() -
+                    locktime.thfLocksPickRoundsMin() + 1);
             int roll = (int)rng.below(1000);
             char buf[96];
             if (rules::thfAttemptSucceeds(roll,
@@ -1874,18 +1876,20 @@ void AppState::bumpLockedDoor(int x, int y){
 // down stays dry). The surface SWIMMING
 // paragraph (R311) governs the crossing.
 void AppState::placeFlood(){
+        Swimcross swimcross;
         int placed = 0;
         int guard = 0;
-        while (placed < rules::floodPerDelveCount() &&
+        while (placed < swimcross.floodPerDelveCount() &&
                ++guard < 500) {
+            Swimcross swimcross;
             int x = 1 + (int)rng.below(MAP_TILES_X - 2);
             int y = 1 + (int)rng.below(MAP_TILES_Y - 2);
             int w = (int)rng.range(
-                rules::floodSideMin(),
-                rules::floodSideMax());
+                swimcross.floodSideMin(),
+                swimcross.floodSideMax());
             int h = (int)rng.range(
-                rules::floodSideMin(),
-                rules::floodSideMax());
+                swimcross.floodSideMin(),
+                swimcross.floodSideMax());
             bool allFloor = true;
             for (int yy = y; yy < y + h; ++yy)
                 for (int xx = x; xx < x + w; ++xx)
@@ -1927,8 +1931,10 @@ void AppState::placeFlood(){
 bool AppState::enterWater(int nx, int ny){
         (void)nx; (void)ny;
         for (const auto& c : party.members) {
+            Swimcross swimcross;
+            Uwfight uwfight;
             if (c.hp <= 0) continue;
-            if (!rules::swimCanSwim((int)c.armor.id,
+            if (!swimcross.swimCanSwim((int)c.armor.id,
                                     c.armor.plus)) {
                 ++turnCount;
                 tickActivity(1);   // R119: the refusal
@@ -1954,11 +1960,11 @@ bool AppState::enterWater(int nx, int ny){
             // JUDGMENT: the surface paragraph
             // carries no load bar, the movement
             // paragraph folds onto the crossing)
-            if (rules::uwCrossLoadBars(
-                    rules::swimLoadBeyondArmorLbs(
+            if (uwfight.uwCrossLoadBars(
+                    swimcross.swimLoadBeyondArmorLbs(
                         carriedWeight(c),
                         items::armor(c.armor.id).weightGp),
-                    rules::uwCrossCapLbs(
+                    uwfight.uwCrossCapLbs(
                         rules::strWeightAllowGp(
                             c.abilities.str, c.exStr)))) {
                 ++turnCount;
@@ -1977,11 +1983,12 @@ bool AppState::enterWater(int nx, int ny){
         }
         log.add("The company takes to the water.");
         for (auto& c : party.members) {
+            Swimcross swimcross;
             if (c.hp <= 0) continue;
-            int loadLbs = rules::swimLoadBeyondArmorLbs(
+            int loadLbs = swimcross.swimLoadBeyondArmorLbs(
                 carriedWeight(c),
                 items::armor(c.armor.id).weightGp);
-            int rolls = rules::swimDrownRollPerCrossing();
+            int rolls = swimcross.swimDrownRollPerCrossing();
             for (int r = 0; r < rolls; ++r) {
                 int roll = (int)rng.below(100);
                 if (roll < rules::uwSurfaceDrownPct(
@@ -2036,12 +2043,14 @@ void AppState::forceLockedDoor(){
             log.add("There is no locked door to force "
                     "here.");
         } else {
+            Doorforce doorforce;
             int ones = 0;
             int attempts = 0;
             bool opened = false;
             for (const auto& c : party.members) {
+                Doorforce doorforce;
                 if (attempts >=
-                        rules::doorWidthStandardAttempts())
+                        doorforce.doorWidthStandardAttempts())
                     break;
                 if (c.hp <= 0) continue;
                 ++attempts;
@@ -2065,7 +2074,7 @@ void AppState::forceLockedDoor(){
                 if (roll == 1) ++ones;
             }
             if (!opened && ones >=
-                    rules::doorLockedSimultaneousOnes()) {
+                    doorforce.doorLockedSimultaneousOnes()) {
                 door->opened = true;
                 opened = true;
                 log.add("The shoulders slam home - the "

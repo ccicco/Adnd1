@@ -9,13 +9,15 @@
     // crossing damage, the 2-5 gp vial cost and the p.64
     // boulder drops.
     {
+        Grenade grenade;
         int bad = 0;
         // sizes and names
         static const int kOz[5] = { 8, 4, 4, 16, 4 };
         for (int k = 0; k < 5; ++k) {
-            if (rules::grenadeSizeOz((rules::GrenadeKind)k)
+            Grenade grenade;
+            if (grenade.grenadeSizeOz((GrenadeKind)k)
                 != kOz[k]) ++bad;
-            if (!*rules::grenadeName((rules::GrenadeKind)k))
+            if (!*grenade.grenadeName((GrenadeKind)k))
                 ++bad;
         }
         // the effect table
@@ -25,114 +27,120 @@
         static const int kSLo[5] = { 1, 2, 2, 1, 0 };
         static const int kSHi[5] = { 1, 2, 2, 3, 0 };
         for (int k = 0; k < 5; ++k) {
+            Grenade grenade;
             int lo, hi;
-            rules::grenadeDirectHit((rules::GrenadeKind)k, lo, hi);
+            grenade.grenadeDirectHit((GrenadeKind)k, lo, hi);
             if (lo != kDLo[k] || hi != kDHi[k]) ++bad;
-            rules::grenadeSplashDamage(
-                (rules::GrenadeKind)k, lo, hi);
+            grenade.grenadeSplashDamage(
+                (GrenadeKind)k, lo, hi);
             if (lo != kSLo[k] || hi != kSHi[k]) ++bad;
-            if (rules::grenadeSplashDiameterFeet(
-                    (rules::GrenadeKind)k) != kDia[k]) ++bad;
+            if (grenade.grenadeSplashDiameterFeet(
+                    (GrenadeKind)k) != kDia[k]) ++bad;
         }
         // oil: the second-round burn + the segment burn
         int olo, ohi;
-        rules::grenadeOilSecondRound(olo, ohi);
+        grenade.grenadeOilSecondRound(olo, ohi);
         if (olo != 1 || ohi != 6) ++bad;
-        if (rules::grenadeOilBurnSegmentsMax() != 3 ||
-            rules::grenadeOilBurnDamagePerSegment() != 1)
+        if (grenade.grenadeOilBurnSegmentsMax() != 3 ||
+            grenade.grenadeOilBurnDamagePerSegment() != 1)
             ++bad;
         // the splash-save radius
-        if (rules::grenadeSplashRadiusFeet() != 3) ++bad;
+        if (grenade.grenadeSplashRadiusFeet() != 3) ++bad;
         // range bands
-        if (rules::grenadeRangeMaxInches() != 3) ++bad;
-        if (rules::grenadeRangeToHitAdj(1) != 0 ||
-            rules::grenadeRangeToHitAdj(2) != -2 ||
-            rules::grenadeRangeToHitAdj(3) != -5) ++bad;
+        if (grenade.grenadeRangeMaxInches() != 3) ++bad;
+        if (grenade.grenadeRangeToHitAdj(1) != 0 ||
+            grenade.grenadeRangeToHitAdj(2) != -2 ||
+            grenade.grenadeRangeToHitAdj(3) != -5) ++bad;
         // the break saves (the p.80 matrix rows)
         static const int kCrush[5] = { 18, 19, 19, 18, 19 };
         static const int kNorm[5]  = { 12, 14, 14, 12, 14 };
         for (int k = 0; k < 5; ++k) {
-            if (rules::grenadeBreakSaveCrushing(
-                    (rules::GrenadeKind)k) != kCrush[k] ||
-                rules::grenadeBreakSaveNormal(
-                    (rules::GrenadeKind)k) != kNorm[k]) ++bad;
+            Grenade grenade;
+            if (grenade.grenadeBreakSaveCrushing(
+                    (GrenadeKind)k) != kCrush[k] ||
+                grenade.grenadeBreakSaveNormal(
+                    (GrenadeKind)k) != kNorm[k]) ++bad;
         }
         // the miss tables: distance dice + direction cone
         {
+            Grenade grenade;
             rules::Rng rngG(20261005);
             rules::Dice diceG(rngG);
             for (int t = 0; t < 500; ++t) {
-                int d6 = rules::grenadeMissDistance(diceG, false);
-                int d4 = rules::grenadeMissDistance(diceG, true);
-                int dir = rules::grenadeMissDirection(diceG);
+                Grenade grenade;
+                int d6 = grenade.grenadeMissDistance(diceG, false);
+                int d4 = grenade.grenadeMissDistance(diceG, true);
+                int dir = grenade.grenadeMissDirection(diceG);
                 if (d6 < 1 || d6 > 6) ++bad;
                 if (d4 < 1 || d4 > 4) ++bad;
                 if (dir < 1 || dir > 8) ++bad;
-                if (!*rules::grenadeMissDirectionName(dir))
+                if (!*grenade.grenadeMissDirectionName(dir))
                     ++bad;
             }
-            std::string n1 = rules::grenadeMissDirectionName(1);
-            std::string n4 = rules::grenadeMissDirectionName(4);
-            std::string n5 = rules::grenadeMissDirectionName(5);
-            std::string n8 = rules::grenadeMissDirectionName(8);
+            std::string n1 = grenade.grenadeMissDirectionName(1);
+            std::string n4 = grenade.grenadeMissDirectionName(4);
+            std::string n5 = grenade.grenadeMissDirectionName(5);
+            std::string n8 = grenade.grenadeMissDirectionName(8);
             if (n1 != "long right" || n4 != "short (before)" ||
                 n5 != "short left" || n8 != "long (over)")
                 ++bad;
         }
         // holy/unholy water targeting (p.65)
-        if (!rules::holyWaterAffects(true, true, true) ||
-            !rules::holyWaterAffects(true, false, true) ||
-            !rules::holyWaterAffects(false, true, true) ||
-            rules::holyWaterAffects(false, false, true) ||
-            rules::holyWaterAffects(true, true, false))
+        if (!grenade.holyWaterAffects(true, true, true) ||
+            !grenade.holyWaterAffects(true, false, true) ||
+            !grenade.holyWaterAffects(false, true, true) ||
+            grenade.holyWaterAffects(false, false, true) ||
+            grenade.holyWaterAffects(true, true, false))
             ++bad;
-        if (!rules::unholyWaterAffects(true, true) ||
-            rules::unholyWaterAffects(false, true) ||
-            rules::unholyWaterAffects(true, false))
+        if (!grenade.unholyWaterAffects(true, true) ||
+            grenade.unholyWaterAffects(false, true) ||
+            grenade.unholyWaterAffects(true, false))
             ++bad;
         // crossing flaming oil + the vial cost
         int wlo, whi;
-        rules::flamingOilWalkDamage(wlo, whi);
+        grenade.flamingOilWalkDamage(wlo, whi);
         if (wlo != 1 || whi != 6) ++bad;
-        if (rules::grenadeVialCostLo() != 2 ||
-            rules::grenadeVialCostHi() != 5) ++bad;
+        if (grenade.grenadeVialCostLo() != 2 ||
+            grenade.grenadeVialCostHi() != 5) ++bad;
         // boulders: diameters + the drop window
-        if (rules::grenadeBoulderDiameterFeet(false) != 1 ||
-            rules::grenadeBoulderDiameterFeet(true) != 2)
+        if (grenade.grenadeBoulderDiameterFeet(false) != 1 ||
+            grenade.grenadeBoulderDiameterFeet(true) != 2)
             ++bad;
-        if (rules::grenadeBoulderDropDamage(14, 10) != 10 ||
-            rules::grenadeBoulderDropDamage(14, 60) != 60 ||
-            rules::grenadeBoulderDropDamage(14, 100) != 60 ||
-            rules::grenadeBoulderDropDamage(28, 30) != 60 ||
-            rules::grenadeBoulderDropDamage(14, 5) != 10 ||
-            rules::grenadeBoulderDropDamage(13, 60) != 0)
+        if (grenade.grenadeBoulderDropDamage(14, 10) != 10 ||
+            grenade.grenadeBoulderDropDamage(14, 60) != 60 ||
+            grenade.grenadeBoulderDropDamage(14, 100) != 60 ||
+            grenade.grenadeBoulderDropDamage(28, 30) != 60 ||
+            grenade.grenadeBoulderDropDamage(14, 5) != 10 ||
+            grenade.grenadeBoulderDropDamage(13, 60) != 0)
             ++bad;
         // roller smoke: bounds sweeps
         {
             rules::Rng rngH(777);
             rules::Dice diceH(rngH);
             for (int t = 0; t < 400; ++t) {
+                Grenade grenade;
                 for (int k = 0; k < 5; ++k) {
+                    Grenade grenade;
                     int lo, hi;
-                    rules::grenadeDirectHit(
-                        (rules::GrenadeKind)k, lo, hi);
-                    int v = rules::rollGrenadeDirectHit(
-                        diceH, (rules::GrenadeKind)k);
+                    grenade.grenadeDirectHit(
+                        (GrenadeKind)k, lo, hi);
+                    int v = grenade.rollGrenadeDirectHit(
+                        diceH, (GrenadeKind)k);
                     if (v < lo || v > hi) ++bad;
-                    rules::grenadeSplashDamage(
-                        (rules::GrenadeKind)k, lo, hi);
-                    int s = rules::rollGrenadeSplashDamage(
-                        diceH, (rules::GrenadeKind)k);
+                    grenade.grenadeSplashDamage(
+                        (GrenadeKind)k, lo, hi);
+                    int s = grenade.rollGrenadeSplashDamage(
+                        diceH, (GrenadeKind)k);
                     if (s < lo || s > hi) ++bad;
                 }
-                int o = rules::rollGrenadeOilSecondRound(diceH);
+                int o = grenade.rollGrenadeOilSecondRound(diceH);
                 if (o < 1 || o > 6) ++bad;
-                int w = rules::rollFlamingOilWalkDamage(diceH);
+                int w = grenade.rollFlamingOilWalkDamage(diceH);
                 if (w < 1 || w > 6) ++bad;
-                int b = rules::rollGrenadeBoulderFlatDamage(
+                int b = grenade.rollGrenadeBoulderFlatDamage(
                     diceH, 28);
                 if (b < 2 || b > 12) ++bad;
-                if (rules::rollGrenadeBoulderFlatDamage(
+                if (grenade.rollGrenadeBoulderFlatDamage(
                         diceH, 13) != 0) ++bad;
             }
         }

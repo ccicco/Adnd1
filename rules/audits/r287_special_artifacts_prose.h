@@ -8,100 +8,102 @@
     // break fell in R286 and no page break falls
     // within these 46 lines.
     {
+        Specart specart;
+        Specart_axe_of_the_dwarvish_lords_to_codex specart_axe_of_the_dwarvish_lords_to_codex;
         int bad = 0;
         // the Quill scalars
-        if (rules::sapQuillMasterThiefBest() != 1 ||
-            rules::sapQuillUnknownAntiquity() != 1 ||
-            rules::sapQuillBearsKurothName() != 1 ||
-            rules::sapQuillInfallibleScribe() != 1 ||
-            rules::sapQuillDepictsSeenSpoken() != 1 ||
-            rules::sapQuillPotionTreasureFinding() != 1 ||
-            rules::sapQuillTreasureFindPerMonth() != 1 ||
-            rules::sapQuillPowerTotal() != 5) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapQuillMasterThiefBest() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapQuillUnknownAntiquity() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapQuillBearsKurothName() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapQuillInfallibleScribe() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapQuillDepictsSeenSpoken() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapQuillPotionTreasureFinding() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapQuillTreasureFindPerMonth() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapQuillPowerTotal() != 5) ++bad;
         // the Quill powers per table I-VI
         static const int kQrl[6] = {
             2, 0, 1, 1, 0, 1,
         };
         for (int i = 0; i < 6; ++i)
-            if (rules::sapQuillPowerCount(i) != kQrl[i]) ++bad;
-        if (rules::sapQuillPowerCount(0) +
-            rules::sapQuillPowerCount(1) +
-            rules::sapQuillPowerCount(2) +
-            rules::sapQuillPowerCount(3) +
-            rules::sapQuillPowerCount(4) +
-            rules::sapQuillPowerCount(5) !=
-            rules::sapQuillPowerTotal()) ++bad;
+            if (specart_axe_of_the_dwarvish_lords_to_codex.sapQuillPowerCount(i) != kQrl[i]) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapQuillPowerCount(0) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapQuillPowerCount(1) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapQuillPowerCount(2) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapQuillPowerCount(3) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapQuillPowerCount(4) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapQuillPowerCount(5) !=
+            specart_axe_of_the_dwarvish_lords_to_codex.sapQuillPowerTotal()) ++bad;
         // the Mace scalars
-        if (rules::sapMaceSaintCuthbertWeapon() != 1 ||
-            rules::sapMaceFollyOfError() != 1 ||
-            rules::sapMaceRelicsEncased() != 1 ||
-            rules::sapMaceHitDamageBonus() != 5 ||
-            rules::sapMaceDisruptionEffects() != 1 ||
-            rules::sapMaceClericStrReq() != 18 ||
-            rules::sapMaceLawfulGoodOnly() != 1 ||
-            rules::sapMacePowerTotal() != 6) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapMaceSaintCuthbertWeapon() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMaceFollyOfError() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMaceRelicsEncased() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMaceHitDamageBonus() != 5 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMaceDisruptionEffects() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMaceClericStrReq() != 18 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMaceLawfulGoodOnly() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMacePowerTotal() != 6) ++bad;
         // the Mace powers per table I-VI
         static const int kMac[6] = {
             3, 2, 0, 0, 0, 1,
         };
         for (int i = 0; i < 6; ++i)
-            if (rules::sapMacePowerCount(i) != kMac[i]) ++bad;
-        if (rules::sapMacePowerCount(0) +
-            rules::sapMacePowerCount(1) +
-            rules::sapMacePowerCount(2) +
-            rules::sapMacePowerCount(3) +
-            rules::sapMacePowerCount(4) +
-            rules::sapMacePowerCount(5) !=
-            rules::sapMacePowerTotal()) ++bad;
+            if (specart_axe_of_the_dwarvish_lords_to_codex.sapMacePowerCount(i) != kMac[i]) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapMacePowerCount(0) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMacePowerCount(1) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMacePowerCount(2) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMacePowerCount(3) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMacePowerCount(4) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMacePowerCount(5) !=
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMacePowerTotal()) ++bad;
         // the Mace bonus agrees with the Quill total
-        if (rules::sapMaceHitDamageBonus() !=
-            rules::sapQuillPowerTotal()) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapMaceHitDamageBonus() !=
+            specart_axe_of_the_dwarvish_lords_to_codex.sapQuillPowerTotal()) ++bad;
         // the Machine scalars
-        if (rules::sapMachineGodsForgotten() != 1 ||
-            rules::sapMachineWorkmanshipUnknown() != 1 ||
-            rules::sapMachineBaronLumEmpire() != 1 ||
-            rules::sapMachineLeverCount() != 60 ||
-            rules::sapMachineDialCount() != 40 ||
-            rules::sapMachineSwitchCount() != 20 ||
-            rules::sapMachineControlsTotal() != 120 ||
-            rules::sapMachineHalfFunction() != 60 ||
-            rules::sapMachineWeightLb() != 5500 ||
-            rules::sapMachineJoltDestroyMax() != 4 ||
-            rules::sapMachineBoothCreatures() != 4 ||
-            rules::sapMachinePowerTotal() != 70) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapMachineGodsForgotten() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMachineWorkmanshipUnknown() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMachineBaronLumEmpire() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMachineLeverCount() != 60 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMachineDialCount() != 40 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMachineSwitchCount() != 20 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMachineControlsTotal() != 120 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMachineHalfFunction() != 60 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMachineWeightLb() != 5500 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMachineJoltDestroyMax() != 4 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMachineBoothCreatures() != 4 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMachinePowerTotal() != 70) ++bad;
         // the Machine controls add up
-        if (rules::sapMachineLeverCount() +
-            rules::sapMachineDialCount() +
-            rules::sapMachineSwitchCount() !=
-            rules::sapMachineControlsTotal()) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapMachineLeverCount() +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMachineDialCount() +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMachineSwitchCount() !=
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMachineControlsTotal()) ++bad;
         // one-half of the controls still function
-        if (rules::sapMachineHalfFunction() * 2 !=
-            rules::sapMachineControlsTotal()) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapMachineHalfFunction() * 2 !=
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMachineControlsTotal()) ++bad;
         // the Machine powers per table I-VI
         static const int kMch[6] = {
             15, 15, 10, 10, 15, 5,
         };
         for (int i = 0; i < 6; ++i)
-            if (rules::sapMachinePowerCount(i) != kMch[i]) ++bad;
-        if (rules::sapMachinePowerCount(0) +
-            rules::sapMachinePowerCount(1) +
-            rules::sapMachinePowerCount(2) +
-            rules::sapMachinePowerCount(3) +
-            rules::sapMachinePowerCount(4) +
-            rules::sapMachinePowerCount(5) !=
-            rules::sapMachinePowerTotal()) ++bad;
+            if (specart_axe_of_the_dwarvish_lords_to_codex.sapMachinePowerCount(i) != kMch[i]) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapMachinePowerCount(0) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMachinePowerCount(1) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMachinePowerCount(2) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMachinePowerCount(3) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMachinePowerCount(4) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMachinePowerCount(5) !=
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMachinePowerTotal()) ++bad;
         // the jolt cap agrees with the booth capacity
-        if (rules::sapMachineJoltDestroyMax() !=
-            rules::sapMachineBoothCreatures()) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapMachineJoltDestroyMax() !=
+            specart_axe_of_the_dwarvish_lords_to_codex.sapMachineBoothCreatures()) ++bad;
         // the cross-pins: the R240 sale table rows
-        if (rules::saRowLo(14) != 34 ||
-            rules::saRowHi(14) != 35 ||
-            rules::saSaleGp(14) != 27500 ||
-            rules::saRowLo(15) != 36 ||
-            rules::saRowHi(15) != 37 ||
-            rules::saSaleGp(15) != 35000 ||
-            rules::saRowLo(16) != 38 ||
-            rules::saRowHi(16) != 38 ||
-            rules::saSaleGp(16) != 72500) ++bad;
+        if (specart.saRowLo(14) != 34 ||
+            specart.saRowHi(14) != 35 ||
+            specart.saSaleGp(14) != 27500 ||
+            specart.saRowLo(15) != 36 ||
+            specart.saRowHi(15) != 37 ||
+            specart.saSaleGp(15) != 35000 ||
+            specart.saRowLo(16) != 38 ||
+            specart.saRowHi(16) != 38 ||
+            specart.saSaleGp(16) != 72500) ++bad;
         printf("R287 special artifacts prose part 8 pins audit: bad %d\n", bad);
     }

@@ -18,7 +18,7 @@
 
 #pragma once
 
-namespace rules {
+
 
 // -----------------------------------------------------------------------
 // The government forms (p.89), the print list in order.
@@ -46,6 +46,8 @@ enum GovForm {
     GOV_FORM_COUNT
 };
 
+
+
 // The defining trait of each form - the print
 // definition, one code per form, in form order.
 enum GovTrait {
@@ -71,91 +73,7 @@ enum GovTrait {
     GOVT_TRAIT_COUNT
 };
 
-inline int govFormCount() { return 19; }
 
-inline int govFormTrait(int form) {
-    // the trait code of each form, in print
-    // list order: autocracy is self-derived
-    // absolute power, bureaucracy rule by
-    // department heads, confederacy a league
-    // for the common good, democracy the
-    // body of citizens, dictatorship final
-    // authority in one supreme head,
-    // feudality layered fealty, geriatocracy
-    // the elderly, gynarchy females only,
-    // hierarchy religious like a feudality,
-    // magocracy magic-users only, matriarchy
-    // the eldest females, militocracy the
-    // military heads, monarchy a single
-    // hereditary sovereign, oligarchy a few
-    // coequal rulers, pedocracy the learned,
-    // plutocracy the wealthy, republic
-    // representatives of an electorate,
-    // theocracy rule by the god, syndicracy
-    // a body of business syndics
-    static const int t[19] = {
-        0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
-        10, 11, 12, 13, 14, 15, 16, 17, 18,
-    };
-    if (form < 0) form = 0;
-    if (form > 18) form = 18;
-    return t[form];
-}
-
-// -----------------------------------------------------------------------
-// The worked example aristocracy (p.88): a
-// non-hereditary ruling class. Members are
-// those who have served in the military, own
-// property of 100 or more acres extent, and
-// pay an annual tax of not less than 10 gold
-// pieces on their income - the serial list
-// reads conjunctively (all three), and the
-// merchant waiver settles it: land ownership
-// is waived for merchants and tradesmen
-// whose business pays not less than 20 gold
-// pieces in taxes each year - a waiver that
-// would be vacuous under an or-reading.
-// -----------------------------------------------------------------------
-inline bool aristocratEligible(
-        bool servedMilitary, int acresOwned,
-        int annualIncomeTaxGold) {
-    if (!servedMilitary) return false;
-    if (acresOwned < 100) return false;
-    if (annualIncomeTaxGold < 10) return false;
-    return true;
-}
-
-inline bool aristocratMerchantEligible(
-        bool servedMilitary, int annualTaxGold) {
-    // the land criterion waived at 20 gold
-    if (!servedMilitary) return false;
-    if (annualTaxGold < 20) return false;
-    return true;
-}
-
-// The offices: aristocrats only, for any
-// government office and command of the
-// military; senators elected from their
-// number; former senators eligible for the
-// tribunals and judgeships; former military
-// officers appointed by senatorial vote to
-// keep the peace and police the land.
-inline bool officeEligible(bool isAristocrat) {
-    return isAristocrat;
-}
-
-inline bool senateEligible(bool isAristocrat) {
-    return isAristocrat;
-}
-
-inline bool tribunalEligible(bool formerSenator) {
-    return formerSenator;
-}
-
-inline bool policeAppointedFrom(
-        bool formerMilitaryOfficer) {
-    return formerMilitaryOfficer;
-}
 
 // -----------------------------------------------------------------------
 // The town and city social structure (p.89):
@@ -168,117 +86,7 @@ enum TownClass {
     TOWN_CLASS_COUNT
 };
 
-inline int townClassCount() { return 3; }
 
-// Upper: nobles, gentlemen, the wealthiest
-// merchants and the most important guildmasters
-// - the important law makers and executives.
-inline bool townDrawsImportantLawmakers(int tc) {
-    return tc == TOWN_UPPER;
-}
-
-// Middle: merchants and guildmasters with the
-// master artisans - the lesser officials.
-inline bool townProvidesLesserOfficials(int tc) {
-    return tc == TOWN_MIDDLE;
-}
-
-// Lower: tradesmen, journeymen, laborers and
-// all others - the common council.
-inline bool townDrawsCommonCouncil(int tc) {
-    return tc == TOWN_LOWER;
-}
-
-// -----------------------------------------------------------------------
-// The municipal offices (pp.89-90).
-// -----------------------------------------------------------------------
-// Mayor, magistrate or burgomaster: probably
-// a lifetime office drawn only from the upper
-// class.
-inline int mayorTitleCount() { return 3; }
-inline bool mayorOfficeLifetime() { return true; }
-inline int mayorOfficeSourceClass() {
-    return TOWN_UPPER;
-}
-
-// Aldermen, burghers or burgesses: chosen by
-// the upper class to serve as the major
-// officers under the mayor; elected by the
-// middle class.
-inline int aldermanTitleCount() { return 3; }
-inline bool aldermenChosenBy(int tc) {
-    return tc == TOWN_UPPER;
-}
-inline bool aldermenElectedBy(int tc) {
-    return tc == TOWN_MIDDLE;
-}
-
-// The judiciary and the military commanders of
-// the municipality fall within the upper
-// stratum; law enforcement, customs and tax
-// officials all come from the middle class.
-inline int townJudiciaryStratum() {
-    return TOWN_UPPER;
-}
-inline int townMilitaryCommandStratum() {
-    return TOWN_UPPER;
-}
-inline int lawEnforcementSourceClass() {
-    return TOWN_MIDDLE;
-}
-inline int customsOfficialSourceClass() {
-    return TOWN_MIDDLE;
-}
-inline int taxOfficialSourceClass() {
-    return TOWN_MIDDLE;
-}
-
-// Councilors of the common council: selected
-// by the upper and middle classes as well as
-// the free lower class; petty officials drawn
-// from the lower class, advisory or
-// administrative only.
-inline bool councilorSelectedBy(int tc) {
-    return tc == TOWN_UPPER || tc == TOWN_MIDDLE;
-}
-inline bool councilorSelectedByLower(
-        bool lowerIsFree) {
-    return lowerIsFree;
-}
-inline int pettyOfficialsSourceClass() {
-    return TOWN_LOWER;
-}
-inline bool pettyOfficialRoleAdministrative() {
-    return true;
-}
-
-// The constabulary: drawn in part from citizen
-// soldiers, the city watch or police force, and
-// militia called up in times of great need; by
-// far the bulk of other soldiery hired
-// mercenaries.
-inline bool constabularyIncludesCitizenSoldiers() {
-    return true;
-}
-inline bool constabularyIncludesWatchOrPolice() {
-    return true;
-}
-inline bool militiaCalledInGreatNeed() {
-    return true;
-}
-inline bool soldieryBulkMercenaries() {
-    return true;
-}
-
-// -----------------------------------------------------------------------
-// Knights (p.89): non-hereditary peers, their
-// precedence varying with the order of
-// knighthood held.
-// -----------------------------------------------------------------------
-inline bool knightsHereditary() { return false; }
-inline bool knightPrecedenceVariesByOrder() {
-    return true;
-}
 
 // -----------------------------------------------------------------------
 // Royal and noble titles, northern European
@@ -299,21 +107,7 @@ enum NobleTitleRN {
     NT_RN_COUNT
 };
 
-inline int nobleTitleRNCount() { return 10; }
 
-inline int nobleTitleRNPrecedence(int t) {
-    // emperor highest, knight lowest
-    if (t < 0) t = 0;
-    if (t > 9) t = 9;
-    return t;
-}
-
-// The ecclesiastical ranks (archbishop, bishop,
-// abbot, prior) sit among the nobility per the
-// table rows.
-inline int ecclesiasticalRanksAmongNobility() {
-    return 4;
-}
 
 // The German equivalents of the table: 0
 // Pfalzgraf (with duke), 1 Herzog (with
@@ -333,22 +127,137 @@ enum GermanTitle {
     GT_COUNT
 };
 
-inline int germanEquivalentCount() { return 7; }
+// R-refactor: namespace rules -> class Socialrank (instance methods)
+class Socialrank {
+public:
+    int govFormCount();
+    int govFormTrait(int form);
 
-inline int germanEquivalentOf(int t) {
-    static const int g[10] = {
-        -1, -1, 0, 1, 2, 3, 4, -1, 5, 6,
-    };
-    if (t < 0) t = 0;
-    if (t > 9) t = 9;
-    return g[t];
-}
+
+// -----------------------------------------------------------------------
+// The worked example aristocracy (p.88): a
+// non-hereditary ruling class. Members are
+// those who have served in the military, own
+// property of 100 or more acres extent, and
+// pay an annual tax of not less than 10 gold
+// pieces on their income - the serial list
+// reads conjunctively (all three), and the
+// merchant waiver settles it: land ownership
+// is waived for merchants and tradesmen
+// whose business pays not less than 20 gold
+// pieces in taxes each year - a waiver that
+// would be vacuous under an or-reading.
+// -----------------------------------------------------------------------
+    bool aristocratEligible( bool servedMilitary, int acresOwned, int annualIncomeTaxGold);
+    bool aristocratMerchantEligible( bool servedMilitary, int annualTaxGold);
+
+
+// The offices: aristocrats only, for any
+// government office and command of the
+// military; senators elected from their
+// number; former senators eligible for the
+// tribunals and judgeships; former military
+// officers appointed by senatorial vote to
+// keep the peace and police the land.
+    bool officeEligible(bool isAristocrat);
+    bool senateEligible(bool isAristocrat);
+    bool tribunalEligible(bool formerSenator);
+    bool policeAppointedFrom( bool formerMilitaryOfficer);
+    int townClassCount();
+
+
+// Upper: nobles, gentlemen, the wealthiest
+// merchants and the most important guildmasters
+// - the important law makers and executives.
+    bool townDrawsImportantLawmakers(int tc);
+
+
+// Middle: merchants and guildmasters with the
+// master artisans - the lesser officials.
+    bool townProvidesLesserOfficials(int tc);
+
+
+// Lower: tradesmen, journeymen, laborers and
+// all others - the common council.
+    bool townDrawsCommonCouncil(int tc);
+
+
+// -----------------------------------------------------------------------
+// The municipal offices (pp.89-90).
+// -----------------------------------------------------------------------
+// Mayor, magistrate or burgomaster: probably
+// a lifetime office drawn only from the upper
+// class.
+    int mayorTitleCount();
+    bool mayorOfficeLifetime();
+    int mayorOfficeSourceClass();
+
+
+// Aldermen, burghers or burgesses: chosen by
+// the upper class to serve as the major
+// officers under the mayor; elected by the
+// middle class.
+    int aldermanTitleCount();
+    bool aldermenChosenBy(int tc);
+    bool aldermenElectedBy(int tc);
+
+
+// The judiciary and the military commanders of
+// the municipality fall within the upper
+// stratum; law enforcement, customs and tax
+// officials all come from the middle class.
+    int townJudiciaryStratum();
+    int townMilitaryCommandStratum();
+    int lawEnforcementSourceClass();
+    int customsOfficialSourceClass();
+    int taxOfficialSourceClass();
+
+
+// Councilors of the common council: selected
+// by the upper and middle classes as well as
+// the free lower class; petty officials drawn
+// from the lower class, advisory or
+// administrative only.
+    bool councilorSelectedBy(int tc);
+    bool councilorSelectedByLower( bool lowerIsFree);
+    int pettyOfficialsSourceClass();
+    bool pettyOfficialRoleAdministrative();
+
+
+// The constabulary: drawn in part from citizen
+// soldiers, the city watch or police force, and
+// militia called up in times of great need; by
+// far the bulk of other soldiery hired
+// mercenaries.
+    bool constabularyIncludesCitizenSoldiers();
+    bool constabularyIncludesWatchOrPolice();
+    bool militiaCalledInGreatNeed();
+    bool soldieryBulkMercenaries();
+
+
+// -----------------------------------------------------------------------
+// Knights (p.89): non-hereditary peers, their
+// precedence varying with the order of
+// knighthood held.
+// -----------------------------------------------------------------------
+    bool knightsHereditary();
+    bool knightPrecedenceVariesByOrder();
+    int nobleTitleRNCount();
+    int nobleTitleRNPrecedence(int t);
+
+
+// The ecclesiastical ranks (archbishop, bishop,
+// abbot, prior) sit among the nobility per the
+// table rows.
+    int ecclesiasticalRanksAmongNobility();
+    int germanEquivalentCount();
+    int germanEquivalentOf(int t);
+
 
 // The Asian title forms (p.89): twenty listed
 // in the table - Padishah, Maharaja, Kha-Khan,
 // Tarkhan, Sultan, Shah, Rajah, Ilkhan, Dey,
 // Caliph, Bey, Orkhon, Bashaw, Pasha, Emir,
 // Amir, Khan, Sheikh, Nawab, Malik.
-inline int asianTitleCount() { return 20; }
-
-} // namespace rules
+    int asianTitleCount();
+};

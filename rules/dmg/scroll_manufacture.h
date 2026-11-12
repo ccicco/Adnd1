@@ -107,27 +107,6 @@
 
 #pragma once
 
-namespace rules {
-
-// -----------------------------------------------------------------------
-// The scroll inscription gates.
-// -----------------------------------------------------------------------
-inline int scrollMinInscribeLevel() {
-    // clerics, druids, magic-users and
-    // illusionists of 7th or higher level
-    return 7;
-}
-
-inline int inscriberClassCount() {
-    // cleric, druid, magic-user, illusionist
-    return 4;
-}
-
-inline int spellMustBeEmployable() {
-    // the spell must be of a level the
-    // inscriber is able to employ
-    return 1;
-}
 
 enum ProtectionScrollKind {
     PS_DEVILS = 0,
@@ -141,30 +120,7 @@ enum ProtectionScrollKind {
     PS_COUNT
 };
 
-inline int protectionClericalCount() {
-    // devils, possession, undead
-    return 3;
-}
 
-inline int protectionMuCount() {
-    // demons, elementals, lycanthropes,
-    // magic, petrification
-    return 5;
-}
-
-inline int curseScrollsAnySpellUser() {
-    // curse scrolls can be made by any
-    // sort of spell user
-    return 1;
-}
-
-inline int protectionScrollIsClerical(int kind) {
-    // 1 when the kind belongs on a clerical
-    // protection scroll, 0 when magic-user
-    if (kind < 0) kind = 0;
-    if (kind > 7) kind = 7;
-    return (kind <= 2) ? 1 : 0;
-}
 
 // -----------------------------------------------------------------------
 // The scroll materials.
@@ -176,232 +132,83 @@ enum ScrollMaterial {
     SCM_COUNT
 };
 
-inline int scrollSheetCostMin(int material) {
-    // papyrus 2 gp and up, parchment 4 gp
-    // and up, vellum 8 gp and up
-    if (material < 0) material = 0;
-    if (material > 2) material = 2;
-    static const int t[3] = {
-        2, 4, 8,
-    };
-    return t[material];
-}
+// R-refactor: namespace rules -> class Scroll_manufacture (instance methods)
+class Scroll_manufacture {
+public:
 
-inline int scrollMaterialFailMod(int material) {
-    // papyrus +5, parchment +/-0, vellum -5
-    if (material < 0) material = 0;
-    if (material > 2) material = 2;
-    static const int t[3] = {
-        5, 0, -5,
-    };
-    return t[material];
-}
 
-inline int quillPerSpell() {
-    // a fresh, virgin quill for each spell
-    return 1;
-}
+// -----------------------------------------------------------------------
+// The scroll inscription gates.
+// -----------------------------------------------------------------------
+    int scrollMinInscribeLevel();
+    int inscriberClassCount();
+    int spellMustBeEmployable();
+    int protectionClericalCount();
+    int protectionMuCount();
+    int curseScrollsAnySpellUser();
+    int protectionScrollIsClerical(int kind);
+    int scrollSheetCostMin(int material);
+    int scrollMaterialFailMod(int material);
+    int quillPerSpell();
+    int quillNamedCreatures();
+    int inkBaseCount();
+    int inkPerSpellDistinct();
 
-inline int quillNamedCreatures() {
-    // griffon, harpy, hippogriff, pegasus,
-    // roc, sphinx (DM additions aside)
-    return 6;
-}
-
-inline int inkBaseCount() {
-    // giant squid sepia, giant octopus ink
-    return 2;
-}
-
-inline int inkPerSpellDistinct() {
-    // each different spell requires a
-    // different ink compound
-    return 1;
-}
 
 // -----------------------------------------------------------------------
 // The preparation and failure rules.
 // -----------------------------------------------------------------------
-inline int scrollPrepDays(int spellLevel) {
-    // one full day per level of the spell
-    if (spellLevel < 1) spellLevel = 1;
-    return spellLevel;
-}
+    int scrollPrepDays(int spellLevel);
+    int prepMustBeContinuous();
+    int scrollFailurePct(int spellLevel, int charLevel, int material);
+    int scrollSuccessRollIsGreaterThan();
+    int scrollMaxSpells();
+    int oneFailureBlocksFurther();
 
-inline int prepMustBeContinuous() {
-    // leaving the scroll breaks the magic
-    return 1;
-}
-
-inline int scrollFailurePct(int spellLevel, int charLevel,
-                            int material) {
-    // 20 base + 1 per spell level - the
-    // character level + the material
-    // modifier. The print example: 14th
-    // level cleric, 7th level spell,
-    // parchment = 13 percent. The print
-    // sets no floor.
-    if (spellLevel < 1) spellLevel = 1;
-    return 20 + spellLevel - charLevel
-        + scrollMaterialFailMod(material);
-}
-
-inline int scrollSuccessRollIsGreaterThan() {
-    // a percentile roll GREATER than the
-    // failure chance equals success
-    return 1;
-}
-
-inline int scrollMaxSpells() {
-    // a maximum of seven spells per scroll
-    return 7;
-}
-
-inline int oneFailureBlocksFurther() {
-    // one failure means no further spells
-    // may be placed on the scroll
-    return 1;
-}
 
 // -----------------------------------------------------------------------
 // Transcribing an unknown spell from a
 // scroll.
 // -----------------------------------------------------------------------
-inline int transcribeNeedsReadMagic() {
-    // a MU or illusionist needs read magic
-    // first
-    return 1;
-}
+    int transcribeNeedsReadMagic();
+    int transcribeDays(int spellLevel);
+    int transcribeEraseFromScroll();
+    int ownScrollsNeedNoReadMagic();
 
-inline int transcribeDays(int spellLevel) {
-    // a period equal to placing the spell
-    // on a scroll
-    if (spellLevel < 1) spellLevel = 1;
-    return spellLevel;
-}
-
-inline int transcribeEraseFromScroll() {
-    // the spell disappears from the scroll
-    return 1;
-}
-
-inline int ownScrollsNeedNoReadMagic() {
-    // the scriber never needs read magic for
-    // his or her own scrolls; clerics and
-    // druids never need it
-    return 1;
-}
 
 // -----------------------------------------------------------------------
 // The fabrication of other magic items.
 // -----------------------------------------------------------------------
-inline int fabricateNeedsEnchantAnItem() {
-    // all other magic items require enchant
-    // an item - save clerical items
-    return 1;
-}
+    int fabricateNeedsEnchantAnItem();
+    int fabricateClericalUsesEnchant();
+    int fabRestDays(int xpValue);
+    int fabRestNoAdventuringOrSpells();
+    int permanentDweomerNeedsPermanency();
+    int chargedItemsNeedPermanency();
 
-inline int fabricateClericalUsesEnchant() {
-    // the clerical exemption
-    return 0;
-}
-
-inline int fabRestDays(int xpValue) {
-    // one day of complete rest per 100 gp
-    // of the item XP value; 2000 xp = 20
-    // days. Each 100 gp or fraction thereof
-    // is one day (the potion-day rounding).
-    if (xpValue < 0) xpValue = 0;
-    return (xpValue + 99) / 100;
-}
-
-inline int fabRestNoAdventuringOrSpells() {
-    // no adventuring or spell use during the
-    // rest, all in relative isolation
-    return 1;
-}
-
-inline int permanentDweomerNeedsPermanency() {
-    // weapons, armor, most rings and
-    // miscellaneous items: permanency
-    return 1;
-}
-
-inline int chargedItemsNeedPermanency() {
-    // wands and other chargeable items wear
-    // out instead
-    return 0;
-}
 
 // -----------------------------------------------------------------------
 // The cleric and druid fabrication retreat.
 // -----------------------------------------------------------------------
-inline int clericRetreatDays() {
-    // a fortnight in complete isolation
-    return 14;
-}
+    int clericRetreatDays();
+    int clericFastDays();
+    int clericPurifyDays();
+    int clericEmpowerPctPerDay();
+    int clericChargedSpellWindowHours();
 
-inline int clericFastDays() {
-    // a sennight fasting
-    return 7;
-}
-
-inline int clericPurifyDays() {
-    // prayer and purification takes a day
-    return 1;
-}
-
-inline int clericEmpowerPctPerDay() {
-    // a cumulative 1 percent per day chance
-    // the deity empowers the item
-    return 1;
-}
-
-inline int clericChargedSpellWindowHours() {
-    // the requisite spells must be cast
-    // within 24 hours of the favor
-    return 24;
-}
 
 // -----------------------------------------------------------------------
 // The illusionist fabrication gates.
 // -----------------------------------------------------------------------
-inline int illusionistScrollLevel() {
-    // scrolls at 7th level and up
-    return 7;
-}
+    int illusionistScrollLevel();
+    int illusionistOneShotChargedLevel();
+    int illusionistPermanentDweomerLevel();
+    int illusionistMajorCreationInstillHours();
+    int illusionistPermanentGemCost();
 
-inline int illusionistOneShotChargedLevel() {
-    // one-shot and charged items at 11th
-    return 11;
-}
-
-inline int illusionistPermanentDweomerLevel() {
-    // items with a truly permanent dweomer
-    // at 14th
-    return 14;
-}
-
-inline int illusionistMajorCreationInstillHours() {
-    // the uninterrupted instilling window
-    // after major creation
-    return 16;
-}
-
-inline int illusionistPermanentGemCost() {
-    // an unflawed gem worth not less than
-    // 10000 gp
-    return 10000;
-}
 
 // -----------------------------------------------------------------------
 // The charmed or enslaved magic-user rule.
 // -----------------------------------------------------------------------
-inline int enslavedMakerCanFabricate() {
-    // totally unable to fabricate any sort
-    // of magic item - scroll, potion or
-    // otherwise; the attempts are fruitless
-    return 0;
-}
-
-}  // namespace rules
+    int enslavedMakerCanFabricate();
+};

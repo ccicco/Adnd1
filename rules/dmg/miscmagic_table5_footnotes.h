@@ -41,105 +41,18 @@
 
 #pragma once
 
-namespace rules {
-
-inline int m5RowCount() {
-    // the Archmagi through the Wings of Flying
-    return 35;
-}
-
-inline int m5RowLo(int i) {
-    // the printed band lower edges; i clamps
-    if (i < 0) i = 0;
-    if (i > 34) i = 34;
-    static const int t[35] = {
-        1, 2, 9, 10, 11, 12, 20, 26, 28, 32,
-        33, 34, 35, 36, 39, 41, 47, 48, 49, 51,
-        53, 55, 58, 59, 61, 67, 68, 69, 70, 77,
-        79, 84, 86, 88, 91,
-    };
-    return t[i];
-}
-
-inline int m5RowHi(int i) {
-    // the printed band upper edges; i clamps
-    if (i < 0) i = 0;
-    if (i > 34) i = 34;
-    static const int t[35] = {
-        1, 8, 9, 10, 11, 19, 25, 27, 31, 32,
-        33, 34, 35, 38, 40, 46, 47, 48, 50, 52,
-        54, 57, 58, 60, 66, 67, 68, 69, 76, 78,
-        83, 85, 87, 90, 100,
-    };
-    return t[i];
-}
-
-inline int m5UsableByCleric(int i) {
-    // the (C) mark; i clamps
-    if (i < 0) i = 0;
-    if (i > 34) i = 34;
-    static const int t[35] = {
-        0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 1, 0, 1, 0, 0, 0, 0, 1, 0,
-        1, 0, 0, 0, 0,
-    };
-    return t[i];
-}
-
-inline int m5UsableByFighter(int i) {
-    // the (F) mark; i clamps
-    if (i < 0) i = 0;
-    if (i > 34) i = 34;
-    static const int t[35] = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 1, 0, 0, 0, 0, 1, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 1, 1,
-        1, 0, 0, 0, 0,
-    };
-    return t[i];
-}
-
-inline int m5UsableByMagicUser(int i) {
-    // the (M) mark; i clamps
-    if (i < 0) i = 0;
-    if (i > 34) i = 34;
-    static const int t[35] = {
-        1, 0, 1, 1, 1, 1, 0, 0, 0, 0,
-        1, 0, 0, 0, 0, 0, 0, 1, 0, 0,
-        0, 0, 1, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0,
-    };
-    return t[i];
-}
-
-inline int m5UsableByThief(int i) {
-    // the (T) mark; i clamps
-    if (i < 0) i = 0;
-    if (i > 34) i = 34;
-    static const int t[35] = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 1, 0,
-        1, 0, 0, 0, 0,
-    };
-    return t[i];
-}
-
-inline int m5ClericCount() {
-    return 5;
-}
-
-inline int m5FighterCount() {
-    return 5;
-}
-
-inline int m5MagicUserCount() {
-    return 8;
-}
-
-inline int m5ThiefCount() {
-    return 2;
-}
-
-}  // namespace rules
+// R-refactor: namespace rules -> class Miscmagic_table5_footnotes (instance methods)
+class Miscmagic_table5_footnotes {
+public:
+    int m5RowCount();
+    int m5RowLo(int i);
+    int m5RowHi(int i);
+    int m5UsableByCleric(int i);
+    int m5UsableByFighter(int i);
+    int m5UsableByMagicUser(int i);
+    int m5UsableByThief(int i);
+    int m5ClericCount();
+    int m5FighterCount();
+    int m5MagicUserCount();
+    int m5ThiefCount();
+};

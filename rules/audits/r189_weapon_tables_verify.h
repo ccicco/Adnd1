@@ -2,6 +2,7 @@
     // All 50 weight/damage rows, the speed cross-verify
     // against the R158 ladder, and the printed notes.
     {
+        Weaponspeed weaponspeed;
         int bad = 0;
         // the weight/damage chart, row by row (50 cells
         // x weight, S/M min/max, L min/max)
@@ -205,23 +206,25 @@
         // matches the R158 engine ladder value
         if (rules::weaponSpeedVerifiedCount() != 18) ++bad;
         for (int i = 0; i < 18; ++i) {
+            Weaponspeed weaponspeed;
             const char* n = rules::weaponSpeedVerifiedName(i);
             int printed = rules::weaponSpeedVerifiedFactor(i);
-            int engine = rules::weaponSpeedFactor(n);
+            int engine = weaponspeed.weaponSpeedFactor(n);
             if (engine != printed) ++bad;
         }
         // the spear default 7 sits inside the printed 6-8
         {
+            Weaponspeed weaponspeed;
             int lo = 0, hi = 0;
-            rules::spearSpeedFactorRange(lo, hi);
+            weaponspeed.spearSpeedFactorRange(lo, hi);
             if (lo != 6 || hi != 8) ++bad;
-            if (rules::weaponSpeedFactor("spear") != 7) ++bad;
+            if (weaponspeed.weaponSpeedFactor("spear") != 7) ++bad;
         }
         // the horseman flail: OCR-mangled cell, the engine
         // 6 stays recorded convention
-        if (rules::weaponSpeedFactor("horseman flail") != 6) ++bad;
+        if (weaponspeed.weaponSpeedFactor("horseman flail") != 6) ++bad;
         // unknown weapons read 0 (the caller decides)
-        if (rules::weaponSpeedFactor("vorpal blade") != 0) ++bad;
+        if (weaponspeed.weaponSpeedFactor("vorpal blade") != 0) ++bad;
         // the printed notes: the lances double from a
         // charging mount, rows 24-26 only
         if (!rules::lanceChargingDouble(24)) ++bad;

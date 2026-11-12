@@ -92,7 +92,26 @@ if g++ -std=c++17 -I. -I"$PREFIX/include/lua5.4" \
   game/state_combat.cpp game/state_town.cpp \
   game/state_overland.cpp game/state_sea.cpp \
   monsters/MonsterXp.cpp \
-  spelleffects/spelleffects.cpp regtest.cpp \
+  spelleffects/spelleffects.cpp \
+    rules/dmg/armorshield.cpp rules/dmg/assassinate.cpp rules/dmg/conduct.cpp rules/dmg/construct.cpp rules/dmg/disease.cpp \
+    rules/dmg/dmg_appendices_klm.cpp rules/dmg/doorforce.cpp rules/dmg/energydrain.cpp rules/dmg/followers.cpp rules/dmg/grenade.cpp \
+    rules/dmg/herbs.cpp rules/dmg/hirecost.cpp rules/dmg/hirelings.cpp rules/dmg/hoard.cpp rules/dmg/humanoid_preferences.cpp \
+    rules/dmg/insanity.cpp rules/dmg/itemsavethrow.cpp rules/dmg/locktime.cpp rules/dmg/magic_research.cpp rules/dmg/miscibility.cpp \
+    rules/dmg/miscmagic_alchemy_jug_to_bag_of_devouring.cpp rules/dmg/miscmagic_bag_of_holding_to_book_of_exalted_deeds.cpp rules/dmg/miscmagic_book_of_infinite_spells_to_boots_of_striding_and_springing.cpp rules/dmg/miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.cpp rules/dmg/miscmagic_candle_of_invocation_to_cloak_of_protection.cpp \
+    rules/dmg/miscmagic_crystal_balls.cpp rules/dmg/miscmagic_cube_of_force_to_decanter_of_endless_water.cpp rules/dmg/miscmagic_deck_of_many_things.cpp rules/dmg/miscmagic_drums_of_deafening_to_eyes_of_petrification.cpp rules/dmg/miscmagic_figurines_of_wondrous_power.cpp \
+    rules/dmg/miscmagic_flask_of_curses_to_girdle_of_giant_strength.cpp rules/dmg/miscmagic_helm_of_brilliance_to_horn_of_bubbles.cpp rules/dmg/miscmagic_horn_of_collapsing_to_incense_of_meditation.cpp rules/dmg/miscmagic_incense_of_obsession_to_fochlucan_bandore.cpp rules/dmg/miscmagic_iron_flask_to_keoghtoms_ointment.cpp \
+    rules/dmg/miscmagic_librams_lyre_and_manuals.cpp rules/dmg/miscmagic_mac_fuirmidh_cittern_to_instrument_type_table.cpp rules/dmg/miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.cpp rules/dmg/miscmagic_necklace_of_prayer_beads_to_periapts.cpp rules/dmg/miscmagic_phylactery_of_faithfulness_to_feather_token.cpp \
+    rules/dmg/miscmagic_robes.cpp rules/dmg/miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.cpp rules/dmg/miscmagic_sphere_of_annihilation_to_wings_of_flying.cpp rules/dmg/miscmagic_table1_footnotes.cpp rules/dmg/miscmagic_table2_footnotes.cpp \
+    rules/dmg/miscmagic_table3_footnotes.cpp rules/dmg/miscmagic_table4_footnotes.cpp rules/dmg/miscmagic_table5_footnotes.cpp rules/dmg/mweapons.cpp rules/dmg/npcbody.cpp \
+    rules/dmg/npcpersonae.cpp rules/dmg/npctraits.cpp rules/dmg/poison.cpp rules/dmg/potions.cpp rules/dmg/potions_conventions_animal_control_to_extra_healing.cpp \
+    rules/dmg/potions_fire_resistance_to_invisibility.cpp rules/dmg/potions_invulnerability_to_water_breathing.cpp rules/dmg/pursuit.cpp rules/dmg/rings.cpp rules/dmg/rings_feather_falling_to_shooting_stars.cpp \
+    rules/dmg/rings_mechanics_contrariness_to_elemental_command.cpp rules/dmg/rings_spell_storing_to_x_ray_vision.cpp rules/dmg/rods_absorption_to_smiting.cpp rules/dmg/rodswands.cpp rules/dmg/sage.cpp \
+    rules/dmg/scroll_manufacture.cpp rules/dmg/scrollpins.cpp rules/dmg/scrolls_mechanics_protection_demons_to_undead.cpp rules/dmg/secondary.cpp rules/dmg/set_spear.cpp \
+    rules/dmg/siegefire.cpp rules/dmg/socialrank.cpp rules/dmg/specart.cpp rules/dmg/specart_axe_of_the_dwarvish_lords_to_codex.cpp rules/dmg/specart_notes_on_artifacts_and_relics.cpp \
+    rules/dmg/spying.cpp rules/dmg/staves_command_to_withering.cpp rules/dmg/subdue.cpp rules/dmg/swimcross.cpp rules/dmg/swords.cpp \
+    rules/dmg/taxation.cpp rules/dmg/treasure_determination.cpp rules/dmg/twoweapon.cpp rules/dmg/uwfight.cpp rules/dmg/uwspells.cpp \
+    rules/dmg/wands_conventions_conjuration_to_fear.cpp rules/dmg/wands_illumination_to_secret_door_and_trap_location.cpp rules/dmg/weaponless.cpp rules/dmg/weaponspeed.cpp rules/dmg/wonder.cpp \
+  regtest.cpp \
   -o regtest -L"$PREFIX/lib" -llua5.4 2>"$warnfile" \
   && ./regtest | tee "$batfile" | grep -v 'audit: bad 0$'; then
   [ "${PIPESTATUS[0]}" = 0 ] || fail=1

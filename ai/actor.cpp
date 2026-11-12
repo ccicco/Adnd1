@@ -255,6 +255,7 @@ void Encounter::logLine(const std::string& s) {
 // ladder returns 0 and the caller reads unknown)
 static int actorSpeedFactor(
     const items::WeaponInstance& w) {
+    Weaponspeed weaponspeed;
     const char* n = items::weapon(w.id).name;
     std::string s;
     for (int i = 0; n[i]; ++i) {
@@ -264,7 +265,7 @@ static int actorSpeedFactor(
     }
     if (w.id == items::WPN_MACE) s = "footman mace";
     if (w.id == items::WPN_FLAIL) s = "footman flail";
-    return rules::weaponSpeedFactor(s.c_str());
+    return weaponspeed.weaponSpeedFactor(s.c_str());
 }
 
 // R782: the deity bridge - the Appendix S stat block
@@ -360,10 +361,11 @@ static bool giantClassFamilyMatch(const std::string& name) {
 // gate decision for one attacker (see
 // actor.h).
 bool Encounter::waterStrikeAllowed(const Actor& a) const{
+        Uwfight uwfight;
         if (!a.isCharacter || !m_waterFight) return true;
         if (a.weaponThrown) return true;
         if (a.subclass == rules::SUB_MONK) return true;
-        return rules::uwStrikeAllowed(
+        return uwfight.uwStrikeAllowed(
             (int)items::weapon(a.weapon.id).wclass) != 0;
     }
 
@@ -505,7 +507,8 @@ int Encounter::resolveMelee(Actor& attacker, Actor& defender) {
     // the counterstrike armed (the flag clears so the
     // follow-up blows stay normal)
     if (attacker.receiveBoost) {
-        dmg *= rules::spsSetDamageMultiplier();
+        Set_spear set_spear;
+        dmg *= set_spear.spsSetDamageMultiplier();
         attacker.receiveBoost = false;
     }
     if (dmg < 1) dmg = 1;
@@ -1162,6 +1165,7 @@ void Encounter::rollSurpriseWired(int& segsA, int& segsB) {
 }
 
 int Encounter::stepRound() {
+    Weaponspeed weaponspeed;
     ++m_round;
     // R43: the engagement range closes one 10' band per round -
     // after 5 rounds the foes are at sword's length and party
@@ -1178,12 +1182,13 @@ int Encounter::stepRound() {
     for (int t = 0; t < 2; ++t) {
         auto& team = t == 0 ? m_party : m_monsters;
         for (auto& a : team) {
+            Uwfight uwfight;
             if (!a.alive()) continue;
             if (!a.hasStatus(
                     spelleffects::STATUS_ENTANGLED))
                 continue;
             if ((int)a.str >=
-                    rules::uwNetEntrapStrTear()) {
+                    uwfight.uwNetEntrapStrTear()) {
                 for (auto& st : a.statuses)
                     if (st.kind ==
                         spelleffects::
@@ -1279,12 +1284,13 @@ int Encounter::stepRound() {
     // (rules/dmg/uwfight.h).
     if (m_waterFight && m_aquatic &&
         rules::uwAquaticFirstStrike()) {
+        Uwfight uwfight;
         baseSegM = mSurp +
-            rules::uwAquaticFirstStrikeSegment();
+            uwfight.uwAquaticFirstStrikeSegment();
         if (baseSegP <
-            rules::uwCompanyEarliestSegment())
+            uwfight.uwCompanyEarliestSegment())
             baseSegP =
-                rules::uwCompanyEarliestSegment();
+                uwfight.uwCompanyEarliestSegment();
     }
 
     // R25: capture + clear the drink request for this round
@@ -1526,14 +1532,15 @@ int Encounter::stepRound() {
         m_monsters[mFrontIdx].mountKind != 0 &&
         m_round == 1;
     bool factorApplies =
-        rules::speedFactorApplies(pCharging || mCharging);
+        weaponspeed.speedFactorApplies(pCharging || mCharging);
     // case 1 (DMG p.66 Simultaneous Initiative): a tie -
     // the lower factor strikes first (+1 segment on the
     // slower side's base; equal factors stay simultaneous)
     // R782: the charging round is exempt (the closing bar)
     if (winner == 0 && pFrontIdx >= 0 && mFrontIdx >= 0 &&
         factorApplies) {
-        int first = rules::speedFactorFirst(sfP, sfM);
+        Weaponspeed weaponspeed;
+        int first = weaponspeed.speedFactorFirst(sfP, sfM);
         if (first == -1) {
             mShift = 1;
             logLine("Initiative tie - the speed factors "
@@ -1552,15 +1559,17 @@ int Encounter::stepRound() {
     // rides an unfired case)
     if (pFrontIdx >= 0 && castMember >= 0 &&
         winner == 1) {
+        Weaponspeed weaponspeed;
         pSegOverride =
-            rules::weaponVsActivitySegment(sfP, mIni);
+            weaponspeed.weaponVsActivitySegment(sfP, mIni);
         if (pSegOverride < 1) pSegOverride = 1;
         if (pSegOverride > 10) pSegOverride = 10;
     }
     if (mFrontIdx >= 0 && monsterCastIdx >= 0 &&
         winner == -1) {
+        Weaponspeed weaponspeed;
         mSegOverride =
-            rules::weaponVsActivitySegment(sfM, pIni);
+            weaponspeed.weaponVsActivitySegment(sfM, pIni);
         if (mSegOverride < 1) mSegOverride = 1;
         if (mSegOverride > 10) mSegOverride = 10;
     }
@@ -1569,9 +1578,10 @@ int Encounter::stepRound() {
     // the +5 routine spacing - the JUDGMENT)
     if (m_round > 1 && pFrontIdx >= 0 && mFrontIdx >= 0 &&
         factorApplies) {
+        Weaponspeed weaponspeed;
         int lo = sfP < sfM ? sfP : sfM;
         int hi = sfP < sfM ? sfM : sfP;
-        int before = rules::speedFactorAttacksBefore(lo, hi);
+        int before = weaponspeed.speedFactorAttacksBefore(lo, hi);
         if (before > 1) {
             if (sfP < sfM) pExtra = before - 1;
             else if (sfM < sfP) mExtra = before - 1;

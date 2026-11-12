@@ -3,9 +3,10 @@
     // table - the 36 rows, the ammo quantity
     // ranges and the duplicate Hammer +2 rows.
     {
+        Mweapons mweapons;
         int bad = 0;
         // the row identity: the 36 die bands
-        if (rules::mwRowCount() != 36) ++bad;
+        if (mweapons.mwRowCount() != 36) ++bad;
         static const int kLo[36] = {
             1, 9, 13, 15, 16, 21, 23, 24, 25, 28, 33, 36,
             37, 38, 39, 47, 51, 52, 57, 61, 63, 64, 65, 68,
@@ -37,73 +38,73 @@
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         };
         for (int i = 0; i < 36; ++i)
-            if (rules::mwRowLo(i) != kLo[i] ||
-                rules::mwRowHi(i) != kHi[i] ||
-                rules::mwXpValue(i) != kXp[i] ||
-                rules::mwSaleGp(i) != kGp[i] ||
-                rules::mwQtyLo(i) != kQlo[i] ||
-                rules::mwQtyHi(i) != kQhi[i])
+            if (mweapons.mwRowLo(i) != kLo[i] ||
+                mweapons.mwRowHi(i) != kHi[i] ||
+                mweapons.mwXpValue(i) != kXp[i] ||
+                mweapons.mwSaleGp(i) != kGp[i] ||
+                mweapons.mwQtyLo(i) != kQlo[i] ||
+                mweapons.mwQtyHi(i) != kQhi[i])
                 ++bad;
         for (int i = 1; i < 36; ++i)
-            if (rules::mwRowLo(i) !=
-                rules::mwRowHi(i - 1) + 1) ++bad;
-        if (rules::mwRowLo(-5) != 1 ||
-            rules::mwRowHi(99) != 100) ++bad;
+            if (mweapons.mwRowLo(i) !=
+                mweapons.mwRowHi(i - 1) + 1) ++bad;
+        if (mweapons.mwRowLo(-5) != 1 ||
+            mweapons.mwRowHi(99) != 100) ++bad;
         // the printed values: the Arrow of
         // Slaying, the Crossbow of Speed, the
         // Dagger of Venom, the Hammer of
         // Thunderbolts, the Mace of Disruption
         // and the Trident (Military Fork)
-        if (rules::mwXpValue(3) != 250 ||
-            rules::mwSaleGp(3) != 2500) ++bad;
-        if (rules::mwXpValue(13) != 1500 ||
-            rules::mwSaleGp(13) != 7500) ++bad;
-        if (rules::mwXpValue(16) != 350 ||
-            rules::mwSaleGp(16) != 3000) ++bad;
-        if (rules::mwXpValue(21) != 2500 ||
-            rules::mwSaleGp(21) != 25000) ++bad;
-        if (rules::mwXpValue(25) != 1750 ||
-            rules::mwSaleGp(25) != 17500) ++bad;
-        if (rules::mwXpValue(35) != 1500 ||
-            rules::mwSaleGp(35) != 12500) ++bad;
+        if (mweapons.mwXpValue(3) != 250 ||
+            mweapons.mwSaleGp(3) != 2500) ++bad;
+        if (mweapons.mwXpValue(13) != 1500 ||
+            mweapons.mwSaleGp(13) != 7500) ++bad;
+        if (mweapons.mwXpValue(16) != 350 ||
+            mweapons.mwSaleGp(16) != 3000) ++bad;
+        if (mweapons.mwXpValue(21) != 2500 ||
+            mweapons.mwSaleGp(21) != 25000) ++bad;
+        if (mweapons.mwXpValue(25) != 1750 ||
+            mweapons.mwSaleGp(25) != 17500) ++bad;
+        if (mweapons.mwXpValue(35) != 1500 ||
+            mweapons.mwSaleGp(35) != 12500) ++bad;
         // the FOUR ammo quantity ranges: the
         // three Arrows 2-24/2-16/2-12 and the
         // Bolt 2-20 (0/0 means a single item)
-        if (rules::mwQtyLo(0) != 2 ||
-            rules::mwQtyHi(0) != 24 ||
-            rules::mwQtyLo(1) != 2 ||
-            rules::mwQtyHi(1) != 16 ||
-            rules::mwQtyLo(2) != 2 ||
-            rules::mwQtyHi(2) != 12 ||
-            rules::mwQtyLo(9) != 2 ||
-            rules::mwQtyHi(9) != 20 ||
-            rules::mwQtyRangeCount() != 4) ++bad;
-        if (rules::mwQtyLo(5) != 0 ||
-            rules::mwQtyHi(5) != 0 ||
-            rules::mwQtyLo(35) != 0 ||
-            rules::mwQtyHi(35) != 0) ++bad;
+        if (mweapons.mwQtyLo(0) != 2 ||
+            mweapons.mwQtyHi(0) != 24 ||
+            mweapons.mwQtyLo(1) != 2 ||
+            mweapons.mwQtyHi(1) != 16 ||
+            mweapons.mwQtyLo(2) != 2 ||
+            mweapons.mwQtyHi(2) != 12 ||
+            mweapons.mwQtyLo(9) != 2 ||
+            mweapons.mwQtyHi(9) != 20 ||
+            mweapons.mwQtyRangeCount() != 4) ++bad;
+        if (mweapons.mwQtyLo(5) != 0 ||
+            mweapons.mwQtyHi(5) != 0 ||
+            mweapons.mwQtyLo(35) != 0 ||
+            mweapons.mwQtyHi(35) != 0) ++bad;
         // the TWO duplicate Hammer +2 rows: the
         // book prints the name twice with
         // different values (p.125)
-        if (rules::mwXpValue(18) != 300 ||
-            rules::mwSaleGp(18) != 2500 ||
-            rules::mwXpValue(19) != 650 ||
-            rules::mwSaleGp(19) != 6000 ||
-            rules::mwDuplicateNameCount() != 2) ++bad;
+        if (mweapons.mwXpValue(18) != 300 ||
+            mweapons.mwSaleGp(18) != 2500 ||
+            mweapons.mwXpValue(19) != 650 ||
+            mweapons.mwSaleGp(19) != 6000 ||
+            mweapons.mwDuplicateNameCount() != 2) ++bad;
         // the cursed Backbiter prints --- x.p.
-        if (rules::mwXpValue(34) != 0 ||
-            rules::mwSaleGp(34) != 1000 ||
-            rules::mwNoXpCount() != 1) ++bad;
+        if (mweapons.mwXpValue(34) != 0 ||
+            mweapons.mwSaleGp(34) != 1000 ||
+            mweapons.mwNoXpCount() != 1) ++bad;
         // the Trident (Military Fork) rides the
         // 00 band - pinned as 100
-        if (rules::mwRowLo(35) != 100 ||
-            rules::mwRowHi(35) != 100) ++bad;
+        if (mweapons.mwRowLo(35) != 100 ||
+            mweapons.mwRowHi(35) != 100) ++bad;
         // clamped reads land on the Arrow +1
         // below and the Trident above
-        if (rules::mwSaleGp(-99) != 120 ||
-            rules::mwSaleGp(99) != 12500 ||
-            rules::mwQtyLo(-99) != 2 ||
-            rules::mwQtyHi(99) != 0) ++bad;
+        if (mweapons.mwSaleGp(-99) != 120 ||
+            mweapons.mwSaleGp(99) != 12500 ||
+            mweapons.mwQtyLo(-99) != 2 ||
+            mweapons.mwQtyHi(99) != 0) ++bad;
         printf("R243 misc weapons pins audit: bad %d\n", bad);
         if (bad) return 1;
     }

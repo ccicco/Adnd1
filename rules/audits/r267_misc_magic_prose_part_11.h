@@ -4,81 +4,83 @@
     // Strength, part2 lines 481-530 - the slice
     // pinning the kMisc3 rows 1-9.
     {
+        Miscmagic_flask_of_curses_to_girdle_of_giant_strength miscmagic_flask_of_curses_to_girdle_of_giant_strength;
+        Miscmagic_table3_footnotes miscmagic_table3_footnotes;
         int bad = 0;
-        if (rules::mmpFlaskCurseOnFirstOpen() != 1 ||
-            rules::mmpFlaskHarmlessAfterUse() != 1) ++bad;
-        if (rules::mmpGauntDexBoostLow() != 4 ||
-            rules::mmpGauntDexBoostMid() != 2 ||
-            rules::mmpGauntDexBoostHigh() != 1 ||
-            rules::mmpGauntDexThiefLevel() != 4 ||
-            rules::mmpGauntDexThiefBonusPct() != 10) ++bad;
-        if (rules::mmpGauntFumbDropPct() != 50 ||
-            rules::mmpGauntFumbDexPenalty() != 2 ||
-            rules::mmpGauntFumbRemoveCurseOnly() != 1 ||
-            rules::mmpGauntOgreStrength() != 18 ||
-            rules::mmpGauntOgreStrengthPercentile() != 0 ||
-            rules::mmpGauntOgreHitBonus() != 3 ||
-            rules::mmpGauntOgreDmgBonus() != 6) ++bad;
-        if (rules::mmpGauntSwimUnderwaterInches() != 15 ||
-            rules::mmpGauntSwimSurfaceInches() != 18 ||
-            rules::mmpGauntSwimClimbSuccessPct() != 95 ||
-            rules::mmpGauntSwimThiefSuccessTenthPct() !=
+        if (miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpFlaskCurseOnFirstOpen() != 1 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpFlaskHarmlessAfterUse() != 1) ++bad;
+        if (miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGauntDexBoostLow() != 4 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGauntDexBoostMid() != 2 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGauntDexBoostHigh() != 1 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGauntDexThiefLevel() != 4 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGauntDexThiefBonusPct() != 10) ++bad;
+        if (miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGauntFumbDropPct() != 50 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGauntFumbDexPenalty() != 2 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGauntFumbRemoveCurseOnly() != 1 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGauntOgreStrength() != 18 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGauntOgreStrengthPercentile() != 0 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGauntOgreHitBonus() != 3 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGauntOgreDmgBonus() != 6) ++bad;
+        if (miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGauntSwimUnderwaterInches() != 15 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGauntSwimSurfaceInches() != 18 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGauntSwimClimbSuccessPct() != 95 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGauntSwimThiefSuccessTenthPct() !=
             995) ++bad;
-        if (rules::mmpGemBrightLightSorts() != 3 ||
-            rules::mmpGemBrightConeLengthFeet() != 10 ||
-            rules::mmpGemBrightConeRadiusHalfFeet() != 5 ||
-            rules::mmpGemBrightRayDiameterFeet() != 1 ||
-            rules::mmpGemBrightRayLengthFeet() != 50 ||
-            rules::mmpGemBrightDazzleMinRounds() != 1 ||
-            rules::mmpGemBrightDazzleMaxRounds() != 4 ||
-            rules::mmpGemBrightRayCharges() != 1) ++bad;
-        if (rules::mmpGemBrightFlashLengthFeet() != 30 ||
-            rules::mmpGemBrightFlashRadiusFeet() != 5 ||
-            rules::mmpGemBrightBlindMinRounds() != 1 ||
-            rules::mmpGemBrightBlindMaxRounds() != 4 ||
-            rules::mmpGemBrightEyePenaltyMin() != 1 ||
-            rules::mmpGemBrightEyePenaltyMax() != 4 ||
-            rules::mmpGemBrightFlashCharges() != 5 ||
-            rules::mmpGemBrightTotalCharges() != 50) ++bad;
-        if (rules::mmpGemBrightDarknessDrainCharges() != 1 ||
-            rules::mmpGemBrightDarknessRoundUseless() != 1 ||
-            rules::mmpGemBrightDarknessDayUseless() != 1 ||
-            rules::mmpGemBrightDarknessExpelCharges() !=
+        if (miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemBrightLightSorts() != 3 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemBrightConeLengthFeet() != 10 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemBrightConeRadiusHalfFeet() != 5 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemBrightRayDiameterFeet() != 1 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemBrightRayLengthFeet() != 50 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemBrightDazzleMinRounds() != 1 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemBrightDazzleMaxRounds() != 4 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemBrightRayCharges() != 1) ++bad;
+        if (miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemBrightFlashLengthFeet() != 30 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemBrightFlashRadiusFeet() != 5 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemBrightBlindMinRounds() != 1 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemBrightBlindMaxRounds() != 4 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemBrightEyePenaltyMin() != 1 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemBrightEyePenaltyMax() != 4 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemBrightFlashCharges() != 5 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemBrightTotalCharges() != 50) ++bad;
+        if (miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemBrightDarknessDrainCharges() != 1 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemBrightDarknessRoundUseless() != 1 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemBrightDarknessDayUseless() != 1 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemBrightDarknessExpelCharges() !=
             5) ++bad;
-        if (rules::mmpGemSeeCursoryRangeInches() != 30 ||
-            rules::mmpGemSeeCarefulRangeInches() != 10 ||
-            rules::mmpGemSeeCursoryAreaFeet() != 200 ||
-            rules::mmpGemSeeCursoryRounds() != 1 ||
-            rules::mmpGemSeeCarefulAreaFeet() != 100 ||
-            rules::mmpGemSeeCarefulRounds() != 2 ||
-            rules::mmpGemSeeHallucinationPct() != 5) ++bad;
-        if (rules::mmpGirdleSexWishRestorePct() != 50 ||
-            rules::mmpGirdleSexSexlessPct() != 10 ||
-            rules::mmpGirdleGiantTypeCount() != 6 ||
-            rules::mmpGirdleGiantRockDmgMin() != 1) ++bad;
+        if (miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemSeeCursoryRangeInches() != 30 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemSeeCarefulRangeInches() != 10 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemSeeCursoryAreaFeet() != 200 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemSeeCursoryRounds() != 1 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemSeeCarefulAreaFeet() != 100 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemSeeCarefulRounds() != 2 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemSeeHallucinationPct() != 5) ++bad;
+        if (miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGirdleSexWishRestorePct() != 50 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGirdleSexSexlessPct() != 10 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGirdleGiantTypeCount() != 6 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGirdleGiantRockDmgMin() != 1) ++bad;
         // the arithmetic: the two 5-charge expends
-        if (rules::mmpGemBrightFlashCharges() !=
-            rules::mmpGemBrightDarknessExpelCharges() ||
-            rules::mmpGemBrightDazzleMinRounds() !=
-            rules::mmpGemBrightBlindMinRounds() ||
-            rules::mmpGemBrightDazzleMaxRounds() !=
-            rules::mmpGemBrightBlindMaxRounds()) ++bad;
+        if (miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemBrightFlashCharges() !=
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemBrightDarknessExpelCharges() ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemBrightDazzleMinRounds() !=
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemBrightBlindMinRounds() ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemBrightDazzleMaxRounds() !=
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGemBrightBlindMaxRounds()) ++bad;
         // the giant strength ladders: strength and
         // damage climb by 1, bend bars by 10
         for (int i = 0; i < 5; ++i)
-            if (rules::mmpGirdleGiantStrength(i + 1) !=
-                rules::mmpGirdleGiantStrength(i) + 1 ||
-                rules::mmpGirdleGiantDmgBonus(i + 1) !=
-                rules::mmpGirdleGiantDmgBonus(i) + 1 ||
-                rules::mmpGirdleGiantBendBarsPct(i + 1) !=
-                rules::mmpGirdleGiantBendBarsPct(i) +
+            if (miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGirdleGiantStrength(i + 1) !=
+                miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGirdleGiantStrength(i) + 1 ||
+                miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGirdleGiantDmgBonus(i + 1) !=
+                miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGirdleGiantDmgBonus(i) + 1 ||
+                miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGirdleGiantBendBarsPct(i + 1) !=
+                miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGirdleGiantBendBarsPct(i) +
                 10) ++bad;
         // the dice bands run 01-00 without gaps
         for (int i = 0; i < 5; ++i)
-            if (rules::mmpGirdleGiantDiceLo(i + 1) !=
-                rules::mmpGirdleGiantDiceHi(i) + 1) ++bad;
-        if (rules::mmpGirdleGiantDiceLo(0) != 1 ||
-            rules::mmpGirdleGiantDiceHi(5) != 100) ++bad;
+            if (miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGirdleGiantDiceLo(i + 1) !=
+                miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGirdleGiantDiceHi(i) + 1) ++bad;
+        if (miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGirdleGiantDiceLo(0) != 1 ||
+            miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGirdleGiantDiceHi(5) != 100) ++bad;
         // the static twin of the printed tables
         static const int kStr[6] = {
             19, 20, 21, 22, 23, 24,
@@ -116,26 +118,26 @@
             50, 60, 70, 80, 90, 100,
         };
         for (int i = 0; i < 6; ++i)
-            if (rules::mmpGirdleGiantStrength(i) != kStr[i] ||
-                rules::mmpGirdleGiantHitBonus(i) != kHit[i] ||
-                rules::mmpGirdleGiantOpenDoorsTop(i) !=
+            if (miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGirdleGiantStrength(i) != kStr[i] ||
+                miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGirdleGiantHitBonus(i) != kHit[i] ||
+                miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGirdleGiantOpenDoorsTop(i) !=
                 kTop[i] ||
-                rules::mmpGirdleGiantOpenDoorsBottom(i) !=
+                miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGirdleGiantOpenDoorsBottom(i) !=
                 kBot[i] ||
-                rules::mmpGirdleGiantOpenChances(i) !=
+                miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGirdleGiantOpenChances(i) !=
                 kCh[i] ||
-                rules::mmpGirdleGiantOpenOutOf(i) !=
+                miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGirdleGiantOpenOutOf(i) !=
                 kOf[i]) ++bad;
         for (int i = 0; i < 6; ++i)
-            if (rules::mmpGirdleGiantWeightAllowance(i) !=
+            if (miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGirdleGiantWeightAllowance(i) !=
                 kWa[i] ||
-                rules::mmpGirdleGiantRangeInches(i) !=
+                miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGirdleGiantRangeInches(i) !=
                 kRg[i] ||
-                rules::mmpGirdleGiantRockDmgMax(i) !=
+                miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGirdleGiantRockDmgMax(i) !=
                 kRd[i] ||
-                rules::mmpGirdleGiantRockWeight(i) !=
+                miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGirdleGiantRockWeight(i) !=
                 kRw[i] ||
-                rules::mmpGirdleGiantBendBarsPct(i) !=
+                miscmagic_flask_of_curses_to_girdle_of_giant_strength.mmpGirdleGiantBendBarsPct(i) !=
                 kBb[i]) ++bad;
         // the kMisc3 rows this slice pins: 1-9,
         // the (C, F, T) marks on rows 4, 5, 8, 9
@@ -149,16 +151,16 @@
             0, 0, 0, 1, 1, 0, 0, 1, 1,
         };
         for (int i = 0; i < 9; ++i)
-            if (rules::m3RowLo(1 + i) != kLo[i] ||
-                rules::m3RowHi(1 + i) != kHi[i]) ++bad;
+            if (miscmagic_table3_footnotes.m3RowLo(1 + i) != kLo[i] ||
+                miscmagic_table3_footnotes.m3RowHi(1 + i) != kHi[i]) ++bad;
         for (int i = 0; i < 9; ++i)
-            if (rules::m3UsableByCleric(1 + i) != kMk[i] ||
-                rules::m3UsableByFighter(1 + i) !=
+            if (miscmagic_table3_footnotes.m3UsableByCleric(1 + i) != kMk[i] ||
+                miscmagic_table3_footnotes.m3UsableByFighter(1 + i) !=
                 kMk[i] ||
-                rules::m3UsableByThief(1 + i) !=
+                miscmagic_table3_footnotes.m3UsableByThief(1 + i) !=
                 kMk[i] ||
-                rules::m3StarCount(1 + i) ||
-                rules::m3IsPerFacetValued(1 + i)) ++bad;
+                miscmagic_table3_footnotes.m3StarCount(1 + i) ||
+                miscmagic_table3_footnotes.m3IsPerFacetValued(1 + i)) ++bad;
         printf("R267 misc magic prose part 11 pins audit: bad %d\n", bad);
         if (bad) return 1;
     }

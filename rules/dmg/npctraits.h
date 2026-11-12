@@ -42,8 +42,10 @@
 #pragma once
 
 #include "npcpersonae.h"  // R209: the d10 face clamp
+#include "rules/dmg/npcpersonae.h"  // R-refactor: cross-file symbol
 
-namespace rules {
+
+
 
 // -----------------------------------------------------------------------
 // The General Tendencies (d12, d6) - 24
@@ -78,18 +80,7 @@ enum NpcTendency {
     NPT_TENDENCY_COUNT
 };
 
-inline int npcTendencyCount() { return 24; }
 
-inline int npcTraitTendency(int d6, int d12) {
-    // the d6 half: 1-3 the first twelve,
-    // 4-6 the second; the d12 picks the row
-    if (d6 < 1) d6 = 1;
-    if (d6 > 6) d6 = 6;
-    if (d12 < 1) d12 = 1;
-    if (d12 > 12) d12 = 12;
-    int half = d6 <= 3 ? 0 : 1;
-    return half * 12 + d12 - 1;
-}
 
 // -----------------------------------------------------------------------
 // The Personality (d8, d8) - three columns
@@ -103,6 +94,7 @@ enum NpcPersType {
     NPPTY_INTROVERTED,
     NPPTY_TYPE_COUNT
 };
+
 
 enum NpcPersWord {
     // average column 1-8
@@ -135,36 +127,7 @@ enum NpcPersWord {
     NPPW_WORD_COUNT
 };
 
-inline int npcTraitPersonalityType(int d8) {
-    // 1-5 average, 6-7 extroverted, 8
-    // introverted
-    if (d8 < 1) d8 = 1;
-    if (d8 > 8) d8 = 8;
-    if (d8 <= 5) return NPPTY_AVERAGE;
-    if (d8 <= 7) return NPPTY_EXTROVERTED;
-    return NPPTY_INTROVERTED;
-}
 
-inline int npcTraitPersonality(int d8first, int d8second) {
-    // the word code: the column base plus
-    // the row (the friendly, aloof, hostile,
-    // rude and diplomatic words appear in
-    // more than one column, so the codes are
-    // per-column - the R209 raw-int
-    // convention, one code per cell)
-    if (d8first < 1) d8first = 1;
-    if (d8first > 8) d8first = 8;
-    if (d8second < 1) d8second = 1;
-    if (d8second > 8) d8second = 8;
-    static const int t[24] = {
-        0, 1, 2, 3, 4, 5, 6, 7,
-        8, 9, 10, 11, 12, 13, 14, 15,
-        16, 17, 18, 19, 20, 21, 22, 23,
-    };
-    int col = d8first <= 5 ? 0 :
-        (d8first <= 7 ? 1 : 2);
-    return t[col * 8 + d8second - 1];
-}
 
 // -----------------------------------------------------------------------
 // The Interests (d12, d6) - 24 interests:
@@ -200,23 +163,7 @@ enum NpcInterest {
     NPI_INTEREST_COUNT
 };
 
-inline int npcInterestCount() { return 24; }
 
-inline int npcTraitInterest(int d6, int d12) {
-    // the same d6-half shape as the
-    // tendencies
-    if (d6 < 1) d6 = 1;
-    if (d6 > 6) d6 = 6;
-    if (d12 < 1) d12 = 1;
-    if (d12 > 12) d12 = 12;
-    int half = d6 <= 3 ? 0 : 1;
-    return half * 12 + d12 - 1;
-}
-
-inline bool npcInterestIsCollector(int i) {
-    // rows 17-20: the four collector faces
-    return i >= NPI_COLLECTOR_1 && i <= NPI_COLLECTOR_4;
-}
 
 // -----------------------------------------------------------------------
 // Disposition (d10): cheerful, morose,
@@ -238,9 +185,7 @@ enum NpcDisposition {
     NPD_COUNT
 };
 
-inline int npcTraitDisposition(int d10) {
-    return npcD10Face(d10) - 1;
-}
+
 
 // -----------------------------------------------------------------------
 // Intellect (d10): dull, average, average,
@@ -263,17 +208,7 @@ enum NpcIntellect {
     NPIQ_COUNT
 };
 
-inline int npcTraitIntellect(int d10) {
-    return npcD10Face(d10) - 1;
-}
 
-inline bool npcIntellectModifiesRating(int iq) {
-    // dreaming, ponderous, anti-intellectual,
-    // scheming and brilliant - the four-out-
-    // of-eight-cases note reads dreaming
-    // through brilliant
-    return iq >= NPIQ_DREAMING;
-}
 
 // -----------------------------------------------------------------------
 // Collections (d12): knives & daggers,
@@ -299,11 +234,7 @@ enum NpcCollection {
     NPCOL_COUNT
 };
 
-inline int npcTraitCollection(int d12) {
-    if (d12 < 1) d12 = 1;
-    if (d12 > 12) d12 = 12;
-    return d12 - 1;
-}
+
 
 // -----------------------------------------------------------------------
 // Nature (d6): soft-hearted, forgiving,
@@ -320,11 +251,7 @@ enum NpcNature {
     NPNT_COUNT
 };
 
-inline int npcTraitNature(int d6) {
-    if (d6 < 1) d6 = 1;
-    if (d6 > 6) d6 = 6;
-    return d6 - 1;
-}
+
 
 // -----------------------------------------------------------------------
 // Materialism (d6): aesthetic,
@@ -341,11 +268,7 @@ enum NpcMaterialism {
     NPM_COUNT
 };
 
-inline int npcTraitMaterialism(int d6) {
-    if (d6 < 1) d6 = 1;
-    if (d6 > 6) d6 = 6;
-    return d6 - 1;
-}
+
 
 // -----------------------------------------------------------------------
 // Honesty (d8): scrupulous, very honorable,
@@ -364,11 +287,7 @@ enum NpcHonesty {
     NPH_COUNT
 };
 
-inline int npcTraitHonesty(int d8) {
-    if (d8 < 1) d8 = 1;
-    if (d8 > 8) d8 = 8;
-    return d8 - 1;
-}
+
 
 // -----------------------------------------------------------------------
 // Bravery (d8): normal, normal, normal,
@@ -387,11 +306,7 @@ enum NpcBravery {
     NPB_COUNT
 };
 
-inline int npcTraitBravery(int d8) {
-    if (d8 < 1) d8 = 1;
-    if (d8 > 8) d8 = 8;
-    return d8 - 1;
-}
+
 
 // -----------------------------------------------------------------------
 // Energy (d8): slothful, lazy, normal,
@@ -411,11 +326,7 @@ enum NpcEnergy {
     NPE_COUNT
 };
 
-inline int npcTraitEnergy(int d8) {
-    if (d8 < 1) d8 = 1;
-    if (d8 > 8) d8 = 8;
-    return d8 - 1;
-}
+
 
 // -----------------------------------------------------------------------
 // Thrift (d8): miserly, mean, thrifty,
@@ -434,11 +345,7 @@ enum NpcThrift {
     NPTHR_COUNT
 };
 
-inline int npcTraitThrift(int d8) {
-    if (d8 < 1) d8 = 1;
-    if (d8 > 8) d8 = 8;
-    return d8 - 1;
-}
+
 
 // -----------------------------------------------------------------------
 // Morals (d12): ascetic, virtuous, normal,
@@ -462,29 +369,7 @@ enum NpcMorals {
     NPMOR_COUNT
 };
 
-inline int npcTraitMorals(int d12) {
-    if (d12 < 1) d12 = 1;
-    if (d12 > 12) d12 = 12;
-    return d12 - 1;
-}
 
-inline bool npcMoralsIsMarked(int m) {
-    // perverted, sadistic and depraved - the
-    // asterisk rows
-    return m >= NPMOR_PERVERTED;
-}
-
-inline int npcMoralsResolved(int firstRoll, int secondRoll) {
-    // the asterisk rule: roll again; if
-    // perverted, sadistic or depraved is
-    // again indicated, the character is that;
-    // otherwise the second roll tells the
-    // true morals and the first is ignored -
-    // the same shape as the R209 sanity rule
-    if (npcMoralsIsMarked(npcTraitMorals(firstRoll)))
-        return npcTraitMorals(secondRoll);
-    return npcTraitMorals(firstRoll);
-}
 
 // -----------------------------------------------------------------------
 // Piety (d12): saintly, martyr/zealot,
@@ -508,11 +393,7 @@ enum NpcPiety {
     NPP_COUNT
 };
 
-inline int npcTraitPiety(int d12) {
-    if (d12 < 1) d12 = 1;
-    if (d12 > 12) d12 = 12;
-    return d12 - 1;
-}
+
 
 // -----------------------------------------------------------------------
 // The encounter/offer reaction adjustments
@@ -537,26 +418,31 @@ enum NpcReactGroup {
     NPRG_GROUP_COUNT
 };
 
-inline int npcReactGroupCount() { return 9; }
-
-inline int npcReactionAdjMin(int group) {
-    // the neurotic row is the print asymmetry:
-    // minus 1 percent to plus 6 percent
-    if (group < 0) group = 0;
-    if (group > 8) group = 8;
-    static const int m[9] = {
-        -1, 1, 1, 1, 1, 1, 1, 1, 1,
-    };
-    return m[group];
-}
-
-inline int npcReactionAdjMax(int group) {
-    if (group < 0) group = 0;
-    if (group > 8) group = 8;
-    static const int x[9] = {
-        6, 10, 20, 6, 4, 8, 20, 8, 20,
-    };
-    return x[group];
-}
-
-}  // namespace rules
+// R-refactor: namespace rules -> class Npctraits (instance methods)
+class Npctraits {
+public:
+    int npcTendencyCount();
+    int npcTraitTendency(int d6, int d12);
+    int npcTraitPersonalityType(int d8);
+    int npcTraitPersonality(int d8first, int d8second);
+    int npcInterestCount();
+    int npcTraitInterest(int d6, int d12);
+    bool npcInterestIsCollector(int i);
+    int npcTraitDisposition(int d10);
+    int npcTraitIntellect(int d10);
+    bool npcIntellectModifiesRating(int iq);
+    int npcTraitCollection(int d12);
+    int npcTraitNature(int d6);
+    int npcTraitMaterialism(int d6);
+    int npcTraitHonesty(int d8);
+    int npcTraitBravery(int d8);
+    int npcTraitEnergy(int d8);
+    int npcTraitThrift(int d8);
+    int npcTraitMorals(int d12);
+    bool npcMoralsIsMarked(int m);
+    int npcMoralsResolved(int firstRoll, int secondRoll);
+    int npcTraitPiety(int d12);
+    int npcReactGroupCount();
+    int npcReactionAdjMin(int group);
+    int npcReactionAdjMax(int group);
+};

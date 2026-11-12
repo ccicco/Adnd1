@@ -60,24 +60,24 @@
 
 #include "../seams/underwater.h"  // R311: the cap pin
 
-namespace rules {
+// R-refactor: namespace rules -> class Uwfight (instance methods)
+class Uwfight {
+public:
+
 
 // The crossing equipment cap in pounds:
 // the R311 movement pin (20 + 1 per full
 // 100 g.p. of the strength weight
 // allowance, C truncation - the negatives
 // move the cap down).
-inline int uwCrossCapLbs(int allowanceGp) {
-    return uwSwimEncumbranceCapLbs(allowanceGp);
-}
+    int uwCrossCapLbs(int allowanceGp);
+
 
 // The crossing load gate: the load beyond
 // the worn armor bars the crossing past
 // the strength-fed cap (1 = barred).
-inline int uwCrossLoadBars(int loadLbs,
-                           int capLbs) {
-    return loadLbs > capLbs ? 1 : 0;
-}
+    int uwCrossLoadBars(int loadLbs, int capLbs);
+
 
 // The underwater strike: only the
 // thrusting weapons connect underwater
@@ -85,18 +85,16 @@ inline int uwCrossLoadBars(int loadLbs,
 // - the print); wclass reads the plain
 // rules::WeaponClass ints: 0 bludgeoning,
 // 1 piercing, 2 slashing.
-inline int uwStrikeAllowed(int wclass) {
-    return wclass == 1 ? 1 : 0;
-}
+    int uwStrikeAllowed(int wclass);
+
 
 // Missile fire underwater is impossible
 // except the specially-made crossbow
 // (R314: the deep crossbow is pinned in
 // items - the bar lifts for it alone at
 // the combatShoot fold).
-inline int uwMissileBarred() {
-    return 1;
-}
+    int uwMissileBarred();
+
 
 // The aquatic first strike (the R311 pin
 // uwAquaticFirstStrike, above): the fold
@@ -109,30 +107,26 @@ inline int uwMissileBarred() {
 // monster roster is pinned - aquatic
 // means the encounter arrived via the
 // waterborne table, the R127 fold).
-inline int uwAquaticFirstStrikeSegment() {
-    return 1;
-}
+    int uwAquaticFirstStrikeSegment();
+
 
 // The company (the land-side weapons)
 // acts no earlier than this segment in
 // the aquatic first-strike fold.
-inline int uwCompanyEarliestSegment() {
-    return 2;
-}
+    int uwCompanyEarliestSegment();
+
 
 // The waterborne wanderer is the aquatic
 // monster (the R127 fresh-water table
 // feeds the flood pool).
-inline int uwWaterborneIsAquatic() {
-    return 1;
-}
+    int uwWaterborneIsAquatic();
+
 
 // The deep crossbow (the specially-made
 // underwater crossbow, R314, items) lifts
 // the underwater missile bar.
-inline int uwDeepCrossbowAllowed() {
-    return 1;
-}
+    int uwDeepCrossbowAllowed();
+
 
 // The net entrap: the MM grasp-and-tear
 // strength (the sahuagin hooked nets -
@@ -140,8 +134,5 @@ inline int uwDeepCrossbowAllowed() {
 // not able to grasp and tear with a
 // strength of 16 or greater; the R318
 // stepRound tear fold reads this pin).
-inline int uwNetEntrapStrTear() {
-    return 16;
-}
-
-}  // namespace rules
+    int uwNetEntrapStrTear();
+};

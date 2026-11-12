@@ -6,43 +6,45 @@
     // double-asterisk pin verified correct
     // (row 11, 56-60), no off-by-one.
     {
+        Miscmagic_crystal_balls miscmagic_crystal_balls;
+        Miscmagic_table2_footnotes miscmagic_table2_footnotes;
         int bad = 0;
-        if (rules::mmpCrystalBallDiameterInches() != 6 ||
-            rules::mmpCrystalBallLocatingRowCount() != 8 ||
-            rules::mmpCrystalBallViewingRowCount() != 6 ||
-            rules::mmpCrystalBallFeatureRowCount() != 4 ||
-            rules::mmpCrystalBallDetectClassCount() != 7 ||
-            rules::mmpCrystalBallIntFactorCount() != 6) ++bad;
-        if (rules::mmpCrystalBallLocatingWellKnownPct() != 100 ||
-            rules::mmpCrystalBallLocatingKnownSlightlyPct() != 85 ||
-            rules::mmpCrystalBallLocatingPicturedPct() != 50 ||
-            rules::mmpCrystalBallLocatingPartPct() != 50 ||
-            rules::mmpCrystalBallLocatingGarmentPct() != 25 ||
-            rules::mmpCrystalBallLocatingWellInformedPct() != 25 ||
-            rules::mmpCrystalBallLocatingSlightlyInformedPct() != 20 ||
-            rules::mmpCrystalBallLocatingOtherPlanePct() != -25) ++bad;
-        if (rules::mmpCrystalBallOverrunIntLoss() != 1 ||
-            rules::mmpCrystalBallOverrunInsaneUntilHealed() != 1 ||
-            rules::mmpCrystalBallImprovingSpellCount() != 4 ||
-            rules::mmpCrystalBallCastThroughSpellCount() != 2 ||
-            rules::mmpCrystalBallCastThroughChancePerLevelPct() != 5 ||
-            rules::mmpCrystalBallSpellFunctionLevel() != 10) ++bad;
-        if (rules::mmpCrystalBallNoticeMinInt() != 12 ||
-            rules::mmpCrystalBallDetectPerLevelPct() != 1 ||
-            rules::mmpCrystalBallDetectionTablePage() != 60 ||
-            rules::mmpCrystalBallDispelDownDays() != 1 ||
-            rules::mmpCrystalBallCheckPerRound() != 1 ||
-            rules::mmpCrystalBallSpellUserClassCount() != 4 ||
-            rules::mmpCrystalBallClericDevicesAllowed() != 1 ||
-            rules::mmpCrystalBallKnowledgeNotDistance() != 1 ||
-            rules::mmpCrystalBallTelepathyCommunicationOnly() != 1) ++bad;
-        if (rules::mmpHypnosisBallCursed() != 1 ||
-            rules::mmpHypnosisBallRadiatesEvil() != 0 ||
-            rules::mmpHypnosisBallSuggestionImplanted() != 1 ||
-            rules::mmpHypnosisBallIndistinguishable() != 1 ||
-            rules::mmpHypnosisBallInfluencerKindCount() != 3 ||
-            rules::mmpHypnosisBallFateCount() != 3 ||
-            rules::mmpHypnosisBallRefereePace() != 1) ++bad;
+        if (miscmagic_crystal_balls.mmpCrystalBallDiameterInches() != 6 ||
+            miscmagic_crystal_balls.mmpCrystalBallLocatingRowCount() != 8 ||
+            miscmagic_crystal_balls.mmpCrystalBallViewingRowCount() != 6 ||
+            miscmagic_crystal_balls.mmpCrystalBallFeatureRowCount() != 4 ||
+            miscmagic_crystal_balls.mmpCrystalBallDetectClassCount() != 7 ||
+            miscmagic_crystal_balls.mmpCrystalBallIntFactorCount() != 6) ++bad;
+        if (miscmagic_crystal_balls.mmpCrystalBallLocatingWellKnownPct() != 100 ||
+            miscmagic_crystal_balls.mmpCrystalBallLocatingKnownSlightlyPct() != 85 ||
+            miscmagic_crystal_balls.mmpCrystalBallLocatingPicturedPct() != 50 ||
+            miscmagic_crystal_balls.mmpCrystalBallLocatingPartPct() != 50 ||
+            miscmagic_crystal_balls.mmpCrystalBallLocatingGarmentPct() != 25 ||
+            miscmagic_crystal_balls.mmpCrystalBallLocatingWellInformedPct() != 25 ||
+            miscmagic_crystal_balls.mmpCrystalBallLocatingSlightlyInformedPct() != 20 ||
+            miscmagic_crystal_balls.mmpCrystalBallLocatingOtherPlanePct() != -25) ++bad;
+        if (miscmagic_crystal_balls.mmpCrystalBallOverrunIntLoss() != 1 ||
+            miscmagic_crystal_balls.mmpCrystalBallOverrunInsaneUntilHealed() != 1 ||
+            miscmagic_crystal_balls.mmpCrystalBallImprovingSpellCount() != 4 ||
+            miscmagic_crystal_balls.mmpCrystalBallCastThroughSpellCount() != 2 ||
+            miscmagic_crystal_balls.mmpCrystalBallCastThroughChancePerLevelPct() != 5 ||
+            miscmagic_crystal_balls.mmpCrystalBallSpellFunctionLevel() != 10) ++bad;
+        if (miscmagic_crystal_balls.mmpCrystalBallNoticeMinInt() != 12 ||
+            miscmagic_crystal_balls.mmpCrystalBallDetectPerLevelPct() != 1 ||
+            miscmagic_crystal_balls.mmpCrystalBallDetectionTablePage() != 60 ||
+            miscmagic_crystal_balls.mmpCrystalBallDispelDownDays() != 1 ||
+            miscmagic_crystal_balls.mmpCrystalBallCheckPerRound() != 1 ||
+            miscmagic_crystal_balls.mmpCrystalBallSpellUserClassCount() != 4 ||
+            miscmagic_crystal_balls.mmpCrystalBallClericDevicesAllowed() != 1 ||
+            miscmagic_crystal_balls.mmpCrystalBallKnowledgeNotDistance() != 1 ||
+            miscmagic_crystal_balls.mmpCrystalBallTelepathyCommunicationOnly() != 1) ++bad;
+        if (miscmagic_crystal_balls.mmpHypnosisBallCursed() != 1 ||
+            miscmagic_crystal_balls.mmpHypnosisBallRadiatesEvil() != 0 ||
+            miscmagic_crystal_balls.mmpHypnosisBallSuggestionImplanted() != 1 ||
+            miscmagic_crystal_balls.mmpHypnosisBallIndistinguishable() != 1 ||
+            miscmagic_crystal_balls.mmpHypnosisBallInfluencerKindCount() != 3 ||
+            miscmagic_crystal_balls.mmpHypnosisBallFateCount() != 3 ||
+            miscmagic_crystal_balls.mmpHypnosisBallRefereePace() != 1) ++bad;
         static const int kLocPct[8] = {
             100, 85, 50, 50, 25, 25, 20, -25,
         };
@@ -71,27 +73,27 @@
             1, 3, 6, 10, 15, 21,
         };
         for (int i = 0; i < 8; ++i)
-            if (rules::mmpCrystalBallLocatingPct(i) !=
+            if (miscmagic_crystal_balls.mmpCrystalBallLocatingPct(i) !=
                 kLocPct[i]) ++bad;
         for (int i = 0; i < 6; ++i)
-            if (rules::mmpCrystalBallViewingMinutes(i) !=
+            if (miscmagic_crystal_balls.mmpCrystalBallViewingMinutes(i) !=
                 kViewMin[i] ||
-                rules::mmpCrystalBallViewingTimesPerDay(i) !=
+                miscmagic_crystal_balls.mmpCrystalBallViewingTimesPerDay(i) !=
                 kViewFreq[i] ||
-                rules::mmpCrystalBallViewingBandHiPct(i) !=
+                miscmagic_crystal_balls.mmpCrystalBallViewingBandHiPct(i) !=
                 kViewHi[i]) ++bad;
         for (int i = 0; i < 4; ++i)
-            if (rules::mmpCrystalBallFeatureBandLo(i) !=
+            if (miscmagic_crystal_balls.mmpCrystalBallFeatureBandLo(i) !=
                 kFeatLo[i] ||
-                rules::mmpCrystalBallFeatureBandHi(i) !=
+                miscmagic_crystal_balls.mmpCrystalBallFeatureBandHi(i) !=
                 kFeatHi[i] ||
-                rules::mmpCrystalBallFeatureCountAt(i) !=
+                miscmagic_crystal_balls.mmpCrystalBallFeatureCountAt(i) !=
                 kFeatCount[i]) ++bad;
         for (int i = 0; i < 7; ++i)
-            if (rules::mmpCrystalBallDetectBasePct(i) !=
+            if (miscmagic_crystal_balls.mmpCrystalBallDetectBasePct(i) !=
                 kDetPct[i]) ++bad;
         for (int i = 0; i < 6; ++i)
-            if (rules::mmpCrystalBallIntFactorPct(i) !=
+            if (miscmagic_crystal_balls.mmpCrystalBallIntFactorPct(i) !=
                 kIntPct[i]) ++bad;
         // the kMisc2 rows this slice completes:
         // row 11 Crystal Ball 56-60, row 12 the
@@ -103,39 +105,39 @@
             60, 61,
         };
         for (int i = 0; i < 2; ++i)
-            if (rules::m2RowLo(11 + i) != kM2Lo2[i] ||
-                rules::m2RowHi(11 + i) != kM2Hi2[i]) ++bad;
+            if (miscmagic_table2_footnotes.m2RowLo(11 + i) != kM2Lo2[i] ||
+                miscmagic_table2_footnotes.m2RowHi(11 + i) != kM2Hi2[i]) ++bad;
         // the class marks: both rows are (M); the
         // Cloak row 10 and the row 13 are negative
         // controls
-        if (!rules::m2UsableByMagicUser(11) ||
-            !rules::m2UsableByMagicUser(12) ||
-            rules::m2UsableByMagicUser(10) ||
-            rules::m2UsableByMagicUser(13)) ++bad;
+        if (!miscmagic_table2_footnotes.m2UsableByMagicUser(11) ||
+            !miscmagic_table2_footnotes.m2UsableByMagicUser(12) ||
+            miscmagic_table2_footnotes.m2UsableByMagicUser(10) ||
+            miscmagic_table2_footnotes.m2UsableByMagicUser(13)) ++bad;
         // the double asterisk: row 11 only, the R226
         // pin verified correct
-        if (!rules::m2HasFeatureAsterisk(11) ||
-            rules::m2HasFeatureAsterisk(10) ||
-            rules::m2HasFeatureAsterisk(12)) ++bad;
+        if (!miscmagic_table2_footnotes.m2HasFeatureAsterisk(11) ||
+            miscmagic_table2_footnotes.m2HasFeatureAsterisk(10) ||
+            miscmagic_table2_footnotes.m2HasFeatureAsterisk(12)) ++bad;
         // the printed ball values: 1000 xp / 5000 gp
         // base, +100 percent per additional feature -
         // clairaudience 2000/10000, ESP 3000/15000,
         // telepathy 4000/20000, cross-pinned against
         // the prose feature table
-        if (rules::m2CrystalBallBaseXp() != 1000 ||
-            rules::m2CrystalBallBaseGp() != 5000 ||
-            rules::m2CrystalBallFeatureBonusPct() != 100) ++bad;
-        if (rules::m2CrystalBallBaseXp() *
-                (1 + rules::mmpCrystalBallFeatureCountAt(1)) !=
+        if (miscmagic_table2_footnotes.m2CrystalBallBaseXp() != 1000 ||
+            miscmagic_table2_footnotes.m2CrystalBallBaseGp() != 5000 ||
+            miscmagic_table2_footnotes.m2CrystalBallFeatureBonusPct() != 100) ++bad;
+        if (miscmagic_table2_footnotes.m2CrystalBallBaseXp() *
+                (1 + miscmagic_crystal_balls.mmpCrystalBallFeatureCountAt(1)) !=
             2000 ||
-            rules::m2CrystalBallBaseGp() *
-                (1 + rules::mmpCrystalBallFeatureCountAt(1)) !=
+            miscmagic_table2_footnotes.m2CrystalBallBaseGp() *
+                (1 + miscmagic_crystal_balls.mmpCrystalBallFeatureCountAt(1)) !=
             10000 ||
-            rules::m2CrystalBallBaseXp() *
-                (1 + rules::mmpCrystalBallFeatureCountAt(3)) !=
+            miscmagic_table2_footnotes.m2CrystalBallBaseXp() *
+                (1 + miscmagic_crystal_balls.mmpCrystalBallFeatureCountAt(3)) !=
             4000 ||
-            rules::m2CrystalBallBaseGp() *
-                (1 + rules::mmpCrystalBallFeatureCountAt(3)) !=
+            miscmagic_table2_footnotes.m2CrystalBallBaseGp() *
+                (1 + miscmagic_crystal_balls.mmpCrystalBallFeatureCountAt(3)) !=
             20000) ++bad;
         printf("R262 misc magic prose part 6 pins audit: bad %d\n", bad);
         if (bad) return 1;

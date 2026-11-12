@@ -3,9 +3,10 @@
     // value table - the 29 rows, the value
     // conventions and the no-x.p. footnote.
     {
+        Specart specart;
         int bad = 0;
         // the row identity: the 29 die bands
-        if (rules::saRowCount() != 29) ++bad;
+        if (specart.saRowCount() != 29) ++bad;
         static const int kLo[29] = {
             1, 2, 3, 5, 21, 22, 23, 25, 26, 27,
             28, 30, 32, 33, 34, 36, 38, 39, 41, 48,
@@ -33,56 +34,56 @@
             0, 0, 0, 0, 0, 0, 0, 0, 0,
         };
         for (int i = 0; i < 29; ++i)
-            if (rules::saRowLo(i) != kLo[i] ||
-                rules::saRowHi(i) != kHi[i] ||
-                rules::saSaleGp(i) != kGp[i] ||
-                rules::saSaleGpHi(i) != kGpHi[i] ||
-                rules::saXpValue(i) != kXp[i])
+            if (specart.saRowLo(i) != kLo[i] ||
+                specart.saRowHi(i) != kHi[i] ||
+                specart.saSaleGp(i) != kGp[i] ||
+                specart.saSaleGpHi(i) != kGpHi[i] ||
+                specart.saXpValue(i) != kXp[i])
                 ++bad;
         for (int i = 1; i < 29; ++i)
-            if (rules::saRowLo(i) !=
-                rules::saRowHi(i - 1) + 1) ++bad;
-        if (rules::saRowLo(-5) != 1 ||
-            rules::saRowHi(99) != 100) ++bad;
+            if (specart.saRowLo(i) !=
+                specart.saRowHi(i - 1) + 1) ++bad;
+        if (specart.saRowLo(-5) != 1 ||
+            specart.saRowHi(99) != 100) ++bad;
         // the printed sale values: the Axe of
         // the Dwarvish Lords, the Jacinth of
         // Inestimable Beauty, the Mighty
         // Servant of Leuk-O, the Marvelous
         // Nightingale, the Sceptre of Might
         // and the Sword of Kas
-        if (rules::saSaleGp(0) != 55000 ||
-            rules::saSaleGp(12) != 100000 ||
-            rules::saSaleGp(17) != 185000 ||
-            rules::saSaleGp(20) != 112500 ||
-            rules::saSaleGp(24) != 150000 ||
-            rules::saSaleGp(25) != 97000) ++bad;
+        if (specart.saSaleGp(0) != 55000 ||
+            specart.saSaleGp(12) != 100000 ||
+            specart.saSaleGp(17) != 185000 ||
+            specart.saSaleGp(20) != 112500 ||
+            specart.saSaleGp(24) != 150000 ||
+            specart.saSaleGp(25) != 97000) ++bad;
         // the Orb of the Dragonkind uniform
         // range 10,000-80,000 (count 1)
-        if (rules::saSaleGp(18) != 10000 ||
-            rules::saSaleGpHi(18) != 80000 ||
-            rules::saDualRangeCount() != 1) ++bad;
+        if (specart.saSaleGp(18) != 10000 ||
+            specart.saSaleGpHi(18) != 80000 ||
+            specart.saDualRangeCount() != 1) ++bad;
         // the Teeth of Dahlver-Nar at 5,000
         // per tooth (count 1)
-        if (rules::saSaleGp(26) != 5000 ||
-            rules::saSaleGpHi(26) != 0 ||
-            rules::saPerToothRowCount() != 1) ++bad;
+        if (specart.saSaleGp(26) != 5000 ||
+            specart.saSaleGpHi(26) != 0 ||
+            specart.saPerToothRowCount() != 1) ++bad;
         // the Throne of the Gods prints NO
         // sale value (count 1)
-        if (rules::saSaleGp(27) != 0 ||
-            rules::saSaleGpHi(27) != 0 ||
-            rules::saNoSaleRowCount() != 1) ++bad;
+        if (specart.saSaleGp(27) != 0 ||
+            specart.saSaleGpHi(27) != 0 ||
+            specart.saNoSaleRowCount() != 1) ++bad;
         // the Wand of Orcus rides the 00
         // band - pinned as 100
-        if (rules::saRowLo(28) != 100 ||
-            rules::saSaleGp(28) != 10000) ++bad;
+        if (specart.saRowLo(28) != 100 ||
+            specart.saSaleGp(28) != 10000) ++bad;
         // the no-x.p. convention: every row
-        if (rules::saNoXpRowCount() != 29) ++bad;
+        if (specart.saNoXpRowCount() != 29) ++bad;
         // clamped reads land on the Axe below
         // and the Wand of Orcus above
-        if (rules::saSaleGp(-99) != 55000 ||
-            rules::saSaleGp(99) != 10000 ||
-            rules::saXpValue(-99) != 0 ||
-            rules::saXpValue(99) != 0) ++bad;
+        if (specart.saSaleGp(-99) != 55000 ||
+            specart.saSaleGp(99) != 10000 ||
+            specart.saXpValue(-99) != 0 ||
+            specart.saXpValue(99) != 0) ++bad;
         printf("R240 special artifacts pins audit: bad %d\n", bad);
         if (bad) return 1;
     }

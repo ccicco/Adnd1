@@ -7,24 +7,25 @@
     // The race reads a plain int (0 human,
     // 5 halfling, 1 dwarf, 2 elf).
     {
+        Locktime locktime;
         int bad = 0;
         // the printed time band: picking takes
         // 1-10 rounds (most locks 1-4); the
         // traps roll rides the locks time
-        if (rules::thfLocksPickRoundsMin() != 1 ||
-            rules::thfLocksPickRoundsMax() != 10 ||
-            rules::thfLocksPickRoundsTypicalMax() != 4 ||
-            rules::thfTrapsTimeRidesLocks() != 1) ++bad;
+        if (locktime.thfLocksPickRoundsMin() != 1 ||
+            locktime.thfLocksPickRoundsMax() != 10 ||
+            locktime.thfLocksPickRoundsTypicalMax() != 4 ||
+            locktime.thfTrapsTimeRidesLocks() != 1) ++bad;
         // the doors prose pins
-        if (rules::doorWoodAlwaysMetalBound() != 1 ||
-            rules::doorMetalUsuallyLocked() != 1) ++bad;
+        if (locktime.doorWoodAlwaysMetalBound() != 1 ||
+            locktime.doorMetalUsuallyLocked() != 1) ++bad;
         // the per-delve count judgment
-        if (rules::doorLockedPerDelveCount() != 1) ++bad;
+        if (locktime.doorLockedPerDelveCount() != 1) ++bad;
         // the time draw band folds the
         // helpers: min + below(max - min + 1)
         // covers the printed 1-10
-        if (rules::thfLocksPickRoundsMax() -
-                rules::thfLocksPickRoundsMin() + 1 != 10)
+        if (locktime.thfLocksPickRoundsMax() -
+                locktime.thfLocksPickRoundsMin() + 1 != 10)
             ++bad;
         // open locks level 1 human dex 9
         // prints 15 percent (150 tenths)

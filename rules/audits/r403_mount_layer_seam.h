@@ -18,6 +18,7 @@
     // horsemanship tail; census
     // 329 -> 330.
     {
+        Followers followers;
         using namespace rules;
         int bad = 0;
         // ---- the layer contract ----
@@ -84,9 +85,9 @@
                 dm::MOUNT_WAGON,
                 dm::TC_VERY_RUGGED) != 0) ++bad;
         // ---- the R170 followers seam ----
-        if (folPaladinWarhorseMinLevel() != 4)
+        if (followers.folPaladinWarhorseMinLevel() != 4)
             ++bad;
-        if (folPaladinWarhorseServiceYears() != 10)
+        if (followers.folPaladinWarhorseServiceYears() != 10)
             ++bad;
         // ---- the R356 spell seam ----
         if (uam1MountLevel() != 1) ++bad;

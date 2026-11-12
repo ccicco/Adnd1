@@ -25,7 +25,10 @@
 
 #include <cstring>
 
-namespace rules {
+// R-refactor: namespace rules -> class Weaponspeed (instance methods)
+class Weaponspeed {
+public:
+
 
 // ----------------------------------------------------------------------------
 // The PHB p.38 speed-factor column (melee weapons, named;
@@ -35,43 +38,9 @@ namespace rules {
 // footman/horseman mace and flail are named per the print
 // (the engine items Mace/Flail read the footman rows).
 // ----------------------------------------------------------------------------
-inline int weaponSpeedFactor(const char* name) {
-    static const struct { const char* n; int sf; } t[] = {
-        { "fist",             1 },   // DMG p.66 example
-        { "dagger",           2 },
-        { "short sword",      3 },
-        { "hammer",           4 },   // DMG p.66 example
-        { "club",             4 },
-        { "hand axe",         4 },
-        { "quarterstaff",     4 },
-        { "scimitar",         4 },
-        { "long sword",       5 },   // DMG: broad or long
-        { "broad sword",      5 },
-        { "horseman mace",    6 },
-        { "horseman flail",   6 },
-        { "spear",            7 },   // print 6-8, default 7
-        { "footman mace",     7 },
-        { "footman flail",    7 },
-        { "morning star",     7 },
-        { "battle axe",       7 },
-        { "two-handed sword", 10 },  // DMG p.64/p.66
-        { "pike",             13 },  // the DMG p.66 example
-        // R780: the three lances ride the ladder -
-        // the PHB p.38 speed column cells (the medium
-        // horse 6 outruns the light horse 7 - the print
-        // is the print)
-        { "lance, medium horse", 6 },
-        { "lance, light horse",  7 },
-        { "lance, heavy horse",  8 },
-    };
-    for (int i = 0; i < (int)(sizeof(t) / sizeof(t[0])); ++i)
-        if (std::strcmp(name, t[i].n) == 0) return t[i].sf;
-    return 0;   // unknown: caller decides
-}
+    int weaponSpeedFactor(const char* name);
+    void spearSpeedFactorRange(int& lo, int& hi);
 
-inline void spearSpeedFactorRange(int& lo, int& hi) {
-    lo = 6; hi = 8;   // the printed 5-13+ foot length spread
-}
 
 // ----------------------------------------------------------------------------
 // R782: the spear length spread - the R158 boundary closes.
@@ -79,11 +48,8 @@ inline void spearSpeedFactorRange(int& lo, int& hi) {
 // 5 feet and under reads 6, 13 feet and over reads 8, the
 // middle lengths keep the R158 default 7 (the name-keyed
 // ladder keeps its default for the bare spear name).
-inline int spearSpeedFactorByLengthFt(int lengthFt) {
-    if (lengthFt <= 5) return 6;
-    if (lengthFt >= 13) return 8;
-    return 7;
-}
+    int spearSpeedFactorByLengthFt(int lengthFt);
+
 
 // ----------------------------------------------------------------------------
 // Case 1 (DMG p.66 Simultaneous Initiative): tied rolls,
@@ -91,11 +57,8 @@ inline int spearSpeedFactorByLengthFt(int lengthFt) {
 // strikes first. Returns -1 if A first, 1 if B first,
 // 0 if equal (truly simultaneous).
 // ----------------------------------------------------------------------------
-inline int speedFactorFirst(int sfA, int sfB) {
-    if (sfA < sfB) return -1;
-    if (sfB < sfA) return 1;
-    return 0;
-}
+    int speedFactorFirst(int sfA, int sfB);
+
 
 // ----------------------------------------------------------------------------
 // Case 2 (DMG p.66): the attacks the lower-factored
@@ -108,17 +71,9 @@ inline int speedFactorFirst(int sfA, int sfB) {
 //   otherwise                    -> 1 (the normal one).
 // Never when closing or charging (speedFactorApplies).
 // ----------------------------------------------------------------------------
-inline int speedFactorAttacksBefore(int sfLow, int sfHigh) {
-    int diff = sfHigh - sfLow;
-    if (diff <= 0) return 1;
-    if (diff >= 10) return 3;
-    if (diff >= 2 * sfLow || diff >= 5) return 2;
-    return 1;
-}
+    int speedFactorAttacksBefore(int sfLow, int sfHigh);
+    bool speedFactorApplies(bool closingOrCharging);
 
-inline bool speedFactorApplies(bool closingOrCharging) {
-    return !closingOrCharging;   // the print exempts both
-}
 
 // ----------------------------------------------------------------------------
 // Case 3 (DMG p.66 Other Weapon Factor Determinants):
@@ -126,28 +81,17 @@ inline bool speedFactorApplies(bool closingOrCharging) {
 // initiative to an opponent mid-activity: factor minus
 // the losing die roll, NEGATIVES READ AS POSITIVE.
 // ----------------------------------------------------------------------------
-inline int weaponVsActivitySegment(int speedFactor,
-                                   int losingInitiativeRoll) {
-    int v = speedFactor - losingInitiativeRoll;
-    if (v < 0) v = -v;
-    return v;
-}
+    int weaponVsActivitySegment(int speedFactor, int losingInitiativeRoll);
+
 
 // Order vs the activity (a spell, casting segments):
 // returns -1 if the weapon strikes first, 0 if
 // simultaneous, 1 if the activity completes first.
-inline int weaponVsActivityOrder(int strikeSegment,
-                                 int activitySegments) {
-    if (strikeSegment < activitySegments) return -1;
-    if (strikeSegment > activitySegments) return 1;
-    return 0;
-}
+    int weaponVsActivityOrder(int strikeSegment, int activitySegments);
+
 
 // The print: if combat is simultaneous, there is no
 // modification of the weapon speed factor (case 3 never
 // subtracts a die roll the tied round does not have).
-inline bool speedFactorModifiedWhenSimultaneous() {
-    return false;
-}
-
-} // namespace rules
+    bool speedFactorModifiedWhenSimultaneous();
+};

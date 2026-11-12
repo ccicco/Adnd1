@@ -3,9 +3,10 @@
     // tables and determination bands, and the
     // random language table.
     {
+        Npcbody npcbody;
         int bad = 0;
         // the averages and dice, every cell
-        if (rules::npcBodyRaceCount() != 7) ++bad;
+        if (npcbody.npcBodyRaceCount() != 7) ++bad;
         static const int kHAvg[14] = {
             48, 60, 42, 66, 36, 66, 72,
             46, 54, 39, 62, 33, 62, 66,
@@ -28,69 +29,69 @@
         };
         for (int f = 0; f <= 1; ++f)
             for (int r = 0; r < 7; ++r)
-                if (rules::npcHeightAvgInches(f, r)
+                if (npcbody.npcHeightAvgInches(f, r)
                         != kHAvg[f * 7 + r] ||
-                    rules::npcWeightAvgPounds(f, r)
+                    npcbody.npcWeightAvgPounds(f, r)
                         != kWAvg[f * 7 + r]) ++bad;
         for (int f = 0; f <= 1; ++f)
             for (int d = 0; d <= 1; ++d)
                 for (int r = 0; r < 7; ++r)
-                    if (rules::npcHeightDie(f, r, d)
+                    if (npcbody.npcHeightDie(f, r, d)
                             != kHDice[f * 14 + d * 7 + r] ||
-                        rules::npcWeightDie(f, r, d)
+                        npcbody.npcWeightDie(f, r, d)
                             != kWDice[f * 14 + d * 7 + r]) ++bad;
         // the packing: count and sides
-        if (rules::npcDieCount(212) != 2 ||
-            rules::npcDieSides(212) != 12 ||
-            rules::npcDieCount(410) != 4 ||
-            rules::npcDieSides(410) != 10 ||
-            rules::npcDieCount(512) != 5 ||
-            rules::npcDieSides(512) != 12 ||
-            rules::npcDieCount(120) != 1 ||
-            rules::npcDieSides(120) != 20) ++bad;
+        if (npcbody.npcDieCount(212) != 2 ||
+            npcbody.npcDieSides(212) != 12 ||
+            npcbody.npcDieCount(410) != 4 ||
+            npcbody.npcDieSides(410) != 10 ||
+            npcbody.npcDieCount(512) != 5 ||
+            npcbody.npcDieSides(512) != 12 ||
+            npcbody.npcDieCount(120) != 1 ||
+            npcbody.npcDieSides(120) != 20) ++bad;
         // the determination bands: the edges
         static const int kHUnder[7] = { 15, 10, 20, 35, 10, 45, 20 };
         static const int kHAvgE[7] = { 80, 80, 85, 90, 90, 75, 80 };
         static const int kWUnder[7] = { 20, 15, 20, 20, 10, 30, 25 };
         static const int kWAvgE[7] = { 65, 90, 75, 85, 50, 55, 75 };
         for (int r = 0; r < 7; ++r)
-            if (rules::npcHeightBandUnderEdge(r)
+            if (npcbody.npcHeightBandUnderEdge(r)
                     != kHUnder[r] ||
-                rules::npcHeightBandAvgEdge(r)
+                npcbody.npcHeightBandAvgEdge(r)
                     != kHAvgE[r] ||
-                rules::npcWeightBandUnderEdge(r)
+                npcbody.npcWeightBandUnderEdge(r)
                     != kWUnder[r] ||
-                rules::npcWeightBandAvgEdge(r)
+                npcbody.npcWeightBandAvgEdge(r)
                     != kWAvgE[r]) ++bad;
         // the class walk: edges and clamps
-        if (rules::npcDetermineHeightClass(                rules::NBR_DWARF, 15) != 0 ||
-            rules::npcDetermineHeightClass(                rules::NBR_DWARF, 16) != 1 ||
-            rules::npcDetermineHeightClass(                rules::NBR_DWARF, 80) != 1 ||
-            rules::npcDetermineHeightClass(                rules::NBR_DWARF, 81) != 2) ++bad;
-        if (rules::npcDetermineHeightClass(                rules::NBR_HALFORC, 45) != 0 ||
-            rules::npcDetermineHeightClass(                rules::NBR_HALFORC, 46) != 1 ||
-            rules::npcDetermineHeightClass(                rules::NBR_HALFORC, 75) != 1 ||
-            rules::npcDetermineHeightClass(                rules::NBR_HALFORC, 76) != 2) ++bad;
-        if (rules::npcDetermineWeightClass(                rules::NBR_HUMAN, 25) != 0 ||
-            rules::npcDetermineWeightClass(                rules::NBR_HUMAN, 26) != 1 ||
-            rules::npcDetermineWeightClass(                rules::NBR_HUMAN, 75) != 1 ||
-            rules::npcDetermineWeightClass(                rules::NBR_HUMAN, 76) != 2) ++bad;
-        if (rules::npcDetermineHeightClass(                rules::NBR_ELF, 10) != 0 ||
-            rules::npcDetermineHeightClass(                rules::NBR_ELF, 11) != 1 ||
-            rules::npcDetermineWeightClass(                rules::NBR_ELF, 15) != 0 ||
-            rules::npcDetermineWeightClass(                rules::NBR_ELF, 16) != 1 ||
-            rules::npcDetermineWeightClass(                rules::NBR_ELF, 90) != 1 ||
-            rules::npcDetermineWeightClass(                rules::NBR_ELF, 91) != 2) ++bad;
-        if (rules::npcDetermineWeightClass(                rules::NBR_HALFLING, 10) != 0 ||
-            rules::npcDetermineWeightClass(                rules::NBR_HALFLING, 11) != 1 ||
-            rules::npcDetermineWeightClass(                rules::NBR_HALFLING, 50) != 1 ||
-            rules::npcDetermineWeightClass(                rules::NBR_HALFLING, 51) != 2) ++bad;
+        if (npcbody.npcDetermineHeightClass(                NBR_DWARF, 15) != 0 ||
+            npcbody.npcDetermineHeightClass(                NBR_DWARF, 16) != 1 ||
+            npcbody.npcDetermineHeightClass(                NBR_DWARF, 80) != 1 ||
+            npcbody.npcDetermineHeightClass(                NBR_DWARF, 81) != 2) ++bad;
+        if (npcbody.npcDetermineHeightClass(                NBR_HALFORC, 45) != 0 ||
+            npcbody.npcDetermineHeightClass(                NBR_HALFORC, 46) != 1 ||
+            npcbody.npcDetermineHeightClass(                NBR_HALFORC, 75) != 1 ||
+            npcbody.npcDetermineHeightClass(                NBR_HALFORC, 76) != 2) ++bad;
+        if (npcbody.npcDetermineWeightClass(                NBR_HUMAN, 25) != 0 ||
+            npcbody.npcDetermineWeightClass(                NBR_HUMAN, 26) != 1 ||
+            npcbody.npcDetermineWeightClass(                NBR_HUMAN, 75) != 1 ||
+            npcbody.npcDetermineWeightClass(                NBR_HUMAN, 76) != 2) ++bad;
+        if (npcbody.npcDetermineHeightClass(                NBR_ELF, 10) != 0 ||
+            npcbody.npcDetermineHeightClass(                NBR_ELF, 11) != 1 ||
+            npcbody.npcDetermineWeightClass(                NBR_ELF, 15) != 0 ||
+            npcbody.npcDetermineWeightClass(                NBR_ELF, 16) != 1 ||
+            npcbody.npcDetermineWeightClass(                NBR_ELF, 90) != 1 ||
+            npcbody.npcDetermineWeightClass(                NBR_ELF, 91) != 2) ++bad;
+        if (npcbody.npcDetermineWeightClass(                NBR_HALFLING, 10) != 0 ||
+            npcbody.npcDetermineWeightClass(                NBR_HALFLING, 11) != 1 ||
+            npcbody.npcDetermineWeightClass(                NBR_HALFLING, 50) != 1 ||
+            npcbody.npcDetermineWeightClass(                NBR_HALFLING, 51) != 2) ++bad;
         // the clamps: 0 reads under, 101 reads
         // over
-        if (rules::npcDetermineHeightClass(                rules::NBR_DWARF, 0) != 0 ||
-            rules::npcDetermineHeightClass(                rules::NBR_DWARF, 101) != 2) ++bad;
+        if (npcbody.npcDetermineHeightClass(                NBR_DWARF, 0) != 0 ||
+            npcbody.npcDetermineHeightClass(                NBR_DWARF, 101) != 2) ++bad;
         // the language table: every face
-        if (rules::npcLanguageKindCount() != 55) ++bad;
+        if (npcbody.npcLanguageKindCount() != 55) ++bad;
         static const int kLang[100] = {
             0, 1, 1, 2,
             3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
@@ -130,98 +131,98 @@
             54, 54, 54, 54, 54, 54, 54,
         };
         for (int d = 1; d <= 100; ++d)
-            if (rules::npcLanguageFor(d) != kLang[d - 1]) ++bad;
+            if (npcbody.npcLanguageFor(d) != kLang[d - 1]) ++bad;
         // the language boundaries: each band
         // start and the kind codes
-        if (rules::npcLanguageFor(1)
-                != rules::NPC_LG_BROWNIE ||
-            rules::npcLanguageFor(2)
-                != rules::NPC_LG_BUGBEAR ||
-            rules::npcLanguageFor(4)
-                != rules::NPC_LG_CENTAUR ||
-            rules::npcLanguageFor(5)
-                != rules::NPC_LG_DRAGON_BLACK ||
-            rules::npcLanguageFor(14)
-                != rules::NPC_LG_DRAGON_WHITE ||
-            rules::npcLanguageFor(15)
-                != rules::NPC_LG_DRYAD ||
-            rules::npcLanguageFor(16)
-                != rules::NPC_LG_DWARVISH ||
-            rules::npcLanguageFor(21)
-                != rules::NPC_LG_ELVISH ||
-            rules::npcLanguageFor(26)
-                != rules::NPC_LG_ETTIN ||
-            rules::npcLanguageFor(28)
-                != rules::NPC_LG_GIANT_CLOUD ||
-            rules::npcLanguageFor(31)
-                != rules::NPC_LG_GIANT_HILL_1 ||
-            rules::npcLanguageFor(33)
-                != rules::NPC_LG_GIANT_HILL_3 ||
-            rules::npcLanguageFor(35)
-                != rules::NPC_LG_GIANT_STORM ||
-            rules::npcLanguageFor(36)
-                != rules::NPC_LG_GOBLIN ||
-            rules::npcLanguageFor(40)
-                != rules::NPC_LG_GNOLL ||
-            rules::npcLanguageFor(41)
-                != rules::NPC_LG_GNOME ||
-            rules::npcLanguageFor(45)
-                != rules::NPC_LG_HALFLING ||
-            rules::npcLanguageFor(50)
-                != rules::NPC_LG_HOBGOBLIN ||
-            rules::npcLanguageFor(52)
-                != rules::NPC_LG_KOBOLD ||
-            rules::npcLanguageFor(55)
-                != rules::NPC_LG_LAMMASU ||
-            rules::npcLanguageFor(56)
-                != rules::NPC_LG_LIZARD_MAN ||
-            rules::npcLanguageFor(59)
-                != rules::NPC_LG_MANTICORE ||
-            rules::npcLanguageFor(60)
-                != rules::NPC_LG_MEDUSIAN ||
-            rules::npcLanguageFor(61)
-                != rules::NPC_LG_MINOTAUR ||
-            rules::npcLanguageFor(62)
-                != rules::NPC_LG_NAGA_GUARDIAN ||
-            rules::npcLanguageFor(64)
-                != rules::NPC_LG_NAGA_WATER ||
-            rules::npcLanguageFor(65)
-                != rules::NPC_LG_NIXIE ||
-            rules::npcLanguageFor(66)
-                != rules::NPC_LG_NYMPH ||
-            rules::npcLanguageFor(67)
-                != rules::NPC_LG_OGRISH ||
-            rules::npcLanguageFor(71)
-                != rules::NPC_LG_OGRE_MAGIAN ||
-            rules::npcLanguageFor(72)
-                != rules::NPC_LG_ORCISH ||
-            rules::npcLanguageFor(77)
-                != rules::NPC_LG_PIXIE ||
-            rules::npcLanguageFor(78)
-                != rules::NPC_LG_SALAMANDER ||
-            rules::npcLanguageFor(79)
-                != rules::NPC_LG_SATYR ||
-            rules::npcLanguageFor(80)
-                != rules::NPC_LG_SHEDU ||
-            rules::npcLanguageFor(81)
-                != rules::NPC_LG_SPRITE ||
-            rules::npcLanguageFor(82)
-                != rules::NPC_LG_SYLPH ||
-            rules::npcLanguageFor(83)
-                != rules::NPC_LG_TITAN ||
-            rules::npcLanguageFor(84)
-                != rules::NPC_LG_TROLL ||
-            rules::npcLanguageFor(85)
-                != rules::NPC_LG_XORN ||
-            rules::npcLanguageFor(86)
-                != rules::NPC_LG_HUMAN_FOREIGN ||
-            rules::npcLanguageFor(100)
-                != rules::NPC_LG_HUMAN_FOREIGN) ++bad;
+        if (npcbody.npcLanguageFor(1)
+                != NPC_LG_BROWNIE ||
+            npcbody.npcLanguageFor(2)
+                != NPC_LG_BUGBEAR ||
+            npcbody.npcLanguageFor(4)
+                != NPC_LG_CENTAUR ||
+            npcbody.npcLanguageFor(5)
+                != NPC_LG_DRAGON_BLACK ||
+            npcbody.npcLanguageFor(14)
+                != NPC_LG_DRAGON_WHITE ||
+            npcbody.npcLanguageFor(15)
+                != NPC_LG_DRYAD ||
+            npcbody.npcLanguageFor(16)
+                != NPC_LG_DWARVISH ||
+            npcbody.npcLanguageFor(21)
+                != NPC_LG_ELVISH ||
+            npcbody.npcLanguageFor(26)
+                != NPC_LG_ETTIN ||
+            npcbody.npcLanguageFor(28)
+                != NPC_LG_GIANT_CLOUD ||
+            npcbody.npcLanguageFor(31)
+                != NPC_LG_GIANT_HILL_1 ||
+            npcbody.npcLanguageFor(33)
+                != NPC_LG_GIANT_HILL_3 ||
+            npcbody.npcLanguageFor(35)
+                != NPC_LG_GIANT_STORM ||
+            npcbody.npcLanguageFor(36)
+                != NPC_LG_GOBLIN ||
+            npcbody.npcLanguageFor(40)
+                != NPC_LG_GNOLL ||
+            npcbody.npcLanguageFor(41)
+                != NPC_LG_GNOME ||
+            npcbody.npcLanguageFor(45)
+                != NPC_LG_HALFLING ||
+            npcbody.npcLanguageFor(50)
+                != NPC_LG_HOBGOBLIN ||
+            npcbody.npcLanguageFor(52)
+                != NPC_LG_KOBOLD ||
+            npcbody.npcLanguageFor(55)
+                != NPC_LG_LAMMASU ||
+            npcbody.npcLanguageFor(56)
+                != NPC_LG_LIZARD_MAN ||
+            npcbody.npcLanguageFor(59)
+                != NPC_LG_MANTICORE ||
+            npcbody.npcLanguageFor(60)
+                != NPC_LG_MEDUSIAN ||
+            npcbody.npcLanguageFor(61)
+                != NPC_LG_MINOTAUR ||
+            npcbody.npcLanguageFor(62)
+                != NPC_LG_NAGA_GUARDIAN ||
+            npcbody.npcLanguageFor(64)
+                != NPC_LG_NAGA_WATER ||
+            npcbody.npcLanguageFor(65)
+                != NPC_LG_NIXIE ||
+            npcbody.npcLanguageFor(66)
+                != NPC_LG_NYMPH ||
+            npcbody.npcLanguageFor(67)
+                != NPC_LG_OGRISH ||
+            npcbody.npcLanguageFor(71)
+                != NPC_LG_OGRE_MAGIAN ||
+            npcbody.npcLanguageFor(72)
+                != NPC_LG_ORCISH ||
+            npcbody.npcLanguageFor(77)
+                != NPC_LG_PIXIE ||
+            npcbody.npcLanguageFor(78)
+                != NPC_LG_SALAMANDER ||
+            npcbody.npcLanguageFor(79)
+                != NPC_LG_SATYR ||
+            npcbody.npcLanguageFor(80)
+                != NPC_LG_SHEDU ||
+            npcbody.npcLanguageFor(81)
+                != NPC_LG_SPRITE ||
+            npcbody.npcLanguageFor(82)
+                != NPC_LG_SYLPH ||
+            npcbody.npcLanguageFor(83)
+                != NPC_LG_TITAN ||
+            npcbody.npcLanguageFor(84)
+                != NPC_LG_TROLL ||
+            npcbody.npcLanguageFor(85)
+                != NPC_LG_XORN ||
+            npcbody.npcLanguageFor(86)
+                != NPC_LG_HUMAN_FOREIGN ||
+            npcbody.npcLanguageFor(100)
+                != NPC_LG_HUMAN_FOREIGN) ++bad;
         // the language clamps
-        if (rules::npcLanguageFor(0)
-                != rules::NPC_LG_BROWNIE ||
-            rules::npcLanguageFor(101)
-                != rules::NPC_LG_HUMAN_FOREIGN) ++bad;
+        if (npcbody.npcLanguageFor(0)
+                != NPC_LG_BROWNIE ||
+            npcbody.npcLanguageFor(101)
+                != NPC_LG_HUMAN_FOREIGN) ++bad;
         printf("R211 NPC body and language audit: bad %d\n", bad);
         if (bad) return 1;
     }

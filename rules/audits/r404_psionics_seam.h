@@ -16,6 +16,7 @@
     // cavalier mind powers; census
     // 330 -> 331.
     {
+        Insanity insanity;
         using namespace rules;
         int bad = 0;
         // ---- the layer contract ----
@@ -56,19 +57,19 @@
         // subject to psionic attack;
         // 5+ are not
         for (int i = 1; i <= 4; ++i)
-            if (!insanityIsMild(i)) ++bad;
-        if (insanityIsMild(0)
-                || insanityIsMild(5)
-                || insanityIsMild(20)) ++bad;
+            if (!insanity.insanityIsMild(i)) ++bad;
+        if (insanity.insanityIsMild(0)
+                || insanity.insanityIsMild(5)
+                || insanity.insanityIsMild(20)) ++bad;
         // the duration classes ride the
         // psionic section (2-12 temporary,
         // 1-4 mild)
-        if (insanityTemporaryWeeksMin() != 2
-                || insanityTemporaryWeeksMax()
+        if (insanity.insanityTemporaryWeeksMin() != 2
+                || insanity.insanityTemporaryWeeksMax()
                     != 12)
             ++bad;
-        if (insanityMildWeeksMin() != 1
-                || insanityMildWeeksMax() != 4)
+        if (insanity.insanityMildWeeksMin() != 1
+                || insanity.insanityMildWeeksMax() != 4)
             ++bad;
         // ---- the R323 subrace seam ----
         // the svirfneblin PC ban rides the

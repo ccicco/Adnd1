@@ -3,9 +3,10 @@
     // rows, the three cursed no-sale rows, the
     // size note and the tiered bonuses.
     {
+        Swords swords;
         int bad = 0;
         // the row identity: the 26 die bands
-        if (rules::swRowCount() != 26) ++bad;
+        if (swords.swRowCount() != 26) ++bad;
         static const int kLo[26] = {
             1, 26, 31, 36, 41, 46, 50, 51, 59,
             63, 67, 68, 72, 75, 77, 78, 79, 80,
@@ -27,71 +28,71 @@
             22000, 22000, 25000, 35000, 50000, 0, 0, 0,
         };
         for (int i = 0; i < 26; ++i)
-            if (rules::swRowLo(i) != kLo[i] ||
-                rules::swRowHi(i) != kHi[i] ||
-                rules::swXpValue(i) != kXp[i] ||
-                rules::swSaleGp(i) != kGp[i])
+            if (swords.swRowLo(i) != kLo[i] ||
+                swords.swRowHi(i) != kHi[i] ||
+                swords.swXpValue(i) != kXp[i] ||
+                swords.swSaleGp(i) != kGp[i])
                 ++bad;
         for (int i = 1; i < 26; ++i)
-            if (rules::swRowLo(i) !=
-                rules::swRowHi(i - 1) + 1) ++bad;
-        if (rules::swRowLo(-5) != 1 ||
-            rules::swRowHi(99) != 100) ++bad;
+            if (swords.swRowLo(i) !=
+                swords.swRowHi(i - 1) + 1) ++bad;
+        if (swords.swRowLo(-5) != 1 ||
+            swords.swRowHi(99) != 100) ++bad;
         // the printed values: Sword +1, Luck
         // Blade, Nine Lives Stealer, Holy
         // Avenger and the Vorpal Weapon
-        if (rules::swXpValue(0) != 400 ||
-            rules::swSaleGp(0) != 2000) ++bad;
-        if (rules::swXpValue(6) != 1000 ||
-            rules::swSaleGp(6) != 5000) ++bad;
-        if (rules::swXpValue(10) != 1600 ||
-            rules::swSaleGp(10) != 8000) ++bad;
-        if (rules::swXpValue(17) != 4000 ||
-            rules::swSaleGp(17) != 20000) ++bad;
-        if (rules::swXpValue(22) != 10000 ||
-            rules::swSaleGp(22) != 50000) ++bad;
+        if (swords.swXpValue(0) != 400 ||
+            swords.swSaleGp(0) != 2000) ++bad;
+        if (swords.swXpValue(6) != 1000 ||
+            swords.swSaleGp(6) != 5000) ++bad;
+        if (swords.swXpValue(10) != 1600 ||
+            swords.swSaleGp(10) != 8000) ++bad;
+        if (swords.swXpValue(17) != 4000 ||
+            swords.swSaleGp(17) != 20000) ++bad;
+        if (swords.swXpValue(22) != 10000 ||
+            swords.swSaleGp(22) != 50000) ++bad;
         // the THREE cursed swords print --- g.p.
         // sale values: +1 Cursed, -2 Cursed and
         // the Berserking (rows 23, 24, 25)
-        if (rules::swXpValue(23) != 400 ||
-            rules::swSaleGp(23) != 0 ||
-            rules::swXpValue(24) != 600 ||
-            rules::swSaleGp(24) != 0 ||
-            rules::swXpValue(25) != 900 ||
-            rules::swSaleGp(25) != 0 ||
-            rules::swNoSaleCount() != 3) ++bad;
+        if (swords.swXpValue(23) != 400 ||
+            swords.swSaleGp(23) != 0 ||
+            swords.swXpValue(24) != 600 ||
+            swords.swSaleGp(24) != 0 ||
+            swords.swXpValue(25) != 900 ||
+            swords.swSaleGp(25) != 0 ||
+            swords.swNoSaleCount() != 3) ++bad;
         // the Berserking rides the 96-00 band -
         // pinned as 96 through 100
-        if (rules::swRowLo(25) != 96 ||
-            rules::swRowHi(25) != 100) ++bad;
+        if (swords.swRowLo(25) != 96 ||
+            swords.swRowHi(25) != 100) ++bad;
         // the sword SIZE note: 70/20/5/4/1 sums
         // to 100
-        if (rules::swLongswordPct() != 70 ||
-            rules::swBroadswordPct() != 20 ||
-            rules::swShortswordPct() != 5 ||
-            rules::swBastardPct() != 4 ||
-            rules::swTwoHandedPct() != 1) ++bad;
-        if (rules::swLongswordPct() +
-            rules::swBroadswordPct() +
-            rules::swShortswordPct() +
-            rules::swBastardPct() +
-            rules::swTwoHandedPct() != 100) ++bad;
+        if (swords.swLongswordPct() != 70 ||
+            swords.swBroadswordPct() != 20 ||
+            swords.swShortswordPct() != 5 ||
+            swords.swBastardPct() != 4 ||
+            swords.swTwoHandedPct() != 1) ++bad;
+        if (swords.swLongswordPct() +
+            swords.swBroadswordPct() +
+            swords.swShortswordPct() +
+            swords.swBastardPct() +
+            swords.swTwoHandedPct() != 100) ++bad;
         // the tiered bonuses: the Flame Tongue
         // ladder 2/3/4 and the Frost Brand +6
-        if (rules::swFlameVsRegenBonus() != 2 ||
-            rules::swFlameVsColdAvianBonus() != 3 ||
-            rules::swFlameVsUndeadBonus() != 4 ||
-            rules::swFrostVsFireBonus() != 6) ++bad;
-        if (rules::swFlameVsRegenBonus() *
-            rules::swFlameVsColdAvianBonus() -
-            rules::swFlameVsRegenBonus() !=
-            rules::swFlameVsUndeadBonus()) ++bad;
+        if (swords.swFlameVsRegenBonus() != 2 ||
+            swords.swFlameVsColdAvianBonus() != 3 ||
+            swords.swFlameVsUndeadBonus() != 4 ||
+            swords.swFrostVsFireBonus() != 6) ++bad;
+        if (swords.swFlameVsRegenBonus() *
+            swords.swFlameVsColdAvianBonus() -
+            swords.swFlameVsRegenBonus() !=
+            swords.swFlameVsUndeadBonus()) ++bad;
         // clamped reads land on Sword +1 below
         // and the Cursed Berserking above
-        if (rules::swSaleGp(-99) != 2000 ||
-            rules::swSaleGp(99) != 0 ||
-            rules::swXpValue(-99) != 400 ||
-            rules::swXpValue(99) != 900) ++bad;
+        if (swords.swSaleGp(-99) != 2000 ||
+            swords.swSaleGp(99) != 0 ||
+            swords.swXpValue(-99) != 400 ||
+            swords.swXpValue(99) != 900) ++bad;
         printf("R242 swords pins audit: bad %d\n", bad);
         if (bad) return 1;
     }

@@ -4,6 +4,7 @@
     // when-to-use guidance (the judgments recorded in
     // the gap report).
     {
+        Secondary secondary;
         int bad = 0;
         static const int kLo[23] = {
             1, 3, 5, 11, 15, 21, 24, 28, 33, 35, 38, 40,
@@ -38,10 +39,11 @@
             "NO SKILL OF MEASURABLE WORTH",
             "ROLL TWICE IGNORING THIS RESULT HEREAFTER"
         };
-        if (rules::secondaryRowCount() != 23) ++bad;
+        if (secondary.secondaryRowCount() != 23) ++bad;
         for (int i = 0; i < 23; ++i) {
-            const rules::SecondarySkillRow& row =
-                rules::secondaryRow(i);
+            Secondary secondary;
+            const SecondarySkillRow& row =
+                secondary.secondaryRow(i);
             if (row.lo != kLo[i] || row.hi != kHi[i] ||
                 std::string(row.name) != kName[i])
                 ++bad;
@@ -52,20 +54,20 @@
             if (kHi[i] + 1 != kLo[i + 1]) ++bad;
         if (kHi[22] != 100) ++bad;
         // the special rows
-        if (!rules::secondaryIsNoSkill(21)) ++bad;
-        if (rules::secondaryIsNoSkill(20)) ++bad;
-        if (rules::secondaryIsNoSkill(22)) ++bad;
-        if (!rules::secondaryIsRollTwice(22)) ++bad;
-        if (rules::secondaryIsRollTwice(21)) ++bad;
+        if (!secondary.secondaryIsNoSkill(21)) ++bad;
+        if (secondary.secondaryIsNoSkill(20)) ++bad;
+        if (secondary.secondaryIsNoSkill(22)) ++bad;
+        if (!secondary.secondaryIsRollTwice(22)) ++bad;
+        if (secondary.secondaryIsRollTwice(21)) ++bad;
         // the intro and adjudication prose
-        if (!rules::secondaryClassAssumedPriorProfession() ||
-            !rules::secondaryMinorMundaneKnowledgePossible() ||
-            !rules::secondaryCampaignAimedAtSkillsUsesTable() ||
-            !rules::secondaryAssignRandomOrPerBackground() ||
-            !rules::secondarySecondSkillIfTwoSkills() ||
-            !rules::secondaryDMAdjudicatesSituations() ||
-            !rules::secondarySkillGivesWorthSoundnessRepairs() ||
-            !rules::secondaryAssumeRoleToScaleAbility())
+        if (!secondary.secondaryClassAssumedPriorProfession() ||
+            !secondary.secondaryMinorMundaneKnowledgePossible() ||
+            !secondary.secondaryCampaignAimedAtSkillsUsesTable() ||
+            !secondary.secondaryAssignRandomOrPerBackground() ||
+            !secondary.secondarySecondSkillIfTwoSkills() ||
+            !secondary.secondaryDMAdjudicatesSituations() ||
+            !secondary.secondarySkillGivesWorthSoundnessRepairs() ||
+            !secondary.secondaryAssumeRoleToScaleAbility())
             ++bad;
         printf("R173 secondary skills audit: bad %d\n", bad);
         if (bad) return 1;

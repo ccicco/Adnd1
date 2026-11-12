@@ -4,6 +4,7 @@
     // tables, cell by cell (the trusted-compilation
     // judgments recorded in the gap report).
     {
+        Dmg_appendices_klm dmg_appendices_klm;
         int bad = 0;
         // Appendix K: the appearance list
         static const char* kApp[10] = {
@@ -11,9 +12,9 @@
             "fuming", "oily", "smoky", "syrupy",
             "vaporous", "viscous", "watery"
         };
-        if (rules::klmAppearanceCount() != 10) ++bad;
+        if (dmg_appendices_klm.klmAppearanceCount() != 10) ++bad;
         for (int i = 0; i < 10; ++i)
-            if (std::string(rules::klmAppearance(i))
+            if (std::string(dmg_appendices_klm.klmAppearance(i))
                     != kApp[i])
                 ++bad;
         // the transparency list with parentheticals
@@ -33,12 +34,13 @@
             false, false, false, true, false, true,
             false, true, false, true
         };
-        if (rules::klmTransparencyCount() != 10) ++bad;
+        if (dmg_appendices_klm.klmTransparencyCount() != 10) ++bad;
         for (int i = 0; i < 10; ++i) {
-            if (std::string(rules::klmTransparency(i))
+            Dmg_appendices_klm dmg_appendices_klm;
+            if (std::string(dmg_appendices_klm.klmTransparency(i))
                     != kTr[i])
                 ++bad;
-            if (rules::klmTransparencyNeedsDetermination(i)
+            if (dmg_appendices_klm.klmTransparencyNeedsDetermination(i)
                     != kTrDet[i])
                 ++bad;
         }
@@ -79,18 +81,19 @@
         static const int kColOff[11] = {
             0, 6, 10, 13, 19, 24, 34, 44, 60, 63, 69
         };
-        if (rules::klmColorGroupCount() != 11) ++bad;
+        if (dmg_appendices_klm.klmColorGroupCount() != 11) ++bad;
         int colTotal = 0;
         for (int g = 0; g < 11; ++g) {
-            if (std::string(rules::klmColorGroupName(g))
+            Dmg_appendices_klm dmg_appendices_klm;
+            if (std::string(dmg_appendices_klm.klmColorGroupName(g))
                     != kGrp[g])
                 ++bad;
-            if (rules::klmColorGroupSize(g) != kGrpN[g])
+            if (dmg_appendices_klm.klmColorGroupSize(g) != kGrpN[g])
                 ++bad;
             colTotal += kGrpN[g];
             for (int j = 0; j < kGrpN[g]; ++j)
                 if (std::string(
-                        rules::klmColorWord(g, j))
+                        dmg_appendices_klm.klmColorWord(g, j))
                         != kCol[kColOff[g] + j])
                     ++bad;
         }
@@ -106,17 +109,17 @@
             "soothing/sugary", "sour", "spicy",
             "sweet", "tart", "vinegary", "watery"
         };
-        if (rules::klmTasteCount() != 28) ++bad;
+        if (dmg_appendices_klm.klmTasteCount() != 28) ++bad;
         for (int i = 0; i < 28; ++i)
-            if (std::string(rules::klmTaste(i)) != kTa[i])
+            if (std::string(dmg_appendices_klm.klmTaste(i)) != kTa[i])
                 ++bad;
-        if (!rules::klmUsedWithDungeonDressing()) ++bad;
+        if (!dmg_appendices_klm.klmUsedWithDungeonDressing()) ++bad;
         // Appendix L: the prose
-        if (!rules::klmConjFractionalCostCharged() ||
-            !rules::klmConjRandomSelectionWhereSeveral() ||
-            !rules::klmConjCasterCannotSpecify() ||
-            rules::klmConjWhaleMaxHitDiceCost() != 36 ||
-            !rules::klmConjWaterSwimmersAndFlyersOnly())
+        if (!dmg_appendices_klm.klmConjFractionalCostCharged() ||
+            !dmg_appendices_klm.klmConjRandomSelectionWhereSeveral() ||
+            !dmg_appendices_klm.klmConjCasterCannotSpecify() ||
+            dmg_appendices_klm.klmConjWhaleMaxHitDiceCost() != 36 ||
+            !dmg_appendices_klm.klmConjWaterSwimmersAndFlyersOnly())
             ++bad;
         // the conjured animals categories: bands,
         // names and quarter costs, cell by cell
@@ -161,14 +164,16 @@
             "owl, giant", "ram, giant",
             "weasel, giant", "wolf, dire"
         };
-        if (rules::klmConjCategoryCount() != 4) ++bad;
+        if (dmg_appendices_klm.klmConjCategoryCount() != 4) ++bad;
         int cjFlat = 0;
         for (int c = 0; c < 4; ++c) {
-            if (rules::klmConjRowCount(c) != kCjN[c])
+            Dmg_appendices_klm dmg_appendices_klm;
+            if (dmg_appendices_klm.klmConjRowCount(c) != kCjN[c])
                 ++bad;
             for (int r = 0; r < kCjN[c]; ++r) {
-                const rules::ConjuredAnimalRow& row =
-                    rules::klmConjRow(c, r);
+                Dmg_appendices_klm dmg_appendices_klm;
+                const ConjuredAnimalRow& row =
+                    dmg_appendices_klm.klmConjRow(c, r);
                 if (row.lo != kCjLo[cjFlat] ||
                     row.hi != kCjHi[cjFlat] ||
                     row.costQ != kCjQ[cjFlat] ||
@@ -186,11 +191,11 @@
         // here keeps the R171 audit honest; the
         // cell-by-cell check lives in the R175
         // audit block below
-        if (rules::klmConjHigherCount() != 26)
+        if (dmg_appendices_klm.klmConjHigherCount() != 26)
             ++bad;
         // Appendix M: the prose
-        if (!rules::klmSummonEvilUsesParenthesis() ||
-            !rules::klmSummonDMMaySelectAndAppoint())
+        if (!dmg_appendices_klm.klmSummonEvilUsesParenthesis() ||
+            !dmg_appendices_klm.klmSummonDMMaySelectAndAppoint())
             ++bad;
         // the 7 land tables: bands, names and evil
         // alternates, cell by cell
@@ -304,16 +309,18 @@
             "", "", "", "",
             "", ""
         };
-        if (rules::klmSummonLandTableCount() != 7)
+        if (dmg_appendices_klm.klmSummonLandTableCount() != 7)
             ++bad;
         int ldFlat = 0;
         for (int t = 0; t < 7; ++t) {
-            if (rules::klmSummonLandRowCount(t)
+            Dmg_appendices_klm dmg_appendices_klm;
+            if (dmg_appendices_klm.klmSummonLandRowCount(t)
                     != kLdN[t])
                 ++bad;
             for (int r = 0; r < kLdN[t]; ++r) {
-                const rules::SummonedMonsterRow& row =
-                    rules::klmSummonLandRow(t, r);
+                Dmg_appendices_klm dmg_appendices_klm;
+                const SummonedMonsterRow& row =
+                    dmg_appendices_klm.klmSummonLandRow(t, r);
                 if (row.lo != kLdLo[ldFlat] ||
                     row.hi != kLdHi[ldFlat] ||
                     std::string(row.name)
@@ -397,20 +404,22 @@
             "Monster Summoning VII, fresh water",
             "Monster Summoning VII, salt water"
         };
-        if (rules::klmSummonWaterTableCount() != 13)
+        if (dmg_appendices_klm.klmSummonWaterTableCount() != 13)
             ++bad;
         int wtFlat = 0;
         for (int t = 0; t < 13; ++t) {
-            if (rules::klmSummonWaterRowCount(t)
+            Dmg_appendices_klm dmg_appendices_klm;
+            if (dmg_appendices_klm.klmSummonWaterRowCount(t)
                     != kWtN[t])
                 ++bad;
             if (std::string(
-                    rules::klmSummonWaterTableName(t))
+                    dmg_appendices_klm.klmSummonWaterTableName(t))
                     != kWtTab[t])
                 ++bad;
             for (int r = 0; r < kWtN[t]; ++r) {
-                const rules::SummonedMonsterRow& row =
-                    rules::klmSummonWaterRow(t, r);
+                Dmg_appendices_klm dmg_appendices_klm;
+                const SummonedMonsterRow& row =
+                    dmg_appendices_klm.klmSummonWaterRow(t, r);
                 if (row.lo != kWtLo[wtFlat] ||
                     row.hi != kWtHi[wtFlat] ||
                     std::string(row.name)

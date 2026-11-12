@@ -48,63 +48,50 @@
 
 #pragma once
 
-namespace rules {
+// R-refactor: namespace rules -> class Swimcross (instance methods)
+class Swimcross {
+public:
+
 
 // The armor swim gate: 1 when the armor
 // swims (none, padded, leather), 0 when
 // the metal armors bar the water.
-inline int swimArmorSwims(int armorId) {
-    return armorId <= 2 ? 1 : 0;
-}
+    int swimArmorSwims(int armorId);
+
 
 // Magic armor excepts the metal ban (the
 // dog paddle the only stroke possible).
-inline int swimMagicArmorSwims() {
-    return 1;
-}
+    int swimMagicArmorSwims();
+
 
 // The crossing gate: enchanted armor dog
 // paddles, plain armor reads the metal
 // ban.
-inline int swimCanSwim(int armorId, int armorPlus) {
-    return armorPlus > 0 ? swimMagicArmorSwims()
-                         : swimArmorSwims(armorId);
-}
+    int swimCanSwim(int armorId, int armorPlus);
+
 
 // The load beyond the worn armor, in
 // pounds (1 pound = 10 g.p.; the print
 // counts the possessions BEYOND the
 // armor), the negatives clamped.
-inline int swimLoadBeyondArmorLbs(int carriedGp,
-                                  int armorGp) {
-    int lbs = (carriedGp - armorGp) / 10;
-    if (lbs < 0) lbs = 0;
-    return lbs;
-}
+    int swimLoadBeyondArmorLbs(int carriedGp, int armorGp);
+
 
 // The drown roll cadence: one roll per
 // living member per water entry (the
 // JUDGMENT - the per-hour print percent
 // condensed to the crossing).
-inline int swimDrownRollPerCrossing() {
-    return 1;
-}
+    int swimDrownRollPerCrossing();
+
 
 // The flooded pool count: one per delve
 // (the R304 one-per-delve convention; the
 // JUDGMENT).
-inline int floodPerDelveCount() {
-    return 1;
-}
+    int floodPerDelveCount();
+
 
 // The pool side floor: 2-3 tiles a side
 // (the JUDGMENT).
-inline int floodSideMin() {
-    return 2;
-}
-
-inline int floodSideMax() {
-    return 3;
-}
-
-}  // namespace rules
+    int floodSideMin();
+    int floodSideMax();
+};

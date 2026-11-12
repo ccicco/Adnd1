@@ -26,261 +26,54 @@
 
 #pragma once
 
-namespace rules {
-
-inline int mmpLibramStudyWeeks() {
-    // a full week of cloistered study
-    return 1;
-}
-
-inline int mmpLibramMisuseDamageMin() {
-    // a non-neutral reader takes 5-20 damage
-    return 5;
-}
-
-inline int mmpLibramMisuseDamageMax() {
-    // the upper edge of the 5-20 damage
-    return 20;
-}
-
-inline int mmpLibramUnconsciousTurnsMin() {
-    // unconscious a like number of turns
-    return 5;
-}
-
-inline int mmpLibramUnconsciousTurnsMax() {
-    // the upper edge of the like-number turns
-    return 20;
-}
-
-inline int mmpLibramInsanityRestMonths() {
-    // the insane reader rests 1 month
-    return 1;
-}
-
-inline int mmpLibramDamnationLevelLoss() {
-    // a non-evil look inside loses 1 level
-    return 1;
-}
-
-inline int mmpLyreNegateKindCount() {
-    // horn of blasting, disintegrate, elemental
-    return 3;
-}
-
-inline int mmpLyreNegateRounds() {
-    // negates 6 rounds of earth elemental attack
-    return 6;
-}
-
-inline int mmpLyreNegatePerDay() {
-    // the negatory chords play once per day
-    return 1;
-}
-
-inline int mmpLyreBuildPerWeek() {
-    // the building chords strum once per week
-    return 1;
-}
-
-inline int mmpLyreBuildTurns() {
-    // 3 turns of such playing
-    return 3;
-}
-
-inline int mmpLyreBuildMen() {
-    // equal to the work of 100 men
-    return 100;
-}
-
-inline int mmpLyreBuildDays() {
-    // 100 men laboring for 3 days
-    return 3;
-}
-
-inline int mmpLyreFalseChordPct() {
-    // a false chord negates 20 percent likely
-    return 20;
-}
-
-inline int mmpLyreFalseChordKnownPct() {
-    // only 5 percent once the proper ones known
-    return 5;
-}
-
-inline int mmpLyreFalseChordDisturbedPct() {
-    // disturbed while playing rises to 50 percent
-    return 50;
-}
-
-inline int mmpHealthReadHours() {
-    // the read takes 24 hours of time
-    return 24;
-}
-
-inline int mmpHealthReadDaysMin() {
-    // over 3-5 days
-    return 3;
-}
-
-inline int mmpHealthReadDaysMax() {
-    // the upper edge of the 3-5 days
-    return 5;
-}
-
-inline int mmpHealthConGain() {
-    // the regimen raises constitution by 1 point
-    return 1;
-}
-
-inline int mmpHealthRegimenMonths() {
-    // the diet and breathing run 1 month
-    return 1;
-}
-
-inline int mmpHealthForgetMonths() {
-    // the secrets fade in 3 months
-    return 3;
-}
-
-inline int mmpExerciseStrGain() {
-    // the course adds 1 point of strength
-    return 1;
-}
-
-inline int mmpGolemKindCount() {
-    // 4 sorts of golems
-    return 4;
-}
-
-inline int mmpGolemMinUserLevel() {
-    // the maker assumed 10th or higher
-    return 10;
-}
-
-inline int mmpGolemFailurePctPerLevel() {
-    // cumulative 10 percent per level under 10th
-    return 10;
-}
-
-inline int mmpGolemFailureWindowTurns() {
-    // falls to pieces within 1 turn of completion
-    return 1;
-}
-
-inline int mmpGolemClericXpLossMin() {
-    // a cleric reading loses 10,000 xp
-    return 10000;
-}
-
-inline int mmpGolemClericXpLossMax() {
-    // up to 60,000 xp lost
-    return 60000;
-}
-
-inline int mmpGolemMuLevelLoss() {
-    // a magic-user reading loses 1 level
-    return 1;
-}
-
-inline int mmpGolemOtherDamageMin() {
-    // any other class suffers 6-36 damage
-    return 6;
-}
-
-inline int mmpGolemOtherDamageMax() {
-    // the upper edge of the 6-36 damage
-    return 36;
-}
-
-inline int mmpGolemDieLo(int i) {
-    // the printed die band lower edges; i clamps
-    if (i < 0) i = 0;
-    if (i > 3) i = 3;
-    static const int t[4] = {
-        1, 6, 18, 19,
-    };
-    return t[i];
-}
-
-inline int mmpGolemDieHi(int i) {
-    // the printed die band upper edges; i clamps
-    if (i < 0) i = 0;
-    if (i > 3) i = 3;
-    static const int t[4] = {
-        5, 17, 18, 20,
-    };
-    return t[i];
-}
-
-inline int mmpGolemMonths(int i) {
-    // the construction months per golem sort; i clamps
-    if (i < 0) i = 0;
-    if (i > 3) i = 3;
-    static const int t[4] = {
-        1, 2, 4, 3,
-    };
-    return t[i];
-}
-
-inline int mmpGolemCostGp(int i) {
-    // the construction cost per golem sort; i clamps
-    if (i < 0) i = 0;
-    if (i > 3) i = 3;
-    static const int t[4] = {
-        65000, 50000, 100000, 80000,
-    };
-    return t[i];
-}
-
-inline int mmpPuissantPracticeMonths() {
-    // the fighter practices 1 month
-    return 1;
-}
-
-inline int mmpPuissantForgetMonths() {
-    // the knowledge fades within 3 months
-    return 3;
-}
-
-inline int mmpPuissantStunTurnsMin() {
-    // a scanning magic-user is stunned 1-6 turns
-    return 1;
-}
-
-inline int mmpPuissantStunTurnsMax() {
-    // the upper edge of the 1-6 turn stun
-    return 6;
-}
-
-inline int mmpPuissantXpLossMin() {
-    // the scanning magic-user loses 10,000 xp
-    return 10000;
-}
-
-inline int mmpPuissantXpLossMax() {
-    // up to 60,000 xp lost
-    return 60000;
-}
-
-inline int mmpQuicknessStudyDays() {
-    // 3 days of uninterrupted study
-    return 3;
-}
-
-inline int mmpQuicknessPracticeMonths() {
-    // the skills practiced 1 month
-    return 1;
-}
-
-inline int mmpQuicknessDexGain() {
-    // the practice gains 1 point of dexterity
-    return 1;
-}
-
-inline int mmpQuicknessRememberMonths() {
-    // the contents remembered 3 months
-    return 3;
-}
-
-}  // namespace rules
+// R-refactor: namespace rules -> class Miscmagic_librams_lyre_and_manuals (instance methods)
+class Miscmagic_librams_lyre_and_manuals {
+public:
+    int mmpLibramStudyWeeks();
+    int mmpLibramMisuseDamageMin();
+    int mmpLibramMisuseDamageMax();
+    int mmpLibramUnconsciousTurnsMin();
+    int mmpLibramUnconsciousTurnsMax();
+    int mmpLibramInsanityRestMonths();
+    int mmpLibramDamnationLevelLoss();
+    int mmpLyreNegateKindCount();
+    int mmpLyreNegateRounds();
+    int mmpLyreNegatePerDay();
+    int mmpLyreBuildPerWeek();
+    int mmpLyreBuildTurns();
+    int mmpLyreBuildMen();
+    int mmpLyreBuildDays();
+    int mmpLyreFalseChordPct();
+    int mmpLyreFalseChordKnownPct();
+    int mmpLyreFalseChordDisturbedPct();
+    int mmpHealthReadHours();
+    int mmpHealthReadDaysMin();
+    int mmpHealthReadDaysMax();
+    int mmpHealthConGain();
+    int mmpHealthRegimenMonths();
+    int mmpHealthForgetMonths();
+    int mmpExerciseStrGain();
+    int mmpGolemKindCount();
+    int mmpGolemMinUserLevel();
+    int mmpGolemFailurePctPerLevel();
+    int mmpGolemFailureWindowTurns();
+    int mmpGolemClericXpLossMin();
+    int mmpGolemClericXpLossMax();
+    int mmpGolemMuLevelLoss();
+    int mmpGolemOtherDamageMin();
+    int mmpGolemOtherDamageMax();
+    int mmpGolemDieLo(int i);
+    int mmpGolemDieHi(int i);
+    int mmpGolemMonths(int i);
+    int mmpGolemCostGp(int i);
+    int mmpPuissantPracticeMonths();
+    int mmpPuissantForgetMonths();
+    int mmpPuissantStunTurnsMin();
+    int mmpPuissantStunTurnsMax();
+    int mmpPuissantXpLossMin();
+    int mmpPuissantXpLossMax();
+    int mmpQuicknessStudyDays();
+    int mmpQuicknessPracticeMonths();
+    int mmpQuicknessDexGain();
+    int mmpQuicknessRememberMonths();
+};

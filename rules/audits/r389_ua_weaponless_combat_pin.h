@@ -15,6 +15,7 @@
     // DMG default, the R388 seam
     // the misc weapons ledger.
     {
+        Weaponless weaponless;
         using namespace rules;
         int bad = 0;
             if (!uaqSysOneSimpleQuickSystem()) ++bad;
@@ -337,9 +338,9 @@
         // stays the engine default:
         // its pummel base ladder
         // reads AC x 10
-            if (pummelBaseChance(10) != 100
-                || pummelBaseChance(9) != 90
-                || pummelBaseChance(0) != 0)
+            if (weaponless.pummelBaseChance(10) != 100
+                || weaponless.pummelBaseChance(9) != 90
+                || weaponless.pummelBaseChance(0) != 0)
                 ++bad;
         printf("R389 UA weaponless combat pin audit: bad %d\n", bad);
         if (bad) return 1;

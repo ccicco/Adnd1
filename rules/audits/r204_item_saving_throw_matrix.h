@@ -8,6 +8,8 @@
     // matrix cells (ceramic flask 18/12, crystal vial
     // 19/14).
     {
+        Grenade grenade;
+        Itemsavethrow itemsavethrow;
         int bad = 0;
         static const int kCells[14][11] = {
             { 11, 16, 10, 20,  6, 17,  9,  3,  2,  8, 1 },
@@ -25,86 +27,86 @@
             {  9, 13,  6, 20,  2, 15, 11,  9,  1, 10, 1 },
             {  8, 10,  3, 19,  1, 11,  7,  5,  1, 12, 1 },
         };
-        for (int m = 0; m < rules::ISM_COUNT; ++m)
-            for (int f = 0; f < rules::ISF_COUNT; ++f)
-                if (rules::itemSaveTarget(
-                        (rules::ItemSaveMaterial)m,
-                        (rules::ItemSaveForm)f)
+        for (int m = 0; m < ISM_COUNT; ++m)
+            for (int f = 0; f < ISF_COUNT; ++f)
+                if (itemsavethrow.itemSaveTarget(
+                        (ItemSaveMaterial)m,
+                        (ItemSaveForm)f)
                         != kCells[m][f]) ++bad;
         // names present for every row and form
-        for (int m = 0; m < rules::ISM_COUNT; ++m)
-            if (!*rules::itemSaveMaterialName(
-                    (rules::ItemSaveMaterial)m)) ++bad;
-        for (int f = 0; f < rules::ISF_COUNT; ++f)
-            if (!*rules::itemSaveFormName(
-                    (rules::ItemSaveForm)f)) ++bad;
+        for (int m = 0; m < ISM_COUNT; ++m)
+            if (!*itemsavethrow.itemSaveMaterialName(
+                    (ItemSaveMaterial)m)) ++bad;
+        for (int f = 0; f < ISF_COUNT; ++f)
+            if (!*itemsavethrow.itemSaveFormName(
+                    (ItemSaveForm)f)) ++bad;
         // the R157 cross-checks: the grenade break saves
         // are the matrix BLOW cells - ceramic flasks
         // (acid, oil) the ceramic row, crystal vials (holy
         // or unholy water, poison) the crystal row
-        if (rules::itemSaveTarget(rules::ISM_CERAMIC,
-                rules::ISF_BLOW_CRUSHING)
-                != rules::grenadeBreakSaveCrushing(
-                      rules::GREN_ACID)) ++bad;
-        if (rules::itemSaveTarget(rules::ISM_CERAMIC,
-                rules::ISF_BLOW_NORMAL)
-                != rules::grenadeBreakSaveNormal(
-                      rules::GREN_OIL)) ++bad;
-        if (rules::itemSaveTarget(rules::ISM_CRYSTAL_VIAL,
-                rules::ISF_BLOW_CRUSHING)
-                != rules::grenadeBreakSaveCrushing(
-                      rules::GREN_HOLY_WATER)) ++bad;
-        if (rules::itemSaveTarget(rules::ISM_CRYSTAL_VIAL,
-                rules::ISF_BLOW_NORMAL)
-                != rules::grenadeBreakSaveNormal(
-                      rules::GREN_POISON)) ++bad;
+        if (itemsavethrow.itemSaveTarget(ISM_CERAMIC,
+                ISF_BLOW_CRUSHING)
+                != grenade.grenadeBreakSaveCrushing(
+                      GREN_ACID)) ++bad;
+        if (itemsavethrow.itemSaveTarget(ISM_CERAMIC,
+                ISF_BLOW_NORMAL)
+                != grenade.grenadeBreakSaveNormal(
+                      GREN_OIL)) ++bad;
+        if (itemsavethrow.itemSaveTarget(ISM_CRYSTAL_VIAL,
+                ISF_BLOW_CRUSHING)
+                != grenade.grenadeBreakSaveCrushing(
+                      GREN_HOLY_WATER)) ++bad;
+        if (itemsavethrow.itemSaveTarget(ISM_CRYSTAL_VIAL,
+                ISF_BLOW_NORMAL)
+                != grenade.grenadeBreakSaveNormal(
+                      GREN_POISON)) ++bad;
         // the liquid row: no save vs blow, fall, normal fire
-        if (rules::itemSaveTarget(rules::ISM_LIQUID,
-                rules::ISF_BLOW_CRUSHING) != 0) ++bad;
-        if (rules::itemSaveTarget(rules::ISM_LIQUID,
-                rules::ISF_FALL) != 0) ++bad;
-        if (rules::itemSaveTarget(rules::ISM_LIQUID,
-                rules::ISF_FIRE_NORMAL) != 13) ++bad;
+        if (itemsavethrow.itemSaveTarget(ISM_LIQUID,
+                ISF_BLOW_CRUSHING) != 0) ++bad;
+        if (itemsavethrow.itemSaveTarget(ISM_LIQUID,
+                ISF_FALL) != 0) ++bad;
+        if (itemsavethrow.itemSaveTarget(ISM_LIQUID,
+                ISF_FIRE_NORMAL) != 13) ++bad;
         // the magical ladder: +1 saves at +2, +2 at +3,
         // +3 at +4, a +5 sword at +6; non-magical 0
-        if (rules::itemSaveMagicalBonus(0) != 0 ||
-            rules::itemSaveMagicalBonus(1) != 2 ||
-            rules::itemSaveMagicalBonus(2) != 3 ||
-            rules::itemSaveMagicalBonus(3) != 4 ||
-            rules::itemSaveMagicalBonus(5) != 6) ++bad;
-        if (rules::itemSaveOwnModeBonus() != 5) ++bad;
+        if (itemsavethrow.itemSaveMagicalBonus(0) != 0 ||
+            itemsavethrow.itemSaveMagicalBonus(1) != 2 ||
+            itemsavethrow.itemSaveMagicalBonus(2) != 3 ||
+            itemsavethrow.itemSaveMagicalBonus(3) != 4 ||
+            itemsavethrow.itemSaveMagicalBonus(5) != 6) ++bad;
+        if (itemsavethrow.itemSaveOwnModeBonus() != 5) ++bad;
         // the fall surfaces: hard 0, wood-like +1, fleshy +5
-        if (rules::itemSaveFallSurfaceAdj(
-                rules::ISFS_HARD) != 0 ||
-            rules::itemSaveFallSurfaceAdj(
-                rules::ISFS_WOODLIKE) != 1 ||
-            rules::itemSaveFallSurfaceAdj(
-                rules::ISFS_FLESHY) != 5) ++bad;
+        if (itemsavethrow.itemSaveFallSurfaceAdj(
+                ISFS_HARD) != 0 ||
+            itemsavethrow.itemSaveFallSurfaceAdj(
+                ISFS_WOODLIKE) != 1 ||
+            itemsavethrow.itemSaveFallSurfaceAdj(
+                ISFS_FLESHY) != 5) ++bad;
         // the fall distance: through 5 feet free, each 5
         // past the first costs 1
-        if (rules::itemSaveFallDistanceAdj(5) != 0 ||
-            rules::itemSaveFallDistanceAdj(9) != 0 ||
-            rules::itemSaveFallDistanceAdj(10) != -1 ||
-            rules::itemSaveFallDistanceAdj(25) != -4 ||
-            rules::itemSaveFallDistanceAdj(100) != -19) ++bad;
+        if (itemsavethrow.itemSaveFallDistanceAdj(5) != 0 ||
+            itemsavethrow.itemSaveFallDistanceAdj(9) != 0 ||
+            itemsavethrow.itemSaveFallDistanceAdj(10) != -1 ||
+            itemsavethrow.itemSaveFallDistanceAdj(25) != -4 ||
+            itemsavethrow.itemSaveFallDistanceAdj(100) != -19) ++bad;
         // the cold-strike footnote: -10 on the die
-        if (rules::itemSaveHardMetalColdStrikePenalty() != 10)
+        if (itemsavethrow.itemSaveHardMetalColdStrikePenalty() != 10)
             ++bad;
         // normal-fire exposure: parchment 1, cloth 2, bone 3;
         // the unprinted tail reads 0 (caller-side)
-        if (rules::itemSaveNormalFireRoundsToAffect(
-                rules::ISM_PARCHMENT_PAPER) != 1 ||
-            rules::itemSaveNormalFireRoundsToAffect(
-                rules::ISM_CLOTH) != 2 ||
-            rules::itemSaveNormalFireRoundsToAffect(
-                rules::ISM_BONE_IVORY) != 3 ||
-            rules::itemSaveNormalFireRoundsToAffect(
-                rules::ISM_GLASS) != 0) ++bad;
+        if (itemsavethrow.itemSaveNormalFireRoundsToAffect(
+                ISM_PARCHMENT_PAPER) != 1 ||
+            itemsavethrow.itemSaveNormalFireRoundsToAffect(
+                ISM_CLOTH) != 2 ||
+            itemsavethrow.itemSaveNormalFireRoundsToAffect(
+                ISM_BONE_IVORY) != 3 ||
+            itemsavethrow.itemSaveNormalFireRoundsToAffect(
+                ISM_GLASS) != 0) ++bad;
         // the save convention: SAVES on roll + adj >= target
-        if (!rules::itemSavesOn(17, 18, 2)) ++bad;
-        if (rules::itemSavesOn(15, 18, 2)) ++bad;
-        if (!rules::itemSavesOn(18, 18, 0)) ++bad;
-        if (rules::itemSavesOn(17, 18, 0)) ++bad;
+        if (!itemsavethrow.itemSavesOn(17, 18, 2)) ++bad;
+        if (itemsavethrow.itemSavesOn(15, 18, 2)) ++bad;
+        if (!itemsavethrow.itemSavesOn(18, 18, 0)) ++bad;
+        if (itemsavethrow.itemSavesOn(17, 18, 0)) ++bad;
         printf("R204 item saving throw matrix audit: bad %d\n", bad);
         if (bad) return 1;
     }

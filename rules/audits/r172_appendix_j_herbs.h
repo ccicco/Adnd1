@@ -4,6 +4,7 @@
     // trusted-compilation judgments recorded in
     // the gap report.
     {
+        Herbs herbs;
         int bad = 0;
         static const char* jP[171] = {
             "abscess root (sweet root)",
@@ -351,43 +352,44 @@
             "blood tonic (anemia)",
             "cathartic, respiratory diseases, heart, kidneys",
         };
-        if (rules::herbsRowCount() != 171) ++bad;
+        if (herbs.herbsRowCount() != 171) ++bad;
         for (int i = 0; i < 171; ++i) {
-            if (std::string(rules::herbsRow(i).plant)
+            Herbs herbs;
+            if (std::string(herbs.herbsRow(i).plant)
                     != jP[i])
                 ++bad;
-            if (std::string(rules::herbsRow(i).uses)
+            if (std::string(herbs.herbsRow(i).uses)
                     != jU[i])
                 ++bad;
         }
         // the rows the book leaves with unknown uses
         int unknowns = 0;
         for (int i = 0; i < 171; ++i)
-            if (std::string(rules::herbsRow(i).uses) == "?")
+            if (std::string(herbs.herbsRow(i).uses) == "?")
                 ++unknowns;
         if (unknowns != 10) ++bad;
-        if (rules::herbsUnknownUsesCount() != 10) ++bad;
+        if (herbs.herbsUnknownUsesCount() != 10) ++bad;
         // the one cross-reference row (blueberry)
         int crossrefs = 0;
         for (int i = 0; i < 171; ++i)
-            if (rules::herbsIsCrossReference(i))
+            if (herbs.herbsIsCrossReference(i))
                 ++crossrefs;
         if (crossrefs != 1) ++bad;
-        if (!rules::herbsIsCrossReference(49)) ++bad;
-        if (std::string(rules::herbsRow(49).plant)
+        if (!herbs.herbsIsCrossReference(49)) ++bad;
+        if (std::string(herbs.herbsRow(49).plant)
                 != "blueberry - see bilberry")
             ++bad;
-        if (std::string(rules::herbsRow(49).uses)
+        if (std::string(herbs.herbsRow(49).uses)
                 != "")
             ++bad;
         // the intro and closing prose
-        if (!rules::herbsIntroHundredsReputedMedicinalAndMagic() ||
-            !rules::herbsIntroNotWithinScopeToDetailAll() ||
-            !rules::herbsIntroAlphabeticalOneOrTwoComments() ||
-            !rules::herbsIntroHerbologistPursuesScholarlyTexts() ||
-            !rules::herbsClosingGuideForPotionsInksItems() ||
-            !rules::herbsClosingAddOrDeleteAsDesired() ||
-            !rules::herbsClosingFolkUsesMagicDMPurview())
+        if (!herbs.herbsIntroHundredsReputedMedicinalAndMagic() ||
+            !herbs.herbsIntroNotWithinScopeToDetailAll() ||
+            !herbs.herbsIntroAlphabeticalOneOrTwoComments() ||
+            !herbs.herbsIntroHerbologistPursuesScholarlyTexts() ||
+            !herbs.herbsClosingGuideForPotionsInksItems() ||
+            !herbs.herbsClosingAddOrDeleteAsDesired() ||
+            !herbs.herbsClosingFolkUsesMagicDMPurview())
             ++bad;
         printf("R172 appendix J herbs audit: bad %d\n", bad);
         if (bad) return 1;

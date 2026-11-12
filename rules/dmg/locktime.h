@@ -27,49 +27,14 @@
 
 #pragma once
 
-namespace rules {
-
-inline int thfLocksPickRoundsMin() {
-    // the printed band floor: a lock can
-    // take from 1 round
-    return 1;
-}
-
-inline int thfLocksPickRoundsMax() {
-    // the printed band ceiling: up to 10
-    // rounds, on the complexity of the lock
-    return 10;
-}
-
-inline int thfLocksPickRoundsTypicalMax() {
-    // most locks take but 1-4 rounds
-    return 4;
-}
-
-inline int thfTrapsTimeRidesLocks() {
-    // the traps print: use the time
-    // requirements for opening locks; time
-    // counts for each function
-    return 1;
-}
-
-inline int doorWoodAlwaysMetalBound() {
-    // the doors prose: wooden doors are
-    // always metal bound
-    return 1;
-}
-
-inline int doorMetalUsuallyLocked() {
-    // the doors prose: metal doors are
-    // usually locked
-    return 1;
-}
-
-inline int doorLockedPerDelveCount() {
-    // JUDGMENT: the print carries no count;
-    // one locked door per delve (the R45
-    // placement convention)
-    return 1;
-}
-
-}  // namespace rules
+// R-refactor: namespace rules -> class Locktime (instance methods)
+class Locktime {
+public:
+    int thfLocksPickRoundsMin();
+    int thfLocksPickRoundsMax();
+    int thfLocksPickRoundsTypicalMax();
+    int thfTrapsTimeRidesLocks();
+    int doorWoodAlwaysMetalBound();
+    int doorMetalUsuallyLocked();
+    int doorLockedPerDelveCount();
+};

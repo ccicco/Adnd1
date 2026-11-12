@@ -9,40 +9,42 @@
     // descriptions. No page break
     // inside the slice this round.
     {
+        Specart specart;
+        Specart_axe_of_the_dwarvish_lords_to_codex specart_axe_of_the_dwarvish_lords_to_codex;
         int bad = 0;
         // the Organ scalars
-        if (rules::sapOrganPipeCount() != 77 ||
-            rules::sapOrganStopCount() != 13 ||
-            rules::sapOrganPedalCount() != 3 ||
-            rules::sapOrganBellowsElemental() != 1 ||
-            rules::sapOrganStopsVaryVoice() != 1 ||
-            rules::sapOrganKeysVaryNotes() != 1 ||
-            rules::sapOrganPedalPurposeUnknown() != 1 ||
-            rules::sapOrganStillWorksDespiteTime() != 1) ++bad;
-        if (rules::sapOrganWrongStopsSummon() != 1 ||
-            rules::sapOrganWrongKeysBackfire() != 1 ||
-            rules::sapOrganMisplayAlignment() != 1 ||
-            rules::sapOrganDmAssignsStopsKeys() != 1 ||
-            rules::sapOrganPowerTotal() != 34 ||
-            rules::sapOrganMisplayNegates() != 1) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapOrganPipeCount() != 77 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapOrganStopCount() != 13 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapOrganPedalCount() != 3 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapOrganBellowsElemental() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapOrganStopsVaryVoice() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapOrganKeysVaryNotes() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapOrganPedalPurposeUnknown() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapOrganStillWorksDespiteTime() != 1) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapOrganWrongStopsSummon() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapOrganWrongKeysBackfire() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapOrganMisplayAlignment() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapOrganDmAssignsStopsKeys() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapOrganPowerTotal() != 34 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapOrganMisplayNegates() != 1) ++bad;
         // the Organ powers per table I-VI
         static const int kOrg[6] = {
             7, 7, 3, 7, 7, 3,
         };
         for (int i = 0; i < 6; ++i)
-            if (rules::sapOrganPowerCount(i) != kOrg[i]) ++bad;
-        if (rules::sapOrganPowerCount(0) +
-            rules::sapOrganPowerCount(1) +
-            rules::sapOrganPowerCount(2) +
-            rules::sapOrganPowerCount(3) +
-            rules::sapOrganPowerCount(4) +
-            rules::sapOrganPowerCount(5) !=
-            rules::sapOrganPowerTotal()) ++bad;
+            if (specart_axe_of_the_dwarvish_lords_to_codex.sapOrganPowerCount(i) != kOrg[i]) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapOrganPowerCount(0) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapOrganPowerCount(1) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapOrganPowerCount(2) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapOrganPowerCount(3) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapOrganPowerCount(4) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapOrganPowerCount(5) !=
+            specart_axe_of_the_dwarvish_lords_to_codex.sapOrganPowerTotal()) ++bad;
         // the Horn scalars
-        if (rules::sapHornResemblesCommonHorns() != 1 ||
-            rules::sapHornSuggestedPowerPct() != 75 ||
-            rules::sapHornSuggestedEffectPct() != 25 ||
-            rules::sapHornIgnoresInappropriate() != 1) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapHornResemblesCommonHorns() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapHornSuggestedPowerPct() != 75 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapHornSuggestedEffectPct() != 25 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapHornIgnoresInappropriate() != 1) ++bad;
         // the Horn blast mappings: 1 wind
         // gives I or III, 2 give II or VI,
         // 3 give V or IV
@@ -53,52 +55,52 @@
             3, 6, 4,
         };
         for (int i = 0; i < 3; ++i)
-            if (rules::sapHornBlastPowerTable(i) != kHbp[i]) ++bad;
+            if (specart_axe_of_the_dwarvish_lords_to_codex.sapHornBlastPowerTable(i) != kHbp[i]) ++bad;
         for (int i = 0; i < 3; ++i)
-            if (rules::sapHornBlastEffectTable(i) != kHbe[i]) ++bad;
+            if (specart_axe_of_the_dwarvish_lords_to_codex.sapHornBlastEffectTable(i) != kHbe[i]) ++bad;
         // the suggested split sums to 100
-        if (rules::sapHornSuggestedPowerPct() +
-            rules::sapHornSuggestedEffectPct() != 100) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapHornSuggestedPowerPct() +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapHornSuggestedEffectPct() != 100) ++bad;
         // the Coat scalars
-        if (rules::sapCoatArndOfTdon() != 1 ||
-            rules::sapCoatChainLinksWeightless() != 1 ||
-            rules::sapCoatCoveredAreaCount() != 3 ||
-            rules::sapCoatMinWearerHeightFt() != 3 ||
-            rules::sapCoatMaxWearerHeightFt() != 8 ||
-            rules::sapCoatInvulnerableCovered() != 1 ||
-            rules::sapCoatUncoveredAc() != 5) ++bad;
-        if (rules::sapCoatSaveBonus() != 5 ||
-            rules::sapCoatFireResistance() != 1 ||
-            rules::sapCoatElementalImmunityCount() != 3 ||
-            rules::sapCoatPowerTotal() != 10) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapCoatArndOfTdon() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapCoatChainLinksWeightless() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapCoatCoveredAreaCount() != 3 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapCoatMinWearerHeightFt() != 3 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapCoatMaxWearerHeightFt() != 8 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapCoatInvulnerableCovered() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapCoatUncoveredAc() != 5) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapCoatSaveBonus() != 5 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapCoatFireResistance() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapCoatElementalImmunityCount() != 3 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapCoatPowerTotal() != 10) ++bad;
         // the Coat powers per table I-VI
         static const int kCoat[6] = {
             3, 2, 2, 1, 1, 1,
         };
         for (int i = 0; i < 6; ++i)
-            if (rules::sapCoatPowerCount(i) != kCoat[i]) ++bad;
-        if (rules::sapCoatPowerCount(0) +
-            rules::sapCoatPowerCount(1) +
-            rules::sapCoatPowerCount(2) +
-            rules::sapCoatPowerCount(3) +
-            rules::sapCoatPowerCount(4) +
-            rules::sapCoatPowerCount(5) !=
-            rules::sapCoatPowerTotal()) ++bad;
+            if (specart_axe_of_the_dwarvish_lords_to_codex.sapCoatPowerCount(i) != kCoat[i]) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapCoatPowerCount(0) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapCoatPowerCount(1) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapCoatPowerCount(2) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapCoatPowerCount(3) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapCoatPowerCount(4) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapCoatPowerCount(5) !=
+            specart_axe_of_the_dwarvish_lords_to_codex.sapCoatPowerTotal()) ++bad;
         // the AC 5 and the save +5 mirror
-        if (rules::sapCoatUncoveredAc() !=
-            rules::sapCoatSaveBonus()) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapCoatUncoveredAc() !=
+            specart_axe_of_the_dwarvish_lords_to_codex.sapCoatSaveBonus()) ++bad;
         // the wearer height range 3 to 8
-        if (rules::sapCoatMaxWearerHeightFt() -
-            rules::sapCoatMinWearerHeightFt() != 5) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapCoatMaxWearerHeightFt() -
+            specart_axe_of_the_dwarvish_lords_to_codex.sapCoatMinWearerHeightFt() != 5) ++bad;
         // the cross-pins: the R240 sale table rows
-        if (rules::saRowLo(8) != 26 ||
-            rules::saRowHi(8) != 26 ||
-            rules::saSaleGp(8) != 25000 ||
-            rules::saRowLo(9) != 27 ||
-            rules::saRowHi(9) != 27 ||
-            rules::saSaleGp(9) != 20000 ||
-            rules::saRowLo(10) != 28 ||
-            rules::saRowHi(10) != 29 ||
-            rules::saSaleGp(10) != 47500) ++bad;
+        if (specart.saRowLo(8) != 26 ||
+            specart.saRowHi(8) != 26 ||
+            specart.saSaleGp(8) != 25000 ||
+            specart.saRowLo(9) != 27 ||
+            specart.saRowHi(9) != 27 ||
+            specart.saSaleGp(9) != 20000 ||
+            specart.saRowLo(10) != 28 ||
+            specart.saRowHi(10) != 29 ||
+            specart.saSaleGp(10) != 47500) ++bad;
         printf("R285 special artifacts prose part 6 pins audit: bad %d\n", bad);
     }

@@ -2,12 +2,14 @@
     // DMG pp.137-138: the general mechanics and
     // the four lead rings (part 1 of 3).
     {
+        Rings rings;
+        Rings_mechanics_contrariness_to_elemental_command rings_mechanics_contrariness_to_elemental_command;
         int bad = 0;
         // the four lead rings are the engine III.C
         // table rows 1-15 (the R223 rings.h pins)
-        if (rules::ringRowCount() != 24 ||
-            rules::ringRowLo(0) != 1 || rules::ringRowHi(0) != 6 ||
-            rules::ringRowLo(3) != 15 || rules::ringRowHi(3) != 15) ++bad;
+        if (rings.ringRowCount() != 24 ||
+            rings.ringRowLo(0) != 1 || rings.ringRowHi(0) != 6 ||
+            rings.ringRowLo(3) != 15 || rings.ringRowHi(3) != 15) ++bad;
         static const int kCLo[4] = {
             1, 7, 13, 15,
         };
@@ -15,12 +17,12 @@
             6, 12, 14, 15,
         };
         for (int i = 0; i < 4; ++i)
-            if (rules::ringRowLo(i) != kCLo[i] ||
-                rules::ringRowHi(i) != kCHi[i]) ++bad;
+            if (rings.ringRowLo(i) != kCLo[i] ||
+                rings.ringRowHi(i) != kCHi[i]) ++bad;
         // the djinni double-dagger: the prose flag
         // cross-pins the R223 charge-limited row 2
-        if (rules::ringIsChargeLimited(2) != 1 ||
-            rules::ringChargeLimitedCount() != 7) ++bad;
+        if (rings.ringIsChargeLimited(2) != 1 ||
+            rings.ringChargeLimitedCount() != 7) ++bad;
         // the contrariness additional-properties bands
         static const int kPLo[6] = {
             1, 21, 41, 61, 71, 81,
@@ -29,65 +31,65 @@
             20, 40, 60, 70, 80, 100,
         };
         for (int i = 0; i < 6; ++i)
-            if (rules::rgpContrarinessPropLo(i) != kPLo[i] ||
-                rules::rgpContrarinessPropHi(i) != kPHi[i]) ++bad;
+            if (rings_mechanics_contrariness_to_elemental_command.rgpContrarinessPropLo(i) != kPLo[i] ||
+                rings_mechanics_contrariness_to_elemental_command.rgpContrarinessPropHi(i) != kPHi[i]) ++bad;
         // the elemental command save penalty list
         static const int kPen[4] = {
             -2, -2, -2, -2,
         };
         for (int i = 0; i < 4; ++i)
-            if (rules::rgpElemCommandSavePenalty(i) != kPen[i]) ++bad;
+            if (rings_mechanics_contrariness_to_elemental_command.rgpElemCommandSavePenalty(i) != kPen[i]) ++bad;
         // the general mechanics
-        if (rules::rgpMaxWornCount() != 2 ||
-            rules::rgpMaxPerHand() != 1 ||
-            rules::rgpSpellLikeLevel() != 12 ||
-            rules::rgpSmallCharMalfunctionPercent() != 20 ||
-            rules::rgpCursedMalfunctionNamedCount() != 3) ++bad;
+        if (rings_mechanics_contrariness_to_elemental_command.rgpMaxWornCount() != 2 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpMaxPerHand() != 1 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpSpellLikeLevel() != 12 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpSmallCharMalfunctionPercent() != 20 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpCursedMalfunctionNamedCount() != 3) ++bad;
         // the closing paragraph cross-pins the level
-        if (rules::rgpOperateLevelExperience() !=
-            rules::rgpSpellLikeLevel() ||
-            rules::rgpPowerActivationSegments() != 5) ++bad;
+        if (rings_mechanics_contrariness_to_elemental_command.rgpOperateLevelExperience() !=
+            rings_mechanics_contrariness_to_elemental_command.rgpSpellLikeLevel() ||
+            rings_mechanics_contrariness_to_elemental_command.rgpPowerActivationSegments() != 5) ++bad;
         // contrariness and djinni
-        if (rules::rgpContrarinessPropertyRowCount() != 6 ||
-            rules::rgpContrarinessShockingGraspPerRound() != 1 ||
-            rules::rgpContrarinessStrengthScore() != 18 ||
-            rules::rgpContrarinessRemoveCursePercent() != 100 ||
-            rules::rgpDjinniAppearDelayRounds() != 1) ++bad;
+        if (rings_mechanics_contrariness_to_elemental_command.rgpContrarinessPropertyRowCount() != 6 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpContrarinessShockingGraspPerRound() != 1 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpContrarinessStrengthScore() != 18 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpContrarinessRemoveCursePercent() != 100 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpDjinniAppearDelayRounds() != 1) ++bad;
         // elemental command: the combat modifications
-        if (rules::rgpElemCommandTypeCount() != 4 ||
-            rules::rgpElemCommandKeepAwayFeet() != 5 ||
-            rules::rgpElemCommandCharmSaveMod() != -2 ||
-            rules::rgpElemCommandElemToHitMod() != -1 ||
-            rules::rgpElemCommandWearerDamagePerDieMod() != -1 ||
-            rules::rgpElemCommandWearerSaveBonus() != 2 ||
-            rules::rgpElemCommandWearerToHitBonus() != 4 ||
-            rules::rgpElemCommandElemSaveMod() != -4 ||
-            rules::rgpElemCommandWearerDamageBonus() != 6 ||
-            rules::rgpElemCommandSavePenaltyRowCount() != 4 ||
-            rules::rgpElemCommandMaxActivePowers() != 1) ++bad;
+        if (rings_mechanics_contrariness_to_elemental_command.rgpElemCommandTypeCount() != 4 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandKeepAwayFeet() != 5 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandCharmSaveMod() != -2 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandElemToHitMod() != -1 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandWearerDamagePerDieMod() != -1 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandWearerSaveBonus() != 2 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandWearerToHitBonus() != 4 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandElemSaveMod() != -4 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandWearerDamageBonus() != 6 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandSavePenaltyRowCount() != 4 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandMaxActivePowers() != 1) ++bad;
         // elemental command: the four power lists
-        if (rules::rgpElemCommandAirPowerCount() != 5 ||
-            rules::rgpElemCommandEarthPowerCount() != 6 ||
-            rules::rgpElemCommandFirePowerCount() != 5 ||
-            rules::rgpElemCommandWaterPowerCount() != 8) ++bad;
+        if (rings_mechanics_contrariness_to_elemental_command.rgpElemCommandAirPowerCount() != 5 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandEarthPowerCount() != 6 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandFirePowerCount() != 5 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandWaterPowerCount() != 8) ++bad;
         // elemental command: the power frequencies
-        if (rules::rgpElemCommandAirGustPerRound() != 1 ||
-            rules::rgpElemCommandWallOfForcePerDay() != 1 ||
-            rules::rgpElemCommandControlWindsPerWeek() != 1 ||
-            rules::rgpElemCommandStoneTellPerDay() != 1 ||
-            rules::rgpElemCommandPasswallPerDay() != 2 ||
-            rules::rgpElemCommandWallOfStonePerDay() != 1 ||
-            rules::rgpElemCommandStoneToFleshPerWeek() != 2 ||
-            rules::rgpElemCommandMoveEarthPerWeek() != 1 ||
-            rules::rgpElemCommandBurningHandsPerTurn() != 1 ||
-            rules::rgpElemCommandPyrotechnicsPerDay() != 2 ||
-            rules::rgpElemCommandWallOfFirePerDay() != 1 ||
-            rules::rgpElemCommandFlameStrikePerWeek() != 2 ||
-            rules::rgpElemCommandCreateWaterPerDay() != 1 ||
-            rules::rgpElemCommandWallOfIcePerDay() != 1 ||
-            rules::rgpElemCommandLowerWaterPerWeek() != 2 ||
-            rules::rgpElemCommandPartWaterPerWeek() != 2 ||
-            rules::rgpElemCommandWaterBreathingRadiusFeet() != 5) ++bad;
+        if (rings_mechanics_contrariness_to_elemental_command.rgpElemCommandAirGustPerRound() != 1 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandWallOfForcePerDay() != 1 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandControlWindsPerWeek() != 1 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandStoneTellPerDay() != 1 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandPasswallPerDay() != 2 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandWallOfStonePerDay() != 1 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandStoneToFleshPerWeek() != 2 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandMoveEarthPerWeek() != 1 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandBurningHandsPerTurn() != 1 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandPyrotechnicsPerDay() != 2 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandWallOfFirePerDay() != 1 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandFlameStrikePerWeek() != 2 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandCreateWaterPerDay() != 1 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandWallOfIcePerDay() != 1 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandLowerWaterPerWeek() != 2 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandPartWaterPerWeek() != 2 ||
+            rings_mechanics_contrariness_to_elemental_command.rgpElemCommandWaterBreathingRadiusFeet() != 5) ++bad;
         printf("R253 rings prose pins audit: bad %d\n", bad);
         if (bad) return 1;
     }

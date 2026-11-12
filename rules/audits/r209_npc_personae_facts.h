@@ -4,6 +4,7 @@
     // the facts tables, the sanity asterisk
     // rule, and the p.11 die rules.
     {
+        Npcpersonae npcpersonae;
         int bad = 0;
         // the class table: abilities and amounts
         // (ability codes: 0 STR, 1 INT, 2 WIS, 3 DEX,
@@ -26,99 +27,99 @@
             0, 0, 0,   0, 0, 0,   2, 1, 0,
             2, 1, 1,
         };
-        if (rules::npcClassCount() != 10) ++bad;
+        if (npcpersonae.npcClassCount() != 10) ++bad;
         for (int c = 0; c < 10; ++c)
             for (int s = 0; s < 3; ++s)
-                if (rules::npcClassAdjAbility(c, s)
+                if (npcpersonae.npcClassAdjAbility(c, s)
                         != kAdjAb[c * 3 + s] ||
-                    rules::npcClassAdjAmount(c, s)
+                    npcpersonae.npcClassAdjAmount(c, s)
                         != kAdjAmt[c * 3 + s]) ++bad;
         // the class minimums: druid 12/14,
         // ranger 12, paladin 17, illusionist
         // 15/15, monk 12/15/15
-        if (rules::npcClassMinAbility(
-                rules::NPCP_DRUID, 0) != 2 ||
-            rules::npcClassMinValue(
-                rules::NPCP_DRUID, 0) != 12 ||
-            rules::npcClassMinAbility(
-                rules::NPCP_DRUID, 1) != 5 ||
-            rules::npcClassMinValue(
-                rules::NPCP_DRUID, 1) != 14) ++bad;
-        if (rules::npcClassMinAbility(
-                rules::NPCP_RANGER, 0) != 2 ||
-            rules::npcClassMinValue(
-                rules::NPCP_RANGER, 0) != 12) ++bad;
-        if (rules::npcClassMinAbility(
-                rules::NPCP_PALADIN, 0) != 5 ||
-            rules::npcClassMinValue(
-                rules::NPCP_PALADIN, 0) != 17) ++bad;
-        if (rules::npcClassMinAbility(
-                rules::NPCP_ILLUSIONIST, 0) != 1 ||
-            rules::npcClassMinValue(
-                rules::NPCP_ILLUSIONIST, 0) != 15 ||
-            rules::npcClassMinAbility(
-                rules::NPCP_ILLUSIONIST, 1) != 3 ||
-            rules::npcClassMinValue(
-                rules::NPCP_ILLUSIONIST, 1) != 15) ++bad;
-        if (rules::npcClassMinAbility(
-                rules::NPCP_MONK, 0) != 0 ||
-            rules::npcClassMinValue(
-                rules::NPCP_MONK, 0) != 12 ||
-            rules::npcClassMinAbility(
-                rules::NPCP_MONK, 1) != 2 ||
-            rules::npcClassMinValue(
-                rules::NPCP_MONK, 1) != 15 ||
-            rules::npcClassMinAbility(
-                rules::NPCP_MONK, 2) != 3 ||
-            rules::npcClassMinValue(
-                rules::NPCP_MONK, 2) != 15) ++bad;
+        if (npcpersonae.npcClassMinAbility(
+                NPCP_DRUID, 0) != 2 ||
+            npcpersonae.npcClassMinValue(
+                NPCP_DRUID, 0) != 12 ||
+            npcpersonae.npcClassMinAbility(
+                NPCP_DRUID, 1) != 5 ||
+            npcpersonae.npcClassMinValue(
+                NPCP_DRUID, 1) != 14) ++bad;
+        if (npcpersonae.npcClassMinAbility(
+                NPCP_RANGER, 0) != 2 ||
+            npcpersonae.npcClassMinValue(
+                NPCP_RANGER, 0) != 12) ++bad;
+        if (npcpersonae.npcClassMinAbility(
+                NPCP_PALADIN, 0) != 5 ||
+            npcpersonae.npcClassMinValue(
+                NPCP_PALADIN, 0) != 17) ++bad;
+        if (npcpersonae.npcClassMinAbility(
+                NPCP_ILLUSIONIST, 0) != 1 ||
+            npcpersonae.npcClassMinValue(
+                NPCP_ILLUSIONIST, 0) != 15 ||
+            npcpersonae.npcClassMinAbility(
+                NPCP_ILLUSIONIST, 1) != 3 ||
+            npcpersonae.npcClassMinValue(
+                NPCP_ILLUSIONIST, 1) != 15) ++bad;
+        if (npcpersonae.npcClassMinAbility(
+                NPCP_MONK, 0) != 0 ||
+            npcpersonae.npcClassMinValue(
+                NPCP_MONK, 0) != 12 ||
+            npcpersonae.npcClassMinAbility(
+                NPCP_MONK, 1) != 2 ||
+            npcpersonae.npcClassMinValue(
+                NPCP_MONK, 1) != 15 ||
+            npcpersonae.npcClassMinAbility(
+                NPCP_MONK, 2) != 3 ||
+            npcpersonae.npcClassMinValue(
+                NPCP_MONK, 2) != 15) ++bad;
         // the no-minimum classes read none
         for (int s = 0; s < 3; ++s)
-            if (rules::npcClassMinAbility(
-                    rules::NPCP_CLERIC, s)
+            if (npcpersonae.npcClassMinAbility(
+                    NPCP_CLERIC, s)
                     != 6 ||
-                rules::npcClassMinValue(
-                    rules::NPCP_CLERIC, s) != 0 ||
-                rules::npcClassMinAbility(
-                    rules::NPCP_THIEF, s)
+                npcpersonae.npcClassMinValue(
+                    NPCP_CLERIC, s) != 0 ||
+                npcpersonae.npcClassMinAbility(
+                    NPCP_THIEF, s)
                     != 6 ||
-                rules::npcClassMinValue(
-                    rules::NPCP_THIEF, s) != 0) ++bad;
+                npcpersonae.npcClassMinValue(
+                    NPCP_THIEF, s) != 0) ++bad;
         // the ability limit clamp
-        if (rules::npcAdjustedAbility(18, 2) != 18 ||
-            rules::npcAdjustedAbility(3, -1) != 3 ||
-            rules::npcAdjustedAbility(10, 2) != 12) ++bad;
+        if (npcpersonae.npcAdjustedAbility(18, 2) != 18 ||
+            npcpersonae.npcAdjustedAbility(3, -1) != 3 ||
+            npcpersonae.npcAdjustedAbility(10, 2) != 12) ++bad;
         // the occupations: laborer strength
         // +1 to +3, mercenary strength +1 and
         // constitution +3 with 4 minimum hit
         // points, merchant 12/12 minimums
-        if (rules::npcOccupationCount() != 3) ++bad;
-        if (rules::npcOccupationAdjAbility(
-                rules::NPCO_LABORER, 0) != 0 ||
-            rules::npcOccupationAdjMin(
-                rules::NPCO_LABORER, 0) != 1 ||
-            rules::npcOccupationAdjMax(
-                rules::NPCO_LABORER, 0) != 3) ++bad;
-        if (rules::npcOccupationAdjAbility(
-                rules::NPCO_MERCENARY, 0) != 0 ||
-            rules::npcOccupationAdjMin(
-                rules::NPCO_MERCENARY, 0) != 1 ||
-            rules::npcOccupationAdjAbility(
-                rules::NPCO_MERCENARY, 1) != 4 ||
-            rules::npcOccupationAdjMin(
-                rules::NPCO_MERCENARY, 1) != 3 ||
-            rules::npcMercenaryMinHitPoints() != 4) ++bad;
-        if (rules::npcOccupationMinAbility(
-                rules::NPCO_MERCHANT, 0) != 1 ||
-            rules::npcOccupationMinValue(
-                rules::NPCO_MERCHANT, 0) != 12 ||
-            rules::npcOccupationMinAbility(
-                rules::NPCO_MERCHANT, 1) != 5 ||
-            rules::npcOccupationMinValue(
-                rules::NPCO_MERCHANT, 1) != 12) ++bad;
+        if (npcpersonae.npcOccupationCount() != 3) ++bad;
+        if (npcpersonae.npcOccupationAdjAbility(
+                NPCO_LABORER, 0) != 0 ||
+            npcpersonae.npcOccupationAdjMin(
+                NPCO_LABORER, 0) != 1 ||
+            npcpersonae.npcOccupationAdjMax(
+                NPCO_LABORER, 0) != 3) ++bad;
+        if (npcpersonae.npcOccupationAdjAbility(
+                NPCO_MERCENARY, 0) != 0 ||
+            npcpersonae.npcOccupationAdjMin(
+                NPCO_MERCENARY, 0) != 1 ||
+            npcpersonae.npcOccupationAdjAbility(
+                NPCO_MERCENARY, 1) != 4 ||
+            npcpersonae.npcOccupationAdjMin(
+                NPCO_MERCENARY, 1) != 3 ||
+            npcpersonae.npcMercenaryMinHitPoints() != 4) ++bad;
+        if (npcpersonae.npcOccupationMinAbility(
+                NPCO_MERCHANT, 0) != 1 ||
+            npcpersonae.npcOccupationMinValue(
+                NPCO_MERCHANT, 0) != 12 ||
+            npcpersonae.npcOccupationMinAbility(
+                NPCO_MERCHANT, 1) != 5 ||
+            npcpersonae.npcOccupationMinValue(
+                NPCO_MERCHANT, 1) != 12) ++bad;
         // the demi-human table (the DMG one,
         // not the PHB one)
-        if (rules::npcDemiRaceCount() != 4) ++bad;
+        if (npcpersonae.npcDemiRaceCount() != 4) ++bad;
         static const int kRaceAb[12] = {
             0, 4, 5,
             1, 3, 6,
@@ -131,9 +132,9 @@
         };
         for (int r = 0; r < 4; ++r)
             for (int s = 0; s < 3; ++s)
-                if (rules::npcRaceAdjAbility(r, s)
+                if (npcpersonae.npcRaceAdjAbility(r, s)
                         != kRaceAb[r * 3 + s] ||
-                    rules::npcRaceAdjAmount(r, s)
+                    npcpersonae.npcRaceAdjAmount(r, s)
                         != kRaceAmt[r * 3 + s]) ++bad;
         // the alignment table, every face
         static const int kAlign[10] = {
@@ -143,8 +144,8 @@
             8,
         };
         for (int d = 1; d <= 10; ++d)
-            if (rules::npcFactAlign(d) != kAlign[d - 1]) ++bad;
-        if (rules::npcFactAlign(0) != rules::NPCA_TRUE) ++bad;
+            if (npcpersonae.npcFactAlign(d) != kAlign[d - 1]) ++bad;
+        if (npcpersonae.npcFactAlign(0) != NPCA_TRUE) ++bad;
         // the possessions table, every face
         static const int kWealth[10] = {
             0, 1, 1,
@@ -154,7 +155,7 @@
             5,
         };
         for (int d = 1; d <= 10; ++d)
-            if (rules::npcFactWealth(d) != kWealth[d - 1]) ++bad;
+            if (npcpersonae.npcFactWealth(d) != kWealth[d - 1]) ++bad;
         // the appearance age bands, every face
         static const int kAge[10] = {
             0, 1,
@@ -164,7 +165,7 @@
             4, 5,
         };
         for (int d = 1; d <= 10; ++d)
-            if (rules::npcFactAgeBand(d) != kAge[d - 1]) ++bad;
+            if (npcpersonae.npcFactAgeBand(d) != kAge[d - 1]) ++bad;
         // the general appearance words,
         // every face, all ten distinct
         static const int kLook[10] = {
@@ -175,7 +176,7 @@
             8, 9,
         };
         for (int d = 1; d <= 10; ++d)
-            if (rules::npcFactGeneralLook(d) != kLook[d - 1]) ++bad;
+            if (npcpersonae.npcFactGeneralLook(d) != kLook[d - 1]) ++bad;
         // the sanity table, every face
         static const int kSanity[10] = {
             0, 1,
@@ -185,38 +186,38 @@
             4, 5,
         };
         for (int d = 1; d <= 10; ++d)
-            if (rules::npcFactSanity(d) != kSanity[d - 1]) ++bad;
+            if (npcpersonae.npcFactSanity(d) != kSanity[d - 1]) ++bad;
         // the asterisk rows: insane and
         // maniacal only
-        if (!rules::npcSanityIsMarked(
-                rules::NPCS_INSANE) ||
-            !rules::npcSanityIsMarked(
-                rules::NPCS_MANIACAL) ||
-            rules::npcSanityIsMarked(                rules::NPCS_NEUROTIC) ||
-            rules::npcSanityIsMarked(                rules::NPCS_NORMAL)) ++bad;
+        if (!npcpersonae.npcSanityIsMarked(
+                NPCS_INSANE) ||
+            !npcpersonae.npcSanityIsMarked(
+                NPCS_MANIACAL) ||
+            npcpersonae.npcSanityIsMarked(                NPCS_NEUROTIC) ||
+            npcpersonae.npcSanityIsMarked(                NPCS_NORMAL)) ++bad;
         // the asterisk resolution: a marked
         // first roll takes the second roll,
         // an unmarked first roll stands
-        if (rules::npcSanityResolved(9, 10)
-                != rules::NPCS_MANIACAL ||
-            rules::npcSanityResolved(10, 9)
-                != rules::NPCS_INSANE ||
-            rules::npcSanityResolved(9, 3)
-                != rules::NPCS_NORMAL ||
-            rules::npcSanityResolved(4, 10)
-                != rules::NPCS_NORMAL ||
-            rules::npcSanityResolved(2, 8)
-                != rules::NPCS_NORMAL) ++bad;
+        if (npcpersonae.npcSanityResolved(9, 10)
+                != NPCS_MANIACAL ||
+            npcpersonae.npcSanityResolved(10, 9)
+                != NPCS_INSANE ||
+            npcpersonae.npcSanityResolved(9, 3)
+                != NPCS_NORMAL ||
+            npcpersonae.npcSanityResolved(4, 10)
+                != NPCS_NORMAL ||
+            npcpersonae.npcSanityResolved(2, 8)
+                != NPCS_NORMAL) ++bad;
         // the p.11 die rules
-        if (rules::npcGeneralCharacterDie(1) != 3 ||
-            rules::npcGeneralCharacterDie(6) != 4 ||
-            rules::npcGeneralCharacterDie(3) != 3 ||
-            rules::npcGeneralCharacterDie(5) != 5) ++bad;
-        if (rules::npcSpecialCharacterDieBonus(1) != 1 ||
-            rules::npcSpecialCharacterDieBonus(5) != 1 ||
-            rules::npcSpecialCharacterDieBonus(6) != 0) ++bad;
+        if (npcpersonae.npcGeneralCharacterDie(1) != 3 ||
+            npcpersonae.npcGeneralCharacterDie(6) != 4 ||
+            npcpersonae.npcGeneralCharacterDie(3) != 3 ||
+            npcpersonae.npcGeneralCharacterDie(5) != 5) ++bad;
+        if (npcpersonae.npcSpecialCharacterDieBonus(1) != 1 ||
+            npcpersonae.npcSpecialCharacterDieBonus(5) != 1 ||
+            npcpersonae.npcSpecialCharacterDieBonus(6) != 0) ++bad;
         // no fewer than three General Tendencies
-        if (rules::npcMinGeneralTendencies() != 3) ++bad;
+        if (npcpersonae.npcMinGeneralTendencies() != 3) ++bad;
         printf("R209 NPC personae facts audit: bad %d\n", bad);
         if (bad) return 1;
     }

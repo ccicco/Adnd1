@@ -3,11 +3,13 @@
     // 11065 stitched into part2 line 3 (Bag of
     // Devouring, the seam fact pinned exactly).
     {
+        Miscmagic_alchemy_jug_to_bag_of_devouring miscmagic_alchemy_jug_to_bag_of_devouring;
+        Miscmagic_table1_footnotes miscmagic_table1_footnotes;
         int bad = 0;
         // the nine items are the engine kMisc1 rows
         // 0-6, 8 and 9 (the R225 m1 band pins);
         // row 7 is the Artifact or Relic row
-        if (rules::m1RowCount() != 33) ++bad;
+        if (miscmagic_table1_footnotes.m1RowCount() != 33) ++bad;
         static const int kM1Lo[7] = {
             1, 3, 5, 6, 8, 12, 14,
         };
@@ -15,21 +17,21 @@
             2, 4, 5, 7, 11, 13, 16,
         };
         for (int i = 0; i < 7; ++i)
-            if (rules::m1RowLo(i) != kM1Lo[i] ||
-                rules::m1RowHi(i) != kM1Hi[i]) ++bad;
-        if (rules::m1RowLo(8) != 18 ||
-            rules::m1RowHi(8) != 20 ||
-            rules::m1RowLo(9) != 21 ||
-            rules::m1RowHi(9) != 21) ++bad;
+            if (miscmagic_table1_footnotes.m1RowLo(i) != kM1Lo[i] ||
+                miscmagic_table1_footnotes.m1RowHi(i) != kM1Hi[i]) ++bad;
+        if (miscmagic_table1_footnotes.m1RowLo(8) != 18 ||
+            miscmagic_table1_footnotes.m1RowHi(8) != 20 ||
+            miscmagic_table1_footnotes.m1RowLo(9) != 21 ||
+            miscmagic_table1_footnotes.m1RowHi(9) != 21) ++bad;
         // the intro
-        if (rules::mmpIntroMaxDuplicates() != 3 ||
-            rules::mmpIntroBooksExactWishCount() != 2) ++bad;
+        if (miscmagic_alchemy_jug_to_bag_of_devouring.mmpIntroMaxDuplicates() != 3 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpIntroBooksExactWishCount() != 2) ++bad;
         // the alchemy jug: 11 liquids
-        if (rules::mmpAlchemyJugRowCount() != 11 ||
-            rules::mmpAlchemyJugKindsPerDay() != 1 ||
-            rules::mmpAlchemyJugPouringsPerDay() != 7 ||
-            rules::mmpAlchemyJugGallonsPerRound() != 2 ||
-            rules::mmpAlchemyJugRoundsPerLargePouring() != 8) ++bad;
+        if (miscmagic_alchemy_jug_to_bag_of_devouring.mmpAlchemyJugRowCount() != 11 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpAlchemyJugKindsPerDay() != 1 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpAlchemyJugPouringsPerDay() != 7 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpAlchemyJugGallonsPerRound() != 2 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpAlchemyJugRoundsPerLargePouring() != 8) ++bad;
         static const int kJugQty[11] = {
             16, 8, 4, 2, 1, 1, 1, 2, 1, 8, 4,
         };
@@ -37,19 +39,19 @@
             0, 0, 0, 0, 0, 1, 2, 3, 3, 4, 4,
         };
         for (int i = 0; i < 11; ++i)
-            if (rules::mmpAlchemyJugRowQty(i) != kJugQty[i] ||
-                rules::mmpAlchemyJugRowUnit(i) != kJugUnit[i]) ++bad;
+            if (miscmagic_alchemy_jug_to_bag_of_devouring.mmpAlchemyJugRowQty(i) != kJugQty[i] ||
+                miscmagic_alchemy_jug_to_bag_of_devouring.mmpAlchemyJugRowUnit(i) != kJugUnit[i]) ++bad;
         // the amulets
-        if (rules::mmpAmuletLocationMultiplier() != 2 ||
-            rules::mmpAmuletLifeProtectionDays() != 7 ||
-            rules::mmpAmuletProofNoAuraFlag() != 1) ++bad;
+        if (miscmagic_alchemy_jug_to_bag_of_devouring.mmpAmuletLocationMultiplier() != 2 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpAmuletLifeProtectionDays() != 7 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpAmuletProofNoAuraFlag() != 1) ++bad;
         // the amulet of the planes: d6 on d12
-        if (rules::mmpAmuletPlanesRowCount() != 17 ||
-            rules::mmpAmuletPlanesLowDieFaces() != 6 ||
-            rules::mmpAmuletPlanesHighDieFaces() != 12 ||
-            rules::mmpAmuletPlanesAddOnHigh() != 12 ||
-            rules::mmpAmuletPlanesResultMax() != 24 ||
-            rules::mmpAmuletPlanesAltRowCount() != 3) ++bad;
+        if (miscmagic_alchemy_jug_to_bag_of_devouring.mmpAmuletPlanesRowCount() != 17 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpAmuletPlanesLowDieFaces() != 6 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpAmuletPlanesHighDieFaces() != 12 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpAmuletPlanesAddOnHigh() != 12 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpAmuletPlanesResultMax() != 24 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpAmuletPlanesAltRowCount() != 3) ++bad;
         static const int kPlLo[17] = {
             1, 3, 4, 5, 6, 8, 9, 10, 11, 13, 14,
             15, 16, 18, 19, 20, 21,
@@ -59,61 +61,61 @@
             15, 17, 18, 19, 20, 24,
         };
         for (int i = 0; i < 17; ++i)
-            if (rules::mmpAmuletPlanesRowLo(i) != kPlLo[i] ||
-                rules::mmpAmuletPlanesRowHi(i) != kPlHi[i]) ++bad;
+            if (miscmagic_alchemy_jug_to_bag_of_devouring.mmpAmuletPlanesRowLo(i) != kPlLo[i] ||
+                miscmagic_alchemy_jug_to_bag_of_devouring.mmpAmuletPlanesRowHi(i) != kPlHi[i]) ++bad;
         static const int kPlAlt[3] = {
             22, 23, 24,
         };
         for (int i = 0; i < 3; ++i)
-            if (rules::mmpAmuletPlanesAltLo(i) != kPlAlt[i]) ++bad;
+            if (miscmagic_alchemy_jug_to_bag_of_devouring.mmpAmuletPlanesAltLo(i) != kPlAlt[i]) ++bad;
         // the apparatus of kwalish
-        if (rules::mmpKwalishLeverCount() != 10 ||
-            rules::mmpKwalishForwardInches() != 3 ||
-            rules::mmpKwalishBackwardInches() != 6 ||
-            rules::mmpKwalishPincerReachFeet() != 4 ||
-            rules::mmpKwalishPincerDamageLo() != 2 ||
-            rules::mmpKwalishPincerDamageHi() != 12 ||
-            rules::mmpKwalishPincerHitPct() != 25 ||
-            rules::mmpKwalishMaxDepthFeet() != 900 ||
-            rules::mmpKwalishOccupants() != 2 ||
-            rules::mmpKwalishAirHoursLo() != 2 ||
-            rules::mmpKwalishAirHoursHi() != 5 ||
-            rules::mmpKwalishArmorClass() != 0 ||
-            rules::mmpKwalishLeakHp() != 100 ||
-            rules::mmpKwalishStaveHp() != 200) ++bad;
+        if (miscmagic_alchemy_jug_to_bag_of_devouring.mmpKwalishLeverCount() != 10 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpKwalishForwardInches() != 3 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpKwalishBackwardInches() != 6 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpKwalishPincerReachFeet() != 4 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpKwalishPincerDamageLo() != 2 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpKwalishPincerDamageHi() != 12 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpKwalishPincerHitPct() != 25 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpKwalishMaxDepthFeet() != 900 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpKwalishOccupants() != 2 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpKwalishAirHoursLo() != 2 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpKwalishAirHoursHi() != 5 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpKwalishArmorClass() != 0 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpKwalishLeakHp() != 100 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpKwalishStaveHp() != 200) ++bad;
         // the arrow of direction
-        if (rules::mmpArrowDirectionUsesPerDay() != 1 ||
-            rules::mmpArrowDirectionRepetitions() != 7 ||
-            rules::mmpArrowDirectionTurns() != 7 ||
-            rules::mmpArrowDirectionRequestKinds() != 5) ++bad;
+        if (miscmagic_alchemy_jug_to_bag_of_devouring.mmpArrowDirectionUsesPerDay() != 1 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpArrowDirectionRepetitions() != 7 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpArrowDirectionTurns() != 7 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpArrowDirectionRequestKinds() != 5) ++bad;
         // the bag of beans
-        if (rules::mmpBeanExplodeDamageLo() != 5 ||
-            rules::mmpBeanExplodeDamageHi() != 20 ||
-            rules::mmpBeanExplodeRadiusFeet() != 10 ||
-            rules::mmpBeanOptimumLo() != 3 ||
-            rules::mmpBeanOptimumHi() != 12 ||
-            rules::mmpBeanBeneficialMax() != 2 ||
-            rules::mmpBeanEffectRowCount() != 7 ||
-            rules::mmpBeanBerryCountLo() != 5 ||
-            rules::mmpBeanBerryCountHi() != 20 ||
-            rules::mmpBeanBerryGemLo() != 100 ||
-            rules::mmpBeanBerryGemHi() != 500 ||
-            rules::mmpBeanSmokeRadiusFeet() != 50 ||
-            rules::mmpBeanSmokeTurns() != 5 ||
-            rules::mmpBeanBlindRoundsLo() != 1 ||
-            rules::mmpBeanBlindRoundsHi() != 6 ||
-            rules::mmpBeanGasRadiusFeet() != 20 ||
-            rules::mmpBeanGasTurns() != 1) ++bad;
+        if (miscmagic_alchemy_jug_to_bag_of_devouring.mmpBeanExplodeDamageLo() != 5 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpBeanExplodeDamageHi() != 20 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpBeanExplodeRadiusFeet() != 10 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpBeanOptimumLo() != 3 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpBeanOptimumHi() != 12 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpBeanBeneficialMax() != 2 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpBeanEffectRowCount() != 7 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpBeanBerryCountLo() != 5 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpBeanBerryCountHi() != 20 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpBeanBerryGemLo() != 100 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpBeanBerryGemHi() != 500 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpBeanSmokeRadiusFeet() != 50 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpBeanSmokeTurns() != 5 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpBeanBlindRoundsLo() != 1 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpBeanBlindRoundsHi() != 6 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpBeanGasRadiusFeet() != 20 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpBeanGasTurns() != 1) ++bad;
         // the bag of devouring (the seam item)
-        if (rules::mmpDevouringIgnorePct() != 90 ||
-            rules::mmpDevouringClosePct() != 60 ||
-            rules::mmpDevouringBaseDrawPct() != 75 ||
-            rules::mmpDevouringDrawModPerPlus() != 5 ||
-            rules::mmpDevouringExampleStr18Pct() != 65 ||
-            rules::mmpDevouringExampleStr5Pct() != 80 ||
-            rules::mmpDevouringCapacityCubicFeet() != 30 ||
-            rules::mmpDevouringSwallowPctPerTurn() != 5 ||
-            rules::mmpDevouringConsumeSegments() != 7) ++bad;
+        if (miscmagic_alchemy_jug_to_bag_of_devouring.mmpDevouringIgnorePct() != 90 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpDevouringClosePct() != 60 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpDevouringBaseDrawPct() != 75 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpDevouringDrawModPerPlus() != 5 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpDevouringExampleStr18Pct() != 65 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpDevouringExampleStr5Pct() != 80 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpDevouringCapacityCubicFeet() != 30 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpDevouringSwallowPctPerTurn() != 5 ||
+            miscmagic_alchemy_jug_to_bag_of_devouring.mmpDevouringConsumeSegments() != 7) ++bad;
         printf("R257 misc magic prose part 1 pins audit: bad %d\n", bad);
         if (bad) return 1;
     }

@@ -2,9 +2,10 @@
     // DMG p.128: the class marks and the
     // asterisk rows of TABLE (III.E.) 2.
     {
+        Miscmagic_table2_footnotes miscmagic_table2_footnotes;
         int bad = 0;
         // the row identity: the 30 die bands
-        if (rules::m2RowCount() != 30) ++bad;
+        if (miscmagic_table2_footnotes.m2RowCount() != 30) ++bad;
         static const int kLo[30] = {
             1, 7, 9, 11, 12, 14, 15, 19, 28, 31,
             33, 56, 61, 62, 64, 66, 68, 70, 73, 77,
@@ -41,66 +42,66 @@
             0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
         };
         for (int i = 0; i < 30; ++i)
-            if (rules::m2RowLo(i) != kLo[i] ||
-                rules::m2RowHi(i) != kHi[i] ||
-                rules::m2UsableByCleric(i) != kC[i] ||
-                rules::m2UsableByMagicUser(i) != kM[i] ||
-                rules::m2IsPerPlusValued(i) != kPP[i] ||
-                rules::m2HasFeatureAsterisk(i) != kFeat[i] ||
-                rules::m2IsTripleStar(i) != kTri[i]) ++bad;
+            if (miscmagic_table2_footnotes.m2RowLo(i) != kLo[i] ||
+                miscmagic_table2_footnotes.m2RowHi(i) != kHi[i] ||
+                miscmagic_table2_footnotes.m2UsableByCleric(i) != kC[i] ||
+                miscmagic_table2_footnotes.m2UsableByMagicUser(i) != kM[i] ||
+                miscmagic_table2_footnotes.m2IsPerPlusValued(i) != kPP[i] ||
+                miscmagic_table2_footnotes.m2HasFeatureAsterisk(i) != kFeat[i] ||
+                miscmagic_table2_footnotes.m2IsTripleStar(i) != kTri[i]) ++bad;
         for (int i = 1; i < 30; ++i)
-            if (rules::m2RowLo(i) !=
-                rules::m2RowHi(i - 1) + 1) ++bad;
-        if (rules::m2RowLo(-5) != 1 ||
-            rules::m2RowHi(99) != 100) ++bad;
+            if (miscmagic_table2_footnotes.m2RowLo(i) !=
+                miscmagic_table2_footnotes.m2RowHi(i - 1) + 1) ++bad;
+        if (miscmagic_table2_footnotes.m2RowLo(-5) != 1 ||
+            miscmagic_table2_footnotes.m2RowHi(99) != 100) ++bad;
         // the class marks: the Candle is
         // (C); the Censers, the Balls and
         // the Eyes of Charming are (M)
-        if (rules::m2ClericCount() != 1 ||
-            rules::m2MagicUserCount() != 5) ++bad;
-        if (!rules::m2UsableByCleric(0) ||
-            rules::m2UsableByCleric(1)) ++bad;
-        if (!rules::m2UsableByMagicUser(2) ||
-            !rules::m2UsableByMagicUser(3) ||
-            !rules::m2UsableByMagicUser(11) ||
-            !rules::m2UsableByMagicUser(12) ||
-            !rules::m2UsableByMagicUser(26) ||
-            rules::m2UsableByMagicUser(1) ||
-            rules::m2UsableByMagicUser(27)) ++bad;
+        if (miscmagic_table2_footnotes.m2ClericCount() != 1 ||
+            miscmagic_table2_footnotes.m2MagicUserCount() != 5) ++bad;
+        if (!miscmagic_table2_footnotes.m2UsableByCleric(0) ||
+            miscmagic_table2_footnotes.m2UsableByCleric(1)) ++bad;
+        if (!miscmagic_table2_footnotes.m2UsableByMagicUser(2) ||
+            !miscmagic_table2_footnotes.m2UsableByMagicUser(3) ||
+            !miscmagic_table2_footnotes.m2UsableByMagicUser(11) ||
+            !miscmagic_table2_footnotes.m2UsableByMagicUser(12) ||
+            !miscmagic_table2_footnotes.m2UsableByMagicUser(26) ||
+            miscmagic_table2_footnotes.m2UsableByMagicUser(1) ||
+            miscmagic_table2_footnotes.m2UsableByMagicUser(27)) ++bad;
         // the asterisk rows: Cloak of
         // Protection 33-55 per plus,
         // Crystal Ball 56-60 the feature
         // asterisk, Eyes of Petrification
         // 00 the triple star
-        if (!rules::m2IsPerPlusValued(10) ||
-            rules::m2IsPerPlusValued(11)) ++bad;
-        if (!rules::m2HasFeatureAsterisk(11) ||
-            rules::m2HasFeatureAsterisk(10)) ++bad;
-        if (!rules::m2IsTripleStar(29) ||
-            rules::m2IsTripleStar(28)) ++bad;
+        if (!miscmagic_table2_footnotes.m2IsPerPlusValued(10) ||
+            miscmagic_table2_footnotes.m2IsPerPlusValued(11)) ++bad;
+        if (!miscmagic_table2_footnotes.m2HasFeatureAsterisk(11) ||
+            miscmagic_table2_footnotes.m2HasFeatureAsterisk(10)) ++bad;
+        if (!miscmagic_table2_footnotes.m2IsTripleStar(29) ||
+            miscmagic_table2_footnotes.m2IsTripleStar(28)) ++bad;
         // a +2 cloak is 2,000 x.p. /
         // 20,000 g.p.
-        if (rules::m2CloakPerPlusXp() != 1000 ||
-            rules::m2CloakPerPlusGp() != 10000 ||
-            rules::m2CloakPerPlusXp() * 2 != 2000 ||
-            rules::m2CloakPerPlusGp() * 2 != 20000)
+        if (miscmagic_table2_footnotes.m2CloakPerPlusXp() != 1000 ||
+            miscmagic_table2_footnotes.m2CloakPerPlusGp() != 10000 ||
+            miscmagic_table2_footnotes.m2CloakPerPlusXp() * 2 != 2000 ||
+            miscmagic_table2_footnotes.m2CloakPerPlusGp() * 2 != 20000)
             ++bad;
         // a crystal ball with two extra
         // features is 3,000 x.p. (base +
         // 2 x 100%)
-        if (rules::m2CrystalBallBaseXp() != 1000 ||
-            rules::m2CrystalBallBaseGp() != 5000 ||
-            rules::m2CrystalBallFeatureBonusPct() != 100 ||
-            rules::m2CrystalBallBaseXp() + 2 *
-            (rules::m2CrystalBallBaseXp() *
-             rules::m2CrystalBallFeatureBonusPct() / 100)
+        if (miscmagic_table2_footnotes.m2CrystalBallBaseXp() != 1000 ||
+            miscmagic_table2_footnotes.m2CrystalBallBaseGp() != 5000 ||
+            miscmagic_table2_footnotes.m2CrystalBallFeatureBonusPct() != 100 ||
+            miscmagic_table2_footnotes.m2CrystalBallBaseXp() + 2 *
+            (miscmagic_table2_footnotes.m2CrystalBallBaseXp() *
+             miscmagic_table2_footnotes.m2CrystalBallFeatureBonusPct() / 100)
                 != 3000) ++bad;
         // clamped flag reads land on the
         // Candle (C) and Eyes of
         // Petrification (triple)
-        if (!rules::m2UsableByCleric(-99) ||
-            rules::m2UsableByMagicUser(-99) ||
-            !rules::m2IsTripleStar(99)) ++bad;
+        if (!miscmagic_table2_footnotes.m2UsableByCleric(-99) ||
+            miscmagic_table2_footnotes.m2UsableByMagicUser(-99) ||
+            !miscmagic_table2_footnotes.m2IsTripleStar(99)) ++bad;
         printf("R226 misc table 2 pins audit: bad %d\n", bad);
         if (bad) return 1;
     }

@@ -1341,6 +1341,7 @@ int main() {
     // hole 99 and the unrecorded damage spans (-1)
     // round-trip the block cells whole
     {
+        Weaponspeed weaponspeed;
         using namespace rules;
         int bad = 0;
         for (int i = 0; i < uasDeityCount(); ++i) {
@@ -1363,11 +1364,11 @@ int main() {
             || nhdStatBlocksOpen())
             ++bad;
         // the spear length spread reads its cells
-        if (spearSpeedFactorByLengthFt(5) != 6
-            || spearSpeedFactorByLengthFt(1) != 6
-            || spearSpeedFactorByLengthFt(7) != 7
-            || spearSpeedFactorByLengthFt(13) != 8
-            || spearSpeedFactorByLengthFt(20) != 8)
+        if (weaponspeed.spearSpeedFactorByLengthFt(5) != 6
+            || weaponspeed.spearSpeedFactorByLengthFt(1) != 6
+            || weaponspeed.spearSpeedFactorByLengthFt(7) != 7
+            || weaponspeed.spearSpeedFactorByLengthFt(13) != 8
+            || weaponspeed.spearSpeedFactorByLengthFt(20) != 8)
             ++bad;
         printf("R782 deity bridge site: bad %d\n", bad);
         if (bad) return 1;

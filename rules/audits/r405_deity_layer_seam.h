@@ -24,6 +24,7 @@
     // subrace parents, R404 the psx
     // pins; census 331 -> 332.
     {
+        Humanoid_preferences humanoid_preferences;
         using namespace rules;
         int bad = 0;
         // ---- the layer contract ----
@@ -111,10 +112,10 @@
         // orc row but no elf column - the
         // Appendix S Gruumsh/Corellon read
         // is the sole cross-pantheon site
-        if (humRPrefRaceCount() != 9) ++bad;
-        if (humRPrefRaceIndex("orc") != 7)
+        if (humanoid_preferences.humRPrefRaceCount() != 9) ++bad;
+        if (humanoid_preferences.humRPrefRaceIndex("orc") != 7)
             ++bad;
-        if (humRPrefRaceIndex("elf") != -1)
+        if (humanoid_preferences.humRPrefRaceIndex("elf") != -1)
             ++bad;
         // ---- the R322 comeliness seam ----
         // Clanggedin CM:13(20) - the dual

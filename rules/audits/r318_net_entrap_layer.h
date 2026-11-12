@@ -117,7 +117,8 @@
         }
         // N4: the pins (the MM data)
         {
-            if (rules::uwNetEntrapStrTear() != 16)
+            Uwfight uwfight;
+            if (uwfight.uwNetEntrapStrTear() != 16)
                 ++bad;
         }
         // N5: the mark - the sahuagin net

@@ -29,45 +29,34 @@
 
 #include <cstring>
 
-namespace rules {
+// R-refactor: namespace rules -> class Twoweapon (instance methods)
+class Twoweapon {
+public:
+
 
 // The second weapon gate: dagger or hand axe only.
-inline bool twoWeaponSecondaryAllowed(const char* name) {
-    return std::strcmp(name, "dagger") == 0
-        || std::strcmp(name, "hand axe") == 0;
-}
+    bool twoWeaponSecondaryAllowed(const char* name);
+
 
 // The penalty ladder. Primary -2, secondary -4; dex
 // above 15 eases both by (dex - 15) points, clamped so
 // the primary never goes positive (the print: 16 gives
 // -1/-3, 17 0/-2, 18 0/-1).
-inline int twoWeaponPrimaryPenalty(int dex) {
-    int adj = (dex > 15) ? (dex - 15) : 0;
-    int p = -2 + adj;
-    return (p > 0) ? 0 : p;
-}
+    int twoWeaponPrimaryPenalty(int dex);
+    int twoWeaponSecondaryPenalty(int dex);
 
-inline int twoWeaponSecondaryPenalty(int dex) {
-    int adj = (dex > 15) ? (dex - 15) : 0;
-    return -4 + adj;   // max -1 at dex 18: no clamp
-}
 
 // Dex below 6: the PHB Reaction/Attacking Adjustment
 // penalties are added to EACH weapon attack (the
 // caller adds its table value to both).
-inline bool twoWeaponLowDexAddsToEach(int dex) {
-    return dex < 6;
-}
+    bool twoWeaponLowDexAddsToEach(int dex);
+
 
 // The secondary weapon never shields or parries.
-inline bool twoWeaponSecondaryParries() {
-    return false;
-}
+    bool twoWeaponSecondaryParries();
+
 
 // Fighting with a weapon in each hand discards the
 // shield option (the off hand holds the second weapon).
-inline bool twoWeaponAllowsShield() {
-    return false;
-}
-
-} // namespace rules
+    bool twoWeaponAllowsShield();
+};

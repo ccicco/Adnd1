@@ -4,71 +4,73 @@
     // plus the eye-mix note, part2 lines 402-429 -
     // the slice that completes the kMisc2 rows 19-29.
     {
+        Miscmagic_drums_of_deafening_to_eyes_of_petrification miscmagic_drums_of_deafening_to_eyes_of_petrification;
+        Miscmagic_table2_footnotes miscmagic_table2_footnotes;
         int bad = 0;
-        if (rules::mmpDrumDeafDeafRangeInches() != 7 ||
-            rules::mmpDrumDeafStunRangeInches() != 1 ||
-            rules::mmpDrumDeafStunMinRounds() != 2 ||
-            rules::mmpDrumDeafStunMaxRounds() != 8 ||
-            rules::mmpDrumDeafHemisphereHalfFeet() !=
+        if (miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDrumDeafDeafRangeInches() != 7 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDrumDeafStunRangeInches() != 1 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDrumDeafStunMinRounds() != 2 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDrumDeafStunMaxRounds() != 8 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDrumDeafHemisphereHalfFeet() !=
             3) ++bad;
-        if (rules::mmpDrumPanicRangeInches() != 12 ||
-            rules::mmpDrumPanicSafeZoneInches() != 2 ||
-            rules::mmpDrumPanicFleeTurns() != 1 ||
-            rules::mmpDrumPanicRestRoundsPerTurn() != 3 ||
-            rules::mmpDrumPanicInt2SaveMod() != -2 ||
-            rules::mmpDrumPanicInt1SaveMod() != -4 ||
-            rules::mmpDrumPanicHemisphereHalfFeet() !=
+        if (miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDrumPanicRangeInches() != 12 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDrumPanicSafeZoneInches() != 2 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDrumPanicFleeTurns() != 1 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDrumPanicRestRoundsPerTurn() != 3 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDrumPanicInt2SaveMod() != -2 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDrumPanicInt1SaveMod() != -4 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDrumPanicHemisphereHalfFeet() !=
             3) ++bad;
-        if (rules::mmpDustAppearDurationMinTurns() != 2 ||
-            rules::mmpDustAppearDurationMaxTurns() != 20 ||
-            rules::mmpDustAppearPacketRadiusFeet() != 10 ||
-            rules::mmpDustAppearTubeStartFeet() != 1 ||
-            rules::mmpDustAppearTubeEndFeet() != 15 ||
-            rules::mmpDustAppearTubeLengthFeet() != 20 ||
-            rules::mmpDustAppearContainerMin() != 5 ||
-            rules::mmpDustAppearContainerMax() != 50) ++bad;
-        if (rules::mmpDustGoneDurationMinTurns() != 2 ||
-            rules::mmpDustGoneDurationMaxTurns() != 20 ||
-            rules::mmpDustGoneSprinkleMinTurns() != 11 ||
-            rules::mmpDustGoneSprinkleMaxTurns() != 20 ||
-            rules::mmpDustGoneAcBonusPlaces() != 4) ++bad;
-        if (rules::mmpDustChokeRadiusFeet() != 20 ||
-            rules::mmpDustChokeDisabledMinRounds() != 5 ||
-            rules::mmpDustChokeDisabledMaxRounds() !=
+        if (miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDustAppearDurationMinTurns() != 2 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDustAppearDurationMaxTurns() != 20 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDustAppearPacketRadiusFeet() != 10 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDustAppearTubeStartFeet() != 1 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDustAppearTubeEndFeet() != 15 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDustAppearTubeLengthFeet() != 20 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDustAppearContainerMin() != 5 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDustAppearContainerMax() != 50) ++bad;
+        if (miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDustGoneDurationMinTurns() != 2 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDustGoneDurationMaxTurns() != 20 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDustGoneSprinkleMinTurns() != 11 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDustGoneSprinkleMaxTurns() != 20 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDustGoneAcBonusPlaces() != 4) ++bad;
+        if (miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDustChokeRadiusFeet() != 20 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDustChokeDisabledMinRounds() != 5 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpDustChokeDisabledMaxRounds() !=
             20) ++bad;
-        if (rules::mmpEfreetiInsanePct() != 10 ||
-            rules::mmpEfreetiWishesPct() != 10 ||
-            rules::mmpEfreetiServePct() != 80 ||
-            rules::mmpEfreetiWishCount() != 3 ||
-            rules::mmpEfreetiReleaseSegments() != 1) ++bad;
-        if (rules::mmpEversmokeFirstRoundCubicFeet() !=
+        if (miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEfreetiInsanePct() != 10 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEfreetiWishesPct() != 10 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEfreetiServePct() != 80 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEfreetiWishCount() != 3 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEfreetiReleaseSegments() != 1) ++bad;
+        if (miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEversmokeFirstRoundCubicFeet() !=
             50000 ||
-            rules::mmpEversmokePerRoundCubicFeet() !=
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEversmokePerRoundCubicFeet() !=
             10000 ||
-            rules::mmpEversmokeMaxCubicFeet() !=
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEversmokeMaxCubicFeet() !=
             120000) ++bad;
-        if (rules::mmpEyesCharmTargetsPerRound() != 1 ||
-            rules::mmpEyesCharmBothSaveMod() != -2 ||
-            rules::mmpEyesCharmOneSaveMod() != 2) ++bad;
-        if (rules::mmpEyesEagleVisionFactor() != 100 ||
-            rules::mmpEyesEagleMinDistanceFeet() != 1 ||
-            rules::mmpEyesEagleSeeAtFeet() != 2000 ||
-            rules::mmpEyesEagleNormalSeeFeet() != 20 ||
-            rules::mmpEyesEagleSingleStunRounds() !=
+        if (miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEyesCharmTargetsPerRound() != 1 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEyesCharmBothSaveMod() != -2 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEyesCharmOneSaveMod() != 2) ++bad;
+        if (miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEyesEagleVisionFactor() != 100 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEyesEagleMinDistanceFeet() != 1 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEyesEagleSeeAtFeet() != 2000 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEyesEagleNormalSeeFeet() != 20 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEyesEagleSingleStunRounds() !=
             1) ++bad;
-        if (rules::mmpEyesMinuteVisionFactor() != 100 ||
-            rules::mmpEyesMinuteMaxDistanceFeet() != 1 ||
-            rules::mmpEyesPetrifyBasiliskGazePct() != 25 ||
-            rules::mmpEyesMixInsanityMinTurns() != 2 ||
-            rules::mmpEyesMixInsanityMaxTurns() != 8 ||
-            rules::mmpEyesMixInsanityDice() != 2) ++bad;
+        if (miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEyesMinuteVisionFactor() != 100 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEyesMinuteMaxDistanceFeet() != 1 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEyesPetrifyBasiliskGazePct() != 25 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEyesMixInsanityMinTurns() != 2 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEyesMixInsanityMaxTurns() != 8 ||
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEyesMixInsanityDice() != 2) ++bad;
         // the arithmetic: the efreeti chances sum
-        if (rules::mmpEfreetiInsanePct() +
-            rules::mmpEfreetiWishesPct() +
-            rules::mmpEfreetiServePct() != 100) ++bad;
-        if (rules::mmpEversmokeFirstRoundCubicFeet() +
-            7 * rules::mmpEversmokePerRoundCubicFeet() !=
-            rules::mmpEversmokeMaxCubicFeet()) ++bad;
+        if (miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEfreetiInsanePct() +
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEfreetiWishesPct() +
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEfreetiServePct() != 100) ++bad;
+        if (miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEversmokeFirstRoundCubicFeet() +
+            7 * miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEversmokePerRoundCubicFeet() !=
+            miscmagic_drums_of_deafening_to_eyes_of_petrification.mmpEversmokeMaxCubicFeet()) ++bad;
         // the kMisc2 rows this slice pins: 19-29,
         // completing the 30-row table
         static const int kLo[11] = {
@@ -88,21 +90,21 @@
             0, 0, 1,
         };
         for (int i = 0; i < 11; ++i)
-            if (rules::m2RowLo(19 + i) != kLo[i] ||
-                rules::m2RowHi(19 + i) != kHi[i]) ++bad;
+            if (miscmagic_table2_footnotes.m2RowLo(19 + i) != kLo[i] ||
+                miscmagic_table2_footnotes.m2RowHi(19 + i) != kHi[i]) ++bad;
         for (int i = 0; i < 11; ++i)
-            if (rules::m2UsableByCleric(19 + i) ||
-                rules::m2IsPerPlusValued(19 + i) ||
-                rules::m2HasFeatureAsterisk(19 + i) ||
-                rules::m2UsableByMagicUser(19 + i) !=
+            if (miscmagic_table2_footnotes.m2UsableByCleric(19 + i) ||
+                miscmagic_table2_footnotes.m2IsPerPlusValued(19 + i) ||
+                miscmagic_table2_footnotes.m2HasFeatureAsterisk(19 + i) ||
+                miscmagic_table2_footnotes.m2UsableByMagicUser(19 + i) !=
                 kM[i] ||
-                rules::m2IsTripleStar(19 + i) !=
+                miscmagic_table2_footnotes.m2IsTripleStar(19 + i) !=
                 kTriple[i]) ++bad;
         // the row 26 (M) positive control, Eyes
         // of Charming; the row 29 triple-star
         // control, Eyes of Petrification
-        if (!rules::m2UsableByMagicUser(26)) ++bad;
-        if (!rules::m2IsTripleStar(29)) ++bad;
+        if (!miscmagic_table2_footnotes.m2UsableByMagicUser(26)) ++bad;
+        if (!miscmagic_table2_footnotes.m2IsTripleStar(29)) ++bad;
         printf("R265 misc magic prose part 9 pins audit: bad %d\n", bad);
         if (bad) return 1;
     }

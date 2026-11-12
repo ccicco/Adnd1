@@ -8,112 +8,114 @@
     // page seam at 1797 absorbed (a running
     // head inside the round).
     {
+        Specart specart;
+        Specart_axe_of_the_dwarvish_lords_to_codex specart_axe_of_the_dwarvish_lords_to_codex;
         int bad = 0;
         // the Throne prose scalars
-        if (rules::sapThroneCarvenMountainHeart() != 1 ||
-            rules::sapThroneMassiveStoneChair() != 1 ||
-            rules::sapThroneMosaicsIvoryMetals() != 1 ||
-            rules::sapThroneSetAboutGems() != 1 ||
-            rules::sapThroneGodsActuallySat() != 1 ||
-            rules::sapThroneWithinGreatCavern() != 1 ||
-            rules::sapThroneImmobileImmovable() != 1 ||
-            rules::sapThroneAffectsAnyoneSeated() != 1 ||
-            rules::sapThroneCertainMagicItem() != 1 ||
-            rules::sapThroneMalevolentEffectToo() != 1 ||
-            rules::sapThroneItemGainOnlyOnce() != 1 ||
-            rules::sapThroneProperWordsGestures() != 1 ||
-            rules::sapThroneGraspOptions() != 3) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapThroneCarvenMountainHeart() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneMassiveStoneChair() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneMosaicsIvoryMetals() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneSetAboutGems() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneGodsActuallySat() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneWithinGreatCavern() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneImmobileImmovable() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneAffectsAnyoneSeated() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneCertainMagicItem() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneMalevolentEffectToo() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneItemGainOnlyOnce() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneProperWordsGestures() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneGraspOptions() != 3) ++bad;
         // the Throne table scalars
-        if (rules::sapThroneUseTotal() != 14 ||
-            rules::sapThroneTableOneCount() != 3 ||
-            rules::sapThroneTableTwoCount() != 3 ||
-            rules::sapThroneTableThreeCount() != 2 ||
-            rules::sapThroneTableFourCount() != 2 ||
-            rules::sapThroneTableFiveCount() != 2 ||
-            rules::sapThroneTableSixCount() != 2 ||
-            rules::sapThroneBlankSlotCount() != 14 ||
-            rules::sapThroneXSignCount() != 6 ||
-            rules::sapThroneBulletLineCount() != 0) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapThroneUseTotal() != 14 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneTableOneCount() != 3 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneTableTwoCount() != 3 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneTableThreeCount() != 2 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneTableFourCount() != 2 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneTableFiveCount() != 2 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneTableSixCount() != 2 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneBlankSlotCount() != 14 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneXSignCount() != 6 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneBulletLineCount() != 0) ++bad;
         static const int kT[6] = {
             3, 3, 2, 2, 2, 2,
         };
         for (int i = 0; i < 6; ++i)
-            if (rules::sapThroneTableUse(i) != kT[i]) ++bad;
-        if (rules::sapThroneTableUse(0) +
-            rules::sapThroneTableUse(1) +
-            rules::sapThroneTableUse(2) +
-            rules::sapThroneTableUse(3) +
-            rules::sapThroneTableUse(4) +
-            rules::sapThroneTableUse(5) !=
-            rules::sapThroneUseTotal()) ++bad;
+            if (specart_axe_of_the_dwarvish_lords_to_codex.sapThroneTableUse(i) != kT[i]) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapThroneTableUse(0) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneTableUse(1) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneTableUse(2) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneTableUse(3) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneTableUse(4) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneTableUse(5) !=
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneUseTotal()) ++bad;
         // the Wand prose scalars
-        if (rules::sapWandDemonPrinceProperty() != 1 ||
-            rules::sapWandPassesToPrimeMaterial() != 1 ||
-            rules::sapWandWreakChaosEvil() != 1 ||
-            rules::sapWandMonsterManualRef() != 1 ||
-            rules::sapWandSavingThrowVersusMagic() != 1 ||
-            rules::sapWandAvoidsDeathAnnihilation() != 1 ||
-            rules::sapWandImmuneCount() != 6) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapWandDemonPrinceProperty() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandPassesToPrimeMaterial() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandWreakChaosEvil() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandMonsterManualRef() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandSavingThrowVersusMagic() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandAvoidsDeathAnnihilation() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandImmuneCount() != 6) ++bad;
         // the Wand table scalars
-        if (rules::sapWandUseTotal() != 10 ||
-            rules::sapWandTableOneCount() != 4 ||
-            rules::sapWandTableTwoCount() != 2 ||
-            rules::sapWandTableThreeCount() != 2 ||
-            rules::sapWandTableFourCount() != 1 ||
-            rules::sapWandTableFiveCount() != 0 ||
-            rules::sapWandTableSixCount() != 1 ||
-            rules::sapWandBlankSlotCount() != 10 ||
-            rules::sapWandXSignCount() != 5 ||
-            rules::sapWandBulletLineCount() != 5 ||
-            rules::sapWandFourOneSpaceSeparator() != 1 ||
-            rules::sapWandFourOneCommaCount() != 2) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapWandUseTotal() != 10 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandTableOneCount() != 4 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandTableTwoCount() != 2 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandTableThreeCount() != 2 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandTableFourCount() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandTableFiveCount() != 0 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandTableSixCount() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandBlankSlotCount() != 10 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandXSignCount() != 5 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandBulletLineCount() != 5 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandFourOneSpaceSeparator() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandFourOneCommaCount() != 2) ++bad;
         static const int kW[6] = {
             4, 2, 2, 1, 0, 1,
         };
         for (int i = 0; i < 6; ++i)
-            if (rules::sapWandTableUse(i) != kW[i]) ++bad;
-        if (rules::sapWandTableUse(0) +
-            rules::sapWandTableUse(1) +
-            rules::sapWandTableUse(2) +
-            rules::sapWandTableUse(3) +
-            rules::sapWandTableUse(4) +
-            rules::sapWandTableUse(5) !=
-            rules::sapWandUseTotal()) ++bad;
+            if (specart_axe_of_the_dwarvish_lords_to_codex.sapWandTableUse(i) != kW[i]) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapWandTableUse(0) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandTableUse(1) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandTableUse(2) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandTableUse(3) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandTableUse(4) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandTableUse(5) !=
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandUseTotal()) ++bad;
         // the finale scalars and identities
-        if (rules::sapFinalXSignCount() != 11 ||
-            rules::sapFinalBlankRunCount() != 24 ||
-            rules::sapFinalUnderscoreRunLen() != 14 ||
-            rules::sapFinalCurlyApostropheCount() != 2 ||
-            rules::sapFinalEmDashCount() != 0 ||
-            rules::sapFinalPageSeamLine() != 1797 ||
-            rules::sapFinalSpecialDescriptionCount() != 29 ||
-            rules::sapFinalXSignCount() !=
-            rules::sapThroneXSignCount() +
-            rules::sapWandXSignCount() ||
-            rules::sapFinalBlankRunCount() !=
-            rules::sapThroneBlankSlotCount() +
-            rules::sapWandBlankSlotCount() ||
-            rules::sapThroneBlankSlotCount() !=
-            rules::sapThroneUseTotal() ||
-            rules::sapWandBlankSlotCount() !=
-            rules::sapWandUseTotal() ||
-            rules::sapWandBulletLineCount() !=
-            rules::sapWandXSignCount() ||
-            rules::sapWandTableFourCount() !=
-            rules::sapWandTableSixCount() ||
-            rules::sapWandFourOneCommaCount() !=
-            rules::sapWandTableOneCount() - 2) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapFinalXSignCount() != 11 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapFinalBlankRunCount() != 24 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapFinalUnderscoreRunLen() != 14 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapFinalCurlyApostropheCount() != 2 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapFinalEmDashCount() != 0 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapFinalPageSeamLine() != 1797 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapFinalSpecialDescriptionCount() != 29 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapFinalXSignCount() !=
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneXSignCount() +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandXSignCount() ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapFinalBlankRunCount() !=
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneBlankSlotCount() +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandBlankSlotCount() ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneBlankSlotCount() !=
+            specart_axe_of_the_dwarvish_lords_to_codex.sapThroneUseTotal() ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandBlankSlotCount() !=
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandUseTotal() ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandBulletLineCount() !=
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandXSignCount() ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandTableFourCount() !=
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandTableSixCount() ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandFourOneCommaCount() !=
+            specart_axe_of_the_dwarvish_lords_to_codex.sapWandTableOneCount() - 2) ++bad;
         // the cross-pins: the R240 sale rows 27
         // and 28 (the Throne priced ---, the
         // Wand at 10000)
-        if (rules::saRowLo(27) != 99 ||
-            rules::saRowHi(27) != 99 ||
-            rules::saSaleGp(27) != 0 ||
-            rules::saSaleGpHi(27) != 0 ||
-            rules::saRowLo(28) != 100 ||
-            rules::saRowHi(28) != 100 ||
-            rules::saSaleGp(28) != 10000 ||
-            rules::saSaleGpHi(28) != 0) ++bad;
+        if (specart.saRowLo(27) != 99 ||
+            specart.saRowHi(27) != 99 ||
+            specart.saSaleGp(27) != 0 ||
+            specart.saSaleGpHi(27) != 0 ||
+            specart.saRowLo(28) != 100 ||
+            specart.saRowHi(28) != 100 ||
+            specart.saSaleGp(28) != 10000 ||
+            specart.saSaleGpHi(28) != 0) ++bad;
         printf("R295 special artifacts prose part 16 pins audit: bad %d\n", bad);
     }
     #include "r297_weapon_proficiency_table.h"  // R828: migrated

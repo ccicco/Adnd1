@@ -2,12 +2,14 @@
     // DMG pp.139-140: Spell Storing through X-Ray
     // Vision (part 3 of 3, upload ~10458-10561).
     {
+        Rings rings;
+        Rings_spell_storing_to_x_ray_vision rings_spell_storing_to_x_ray_vision;
         int bad = 0;
         // the ten rings are the engine III.C table
         // rows 64-100 (the R223 rings.h band pins)
-        if (rules::ringRowCount() != 24 ||
-            rules::ringRowLo(14) != 64 || rules::ringRowHi(14) != 65 ||
-            rules::ringRowLo(23) != 100 || rules::ringRowHi(23) != 100) ++bad;
+        if (rings.ringRowCount() != 24 ||
+            rings.ringRowLo(14) != 64 || rings.ringRowHi(14) != 65 ||
+            rings.ringRowLo(23) != 100 || rings.ringRowHi(23) != 100) ++bad;
         static const int kCLo[10] = {
             64, 66, 70, 76, 78, 80, 86, 91, 99, 100,
         };
@@ -15,54 +17,54 @@
             65, 69, 75, 77, 79, 85, 90, 98, 99, 100,
         };
         for (int i = 0; i < 10; ++i)
-            if (rules::ringRowLo(14 + i) != kCLo[i] ||
-                rules::ringRowHi(14 + i) != kCHi[i]) ++bad;
+            if (rings.ringRowLo(14 + i) != kCLo[i] ||
+                rings.ringRowHi(14 + i) != kCHi[i]) ++bad;
         // the dagger cross-pins (the R255-fixed
         // array): Telekinesis, Three Wishes and
         // Wizardry flagged; Weakness and X-Ray not
-        if (rules::ringIsChargeLimited(17) != 1 ||
-            rules::ringIsChargeLimited(18) != 1 ||
-            rules::ringIsChargeLimited(22) != 1 ||
-            rules::ringIsChargeLimited(21) != 0 ||
-            rules::ringIsChargeLimited(23) != 0 ||
-            rules::ringIsMuOnly(22) != 1 ||
-            rules::ringChargeLimitedCount() != 7) ++bad;
+        if (rings.ringIsChargeLimited(17) != 1 ||
+            rings.ringIsChargeLimited(18) != 1 ||
+            rings.ringIsChargeLimited(22) != 1 ||
+            rings.ringIsChargeLimited(21) != 0 ||
+            rings.ringIsChargeLimited(23) != 0 ||
+            rings.ringIsMuOnly(22) != 1 ||
+            rings.ringChargeLimitedCount() != 7) ++bad;
         // spell storing: 2-5 (d4+1) spells
-        if (rules::rgpSpellStoringSpellLo() != 2 ||
-            rules::rgpSpellStoringSpellHi() != 5 ||
-            rules::rgpSpellStoringSpellDice() != 1 ||
-            rules::rgpSpellStoringSpellPlus() != 1 ||
-            rules::rgpSpellStoringClericFaces() != 6 ||
-            rules::rgpSpellStoringClericSwapOn() != 6 ||
-            rules::rgpSpellStoringClericSwapFaces() != 4 ||
-            rules::rgpSpellStoringMuFaces() != 8 ||
-            rules::rgpSpellStoringMuSwapOn() != 8 ||
-            rules::rgpSpellStoringMuSwapFaces() != 6 ||
-            rules::rgpSpellStoringRestoreMULevel() != 12 ||
-            rules::rgpSpellStoringRestoreSpellLevel() != 6 ||
-            rules::rgpSpellStoringCastSegments() != 5) ++bad;
+        if (rings_spell_storing_to_x_ray_vision.rgpSpellStoringSpellLo() != 2 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellStoringSpellHi() != 5 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellStoringSpellDice() != 1 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellStoringSpellPlus() != 1 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellStoringClericFaces() != 6 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellStoringClericSwapOn() != 6 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellStoringClericSwapFaces() != 4 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellStoringMuFaces() != 8 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellStoringMuSwapOn() != 8 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellStoringMuSwapFaces() != 6 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellStoringRestoreMULevel() != 12 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellStoringRestoreSpellLevel() != 6 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellStoringCastSegments() != 5) ++bad;
         // spell turning: exceptions and rounding
-        if (rules::rgpSpellTurningExceptionCount() != 3 ||
-            rules::rgpSpellTurningScrollIsDevice() != 0 ||
-            rules::rgpSpellTurningRoundDownMax() != 5 ||
-            rules::rgpSpellTurningRoundUpMin() != 6 ||
-            rules::rgpSpellTurningRoundUpAdd() != 10 ||
-            rules::rgpSpellTurningFloorExample() != 0 ||
-            rules::rgpSpellTurningCeilExample() != 100 ||
-            rules::rgpSpellTurningSaveAdjPer10Pct() != 1 ||
-            rules::rgpSpellTurningSaveAdjAt80() != 2 ||
-            rules::rgpSpellTurningSaveAdjAt10() != 9 ||
-            rules::rgpSpellTurningSpecialSaveLowMax() != 9 ||
-            rules::rgpSpellTurningSpecialSaveHighMin() != 91 ||
-            rules::rgpSpellTurningSaveChancePer10Pct() != 5 ||
-            rules::rgpSpellTurningLowBandSaveRoll() != 20 ||
-            rules::rgpSpellTurningExampleTurnedPct() != 34 ||
-            rules::rgpSpellTurningExampleWearerSave() != 15 ||
-            rules::rgpSpellTurningExampleCasterSave() != 30 ||
-            rules::rgpSpellTurningExampleCasterRollLo() != 15 ||
-            rules::rgpSpellTurningMustRemoveToReceive() != 1 ||
-            rules::rgpSpellTurningPsionicIsSpellcasting() != 0 ||
-            rules::rgpSpellTurningResonantRowCount() != 4) ++bad;
+        if (rings_spell_storing_to_x_ray_vision.rgpSpellTurningExceptionCount() != 3 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellTurningScrollIsDevice() != 0 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellTurningRoundDownMax() != 5 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellTurningRoundUpMin() != 6 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellTurningRoundUpAdd() != 10 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellTurningFloorExample() != 0 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellTurningCeilExample() != 100 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellTurningSaveAdjPer10Pct() != 1 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellTurningSaveAdjAt80() != 2 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellTurningSaveAdjAt10() != 9 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellTurningSpecialSaveLowMax() != 9 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellTurningSpecialSaveHighMin() != 91 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellTurningSaveChancePer10Pct() != 5 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellTurningLowBandSaveRoll() != 20 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellTurningExampleTurnedPct() != 34 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellTurningExampleWearerSave() != 15 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellTurningExampleCasterSave() != 30 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellTurningExampleCasterRollLo() != 15 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellTurningMustRemoveToReceive() != 1 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellTurningPsionicIsSpellcasting() != 0 ||
+            rings_spell_storing_to_x_ray_vision.rgpSpellTurningResonantRowCount() != 4) ++bad;
         // the resonating field table
         static const int kResLo[4] = {
             1, 71, 81, 98,
@@ -71,20 +73,20 @@
             70, 80, 97, 100,
         };
         for (int i = 0; i < 4; ++i)
-            if (rules::rgpSpellTurningResonantLo(i) != kResLo[i] ||
-                rules::rgpSpellTurningResonantHi(i) != kResHi[i]) ++bad;
+            if (rings_spell_storing_to_x_ray_vision.rgpSpellTurningResonantLo(i) != kResLo[i] ||
+                rings_spell_storing_to_x_ray_vision.rgpSpellTurningResonantHi(i) != kResHi[i]) ++bad;
         // swimming
-        if (rules::rgpSwimmingBaseSpeedInches() != 21 ||
-            rules::rgpSwimmingDiveFeet() != 50 ||
-            rules::rgpSwimmingDiveDepthInchesPer10Feet() != 18 ||
-            rules::rgpSwimmingBreathRounds() != 4 ||
-            rules::rgpSwimmingSurfaceHours() != 4 ||
-            rules::rgpSwimmingRestHours() != 1 ||
-            rules::rgpSwimmingAfloatExceptTyphoon() != 1) ++bad;
+        if (rings_spell_storing_to_x_ray_vision.rgpSwimmingBaseSpeedInches() != 21 ||
+            rings_spell_storing_to_x_ray_vision.rgpSwimmingDiveFeet() != 50 ||
+            rings_spell_storing_to_x_ray_vision.rgpSwimmingDiveDepthInchesPer10Feet() != 18 ||
+            rings_spell_storing_to_x_ray_vision.rgpSwimmingBreathRounds() != 4 ||
+            rings_spell_storing_to_x_ray_vision.rgpSwimmingSurfaceHours() != 4 ||
+            rings_spell_storing_to_x_ray_vision.rgpSwimmingRestHours() != 1 ||
+            rings_spell_storing_to_x_ray_vision.rgpSwimmingAfloatExceptTyphoon() != 1) ++bad;
         // telekinesis: the weight table
-        if (rules::rgpTelekinesisRowCount() != 5 ||
-            rules::rgpTelekinesisStartSegments() != 1 ||
-            rules::rgpTelekinesisDaggerFlag() != 1) ++bad;
+        if (rings_spell_storing_to_x_ray_vision.rgpTelekinesisRowCount() != 5 ||
+            rings_spell_storing_to_x_ray_vision.rgpTelekinesisStartSegments() != 1 ||
+            rings_spell_storing_to_x_ray_vision.rgpTelekinesisDaggerFlag() != 1) ++bad;
         static const int kTkLo[5] = {
             1, 26, 51, 90, 100,
         };
@@ -95,36 +97,36 @@
             250, 500, 1000, 2000, 4000,
         };
         for (int i = 0; i < 5; ++i)
-            if (rules::rgpTelekinesisRowLo(i) != kTkLo[i] ||
-                rules::rgpTelekinesisRowHi(i) != kTkHi[i] ||
-                rules::rgpTelekinesisRowGp(i) != kTkGp[i]) ++bad;
+            if (rings_spell_storing_to_x_ray_vision.rgpTelekinesisRowLo(i) != kTkLo[i] ||
+                rings_spell_storing_to_x_ray_vision.rgpTelekinesisRowHi(i) != kTkHi[i] ||
+                rings_spell_storing_to_x_ray_vision.rgpTelekinesisRowGp(i) != kTkGp[i]) ++bad;
         // three wishes and warmth
-        if (rules::rgpThreeWishesWishCount() != 3 ||
-            rules::rgpThreeWishesLimitedPct() != 25 ||
-            rules::rgpThreeWishesLimitedBandLo() != 1 ||
-            rules::rgpThreeWishesLimitedBandHi() != 25 ||
-            rules::rgpThreeWishesDaggerFlag() != 1 ||
-            rules::rgpWarmthRestoreHpPerTurn() != 1 ||
-            rules::rgpWarmthColdSaveBonus() != 2 ||
-            rules::rgpWarmthColdDamagePerDieMod() != -1) ++bad;
+        if (rings_spell_storing_to_x_ray_vision.rgpThreeWishesWishCount() != 3 ||
+            rings_spell_storing_to_x_ray_vision.rgpThreeWishesLimitedPct() != 25 ||
+            rings_spell_storing_to_x_ray_vision.rgpThreeWishesLimitedBandLo() != 1 ||
+            rings_spell_storing_to_x_ray_vision.rgpThreeWishesLimitedBandHi() != 25 ||
+            rings_spell_storing_to_x_ray_vision.rgpThreeWishesDaggerFlag() != 1 ||
+            rings_spell_storing_to_x_ray_vision.rgpWarmthRestoreHpPerTurn() != 1 ||
+            rings_spell_storing_to_x_ray_vision.rgpWarmthColdSaveBonus() != 2 ||
+            rings_spell_storing_to_x_ray_vision.rgpWarmthColdDamagePerDieMod() != -1) ++bad;
         // water walking
-        if (rules::rgpWaterWalkingMaxLoadPounds() != 1200 ||
-            rules::rgpWaterWalkingDepressionLengthInches() != 18 ||
-            rules::rgpWaterWalkingDepressionDepthInches() != 1 ||
-            rules::rgpWaterWalkingDepressionPerPounds() != 100) ++bad;
+        if (rings_spell_storing_to_x_ray_vision.rgpWaterWalkingMaxLoadPounds() != 1200 ||
+            rings_spell_storing_to_x_ray_vision.rgpWaterWalkingDepressionLengthInches() != 18 ||
+            rings_spell_storing_to_x_ray_vision.rgpWaterWalkingDepressionDepthInches() != 1 ||
+            rings_spell_storing_to_x_ray_vision.rgpWaterWalkingDepressionPerPounds() != 100) ++bad;
         // weakness: the cursed ring and the reversal
-        if (rules::rgpWeaknessLossPerTurn() != 1 ||
-            rules::rgpWeaknessFloorScore() != 3 ||
-            rules::rgpWeaknessInvisibleFlag() != 1 ||
-            rules::rgpWeaknessInvisibleLossMultiplier() != 2 ||
-            rules::rgpWeaknessBerserkChancePct() != 5 ||
-            rules::rgpWeaknessBerserkTargetScore() != 18 ||
-            rules::rgpWeaknessBerserkGainPerTurn() != 1 ||
-            rules::rgpWeaknessRestDaysPerPoint() != 1) ++bad;
+        if (rings_spell_storing_to_x_ray_vision.rgpWeaknessLossPerTurn() != 1 ||
+            rings_spell_storing_to_x_ray_vision.rgpWeaknessFloorScore() != 3 ||
+            rings_spell_storing_to_x_ray_vision.rgpWeaknessInvisibleFlag() != 1 ||
+            rings_spell_storing_to_x_ray_vision.rgpWeaknessInvisibleLossMultiplier() != 2 ||
+            rings_spell_storing_to_x_ray_vision.rgpWeaknessBerserkChancePct() != 5 ||
+            rings_spell_storing_to_x_ray_vision.rgpWeaknessBerserkTargetScore() != 18 ||
+            rings_spell_storing_to_x_ray_vision.rgpWeaknessBerserkGainPerTurn() != 1 ||
+            rings_spell_storing_to_x_ray_vision.rgpWeaknessRestDaysPerPoint() != 1) ++bad;
         // wizardry: the doubling table
-        if (rules::rgpWizardryRowCount() != 8 ||
-            rules::rgpWizardryMuOnlyFlag() != 1 ||
-            rules::rgpWizardryDaggerFlag() != 1) ++bad;
+        if (rings_spell_storing_to_x_ray_vision.rgpWizardryRowCount() != 8 ||
+            rings_spell_storing_to_x_ray_vision.rgpWizardryMuOnlyFlag() != 1 ||
+            rings_spell_storing_to_x_ray_vision.rgpWizardryDaggerFlag() != 1) ++bad;
         static const int kWzLo[8] = {
             1, 51, 76, 83, 89, 93, 96, 100,
         };
@@ -138,22 +140,22 @@
             1, 2, 3, 2, 4, 5, 3, 5,
         };
         for (int i = 0; i < 8; ++i)
-            if (rules::rgpWizardryRowLo(i) != kWzLo[i] ||
-                rules::rgpWizardryRowHi(i) != kWzHi[i] ||
-                rules::rgpWizardryRowSpellLo(i) != kWzSLo[i] ||
-                rules::rgpWizardryRowSpellHi(i) != kWzSHi[i]) ++bad;
+            if (rings_spell_storing_to_x_ray_vision.rgpWizardryRowLo(i) != kWzLo[i] ||
+                rings_spell_storing_to_x_ray_vision.rgpWizardryRowHi(i) != kWzHi[i] ||
+                rings_spell_storing_to_x_ray_vision.rgpWizardryRowSpellLo(i) != kWzSLo[i] ||
+                rings_spell_storing_to_x_ray_vision.rgpWizardryRowSpellHi(i) != kWzSHi[i]) ++bad;
         // x-ray vision: the penetration table
-        if (rules::rgpXRayVisionRangeFeet() != 20 ||
-            rules::rgpXRayScanSqFtPerRound() != 100 ||
-            rules::rgpXRaySecretFindPct() != 90 ||
-            rules::rgpXRayDrainIntervalTurns() != 6 ||
-            rules::rgpXRayDrainAmount() != 1 ||
-            rules::rgpXRayDrainAt3TurnsPerHour() != 2 ||
-            rules::rgpXRayDrainAt4TurnsPerHour() != 3 ||
-            rules::rgpXRayConRecoveryPerDay() != 2 ||
-            rules::rgpXRayExhaustedScore() != 2 ||
-            rules::rgpXRayResumeScore() != 3 ||
-            rules::rgpXRaySubstanceCount() != 5) ++bad;
+        if (rings_spell_storing_to_x_ray_vision.rgpXRayVisionRangeFeet() != 20 ||
+            rings_spell_storing_to_x_ray_vision.rgpXRayScanSqFtPerRound() != 100 ||
+            rings_spell_storing_to_x_ray_vision.rgpXRaySecretFindPct() != 90 ||
+            rings_spell_storing_to_x_ray_vision.rgpXRayDrainIntervalTurns() != 6 ||
+            rings_spell_storing_to_x_ray_vision.rgpXRayDrainAmount() != 1 ||
+            rings_spell_storing_to_x_ray_vision.rgpXRayDrainAt3TurnsPerHour() != 2 ||
+            rings_spell_storing_to_x_ray_vision.rgpXRayDrainAt4TurnsPerHour() != 3 ||
+            rings_spell_storing_to_x_ray_vision.rgpXRayConRecoveryPerDay() != 2 ||
+            rings_spell_storing_to_x_ray_vision.rgpXRayExhaustedScore() != 2 ||
+            rings_spell_storing_to_x_ray_vision.rgpXRayResumeScore() != 3 ||
+            rings_spell_storing_to_x_ray_vision.rgpXRaySubstanceCount() != 5) ++bad;
         static const int kXrRate[5] = {
             48, 30, 12, 1, 0,
         };
@@ -161,8 +163,8 @@
             240, 240, 120, 10, 0,
         };
         for (int i = 0; i < 5; ++i)
-            if (rules::rgpXRaySubstanceRateInches(i) != kXrRate[i] ||
-                rules::rgpXRaySubstanceMaxInches(i) != kXrMax[i]) ++bad;
+            if (rings_spell_storing_to_x_ray_vision.rgpXRaySubstanceRateInches(i) != kXrRate[i] ||
+                rings_spell_storing_to_x_ray_vision.rgpXRaySubstanceMaxInches(i) != kXrMax[i]) ++bad;
         printf("R256 rings prose part 3 pins audit: bad %d\n", bad);
         if (bad) return 1;
     }

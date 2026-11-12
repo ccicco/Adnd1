@@ -19,6 +19,8 @@
     // decision record lands; the
     // census 300 -> 301.
     {
+        Hoard hoard;
+        Treasure_determination treasure_determination;
         using namespace rules;
         int bad = 0;
         // ---- the dial pins ----
@@ -52,10 +54,10 @@
             // 01-10 the Map Table,
             // 11-00 the Magic Items
             // Table
-            if (mapOrMagicIsMap(1) != 1) ++bad;
-            if (mapOrMagicIsMap(10) != 1) ++bad;
-            if (mapOrMagicIsMap(11) != 0) ++bad;
-            if (mapOrMagicIsMap(100) != 0)
+            if (treasure_determination.mapOrMagicIsMap(1) != 1) ++bad;
+            if (treasure_determination.mapOrMagicIsMap(10) != 1) ++bad;
+            if (treasure_determination.mapOrMagicIsMap(11) != 0) ++bad;
+            if (treasure_determination.mapOrMagicIsMap(100) != 0)
                 ++bad;
         // ---- the R220 seam ----
             // the combined hoard: ten
@@ -64,16 +66,16 @@
             // be hidden, trapped and
             // guarded, in distant
             // places
-            if (hoardBandCount() != 10) ++bad;
-            if (hoardBandOfRoll(1) != 0) ++bad;
-            if (hoardBandOfRoll(20) != 0) ++bad;
-            if (hoardBandOfRoll(21) != 1) ++bad;
-            if (hoardBandOfRoll(55) != 2) ++bad;
-            if (hoardBandOfRoll(100) != 9)
+            if (hoard.hoardBandCount() != 10) ++bad;
+            if (hoard.hoardBandOfRoll(1) != 0) ++bad;
+            if (hoard.hoardBandOfRoll(20) != 0) ++bad;
+            if (hoard.hoardBandOfRoll(21) != 1) ++bad;
+            if (hoard.hoardBandOfRoll(55) != 2) ++bad;
+            if (hoard.hoardBandOfRoll(100) != 9)
                 ++bad;
-            if (!hoardMustBeHiddenTrappedGuarded())
+            if (!hoard.hoardMustBeHiddenTrappedGuarded())
                 ++bad;
-            if (!hoardDistantPlaces()) ++bad;
+            if (!hoard.hoardDistantPlaces()) ++bad;
         printf("R374 UA treasure dial pin audit: bad %d\n", bad);
         if (bad) return 1;
     }

@@ -21,6 +21,7 @@
     // R389 seam the System II
     // layer.
     {
+        Subdue subdue;
         using namespace rules;
         int bad = 0;
             if (!uanlSubdualEffectiveNonLethal()) ++bad;
@@ -127,11 +128,11 @@
                 >= uanlDisarmFallsMaxFeet()) ++bad;
             if (uanlDisarmWeaponCount()
                 != uanlDisarmOrderSword()) ++bad;
-            if (subdualTemporaryPct()
+            if (subdue.subdualTemporaryPct()
                 != uanlSubdualTemporaryPct()
-                || subdualRealPct()
+                || subdue.subdualRealPct()
                 != uanlSubdualRealPct()) ++bad;
-            if (subdualRealDamage(
+            if (subdue.subdualRealDamage(
                 uanlSubdualExamplePoints())
                 != uanlSubdualExampleReal()) ++bad;
             if (!uaqSysTwoOutgrowthMorePowerful())

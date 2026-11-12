@@ -23,21 +23,22 @@
     // still ride no engine concept, and the spear keeps its R158 default 7 on
     // this seam
     {
+        Set_spear set_spear;
         using namespace rules;
         int bad = 0;
-    if (spsSetFeederRound() != 189
-            || spsSpearSetRound() != 781
-            || spsAcFeederRound() != 145
-            || spsSpeedPage() != 66
-            || spsSetDamageMultiplier() != 2
-            || spsLanceAcRowCount() != 3
-            || !spsSpearSetReceivesTheClosingFoe()
-            || !spsTheStanceConsumesTheRound()
-            || !spsLanceAcCellsRideTheCompilation()
-            || !spsTieReadsTheSpeedLadder()
-            || !spsWeaponVsSpellReadsTheSegment()
-            || !spsExtraAttacksOpenAfterRoundOne()
-            || !spsMissileWeaponsCarryNoFactor()
+    if (set_spear.spsSetFeederRound() != 189
+            || set_spear.spsSpearSetRound() != 781
+            || set_spear.spsAcFeederRound() != 145
+            || set_spear.spsSpeedPage() != 66
+            || set_spear.spsSetDamageMultiplier() != 2
+            || set_spear.spsLanceAcRowCount() != 3
+            || !set_spear.spsSpearSetReceivesTheClosingFoe()
+            || !set_spear.spsTheStanceConsumesTheRound()
+            || !set_spear.spsLanceAcCellsRideTheCompilation()
+            || !set_spear.spsTieReadsTheSpeedLadder()
+            || !set_spear.spsWeaponVsSpellReadsTheSegment()
+            || !set_spear.spsExtraAttacksOpenAfterRoundOne()
+            || !set_spear.spsMissileWeaponsCarryNoFactor()
         )
             ++bad;
         printf("R781 set spear and speed seam audit: bad %d\n", bad);

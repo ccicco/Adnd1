@@ -70,225 +70,80 @@
 
 #pragma once
 
-namespace rules {
+// R-refactor: namespace rules -> class Sage (instance methods)
+class Sage {
+public:
+
 
 // ---- the fields of study ----
 
 // The field count (the print: 7 fields).
-inline int sageFieldCount() {
-    return 7;
-}
+    int sageFieldCount();
+
 
 // The field name at index f (clamped).
-inline const char* sageFieldName(int f) {
-    static const char* const kNames[7] = {
-        "Humankind",
-        "Demi-Humankind",
-        "Humanoids & Giantkind",
-        "Physical Universe(s)",
-        "Fauna",
-        "Flora",
-        "Supernatural & Unusual",
-    };
-    if (f < 0) f = 0;
-    if (f > 6) f = 6;
-    return kNames[f];
-}
+    const char* sageFieldName(int f);
+
 
 // The field percent band low (clamped; the
 // seven bands tile 1-100).
-inline int sageFieldLo(int f) {
-    static const int kLo[7] = {
-           1,   31,   51,   61,   71,   81,   91,
-    };
-    if (f < 0) f = 0;
-    if (f > 6) f = 6;
-    return kLo[f];
-}
+    int sageFieldLo(int f);
+
 
 // The field percent band high (clamped).
-inline int sageFieldHi(int f) {
-    static const int kHi[7] = {
-          30,   50,   60,   70,   80,   90,  100,
-    };
-    if (f < 0) f = 0;
-    if (f > 6) f = 6;
-    return kHi[f];
-}
+    int sageFieldHi(int f);
+
 
 // The special knowledge categories in the
 // field (clamped).
-inline int sageFieldCategoryCount(int f) {
-    static const int kCount[7] = {
-          12,   11,    8,   10,   10,    8,    9,
-    };
-    if (f < 0) f = 0;
-    if (f > 6) f = 6;
-    return kCount[f];
-}
+    int sageFieldCategoryCount(int f);
+
 
 // The flat index of the first category in the
 // field (clamped); the categories run field by
 // field in the print order.
-inline int sageFieldCategoryFirst(int f) {
-    static const int kFirst[7] = {
-           0,   12,   23,   31,   41,   51,   59,
-    };
-    if (f < 0) f = 0;
-    if (f > 6) f = 6;
-    return kFirst[f];
-}
+    int sageFieldCategoryFirst(int f);
+
 
 // ---- the special knowledge categories ----
 
 // The category count (the print: 68 categories
 // across the seven fields).
-inline int sageCategoryCount() {
-    return 68;
-}
+    int sageCategoryCount();
+
 
 // The category name at flat index i (clamped).
-inline const char* sageCategoryName(int i) {
-    static const char* const kNames[68] = {
-        "Art & Music",
-        "Biology",
-        "Demography",
-        "History",
-        "Languages",
-        "Legends & Folklore",
-        "Law & Customs",
-        "Philosophy & Ethics",
-        "Politics & Genealogy",
-        "Psychology",
-        "Sociology",
-        "Theology & Myth",
-        "Art & Music",
-        "Biology",
-        "Demography",
-        "Languages",
-        "Legends & Folklore",
-        "Law & Customs",
-        "Philosophy & Ethics",
-        "Politics & Genealogy",
-        "Psychology",
-        "Sociology",
-        "Theology & Myth",
-        "Biology",
-        "Demography",
-        "History",
-        "Languages",
-        "Legends & Folklore",
-        "Law & Customs",
-        "Sociology",
-        "Theology & Myth",
-        "Architecture & Engineering",
-        "Astronomy",
-        "Chemistry",
-        "Geography",
-        "Geology & Mineralogy",
-        "Mathematics",
-        "Meteorology & Climatology",
-        "Oceanography",
-        "Physics",
-        "Topography & Cartography",
-        "Amphibians",
-        "Arachnids",
-        "Avians",
-        "Cephalopods & Echinoderms",
-        "Crustaceans & Mollusks",
-        "Ichthyoids",
-        "Insects",
-        "Mammals",
-        "Marsupials",
-        "Reptiles",
-        "Bushes & Shrubs",
-        "Flowers",
-        "Fungi",
-        "Grasses & Grains",
-        "Herbs",
-        "Mosses & Ferns",
-        "Trees",
-        "Weeds",
-        "Astrology & Numerology",
-        "Cryptography",
-        "Divination",
-        "Dweomercraeft",
-        "Heraldry, Signs & Sigils",
-        "Medicine",
-        "Metaphysics",
-        "Planes (Astral, Elemental & Ethereal)",
-        "Planes (Outer)",
-    };
-    if (i < 0) i = 0;
-    if (i > 67) i = 67;
-    return kNames[i];
-}
+    const char* sageCategoryName(int i);
+
 
 // The owning field of the category at flat
 // index i (clamped).
-inline int sageCategoryField(int i) {
-    static const int kField[68] = {
-           0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-           0,    0,    1,    1,    1,    1,    1,    1,    1,    1,
-           1,    1,    1,    2,    2,    2,    2,    2,    2,    2,
-           2,    3,    3,    3,    3,    3,    3,    3,    3,    3,
-           3,    4,    4,    4,    4,    4,    4,    4,    4,    4,
-           4,    5,    5,    5,    5,    5,    5,    5,    5,    6,
-           6,    6,    6,    6,    6,    6,    6,    6,
-    };
-    if (i < 0) i = 0;
-    if (i > 67) i = 67;
-    return kField[i];
-}
+    int sageCategoryField(int i);
+
 
 // ---- the fields-count table ----
 
 // The dice band count.
-inline int sageFieldsBandCount() {
-    return 6;
-}
+    int sageFieldsBandCount();
+
 
 // The dice band low (clamped; the six bands
 // tile 1-100).
-inline int sageFieldsBandLo(int b) {
-    static const int kLo[6] = {
-           1,   11,   31,   51,   71,   91,
-    };
-    if (b < 0) b = 0;
-    if (b > 5) b = 5;
-    return kLo[b];
-}
+    int sageFieldsBandLo(int b);
+
 
 // The dice band high (clamped).
-inline int sageFieldsBandHi(int b) {
-    static const int kHi[6] = {
-          10,   30,   50,   70,   90,  100,
-    };
-    if (b < 0) b = 0;
-    if (b > 5) b = 5;
-    return kHi[b];
-}
+    int sageFieldsBandHi(int b);
+
 
 // The minor fields in the band (clamped).
-inline int sageFieldsBandMinor(int b) {
-    static const int kMinor[6] = {
-           1,    1,    1,    2,    2,    2,
-    };
-    if (b < 0) b = 0;
-    if (b > 5) b = 5;
-    return kMinor[b];
-}
+    int sageFieldsBandMinor(int b);
+
 
 // The special categories in the major field
 // (clamped).
-inline int sageFieldsBandSpecial(int b) {
-    static const int kSpecial[6] = {
-           2,    3,    4,    2,    3,    4,
-    };
-    if (b < 0) b = 0;
-    if (b > 5) b = 5;
-    return kSpecial[b];
-}
+    int sageFieldsBandSpecial(int b);
+
 
 // ---- the chance of knowing an answer ----
 
@@ -298,185 +153,88 @@ inline int sageFieldsBandSpecial(int b) {
 // 1 specific, 2 exacting. -1 pins the none cell
 // (the print dash - an exacting question out of
 // the fields cannot be answered at all).
-inline int sageKnowLo(int scope, int nature) {
-    static const int kLo[4][3] = {
-        {  31,   11,   -1},
-        {  46,   31,   11},
-        {  61,   57,   26},
-        {  81,   76,   61},
-    };
-    if (scope < 0) scope = 0;
-    if (scope > 3) scope = 3;
-    if (nature < 0) nature = 0;
-    if (nature > 2) nature = 2;
-    return kLo[scope][nature];
-}
+    int sageKnowLo(int scope, int nature);
+
 
 // The knowing percent band high (both clamped).
-inline int sageKnowHi(int scope, int nature) {
-    static const int kHi[4][3] = {
-        {  50,   20,   -1},
-        {  65,   40,   20},
-        {  80,   60,   35},
-        { 100,   96,   80},
-    };
-    if (scope < 0) scope = 0;
-    if (scope > 3) scope = 3;
-    if (nature < 0) nature = 0;
-    if (nature > 2) nature = 2;
-    return kHi[scope][nature];
-}
+    int sageKnowHi(int scope, int nature);
+
 
 // The none flag: 1 when the cell prints a dash.
-inline int sageKnowNone(int scope, int nature) {
-    return sageKnowLo(scope, nature) < 0;
-}
+    int sageKnowNone(int scope, int nature);
+
 
 // ---- the sage characteristics ----
 
 // The ability row count (0 STR, 1 INT, 2 WIS,
 // 3 DEX, 4 CON, 5 CHA).
-inline int sageAbilityCount() {
-    return 6;
-}
+    int sageAbilityCount();
+
 
 // The ability die (clamped).
-inline int sageAbilityDice(int a) {
-    static const int kDice[6] = {
-           8,    4,    6,    6,    6,    6,
-    };
-    if (a < 0) a = 0;
-    if (a > 5) a = 5;
-    return kDice[a];
-}
+    int sageAbilityDice(int a);
+
 
 // The ability dice count (clamped).
-inline int sageAbilityDiceCount(int a) {
-    static const int kCount[6] = {
-           1,    1,    1,    3,    2,    2,
-    };
-    if (a < 0) a = 0;
-    if (a > 5) a = 5;
-    return kCount[a];
-}
+    int sageAbilityDiceCount(int a);
+
 
 // The ability plus (clamped); the score bands
 // run plus + count to plus + count * dice.
-inline int sageAbilityPlus(int a) {
-    static const int kPlus[6] = {
-           7,   14,   12,    0,    3,    2,
-    };
-    if (a < 0) a = 0;
-    if (a > 5) a = 5;
-    return kPlus[a];
-}
+    int sageAbilityPlus(int a);
+
 
 // The alignment band count (ascending dice
 // order; the nine bands tile 1-100).
-inline int sageAlignBandCount() {
-    return 9;
-}
+    int sageAlignBandCount();
+
 
 // The alignment band low (clamped).
-inline int sageAlignLo(int b) {
-    static const int kLo[9] = {
-           1,    6,   11,   21,   31,   41,   61,   81,   91,
-    };
-    if (b < 0) b = 0;
-    if (b > 8) b = 8;
-    return kLo[b];
-}
+    int sageAlignLo(int b);
+
 
 // The alignment band high (clamped).
-inline int sageAlignHi(int b) {
-    static const int kHi[9] = {
-           5,   10,   20,   30,   40,   60,   80,   90,  100,
-    };
-    if (b < 0) b = 0;
-    if (b > 8) b = 8;
-    return kHi[b];
-}
+    int sageAlignHi(int b);
+
 
 // The alignment band name (clamped).
-inline const char* sageAlignName(int b) {
-    static const char* const kNames[9] = {
-        "chaotic evil",
-        "chaotic good",
-        "chaotic neutral",
-        "lawful evil",
-        "lawful good",
-        "lawful neutral",
-        "neutral",
-        "neutral evil",
-        "neutral good",
-    };
-    if (b < 0) b = 0;
-    if (b > 8) b = 8;
-    return kNames[b];
-}
+    const char* sageAlignName(int b);
+
 
 // The hit points: 8d4 plus the constitution
 // bonus as applicable.
-inline int sageHpDiceCount() {
-    return 8;
-}
+    int sageHpDiceCount();
+    int sageHpDie();
 
-inline int sageHpDie() {
-    return 4;
-}
 
 // ---- the spell skills ----
 
 // The spell kind count.
-inline int sageSpellKindCount() {
-    return 3;
-}
+    int sageSpellKindCount();
+
 
 // The field spell kind (clamped): 0 clerical,
 // 1 druidical, 2 magic-user or illusionist (the
 // art and music and legends and folklore
 // categories read clerical or magic-user).
-inline int sageSpellKind(int f) {
-    static const int kKind[7] = {
-           0,    0,    0,    0,    1,    1,    2,
-    };
-    if (f < 0) f = 0;
-    if (f > 6) f = 6;
-    return kKind[f];
-}
+    int sageSpellKind(int f);
+
 
 // The maximum spell level: d4 + 2, the 3-6
 // band inclusive.
-inline int sageSpellMaxDie() {
-    return 4;
-}
+    int sageSpellMaxDie();
+    int sageSpellMaxPlus();
+    int sageSpellMaxLo();
+    int sageSpellMaxHi();
 
-inline int sageSpellMaxPlus() {
-    return 2;
-}
-
-inline int sageSpellMaxLo() {
-    return 3;
-}
-
-inline int sageSpellMaxHi() {
-    return 6;
-}
 
 // The spells held per level and the ready cap
 // (1-4 per level, no more than 1 of each level
 // available for use at a time).
-inline int sageSpellPerLevelLo() {
-    return 1;
-}
+    int sageSpellPerLevelLo();
+    int sageSpellPerLevelHi();
+    int sageSpellReadyPerLevel();
 
-inline int sageSpellPerLevelHi() {
-    return 4;
-}
-
-inline int sageSpellReadyPerLevel() {
-    return 1;
-}
 
 // ---- the employment offer ----
 
@@ -485,69 +243,41 @@ inline int sageSpellReadyPerLevel() {
 // research grants per month (2d6 hundred g.p.),
 // row 2 the initial material expenditure (the
 // 20,000 g.p. minimum; lo equals hi).
-inline int sageOfferCount() {
-    return 3;
-}
+    int sageOfferCount();
+
 
 // The offer row low (clamped; g.p. per month).
-inline int sageOfferLo(int i) {
-    static const int kLo[3] = {
-         200,  200, 20000,
-    };
-    if (i < 0) i = 0;
-    if (i > 2) i = 2;
-    return kLo[i];
-}
+    int sageOfferLo(int i);
+
 
 // The offer row high (clamped; g.p. per month).
-inline int sageOfferHi(int i) {
-    static const int kHi[3] = {
-        1200, 1200, 20000,
-    };
-    if (i < 0) i = 0;
-    if (i > 2) i = 2;
-    return kHi[i];
-}
+    int sageOfferHi(int i);
+
 
 // ---- the efficiency economics ----
 
 // The efficiency milestone count.
-inline int sageEffMilestoneCount() {
-    return 3;
-}
+    int sageEffMilestoneCount();
+
 
 // The milestone cost (clamped): 20,000 g.p.
 // buys 50 percent, 60,000 reaches 90 and
 // 100,000 the full 100 (the specific and
 // exacting areas).
-inline int sageEffMilestoneCost(int i) {
-    static const int kCost[3] = {
-        20000, 60000, 100000,
-    };
-    if (i < 0) i = 0;
-    if (i > 2) i = 2;
-    return kCost[i];
-}
+    int sageEffMilestoneCost(int i);
+
 
 // The milestone efficiency percent (clamped).
-inline int sageEffMilestonePercent(int i) {
-    static const int kPct[3] = {
-          50,   90,  100,
-    };
-    if (i < 0) i = 0;
-    if (i > 2) i = 2;
-    return kPct[i];
-}
+    int sageEffMilestonePercent(int i);
+
 
 // The +1 percent step cost to 90 percent.
-inline int sageEffStepCost() {
-    return 1000;
-}
+    int sageEffStepCost();
+
 
 // The +1 percent step cost after 90.
-inline int sageEffHighCostPerPercent() {
-    return 4000;
-}
+    int sageEffHighCostPerPercent();
+
 
 // ---- the improvement ladder ----
 
@@ -560,155 +290,75 @@ inline int sageEffHighCostPerPercent() {
 // maximum), row 3 an extra major field
 // (200,000 g.p. and two years; -1 pins no
 // stated maximum).
-inline int sageImproveCount() {
-    return 4;
-}
+    int sageImproveCount();
+
 
 // The improvement cost in g.p. (clamped).
-inline int sageImproveCost(int i) {
-    static const int kCost[4] = {
-        5000, 10000, 100000, 200000,
-    };
-    if (i < 0) i = 0;
-    if (i > 3) i = 3;
-    return kCost[i];
-}
+    int sageImproveCost(int i);
+
 
 // The improvement time in months (clamped).
-inline int sageImproveMonths(int i) {
-    static const int kMonths[4] = {
-           1,    1,   24,   24,
-    };
-    if (i < 0) i = 0;
-    if (i > 3) i = 3;
-    return kMonths[i];
-}
+    int sageImproveMonths(int i);
+
 
 // The improvement maximum (clamped; -1 pins
 // no stated maximum).
-inline int sageImproveMax(int i) {
-    static const int kMax[4] = {
-           5,    5,    3,   -1,
-    };
-    if (i < 0) i = 0;
-    if (i > 3) i = 3;
-    return kMax[i];
-}
+    int sageImproveMax(int i);
+
 
 // ---- the information discovery table ----
 
 // The discovery time band low (both clamped).
 // Scope and nature read as the knowing table;
 // -1 pins the none cell (the print dash).
-inline int sageTimeLo(int scope, int nature) {
-    static const int kLo[4][3] = {
-        {   1,    2,   -1},
-        {   1,    2,    5},
-        {   1,    1,    3},
-        {   1,    1,    2},
-    };
-    if (scope < 0) scope = 0;
-    if (scope > 3) scope = 3;
-    if (nature < 0) nature = 0;
-    if (nature > 2) nature = 2;
-    return kLo[scope][nature];
-}
+    int sageTimeLo(int scope, int nature);
+
 
 // The discovery time band high (both clamped).
-inline int sageTimeHi(int scope, int nature) {
-    static const int kHi[4][3] = {
-        {   6,   24,   -1},
-        {   4,   20,   40},
-        {   3,   12,   30},
-        {   2,   10,   12},
-    };
-    if (scope < 0) scope = 0;
-    if (scope > 3) scope = 3;
-    if (nature < 0) nature = 0;
-    if (nature > 2) nature = 2;
-    return kHi[scope][nature];
-}
+    int sageTimeHi(int scope, int nature);
+
 
 // The discovery time unit (both clamped):
 // 0 rounds, 1 hours, 2 days (the lone HOURS
 // cell the special-category specific band).
-inline int sageTimeUnit(int scope, int nature) {
-    static const int kUnit[4][3] = {
-        {   0,    2,    0},
-        {   0,    2,    2},
-        {   0,    2,    2},
-        {   0,    1,    2},
-    };
-    if (scope < 0) scope = 0;
-    if (scope > 3) scope = 3;
-    if (nature < 0) nature = 0;
-    if (nature > 2) nature = 2;
-    return kUnit[scope][nature];
-}
+    int sageTimeUnit(int scope, int nature);
+
 
 // The none flag: 1 when the cell prints a dash.
-inline int sageTimeNone(int scope, int nature) {
-    return sageTimeLo(scope, nature) < 0;
-}
+    int sageTimeNone(int scope, int nature);
+
 
 // The g.p. cost per day for the scope (clamped).
-inline int sageCostPerDay(int scope) {
-    static const int kCost[4] = {
-         100, 1000,  500,  200,
-    };
-    if (scope < 0) scope = 0;
-    if (scope > 3) scope = 3;
-    return kCost[scope];
-}
+    int sageCostPerDay(int scope);
+
 
 // The free-cost spread threshold (clamped):
 // a knowing roll in the lower 20 percent of
 // the spread means the materials are on hand;
 // the special category widens to the lower 80
 // percent.
-inline int sageFreeSpreadPercent(int scope) {
-    static const int kFree[4] = {
-          20,   20,   20,   80,
-    };
-    if (scope < 0) scope = 0;
-    if (scope > 3) scope = 3;
-    return kFree[scope];
-}
+    int sageFreeSpreadPercent(int scope);
+
 
 // The unknown-information band: 51-100
 // percent of the maximum time.
-inline int sageUnknownPercentLo() {
-    return 51;
-}
+    int sageUnknownPercentLo();
+    int sageUnknownPercentHi();
 
-inline int sageUnknownPercentHi() {
-    return 100;
-}
 
 // The unknown-information cost divisor (the
 // costs accrue at half the stated amount).
-inline int sageUnknownCostDivisor() {
-    return 2;
-}
+    int sageUnknownCostDivisor();
+
 
 // The short-term terms: 100 g.p. per day plus
 // the question difficulty, one week maximum,
 // a one-game-month cooldown after.
-inline int sageShortTermCostPerDay() {
-    return 100;
-}
+    int sageShortTermCostPerDay();
+    int sageShortTermMaxDays();
+    int sageShortTermCooldownMonths();
 
-inline int sageShortTermMaxDays() {
-    return 7;
-}
-
-inline int sageShortTermCooldownMonths() {
-    return 1;
-}
 
 // The permanent offer is lifetime service only.
-inline int sagePermanentHireOnly() {
-    return 1;
-}
-
-}  // namespace rules
+    int sagePermanentHireOnly();
+};

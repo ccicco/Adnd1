@@ -45,316 +45,63 @@
 
 #pragma once
 
-namespace rules {
-
-inline int potDurationTurnsBase() {
-    // the conventions: effects last 4
-    // complete turns
-    return 4;
-}
-
-inline int potDurationExtraLo() {
-    // plus 1-4 additional turns (d4)
-    return 1;
-}
-
-inline int potDurationExtraHi() {
-    return 4;
-}
-
-inline int potOnsetLo() {
-    // potions take effect 2-5 segments
-    // after they are imbibed
-    return 2;
-}
-
-inline int potOnsetHi() {
-    return 5;
-}
-
-inline int potAnimalSmallLo() {
-    // Animal Control: 5-20 animals of
-    // the size of giant rats
-    return 5;
-}
-
-inline int potAnimalSmallHi() {
-    return 20;
-}
-
-inline int potAnimalManLo() {
-    // 3-12 animals of about man-size
-    return 3;
-}
-
-inline int potAnimalManHi() {
-    return 12;
-}
-
-inline int potAnimalLargeLo() {
-    // 1-4 animals of about half a ton
-    // or more in weight
-    return 1;
-}
-
-inline int potAnimalLargeHi() {
-    return 4;
-}
-
-inline int potAnimalSaveInt() {
-    // animals with intelligence of 5
-    // or better get a save versus magic
-    return 5;
-}
-
-inline int potAnimalTypeRowCount() {
-    // the animal type sub-table: 7 rows
-    return 7;
-}
-
-inline int potAnimalTypeLo(int i) {
-    // the printed band lower edges; i clamps
-    if (i < 0) i = 0;
-    if (i > 6) i = 6;
-    static const int t[7] = {
-        1, 5, 9, 13, 16, 18, 20,
-    };
-    return t[i];
-}
-
-inline int potAnimalTypeHi(int i) {
-    // the printed band upper edges; i clamps
-    if (i < 0) i = 0;
-    if (i > 6) i = 6;
-    static const int t[7] = {
-        4, 8, 12, 15, 17, 19, 20,
-    };
-    return t[i];
-}
-
-inline int potAnimalTypeFaces() {
-    // the animal type roll is on d20
-    return 20;
-}
-
-inline int potClairaudRangeInches() {
-    // Clairaudience: clairaudit unknown
-    // areas within 3"
-    return 3;
-}
-
-inline int potClairaudTurns() {
-    // the effects last for 2 turns only
-    return 2;
-}
-
-inline int potClairvoyRangeInches() {
-    // Clairvoyance: unknown areas up to
-    // 3" distant can be seen
-    return 3;
-}
-
-inline int potClairvoyTurns() {
-    // the effects last for 1 turn only
-    return 1;
-}
-
-inline int potClimbBasePercent() {
-    // Climbing: a base 1% chance of
-    // slipping and falling
-    return 1;
-}
-
-inline int potClimbFallRoll() {
-    // check at the halfway point, d%;
-    // 01 equals a fall
-    return 1;
-}
-
-inline int potClimbTurns() {
-    // effective for 1 turn
-    return 1;
-}
-
-inline int potClimbExtraRoundsLo() {
-    // plus 5 to 20 rounds
-    return 5;
-}
-
-inline int potClimbExtraRoundsHi() {
-    return 20;
-}
-
-inline int potClimbLoadIncrementGp() {
-    // for every 1,000 g.p. weight
-    // equivalent carried
-    return 1000;
-}
-
-inline int potClimbLoadPercent() {
-    // an additional 1% chance of slipping
-    return 1;
-}
-
-inline int potClimbArmorRowCount() {
-    // the climbing armor table: 7 rows
-    return 7;
-}
-
-inline int potClimbArmorPercent(int i) {
-    // the armor slip additions; i clamps:
-    // studded leather, ring mail, scale
-    // mail, chainmail, banded or
-    // splinted, plate mail, magic armor
-    if (i < 0) i = 0;
-    if (i > 6) i = 6;
-    static const int t[7] = {
-        1, 2, 4, 7, 8, 10, 1,
-    };
-    return t[i];
-}
-
-inline int potDeludeAgreePercent() {
-    // Delusion: 90% probable that tasters
-    // will all agree it is the same potion
-    return 90;
-}
-
-inline int potDiminishMinPercent() {
-    // Diminution: diminish to as small as
-    // 5% of normal size
-    return 5;
-}
-
-inline int potDiminishHalfPercent() {
-    // half the contents: shrinks to 50%
-    return 50;
-}
-
-inline int potDiminishTurnsBase() {
-    // the effects last for 6 turns
-    return 6;
-}
-
-inline int potDiminishExtraLo() {
-    // plus 2-5 turns (d4 + 1)
-    return 2;
-}
-
-inline int potDiminishExtraHi() {
-    return 5;
-}
-
-inline int potDragonRangeInches() {
-    // Dragon Control: a charm monster
-    // effect upon any dragon within 6"
-    return 6;
-}
-
-inline int potDragonSaveMod() {
-    // the dragon save versus magic is
-    // made at -2 on the die
-    return -2;
-}
-
-inline int potDragonTypeRowCount() {
-    // the dragon type sub-table: 12 rows
-    return 12;
-}
-
-inline int potDragonTypeLo(int i) {
-    // the printed band lower edges; i clamps
-    if (i < 0) i = 0;
-    if (i > 11) i = 11;
-    static const int t[12] = {
-        1, 3, 5, 8, 10, 11, 13, 15, 16, 17, 18, 20,
-    };
-    return t[i];
-}
-
-inline int potDragonTypeHi(int i) {
-    // the printed band upper edges; i clamps
-    if (i < 0) i = 0;
-    if (i > 11) i = 11;
-    static const int t[12] = {
-        2, 4, 7, 9, 10, 12, 14, 15, 16, 17, 19, 20,
-    };
-    return t[i];
-}
-
-inline int potDragonTypeFaces() {
-    // the dragon type roll is on d20
-    return 20;
-}
-
-inline int potDragonLo() {
-    // control lasts for from 5-20
-    // (5d4) rounds
-    return 5;
-}
-
-inline int potDragonHi() {
-    return 20;
-}
-
-inline int potDragonDice() {
-    return 5;
-}
-
-inline int potDragonFaces() {
-    return 4;
-}
-
-inline int potEspLo() {
-    // ESP: the effects last for 5-40
-    // (5d8) rounds
-    return 5;
-}
-
-inline int potEspHi() {
-    return 40;
-}
-
-inline int potEspDice() {
-    return 5;
-}
-
-inline int potEspFaces() {
-    return 8;
-}
-
-inline int potXHealLo() {
-    // Extra-Healing: restores 6-27
-    // (3d8 + 3) hit points when wholly
-    // consumed
-    return 6;
-}
-
-inline int potXHealHi() {
-    return 27;
-}
-
-inline int potXHealDice() {
-    return 3;
-}
-
-inline int potXHealFaces() {
-    return 8;
-}
-
-inline int potXHealBonus() {
-    return 3;
-}
-
-inline int potXHealThirdLo() {
-    // or 1-8 hit points of damage for each
-    // one-third potion
-    return 1;
-}
-
-inline int potXHealThirdHi() {
-    return 8;
-}
-
-}  // namespace rules
-
+// R-refactor: namespace rules -> class Potions_conventions_animal_control_to_extra_healing (instance methods)
+class Potions_conventions_animal_control_to_extra_healing {
+public:
+    int potDurationTurnsBase();
+    int potDurationExtraLo();
+    int potDurationExtraHi();
+    int potOnsetLo();
+    int potOnsetHi();
+    int potAnimalSmallLo();
+    int potAnimalSmallHi();
+    int potAnimalManLo();
+    int potAnimalManHi();
+    int potAnimalLargeLo();
+    int potAnimalLargeHi();
+    int potAnimalSaveInt();
+    int potAnimalTypeRowCount();
+    int potAnimalTypeLo(int i);
+    int potAnimalTypeHi(int i);
+    int potAnimalTypeFaces();
+    int potClairaudRangeInches();
+    int potClairaudTurns();
+    int potClairvoyRangeInches();
+    int potClairvoyTurns();
+    int potClimbBasePercent();
+    int potClimbFallRoll();
+    int potClimbTurns();
+    int potClimbExtraRoundsLo();
+    int potClimbExtraRoundsHi();
+    int potClimbLoadIncrementGp();
+    int potClimbLoadPercent();
+    int potClimbArmorRowCount();
+    int potClimbArmorPercent(int i);
+    int potDeludeAgreePercent();
+    int potDiminishMinPercent();
+    int potDiminishHalfPercent();
+    int potDiminishTurnsBase();
+    int potDiminishExtraLo();
+    int potDiminishExtraHi();
+    int potDragonRangeInches();
+    int potDragonSaveMod();
+    int potDragonTypeRowCount();
+    int potDragonTypeLo(int i);
+    int potDragonTypeHi(int i);
+    int potDragonTypeFaces();
+    int potDragonLo();
+    int potDragonHi();
+    int potDragonDice();
+    int potDragonFaces();
+    int potEspLo();
+    int potEspHi();
+    int potEspDice();
+    int potEspFaces();
+    int potXHealLo();
+    int potXHealHi();
+    int potXHealDice();
+    int potXHealFaces();
+    int potXHealBonus();
+    int potXHealThirdLo();
+    int potXHealThirdHi();
+};

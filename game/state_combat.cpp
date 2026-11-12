@@ -255,6 +255,7 @@ void AppState::combatQuaff(){
 
 // ---- combatShoot ----
 void AppState::combatShoot(){
+        Uwfight uwfight;
         if (mode != MODE_COMBAT || !combat.encounter || combat.over)
             return;
         // R313: the underwater combat pin (R311) -
@@ -264,8 +265,9 @@ void AppState::combatShoot(){
         // seam fold uwDeepCrossbowAllowed); the bar
         // lifts for it alone, and a member with no
         // ranged weapon still reads the bar
-        if (rules::uwMissileBarred() &&
+        if (uwfight.uwMissileBarred() &&
             map.at(party.x, party.y) == TILE_WATER) {
+            Uwfight uwfight;
             const auto& pa =
                 combat.encounter->party();
             bool deep =
@@ -275,7 +277,7 @@ void AppState::combatShoot(){
                 pa[combat.activeMember]
                     .rangedWeapon.id ==
                     items::WPN_CROSSBOW_DEEP &&
-                rules::uwDeepCrossbowAllowed() != 0;
+                uwfight.uwDeepCrossbowAllowed() != 0;
             if (!deep) {
                 log.add("The water bars missile fire - no "
                         "crossbow of the deep.");
@@ -308,11 +310,12 @@ void AppState::combatShoot(){
 
 // ---- combatThrow ----
 void AppState::combatThrow(){
+        Uwfight uwfight;
         if (mode != MODE_COMBAT || !combat.encounter || combat.over)
             return;
         // R313: the hurled weapon is a missile too -
         // the underwater bar rides the throw
-        if (rules::uwMissileBarred() &&
+        if (uwfight.uwMissileBarred() &&
             map.at(party.x, party.y) == TILE_WATER) {
             log.add("The water bars the hurl - no "
                     "crossbow of the deep.");
@@ -662,6 +665,7 @@ void AppState::spawnWanderingEncounter(){        if (mode == MODE_COMBAT) return
         // encounter; the substituted keys
         // stay land monsters.
         if (map.at(party.x, party.y) == TILE_WATER) {
+            Uwfight uwfight;
             dm::DungeonEncounter e =
                 dm::rollWaterborneEncounter(
                     registry, dice,
@@ -686,7 +690,7 @@ void AppState::spawnWanderingEncounter(){        if (mode == MODE_COMBAT) return
             beginCombat(std::move(foes), -1,
                        e.key);
             if (combat.encounter &&
-                rules::uwWaterborneIsAquatic())
+                uwfight.uwWaterborneIsAquatic())
                 combat.encounter->setAquatic();
             return;
         }

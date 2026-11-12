@@ -35,35 +35,7 @@
 
 #pragma once
 
-namespace rules {
 
-// -----------------------------------------------------------------------
-// The import duty (normal goods brought in
-// for sale): 1 percent for citizens, double
-// rate - 2 percent - for foreigners.
-// -----------------------------------------------------------------------
-inline int taxImportDutyPercent(bool foreigner) {
-    return foreigner ? 2 : 1;
-}
-
-// The luxury tariff (wine, spirits, furs,
-// copper/gold metals, jewelry and the like),
-// charged on the sale: 5 percent of value.
-// No legal sale without the declaration -
-// the caller gates the form.
-inline int taxLuxuryTariffPercent() { return 5; }
-
-// -----------------------------------------------------------------------
-// The town entry fee (per head - man or
-// animal - or wheel), in copper pieces:
-// citizens 1, non-citizens 5. Official
-// passports waive it; diplomatic types are
-// immune on personal goods and belongings.
-// -----------------------------------------------------------------------
-inline int taxEntryFeeCopper(bool nonCitizen) {
-    // R207b: true = the 5 cp non-citizen fee
-    return nonCitizen ? 5 : 1;
-}
 
 // -----------------------------------------------------------------------
 // The annual head tax by social standing,
@@ -75,35 +47,61 @@ inline int taxEntryFeeCopper(bool nonCitizen) {
 enum TaxStanding { TAXS_PEASANT = 0, TAXS_FREEMAN,
                    TAXS_GENTLEMAN_NOBLE };
 
-inline int taxHeadTaxAnnual(int standing) {
-    // the coin unit: 1 = copper, 10 = silver
-    // (a copper-of-value tenfold), 100 = gold
-    static const int k[3] = { 1, 10, 100 };
-    if (standing < TAXS_PEASANT) standing = TAXS_PEASANT;
-    if (standing > TAXS_GENTLEMAN_NOBLE)
-        standing = TAXS_GENTLEMAN_NOBLE;
-    return k[standing];
-}
+// R-refactor: namespace rules -> class Taxation (instance methods)
+class Taxation {
+public:
+
+
+// -----------------------------------------------------------------------
+// The import duty (normal goods brought in
+// for sale): 1 percent for citizens, double
+// rate - 2 percent - for foreigners.
+// -----------------------------------------------------------------------
+    int taxImportDutyPercent(bool foreigner);
+
+
+// The luxury tariff (wine, spirits, furs,
+// copper/gold metals, jewelry and the like),
+// charged on the sale: 5 percent of value.
+// No legal sale without the declaration -
+// the caller gates the form.
+    int taxLuxuryTariffPercent();
+
+
+// -----------------------------------------------------------------------
+// The town entry fee (per head - man or
+// animal - or wheel), in copper pieces:
+// citizens 1, non-citizens 5. Official
+// passports waive it; diplomatic types are
+// immune on personal goods and belongings.
+// -----------------------------------------------------------------------
+    int taxEntryFeeCopper(bool nonCitizen);
+    int taxHeadTaxAnnual(int standing);
+
 
 // The foreigner sales tax: 10 percent on
 // sales, no service tax levied on them.
-inline int taxForeignerSalesTaxPercent() { return 10; }
-inline int taxForeignerServiceTaxPercent() { return 0; }
+    int taxForeignerSalesTaxPercent();
+    int taxForeignerServiceTaxPercent();
+
 
 // The tithe pledge: religious services
 // require the pledge - the percent is the
 // caller denomination (the print leaves it
 // to the organization).
-inline bool taxTithePledgeRequired() { return true; }
+    bool taxTithePledgeRequired();
+
 
 // The annual property tax on citizens:
 // 5 percent of property value.
-inline int taxPropertyTaxPercent() { return 5; }
+    int taxPropertyTaxPercent();
+
 
 // Citizenship: one month of residence plus
 // 10 gold pieces.
-inline int taxCitizenshipResidenceDays() { return 30; }
-inline int taxCitizenshipFeeGold() { return 10; }
+    int taxCitizenshipResidenceDays();
+    int taxCitizenshipFeeGold();
+
 
 // -----------------------------------------------------------------------
 // Foreign currency: merchants holding
@@ -118,35 +116,26 @@ inline int taxCitizenshipFeeGold() { return 10; }
 // for the changers. Gems carry a 10 percent
 // surtax on sale or exchange.
 // -----------------------------------------------------------------------
-inline int taxForeignCoinMerchantFinePercent() { return 5; }
-inline int taxExchangeRatePercent() { return 90; }
-inline int taxForeignCoinLimitSilverNobles() { return 100; }
-inline int taxForeignCoinOverLimitFinePercent() { return 50; }
-inline int taxMoneyChangerGraceHours() { return 24; }
-inline int taxGemSurtaxPercent() { return 10; }
+    int taxForeignCoinMerchantFinePercent();
+    int taxExchangeRatePercent();
+    int taxForeignCoinLimitSilverNobles();
+    int taxForeignCoinOverLimitFinePercent();
+    int taxMoneyChangerGraceHours();
+    int taxGemSurtaxPercent();
+
 
 // The exchange: foreign value times 90
 // percent, in domestic coin.
-inline int taxExchangeDomestic(int foreignValue) {
-    return foreignValue * taxExchangeRatePercent() / 100;
-}
+    int taxExchangeDomestic(int foreignValue);
+
 
 // The over-limit fine: does it apply? Over
 // 100 silver nobles of foreign coin, unless
 // within the grace hours and bound for the
 // changers (the caller holds the clock and
 // the direction).
-inline bool taxForeignCoinFineApplies(
-        int foreignSilverNobles,
-        int hoursSinceEntry,
-        bool headedToChangers) {
-    if (foreignSilverNobles <= taxForeignCoinLimitSilverNobles())
-        return false;
-    if (hoursSinceEntry <= taxMoneyChangerGraceHours()
-            && headedToChangers)
-        return false;
-    return true;
-}
+    bool taxForeignCoinFineApplies( int foreignSilverNobles, int hoursSinceEntry, bool headedToChangers);
+
 
 // -----------------------------------------------------------------------
 // Tolls: paid for road, bridge or ferry use
@@ -155,7 +144,6 @@ inline bool taxForeignCoinFineApplies(
 // all goods, with fine and imprisonment
 // possible.
 // -----------------------------------------------------------------------
-inline bool taxTollEvasionConfiscates() { return true; }
-inline bool taxTollEvasionImprisons() { return true; }
-
-} // namespace rules
+    bool taxTollEvasionConfiscates();
+    bool taxTollEvasionImprisons();
+};

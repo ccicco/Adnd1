@@ -33,13 +33,14 @@
 #pragma once
 
 #include "../engine/dice.h"
+using rules::Dice;  // R-refactor: engine type, was namespace-implicit
 
-namespace rules {
+
+
 
 // -----------------------------------------------------------------------
 // The 11 attack forms (the print order)
 // -----------------------------------------------------------------------
-
 enum ItemSaveForm {
     ISF_ACID = 0,
     ISF_BLOW_CRUSHING,
@@ -55,10 +56,11 @@ enum ItemSaveForm {
     ISF_COUNT
 };
 
+
+
 // -----------------------------------------------------------------------
 // The 14 materials (the print row order)
 // -----------------------------------------------------------------------
-
 enum ItemSaveMaterial {
     ISM_BONE_IVORY = 0,
     ISM_CERAMIC,
@@ -77,74 +79,7 @@ enum ItemSaveMaterial {
     ISM_COUNT
 };
 
-inline const char* itemSaveFormName(ItemSaveForm f) {
-    static const char* const n[ISF_COUNT] = {
-        "acid", "blow, crushing", "blow, normal",
-        "disintegrate", "fall",
-        "fireball (or breath)", "fire, magical",
-        "fire, normal (oil)", "frost, magical",
-        "lightning bolt", "electrical discharge/current"
-    };
-    if (f < ISF_ACID) f = ISF_ACID;
-    if (f >= ISF_COUNT) f = ISF_ELECTRICAL;
-    return n[f];
-}
 
-inline const char* itemSaveMaterialName(ItemSaveMaterial m) {
-    static const char* const n[ISM_COUNT] = {
-        "bone or ivory", "ceramic", "cloth",
-        "crystal or vial", "glass", "leather or book",
-        "liquid", "metal, hard",
-        "metal, soft or jewelry", "mirror",
-        "parchment or paper", "stone, small or gem",
-        "wood or rope, thin", "wood or rope, thick"
-    };
-    if (m < ISM_BONE_IVORY) m = ISM_BONE_IVORY;
-    if (m >= ISM_COUNT) m = ISM_WOOD_ROPE_THICK;
-    return n[m];
-}
-
-// -----------------------------------------------------------------------
-// The matrix: the 154 printed cells. The R157 grenade
-// break saves (ceramic 18/12, crystal 19/14) read exactly
-// the BLOW columns of these rows - the cross-check pins.
-// -----------------------------------------------------------------------
-inline int itemSaveTarget(ItemSaveMaterial m, ItemSaveForm f) {
-    static const int k[ISM_COUNT][ISF_COUNT] = {
-        { 11, 16, 10, 20,  6, 17,  9,  3,  2,  8, 1 },
-        {  4, 18, 12, 19, 11,  5,  3,  2,  4,  2, 1 },
-        { 12,  6,  3, 20,  2, 20, 16, 13,  1, 18, 1 },
-        {  6, 19, 14, 20, 13, 10,  6,  3,  7, 15, 5 },
-        {  5, 20, 15, 20, 14, 11,  7,  4,  6, 17, 1 },
-        { 10,  4,  2, 20,  1, 13,  6,  4,  3, 13, 1 },
-        { 15,  0,  0, 20,  0, 15, 14, 13, 12, 18, 15 },
-        {  7,  6,  2, 17,  2,  6,  2,  1,  1,  1, 1 },
-        { 13, 14,  9, 19,  4, 18, 13,  5,  1,  6, 1 },
-        { 12, 20, 15, 20, 13, 14,  9,  5,  6, 18, 1 },
-        { 16, 11,  6, 20,  0, 25, 21, 18,  2, 20, 1 },
-        {  3, 17,  7, 18,  4,  7,  3,  2,  1, 14, 2 },
-        {  9, 13,  6, 20,  2, 15, 11,  9,  1, 10, 1 },
-        {  8, 10,  3, 19,  1, 11,  7,  5,  1, 12, 1 },
-    };
-    if (m < ISM_BONE_IVORY) m = ISM_BONE_IVORY;
-    if (m >= ISM_COUNT) m = ISM_WOOD_ROPE_THICK;
-    if (f < ISF_ACID) f = ISF_ACID;
-    if (f >= ISF_COUNT) f = ISF_ELECTRICAL;
-    return k[m][f];
-}
-
-// -----------------------------------------------------------------------
-// Magical items: +2 on all rolls plus +1 for each plus
-// above +1 (+1 saves at +2, +2 at +3, +3 at +4); a
-// non-magical item reads 0. Every item, magical or not,
-// gains +5 versus attack forms in its own mode.
-// -----------------------------------------------------------------------
-inline int itemSaveMagicalBonus(int plus) {
-    if (plus < 1) return 0;
-    return 2 + (plus - 1);
-}
-
-inline int itemSaveOwnModeBonus() { return 5; }
 
 // -----------------------------------------------------------------------
 // Fall (form 5): the printed cell assumes about 5 feet
@@ -155,25 +90,40 @@ inline int itemSaveOwnModeBonus() { return 5; }
 enum ItemSaveFallSurface { ISFS_HARD = 0, ISFS_WOODLIKE,
                             ISFS_FLESHY };
 
-inline int itemSaveFallSurfaceAdj(ItemSaveFallSurface s) {
-    static const int a[3] = { 0, 1, 5 };
-    if (s < ISFS_HARD) s = ISFS_HARD;
-    if (s > ISFS_FLESHY) s = ISFS_FLESHY;
-    return a[s];
-}
+// R-refactor: namespace rules -> class Itemsavethrow (instance methods)
+class Itemsavethrow {
+public:
+    const char* itemSaveFormName(ItemSaveForm f);
+    const char* itemSaveMaterialName(ItemSaveMaterial m);
 
-inline int itemSaveFallDistanceAdj(int feet) {
-    int extra = feet - 5;
-    if (extra < 0) extra = 0;
-    return -(extra / 5);
-}
+
+// -----------------------------------------------------------------------
+// The matrix: the 154 printed cells. The R157 grenade
+// break saves (ceramic 18/12, crystal 19/14) read exactly
+// the BLOW columns of these rows - the cross-check pins.
+// -----------------------------------------------------------------------
+    int itemSaveTarget(ItemSaveMaterial m, ItemSaveForm f);
+
+
+// -----------------------------------------------------------------------
+// Magical items: +2 on all rolls plus +1 for each plus
+// above +1 (+1 saves at +2, +2 at +3, +3 at +4); a
+// non-magical item reads 0. Every item, magical or not,
+// gains +5 versus attack forms in its own mode.
+// -----------------------------------------------------------------------
+    int itemSaveMagicalBonus(int plus);
+    int itemSaveOwnModeBonus();
+    int itemSaveFallSurfaceAdj(ItemSaveFallSurface s);
+    int itemSaveFallDistanceAdj(int feet);
+
 
 // -----------------------------------------------------------------------
 // The hard-metal cold-strike footnote: exposed to
 // extreme cold then struck against a very hard surface
 // with force, the saving throw is -10 on the die.
 // -----------------------------------------------------------------------
-inline int itemSaveHardMetalColdStrikePenalty() { return 10; }
+    int itemSaveHardMetalColdStrikePenalty();
+
 
 // -----------------------------------------------------------------------
 // Normal fire (form 8) exposure: paper or parchment for
@@ -181,24 +131,13 @@ inline int itemSaveHardMetalColdStrikePenalty() { return 10; }
 // the print trails with "etc."; the caller rules the
 // rest. 0 = not printed (caller-side).
 // -----------------------------------------------------------------------
-inline int itemSaveNormalFireRoundsToAffect(ItemSaveMaterial m) {
-    if (m == ISM_PARCHMENT_PAPER) return 1;
-    if (m == ISM_CLOTH) return 2;
-    if (m == ISM_BONE_IVORY) return 3;
-    return 0;
-}
+    int itemSaveNormalFireRoundsToAffect(ItemSaveMaterial m);
+
 
 // -----------------------------------------------------------------------
 // The save itself: the item SAVES on roll + adj >= the
 // cell value (the R157 convention).
 // -----------------------------------------------------------------------
-inline bool itemSavesOn(int roll, int target, int adj) {
-    return roll + adj >= target;
-}
-
-inline bool rollItemSave(rules::Dice& dice, ItemSaveMaterial m,
-                         ItemSaveForm f, int adj) {
-    return itemSavesOn((int)dice.d20(), itemSaveTarget(m, f), adj);
-}
-
-} // namespace rules
+    bool itemSavesOn(int roll, int target, int adj);
+    bool rollItemSave(rules::Dice& dice, ItemSaveMaterial m, ItemSaveForm f, int adj);
+};

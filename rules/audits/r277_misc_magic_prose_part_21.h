@@ -7,98 +7,100 @@
     // pinning the kMisc5 rows 0-5 of the 35-row III.E.5
     // table (and opening it).
     {
+        Miscmagic_robes miscmagic_robes;
+        Miscmagic_table5_footnotes miscmagic_table5_footnotes;
         int bad = 0;
         // the robe of the archmagi scalars
-        if (rules::mmpArchmagiWhitePct() != 45 ||
-            rules::mmpArchmagiGrayPct() != 30 ||
-            rules::mmpArchmagiBlackPct() != 25 ||
-            rules::mmpArchmagiAcClass() != 5 ||
-            rules::mmpArchmagiMagicResistPct() != 5 ||
-            rules::mmpArchmagiSaveBonus() != 1 ||
-            rules::mmpArchmagiPenaltyPct() != 20 ||
-            rules::mmpArchmagiPenaltyMinus() != 4 ||
-            rules::mmpArchmagiCharmFamilyCount() != 7) ++bad;
+        if (miscmagic_robes.mmpArchmagiWhitePct() != 45 ||
+            miscmagic_robes.mmpArchmagiGrayPct() != 30 ||
+            miscmagic_robes.mmpArchmagiBlackPct() != 25 ||
+            miscmagic_robes.mmpArchmagiAcClass() != 5 ||
+            miscmagic_robes.mmpArchmagiMagicResistPct() != 5 ||
+            miscmagic_robes.mmpArchmagiSaveBonus() != 1 ||
+            miscmagic_robes.mmpArchmagiPenaltyPct() != 20 ||
+            miscmagic_robes.mmpArchmagiPenaltyMinus() != 4 ||
+            miscmagic_robes.mmpArchmagiCharmFamilyCount() != 7) ++bad;
         // the archmagi clash scalars
-        if (rules::mmpArchmagiClashDmgMin() != 18 ||
-            rules::mmpArchmagiClashDmgMax() != 51 ||
-            rules::mmpArchmagiClashDiceCount() != 11 ||
-            rules::mmpArchmagiClashDiceBonus() != 7 ||
-            rules::mmpArchmagiClashXpMin() != 18000 ||
-            rules::mmpArchmagiClashXpMax() != 51000 ||
-            rules::mmpArchmagiGrayDmgMin() != 6 ||
-            rules::mmpArchmagiGrayDmgMax() != 24 ||
-            rules::mmpArchmagiGrayXpMin() != 6000 ||
-            rules::mmpArchmagiGrayXpMax() != 24000) ++bad;
+        if (miscmagic_robes.mmpArchmagiClashDmgMin() != 18 ||
+            miscmagic_robes.mmpArchmagiClashDmgMax() != 51 ||
+            miscmagic_robes.mmpArchmagiClashDiceCount() != 11 ||
+            miscmagic_robes.mmpArchmagiClashDiceBonus() != 7 ||
+            miscmagic_robes.mmpArchmagiClashXpMin() != 18000 ||
+            miscmagic_robes.mmpArchmagiClashXpMax() != 51000 ||
+            miscmagic_robes.mmpArchmagiGrayDmgMin() != 6 ||
+            miscmagic_robes.mmpArchmagiGrayDmgMax() != 24 ||
+            miscmagic_robes.mmpArchmagiGrayXpMin() != 6000 ||
+            miscmagic_robes.mmpArchmagiGrayXpMax() != 24000) ++bad;
         // the color split sums to 100 percent
-        if (rules::mmpArchmagiWhitePct() +
-            rules::mmpArchmagiGrayPct() +
-            rules::mmpArchmagiBlackPct() != 100) ++bad;
+        if (miscmagic_robes.mmpArchmagiWhitePct() +
+            miscmagic_robes.mmpArchmagiGrayPct() +
+            miscmagic_robes.mmpArchmagiBlackPct() != 100) ++bad;
         // the clash dice reproduce the printed damage
-        if (rules::mmpArchmagiClashDiceCount() +
-            rules::mmpArchmagiClashDiceBonus() !=
-            rules::mmpArchmagiClashDmgMin() ||
-            4 * rules::mmpArchmagiClashDiceCount() +
-            rules::mmpArchmagiClashDiceBonus() !=
-            rules::mmpArchmagiClashDmgMax()) ++bad;
+        if (miscmagic_robes.mmpArchmagiClashDiceCount() +
+            miscmagic_robes.mmpArchmagiClashDiceBonus() !=
+            miscmagic_robes.mmpArchmagiClashDmgMin() ||
+            4 * miscmagic_robes.mmpArchmagiClashDiceCount() +
+            miscmagic_robes.mmpArchmagiClashDiceBonus() !=
+            miscmagic_robes.mmpArchmagiClashDmgMax()) ++bad;
         // the robe of blending scalars
-        if (rules::mmpBlendDetectRangeInches() != 3 ||
-            rules::mmpBlendDetectPerIntPct() != 1 ||
-            rules::mmpBlendDetectIntMin() != 15 ||
-            rules::mmpBlendLevelDetectIntMin() != 5 ||
-            rules::mmpBlendLevelDetectLevelMin() != 10 ||
-            rules::mmpBlendDetectPerLevelPct() != 1 ||
-            rules::mmpBlendExamplePct() != 30) ++bad;
+        if (miscmagic_robes.mmpBlendDetectRangeInches() != 3 ||
+            miscmagic_robes.mmpBlendDetectPerIntPct() != 1 ||
+            miscmagic_robes.mmpBlendDetectIntMin() != 15 ||
+            miscmagic_robes.mmpBlendLevelDetectIntMin() != 5 ||
+            miscmagic_robes.mmpBlendLevelDetectLevelMin() != 10 ||
+            miscmagic_robes.mmpBlendDetectPerLevelPct() != 1 ||
+            miscmagic_robes.mmpBlendExamplePct() != 30) ++bad;
         // the example is the two chances summed
-        if (18 * rules::mmpBlendDetectPerIntPct() +
-            12 * rules::mmpBlendDetectPerLevelPct() !=
-            rules::mmpBlendExamplePct()) ++bad;
+        if (18 * miscmagic_robes.mmpBlendDetectPerIntPct() +
+            12 * miscmagic_robes.mmpBlendDetectPerLevelPct() !=
+            miscmagic_robes.mmpBlendExamplePct()) ++bad;
         // the robe of eyes scalars
-        if (rules::mmpEyesInfravisionInches() != 12 ||
-            rules::mmpEyesSeeInvisibleInches() != 24 ||
-            rules::mmpEyesSeeInfraredInches() != 12 ||
-            rules::mmpEyesTrackRangerLevel() != 12 ||
-            rules::mmpEyesBlindLightMin() != 1 ||
-            rules::mmpEyesBlindLightMax() != 3 ||
-            rules::mmpEyesBlindContinualMin() != 2 ||
-            rules::mmpEyesBlindContinualMax() != 8) ++bad;
+        if (miscmagic_robes.mmpEyesInfravisionInches() != 12 ||
+            miscmagic_robes.mmpEyesSeeInvisibleInches() != 24 ||
+            miscmagic_robes.mmpEyesSeeInfraredInches() != 12 ||
+            miscmagic_robes.mmpEyesTrackRangerLevel() != 12 ||
+            miscmagic_robes.mmpEyesBlindLightMin() != 1 ||
+            miscmagic_robes.mmpEyesBlindLightMax() != 3 ||
+            miscmagic_robes.mmpEyesBlindContinualMin() != 2 ||
+            miscmagic_robes.mmpEyesBlindContinualMax() != 8) ++bad;
         // the robe of powerlessness scalars
-        if (rules::mmpPowerlessIntelligence() != 3 ||
-            rules::mmpPowerlessStrength() != 3) ++bad;
+        if (miscmagic_robes.mmpPowerlessIntelligence() != 3 ||
+            miscmagic_robes.mmpPowerlessStrength() != 3) ++bad;
         // the robe of scintillating colors scalars
-        if (rules::mmpScintIntMin() != 15 ||
-            rules::mmpScintWisMin() != 13 ||
-            rules::mmpScintLightFeet() != 40 ||
-            rules::mmpScintStartRounds() != 1 ||
-            rules::mmpScintTransfixMin() != 2 ||
-            rules::mmpScintTransfixMax() != 5 ||
-            rules::mmpScintHitPctPerRound() != 5 ||
-            rules::mmpScintHitPctMax() != 25 ||
-            rules::mmpScintHitMaxRounds() != 5 ||
-            rules::mmpScintCastRangeInches() != 1 ||
-            rules::mmpScintHypnotizeMin() != 2 ||
-            rules::mmpScintHypnotizeMax() != 5) ++bad;
+        if (miscmagic_robes.mmpScintIntMin() != 15 ||
+            miscmagic_robes.mmpScintWisMin() != 13 ||
+            miscmagic_robes.mmpScintLightFeet() != 40 ||
+            miscmagic_robes.mmpScintStartRounds() != 1 ||
+            miscmagic_robes.mmpScintTransfixMin() != 2 ||
+            miscmagic_robes.mmpScintTransfixMax() != 5 ||
+            miscmagic_robes.mmpScintHitPctPerRound() != 5 ||
+            miscmagic_robes.mmpScintHitPctMax() != 25 ||
+            miscmagic_robes.mmpScintHitMaxRounds() != 5 ||
+            miscmagic_robes.mmpScintCastRangeInches() != 1 ||
+            miscmagic_robes.mmpScintHypnotizeMin() != 2 ||
+            miscmagic_robes.mmpScintHypnotizeMax() != 5) ++bad;
         // the hit ladder reaches the max at the max rounds
-        if (rules::mmpScintHitPctPerRound() *
-            rules::mmpScintHitMaxRounds() !=
-            rules::mmpScintHitPctMax()) ++bad;
+        if (miscmagic_robes.mmpScintHitPctPerRound() *
+            miscmagic_robes.mmpScintHitMaxRounds() !=
+            miscmagic_robes.mmpScintHitPctMax()) ++bad;
         // the robe of useful items scalars
-        if (rules::mmpUsefulDetachRounds() != 1 ||
-            rules::mmpUsefulBaseEach() != 2 ||
-            rules::mmpUsefulBaseCount() != 6 ||
-            rules::mmpUsefulExtraMin() != 4 ||
-            rules::mmpUsefulExtraMax() != 16 ||
-            rules::mmpUsefulGpBag() != 100 ||
-            rules::mmpUsefulCofferGp() != 500 ||
-            rules::mmpUsefulGemsCount() != 10 ||
-            rules::mmpUsefulGemValueGp() != 100 ||
-            rules::mmpUsefulLadderFeet() != 24 ||
-            rules::mmpUsefulPitCubicFeet() != 10 ||
-            rules::mmpUsefulRowboatFeet() != 12 ||
-            rules::mmpUsefulWindowWidthFeet() != 2 ||
-            rules::mmpUsefulWindowHeightFeet() != 4 ||
-            rules::mmpUsefulWindowDepthFeet() != 2 ||
-            rules::mmpUsefulScrollSpells() != 1 ||
-            rules::mmpUsefulWarDogsPair() != 2) ++bad;
+        if (miscmagic_robes.mmpUsefulDetachRounds() != 1 ||
+            miscmagic_robes.mmpUsefulBaseEach() != 2 ||
+            miscmagic_robes.mmpUsefulBaseCount() != 6 ||
+            miscmagic_robes.mmpUsefulExtraMin() != 4 ||
+            miscmagic_robes.mmpUsefulExtraMax() != 16 ||
+            miscmagic_robes.mmpUsefulGpBag() != 100 ||
+            miscmagic_robes.mmpUsefulCofferGp() != 500 ||
+            miscmagic_robes.mmpUsefulGemsCount() != 10 ||
+            miscmagic_robes.mmpUsefulGemValueGp() != 100 ||
+            miscmagic_robes.mmpUsefulLadderFeet() != 24 ||
+            miscmagic_robes.mmpUsefulPitCubicFeet() != 10 ||
+            miscmagic_robes.mmpUsefulRowboatFeet() != 12 ||
+            miscmagic_robes.mmpUsefulWindowWidthFeet() != 2 ||
+            miscmagic_robes.mmpUsefulWindowHeightFeet() != 4 ||
+            miscmagic_robes.mmpUsefulWindowDepthFeet() != 2 ||
+            miscmagic_robes.mmpUsefulScrollSpells() != 1 ||
+            miscmagic_robes.mmpUsefulWarDogsPair() != 2) ++bad;
         // the extra items dice table against static twins
         static const int kUlo[13] = {
             1, 9, 16, 23, 31, 45, 52,
@@ -109,17 +111,17 @@
             68, 75, 83, 90, 96, 100,
         };
         for (int i = 0; i < 13; ++i)
-            if (rules::mmpUsefulRowLo(i) != kUlo[i] ||
-                rules::mmpUsefulRowHi(i) != kUhi[i]) ++bad;
+            if (miscmagic_robes.mmpUsefulRowLo(i) != kUlo[i] ||
+                miscmagic_robes.mmpUsefulRowHi(i) != kUhi[i]) ++bad;
         // the bands run 01 through 00 with no gaps
-        if (rules::mmpUsefulRowLo(0) != 1 ||
-            rules::mmpUsefulRowHi(12) != 100) ++bad;
+        if (miscmagic_robes.mmpUsefulRowLo(0) != 1 ||
+            miscmagic_robes.mmpUsefulRowHi(12) != 100) ++bad;
         for (int i = 0; i < 12; ++i)
-            if (rules::mmpUsefulRowLo(i + 1) !=
-                rules::mmpUsefulRowHi(i) + 1) ++bad;
+            if (miscmagic_robes.mmpUsefulRowLo(i + 1) !=
+                miscmagic_robes.mmpUsefulRowHi(i) + 1) ++bad;
         for (int i = 0; i < 13; ++i)
-            if (rules::mmpUsefulRowLo(i) >
-                rules::mmpUsefulRowHi(i)) ++bad;
+            if (miscmagic_robes.mmpUsefulRowLo(i) >
+                miscmagic_robes.mmpUsefulRowHi(i)) ++bad;
         // the kMisc5 table opening cross-check
         static const int kRlo[6] = {
             1, 2, 9, 10, 11, 12,
@@ -128,26 +130,26 @@
             1, 8, 9, 10, 11, 19,
         };
         for (int i = 0; i < 6; ++i)
-            if (rules::m5RowLo(i) != kRlo[i] ||
-                rules::m5RowHi(i) != kRhi[i]) ++bad;
+            if (miscmagic_table5_footnotes.m5RowLo(i) != kRlo[i] ||
+                miscmagic_table5_footnotes.m5RowHi(i) != kRhi[i]) ++bad;
         // the marks: only the scintillating robe is (C)
         for (int i = 0; i < 6; ++i)
             if (i != 4 &&
-                rules::m5UsableByCleric(i) != 0) ++bad;
+                miscmagic_table5_footnotes.m5UsableByCleric(i) != 0) ++bad;
         // no fighter or thief marks on the robes
         for (int i = 0; i < 6; ++i)
-            if (rules::m5UsableByFighter(i) != 0) ++bad;
+            if (miscmagic_table5_footnotes.m5UsableByFighter(i) != 0) ++bad;
         for (int i = 0; i < 6; ++i)
-            if (rules::m5UsableByThief(i) != 0) ++bad;
+            if (miscmagic_table5_footnotes.m5UsableByThief(i) != 0) ++bad;
         // the magic-user marks: all robes but the blending
         for (int i = 0; i < 6; ++i)
             if (i != 1 &&
-                rules::m5UsableByMagicUser(i) != 1) ++bad;
+                miscmagic_table5_footnotes.m5UsableByMagicUser(i) != 1) ++bad;
         // the whole-table counts and row census
-        if (rules::m5ClericCount() != 5 ||
-            rules::m5FighterCount() != 5 ||
-            rules::m5MagicUserCount() != 8 ||
-            rules::m5ThiefCount() != 2 ||
-            rules::m5RowCount() != 35) ++bad;
+        if (miscmagic_table5_footnotes.m5ClericCount() != 5 ||
+            miscmagic_table5_footnotes.m5FighterCount() != 5 ||
+            miscmagic_table5_footnotes.m5MagicUserCount() != 8 ||
+            miscmagic_table5_footnotes.m5ThiefCount() != 2 ||
+            miscmagic_table5_footnotes.m5RowCount() != 35) ++bad;
         printf("R277 misc magic prose part 21 pins audit: bad %d\n", bad);
     }

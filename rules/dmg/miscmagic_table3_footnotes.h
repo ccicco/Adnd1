@@ -54,169 +54,29 @@
 
 #pragma once
 
-namespace rules {
-
-inline int m3RowCount() {
-    // Figurine through the 93-00 Ointment
-    return 33;
-}
-
-inline int m3RowLo(int i) {
-    // the printed band lower edges; i clamps
-    if (i < 0) i = 0;
-    if (i > 32) i = 32;
-    static const int t[33] = {
-        1, 16, 17, 19, 21, 23, 26, 27, 28, 29,
-        30, 31, 36, 38, 40, 41, 46, 47, 49, 50,
-        54, 61, 64, 66, 71, 72, 73, 79, 81, 86,
-        91, 92, 93,
-    };
-    return t[i];
-}
-
-inline int m3RowHi(int i) {
-    // the printed band upper edges; i clamps
-    if (i < 0) i = 0;
-    if (i > 32) i = 32;
-    static const int t[33] = {
-        15, 16, 18, 20, 22, 25, 26, 27, 28, 29,
-        30, 35, 37, 39, 40, 45, 46, 48, 49, 53,
-        60, 63, 65, 70, 71, 72, 78, 80, 85, 90,
-        91, 92, 100,
-    };
-    return t[i];
-}
-
-inline int m3UsableByCleric(int i) {
-    // the (C) mark; i clamps
-    if (i < 0) i = 0;
-    if (i > 32) i = 32;
-    static const int t[33] = {
-        0, 0, 0, 0, 1, 1, 0, 0, 1, 1,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-        0, 0, 0, 1, 1, 0, 0, 0, 0, 0,
-        0, 0, 0,
-    };
-    return t[i];
-}
-
-inline int m3UsableByFighter(int i) {
-    // the (F) mark; i clamps
-    if (i < 0) i = 0;
-    if (i > 32) i = 32;
-    static const int t[33] = {
-        0, 0, 0, 0, 1, 1, 0, 0, 1, 1,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-        0, 0, 0, 0, 0, 0, 0, 0, 1, 1,
-        0, 0, 0,
-    };
-    return t[i];
-}
-
-inline int m3UsableByThief(int i) {
-    // the (T) mark; i clamps
-    if (i < 0) i = 0;
-    if (i > 32) i = 32;
-    static const int t[33] = {
-        0, 0, 0, 0, 1, 1, 0, 0, 1, 1,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0,
-    };
-    return t[i];
-}
-
-inline int m3StarCount(int i) {
-    // the asterisk ladder: 1 the Figurine
-    // (per hit die), 2 the Horn of Valhalla
-    // (bronze/iron), 3 the Ioun Stones (per
-    // stone), 4 the Instrument of the Bards
-    // (per level of instrument); i clamps
-    if (i < 0) i = 0;
-    if (i > 32) i = 32;
-    static const int t[33] = {
-        1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        2, 0, 0, 0, 0, 3, 4, 0, 0, 0,
-        0, 0, 0,
-    };
-    return t[i];
-}
-
-inline int m3IsPerFacetValued(int i) {
-    // the Jewel of Flawlessness (92): 1,000
-    // g.p. per facet; i clamps
-    if (i < 0) i = 0;
-    if (i > 32) i = 32;
-    static const int t[33] = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 1, 0,
-    };
-    return t[i];
-}
-
-inline int m3ClericCount() {
-    return 7;
-}
-
-inline int m3FighterCount() {
-    return 7;
-}
-
-inline int m3ThiefCount() {
-    return 4;
-}
-
-inline int m3FigurinePerHitDieXp() {
-    // per hit die of the figurine
-    return 100;
-}
-
-inline int m3FigurinePerHitDieGp() {
-    return 1000;
-}
-
-inline int m3ValhallaBaseXp() {
-    return 1000;
-}
-
-inline int m3ValhallaBaseGp() {
-    return 15000;
-}
-
-inline int m3ValhallaBronzeMult() {
-    // double for a bronze horn
-    return 2;
-}
-
-inline int m3ValhallaIronMult() {
-    // triple for an iron horn
-    return 3;
-}
-
-inline int m3IounPerStoneXp() {
-    // per stone
-    return 300;
-}
-
-inline int m3IounPerStoneGp() {
-    return 5000;
-}
-
-inline int m3InstrumentBaseXp() {
-    // per level of instrument for bards
-    return 1000;
-}
-
-inline int m3InstrumentBaseGp() {
-    return 5000;
-}
-
-inline int m3JewelPerFacetGp() {
-    // no x.p., 1,000 g.p. per facet
-    return 1000;
-}
-
-}  // namespace rules
+// R-refactor: namespace rules -> class Miscmagic_table3_footnotes (instance methods)
+class Miscmagic_table3_footnotes {
+public:
+    int m3RowCount();
+    int m3RowLo(int i);
+    int m3RowHi(int i);
+    int m3UsableByCleric(int i);
+    int m3UsableByFighter(int i);
+    int m3UsableByThief(int i);
+    int m3StarCount(int i);
+    int m3IsPerFacetValued(int i);
+    int m3ClericCount();
+    int m3FighterCount();
+    int m3ThiefCount();
+    int m3FigurinePerHitDieXp();
+    int m3FigurinePerHitDieGp();
+    int m3ValhallaBaseXp();
+    int m3ValhallaBaseGp();
+    int m3ValhallaBronzeMult();
+    int m3ValhallaIronMult();
+    int m3IounPerStoneXp();
+    int m3IounPerStoneGp();
+    int m3InstrumentBaseXp();
+    int m3InstrumentBaseGp();
+    int m3JewelPerFacetGp();
+};

@@ -8,88 +8,90 @@
     // (no running heads between lines 1450
     // and 1797).
     {
+        Specart specart;
+        Specart_axe_of_the_dwarvish_lords_to_codex specart_axe_of_the_dwarvish_lords_to_codex;
         int bad = 0;
         // the Sceptre scalars, bands and blanks
-        if (rules::sapSceptreCount() != 3 ||
-            rules::sapSceptreSourceCrownOfMight() != 1 ||
-            rules::sapSceptreEvilBandLo() != 1 ||
-            rules::sapSceptreEvilBandHi() != 6 ||
-            rules::sapSceptreGoodBandLo() != 7 ||
-            rules::sapSceptreGoodBandHi() != 14 ||
-            rules::sapSceptreNeutralBandLo() != 15 ||
-            rules::sapSceptreNeutralBandHi() != 20 ||
-            rules::sapSceptreForeignEthosCrownEffects() != 1 ||
-            rules::sapSceptreBronzeInlaidSilver() != 1 ||
-            rules::sapSceptreHugeStoneTipping() != 1 ||
-            rules::sapSceptreLengthFeet() != 2 ||
-            rules::sapSceptreValueGp() != 150000 ||
-            rules::sapSceptreRodOfBeguiling() != 1 ||
-            rules::sapSceptreCrownOrbComboNote() != 1 ||
-            rules::sapSceptreBlankSlotCount() != 9) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapSceptreCount() != 3 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapSceptreSourceCrownOfMight() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapSceptreEvilBandLo() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapSceptreEvilBandHi() != 6 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapSceptreGoodBandLo() != 7 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapSceptreGoodBandHi() != 14 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapSceptreNeutralBandLo() != 15 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapSceptreNeutralBandHi() != 20 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapSceptreForeignEthosCrownEffects() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapSceptreBronzeInlaidSilver() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapSceptreHugeStoneTipping() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapSceptreLengthFeet() != 2 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapSceptreValueGp() != 150000 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapSceptreRodOfBeguiling() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapSceptreCrownOrbComboNote() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapSceptreBlankSlotCount() != 9) ++bad;
         static const int kS[6] = {
             1, 1, 0, 0, 0, 1,
         };
         for (int i = 0; i < 6; ++i)
-            if (rules::sapSceptreTableUse(i) != kS[i]) ++bad;
-        if (rules::sapSceptreTableUse(0) +
-            rules::sapSceptreTableUse(1) +
-            rules::sapSceptreTableUse(2) +
-            rules::sapSceptreTableUse(3) +
-            rules::sapSceptreTableUse(4) +
-            rules::sapSceptreTableUse(5) !=
-            rules::sapSceptreUseTotal()) ++bad;
+            if (specart_axe_of_the_dwarvish_lords_to_codex.sapSceptreTableUse(i) != kS[i]) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapSceptreTableUse(0) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapSceptreTableUse(1) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapSceptreTableUse(2) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapSceptreTableUse(3) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapSceptreTableUse(4) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapSceptreTableUse(5) !=
+            specart_axe_of_the_dwarvish_lords_to_codex.sapSceptreUseTotal()) ++bad;
         // the Kas legend scalars
-        if (rules::sapKasOfVecnaTheLich() != 1 ||
-            rules::sapKasBodyguardRightHand() != 1 ||
-            rules::sapKasFlatchetDullGrayMetal() != 1 ||
-            rules::sapKasSharpPointKeenEdges() != 1 ||
-            rules::sapKasServedFaithfully() != 1 ||
-            rules::sapKasHubrisGrew() != 1 ||
-            rules::sapKasSwordUrgedHimOn() != 1 ||
-            rules::sapKasGreaterThanVecna() != 1 ||
-            rules::sapKasCouldRuleInVecnaStead() != 1 ||
-            rules::sapKasDestroyedVecna() != 1 ||
-            rules::sapKasDoomWroughtTogether() != 1 ||
-            rules::sapKasWorldBrighter() != 1) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapKasOfVecnaTheLich() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasBodyguardRightHand() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasFlatchetDullGrayMetal() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasSharpPointKeenEdges() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasServedFaithfully() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasHubrisGrew() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasSwordUrgedHimOn() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasGreaterThanVecna() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasCouldRuleInVecnaStead() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasDestroyedVecna() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasDoomWroughtTogether() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasWorldBrighter() != 1) ++bad;
         // the blade scalars
-        if (rules::sapKasPowersOnlyHinted() != 1 ||
-            rules::sapKasRenownedSwordsman() != 1 ||
-            rules::sapKasPlusBonus() != 6 ||
-            rules::sapKasDefender() != 1 ||
-            rules::sapKasDoubleDamageOffPlane() != 1 ||
-            rules::sapKasNormalDamageOnOtherPlanes() != 1 ||
-            rules::sapKasShortSword() != 1 ||
-            rules::sapKasEvilChaoticAlignment() != 1 ||
-            rules::sapKasIntelligence() != 15 ||
-            rules::sapKasEgo() != 19 ||
-            rules::sapKasTriesToControl() != 1 ||
-            rules::sapKasPrintsInOrder() != 1) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapKasPowersOnlyHinted() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasRenownedSwordsman() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasPlusBonus() != 6 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasDefender() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasDoubleDamageOffPlane() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasNormalDamageOnOtherPlanes() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasShortSword() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasEvilChaoticAlignment() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasIntelligence() != 15 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasEgo() != 19 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasTriesToControl() != 1 ||
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasPrintsInOrder() != 1) ++bad;
         static const int kK[6] = {
             5, 2, 1, 2, 2, 1,
         };
         for (int i = 0; i < 6; ++i)
-            if (rules::sapKasTableUse(i) != kK[i]) ++bad;
-        if (rules::sapKasTableUse(0) +
-            rules::sapKasTableUse(1) +
-            rules::sapKasTableUse(2) +
-            rules::sapKasTableUse(3) +
-            rules::sapKasTableUse(4) +
-            rules::sapKasTableUse(5) !=
-            rules::sapKasUseTotal()) ++bad;
+            if (specart_axe_of_the_dwarvish_lords_to_codex.sapKasTableUse(i) != kK[i]) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapKasTableUse(0) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasTableUse(1) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasTableUse(2) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasTableUse(3) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasTableUse(4) +
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasTableUse(5) !=
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasUseTotal()) ++bad;
         // each Kas use carries one blank slot
-        if (rules::sapKasBlankSlotCount() !=
-            rules::sapKasUseTotal()) ++bad;
+        if (specart_axe_of_the_dwarvish_lords_to_codex.sapKasBlankSlotCount() !=
+            specart_axe_of_the_dwarvish_lords_to_codex.sapKasUseTotal()) ++bad;
         // the cross-pins: the R240 sale rows 24 and 25
         // (a range row and a fixed single-die row)
-        if (rules::saRowLo(24) != 75 ||
-            rules::saRowHi(24) != 91 ||
-            rules::saSaleGp(24) != 150000 ||
-            rules::saSaleGpHi(24) != 0 ||
-            rules::saSaleGp(24) !=
-            rules::sapSceptreValueGp()) ++bad;
-        if (rules::saRowLo(25) != 92 ||
-            rules::saRowHi(25) != 92 ||
-            rules::saSaleGp(25) != 97000 ||
-            rules::saSaleGpHi(25) != 0) ++bad;
+        if (specart.saRowLo(24) != 75 ||
+            specart.saRowHi(24) != 91 ||
+            specart.saSaleGp(24) != 150000 ||
+            specart.saSaleGpHi(24) != 0 ||
+            specart.saSaleGp(24) !=
+            specart_axe_of_the_dwarvish_lords_to_codex.sapSceptreValueGp()) ++bad;
+        if (specart.saRowLo(25) != 92 ||
+            specart.saRowHi(25) != 92 ||
+            specart.saSaleGp(25) != 97000 ||
+            specart.saSaleGpHi(25) != 0) ++bad;
         printf("R293 special artifacts prose part 14 pins audit: bad %d\n", bad);
     }

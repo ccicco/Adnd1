@@ -36,127 +36,22 @@
 
 #pragma once
 
-namespace rules {
-
-inline int m2RowCount() {
-    // Candle through Eyes of Petrification
-    return 30;
-}
-
-inline int m2RowLo(int i) {
-    // the printed band lower edges; i clamps
-    if (i < 0) i = 0;
-    if (i > 29) i = 29;
-    static const int t[30] = {
-        1, 7, 9, 11, 12, 14, 15, 19, 28, 31,
-        33, 56, 61, 62, 64, 66, 68, 70, 73, 77,
-        78, 80, 86, 92, 93, 94, 95, 96, 98, 100,
-    };
-    return t[i];
-}
-
-inline int m2RowHi(int i) {
-    // the printed band upper edges; i clamps
-    if (i < 0) i = 0;
-    if (i > 29) i = 29;
-    static const int t[30] = {
-        6, 8, 10, 11, 13, 14, 18, 27, 30, 32,
-        55, 60, 61, 63, 65, 67, 69, 72, 76, 77,
-        79, 85, 91, 92, 93, 94, 95, 97, 99, 100,
-    };
-    return t[i];
-}
-
-inline int m2UsableByCleric(int i) {
-    // the (C) mark; i clamps
-    if (i < 0) i = 0;
-    if (i > 29) i = 29;
-    static const int t[30] = {
-        1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    };
-    return t[i];
-}
-
-inline int m2UsableByMagicUser(int i) {
-    // the (M) mark; i clamps
-    if (i < 0) i = 0;
-    if (i > 29) i = 29;
-    static const int t[30] = {
-        0, 0, 1, 1, 0, 0, 0, 0, 0, 0,
-        0, 1, 1, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
-    };
-    return t[i];
-}
-
-inline int m2IsPerPlusValued(int i) {
-    // the Cloak of Protection per-plus asterisk row; i clamps
-    if (i < 0) i = 0;
-    if (i > 29) i = 29;
-    static const int t[30] = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    };
-    return t[i];
-}
-
-inline int m2HasFeatureAsterisk(int i) {
-    // the Crystal Ball double-asterisk row; i clamps
-    if (i < 0) i = 0;
-    if (i > 29) i = 29;
-    static const int t[30] = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 1, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    };
-    return t[i];
-}
-
-inline int m2IsTripleStar(int i) {
-    // the Eyes of Petrification triple-asterisk row; i clamps
-    if (i < 0) i = 0;
-    if (i > 29) i = 29;
-    static const int t[30] = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-    };
-    return t[i];
-}
-
-inline int m2ClericCount() {
-    return 1;
-}
-
-inline int m2MagicUserCount() {
-    return 5;
-}
-
-inline int m2CloakPerPlusXp() {
-    // per plus of protection
-    return 1000;
-}
-
-inline int m2CloakPerPlusGp() {
-    return 10000;
-}
-
-inline int m2CrystalBallBaseXp() {
-    return 1000;
-}
-
-inline int m2CrystalBallBaseGp() {
-    return 5000;
-}
-
-inline int m2CrystalBallFeatureBonusPct() {
-    // add 100% for each additional
-    // feature
-    return 100;
-}
-
-}  // namespace rules
-
+// R-refactor: namespace rules -> class Miscmagic_table2_footnotes (instance methods)
+class Miscmagic_table2_footnotes {
+public:
+    int m2RowCount();
+    int m2RowLo(int i);
+    int m2RowHi(int i);
+    int m2UsableByCleric(int i);
+    int m2UsableByMagicUser(int i);
+    int m2IsPerPlusValued(int i);
+    int m2HasFeatureAsterisk(int i);
+    int m2IsTripleStar(int i);
+    int m2ClericCount();
+    int m2MagicUserCount();
+    int m2CloakPerPlusXp();
+    int m2CloakPerPlusGp();
+    int m2CrystalBallBaseXp();
+    int m2CrystalBallBaseGp();
+    int m2CrystalBallFeatureBonusPct();
+};

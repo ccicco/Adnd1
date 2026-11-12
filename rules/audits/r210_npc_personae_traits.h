@@ -4,166 +4,167 @@
     // tables, the morals asterisk rule, and the
     // reaction adjustment percents.
     {
+        Npctraits npctraits;
         int bad = 0;
         // the tendencies: 24 rows, the d6 halves
-        if (rules::npcTendencyCount() != 24) ++bad;
-        if (rules::npcTraitTendency(1, 1) != 0 ||
-            rules::npcTraitTendency(3, 12) != 11 ||
-            rules::npcTraitTendency(4, 1) != 12 ||
-            rules::npcTraitTendency(6, 12) != 23 ||
-            rules::npcTraitTendency(2, 5)
-                != rules::NPT_HELPFUL_KINDLY ||
-            rules::npcTraitTendency(5, 6)
-                != rules::NPT_FOUL_BARBARIC ||
-            rules::npcTraitTendency(1, 24) != 11 ||
-            rules::npcTraitTendency(9, 1) != 12) ++bad;
+        if (npctraits.npcTendencyCount() != 24) ++bad;
+        if (npctraits.npcTraitTendency(1, 1) != 0 ||
+            npctraits.npcTraitTendency(3, 12) != 11 ||
+            npctraits.npcTraitTendency(4, 1) != 12 ||
+            npctraits.npcTraitTendency(6, 12) != 23 ||
+            npctraits.npcTraitTendency(2, 5)
+                != NPT_HELPFUL_KINDLY ||
+            npctraits.npcTraitTendency(5, 6)
+                != NPT_FOUL_BARBARIC ||
+            npctraits.npcTraitTendency(1, 24) != 11 ||
+            npctraits.npcTraitTendency(9, 1) != 12) ++bad;
         // the personality: the column split and
         // the per-column words
-        if (rules::npcTraitPersonalityType(1)
-                != rules::NPPTY_AVERAGE ||
-            rules::npcTraitPersonalityType(5)
-                != rules::NPPTY_AVERAGE ||
-            rules::npcTraitPersonalityType(6)
-                != rules::NPPTY_EXTROVERTED ||
-            rules::npcTraitPersonalityType(7)
-                != rules::NPPTY_EXTROVERTED ||
-            rules::npcTraitPersonalityType(8)
-                != rules::NPPTY_INTROVERTED) ++bad;
-        if (rules::npcTraitPersonality(1, 1)
-                != rules::NPPW_MODEST ||
-            rules::npcTraitPersonality(1, 8)
-                != rules::NPPW_ABRASIVE ||
-            rules::npcTraitPersonality(6, 1)
-                != rules::NPPW_FORCEFUL ||
-            rules::npcTraitPersonality(7, 7)
-                != rules::NPPW_RASH ||
-            rules::npcTraitPersonality(8, 1)
-                != rules::NPPW_RETIRING ||
-            rules::npcTraitPersonality(8, 8)
-                != rules::NPPW_SOLITARY_SECRETIVE) ++bad;
+        if (npctraits.npcTraitPersonalityType(1)
+                != NPPTY_AVERAGE ||
+            npctraits.npcTraitPersonalityType(5)
+                != NPPTY_AVERAGE ||
+            npctraits.npcTraitPersonalityType(6)
+                != NPPTY_EXTROVERTED ||
+            npctraits.npcTraitPersonalityType(7)
+                != NPPTY_EXTROVERTED ||
+            npctraits.npcTraitPersonalityType(8)
+                != NPPTY_INTROVERTED) ++bad;
+        if (npctraits.npcTraitPersonality(1, 1)
+                != NPPW_MODEST ||
+            npctraits.npcTraitPersonality(1, 8)
+                != NPPW_ABRASIVE ||
+            npctraits.npcTraitPersonality(6, 1)
+                != NPPW_FORCEFUL ||
+            npctraits.npcTraitPersonality(7, 7)
+                != NPPW_RASH ||
+            npctraits.npcTraitPersonality(8, 1)
+                != NPPW_RETIRING ||
+            npctraits.npcTraitPersonality(8, 8)
+                != NPPW_SOLITARY_SECRETIVE) ++bad;
         // every personality cell: the identity
         // walk (col base + row)
         static const int kPersColBase[3] = { 0, 8, 16 };
         for (int c = 0; c < 3; ++c)
             for (int r = 1; r <= 8; ++r)
-                if (rules::npcTraitPersonality(
+                if (npctraits.npcTraitPersonality(
                         c == 0 ? 1 : (c == 1 ? 6 : 8), r)
                     != kPersColBase[c] + r - 1) ++bad;
         // the interests: the halves, the
         // collector rows and the none rows
-        if (rules::npcInterestCount() != 24) ++bad;
-        if (rules::npcTraitInterest(1, 1)
-                != rules::NPI_RELIGION ||
-            rules::npcTraitInterest(3, 12)
-                != rules::NPI_POLITICS ||
-            rules::npcTraitInterest(4, 1)
-                != rules::NPI_WINES_SPIRITS ||
-            rules::npcTraitInterest(5, 5)
-                != rules::NPI_COLLECTOR_1 ||
-            rules::npcTraitInterest(6, 12)
-                != rules::NPI_NONE_2) ++bad;
+        if (npctraits.npcInterestCount() != 24) ++bad;
+        if (npctraits.npcTraitInterest(1, 1)
+                != NPI_RELIGION ||
+            npctraits.npcTraitInterest(3, 12)
+                != NPI_POLITICS ||
+            npctraits.npcTraitInterest(4, 1)
+                != NPI_WINES_SPIRITS ||
+            npctraits.npcTraitInterest(5, 5)
+                != NPI_COLLECTOR_1 ||
+            npctraits.npcTraitInterest(6, 12)
+                != NPI_NONE_2) ++bad;
         for (int i = 16; i <= 19; ++i)
-            if (!rules::npcInterestIsCollector(i)) ++bad;
-        if (rules::npcInterestIsCollector(15) ||
-            rules::npcInterestIsCollector(20)) ++bad;
+            if (!npctraits.npcInterestIsCollector(i)) ++bad;
+        if (npctraits.npcInterestIsCollector(15) ||
+            npctraits.npcInterestIsCollector(20)) ++bad;
         // the disposition, intellect and
         // collections word faces
-        if (rules::npcTraitDisposition(1)
-                != rules::NPD_CHEERFUL ||
-            rules::npcTraitDisposition(3)
-                != rules::NPD_COMPASSIONATE_SENSITIVE ||
-            rules::npcTraitDisposition(10)
-                != rules::NPD_HARSH ||
-            rules::npcTraitDisposition(0)
-                != rules::NPD_HARSH) ++bad;
-        if (rules::npcTraitIntellect(1)
-                != rules::NPIQ_DULL ||
-            rules::npcTraitIntellect(6)
-                != rules::NPIQ_DREAMING ||
-            rules::npcTraitIntellect(10)
-                != rules::NPIQ_BRILLIANT) ++bad;
-        if (!rules::npcIntellectModifiesRating(
-                rules::NPIQ_SCHEMING) ||
-            !rules::npcIntellectModifiesRating(                rules::NPIQ_DREAMING) ||
-            rules::npcIntellectModifiesRating(                rules::NPIQ_ACTIVE_1)) ++bad;
-        if (rules::npcTraitCollection(1)
-                != rules::NPCOL_KNIVES_DAGGERS ||
-            rules::npcTraitCollection(2)
-                != rules::NPCOL_SWORDS ||
-            rules::npcTraitCollection(12)
-                != rules::NPCOL_ARTWORK) ++bad;
+        if (npctraits.npcTraitDisposition(1)
+                != NPD_CHEERFUL ||
+            npctraits.npcTraitDisposition(3)
+                != NPD_COMPASSIONATE_SENSITIVE ||
+            npctraits.npcTraitDisposition(10)
+                != NPD_HARSH ||
+            npctraits.npcTraitDisposition(0)
+                != NPD_HARSH) ++bad;
+        if (npctraits.npcTraitIntellect(1)
+                != NPIQ_DULL ||
+            npctraits.npcTraitIntellect(6)
+                != NPIQ_DREAMING ||
+            npctraits.npcTraitIntellect(10)
+                != NPIQ_BRILLIANT) ++bad;
+        if (!npctraits.npcIntellectModifiesRating(
+                NPIQ_SCHEMING) ||
+            !npctraits.npcIntellectModifiesRating(                NPIQ_DREAMING) ||
+            npctraits.npcIntellectModifiesRating(                NPIQ_ACTIVE_1)) ++bad;
+        if (npctraits.npcTraitCollection(1)
+                != NPCOL_KNIVES_DAGGERS ||
+            npctraits.npcTraitCollection(2)
+                != NPCOL_SWORDS ||
+            npctraits.npcTraitCollection(12)
+                != NPCOL_ARTWORK) ++bad;
         // the nature, materialism, honesty,
         // bravery, energy and thrift faces
-        if (rules::npcTraitNature(1)
-                != rules::NPNT_SOFT_HEARTED ||
-            rules::npcTraitNature(6)
-                != rules::NPNT_VENGEFUL) ++bad;
-        if (rules::npcTraitMaterialism(1)
-                != rules::NPM_AESTHETIC ||
-            rules::npcTraitMaterialism(6)
-                != rules::NPM_AVARICIOUS) ++bad;
-        if (rules::npcTraitHonesty(1)
-                != rules::NPH_SCRUPULOUS ||
-            rules::npcTraitHonesty(4)
-                != rules::NPH_AVERAGE_1 ||
-            rules::npcTraitHonesty(6)
-                != rules::NPH_AVERAGE_3 ||
-            rules::npcTraitHonesty(7)
-                != rules::NPH_LIAR) ++bad;
-        if (rules::npcTraitBravery(4)
-                != rules::NPB_FOOLHARDY ||
-            rules::npcTraitBravery(7)
-                != rules::NPB_COWARDLY) ++bad;
-        if (rules::npcTraitEnergy(1)
-                != rules::NPE_SLOTHFUL ||
-            rules::npcTraitEnergy(8)
-                != rules::NPE_DRIVEN) ++bad;
-        if (rules::npcTraitThrift(1)
-                != rules::NPTHR_MISERLY ||
-            rules::npcTraitThrift(6)
-                != rules::NPTHR_SPENDTHRIFT_1 ||
-            rules::npcTraitThrift(8)
-                != rules::NPTHR_WASTREL) ++bad;
+        if (npctraits.npcTraitNature(1)
+                != NPNT_SOFT_HEARTED ||
+            npctraits.npcTraitNature(6)
+                != NPNT_VENGEFUL) ++bad;
+        if (npctraits.npcTraitMaterialism(1)
+                != NPM_AESTHETIC ||
+            npctraits.npcTraitMaterialism(6)
+                != NPM_AVARICIOUS) ++bad;
+        if (npctraits.npcTraitHonesty(1)
+                != NPH_SCRUPULOUS ||
+            npctraits.npcTraitHonesty(4)
+                != NPH_AVERAGE_1 ||
+            npctraits.npcTraitHonesty(6)
+                != NPH_AVERAGE_3 ||
+            npctraits.npcTraitHonesty(7)
+                != NPH_LIAR) ++bad;
+        if (npctraits.npcTraitBravery(4)
+                != NPB_FOOLHARDY ||
+            npctraits.npcTraitBravery(7)
+                != NPB_COWARDLY) ++bad;
+        if (npctraits.npcTraitEnergy(1)
+                != NPE_SLOTHFUL ||
+            npctraits.npcTraitEnergy(8)
+                != NPE_DRIVEN) ++bad;
+        if (npctraits.npcTraitThrift(1)
+                != NPTHR_MISERLY ||
+            npctraits.npcTraitThrift(6)
+                != NPTHR_SPENDTHRIFT_1 ||
+            npctraits.npcTraitThrift(8)
+                != NPTHR_WASTREL) ++bad;
         // the morals: the faces, the marked
         // rows and the asterisk resolution
-        if (rules::npcTraitMorals(1)
-                != rules::NPMOR_ASCETIC ||
-            rules::npcTraitMorals(5)
-                != rules::NPMOR_LUSTY_1 ||
-            rules::npcTraitMorals(10)
-                != rules::NPMOR_PERVERTED ||
-            rules::npcTraitMorals(12)
-                != rules::NPMOR_DEPRAVED) ++bad;
-        if (!rules::npcMoralsIsMarked(                rules::NPMOR_PERVERTED) ||
-            !rules::npcMoralsIsMarked(                rules::NPMOR_SADISTIC) ||
-            !rules::npcMoralsIsMarked(                rules::NPMOR_DEPRAVED) ||
-            rules::npcMoralsIsMarked(                rules::NPMOR_AMORAL) ||
-            rules::npcMoralsIsMarked(                rules::NPMOR_ASCETIC)) ++bad;
-        if (rules::npcMoralsResolved(12, 11)
-                != rules::NPMOR_SADISTIC ||
-            rules::npcMoralsResolved(10, 10)
-                != rules::NPMOR_PERVERTED ||
-            rules::npcMoralsResolved(10, 3)
-                != rules::NPMOR_NORMAL_1 ||
-            rules::npcMoralsResolved(4, 12)
-                != rules::NPMOR_NORMAL_2 ||
-            rules::npcMoralsResolved(2, 11)
-                != rules::NPMOR_VIRTUOUS) ++bad;
+        if (npctraits.npcTraitMorals(1)
+                != NPMOR_ASCETIC ||
+            npctraits.npcTraitMorals(5)
+                != NPMOR_LUSTY_1 ||
+            npctraits.npcTraitMorals(10)
+                != NPMOR_PERVERTED ||
+            npctraits.npcTraitMorals(12)
+                != NPMOR_DEPRAVED) ++bad;
+        if (!npctraits.npcMoralsIsMarked(                NPMOR_PERVERTED) ||
+            !npctraits.npcMoralsIsMarked(                NPMOR_SADISTIC) ||
+            !npctraits.npcMoralsIsMarked(                NPMOR_DEPRAVED) ||
+            npctraits.npcMoralsIsMarked(                NPMOR_AMORAL) ||
+            npctraits.npcMoralsIsMarked(                NPMOR_ASCETIC)) ++bad;
+        if (npctraits.npcMoralsResolved(12, 11)
+                != NPMOR_SADISTIC ||
+            npctraits.npcMoralsResolved(10, 10)
+                != NPMOR_PERVERTED ||
+            npctraits.npcMoralsResolved(10, 3)
+                != NPMOR_NORMAL_1 ||
+            npctraits.npcMoralsResolved(4, 12)
+                != NPMOR_NORMAL_2 ||
+            npctraits.npcMoralsResolved(2, 11)
+                != NPMOR_VIRTUOUS) ++bad;
         // the piety faces: the average run
         // 5-8
-        if (rules::npcTraitPiety(1)
-                != rules::NPP_SAINTLY ||
-            rules::npcTraitPiety(2)
-                != rules::NPP_MARTYR_ZEALOT ||
-            rules::npcTraitPiety(5)
-                != rules::NPP_AVERAGE_1 ||
-            rules::npcTraitPiety(8)
-                != rules::NPP_AVERAGE_4 ||
-            rules::npcTraitPiety(12)
-                != rules::NPP_IRRELIGIOUS) ++bad;
+        if (npctraits.npcTraitPiety(1)
+                != NPP_SAINTLY ||
+            npctraits.npcTraitPiety(2)
+                != NPP_MARTYR_ZEALOT ||
+            npctraits.npcTraitPiety(5)
+                != NPP_AVERAGE_1 ||
+            npctraits.npcTraitPiety(8)
+                != NPP_AVERAGE_4 ||
+            npctraits.npcTraitPiety(12)
+                != NPP_IRRELIGIOUS) ++bad;
         // the reaction adjustment percents:
         // the print mins and maxes
-        if (rules::npcReactGroupCount() != 9) ++bad;
+        if (npctraits.npcReactGroupCount() != 9) ++bad;
         static const int kReactMin[9] = {
             -1, 1, 1, 1, 1, 1, 1, 1, 1,
         };
@@ -171,17 +172,17 @@
             6, 10, 20, 6, 4, 8, 20, 8, 20,
         };
         for (int g = 0; g < 9; ++g)
-            if (rules::npcReactionAdjMin(g)
+            if (npctraits.npcReactionAdjMin(g)
                     != kReactMin[g] ||
-                rules::npcReactionAdjMax(g)
+                npctraits.npcReactionAdjMax(g)
                     != kReactMax[g]) ++bad;
         // the d6/d8/d12/d10 clamps hold at the
         // extremes
-        if (rules::npcTraitTendency(0, 0) != 0 ||
-            rules::npcTraitTendency(7, 13) != 23 ||
-            rules::npcTraitPersonality(9, 9)
-                != rules::NPPW_SOLITARY_SECRETIVE ||
-            rules::npcTraitMorals(0) != 0) ++bad;
+        if (npctraits.npcTraitTendency(0, 0) != 0 ||
+            npctraits.npcTraitTendency(7, 13) != 23 ||
+            npctraits.npcTraitPersonality(9, 9)
+                != NPPW_SOLITARY_SECRETIVE ||
+            npctraits.npcTraitMorals(0) != 0) ++bad;
         printf("R210 NPC personae traits audit: bad %d\n", bad);
         if (bad) return 1;
     }

@@ -40,12 +40,11 @@
 
 #pragma once
 
-namespace rules {
+
 
 // ----------------------------------------------------------------------------
 // Intoxication (p.82)
 // ----------------------------------------------------------------------------
-
 enum IntoxState {
     INTOX_SOBER = 0,
     INTOX_SLIGHT,
@@ -54,63 +53,37 @@ enum IntoxState {
     INTOX_COMATOSE
 };
 
-inline IntoxState intoxicationClamp(IntoxState s) {
-    if (s < INTOX_SOBER) s = INTOX_SOBER;
-    if (s > INTOX_COMATOSE) s = INTOX_COMATOSE;
-    return s;
-}
+// R-refactor: namespace rules -> class Insanity (instance methods)
+class Insanity {
+public:
+    IntoxState intoxicationClamp(IntoxState s);
+
 
 // The eight table rows, slight/moderate/great.
 // Bravery moves up towards foolhardy; morale is
 // NPC-only; hp RISE with the drug.
-inline int intoxicationBraveryAdjust(IntoxState s) {
-    static const int k[5] = { 0, 1, 2, 4, 0 };
-    return k[intoxicationClamp(s)];
-}
-inline int intoxicationMoraleAdjust(IntoxState s) {
-    static const int k[5] = { 0, 5, 10, 15, 0 };
-    return k[intoxicationClamp(s)];
-}
-inline int intoxicationIntelligenceAdjust(IntoxState s) {
-    static const int k[5] = { 0, -1, -3, -6, 0 };
-    return k[intoxicationClamp(s)];
-}
-inline int intoxicationWisdomAdjust(IntoxState s) {
-    static const int k[5] = { 0, -1, -4, -7, 0 };
-    return k[intoxicationClamp(s)];
-}
-inline int intoxicationDexterityAdjust(IntoxState s) {
-    static const int k[5] = { 0, 0, -2, -5, 0 };
-    return k[intoxicationClamp(s)];
-}
-inline int intoxicationCharismaAdjust(IntoxState s) {
-    static const int k[5] = { 0, 0, -1, -4, 0 };
-    return k[intoxicationClamp(s)];
-}
-inline int intoxicationAttackDiceAdjust(IntoxState s) {
-    static const int k[5] = { 0, 0, -1, -5, 0 };
-    return k[intoxicationClamp(s)];
-}
-inline int intoxicationHitPointAdjust(IntoxState s) {
-    static const int k[5] = { 0, 0, 1, 3, 0 };
-    return k[intoxicationClamp(s)];
-}
+    int intoxicationBraveryAdjust(IntoxState s);
+    int intoxicationMoraleAdjust(IntoxState s);
+    int intoxicationIntelligenceAdjust(IntoxState s);
+    int intoxicationWisdomAdjust(IntoxState s);
+    int intoxicationDexterityAdjust(IntoxState s);
+    int intoxicationCharismaAdjust(IntoxState s);
+    int intoxicationAttackDiceAdjust(IntoxState s);
+    int intoxicationHitPointAdjust(IntoxState s);
+
 
 // Opponent saves vs magic from the intoxicated
 // character rise by the attack-dice number: the
 // point value (1 or 5) and its percent form
 // (5 or 25).
-inline int intoxicationMagicSaveRaise(IntoxState s) {
-    return -intoxicationAttackDiceAdjust(s);
-}
-inline int intoxicationMagicSaveRaisePercent(IntoxState s) {
-    static const int k[5] = { 0, 0, 5, 25, 0 };
-    return k[intoxicationClamp(s)];
-}
+    int intoxicationMagicSaveRaise(IntoxState s);
+    int intoxicationMagicSaveRaisePercent(IntoxState s);
+
 
 // Comatose sleep: 7-10 hours.
-inline int intoxicationComatoseSleepMin() { return 7; }
-inline int intoxicationComatoseSleepMax() { return 10; }
+    int intoxicationComatoseSleepMin();
+    int intoxicationComatoseSleepMax();
+
 
 // ----------------------------------------------------------------------------
 // Recovery (p.83)
@@ -118,35 +91,22 @@ inline int intoxicationComatoseSleepMax() { return 10; }
 
 // Recovery time in hours per state (time is the
 // only cure).
-inline int intoxicationRecoveryMin(IntoxState s) {
-    static const int k[5] = { 0, 1, 2, 4, 7 };
-    return k[intoxicationClamp(s)];
-}
-inline int intoxicationRecoveryMax(IntoxState s) {
-    static const int k[5] = { 0, 2, 4, 6, 10 };
-    return k[intoxicationClamp(s)];
-}
+    int intoxicationRecoveryMin(IntoxState s);
+    int intoxicationRecoveryMax(IntoxState s);
+
 
 // Stimulant effect as a percent multiplier on the
 // recovery time (the print: x .80/.85/.90/.95 mild,
 // x .50/.55/.55/.60 strong).
-inline int intoxicationStimulantPercent(
-        IntoxState s, bool strong) {
-    static const int kMild[5] = { 100, 80, 85, 90, 95 };
-    static const int kStrong[5] = { 100, 50, 55, 55, 60 };
-    return strong ? kStrong[intoxicationClamp(s)]
-                  : kMild[intoxicationClamp(s)];
-}
+    int intoxicationStimulantPercent( IntoxState s, bool strong);
+
 
 // A strong stimulant: 5 percent per application of
 // permanently lowering constitution by 1. Mild
 // stimulants are harmless.
-inline int intoxicationStrongStimulantConChance() {
-    return 5;
-}
-inline int intoxicationStrongStimulantConLoss() {
-    return 1;
-}
+    int intoxicationStrongStimulantConChance();
+    int intoxicationStrongStimulantConLoss();
+
 
 // ----------------------------------------------------------------------------
 // The types of insanity (p.83)
@@ -155,137 +115,113 @@ inline int intoxicationStrongStimulantConLoss() {
 // The 20 named forms, 1-20 in the printed order.
 // 1-4 are MILD (subject to psionic attack); 11-20
 // the print lists under COMBAT (INSANITY).
-inline const char* insanityName(int type) {
-    static const char* const k[21] = {
-        "",
-        "dipsomania",
-        "kleptomania",
-        "schizoid",
-        "pathological liar",
-        "monomania",
-        "dementia praecox",
-        "melancholia",
-        "megalomania",
-        "delusional insanity",
-        "schizophrenia",
-        "mania",
-        "lunacy",
-        "paranoia",
-        "manic-depressive",
-        "hallucinatory insanity",
-        "sado-masochism",
-        "homicidal mania",
-        "hebephrenia",
-        "suicidal mania",
-        "catatonia"
-    };
-    if (type < 1) type = 1;
-    if (type > 20) type = 20;
-    return k[type];
-}
+    const char* insanityName(int type);
+
 
 // The four mild forms (the print star): subject to
 // psionic attack.
-inline bool insanityIsMild(int type) {
-    return type >= 1 && type <= 4;
-}
+    bool insanityIsMild(int type);
+
 
 // The psionic-section duration classes: permanent
 // (until heal, restoration or wish; TWO forms),
 // temporary (2-12 weeks; otherwise as permanent),
 // mild (1-4 weeks; ONE form).
-inline int insanityTemporaryWeeksMin() { return 2; }
-inline int insanityTemporaryWeeksMax() { return 12; }
-inline int insanityMildWeeksMin() { return 1; }
-inline int insanityMildWeeksMax() { return 4; }
+    int insanityTemporaryWeeksMin();
+    int insanityTemporaryWeeksMax();
+    int insanityMildWeeksMin();
+    int insanityMildWeeksMax();
+
 
 // 1. Dipsomania: drinking until passing out about
 // once per week; 50 percent it continues on waking
 // near alcohol, 10 percent otherwise.
-inline int insanityDipsomaniaContinueNearAlcohol() {
-    return 50;
-}
-inline int insanityDipsomaniaContinueOtherwise() {
-    return 10;
-}
+    int insanityDipsomaniaContinueNearAlcohol();
+    int insanityDipsomaniaContinueOtherwise();
+
 
 // 2. Kleptomania: 90 percent chance of being seen
 // if observed; thieves and assassins steal at -10
 // percent.
-inline int insanityKleptomaniaSeenChance() { return 90; }
-inline int insanityKleptomaniaThiefPenalty() { return -10; }
+    int insanityKleptomaniaSeenChance();
+    int insanityKleptomaniaThiefPenalty();
+
 
 // 6. Dementia praecox: 25 percent to ignore any
 // situation as meaningless.
-inline int insanityDementiaPraecoxIgnoreChance() { return 25; }
+    int insanityDementiaPraecoxIgnoreChance();
+
 
 // 7. Melancholia: 50 percent to ignore a given
 // situation.
-inline int insanityMelancholiaIgnoreChance() { return 50; }
+    int insanityMelancholiaIgnoreChance();
+
 
 // 10. Schizophrenia: 1-4 personalities; onset 1 in 6
 // per day, checked every round under stress.
-inline int insanitySchizophreniaPersonalitiesMin() { return 1; }
-inline int insanitySchizophreniaPersonalitiesMax() { return 4; }
-inline int insanityOnsetChanceIn6() { return 1; }
+    int insanitySchizophreniaPersonalitiesMin();
+    int insanitySchizophreniaPersonalitiesMax();
+    int insanityOnsetChanceIn6();
+
 
 // 11. Mania: strikes 1 in 6 per turn, lasts 2-12
 // turns, 1 in 6 per turn of return; the d6 strength
 // states 18/50, 18/75, 18/00.
-inline int insanityManiaDurationMinTurns() { return 2; }
-inline int insanityManiaDurationMaxTurns() { return 12; }
-inline int insanityManiaStrengthState(int d6) {
-    static const int k[7] = { 0, 50, 75, 100, 100, 100, 100 };
-    if (d6 < 1) d6 = 1;
-    if (d6 > 6) d6 = 6;
-    return k[d6];
-}
+    int insanityManiaDurationMinTurns();
+    int insanityManiaDurationMaxTurns();
+    int insanityManiaStrengthState(int d6);
+
 
 // 14. Manic-depressive: 1-4 day cycle; 90 percent
 // likely to flip on excitement or frustration.
-inline int insanityManicDepressiveCycleMinDays() { return 1; }
-inline int insanityManicDepressiveCycleMaxDays() { return 4; }
-inline int insanityManicDepressiveFlipChance() { return 90; }
+    int insanityManicDepressiveCycleMinDays();
+    int insanityManicDepressiveCycleMaxDays();
+    int insanityManicDepressiveFlipChance();
+
 
 // 15. Hallucinatory insanity: 50 percent normal
 // until stimulated; hallucinations 1-20 turns
 // after the excitement passes.
-inline int insanityHallucinatoryNormalChance() { return 50; }
-inline int insanityHallucinatoryDurationMinTurns() { return 1; }
-inline int insanityHallucinatoryDurationMaxTurns() { return 20; }
+    int insanityHallucinatoryNormalChance();
+    int insanityHallucinatoryDurationMinTurns();
+    int insanityHallucinatoryDurationMaxTurns();
+
 
 // 16. Sado-masochism: normalcy returns 1-3 days
 // after acting out either phase.
-inline int insanitySadoMasoNormalMinDays() { return 1; }
-inline int insanitySadoMasoNormalMaxDays() { return 3; }
+    int insanitySadoMasoNormalMinDays();
+    int insanitySadoMasoNormalMaxDays();
+
 
 // 17. Homicidal mania: the kill urge on 1-4 day
 // intervals; frustrated killing means mania, then
 // melancholia 1-6 days.
-inline int insanityHomicidalIntervalMinDays() { return 1; }
-inline int insanityHomicidalIntervalMaxDays() { return 4; }
-inline int insanityHomicidalMelancholiaMinDays() { return 1; }
-inline int insanityHomicidalMelancholiaMaxDays() { return 6; }
+    int insanityHomicidalIntervalMinDays();
+    int insanityHomicidalIntervalMaxDays();
+    int insanityHomicidalMelancholiaMinDays();
+    int insanityHomicidalMelancholiaMaxDays();
+
 
 // 18. Hebephrenia: 75 percent enraged when
 // irritated, else catatonic 1-6 hours.
-inline int insanityHebephreniaEnrageChance() { return 75; }
-inline int insanityHebephreniaCatatonicMinHours() { return 1; }
-inline int insanityHebephreniaCatatonicMaxHours() { return 6; }
+    int insanityHebephreniaEnrageChance();
+    int insanityHebephreniaCatatonicMinHours();
+    int insanityHebephreniaCatatonicMaxHours();
+
 
 // 19. Suicidal mania: a 10-80 percent scale by
 // danger; frustration means mania 2-8 turns,
 // then melancholy 2-12 days.
-inline int insanitySuicidalScaleMin() { return 10; }
-inline int insanitySuicidalScaleMax() { return 80; }
-inline int insanitySuicidalManiaMinTurns() { return 2; }
-inline int insanitySuicidalManiaMaxTurns() { return 8; }
-inline int insanitySuicidalMelancholyMinDays() { return 2; }
-inline int insanitySuicidalMelancholyMaxDays() { return 12; }
+    int insanitySuicidalScaleMin();
+    int insanitySuicidalScaleMax();
+    int insanitySuicidalManiaMinTurns();
+    int insanitySuicidalManiaMaxTurns();
+    int insanitySuicidalMelancholyMinDays();
+    int insanitySuicidalMelancholyMaxDays();
+
 
 // 20. Catatonia: a 1 percent cumulative chance per
 // round of provocation of homicidal mania; the
 // catatonia returns once provocation ceases.
-inline int insanityCatatoniaReactionChance() { return 1; }
-
-} // namespace rules
+    int insanityCatatoniaReactionChance();
+};

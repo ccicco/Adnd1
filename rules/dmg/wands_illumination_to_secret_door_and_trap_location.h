@@ -77,414 +77,80 @@
 
 #pragma once
 
-namespace rules {
-
-inline int wdIllumFunctionCount() {
-    // Wand of Illumination: 4 separate
-    // functions
-    return 4;
-}
-
-inline int wdIllumSpellLikeCount() {
-    // 3 approximate magic-user spells,
-    // and 1 is singular
-    return 3;
-}
-
-inline int wdIllumDanceSegments() {
-    // dancing lights: in 1 segment the
-    // wand will produce the effect
-    return 1;
-}
-
-inline int wdIllumDanceCharges() {
-    // at a cost of 1 charge
-    return 1;
-}
-
-inline int wdIllumLightSegments() {
-    // light: sent forth in 2 segments
-    // time
-    return 2;
-}
-
-inline int wdIllumLightCharges() {
-    // at an expenditure of 1 charge
-    return 1;
-}
-
-inline int wdIllumContinualSegments() {
-    // continual light: only 2 segments
-    // to perform
-    return 2;
-}
-
-inline int wdIllumContinualCharges() {
-    // but the cost is 2 charges
-    return 2;
-}
-
-inline int wdIllumSunburstRangeInches() {
-    // sunburst: the range is 12"
-    // maximum
-    return 12;
-}
-
-inline int wdIllumSunburstDurationTenths() {
-    // its duration is but 1/10 of a
-    // second - pinned as tenths
-    return 1;
-}
-
-inline int wdIllumSunburstGlobeInches() {
-    // a globe of 4" diameter
-    return 4;
-}
-
-inline int wdIllumSunburstUndeadLo() {
-    // any undead within the globe take
-    // 6-36 hit points of damage, with
-    // no saving throw
-    return 6;
-}
-
-inline int wdIllumSunburstUndeadHi() {
-    return 36;
-}
-
-inline int wdIllumSunburstBlindLo() {
-    // all others within the globe are
-    // blinded for 2-12 segments
-    return 2;
-}
-
-inline int wdIllumSunburstBlindHi() {
-    return 12;
-}
-
-inline int wdIllumSunburstSegments() {
-    // the function requires 3 segments
-    return 3;
-}
-
-inline int wdIllumSunburstCharges() {
-    // and expends 3 charges
-    return 3;
-}
-
-inline int wdIllumRechargeable() {
-    // the wand can be recharged
-    return 1;
-}
-
-inline int wdIllusionRangeInches() {
-    // Wand of Illusion: a 14" maximum
-    // range
-    return 14;
-}
-
-inline int wdIllusionSegments() {
-    // the effect takes 3 segments to
-    // commence
-    return 3;
-}
-
-inline int wdIllusionChargesPerPortion() {
-    // it costs 1 charge to effect
-    return 1;
-}
-
-inline int wdIllusionChargesPerRound() {
-    // and 1 per round to continue
-    return 1;
-}
-
-inline int wdIllusionRechargeable() {
-    // the wand may be recharged
-    return 1;
-}
-
-inline int wdLightningFunctionCount() {
-    // Wand of Lightning: 2 functions
-    // which closely resemble
-    // magic-user spells
-    return 2;
-}
-
-inline int wdLightningShockLo() {
-    // the shock: 1-10 hit points of
-    // damage, with no saving throw
-    return 1;
-}
-
-inline int wdLightningShockHi() {
-    return 10;
-}
-
-inline int wdLightningShockAc() {
-    // metallic armor and shield are
-    // discounted, giving opponents
-    // armor class 10
-    return 10;
-}
-
-inline int wdLightningShockCharges() {
-    // the shock uses 1 charge
-    return 1;
-}
-
-inline int wdLightningBoltLo() {
-    // the lightning bolt: damage is
-    // 12-36 hit points
-    return 12;
-}
-
-inline int wdLightningBoltHi() {
-    return 36;
-}
-
-inline int wdLightningBoltDice() {
-    // 6d6, treating 1s as 2s
-    return 6;
-}
-
-inline int wdLightningBoltCharges() {
-    // this function uses 2 charges
-    return 2;
-}
-
-inline int wdLightningBoltSegments() {
-    // it requires 2 segments to
-    // discharge
-    return 2;
-}
-
-inline int wdLightningFunctionsPerRound() {
-    // it can perform but 1 function
-    // per round
-    return 1;
-}
-
-inline int wdLightningRechargeable() {
-    // the wand may be recharged
-    return 1;
-}
-
-inline int wdMDetectRadiusInches() {
-    // Wand of Magic Detection: within
-    // a 3" radius the wand will pulse
-    return 3;
-}
-
-inline int wdMDetectRounds() {
-    // operation requires 1 round
-    return 1;
-}
-
-inline int wdMDetectChargesPerTurn() {
-    // 1 charge is expended per turn
-    // (or fraction thereof) of use
-    return 1;
-}
-
-inline int wdMDetectMalfunctionPercent() {
-    // there is a 2% cumulative chance
-    // per round of a malfunction
-    return 2;
-}
-
-inline int wdMDetectRechargeable() {
-    // the wand may be recharged
-    return 1;
-}
-
-inline int wdMetalRadiusInches() {
-    // Wand of Metal and Mineral
-    // Detection: also a 3" radius
-    // range
-    return 3;
-}
-
-inline int wdMetalRounds() {
-    // each operation requires 1 round
-    return 1;
-}
-
-inline int wdMetalChargesPerTurn() {
-    // each charge powers the wand for
-    // 1 full turn
-    return 1;
-}
-
-inline int wdMetalRechargeable() {
-    // the wand may be recharged
-    return 1;
-}
-
-inline int wdMissileDamageLo() {
-    // Wand of Magic Missiles: each
-    // missile causes 2-5 hit points
-    // of damage
-    return 2;
-}
-
-inline int wdMissileDamageHi() {
-    return 5;
-}
-
-inline int wdMissileSegments() {
-    // each missile takes 3 segments to
-    // discharge
-    return 3;
-}
-
-inline int wdMissileCharges() {
-    // and costs 1 charge
-    return 1;
-}
-
-inline int wdMissileMaxPerRound() {
-    // a maximum of 2 may be expended
-    // in 1 round
-    return 2;
-}
-
-inline int wdMissileRechargeable() {
-    // the wand may be recharged
-    return 1;
-}
-
-inline int wdNegateWandPercent() {
-    // Wand of Negation: this will
-    // totally negate any wand function
-    return 100;
-}
-
-inline int wdNegateDevicePercent() {
-    // any other device is 75% likely
-    // to be negated
-    return 75;
-}
-
-inline int wdNegateSegments() {
-    // operation requires but 1 segment
-    // of a round
-    return 1;
-}
-
-inline int wdNegateUsesPerRound() {
-    // it can function but once per
-    // round
-    return 1;
-}
-
-inline int wdNegateCharges() {
-    // each negation drains 1 charge
-    return 1;
-}
-
-inline int wdNegateRechargeable() {
-    // the wand cannot be recharged -
-    // the only one of the ten
-    return 0;
-}
-
-inline int wdParalyzeRangeInches() {
-    // Wand of Paralyzation: a thin
-    // ray of bluish color to a
-    // maximum range of 6"
-    return 6;
-}
-
-inline int wdParalyzeDurationLo() {
-    // struck creatures are rigidly
-    // immobile for from 5-20 rounds
-    return 5;
-}
-
-inline int wdParalyzeDurationHi() {
-    return 20;
-}
-
-inline int wdParalyzeSegments() {
-    // each operation takes 3 segments
-    return 3;
-}
-
-inline int wdParalyzeCharges() {
-    // and costs 1 charge
-    return 1;
-}
-
-inline int wdParalyzeUsesPerRound() {
-    // the wand may operate once per
-    // round
-    return 1;
-}
-
-inline int wdParalyzeRechargeable() {
-    // it may be recharged
-    return 1;
-}
-
-inline int wdPolyRangeInches() {
-    // Wand of Polymorphing: a thin ray
-    // which darts forth to a maximum
-    // distance of 6"
-    return 6;
-}
-
-inline int wdPolySegments() {
-    // either function requires 3
-    // segments
-    return 3;
-}
-
-inline int wdPolyCharges() {
-    // each draws 1 charge
-    return 1;
-}
-
-inline int wdPolyFunctionsPerRound() {
-    // only 1 function per round is
-    // possible
-    return 1;
-}
-
-inline int wdPolyRechargeable() {
-    // the wand may be recharged
-    return 1;
-}
-
-inline int wdSecretDoorRadiusHalfInches() {
-    // Wand of Secret Door and Trap
-    // Location: an effective radius of
-    // 1.5 inch for secret door location
-    // - pinned as 3 half-inches, the
-    // first half-inch pin since the
-    // 2.25 inch quarter-inch of R246
-    return 3;
-}
-
-inline int wdTrapRadiusInches() {
-    // 3" for trap location
-    return 3;
-}
-
-inline int wdSecretRounds() {
-    // it requires 1 round to function
-    return 1;
-}
-
-inline int wdSecretCharges() {
-    // and draws 1 charge
-    return 1;
-}
-
-inline int wdSecretRechargeable() {
-    // the wand may be recharged
-    return 1;
-}
-
-}  // namespace rules
-
+// R-refactor: namespace rules -> class Wands_illumination_to_secret_door_and_trap_location (instance methods)
+class Wands_illumination_to_secret_door_and_trap_location {
+public:
+    int wdIllumFunctionCount();
+    int wdIllumSpellLikeCount();
+    int wdIllumDanceSegments();
+    int wdIllumDanceCharges();
+    int wdIllumLightSegments();
+    int wdIllumLightCharges();
+    int wdIllumContinualSegments();
+    int wdIllumContinualCharges();
+    int wdIllumSunburstRangeInches();
+    int wdIllumSunburstDurationTenths();
+    int wdIllumSunburstGlobeInches();
+    int wdIllumSunburstUndeadLo();
+    int wdIllumSunburstUndeadHi();
+    int wdIllumSunburstBlindLo();
+    int wdIllumSunburstBlindHi();
+    int wdIllumSunburstSegments();
+    int wdIllumSunburstCharges();
+    int wdIllumRechargeable();
+    int wdIllusionRangeInches();
+    int wdIllusionSegments();
+    int wdIllusionChargesPerPortion();
+    int wdIllusionChargesPerRound();
+    int wdIllusionRechargeable();
+    int wdLightningFunctionCount();
+    int wdLightningShockLo();
+    int wdLightningShockHi();
+    int wdLightningShockAc();
+    int wdLightningShockCharges();
+    int wdLightningBoltLo();
+    int wdLightningBoltHi();
+    int wdLightningBoltDice();
+    int wdLightningBoltCharges();
+    int wdLightningBoltSegments();
+    int wdLightningFunctionsPerRound();
+    int wdLightningRechargeable();
+    int wdMDetectRadiusInches();
+    int wdMDetectRounds();
+    int wdMDetectChargesPerTurn();
+    int wdMDetectMalfunctionPercent();
+    int wdMDetectRechargeable();
+    int wdMetalRadiusInches();
+    int wdMetalRounds();
+    int wdMetalChargesPerTurn();
+    int wdMetalRechargeable();
+    int wdMissileDamageLo();
+    int wdMissileDamageHi();
+    int wdMissileSegments();
+    int wdMissileCharges();
+    int wdMissileMaxPerRound();
+    int wdMissileRechargeable();
+    int wdNegateWandPercent();
+    int wdNegateDevicePercent();
+    int wdNegateSegments();
+    int wdNegateUsesPerRound();
+    int wdNegateCharges();
+    int wdNegateRechargeable();
+    int wdParalyzeRangeInches();
+    int wdParalyzeDurationLo();
+    int wdParalyzeDurationHi();
+    int wdParalyzeSegments();
+    int wdParalyzeCharges();
+    int wdParalyzeUsesPerRound();
+    int wdParalyzeRechargeable();
+    int wdPolyRangeInches();
+    int wdPolySegments();
+    int wdPolyCharges();
+    int wdPolyFunctionsPerRound();
+    int wdPolyRechargeable();
+    int wdSecretDoorRadiusHalfInches();
+    int wdTrapRadiusInches();
+    int wdSecretRounds();
+    int wdSecretCharges();
+    int wdSecretRechargeable();
+};

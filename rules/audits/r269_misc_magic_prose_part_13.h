@@ -4,40 +4,42 @@
     // Meditation, part2 lines 581-626 - the slice
     // pinning the kMisc3 rows 18-23.
     {
+        Miscmagic_horn_of_collapsing_to_incense_of_meditation miscmagic_horn_of_collapsing_to_incense_of_meditation;
+        Miscmagic_table3_footnotes miscmagic_table3_footnotes;
         int bad = 0;
-        if (rules::mmpHornCollapseMisfirePct() != 10 ||
-            rules::mmpHornCollapseOutRocksMin() != 2 ||
-            rules::mmpHornCollapseOutRocksMax() != 12 ||
-            rules::mmpHornCollapseOutRockDmgMin() != 1 ||
-            rules::mmpHornCollapseOutRockDmgMax() != 6) ++bad;
-        if (rules::mmpHornCollapseIndoorDmgMin() != 3 ||
-            rules::mmpHornCollapseIndoorDmgMax() != 36 ||
-            rules::mmpHornCollapseUnderDmgMin() != 5 ||
-            rules::mmpHornCollapseUnderDmgMax() != 20 ||
-            rules::mmpHornCollapseUnderHeightFactorFeet() !=
+        if (miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornCollapseMisfirePct() != 10 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornCollapseOutRocksMin() != 2 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornCollapseOutRocksMax() != 12 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornCollapseOutRockDmgMin() != 1 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornCollapseOutRockDmgMax() != 6) ++bad;
+        if (miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornCollapseIndoorDmgMin() != 3 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornCollapseIndoorDmgMax() != 36 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornCollapseUnderDmgMin() != 5 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornCollapseUnderDmgMax() != 20 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornCollapseUnderHeightFactorFeet() !=
             10) ++bad;
-        if (rules::mmpHornCollapseAimRangeMinFeet() != 30 ||
-            rules::mmpHornCollapseAimRangeMaxFeet() != 60 ||
-            rules::mmpHornCollapseRoofWidthFeet() != 20 ||
-            rules::mmpHornCollapseRoofLengthFeet() != 20 ||
-            rules::mmpHornCollapseRoofRadiusFeet() !=
+        if (miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornCollapseAimRangeMinFeet() != 30 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornCollapseAimRangeMaxFeet() != 60 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornCollapseRoofWidthFeet() != 20 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornCollapseRoofLengthFeet() != 20 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornCollapseRoofRadiusFeet() !=
             10) ++bad;
-        if (rules::mmpHornCollapseIndoorsOrUndergroundOnly() !=
+        if (miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornCollapseIndoorsOrUndergroundOnly() !=
             1) ++bad;
         // the collapse roof geometry: 20 = 10 + 10
-        if (rules::mmpHornCollapseRoofWidthFeet() !=
-            rules::mmpHornCollapseRoofRadiusFeet() +
-            rules::mmpHornCollapseRoofRadiusFeet() ||
-            rules::mmpHornCollapseRoofLengthFeet() !=
-            rules::mmpHornCollapseRoofWidthFeet() ||
-            rules::mmpHornCollapseAimRangeMaxFeet() !=
-            rules::mmpHornCollapseAimRangeMinFeet() +
+        if (miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornCollapseRoofWidthFeet() !=
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornCollapseRoofRadiusFeet() +
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornCollapseRoofRadiusFeet() ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornCollapseRoofLengthFeet() !=
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornCollapseRoofWidthFeet() ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornCollapseAimRangeMaxFeet() !=
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornCollapseAimRangeMinFeet() +
             30) ++bad;
-        if (rules::mmpHornTritonPerDay() != 1 ||
-            rules::mmpHornTritonTritonPerDay() != 3 ||
-            rules::mmpHornTritonFunctionCount() != 3 ||
-            rules::mmpHornTritonCalmRadiusMiles() != 1 ||
-            rules::mmpHornTritonCalmDispelKinds() !=
+        if (miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornTritonPerDay() != 1 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornTritonTritonPerDay() != 3 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornTritonFunctionCount() != 3 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornTritonCalmRadiusMiles() != 1 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornTritonCalmDispelKinds() !=
             2) ++bad;
         // the triton summon table against static twins
         static const int kDlo[3] = {
@@ -52,48 +54,48 @@
         static const int kChi[3] = {
             20, 30, 10,
         };
-        if (rules::mmpHornTritonSummonKindCount() !=
+        if (miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornTritonSummonKindCount() !=
             3) ++bad;
         for (int i = 0; i < 3; ++i)
-            if (rules::mmpHornTritonSummonDieLo(i) !=
+            if (miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornTritonSummonDieLo(i) !=
                 kDlo[i] ||
-                rules::mmpHornTritonSummonDieHi(i) !=
+                miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornTritonSummonDieHi(i) !=
                 kDhi[i] ||
-                rules::mmpHornTritonSummonCountMin(i) !=
+                miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornTritonSummonCountMin(i) !=
                 kClo[i] ||
-                rules::mmpHornTritonSummonCountMax(i) !=
+                miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornTritonSummonCountMax(i) !=
                 kChi[i]) ++bad;
         // the selection die runs 1-6 without gaps
         for (int i = 0; i < 2; ++i)
-            if (rules::mmpHornTritonSummonDieLo(i + 1) !=
-                rules::mmpHornTritonSummonDieHi(i) +
+            if (miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornTritonSummonDieLo(i + 1) !=
+                miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornTritonSummonDieHi(i) +
                 1) ++bad;
-        if (rules::mmpHornTritonSummonDieLo(0) != 1 ||
-            rules::mmpHornTritonSummonDieHi(2) != 6) ++bad;
-        if (rules::mmpHornTritonPanicAnimalOrLower() != 1 ||
-            rules::mmpHornTritonPanicToHitPenalty() != 5 ||
-            rules::mmpHornTritonPanicTurnsMin() != 3 ||
-            rules::mmpHornTritonPanicTurnsMax() != 18 ||
-            rules::mmpHornTritonPanicRoundsPerTurn() !=
+        if (miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornTritonSummonDieLo(0) != 1 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornTritonSummonDieHi(2) != 6) ++bad;
+        if (miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornTritonPanicAnimalOrLower() != 1 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornTritonPanicToHitPenalty() != 5 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornTritonPanicTurnsMin() != 3 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornTritonPanicTurnsMax() != 18 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornTritonPanicRoundsPerTurn() !=
             10) ++bad;
         // the panic ladder: turns times 10 = rounds
-        if (rules::mmpHornTritonPanicRoundsMin() !=
-            rules::mmpHornTritonPanicTurnsMin() *
-            rules::mmpHornTritonPanicRoundsPerTurn() ||
-            rules::mmpHornTritonPanicRoundsMax() !=
-            rules::mmpHornTritonPanicTurnsMax() *
-            rules::mmpHornTritonPanicRoundsPerTurn() ||
-            rules::mmpHornTritonHearRadiusLeagues() !=
+        if (miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornTritonPanicRoundsMin() !=
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornTritonPanicTurnsMin() *
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornTritonPanicRoundsPerTurn() ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornTritonPanicRoundsMax() !=
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornTritonPanicTurnsMax() *
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornTritonPanicRoundsPerTurn() ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornTritonHearRadiusLeagues() !=
             1) ++bad;
-        if (rules::mmpHornValhallaVarietyCount() != 4 ||
-            rules::mmpHornValhallaBlowIntervalDays() != 7 ||
-            rules::mmpHornValhallaSummonedAc() != 4 ||
-            rules::mmpHornValhallaSummonedHpPerDie() !=
+        if (miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornValhallaVarietyCount() != 4 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornValhallaBlowIntervalDays() != 7 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornValhallaSummonedAc() != 4 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornValhallaSummonedHpPerDie() !=
             6) ++bad;
-        if (rules::mmpHornValhallaSwordSpearPct() != 50 ||
-            rules::mmpHornValhallaAxeSpearPct() != 50 ||
-            rules::mmpHornValhallaServiceTurns() != 6 ||
-            rules::mmpHornValhallaAlignedPct() != 50) ++bad;
+        if (miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornValhallaSwordSpearPct() != 50 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornValhallaAxeSpearPct() != 50 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornValhallaServiceTurns() != 6 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornValhallaAlignedPct() != 50) ++bad;
         // the valhalla variety table against twins
         static const int kVlo[4] = {
             1, 9, 16, 19,
@@ -123,73 +125,73 @@
             0, 1, 0, 0,
         };
         for (int i = 0; i < 4; ++i)
-            if (rules::mmpHornValhallaDiceLo(i) != kVlo[i] ||
-                rules::mmpHornValhallaDiceHi(i) != kVhi[i] ||
-                rules::mmpHornValhallaCountMin(i) !=
+            if (miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornValhallaDiceLo(i) != kVlo[i] ||
+                miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornValhallaDiceHi(i) != kVhi[i] ||
+                miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornValhallaCountMin(i) !=
                 kNlo[i] ||
-                rules::mmpHornValhallaCountMax(i) !=
+                miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornValhallaCountMax(i) !=
                 kNhi[i] ||
-                rules::mmpHornValhallaLevel(i) != kLvl[i] ||
-                rules::mmpHornValhallaUsableAny(i) !=
+                miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornValhallaLevel(i) != kLvl[i] ||
+                miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornValhallaUsableAny(i) !=
                 kAny[i] ||
-                rules::mmpHornValhallaUsableCleric(i) !=
+                miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornValhallaUsableCleric(i) !=
                 kVc[i] ||
-                rules::mmpHornValhallaUsableFighter(i) !=
+                miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornValhallaUsableFighter(i) !=
                 kVf[i] ||
-                rules::mmpHornValhallaUsableThief(i) !=
+                miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornValhallaUsableThief(i) !=
                 kVt[i]) ++bad;
         // the variety dice run 1-20 without gaps, the
         // levels climb by 1
         for (int i = 0; i < 3; ++i)
-            if (rules::mmpHornValhallaDiceLo(i + 1) !=
-                rules::mmpHornValhallaDiceHi(i) + 1 ||
-                rules::mmpHornValhallaLevel(i + 1) !=
-                rules::mmpHornValhallaLevel(i) + 1) ++bad;
-        if (rules::mmpHornValhallaDiceLo(0) != 1 ||
-            rules::mmpHornValhallaDiceHi(3) != 20) ++bad;
+            if (miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornValhallaDiceLo(i + 1) !=
+                miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornValhallaDiceHi(i) + 1 ||
+                miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornValhallaLevel(i + 1) !=
+                miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornValhallaLevel(i) + 1) ++bad;
+        if (miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornValhallaDiceLo(0) != 1 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornValhallaDiceHi(3) != 20) ++bad;
         // the asterisk ladder: bronze doubles, iron
         // triples, the row 20 star count is 2
-        if (rules::mmpHornValhallaIronXpMultiplier() !=
-            rules::mmpHornValhallaBronzeXpMultiplier() +
+        if (miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornValhallaIronXpMultiplier() !=
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornValhallaBronzeXpMultiplier() +
             1 ||
-            rules::mmpHornValhallaBronzeXpMultiplier() !=
-            rules::m3StarCount(20)) ++bad;
-        if (rules::mmpHorseshoesSpeedShoeCount() != 4 ||
-            rules::mmpHorseshoesSpeedFullPct() != 200 ||
-            rules::mmpHorseshoesSpeedDropPct() != 1 ||
-            rules::mmpHorseshoesSpeedDropLeagues() !=
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHornValhallaBronzeXpMultiplier() !=
+            miscmagic_table3_footnotes.m3StarCount(20)) ++bad;
+        if (miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHorseshoesSpeedShoeCount() != 4 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHorseshoesSpeedFullPct() != 200 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHorseshoesSpeedDropPct() != 1 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHorseshoesSpeedDropLeagues() !=
             7) ++bad;
         // the speed ladder: 200 = 100 + 100,
         // 150 = 100 + 50
-        if (rules::mmpHorseshoesSpeedFullPct() !=
-            rules::mmpHorseshoesSpeedTwoLostPct() +
-            rules::mmpHorseshoesSpeedTwoLostPct() ||
-            rules::mmpHorseshoesSpeedOneLostPct() !=
-            rules::mmpHorseshoesSpeedTwoLostPct() +
+        if (miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHorseshoesSpeedFullPct() !=
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHorseshoesSpeedTwoLostPct() +
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHorseshoesSpeedTwoLostPct() ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHorseshoesSpeedOneLostPct() !=
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHorseshoesSpeedTwoLostPct() +
             50) ++bad;
-        if (rules::mmpHorseshoesZephyrGroundless() != 1 ||
-            rules::mmpHorseshoesZephyrNoTracks() != 1 ||
-            rules::mmpHorseshoesZephyrNoTireHours() != 12 ||
-            rules::mmpHorseshoesZephyrPerDay() != 1) ++bad;
-        if (rules::mmpIncenseMedRecognizeClericLevel() !=
+        if (miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHorseshoesZephyrGroundless() != 1 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHorseshoesZephyrNoTracks() != 1 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHorseshoesZephyrNoTireHours() != 12 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpHorseshoesZephyrPerDay() != 1) ++bad;
+        if (miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpIncenseMedRecognizeClericLevel() !=
             5 ||
-            rules::mmpIncenseMedPrayHours() != 8 ||
-            rules::mmpIncenseMedCureAlwaysMax() != 1 ||
-            rules::mmpIncenseMedBroadestArea() != 1 ||
-            rules::mmpIncenseMedSavePenalty() !=
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpIncenseMedPrayHours() != 8 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpIncenseMedCureAlwaysMax() != 1 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpIncenseMedBroadestArea() != 1 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpIncenseMedSavePenalty() !=
             1) ++bad;
         // the incense ladders: burn = pray hours,
         // 24 = 8 + 8 + 8, the halved survival divisor
-        if (rules::mmpIncenseMedBurnHours() !=
-            rules::mmpIncenseMedPrayHours() ||
-            rules::mmpIncenseMedEffectHours() !=
-            rules::mmpIncenseMedBurnHours() +
-            rules::mmpIncenseMedBurnHours() +
-            rules::mmpIncenseMedBurnHours() ||
-            rules::mmpIncenseMedNotSurvivingDivisor() !=
+        if (miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpIncenseMedBurnHours() !=
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpIncenseMedPrayHours() ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpIncenseMedEffectHours() !=
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpIncenseMedBurnHours() +
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpIncenseMedBurnHours() +
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpIncenseMedBurnHours() ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpIncenseMedNotSurvivingDivisor() !=
             2) ++bad;
-        if (rules::mmpIncenseMedPieceCountMin() != 2 ||
-            rules::mmpIncenseMedPieceCountMax() != 8) ++bad;
+        if (miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpIncenseMedPieceCountMin() != 2 ||
+            miscmagic_horn_of_collapsing_to_incense_of_meditation.mmpIncenseMedPieceCountMax() != 8) ++bad;
         // the kMisc3 rows this slice pins: 18-23,
         // the (C, F) mark on row 19, the (C) mark on
         // row 23, the double asterisk on row 20
@@ -212,16 +214,16 @@
             0, 0, 2, 0, 0, 0,
         };
         for (int i = 0; i < 6; ++i)
-            if (rules::m3RowLo(18 + i) != kLo[i] ||
-                rules::m3RowHi(18 + i) != kHi[i] ||
-                rules::m3StarCount(18 + i) != kSt[i]) ++bad;
+            if (miscmagic_table3_footnotes.m3RowLo(18 + i) != kLo[i] ||
+                miscmagic_table3_footnotes.m3RowHi(18 + i) != kHi[i] ||
+                miscmagic_table3_footnotes.m3StarCount(18 + i) != kSt[i]) ++bad;
         for (int i = 0; i < 6; ++i)
-            if (rules::m3UsableByCleric(18 + i) != kCm[i] ||
-                rules::m3UsableByFighter(18 + i) !=
+            if (miscmagic_table3_footnotes.m3UsableByCleric(18 + i) != kCm[i] ||
+                miscmagic_table3_footnotes.m3UsableByFighter(18 + i) !=
                 kFm[i] ||
-                rules::m3UsableByThief(18 + i) !=
+                miscmagic_table3_footnotes.m3UsableByThief(18 + i) !=
                 kTm[i] ||
-                rules::m3IsPerFacetValued(18 + i)) ++bad;
+                miscmagic_table3_footnotes.m3IsPerFacetValued(18 + i)) ++bad;
         printf("R269 misc magic prose part 13 pins audit: bad %d\n", bad);
         if (bad) return 1;
     }

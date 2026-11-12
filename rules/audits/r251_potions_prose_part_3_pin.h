@@ -3,13 +3,15 @@
     // through Water Breathing - the potions
     // arc closes.
     {
+        Potions potions;
+        Potions_invulnerability_to_water_breathing potions_invulnerability_to_water_breathing;
         int bad = 0;
         // the sixteen potions are the engine III.A
         // table rows 20-35 - bands 55-100, the
         // table closing at 100 (the R221 pins)
-        if (rules::potionRowCount() != 35 ||
-            rules::potionRowLo(19) != 55 ||
-            rules::potionRowHi(34) != 100) ++bad;
+        if (potions.potionRowCount() != 35 ||
+            potions.potionRowLo(19) != 55 ||
+            potions.potionRowHi(34) != 100) ++bad;
         // the engine rows 20-35 checked band
         // by band against the R221 pins
         static const int kRowLo[16] = {
@@ -21,73 +23,73 @@
             87, 90, 93, 96, 97, 100,
         };
         for (int i = 0; i < 16; ++i)
-            if (rules::potionRowLo(i + 19) != kRowLo[i] ||
-                rules::potionRowHi(i + 19) != kRowHi[i]) ++bad;
+            if (potions.potionRowLo(i + 19) != kRowLo[i] ||
+                potions.potionRowHi(i + 19) != kRowHi[i]) ++bad;
         // Invulnerability - the hit dice, the
         // armor class, the save, and the rounds
-        if (rules::potInvulnMinHitDice() != 4 ||
-            rules::potInvulnAcClasses() != 2 ||
-            rules::potInvulnSaveMod() != 2 ||
-            rules::potInvulnRoundLo() != 5 ||
-            rules::potInvulnRoundHi() != 20) ++bad;
+        if (potions_invulnerability_to_water_breathing.potInvulnMinHitDice() != 4 ||
+            potions_invulnerability_to_water_breathing.potInvulnAcClasses() != 2 ||
+            potions_invulnerability_to_water_breathing.potInvulnSaveMod() != 2 ||
+            potions_invulnerability_to_water_breathing.potInvulnRoundLo() != 5 ||
+            potions_invulnerability_to_water_breathing.potInvulnRoundHi() != 20) ++bad;
         // Levitation - the spell level and the
         // maximum weight
-        if (rules::potLevitSpellLevel() != 2 ||
-            rules::potLevitMaxWeightGp() != 6000) ++bad;
+        if (potions_invulnerability_to_water_breathing.potLevitSpellLevel() != 2 ||
+            potions_invulnerability_to_water_breathing.potLevitMaxWeightGp() != 6000) ++bad;
         // Longevity - the years and the reversal
-        if (rules::potLongYearsLo() != 1 ||
-            rules::potLongYearsHi() != 12 ||
-            rules::potLongReversePercent() != 1) ++bad;
+        if (potions_invulnerability_to_water_breathing.potLongYearsLo() != 1 ||
+            potions_invulnerability_to_water_breathing.potLongYearsHi() != 12 ||
+            potions_invulnerability_to_water_breathing.potLongReversePercent() != 1) ++bad;
         // Oil of Etherealness - the onset and
         // the duration
-        if (rules::potEtherRoundsToEffect() != 3 ||
-            rules::potEtherTurnsBase() != 4 ||
-            rules::potEtherExtraLo() != 1 ||
-            rules::potEtherExtraHi() != 4) ++bad;
+        if (potions_invulnerability_to_water_breathing.potEtherRoundsToEffect() != 3 ||
+            potions_invulnerability_to_water_breathing.potEtherTurnsBase() != 4 ||
+            potions_invulnerability_to_water_breathing.potEtherExtraLo() != 1 ||
+            potions_invulnerability_to_water_breathing.potEtherExtraHi() != 4) ++bad;
         // Oil of Slipperiness - the slip chance
         // and the hours
-        if (rules::potSlipFallPercent() != 95 ||
-            rules::potSlipHours() != 8) ++bad;
+        if (potions_invulnerability_to_water_breathing.potSlipFallPercent() != 95 ||
+            potions_invulnerability_to_water_breathing.potSlipHours() != 8) ++bad;
         // Philter of Love - the charm duration
-        if (rules::potLoveTurnsBase() != 4 ||
-            rules::potLoveExtraLo() != 1 ||
-            rules::potLoveExtraHi() != 4) ++bad;
+        if (potions_invulnerability_to_water_breathing.potLoveTurnsBase() != 4 ||
+            potions_invulnerability_to_water_breathing.potLoveExtraLo() != 1 ||
+            potions_invulnerability_to_water_breathing.potLoveExtraHi() != 4) ++bad;
         // Philter of Persuasiveness - the
         // reaction bonus and the suggest
-        if (rules::potPersuadeReactPercent() != 25 ||
-            rules::potPersuadePerTurn() != 1 ||
-            rules::potPersuadeRangeInches() != 3) ++bad;
+        if (potions_invulnerability_to_water_breathing.potPersuadeReactPercent() != 25 ||
+            potions_invulnerability_to_water_breathing.potPersuadePerTurn() != 1 ||
+            potions_invulnerability_to_water_breathing.potPersuadeRangeInches() != 3) ++bad;
         // Plant Control - the square, the range,
         // and the duration
-        if (rules::potPlantSaveInt() != 5 ||
-            rules::potPlantSquareInches() != 2 ||
-            rules::potPlantRangeInches() != 9 ||
-            rules::potPlantRoundLo() != 5 ||
-            rules::potPlantRoundHi() != 20) ++bad;
+        if (potions_invulnerability_to_water_breathing.potPlantSaveInt() != 5 ||
+            potions_invulnerability_to_water_breathing.potPlantSquareInches() != 2 ||
+            potions_invulnerability_to_water_breathing.potPlantRangeInches() != 9 ||
+            potions_invulnerability_to_water_breathing.potPlantRoundLo() != 5 ||
+            potions_invulnerability_to_water_breathing.potPlantRoundHi() != 20) ++bad;
         // Poison - the save modifiers and the
         // neutralize percent
-        if (rules::potPoisonWeakLo() != 1 ||
-            rules::potPoisonWeakHi() != 4 ||
-            rules::potPoisonDeadlyLo() != -4 ||
-            rules::potPoisonDeadlyHi() != -1 ||
-            rules::potPoisonNeutralizePercent() != 40) ++bad;
+        if (potions_invulnerability_to_water_breathing.potPoisonWeakLo() != 1 ||
+            potions_invulnerability_to_water_breathing.potPoisonWeakHi() != 4 ||
+            potions_invulnerability_to_water_breathing.potPoisonDeadlyLo() != -4 ||
+            potions_invulnerability_to_water_breathing.potPoisonDeadlyHi() != -1 ||
+            potions_invulnerability_to_water_breathing.potPoisonNeutralizePercent() != 40) ++bad;
         // Polymorph self - the spell level
-        if (rules::potPolySpellLevel() != 4) ++bad;
+        if (potions_invulnerability_to_water_breathing.potPolySpellLevel() != 4) ++bad;
         // Speed - the boost, the movement, the
         // aging, and the rounds
-        if (rules::potSpeedBoostPercent() != 100 ||
-            rules::potSpeedMoveBaseInches() != 9 ||
-            rules::potSpeedMoveBoostedInches() != 18 ||
-            rules::potSpeedAgeYears() != 1 ||
-            rules::potSpeedRoundLo() != 5 ||
-            rules::potSpeedRoundHi() != 20) ++bad;
+        if (potions_invulnerability_to_water_breathing.potSpeedBoostPercent() != 100 ||
+            potions_invulnerability_to_water_breathing.potSpeedMoveBaseInches() != 9 ||
+            potions_invulnerability_to_water_breathing.potSpeedMoveBoostedInches() != 18 ||
+            potions_invulnerability_to_water_breathing.potSpeedAgeYears() != 1 ||
+            potions_invulnerability_to_water_breathing.potSpeedRoundLo() != 5 ||
+            potions_invulnerability_to_water_breathing.potSpeedRoundHi() != 20) ++bad;
         // Super-Heroism - the ceiling, the table,
         // and the rounds
-        if (rules::potSHeroMaxLevels() != 13 ||
-            rules::potSHeroRowCount() != 4 ||
-            rules::potSHeroDmgFaces() != 10 ||
-            rules::potSHeroRoundLo() != 5 ||
-            rules::potSHeroRoundHi() != 30) ++bad;
+        if (potions_invulnerability_to_water_breathing.potSHeroMaxLevels() != 13 ||
+            potions_invulnerability_to_water_breathing.potSHeroRowCount() != 4 ||
+            potions_invulnerability_to_water_breathing.potSHeroDmgFaces() != 10 ||
+            potions_invulnerability_to_water_breathing.potSHeroRoundLo() != 5 ||
+            potions_invulnerability_to_water_breathing.potSHeroRoundHi() != 30) ++bad;
         static const int kSLvl[4] = {
             5, 4, 3, 2,
         };
@@ -98,30 +100,30 @@
             1, 2, 3, 4,
         };
         for (int i = 0; i < 4; ++i)
-            if (rules::potSHeroLevels(i) != kSLvl[i] ||
-                rules::potSHeroDmgDice(i) != kSDice[i] ||
-                rules::potSHeroDmgBonus(i) != kSBon[i]) ++bad;
+            if (potions_invulnerability_to_water_breathing.potSHeroLevels(i) != kSLvl[i] ||
+                potions_invulnerability_to_water_breathing.potSHeroDmgDice(i) != kSDice[i] ||
+                potions_invulnerability_to_water_breathing.potSHeroDmgBonus(i) != kSBon[i]) ++bad;
         // Sweet Water - the volumes and the
         // initial period
-        if (rules::potSweetWaterCubicFeet() != 100000 ||
-            rules::potSweetAcidCubicFeet() != 1000 ||
-            rules::potSweetRoundLo() != 5 ||
-            rules::potSweetRoundHi() != 20) ++bad;
+        if (potions_invulnerability_to_water_breathing.potSweetWaterCubicFeet() != 100000 ||
+            potions_invulnerability_to_water_breathing.potSweetAcidCubicFeet() != 1000 ||
+            potions_invulnerability_to_water_breathing.potSweetRoundLo() != 5 ||
+            potions_invulnerability_to_water_breathing.potSweetRoundHi() != 20) ++bad;
         // Treasure Finding - the range, the
         // mass, and the rounds
-        if (rules::potTreasureRangeInches() != 24 ||
-            rules::potTreasureMinCopper() != 10000 ||
-            rules::potTreasureMinGems() != 100 ||
-            rules::potTreasureRoundLo() != 5 ||
-            rules::potTreasureRoundHi() != 20) ++bad;
+        if (potions_invulnerability_to_water_breathing.potTreasureRangeInches() != 24 ||
+            potions_invulnerability_to_water_breathing.potTreasureMinCopper() != 10000 ||
+            potions_invulnerability_to_water_breathing.potTreasureMinGems() != 100 ||
+            potions_invulnerability_to_water_breathing.potTreasureRoundLo() != 5 ||
+            potions_invulnerability_to_water_breathing.potTreasureRoundHi() != 20) ++bad;
         // Undead Control - the hit dice, the
         // save, the rounds, and the type table
-        if (rules::potUndeadMaxHitDice() != 16 ||
-            rules::potUndeadSaveMod() != -2 ||
-            rules::potUndeadRoundLo() != 5 ||
-            rules::potUndeadRoundHi() != 20 ||
-            rules::potUndeadTypeRowCount() != 10 ||
-            rules::potUndeadTypeFaces() != 10) ++bad;
+        if (potions_invulnerability_to_water_breathing.potUndeadMaxHitDice() != 16 ||
+            potions_invulnerability_to_water_breathing.potUndeadSaveMod() != -2 ||
+            potions_invulnerability_to_water_breathing.potUndeadRoundLo() != 5 ||
+            potions_invulnerability_to_water_breathing.potUndeadRoundHi() != 20 ||
+            potions_invulnerability_to_water_breathing.potUndeadTypeRowCount() != 10 ||
+            potions_invulnerability_to_water_breathing.potUndeadTypeFaces() != 10) ++bad;
         static const int kULo[10] = {
             1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
         };
@@ -129,20 +131,20 @@
             1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
         };
         for (int i = 0; i < 10; ++i)
-            if (rules::potUndeadTypeLo(i) != kULo[i] ||
-                rules::potUndeadTypeHi(i) != kUHi[i]) ++bad;
+            if (potions_invulnerability_to_water_breathing.potUndeadTypeLo(i) != kULo[i] ||
+                potions_invulnerability_to_water_breathing.potUndeadTypeHi(i) != kUHi[i]) ++bad;
         for (int i = 1; i < 10; ++i)
-            if (rules::potUndeadTypeLo(i) !=
-                rules::potUndeadTypeHi(i - 1) + 1) ++bad;
-        if (rules::potUndeadTypeLo(-5) != 1 ||
-            rules::potUndeadTypeHi(99) != 10) ++bad;
+            if (potions_invulnerability_to_water_breathing.potUndeadTypeLo(i) !=
+                potions_invulnerability_to_water_breathing.potUndeadTypeHi(i - 1) + 1) ++bad;
+        if (potions_invulnerability_to_water_breathing.potUndeadTypeLo(-5) != 1 ||
+            potions_invulnerability_to_water_breathing.potUndeadTypeHi(99) != 10) ++bad;
         // Water Breathing - the doses and the
         // duration
-        if (rules::potWaterTwoDosePercent() != 75 ||
-            rules::potWaterFourDosePercent() != 25 ||
-            rules::potWaterHourPerDose() != 1 ||
-            rules::potWaterExtraLo() != 1 ||
-            rules::potWaterExtraHi() != 10) ++bad;
+        if (potions_invulnerability_to_water_breathing.potWaterTwoDosePercent() != 75 ||
+            potions_invulnerability_to_water_breathing.potWaterFourDosePercent() != 25 ||
+            potions_invulnerability_to_water_breathing.potWaterHourPerDose() != 1 ||
+            potions_invulnerability_to_water_breathing.potWaterExtraLo() != 1 ||
+            potions_invulnerability_to_water_breathing.potWaterExtraHi() != 10) ++bad;
         printf("R251 potions prose part 3 pins audit: bad %d\n", bad);
         if (bad) return 1;
     }

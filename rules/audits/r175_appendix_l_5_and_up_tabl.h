@@ -12,6 +12,7 @@
     // dice-score column, so only the contiguity
     // walk gates the banded ones.
     {
+        Dmg_appendices_klm dmg_appendices_klm;
         int bad = 0;
         static const int kCat[26] = {
             5, 5, 5, 5, 5, 5, 5,
@@ -89,10 +90,11 @@
             52, 52,
             56, 56
         };
-        if (rules::klmConjHigherCount() != 26) ++bad;
+        if (dmg_appendices_klm.klmConjHigherCount() != 26) ++bad;
         for (int i = 0; i < 26; ++i) {
-            const rules::ConjHigherRow& r =
-                rules::klmConjHigherRow(i);
+            Dmg_appendices_klm dmg_appendices_klm;
+            const ConjHigherRow& r =
+                dmg_appendices_klm.klmConjHigherRow(i);
             if (r.cat  != kCat[i])  ++bad;
             if (r.lo   != kLo[i])   ++bad;
             if (r.hi   != kHi[i])   ++bad;
@@ -100,42 +102,45 @@
             if (r.cost != kCost[i]) ++bad;
         }
         // the clamps: index -1 and 26+ read the ends
-        if (rules::klmConjHigherRow(-1).cat != 5 ||
-            rules::klmConjHigherRow(99).cat != 14)
+        if (dmg_appendices_klm.klmConjHigherRow(-1).cat != 5 ||
+            dmg_appendices_klm.klmConjHigherRow(99).cat != 14)
             ++bad;
         // the banded categories: first row lo 1,
         // contiguous bands, last row hi 100
         for (int i = 0; i < 26; ++i) {
-            const rules::ConjHigherRow& r =
-                rules::klmConjHigherRow(i);
+            Dmg_appendices_klm dmg_appendices_klm;
+            const ConjHigherRow& r =
+                dmg_appendices_klm.klmConjHigherRow(i);
             if (r.lo == 0) continue;   // bandless
             bool first = (i == 0) ||
-                rules::klmConjHigherRow(i - 1).cat
+                dmg_appendices_klm.klmConjHigherRow(i - 1).cat
                     != r.cat;
             bool last = (i == 25) ||
-                rules::klmConjHigherRow(i + 1).cat
+                dmg_appendices_klm.klmConjHigherRow(i + 1).cat
                     != r.cat;
             if (first && r.lo != 1) ++bad;
             if (last) {
                 if (r.hi != 100) ++bad;
             } else {
-                const rules::ConjHigherRow& n =
-                    rules::klmConjHigherRow(i + 1);
+                Dmg_appendices_klm dmg_appendices_klm;
+                const ConjHigherRow& n =
+                    dmg_appendices_klm.klmConjHigherRow(i + 1);
                 if (r.hi + 1 != n.lo) ++bad;
             }
         }
         // the bandless categories are 9, 11, 13, 14
         for (int i = 0; i < 26; ++i) {
-            const rules::ConjHigherRow& r =
-                rules::klmConjHigherRow(i);
+            Dmg_appendices_klm dmg_appendices_klm;
+            const ConjHigherRow& r =
+                dmg_appendices_klm.klmConjHigherRow(i);
             if ((r.cat == 9 || r.cat == 11 ||
                  r.cat == 13 || r.cat == 14)
                 && (r.lo != 0 || r.hi != 0)) ++bad;
         }
         // the whale cap and the water note stand
-        if (rules::klmConjWhaleMaxHitDiceCost() != 36)
+        if (dmg_appendices_klm.klmConjWhaleMaxHitDiceCost() != 36)
             ++bad;
-        if (!rules::klmConjWaterSwimmersAndFlyersOnly())
+        if (!dmg_appendices_klm.klmConjWaterSwimmersAndFlyersOnly())
             ++bad;
         printf("R175 appendix L 5-and-up table audit: bad %d\n", bad);
         if (bad) return 1;

@@ -57,106 +57,27 @@
 
 #pragma once
 
-namespace rules {
-
-inline int sapOneOfEachExists() {
-    // only 1 of each may exist - a singular thing
-    return 1;
-}
-
-inline int sapListingCrossedWhenPlaced() {
-    // draw a line through its listing on the table
-    return 1;
-}
-
-inline int sapUnavailableOptionCount() {
-    // substitute a clue or simply ignore the result
-    return 2;
-}
-
-inline int sapPowersPartiallyDescribed() {
-    // their powers are only partially described
-    return 1;
-}
-
-inline int sapDmAssignsMajorPowers() {
-    // the DM must at least decide the major powers
-    return 1;
-}
-
-inline int sapLoreFoundByChance() {
-    // discovery of such information is not by chance
-    return 0;
-}
-
-inline int sapNemesisSometimesNeeded() {
-    // a nemesis creature in some cases, with limits
-    return 1;
-}
-
-inline int sapPowerTableCount() {
-    // 5 tables list the powers and side effects
-    return 5;
-}
-
-inline int sapHenchBehaviorCount() {
-    // the item holder will do one of three things
-    return 3;
-}
-
-inline int sapBehaviorEvilDestroysOrEscapes() {
-    // an evil holder destroys or escapes once known
-    return 1;
-}
-
-inline int sapBehaviorNeutralDominates() {
-    // a neutral holder dominates the former employer
-    return 1;
-}
-
-inline int sapBehaviorGoodDefectsWithItem() {
-    // a good holder escapes with the item to a suzerain
-    return 1;
-}
-
-inline int sapLoyaltyDropMinPct() {
-    // the floor of the loyalty drop band
-    return 10;
-}
-
-inline int sapLoyaltyDropMaxPct() {
-    // the top of the 10-30 percent loyalty drop
-    return 30;
-}
-
-inline int sapDestroyedBySingleMeans() {
-    // each can only be destroyed by a single means
-    return 1;
-}
-
-inline int sapDefaceSavePenalty() {
-    // the deface save versus magic is at minus 5
-    return -5;
-}
-
-inline int sapDefaceFailureIsDeath() {
-    // a failed deface save equals death
-    return 1;
-}
-
-inline int sapCorruptionTraitCount() {
-    // reclusive, secretive, arrogant, greedy
-    return 4;
-}
-
-inline int sapEffectsArePermanent() {
-    // the effects are permanent, even past wishes
-    return 1;
-}
-
-inline int sapDeityMayReverseSome() {
-    // a creating or controlling deity may reverse some
-    return 1;
-}
-
-}  // namespace rules
+// R-refactor: namespace rules -> class Specart_notes_on_artifacts_and_relics (instance methods)
+class Specart_notes_on_artifacts_and_relics {
+public:
+    int sapOneOfEachExists();
+    int sapListingCrossedWhenPlaced();
+    int sapUnavailableOptionCount();
+    int sapPowersPartiallyDescribed();
+    int sapDmAssignsMajorPowers();
+    int sapLoreFoundByChance();
+    int sapNemesisSometimesNeeded();
+    int sapPowerTableCount();
+    int sapHenchBehaviorCount();
+    int sapBehaviorEvilDestroysOrEscapes();
+    int sapBehaviorNeutralDominates();
+    int sapBehaviorGoodDefectsWithItem();
+    int sapLoyaltyDropMinPct();
+    int sapLoyaltyDropMaxPct();
+    int sapDestroyedBySingleMeans();
+    int sapDefaceSavePenalty();
+    int sapDefaceFailureIsDeath();
+    int sapCorruptionTraitCount();
+    int sapEffectsArePermanent();
+    int sapDeityMayReverseSome();
+};

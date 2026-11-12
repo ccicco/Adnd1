@@ -81,19 +81,7 @@
 
 #pragma once
 
-namespace rules {
 
-// -----------------------------------------------------------------------
-// Table I: map or magic.
-// -----------------------------------------------------------------------
-inline int mapOrMagicIsMap(int roll) {
-    // 01-10 the Map Table, 11-00 the Magic
-    // Items Table; the roll is 1-100
-    if (roll < 1) roll = 1;
-    if (roll > 100) roll = 100;
-    if (roll <= 10) return 1;
-    return 0;
-}
 
 // -----------------------------------------------------------------------
 // Table II: the map table.
@@ -106,66 +94,7 @@ enum MapLead {
     MT_COUNT
 };
 
-inline int mapTableResult(int roll) {
-    // 01-05 false, 06-70 monetary, 71-90
-    // magic, 91-00 a combined hoard
-    if (roll < 1) roll = 1;
-    if (roll > 100) roll = 100;
-    if (roll <= 5) return MT_FALSE;
-    if (roll <= 70) return MT_MONETARY;
-    if (roll <= 90) return MT_MAGIC;
-    return MT_COMBINED;
-}
 
-inline int mapNeverListsTreasure() {
-    // a map shows the location only, never
-    // the treasure itself
-    return 1;
-}
-
-// -----------------------------------------------------------------------
-// The outdoor map destination sub-table.
-// -----------------------------------------------------------------------
-inline int mapDestIsLairCaves(int roll) {
-    // 01-20 a labyrinth of caves found in
-    // the lair
-    if (roll < 1) roll = 1;
-    if (roll > 100) roll = 100;
-    if (roll <= 20) return 1;
-    return 0;
-}
-
-inline int mapDestMilesMin(int roll) {
-    // 21-60: 5 miles; 61-90: 10; 91-00: 50;
-    // the lair-caves band is 0 miles
-    if (roll < 1) roll = 1;
-    if (roll > 100) roll = 100;
-    if (roll <= 20) return 0;
-    if (roll <= 60) return 5;
-    if (roll <= 90) return 10;
-    return 50;
-}
-
-inline int mapDestMilesMax(int roll) {
-    // 21-60: 8 miles; 61-90: 40; 91-00: 500
-    if (roll < 1) roll = 1;
-    if (roll > 100) roll = 100;
-    if (roll <= 20) return 0;
-    if (roll <= 60) return 8;
-    if (roll <= 90) return 40;
-    return 500;
-}
-
-inline int mapDirectionDie() {
-    // a quick roll of d8 for direction
-    return 8;
-}
-
-inline int mapDirectionNorthIsOne() {
-    // 1 is north, counting round (2 is
-    // northeast, 3 is east, etc.)
-    return 1;
-}
 
 // -----------------------------------------------------------------------
 // The containment sub-table.
@@ -180,25 +109,30 @@ enum MapContainment {
     MCON_COUNT
 };
 
-inline int mapContainment(int roll) {
-    // 01-10 buried unguarded, 11-20 water,
-    // 21-70 lair, 71-80 ruins, 81-90 crypt,
-    // 91-00 town
-    if (roll < 1) roll = 1;
-    if (roll > 100) roll = 100;
-    if (roll <= 10) return MCON_BURIED_UNGUARDED;
-    if (roll <= 20) return MCON_HIDDEN_IN_WATER;
-    if (roll <= 70) return MCON_GUARDED_IN_LAIR;
-    if (roll <= 80) return MCON_IN_RUINS;
-    if (roll <= 90) return MCON_BURIAL_CRYPT;
-    return MCON_IN_TOWN;
-}
+// R-refactor: namespace rules -> class Treasure_determination (instance methods)
+class Treasure_determination {
+public:
 
-inline int lowValueLessGuarded() {
-    // relatively low-value treasures are not
-    // as well guarded as those of great value
-    return 1;
-}
+
+// -----------------------------------------------------------------------
+// Table I: map or magic.
+// -----------------------------------------------------------------------
+    int mapOrMagicIsMap(int roll);
+    int mapTableResult(int roll);
+    int mapNeverListsTreasure();
+
+
+// -----------------------------------------------------------------------
+// The outdoor map destination sub-table.
+// -----------------------------------------------------------------------
+    int mapDestIsLairCaves(int roll);
+    int mapDestMilesMin(int roll);
+    int mapDestMilesMax(int roll);
+    int mapDirectionDie();
+    int mapDirectionNorthIsOne();
+    int mapContainment(int roll);
+    int lowValueLessGuarded();
+
 
 // -----------------------------------------------------------------------
 // Table II.A: monetary treasure (d20).
@@ -206,260 +140,40 @@ inline int lowValueLessGuarded() {
 // 11-12, 13-15, 16-17, 18, 19, 20; the
 // quantity is the pip roll x the multiplier.
 // -----------------------------------------------------------------------
-inline int monetaryRowCount() { return 9; }
+    int monetaryRowCount();
+    int monetaryBandLo(int row);
+    int monetaryBandHi(int row);
+    int monetaryPipMin(int row);
+    int monetaryPipMax(int row);
+    int monetaryMult(int row);
+    int monetaryQty(int row, int pips);
+    int jewelryPipMin();
+    int jewelryPipMax();
+    int monetaryReRollMax();
+    int monetaryExtraRolls(int die);
+    int monetaryEachItemRow();
+    int monetaryEachItemCoversRows();
+    int abandonedTheftChanceIsDmSet();
 
-inline int monetaryBandLo(int row) {
-    if (row < 0) row = 0;
-    if (row > 8) row = 8;
-    if (row == 0) return 1;
-    if (row == 1) return 3;
-    if (row == 2) return 6;
-    if (row == 3) return 11;
-    if (row == 4) return 13;
-    if (row == 5) return 16;
-    if (row == 6) return 18;
-    if (row == 7) return 19;
-    return 20;
-}
-
-inline int monetaryBandHi(int row) {
-    if (row < 0) row = 0;
-    if (row > 8) row = 8;
-    if (row == 0) return 2;
-    if (row == 1) return 5;
-    if (row == 2) return 10;
-    if (row == 3) return 12;
-    if (row == 4) return 15;
-    if (row == 5) return 17;
-    if (row == 6) return 18;
-    if (row == 7) return 19;
-    return 20;
-}
-
-inline int monetaryPipMin(int row) {
-    // rows 0-5: cp 2d4, sp d4+1, ep 5d6,
-    // gp 3d6, pp 5d4, gems d10; jewelry is
-    // its own helper below
-    if (row < 0) row = 0;
-    if (row > 5) row = 5;
-    if (row == 0) return 2;
-    if (row == 1) return 2;
-    if (row == 2) return 5;
-    if (row == 3) return 3;
-    if (row == 4) return 5;
-    return 1;
-}
-
-inline int monetaryPipMax(int row) {
-    if (row < 0) row = 0;
-    if (row > 5) row = 5;
-    if (row == 0) return 8;
-    if (row == 1) return 5;
-    if (row == 2) return 30;
-    if (row == 3) return 18;
-    if (row == 4) return 20;
-    return 10;
-}
-
-inline int monetaryMult(int row) {
-    // cp/sp x 10,000; ep/gp x 1,000;
-    // pp x 100; gems x 10 (the gem count)
-    if (row < 0) row = 0;
-    if (row > 5) row = 5;
-    if (row == 0) return 10000;
-    if (row == 1) return 10000;
-    if (row == 2) return 1000;
-    if (row == 3) return 1000;
-    if (row == 4) return 100;
-    return 10;
-}
-
-inline int monetaryQty(int row, int pips) {
-    // the trove quantity: the pip roll
-    // clamped to its range, times the
-    // multiplier (cp 20,000-80,000; sp
-    // 20,000-50,000; ep 5,000-30,000; gp
-    // 3,000-18,000; pp 500-2,000; gems
-    // 10-100)
-    if (row < 0) row = 0;
-    if (row > 5) row = 5;
-    if (pips < monetaryPipMin(row))
-        pips = monetaryPipMin(row);
-    if (pips > monetaryPipMax(row))
-        pips = monetaryPipMax(row);
-    return pips * monetaryMult(row);
-}
-
-inline int jewelryPipMin() { return 5; }
-
-inline int jewelryPipMax() { return 50; }
-
-inline int monetaryReRollMax() {
-    // rows 18 and 19 discount rolls above 17
-    return 17;
-}
-
-inline int monetaryExtraRolls(int die) {
-    // row 18 rolls twice, row 19 thrice;
-    // every other row rolls once
-    if (die < 1) die = 1;
-    if (die > 20) die = 20;
-    if (die == 18) return 2;
-    if (die == 19) return 3;
-    return 1;
-}
-
-inline int monetaryEachItemRow() { return 20; }
-
-inline int monetaryEachItemCoversRows() {
-    // row 20 gives each monetary item above:
-    // one of each row 1 through 17 (rows 18
-    // and 19 are re-roll instructions, not
-    // items)
-    return 17;
-}
-
-inline int abandonedTheftChanceIsDmSet() {
-    // the chance abandoned treasure is stolen
-    // away is set by the DM from actions and
-    // precautions
-    return 1;
-}
 
 // -----------------------------------------------------------------------
 // Table II.B: magic treasure (d20).
 // Bands 0-6 cover die results 1-5, 6-8,
 // 9-12, 13-14, 15-18, 19, 20.
 // -----------------------------------------------------------------------
-inline int magicBandCount() { return 7; }
-
-inline int magicBandLo(int row) {
-    if (row < 0) row = 0;
-    if (row > 6) row = 6;
-    if (row == 0) return 1;
-    if (row == 1) return 6;
-    if (row == 2) return 9;
-    if (row == 3) return 13;
-    if (row == 4) return 15;
-    if (row == 5) return 19;
-    return 20;
-}
-
-inline int magicBandHi(int row) {
-    if (row < 0) row = 0;
-    if (row > 6) row = 6;
-    if (row == 0) return 5;
-    if (row == 1) return 8;
-    if (row == 2) return 12;
-    if (row == 3) return 14;
-    if (row == 4) return 18;
-    if (row == 5) return 19;
-    return 20;
-}
-
-inline int magicBandItems(int row) {
-    // the total item count of the band: 1+4
-    // potions, 2, the SAW triple, 3, the
-    // 6-potion + 6-scroll dozen, 4, 5
-    if (row < 0) row = 0;
-    if (row > 6) row = 6;
-    if (row == 0) return 1;
-    if (row == 1) return 2;
-    if (row == 2) return 3;
-    if (row == 3) return 3;
-    if (row == 4) return 12;
-    if (row == 5) return 4;
-    return 5;
-}
-
-inline int magicBandExtraPotions(int row) {
-    // band 1-5: the item plus 4 potions
-    if (row < 0) row = 0;
-    if (row > 6) row = 6;
-    if (row == 0) return 4;
-    return 0;
-}
-
-inline int magicBandPotions(int row) {
-    // band 15-18: any 6 potions
-    if (row < 0) row = 0;
-    if (row > 6) row = 6;
-    if (row == 4) return 6;
-    return 0;
-}
-
-inline int magicBandScrolls(int row) {
-    // band 15-18: any 6 scrolls
-    if (row < 0) row = 0;
-    if (row > 6) row = 6;
-    if (row == 4) return 6;
-    return 0;
-}
-
-inline int magicBandSwords(int row) {
-    // band 9-12: 1 sword
-    if (row < 0) row = 0;
-    if (row > 6) row = 6;
-    if (row == 2) return 1;
-    return 0;
-}
-
-inline int magicBandArmorOrShield(int row) {
-    // band 9-12: 1 armor or shield
-    if (row < 0) row = 0;
-    if (row > 6) row = 6;
-    if (row == 2) return 1;
-    return 0;
-}
-
-inline int magicBandMiscWeapons(int row) {
-    // band 9-12: 1 miscellaneous weapon
-    if (row < 0) row = 0;
-    if (row > 6) row = 6;
-    if (row == 2) return 1;
-    return 0;
-}
-
-inline int magicBandNoSwordOrPotions(int row) {
-    // band 13-14: any 3 items, no sword or
-    // potions
-    if (row < 0) row = 0;
-    if (row > 6) row = 6;
-    if (row == 3) return 1;
-    return 0;
-}
-
-inline int magicBandRings(int row) {
-    // band 19: 1 of the 4 items is a ring
-    if (row < 0) row = 0;
-    if (row > 6) row = 6;
-    if (row == 5) return 1;
-    return 0;
-}
-
-inline int magicBandRods(int row) {
-    // bands 19 and 20: 1 item is a rod
-    if (row < 0) row = 0;
-    if (row > 6) row = 6;
-    if (row == 5) return 1;
-    if (row == 6) return 1;
-    return 0;
-}
-
-inline int magicBandMiscMagic(int row) {
-    // band 20: 1 item is miscellaneous magic
-    if (row < 0) row = 0;
-    if (row > 6) row = 6;
-    if (row == 6) return 1;
-    return 0;
-}
-
-inline int magicTableWeightedByDesign() {
-    // potions, scrolls, armor and arms are
-    // plentiful; rings, rods and misc magic
-    // are only 25 percent - keep potent magic
-    // rare
-    return 1;
-}
-
-}  // namespace rules
+    int magicBandCount();
+    int magicBandLo(int row);
+    int magicBandHi(int row);
+    int magicBandItems(int row);
+    int magicBandExtraPotions(int row);
+    int magicBandPotions(int row);
+    int magicBandScrolls(int row);
+    int magicBandSwords(int row);
+    int magicBandArmorOrShield(int row);
+    int magicBandMiscWeapons(int row);
+    int magicBandNoSwordOrPotions(int row);
+    int magicBandRings(int row);
+    int magicBandRods(int row);
+    int magicBandMiscMagic(int row);
+    int magicTableWeightedByDesign();
+};

@@ -32,73 +32,75 @@
 // rules/dmg/weaponspeed.h, and the lance vs-AC rows ride the 1eonline.info
 // compilation the R189 speed-verify duty already trusts
 //
-namespace rules {
+
+// R-refactor: namespace rules -> class Set_spear (instance methods)
+class Set_spear {
+public:
+
 
 // ---- the set spear (the R781 wiring) ----
 
 // The feeder seam: the R189 chart's set-spear double asterisk (the receive
 // vs. the charging rider).
-inline int spsSetFeederRound()
-    { return 189; }
+    int spsSetFeederRound();
+
 
 // The set spear round: the stance goes live, the receive doubles its one
 // blow.
-inline int spsSpearSetRound()
-    { return 781; }
+    int spsSpearSetRound();
+
 
 // The set spear's receive multiplier: double damage on the one counterstrike
 // blow.
-inline int spsSetDamageMultiplier()
-    { return 2; }
+    int spsSetDamageMultiplier();
+
 
 // The stance answers a closing monster blow with a FIRST counterstrike
 // (ai/actor.cpp, the resolution-loop fold).
-inline bool spsSpearSetReceivesTheClosingFoe()
-    { return true; }
+    bool spsSpearSetReceivesTheClosingFoe();
+
 
 // The planted spear submits no attack that round - one defensive posture (the
 // submitTeam stance branch).
-inline bool spsTheStanceConsumesTheRound()
-    { return true; }
+    bool spsTheStanceConsumesTheRound();
+
 
 // ---- the speed seam and the vs-AC rows (the R781 wiring) ----
 
 // The vs-AC feeder seam: the R145 per-weapon adjustment audit the three
 // compilation lance rows now pin.
-inline int spsAcFeederRound()
-    { return 145; }
+    int spsAcFeederRound();
+
 
 // DMG p.66 - the speed factor cases page the R158 helpers already honor.
-inline int spsSpeedPage()
-    { return 66; }
+    int spsSpeedPage();
+
 
 // The three compilation vs-AC rows: light, medium, heavy horse.
-inline int spsLanceAcRowCount()
-    { return 3; }
+    int spsLanceAcRowCount();
+
 
 // The three 1eonline.info vs-AC rows (light -3..0, medium -1..+1, heavy
 // +4..0) replace the struck R779 zero rows.
-inline bool spsLanceAcCellsRideTheCompilation()
-    { return true; }
+    bool spsLanceAcCellsRideTheCompilation();
+
 
 // DMG p.66 case 1 live: a tie orders the blows by the lower factor (a +1
 // shift on the slower side's base).
-inline bool spsTieReadsTheSpeedLadder()
-    { return true; }
+    bool spsTieReadsTheSpeedLadder();
+
 
 // DMG p.66 case 3 live: the weapon strikes at the factor minus the losing die
 // (clamped 1..10) against the caster.
-inline bool spsWeaponVsSpellReadsTheSegment()
-    { return true; }
+    bool spsWeaponVsSpellReadsTheSegment();
+
 
 // DMG p.66 case 2 live: after round one the faster front gains the
 // before-count minus one (the +5 spacing JUDGMENT).
-inline bool spsExtraAttacksOpenAfterRoundOne()
-    { return true; }
+    bool spsExtraAttacksOpenAfterRoundOne();
+
 
 // The R158 print: missile weapons carry no factor - the fold reads 0 as
 // unknown and skips.
-inline bool spsMissileWeaponsCarryNoFactor()
-    { return true; }
-
-}   // namespace rules
+    bool spsMissileWeaponsCarryNoFactor();
+};
