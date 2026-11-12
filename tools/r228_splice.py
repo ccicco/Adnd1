@@ -534,7 +534,7 @@ patch('regtest.cpp', '(MU %d, CL %d, DR %d), ' + DQ,
       r80d_old, r80d_new)
 patch('regtest.cpp', 'R228: the druid registry parameters audit',
       audit_old, audit_new)
-patch('tools/phb_gap_report.md',
+patch('tools/reports/phb_gap_report.md',
       'R229 the illusionist roster joins the',
       gap_old, gap_new)
 

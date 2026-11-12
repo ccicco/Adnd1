@@ -5,7 +5,7 @@
  "regtest": "regtest.cpp",
  "header_file": "rules/ff/index_walk.h",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
- "gap_report": "tools/mm2_gap_report.md",
+ "gap_report": "tools/reports/mm2_gap_report.md",
  "banner": {
   "title": "the FF index line walk - the 414-line F-reference census",
   "provenance": "spec-driven; the FF index line walk round - the F-referenced lines of the merged MM2 index (print pp. 156-160, the four-column layout) read a third time against the geometric xml (the word coordinates, 1595 reconstructed lines) and collated with the two djvu texts and the char-level abbyy: 414 walk lines (the R819 two-voice census pinned 401; the geometric re-read recovers the thirteen rows the fused texts dropped - the Bunyip, Gold Bug, Burrow Warden, Blind Man, Blending Man, Mephit Devil, Dark Elf, Olhydra and Oriental Dragon reads among them), 214 keyed to the 103 registry FF defs (every roster def carries a keyed line; the Penanggalan, Rothe and Terithran reads ride their own-name rows), 200 keyless (the family rows, the MM2 own rows, the no-def reads), no defs promoted, the registry stays 913, the ff def census stays 103, no gap boxes flip; the walk is the own-name model - a family sub-row letters on its own printed initial and a double-listed row counts each printing"

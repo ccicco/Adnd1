@@ -5151,7 +5151,7 @@
   "  Astral/Ethereal + Creating-Your-Own +",
   "  the frequency lists + Index)."
  ],
- "gap_report": "tools/mm2_gap_report.md",
+ "gap_report": "tools/reports/mm2_gap_report.md",
  "gap_census": {
   "closed": 34,
   "open": 3

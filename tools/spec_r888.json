@@ -30,7 +30,7 @@
   "  32 issue pages at extract/dragon/001/",
   "  pNNN_full.txt (the chat-side OCR",
   "  transcripts, folio = PDF page) PLUS the",
-  "  pre-flip tools/dragon_gap_report.md (3",
+  "  pre-flip tools/reports/dragon_gap_report.md (3",
   "  boxes, 0 closed) shipped as spec data",
   "  files - the Ives box flips at the NEXT",
   "  Dragon round (a report cannot flip in the",
@@ -71,7 +71,7 @@
  "audit_file": "rules/audits/r888_dragon_small_variants.h",
  "audit_label": "R888 Dragon small variants audit",
  "audit_anchor": "#include \"rules/audits/r887_ives_attribute.h\"  // R887: R887 Ives attribute audit",
- "gap_report": "tools/dragon_gap_report.md",
+ "gap_report": "tools/reports/dragon_gap_report.md",
  "gap_census": {
   "closed": 1,
   "open": 2

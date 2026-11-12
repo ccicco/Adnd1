@@ -17,7 +17,7 @@
 #                         draws a wander bite (drinking in
 #                         the halls is not free)
 #   regtest.cpp         - "R90 clock audit: bad 0"
-#   tools/playverify_r77_r83.md - the walkthrough
+#   tools/reports/playverify_r77_r83.md - the walkthrough
 # All anchors and inserted text are ASCII-only (protocol rule).
 
 import sys, os
@@ -232,7 +232,7 @@ OK &= patch('regtest.cpp',
 # ---------------------------------------------------------------------------
 # 6) playverify checklist - the R90 lines
 # ---------------------------------------------------------------------------
-OK &= patch('tools/playverify_r77_r83.md',
+OK &= patch('tools/reports/playverify_r77_r83.md',
 """## Sign-off""",
 """## R90: the camp clock
 - [ ] Rest in the dungeon ([R]): on success the HUD Turn jumps

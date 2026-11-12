@@ -3,7 +3,7 @@
  "prefix": "mm2q",
  "header_file": "rules/mm/mm2q.h",
  "regtest": "regtest.cpp",
- "gap_report": "tools/mm2_gap_report.md",
+ "gap_report": "tools/reports/mm2_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "census_before": 733,
  "title": "the MM2 letter Q walk - the quasi-elemental lightning, quickling and quickwood turns",

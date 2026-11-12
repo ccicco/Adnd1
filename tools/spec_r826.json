@@ -5,7 +5,7 @@
   "regtest": "regtest.cpp",
   "header_file": "rules/meta/migration_batch_dmg_tables.h",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
-  "gap_report": "tools/mm2_gap_report.md",
+  "gap_report": "tools/reports/mm2_gap_report.md",
   "banner": {
     "title": "the DMG tables migration batch - the third batch of blocks leaves regtest",
     "provenance": "spec-driven; the third 18 real audit blocks (R147 x3 through R178c, 1938 lines - the DMG tables and appendix audits) move verbatim into rules/audits fragments, regtest keeps the one-line include at each head line; the census holds, the labels relocate; the round audit rides a fragment as before"

@@ -384,8 +384,8 @@ int rollTurnCount(Dice& dice, const TurnAttempt& t) {
         write("regtest.cpp", r)
     changed = changed or did
 
-    # ---- 4. tools/dmg_gap_report.md: flip the box, same commit ----
-    g = read("tools/dmg_gap_report.md")
+    # ---- 4. tools/reports/dmg_gap_report.md: flip the box, same commit ----
+    g = read("tools/reports/dmg_gap_report.md")
     old_g = """R108b "THE BOOK, WHOLE" (the redo). The first
 edition of this report was verified against OCR
 book pages 1-67 only. The full Premium DMG OCR
@@ -407,10 +407,10 @@ R109 CLOSED divergence 1 of 6 (turning undead);
 the remaining five stay ranked below."""
     g, did = replace_exact(g, old_g, new_g, "gap report header note")
     if did:
-        write("tools/dmg_gap_report.md", g)
+        write("tools/reports/dmg_gap_report.md", g)
     changed = changed or did
 
-    g = read("tools/dmg_gap_report.md")
+    g = read("tools/reports/dmg_gap_report.md")
     old_g = """- [~] 1. **Turning undead (p.75-76, matrix III;
       procedure p.77)** - the repo's mechanic is
       not the book's. The book: roll d20, match
@@ -447,7 +447,7 @@ the remaining five stay ranked below."""
       battery audit."""
     g, did = replace_exact(g, old_g, new_g, "gap report turning box")
     if did:
-        write("tools/dmg_gap_report.md", g)
+        write("tools/reports/dmg_gap_report.md", g)
     changed = changed or did
 
     print("R109 splice: " +

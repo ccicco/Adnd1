@@ -45,7 +45,7 @@
 #       volley hit rides the R37 dice, the
 #       R315 convention); the battery census
 #       moves 244 -> 245.
-#   (j) tools/dmg_gap_report.md - the
+#   (j) tools/reports/dmg_gap_report.md - the
 #       chronicle paragraph (no box flip).
 #
 # The R318 round-state entry rides the R319
@@ -636,7 +636,7 @@ _o, _c, _o2, _c2 = counts(s)
 assert _o == _c and _o2 == _c2, 'patch i balance'
 assert len(applied) + len(already) == 9, 'patch i count wrong'
 
-# ---- (j) tools/dmg_gap_report.md: the chronicle ----
+# ---- (j) tools/reports/dmg_gap_report.md: the chronicle ----
 GP_OLD = NL.join([
     'census moves 243 -> 244 with the R317',
     'audit.',
@@ -668,7 +668,7 @@ GP_NEW = NL.join([
 clean(GP_OLD, 57, gap=True)
 clean(GP_NEW, 57, gap=True)
 
-p = 'tools/dmg_gap_report.md'
+p = 'tools/reports/dmg_gap_report.md'
 s = rd(p)
 if 'R318 the net entrap layer' in s:
     already.append('dmg report: the chronicle')

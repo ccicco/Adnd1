@@ -31,7 +31,7 @@
 #       contiguity walk, the bandless gate and the
 #       cap/note re-pins (census 93 - one new
 #       audit printf).
-#   (d) tools/dmg_gap_report.md - the header round
+#   (d) tools/reports/dmg_gap_report.md - the header round
 #       note, the R171 box tail and the Appendix
 #       K+L+M box close the finding.
 #
@@ -465,17 +465,17 @@ patch("regtest.cpp", p4_old, p4_new,
       marker="R175 appendix L 5-and-up table audit")
 assert len(applied) + len(already) == 4
 
-patch("tools/dmg_gap_report.md", p5_old, p5_new,
+patch("tools/reports/dmg_gap_report.md", p5_old, p5_new,
       "gap report: R175 header note",
       marker="R175 PINNED the Appendix L 5-and-up table")
 assert len(applied) + len(already) == 5
 
-patch("tools/dmg_gap_report.md", p6_old, p6_new,
+patch("tools/reports/dmg_gap_report.md", p6_old, p6_new,
       "gap report: R171 box tail closed",
       marker="CLOSED R175 (the trusted compilation")
 assert len(applied) + len(already) == 6
 
-patch("tools/dmg_gap_report.md", p7_old, p7_new,
+patch("tools/reports/dmg_gap_report.md", p7_old, p7_new,
       "gap report: K+L+M box closed",
       marker="CLOSED" + NL + "      R175: the full 26-row table")
 assert len(applied) + len(already) == 7

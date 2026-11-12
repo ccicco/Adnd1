@@ -392,7 +392,7 @@ assert len(applied) + len(already) == 2, 'b count'
 
 
 # ---- (c) the gap report: the three closes ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 if '- [x] **Method V**' in s:
     already.append('gap: the Method V close')

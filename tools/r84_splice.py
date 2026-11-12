@@ -12,7 +12,7 @@
 #      -> UTF-8 artifacts) plus real U+2014 em-dashes. The
 #      whole codebase becomes pure ASCII (bulletproof for any
 #      compiler / code page, no /utf-8 flag needed).
-#   3) tools/playverify_r77_r83.md - the keyboard checklist that
+#   3) tools/reports/playverify_r77_r83.md - the keyboard checklist that
 #      clears the play-verify backlog item once a PC build runs.
 # Idempotent: each part skips if its result is already present.
 
@@ -99,7 +99,7 @@ OK &= ascii_pass()
 # R84-CHUNK-3-START
 
 # ---------------------------------------------------------------------------
-# 3) the play-verify checklist (tools/playverify_r77_r83.md)
+# 3) the play-verify checklist (tools/reports/playverify_r77_r83.md)
 # ---------------------------------------------------------------------------
 CHECKLIST = """# Play-Verify Checklist: R77-R83 features (run on a PC build)
 # Build first (MSVC or mingw): adnd1.exe. Then walk these in order.
@@ -169,7 +169,7 @@ CHECKLIST = """# Play-Verify Checklist: R77-R83 features (run on a PC build)
 """
 
 def write_checklist():
-    p = os.path.join(ROOT, 'tools/playverify_r77_r83.md')
+    p = os.path.join(ROOT, 'tools/reports/playverify_r77_r83.md')
     if os.path.exists(p):
         REPORT.append('play-verify checklist: already present')
         return True

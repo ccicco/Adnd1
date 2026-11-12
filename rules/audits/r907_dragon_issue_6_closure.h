@@ -1,7 +1,7 @@
     // ---- R907 Dragon issue-6 closure audit ----
     // THE DRAGON ISSUE-6 BOX CLOSING ROUND - the pure bookkeeping round, no
     // new print ink. The flip: the issue-6 box in
-    // tools/dragon_gap_report_006.md goes [x] - 1 closed / 0 open, the
+    // tools/reports/dragon_gap_report_006.md goes [x] - 1 closed / 0 open, the
     // issue-6 walk complete, the four chains (the Sea Trade system, the
     // psionic option, the morale system, the Death Angel at folios 6, 25,
     // 26-27, 29) having been the only engine-relevant ink in issue #6. The

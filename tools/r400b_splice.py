@@ -57,7 +57,7 @@
 # 6. regtest.cpp: a new R400
 #    audit block before the R227
 #    anchor; census 326 -> 327.
-# 7. tools/ua_gap_report.md: the
+# 7. tools/reports/ua_gap_report.md: the
 #    comeliness seam checkbox and
 #    the DEFERRED item close.
 # 8. The seed takes the R399
@@ -560,8 +560,8 @@ R227 = ('    // ---- R227: the wis mental'
 pair(RT, R227, AUD + NL + R227,
      'regtest: the R400 audit block')
 
-# ======== (h) tools/ua_gap_report.md ========
-GP = 'tools/ua_gap_report.md'
+# ======== (h) tools/reports/ua_gap_report.md ========
+GP = 'tools/reports/ua_gap_report.md'
 
 pair(GP, E(
     '- [ ] The comeliness site (a Character',

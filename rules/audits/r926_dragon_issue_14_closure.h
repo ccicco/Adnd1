@@ -2,7 +2,7 @@
     // THE DRAGON ISSUE-14 CLOSURE ROUND - the pure flip, no new ink. BOTH
     // report-014 boxes close at this single flip - the Name That Monster
     // Contest #1 winners (folio 3) and the Gregory Rihn lycanthropy variant
-    // (folios 29-32) - 2 closed / 0 open in tools/dragon_gap_report_014.md;
+    // (folios 29-32) - 2 closed / 0 open in tools/reports/dragon_gap_report_014.md;
     // the two-chain walk completes in two rounds (R925 opener carrying both
     // chains, this flip), the issue-11 two-round pattern. The bookkeeping
     // pins: the two boxes and their two chains, the issue-13 report complete

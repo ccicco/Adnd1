@@ -185,7 +185,7 @@ patch('regtest.cpp',
       NL.join(aud) + NL + '    // ---- R163: the poison table audit -------------')
 
 # ---------------------------------------------------------------------------
-# Patch 6: tools/phb_gap_report.md - the divergence 3 box flipped
+# Patch 6: tools/reports/phb_gap_report.md - the divergence 3 box flipped
 # ---------------------------------------------------------------------------
 
 box_old = ('- [~] 3. **WIS Table I, magical attack adjustment'
@@ -214,22 +214,22 @@ box_new = ('- [x] 3. **WIS Table I, magical attack adjustment'
            + NL + '      The R194 battery audit walks the ladder and'
            + NL + '      the delegation. Census 111.')
 
-t2 = rd('tools/phb_gap_report.md')
+t2 = rd('tools/reports/phb_gap_report.md')
 if 'CLOSED R194: rules/engine/character.cpp wisMagDefAdj' not in t2:
     assert t2.count(box_old) == 1, 'R194 box anchor not unique'
 else:
     assert t2.count(box_old) == 0, 'R194 box old text lingers'
 
-patch('tools/phb_gap_report.md',
+patch('tools/reports/phb_gap_report.md',
       'CLOSED R194: rules/engine/character.cpp wisMagDefAdj',
       box_old,
       box_new)
 
 # ---------------------------------------------------------------------------
-# Patch 7: tools/phb_gap_report.md - the intro line repin
+# Patch 7: tools/reports/phb_gap_report.md - the intro line repin
 # ---------------------------------------------------------------------------
 
-patch('tools/phb_gap_report.md',
+patch('tools/reports/phb_gap_report.md',
       'divergence 4 (INT) remains the last ranked fix round',
       'divergences 3 (WIS) and 4 (INT) remain ranked fix rounds;'
       + NL + '5 (CHA, the live reaction feed) CLOSED R193.',
@@ -237,10 +237,10 @@ patch('tools/phb_gap_report.md',
       + NL + '3 (WIS) CLOSED R194, 5 (CHA) CLOSED R193.')
 
 # ---------------------------------------------------------------------------
-# Patch 8: tools/dmg_gap_report.md - the round note
+# Patch 8: tools/reports/dmg_gap_report.md - the round note
 # ---------------------------------------------------------------------------
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R194 landed the wisdom defense repin',
       'New R193 battery audit; census 110. Next: the PHB'
       + NL + 'divergences 3 (WIS) and 4 (INT).',

@@ -338,11 +338,11 @@ PATCHES = [
      TC_OLD, TC_NEW, "treasure.cpp pin helpers"),
     ("regtest.cpp", "R122 treasure line-diff audit",
      RT_OLD, RT_NEW, "regtest R122 audit"),
-    ("tools/dmg_gap_report.md", "R122 CLOSED the treasure line-diff",
+    ("tools/reports/dmg_gap_report.md", "R122 CLOSED the treasure line-diff",
      GH_OLD, GH_NEW, "gap report header note"),
-    ("tools/dmg_gap_report.md", "VERIFIED R122: every implemented table",
+    ("tools/reports/dmg_gap_report.md", "VERIFIED R122: every implemented table",
      GT_OLD, GT_NEW, "gap report upper box note"),
-    ("tools/dmg_gap_report.md", "are the treasure.h print-errata list",
+    ("tools/reports/dmg_gap_report.md", "are the treasure.h print-errata list",
      GB_OLD, GB_NEW, "gap report treasure line-diff box"),
 ]
 

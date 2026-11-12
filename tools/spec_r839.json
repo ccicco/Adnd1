@@ -5,7 +5,7 @@
  "regtest": "regtest.cpp",
  "header_file": "rules/ff/promo_batch4.h",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
- "gap_report": "tools/mm2_gap_report.md",
+ "gap_report": "tools/reports/mm2_gap_report.md",
  "banner": {
   "title": "the fourth FF promotion batch - the dungeon cells rekey",
   "provenance": "spec-driven; the fourth Fiend Folio promotion batch - twenty-five defs lifted from the ff print as new lua data files (the fifteen NEW defs that key the dungeon FF rows: al_miraj, bullywug, bat_giant, grimlock, mephit_fire, drow, lava_children, meenlock, hook_horror, githyanki, grell, mezzodaemon, slaad_grey, nycadaemon and slaad_death, plus the ten FILL defs in print order: achaierai, adherer, aleax, apparition, astral_searcher, babbler, berbalang, blindheim, bonesnapper and booka), the twenty-four blank dungeon encounter cells rekeyed (fifteen to the new defs, nine to the standing norker, coffer_corpse, quaggoth, kenku, shocker, thoqqua, caterwaul, algoid and red_slaad defs), the two FF rows left keyless (the Elemental Prince row - no print def - and the Hornet Giant row, the FF p. 52 def rides a future promotion), the dungeon walk-key census re-pinned (146 -> 170), the blank census drains 44 -> 20, the registry 887 -> 912, the ff def census 77 -> 102, the source rows stay (ff 26 dungeon), no gap boxes flip; the def bodies carry the print-fidelity pin headers"

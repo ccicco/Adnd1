@@ -46,11 +46,11 @@
 #       sequences (the replica walked the
 #       draws first - no compiler in the splice
 #       sandbox).
-#   (f) tools/phb_gap_report.md - the STR
+#   (f) tools/reports/phb_gap_report.md - the STR
 #       Table II box head amended and the
 #       round box (the ledger holds ZERO open
 #       items).
-#   (g) tools/dmg_gap_report.md - the
+#   (g) tools/reports/dmg_gap_report.md - the
 #       chronicle paragraph (the DMG pins
 #       recorded).
 #
@@ -826,7 +826,7 @@ assert s.count('strOpenDoorsLockedMax') == 5, 'patch e parentheticals'
 assert s.count('forceLockedDoor();') == 9, 'patch e site calls'
 assert len(applied) + len(already) == 5, 'patch e count wrong'
 
-# ---- (f) tools/phb_gap_report.md: the head + the box ----
+# ---- (f) tools/reports/phb_gap_report.md: the head + the box ----
 GR153_OLD = NL.join([
     '- [x] **STR Table II (p.9, ability adjustments)** -',
     '      pinned R153: hit probability, damage, the',
@@ -892,7 +892,7 @@ GR_INS_NEW = NL.join([
 for t in (GR153_OLD, GR153_NEW, GR_INS_OLD, GR_BOX, GR_INS_NEW):
     clean(t, 57)
 
-p = 'tools/phb_gap_report.md'
+p = 'tools/reports/phb_gap_report.md'
 s = rd(p)
 if 'The locked door forced' in s:
     already.append('phb_gap_report.md: the head + the box')
@@ -921,7 +921,7 @@ assert '## R299 the party recordings round' in s, 'patch f ate the head'
 assert s.count('- [ ]') == 0, 'patch f opened an item'
 assert len(applied) + len(already) == 6, 'patch f count wrong'
 
-# ---- (g) tools/dmg_gap_report.md: the chronicle ----
+# ---- (g) tools/reports/dmg_gap_report.md: the chronicle ----
 DMG_OLD = NL.join([
     'carries the round box; the battery',
     'census moves 225 -> 227).',
@@ -952,7 +952,7 @@ DMG_NEW = NL.join([
 for t in (DMG_OLD, DMG_NEW):
     clean(t, 57)
 
-p = 'tools/dmg_gap_report.md'
+p = 'tools/reports/dmg_gap_report.md'
 s = rd(p)
 if 'R305 PINNED the DMG FIRST DUNGEON' in s:
     already.append('dmg_gap_report.md: the chronicle')

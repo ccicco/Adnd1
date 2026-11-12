@@ -49,7 +49,7 @@
 #    R371, the equipment costs
 #    cross-check R392 live;
 #    census 334 -> 335.
-# 3. tools/ua_gap_report.md:
+# 3. tools/reports/ua_gap_report.md:
 #    the two stale boxes
 #    (the Armor Class Table,
 #    the Equipment and
@@ -421,8 +421,8 @@ R227 = ('    // ---- R227: the wis mental'
 pair(RT, R227, AUD + NL + R227,
      'regtest: the R408 audit block')
 
-# ======== (d) tools/ua_gap_report.md ========
-GP = 'tools/ua_gap_report.md'
+# ======== (d) tools/reports/ua_gap_report.md ========
+GP = 'tools/reports/ua_gap_report.md'
 
 pair(GP, E(
     '- [ ] **The Armor Class Table** (p. 26)',

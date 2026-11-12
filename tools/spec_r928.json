@@ -76,8 +76,8 @@
  "audit_file": "rules/audits/r928_dragon_issue_15_closure.h",
  "audit_label": "R928 Dragon issue-15 closure audit",
  "audit_anchor": "#include \"rules/audits/r927_issue_15_opener.h\"  // R927: R927 issue-15 opener audit",
- "audit_comment": "THE DRAGON ISSUE-15 CLOSURE ROUND - the pure flip, no new ink. ALL FIVE report-015 boxes close at this single flip - Dragon Magic (print 3, cont. 13), the Wandering Monster fourth-level list (print 7), Weather in the Wilderness (print 14-15), the Pits tables (print 5) and the Random Events Table for Settlements (print 5) - 5 closed / 0 open in tools/dragon_gap_report_015.md; the five-chain walk completes in two rounds (the R927 opener carrying all five chains, this flip), the issue-14 two-round pattern. Issues 2-15 all closed.",
- "gap_report": "tools/dragon_gap_report_015.md",
+ "audit_comment": "THE DRAGON ISSUE-15 CLOSURE ROUND - the pure flip, no new ink. ALL FIVE report-015 boxes close at this single flip - Dragon Magic (print 3, cont. 13), the Wandering Monster fourth-level list (print 7), Weather in the Wilderness (print 14-15), the Pits tables (print 5) and the Random Events Table for Settlements (print 5) - 5 closed / 0 open in tools/reports/dragon_gap_report_015.md; the five-chain walk completes in two rounds (the R927 opener carrying all five chains, this flip), the issue-14 two-round pattern. Issues 2-15 all closed.",
+ "gap_report": "tools/reports/dragon_gap_report_015.md",
  "gap_census": {
   "closed": 5,
   "open": 0

@@ -512,7 +512,7 @@ patch('regtest.cpp',
       NL.join(aud) + NL + '    // ---- R163: the poison table audit -------------')
 
 # ---------------------------------------------------------------------------
-# Patch 10: tools/phb_gap_report.md - the R192 box flipped
+# Patch 10: tools/reports/phb_gap_report.md - the R192 box flipped
 # ---------------------------------------------------------------------------
 
 box_old = ('- [ ] **Wisdom Table II, cleric bonus spells and'
@@ -540,22 +540,22 @@ box_new = ('- [x] **Wisdom Table II, cleric bonus spells and'
            + NL + '      R192 battery audit walks both tables cell'
            + NL + '      for cell and the wiring. Census 109.')
 
-t2 = rd('tools/phb_gap_report.md')
+t2 = rd('tools/reports/phb_gap_report.md')
 if 'spell failure - PINNED R192' not in t2:
     assert t2.count(box_old) == 1, 'R192 box anchor not unique'
 else:
     assert t2.count(box_old) == 0, 'R192 box old text lingers'
 
-patch('tools/phb_gap_report.md',
+patch('tools/reports/phb_gap_report.md',
       'spell failure - PINNED R192',
       box_old,
       box_new)
 
 # ---------------------------------------------------------------------------
-# Patch 11: tools/dmg_gap_report.md - the round note
+# Patch 11: tools/reports/dmg_gap_report.md - the round note
 # ---------------------------------------------------------------------------
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R192 landed the wisdom wiring',
       'other nine rows verified cell for cell. New R191'
       + NL + 'battery audit; census 108. Next: the gap report names'

@@ -82,7 +82,7 @@
  "audit_file": "rules/audits/r909_dragon_issue_7_closure.h",
  "audit_label": "R909 Dragon issue-7 closure audit",
  "audit_anchor": "#include \"rules/audits/r908_prowler_opener.h\"  // R908: R908 Prowler opener audit",
- "gap_report": "tools/dragon_gap_report_007.md",
+ "gap_report": "tools/reports/dragon_gap_report_007.md",
  "gap_census": {
   "closed": 1,
   "open": 0
@@ -96,7 +96,7 @@
  ],
  "banner": {
   "title": "The Dragon issue-7 box closing round - the thin walk complete: the pure bookkeeping round, the flip and the registry ground truth",
-  "provenance": "The pure box-closing round, no new ink: the issue-7 box in tools/dragon_gap_report_007.md flips closed (1 / 0), completing the issue-7 walk exactly as adjudicated at R908 - the Prowler having been the only engine-relevant ink in issue #7 (the Gygax origins history, the awards ballot, the diceless-play piece, Mystery Hill, the fiction, the Space Marines feature, the EPT military formations, the figure painting, the comic, the Gnome Cache as ideas-usable, the Editor's Library, the editorial, the ads and the mapping registry all scoped out). The bookkeeping pins: the single box and its single chain, the issue-6 report complete at 1 / 0 since R907, the issue-5 report complete at 1 / 0 since R903, and the registry ground truth carried forward (the 1311 live census, the 1333 base lua files, the 25 never-load errors - the battery line the only ground truth, a pre-R900 print-fidelity state untouched).",
+  "provenance": "The pure box-closing round, no new ink: the issue-7 box in tools/reports/dragon_gap_report_007.md flips closed (1 / 0), completing the issue-7 walk exactly as adjudicated at R908 - the Prowler having been the only engine-relevant ink in issue #7 (the Gygax origins history, the awards ballot, the diceless-play piece, Mystery Hill, the fiction, the Space Marines feature, the EPT military formations, the figure painting, the comic, the Gnome Cache as ideas-usable, the Editor's Library, the editorial, the ads and the mapping registry all scoped out). The bookkeeping pins: the single box and its single chain, the issue-6 report complete at 1 / 0 since R907, the issue-5 report complete at 1 / 0 since R903, and the registry ground truth carried forward (the 1311 live census, the 1333 base lua files, the 25 never-load errors - the battery line the only ground truth, a pre-R900 print-fidelity state untouched).",
   "sentinel": "The variant-layer doctrine rides the closure: Dragon ink is never core 1e canon, the pin IS the conversion, and the R908 judgments (the DMG p.85 special/exceptional count, the AS-SCANNED zombei spelling, the not-printed treasure and size lines) stay noted in the opener round, never silent."
  },
  "consts": [
@@ -229,5 +229,5 @@
    }
   ]
  },
- "audit_comment": "THE DRAGON ISSUE-7 BOX CLOSING ROUND - the pure bookkeeping round, no new print ink. The flip: the issue-7 box in tools/dragon_gap_report_007.md goes [x] - 1 closed / 0 open, the issue-7 walk complete, the Prowler (folio 24) having been the only engine-relevant ink in issue #7. The bookkeeping pins: the single box and its single chain, the issue-6 report complete at 1 / 0 since R907, the issue-5 report complete at 1 / 0 since R903, the registry ground truth carried forward (the 1311 live census against the 1333 base lua files with the 25 never-load errors, a pre-R900 print-fidelity state untouched), and the variant-layer doctrine riding the closure. The R908 record seats in the seed via prev_record."
+ "audit_comment": "THE DRAGON ISSUE-7 BOX CLOSING ROUND - the pure bookkeeping round, no new print ink. The flip: the issue-7 box in tools/reports/dragon_gap_report_007.md goes [x] - 1 closed / 0 open, the issue-7 walk complete, the Prowler (folio 24) having been the only engine-relevant ink in issue #7. The bookkeeping pins: the single box and its single chain, the issue-6 report complete at 1 / 0 since R907, the issue-5 report complete at 1 / 0 since R903, the registry ground truth carried forward (the 1311 live census against the 1333 base lua files with the 25 never-load errors, a pre-R900 print-fidelity state untouched), and the variant-layer doctrine riding the closure. The R908 record seats in the seed via prev_record."
 }

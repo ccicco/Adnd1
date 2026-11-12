@@ -57,7 +57,7 @@
   "    ARC IS CLOSED - next per the",
   "    Curtiss call. WAIT FOR GO."
  ],
- "gap_report": "tools/ua_gap_report.md",
+ "gap_report": "tools/reports/ua_gap_report.md",
  "gap_census": {
   "closed": 102,
   "open": 1

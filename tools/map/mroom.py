@@ -14,10 +14,10 @@ PROPOSAL - Curtiss adjudicates each segment against
 the raster; a wall is a wall when he says so.
 
 Usage:
-    python3 tools/mroom.py <image> 15,37 [radius]
-    python3 tools/mroom.py <image> 16,38 6 \\
+    python3 tools/map/mroom.py <image> 15,37 [radius]
+    python3 tools/map/mroom.py <image> 16,38 6 \\
         --ledger extract/g1/map-006.ledger.json
-    python3 tools/mroom.py <image> --bbox 10,22,32,40 \\
+    python3 tools/map/mroom.py <image> --bbox 10,22,32,40 \\
         --ledger extract/g1/map-006.ledger.json --frac
 
 Bbox lines may lie outside the building bbox

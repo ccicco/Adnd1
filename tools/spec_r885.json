@@ -59,7 +59,7 @@
  "audit_file": "rules/audits/r885_ddg_promotion.h",
  "audit_label": "R885 DDG promotion audit",
  "audit_anchor": "#include \"rules/audits/r884_ddg_promotion.h\"  // R884: R884 DDG promotion audit",
- "gap_report": "tools/ddg_gap_report.md",
+ "gap_report": "tools/reports/ddg_gap_report.md",
  "gap_census": {
   "closed": 24,
   "open": 0

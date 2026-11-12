@@ -3,7 +3,7 @@
  "prefix": "dnb",
  "header_file": "rules/meta/rt_seam.h",
  "regtest": "regtest.cpp",
- "gap_report": "tools/oa_gap_report.md",
+ "gap_report": "tools/reports/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "census_before": 697,
  "title": "the RT file-patch fix - the seam upgrades itself",

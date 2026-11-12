@@ -64,7 +64,7 @@
 #       independent: the light rows save not,
 #       the folds read the pins); the battery
 #       census moves 245 -> 246.
-#   (o) tools/dmg_gap_report.md - the R318
+#   (o) tools/reports/dmg_gap_report.md - the R318
 #       truth-up (the r318b hooks) and the
 #       R319 chronicle paragraph.
 #
@@ -1061,7 +1061,7 @@ assert _o == _c and _o2 == _c2, 'patch n balance'
 assert len(applied) + len(already) == 14, 'patch n count wrong'
 
 # ---- (o) dmg_gap_report.md: the truth-up and chronicle ----
-GP = 'tools/dmg_gap_report.md'
+GP = 'tools/reports/dmg_gap_report.md'
 TU_OLD = NL.join([
     'entrap); the entrap is permanent until',
     'torn (the zero-round convention) and a',

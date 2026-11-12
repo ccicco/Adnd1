@@ -525,7 +525,7 @@ PATCHES = [
          '        if (bad) return 1;',
          '    }',
      ])),
-    ('tools/phb_gap_report.md',
+    ('tools/reports/phb_gap_report.md',
      'R231 the subclass leveling wire - WIRED:',
      lines([
          '- [ ] the per-subclass specials hooks (lay on',
@@ -561,7 +561,7 @@ PATCHES = [
 
 
 # the base check: the R230 box is closed (census 146)
-g = open('tools/phb_gap_report.md').read()
+g = open('tools/reports/phb_gap_report.md').read()
 assert g.count('Census 146.') == 1, 'wrong base: the R230 box is not closed'
 
 for p in PATCHES:

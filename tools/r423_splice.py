@@ -149,7 +149,7 @@ def pair(path, old, new, label):
 
 
 RT = 'regtest.cpp'
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 SD = ('doc/vibe/'
       'adnd1_knowledge_seed_v2.md')
 AR = 'rules/ua/uaappendr.h'
@@ -852,7 +852,7 @@ R227 = ('    // ---- R227: the wis mental'
 pair(RT, R227, AUD + NL + R227,
      'regtest: the R423 audit block')
 
-# ======== (c) tools/ua_gap_report.md ========
+# ======== (c) tools/reports/ua_gap_report.md ========
 
 pair(GP,
      '- [ ] **Appendix S: non-human'

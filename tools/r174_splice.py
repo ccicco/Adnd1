@@ -28,7 +28,7 @@
 #   (f) regtest.cpp - the R174 audit block: every band
 #       edge pinned both ways plus the 1-100 sweep, all
 #       three tables (census 92 - one new audit printf).
-#   (g) tools/dmg_gap_report.md - the header round note,
+#   (g) tools/reports/dmg_gap_report.md - the header round note,
 #       the R146 box tail, and the R146-fiction open box
 #       flips CLOSED.
 #
@@ -454,17 +454,17 @@ patch("regtest.cpp", p7_old, p7_new,
       marker="R174 city fiction notes audit")
 assert len(applied) + len(already) == 7
 
-patch("tools/dmg_gap_report.md", p8_old, p8_new,
+patch("tools/reports/dmg_gap_report.md", p8_old, p8_new,
       "gap report: R174 header note",
       marker="R174 PINNED the R146 fiction leftovers")
 assert len(applied) + len(already) == 8
 
-patch("tools/dmg_gap_report.md", p9_old, p9_new,
+patch("tools/reports/dmg_gap_report.md", p9_old, p9_new,
       "gap report: R146 box tail amended",
       marker="R174 CLOSED the pair")
 assert len(applied) + len(already) == 9
 
-patch("tools/dmg_gap_report.md", p10_old, p10_new,
+patch("tools/reports/dmg_gap_report.md", p10_old, p10_new,
       "gap report: R146-fiction box closed",
       marker="CLOSED" + NL + "      R174: the noble gender coin")
 assert len(applied) + len(already) == 10

@@ -28,10 +28,10 @@
 #       defensive walks, the CON hit-point, system
 #       shock and resurrection walks, and the clamps
 #       (census 95 - one new audit printf).
-#   (e) tools/phb_gap_report.md - divergences 1 and
+#   (e) tools/reports/phb_gap_report.md - divergences 1 and
 #       2 flip to CLOSED R178c; the header round note
 #       is added.
-#   (f) tools/dmg_gap_report.md - the round-note chain
+#   (f) tools/reports/dmg_gap_report.md - the round-note chain
 #       gains the R178c note.
 #
 # Idempotent: safe to run twice; a silent run means
@@ -431,22 +431,22 @@ patch("regtest.cpp", p5_old, p5_new,
       marker="R178c DEX and CON tables audit")
 assert len(applied) + len(already) == 5
 
-patch("tools/phb_gap_report.md", p6_old, p6_new,
+patch("tools/reports/phb_gap_report.md", p6_old, p6_new,
       "phb report: divergence 1 closed",
       marker="CLOSED R178c: the ladder repinned")
 assert len(applied) + len(already) == 6
 
-patch("tools/phb_gap_report.md", p7_old, p7_new,
+patch("tools/reports/phb_gap_report.md", p7_old, p7_new,
       "phb report: divergence 2 closed",
       marker="CLOSED R178c: both columns repinned")
 assert len(applied) + len(already) == 7
 
-patch("tools/phb_gap_report.md", p8_old, p8_new,
+patch("tools/reports/phb_gap_report.md", p8_old, p8_new,
       "phb report: R178c header note",
       marker="R178c CLOSED divergences 1 and 2")
 assert len(applied) + len(already) == 8
 
-patch("tools/dmg_gap_report.md", p9_old, p9_new,
+patch("tools/reports/dmg_gap_report.md", p9_old, p9_new,
       "dmg report: R178c round note",
       marker="R178c CLOSED the PHB report divergences 1 and 2")
 assert len(applied) + len(already) == 9

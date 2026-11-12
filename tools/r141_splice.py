@@ -16,7 +16,7 @@
 #    keep the 50' convention); a wide chamber logs the
 #    distance
 #  - regtest.cpp: the R141 geometry audit (census 59)
-#  - tools/dmg_gap_report.md: the R141 box
+#  - tools/reports/dmg_gap_report.md: the R141 box
 # This file contains ZERO backslash characters (the
 # R133b lesson); the audit printf assembles its
 # escaped newline from chr(92).
@@ -194,7 +194,7 @@ patch("regtest.cpp", old_r140_head + NL,
       "regtest.cpp: R141 audit",
       marker="R141 engagement geometry audit")
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """      R140 final sweep audit; census 58.
 
 ## Out of scope by design

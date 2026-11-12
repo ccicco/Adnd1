@@ -947,7 +947,7 @@ assert os.path.exists(US), 'b exists'
 assert rd(US).count('R347') == 1, 'b tag kept'
 # ---- (c) the gap report: the note (the
 # item STAYS OPEN - the 6th-7th levels) ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 if 'R347: the 5th level pinned' in s:
     already.append('gap report: the note')

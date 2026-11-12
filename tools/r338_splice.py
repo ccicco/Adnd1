@@ -271,7 +271,7 @@ assert len(applied) + len(already) == 2, 'b count'
 # ---- (c) the gap report: the note (the
 # item STAYS OPEN - the rate column and
 # the S/M ranges are OCR-lost) ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 if 'R338: the fragment-verified' in s:
     already.append('gap report: the note')

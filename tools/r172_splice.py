@@ -853,7 +853,7 @@ p4_new = NL.join([
     '(user-authorized). Census 90.',
     '',
     'Categories:'])
-patch("tools/dmg_gap_report.md", p4_old, p4_new,
+patch("tools/reports/dmg_gap_report.md", p4_old, p4_new,
       "gap report: R172 header note",
       marker="R172 PINNED Appendix J (DMG p.220)")
 assert len(applied) + len(already) == 4
@@ -866,7 +866,7 @@ p5_new = NL.join([
     '  conversion tables (pp.112-114). Appendix J was',
     '  OUT until R172 reversed it - pinned now (see the',
     '  R172 note and the box below).'])
-patch("tools/dmg_gap_report.md", p5_old, p5_new,
+patch("tools/reports/dmg_gap_report.md", p5_old, p5_new,
       "gap report: OUT amendment",
       marker="OUT until R172 reversed it")
 assert len(applied) + len(already) == 5
@@ -886,7 +886,7 @@ p6_new = NL.join([
     '      compilation drops restored).',
     '',
     '## How this doc lives'])
-patch("tools/dmg_gap_report.md", p6_old, p6_new,
+patch("tools/reports/dmg_gap_report.md", p6_old, p6_new,
       "gap report: appendix J box",
       marker="PINNED R172:")
 assert len(applied) + len(already) == 6

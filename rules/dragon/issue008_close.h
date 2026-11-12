@@ -5,7 +5,7 @@
 // census 833 -> 834.
 //
 // The pure box-closing round, no new ink: the issue-8 box in
-// tools/dragon_gap_report_008.md flips closed (1 / 0), completing the issue-8
+// tools/reports/dragon_gap_report_008.md flips closed (1 / 0), completing the issue-8
 // walk exactly as adjudicated at R910 - the Gygax Planes article, the Watson
 // towns article and the Kuntz gems re-evaluation having been the only
 // engine-relevant ink in issue #8 (the Finzer Family fiction, the Gamma World

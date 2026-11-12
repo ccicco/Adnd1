@@ -724,9 +724,9 @@ PATCHES = [
      RI_OLD, RI_NEW, "regtest outdoormove include"),
     ("regtest.cpp", "R123 outdoor movement audit",
      RT_OLD, RT_NEW, "regtest R123 audit"),
-    ("tools/dmg_gap_report.md", "R123 CLOSED outdoor movement",
+    ("tools/reports/dmg_gap_report.md", "R123 CLOSED outdoor movement",
      GH_OLD, GH_NEW, "gap report header note"),
-    ("tools/dmg_gap_report.md", "R123: the book's daily rates wired -",
+    ("tools/reports/dmg_gap_report.md", "R123: the book's daily rates wired -",
      GB_OLD, GB_NEW, "gap report outdoor movement box"),
 ]
 

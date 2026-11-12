@@ -19,7 +19,7 @@
   "  audit\" at rules/audits/r909_dragon_issue_7_closure.h, 3",
   "  examples, 2 header_sections, ZERO file_patches",
   "  and data_files, 1 gap flip. THE FLIP: the",
-  "  issue-7 box in tools/dragon_gap_report_007.md",
+  "  issue-7 box in tools/reports/dragon_gap_report_007.md",
   "  went [x] -> 1 closed / 0 open, THE ISSUE-7 WALK",
   "  COMPLETE - the Prowler was the only engine-",
   "  relevant ink in issue #7. The bookkeeping pins:",
@@ -47,7 +47,7 @@
  "audit_file": "rules/audits/r910_issue_8_opener.h",
  "audit_label": "R910 issue-8 opener audit",
  "audit_anchor": "#include \"rules/audits/r909_dragon_issue_7_closure.h\"  // R909: R909 Dragon issue-7 closure audit",
- "gap_report": "tools/dragon_gap_report_007.md",
+ "gap_report": "tools/reports/dragon_gap_report_007.md",
  "gap_census": {
   "closed": 1,
   "open": 0
@@ -711,7 +711,7 @@
  "file_patches": [],
  "data_files": [
   {
-   "path": "tools/dragon_gap_report_008.md",
+   "path": "tools/reports/dragon_gap_report_008.md",
    "content": "# Dragon gap report - THE DRAGON, Vol. 1 No. 8 (July 1977)\n\nThe Dragon Magazine walk, issue #8. Primary ink:\nextract/dragon/008/pNNN_full.txt, NNN = page index; PRINT FOLIO =\nPDF PAGE (verified: the printed 3, 12, 21, 22, 23 and 24 footers\nsit on the PDF pages 3, 12, 21, 22, 23 and 24). The voice is the\nchat-side DjVu OCR transcript of the archive.org scan (the issue-8\nsource lives in the archive.org item accessory-dragon-magazine-012,\nwhich holds issues 7-14); the article CHAIN is the ink unit, not\nthe folio.\n\nDoctrine (Curtiss, 2026-10-29): the pin IS the conversion - OD&D-era\nink adjudicated to 1e terms, the conversion noted, never silent;\nDragon pins ride a VARIANT layer with provenance, never core canon.\n\nAdjudication (Curtiss, 2026-10-29): use - three engine-relevant\nchains: the Gygax Planes article (folios 4-5, Designers Forum) as\nthe planar-mechanics variant layer - the seven inner and sixteen\nouter planes, the ethereal/astral travel split with its\nrestrictions, the planar-existence law for magic weapons and\nspecial-metal creatures; the Development of Towns in D&D article by\nTony Watson (folios 5-7) as the town-services variant layer - the\npawnshop, market, stable, thieves' quarter and Falgrave's pins with\nthe surgeon, soothsayer, magician and library fees; the A\nRe-evaluation of Gems and Jewelry in D&D article by Robert J. Kuntz\n(folios 22-23) as the treasure-value substitution variant layer -\nthe carat, basic-value, metal, gem-count and jewelry-type tables;\ndrop - the Fischer Finzer Family fiction (8-20), the Gamma World\nsneak preview (21), the Featured Creature contest announcement\n(25, a contest with no stats), the Still More Additions to MA\nDesigners Forum (26) and the Mutated Animals feature (28, both MA\nchains), the From the Fantasy Forge figure reviews (24), the\neditorial (3), the ads (2, 13, 17-18, 27, 30-32) and the Fenn\nManor ad (31).\n\n## Boxes\n\n- [ ] **The Gygax Planes article, the Watson towns article and the\n  Kuntz gems re-evaluation** (folios 4-5, 5-7, 22-23) - the\n  issue-8 opener round\n\n1 box, 0 closed, 1 open at the R910 authoring. The R910 round ships\nthis report pre-flip (a report cannot flip in the round that\ncreates it); the issue-8 box closes at the next round's flip.\n\n## Scoped out of the engine\n\nThe Fischer Finzer Family fiction (8-20); the Gamma World sneak\npreview (21); the Featured Creature contest announcement (25); the\nStill More Additions to MA forum (26); the Mutated Animals feature\n(28); the From the Fantasy Forge figure reviews (24); the editorial\n(3); the ads (2, 13, 17-18, 27, 30-32); the Fenn Manor ad (31). The\nKuntz gem-type description lists (Table C) ride the transcript -\nthe numeric substitution tables A, B, D, E and F pin, the type\nlists garbled in the OCR and never guessed; the worked example's\ntable labels read swapped against the printed tables' own bands -\nas scanned, the arithmetic (75 x 5 x 3 = 1,125) is the anchor; the\ncarat table's starred rows overlap by the print's own arithmetic\n(91-95 at 20-50 against 96-98 at 20-70) and ride as scanned with\nthe re-roll footnote noted.\n"
   },
   {

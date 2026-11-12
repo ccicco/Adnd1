@@ -236,9 +236,9 @@ PATCHES = [
      AC2_OLD, AC2_NEW, "actor.cpp adj rides the band"),
     ("regtest.cpp", "R116 missile range audit",
      RT_OLD, RT_NEW, "regtest R116 audit"),
-    ("tools/dmg_gap_report.md", "R116 CLOSED the missile range",
+    ("tools/reports/dmg_gap_report.md", "R116 CLOSED the missile range",
      GH_OLD, GH_NEW, "gap report header note"),
-    ("tools/dmg_gap_report.md", "CLOSED R116: rules::missileRangeMod",
+    ("tools/reports/dmg_gap_report.md", "CLOSED R116: rules::missileRangeMod",
      GB_OLD, GB_NEW, "gap report missile range box"),
 ]
 

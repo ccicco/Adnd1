@@ -62,7 +62,7 @@
   "    pass enters its tail.",
   "    WAIT FOR GO."
  ],
- "gap_report": "tools/mm2_gap_report.md",
+ "gap_report": "tools/reports/mm2_gap_report.md",
  "gap_flips": [],
  "data_files": [],
  "consts": [

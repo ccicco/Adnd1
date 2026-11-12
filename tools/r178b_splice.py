@@ -22,12 +22,12 @@
 # the druid spell layer, and the dual-class
 # machinery, so it slots after R185:
 #
-#   (a) tools/phb_gap_report.md - the arc scope
+#   (a) tools/reports/phb_gap_report.md - the arc scope
 #       paragraph gains the bard, and the round
 #       queue gains the bard round (the
 #       per-subclass specials entry renumbers
 #       R186+ to R187+).
-#   (b) tools/dmg_gap_report.md - the round-note
+#   (b) tools/reports/dmg_gap_report.md - the round-note
 #       chain gains the R178b note.
 #
 # A scope amendment adds NO audit; the battery
@@ -138,17 +138,17 @@ p3_new = NL.join([
 ])
 
 # ---- run ----
-patch("tools/phb_gap_report.md", p1_old, p1_new,
+patch("tools/reports/phb_gap_report.md", p1_old, p1_new,
       "phb report: scope paragraph gains the bard",
       marker="plus the bard (Appendix II - the seventh")
 assert len(applied) + len(already) == 1
 
-patch("tools/phb_gap_report.md", p2_old, p2_new,
+patch("tools/reports/phb_gap_report.md", p2_old, p2_new,
       "phb report: the bard round queued",
       marker="- R186 the bard (Appendix II)")
 assert len(applied) + len(already) == 2
 
-patch("tools/dmg_gap_report.md", p3_old, p3_new,
+patch("tools/reports/dmg_gap_report.md", p3_old, p3_new,
       "dmg report: R178b round note",
       marker="R178b AMENDED the arc scope")
 assert len(applied) + len(already) == 3

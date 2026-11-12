@@ -69,7 +69,7 @@
   "closed": 20,
   "open": 4
  },
- "gap_report": "tools/ddg_gap_report.md",
+ "gap_report": "tools/reports/ddg_gap_report.md",
  "gap_flips": [],
  "consts": [
   {

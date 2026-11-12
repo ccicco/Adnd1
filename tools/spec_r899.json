@@ -106,7 +106,7 @@
   "  Smith rebuttal rode beside the Pulsipher",
   "  letter, both systems standing on the variant",
   "  layer. GAP REPORT: the fighting sub-classes box",
-  "  flipped in tools/dragon_gap_report_003.md ->",
+  "  flipped in tools/reports/dragon_gap_report_003.md ->",
   "  issue-3 report 3 closed / 2 open. VERIFIED:",
   "  engine double-run GREEN applied 6 / already 6 -",
   "  NO ABORTS, the second clean pass in a row;",
@@ -128,7 +128,7 @@
  "audit_file": "rules/audits/r899_comedy_and_small_variants.h",
  "audit_label": "R899 comedy and small-variants audit",
  "audit_anchor": "#include \"rules/audits/r898_character_round.h\"  // R898: R898 character round audit",
- "gap_report": "tools/dragon_gap_report_003.md",
+ "gap_report": "tools/reports/dragon_gap_report_003.md",
  "gap_census": {
   "closed": 4,
   "open": 1

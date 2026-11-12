@@ -2,7 +2,7 @@
     // THE PROMOTIONS MOP ROUND TWO - the MM1 text completion, the structural
     // half of the naive-era data-quality pass. 136 of the 138 text-deficient
     // MM1 defs gain their text field, every byte derived mechanically from
-    // tools/monsters.md: 25 family carriers, 61 family members, 50 variants.
+    // tools/reports/monsters.md: 25 family carriers, 61 family members, 50 variants.
     // The two excluded defs - the Copper Dragon and the Monoclonius, the only
     // MM1 records with no prose anywhere in the source - await the
     // print-voice collation half. The MM1 text census moves 270 of 408 to 406

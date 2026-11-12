@@ -5,7 +5,7 @@
 // census 825 -> 826.
 //
 // The pure box-closing round, no new ink: the issue-5 box in
-// tools/dragon_gap_report_005.md flips closed (1 / 0), completing the issue-5
+// tools/reports/dragon_gap_report_005.md flips closed (1 / 0), completing the issue-5
 // walk exactly as adjudicated at R902 - the Witchcraft Supplement variant
 // layer, the Anhkheg lore-against-def pin and the Wizard Research Rules
 // having been the only engine-relevant ink in issue #5 (the Metamorphosis
@@ -29,7 +29,7 @@ namespace rules {
 // ---- the walk bookkeeping ----
 
 // the issue-5 report carries a single box - the three-chain opener at folios
-// 4-9, 12+28, 24-26+28 (tools/dragon_gap_report_005.md); this round flips it
+// 4-9, 12+28, 24-26+28 (tools/reports/dragon_gap_report_005.md); this round flips it
 // closed, 1 closed / 0 open, the walk complete
 inline int cwxReportBoxes()
     { return 1; }
@@ -41,17 +41,17 @@ inline int cwxIssue5Chains()
     { return 3; }
 
 // the issue-4 report sits complete at 1 closed / 0 open since the R901 flip
-// (tools/dragon_gap_report_004.md)
+// (tools/reports/dragon_gap_report_004.md)
 inline int cwxIssue4Closed()
     { return 1; }
 
 // the issue-4 walk is complete - 1 closed / 0 open since R901
-// (tools/dragon_gap_report_004.md)
+// (tools/reports/dragon_gap_report_004.md)
 inline bool cwxIssue4WalkComplete()
     { return true; }
 
 // the issue-5 walk is complete at this round's flip - the three-chain box
-// closed, 1 / 0 (tools/dragon_gap_report_005.md)
+// closed, 1 / 0 (tools/reports/dragon_gap_report_005.md)
 inline bool cwxIssue5WalkComplete()
     { return true; }
 

@@ -424,10 +424,10 @@ patch('regtest.cpp',
       NL.join(aud) + NL + '    // ---- R163: the poison table audit -------------')
 
 # ---------------------------------------------------------------------------
-# Patch 4: tools/phb_gap_report.md - the R184 box flipped
+# Patch 4: tools/reports/phb_gap_report.md - the R184 box flipped
 # ---------------------------------------------------------------------------
 
-patch('tools/phb_gap_report.md',
+patch('tools/reports/phb_gap_report.md',
       'R184 the paladin and ranger spell layers - PINNED',
       '- R184 the paladin and ranger spell layers - the'
       + NL + '      spell progressions and the shared-list'
@@ -460,10 +460,10 @@ patch('tools/phb_gap_report.md',
       + NL + '      walks every cell and ladder. Census 101.')
 
 # ---------------------------------------------------------------------------
-# Patch 5: tools/dmg_gap_report.md - the round note
+# Patch 5: tools/reports/dmg_gap_report.md - the round note
 # ---------------------------------------------------------------------------
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R184 landed the paladin and ranger spell',
       'New R183 battery audit; census 100. Next:'
       + NL + 'R184 the paladin and ranger spell layers.',

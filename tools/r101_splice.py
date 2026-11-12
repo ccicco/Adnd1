@@ -13,7 +13,7 @@
 #                         trailing 7 + crew branch (load)
 #   regtest.cpp       - R101 plate kit audit (extended
 #                       contract + crew line parse)
-#   tools/playverify_r77_r83.md - R101 section
+#   tools/reports/playverify_r77_r83.md - R101 section
 import sys, os
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)) + '/..')
@@ -239,7 +239,7 @@ OK &= patch('regtest.cpp',
 # ---------------------------------------------------------------------------
 # 6) playverify - the R101 section
 # ---------------------------------------------------------------------------
-OK &= patch('tools/playverify_r77_r83.md',
+OK &= patch('tools/reports/playverify_r77_r83.md',
 """## R100: the hire's years
 """,
 """## R101: the plate kit

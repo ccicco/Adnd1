@@ -289,7 +289,7 @@ assert len(applied) + len(already) == 2, 'b count'
 
 # ---- (c) the gap report: the decision
 # record lands (no item flips) ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 if 'DECIDED R374' in s:
     already.append('gap: the decision record')

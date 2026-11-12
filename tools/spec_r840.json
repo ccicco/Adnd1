@@ -5,7 +5,7 @@
  "regtest": "regtest.cpp",
  "header_file": "rules/ff/hornet_promotion.h",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
- "gap_report": "tools/mm2_gap_report.md",
+ "gap_report": "tools/reports/mm2_gap_report.md",
  "banner": {
   "title": "the hornet promotion - the dungeon FF surface closes",
   "provenance": "spec-driven; the hornet promotion round - the giant hornet def lifted from the FF print (p. 52, the ff_print xp class) as a new lua data file, the die 14 Monster Level IV dungeon cell rekeyed (the R839 holdout - the FF p. 52 stat block the batch did not carry), the keyless FF rows drain two to one (the Elemental Prince row stays keyless, the settled no-def read), the dungeon walk-key census re-pinned (170 -> 171), the blank census drains 20 -> 19, the registry 912 -> 913, the ff def census 102 -> 103, the source rows stay (ff 26 dungeon), no gap boxes flip; the def body carries the print-fidelity pin headers"

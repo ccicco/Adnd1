@@ -14,7 +14,7 @@
 #    only)
 #  - regtest.cpp: the six mech-count pins flip 29 -> 40;
 #    the R139 audit (census 57)
-#  - tools/dmg_gap_report.md: the R139 box
+#  - tools/reports/dmg_gap_report.md: the R139 box
 # This file contains ZERO backslash characters - the
 # audit printf's escaped newline is assembled from
 # chr(92), which nothing can eat (the R133b lesson).
@@ -482,7 +482,7 @@ patch("regtest.cpp", old_r138_head + NL,
       "regtest.cpp: R139 audit",
       marker="R139 engine-deep change-family audit")
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """      exact. Pinned by the R138 parley audit; census 56.
 
 ## Out of scope by design

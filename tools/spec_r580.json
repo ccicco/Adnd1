@@ -3,7 +3,7 @@
   "prefix": "ddi",
   "header_file": "rules/mop/elysiumbeasts.h",
   "regtest": "regtest.cpp",
-  "gap_report": "tools/motp_gap_report.md",
+  "gap_report": "tools/reports/motp_gap_report.md",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
   "census_before": 503,
   "title": "Elysium and the Happy Hunting Grounds",

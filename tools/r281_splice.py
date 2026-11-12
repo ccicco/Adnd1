@@ -659,7 +659,7 @@ assert mark in rd(p), 'patch 3 failed'
 assert rd(p).count(mark) == 1, 'patch 3 doubled'
 
 # ---- patch 4: the gap report entry ----
-p = 'tools/dmg_gap_report.md'
+p = 'tools/reports/dmg_gap_report.md'
 s = rd(p)
 mark = 'R281 landed the III.E Special'
 if mark in s:

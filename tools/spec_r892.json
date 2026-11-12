@@ -72,7 +72,7 @@
  "audit_file": "rules/audits/r892_fischer_items.h",
  "audit_label": "R892 Fischer items audit",
  "audit_anchor": "#include \"rules/audits/r891_alchemist_class.h\"  // R891: R891 Alchemist class audit",
- "gap_report": "tools/dragon_gap_report_002.md",
+ "gap_report": "tools/reports/dragon_gap_report_002.md",
  "gap_census": {
   "closed": 2,
   "open": 2

@@ -3,7 +3,7 @@
  "prefix": "mm2p",
  "header_file": "rules/mm/mm2p.h",
  "regtest": "regtest.cpp",
- "gap_report": "tools/mm2_gap_report.md",
+ "gap_report": "tools/reports/mm2_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "census_before": 732,
  "title": "the MM2 letter P walk - the para-elemental (ice, smoke, magma and ooze), pech, pedipalp (large, huge and giant), phantom, phoenix, phycomid, planetar, pseudo-undead, deadly pudding (brown, dun and white) and pyrolisk turns",

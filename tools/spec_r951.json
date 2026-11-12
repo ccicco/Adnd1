@@ -12,7 +12,7 @@
  "audit_label": "R951 issue-23 Lower Planes generation audit",
  "audit_anchor": "#include \"rules/audits/r950_issue_23_variant_triptych.h\"  // R950: R950 issue-23 variant triptych audit",
  "audit_comment": "THE SORCEROR SCROLL LOWER-PLANES GENERATOR AUDIT - the issue-23 part-two table round, the Random Generation of Creatures from the Lower Planes system headed into the forth coming DUNGEON MASTERS GUIDE. The base stat block, the twenty-three appearance and generation grids, the strength-to-hit-damage bands, the attack forms, the special attacks and defenses and the optional-poison footnote all ride this single chain, print 15 through 18.",
- "gap_report": "tools/dragon_gap_report_023.md",
+ "gap_report": "tools/reports/dragon_gap_report_023.md",
  "gap_census": {
   "closed": 0,
   "open": 3

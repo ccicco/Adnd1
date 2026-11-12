@@ -1618,7 +1618,7 @@ assert len(applied) + len(already) == 4, 'b3 count'
 
 
 # ---- (c) the gap report: the two notes ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 if 'R363: the cantrips and the' in s:
     already.append('gap report: the spells item note')

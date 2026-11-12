@@ -59,7 +59,7 @@ reg = rd("regtest.cpp")
 print("verify: R132 audit present:",
       "R132 second-effects slice audit" in reg)
 print("verify: mech-11 pins:", reg.count("mech != 11"))
-gap = rd("tools/dmg_gap_report.md")
+gap = rd("tools/reports/dmg_gap_report.md")
 print("verify: R132 box present:", "CLOSED R132: the" in gap)
 print("verify: R128 box 54:", "R132's second-effects slice"
       " wires six more" in gap)

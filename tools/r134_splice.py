@@ -15,7 +15,7 @@
 #    count pins update (16 -> 19), the R133 audit's
 #    deep-water dressing pins flip to talk-flavor, and
 #    the new R134 audit pins the set (census 52)
-#  - tools/dmg_gap_report.md: the R128/R132/R133 boxes'
+#  - tools/reports/dmg_gap_report.md: the R128/R132/R133 boxes'
 #    dressing counts drop to 46; the R134 box closes
 # This file contains ZERO backslash characters - the
 # audit printf's escaped newline is assembled from
@@ -308,7 +308,7 @@ patch("regtest.cpp",
       "regtest.cpp: R132 comment 19",
       marker="nineteen mechanical of 65 (R134 grew it)")
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """      2d6). R132's second-effects slice wires six more
       (the R132 box), R133's five more (the R133 box).
       The other 49 attributes stay dressing - documented;
@@ -323,7 +323,7 @@ patch("tools/dmg_gap_report.md",
       "gap report: R128 box 46",
       marker="R134's three deep (the R134 box). The other 46")
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """      The R133 slice wires five more (the R133 box).
       The remaining 49 attributes stay dressing;
       their effects ride future rounds. Pinned by
@@ -338,7 +338,7 @@ patch("tools/dmg_gap_report.md",
       "gap report: R132 box 46",
       marker="R134's three deep waters (the R134 box)")
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """      documented. The remaining 49 attributes stay
       dressing; their effects ride future rounds.
       Pinned by the R133 battery audit; census 51.
@@ -352,7 +352,7 @@ patch("tools/dmg_gap_report.md",
       "gap report: R133 box 46",
       marker="The R134 slice wires the three deep")
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """      Pinned by the R133 battery audit; census 51.
 
 ## Out of scope by design

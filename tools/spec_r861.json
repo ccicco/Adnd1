@@ -12,7 +12,7 @@
  "audit_anchor": "#include \"rules/audits/r860_indian_mythos.h\"  // R860: R860 Indian mythos audit",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "seed_anchor": "## Knowledge maintenance",
- "gap_report": "tools/ddg_gap_report.md",
+ "gap_report": "tools/reports/ddg_gap_report.md",
  "gap_flips": [
   {
    "from": "- [ ] **Japanese mythos** (pp. 81-85)",

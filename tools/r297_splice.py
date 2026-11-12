@@ -45,7 +45,7 @@
 #       clamps, the cleric example, the mapping
 #       pair probes, the seam identity and the
 #       note scalars.
-#   (f) tools/phb_gap_report.md - the R296 open
+#   (f) tools/reports/phb_gap_report.md - the R296 open
 #       item flips PINNED R297 (Census 214).
 #
 # Idempotent: safe to run twice; a silent run
@@ -602,7 +602,7 @@ assert 'R295 special artifacts prose part 16' in s, 'patch e ate R295'
 assert '// ---- R227: the wis mental save wiring audit ----' in s, 'patch e ate R227'
 assert len(applied) + len(already) == 5, 'patch e count wrong'
 
-# ---- (f) tools/phb_gap_report.md: the flip ----
+# ---- (f) tools/reports/phb_gap_report.md: the flip ----
 ITEM_OLD = NL.join([
     '- [ ] **Weapon Proficiency Table (the WEAPONS',
     '      section)** - ten class rows. Initial',
@@ -670,7 +670,7 @@ ITEM_NEW = NL.join([
 clean(ITEM_OLD, 57)
 clean(ITEM_NEW, 57)
 
-p = 'tools/phb_gap_report.md'
+p = 'tools/reports/phb_gap_report.md'
 s = rd(p)
 if 'PINNED R297' in s:
     already.append('phb_gap_report.md: the flip')

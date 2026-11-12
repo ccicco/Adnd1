@@ -508,10 +508,10 @@ patch('regtest.cpp',
       NL.join(aud) + NL + '    // ---- R163: the poison table audit -------------')
 
 # ---------------------------------------------------------------------------
-# Patch 4: tools/phb_gap_report.md - the R185 box flipped
+# Patch 4: tools/reports/phb_gap_report.md - the R185 box flipped
 # ---------------------------------------------------------------------------
 
-patch('tools/phb_gap_report.md',
+patch('tools/reports/phb_gap_report.md',
       'R185 multi-class and dual-class - PINNED',
       '- R185 multi-class and dual-class - the split'
       + NL + '      experience machinery, the hit-dice and'
@@ -541,10 +541,10 @@ patch('tools/phb_gap_report.md',
       + NL + '      cell, ladder and gate. Census 102.')
 
 # ---------------------------------------------------------------------------
-# Patch 5: tools/dmg_gap_report.md - the round note
+# Patch 5: tools/reports/dmg_gap_report.md - the round note
 # ---------------------------------------------------------------------------
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R185 landed the multi-class and dual-class',
       'census 101. Next: R185 multi-class and'
       + NL + 'dual-class.',

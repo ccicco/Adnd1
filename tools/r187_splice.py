@@ -903,7 +903,7 @@ patch('regtest.cpp',
       NL.join(aud) + NL + '    // ---- R163: the poison table audit -------------')
 
 # ---------------------------------------------------------------------------
-# Patch 4: tools/phb_gap_report.md - the R187 box flipped
+# Patch 4: tools/reports/phb_gap_report.md - the R187 box flipped
 # ---------------------------------------------------------------------------
 
 box_old = ('- R187+ the per-subclass specials that remain -'
@@ -947,22 +947,22 @@ box_new = ('- [x] R187 the per-subclass specials - PINNED:'
            + NL + '      The R187 battery audit walks every fee cell'
            + NL + '      and ladder. Census 104.')
 
-t = rd('tools/phb_gap_report.md')
+t = rd('tools/reports/phb_gap_report.md')
 if 'R187 the per-subclass specials - PINNED' not in t:
     assert t.count(box_old) == 1, 'R187 box anchor not unique'
 else:
     assert t.count(box_old) == 0, 'R187 box old text lingers'
 
-patch('tools/phb_gap_report.md',
+patch('tools/reports/phb_gap_report.md',
       'R187 the per-subclass specials - PINNED',
       box_old,
       box_new)
 
 # ---------------------------------------------------------------------------
-# Patch 5: tools/dmg_gap_report.md - the round note
+# Patch 5: tools/reports/dmg_gap_report.md - the round note
 # ---------------------------------------------------------------------------
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R187 landed the per-subclass specials',
       'census 103. Next: the gap report names the'
       + NL + 'next round.',

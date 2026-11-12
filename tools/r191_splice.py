@@ -361,7 +361,7 @@ patch('regtest.cpp',
       NL.join(aud) + NL + '    // ---- R163: the poison table audit -------------')
 
 # ---------------------------------------------------------------------------
-# Patch 6: tools/phb_gap_report.md - the R191 box flipped
+# Patch 6: tools/reports/phb_gap_report.md - the R191 box flipped
 # ---------------------------------------------------------------------------
 
 box_old = ('- [ ] **Armor Class table (the ARMOR section)** -'
@@ -394,22 +394,22 @@ box_new = ('- [x] **Armor Class table (the ARMOR section) -'
            + NL + '      engine rows, the composites and the worked'
            + NL + '      examples. Census 108.')
 
-t2 = rd('tools/phb_gap_report.md')
+t2 = rd('tools/reports/phb_gap_report.md')
 if 'Armor Class table (the ARMOR section) -' not in t2:
     assert t2.count(box_old) == 1, 'R191 box anchor not unique'
 else:
     assert t2.count(box_old) == 0, 'R191 box old text lingers'
 
-patch('tools/phb_gap_report.md',
+patch('tools/reports/phb_gap_report.md',
       'PINNED R191:** rules/phb/armorratings.h CREATED',
       box_old,
       box_new)
 
 # ---------------------------------------------------------------------------
-# Patch 7: tools/dmg_gap_report.md - the round note
+# Patch 7: tools/reports/dmg_gap_report.md - the round note
 # ---------------------------------------------------------------------------
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R191 landed the armor class ratings',
       '(pcMonthlySupportCost). New R190 battery audit; census'
       + NL + '107. Next: the gap report names the next round.',

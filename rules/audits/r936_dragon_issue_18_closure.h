@@ -8,7 +8,7 @@
     // 13, 23-24, 24: the R935 part two - the Sullin new spells levels one to
     // six, the Eckert monkish weapons and the kedo combat matrix, the Coburn
     // effective use of poison) - 2 closed / 0 open in
-    // tools/dragon_gap_report_018.md; the seven-chain walk completes in three
+    // tools/reports/dragon_gap_report_018.md; the seven-chain walk completes in three
     // rounds (the R934 opener part one carrying four chains, the R935 opener
     // part two carrying three chains, this flip), the second three-round
     // issue shape after issue 17. ISSUES 2-18 ALL CLOSED. Registry ground

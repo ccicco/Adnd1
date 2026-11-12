@@ -33,7 +33,7 @@ SEED_ANCHOR = '## Knowledge maintenance'
 SEED_FILE = ('doc/vibe/'
              'adnd1_knowledge_seed_v2.md')
 REGTEST = 'regtest.cpp'
-GAP_REPORT = 'tools/wsg_gap_report.md'
+GAP_REPORT = 'tools/reports/wsg_gap_report.md'
 CALLER_FILES = ['dm/treasure.cpp',
                 'game/state_combat.cpp']
 

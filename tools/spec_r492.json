@@ -4,7 +4,7 @@
  "prefix": "wmd",
  "header_file": "rules/wsg/wsgdm.h",
  "regtest": "regtest.cpp",
- "gap_report": "tools/wsg_gap_report.md",
+ "gap_report": "tools/reports/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "caller_files": [
   "dm/treasure.cpp",

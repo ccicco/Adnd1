@@ -14,7 +14,7 @@
 #  - regtest.cpp: the five audits' mechanical count pins
 #    update (24 -> 29), four audit comments update, and
 #    the new R136 audit pins the set (census 54)
-#  - tools/dmg_gap_report.md: the R128/R132/R133/R134
+#  - tools/reports/dmg_gap_report.md: the R128/R132/R133/R134
 #    boxes' dressing counts drop to 36; the R136 box
 #    closes
 # Anti-magic STAYS dressing: an honest suppression zone
@@ -373,7 +373,7 @@ patch("regtest.cpp", old_r135_head + NL,
       "regtest.cpp: R136 audit",
       marker="R136 odds-and-ends slice audit")
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """      2d6). R132's second-effects slice wires six more
       (the R132 box), R133's five more (the R133 box),
       R134's three deep (the R134 box), R135's five
@@ -392,7 +392,7 @@ patch("tools/dmg_gap_report.md",
       "gap report: R128 box 36",
       marker="R136's five" + NL + "      odds-and-ends")
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """      The R133 slice wires five more (the R133 box),
       R134's three deep waters (the R134 box), R135's
       five geometry (the R135 box). The
@@ -411,7 +411,7 @@ patch("tools/dmg_gap_report.md",
       "gap report: R132 box 36",
       marker="R136's five" + NL + "      odds-and-ends (the R136 box). The")
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """      documented. The R134 slice wires the three deep
       waters (the R134 box), R135's five geometry
       (the R135 box). The remaining 41
@@ -430,7 +430,7 @@ patch("tools/dmg_gap_report.md",
       "gap report: R133 box 36",
       marker="R136's five odds-and-ends")
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """      effects ride future rounds. Pinned by the R135
       battery audit; census 53.
 

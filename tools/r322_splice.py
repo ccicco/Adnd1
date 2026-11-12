@@ -67,7 +67,7 @@
 #       self-referential-assert lessons).
 #   (b) rules/ua/comeliness.h - NEW FILE: the
 #       comeliness pins.
-#   (c) tools/ua_gap_report.md - NEW FILE:
+#   (c) tools/reports/ua_gap_report.md - NEW FILE:
 #       the LOSSLESS whole-book UA gap
 #       report: the players section, the
 #       DM section and the appendices per
@@ -396,8 +396,8 @@ _o, _c, _o2, _c2 = counts(s)
 assert _o == _c and _o2 == _c2, 'patch b balance'
 assert len(applied) + len(already) == 2, 'patch b count wrong'
 
-# ---- (c) tools/ua_gap_report.md: the arc report ----
-GP = 'tools/ua_gap_report.md'
+# ---- (c) tools/reports/ua_gap_report.md: the arc report ----
+GP = 'tools/reports/ua_gap_report.md'
 GP_FILE = NL.join([
     '# UA Gap Report - the book vs the repo',
     '',

@@ -14,7 +14,7 @@
 #   (a) regtest.cpp - the include block gains
 #       rules/phb/subclasses.h (after the R173 secondary
 #       include, the R179 comment).
-#   (b) tools/dmg_gap_report.md - the round-note
+#   (b) tools/reports/dmg_gap_report.md - the round-note
 #       chain gains the R179b note with the lesson.
 #
 # Census stays 96 (no new audit - the R179 audit
@@ -90,7 +90,7 @@ patch("regtest.cpp", p1_old, p1_new,
       marker='#include "rules/phb/subclasses.h"')
 assert len(applied) + len(already) == 1
 
-patch("tools/dmg_gap_report.md", p2_old, p2_new,
+patch("tools/reports/dmg_gap_report.md", p2_old, p2_new,
       "dmg report: R179b round note",
       marker="R179b FIXED the R179 build")
 assert len(applied) + len(already) == 2

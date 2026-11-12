@@ -47,7 +47,7 @@
 #       scenario on seeded sequences (the
 #       replica walked the draws first -
 #       no compiler in the splice sandbox).
-#   (f) tools/phb_gap_report.md - the
+#   (f) tools/reports/phb_gap_report.md - the
 #       wiring-arc box (the R298 box head
 #       amended; the ledger holds ZERO
 #       open items).
@@ -578,7 +578,7 @@ assert s.count('silScenario(pt,') == 8, 'patch e scenario count'
 assert 'rules/phb/thieffunc.h' in s, 'patch e include'
 assert len(applied) + len(already) == 5, 'patch e count wrong'
 
-# ---- (f) tools/phb_gap_report.md: the wiring-arc box ----
+# ---- (f) tools/reports/phb_gap_report.md: the wiring-arc box ----
 GR_HEAD_OLD = NL.join([
     '      R301: the trap site now rolls the seam;',
     '      the other functions stay data) -',
@@ -659,7 +659,7 @@ GR_INS_NEW = NL.join([
 for t in (GR_HEAD_OLD, GR_HEAD_NEW, GR_INS_OLD, GR_BOX, GR_INS_NEW):
     clean(t, 57)
 
-p = 'tools/phb_gap_report.md'
+p = 'tools/reports/phb_gap_report.md'
 s = rd(p)
 if 'The thief silence wired' in s:
     already.append('phb_gap_report.md: the wiring-arc box')

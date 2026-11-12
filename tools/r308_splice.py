@@ -35,7 +35,7 @@
 #       local ground truth, the coin identity,
 #       the list boundaries, the clamps, the
 #       herbs cells and the monetary pins.
-#   (c) tools/phb_gap_report.md - the R307 open
+#   (c) tools/reports/phb_gap_report.md - the R307 open
 #       box flipped to the PINNED form (the
 #       ledger holds ZERO open items again).
 #
@@ -584,7 +584,7 @@ assert s.count('{') == s.count('}'), 'rt brace balance'
 assert s.count('(') == s.count(')'), 'rt paren balance'
 assert len(applied) + len(already) == 4, 'patch b count wrong'
 
-# ---- (c) tools/phb_gap_report.md: the box flip ----
+# ---- (c) tools/reports/phb_gap_report.md: the box flip ----
 PHB_C_OLD = NL.join([
     '- [ ] **The general equipment cost',
     '      lists (Clothing, Herbs,',
@@ -650,7 +650,7 @@ PHB_C_NEW = NL.join([
 clean(PHB_C_OLD, 57, gap=True)
 clean(PHB_C_NEW, 57, gap=True)
 
-p = 'tools/phb_gap_report.md'
+p = 'tools/reports/phb_gap_report.md'
 s = rd(p)
 if 'PINNED R308' in s:
     already.append('phb report: the box flip')

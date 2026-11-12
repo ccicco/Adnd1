@@ -4,7 +4,7 @@
     // cont. 13), the Wandering Monster fourth-level list (print 7), Weather
     // in the Wilderness (print 14-15), the Pits tables (print 5) and the
     // Random Events Table for Settlements (print 5) - 5 closed / 0 open in
-    // tools/dragon_gap_report_015.md; the five-chain walk completes in two
+    // tools/reports/dragon_gap_report_015.md; the five-chain walk completes in two
     // rounds (the R927 opener carrying all five chains, this flip), the
     // issue-14 two-round pattern. Issues 2-15 all closed.
     {

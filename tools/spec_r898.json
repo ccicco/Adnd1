@@ -81,7 +81,7 @@
   "  the variant layer, the Berserker experimental",
   "  per its author's caution. GAP REPORT: the",
   "  specialists box flipped in",
-  "  tools/dragon_gap_report_003.md -> issue-3",
+  "  tools/reports/dragon_gap_report_003.md -> issue-3",
   "  report 2 closed / 3 open. VERIFIED: engine",
   "  double-run GREEN applied 6 / already 6 - NO",
   "  ABORTS THIS ROUND, the first clean pass since",
@@ -104,7 +104,7 @@
  "audit_file": "rules/audits/r898_character_round.h",
  "audit_label": "R898 character round audit",
  "audit_anchor": "#include \"rules/audits/r897_fighting_sub_classes.h\"  // R897: R897 fighting sub-classes audit",
- "gap_report": "tools/dragon_gap_report_003.md",
+ "gap_report": "tools/reports/dragon_gap_report_003.md",
  "gap_census": {
   "closed": 3,
   "open": 2

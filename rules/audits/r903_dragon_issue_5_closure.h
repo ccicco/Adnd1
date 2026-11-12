@@ -1,7 +1,7 @@
     // ---- R903 Dragon issue-5 closure audit ----
     // THE DRAGON ISSUE-5 BOX CLOSING ROUND - the pure bookkeeping round, no
     // new print ink. The flip: the issue-5 box in
-    // tools/dragon_gap_report_005.md goes [x] - 1 closed / 0 open, the
+    // tools/reports/dragon_gap_report_005.md goes [x] - 1 closed / 0 open, the
     // issue-5 walk complete, the three chains (the Witchcraft Supplement, the
     // Anhkheg lore-against-def pin, the Wizard Research Rules at folios 4-9,
     // 12+28, 24-26+28) having been the only engine-relevant ink in issue #5.

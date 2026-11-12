@@ -7,7 +7,7 @@
 // Pinned from The Dragon Vol. 1 No. 2 (August 1976): folio 21, Creature
 // Features - the Remorhaz, the original appearance ahead of the MM1 def. The
 // voice rides extract/dragon/002/ (all 32 issue pages) plus the pre-flip
-// tools/dragon_gap_report_002.md (4 boxes, 0 closed), both shipped as spec
+// tools/reports/dragon_gap_report_002.md (4 boxes, 0 closed), both shipped as spec
 // data files. OD&D-era ink converted per the walk doctrine: the pin IS the
 // conversion, noted, never silent.
 //

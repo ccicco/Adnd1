@@ -52,7 +52,7 @@
   "    NEXT: R997 R542-R556, 15 rec.",
   "    WAIT FOR GO."
  ],
- "gap_report": "tools/dsg_gap_report.md",
+ "gap_report": "tools/reports/dsg_gap_report.md",
  "gap_census": {
   "closed": 155,
   "open": 0

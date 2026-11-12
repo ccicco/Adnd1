@@ -63,12 +63,12 @@ def main():
         changed = changed or did
     write("regtest.cpp", r)
 
-    g = read("tools/dmg_gap_report.md")
+    g = read("tools/reports/dmg_gap_report.md")
     g, did = replace_exact(g, GHEAD_OLD, GHEAD_NEW, "gap report header note")
     changed = changed or did
     g, did = replace_exact(g, GBOX_OLD, GBOX_NEW, "gap report monster box")
     changed = changed or did
-    write("tools/dmg_gap_report.md", g)
+    write("tools/reports/dmg_gap_report.md", g)
 
     print("R112 splice: " +
           ("ALL OK" if changed else "nothing to do (already applied)"))

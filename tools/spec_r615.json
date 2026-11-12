@@ -5,7 +5,7 @@
  "header_file": "rules/oa/oaabilities.h",
  "regtest": "regtest.cpp",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
- "gap_report": "tools/oa_gap_report.md",
+ "gap_report": "tools/reports/oa_gap_report.md",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R614 LANDED 2026-10-18: commit",
  "prev_record": [
@@ -15,7 +15,7 @@
   "  pushed 8836093..a7019b4), THE",
   "  OA ARC OPENER (the R564 MotP",
   "  pattern): the gap report",
-  "  tools/oa_gap_report.md lands in",
+  "  tools/reports/oa_gap_report.md lands in",
   "  the same commit as the spec -",
   "  235 boxes at opener (all 88",
   "  numbered tables itemized). OA",

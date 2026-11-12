@@ -52,7 +52,7 @@
 #       audit (seeded scenarios the replica
 #       walked first); the battery census
 #       moves 237 -> 239.
-#   (h) tools/dmg_gap_report.md - the
+#   (h) tools/reports/dmg_gap_report.md - the
 #       chronicle paragraph (no box flip -
 #       the dmg ledger holds ZERO open
 #       items).
@@ -959,7 +959,7 @@ assert s.count('{') == s.count('}'), 'rt brace balance'
 assert s.count('(') == s.count(')'), 'rt paren balance'
 assert len(applied) + len(already) == 7, 'patch g count wrong'
 
-# ---- (h) tools/dmg_gap_report.md: the chronicle ----
+# ---- (h) tools/reports/dmg_gap_report.md: the chronicle ----
 CH_OLD = NL.join([
     'moves 235 -> 237 with',
     'the R312a seam and R312 engine audits.',
@@ -1005,7 +1005,7 @@ CH_NEW = NL.join([
 clean(CH_OLD, 57, gap=True)
 clean(CH_NEW, 57, gap=True)
 
-p = 'tools/dmg_gap_report.md'
+p = 'tools/reports/dmg_gap_report.md'
 s = rd(p)
 if 'R313 the underwater fight' in s:
     already.append('dmg report: the chronicle')

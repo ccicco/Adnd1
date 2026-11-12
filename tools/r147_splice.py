@@ -46,7 +46,7 @@
 #  - game/state_combat.cpp: buildFoesFromParty lands a.race
 #  - NEW dm/appendixp.h
 #  - regtest.cpp: include + 3 audits (census 64 -> 67)
-#  - tools/dmg_gap_report.md: the R144 box amended + two
+#  - tools/reports/dmg_gap_report.md: the R144 box amended + two
 #    R147 boxes
 #
 # Idempotent: safe to run twice; a silent run means the
@@ -897,12 +897,12 @@ patch("regtest.cpp", old_rt_aud, audits,
       marker="R147 Appendix P audit")
 assert len(applied) + len(already) == 16
 
-patch("tools/dmg_gap_report.md", old_gap144, new_gap144,
+patch("tools/reports/dmg_gap_report.md", old_gap144, new_gap144,
       "gap report: R144 box amended",
       marker="as was the dwarf CON magic-save bonus until")
 assert len(applied) + len(already) == 17
 
-patch("tools/dmg_gap_report.md", old_gap_tail, new_gap_tail,
+patch("tools/reports/dmg_gap_report.md", old_gap_tail, new_gap_tail,
       "gap report: R147 boxes",
       marker="CLOSED R147: pinned as")
 assert len(applied) + len(already) == 18

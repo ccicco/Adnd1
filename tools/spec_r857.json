@@ -12,7 +12,7 @@
  "audit_anchor": "#include \"rules/audits/r856_cthulhu_mythos.h\"  // R856: R856 Cthulhu mythos audit",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "seed_anchor": "## Knowledge maintenance",
- "gap_report": "tools/ddg_gap_report.md",
+ "gap_report": "tools/reports/ddg_gap_report.md",
  "gap_flips": [
   {
    "from": "- [ ] **Egyptian mythos** (pp. 49-56)",

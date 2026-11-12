@@ -59,7 +59,7 @@
  "audit_file": "rules/audits/r894_artificer.h",
  "audit_label": "R894 Artificer audit",
  "audit_anchor": "#include \"rules/audits/r893_systems.h\"  // R893: R893 systems audit",
- "gap_report": "tools/dragon_gap_report_002.md",
+ "gap_report": "tools/reports/dragon_gap_report_002.md",
  "gap_census": {
   "closed": 4,
   "open": 0
@@ -434,13 +434,13 @@
  "table_checks": [],
  "file_patches": [
   {
-   "file": "tools/dragon_gap_report.md",
+   "file": "tools/reports/dragon_gap_report.md",
    "from": "- [x] **Aronson: mighty magic miscellany, the illusionist deltas**\n  (folios 23-25) - the deltas round\n\n3 boxes",
    "to": "- [x] **Aronson: mighty magic miscellany, the illusionist deltas**\n  (folios 23-25) - the deltas round\n- [ ] **The Ward Artificer devices** (folios 8-10) - the\n  un-parked items sweep round\n\n4 boxes",
    "note": "the issue-1 report gains the un-parked Ward box"
   },
   {
-   "file": "tools/dragon_gap_report.md",
+   "file": "tools/reports/dragon_gap_report.md",
    "from": "## Parked\n\nWard's Artificer devices (8-10) - codifiable as items, parked for a\npossible later items sweep.",
    "to": "## Parked\n\nNone. Ward's Artificer devices (8-10) were un-parked at R894\n(Curtiss's call) - the box above ships pre-flip and closes at the\nnext Dragon round's flip per the R796 rule.",
    "note": "the Parked section empties - the un-park is recorded"

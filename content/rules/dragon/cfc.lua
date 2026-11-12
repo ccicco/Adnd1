@@ -5,13 +5,13 @@ return {
   "prefix" = "cfc",
   "banner" = {
       "title" = "The Creature Features box closing round - the issue-4 walk complete: the pure bookkeeping round, the flip and the registry ground truth",
-      "provenance" = "The pure box-closing round, no new ink: the Creature Features box in tools/dragon_gap_report_004.md flips closed (1 / 0), completing the issue-4 walk exactly as adjudicated at R900 - the Creature Features chain was the only engine-relevant chain in The Dragon Vol. 1 No. 4 (December 1976); everything else was scoped out (the EPT campaign chains, the Metamorphosis Alpha androids, the Jaquet Oddball parody, the fiction, Finieous Fingers, Wargaming World, the Temple pictorial, Mapping the Dungeons, the ads and the preview). The R900 record seats in the seed this round.",
+      "provenance" = "The pure box-closing round, no new ink: the Creature Features box in tools/reports/dragon_gap_report_004.md flips closed (1 / 0), completing the issue-4 walk exactly as adjudicated at R900 - the Creature Features chain was the only engine-relevant chain in The Dragon Vol. 1 No. 4 (December 1976); everything else was scoped out (the EPT campaign chains, the Metamorphosis Alpha androids, the Jaquet Oddball parody, the fiction, Finieous Fingers, Wargaming World, the Temple pictorial, Mapping the Dungeons, the ads and the preview). The R900 record seats in the seed this round.",
       "sentinel" = "The pure-round doctrine: a closing round carries no new print ink - only the flip and the walk bookkeeping, every number cited to its standing record; the registry ground truth pins as the R900 lesson taught: 1311 loaded live against 1333 files with 25 never-load errors, the battery line 'loaded N, errors M' the only ground truth for registry floors, never the file count; the 25 broken MM2/FF text lines stay untouched, a pre-R900 print-fidelity state; the variant-layer doctrine holds at the closure - Dragon ink is never core 1e canon.",
     },
   "consts" = { {
       "name" = "cfcReportBoxes",
       "value" = 1,
-      "comment" = "the issue-4 report carries a single box - the Creature Features chain at folios 18-19, 21 (tools/dragon_gap_report_004.md); this round flips it closed, 1 closed / 0 open, the walk complete",
+      "comment" = "the issue-4 report carries a single box - the Creature Features chain at folios 18-19, 21 (tools/reports/dragon_gap_report_004.md); this round flips it closed, 1 closed / 0 open, the walk complete",
     }, {
       "name" = "cfcCreatureFeaturesDefs",
       "value" = 3,
@@ -19,7 +19,7 @@ return {
     }, {
       "name" = "cfcIssue3Closed",
       "value" = 5,
-      "comment" = "the issue-3 report closed 5 / 0 at the R900 flip - the adjudicated issue-3 walk complete (tools/dragon_gap_report_003.md)",
+      "comment" = "the issue-3 report closed 5 / 0 at the R900 flip - the adjudicated issue-3 walk complete (tools/reports/dragon_gap_report_003.md)",
     }, {
       "name" = "cfcLiveRegistry",
       "value" = 1311,
@@ -36,11 +36,11 @@ return {
   "bools" = { {
       "name" = "cfcIssue3WalkComplete",
       "value" = true,
-      "comment" = "the issue-3 walk is complete - 5 boxes closed / 0 open at the R900 flip (tools/dragon_gap_report_003.md)",
+      "comment" = "the issue-3 walk is complete - 5 boxes closed / 0 open at the R900 flip (tools/reports/dragon_gap_report_003.md)",
     }, {
       "name" = "cfcIssue4WalkComplete",
       "value" = true,
-      "comment" = "the issue-4 walk is complete at this round's flip - the Creature Features box closed, 1 / 0 (tools/dragon_gap_report_004.md)",
+      "comment" = "the issue-4 walk is complete at this round's flip - the Creature Features box closed, 1 / 0 (tools/reports/dragon_gap_report_004.md)",
     }, {
       "name" = "cfcVariantLayerDoctrine",
       "value" = true,
@@ -65,6 +65,6 @@ return {
     } },
   "audit" = {
       "label" = "R901 Creature Features closure audit",
-      "comment" = "THE CREATURE FEATURES BOX CLOSING ROUND - the pure bookkeeping round, no new print ink. The flip: the Creature Features box in tools/dragon_gap_report_004.md goes [x] - 1 closed / 0 open, the issue-4 walk complete, the chain (the Mihalli, the Vriyagga, the Qu'uni at folios 18-19, 21) having been the only engine-relevant ink in issue #4. The bookkeeping pins: the single box and its three defs, the issue-3 report complete at 5 / 0, and the registry ground truth from the R900 lesson - the live census 1311 against the 1333 base lua files with the 25 never-load errors, the battery line 'loaded 1311, errors 25' the only ground truth for registry floors; the 25 long-broken MM2/FF text lines are a pre-R900 print-fidelity state, untouched. The R900 record seats in the seed via this round's prev_record. No file patches, no data files, no tables - the census rides 823 -> 824.",
+      "comment" = "THE CREATURE FEATURES BOX CLOSING ROUND - the pure bookkeeping round, no new print ink. The flip: the Creature Features box in tools/reports/dragon_gap_report_004.md goes [x] - 1 closed / 0 open, the issue-4 walk complete, the chain (the Mihalli, the Vriyagga, the Qu'uni at folios 18-19, 21) having been the only engine-relevant ink in issue #4. The bookkeeping pins: the single box and its three defs, the issue-3 report complete at 5 / 0, and the registry ground truth from the R900 lesson - the live census 1311 against the 1333 base lua files with the 25 never-load errors, the battery line 'loaded 1311, errors 25' the only ground truth for registry floors; the 25 long-broken MM2/FF text lines are a pre-R900 print-fidelity state, untouched. The R900 record seats in the seed via this round's prev_record. No file patches, no data files, no tables - the census rides 823 -> 824.",
     },
 }

@@ -42,7 +42,7 @@
 #       constants asserted, the drown, cap,
 #       decay, light and ultravision walks,
 #       and the print identities.
-#   (d) tools/dmg_gap_report.md - the
+#   (d) tools/reports/dmg_gap_report.md - the
 #       chronicle paragraph (no box flip -
 #       the dmg ledger holds ZERO open
 #       items).
@@ -862,7 +862,7 @@ assert s.count('{') == s.count('}'), 'rt brace balance'
 assert s.count('(') == s.count(')'), 'rt paren balance'
 assert len(applied) + len(already) == 3, 'patch c count wrong'
 
-# ---- (d) tools/dmg_gap_report.md: the chronicle ----
+# ---- (d) tools/reports/dmg_gap_report.md: the chronicle ----
 CH_OLD = NL.join([
     '234 with the R310 audit.',
     '',
@@ -917,7 +917,7 @@ CH_NEW = NL.join([
 clean(CH_OLD, 57, gap=True)
 clean(CH_NEW, 57, gap=True)
 
-p = 'tools/dmg_gap_report.md'
+p = 'tools/reports/dmg_gap_report.md'
 s = rd(p)
 if 'R311 the underwater environment pin' in s:
     already.append('dmg report: the chronicle')

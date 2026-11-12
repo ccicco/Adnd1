@@ -15,7 +15,7 @@
  "chains": [],
  "switches": [],
  "file_patches": [],
- "gap_report": "tools/dragon_gap_report_025.md",
+ "gap_report": "tools/reports/dragon_gap_report_025.md",
  "gap_census": {
   "closed": 3,
   "open": 0

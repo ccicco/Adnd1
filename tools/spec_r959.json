@@ -12,7 +12,7 @@
  "audit_label": "R959 issue-25 table round audit",
  "audit_anchor": "#include \"rules/audits/r958_issue_25_opener_set.h\"  // R958: R958 issue-25 opener set audit",
  "audit_comment": "the two-chain table round audit - the Xochiyaoyotl war game with the scale, the prowess grid, the morale and victory brackets and the Spanish option, and the vampire varieties with the fifteen type roster, the charm adjustments and the call bands",
- "gap_report": "tools/dragon_gap_report_024.md",
+ "gap_report": "tools/reports/dragon_gap_report_024.md",
  "gap_census": {
   "closed": 3,
   "open": 0

@@ -5,7 +5,7 @@
  "header_file": "rules/oa/oacreating.h",
  "regtest": "regtest.cpp",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
- "gap_report": "tools/oa_gap_report.md",
+ "gap_report": "tools/reports/oa_gap_report.md",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R613 LANDED 2026-10-18: commit",
  "prev_record": [
@@ -402,7 +402,7 @@
  },
  "banner": {
   "title": "CREATING THE PLAYER CHARACTER, printed capture pp. 5-8 - the OA arc opener",
-  "provenance": "verified against capture pp. 1-8 of the oa.pdf OCR session (315 capture pages, single Mistral-OCR capture; the book prints no page numbers in the capture margin so all cites are capture pages; contested cells settle book-internal first, then against the physical copy). THE OA GAP REPORT LANDS WITH THIS ROUND IN THE SAME COMMIT - the R564 MotP opener pattern: tools/oa_gap_report.md ships pre-flip (235 boxes, 0 closed) beside the spec, and the engine flips the opener boxes in place.",
+  "provenance": "verified against capture pp. 1-8 of the oa.pdf OCR session (315 capture pages, single Mistral-OCR capture; the book prints no page numbers in the capture margin so all cites are capture pages; contested cells settle book-internal first, then against the physical copy). THE OA GAP REPORT LANDS WITH THIS ROUND IN THE SAME COMMIT - the R564 MotP opener pattern: tools/reports/oa_gap_report.md ships pre-flip (235 boxes, 0 closed) beside the spec, and the engine flips the opener boxes in place.",
   "sentinel": "the gap census after this round: 4 closed, 231 open - the OA arc begins (R613b closed the DMO arc at 96/0 with the Chapter 2 parent flip; census 536 -> 537); NEXT - R615: the Chapter 1 ability tables (Tables 1-8) close on grid pins, prefix dgb, audit \"R615 OA ability tables audit\", include after rules/oa/oacreating.h"
  }
 }

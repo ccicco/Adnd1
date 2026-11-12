@@ -23,7 +23,7 @@ import sys
 
 WD   = 'rules/dmg/miscprose1.h'
 REG  = 'regtest.cpp'
-GAP  = 'tools/dmg_gap_report.md'
+GAP  = 'tools/reports/dmg_gap_report.md'
 
 NL = chr(10)
 BS = chr(92)

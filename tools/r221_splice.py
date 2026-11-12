@@ -334,7 +334,7 @@ patch('regtest.cpp',
       new3)
 
 # ---------------------------------------------------------------------------
-# Patch 4: tools/dmg_gap_report.md - the log entry
+# Patch 4: tools/reports/dmg_gap_report.md - the log entry
 # ---------------------------------------------------------------------------
 
 log_lines = [
@@ -377,7 +377,7 @@ old4 = ('III.A-H surrounding prose seam.' + NL + NL + 'Categories:')
 new4 = ('III.A-H surrounding prose seam.' + NL + NL + log_entry + NL
         + NL + 'Categories:')
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R221 landed the III.A potions prose pins',
       old4,
       new4)

@@ -23,7 +23,7 @@
   "  the engine and rn handle it), 1 gap flip. THE",
   "  PINS, all cited: the issue-4 single box over",
   "  its three defs",
-  "  (tools/dragon_gap_report_004.md), the issue-3",
+  "  (tools/reports/dragon_gap_report_004.md), the issue-3",
   "  report complete at 5/0, the registry ground",
   "  truth from the R900 lesson (live census 1311 vs",
   "  the 1333 base lua files with the 25 never-load",
@@ -56,7 +56,7 @@
  "audit_file": "rules/audits/r902_dragon_issue_5.h",
  "audit_label": "R902 Dragon issue-5 audit",
  "audit_anchor": "#include \"rules/audits/r901_creature_features_closure.h\"  // R901: R901 Creature Features closure audit",
- "gap_report": "tools/dragon_gap_report_004.md",
+ "gap_report": "tools/reports/dragon_gap_report_004.md",
  "gap_census": {
   "closed": 1,
   "open": 0
@@ -1386,7 +1386,7 @@
    "content": "TheMongolArmy\u2014TheForestofFlame\u2014\nADisciplinedHorde|AnillustratedtalebyMorno\nPtIIofReminiscences\nofaSoloWargamerInitiateCode\u2014CloneBankAlpha;\nAnalternativeMAbackground\nPtIIofAMRMI\u2014\n:|ysteryHill\nArtilleryEvaluation|America\u2019sStonehenge?\nAViking-SaxonPaintingGuideforLegions\nDemi-CampaignofthePetalThronefigures\nLETSSIM\u00a5VASNAOAe\u00a51\nolHt\n\u201cSBOEAUS(SUPEPOOCPPES[ekBaauas)ayybeSoyped6capeuabneodssepo-puoiasceEWoyUOpEnpddy\n"
   },
   {
-   "path": "tools/dragon_gap_report_005.md",
+   "path": "tools/reports/dragon_gap_report_005.md",
    "content": "# Dragon gap report - THE DRAGON, Vol. 1 No. 5 (March 1977)\n\nThe Dragon Magazine walk, issue #5. Primary ink:\nextract/dragon/005/pNNN_full.txt, NNN = page index; PRINT FOLIO =\nPDF PAGE (verified both ends: the printed 12 and 26 footers sit on\nthe PDF pages 12 and 26). The voice is the chat-side DjVu OCR\ntranscript of the archive.org scan; the article CHAIN is the ink\nunit, not the folio.\n\nDoctrine (Curtiss, 2026-10-29): the pin IS the conversion - OD&D-era\nink adjudicated to 1e terms, the conversion noted, never silent;\nDragon pins ride a VARIANT layer with provenance, never core canon.\n\nAdjudication (Curtiss, 2026-10-29): use - all three engine-relevant\nchains: the Witchcraft Supplement (folios 4-9, the anonymous ms.)\nas the witch class variant layer - the encounter doctrine, the\nOrder ladder, the spell quotas, the spell matrix, the covens' trade\nand the lair treasure; the Anhkheg Featured Creature (folios 12\nand 28) as the lore-against-def pin - the merged MM1 ankheg def\nexists, so the Dragon print rides the bulette/Remorhaz precedent,\na provenance pin, never a competing def, the print divergences\nnoted; the Wizard Research Rules by Charles Preston Goforth, Jr.\n(folios 24-26, 28) as the research and enchantment variant layer -\nthe spell research ladder, the serious enchanting, the True Ring\nand the Wizard Blade; drop - the Metamorphosis Alpha chains (Ward's\nmissed ideas 10-11, Gygax's humanoids 16), the fiction (Gardner F.\nFox 18-24, the Gnome Cache 29-30), the Tolkien lore chain (14), the\nGandalf analysis (27), the letters (3, 13), the ads throughout and\nthe next-issue preview (32).\n\n## Boxes\n\n- [ ] **The Witchcraft Supplement, the Anhkheg and the Wizard\n  Research Rules** (folios 4-9, 12+28, 24-26+28) - the issue-5\n  opener round\n\n1 box, 0 closed, 1 open at the R902 authoring. The R902 round ships\nthis report pre-flip (a report cannot flip in the round that\ncreates it); the issue-5 box closes at the next round's flip.\n\n## Scoped out of the engine\n\nThe Metamorphosis Alpha additions (10-11) and the humanoid\nappearance piece (16); the Gardner F. Fox fiction (18-24); the\nGnome Cache (29-30); the Tolkien Elves lore chain (14); \"Gandalf\nWas Only a Fifth Level Magic-User\" (27); the letters columns (3,\n13); the GenCon X, Minifigs, Judges Guild, Games & Puzzles,\nArchive Miniatures, Little Wars, Diplomacy World and Dungeon Hobby\nShop ads (2, 6, 15, 17, 19, 25, 28, 31); the coming next-issue\npreview (32). The witchcraft wilderness encounter table's dense\nOCR garble (folio 4, the interleaved terrain rows) is scoped out of\nthe pin set - the clean scalars ride, the garbled grid does not,\nper the OCR-table caution.\n"
   }
  ],

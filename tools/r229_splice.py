@@ -613,7 +613,7 @@ gap_old = NL.join([
     '      SpellId registry (61 spells, the same seam',
     '      shape as R228).',
 ])
-patch('tools/phb_gap_report.md', '- [x] R229 the illusionist roster joins the', gap_old, gap_new)
+patch('tools/reports/phb_gap_report.md', '- [x] R229 the illusionist roster joins the', gap_old, gap_new)
 
 assert APPLIED + ALREADY == 14, 'patch count drift'
 print('R229 splice: ALL OK (applied %d, already %d)'

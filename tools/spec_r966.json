@@ -44,7 +44,7 @@
   "  sequel) with the TD 27 intake unadjudicated,",
   "  awaiting the Curtiss-provided scan. WAIT FOR GO."
  ],
- "gap_report": "tools/dragon_gap_report_026.md",
+ "gap_report": "tools/reports/dragon_gap_report_026.md",
  "gap_census": {
   "closed": 3,
   "open": 0

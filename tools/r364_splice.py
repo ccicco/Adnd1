@@ -1166,7 +1166,7 @@ assert len(applied) + len(already) == 4, 'b3 count'
 
 
 # ---- (c) the gap report: the note ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 if 'R364: the 3rd, 4th and' in s:
     already.append('gap report: the note')

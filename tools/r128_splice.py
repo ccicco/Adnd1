@@ -19,7 +19,7 @@
 #    curiosity on first entry and triggers the effect
 #  - regtest.cpp: the R128 special rooms audit (counts 37/65,
 #    name loops, summary pins, slice pins - census 46)
-#  - tools/dmg_gap_report.md: the special-rooms box opens
+#  - tools/reports/dmg_gap_report.md: the special-rooms box opens
 #    CLOSED R128
 import os, sys
 
@@ -423,7 +423,7 @@ r"""
       "regtest.cpp: R128 special rooms audit",
       marker="R128: special rooms audit")
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 r"""
       mermaid -> merman). Pinned by the R127 battery
       audit; census 45.

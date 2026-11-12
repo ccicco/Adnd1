@@ -28,7 +28,7 @@
     // Yoshi-Iye +2 and Tametomo +4 arrows. THE TREASURES: the six pieces with
     // the Imperial Sword a Dancing Sword lost at Dannoura and the Sakaki
     // branches required. THE FLIP: the part-one box in
-    // tools/dragon_gap_report_013.md went [x] - 1 closed, 1 open, the closing
+    // tools/reports/dragon_gap_report_013.md went [x] - 1 closed, 1 open, the closing
     // round to follow.
     {
         using namespace rules;

@@ -19,7 +19,7 @@
 #  - ai/actor.cpp: both call sites (melee + missile) pass
 #    defender.armorClass() - the AcType fold retires there
 #  - regtest.cpp: the R145 weapon table audit (census 63)
-#  - tools/dmg_gap_report.md: the R145 box (R144's named
+#  - tools/reports/dmg_gap_report.md: the R145 box (R144's named
 #    approximation closes; the new approximations named)
 # Idempotent: safe to run twice; a silent run means the
 # paste was truncated - this tail ALWAYS prints. An assert
@@ -545,7 +545,7 @@ patch("regtest.cpp", old_r144_head + NL,
       marker="R145 weapon table audit")
 assert len(applied) + len(already) == 7
 
-patch("tools/dmg_gap_report.md", old_gap, new_gap,
+patch("tools/reports/dmg_gap_report.md", old_gap, new_gap,
       "gap report: R145 box", marker="CLOSED R145:")
 assert len(applied) + len(already) == 8
 

@@ -521,7 +521,7 @@ assert len(applied) + len(already) == 2, 'b count'
 # item STAYS OPEN - the DM pp. 77-79 half
 # is DMG material absent from the UA
 # extract) ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 if 'R340: the fragment-verified' in s:
     already.append('gap report: the note')

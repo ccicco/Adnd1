@@ -473,7 +473,7 @@ patch('regtest.cpp',
       new3)
 
 # ---------------------------------------------------------------------------
-# Patch 4: tools/dmg_gap_report.md - the log entry
+# Patch 4: tools/reports/dmg_gap_report.md - the log entry
 # ---------------------------------------------------------------------------
 
 log_lines = [
@@ -529,7 +529,7 @@ new4 = ('campaign integration seams, DMG pp.110-112' + NL
         + 'area, upload lines ~8560+).' + NL + NL + log_entry + NL
         + NL + 'Categories:')
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R215 landed the conducting the game pins',
       old4,
       new4)

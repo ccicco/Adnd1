@@ -428,7 +428,7 @@ assert len(applied) + len(already) == 3, 'b count'
 
 # ---- (c) the gap report: the note and
 # the CLOSE (the item flips to [x]) ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 if 'R355: the 7th level pinned' in s:
     already.append('gap report: the note and the close')

@@ -5,7 +5,7 @@
  "regtest": "regtest.cpp",
  "header_file": "rules/ff/promo_batch6.h",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
- "gap_report": "tools/mm2_gap_report.md",
+ "gap_report": "tools/reports/mm2_gap_report.md",
  "banner": {
   "title": "the sixth FF promotion batch - the missing prints walk on",
   "provenance": "spec-driven; the sixth Fiend Folio promotion batch - twenty-five of the fifty-seven missing FF print stat-blocks lifted as new lua data files, the holdouts in ToC order from the flind p. 39 through the kuo-toa pp. 57-59 (the garbug promoting as two defs - the black and the violet, the two-column variant precedent; the fog giant p. 42, the mountain giant p. 42 and the giant strider p. 42 riding the print family prose; the kuo-toa carrying its three-page community entry with the hit-point, arms and slave tables), the stat blocks read from the three-voice scan collation (the djvu text, the word-geometry xml, the abbyy char xml) with the 1eonline print transcripts recovering the shredded rows - the guardian familiar psionic and attack/defence mode rows stay unrecovered in both scan voices and ride the query-mark sentinel per the landed precedent (dryad, dwarf, dragon turtle); the scan OCRs 1 as 7 systematically (the galltrit no-appearing, the iron cobra no-appearing, the guardian familiar hit dice and xp reads corrected); the registry 938 -> 963, the ff def census 128 -> 153, the missing print census 57 -> 32 (the R842-pinned 57 stands; the independent recount makes 58 with the yellow urchin p. 92 - the drain is per def, so the arithmetic holds either way), no encounter cells rewire, no gap boxes flip; the def bodies carry the print-fidelity pin headers"

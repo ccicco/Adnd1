@@ -507,7 +507,7 @@ patch('regtest.cpp',
       anchor + NL + NL.join(aud))
 
 # ---------------------------------------------------------------------------
-# Patch 4: tools/dmg_gap_report.md - the round-log entry (R202 convention)
+# Patch 4: tools/reports/dmg_gap_report.md - the round-log entry (R202 convention)
 # ---------------------------------------------------------------------------
 
 entry = (
@@ -545,7 +545,7 @@ log_new = ('d20 + adj >= cell. New R204 battery audit; census'
            + NL + '120. Next: the DMG-only sweep continues.'
            + NL + NL + entry + NL + NL + 'Categories:')
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R205 landed the spying tables',
       log_old,
       log_new)

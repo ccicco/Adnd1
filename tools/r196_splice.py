@@ -269,10 +269,10 @@ patch('regtest.cpp',
       NL.join(aud) + NL + '    // ---- R163: the poison table audit -------------')
 
 # ---------------------------------------------------------------------------
-# Patch 6: tools/phb_gap_report.md - the verified-list entry
+# Patch 6: tools/reports/phb_gap_report.md - the verified-list entry
 # ---------------------------------------------------------------------------
 
-patch('tools/phb_gap_report.md',
+patch('tools/reports/phb_gap_report.md',
       'columns pin as minSpellsPerLevel',
       '- [x] **Spells (the SPELL TABLES and the spell'
       + NL + '      explanations, engine classes)** - the'
@@ -295,10 +295,10 @@ patch('tools/phb_gap_report.md',
       + NL + '      now read the printed percents.')
 
 # ---------------------------------------------------------------------------
-# Patch 7: tools/dmg_gap_report.md - the round note
+# Patch 7: tools/reports/dmg_gap_report.md - the round note
 # ---------------------------------------------------------------------------
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R196 landed the INT Table II repin',
       'ability tables print-pinned (STR R153, DEX R178c,'
       + NL + 'CON R178c, INT R195, WIS R194, CHA R193). Next:'

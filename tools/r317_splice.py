@@ -40,7 +40,7 @@
 #       not, the dry fight does not, the
 #       pins re-assert - draw-independent);
 #       the battery census moves 243 -> 244.
-#   (e) tools/dmg_gap_report.md - the
+#   (e) tools/reports/dmg_gap_report.md - the
 #       chronicle paragraph (no box flip).
 #
 # The R317 round-state entry rides the R318
@@ -400,7 +400,7 @@ _o, _c, _o2, _c2 = counts(s)
 assert _o == _c and _o2 == _c2, 'patch d balance'
 assert len(applied) + len(already) == 4, 'patch d count wrong'
 
-# ---- (e) tools/dmg_gap_report.md: the chronicle ----
+# ---- (e) tools/reports/dmg_gap_report.md: the chronicle ----
 GP_OLD = NL.join([
     'with the R316 seam audit.',
     '',
@@ -428,7 +428,7 @@ GP_NEW = NL.join([
 clean(GP_OLD, 57, gap=True)
 clean(GP_NEW, 57, gap=True)
 
-p = 'tools/dmg_gap_report.md'
+p = 'tools/reports/dmg_gap_report.md'
 s = rd(p)
 if 'R317 the infravision fold' in s:
     already.append('dmg report: the chronicle')

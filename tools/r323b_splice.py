@@ -30,7 +30,7 @@
 #       the drow innate spell lists, the
 #       comeliness subrace grain (the
 #       R322 recorded read, homed).
-#   (c) tools/ua_gap_report.md - four
+#   (c) tools/reports/ua_gap_report.md - four
 #       boxes close (Race Table I, the
 #       sub-race mechanics, the
 #       preferences matrix, the subrace
@@ -1237,7 +1237,7 @@ SEED_ENTRY = NL.join([
     '  opener: the comeliness pins',
     '  (rules/ua/comeliness.h) and the',
     '  lossless ua gap report',
-    '  (tools/ua_gap_report.md) with the',
+    '  (tools/reports/ua_gap_report.md) with the',
     '  DEFERRED ontology (OUT nearly',
     '  empty by design), the',
     '  deferred-seams dependency graph,',
@@ -1317,7 +1317,7 @@ assert s.count('uaComelinessViewedSubraceAdj') == 1, 'b grain'
 assert len(applied) + len(already) == 2, 'patch b count wrong'
 
 # ---- (c) the gap report: the box flips ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 changed = False
 for old, new in GP_EDITS:

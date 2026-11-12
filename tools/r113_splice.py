@@ -55,7 +55,7 @@ def main():
         changed += did
     write("regtest.cpp", r)
 
-    g = read("tools/dmg_gap_report.md")
+    g = read("tools/reports/dmg_gap_report.md")
     if "R113 CLOSED divergence 4" in g:
         print("already applied: gap report header note")
     else:
@@ -66,7 +66,7 @@ def main():
     else:
         g, did = replace_exact(g, GBOX_OLD, GBOX_NEW, "gap report class box")
         changed += did
-    write("tools/dmg_gap_report.md", g)
+    write("tools/reports/dmg_gap_report.md", g)
 
     print("R113 splice: " +
           ("ALL OK" if changed == 5 else

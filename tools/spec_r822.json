@@ -11,7 +11,7 @@
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
   "seed_anchor": "## Knowledge maintenance",
   "prev_seed_key": "- R821 LANDED 2026-10-24: commit",
-  "gap_report": "tools/mm2_gap_report.md",
+  "gap_report": "tools/reports/mm2_gap_report.md",
   "regtest": "regtest.cpp",
   "banner": {
     "title": "THE AUDIT FILES DECOMPOSITION WIRING - the regtest monolith begins to come apart: the engine gains the audit_file spec key (a round's audit block rides a NEW fragment under rules/audits/, regtest gets the one-line #include at the R227 anchor), the census sums regtest.cpp plus the fragments, preflight reads the fragment printfs, and rn adds the fragment to the git add - the tooling round, lands alone, no gap boxes flip",

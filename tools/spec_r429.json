@@ -4,7 +4,7 @@
  "prefix": "wsw",
  "header_file": "rules/wsg/wsgsplwx.h",
  "regtest": "regtest.cpp",
- "gap_report": "tools/wsg_gap_report.md",
+ "gap_report": "tools/reports/wsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "caller_files": [
   "dm/treasure.cpp",
@@ -862,7 +862,7 @@
   "  rules/wsg/wsgenvfx.h NEW (38 inlines, prefix wse), verified cell for cell",
   "  three-way (the page image vs the text layer vs the book own examples: 105",
   "  deg band 10, -30 LM 1/2, 35 mph melee -2, 85/40 the greater reduction 2/3,",
-  "  the 90-mph cap). tools/wsg_gap_report.md flips 5: post-state 16 closed, 170",
+  "  the 90-mph cap). tools/reports/wsg_gap_report.md flips 5: post-state 16 closed, 170",
   "  open, 42 tables. Lessons: the 99 census was initialized to the expected",
   "  values and then incremented - now zeros plus a separate expected array; the",
   "  precip cap check band(90)+2 != 5 was TRUE on correct data and would have",

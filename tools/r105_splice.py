@@ -18,7 +18,7 @@
 #   game/state_town.cpp - wages block, share site, hire
 #   game/state_core.cpp - "crew %d %d" + optional second
 #   regtest.cpp       - R105 crew nerve audit
-#   tools/playverify_r77_r83.md - R105 section
+#   tools/reports/playverify_r77_r83.md - R105 section
 import sys, os
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)) + '/..')
@@ -319,7 +319,7 @@ OK &= patch('regtest.cpp',
 # ---------------------------------------------------------------------------
 # 9) playverify - the R105 section
 # ---------------------------------------------------------------------------
-OK &= patch('tools/playverify_r77_r83.md',
+OK &= patch('tools/reports/playverify_r77_r83.md',
 """## R103: the carrot
 """,
 """## R105: the crew's nerve

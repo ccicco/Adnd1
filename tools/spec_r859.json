@@ -12,7 +12,7 @@
  "audit_anchor": "#include \"rules/audits/r858_finnish_mythos.h\"  // R858: R858 Finnish mythos audit",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "seed_anchor": "## Knowledge maintenance",
- "gap_report": "tools/ddg_gap_report.md",
+ "gap_report": "tools/reports/ddg_gap_report.md",
  "gap_flips": [
   {
    "from": "- [ ] **Greek mythos** (pp. 63-74)",

@@ -329,9 +329,9 @@ PATCHES = [
      AC2_OLD, AC2_NEW, "appstate.h hire decl comment"),
     ("regtest.cpp", "R121 crew officers audit",
      RT_OLD, RT_NEW, "regtest R121 audit"),
-    ("tools/dmg_gap_report.md", "R121 CLOSED crew officers",
+    ("tools/reports/dmg_gap_report.md", "R121 CLOSED crew officers",
      GH_OLD, GH_NEW, "gap report header note"),
-    ("tools/dmg_gap_report.md", "for every 20 crewmen the book",
+    ("tools/reports/dmg_gap_report.md", "for every 20 crewmen the book",
      GB_OLD, GB_NEW, "gap report crew officers box"),
 ]
 

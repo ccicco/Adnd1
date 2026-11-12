@@ -148,7 +148,7 @@ patch("regtest.cpp",
       marker="R132 second-effects slice audit")
 
 # ---- B3: the R128 box 54 (paste B's second patch) ----
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """      2d6). The other 60 attributes stay dressing -
       documented; their effects ride future rounds.
 """,
@@ -161,7 +161,7 @@ patch("tools/dmg_gap_report.md",
       marker="R132's second-effects slice wires six more")
 
 # ---- B4: the R132 box (paste B's third patch) ----
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """      battery audit; census 49.
 
 ## Out of scope by design

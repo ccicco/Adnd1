@@ -447,7 +447,7 @@ assert s.count('creation.subracePick = 0;') == 1, 'f reset'
 assert len(applied) + len(already) == 6, 'f count'
 
 # ---- (g) the gap report: the close ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 if 'CLOSED R326' in s:
     already.append('gap report: the close')

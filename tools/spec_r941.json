@@ -51,7 +51,7 @@
  "audit_anchor": "#include \"rules/audits/r940_issue_20_opener_part_one.h\"  // R940: R940 issue-20 opener part one audit",
  "audit_label": "R941 issue-20 opener part two audit",
  "audit_comment": "THE DRAGON ISSUE-20 OPENER PART TWO - the two-chain round of the issue-20 three-round shape. Two chains pinned from the Curtiss-provided Dm20.pdf scan: the Fitzgerald It Is A Good Day To Die - the 600-death Saskatoon wilderness-campaign census, thirty-one causes with the percentage column in tenths; the Sagui Demonic Possession in the Dungeon - the type-IV-or-greater possession doctrine, the amulet rules, the host-death and repossession ladders, the exorcism ritual with the wraith and spectre turning mirrors and the victim outcomes. The closing flip rides R942, closing both report-020 boxes.",
- "gap_report": "tools/dragon_gap_report_020.md",
+ "gap_report": "tools/reports/dragon_gap_report_020.md",
  "gap_census": {
   "closed": 0,
   "open": 2

@@ -683,7 +683,7 @@ patch('regtest.cpp',
       new3)
 
 # ---------------------------------------------------------------------------
-# Patch 4: tools/dmg_gap_report.md - the log entry
+# Patch 4: tools/reports/dmg_gap_report.md - the log entry
 # ---------------------------------------------------------------------------
 
 log_lines = [
@@ -725,7 +725,7 @@ old4 = 'tables, the language determination.' + NL + NL + 'Categories:'
 new4 = ('tables, the language determination.' + NL + NL + log_entry + NL + NL
         + 'Categories:')
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R211 landed the NPC height and weight',
       old4,
       new4)

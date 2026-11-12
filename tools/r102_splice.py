@@ -16,7 +16,7 @@
 #   game/state_core.cpp - "cscrolls %d" save + load branch
 #   regtest.cpp       - R102 ledger audit (field-vs-save
 #                       inventory PINNED + the new line)
-#   tools/playverify_r77_r83.md - R102 section
+#   tools/reports/playverify_r77_r83.md - R102 section
 import sys, os
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)) + '/..')
@@ -161,7 +161,7 @@ OK &= patch('regtest.cpp',
 # ---------------------------------------------------------------------------
 # 4) playverify - the R102 section
 # ---------------------------------------------------------------------------
-OK &= patch('tools/playverify_r77_r83.md',
+OK &= patch('tools/reports/playverify_r77_r83.md',
 """## R101: the plate kit
 """,
 """## R102: the ledger of everything

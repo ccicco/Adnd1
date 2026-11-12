@@ -13,7 +13,7 @@
 #                            branch (v1 saves load at 0 days)
 #   game/state_town.cpp     - delve report gains day count
 #   regtest.cpp             - R95 calendar audit
-#   tools/playverify_r77_r83.md - R95 section
+#   tools/reports/playverify_r77_r83.md - R95 section
 #
 # The conversion: a dungeon day is 144 turns (the R89-R92
 # coherence bound); overland/sea days count their own day
@@ -241,7 +241,7 @@ OK &= patch('regtest.cpp',
 # ---------------------------------------------------------------------------
 # 6) playverify - the R95 section
 # ---------------------------------------------------------------------------
-OK &= patch('tools/playverify_r77_r83.md',
+OK &= patch('tools/reports/playverify_r77_r83.md',
 """## R94: the nerve
 """,
 """## R95: the calendar

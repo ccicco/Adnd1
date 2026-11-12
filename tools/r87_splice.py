@@ -14,7 +14,7 @@
 #   game/state_core.cpp - dumpEquipment prints the burden line
 #                         (band, weight, movement rate)
 #   regtest.cpp         - "R87 burden audit: bad 0"
-#   tools/playverify_r77_r83.md - burden walkthrough lines
+#   tools/reports/playverify_r77_r83.md - burden walkthrough lines
 # All anchors and inserted text are ASCII-only (protocol rule).
 
 import sys, os
@@ -288,7 +288,7 @@ OK &= patch('regtest.cpp',
 # ---------------------------------------------------------------------------
 # 6) playverify checklist - the burden lines
 # ---------------------------------------------------------------------------
-OK &= patch('tools/playverify_r77_r83.md',
+OK &= patch('tools/reports/playverify_r77_r83.md',
 """## Sign-off""",
 """## R87: the burden (encumbrance wired to the pack)
 - [ ] [D] dump kit: every member now prints a burden line,

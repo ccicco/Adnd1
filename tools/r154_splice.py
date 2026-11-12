@@ -1311,11 +1311,11 @@ patch("adnd1.cpp", jm_old, jm_new,
       "adnd1.cpp: the join message",
       marker="rules::raceName((rules::CharRace)c.race)")
 assert len(applied) + len(already) == 24
-patch("tools/dmg_gap_report.md", gh_old, gh_new,
+patch("tools/reports/dmg_gap_report.md", gh_old, gh_new,
       "gap report: R154 header note",
       marker="R154 PINNED the PC races layer")
 assert len(applied) + len(already) == 25
-patch("tools/dmg_gap_report.md", gb_old, gb_new,
+patch("tools/reports/dmg_gap_report.md", gb_old, gb_new,
       "gap report: PC races box closed",
       marker="PINNED R154, re-authored against current main")
 assert len(applied) + len(already) == 26

@@ -22,7 +22,7 @@
 #                         the build site stamps the day
 #   game/state_core.cpp - save/load (3 optional ints)
 #   regtest.cpp       - R106 keep ledger audit
-#   tools/playverify_r77_r83.md - R106 section
+#   tools/reports/playverify_r77_r83.md - R106 section
 import sys, os
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)) + '/..')
@@ -319,7 +319,7 @@ OK &= patch('regtest.cpp',
 # ---------------------------------------------------------------------------
 # 8) playverify - the R106 section
 # ---------------------------------------------------------------------------
-OK &= patch('tools/playverify_r77_r83.md',
+OK &= patch('tools/reports/playverify_r77_r83.md',
 """## R105: the crew's nerve
 """,
 """## R106: the keep's ledger

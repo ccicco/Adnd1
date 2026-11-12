@@ -372,7 +372,7 @@ assert len(applied) + len(already) == 2, 'b count'
 
 
 # ---- (c) the gap: the table close ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 if '- [x] **Cavaliers Table I**' in s:
     already.append('gap report: the table close')
@@ -418,7 +418,7 @@ else:
     applied.append('gap report: the table close')
 
 # ---- (c) the gap kept asserts ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 assert s.count(
     '- [x] **Cavaliers Table I**'

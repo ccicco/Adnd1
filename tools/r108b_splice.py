@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# R108b splice: THE BOOK, WHOLE - replaces tools/dmg_gap_report.md
+# R108b splice: THE BOOK, WHOLE - replaces tools/reports/dmg_gap_report.md
 # with the full-book edition (OCR pages 1-242 read end to end).
 # Pure docs round: no C++ changes, battery stays byte-identical.
 

@@ -5,7 +5,7 @@
 // census 838 -> 839.
 //
 // The pure box-closing round, no new ink: the issue-10 part-two box in
-// tools/dragon_gap_report_010.md flips closed (2 / 0), completing the
+// tools/reports/dragon_gap_report_010.md flips closed (2 / 0), completing the
 // issue-10 walk exactly as adjudicated at R914 and R915 - the Orgies Inc.
 // article, the Clifton wilderness article, the Random Monsters article, the
 // Gilbert dungeon method article, the Weights & Measures article and the

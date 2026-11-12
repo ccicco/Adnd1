@@ -19,7 +19,7 @@
 #    corrected rows, the printed high rows, the holds, and
 #    the gates (census 48); the R129 cast-pending comment
 #    updates (its 12th-level pins stand)
-#  - tools/dmg_gap_report.md: the R130 box closes
+#  - tools/reports/dmg_gap_report.md: the R130 box closes
 import os, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -349,7 +349,7 @@ r"""
       "regtest.cpp: R130 high-level slots audit",
       marker="R130 high-level slots audit")
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 r"""
 Pinned by the R128 battery audit; census 46.
 

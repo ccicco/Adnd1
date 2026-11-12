@@ -5,7 +5,7 @@
   "regtest": "regtest.cpp",
   "header_file": "rules/meta/migration_batch_ua_wsg.h",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
-  "gap_report": "tools/mm2_gap_report.md",
+  "gap_report": "tools/reports/mm2_gap_report.md",
   "banner": {
     "title": "the UA and WSG migration batch - the sixth batch, a clean hundred",
     "provenance": "spec-driven; the sixth batch of real audit blocks (digest idx 239-338, R357 UA MU 2nd level spells through R458 WSG portaging - the UA pins and appendices, the WSG pins; 100 blocks at Curtiss's 100-per-round pace call, 18485 lines, zero blocks held back) move verbatim into rules/audits fragments, regtest keeps the one-line include at each head line; the census holds, the labels relocate; the round audit rides a fragment as before"

@@ -1500,7 +1500,7 @@ assert len(applied) + len(already) == 3, 'b2 count'
 
 # ---- (c) the gap report: the note (the
 # item STAYS OPEN - the 7th-9th levels) ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 if 'R360: the 5th and 6th levels' in s:
     already.append('gap report: the note')

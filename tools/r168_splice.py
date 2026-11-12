@@ -123,14 +123,14 @@ assert len(applied) + len(already) == 3
 
 p4_old = NL.join(['the dice and tracks the disability. Census 85.', '', 'Categories:'])
 p4_new = NL.join(['the dice and tracks the disability. Census 85.', 'R168 PINNED underwater spell use (DMG p.57) -', 'rules/dmg/uwspells.h: the general limits (spell', 'ranges and distances as in dungeons, material', 'components altered by water, fire-based spells do', 'not function except within an airy water radius,', 'electrical spells conducted to the entire', 'surrounding area); the cannot-cast lists cell', 'by cell - cleric 9 (speak with dead, lower', 'water, speak with plants, atonement, flame', 'strike, insect plague, aerial servant, control', 'weather, wind walk), druid 22 (predict', 'weather; fire trap, heat metal - its chill', 'metal reverse works - produce flame; call', 'lightning, pyrotechnics; animal summoning I,', 'call woodland beings, produce fire; animal', 'summoning II, control winds, insect plague,', 'pass plant, wall of fire; animal summoning', 'III, conjure fire elemental, fire seeds,', 'weather summoning; Chariot of Sustarre,', 'control weather, creeping doom, fire storm),', 'magic-user 10 (affect normal fires, burning', 'hands, find familiar, pyrotechnics, fireball,', 'flame arrow, gust of wind, fire charm, fire', 'shield - the hot flame version, its cold flame', 'version still functions - and fire trap); the', '11 asterisked entries pinned as the printed', 'mark (the re-upload OCR shows no footnote for', 'it, so it rides as a flag); the altered-effects', 'list: cleric part water (a tunnel no wider', 'than 10 feet) and earthquake (shock waves', 'stunning all in range who fail a save vs', 'death magic for 5-20 rounds), druid conjure', 'earth elemental (confined to the water floor),', 'magic-user fly (swim at any depth even', 'encumbered, maximum speed 9 inches),', 'lightning bolt (a 2 inch radius sphere, save', 'for half), ice storm (hail 1-10 damage, sleet', 'no effect), wall of ice (floats to the', 'surface), conjure elemental (air and fire', 'impossible, earth as the druid spell, water', 'fine), Otiluke freezing sphere (50 cubic', 'feet per level, rounds per level, suffocation', 'unless immediate aid), part water (as the', 'clerical spell). The caller decides casting;', 'the encounter tables stay pinned R60/R127.', 'Census 86.', '', 'Categories:'])
-patch("tools/dmg_gap_report.md", p4_old, p4_new,
+patch("tools/reports/dmg_gap_report.md", p4_old, p4_new,
       "gap report: R168 header note",
       marker="R168 PINNED underwater spell use")
 assert len(applied) + len(already) == 4
 
 p5_old = NL.join(['- [ ] **Underwater spell use (p.57)** - the modifier', '      table; the underwater encounter tables are pinned', '      (R60/R127) but the spell columns are not.'])
 p5_new = NL.join(['- [x] **Underwater spell use (p.57)** - PINNED', '      R168: rules/dmg/uwspells.h (the cannot-cast and', '      altered spell lists cell by cell, the general', '      limits, the altered-effect numerics).'])
-patch("tools/dmg_gap_report.md", p5_old, p5_new,
+patch("tools/reports/dmg_gap_report.md", p5_old, p5_new,
       "gap report: underwater spell use box closed",
       marker="R168: rules/dmg/uwspells.h (the cannot-cast and")
 assert len(applied) + len(already) == 5

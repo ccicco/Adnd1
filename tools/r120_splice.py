@@ -379,7 +379,7 @@ PATCHES = [
      KH_OLD, KH_NEW, "adnd1 [H] listen key"),
     ("regtest.cpp", "R120 parley and listening audit",
      RT_OLD, RT_NEW, "regtest R120 audit"),
-    ("tools/dmg_gap_report.md", "R120 WIRED parley",
+    ("tools/reports/dmg_gap_report.md", "R120 WIRED parley",
      GH_OLD, GH_NEW, "gap report header note"),
 ]
 

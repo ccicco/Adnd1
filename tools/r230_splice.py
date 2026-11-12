@@ -700,7 +700,7 @@ PATCHES = [
          '        if (bad) return 1;',
          '    }',
      ])),
-    ('tools/phb_gap_report.md',
+    ('tools/reports/phb_gap_report.md',
      'R230 the subclass creation gates -',
      lines([
          '- [ ] the subclass creation gates - no',
@@ -742,7 +742,7 @@ PATCHES = [
 
 
 # the base check: the R229 box is closed (census 145)
-g = open('tools/phb_gap_report.md').read()
+g = open('tools/reports/phb_gap_report.md').read()
 assert g.count('Census 145.') == 1, 'wrong base: the R229 box is not closed'
 
 for p in PATCHES:

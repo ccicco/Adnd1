@@ -44,7 +44,7 @@
 #       the switches, the toActor copy, the
 #       live proficiency gate; the C++ battery
 #       is the gate).
-#   (g) tools/phb_gap_report.md - the R297
+#   (g) tools/reports/phb_gap_report.md - the R297
 #       simplification note amended, the R299
 #       wiring entry, the third scope pass
 #       recorded (ONE new open item - the
@@ -729,7 +729,7 @@ assert 'R298 thief function take table pins audit' in s, 'patch f ate R298'
 assert '// ---- R227: the wis mental save wiring audit ----' in s, 'patch f ate R227'
 assert len(applied) + len(already) == 6, 'patch f count wrong'
 
-# ---- (g) tools/phb_gap_report.md: the flip and the pass ----
+# ---- (g) tools/reports/phb_gap_report.md: the flip and the pass ----
 G_SIMPL_OLD = NL.join([
     '      recorded: the party roster carries no',
     '      recordings yet (a future round), the',
@@ -862,7 +862,7 @@ clean(G_SIMPL_OLD, 57)
 clean(G_TAIL_OLD, 57)
 clean(G_PLANES_OLD, 57)
 
-p = 'tools/phb_gap_report.md'
+p = 'tools/reports/phb_gap_report.md'
 s = rd(p)
 if 'WIRED R299' in s:
     already.append('phb_gap_report.md: the flip and the pass')

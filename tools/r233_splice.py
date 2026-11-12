@@ -50,7 +50,7 @@ APP  = 'game/appstate.h'
 AD   = 'adnd1.cpp'
 CORE = 'game/state_core.cpp'
 REG  = 'regtest.cpp'
-GAP  = 'tools/phb_gap_report.md'
+GAP  = 'tools/reports/phb_gap_report.md'
 
 NL = chr(10)
 Q  = chr(39)

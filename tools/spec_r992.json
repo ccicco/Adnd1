@@ -47,7 +47,7 @@
   "    across 64 records on disk. NEXT: R992",
   "    R490-R496, 7 rec. WAIT FOR GO."
  ],
- "gap_report": "tools/wsg_gap_report.md",
+ "gap_report": "tools/reports/wsg_gap_report.md",
  "gap_census": {
   "closed": 186,
   "open": 0

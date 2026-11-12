@@ -68,7 +68,7 @@ def die(msg):
 
 
 RT = 'regtest.cpp'
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 ILC = 'rules/ua/uailcantrips.h'
 UAS2 = 'rules/ua/uaspelltables2.h'
 

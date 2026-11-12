@@ -52,7 +52,7 @@
  "audit_file": "rules/audits/r883_ddg_promotion.h",
  "audit_label": "R883 DDG promotion audit",
  "audit_anchor": "#include \"rules/audits/r882_ddg_promotion.h\"  // R882: R882 DDG promotion audit",
- "gap_report": "tools/ddg_gap_report.md",
+ "gap_report": "tools/reports/ddg_gap_report.md",
  "gap_census": {
   "closed": 24,
   "open": 0

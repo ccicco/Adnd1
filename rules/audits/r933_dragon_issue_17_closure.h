@@ -6,7 +6,7 @@
     // the Scholar and the Crs-tchen, the Tesseracts, A Short History of
     // Adamanite, the Angels) and A Wizard With A Difference (print 10-13, the
     // R932 part two, the Ward eight specialized wizard variants) - 2 closed /
-    // 0 open in tools/dragon_gap_report_017.md; the eight-chain walk
+    // 0 open in tools/reports/dragon_gap_report_017.md; the eight-chain walk
     // completes in three rounds (the R931 opener part one, the R932 opener
     // part two, this flip), the issue-17 three-round shape the Curtiss split
     // set. Issues 2-17 ALL CLOSED. Registry ground truth unchanged: 1313

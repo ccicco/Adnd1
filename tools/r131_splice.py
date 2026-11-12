@@ -17,7 +17,7 @@
 #  - regtest.cpp: the R131 slot plumbing audit pins the
 #    nine-deep arrays, the zero defaults, and toActor's
 #    carry of the 7th-9th columns (census 49)
-#  - tools/dmg_gap_report.md: the R131 box closes the debt
+#  - tools/reports/dmg_gap_report.md: the R131 box closes the debt
 import os, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -198,7 +198,7 @@ patch("regtest.cpp",
       "regtest.cpp: R131 slot plumbing audit",
       marker="R131 slot plumbing audit")
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """      rounds. Pinned by the R130 battery audit;
       census 48.
 

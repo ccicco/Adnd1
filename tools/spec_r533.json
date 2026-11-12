@@ -5,7 +5,7 @@
  "prefix": "dndl",
  "header_file": "rules/dsg/dsgland.h",
  "regtest": "regtest.cpp",
- "gap_report": "tools/dsg_gap_report.md",
+ "gap_report": "tools/reports/dsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "inline_count": 52,
  "banner": {

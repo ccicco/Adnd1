@@ -247,7 +247,7 @@ assert len(applied) + len(already) == 2, 'b count'
 # ---- (c) the gap report: the item
 # CLOSES - the holes noted pending the
 # PDF ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 if 'CLOSED R339' in s:
     already.append('gap report: the close')

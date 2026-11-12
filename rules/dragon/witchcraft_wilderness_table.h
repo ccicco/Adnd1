@@ -25,7 +25,7 @@
 // The cross-check doctrine rides: the pin IS the conversion, and the second
 // voice settles the garbled cell - the wilderness table pins exactly as the
 // upload reads it, the terrain none band as the 0 sentinel, and the
-// scoped-out sentence in tools/dragon_gap_report_005.md updates by file patch
+// scoped-out sentence in tools/reports/dragon_gap_report_005.md updates by file patch
 // to record the resolution, never silently. The Comfort spell's duration
 // quirk is noted and settled by arithmetic: the upload reads 'D = 3b (6
 // hours)' where the archive.org scan reads 'D = 36', and 6 hours at 10

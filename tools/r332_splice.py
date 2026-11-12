@@ -411,7 +411,7 @@ assert s.count('R332') == 1, 'b round tag'
 assert len(applied) + len(already) == 2, 'b count'
 
 # ---- (c) the gap report: the close ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 if 'CLOSED R332' in s:
     already.append('gap report: the close')

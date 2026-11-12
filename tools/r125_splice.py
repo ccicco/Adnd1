@@ -13,7 +13,7 @@
 #    dressing line
 #  - regtest.cpp: include + the R125 traps and tricks
 #    audit (census becomes 43)
-#  - tools/dmg_gap_report.md: the pp.216-217 box flips
+#  - tools/reports/dmg_gap_report.md: the pp.216-217 box flips
 import os, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -519,13 +519,13 @@ P_new = r'''- [x] **Traps and dressing lists (pp.216-217)**
       the 1eonline.info compilation of the pages and ride
       the book-verify debt with the printed table as the
       winner.'''
-patch('tools/dmg_gap_report.md', P_old, P_new, 'gap-report', 1, 'CLOSED R125')
+patch('tools/reports/dmg_gap_report.md', P_old, P_new, 'gap-report', 1, 'CLOSED R125')
 # R125-CHUNK-3-END
 
 # ---- verification (never trust a silent run) ----
 touched = ['dm/appendixgh.h', 'game/appstate.h',
            'game/state_dungeon.cpp', 'game/state_town.cpp',
-           'regtest.cpp', 'tools/dmg_gap_report.md']
+           'regtest.cpp', 'tools/reports/dmg_gap_report.md']
 for f in touched:
     fp = os.path.join(ROOT, f)
     if not os.path.exists(fp):

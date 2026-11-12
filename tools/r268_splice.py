@@ -1054,7 +1054,7 @@ else:
 wr('regtest.cpp', RG)
 
 # ---- apply patch 4: the gap entry ----
-GP = rd('tools/dmg_gap_report.md')
+GP = rd('tools/reports/dmg_gap_report.md')
 if GP.count('R268 landed the III.E misc') == 1:
     already += 1
 else:
@@ -1066,7 +1066,7 @@ else:
     applied += 1
     assert GP.count('R268 landed the III.E misc') == 1, (
         'gap entry insert failed')
-wr('tools/dmg_gap_report.md', GP)
+wr('tools/reports/dmg_gap_report.md', GP)
 
 # ---- report ----
 assert applied + already == 4, 'patch count wrong'

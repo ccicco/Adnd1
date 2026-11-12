@@ -19,7 +19,7 @@
 #
 # Patches (3):
 #   tools/preflight.sh - header note + the lean gate
-#   tools/maintenance_survey_r104.md - R107 appendix
+#   tools/reports/maintenance_survey_r104.md - R107 appendix
 import sys, os
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)) + '/..')
@@ -133,7 +133,7 @@ fi
 # ---------------------------------------------------------------------------
 # 3) the survey doc - the R107 appendix
 # ---------------------------------------------------------------------------
-OK &= patch('tools/maintenance_survey_r104.md',
+OK &= patch('tools/reports/maintenance_survey_r104.md',
 """## Standing rules from this survey
 """,
 """## R107 appendix - the lean gate

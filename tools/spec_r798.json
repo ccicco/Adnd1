@@ -3,7 +3,7 @@
  "prefix": "mm2bc",
  "header_file": "rules/mm/mm2bc.h",
  "regtest": "regtest.cpp",
- "gap_report": "tools/mm2_gap_report.md",
+ "gap_report": "tools/reports/mm2_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "census_before": 720,
  "title": "the MM2 letters B and C",

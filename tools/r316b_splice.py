@@ -48,7 +48,7 @@
 #       what the app feeds, the pin bases
 #       re-assert - all draw-independent);
 #       the battery census moves 242 -> 243.
-#   (g) tools/dmg_gap_report.md - the
+#   (g) tools/reports/dmg_gap_report.md - the
 #       chronicle paragraph (no box flip).
 #   (h) regtest.cpp - the R314 W1 assert
 #       reads the log window, not the head:
@@ -489,7 +489,7 @@ _o, _c, _o2, _c2 = counts(s)
 assert _o == _c and _o2 == _c2, 'patch f balance'
 assert len(applied) + len(already) == 6, 'patch f count wrong'
 
-# ---- (g) tools/dmg_gap_report.md: the chronicle ----
+# ---- (g) tools/reports/dmg_gap_report.md: the chronicle ----
 GP_OLD = NL.join([
     'with the R315 engine audit.',
     '',
@@ -515,7 +515,7 @@ GP_NEW = NL.join([
 clean(GP_OLD, 57, gap=True)
 clean(GP_NEW, 57, gap=True)
 
-p = 'tools/dmg_gap_report.md'
+p = 'tools/reports/dmg_gap_report.md'
 s = rd(p)
 if 'R316 the underwater vision seam' in s:
     already.append('dmg report: the chronicle')

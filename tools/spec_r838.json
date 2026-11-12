@@ -5,7 +5,7 @@
  "regtest": "regtest.cpp",
  "header_file": "rules/ff/promo_batch3.h",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
- "gap_report": "tools/mm2_gap_report.md",
+ "gap_report": "tools/reports/mm2_gap_report.md",
  "banner": {
   "title": "the third FF promotion batch - the outdoor tail walks",
   "provenance": "spec-driven; the third Fiend Folio promotion batch - twenty-five defs lifted from the ff print as new lua data files (scarecrow through xvart, the print-order batch: the outdoor tail plus the s-through-x fill), the thirteen blank outdoor encounter cells rekeyed (eleven to the new defs, the two disenchanter cells to the standing R837 def), the Mountain Giant cell stays keyless (the settled no-def read, the FF p.42 Lambeosaurus parenthetical), the outdoor walk-key census re-pinned (632 -> 645), the registry 862 -> 887, the ff def census 52 -> 77, the keyless outdoor FF cells 14 -> 1, the source rows stay (ff 74 outdoor), no aquatic cells this round (the aquatic surface is fully keyed; the dungeon mm2encd FF rows ride a future round), no gap boxes flip; the def bodies carry the print-fidelity pin headers"

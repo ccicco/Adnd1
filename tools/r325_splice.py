@@ -25,7 +25,7 @@
 #   (d) game/state_core.cpp - the optional
 #       save line and the load tag (v1
 #       saves load as none).
-#   (e) tools/ua_gap_report.md - the R324
+#   (e) tools/reports/ua_gap_report.md - the R324
 #       close sentence gains the R325
 #       close (the wiring is wired).
 #   (f) regtest.cpp - the include and the
@@ -782,7 +782,7 @@ assert s.count('SUBRACE_COUNT') == 1, 'd the range gate'
 assert len(applied) + len(already) == 4, 'patch d count wrong'
 
 # ---- (e) the gap report: the wiring close ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 clean(GP_ANCHOR, 57)
 clean(GP_CLOSE, 57)

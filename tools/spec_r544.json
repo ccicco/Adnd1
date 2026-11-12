@@ -3,7 +3,7 @@
  "prefix": "dnam",
  "header_file": "rules/dsg/dsgarea11.h",
  "regtest": "regtest.cpp",
- "gap_report": "tools/dsg_gap_report.md",
+ "gap_report": "tools/reports/dsg_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "census_before": 467,
  "title": "the DSG Deepearth areas 22-23",

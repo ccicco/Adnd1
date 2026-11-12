@@ -10,7 +10,7 @@
 // verified against printed pp. 1-22 of the uploaded dmo.pdf OCR (part 1 of
 // the session capture); the maxim roster from p. 6, the tension doctrine from
 // pp. 7-10, the demographics from p. 22; THIS ROUND LANDS A NEW GAP REPORT
-// tools/dmo_gap_report.md (96 boxes at opener, all 52 numbered tables
+// tools/reports/dmo_gap_report.md (96 boxes at opener, all 52 numbered tables
 // enumerated per the R566 amended-manifest lesson applied at opener) in the
 // same commit as the spec.
 //

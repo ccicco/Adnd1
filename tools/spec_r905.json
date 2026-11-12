@@ -22,7 +22,7 @@
   "audit\" at rules/audits/r904_wilderness_encounter_table.h, 7",
   "examples, 1 header_section, ZERO data_files, 1",
   "file_patch (the scoped-out sentence in",
-  "tools/dragon_gap_report_005.md updated to",
+  "tools/reports/dragon_gap_report_005.md updated to",
   "record the resolution - never silent), no gap",
   "flips (report 005 verified 1 closed / 0 open).",
   "THE PINS, all folio 4: AC 8, move 9 on foot /",
@@ -57,7 +57,7 @@
  "audit_file": "rules/audits/r905_witch_remainders.h",
  "audit_label": "R905 witch remainders audit",
  "audit_anchor": "#include \"rules/audits/r904_wilderness_encounter_table.h\"  // R904: R904 wilderness encounter table audit",
- "gap_report": "tools/dragon_gap_report_005.md",
+ "gap_report": "tools/reports/dragon_gap_report_005.md",
  "gap_census": {
   "closed": 1,
   "open": 0

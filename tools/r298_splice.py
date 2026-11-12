@@ -46,7 +46,7 @@
 #       clamps, the seam identity and the
 #       printed 12th-level pick pockets
 #       example (120 - 45 = 75).
-#   (c) tools/phb_gap_report.md - the R298
+#   (c) tools/reports/phb_gap_report.md - the R298
 #       item flips PINNED R298 (Census 215) -
 #       the phb ledger now holds ZERO open
 #       items.
@@ -518,7 +518,7 @@ assert 'R297 weapon proficiency table pins audit' in s, 'patch b ate R297'
 assert '// ---- R227: the wis mental save wiring audit ----' in s, 'patch b ate R227'
 assert len(applied) + len(already) == 2, 'patch b count wrong'
 
-# ---- (c) tools/phb_gap_report.md: the flip ----
+# ---- (c) tools/reports/phb_gap_report.md: the flip ----
 ITEM_OLD = NL.join([
     '- [ ] **Thief Function Take table and DEXTERITY',
     '      TABLE II (the THIEF and DEXTERITY',
@@ -586,7 +586,7 @@ ITEM_NEW = NL.join([
 clean(ITEM_OLD, 57)
 clean(ITEM_NEW, 57)
 
-p = 'tools/phb_gap_report.md'
+p = 'tools/reports/phb_gap_report.md'
 s = rd(p)
 if 'PINNED R298' in s:
     already.append('phb_gap_report.md: the flip')

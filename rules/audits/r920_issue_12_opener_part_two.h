@@ -16,7 +16,7 @@
     // armor class (3 head, 5 chest) pins as consts with the grid cell riding
     // the sentinel, and the see-below magic cells and resistant-to-psionics
     // cells ride the sentinel with the census. THE FLIP: the part-one box in
-    // tools/dragon_gap_report_012.md went [x] - 1 closed, 1 open, the closing
+    // tools/reports/dragon_gap_report_012.md went [x] - 1 closed, 1 open, the closing
     // round to follow.
     {
         using namespace rules;

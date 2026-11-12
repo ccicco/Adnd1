@@ -376,7 +376,7 @@ p4_new = NL.join([
     'transcription paraphrases. Census 91.',
     '',
     'Categories:'])
-patch("tools/dmg_gap_report.md", p4_old, p4_new,
+patch("tools/reports/dmg_gap_report.md", p4_old, p4_new,
       "gap report: R173 header note",
       marker="R173 PINNED Secondary skills (DMG p.12)")
 assert len(applied) + len(already) == 4
@@ -389,7 +389,7 @@ p5_new = NL.join([
     '- [x] **Secondary skills (p.12)** - PINNED R173:',
     '      rules/dmg/secondary.h (the 23-band table cell by',
     '      cell; the when-to-use guidance).'])
-patch("tools/dmg_gap_report.md", p5_old, p5_new,
+patch("tools/reports/dmg_gap_report.md", p5_old, p5_new,
       "gap report: secondary skills box closed",
       marker="rules/dmg/secondary.h (the 23-band table cell")
 assert len(applied) + len(already) == 5

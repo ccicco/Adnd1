@@ -5,7 +5,7 @@
 // census 823 -> 824.
 //
 // The pure box-closing round, no new ink: the Creature Features box in
-// tools/dragon_gap_report_004.md flips closed (1 / 0), completing the issue-4
+// tools/reports/dragon_gap_report_004.md flips closed (1 / 0), completing the issue-4
 // walk exactly as adjudicated at R900 - the Creature Features chain was the
 // only engine-relevant chain in The Dragon Vol. 1 No. 4 (December 1976);
 // everything else was scoped out (the EPT campaign chains, the Metamorphosis
@@ -27,7 +27,7 @@ namespace rules {
 // ---- the walk bookkeeping ----
 
 // the issue-4 report carries a single box - the Creature Features chain at
-// folios 18-19, 21 (tools/dragon_gap_report_004.md); this round flips it
+// folios 18-19, 21 (tools/reports/dragon_gap_report_004.md); this round flips it
 // closed, 1 closed / 0 open, the walk complete
 inline int cfcReportBoxes()
     { return 1; }
@@ -38,17 +38,17 @@ inline int cfcCreatureFeaturesDefs()
     { return 3; }
 
 // the issue-3 report closed 5 / 0 at the R900 flip - the adjudicated issue-3
-// walk complete (tools/dragon_gap_report_003.md)
+// walk complete (tools/reports/dragon_gap_report_003.md)
 inline int cfcIssue3Closed()
     { return 5; }
 
 // the issue-3 walk is complete - 5 boxes closed / 0 open at the R900 flip
-// (tools/dragon_gap_report_003.md)
+// (tools/reports/dragon_gap_report_003.md)
 inline bool cfcIssue3WalkComplete()
     { return true; }
 
 // the issue-4 walk is complete at this round's flip - the Creature Features
-// box closed, 1 / 0 (tools/dragon_gap_report_004.md)
+// box closed, 1 / 0 (tools/reports/dragon_gap_report_004.md)
 inline bool cfcIssue4WalkComplete()
     { return true; }
 

@@ -5,7 +5,7 @@
   "regtest": "regtest.cpp",
   "header_file": "rules/meta/migration_batch_wsg_tail_dsg.h",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
-  "gap_report": "tools/mm2_gap_report.md",
+  "gap_report": "tools/reports/mm2_gap_report.md",
   "banner": {
     "title": "the WSG tail and DSG migration batch - the seventh batch rides the same wiring",
     "provenance": "spec-driven; the seventh batch of real audit blocks (digest idx 339-440, R459 WSG capsized use through R561 DSG DM section - the WSG tail pins, the DSG surface and Deepearth and campaign pins; 100 blocks at Curtiss's 100-per-round pace call, 19526 lines) move verbatim into rules/audits fragments, regtest keeps the one-line include at each head line; the census holds, the labels relocate; the round audit rides a fragment as before"

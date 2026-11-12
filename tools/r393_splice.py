@@ -935,8 +935,8 @@ pair(RT,
      ).rstrip(NL),
      'regtest.cpp: the R393 audit block')
 
-# ===== (f) tools/ua_gap_report.md =====
-GP = 'tools/ua_gap_report.md'
+# ===== (f) tools/reports/ua_gap_report.md =====
+GP = 'tools/reports/ua_gap_report.md'
 
 pair(GP,
      B('- [ ] **Weapon specialization** (pp.',

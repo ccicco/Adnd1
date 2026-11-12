@@ -98,14 +98,14 @@ assert len(applied) + len(already) == 3
 
 p4_old = NL.join(['Census 76.', '', 'Categories:'])
 p4_new = NL.join(['Census 76.', 'R159 PINNED striking to subdue (DMG p.67 + the MM', 'dragon rules) - rules/dmg/subdue.h: the flat/butt/haft/', 'pommel strike (otherwise a normal attack), the 75/25', 'accounting (the print example 40 subdual = 10 real,', 'cumulative, floored), applicability (MM-stated or', 'humanoid size and type, never player characters), and', 'the knockout JUDGMENT (cumulative subdual meets or', 'exceeds remaining hit points). Dragon capture: announce', 'intent before combat (killing form otherwise, fixed', 'per dragon), silver/gold/chromatic/platinum unsubduable', '(brass, bronze, copper can be), the average-or-better', 'attacker intelligence gate (JUDGMENT: 9), the percent', 'ratio with halves up (the MM example 44/88 = 50, 67/88', '= 76, 77/88 = 88), the automatic 1:1 subdual, the', '100-800 gp per hit point d8 sale price, and the ridden', 'convention. Census 77.', '', 'Categories:'])
-patch("tools/dmg_gap_report.md", p4_old, p4_new,
+patch("tools/reports/dmg_gap_report.md", p4_old, p4_new,
       "gap report: R159 header note",
       marker='R159 PINNED striking to subdue')
 assert len(applied) + len(already) == 4
 
 p5_old = NL.join(['- [ ] **Striking to subdue (p.67)** - the knockout', '      procedure and subdual damage accounting.'])
 p5_new = NL.join(['- [x] **Striking to subdue (p.67)** - pinned by R159:', '      rules/dmg/subdue.h (the 75/25 accounting, applicability,', '      the knockout threshold, and the MM dragon capture:', '      the kind table, the int gate, the percent ratio,', '      the automatic subdual, the sale price).'])
-patch("tools/dmg_gap_report.md", p5_old, p5_new,
+patch("tools/reports/dmg_gap_report.md", p5_old, p5_new,
       "gap report: subdue box closed",
       marker='**Striking to subdue (p.67)** - pinned by R159')
 assert len(applied) + len(already) == 5

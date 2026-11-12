@@ -91,7 +91,7 @@
  "audit_file": "rules/audits/r879_registry_schema.h",
  "audit_label": "R879 registry schema audit",
  "audit_anchor": "#include \"rules/audits/r878_alignment_figures.h\"  // R878: R878 alignment figures audit",
- "gap_report": "tools/ddg_gap_report.md",
+ "gap_report": "tools/reports/ddg_gap_report.md",
  "gap_census": {
   "closed": 24,
   "open": 0

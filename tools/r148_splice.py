@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # tools/r148_splice.py - R148, REPORT-ONLY: the gap-report
-# fresh sweep. Two patches to tools/dmg_gap_report.md, no
+# fresh sweep. Two patches to tools/reports/dmg_gap_report.md, no
 # code and no battery change (AUDIT CENSUS stays 67).
 #
 # (a) THE FRESH-SWEEP OPEN BOXES (24): a table-and-prose
@@ -180,12 +180,12 @@ new_out = NL.join([
 ])
 
 # ---- run ----
-patch("tools/dmg_gap_report.md", old_tail, new_tail,
+patch("tools/reports/dmg_gap_report.md", old_tail, new_tail,
       "gap report: fresh-sweep open boxes",
       marker="PC races layer (PHB pp.15-18")
 assert len(applied) + len(already) == 1
 
-patch("tools/dmg_gap_report.md", old_out, new_out,
+patch("tools/reports/dmg_gap_report.md", old_out, new_out,
       "gap report: OUT pins",
       marker="Metamorphosis Alpha")
 assert len(applied) + len(already) == 2

@@ -1066,7 +1066,7 @@ assert len(applied) + len(already) == 5, 'b4 count'
 
 
 # ---- (c1) the gap ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 if '- [x] **The spell book rules**' in s:
     already.append('gap report: the books close')
@@ -1120,7 +1120,7 @@ else:
     applied.append('gap report: the books close')
 
 # ---- (c2) the gap ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 if '- [x] **The spell explanations - the' in s:
     already.append('gap report: the commentary close')
@@ -1154,7 +1154,7 @@ else:
     applied.append('gap report: the commentary close')
 
 # ---- (c3) the gap ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 if '- [x] **Underwater spell use**' in s:
     already.append('gap report: the underwater close')
@@ -1201,7 +1201,7 @@ else:
     applied.append('gap report: the underwater close')
 
 # ---- (c4) the gap ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 if '- [x] **The effects of darkness**' in s:
     already.append('gap report: the darkness close')
@@ -1230,7 +1230,7 @@ else:
     applied.append('gap report: the darkness close')
 
 # ---- (c) the gap kept asserts ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 assert s.count(
     '- [x] **The spell book rules**'

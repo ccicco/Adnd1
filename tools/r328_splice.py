@@ -449,7 +449,7 @@ assert 'uaStationArmorBan' not in s, 'b no station ref'
 assert len(applied) + len(already) == 2, 'b count'
 
 # ---- (c) the gap report: the close ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 if 'CLOSED R328' in s:
     already.append('gap report: the close')

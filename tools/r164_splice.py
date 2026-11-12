@@ -93,14 +93,14 @@ assert len(applied) + len(already) == 3
 
 p4_old = NL.join(['keeps its per-monster saves). Census 81.', '', 'Categories:'])
 p4_new = NL.join(['keeps its per-monster saves). Census 81.', 'R164 PINNED the assassination table (DMG p.75) -', 'rules/dmg/assassinate.h: the assassins table for', 'assassinations, 15 rows (assassin level 1-15)', 'against 10 victim bands (0-1 through 18+), every', 'printed cell pinned; the printed dashes read as no', 'chance. JUDGMENT: an attacker below level 1', 'reads row 1, above 15 reads row 15. The footnote:', 'the table also governs attacks on helpless', 'opponents by any character class. The percentages', 'are near optimum conditions - the caller adjusts', 'up for perfect conditions (asleep and unguarded,', 'absolute trust, very drunk and unguarded) and down', 'for a wary, prepared or guarded victim; weapon', 'damage always occurs and may kill even when the', 'assassination roll fails (caller-side). The', 'percentile roll is caller-side (the grenade.h', 'pattern). Census 82.', '', 'Categories:'])
-patch("tools/dmg_gap_report.md", p4_old, p4_new,
+patch("tools/reports/dmg_gap_report.md", p4_old, p4_new,
       "gap report: R164 header note",
       marker='R164 PINNED the assassination table')
 assert len(applied) + len(already) == 4
 
 p5_old = NL.join(['- [ ] **The assassination table (p.75)** - the odds table', '      proper; the p.19-20 spying rules are already wired', '      (the spy).'])
 p5_new = NL.join(['- [x] **The assassination table (p.75)** - pinned by', '      R164: rules/dmg/assassinate.h (the 15x10 odds matrix', '      with the dashes as no chance, the band mapping,', '      the level clamps, the helpless-opponents', '      footnote).'])
-patch("tools/dmg_gap_report.md", p5_old, p5_new,
+patch("tools/reports/dmg_gap_report.md", p5_old, p5_new,
       "gap report: assassination table box closed",
       marker='The assassination table (p.75)** - pinned by')
 assert len(applied) + len(already) == 5

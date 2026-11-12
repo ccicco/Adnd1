@@ -3,7 +3,7 @@
   "prefix": "dcs",
   "header_file": "rules/mop/motpintro.h",
   "regtest": "regtest.cpp",
-  "gap_report": "tools/motp_gap_report.md",
+  "gap_report": "tools/reports/motp_gap_report.md",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
   "census_before": 487,
   "title": "the MotP arc opener, the introduction",
@@ -43,7 +43,7 @@
   "banner": {
     "title": "THE MotP ARC OPENER - the introduction, printed pp. 5-10: the five groupings of the planes, the organization pattern, the true-vs-subjective time doctrine with its per-plane ratios, and the spell school definitions - the arc the DSG arc handed off to opens here, on the R503 extraction-round pattern.",
     "provenance": "from the Manual of the Plans (1987, Jeff Grubb), printed pp. 3-10, the uploaded motp.pdf OCR (60 clean pages of prose; the pp. 8-9 spell-summary tables are the one garbled spread, flagged in the gap report); the offset pinned at printed + 1.",
-    "sentinel": "the opener mirrors the book's own skeleton: the gap report tools/motp_gap_report.md lands with this round and every box in it closes on the MotP's own text - nothing auto-credited across the seams."
+    "sentinel": "the opener mirrors the book's own skeleton: the gap report tools/reports/motp_gap_report.md lands with this round and every box in it closes on the MotP's own text - nothing auto-credited across the seams."
   },
   "consts": [
     {

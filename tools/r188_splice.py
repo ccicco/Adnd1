@@ -414,7 +414,7 @@ patch('rules/engine/character.cpp',
       + NL + '// rounding (975 -> +98 -> 1073) live in rules/phb/xpadjust.h.')
 
 # ---------------------------------------------------------------------------
-# Patch 5: tools/phb_gap_report.md - the R188 box flipped
+# Patch 5: tools/reports/phb_gap_report.md - the R188 box flipped
 # ---------------------------------------------------------------------------
 
 box_old = ('- [ ] **Prime requisite XP adjustment (the class'
@@ -445,22 +445,22 @@ box_new = ('- [x] **Prime requisite XP adjustment - PINNED R188:**'
            + NL + '      audit walks every gate and the rounding. Census'
            + NL + '      105.')
 
-t = rd('tools/phb_gap_report.md')
+t = rd('tools/reports/phb_gap_report.md')
 if 'Prime requisite XP adjustment - PINNED R188' not in t:
     assert t.count(box_old) == 1, 'R188 box anchor not unique'
 else:
     assert t.count(box_old) == 0, 'R188 box old text lingers'
 
-patch('tools/phb_gap_report.md',
+patch('tools/reports/phb_gap_report.md',
       'Prime requisite XP adjustment - PINNED R188',
       box_old,
       box_new)
 
 # ---------------------------------------------------------------------------
-# Patch 6: tools/dmg_gap_report.md - the round note
+# Patch 6: tools/reports/dmg_gap_report.md - the round note
 # ---------------------------------------------------------------------------
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R188 landed the prime requisite XP adjustment',
       'census 104. Next: the gap report names the next'
       + NL + 'round.',

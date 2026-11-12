@@ -57,7 +57,7 @@
 #    amend; the R421 audit block
 #    lands before the R227 anchor;
 #    census 346 -> 347.
-# 4. tools/ua_gap_report.md: the
+# 4. tools/reports/ua_gap_report.md: the
 #    IL cantrips box flips and
 #    takes AMENDED R421.
 # 5. The seed takes the R419
@@ -123,7 +123,7 @@ def pair_n(path, old, new, want, label):
 ILC = 'rules/ua/uailcantrips.h'
 UAS2 = 'rules/ua/uaspelltables2.h'
 RT = 'regtest.cpp'
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 SD = ('doc/vibe/'
       'adnd1_knowledge_seed_v2.md')
 
@@ -861,7 +861,7 @@ R227 = ('    // ---- R227: the wis mental'
 pair(RT, R227, AUD + NL + R227,
      'regtest: the R421 audit block')
 
-# ======== (e) tools/ua_gap_report.md ========
+# ======== (e) tools/reports/ua_gap_report.md ========
 
 pair(GP,
      '- [ ] **The illusionist cantrips**'

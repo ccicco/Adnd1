@@ -6,7 +6,7 @@
   "material_variant": "plank_narrow",
   "master": { "size": 1024, "px_per_foot": 102.4, "tile_feet": 10 },
   "coverage": "full", "alignments": ["h", "v"],
-  "generator": "true JPEG converted via tools/jpg2png.py (pure stdlib, exact decode, no resampling)",
+  "generator": "true JPEG converted via tools/map/jpg2png.py (pure stdlib, exact decode, no resampling)",
   "compose": {
     "plank_rows": 10,
     "plank_ft": 1.2,

@@ -1,7 +1,7 @@
     // ---- R924 Dragon issue-13 closure audit ----
     // THE DRAGON ISSUE-13 CLOSURE ROUND - the pure flip, no new ink. The
     // issue-13 part-two box (the Arkenberg Japanese Mythos, folios 11-15)
-    // closes 2 closed / 0 open in tools/dragon_gap_report_013.md; the
+    // closes 2 closed / 0 open in tools/reports/dragon_gap_report_013.md; the
     // three-chain walk completes exactly as adjudicated - the R922 part-one
     // pair (the Shlump da Orc giant physics article and the Jon Pickens demon
     // generation article) and the R923 part-two chain (the Japanese Mythos).

@@ -2,7 +2,7 @@
 # tools/survey_r823.py - the audit-region survey for the regtest
 # decomposition migration (the R822 wiring's first cousin).
 # READS regtest.cpp at the working tree; NEVER writes regtest.cpp.
-# Writes tools/audit_migration_survey.md and prints it whole.
+# Writes tools/reports/audit_migration_survey.md and prints it whole.
 # No network, no git. The migration rounds are authored FROM this
 # digest; nothing in it changes the tree.
 import io
@@ -11,7 +11,7 @@ import re
 import sys
 
 RT = 'regtest.cpp'
-OUT = 'tools/audit_migration_survey.md'
+OUT = 'tools/reports/audit_migration_survey.md'
 MAXDUMP = 300   # cap lines per dumped segment
 
 s = io.open(RT, 'r', encoding='utf-8', errors='replace').read()

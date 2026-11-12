@@ -33,7 +33,7 @@
 #       battery is the gate; the quarterstaff,
 #       club, sling and None conventions
 #       recorded).
-#   (d) tools/phb_gap_report.md - the R299 open
+#   (d) tools/reports/phb_gap_report.md - the R299 open
 #       item flipped to PINNED R300 (the
 #       repins and JUDGMENTs recorded); the
 #       ledger holds ZERO open items.
@@ -557,7 +557,7 @@ assert '#include "rules/phb/equipcosts.h"' in s, 'patch c include missing'
 assert 'R298 thief function take table pins audit' in s, 'patch c ate R298'
 assert len(applied) + len(already) == 3, 'patch c count wrong'
 
-# ---- (d) tools/phb_gap_report.md: the flip ----
+# ---- (d) tools/reports/phb_gap_report.md: the flip ----
 G_ITEM_OLD = NL.join([
     '- [ ] **The equipment cost columns (the BASIC',
     '      EQUIPMENT AND SUPPLIES COSTS tables,',
@@ -633,7 +633,7 @@ G_ITEM_NEW = NL.join([
 clean(G_ITEM_OLD, 57)
 clean(G_ITEM_NEW, 57)
 
-p = 'tools/phb_gap_report.md'
+p = 'tools/reports/phb_gap_report.md'
 s = rd(p)
 if '13432)** - PINNED' in s:
     already.append('phb_gap_report.md: the flip')

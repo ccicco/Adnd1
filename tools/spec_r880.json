@@ -68,7 +68,7 @@
  "audit_file": "rules/audits/r880_ddg_promotion.h",
  "audit_label": "R880 DDG promotion audit",
  "audit_anchor": "#include \"rules/audits/r879_registry_schema.h\"  // R879: R879 registry schema audit",
- "gap_report": "tools/ddg_gap_report.md",
+ "gap_report": "tools/reports/ddg_gap_report.md",
  "gap_census": {
   "closed": 24,
   "open": 0

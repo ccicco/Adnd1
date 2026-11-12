@@ -392,10 +392,10 @@ patch('rules/engine/turn.h',
       + NL + '// rules/phb/attacksround.h).')
 
 # ---------------------------------------------------------------------------
-# Patch 7: tools/phb_gap_report.md - the R181 box flipped
+# Patch 7: tools/reports/phb_gap_report.md - the R181 box flipped
 # ---------------------------------------------------------------------------
 
-patch('tools/phb_gap_report.md',
+patch('tools/reports/phb_gap_report.md',
       'R181 the attacks per melee round - PINNED',
       '- R181 attacks per melee round - the'
       + NL + '      fighter-group table (also closes the open'
@@ -428,10 +428,10 @@ patch('tools/phb_gap_report.md',
       + NL + '      monk cell and the repin. Census 98.')
 
 # ---------------------------------------------------------------------------
-# Patch 8: tools/phb_gap_report.md - the open item flipped
+# Patch 8: tools/reports/phb_gap_report.md - the open item flipped
 # ---------------------------------------------------------------------------
 
-patch('tools/phb_gap_report.md',
+patch('tools/reports/phb_gap_report.md',
       'PINNED R181: the engine',
       '- [ ] **Fighter attacks per melee round (the class'
       + NL + '      tables section)** - 1 per round at levels 1-6,'
@@ -446,10 +446,10 @@ patch('tools/phb_gap_report.md',
       + NL + '      unsourced level-8+ original note).')
 
 # ---------------------------------------------------------------------------
-# Patch 9: tools/dmg_gap_report.md - the round note
+# Patch 9: tools/reports/dmg_gap_report.md - the round note
 # ---------------------------------------------------------------------------
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R181 landed the attacks per melee round',
       'Next: R181 attacks per melee round.',
       'Next: R181 attacks per melee round.'

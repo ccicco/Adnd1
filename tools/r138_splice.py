@@ -13,7 +13,7 @@
 #  - game/state_town.cpp: describeRoom prompts for a
 #    talky feature too (the X key answers)
 #  - regtest.cpp: the R138 parley audit (census 56)
-#  - tools/dmg_gap_report.md: the R138 box closes the
+#  - tools/reports/dmg_gap_report.md: the R138 box closes the
 #    talk-flavor standing debt
 # This file contains ZERO backslash characters - the
 # audit printf's escaped newline is assembled from
@@ -208,7 +208,7 @@ patch("regtest.cpp", old_r137_head + NL,
       "regtest.cpp: R138 audit",
       marker="R138 talk-flavor parley audit")
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """      battery pins it exact. Pinned by the R137 hook
       audit; census 55.
 

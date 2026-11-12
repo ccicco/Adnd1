@@ -15,7 +15,7 @@
 #  - regtest.cpp: the R128 and R132 audits' mechanical
 #    count pins update (11 -> 16) and the new R133 audit
 #    pins the set (census 51)
-#  - tools/dmg_gap_report.md: the R128 and R132 boxes'
+#  - tools/reports/dmg_gap_report.md: the R128 and R132 boxes'
 #    dressing counts drop to 49; the R133 box closes
 import os, sys
 
@@ -312,7 +312,7 @@ patch("regtest.cpp",
       "regtest.cpp: R132 count 16",
       marker="exactly sixteen mechanical of 65 (R133 grew it)")
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """      2d6). R132's second-effects slice wires six more
       (the R132 box). The other 54 attributes stay
       dressing - documented; their effects ride future
@@ -326,7 +326,7 @@ patch("tools/dmg_gap_report.md",
       "gap report: R128 box 49",
       marker="R133's five more (the R133 box)")
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """      The remaining 54 attributes stay dressing;
       their effects ride future rounds. Pinned by
       the R132 battery audit; census 50.
@@ -339,7 +339,7 @@ patch("tools/dmg_gap_report.md",
       "gap report: R132 box 49",
       marker="The R133 slice wires five more")
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """      their effects ride future rounds. Pinned by
       the R132 battery audit; census 50.
 

@@ -5,7 +5,7 @@
   "regtest": "regtest.cpp",
   "header_file": "rules/meta/migration_batch_subclass.h",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
-  "gap_report": "tools/mm2_gap_report.md",
+  "gap_report": "tools/reports/mm2_gap_report.md",
   "banner": {
     "title": "the subclass migration batch - the fourth batch leaves regtest at fifty blocks",
     "provenance": "spec-driven; the fourth batch of real audit blocks (digest idx 54-119, R179 subclass registry through R245 staves prose, 50 blocks at Curtiss's 50-per-round pace call, 5111 lines - the subclass seams and engines, the class audits, the DMG magic item pins) move verbatim into rules/audits fragments, regtest keeps the one-line include at each head line; the census holds, the labels relocate; the round audit rides a fragment as before"

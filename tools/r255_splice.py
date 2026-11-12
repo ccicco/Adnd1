@@ -15,7 +15,7 @@
 #   - regtest.cpp: the R223 audit kChg array + the
 #     truthy/negative per-index asserts, and the R254
 #     audit NOTE (rows 9/11 now asserted: 29 -> 31)
-#   - tools/dmg_gap_report.md: the divergence note
+#   - tools/reports/dmg_gap_report.md: the divergence note
 #     flipped to RESOLVED, plus the R255 log entry
 # No new audit line; census stays 173.
 #
@@ -26,7 +26,7 @@ import sys
 RH  = 'rules/dmg/rings.h'
 R2  = 'rules/dmg/ringsprose2.h'
 REG = 'regtest.cpp'
-GAP = 'tools/dmg_gap_report.md'
+GAP = 'tools/reports/dmg_gap_report.md'
 
 NL = chr(10)
 

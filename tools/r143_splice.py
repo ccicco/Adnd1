@@ -21,7 +21,7 @@
 #    crypt column south of the knob, cleric row built
 #  - regtest.cpp: the R142 audit widens to six rooms; the
 #    R143 crypt wing audit (census 61)
-#  - tools/dmg_gap_report.md: the R143 box
+#  - tools/reports/dmg_gap_report.md: the R143 box
 # This file contains ZERO backslash characters (the
 # R133b lesson); the audit printf assembles its
 # escaped newline from chr(92).
@@ -510,7 +510,7 @@ patch("regtest.cpp", old_r142_head + NL,
       marker="R143 crypt wing audit")
 assert len(applied) + len(already) == 15
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """      R142 sample dungeon audit; census 60.
 
 ## Out of scope by design

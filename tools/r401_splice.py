@@ -46,7 +46,7 @@
 #    audit block lands before
 #    the R227 anchor; census
 #    327 -> 328.
-# 4. tools/ua_gap_report.md:
+# 4. tools/reports/ua_gap_report.md:
 #    the seam checkbox closes;
 #    the spell-tables, MU and
 #    IL cantrip items take
@@ -608,8 +608,8 @@ R227 = ('    // ---- R227: the wis mental'
 pair(RT, R227, AUD + NL + R227,
      'regtest: the R401 audit block')
 
-# ======== (e) tools/ua_gap_report.md ========
-GP = 'tools/ua_gap_report.md'
+# ======== (e) tools/reports/ua_gap_report.md ========
+GP = 'tools/reports/ua_gap_report.md'
 
 pair(GP, E(
     '- [ ] The cantrip tier seam - a',

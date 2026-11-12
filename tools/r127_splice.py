@@ -20,7 +20,7 @@
 #  - game/state_sea.cpp + game/appstate.h: the coaster
 #    rolls waterborne encounters; the Men rows (buccaneer,
 #    merchant, pirate-raider) get a sail log line
-#  - tools/dmg_gap_report.md: the p.190 box flips
+#  - tools/reports/dmg_gap_report.md: the p.190 box flips
 import os, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -630,7 +630,7 @@ r"""
       "appstate.h: MODE_SEA comment",
       marker="R127 p.190 waterborne")
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 r"""
 - [ ] **Waterborne/aerial encounter tables
       (p.190)** - alongside the crew economy.""",

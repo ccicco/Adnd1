@@ -980,7 +980,7 @@ patch('regtest.cpp',
       new3)
 
 # ---------------------------------------------------------------------------
-# Patch 4: tools/dmg_gap_report.md - the log entry
+# Patch 4: tools/reports/dmg_gap_report.md - the log entry
 # ---------------------------------------------------------------------------
 
 log_lines = [
@@ -1044,7 +1044,7 @@ old4 = 'defensive values (pp.108-110).' + NL + NL + 'Categories:'
 new4 = ('defensive values (pp.108-110).' + NL + NL + log_entry + NL + NL
         + 'Categories:')
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R214 landed the war machine fire tables',
       old4,
       new4)

@@ -2207,7 +2207,7 @@
   "  boxes remain - the MM2 tail beyond the",
   "  A-Z monster section)."
  ],
- "gap_report": "tools/mm2_gap_report.md",
+ "gap_report": "tools/reports/mm2_gap_report.md",
  "gap_census": {
   "closed": 33,
   "open": 4

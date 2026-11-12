@@ -47,7 +47,7 @@
 #    noPsionics trait, the
 #    duergar not-all-psionic
 #    read); census 330 -> 331.
-# 3. tools/ua_gap_report.md:
+# 3. tools/reports/ua_gap_report.md:
 #    the seam checkbox closes;
 #    the DEFERRED block takes
 #    an AMENDED R404 note.
@@ -412,8 +412,8 @@ R227 = ('    // ---- R227: the wis mental'
 pair(RT, R227, AUD + NL + R227,
      'regtest: the R404 audit block')
 
-# ======== (d) tools/ua_gap_report.md ========
-GP = 'tools/ua_gap_report.md'
+# ======== (d) tools/reports/ua_gap_report.md ========
+GP = 'tools/reports/ua_gap_report.md'
 
 pair(GP, E(
     '- [ ] The psionics seam - gates the',

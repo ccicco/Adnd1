@@ -149,14 +149,14 @@ assert len(applied) + len(already) == 3
 
 p4_old = NL.join(['rosters. Census 88.', '', 'Categories:'])
 p4_new = NL.join(['rosters. Census 88.', 'R171 PINNED Appendices K, L and M (DMG', 'pp.221-224) - rules/dmg/dmg_appendices_klm.h: Appendix K - the', 'appearance and consistency list (10), the', 'transparency list (10 with the printed', 'parentheticals, four asking the reader to', 'determine), the color list (74 words in the 11', 'printed groups METALLIC through ORANGE) and the', 'taste and/or odor list (28), with the use', 'alongside Appendix I dungeon dressing;', 'Appendix L - the conjure animals prose (the', 'fractional hit point cost charged against the', 'total, random selection where several', 'possibilities exist, the caster cannot specify)', 'and the four hit dice category tables cell by', 'cell (5, 4, 15 and 13 rows with every band,', 'name and quarter cost), the printed 5-and-up', 'animal roster, the whale 36 hit dice cost cap', 'and the water note (swimmers and flying ones', 'only); Appendix M - the summoned monsters', 'prose (the evil parenthesis, the DM purview)', 'and all 20 tables cell by cell: the 7 land', 'tables (6, 6, 12, 12, 12, 16 and 34 rows) and', 'the 13 fresh/salt water tables (31 rows).', 'JUDGMENTs: the K lists were cell-verified', 'against the 1eonline.info compilation (the', 'repo-trusted source, the R146 precedent),', 'which agrees with the upload wherever legible;', 'the Appendix L 5-and-up band columns are OCR', 'debt - an open finding, the roster is pinned;', 'the Appendix M water tables for summonings', 'II-VI are dropped by the upload and come', 'from the trusted compilation, which agrees', 'with the upload cell for cell on the I and VII', 'water tables the upload shows; the herbs', 'material interleaved in the upload K region', 'belongs to Appendix J (p.220, a separate open', 'box). The caller rolls and selects. Census 89.', '', 'Categories:'])
-patch("tools/dmg_gap_report.md", p4_old, p4_new,
+patch("tools/reports/dmg_gap_report.md", p4_old, p4_new,
       "gap report: R171 header note",
       marker="R171 PINNED Appendices K, L and M")
 assert len(applied) + len(already) == 4
 
 p5_old = NL.join(['- [ ] **Appendices K + L + M (pp.221-224)** - describing', '      magical substances; conjured animals; summoned', '      monsters - support tables for the conjure and', '      summon spell effects.'])
 p5_new = NL.join(['- [x] **Appendices K + L + M (pp.221-224)** - PINNED', '      R171: rules/dmg/dmg_appendices_klm.h (the substance word lists, the', '      conjured animals categories, the 20 summoned', '      monsters tables; the Appendix L 5-and-up band', '      columns are the open OCR-debt finding).'])
-patch("tools/dmg_gap_report.md", p5_old, p5_new,
+patch("tools/reports/dmg_gap_report.md", p5_old, p5_new,
       "gap report: appendices K L M box closed",
       marker="R171: rules/dmg/dmg_appendices_klm.h (the substance word lists,")
 assert len(applied) + len(already) == 5

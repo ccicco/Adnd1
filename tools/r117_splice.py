@@ -267,9 +267,9 @@ PATCHES = [
      DC_OLD, DC_NEW, "dm.cpp book's reaction table"),
     ("regtest.cpp", "R117 encounter reactions audit",
      RT_OLD, RT_NEW, "regtest R117 audit"),
-    ("tools/dmg_gap_report.md", "R117 CLOSED encounter reactions",
+    ("tools/reports/dmg_gap_report.md", "R117 CLOSED encounter reactions",
      GH_OLD, GH_NEW, "gap report header note"),
-    ("tools/dmg_gap_report.md", "CLOSED R117: the book's percentile",
+    ("tools/reports/dmg_gap_report.md", "CLOSED R117: the book's percentile",
      GB_OLD, GB_NEW, "gap report reactions box"),
 ]
 

@@ -15,7 +15,7 @@
 #  - game/state_sea.cpp: the drunk and harlot flavor
 #    strings dress with the subtable kinds
 #  - regtest.cpp: the R146 city flavor audit (census 64)
-#  - tools/dmg_gap_report.md: the R146 box (noble gender
+#  - tools/reports/dmg_gap_report.md: the R146 box (noble gender
 #    and the ruffian humanoid note stay named fiction)
 # Idempotent: safe to run twice; a silent run means the
 # paste was truncated - this tail ALWAYS prints. An assert
@@ -378,7 +378,7 @@ patch("regtest.cpp", old_r145_head + NL,
       marker="R146 city flavor audit")
 assert len(applied) + len(already) == 6
 
-patch("tools/dmg_gap_report.md", old_gap, new_gap,
+patch("tools/reports/dmg_gap_report.md", old_gap, new_gap,
       "gap report: R146 box", marker="CLOSED R146:")
 assert len(applied) + len(already) == 7
 

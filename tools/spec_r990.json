@@ -47,7 +47,7 @@
   "    bytes of Lua on disk. NEXT: R990",
   "    R455-R474, 20 rec. WAIT FOR GO."
  ],
- "gap_report": "tools/wsg_gap_report.md",
+ "gap_report": "tools/reports/wsg_gap_report.md",
  "gap_census": {
   "closed": 186,
   "open": 0

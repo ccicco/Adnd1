@@ -16,7 +16,7 @@
     // 7-14, his fire breath, his low intelligence vs animal, his 30 feet vs
     // 21-42) rides noted, never silent. THE VOICE: all 32 issue-2 pages at
     // extract/dragon/002/pNNN_full.txt plus the pre-flip
-    // tools/dragon_gap_report_002.md (4 boxes, 0 closed - the Remorhaz box
+    // tools/reports/dragon_gap_report_002.md (4 boxes, 0 closed - the Remorhaz box
     // flips at the next Dragon round) shipped as spec data files. The Aronson
     // box on the issue-1 report flips this round - the issue-1 report closes
     // out at 3 closed / 0 open.

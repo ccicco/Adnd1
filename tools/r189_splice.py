@@ -533,7 +533,7 @@ patch('regtest.cpp',
       NL.join(aud) + NL + '    // ---- R163: the poison table audit -------------')
 
 # ---------------------------------------------------------------------------
-# Patch 4: tools/phb_gap_report.md - the R189 box flipped
+# Patch 4: tools/reports/phb_gap_report.md - the R189 box flipped
 # ---------------------------------------------------------------------------
 
 box_old = ('- [ ] **The PHB book-verify pass for the weapon'
@@ -569,22 +569,22 @@ box_new = ('- [x] **The PHB book-verify pass for the weapon tables -'
            + NL + '      battery audit walks all 50 rows and the speed'
            + NL + '      cross-verify. Census 106.')
 
-t2 = rd('tools/phb_gap_report.md')
+t2 = rd('tools/reports/phb_gap_report.md')
 if 'The PHB book-verify pass for the weapon tables -' not in t2:
     assert t2.count(box_old) == 1, 'R189 box anchor not unique'
 else:
     assert t2.count(box_old) == 0, 'R189 box old text lingers'
 
-patch('tools/phb_gap_report.md',
+patch('tools/reports/phb_gap_report.md',
       'PINNED R189:** rules/phb/weapontables.h CREATED',
       box_old,
       box_new)
 
 # ---------------------------------------------------------------------------
-# Patch 5: tools/dmg_gap_report.md - the round note
+# Patch 5: tools/reports/dmg_gap_report.md - the round note
 # ---------------------------------------------------------------------------
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R189 landed the weapon tables verify',
       'R188 battery audit; census 105. Next: the gap report'
       + NL + 'names the next round.',

@@ -112,7 +112,7 @@
   "closed": 24,
   "open": 0
  },
- "gap_report": "tools/ddg_gap_report.md",
+ "gap_report": "tools/reports/ddg_gap_report.md",
  "gap_flips": [
   {
    "note": "the alignment figures box (the LAST open ddg box)",

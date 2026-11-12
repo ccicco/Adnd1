@@ -2164,7 +2164,7 @@ else:
 
 # ---- (g) the gap report: the
 # 20-item manifest flip ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 if 'AMENDED R392' in s:
     already.append('gap: the manifest amendments')

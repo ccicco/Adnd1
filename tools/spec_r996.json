@@ -50,7 +50,7 @@
   "    NEXT: R996 R528-R541, 14 rec.",
   "    WAIT FOR GO."
  ],
- "gap_report": "tools/dsg_gap_report.md",
+ "gap_report": "tools/reports/dsg_gap_report.md",
  "gap_census": {
   "closed": 155,
   "open": 0

@@ -20,7 +20,7 @@
 #    halls table
 #  - adnd1.cpp: the M key in the delve summons the sample
 #  - regtest.cpp: the R142 sample dungeon audit (census 60)
-#  - tools/dmg_gap_report.md: the R142 box
+#  - tools/reports/dmg_gap_report.md: the R142 box
 # This file contains ZERO backslash characters (the
 # R133b lesson); the audit printf assembles its
 # escaped newline from chr(92).
@@ -553,7 +553,7 @@ patch("regtest.cpp", old_r141_head + NL,
       "regtest.cpp: R142 audit",
       marker="R142 sample dungeon audit")
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """      engagement geometry audit; census 59.
 
 ## Out of scope by design

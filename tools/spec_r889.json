@@ -58,7 +58,7 @@
  "audit_file": "rules/audits/r889_aronson_deltas.h",
  "audit_label": "R889 Aronson deltas audit",
  "audit_anchor": "#include \"rules/audits/r888_dragon_small_variants.h\"  // R888: R888 Dragon small variants audit",
- "gap_report": "tools/dragon_gap_report.md",
+ "gap_report": "tools/reports/dragon_gap_report.md",
  "gap_census": {
   "closed": 2,
   "open": 1

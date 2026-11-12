@@ -19,7 +19,7 @@
 #    high-level name-level tables arrive, documented);
 #    the R129 caster aging audit pins the causes, rows,
 #    and slot behavior (census 47)
-#  - tools/dmg_gap_report.md: the p.14 box flips CLOSED
+#  - tools/reports/dmg_gap_report.md: the p.14 box flips CLOSED
 import os, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -321,7 +321,7 @@ r"""
       "regtest.cpp: R129 caster aging audit",
       marker="R129: caster aging audit")
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 r"""
 - [ ] **Magical aging causes, remainder
       (p.14)** - haste is wired (R115:

@@ -11,7 +11,7 @@
   "closed": 17,
   "open": 7
  },
- "gap_report": "tools/ddg_gap_report.md",
+ "gap_report": "tools/reports/ddg_gap_report.md",
  "gap_flips": [
   {
    "from": "- [ ] **Norse mythos** (pp. 113-124)",

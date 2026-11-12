@@ -3,7 +3,7 @@
  "prefix": "del",
  "header_file": "rules/dmo/dmoworlds.h",
  "regtest": "regtest.cpp",
- "gap_report": "tools/dmo_gap_report.md",
+ "gap_report": "tools/reports/dmo_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "census_before": 524,
  "title": "The World Ratings",

@@ -34,9 +34,9 @@
 #       identity, the employment bands, the
 #       mercenary block, the special and
 #       asterisk flags and the clamps.
-#   (d) tools/dmg_gap_report.md - the
+#   (d) tools/reports/dmg_gap_report.md - the
 #       chronicle paragraph.
-#   (e) tools/dmg_gap_report.md - the R307
+#   (e) tools/reports/dmg_gap_report.md - the R307
 #       open box flipped to the PINNED form
 #       (the sage box stays open).
 #
@@ -602,7 +602,7 @@ assert s.count('{') == s.count('}'), 'rt brace balance'
 assert s.count('(') == s.count(')'), 'rt paren balance'
 assert len(applied) + len(already) == 3, 'patch c count wrong'
 
-# ---- (d) tools/dmg_gap_report.md: the chronicle ----
+# ---- (d) tools/reports/dmg_gap_report.md: the chronicle ----
 CH_OLD = NL.join([
     'the battery census stays 231.',
     '',
@@ -641,7 +641,7 @@ CH_NEW = NL.join([
 clean(CH_OLD, 57, gap=True)
 clean(CH_NEW, 57, gap=True)
 
-p = 'tools/dmg_gap_report.md'
+p = 'tools/reports/dmg_gap_report.md'
 s = rd(p)
 if 'R309 the hirelings cost tables pin' in s:
     already.append('dmg report: the chronicle')
@@ -657,7 +657,7 @@ assert s.count('Categories:') == 1, 'd legend head'
 assert s.count('moves 232 -> 233') == 1, 'd census note'
 assert len(applied) + len(already) == 4, 'patch d count wrong'
 
-# ---- (e) tools/dmg_gap_report.md: the box flip ----
+# ---- (e) tools/reports/dmg_gap_report.md: the box flip ----
 BX_OLD = NL.join([
     '- [ ] **Standard and expert hirelings',
     '      cost tables (the STANDARD',
@@ -721,7 +721,7 @@ BX_NEW = NL.join([
 clean(BX_OLD, 57, gap=True)
 clean(BX_NEW, 57, gap=True)
 
-p = 'tools/dmg_gap_report.md'
+p = 'tools/reports/dmg_gap_report.md'
 s = rd(p)
 if 'PINNED R309' in s:
     already.append('dmg report: the box flip')

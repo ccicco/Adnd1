@@ -41,7 +41,7 @@
 #       the lean syntax gate keeps the
 #       complement (ai/, spelleffects/,
 #       treasuresim.cpp).
-#   (g) tools/phb_gap_report.md - the wiring
+#   (g) tools/reports/phb_gap_report.md - the wiring
 #       arc box (the R298 box amended; the
 #       ledger holds ZERO open items).
 #
@@ -809,7 +809,7 @@ assert 'PREFLIGHT: GREEN' in s, 'patch f ate the green line'
 assert 'R107 (the lean gate)' in s, 'patch f ate the R107 note'
 assert len(applied) + len(already) == 6, 'patch f count wrong'
 
-# ---- (g) tools/phb_gap_report.md: the wiring-arc box ----
+# ---- (g) tools/reports/phb_gap_report.md: the wiring-arc box ----
 GR_HEAD_OLD = NL.join([
     '      rules/phb/thieffunc.h CREATED (a DATA-ONLY',
     '      pin, the R186 poetics precedent - the',
@@ -876,7 +876,7 @@ GR_INS_NEW = NL.join([
 for t in (GR_HEAD_OLD, GR_HEAD_NEW, GR_INS_OLD, GR_BOX, GR_INS_NEW):
     clean(t, 57)
 
-p = 'tools/phb_gap_report.md'
+p = 'tools/reports/phb_gap_report.md'
 s = rd(p)
 if 'The thief trap rolls wired' in s:
     already.append('phb_gap_report.md: the wiring-arc box')

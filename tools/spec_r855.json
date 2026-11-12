@@ -12,7 +12,7 @@
  "audit_anchor": "#include \"rules/audits/r854_central_american_mythos.h\"  // R854: R854 Central American mythos audit",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "seed_anchor": "## Knowledge maintenance",
- "gap_report": "tools/ddg_gap_report.md",
+ "gap_report": "tools/reports/ddg_gap_report.md",
  "gap_flips": [
   {
    "from": "- [ ] **Chinese mythos** (pp. 37-42)",

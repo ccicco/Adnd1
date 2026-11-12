@@ -45,9 +45,9 @@
 #       save line and the load branch.
 #   (j) game/state_dungeon.cpp - the MIK_OTHER
 #       fly potion claim route.
-#   (k) tools/dmg_gap_report.md - the OUT-list
+#   (k) tools/reports/dmg_gap_report.md - the OUT-list
 #       edit (the aerial reversal recorded).
-#   (l) tools/dmg_gap_report.md - the R321
+#   (l) tools/reports/dmg_gap_report.md - the R321
 #       chronicle paragraph.
 #   (m) regtest.cpp - the rules/seams/aerial.h
 #       include and the R321 audit (the pins,
@@ -684,7 +684,7 @@ assert _o == _c and _o2 == _c2, 'patch j balance'
 assert len(applied) + len(already) == 10, 'patch j count wrong'
 
 # ---- (k) dmg_gap_report.md: the OUT-list edit ----
-GP = 'tools/dmg_gap_report.md'
+GP = 'tools/reports/dmg_gap_report.md'
 GO_OLD = NL.join([
     '- OUT: Aerial and naval combat systems, siege',
     '  and war-machine rules, stronghold domain',

@@ -36,7 +36,7 @@
 #    audit block lands before
 #    the R227 anchor; census
 #    328 -> 329.
-# 4. tools/ua_gap_report.md:
+# 4. tools/reports/ua_gap_report.md:
 #    the seam checkbox closes;
 #    the DECIDED R374 block
 #    takes an AMENDED R402
@@ -549,8 +549,8 @@ R227 = ('    // ---- R227: the wis mental'
 pair(RT, R227, AUD + NL + R227,
      'regtest: the R402 audit block')
 
-# ======== (e) tools/ua_gap_report.md ========
-GP = 'tools/ua_gap_report.md'
+# ======== (e) tools/reports/ua_gap_report.md ========
+GP = 'tools/reports/ua_gap_report.md'
 
 pair(GP, E(
     '- [ ] The treasure system dial - the',

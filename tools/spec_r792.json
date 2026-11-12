@@ -3,7 +3,7 @@
  "prefix": "prg",
  "header_file": "rules/meta/registry_promotion_defs.h",
  "regtest": "regtest.cpp",
- "gap_report": "tools/oa_gap_report.md",
+ "gap_report": "tools/reports/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "census_before": 714,
  "title": "the registry promotion defs",

@@ -111,7 +111,7 @@ Standing doctrines (user-set, 2026-10-29):
 - Dropped: Lakofka (14-17), Mapping the Dungeons (20-21), BotFA
   (6, 13), the Lankhmar houri piece (4-5), Hyborean (24-25),
   Dungeon! (25), fiction, reviews, ads.
-- Gap report: tools/dragon_gap_report.md (3 boxes, 0 closed at
+- Gap report: tools/reports/dragon_gap_report.md (3 boxes, 0 closed at
   authoring; the Ives box closes at the next Dragon round).
 
 ## The one-line continuity

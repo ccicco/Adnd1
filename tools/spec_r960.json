@@ -12,7 +12,7 @@
  "audit_label": "R960 issue-25 commentary set audit",
  "audit_anchor": "#include \"rules/audits/r959_issue_25_table_round.h\"  // R959: R959 issue-25 table round audit",
  "audit_comment": "the three-chain commentary set audit - the War of Flowers with the declaration ritual and the command ladder, the To Select a Mythos guide with the mythos calls, and the Conquistadores with the expedition numbers and the weapon notes",
- "gap_report": "tools/dragon_gap_report_024.md",
+ "gap_report": "tools/reports/dragon_gap_report_024.md",
  "gap_census": {
   "closed": 3,
   "open": 0

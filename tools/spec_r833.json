@@ -5,7 +5,7 @@
   "regtest": "regtest.cpp",
   "header_file": "rules/meta/migration_batch_final_digest.h",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
-  "gap_report": "tools/mm2_gap_report.md",
+  "gap_report": "tools/reports/mm2_gap_report.md",
   "banner": {
     "title": "the final digest migration batch - the digest runs dry",
     "provenance": "spec-driven; the tenth batch of real audit blocks (digest idx 650-744, R772 OA Weapons prose through R113 class matrix - the OA back matter, the seam and registry blocks R774-R822, the MM2 walks and grids, and the early-file blocks R84-R137; 86 blocks - every digest entry that passes the gates, at Curtiss's 100-per-round pace call, 14289 lines) move verbatim into rules/audits fragments, regtest keeps the one-line include at each head line; the census holds, the labels relocate; the round audit rides a fragment as before"

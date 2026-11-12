@@ -81,7 +81,7 @@
 #    audit block lands before
 #    the R227 anchor; census
 #    324 -> 325.
-# 8. tools/ua_gap_report.md:
+# 8. tools/reports/ua_gap_report.md:
 #    the misc magic item takes
 #    an AMENDED R398: closed
 #    sub-entry.
@@ -1352,7 +1352,7 @@ pair(P6, E(
     'prose6: the part ledger')
 
 # ============ (c) the gap report ============
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 
 pair(GP, E(
     '        garbles - the item AMENDED,',

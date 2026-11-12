@@ -284,7 +284,7 @@ patch('regtest.cpp',
       NL.join(aud) + NL + '    // ---- R163: the poison table audit -------------')
 
 # ---------------------------------------------------------------------------
-# Patch 4: tools/phb_gap_report.md - the R190 box flipped
+# Patch 4: tools/reports/phb_gap_report.md - the R190 box flipped
 # ---------------------------------------------------------------------------
 
 box_old = ('- [ ] **Starting money by class (the EQUIPPING THE'
@@ -312,22 +312,22 @@ box_new = ('- [x] **Starting money by class (the MONEY section) -'
            + NL + '      battery audit walks all five rows. Census'
            + NL + '      107.')
 
-t2 = rd('tools/phb_gap_report.md')
+t2 = rd('tools/reports/phb_gap_report.md')
 if 'Starting money by class (the MONEY section) -' not in t2:
     assert t2.count(box_old) == 1, 'R190 box anchor not unique'
 else:
     assert t2.count(box_old) == 0, 'R190 box old text lingers'
 
-patch('tools/phb_gap_report.md',
+patch('tools/reports/phb_gap_report.md',
       'PINNED R190:** rules/phb/startmoney.h CREATED',
       box_old,
       box_new)
 
 # ---------------------------------------------------------------------------
-# Patch 5: tools/dmg_gap_report.md - the round note
+# Patch 5: tools/reports/dmg_gap_report.md - the round note
 # ---------------------------------------------------------------------------
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R190 landed the starting money',
       'printed notes; the R144/R145 AC standing note closes'
       + NL + 'with the OCR limitation recorded). New R189 battery'

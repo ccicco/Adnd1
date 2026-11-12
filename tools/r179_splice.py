@@ -32,9 +32,9 @@
 #       defs, every XP row, every title, the caps,
 #       the hit dice, the adders, the clamps)
 #       (census 96 - one new audit printf).
-#   (c) tools/phb_gap_report.md - the R179 arc box
+#   (c) tools/reports/phb_gap_report.md - the R179 arc box
 #       flips to pinned; the round note is added.
-#   (d) tools/dmg_gap_report.md - the round-note
+#   (d) tools/reports/dmg_gap_report.md - the round-note
 #       chain gains the R179 note.
 #
 # Idempotent: safe to run twice; a silent run means
@@ -503,7 +503,7 @@ p3_new = NL.join([
     '      every row, title, cap and clamp. Census 96.',
 ])
 
-s = rd("tools/phb_gap_report.md")
+s = rd("tools/reports/phb_gap_report.md")
 if "PINNED:" + NL + "      rules/phb/subclasses.h CREATED" in s:
     already.append("phb report: R179 box flipped")
 else:
@@ -512,7 +512,7 @@ else:
         fails.append("phb report R179 box: anchor count "
                      + str(n) + " (expected 1)")
     else:
-        wr("tools/phb_gap_report.md", s.replace(p3_old, p3_new))
+        wr("tools/reports/phb_gap_report.md", s.replace(p3_old, p3_new))
         applied.append("phb report: R179 box flipped")
 assert len(applied) + len(already) == 3
 
@@ -535,7 +535,7 @@ p4_new = NL.join([
     'attacks, spells, multi-class, the bard).',
 ])
 
-s = rd("tools/dmg_gap_report.md")
+s = rd("tools/reports/dmg_gap_report.md")
 if "R179 PINNED the six subclass foundations" in s:
     already.append("dmg report: R179 round note")
 else:
@@ -544,7 +544,7 @@ else:
         fails.append("dmg report R179 note: anchor count "
                      + str(n) + " (expected 1)")
     else:
-        wr("tools/dmg_gap_report.md", s.replace(p4_old, p4_new))
+        wr("tools/reports/dmg_gap_report.md", s.replace(p4_old, p4_new))
         applied.append("dmg report: R179 round note")
 assert len(applied) + len(already) == 4
 

@@ -12,7 +12,7 @@
  "audit_label": "R953 Dragon issue-23 closure audit",
  "audit_anchor": "#include \"rules/audits/r952_issue_23_commentary_set.h\"  // R952: R952 issue-23 commentary set audit",
  "audit_comment": "THE DRAGON ISSUE-23 BOX CLOSING ROUND - the pure flip, no new ink. All three report-023 boxes flip at this single round: the part-one variant triptych (R950, t23), the part-two Lower Planes generator (R951, s23) and the part-three commentary set (R952, k23). The walk holds issues 2-23 all closed; the Sullin and brawling watches ride to TD 24.",
- "gap_report": "tools/dragon_gap_report_023.md",
+ "gap_report": "tools/reports/dragon_gap_report_023.md",
  "gap_census": {
   "closed": 3,
   "open": 0

@@ -11,7 +11,7 @@
 # psionics and stronghold economics, which are all
 # written down). This round records them:
 #
-#   (a) tools/phb_gap_report.md - a new R296 scope
+#   (a) tools/reports/phb_gap_report.md - a new R296 scope
 #       section: two items OPENED (the weapon
 #       proficiency table - initial slots, the -2 to
 #       -5 non-proficiency penalty, the added-slot
@@ -25,7 +25,7 @@
 #       and jewelers - the economy is gold-only;
 #       Appendix V - the division agreements are
 #       player-side; Appendix IV - no planar layer).
-#   (b) tools/dmg_gap_report.md - the round-note
+#   (b) tools/reports/dmg_gap_report.md - the round-note
 #       chain gains the R296 note pointing at the
 #       scope pass.
 #
@@ -189,7 +189,7 @@ for frag in ("R296", "R297", "R298", "213"):
 assert SECTION.count("- [ ]") == 2, "open item count is not 2"
 
 # ---- (1) the PHB gap report scope section ----
-p = "tools/phb_gap_report.md"
+p = "tools/reports/phb_gap_report.md"
 s = rd(p)
 if "R296 SCOPE PASS" in s:
     already.append("phb_gap_report.md: R296 scope section")
@@ -208,7 +208,7 @@ assert s.count("# PHB Gap Report") == 1, "patch 1 ate the header"
 assert len(applied) + len(already) == 1, "patch 1 count wrong"
 
 # ---- (2) the DMG report round note ----
-p = "tools/dmg_gap_report.md"
+p = "tools/reports/dmg_gap_report.md"
 s = rd(p)
 if "R296 the PHB report scope round" in s:
     already.append("dmg_gap_report.md: R296 round note")
@@ -240,6 +240,6 @@ if len(applied) + len(already) != 2:
 print("R296 splice: ALL OK (applied "
       + str(len(applied)) + ", already " + str(len(already)) + ")")
 print("R296 note: 2 patches; no audit added, census 213;")
-print("real gate: md5sum tools/phb_gap_report.md")
+print("real gate: md5sum tools/reports/phb_gap_report.md")
 print("commit: R296: the PHB gap report scope round - the unrecorded sections recorded OUT and the proficiency and thief tables opened (census 213)")
 

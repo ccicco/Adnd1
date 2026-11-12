@@ -296,9 +296,9 @@ PATCHES = [
      NC_OLD, NC_NEW, "state_core new-dungeon reset"),
     ("regtest.cpp", "R119 forced rest audit",
      RT_OLD, RT_NEW, "regtest R119 audit"),
-    ("tools/dmg_gap_report.md", "R119 CLOSED forced rest",
+    ("tools/reports/dmg_gap_report.md", "R119 CLOSED forced rest",
      GH_OLD, GH_NEW, "gap report header note"),
-    ("tools/dmg_gap_report.md", "R119: the book requires rest",
+    ("tools/reports/dmg_gap_report.md", "R119: the book requires rest",
      GB_OLD, GB_NEW, "gap report forced rest box"),
 ]
 
@@ -369,9 +369,9 @@ PATCHES = [
      NC_OLD, NC_NEW, "state_core new-dungeon reset"),
     ("regtest.cpp", "R119 forced rest audit",
      RT_OLD, RT_NEW, "regtest R119 audit"),
-    ("tools/dmg_gap_report.md", "R119 CLOSED forced rest",
+    ("tools/reports/dmg_gap_report.md", "R119 CLOSED forced rest",
      GH_OLD, GH_NEW, "gap report header note"),
-    ("tools/dmg_gap_report.md", "R119: the book requires rest",
+    ("tools/reports/dmg_gap_report.md", "R119: the book requires rest",
      GB_OLD, GB_NEW, "gap report forced rest box"),
 ]
 

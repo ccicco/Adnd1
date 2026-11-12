@@ -18,7 +18,7 @@
 #    update (5 -> 11; the counterfeit dressing pin
 #    flips) and the new R132 audit pins the set
 #    (census 50)
-#  - tools/dmg_gap_report.md: the R128 box's dressing
+#  - tools/reports/dmg_gap_report.md: the R128 box's dressing
 #    count drops to 54; the R132 box closes
 import os, sys
 

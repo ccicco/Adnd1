@@ -98,14 +98,14 @@ assert len(applied) + len(already) == 3
 
 p4_old = NL.join(['lane). Census 75.', '', 'Categories:'])
 p4_new = NL.join(['lane). Census 75.', 'R158 PINNED weapon speed factors in initiative (DMG', 'p.66 + the PHB p.38 factor column) - rules/dmg/weaponspeed.h:', 'the named factor table (fist 1 through pike 13; the spear', 'prints 6-8 and defaults 7, footman/horseman mace and', 'flail named per the print), the simultaneous-initiative', 'tie order (lower factor strikes first), the extra-attacks', 'rule (difference at least twice the lower factor or 5+ =', 'two attacks before the slower acts; 10+ adds a third', 'simultaneous; never when closing or charging), and the', 'weapon-vs-activity strike segment (factor minus the', 'losing initiative die, negatives as positive, no', 'modification on a tied round). rules/turn verified first:', 'the scheduler carries NO factor logic and needs none - the', 'DMG limits factor use to these caller-detected cases. The', 'fireball example (sword 5 vs casting 3, dagger 2 vs 3,', 'the two-handed no-chance) is pinned in the audit.', 'Census 76.', '', 'Categories:'])
-patch("tools/dmg_gap_report.md", p4_old, p4_new,
+patch("tools/reports/dmg_gap_report.md", p4_old, p4_new,
       "gap report: R158 header note",
       marker='R158 PINNED weapon speed factors')
 assert len(applied) + len(already) == 4
 
 p5_old = NL.join(['- [ ] **Weapon speed factors in initiative (p.66)** - the', '      segment scheduler exists; the speed-factor table', '      and its melee-initiative adjustments are unpinned', '      (verify against rules/turn first).'])
 p5_new = NL.join(['- [x] **Weapon speed factors in initiative (p.66)** - pinned', '      by R158: rules/dmg/weaponspeed.h (the p.38 factor table,', '      the tie order, the extra-attack windows, the', '      weapon-vs-spell strike segment); rules/turn verified', '      first and deliberately untouched - the print applies', '      factors only in caller-detected cases.'])
-patch("tools/dmg_gap_report.md", p5_old, p5_new,
+patch("tools/reports/dmg_gap_report.md", p5_old, p5_new,
       "gap report: speed factor box closed",
       marker='by R158: rules/dmg/weaponspeed.h')
 assert len(applied) + len(already) == 5

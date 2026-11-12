@@ -508,11 +508,11 @@ patch("regtest.cpp", aud_old, aud_new,
       "regtest.cpp: R151 Appendix O encumbrance audit",
       marker="R151 Appendix O encumbrance audit")
 assert len(applied) + len(already) == 3
-patch("tools/dmg_gap_report.md", gap_head_old, gap_head_new,
+patch("tools/reports/dmg_gap_report.md", gap_head_old, gap_head_new,
       "gap report: R151 header note",
       marker="R151 PINNED the Appendix O encumbrance table")
 assert len(applied) + len(already) == 4
-patch("tools/dmg_gap_report.md", gap_box_old, gap_box_new,
+patch("tools/reports/dmg_gap_report.md", gap_box_old, gap_box_new,
       "gap report: Appendix O box closed",
       marker="PINNED R151: dm/appendixo.h")
 assert len(applied) + len(already) == 5

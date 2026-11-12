@@ -640,7 +640,7 @@ R176 battery audit carries the row walk, the
 beyond-table probes and the clamps.
 Census 94.
 R177 CREATED the PHB gap report
-(tools/phb_gap_report.md) - the sibling
+(tools/reports/phb_gap_report.md) - the sibling
 whole-book inventory for the Players Handbook,
 same conventions: verified boxes, ranked
 divergences, open items, out-of-scope notes.

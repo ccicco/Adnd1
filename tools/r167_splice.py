@@ -140,14 +140,14 @@ assert len(applied) + len(already) == 3
 
 p4_old = NL.join(['the insane character. Census 84.', '', 'Categories:'])
 p4_new = NL.join(['the insane character. Census 84.', 'R167 PINNED PC disease and parasitic infestation', '(DMG pp.13-14) - rules/dmg/disease.h: the monthly', 'contraction check (weekly when favorable, on', 'every carrier exposure) with the 2 percent disease', 'base and its eleven printed modifiers and the 3', 'percent parasite base and its six; the 16-row', 'disease (or disorder) table (body area by d100,', 'occurrence acute or chronic by d8, severity by d8,', 'three areas with no terminal column) and the', '6-row parasite table, every cell pinned; the', 'severity effects (mild 1-3 weeks rest; severe hit', 'points to 50 percent, disabled 1-2 weeks plus 1-2', 'weeks mild; terminal death or function loss in', '1-12 days with the per-area exceptions); the', 'occurrence and severity die roll adjustments (the', 'constitution ladder +2 through -4, chronic disease', '+1, severe infestation +1, under 25 percent hit', 'points +1, a score of 0 or less means no', 'contraction, never used for parasites); the', 'per-area ability losses with their percent chances', '(blood 1/1 per week, brain 1/1 per occurrence', 'with terminal in 1-12 hours, connective tissue', '1 each per month with terminal treated as chronic', 'severe, eyes blind one or both at 50/50, muscles', '25 percent permanent, nose-throat 10 percent,', 'respiratory 10 percent checked separately, skin', '10/10/25, urinary 20 percent); and death from', 'disease or infestation (90 percent relapse unless', 'a curative is used, permanent losses never fixed', 'by any curative). The monster-borne layer', '(mummy rot) stays as wired; the caller rolls', 'the dice and tracks the disability. Census 85.', '', 'Categories:'])
-patch("tools/dmg_gap_report.md", p4_old, p4_new,
+patch("tools/reports/dmg_gap_report.md", p4_old, p4_new,
       "gap report: R167 header note",
       marker='R167 PINNED PC disease and parasitic infestation')
 assert len(applied) + len(already) == 4
 
 p5_old = NL.join(['- [ ] **PC disease + parasitic infestation (pp.13-14)**', '      - contraction chance, occurrence and severity', '      tables. The monster-borne disease layer exists', '      (mummy rot); PC-side contraction does not.'])
 p5_new = NL.join(['- [x] **PC disease + parasitic infestation (pp.13-14)**', '      - pinned by R167: rules/dmg/disease.h (the', '      contraction chances with every modifier, the', '      occurrence and severity tables cell by cell,', '      the die roll adjustments, the per-area', '      losses, the death relapse).'])
-patch("tools/dmg_gap_report.md", p5_old, p5_new,
+patch("tools/reports/dmg_gap_report.md", p5_old, p5_new,
       "gap report: disease and infestation box closed",
       marker='severity tables cell by cell,')
 assert len(applied) + len(already) == 5

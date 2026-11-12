@@ -381,7 +381,7 @@ assert len(applied) + len(already) == 2, 'b count'
 # The item STAYS OPEN (the table cells
 # are OCR-lost); an in-place note
 # records what R331 pinned.
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 if 'R331: the prose pinned' in s:
     already.append('gap report: the note')

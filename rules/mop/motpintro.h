@@ -13,7 +13,7 @@
 // pinned at printed + 1.
 //
 // the opener mirrors the book's own skeleton: the gap report
-// tools/motp_gap_report.md lands with this round and every box in it closes
+// tools/reports/motp_gap_report.md lands with this round and every box in it closes
 // on the MotP's own text - nothing auto-credited across the seams.
 //
 namespace rules {

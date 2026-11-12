@@ -19,7 +19,7 @@
   "rules/audits/r903_dragon_issue_5_closure.h, 3 examples, 2",
   "header_sections, ZERO file_patches and ZERO",
   "data_files, 1 gap flip. THE FLIP: the issue-5",
-  "box in tools/dragon_gap_report_005.md went [x]",
+  "box in tools/reports/dragon_gap_report_005.md went [x]",
   "-> 1 closed / 0 open, THE ISSUE-5 WALK COMPLETE",
   "- the three chains (the Witchcraft Supplement",
   "variant layer, the Anhkheg lore-against-def",
@@ -48,7 +48,7 @@
  "audit_file": "rules/audits/r904_wilderness_encounter_table.h",
  "audit_label": "R904 wilderness encounter table audit",
  "audit_anchor": "#include \"rules/audits/r903_dragon_issue_5_closure.h\"  // R903: R903 Dragon issue-5 closure audit",
- "gap_report": "tools/dragon_gap_report_005.md",
+ "gap_report": "tools/reports/dragon_gap_report_005.md",
  "gap_census": {
   "closed": 1,
   "open": 0
@@ -57,7 +57,7 @@
  "banner": {
   "title": "The witchcraft wilderness encounter table round - the folio-4 grid, resolved legible by the chat-side upload cross-check: armor class 8, the 9/24 move, hit dice 4-7, the 30/45 lair lines and the number-appearing terrain bands",
   "provenance": "Pinned from The Dragon Vol. 1 No. 5 (March 1977), folio 4, the Witchcraft Supplement's wilderness encounter table - the grid the archive.org DjVu OCR garbled and R902 scoped out per the standing OCR-table caution. The chat-side upload cross-check (Curtiss's Dragon_Magazine_005.pdf, October 29) made the grid fully legible: number appearing by terrain (Mts/Desert none, Riv/Swamps 2-4, Clear 1-3, Towns/Woods 2-13), armor class 8, movement 9 on foot and 24 on broom, hit dice 4-7, and the lair lines - Lawful Witch 30 percent, Chaotic Witch 45 percent, the Secret Order witches excepted at their own 75 percent any-terrain one-only line already pinned at R902. The same cross-check confirmed every pages-1-5 pin of R902 against the upload's voice - the encounter doctrine, the Order ladder, the quotas, the immunities and the spell matrix through Curse - with one voice quirk noted below. The upload's extraction capped at page 5, so pages 6-32 remain single-voice archive.org; the provenance recorded at R902 stands for those pages.",
-  "sentinel": "The cross-check doctrine rides: the pin IS the conversion, and the second voice settles the garbled cell - the wilderness table pins exactly as the upload reads it, the terrain none band as the 0 sentinel, and the scoped-out sentence in tools/dragon_gap_report_005.md updates by file patch to record the resolution, never silently. The Comfort spell's duration quirk is noted and settled by arithmetic: the upload reads 'D = 3b (6 hours)' where the archive.org scan reads 'D = 36', and 6 hours at 10 minutes per turn is 36 turns - the R902 pin of 36 stands. No new registry ink: this is a pure variant-layer const round against the R902 Witchcraft Supplement chain, no lua defs, no transcripts, no gap flips."
+  "sentinel": "The cross-check doctrine rides: the pin IS the conversion, and the second voice settles the garbled cell - the wilderness table pins exactly as the upload reads it, the terrain none band as the 0 sentinel, and the scoped-out sentence in tools/reports/dragon_gap_report_005.md updates by file patch to record the resolution, never silently. The Comfort spell's duration quirk is noted and settled by arithmetic: the upload reads 'D = 3b (6 hours)' where the archive.org scan reads 'D = 36', and 6 hours at 10 minutes per turn is 36 turns - the R902 pin of 36 stands. No new registry ink: this is a pure variant-layer const round against the R902 Witchcraft Supplement chain, no lua defs, no transcripts, no gap flips."
  },
  "consts": [
   {
@@ -188,7 +188,7 @@
  "table_checks": [],
  "file_patches": [
   {
-   "file": "tools/dragon_gap_report_005.md",
+   "file": "tools/reports/dragon_gap_report_005.md",
    "note": "the scoped-out sentence updates - the folio-4 garble resolved by the upload cross-check, the table now pinned at R904",
    "from": "The witchcraft wilderness encounter table's dense\nOCR garble (folio 4, the interleaved terrain rows) is scoped out of\nthe pin set - the clean scalars ride, the garbled grid does not,\nper the OCR-table caution.",
    "to": "The witchcraft wilderness encounter table's dense\nOCR garble (folio 4, the interleaved terrain rows) was resolved at\nR904: the chat-side upload cross-check made the grid legible and\nit pins in the R904 round - no longer scoped out; the garble\ncaution itself stands for any other grid it may apply to."
@@ -248,5 +248,5 @@
    }
   ]
  },
- "audit_comment": "THE WITCHCRAFT WILDERNESS ENCOUNTER TABLE ROUND - the folio-4 grid the DjVu OCR garbled, made legible by the chat-side upload cross-check and pinned as scanned: the number-appearing terrain bands as a 4-row table (Mts/Desert none at the 0 sentinel, Riv/Swamps 2-4, Clear 1-3, Towns/Woods 2-13), armor class 8, movement 9 on foot and 24 on broom, hit dice 4-7, the Lawful 30 percent and Chaotic 45 percent lair lines, the terrain factor doctrine (the woodlands and orchards favored), and the lair device access (every portable magic device in the hoard). The Secret Order exception stays pinned at R902 - no duplicate ink. The cross-check also confirmed every R902 pages-1-5 pin against the upload: the rolls 5 or 7 encounter doctrine, the 35/65 split, the 12-sided Order ladder, the spell quotas, the immunities, and the spell matrix rows Pit, Fire Box, Diminish, Plant Entrapment, Paralyzing Pit, Undead Control, Aging, Circle of Blindness, Curse, Calm, Rejuvenation, Dissipation and Comfort. The Comfort quirk is noted and settled: the upload reads D = 3b (6 hours), the archive.org scan reads D = 36, and 6 hours at 10 minutes per turn is 36 turns - the pin stands. The scoped-out sentence in tools/dragon_gap_report_005.md updates by file patch to record the resolution. The R903 record seats in the seed via prev_record."
+ "audit_comment": "THE WITCHCRAFT WILDERNESS ENCOUNTER TABLE ROUND - the folio-4 grid the DjVu OCR garbled, made legible by the chat-side upload cross-check and pinned as scanned: the number-appearing terrain bands as a 4-row table (Mts/Desert none at the 0 sentinel, Riv/Swamps 2-4, Clear 1-3, Towns/Woods 2-13), armor class 8, movement 9 on foot and 24 on broom, hit dice 4-7, the Lawful 30 percent and Chaotic 45 percent lair lines, the terrain factor doctrine (the woodlands and orchards favored), and the lair device access (every portable magic device in the hoard). The Secret Order exception stays pinned at R902 - no duplicate ink. The cross-check also confirmed every R902 pages-1-5 pin against the upload: the rolls 5 or 7 encounter doctrine, the 35/65 split, the 12-sided Order ladder, the spell quotas, the immunities, and the spell matrix rows Pit, Fire Box, Diminish, Plant Entrapment, Paralyzing Pit, Undead Control, Aging, Circle of Blindness, Curse, Calm, Rejuvenation, Dissipation and Comfort. The Comfort quirk is noted and settled: the upload reads D = 3b (6 hours), the archive.org scan reads D = 36, and 6 hours at 10 minutes per turn is 36 turns - the pin stands. The scoped-out sentence in tools/reports/dragon_gap_report_005.md updates by file patch to record the resolution. The R903 record seats in the seed via prev_record."
 }

@@ -141,7 +141,7 @@ def newfile(path, text, label):
 
 RT = 'regtest.cpp'
 HD = 'rules/wsg/wsgenvfx.h'
-GR = 'tools/wsg_gap_report.md'
+GR = 'tools/reports/wsg_gap_report.md'
 SD = ('doc/vibe/'
       'adnd1_knowledge_seed_v2.md')
 
@@ -317,7 +317,7 @@ SEED_ENTRY = E(
     '  and the clothing-as-armor',
     '  option (AC 8/9, the',
     '  10-percent miscast).',
-    '  tools/wsg_gap_report.md',
+    '  tools/reports/wsg_gap_report.md',
     '  flips 8: 12 closed, 174',
     '  open, 42 tables.',
     '  INCIDENT: the first build',

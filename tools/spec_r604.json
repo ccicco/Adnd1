@@ -3,7 +3,7 @@
  "prefix": "deq",
  "header_file": "rules/dmo/dmospells.h",
  "regtest": "regtest.cpp",
- "gap_report": "tools/dmo_gap_report.md",
+ "gap_report": "tools/reports/dmo_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "census_before": 526,
  "title": "Spells and Magical Items",

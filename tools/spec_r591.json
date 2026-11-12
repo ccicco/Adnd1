@@ -3,7 +3,7 @@
  "prefix": "ddu",
  "header_file": "rules/mop/outerplanesseal.h",
  "regtest": "regtest.cpp",
- "gap_report": "tools/motp_gap_report.md",
+ "gap_report": "tools/reports/motp_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "census_before": 514,
  "title": "the Outer Planes seal",
@@ -55,7 +55,7 @@
   "  (R566-R590). NEXT - R591: the gap",
   "  report's eight remaining boxes belong",
   "  to later chapters; consult",
-  "  tools/motp_gap_report.md (fetched at",
+  "  tools/reports/motp_gap_report.md (fetched at",
   "  1e2f203) for the open list and pick",
   "  the next chapter's first box."
  ],

@@ -1,7 +1,7 @@
 # PHB Gap Report - the book vs the repo
 
 R177 CREATION. THE SECOND BOOK, WHOLE. The DMG gap
-report (tools/dmg_gap_report.md) covers the Dungeon
+report (tools/reports/dmg_gap_report.md) covers the Dungeon
 Masters Guide; this sibling report inventories the
 Players Handbook (the Premium 1e OCR upload)
 against the same engine, end to end. Engine scope:

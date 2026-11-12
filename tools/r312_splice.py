@@ -43,7 +43,7 @@
 #       audit (seeded scenarios the replica
 #       walked first); the battery census
 #       moves 235 -> 237.
-#   (i) tools/dmg_gap_report.md - the
+#   (i) tools/reports/dmg_gap_report.md - the
 #       chronicle paragraph (no box flip -
 #       the dmg ledger holds ZERO open
 #       items).
@@ -1023,7 +1023,7 @@ assert s.count('{') == s.count('}'), 'rt brace balance'
 assert s.count('(') == s.count(')'), 'rt paren balance'
 assert len(applied) + len(already) == 8, 'patch h count wrong'
 
-# ---- (i) tools/dmg_gap_report.md: the chronicle ----
+# ---- (i) tools/reports/dmg_gap_report.md: the chronicle ----
 CH_OLD = NL.join([
     '235 with the R311 audit.',
     '',
@@ -1063,7 +1063,7 @@ CH_NEW = NL.join([
 clean(CH_OLD, 57, gap=True)
 clean(CH_NEW, 57, gap=True)
 
-p = 'tools/dmg_gap_report.md'
+p = 'tools/reports/dmg_gap_report.md'
 s = rd(p)
 if 'R312 the flooded crossing' in s:
     already.append('dmg report: the chronicle')

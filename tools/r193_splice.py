@@ -278,7 +278,7 @@ patch('regtest.cpp',
       NL.join(aud) + NL + '    // ---- R163: the poison table audit -------------')
 
 # ---------------------------------------------------------------------------
-# Patch 6: tools/phb_gap_report.md - the divergence 5 box flipped
+# Patch 6: tools/reports/phb_gap_report.md - the divergence 5 box flipped
 # ---------------------------------------------------------------------------
 
 box_old = ('- [~] 5. **CHA table (reaction adjustment, loyalty'
@@ -313,22 +313,22 @@ box_new = ('- [x] 5. **CHA table (reaction adjustment, loyalty'
            + NL + '      battery audit walks all three columns, all'
            + NL + '      16 scores. Census 110.')
 
-t2 = rd('tools/phb_gap_report.md')
+t2 = rd('tools/reports/phb_gap_report.md')
 if 'CLOSED R193: all three accessors repinned' not in t2:
     assert t2.count(box_old) == 1, 'R193 box anchor not unique'
 else:
     assert t2.count(box_old) == 0, 'R193 box old text lingers'
 
-patch('tools/phb_gap_report.md',
+patch('tools/reports/phb_gap_report.md',
       'CLOSED R193: all three accessors repinned',
       box_old,
       box_new)
 
 # ---------------------------------------------------------------------------
-# Patch 7: tools/phb_gap_report.md - the intro line repin
+# Patch 7: tools/reports/phb_gap_report.md - the intro line repin
 # ---------------------------------------------------------------------------
 
-patch('tools/phb_gap_report.md',
+patch('tools/reports/phb_gap_report.md',
       'divergences 3 (WIS) and 4 (INT) remain ranked fix rounds',
       'retired. Census 95. The WIS, INT and CHA'
       + NL + 'divergences (3, 4, 5) remain ranked fix rounds.',
@@ -337,10 +337,10 @@ patch('tools/phb_gap_report.md',
       + NL + '5 (CHA, the live reaction feed) CLOSED R193.')
 
 # ---------------------------------------------------------------------------
-# Patch 8: tools/dmg_gap_report.md - the round note
+# Patch 8: tools/reports/dmg_gap_report.md - the round note
 # ---------------------------------------------------------------------------
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R193 landed the charisma repin',
       'engine limit closes. New R192 battery audit; census'
       + NL + '109. Next: the gap report names the next round.',

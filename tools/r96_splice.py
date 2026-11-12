@@ -11,7 +11,7 @@
 #   game/state_town.cpp - inn night counts a career day
 #   game/state_town.cpp - training counts its days
 #   regtest.cpp        - R96 town clock audit
-#   tools/playverify_r77_r83.md - R96 section
+#   tools/reports/playverify_r77_r83.md - R96 section
 import sys, os
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)) + '/..')
@@ -151,7 +151,7 @@ OK &= patch('regtest.cpp',
 # ---------------------------------------------------------------------------
 # 5) playverify - the R96 section
 # ---------------------------------------------------------------------------
-OK &= patch('tools/playverify_r77_r83.md',
+OK &= patch('tools/reports/playverify_r77_r83.md',
 """## R95: the calendar
 """,
 """## R96: the town clock

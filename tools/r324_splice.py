@@ -23,7 +23,7 @@
 #       footnote, the escalation riders,
 #       the floor rule, the single-class
 #       +2 rule.
-#   (c) tools/ua_gap_report.md - the Race
+#   (c) tools/reports/ua_gap_report.md - the Race
 #       Table II box closes (the print
 #       letters corrected on the record).
 #   (d) regtest.cpp - the include and the
@@ -1678,7 +1678,7 @@ assert 'SUB_COUNT' not in s, 'b no SUB_COUNT (the R323 lesson)'
 assert len(applied) + len(already) == 2, 'patch b count wrong'
 
 # ---- (c) the gap report: the box close ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 clean(GP_ANCHOR, 57)
 clean(GP_CLOSE, 57)

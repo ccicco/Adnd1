@@ -38,7 +38,7 @@
 #       round spend; the hit rolls ride the
 #       R37 dice); the battery census moves
 #       241 -> 242.
-#   (e) tools/dmg_gap_report.md - the
+#   (e) tools/reports/dmg_gap_report.md - the
 #       chronicle paragraph (no box flip).
 #
 # NOT CHARGED (recorded, the seam headers):
@@ -456,7 +456,7 @@ _o, _c, _o2, _c2 = counts(s)
 assert _o == _c and _o2 == _c2, 'patch d balance'
 assert len(applied) + len(already) == 4, 'patch d count wrong'
 
-# ---- (e) tools/dmg_gap_report.md: the chronicle ----
+# ---- (e) tools/reports/dmg_gap_report.md: the chronicle ----
 CH_OLD = NL.join([
     'and R314 engine audits.',
     '',
@@ -489,7 +489,7 @@ CH_NEW = NL.join([
 clean(CH_OLD, 57, gap=True)
 clean(CH_NEW, 57, gap=True)
 
-p = 'tools/dmg_gap_report.md'
+p = 'tools/reports/dmg_gap_report.md'
 s = rd(p)
 if 'R315 the net throwers' in s:
     already.append('dmg report: the chronicle')

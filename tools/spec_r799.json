@@ -3,7 +3,7 @@
  "prefix": "mm2dp",
  "header_file": "rules/mm/mm2dp.h",
  "regtest": "regtest.cpp",
- "gap_report": "tools/mm2_gap_report.md",
+ "gap_report": "tools/reports/mm2_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "census_before": 721,
  "title": "the MM2 letter D part 1 - the planar evil families",

@@ -29,7 +29,7 @@
 #       R162 audit: the 13-row walk per class, the
 #       beyond-table probes (levels 14 and 15 per class),
 #       and the clamps (census 94 - one new audit printf).
-#   (f) tools/dmg_gap_report.md - the header round note,
+#   (f) tools/reports/dmg_gap_report.md - the header round note,
 #       the R162 FINDING tail and the classes box tail
 #       close the finding.
 #
@@ -366,17 +366,17 @@ patch("regtest.cpp", p5_old, p5_new,
       marker="R176 printed XP tables audit")
 assert len(applied) + len(already) == 5
 
-patch("tools/dmg_gap_report.md", p6_old, p6_new,
+patch("tools/reports/dmg_gap_report.md", p6_old, p6_new,
       "gap report: R176 header note",
       marker="R176 PINNED the printed XP tables")
 assert len(applied) + len(already) == 6
 
-patch("tools/dmg_gap_report.md", p7_old, p7_new,
+patch("tools/reports/dmg_gap_report.md", p7_old, p7_new,
       "gap report: R162 FINDING tail closed",
       marker="CLOSED R176: the rows")
 assert len(applied) + len(already) == 7
 
-patch("tools/dmg_gap_report.md", p8_old, p8_new,
+patch("tools/reports/dmg_gap_report.md", p8_old, p8_new,
       "gap report: classes box tail closed",
       marker="CLOSED R176 - the rows repinned to the print).")
 assert len(applied) + len(already) == 8

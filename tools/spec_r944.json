@@ -50,7 +50,7 @@
  "audit_anchor": "#include \"rules/audits/r943_issue_21_opener_part_one.h\"  // R943: R943 issue-21 opener part one audit",
  "audit_label": "R944 issue-21 opener part two audit",
  "audit_comment": "THE DRAGON ISSUE-21 OPENER PART TWO - the four-chain round of the issue-21 three-round shape. Four chains pinned: the Callison gold-piece inflation economics (the 1:1 dollar analogy, the 1-10 starting purse, the Strategic Review Vol. II No. 2 Gygax reference), the Callison natural-history monster doctrine (the never-both snakes, the live-prey spiders, the solitary scorpions, the social ants), the Turnbull Hall of Mystery do-it-yourself module (the five mirrors, the Excalibur dial, the eight-room census) and the Blume M-U titles kit (the ten-column chart against the seven-column prose walk). No watches moved: the Sullin levels 7-9 and the brawling sequel still print nowhere and ride to TD 22.",
- "gap_report": "tools/dragon_gap_report_021.md",
+ "gap_report": "tools/reports/dragon_gap_report_021.md",
  "gap_census": {
   "closed": 0,
   "open": 2

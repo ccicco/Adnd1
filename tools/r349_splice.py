@@ -421,7 +421,7 @@ assert os.path.exists(US), 'b exists'
 assert rd(US).count('R349') == 1, 'b tag kept'
 # ---- (c) the gap report: the note (the
 # item CLOSES this round) ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 if 'R349: the 7th level pinned' in s:
     already.append('gap report: the note')

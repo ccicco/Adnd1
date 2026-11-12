@@ -5,7 +5,7 @@
  "regtest": "regtest.cpp",
  "header_file": "rules/ff/promo_batch5.h",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
- "gap_report": "tools/mm2_gap_report.md",
+ "gap_report": "tools/reports/mm2_gap_report.md",
  "banner": {
   "title": "the fifth FF promotion batch - the missing prints open",
   "provenance": "spec-driven; the fifth Fiend Folio promotion batch - twenty-five of the eighty-two missing FF print stat-blocks lifted as new lua data files (the three lung dragons - the pan lung p. 29, the tien lung p. 29, the yu lung p. 30; the five elemental princes of evil - cryonax p. 31, imix p. 31, ogremoch p. 32, olhydra p. 32, yan-c-bin p. 33; and seventeen holdouts from the giant bloodworm p. 15 to the flail snail p. 38), the stat blocks read from the three-voice scan collation (the djvu text, the word-geometry xml, the abbyy char xml) with the shredded dark stalker rows recovered from the print transcriptions, the registry 913 -> 938, the ff def census 103 -> 128, the missing print census 82 -> 57, no encounter cells rewire, no gap boxes flip; the def bodies carry the print-fidelity pin headers"

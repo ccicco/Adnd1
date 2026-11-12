@@ -39,7 +39,7 @@
   "  30 feet vs 21-42). THE VOICE: all 32",
   "  issue-2 pages at extract/dragon/002/",
   "  plus the pre-flip",
-  "  tools/dragon_gap_report_002.md (4 boxes,",
+  "  tools/reports/dragon_gap_report_002.md (4 boxes,",
   "  0 closed - Remorhaz, Alchemist, Fischer",
   "  items, the systems round) shipped as spec",
   "  data files; the Aronson box FLIPPED - the",
@@ -72,7 +72,7 @@
  "audit_file": "rules/audits/r891_alchemist_class.h",
  "audit_label": "R891 Alchemist class audit",
  "audit_anchor": "#include \"rules/audits/r890_remorhaz_lore.h\"  // R890: R890 Remorhaz lore audit",
- "gap_report": "tools/dragon_gap_report_002.md",
+ "gap_report": "tools/reports/dragon_gap_report_002.md",
  "gap_census": {
   "closed": 1,
   "open": 3

@@ -2,7 +2,7 @@
     // THE DRAGON ISSUE-10 CLOSURE ROUND - the pure flip. The issue-10
     // part-two box (the Gilbert dungeon method article, the Weights &
     // Measures article and the Holsinger level ritual article, folios 11-14,
-    // 19-21) closes 2 closed / 0 open in tools/dragon_gap_report_010.md; the
+    // 19-21) closes 2 closed / 0 open in tools/reports/dragon_gap_report_010.md; the
     // six-chain walk completes exactly as adjudicated at R914 and R915. The
     // bookkeeping pins: the two boxes and their six chains, the issue-9
     // report complete at 1 / 0 since R913, the issue-8 report complete at 1 /

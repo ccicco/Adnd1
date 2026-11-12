@@ -631,7 +631,7 @@ patch('regtest.cpp',
       anchor + NL + NL.join(aud))
 
 # ---------------------------------------------------------------------------
-# Patch 4: tools/dmg_gap_report.md - the round-log entry (R202 convention)
+# Patch 4: tools/reports/dmg_gap_report.md - the round-log entry (R202 convention)
 # ---------------------------------------------------------------------------
 
 entry = (
@@ -674,7 +674,7 @@ log_new = ('60 suicide); the hired-spy 8th-level cap.'
            + NL + 'the DMG-only sweep continues.'
            + NL + NL + entry + NL + NL + 'Categories:')
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R206 landed pursuit and evasion',
       log_old,
       log_new)

@@ -11,7 +11,7 @@
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R818 LANDED 2026-10-24: commit",
- "gap_report": "tools/mm2_gap_report.md",
+ "gap_report": "tools/reports/mm2_gap_report.md",
  "regtest": "regtest.cpp",
  "data_files": [],
  "banner": {

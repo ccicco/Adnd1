@@ -12,7 +12,7 @@
  "audit_label": "R955 issue-24 alignment pantheon audit",
  "audit_anchor": "#include \"rules/audits/r954_issue_24_variant_triptych.h\"  // R954: R954 issue-24 variant triptych audit",
  "audit_comment": "the alignment pantheon audit - the eighteen prime alignments, the twenty-one prime deities, the four elemental lords, the five sons of Thakta Tylden and the Headsman of Marly",
- "gap_report": "tools/dragon_gap_report_023.md",
+ "gap_report": "tools/reports/dragon_gap_report_023.md",
  "gap_census": {
   "closed": 3,
   "open": 0

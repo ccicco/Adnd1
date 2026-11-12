@@ -689,7 +689,7 @@ pair(UQ, '}   // namespace rules',
     'appendq: the R394 fill section')
 
 # ========= (f) the gap report ==========
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 
 pair(GP, B(
     '        the dice-count table cells',

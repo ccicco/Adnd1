@@ -53,7 +53,7 @@
  "audit_anchor": "#include \"rules/audits/r947_issue_22_sneak_preview.h\"  // R947: R947 issue-22 sneak preview audit",
  "audit_label": "R948 issue-22 commentary set audit",
  "audit_comment": "the five-chain commentary audit - the design philosophy essay, the pole arms taxonomy, the Berg rebuttal, the Kassala battle report and the games catalog roster",
- "gap_report": "tools/dragon_gap_report_022.md",
+ "gap_report": "tools/reports/dragon_gap_report_022.md",
  "gap_census": {
   "closed": 0,
   "open": 3

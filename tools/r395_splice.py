@@ -2205,7 +2205,7 @@ for bad in ('uadr ', 'uads2', 'uadet2'):
         die('rows stray token %r' % bad)
 
 # ============ (d) the gap report ============
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 
 pair(GP, B(
     '        the item stays OPEN,',

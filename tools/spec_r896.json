@@ -86,7 +86,7 @@
  "audit_file": "rules/audits/r896_specialists.h",
  "audit_label": "R896 specialists audit",
  "audit_anchor": "#include \"rules/audits/r895_women_magic.h\"  // R895: R895 women magic audit",
- "gap_report": "tools/dragon_gap_report_003.md",
+ "gap_report": "tools/reports/dragon_gap_report_003.md",
  "gap_census": {
   "closed": 1,
   "open": 4

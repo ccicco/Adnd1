@@ -4,7 +4,7 @@
  "prefix": "dju",
  "header_file": "rules/oa/oa78bisan.h",
  "regtest": "regtest.cpp",
- "gap_report": "tools/oa_gap_report.md",
+ "gap_report": "tools/reports/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "caller_files": [],
  "census_before": 629,

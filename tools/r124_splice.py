@@ -1554,9 +1554,9 @@ PATCHES = [
      RI_OLD, RI_NEW, "regtest appendixa include"),
     ("regtest.cpp", "R124 appendix A dressing audit",
      RT_OLD, RT_NEW, "regtest R124 audit"),
-    ("tools/dmg_gap_report.md", "R124 CLOSED Appendix A dressing",
+    ("tools/reports/dmg_gap_report.md", "R124 CLOSED Appendix A dressing",
      GH_OLD, GH_NEW, "gap report header note"),
-    ("tools/dmg_gap_report.md", "CLOSED R124: all tables",
+    ("tools/reports/dmg_gap_report.md", "CLOSED R124: all tables",
      GB_OLD, GB_NEW, "gap report appendix A box"),
 ]
 

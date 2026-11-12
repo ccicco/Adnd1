@@ -28,7 +28,7 @@
   "    data-quality pass. 136",
   "    file_patches, every byte derived",
   "    mechanically from",
-  "    tools/monsters.md (358",
+  "    tools/reports/monsters.md (358",
   "    @-records, 38 family headings):",
   "    25 family carriers regain their",
   "    own text_family prose, 61",
@@ -82,7 +82,7 @@
   "    naive-era prose.",
   "    WAIT FOR GO."
  ],
- "gap_report": "tools/mm2_gap_report.md",
+ "gap_report": "tools/reports/mm2_gap_report.md",
  "gap_census": {
   "closed": 37,
   "open": 0

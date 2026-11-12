@@ -14,7 +14,7 @@
 #                      hours; the stairs are the DMG's most-
 #                      wandered ground)
 #   regtest.cpp      - "R91 stairs audit: bad 0"
-#   tools/playverify_r77_r83.md - the walkthrough
+#   tools/reports/playverify_r77_r83.md - the walkthrough
 # DESIGN: the charge lands AFTER newDungeon (which resets
 # turnCount to 0) - the new level starts at 36, the honest
 # arrival time. One wander check per descent, same as rest.
@@ -147,7 +147,7 @@ OK &= patch('regtest.cpp',
 # ---------------------------------------------------------------------------
 # 4) playverify checklist - the R91 lines
 # ---------------------------------------------------------------------------
-OK &= patch('tools/playverify_r77_r83.md',
+OK &= patch('tools/reports/playverify_r77_r83.md',
 """## Sign-off""",
 """## R91: the stairs
 - [ ] Descend the stairs (step onto them): the new level's

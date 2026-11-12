@@ -3,7 +3,7 @@
  "prefix": "mm2hi",
  "header_file": "rules/mm/mm2hi.h",
  "regtest": "regtest.cpp",
- "gap_report": "tools/mm2_gap_report.md",
+ "gap_report": "tools/reports/mm2_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "census_before": 728,
  "title": "the MM2 letters HI walk - the hangman tree, haunt, hollyphant, hordling and hybsil turns",

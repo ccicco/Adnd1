@@ -3,7 +3,7 @@
  "prefix": "rns",
  "header_file": "rules/meta/rn_selfpatch_guard.h",
  "regtest": "regtest.cpp",
- "gap_report": "tools/oa_gap_report.md",
+ "gap_report": "tools/reports/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "census_before": 717,
  "title": "the rn self-patch guard",

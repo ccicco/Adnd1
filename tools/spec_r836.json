@@ -5,7 +5,7 @@
   "regtest": "regtest.cpp",
   "header_file": "rules/ff/promo_batch1.h",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
-  "gap_report": "tools/mm2_gap_report.md",
+  "gap_report": "tools/reports/mm2_gap_report.md",
   "banner": {
     "title": "the first FF promotion batch - the ff arc opens",
     "provenance": "spec-driven; the first Fiend Folio promotion batch - twenty-five defs lifted from the ff print as new lua data files (thirteen aquatic, twelve outdoor), the thirty-seven blank encounter cells rekeyed to their new defs, the walk-key censuses re-pinned (the aquatic 192 -> 211, the outdoor 572 -> 590), the registry 812 -> 837, the ff def census 2 -> 27, the source rows stay (ff 19 aquatic, 74 outdoor), no gap boxes flip; the def bodies carry the print-fidelity pin headers"

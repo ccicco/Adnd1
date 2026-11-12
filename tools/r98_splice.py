@@ -12,7 +12,7 @@
 #                       applyAgeBracket() helpers
 #   game/state_town.cpp - bracket advance at the birthday
 #   regtest.cpp       - R98 years tell audit
-#   tools/playverify_r77_r83.md - R98 section
+#   tools/reports/playverify_r77_r83.md - R98 section
 import sys, os
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)) + '/..')
@@ -238,7 +238,7 @@ OK &= patch('regtest.cpp',
 # ---------------------------------------------------------------------------
 # 4) playverify - the R98 section
 # ---------------------------------------------------------------------------
-OK &= patch('tools/playverify_r77_r83.md',
+OK &= patch('tools/reports/playverify_r77_r83.md',
 """## R97: the gray beard
 """,
 """## R98: the years tell

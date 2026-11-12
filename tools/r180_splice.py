@@ -441,10 +441,10 @@ patch('regtest.cpp',
       NL.join(aud) + NL + '    // ---- R163: the poison table audit -------------')
 
 # ---------------------------------------------------------------------------
-# Patch 4: tools/phb_gap_report.md - the R180 box flipped
+# Patch 4: tools/reports/phb_gap_report.md - the R180 box flipped
 # ---------------------------------------------------------------------------
 
-patch('tools/phb_gap_report.md',
+patch('tools/reports/phb_gap_report.md',
       'R180 the qualification and race gates - PINNED',
       '- R180 qualification and race gates - the ability'
       + NL + '      minimums and the alignment requirements;'
@@ -477,10 +477,10 @@ patch('tools/phb_gap_report.md',
       + NL + '      meets-min and bonus probes. Census 97.')
 
 # ---------------------------------------------------------------------------
-# Patch 5: tools/dmg_gap_report.md - the round note
+# Patch 5: tools/reports/dmg_gap_report.md - the round note
 # ---------------------------------------------------------------------------
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R180 landed the qualification',
       'Census stays 96 (no new audit).',
       'Census stays 96 (no new audit).'

@@ -1031,7 +1031,7 @@ assert len(applied) + len(already) == 5, 'b4 count'
 
 
 # ---- (c1) the gap: the IL spells close ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 if 'CLOSED R365: the 6th and' in s:
     already.append('gap report: the close')

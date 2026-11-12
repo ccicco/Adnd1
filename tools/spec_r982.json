@@ -52,7 +52,7 @@
   "  R713-R726 14 rec, R987 R727-R759 33 rec, R988",
   "  R760-R773 14 rec - the set closer). WAIT FOR GO."
  ],
- "gap_report": "tools/dragon_gap_report_026.md",
+ "gap_report": "tools/reports/dragon_gap_report_026.md",
  "gap_census": {
   "closed": 3,
   "open": 0

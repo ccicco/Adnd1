@@ -30,7 +30,7 @@ APP  = 'game/appstate.h'
 TOWN = 'game/state_town.cpp'
 AD   = 'adnd1.cpp'
 REG  = 'regtest.cpp'
-GAP  = 'tools/phb_gap_report.md'
+GAP  = 'tools/reports/phb_gap_report.md'
 
 NL = chr(10)
 BS = chr(92)

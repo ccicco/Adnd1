@@ -20,7 +20,7 @@
 #   game/state_core.cpp - save repair + load trailing int
 #   regtest.cpp       - R100 hire's years audit (incl. the
 #                       pinned save/load contract)
-#   tools/playverify_r77_r83.md - R100 section
+#   tools/reports/playverify_r77_r83.md - R100 section
 import sys, os
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)) + '/..')
@@ -279,7 +279,7 @@ OK &= patch('regtest.cpp',
 # ---------------------------------------------------------------------------
 # 9) playverify - the R100 section
 # ---------------------------------------------------------------------------
-OK &= patch('tools/playverify_r77_r83.md',
+OK &= patch('tools/reports/playverify_r77_r83.md',
 """## R98: the years tell
 """,
 """## R100: the hire's years

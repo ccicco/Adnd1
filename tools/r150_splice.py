@@ -12,7 +12,7 @@
 # (b) regtest.cpp - the include plus the R150 audit
 #     block (band edges both ways, the house
 #     discipline); the census reads 68 now.
-# (c) tools/dmg_gap_report.md - the R150 header note
+# (c) tools/reports/dmg_gap_report.md - the R150 header note
 #     and the Appendix I box flips closed, with the
 #     R149 box band-count slips corrected in place:
 #     the prints read 14 air-current bands (not 16),
@@ -778,11 +778,11 @@ patch("regtest.cpp", aud_old, aud_new,
       "regtest.cpp: R150 appendix I dressing audit",
       marker="R150 appendix I dressing audit")
 assert len(applied) + len(already) == 3
-patch("tools/dmg_gap_report.md", gap_head_old, gap_head_new,
+patch("tools/reports/dmg_gap_report.md", gap_head_old, gap_head_new,
       "gap report: R150 header note",
       marker="R150 PINNED the Appendix I dressing lists")
 assert len(applied) + len(already) == 4
-patch("tools/dmg_gap_report.md", gap_box_old, gap_box_new,
+patch("tools/reports/dmg_gap_report.md", gap_box_old, gap_box_new,
       "gap report: Appendix I box closed",
       marker="PINNED R150: dm/appendixi.h")
 assert len(applied) + len(already) == 5

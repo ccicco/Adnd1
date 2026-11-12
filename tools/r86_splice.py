@@ -11,7 +11,7 @@
 #   adnd1.cpp           - HUD roster token gains " pN" for
 #                         pack carriers (dungeon/at-a-glance)
 #   regtest.cpp         - "R86 cursed/hire audit: bad 0"
-#   tools/playverify_r77_r83.md - the R85 pack walkthrough
+#   tools/reports/playverify_r77_r83.md - the R85 pack walkthrough
 # All anchors and inserted text are ASCII-only (protocol rule).
 
 import sys, os
@@ -304,7 +304,7 @@ OK &= patch('regtest.cpp',
 # ---------------------------------------------------------------------------
 # 7) playverify checklist - the R85 pack walkthrough
 # ---------------------------------------------------------------------------
-OK &= patch('tools/playverify_r77_r83.md',
+OK &= patch('tools/reports/playverify_r77_r83.md',
 """## Sign-off""",
 """## R85: the pack (+ R86 hire's pack)
 - [ ] Win magic gear nobody equips (hoard rolls a weapon no

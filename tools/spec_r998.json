@@ -53,7 +53,7 @@
   "    SET CLOSER (cumulative 60,",
   "    remaining 0). WAIT FOR GO."
  ],
- "gap_report": "tools/dsg_gap_report.md",
+ "gap_report": "tools/reports/dsg_gap_report.md",
  "gap_census": {
   "closed": 155,
   "open": 0

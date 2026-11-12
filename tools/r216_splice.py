@@ -567,7 +567,7 @@ patch('regtest.cpp',
       new3)
 
 # ---------------------------------------------------------------------------
-# Patch 4: tools/dmg_gap_report.md - the log entry
+# Patch 4: tools/reports/dmg_gap_report.md - the log entry
 # ---------------------------------------------------------------------------
 
 log_lines = [
@@ -628,7 +628,7 @@ new4 = ('the AD&D campaign milieu sections, upload' + NL
         + 'lines ~8720+).' + NL + NL + log_entry + NL
         + NL + 'Categories:')
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R216 landed the magical research pins',
       old4,
       new4)

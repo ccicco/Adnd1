@@ -45,7 +45,7 @@
   "    Next in the queue: the deity seam.",
   "    WAIT FOR GO."
  ],
- "gap_report": "tools/ddg_gap_report.md",
+ "gap_report": "tools/reports/ddg_gap_report.md",
  "gap_flips": [],
  "gap_census": {
   "closed": 24,

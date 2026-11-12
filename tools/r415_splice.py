@@ -90,7 +90,7 @@
 #    the yawn band derivation
 #    cross-checking itself;
 #    census 341 -> 342.
-# 3. tools/ua_gap_report.md:
+# 3. tools/reports/ua_gap_report.md:
 #    the MU cantrips box takes
 #    AMENDED R415 - the
 #    person-affecting
@@ -666,8 +666,8 @@ R227 = ('    // ---- R227: the wis mental'
 pair(RT, R227, AUD + NL + R227,
      'regtest: the R415 audit block')
 
-# ======== (d) tools/ua_gap_report.md ========
-GP = 'tools/ua_gap_report.md'
+# ======== (d) tools/reports/ua_gap_report.md ========
+GP = 'tools/reports/ua_gap_report.md'
 
 pair(GP, E(
     '      - AMENDED R414: the',

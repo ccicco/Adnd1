@@ -8,7 +8,7 @@
 // capture margin so all cites are capture pages; contested cells settle
 // book-internal first, then against the physical copy). THE OA GAP REPORT
 // LANDS WITH THIS ROUND IN THE SAME COMMIT - the R564 MotP opener pattern:
-// tools/oa_gap_report.md ships pre-flip (235 boxes, 0 closed) beside the
+// tools/reports/oa_gap_report.md ships pre-flip (235 boxes, 0 closed) beside the
 // spec, and the engine flips the opener boxes in place.
 //
 // the gap census after this round: 4 closed, 231 open - the OA arc begins

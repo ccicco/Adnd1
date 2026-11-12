@@ -10,7 +10,7 @@
 #                      the mode switch (an interrupted
 #                      retreat stays in the dungeon)
 #   regtest.cpp      - "R92 road audit: bad 0"
-#   tools/playverify_r77_r83.md - the walkthrough
+#   tools/reports/playverify_r77_r83.md - the walkthrough
 # DESIGN: the check rolls before mode = MODE_TOWN, so a
 # followed company fights on the level it stood on. The
 # climb is pace-free (route-finding, stairs parity). Turn
@@ -155,7 +155,7 @@ OK &= patch('regtest.cpp',
 # ---------------------------------------------------------------------------
 # 4) playverify checklist - the R92 lines
 # ---------------------------------------------------------------------------
-OK &= patch('tools/playverify_r77_r83.md',
+OK &= patch('tools/reports/playverify_r77_r83.md',
 """## Sign-off""",
 """## R92: the road home
 - [ ] Retreat to town ([B]): the return is no longer instant -

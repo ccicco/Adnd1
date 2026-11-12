@@ -24,22 +24,22 @@
 # reference-sheet repeats recorded as
 # covered notes.
 #
-#   (a) tools/dmg_gap_report.md - the
+#   (a) tools/reports/dmg_gap_report.md - the
 #       chronicle paragraph.
-#   (b) tools/dmg_gap_report.md - the
+#   (b) tools/reports/dmg_gap_report.md - the
 #       two open boxes (the hirelings
 #       cost tables, the sage
 #       subsection).
-#   (c) tools/dmg_gap_report.md - the
+#   (c) tools/reports/dmg_gap_report.md - the
 #       OUT bullet (the helmets, the
 #       peasants, the Appendix C
 #       appearance family, the glossary
 #       and afterword).
-#   (d) tools/phb_gap_report.md - the
+#   (d) tools/reports/phb_gap_report.md - the
 #       R307 scope section and the open
 #       box (the general equipment cost
 #       lists).
-#   (e) tools/phb_gap_report.md - the
+#   (e) tools/reports/phb_gap_report.md - the
 #       OUT additions (the vision
 #       appendix, the end-of-book advice
 #       sections).
@@ -80,7 +80,7 @@ def clean(s):
         assert all(ord(c) < 128 for c in ln), 'non-ascii line'
         assert len(ln) <= 57, 'line too long: ' + ln
 
-# ---- (a) tools/dmg_gap_report.md: the chronicle ----
+# ---- (a) tools/reports/dmg_gap_report.md: the chronicle ----
 DMG_A_OLD = NL.join([
     'moves 229 -> 231).',
     '',
@@ -121,7 +121,7 @@ DMG_A_NEW = NL.join([
 clean(DMG_A_OLD)
 clean(DMG_A_NEW)
 
-# ---- (b) tools/dmg_gap_report.md: the open boxes ----
+# ---- (b) tools/reports/dmg_gap_report.md: the open boxes ----
 DMG_B_OLD = NL.join([
     '      cityRuffianKind), audited by the R174 battery',
     '      block. Census 92.',
@@ -170,7 +170,7 @@ DMG_B_NEW = NL.join([
 clean(DMG_B_OLD)
 clean(DMG_B_NEW)
 
-# ---- (c) tools/dmg_gap_report.md: the OUT bullet ----
+# ---- (c) tools/reports/dmg_gap_report.md: the OUT bullet ----
 DMG_C_OLD = NL.join([
     'R172 note and the box below).',
     '',
@@ -204,7 +204,7 @@ DMG_C_NEW = NL.join([
 clean(DMG_C_OLD)
 clean(DMG_C_NEW)
 
-# ---- (d) tools/phb_gap_report.md: the section + open box ----
+# ---- (d) tools/reports/phb_gap_report.md: the section + open box ----
 PHB_D_OLD = NL.join([
     '## Out of engine scope (the R296 additions)',
 ])
@@ -261,7 +261,7 @@ PHB_D_NEW = NL.join([
 clean(PHB_D_OLD)
 clean(PHB_D_NEW)
 
-# ---- (e) tools/phb_gap_report.md: the OUT additions ----
+# ---- (e) tools/reports/phb_gap_report.md: the OUT additions ----
 PHB_E_OLD = NL.join([
     'the pin',
     '  round waits for that source.',
@@ -300,7 +300,7 @@ clean(PHB_E_OLD)
 clean(PHB_E_NEW)
 
 # ---- apply: the DMG patches ----
-p = 'tools/dmg_gap_report.md'
+p = 'tools/reports/dmg_gap_report.md'
 s = rd(p)
 if 'R307 the fresh gap pass (a report' in s:
     already.append('dmg chronicle')
@@ -346,7 +346,7 @@ assert s.count('the battery census stays 231') == 1, \
 assert s.count('pinned since R67') == 1, 'patch a repair note'
 
 # ---- apply: the PHB patches ----
-p = 'tools/phb_gap_report.md'
+p = 'tools/reports/phb_gap_report.md'
 s = rd(p)
 if '## R307 the fresh gap pass (the fourth' in s:
     already.append('phb scope section')

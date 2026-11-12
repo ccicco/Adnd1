@@ -89,14 +89,14 @@ assert len(applied) + len(already) == 3
 
 p4_old = NL.join(['mode selection, bears grapple, monks unimpeded).', 'Census 78.', '', 'Categories:'])
 p4_new = NL.join(['mode selection, bears grapple, monks unimpeded).', 'R161 PINNED attacks with two weapons (DMG p.70) -', 'rules/dmg/twoweapon.h: one weapon in each hand (the shield', 'option discarded), the second weapon a dagger or hand', 'axe only, the penalty ladder (primary -2, secondary', '-4; eased above dex 15 - 16: -1/-3, 17: 0/-2, 18:', '0/-1 - never a positive rating), dex below 6 adding', 'the PHB Reaction/Attacking Adjustment to EACH attack', '(caller-side), and the secondary weapon never acting', 'as a shield or parrying device. Census 79.', '', 'Categories:'])
-patch("tools/dmg_gap_report.md", p4_old, p4_new,
+patch("tools/reports/dmg_gap_report.md", p4_old, p4_new,
       "gap report: R161 header note",
       marker='R161 PINNED attacks with two weapons')
 assert len(applied) + len(already) == 4
 
 p5_old = NL.join(['- [ ] **Attacks with two weapons (p.70)** - the R7', '      double-attack named leader: the two-weapon', '      conventions for attack and armor class.'])
 p5_new = NL.join(['- [x] **Attacks with two weapons (p.70)** - pinned by', '      R161: rules/dmg/twoweapon.h (the dagger/hand-axe', '      gate, the penalty ladder with the dex easing,', '      the low-dex add-to-each rule, no shield or', '      parry from the second weapon).'])
-patch("tools/dmg_gap_report.md", p5_old, p5_new,
+patch("tools/reports/dmg_gap_report.md", p5_old, p5_new,
       "gap report: two weapons box closed",
       marker='Attacks with two weapons (p.70)** - pinned by')
 assert len(applied) + len(already) == 5

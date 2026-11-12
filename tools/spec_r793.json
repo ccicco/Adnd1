@@ -3,7 +3,7 @@
  "prefix": "prf",
  "header_file": "rules/meta/registry_def_name_fix.h",
  "regtest": "regtest.cpp",
- "gap_report": "tools/oa_gap_report.md",
+ "gap_report": "tools/reports/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "census_before": 715,
  "title": "the registry promotion def name fix",

@@ -78,7 +78,7 @@
 #    cross-checking
 #    themselves; census
 #    343 -> 344.
-# 3. tools/ua_gap_report.md:
+# 3. tools/reports/ua_gap_report.md:
 #    the MU cantrips box takes
 #    AMENDED R417 - the
 #    haunting-sound
@@ -627,8 +627,8 @@ R227 = ('    // ---- R227: the wis mental'
 pair(RT, R227, AUD + NL + R227,
      'regtest: the R417 audit block')
 
-# ======== (d) tools/ua_gap_report.md ========
-GP = 'tools/ua_gap_report.md'
+# ======== (d) tools/reports/ua_gap_report.md ========
+GP = 'tools/reports/ua_gap_report.md'
 
 GP_R417 = E(
     '      - AMENDED R417: the',

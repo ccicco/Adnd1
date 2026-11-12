@@ -616,7 +616,7 @@ assert s.count(mark) == 1, 'patch 2 failed'
 assert s.count('R283 special artifacts prose part 4 pins audit: bad %d' + BS + 'n') == 1, 'patch 2 doubled'
 
 # ---- patch 3: the gap report entry ----
-p = 'tools/dmg_gap_report.md'
+p = 'tools/reports/dmg_gap_report.md'
 s = rd(p)
 mark = 'R283 landed the III.E Special'
 if mark in s:

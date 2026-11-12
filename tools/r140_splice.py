@@ -533,7 +533,7 @@ patch("regtest.cpp", old_r139_head + NL,
       "regtest.cpp: R140 audit",
       marker="R140 final sweep audit")
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """      change-family audit; census 57.
 
 ## Out of scope by design

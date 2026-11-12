@@ -41,7 +41,7 @@
   "  and the spell-grid dash-to-0 conversions are",
   "  the round's stated transforms. GAP REPORT: the",
   "  Women & Magic box flipped in",
-  "  tools/dragon_gap_report_003.md -> issue-3",
+  "  tools/reports/dragon_gap_report_003.md -> issue-3",
   "  report 1 closed / 4 open. LESSON APPLIED",
   "  (R895): the fresh-unpack-after-abort ritual -",
   "  both aborts this round (a bool name mismatch,",
@@ -65,7 +65,7 @@
  "audit_file": "rules/audits/r897_fighting_sub_classes.h",
  "audit_label": "R897 fighting sub-classes audit",
  "audit_anchor": "#include \"rules/audits/r896_specialists.h\"  // R896: R896 specialists audit",
- "gap_report": "tools/dragon_gap_report_003.md",
+ "gap_report": "tools/reports/dragon_gap_report_003.md",
  "gap_census": {
   "closed": 2,
   "open": 3

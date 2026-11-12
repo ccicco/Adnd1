@@ -66,7 +66,7 @@
 #    dirty/clean pairs
 #    cross-checking each other;
 #    census 339 -> 340.
-# 3. tools/ua_gap_report.md: the
+# 3. tools/reports/ua_gap_report.md: the
 #    MU cantrips box takes
 #    AMENDED R413 - the reversed
 #    descriptions land; the
@@ -588,8 +588,8 @@ R227 = ('    // ---- R227: the wis mental'
 pair(RT, R227, AUD + NL + R227,
      'regtest: the R413 audit block')
 
-# ======== (d) tools/ua_gap_report.md ========
-GP = 'tools/ua_gap_report.md'
+# ======== (d) tools/reports/ua_gap_report.md ========
+GP = 'tools/reports/ua_gap_report.md'
 
 pair(GP, E(
     '      - AMENDED R412: the useful',

@@ -46,7 +46,7 @@
 #    R397 audit block lands
 #    before the R227 anchor;
 #    the census 323 -> 324.
-# 6. tools/ua_gap_report.md:
+# 6. tools/reports/ua_gap_report.md:
 #    all four items flip
 #    AMENDED R397: closed.
 # 7. The seed takes the R396
@@ -1573,7 +1573,7 @@ pair(WAN, B(
     'uawandprose: the extract ledger')
 
 # ============ (c) the gap report ============
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 
 pair(GP, B(
     '        garbled remainder.',

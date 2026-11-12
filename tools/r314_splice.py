@@ -61,7 +61,7 @@
 #       audit (seeded scenarios the replica
 #       walked first); the battery census
 #       moves 239 -> 241.
-#   (j) tools/dmg_gap_report.md - the
+#   (j) tools/reports/dmg_gap_report.md - the
 #       chronicle paragraph (no box flip).
 #
 # NOT CHARGED (recorded, the seam header):
@@ -948,7 +948,7 @@ assert s.count('{') == s.count('}'), 'rt brace balance'
 assert s.count('(') == s.count(')'), 'rt paren balance'
 assert len(applied) + len(already) == 9, 'patch i count wrong'
 
-# ---- (j) tools/dmg_gap_report.md: the chronicle ----
+# ---- (j) tools/reports/dmg_gap_report.md: the chronicle ----
 CH_OLD = NL.join([
     'roster). The census moves 237 -> 239',
     'with the R313a seam and R313 engine',
@@ -993,7 +993,7 @@ CH_NEW = NL.join([
 clean(CH_OLD, 57, gap=True)
 clean(CH_NEW, 57, gap=True)
 
-p = 'tools/dmg_gap_report.md'
+p = 'tools/reports/dmg_gap_report.md'
 s = rd(p)
 if 'R314 the deep crossbow' in s:
     already.append('dmg report: the chronicle')

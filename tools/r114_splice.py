@@ -52,7 +52,7 @@ def main():
             changed += 1
             write("regtest.cpp", r)
 
-    g = read("tools/dmg_gap_report.md")
+    g = read("tools/reports/dmg_gap_report.md")
     if "R114 CLOSED divergence 6" in g:
         print("already applied: gap report header note")
     else:
@@ -66,7 +66,7 @@ def main():
         if did:
             changed += 1
     if "R114 CLOSED divergence 6" in g and "CLOSED R114" in g:
-        write("tools/dmg_gap_report.md", g)
+        write("tools/reports/dmg_gap_report.md", g)
 
     if changed == 4:
         print("R114 splice: ALL OK")

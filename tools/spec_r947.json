@@ -55,7 +55,7 @@
  "audit_anchor": "#include \"rules/audits/r946_issue_22_opener_part_one.h\"  // R946: R946 issue-22 opener part one audit",
  "audit_label": "R947 issue-22 sneak preview audit",
  "audit_comment": "THE DRAGON ISSUE-22 OPENER PART TWO - the AD&D sneak preview of the Dungeon Masters Guide, the single-chain table round of the four-round shape. Pinned: the magic items of the six modules (the amulet of the planes and its seventeen plane bands, the hammer of thunderbolts, the helm of underwater action, the Nolzur pigments, the pearl of wisdom, the periapt chart, the two philters, the water breathing potion), the four elemental command rings with their power counts and save penalties, the eight protection scrolls with their reading times and hit-dice caps, the creatures-struck-only-by-magic-weapons grades, the grenade-like missile rules, the attack matrix I.D point one for thieves assassins and monks, the cleric-undead matrix with the T D and dash symbols converted ninety-seven ninety-eight ninety-nine and zero, the psionic IV.B crush percentages IV.C blast saves and IV.D ranges, and the three saving throw matrices - the characters, the monster rules and the items. The print catches pinned as scanned: Freet Giant Jari, con penetrate, jackolwere, wralths, the Ghost row printed twice for the Ghast, Petrifaction, the farce and an die footnote, the missing I.D footnote e, the I.B armor class three eleven and the dropped armor class ten cell, the five I.C bands over four columns with the dangling Opponent, and the overlapping IV.B defender band.",
- "gap_report": "tools/dragon_gap_report_022.md",
+ "gap_report": "tools/reports/dragon_gap_report_022.md",
  "gap_census": {
   "closed": 0,
   "open": 3

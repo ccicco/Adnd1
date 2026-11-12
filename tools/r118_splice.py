@@ -331,9 +331,9 @@ PATCHES = [
      RI_OLD, RI_NEW, "regtest includes abilities"),
     ("regtest.cpp", "R118 listening at doors audit",
      RT_OLD, RT_NEW, "regtest R118 audit"),
-    ("tools/dmg_gap_report.md", "R118 CLOSED listening at doors",
+    ("tools/reports/dmg_gap_report.md", "R118 CLOSED listening at doors",
      GH_OLD, GH_NEW, "gap report header note"),
-    ("tools/dmg_gap_report.md", "CLOSED R118: the book's table is",
+    ("tools/reports/dmg_gap_report.md", "CLOSED R118: the book's table is",
      GB_OLD, GB_NEW, "gap report listening box"),
 ]
 

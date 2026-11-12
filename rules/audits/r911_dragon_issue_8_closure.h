@@ -1,7 +1,7 @@
     // ---- R911 Dragon issue-8 closure audit ----
     // THE DRAGON ISSUE-8 BOX CLOSING ROUND - the pure bookkeeping round, no
     // new print ink. The flip: the issue-8 box in
-    // tools/dragon_gap_report_008.md goes [x] - 1 closed / 0 open, the
+    // tools/reports/dragon_gap_report_008.md goes [x] - 1 closed / 0 open, the
     // issue-8 walk complete, the three chains (the Gygax Planes article, the
     // Watson towns article, the Kuntz gems re-evaluation at folios 4-5, 5-7,
     // 22-23) having been the only engine-relevant ink in issue #8. The

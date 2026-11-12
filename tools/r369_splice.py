@@ -274,7 +274,7 @@ assert len(applied) + len(already) == 2, 'b count'
 
 
 # ---- (c) the gap report: the item close ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 if '- [x] **Cantrip acquisition, MU**' in s:
     already.append('gap report: the item close')
@@ -317,7 +317,7 @@ else:
     applied.append('gap report: the item close')
 
 # ---- (c) the gap kept asserts ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 assert s.count(
     '- [x] **Cantrip acquisition, MU**'

@@ -5,7 +5,7 @@
   "regtest": "regtest.cpp",
   "header_file": "rules/meta/migration_batch_planes_oa.h",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
-  "gap_report": "tools/mm2_gap_report.md",
+  "gap_report": "tools/reports/mm2_gap_report.md",
   "banner": {
     "title": "the planes and OA migration batch - the eighth batch rides the same wiring",
     "provenance": "spec-driven; the eighth batch of real audit blocks (digest idx 441-549, R562 DSG intro frame through R671 OA wu jen second level spells - the DSG tail, the MotP planes, the DMO sections, the first OA ability, class, family, equipment, and spell pins; 100 blocks at Curtiss's 100-per-round pace call, 19285 lines) move verbatim into rules/audits fragments, regtest keeps the one-line include at each head line; the census holds, the labels relocate; the round audit rides a fragment as before"

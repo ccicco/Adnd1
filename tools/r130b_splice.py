@@ -12,7 +12,7 @@
 #    P6 meant to hit - its anchor text only exists in
 #    spells.cpp) updates to the printed-tables wording
 #    with the 12th-level pins standing
-#  - tools/dmg_gap_report.md: the R130 box inserts with the
+#  - tools/reports/dmg_gap_report.md: the R130 box inserts with the
 #    CORRECT indented anchor (the r130 splice missed the
 #    six leading spaces on "Pinned by the R128...")
 #  - sanity gates: the six r130-applied markers and the
@@ -162,7 +162,7 @@ else:
                 applied.append("regtest.cpp: R130 audit rebuild")
 
 # ---- B3: the gap report box (indented anchor) ----
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """      Pinned by the R128 battery audit; census 46.
 
 ## Out of scope by design

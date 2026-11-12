@@ -5,7 +5,7 @@
   "regtest": "regtest.cpp",
   "header_file": "rules/meta/migration_batch_oa_tail.h",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
-  "gap_report": "tools/mm2_gap_report.md",
+  "gap_report": "tools/reports/mm2_gap_report.md",
   "banner": {
     "title": "the OA tail migration batch - the ninth batch, a clean hundred",
     "provenance": "spec-driven; the ninth batch of real audit blocks (digest idx 550-649, R672 OA wu jen third level spells through R771 OA open boxes - the OA spells, combat, calendar, monsters, treasure, armor and weapons, Kara-Tur, and daily-life pins; 100 blocks at Curtiss's 100-per-round pace call, 12737 lines, zero blocks held back) move verbatim into rules/audits fragments, regtest keeps the one-line include at each head line; the census holds, the labels relocate; the round audit rides a fragment as before"

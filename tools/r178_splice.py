@@ -14,7 +14,7 @@
 # report out-of-scope notes flip to the arc, and the
 # arc plan with its round queue is recorded:
 #
-#   (a) tools/phb_gap_report.md - the subclasses
+#   (a) tools/reports/phb_gap_report.md - the subclasses
 #       bullet and the druid/illusionist spell-list
 #       bullet flip from out-of-scope to the arc, and
 #       the ARC SECTION is appended: the scope
@@ -22,7 +22,7 @@
 #       qualification and race gates, attacks per
 #       round, the spell layers, multi-class and
 #       dual-class, then the per-subclass specials).
-#   (b) tools/dmg_gap_report.md - the round-note chain
+#   (b) tools/reports/dmg_gap_report.md - the round-note chain
 #       gains the R178 note pointing at the arc.
 #
 # A scope round adds NO audit; the battery census
@@ -177,22 +177,22 @@ p4_new = NL.join([
 ])
 
 # ---- run ----
-patch("tools/phb_gap_report.md", p1_old, p1_new,
+patch("tools/reports/phb_gap_report.md", p1_old, p1_new,
       "phb report: subclasses bullet opened",
       marker="OPENED R178: the subclass")
 assert len(applied) + len(already) == 1
 
-patch("tools/phb_gap_report.md", p2_old, p2_new,
+patch("tools/reports/phb_gap_report.md", p2_old, p2_new,
       "phb report: spell-list bullet split",
       marker="OPENED" + NL + "  R178: the subclass arc (they join the spell")
 assert len(applied) + len(already) == 2
 
-patch("tools/phb_gap_report.md", p3_old, p3_new,
+patch("tools/reports/phb_gap_report.md", p3_old, p3_new,
       "phb report: the subclass arc section",
       marker="## The subclass arc (OPENED R178")
 assert len(applied) + len(already) == 3
 
-patch("tools/dmg_gap_report.md", p4_old, p4_new,
+patch("tools/reports/dmg_gap_report.md", p4_old, p4_new,
       "dmg report: R178 round note",
       marker="R178 OPENED the subclass arc")
 assert len(applied) + len(already) == 4

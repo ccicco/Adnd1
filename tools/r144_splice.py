@@ -15,7 +15,7 @@
 # follows EVERY patch (the R142 lesson).
 #  - regtest.cpp: the R144 p.71 golden melee audit
 #    (census 62)
-#  - tools/dmg_gap_report.md: the R144 box (the old
+#  - tools/reports/dmg_gap_report.md: the R144 box (the old
 #    rules-core debt closes; the per-weapon AC rows and the
 #    dwarf magic-save bonus are named as standing
 #    approximations)
@@ -176,7 +176,7 @@ patch("regtest.cpp", old_r143_head + NL,
       marker="R144 golden melee audit")
 assert len(applied) + len(already) == 1
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """      wing audit; census 61.
 
 ## Out of scope by design

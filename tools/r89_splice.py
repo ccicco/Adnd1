@@ -15,7 +15,7 @@
 #                    fires on ticks (a 30' company is checked
 #                    four times per step)
 #   regtest.cpp    - "R89 pace audit: bad 0"
-#   tools/playverify_r77_r83.md - the walkthrough
+#   tools/reports/playverify_r77_r83.md - the walkthrough
 # DESIGN: coins are LIQUID - the packAdd gear gate excludes
 # them by design (coin can be dropped/spent instantly); the
 # burden display, the [E] warning and the pace tell the truth.
@@ -287,7 +287,7 @@ OK &= patch('regtest.cpp',
 # ---------------------------------------------------------------------------
 # 7) playverify checklist - the R89 lines
 # ---------------------------------------------------------------------------
-OK &= patch('tools/playverify_r77_r83.md',
+OK &= patch('tools/reports/playverify_r77_r83.md',
 """## Sign-off""",
 """## R89: the scale + the pace
 - [ ] [D] dump kit: the "Carried:" line now ends

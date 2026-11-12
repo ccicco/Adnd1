@@ -5,7 +5,7 @@
 // census 835 -> 836.
 //
 // The pure box-closing round, no new ink: the issue-9 box in
-// tools/dragon_gap_report_009.md flips closed (1 / 0), completing the issue-9
+// tools/reports/dragon_gap_report_009.md flips closed (1 / 0), completing the issue-9
 // walk exactly as adjudicated at R912 - the Gygax alignment article and the
 // Ward Tombs & Crypts article having been the only engine-relevant ink in
 // issue #9 (the Finzer Family fiction, the Barker EPT column, the Blume Boot

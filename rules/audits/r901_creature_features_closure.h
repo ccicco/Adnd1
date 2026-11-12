@@ -1,7 +1,7 @@
     // ---- R901 Creature Features closure audit ----
     // THE CREATURE FEATURES BOX CLOSING ROUND - the pure bookkeeping round,
     // no new print ink. The flip: the Creature Features box in
-    // tools/dragon_gap_report_004.md goes [x] - 1 closed / 0 open, the
+    // tools/reports/dragon_gap_report_004.md goes [x] - 1 closed / 0 open, the
     // issue-4 walk complete, the chain (the Mihalli, the Vriyagga, the Qu'uni
     // at folios 18-19, 21) having been the only engine-relevant ink in issue
     // #4. The bookkeeping pins: the single box and its three defs, the

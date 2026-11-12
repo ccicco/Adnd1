@@ -3,7 +3,7 @@
   "prefix": "dcq",
   "header_file": "rules/dsg/dsgintro.h",
   "regtest": "regtest.cpp",
-  "gap_report": "tools/dsg_gap_report.md",
+  "gap_report": "tools/reports/dsg_gap_report.md",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
   "census_before": 485,
   "title": "the DSG what-is-it front matter",

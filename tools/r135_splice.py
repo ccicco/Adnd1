@@ -15,7 +15,7 @@
 #  - regtest.cpp: the four audits' mechanical count pins
 #    update (19 -> 24), three audit comments update, and
 #    the new R135 audit pins the set (census 53)
-#  - tools/dmg_gap_report.md: the R128/R132/R133/R134
+#  - tools/reports/dmg_gap_report.md: the R128/R132/R133/R134
 #    boxes' dressing counts drop to 41; the R135 box
 #    closes
 # This file contains ZERO backslash characters - the
@@ -302,7 +302,7 @@ patch("regtest.cpp",
       "regtest.cpp: R132 comment 24",
       marker="of 65 (R135 grew it)")
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """      2d6). R132's second-effects slice wires six more
       (the R132 box), R133's five more (the R133 box),
       R134's three deep (the R134 box). The other 46
@@ -319,7 +319,7 @@ patch("tools/dmg_gap_report.md",
       "gap report: R128 box 41",
       marker="R135's five" + NL + "      geometry")
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """      The R133 slice wires five more (the R133 box),
       R134's three deep waters (the R134 box). The
       remaining 46 attributes stay dressing;
@@ -336,7 +336,7 @@ patch("tools/dmg_gap_report.md",
       "gap report: R132 box 41",
       marker="R135's" + NL + "      five geometry")
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """      documented. The R134 slice wires the three deep
       waters (the R134 box). The remaining 46
       attributes stay dressing; their effects ride
@@ -353,7 +353,7 @@ patch("tools/dmg_gap_report.md",
       "gap report: R133 box 41",
       marker="R135's five geometry")
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """      effects ride future rounds. Pinned by the R134
       battery audit; census 52.
 

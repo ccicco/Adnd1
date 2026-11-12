@@ -6,7 +6,7 @@
 # full close. This round creates the same inventory
 # for the Players Handbook:
 #
-#   (a) tools/phb_gap_report.md CREATED - the whole
+#   (a) tools/reports/phb_gap_report.md CREATED - the whole
 #       book read against the engine: verified boxes
 #       (with their rounds), the ranked DIVERGENT
 #       fix-round candidates, the open items and the
@@ -21,7 +21,7 @@
 #       language ladder, the CHA scale plus two
 #       henchmen cells, and the prime-requisite rungs
 #       (open verify).
-#   (b) tools/dmg_gap_report.md - the round-note chain
+#   (b) tools/reports/dmg_gap_report.md - the round-note chain
 #       gains the R177 note pointing at the sibling
 #       report.
 #
@@ -51,7 +51,7 @@ REPORT = NL.join([
     "# PHB Gap Report - the book vs the repo",
     "",
     "R177 CREATION. THE SECOND BOOK, WHOLE. The DMG gap",
-    "report (tools/dmg_gap_report.md) covers the Dungeon",
+    "report (tools/reports/dmg_gap_report.md) covers the Dungeon",
     "Masters Guide; this sibling report inventories the",
     "Players Handbook (the Premium 1e OCR upload)",
     "against the same engine, end to end. Engine scope:",
@@ -226,7 +226,7 @@ REPORT = NL.join([
 ])
 
 def patch_report():
-    p = os.path.join(ROOT, "tools/phb_gap_report.md")
+    p = os.path.join(ROOT, "tools/reports/phb_gap_report.md")
     if os.path.exists(p):
         with open(p, encoding="ascii") as f:
             s = f.read()
@@ -236,7 +236,7 @@ def patch_report():
             fails.append("phb_gap_report.md exists without "
                          "the R177 marker")
         return
-    wr("tools/phb_gap_report.md", REPORT)
+    wr("tools/reports/phb_gap_report.md", REPORT)
     applied.append("phb_gap_report.md created")
 
 patch_report()
@@ -253,7 +253,7 @@ p2_new = NL.join([
     "beyond-table probes and the clamps.",
     "Census 94.",
     "R177 CREATED the PHB gap report",
-    "(tools/phb_gap_report.md) - the sibling",
+    "(tools/reports/phb_gap_report.md) - the sibling",
     "whole-book inventory for the Players Handbook,",
     "same conventions: verified boxes, ranked",
     "divergences, open items, out-of-scope notes.",
@@ -265,7 +265,7 @@ p2_new = NL.join([
     "audit; census stays 94.",
 ])
 
-p = os.path.join(ROOT, "tools/dmg_gap_report.md")
+p = os.path.join(ROOT, "tools/reports/dmg_gap_report.md")
 with open(p, encoding="ascii") as f:
     s = f.read()
 if "R177 CREATED the PHB gap report" in s:
@@ -276,7 +276,7 @@ else:
         fails.append("dmg_gap_report.md round note: anchor "
                      "count " + str(n) + " (expected 1)")
     else:
-        wr("tools/dmg_gap_report.md", s.replace(p2_old, p2_new))
+        wr("tools/reports/dmg_gap_report.md", s.replace(p2_old, p2_new))
         applied.append("dmg_gap_report.md: R177 round note")
 assert len(applied) + len(already) == 2
 
@@ -299,7 +299,7 @@ else:
     print("R177 splice: ALL OK (applied " + str(len(applied))
           + ", already " + str(len(already)) + ")")
 print("R177 note: 2 patches; no audit added, census 94;")
-print("real gate: md5sum tools/phb_gap_report.md")
+print("real gate: md5sum tools/reports/phb_gap_report.md")
 print("commit: R177: the PHB gap report created - the")
 print("sibling whole-book inventory (census 94)")
 

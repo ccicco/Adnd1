@@ -2,7 +2,7 @@
     // THE DRAGON ISSUE-12 CLOSURE ROUND - the pure flip, no new ink. The
     // issue-12 part-two box (the Persian Mythos and the Lovecraftian Mythos,
     // folios 8-11 and 18-21) closes 2 closed / 0 open in
-    // tools/dragon_gap_report_012.md; the four-chain walk completes exactly
+    // tools/reports/dragon_gap_report_012.md; the four-chain walk completes exactly
     // as adjudicated - the R919 part-one pair (the Ovalle illusionist article
     // and the Endersby and Carroll ship cargo article) and the R920 part-two
     // pair (the Arkenberg Persian Mythos and the Kuntz/Holmes Lovecraftian

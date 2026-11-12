@@ -188,14 +188,14 @@ assert len(applied) + len(already) == 18
 
 p19_old = NL.join(['print wins. Census 72.', '', 'Categories:'])
 p19_new = NL.join(['print wins. Census 72.', 'R155 PINNED matrix II.C (DMG p.80) - the classed', 'monsters: a classed foe saves on its MOST FAVORABLE', 'matrix (footnotes 1-2). The five MM1 write-ups that', 'print class abilities (brownie, dolphin, displacer', 'beast, couatl, ki-rin) gain the Lua saveAs key (class', 'bits + per-class levels; the couatl carries MU 5 AND', 'cleric 7), mostFavorableSaveTarget mins the save in', 'spelleffects and the ai save helper, and the displacer', '+2 save die rides the actor saveBonus. FINDING: the', 'displacer magicResistance write-up (a save-as note)', 'misparsed as 12% MR - fixed to read 0. Judgment left', 'for a later lane: ixitxachitl (clerical, per-leader)', 'and the humanoid classed leaders are per-encounter', 'extras, not base-monster data. Census 73.', '', 'Categories:'])
-patch("tools/dmg_gap_report.md", p19_old, p19_new,
+patch("tools/reports/dmg_gap_report.md", p19_old, p19_new,
       "gap report: R155 header note",
       marker='R155 PINNED matrix II.C')
 assert len(applied) + len(already) == 19
 
 p20_old = NL.join(['- [ ] **Matrix II.C (classed monsters, most favorable', '      matrix)** - the R147 named gap: the per-monster', '      class pass, so a classed foe saves on its own', '      class matrix when that beats matrix II.'])
 p20_new = NL.join(['- [x] **Matrix II.C (classed monsters, most favorable', '      matrix)** - pinned by R155: the saveAs data pass', '      (class bits + per-class levels, the Lua key) and', '      mostFavorableSaveTarget min the save in', '      spelleffects/trySave and the ai save helper; the', '      five MM1 classed write-ups carry the data.'])
-patch("tools/dmg_gap_report.md", p20_old, p20_new,
+patch("tools/reports/dmg_gap_report.md", p20_old, p20_new,
       "gap report: matrix II.C box closed",
       marker='pinned by R155: the saveAs data pass')
 assert len(applied) + len(already) == 20

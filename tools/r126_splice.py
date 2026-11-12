@@ -15,7 +15,7 @@
 #    and the 11 subtables plus the tropical Sphinx
 #    footnote, and spot pins from the verified
 #    transcription (census becomes 44)
-#  - tools/dmg_gap_report.md: the pp.182-189 box flips
+#  - tools/reports/dmg_gap_report.md: the pp.182-189 box flips
 import os, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -376,7 +376,7 @@ patch("regtest.cpp",
       marker="R126: wilderness line-diff audit")
 
 # the gap report box flips
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """- [ ] **Wilderness encounter tables
       (pp.182-189)** - the appendix C-style
       tables for outdoor play.""",

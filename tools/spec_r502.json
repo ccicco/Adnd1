@@ -419,7 +419,7 @@
   "open": 0
  },
  "gap_flips": [],
- "gap_report": "tools/wsg_gap_report.md",
+ "gap_report": "tools/reports/wsg_gap_report.md",
  "header_file": "rules/wsg/wsgcampfold.h",
  "header_sections": {
   "the fire capacity": [

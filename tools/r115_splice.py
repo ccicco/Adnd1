@@ -441,11 +441,11 @@ PATCHES = [
      LD_OLD, LD_NEW, "state_core.cpp load mageage"),
     ("regtest.cpp", "R115 magic weapon gate audit",
      RT_OLD, RT_NEW, "regtest R115 audits"),
-    ("tools/dmg_gap_report.md", "R115 verified the magic-weapon",
+    ("tools/reports/dmg_gap_report.md", "R115 verified the magic-weapon",
      GH_OLD, GH_NEW, "gap report header note"),
-    ("tools/dmg_gap_report.md", "VERIFIED R115: already implemented",
+    ("tools/reports/dmg_gap_report.md", "VERIFIED R115: already implemented",
      GB_OLD, GB_NEW, "gap report gate box + remainder item"),
-    ("tools/dmg_gap_report.md", "haste wired R115",
+    ("tools/reports/dmg_gap_report.md", "haste wired R115",
      AB_OLD, AB_NEW, "gap report aging box note"),
 ]
 

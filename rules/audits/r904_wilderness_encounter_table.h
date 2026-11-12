@@ -16,7 +16,7 @@
     // Dissipation and Comfort. The Comfort quirk is noted and settled: the
     // upload reads D = 3b (6 hours), the archive.org scan reads D = 36, and 6
     // hours at 10 minutes per turn is 36 turns - the pin stands. The
-    // scoped-out sentence in tools/dragon_gap_report_005.md updates by file
+    // scoped-out sentence in tools/reports/dragon_gap_report_005.md updates by file
     // patch to record the resolution. The R903 record seats in the seed via
     // prev_record.
     {

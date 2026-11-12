@@ -5,7 +5,7 @@
 // census 829 -> 830.
 //
 // The pure box-closing round, no new ink: the issue-6 box in
-// tools/dragon_gap_report_006.md flips closed (1 / 0), completing the issue-6
+// tools/reports/dragon_gap_report_006.md flips closed (1 / 0), completing the issue-6
 // walk exactly as adjudicated at R906 - the Sea Trade system, the psionic
 // determination option, the morale system and the Death Angel having been the
 // only engine-relevant ink in issue #6 (the Metamorphosis Alpha chains, the

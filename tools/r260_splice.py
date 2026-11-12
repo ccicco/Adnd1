@@ -688,7 +688,7 @@ GAP = [
     'the, line 161 continues',
     'nine alignments).',
 ]
-GP = rd('tools/dmg_gap_report.md')
+GP = rd('tools/reports/dmg_gap_report.md')
 if GP.count('R260 landed the III.E misc') == 1:
     already += 1
 else:
@@ -701,7 +701,7 @@ else:
     applied += 1
     assert GP.count('R260 landed the III.E misc') == 1, \
         'gap entry insert failed'
-wr('tools/dmg_gap_report.md', GP)
+wr('tools/reports/dmg_gap_report.md', GP)
 
 # ---- report ----
 assert applied + already == 7, 'patch count wrong'

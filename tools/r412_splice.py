@@ -75,7 +75,7 @@
 #    freshen/salt pairs
 #    cross-checking each
 #    other; census 338 -> 339.
-# 3. tools/ua_gap_report.md:
+# 3. tools/reports/ua_gap_report.md:
 #    the MU cantrips box takes
 #    an AMENDED R412 note -
 #    the useful-category
@@ -554,8 +554,8 @@ R227 = ('    // ---- R227: the wis mental'
 pair(RT, R227, AUD + NL + R227,
      'regtest: the R412 audit block')
 
-# ======== (d) tools/ua_gap_report.md ========
-GP = 'tools/ua_gap_report.md'
+# ======== (d) tools/reports/ua_gap_report.md ========
+GP = 'tools/reports/ua_gap_report.md'
 
 pair(GP, E(
     '      - six categories: useful (20',

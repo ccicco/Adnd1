@@ -634,7 +634,7 @@ patch('regtest.cpp',
       new3)
 
 # ---------------------------------------------------------------------------
-# Patch 4: tools/dmg_gap_report.md - the log entry
+# Patch 4: tools/reports/dmg_gap_report.md - the log entry
 # ---------------------------------------------------------------------------
 
 log_lines = [
@@ -705,7 +705,7 @@ old4 = ('lines ~9100+, pp.119+).' + NL + NL + 'Categories:')
 new4 = ('lines ~9100+, pp.119+).' + NL + NL + log_entry + NL
         + NL + 'Categories:')
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R217 landed the scroll manufacture',
       old4,
       new4)

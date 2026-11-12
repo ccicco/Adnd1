@@ -834,7 +834,7 @@ patch('regtest.cpp',
       new3)
 
 # ---------------------------------------------------------------------------
-# Patch 4: tools/dmg_gap_report.md - the log entry
+# Patch 4: tools/reports/dmg_gap_report.md - the log entry
 # ---------------------------------------------------------------------------
 
 log_lines = [
@@ -894,7 +894,7 @@ old4 = ('construction, siege' + NL + 'and the underworld.' + NL
 new4 = ('construction, siege' + NL + 'and the underworld.' + NL + NL
         + log_entry + NL + NL + 'Categories:')
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R213 landed the construction and siege',
       old4,
       new4)

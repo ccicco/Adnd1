@@ -710,7 +710,7 @@ assert len(applied) + len(already) == 2, 'b count'
 
 # ---- (c) the gap report: the note (the
 # item STAYS OPEN - the 3rd-7th levels) ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 if 'R344: the 2nd level pinned' in s:
     already.append('gap report: the note')

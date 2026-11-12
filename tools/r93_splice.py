@@ -12,7 +12,7 @@
 #                      the ledger and prints the report line
 #   adnd1.cpp        - HUD "Move N'" gains a * when laden
 #   regtest.cpp      - "R93 ledger audit: bad 0"
-#   tools/playverify_r77_r83.md - the walkthrough
+#   tools/reports/playverify_r77_r83.md - the walkthrough
 # DESIGN: delveCount counts COMPLETED delves (incremented on
 # the clean-road return, not the descent - a dead company
 # that never returns was never a delve in the books).
@@ -245,7 +245,7 @@ OK &= patch('regtest.cpp',
 # ---------------------------------------------------------------------------
 # 6) playverify checklist - the R93 lines
 # ---------------------------------------------------------------------------
-OK &= patch('tools/playverify_r77_r83.md',
+OK &= patch('tools/reports/playverify_r77_r83.md',
 """## Sign-off""",
 """## R93: the ledger
 - [ ] Return to town ([B], clean road): after "You return to

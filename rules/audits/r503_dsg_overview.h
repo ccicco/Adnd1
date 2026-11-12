@@ -12,7 +12,7 @@
     // realms-deeper-than-a-mile rule; and the living/dead cave mechanics
     // (glisten, sturdy, mud pools vs brittle, dust, rubble,
     // standing-but-not-stagnant water). The DM-section boxes of
-    // tools/dsg_gap_report.md are re-grained in the same splice from the DM
+    // tools/reports/dsg_gap_report.md are re-grained in the same splice from the DM
     // table of contents pulled at pdf 65, and the perspective-maps section
     // (pp. 124-127) the player TOC missed is opened. Provenance: the
     // tesseract reads (d8-d12 full/tsv/png) on the r503-extraction branch;

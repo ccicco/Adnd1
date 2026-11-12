@@ -81,7 +81,7 @@
   "closed": 23,
   "open": 1
  },
- "gap_report": "tools/ddg_gap_report.md",
+ "gap_report": "tools/reports/ddg_gap_report.md",
  "gap_flips": [
   {
    "note": "the Appendix 3 box (the clerical chart, the flip held from R876)",

@@ -60,7 +60,7 @@
   "    are Curtiss's call.",
   "    WAIT FOR GO."
  ],
- "gap_report": "tools/mm2_gap_report.md",
+ "gap_report": "tools/reports/mm2_gap_report.md",
  "gap_census": {
   "closed": 37,
   "open": 0

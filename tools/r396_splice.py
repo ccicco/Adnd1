@@ -26,7 +26,7 @@
 #    audit block lands before the
 #    R227 anchor; the census
 #    322 -> 323.
-# 3. tools/ua_gap_report.md: the
+# 3. tools/reports/ua_gap_report.md: the
 #    new-potions item flips
 #    AMENDED R396: closed.
 # 4. The seed takes the R395
@@ -436,7 +436,7 @@ pair(PP, B(
     'potprose: the part ledger')
 
 # ============ (c) the gap report ============
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 
 pair(GP, B(
     '        stammering) - the item',

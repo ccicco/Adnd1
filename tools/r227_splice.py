@@ -260,7 +260,7 @@ patch('regtest.cpp',
       new6)
 
 # ---------------------------------------------------------------------------
-# Patch 7: tools/phb_gap_report.md - the wiring arc opens
+# Patch 7: tools/reports/phb_gap_report.md - the wiring arc opens
 # ---------------------------------------------------------------------------
 
 log_lines = [
@@ -320,7 +320,7 @@ old7 = ('stay queued BEFORE the arc rounds - the live DEX' + NL +
 
 new7 = (old7 + NL + NL + log_entry + NL)
 
-patch('tools/phb_gap_report.md',
+patch('tools/reports/phb_gap_report.md',
       'The wiring arc (OPENED R227 - the engine-call pass)',
       old7,
       new7)

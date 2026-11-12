@@ -58,7 +58,7 @@
 #       array - draw-independent: the row
 #       saves not, the folds read pins); the
 #       battery census moves 246 -> 247.
-#   (m) tools/dmg_gap_report.md - the R320
+#   (m) tools/reports/dmg_gap_report.md - the R320
 #       chronicle paragraph (the mud and
 #       seaweed kills recorded).
 #
@@ -881,7 +881,7 @@ assert _o == _c and _o2 == _c2, 'patch l balance'
 assert len(applied) + len(already) == 12, 'patch l count wrong'
 
 # ---- (m) dmg_gap_report.md: the chronicle ----
-GP = 'tools/dmg_gap_report.md'
+GP = 'tools/reports/dmg_gap_report.md'
 GC_OLD = NL.join([
     'moves 245 -> 246 with the R319',
     'audit.',

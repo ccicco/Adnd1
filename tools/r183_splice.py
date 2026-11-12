@@ -385,10 +385,10 @@ patch('regtest.cpp',
       NL.join(aud) + NL + '    // ---- R163: the poison table audit -------------')
 
 # ---------------------------------------------------------------------------
-# Patch 4: tools/phb_gap_report.md - the R183 box flipped
+# Patch 4: tools/reports/phb_gap_report.md - the R183 box flipped
 # ---------------------------------------------------------------------------
 
-patch('tools/phb_gap_report.md',
+patch('tools/reports/phb_gap_report.md',
       'R183 the illusionist spell layer - PINNED',
       '- R183 the illusionist spell layer - the'
       + NL + '      illusionist list likewise.',
@@ -412,10 +412,10 @@ patch('tools/phb_gap_report.md',
       + NL + '      name spot-checks. Census 100.')
 
 # ---------------------------------------------------------------------------
-# Patch 5: tools/dmg_gap_report.md - the round note
+# Patch 5: tools/reports/dmg_gap_report.md - the round note
 # ---------------------------------------------------------------------------
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R183 landed the illusionist spell layer',
       'audit; census 99. Next: R183 the illusionist'
       + NL + 'spell layer.',

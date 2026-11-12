@@ -18,7 +18,7 @@
 #   adnd1.cpp         - [G] binding
 #   game/state_core.cpp - save/load trailing int 8
 #   regtest.cpp       - R103 carrot audit
-#   tools/playverify_r77_r83.md - R103 section
+#   tools/reports/playverify_r77_r83.md - R103 section
 import sys, os
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)) + '/..')
@@ -356,7 +356,7 @@ OK &= patch('regtest.cpp',
 # ---------------------------------------------------------------------------
 # 11) playverify - the R103 section
 # ---------------------------------------------------------------------------
-OK &= patch('tools/playverify_r77_r83.md',
+OK &= patch('tools/reports/playverify_r77_r83.md',
 """## R102: the ledger of everything
 """,
 """## R103: the carrot

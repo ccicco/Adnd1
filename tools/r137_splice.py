@@ -14,7 +14,7 @@
 #    prompts instead of auto-firing
 #  - adnd1.cpp: the dungeon X key calls engageTrick
 #  - regtest.cpp: the R137 hook audit (census 55)
-#  - tools/dmg_gap_report.md: the R137 box closes the
+#  - tools/reports/dmg_gap_report.md: the R137 box closes the
 #    standing deliberate-engage debt
 # This file contains ZERO backslash characters - the
 # audit printf's escaped newline is assembled from
@@ -225,7 +225,7 @@ patch("regtest.cpp", old_r136_head + NL,
       "regtest.cpp: R137 audit",
       marker="R137 deliberate-engage hook audit")
 
-patch("tools/dmg_gap_report.md",
+patch("tools/reports/dmg_gap_report.md",
 """      attributes stay dressing; their effects ride
       future rounds. Pinned by the R136 battery audit;
       census 54.

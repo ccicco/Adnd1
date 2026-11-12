@@ -16,7 +16,7 @@
 #   game/state_core.cpp - "age %d" save + load branch
 #   game/state_town.cpp - inn birthday line
 #   regtest.cpp       - R97 gray beard audit
-#   tools/playverify_r77_r83.md - R97 section
+#   tools/reports/playverify_r77_r83.md - R97 section
 import sys, os
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)) + '/..')
@@ -235,7 +235,7 @@ OK &= patch('regtest.cpp',
 # ---------------------------------------------------------------------------
 # 8) playverify - the R97 section
 # ---------------------------------------------------------------------------
-OK &= patch('tools/playverify_r77_r83.md',
+OK &= patch('tools/reports/playverify_r77_r83.md',
 """## R96: the town clock
 """,
 """## R97: the gray beard

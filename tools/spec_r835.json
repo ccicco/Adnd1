@@ -5,7 +5,7 @@
   "regtest": "regtest.cpp",
   "header_file": "rules/meta/migration_batch_final_holdback.h",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
-  "gap_report": "tools/mm2_gap_report.md",
+  "gap_report": "tools/reports/mm2_gap_report.md",
   "banner": {
     "title": "the final holdback batch - the decomposition arc closes",
     "provenance": "spec-driven; the last 55 holdback blocks leave regtest - the 8 ready-now blocks, the 16 no-head blocks (the WSG weather pair, the DMO family, the MM2 letter walks - heads 823 to 2325 lines above their labels, found by the R834 widened walk), and the 31 width-family blocks riding the per-block allow_wide tolerance (77 wide code lines, up to 159 cols) - all moving verbatim into rules/audits fragments, regtest keeping the one-line include at each head line; the census holds, the labels relocate; the wiring audit stays put by design; the arc closes: one wiring audit remains inline, 757 blocks live in fragments"

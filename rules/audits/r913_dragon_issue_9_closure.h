@@ -1,7 +1,7 @@
     // ---- R913 Dragon issue-9 closure audit ----
     // THE DRAGON ISSUE-9 CLOSURE ROUND - the pure flip. The issue-9 box (the
     // Gygax alignment article and the Ward Tombs & Crypts article, folios 5-6
-    // and 25) closes 1 / 0 in tools/dragon_gap_report_009.md; the two-chain
+    // and 25) closes 1 / 0 in tools/reports/dragon_gap_report_009.md; the two-chain
     // walk completes exactly as adjudicated at R912. The bookkeeping pins:
     // the single box and its two chains, the issue-8 report complete at 1 / 0
     // since R911, the issue-7 report complete at 1 / 0 since R909, the

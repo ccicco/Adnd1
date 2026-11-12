@@ -237,7 +237,7 @@
   "open": 15
  },
  "gap_flips": [],
- "gap_report": "tools/dsg_gap_report.md",
+ "gap_report": "tools/reports/dsg_gap_report.md",
  "header_file": "rules/dsg/dsgcamp2.h",
  "header_sections": {
   "the Consistency section": [

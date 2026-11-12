@@ -351,7 +351,7 @@ assert len(applied) + len(already) == 2, 'b count'
 # and the footnote-1 tail are
 # OCR-lost); an in-place note
 # records what R334 pinned.
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 if 'R334: the fragment-verified' in s:
     already.append('gap report: the note')

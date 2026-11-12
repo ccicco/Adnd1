@@ -392,7 +392,7 @@ patch('regtest.cpp',
       anchor + NL + NL.join(aud))
 
 # ---------------------------------------------------------------------------
-# Patch 4: tools/dmg_gap_report.md - the round-log entry (R202 convention)
+# Patch 4: tools/reports/dmg_gap_report.md - the round-log entry (R202 convention)
 # ---------------------------------------------------------------------------
 
 entry = (
@@ -438,7 +438,7 @@ log_new = ('battery audit; census 122. Next: the'
            + NL + 'DMG-only sweep continues.'
            + NL + NL + entry + NL + NL + 'Categories:')
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R207 landed the town taxation system',
       log_old,
       log_new)

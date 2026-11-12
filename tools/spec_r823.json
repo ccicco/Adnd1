@@ -5,7 +5,7 @@
   "regtest": "regtest.cpp",
   "header_file": "rules/meta/migration_wiring.h",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
-  "gap_report": "tools/mm2_gap_report.md",
+  "gap_report": "tools/reports/mm2_gap_report.md",
   "banner": {
     "title": "the audit blocks migration wiring - the tooling round of the regtest decomposition arc",
     "provenance": "spec-driven; the engine gains the migrate_blocks key - a declared block leaves regtest verbatim for a rules/audits fragment, regtest keeps the one-line include at its head line; the census holds, the label relocates; rverify counts the moves, rn git-adds the fragments"

@@ -84,14 +84,14 @@ assert len(applied) + len(already) == 3
 
 p4_old = NL.join(['party carries combat fields only. Census 74.', '', 'Categories:'])
 p4_new = NL.join(['party carries combat fields only. Census 74.', 'R157 PINNED grenade-like missiles + holy/unholy water', '(DMG pp.64-65) - the thrown-flask layer: container sizes,', 'the effect table (direct hit + splash dice), the 3-inch', 'range bands, the item-save break rule (the p.80 matrix:', 'ceramic flask 18/12, crystal vial 19/14), the 3-foot', 'splash-save radius, the d6/d8 miss tables, the p.65', 'holy/unholy water targeting (non-material undead', 'unaffected), the flaming-oil crossing damage, the 2-5 gp', 'vial cost and the boulder drops. JUDGMENT: the acid flask', 'rides the ceramic row and the poison vial the crystal row', '(the print names only the oil flask and the holy-water', 'vial); a drop under 10 feet reads at the window edge. The', 'to-hit throw itself stays in the missile-fire lane; poison', 'damage stays print-special (the caller holds the poison', 'lane). Census 75.', '', 'Categories:'])
-patch("tools/dmg_gap_report.md", p4_old, p4_new,
+patch("tools/reports/dmg_gap_report.md", p4_old, p4_new,
       "gap report: R157 header note",
       marker='R157 PINNED grenade-like missiles')
 assert len(applied) + len(already) == 4
 
 p5_old = NL.join(['- [ ] **Grenade-like missiles + holy/unholy water', '      (pp.64-65)** - thrown flasks: the break and splash', '      rules, the cone tables, vial costs and effects.'])
 p5_new = NL.join(['- [x] **Grenade-like missiles + holy/unholy water', '      (pp.64-65)** - pinned by R157: rules/dmg/grenade.h, the', '      header-only flask layer (sizes, effect dice, range', '      bands, item-save breaks, the d8 direction cone,', '      holy/unholy targeting, oil crossing, vial cost,', '      boulder drops); the throw itself rides the', '      missile-fire lane.'])
-patch("tools/dmg_gap_report.md", p5_old, p5_new,
+patch("tools/reports/dmg_gap_report.md", p5_old, p5_new,
       "gap report: grenade box closed",
       marker='pinned by R157: rules/dmg/grenade.h')
 assert len(applied) + len(already) == 5

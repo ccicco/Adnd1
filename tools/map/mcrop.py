@@ -13,8 +13,8 @@ labels, so every feature in the crop can be located
 in his frame at a glance.
 
 Usage:
-    python3 tools/mcrop.py <image> --bbox 9,22,35,42
-    python3 tools/mcrop.py <image> --bbox 9,22,35,42 \\
+    python3 tools/map/mcrop.py <image> --bbox 9,22,35,42
+    python3 tools/map/mcrop.py <image> --bbox 9,22,35,42 \\
         --grid --scale 2 --out room1.png
 
 Constants copied from hallscan (his fit_lattice

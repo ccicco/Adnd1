@@ -2,7 +2,7 @@
     // THE DRAGON ISSUE-11 CLOSURE ROUND - the pure flip, no new ink. The
     // issue-11 box (the Kuntz brawling article and the Ward quarterstaff
     // article, folios 7 and 26-27) closes 1 closed / 0 open in
-    // tools/dragon_gap_report_011.md; the two-chain walk completes exactly as
+    // tools/reports/dragon_gap_report_011.md; the two-chain walk completes exactly as
     // adjudicated at R917. The bookkeeping pins: the single box and its two
     // chains, the issue-10 report complete at 2 / 0 since R916, the issue-9
     // report complete at 1 / 0 since R913, the issue-8 report complete at 1 /

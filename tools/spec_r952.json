@@ -12,7 +12,7 @@
  "audit_label": "R952 issue-23 commentary set audit",
  "audit_anchor": "#include \"rules/audits/r951_issue_23_lower_planes_generation.h\"  // R951: R951 issue-23 Lower Planes generation audit",
  "audit_comment": "THE SIX-CHAIN COMMENTARY SET AUDIT - the issue-23 part-three round: the trade-show roster, the armor and sword weights, the permanent-damage charts with their percentile bands, the Elrohir prison formula, the Kask Origins verdict and the Niall tale through the amanatlon device, print 6, 14, 19-20, 21, 4 plus 21 and 8-9 plus 22-30.",
- "gap_report": "tools/dragon_gap_report_023.md",
+ "gap_report": "tools/reports/dragon_gap_report_023.md",
  "gap_census": {
   "closed": 0,
   "open": 3

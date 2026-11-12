@@ -3,7 +3,7 @@
  "prefix": "mvm",
  "header_file": "rules/seams/mountmove.h",
  "regtest": "regtest.cpp",
- "gap_report": "tools/oa_gap_report.md",
+ "gap_report": "tools/reports/oa_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "census_before": 700,
  "title": "the mounted movement charge - the warhorse kinds ride",

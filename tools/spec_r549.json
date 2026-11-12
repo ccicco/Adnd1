@@ -24,7 +24,7 @@
    "to": "  - [x] Lands of Deepearth (pp. 75-98) - R533 the setting frame and the connecting-passage generation (the 1d6-x-10 water widths with the 1d6 temperature, the tunnel obstacle-and-cavern generation, the 300-ft area-details framework; the pp. 76-77 map plates are graphics and pin nothing) and R534-R548 the individual area key, all 31 areas from the Great Lake through the fungus forest, the illithid outpost, the drow realm and the dark realms to darksea (dsgland.h + dsgarea1-15.h, the child held open until the setting landed in full - closed R549)"
   }
  ],
- "gap_report": "tools/dsg_gap_report.md",
+ "gap_report": "tools/reports/dsg_gap_report.md",
  "header_file": "rules/dsg/dsgdeep.h",
  "header_sections": {},
  "include_after": "#include \"rules/dsg/dsgarea15.h\"  // R548: the DSG Deepearth areas 30-31 pins",

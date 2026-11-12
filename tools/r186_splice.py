@@ -758,7 +758,7 @@ patch('regtest.cpp',
       NL.join(aud) + NL + '    // ---- R163: the poison table audit -------------')
 
 # ---------------------------------------------------------------------------
-# Patch 4: tools/phb_gap_report.md - the R186 box flipped
+# Patch 4: tools/reports/phb_gap_report.md - the R186 box flipped
 # ---------------------------------------------------------------------------
 
 box_old = ('- R186 the bard (Appendix II) - the progression'
@@ -815,22 +815,22 @@ box_new = ('- [x] R186 the bard (Appendix II) - PINNED:'
            + NL + '      battery audit walks every cell of both'
            + NL + '      tables. Census 103.')
 
-t = rd('tools/phb_gap_report.md')
+t = rd('tools/reports/phb_gap_report.md')
 if 'R186 the bard (Appendix II) - PINNED' not in t:
     assert t.count(box_old) == 1, 'R186 box anchor not unique'
 else:
     assert t.count(box_old) == 0, 'R186 box old text lingers'
 
-patch('tools/phb_gap_report.md',
+patch('tools/reports/phb_gap_report.md',
       'R186 the bard (Appendix II) - PINNED',
       box_old,
       box_new)
 
 # ---------------------------------------------------------------------------
-# Patch 5: tools/dmg_gap_report.md - the round note
+# Patch 5: tools/reports/dmg_gap_report.md - the round note
 # ---------------------------------------------------------------------------
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R186 landed the bard',
       'R185 battery audit; census 102. Next: R186'
       + NL + 'the bard (Appendix II).',

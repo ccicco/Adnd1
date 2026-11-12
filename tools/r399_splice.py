@@ -49,7 +49,7 @@
 #    lands before the R227
 #    anchor; census 325 ->
 #    326.
-# 4. tools/ua_gap_report.md:
+# 4. tools/reports/ua_gap_report.md:
 #    both treasure items take
 #    an AMENDED R399: closed
 #    sub-entry.
@@ -510,8 +510,8 @@ pair(P2, E(
     '    { return 0; }'),
     'weapons: the part ledger')
 
-# ============ (d) tools/ua_gap_report.md ============
-GP = 'tools/ua_gap_report.md'
+# ============ (d) tools/reports/ua_gap_report.md ============
+GP = 'tools/reports/ua_gap_report.md'
 
 pair(GP, E(
     '      - AMENDED R387: the UA armor and',

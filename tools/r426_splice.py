@@ -167,7 +167,7 @@ def newfile(path, text, label):
 
 RT = 'regtest.cpp'
 HD = 'rules/wsg/wsgdress.h'
-GR = 'tools/wsg_gap_report.md'
+GR = 'tools/reports/wsg_gap_report.md'
 SD = ('doc/vibe/'
       'adnd1_knowledge_seed_v2.md')
 
@@ -313,7 +313,7 @@ SEED_ENTRY = E(
     '  as switches with the',
     '  censuses and the book own',
     '  denominator arithmetic.',
-    '  tools/wsg_gap_report.md',
+    '  tools/reports/wsg_gap_report.md',
     '  (NEW): the lossless',
     '  whole-book inventory -',
     '  the 42-table manifest from',

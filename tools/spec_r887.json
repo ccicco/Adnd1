@@ -81,7 +81,7 @@
  "audit_file": "rules/audits/r887_ives_attribute.h",
  "audit_label": "R887 Ives attribute audit",
  "audit_anchor": "#include \"rules/audits/r886_ddg_promotion.h\"  // R886: R886 DDG promotion audit",
- "gap_report": "tools/ddg_gap_report.md",
+ "gap_report": "tools/reports/ddg_gap_report.md",
  "gap_census": {
   "closed": 24,
   "open": 0
@@ -439,7 +439,7 @@
    "content": "In the July\n\nLITTLE WARS\n\nIn the next issue of\n\nDSCO\n\nRay Johnson on Napoleonics\n\nPart II of The Gnome Cache\n\nGary Gygax on the History of War Gaming\n\nThe Conclusion of\nThe Search for the Forbidden Chamber\n\nDave Arneson WWII Naval Encounters\n\nMonk vs Monk\nCombat in the Arena of promotion\n\nComplete ACW Miniatures Rules\n\nA new S&S novelette by Gardner Fox\n\nDSCO\n\nPOB 756\n\nLAKE GENEVA, WIS. 53147\n\nApplication to mail as second-class postage rates is pending at Beloit, WI 53511\n"
   },
   {
-   "path": "tools/dragon_gap_report.md",
+   "path": "tools/reports/dragon_gap_report.md",
    "content": "# Dragon gap report - THE DRAGON, Vol. 1 No. 1 (June 1976)\n\nThe Dragon Magazine walk, issue #1. Primary ink:\nextract/dragon/001/pNNN_full.txt, NNN = PDF page index; PRINT FOLIO =\nPDF PAGE (verified both ends - folios 3, 4, 6, 14, 19 and 30 all\nmatch). The voice is the chat-side PDF OCR transcript (the Termux\ntesseract --psm 4 + TSV geometry pass stays an open candidate); the\narticle CHAIN is the ink unit, not the folio.\n\nDoctrine (Curtiss, 2026-10-29): the pin IS the conversion - OD&D-era\nink adjudicated to 1e terms, the conversion noted, never silent;\nDragon pins ride a VARIANT layer with provenance, never core canon.\n\n## Boxes\n\n- [ ] **The Ives attribute tables** (folio 7) - the opener round\n- [ ] **The small-variant set: Gold languages (9-10), Smith Eldar\n  (30), the Bulette lore pin (19)** - the combined round\n- [ ] **Aronson: mighty magic miscellany, the illusionist deltas**\n  (folios 23-25) - the deltas round\n\n3 boxes, 0 closed, 3 open at the R887 authoring. The R887 round ships\nthis report pre-flip (a report cannot flip in the round that creates\nit); the Ives box closes at the next Dragon round's flip.\n\n## Scoped out of the engine\n\nLakofka fantasy miniature rules (14-17, Chainmail-scale); Fischer\nmapping the dungeons (20-21, DM procedure); BotFA in miniature (6,\n13); the Lankhmar houri piece (4-5); the Hyborean armies (24-25);\nDungeon! variants (25); the Gnome Cache fiction (28-30); game\nreviews, ads and convention matter.\n\n## Parked\n\nWard's Artificer devices (8-10) - codifiable as items, parked for a\npossible later items sweep.\n"
   }
  ],

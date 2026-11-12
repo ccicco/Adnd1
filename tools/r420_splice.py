@@ -22,7 +22,7 @@
 # seed record, no header touch.
 import sys
 
-PATH = 'tools/ua_gap_report.md'
+PATH = 'tools/reports/ua_gap_report.md'
 
 FLIPS = [
     ('weight and damage p. 26',

@@ -71,7 +71,7 @@
 #    cross-check the roster
 #    counts, the 2..10 norm band
 #    loops; census 344 -> 345.
-# 3. tools/ua_gap_report.md:
+# 3. tools/reports/ua_gap_report.md:
 #    the MU cantrips box takes
 #    AMENDED R418.
 # 4. The seed takes the R417
@@ -473,8 +473,8 @@ R227 = ('    // ---- R227: the wis mental'
 pair(RT, R227, AUD + NL + R227,
      'regtest: the R418 audit block')
 
-# ======== (d) tools/ua_gap_report.md ========
-GP = 'tools/ua_gap_report.md'
+# ======== (d) tools/reports/ua_gap_report.md ========
+GP = 'tools/reports/ua_gap_report.md'
 
 pair(GP, E(
     '      - AMENDED R417: the',

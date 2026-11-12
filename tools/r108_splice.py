@@ -5,7 +5,7 @@
 # (PDF pages 1-68). This round verified every parked
 # book-verify item in that range against the actual text
 # and classified the whole book into the four categories.
-# The report ships as tools/dmg_gap_report.md - a living
+# The report ships as tools/reports/dmg_gap_report.md - a living
 # checklist: rounds that close an item flip its box in the
 # same commit.
 #
@@ -194,10 +194,10 @@ should take the aging adoption first - it is the only
 verified-value divergence found in range.
 """
 
-if os.path.exists('tools/dmg_gap_report.md'):
+if os.path.exists('tools/reports/dmg_gap_report.md'):
     print('gap report: already present')
 else:
-    wr('tools/dmg_gap_report.md', REPORT)
+    wr('tools/reports/dmg_gap_report.md', REPORT)
     print('gap report: written')
 
 print()

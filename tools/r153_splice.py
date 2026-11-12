@@ -526,11 +526,11 @@ patch("regtest.cpp", aud_old, aud_new,
       "regtest.cpp: R153 exceptional strength audit",
       marker="R153 exceptional strength audit")
 assert len(applied) + len(already) == 6
-patch("tools/dmg_gap_report.md", gap_head_old, gap_head_new,
+patch("tools/reports/dmg_gap_report.md", gap_head_old, gap_head_new,
       "gap report: R153 header note",
       marker="R153 PINNED the exceptional strength table")
 assert len(applied) + len(already) == 7
-patch("tools/dmg_gap_report.md", gap_box_old, gap_box_new,
+patch("tools/reports/dmg_gap_report.md", gap_box_old, gap_box_new,
       "gap report: exceptional-strength box closed",
       marker="PINNED R153,")
 assert len(applied) + len(already) == 8

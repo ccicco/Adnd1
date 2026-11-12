@@ -78,7 +78,7 @@
 #     collision gate keyed on
 #     the wsg call absence for
 #     idempotency)
-#   - tools/wsg_gap_report.md
+#   - tools/reports/wsg_gap_report.md
 #     NEW (the lossless
 #     whole-book inventory: the
 #     14 chapters, the DM
@@ -183,7 +183,7 @@ def newfile(path, text, label):
 
 RT = 'regtest.cpp'
 HD = 'rules/wsg/wsgprof.h'
-GR = 'tools/wsg_gap_report.md'
+GR = 'tools/reports/wsg_gap_report.md'
 SD = ('doc/vibe/'
       'adnd1_knowledge_seed_v2.md')
 
@@ -753,7 +753,7 @@ for i, ln in enumerate(lines):
             '(%r)'
             % (i, ln[:40]))
 
-# ======== (c) tools/wsg_gap_report.md ========
+# ======== (c) tools/reports/wsg_gap_report.md ========
 
 # the 14 chapters (the book
 # own Table of Contents

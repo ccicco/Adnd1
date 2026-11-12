@@ -150,7 +150,7 @@ patch('regtest.cpp',
       NL.join(aud) + NL + '    // ---- R163: the poison table audit -------------')
 
 # ---------------------------------------------------------------------------
-# Patch 3: tools/phb_gap_report.md - the divergence 4 box flipped
+# Patch 3: tools/reports/phb_gap_report.md - the divergence 4 box flipped
 # ---------------------------------------------------------------------------
 
 box_old = ('- [~] 4. **INT Table I, additional languages (the'
@@ -176,22 +176,22 @@ box_new = ('- [x] 4. **INT Table I, additional languages (the'
            + NL + '      the print (STR R153, DEX R178c, CON R178c,'
            + NL + '      INT R195, WIS R194, CHA R193).')
 
-t2 = rd('tools/phb_gap_report.md')
+t2 = rd('tools/reports/phb_gap_report.md')
 if 'CLOSED R195: rules/engine/character.cpp' not in t2:
     assert t2.count(box_old) == 1, 'R195 box anchor not unique'
 else:
     assert t2.count(box_old) == 0, 'R195 box old text lingers'
 
-patch('tools/phb_gap_report.md',
+patch('tools/reports/phb_gap_report.md',
       'CLOSED R195: rules/engine/character.cpp',
       box_old,
       box_new)
 
 # ---------------------------------------------------------------------------
-# Patch 4: tools/phb_gap_report.md - the intro line repin
+# Patch 4: tools/reports/phb_gap_report.md - the intro line repin
 # ---------------------------------------------------------------------------
 
-patch('tools/phb_gap_report.md',
+patch('tools/reports/phb_gap_report.md',
       'every founding-read divergence is closed (R178c',
       'divergence 4 (INT) remains the last ranked fix round;'
       + NL + '3 (WIS) CLOSED R194, 5 (CHA) CLOSED R193.',
@@ -200,10 +200,10 @@ patch('tools/phb_gap_report.md',
       + NL + 'tables now read the print.')
 
 # ---------------------------------------------------------------------------
-# Patch 5: tools/dmg_gap_report.md - the round note
+# Patch 5: tools/reports/dmg_gap_report.md - the round note
 # ---------------------------------------------------------------------------
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R195 landed the INT languages repin',
       'assembles). New R194 battery audit; census 111. Next:'
       + NL + 'the last PHB divergence, 4 (INT languages).',

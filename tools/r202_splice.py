@@ -7,12 +7,12 @@
 # try GREEN each, with no log entries. This
 # round pays the documentation debt: the
 # five entries appended to the round log
-# in tools/dmg_gap_report.md, in the
+# in tools/reports/dmg_gap_report.md, in the
 # established style (R193-R196 the
 # precedent). A report round adds no audit;
 # census stays 118.
 #
-# Patches: 1 (tools/dmg_gap_report.md).
+# Patches: 1 (tools/reports/dmg_gap_report.md).
 
 BS = chr(92)
 NL = chr(10)
@@ -48,7 +48,7 @@ def patch(path, marker, old, new):
 
 
 # ---------------------------------------------------------------------------
-# Patch 1: tools/dmg_gap_report.md - the five owed round-log entries
+# Patch 1: tools/reports/dmg_gap_report.md - the five owed round-log entries
 # ---------------------------------------------------------------------------
 
 log = []
@@ -126,7 +126,7 @@ new1 = ('New R196 battery'
         + NL
         + NL + 'Categories:')
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R197 landed the per-spell mental-form flag',
       old1,
       new1)

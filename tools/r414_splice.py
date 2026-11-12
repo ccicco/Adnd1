@@ -81,7 +81,7 @@
 #    cross-checking itself by
 #    derivation; census
 #    340 -> 341.
-# 3. tools/ua_gap_report.md:
+# 3. tools/reports/ua_gap_report.md:
 #    the MU cantrips box takes
 #    AMENDED R414 - the
 #    legerdemain descriptions
@@ -665,8 +665,8 @@ R227 = ('    // ---- R227: the wis mental'
 pair(RT, R227, AUD + NL + R227,
      'regtest: the R414 audit block')
 
-# ======== (d) tools/ua_gap_report.md ========
-GP = 'tools/ua_gap_report.md'
+# ======== (d) tools/reports/ua_gap_report.md ========
+GP = 'tools/reports/ua_gap_report.md'
 
 pair(GP, E(
     '      - AMENDED R413: the reversed',

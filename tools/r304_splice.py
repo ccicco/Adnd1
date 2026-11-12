@@ -47,10 +47,10 @@
 #       scenario on seeded sequences (the
 #       replica walked the draws first - no
 #       compiler in the splice sandbox).
-#   (g) tools/phb_gap_report.md - the wiring-arc
+#   (g) tools/reports/phb_gap_report.md - the wiring-arc
 #       box (the R298 box head amended; the
 #       ledger holds ZERO open items).
-#   (h) tools/dmg_gap_report.md - the chronicle
+#   (h) tools/reports/dmg_gap_report.md - the chronicle
 #       paragraph (the DMG pins recorded; the
 #       legend stays the only open checkbox).
 #
@@ -777,7 +777,7 @@ assert s.count('R227: the wis mental save wiring audit') == 1, \
 assert s.count('THF_OPEN_LOCKS') == 7, 'patch f open locks probes'
 assert len(applied) + len(already) == 6, 'patch f count wrong'
 
-# ---- (g) tools/phb_gap_report.md: the box ----
+# ---- (g) tools/reports/phb_gap_report.md: the box ----
 GR_HEAD_OLD = NL.join([
     '      move silently draw; R303: the street',
     '      site rolls the pick pockets draw;',
@@ -847,7 +847,7 @@ GR_INS_NEW = NL.join([
 for t in (GR_HEAD_OLD, GR_HEAD_NEW, GR_INS_OLD, GR_BOX, GR_INS_NEW):
     clean(t, 57)
 
-p = 'tools/phb_gap_report.md'
+p = 'tools/reports/phb_gap_report.md'
 s = rd(p)
 if 'The thief locks wired' in s:
     already.append('phb_gap_report.md: the wiring-arc box')
@@ -876,7 +876,7 @@ assert '## R299 the party recordings round' in s, 'patch g ate the head'
 assert s.count('- [ ]') == 0, 'patch g opened an item'
 assert len(applied) + len(already) == 7, 'patch g count wrong'
 
-# ---- (h) tools/dmg_gap_report.md: the chronicle ----
+# ---- (h) tools/reports/dmg_gap_report.md: the chronicle ----
 DMG_OLD = NL.join([
     'candidate). No audit added; the',
     'battery census stays 213.',
@@ -908,7 +908,7 @@ DMG_NEW = NL.join([
 for t in (DMG_OLD, DMG_NEW):
     clean(t, 57)
 
-p = 'tools/dmg_gap_report.md'
+p = 'tools/reports/dmg_gap_report.md'
 s = rd(p)
 if 'R304 PINNED the DMG THIEF ABILITIES' in s:
     already.append('dmg_gap_report.md: the chronicle')

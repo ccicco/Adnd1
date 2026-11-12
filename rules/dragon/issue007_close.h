@@ -5,7 +5,7 @@
 // census 831 -> 832.
 //
 // The pure box-closing round, no new ink: the issue-7 box in
-// tools/dragon_gap_report_007.md flips closed (1 / 0), completing the issue-7
+// tools/reports/dragon_gap_report_007.md flips closed (1 / 0), completing the issue-7
 // walk exactly as adjudicated at R908 - the Prowler having been the only
 // engine-relevant ink in issue #7 (the Gygax origins history, the awards
 // ballot, the diceless-play piece, Mystery Hill, the fiction, the Space

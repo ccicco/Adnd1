@@ -591,7 +591,7 @@ assert len(applied) + len(already) == 3, 'b2 count'
 
 
 # ---- (c1) the gap ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 if '- [x] **Social class and rank**' in s:
     already.append('gap report: the social class close')
@@ -627,7 +627,7 @@ else:
     applied.append('gap report: the social class close')
 
 # ---- (c2) the gap ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 if '- [x] **Circumstances of birth**' in s:
     already.append('gap report: the birth close')
@@ -666,7 +666,7 @@ else:
     applied.append('gap report: the birth close')
 
 # ---- (c) the gap kept asserts ----
-GP = 'tools/ua_gap_report.md'
+GP = 'tools/reports/ua_gap_report.md'
 s = rd(GP)
 assert s.count(
     '- [x] **Social class and rank**'

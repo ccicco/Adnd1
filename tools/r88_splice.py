@@ -12,7 +12,7 @@
 #                         cargo and burden lines
 #   adnd1.cpp           - HUD status line shows party Move N'
 #   regtest.cpp         - "R88 warning audit: bad 0"
-#   tools/playverify_r77_r83.md - the walkthrough lines
+#   tools/reports/playverify_r77_r83.md - the walkthrough lines
 # All anchors and inserted text are ASCII-only (protocol rule).
 
 import sys, os
@@ -290,7 +290,7 @@ OK &= patch('regtest.cpp',
 # ---------------------------------------------------------------------------
 # 6) playverify checklist - the R88 lines
 # ---------------------------------------------------------------------------
-OK &= patch('tools/playverify_r77_r83.md',
+OK &= patch('tools/reports/playverify_r77_r83.md',
 """## Sign-off""",
 """## R88: the warning + the hire's dump
 - [ ] [D] dump kit now ends with the henchman's block (when

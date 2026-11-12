@@ -36,7 +36,7 @@
     // the Vriyagga 2400 + 1250 + 1600 = 5250 at the 15-dice middle size, the
     // Qu'uni 20 flat at 2 dice), the 4.5-per-die d8 average hit points
     // floored (13, 67, 9), the XP values 154, 6590 and 38. GAP REPORT: the
-    // comedy box flipped in tools/dragon_gap_report_003.md -> the issue-3
+    // comedy box flipped in tools/reports/dragon_gap_report_003.md -> the issue-3
     // report 5 closed / 0 open, the walk complete; the issue-4 report ships
     // pre-flip with the Creature Features box open.
     {

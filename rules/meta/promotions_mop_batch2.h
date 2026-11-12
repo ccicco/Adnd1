@@ -8,7 +8,7 @@
 // data-quality pass part one (the structural half). The MM1 census at HEAD:
 // 408 defs, 270 carrying text, 138 text-deficient - the generator dropped the
 // prose for every family member, every variant and 25 family carriers. THE
-// DERIVATION IS PURELY MECHANICAL from tools/monsters.md, the merged @-record
+// DERIVATION IS PURELY MECHANICAL from tools/reports/monsters.md, the merged @-record
 // source (the single XP and prose authority, the v4 canvas lineage): 25
 // carrier defs regain their own text_family prose, 61 family-member defs gain
 // their family text_family prose (the print carries the shared description on
@@ -79,7 +79,7 @@ inline int pm2Mm1TextedAfter()
 
 // ---- the repair doctrines ----
 
-// every inserted byte derives verbatim from tools/monsters.md - no new print
+// every inserted byte derives verbatim from tools/reports/monsters.md - no new print
 // ink, no adjudication, paragraphs escaped and quotes escaped per the landed
 // convention
 inline bool pm2CompletionMechanical()

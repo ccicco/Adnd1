@@ -12,7 +12,7 @@
  "audit_anchor": "#include \"rules/audits/r852_babylonian_mythos.h\"  // R852: R852 Babylonian mythos audit",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "seed_anchor": "## Knowledge maintenance",
- "gap_report": "tools/ddg_gap_report.md",
+ "gap_report": "tools/reports/ddg_gap_report.md",
  "gap_flips": [
   {
    "from": "- [ ] **Celtic mythos** (pp. 26-31)",

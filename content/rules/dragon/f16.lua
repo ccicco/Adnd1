@@ -133,6 +133,6 @@ return {
     } },
   "audit" = {
       "label" = "R930 Dragon issue-16 closure audit",
-      "comment" = "THE DRAGON ISSUE-16 CLOSURE ROUND - the pure flip, no new ink. BOTH report-016 boxes close at this single flip - the Near Eastern Mythos (print 4-6) and The Ultimate NPC: Ninja (print 7-10) - 2 closed / 0 open in tools/dragon_gap_report_016.md; the two-chain walk completes in two rounds (the R929 opener carrying both chains, this flip), the issue-14 and issue-15 two-round pattern. Issues 2-16 all closed.",
+      "comment" = "THE DRAGON ISSUE-16 CLOSURE ROUND - the pure flip, no new ink. BOTH report-016 boxes close at this single flip - the Near Eastern Mythos (print 4-6) and The Ultimate NPC: Ninja (print 7-10) - 2 closed / 0 open in tools/reports/dragon_gap_report_016.md; the two-chain walk completes in two rounds (the R929 opener carrying both chains, this flip), the issue-14 and issue-15 two-round pattern. Issues 2-16 all closed.",
     },
 }

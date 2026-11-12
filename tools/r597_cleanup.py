@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # r597_cleanup.py -- the R597 tool round: the UA logging
 # reclassification. NOT a splice and NOT a content round: it
-# patches tools/ua_gap_report.md in place, idempotently
+# patches tools/reports/ua_gap_report.md in place, idempotently
 # (run twice -> applied 1, already 1, exactly like the
 # splice engine's idempotency gate). The patch site must
 # match EXACTLY ONCE or the run aborts with no writes.
 #
 # The one fix:
-#   tools/ua_gap_report.md -- the two open logging boxes
+#   tools/reports/ua_gap_report.md -- the two open logging boxes
 #   (the code-level logging layer, the game-level logging
 #   layer) are reclassified from open `[ ]` items to a
 #   single DEFERRED line. Ruling 2026-10-17 (post-R596
@@ -54,7 +54,7 @@ NEW = """- DEFERRED: the two logging layers (a
       evidence and the closure-criterion
       instrument)."""
 
-rel = 'tools/ua_gap_report.md'
+rel = 'tools/reports/ua_gap_report.md'
 p = os.path.join(ROOT, rel)
 try:
     with open(p) as fh:

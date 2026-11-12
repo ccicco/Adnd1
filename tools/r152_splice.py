@@ -263,11 +263,11 @@ patch("regtest.cpp", aud_old, aud_new,
       "regtest.cpp: R152 becoming-lost audit",
       marker="R152 becoming-lost audit")
 assert len(applied) + len(already) == 2
-patch("tools/dmg_gap_report.md", gap_head_old, gap_head_new,
+patch("tools/reports/dmg_gap_report.md", gap_head_old, gap_head_new,
       "gap report: R152 header note",
       marker="R152 PINNED the becoming-lost check")
 assert len(applied) + len(already) == 3
-patch("tools/dmg_gap_report.md", gap_box_old, gap_box_new,
+patch("tools/reports/dmg_gap_report.md", gap_box_old, gap_box_new,
       "gap report: becoming-lost box closed",
       marker="R152: the dm/outdoormove.h lost section")
 assert len(applied) + len(already) == 4

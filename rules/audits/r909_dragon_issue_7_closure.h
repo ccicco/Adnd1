@@ -1,7 +1,7 @@
     // ---- R909 Dragon issue-7 closure audit ----
     // THE DRAGON ISSUE-7 BOX CLOSING ROUND - the pure bookkeeping round, no
     // new print ink. The flip: the issue-7 box in
-    // tools/dragon_gap_report_007.md goes [x] - 1 closed / 0 open, the
+    // tools/reports/dragon_gap_report_007.md goes [x] - 1 closed / 0 open, the
     // issue-7 walk complete, the Prowler (folio 24) having been the only
     // engine-relevant ink in issue #7. The bookkeeping pins: the single box
     // and its single chain, the issue-6 report complete at 1 / 0 since R907,

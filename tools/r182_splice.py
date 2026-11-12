@@ -375,10 +375,10 @@ patch('regtest.cpp',
       NL.join(aud) + NL + '    // ---- R163: the poison table audit -------------')
 
 # ---------------------------------------------------------------------------
-# Patch 4: tools/phb_gap_report.md - the R182 box flipped
+# Patch 4: tools/reports/phb_gap_report.md - the R182 box flipped
 # ---------------------------------------------------------------------------
 
-patch('tools/phb_gap_report.md',
+patch('tools/reports/phb_gap_report.md',
       'R182 the druid spell layer - PINNED',
       '- R182 the druid spell layer - the druid list'
       + NL + '      joins the registry with its own'
@@ -402,10 +402,10 @@ patch('tools/phb_gap_report.md',
       + NL + '      row and name spot-checks. Census 99.')
 
 # ---------------------------------------------------------------------------
-# Patch 5: tools/dmg_gap_report.md - the round note
+# Patch 5: tools/reports/dmg_gap_report.md - the round note
 # ---------------------------------------------------------------------------
 
-patch('tools/dmg_gap_report.md',
+patch('tools/reports/dmg_gap_report.md',
       'R182 landed the druid spell layer',
       'census 98. Next: R182 the druid spell layer.',
       'census 98. Next: R182 the druid spell layer.'

@@ -2,7 +2,7 @@
 # R104 the scales (MAINTENANCE): the line-count survey of
 # the whole repo, and the one refactor it justified.
 #
-# THE SURVEY (verdicts in tools/maintenance_survey_r104.md):
+# THE SURVEY (verdicts in tools/reports/maintenance_survey_r104.md):
 #   dm/encounters.cpp  4214 - ~75% verbatim DMG book tables
 #                              (data, not debt - leave)
 #   adnd1.cpp          1699 - the Win32/GDI shell, ungated
@@ -467,7 +467,7 @@ audit pins it.
    places (preflight.sh g++ list + the MSVC project);
    headers do not. Prefer intra-file refactors.
 """
-OK &= put_file('tools/maintenance_survey_r104.md', SURVEY,
+OK &= put_file('tools/reports/maintenance_survey_r104.md', SURVEY,
                'survey doc')
 
 # ---------------------------------------------------------------------------

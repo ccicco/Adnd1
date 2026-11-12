@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # tools/r149_splice.py - R149, REPORT-ONLY: the book-verify
-# pass. Seven patches to tools/dmg_gap_report.md, no code and
+# pass. Seven patches to tools/reports/dmg_gap_report.md, no code and
 # no battery change (AUDIT CENSUS stays 67).
 #
 # The fresh DMG/PHB uploads (2026-10-04) were diffed end to
@@ -298,37 +298,37 @@ new_ai = NL.join([
 ])
 
 # ---- run ----
-patch("tools/dmg_gap_report.md", old_head, new_head,
+patch("tools/reports/dmg_gap_report.md", old_head, new_head,
       "gap report: R149 header note",
       marker="R149 CLOSED the book-verify pass")
 assert len(applied) + len(already) == 1
 
-patch("tools/dmg_gap_report.md", old_144, new_144,
+patch("tools/reports/dmg_gap_report.md", old_144, new_144,
       "gap report: R144 box book-verified",
       marker="AXE CORRECTION: the example")
 assert len(applied) + len(already) == 2
 
-patch("tools/dmg_gap_report.md", old_145, new_145,
+patch("tools/reports/dmg_gap_report.md", old_145, new_145,
       "gap report: R145 box book-verified",
       marker="eight of the fifteen rows verify")
 assert len(applied) + len(already) == 3
 
-patch("tools/dmg_gap_report.md", old_146, new_146,
+patch("tools/reports/dmg_gap_report.md", old_146, new_146,
       "gap report: R146 box corrected",
       marker="nobleman-with-retainers 75%")
 assert len(applied) + len(already) == 4
 
-patch("tools/dmg_gap_report.md", old_fic, new_fic,
+patch("tools/reports/dmg_gap_report.md", old_fic, new_fic,
       "gap report: R146-fiction box amended",
       marker="a coin")
 assert len(applied) + len(already) == 5
 
-patch("tools/dmg_gap_report.md", old_bv, new_bv,
+patch("tools/reports/dmg_gap_report.md", old_bv, new_bv,
       "gap report: book-verify box closed",
       marker="CLOSED R149: the fresh DMG/PHB uploads")
 assert len(applied) + len(already) == 6
 
-patch("tools/dmg_gap_report.md", old_ai, new_ai,
+patch("tools/reports/dmg_gap_report.md", old_ai, new_ai,
       "gap report: Appendix I open box",
       marker="named R149 from the fresh read")
 assert len(applied) + len(already) == 7

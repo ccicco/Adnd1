@@ -71,7 +71,7 @@
  "audit_file": "rules/audits/r893_systems.h",
  "audit_label": "R893 systems audit",
  "audit_anchor": "#include \"rules/audits/r892_fischer_items.h\"  // R892: R892 Fischer items audit",
- "gap_report": "tools/dragon_gap_report_002.md",
+ "gap_report": "tools/reports/dragon_gap_report_002.md",
  "gap_census": {
   "closed": 3,
   "open": 1

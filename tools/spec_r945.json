@@ -59,7 +59,7 @@
  "audit_anchor": "#include \"rules/audits/r944_issue_21_opener_part_two.h\"  // R944: R944 issue-21 opener part two audit",
  "audit_label": "R945 Dragon issue-21 closure audit",
  "audit_comment": "THE DRAGON ISSUE-21 BOX CLOSING ROUND - the pure flip, no new ink. Both report-021 boxes flip at this single round: the issue-21 opener chains part one (the R943 twenty-NPC personality grid, the spell-research doctrine, the foretelling-spell counters) and part two (the R944 gold-piece inflation doctrine, the natural-history monster doctrine, the Hall of Mystery, the M-U titles kit). Seven chains across three rounds, the fifth three-round issue shape. ISSUES 2-21 ALL CLOSED. Registry ground truth unchanged: 1313 loaded / 1338 base lua / 25 never-load (R924 re-measure).",
- "gap_report": "tools/dragon_gap_report_021.md",
+ "gap_report": "tools/reports/dragon_gap_report_021.md",
  "gap_census": {
   "closed": 2,
   "open": 0

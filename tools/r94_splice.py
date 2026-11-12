@@ -12,7 +12,7 @@
 #                      him; a bitten road wears on him
 #   game/state_dungeon.cpp - an interrupted camp wears on him
 #   regtest.cpp      - "R94 nerve audit: bad 0"
-#   tools/playverify_r77_r83.md - the walkthrough
+#   tools/reports/playverify_r77_r83.md - the walkthrough
 # DESIGN: loyalty range 0..125 (the loader's existing bounds).
 # The deltas are small and directional: success pays, the
 # unlit deeps and frightened watches cost. The quit checks
@@ -242,7 +242,7 @@ OK &= patch('regtest.cpp',
 # ---------------------------------------------------------------------------
 # 6) playverify checklist - the R94 lines
 # ---------------------------------------------------------------------------
-OK &= patch('tools/playverify_r77_r83.md',
+OK &= patch('tools/reports/playverify_r77_r83.md',
 """## Sign-off""",
 """## R94: the nerve
 - [ ] With the henchman hired, descend DEEPER than ever

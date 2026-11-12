@@ -8,7 +8,7 @@
 # extract/ddg/. Deleted (git history preserves them): the
 # reorg.b64 transport file, the ten zero-byte pNNN stubs, the
 # stale root hallscan.py (the fitted tool already seats at
-# tools/hallscan.py - the root copy is the pre-fit template),
+# tools/map/hallscan.py - the root copy is the pre-fit template),
 # and the stale root map-006.jpg (byte-identical duplicate of
 # extract/g1/map-006.jpg, already seated by the seat commit).
 # The "raster": "map-006.jpg" reference in

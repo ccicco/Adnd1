@@ -5,7 +5,7 @@
   "regtest": "regtest.cpp",
   "header_file": "rules/meta/tooling_holdback_patch.h",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
-  "gap_report": "tools/mm2_gap_report.md",
+  "gap_report": "tools/reports/mm2_gap_report.md",
   "banner": {
     "title": "the holdback tooling patch - the second tooling round of the regtest decomposition arc",
     "provenance": "spec-driven; the engine head walk widens 800 to 4000 so the sixteen no-head blocks (the WSG weather pair, the DMO family, the MM2 letter walks - heads 823 to 2325 lines above their labels) find their heads, and the migrate key gains a per-block allow_wide tolerance so the thirty-one width-family blocks (77 wide code lines, 79 to 159 cols; regtest itself runs to 305) move verbatim instead of split; the 78-col default stands for every undeclared block; no block moves this round - the tooling lands alone, the final 55-block batch closes the arc"
