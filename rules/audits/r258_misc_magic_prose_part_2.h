@@ -4,7 +4,7 @@
     // part2 line; no page headers inside the
     // slice.
     {
-        Miscmagic_bag_of_holding_to_book_of_exalted_deeds miscmagic_bag_of_holding_to_book_of_exalted_deeds;
+        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
         Miscmagic_table1_footnotes miscmagic_table1_footnotes;
         int bad = 0;
         // the six items are the engine kMisc1 rows
@@ -24,10 +24,10 @@
         if (miscmagic_table1_footnotes.m1UsableByCleric(15) != 1 ||
             miscmagic_table1_footnotes.m1UsableByCleric(14) != 0) ++bad;
         // the bag of holding: the 4 quality rows
-        if (miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpHoldingSackShortSideFeet() != 2 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpHoldingSackLongSideFeet() != 4 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpHoldingRowCount() != 4 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpHoldingRuptureCauseCount() != 2) ++bad;
+        if (miscmagic.mmpHoldingSackShortSideFeet() != 2 ||
+            miscmagic.mmpHoldingSackLongSideFeet() != 4 ||
+            miscmagic.mmpHoldingRowCount() != 4 ||
+            miscmagic.mmpHoldingRuptureCauseCount() != 2) ++bad;
         static const int kHoldingLo[4] = {
             1, 31, 71, 91,
         };
@@ -44,37 +44,37 @@
             30, 70, 150, 250,
         };
         for (int i = 0; i < 4; ++i)
-            if (miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpHoldingRowLo(i) != kHoldingLo[i] ||
-                miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpHoldingRowHi(i) != kHoldingHi[i] ||
-                miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpHoldingRowWeightPounds(i) !=
+            if (miscmagic.mmpHoldingRowLo(i) != kHoldingLo[i] ||
+                miscmagic.mmpHoldingRowHi(i) != kHoldingHi[i] ||
+                miscmagic.mmpHoldingRowWeightPounds(i) !=
                     kHoldingWeight[i] ||
-                miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpHoldingRowWeightLimitPounds(i) !=
+                miscmagic.mmpHoldingRowWeightLimitPounds(i) !=
                     kHoldingWeightLimit[i] ||
-                miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpHoldingRowVolumeLimitCubicFeet(i) !=
+                miscmagic.mmpHoldingRowVolumeLimitCubicFeet(i) !=
                     kHoldingVolume[i]) ++bad;
         // the bag of transmuting
-        if (miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpTransmutingDisguiseQualityCount() != 4 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpTransmutingProperUsesMin() != 2 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpTransmutingProperUsesMax() != 5 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpTransmutingTransmuteKindCount() != 2 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpTransmutingItemBaseMaterialCount() != 3 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpTransmutingExemptKindCount() != 2) ++bad;
+        if (miscmagic.mmpTransmutingDisguiseQualityCount() != 4 ||
+            miscmagic.mmpTransmutingProperUsesMin() != 2 ||
+            miscmagic.mmpTransmutingProperUsesMax() != 5 ||
+            miscmagic.mmpTransmutingTransmuteKindCount() != 2 ||
+            miscmagic.mmpTransmutingItemBaseMaterialCount() != 3 ||
+            miscmagic.mmpTransmutingExemptKindCount() != 2) ++bad;
         // the bag of tricks: the animal stat columns
         // are mangled in the upload - the type bands
         // and counts are pinned, the stats are not
         // (the R256 lesson)
-        if (miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpTricksTossMinFeet() != 1 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpTricksTossMaxFeet() != 20 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpTricksTypeDieSides() != 10 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpTricksTypeCount() != 3 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpTricksAnimalsPerType() != 8 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpTricksAnimalDieMin() != 1 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpTricksAnimalDieMax() != 8 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpTricksDrawnAtOnceMax() != 1 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpTricksDurationTurns() != 1 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpTricksEndConditionCount() != 2 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpTricksTypeRollCount() != 1 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpTricksWeeklyDrawMax() != 10) ++bad;
+        if (miscmagic.mmpTricksTossMinFeet() != 1 ||
+            miscmagic.mmpTricksTossMaxFeet() != 20 ||
+            miscmagic.mmpTricksTypeDieSides() != 10 ||
+            miscmagic.mmpTricksTypeCount() != 3 ||
+            miscmagic.mmpTricksAnimalsPerType() != 8 ||
+            miscmagic.mmpTricksAnimalDieMin() != 1 ||
+            miscmagic.mmpTricksAnimalDieMax() != 8 ||
+            miscmagic.mmpTricksDrawnAtOnceMax() != 1 ||
+            miscmagic.mmpTricksDurationTurns() != 1 ||
+            miscmagic.mmpTricksEndConditionCount() != 2 ||
+            miscmagic.mmpTricksTypeRollCount() != 1 ||
+            miscmagic.mmpTricksWeeklyDrawMax() != 10) ++bad;
         static const int kTricksTypeLo[3] = {
             1, 6, 9,
         };
@@ -82,21 +82,21 @@
             5, 8, 100,
         };
         for (int i = 0; i < 3; ++i)
-            if (miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpTricksTypeLo(i) != kTricksTypeLo[i] ||
-                miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpTricksTypeHi(i) != kTricksTypeHi[i]) ++bad;
+            if (miscmagic.mmpTricksTypeLo(i) != kTricksTypeLo[i] ||
+                miscmagic.mmpTricksTypeHi(i) != kTricksTypeHi[i]) ++bad;
         // the beaker of plentiful potions
-        if (miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBeakerDoseMin() != 2 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBeakerDoseMax() != 5 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBeakerPotionCountMin() != 2 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBeakerPotionCountMax() != 5 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBeakerCountDieSides() != 4 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBeakerCountDiePlus() != 1 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBeakerPourRounds() != 1 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBeakerPourDoses() != 1 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBeakerBadTypeCount() != 2 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBeakerMonthlyTypeLoss() != 1 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBeakerDispenseRowMin() != 2 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBeakerDispenseRowMax() != 5) ++bad;
+        if (miscmagic.mmpBeakerDoseMin() != 2 ||
+            miscmagic.mmpBeakerDoseMax() != 5 ||
+            miscmagic.mmpBeakerPotionCountMin() != 2 ||
+            miscmagic.mmpBeakerPotionCountMax() != 5 ||
+            miscmagic.mmpBeakerCountDieSides() != 4 ||
+            miscmagic.mmpBeakerCountDiePlus() != 1 ||
+            miscmagic.mmpBeakerPourRounds() != 1 ||
+            miscmagic.mmpBeakerPourDoses() != 1 ||
+            miscmagic.mmpBeakerBadTypeCount() != 2 ||
+            miscmagic.mmpBeakerMonthlyTypeLoss() != 1 ||
+            miscmagic.mmpBeakerDispenseRowMin() != 2 ||
+            miscmagic.mmpBeakerDispenseRowMax() != 5) ++bad;
         static const int kBeakerPerDay[4] = {
             1, 1, 0, 0,
         };
@@ -104,52 +104,52 @@
             3, 2, 1, 1,
         };
         for (int i = 0; i < 4; ++i)
-            if (miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBeakerPerDayByCount(i) !=
+            if (miscmagic.mmpBeakerPerDayByCount(i) !=
                     kBeakerPerDay[i] ||
-                miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBeakerPerWeekByCount(i) !=
+                miscmagic.mmpBeakerPerWeekByCount(i) !=
                     kBeakerPerWeek[i]) ++bad;
         // the boat, folding
-        if (miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBoatBoxLengthInches() != 12 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBoatBoxWidthInches() != 6 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBoatBoxDepthInches() != 6 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBoatLengthFeet() != 10 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBoatWidthFeet() != 4 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBoatDepthFeet() != 2 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBoatShipLengthFeet() != 24 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBoatShipWidthFeet() != 8 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBoatShipDepthFeet() != 6 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBoatOarPairs() != 1 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBoatComponentCount() != 4 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBoatShipOarSets() != 5 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBoatShipComponentCount() != 7 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBoatPersonsMin() != 3 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBoatPersonsMax() != 4 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBoatShipPersons() != 15 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpBoatCommandWordCount() != 3) ++bad;
+        if (miscmagic.mmpBoatBoxLengthInches() != 12 ||
+            miscmagic.mmpBoatBoxWidthInches() != 6 ||
+            miscmagic.mmpBoatBoxDepthInches() != 6 ||
+            miscmagic.mmpBoatLengthFeet() != 10 ||
+            miscmagic.mmpBoatWidthFeet() != 4 ||
+            miscmagic.mmpBoatDepthFeet() != 2 ||
+            miscmagic.mmpBoatShipLengthFeet() != 24 ||
+            miscmagic.mmpBoatShipWidthFeet() != 8 ||
+            miscmagic.mmpBoatShipDepthFeet() != 6 ||
+            miscmagic.mmpBoatOarPairs() != 1 ||
+            miscmagic.mmpBoatComponentCount() != 4 ||
+            miscmagic.mmpBoatShipOarSets() != 5 ||
+            miscmagic.mmpBoatShipComponentCount() != 7 ||
+            miscmagic.mmpBoatPersonsMin() != 3 ||
+            miscmagic.mmpBoatPersonsMax() != 4 ||
+            miscmagic.mmpBoatShipPersons() != 15 ||
+            miscmagic.mmpBoatCommandWordCount() != 3) ++bad;
         // the book of exalted deeds
-        if (miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpExaltedReadingWeeks() != 1 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpExaltedWisdomGain() != 1 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpExaltedHalfwayPct() != 50 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpExaltedNeutralXpLossMin() != 20000 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpExaltedNeutralXpLossMax() != 80000 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpExaltedLevelFloor() != 1 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpExaltedEvilLevelLoss() != 1 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpExaltedAtonementPct() != 50 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpExaltedAtonementAdventuresMin() != 2 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpExaltedAtonementAdventuresMax() != 5 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpExaltedMuIntLoss() != 1 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpExaltedMuSaveXpLossMin() != 2000 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpExaltedMuSaveXpLossMax() != 20000 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpExaltedThiefHpMin() != 5 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpExaltedThiefHpMax() != 30 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpExaltedThiefDexLoss() != 1 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpExaltedThiefConvertPctMin() != 10 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpExaltedThiefConvertPctMax() != 60 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpExaltedThiefConvertWisReq() != 15 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpExaltedAssassinHpMin() != 5 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpExaltedAssassinHpMax() != 40 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpExaltedVanishesAfterPerusal() != 1 ||
-            miscmagic_bag_of_holding_to_book_of_exalted_deeds.mmpExaltedMaxBenefitTimes() != 1) ++bad;
+        if (miscmagic.mmpExaltedReadingWeeks() != 1 ||
+            miscmagic.mmpExaltedWisdomGain() != 1 ||
+            miscmagic.mmpExaltedHalfwayPct() != 50 ||
+            miscmagic.mmpExaltedNeutralXpLossMin() != 20000 ||
+            miscmagic.mmpExaltedNeutralXpLossMax() != 80000 ||
+            miscmagic.mmpExaltedLevelFloor() != 1 ||
+            miscmagic.mmpExaltedEvilLevelLoss() != 1 ||
+            miscmagic.mmpExaltedAtonementPct() != 50 ||
+            miscmagic.mmpExaltedAtonementAdventuresMin() != 2 ||
+            miscmagic.mmpExaltedAtonementAdventuresMax() != 5 ||
+            miscmagic.mmpExaltedMuIntLoss() != 1 ||
+            miscmagic.mmpExaltedMuSaveXpLossMin() != 2000 ||
+            miscmagic.mmpExaltedMuSaveXpLossMax() != 20000 ||
+            miscmagic.mmpExaltedThiefHpMin() != 5 ||
+            miscmagic.mmpExaltedThiefHpMax() != 30 ||
+            miscmagic.mmpExaltedThiefDexLoss() != 1 ||
+            miscmagic.mmpExaltedThiefConvertPctMin() != 10 ||
+            miscmagic.mmpExaltedThiefConvertPctMax() != 60 ||
+            miscmagic.mmpExaltedThiefConvertWisReq() != 15 ||
+            miscmagic.mmpExaltedAssassinHpMin() != 5 ||
+            miscmagic.mmpExaltedAssassinHpMax() != 40 ||
+            miscmagic.mmpExaltedVanishesAfterPerusal() != 1 ||
+            miscmagic.mmpExaltedMaxBenefitTimes() != 1) ++bad;
         printf("R258 misc magic prose part 2 pins audit: bad %d\n", bad);
         if (bad) return 1;
     }

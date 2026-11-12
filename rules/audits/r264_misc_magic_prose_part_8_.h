@@ -4,54 +4,54 @@
     // the 22-plaque table and the per-plaque
     // explanations, pinning the kMisc2 row 18.
     {
-        Miscmagic_deck_of_many_things miscmagic_deck_of_many_things;
+        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
         Miscmagic_table2_footnotes miscmagic_table2_footnotes;
         int bad = 0;
-        if (miscmagic_deck_of_many_things.mmpDeckPlaqueMaterialCount() != 2 ||
-            miscmagic_deck_of_many_things.mmpDeckMinDraws() != 1 ||
-            miscmagic_deck_of_many_things.mmpDeckMaxDraws() != 4 ||
-            miscmagic_deck_of_many_things.mmpDeckJesterBonusDraws() != 2 ||
-            miscmagic_deck_of_many_things.mmpDeckBasePlaqueCount() != 13 ||
-            miscmagic_deck_of_many_things.mmpDeckFullPlaqueCount() != 22 ||
-            miscmagic_deck_of_many_things.mmpDeckBaseChancePct() != 75 ||
-            miscmagic_deck_of_many_things.mmpDeckFullChancePct() != 25 ||
-            miscmagic_deck_of_many_things.mmpDeckAsteriskPlaqueCount() != 9 ||
-            miscmagic_deck_of_many_things.mmpDeckDiscardPlaqueCount() != 2 ||
-            miscmagic_deck_of_many_things.mmpDeckBoldFaceStopCount() != 2 ||
-            miscmagic_deck_of_many_things.mmpDeckTablePlaqueCount() != 22) ++bad;
-        if (miscmagic_deck_of_many_things.mmpDeckSunXp() != 50000 ||
-            miscmagic_deck_of_many_things.mmpDeckMoonWishesMin() != 1 ||
-            miscmagic_deck_of_many_things.mmpDeckMoonWishesMax() != 4 ||
-            miscmagic_deck_of_many_things.mmpDeckMoonSpellLevel() != 9 ||
-            miscmagic_deck_of_many_things.mmpDeckStarPoints() != 2 ||
-            miscmagic_deck_of_many_things.mmpDeckStarMaxScore() != 19 ||
-            miscmagic_deck_of_many_things.mmpDeckStarFallbackOrderCount() != 6 ||
-            miscmagic_deck_of_many_things.mmpDeckCometMidpointProgress() != 1) ++bad;
-        if (miscmagic_deck_of_many_things.mmpDeckThroneCharisma() != 18 ||
-            miscmagic_deck_of_many_things.mmpDeckThroneReactionBonusPct() != 25 ||
-            miscmagic_deck_of_many_things.mmpDeckKeyMapBonusPct() != 20 ||
-            miscmagic_deck_of_many_things.mmpDeckKeyWeaponCount() != 1 ||
-            miscmagic_deck_of_many_things.mmpDeckKnightLevel() != 4 ||
-            miscmagic_deck_of_many_things.mmpDeckKnightBonusPerDie() != 1 ||
-            miscmagic_deck_of_many_things.mmpDeckKnightAbilityMax() != 18 ||
-            miscmagic_deck_of_many_things.mmpDeckGemJewelryCount() != 20 ||
-            miscmagic_deck_of_many_things.mmpDeckGemGemCount() != 50 ||
-            miscmagic_deck_of_many_things.mmpDeckGemGemBaseGp() != 1000 ||
-            miscmagic_deck_of_many_things.mmpDeckGemXpLevelCap() != 1) ++bad;
-        if (miscmagic_deck_of_many_things.mmpDeckEuryaleSavePenalty() != 3 ||
-            miscmagic_deck_of_many_things.mmpDeckRogueHenchmenAlienated() != 1 ||
-            miscmagic_deck_of_many_things.mmpDeckJesterXp() != 10000 ||
-            miscmagic_deck_of_many_things.mmpDeckJesterExtraDraws() != 2 ||
-            miscmagic_deck_of_many_things.mmpDeckFoolXp() != 10000 ||
-            miscmagic_deck_of_many_things.mmpDeckIdiotIntLossMin() != 1 ||
-            miscmagic_deck_of_many_things.mmpDeckIdiotIntLossMax() != 4) ++bad;
-        if (miscmagic_deck_of_many_things.mmpDeckSkullDeathAc() != -4 ||
-            miscmagic_deck_of_many_things.mmpDeckSkullDeathHp() != 33 ||
-            miscmagic_deck_of_many_things.mmpDeckSkullScytheDmgMin() != 2 ||
-            miscmagic_deck_of_many_things.mmpDeckSkullScytheDmgMax() != 16 ||
-            miscmagic_deck_of_many_things.mmpDeckSkullUndeadForSpells() != 1 ||
-            miscmagic_deck_of_many_things.mmpDeckFatesPartyEndures() != 1 ||
-            miscmagic_deck_of_many_things.mmpDeckDonjonGearStripped() != 1) ++bad;
+        if (miscmagic.mmpDeckPlaqueMaterialCount() != 2 ||
+            miscmagic.mmpDeckMinDraws() != 1 ||
+            miscmagic.mmpDeckMaxDraws() != 4 ||
+            miscmagic.mmpDeckJesterBonusDraws() != 2 ||
+            miscmagic.mmpDeckBasePlaqueCount() != 13 ||
+            miscmagic.mmpDeckFullPlaqueCount() != 22 ||
+            miscmagic.mmpDeckBaseChancePct() != 75 ||
+            miscmagic.mmpDeckFullChancePct() != 25 ||
+            miscmagic.mmpDeckAsteriskPlaqueCount() != 9 ||
+            miscmagic.mmpDeckDiscardPlaqueCount() != 2 ||
+            miscmagic.mmpDeckBoldFaceStopCount() != 2 ||
+            miscmagic.mmpDeckTablePlaqueCount() != 22) ++bad;
+        if (miscmagic.mmpDeckSunXp() != 50000 ||
+            miscmagic.mmpDeckMoonWishesMin() != 1 ||
+            miscmagic.mmpDeckMoonWishesMax() != 4 ||
+            miscmagic.mmpDeckMoonSpellLevel() != 9 ||
+            miscmagic.mmpDeckStarPoints() != 2 ||
+            miscmagic.mmpDeckStarMaxScore() != 19 ||
+            miscmagic.mmpDeckStarFallbackOrderCount() != 6 ||
+            miscmagic.mmpDeckCometMidpointProgress() != 1) ++bad;
+        if (miscmagic.mmpDeckThroneCharisma() != 18 ||
+            miscmagic.mmpDeckThroneReactionBonusPct() != 25 ||
+            miscmagic.mmpDeckKeyMapBonusPct() != 20 ||
+            miscmagic.mmpDeckKeyWeaponCount() != 1 ||
+            miscmagic.mmpDeckKnightLevel() != 4 ||
+            miscmagic.mmpDeckKnightBonusPerDie() != 1 ||
+            miscmagic.mmpDeckKnightAbilityMax() != 18 ||
+            miscmagic.mmpDeckGemJewelryCount() != 20 ||
+            miscmagic.mmpDeckGemGemCount() != 50 ||
+            miscmagic.mmpDeckGemGemBaseGp() != 1000 ||
+            miscmagic.mmpDeckGemXpLevelCap() != 1) ++bad;
+        if (miscmagic.mmpDeckEuryaleSavePenalty() != 3 ||
+            miscmagic.mmpDeckRogueHenchmenAlienated() != 1 ||
+            miscmagic.mmpDeckJesterXp() != 10000 ||
+            miscmagic.mmpDeckJesterExtraDraws() != 2 ||
+            miscmagic.mmpDeckFoolXp() != 10000 ||
+            miscmagic.mmpDeckIdiotIntLossMin() != 1 ||
+            miscmagic.mmpDeckIdiotIntLossMax() != 4) ++bad;
+        if (miscmagic.mmpDeckSkullDeathAc() != -4 ||
+            miscmagic.mmpDeckSkullDeathHp() != 33 ||
+            miscmagic.mmpDeckSkullScytheDmgMin() != 2 ||
+            miscmagic.mmpDeckSkullScytheDmgMax() != 16 ||
+            miscmagic.mmpDeckSkullUndeadForSpells() != 1 ||
+            miscmagic.mmpDeckFatesPartyEndures() != 1 ||
+            miscmagic.mmpDeckDonjonGearStripped() != 1) ++bad;
         static const int kAsterisk[22] = {
             0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1,
             0, 0, 0, 1, 0, 1, 1, 1, 1, 1,
@@ -65,15 +65,15 @@
             0, 0, 0, 0, 1, 1, 0, 0, 0, 0,
         };
         for (int i = 0; i < 22; ++i)
-            if (miscmagic_deck_of_many_things.mmpDeckPlaqueAsterisk(i) !=
+            if (miscmagic.mmpDeckPlaqueAsterisk(i) !=
                 kAsterisk[i] ||
-                miscmagic_deck_of_many_things.mmpDeckPlaqueBoldFace(i) !=
+                miscmagic.mmpDeckPlaqueBoldFace(i) !=
                 kBoldFace[i] ||
-                miscmagic_deck_of_many_things.mmpDeckPlaqueDiscarded(i) !=
+                miscmagic.mmpDeckPlaqueDiscarded(i) !=
                 kDiscard[i]) ++bad;
-        if (miscmagic_deck_of_many_things.mmpDeckBasePlaqueCount() +
-            miscmagic_deck_of_many_things.mmpDeckAsteriskPlaqueCount() !=
-            miscmagic_deck_of_many_things.mmpDeckFullPlaqueCount()) ++bad;
+        if (miscmagic.mmpDeckBasePlaqueCount() +
+            miscmagic.mmpDeckAsteriskPlaqueCount() !=
+            miscmagic.mmpDeckFullPlaqueCount()) ++bad;
         // the kMisc2 row this slice pins: the Deck
         // of Many Things, 73-76, no class marks
         if (miscmagic_table2_footnotes.m2RowLo(18) != 73 ||

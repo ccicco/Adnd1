@@ -8,62 +8,62 @@
     // part2 lines 843-900 - the slice pinning the
     // kMisc4 rows 9-18 of the 36-row III.E.4 table.
     {
-        Miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles;
+        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
         Miscmagic_table4_footnotes miscmagic_table4_footnotes;
         int bad = 0;
         // the manual of stealthy pilfering
-        if (miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpStealthyPracticeMonths() != 1 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpStealthyKnowledgeMonths() != 3 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpStealthyAssassinXp() != 5000 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpStealthyAssassinWeeks() != 1 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpStealthyWrongDamageMin() != 5 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpStealthyWrongDamageMax() != 20 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpStealthyXpLossMin() != 5000 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpStealthyXpLossMax() != 20000 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpStealthyAtoneDays() != 1 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpStealthyWisdomLoss() != 1) ++bad;
+        if (miscmagic.mmpStealthyPracticeMonths() != 1 ||
+            miscmagic.mmpStealthyKnowledgeMonths() != 3 ||
+            miscmagic.mmpStealthyAssassinXp() != 5000 ||
+            miscmagic.mmpStealthyAssassinWeeks() != 1 ||
+            miscmagic.mmpStealthyWrongDamageMin() != 5 ||
+            miscmagic.mmpStealthyWrongDamageMax() != 20 ||
+            miscmagic.mmpStealthyXpLossMin() != 5000 ||
+            miscmagic.mmpStealthyXpLossMax() != 20000 ||
+            miscmagic.mmpStealthyAtoneDays() != 1 ||
+            miscmagic.mmpStealthyWisdomLoss() != 1) ++bad;
         // the stun rounds are a like number of the
         // printed damage pair
-        if (miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpStealthyStunRoundsMin() !=
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpStealthyWrongDamageMin() ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpStealthyStunRoundsMax() !=
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpStealthyWrongDamageMax()) ++bad;
+        if (miscmagic.mmpStealthyStunRoundsMin() !=
+            miscmagic.mmpStealthyWrongDamageMin() ||
+            miscmagic.mmpStealthyStunRoundsMax() !=
+            miscmagic.mmpStealthyWrongDamageMax()) ++bad;
         // the mattock of the titans
-        if (miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpMattockLengthFeet() != 10 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpMattockWeightLb() != 100 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpMattockMinStrength() != 20 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpMattockEarthCubicFeet() != 100 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpMattockRockCubicFeet() != 20 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpMattockAreaTurns() != 1 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpMattockHitBonus() != 3 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpMattockDamageMin() != 5 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpMattockDamageMax() != 30) ++bad;
+        if (miscmagic.mmpMattockLengthFeet() != 10 ||
+            miscmagic.mmpMattockWeightLb() != 100 ||
+            miscmagic.mmpMattockMinStrength() != 20 ||
+            miscmagic.mmpMattockEarthCubicFeet() != 100 ||
+            miscmagic.mmpMattockRockCubicFeet() != 20 ||
+            miscmagic.mmpMattockAreaTurns() != 1 ||
+            miscmagic.mmpMattockHitBonus() != 3 ||
+            miscmagic.mmpMattockDamageMin() != 5 ||
+            miscmagic.mmpMattockDamageMax() != 30) ++bad;
         // the maul of the titans
-        if (miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpMaulLengthFeet() != 8 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpMaulWeightLb() != 150 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpMaulMinStrength() != 21 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpMaulPileDiameterFeet() != 2 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpMaulPileDepthFeet() != 4 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpMaulBlowsPerRound() != 2 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpMaulDoorHeightFeet() != 10 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpMaulDoorWidthFeet() != 4 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpMaulDoorThicknessInches() != 2 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpMaulDoorBlows() != 1 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpMaulDoorIronBlows() != 2 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpMaulHitBonus() != 2 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpMaulDamageMin() != 10 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpMaulDamageMax() != 40) ++bad;
+        if (miscmagic.mmpMaulLengthFeet() != 8 ||
+            miscmagic.mmpMaulWeightLb() != 150 ||
+            miscmagic.mmpMaulMinStrength() != 21 ||
+            miscmagic.mmpMaulPileDiameterFeet() != 2 ||
+            miscmagic.mmpMaulPileDepthFeet() != 4 ||
+            miscmagic.mmpMaulBlowsPerRound() != 2 ||
+            miscmagic.mmpMaulDoorHeightFeet() != 10 ||
+            miscmagic.mmpMaulDoorWidthFeet() != 4 ||
+            miscmagic.mmpMaulDoorThicknessInches() != 2 ||
+            miscmagic.mmpMaulDoorBlows() != 1 ||
+            miscmagic.mmpMaulDoorIronBlows() != 2 ||
+            miscmagic.mmpMaulHitBonus() != 2 ||
+            miscmagic.mmpMaulDamageMin() != 10 ||
+            miscmagic.mmpMaulDamageMax() != 40) ++bad;
         // the medallion of esp scalars
-        if (miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpEspPathWidthFeet() != 1 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpEspBroadenFeet() != 2 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpEspBroadenPerFeet() != 10 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpEspMaxWidthFeet() != 11 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpEspMaxWidthAtFeet() != 50 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpEspUseRounds() != 1 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpEspStoneBlockFeet() != 3 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpEspMetalBlockSixthsFeet() != 1 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpEspMalfunctionRoll() != 6 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpEspMalfunctionDieSides() != 6) ++bad;
+        if (miscmagic.mmpEspPathWidthFeet() != 1 ||
+            miscmagic.mmpEspBroadenFeet() != 2 ||
+            miscmagic.mmpEspBroadenPerFeet() != 10 ||
+            miscmagic.mmpEspMaxWidthFeet() != 11 ||
+            miscmagic.mmpEspMaxWidthAtFeet() != 50 ||
+            miscmagic.mmpEspUseRounds() != 1 ||
+            miscmagic.mmpEspStoneBlockFeet() != 3 ||
+            miscmagic.mmpEspMetalBlockSixthsFeet() != 1 ||
+            miscmagic.mmpEspMalfunctionRoll() != 6 ||
+            miscmagic.mmpEspMalfunctionDieSides() != 6) ++bad;
         // the medallion type table against static twins
         static const int kElo[4] = {
             1, 16, 19, 20,
@@ -78,41 +78,41 @@
             0, 1, 0, 0,
         };
         for (int i = 0; i < 4; ++i)
-            if (miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpEspRowLo(i) != kElo[i] ||
-                miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpEspRowHi(i) != kEhi[i] ||
-                miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpEspRangeFeet(i) != kErg[i] ||
-                miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpEspEmpathy(i) != kEmp[i]) ++bad;
+            if (miscmagic.mmpEspRowLo(i) != kElo[i] ||
+                miscmagic.mmpEspRowHi(i) != kEhi[i] ||
+                miscmagic.mmpEspRangeFeet(i) != kErg[i] ||
+                miscmagic.mmpEspEmpathy(i) != kEmp[i]) ++bad;
         // the medallion die bands tile 1-20 without gaps
         for (int i = 0; i < 3; ++i)
-            if (miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpEspRowLo(i + 1) !=
-                miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpEspRowHi(i) + 1) ++bad;
-        if (miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpEspRowLo(0) != 1 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpEspRowHi(3) != 20) ++bad;
+            if (miscmagic.mmpEspRowLo(i + 1) !=
+                miscmagic.mmpEspRowHi(i) + 1) ++bad;
+        if (miscmagic.mmpEspRowLo(0) != 1 ||
+            miscmagic.mmpEspRowHi(3) != 20) ++bad;
         // the medallion of thought projection
-        if (miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpProjectionWorksRoll() != 6) ++bad;
+        if (miscmagic.mmpProjectionWorksRoll() != 6) ++bad;
         // both printed medallion rolls are the 6 on d6
-        if (miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpProjectionWorksRoll() !=
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpEspMalfunctionRoll()) ++bad;
+        if (miscmagic.mmpProjectionWorksRoll() !=
+            miscmagic.mmpEspMalfunctionRoll()) ++bad;
         // the mirror of life trapping
-        if (miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpTrapAreaSquareFeet() != 4 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpTrapCellMin() != 13 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpTrapCellMax() != 18 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpTrapTriggerFeet() != 30 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpTrapSeePctUnaware() != 100 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpTrapSeePctAvoiding() != 50 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpTrapSeePctAware() != 20 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpTrapOverflowFreed() != 1) ++bad;
+        if (miscmagic.mmpTrapAreaSquareFeet() != 4 ||
+            miscmagic.mmpTrapCellMin() != 13 ||
+            miscmagic.mmpTrapCellMax() != 18 ||
+            miscmagic.mmpTrapTriggerFeet() != 30 ||
+            miscmagic.mmpTrapSeePctUnaware() != 100 ||
+            miscmagic.mmpTrapSeePctAvoiding() != 50 ||
+            miscmagic.mmpTrapSeePctAware() != 20 ||
+            miscmagic.mmpTrapOverflowFreed() != 1) ++bad;
         // the 13-18 cell span is the 5 gap
-        if (miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpTrapCellMax() -
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpTrapCellMin() != 5) ++bad;
+        if (miscmagic.mmpTrapCellMax() -
+            miscmagic.mmpTrapCellMin() != 5) ++bad;
         // the mirror of mental prowess
-        if (miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpProwessQuestionsPerWeek() != 1 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpProwessWidthFeet() != 5 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpProwessHeightFeet() != 2) ++bad;
+        if (miscmagic.mmpProwessQuestionsPerWeek() != 1 ||
+            miscmagic.mmpProwessWidthFeet() != 5 ||
+            miscmagic.mmpProwessHeightFeet() != 2) ++bad;
         // the necklace of adaptation
-        if (miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpAdaptationAirlessDays() != 7) ++bad;
+        if (miscmagic.mmpAdaptationAirlessDays() != 7) ++bad;
         // the necklace of missiles
-        if (miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpMissileRangeInches() != 7) ++bad;
+        if (miscmagic.mmpMissileRangeInches() != 7) ++bad;
         static const int kNlo[7] = {
             1, 5, 9, 13, 17, 19, 20,
         };
@@ -132,42 +132,42 @@
             1, 0, 2, 0, 2, 0, 2, 0, 2, 0,
         };
         for (int i = 0; i < 7; ++i)
-            if (miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpNeckRowLo(i) != kNlo[i] ||
-                miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpNeckRowHi(i) != kNhi[i]) ++bad;
+            if (miscmagic.mmpNeckRowLo(i) != kNlo[i] ||
+                miscmagic.mmpNeckRowHi(i) != kNhi[i]) ++bad;
         for (int i = 0; i < 10; ++i)
-            if (miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpNeckDieOf(i) != kHdc[i]) ++bad;
+            if (miscmagic.mmpNeckDieOf(i) != kHdc[i]) ++bad;
         for (int i = 0; i < 70; ++i)
-            if (miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpNeckCell(i) != kNcl[i]) ++bad;
+            if (miscmagic.mmpNeckCell(i) != kNcl[i]) ++bad;
         // the necklace die bands tile 1-20 without gaps
         for (int i = 0; i < 6; ++i)
-            if (miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpNeckRowLo(i + 1) !=
-                miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpNeckRowHi(i) + 1) ++bad;
-        if (miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpNeckRowLo(0) != 1 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpNeckRowHi(6) != 20) ++bad;
+            if (miscmagic.mmpNeckRowLo(i + 1) !=
+                miscmagic.mmpNeckRowHi(i) + 1) ++bad;
+        if (miscmagic.mmpNeckRowLo(0) != 1 ||
+            miscmagic.mmpNeckRowHi(6) != 20) ++bad;
         // the hit dice columns descend by one
         for (int i = 0; i < 9; ++i)
-            if (miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpNeckDieOf(i + 1) !=
-                miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpNeckDieOf(i) - 1) ++bad;
+            if (miscmagic.mmpNeckDieOf(i + 1) !=
+                miscmagic.mmpNeckDieOf(i) - 1) ++bad;
         // the printed 9-12 example: one 7-dice, two
         // 5-dice and four 3-dice - seven missiles
-        if (miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpNeckCell(24) != 1 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpNeckCell(26) != 2 ||
-            miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpNeckCell(28) != 4) ++bad;
+        if (miscmagic.mmpNeckCell(24) != 1 ||
+            miscmagic.mmpNeckCell(26) != 2 ||
+            miscmagic.mmpNeckCell(28) != 4) ++bad;
         // every row sums to its missile count
         static const int kTot[7] = {
             3, 5, 7, 9, 7, 9, 9,
         };
         for (int r = 0; r <= 6; ++r)
-            if (miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpNeckCell(r * 10) +
-                miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpNeckCell(r * 10 + 1) +
-                miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpNeckCell(r * 10 + 2) +
-                miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpNeckCell(r * 10 + 3) +
-                miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpNeckCell(r * 10 + 4) +
-                miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpNeckCell(r * 10 + 5) +
-                miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpNeckCell(r * 10 + 6) +
-                miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpNeckCell(r * 10 + 7) +
-                miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpNeckCell(r * 10 + 8) +
-                miscmagic_manual_of_stealthy_pilfering_to_necklace_of_missiles.mmpNeckCell(r * 10 + 9) !=
+            if (miscmagic.mmpNeckCell(r * 10) +
+                miscmagic.mmpNeckCell(r * 10 + 1) +
+                miscmagic.mmpNeckCell(r * 10 + 2) +
+                miscmagic.mmpNeckCell(r * 10 + 3) +
+                miscmagic.mmpNeckCell(r * 10 + 4) +
+                miscmagic.mmpNeckCell(r * 10 + 5) +
+                miscmagic.mmpNeckCell(r * 10 + 6) +
+                miscmagic.mmpNeckCell(r * 10 + 7) +
+                miscmagic.mmpNeckCell(r * 10 + 8) +
+                miscmagic.mmpNeckCell(r * 10 + 9) !=
                 kTot[r]) ++bad;
         // the engine kMisc4 rows 9-18: the die band
         // edges, the (T), (F) and (M) marks, the single

@@ -9,156 +9,156 @@
     // part2 lines 1054-1081 - the slice pinning the kMisc5
     // rows 6-16 of the 35-row III.E.5 table.
     {
-        Miscmagic_rope_of_climbing_to_spade_of_colossal_excavation miscmagic_rope_of_climbing_to_spade_of_colossal_excavation;
+        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
         Miscmagic_table5_footnotes miscmagic_table5_footnotes;
         int bad = 0;
         // the rope of climbing scalars
-        if (miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpClimbLengthFeet() != 60 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpClimbWeightPounds() != 3 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpClimbSupportPounds() != 3000 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpClimbSpeedFeetPerRound() != 10 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpClimbKnotIntervalFeet() != 1 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpClimbKnottedLengthFeet() != 50) ++bad;
+        if (miscmagic.mmpClimbLengthFeet() != 60 ||
+            miscmagic.mmpClimbWeightPounds() != 3 ||
+            miscmagic.mmpClimbSupportPounds() != 3000 ||
+            miscmagic.mmpClimbSpeedFeetPerRound() != 10 ||
+            miscmagic.mmpClimbKnotIntervalFeet() != 1 ||
+            miscmagic.mmpClimbKnottedLengthFeet() != 50) ++bad;
         // the knotted rope is shorter than the full rope
-        if (miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpClimbKnottedLengthFeet() >=
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpClimbLengthFeet()) ++bad;
+        if (miscmagic.mmpClimbKnottedLengthFeet() >=
+            miscmagic.mmpClimbLengthFeet()) ++bad;
         // the rope of constriction scalars
-        if (miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpConstrictExtraVictimsMin() != 1 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpConstrictExtraVictimsMax() != 4 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpConstrictVictimRangeFeet() != 10 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpConstrictDmgMin() != 2 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpConstrictDmgMax() != 12 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpConstrictAcClass() != -2 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpConstrictCutHitPoints() != 22) ++bad;
+        if (miscmagic.mmpConstrictExtraVictimsMin() != 1 ||
+            miscmagic.mmpConstrictExtraVictimsMax() != 4 ||
+            miscmagic.mmpConstrictVictimRangeFeet() != 10 ||
+            miscmagic.mmpConstrictDmgMin() != 2 ||
+            miscmagic.mmpConstrictDmgMax() != 12 ||
+            miscmagic.mmpConstrictAcClass() != -2 ||
+            miscmagic.mmpConstrictCutHitPoints() != 22) ++bad;
         // the victim band and damage band are ordered
-        if (miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpConstrictExtraVictimsMin() >
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpConstrictExtraVictimsMax() ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpConstrictDmgMin() >
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpConstrictDmgMax()) ++bad;
+        if (miscmagic.mmpConstrictExtraVictimsMin() >
+            miscmagic.mmpConstrictExtraVictimsMax() ||
+            miscmagic.mmpConstrictDmgMin() >
+            miscmagic.mmpConstrictDmgMax()) ++bad;
         // the rope of entanglement scalars
-        if (miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEntangleLashFeet() != 20 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEntangleUpwardFeet() != 10 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEntangleManSizedMax() != 8 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEntangleStrikeSegments() != 1 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEntangleEntwineSegments() != 1 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEntangleCommandSegments() != 1 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEntangleWholeSegments() != 3 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEntangleAcClass() != -2 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEntangleCutHitPoints() != 22 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEntangleRepairTurns() != 6) ++bad;
+        if (miscmagic.mmpEntangleLashFeet() != 20 ||
+            miscmagic.mmpEntangleUpwardFeet() != 10 ||
+            miscmagic.mmpEntangleManSizedMax() != 8 ||
+            miscmagic.mmpEntangleStrikeSegments() != 1 ||
+            miscmagic.mmpEntangleEntwineSegments() != 1 ||
+            miscmagic.mmpEntangleCommandSegments() != 1 ||
+            miscmagic.mmpEntangleWholeSegments() != 3 ||
+            miscmagic.mmpEntangleAcClass() != -2 ||
+            miscmagic.mmpEntangleCutHitPoints() != 22 ||
+            miscmagic.mmpEntangleRepairTurns() != 6) ++bad;
         // the three segment costs sum to the whole
-        if (miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEntangleStrikeSegments() +
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEntangleEntwineSegments() +
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEntangleCommandSegments() !=
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEntangleWholeSegments()) ++bad;
+        if (miscmagic.mmpEntangleStrikeSegments() +
+            miscmagic.mmpEntangleEntwineSegments() +
+            miscmagic.mmpEntangleCommandSegments() !=
+            miscmagic.mmpEntangleWholeSegments()) ++bad;
         // the man-sized equivalence chain against a twin
         static const int kMu[9] = {
             1, 2, 3, 4, 6,
             8, 10, 12, 16,
         };
         for (int i = 0; i < 9; ++i)
-            if (miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEntangleManUnits(i) != kMu[i]) ++bad;
+            if (miscmagic.mmpEntangleManUnits(i) != kMu[i]) ++bad;
         // the chain rises strictly and the men equal the max
-        if (miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEntangleManUnits(0) != 1 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEntangleManUnits(8) != 16) ++bad;
+        if (miscmagic.mmpEntangleManUnits(0) != 1 ||
+            miscmagic.mmpEntangleManUnits(8) != 16) ++bad;
         for (int i = 0; i < 8; ++i)
-            if (miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEntangleManUnits(i) >=
-                miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEntangleManUnits(i + 1)) ++bad;
-        if (miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEntangleManUnits(5) !=
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEntangleManSizedMax()) ++bad;
+            if (miscmagic.mmpEntangleManUnits(i) >=
+                miscmagic.mmpEntangleManUnits(i + 1)) ++bad;
+        if (miscmagic.mmpEntangleManUnits(5) !=
+            miscmagic.mmpEntangleManSizedMax()) ++bad;
         // the rug of smothering scalars
-        if (miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSmotherRoundsMin() != 3 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSmotherRoundsMax() != 6 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSmotherBlockingSpells() != 4) ++bad;
+        if (miscmagic.mmpSmotherRoundsMin() != 3 ||
+            miscmagic.mmpSmotherRoundsMax() != 6 ||
+            miscmagic.mmpSmotherBlockingSpells() != 4) ++bad;
         // the rug of welcome scalars
-        if (miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpWelcomeFlyWidthFeet() != 6 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpWelcomeFlyLengthFeet() != 9 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpWelcomeBridgeFeet() != 27 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpWelcomeBridgeWidthFeet() != 2 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpWelcomeAcClass() != 0 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpWelcomeDestroyHitPoints() != 100 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpWelcomeShrinkDivisor() != 12) ++bad;
+        if (miscmagic.mmpWelcomeFlyWidthFeet() != 6 ||
+            miscmagic.mmpWelcomeFlyLengthFeet() != 9 ||
+            miscmagic.mmpWelcomeBridgeFeet() != 27 ||
+            miscmagic.mmpWelcomeBridgeWidthFeet() != 2 ||
+            miscmagic.mmpWelcomeAcClass() != 0 ||
+            miscmagic.mmpWelcomeDestroyHitPoints() != 100 ||
+            miscmagic.mmpWelcomeShrinkDivisor() != 12) ++bad;
         // the bridge is longer than it is wide
-        if (miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpWelcomeBridgeWidthFeet() >=
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpWelcomeBridgeFeet()) ++bad;
+        if (miscmagic.mmpWelcomeBridgeWidthFeet() >=
+            miscmagic.mmpWelcomeBridgeFeet()) ++bad;
         // the saw of mighty cutting scalars
-        if (miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSawLengthFeet() != 12 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSawWidthFeet() != 1 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSawSoloStrength() != 18 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSawTandemStrength() != 17 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSawTandemPersons() != 2 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSawHardwoodFeet() != 2 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSawHardwoodTurns() != 1 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSawTrunkFeet() != 4 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSawTrunkTurns() != 3 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSawSmallDiameterFeet() != 1 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSawSmallRounds() != 3 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSawWorkTurns() != 6 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSawRestTurns() != 6) ++bad;
+        if (miscmagic.mmpSawLengthFeet() != 12 ||
+            miscmagic.mmpSawWidthFeet() != 1 ||
+            miscmagic.mmpSawSoloStrength() != 18 ||
+            miscmagic.mmpSawTandemStrength() != 17 ||
+            miscmagic.mmpSawTandemPersons() != 2 ||
+            miscmagic.mmpSawHardwoodFeet() != 2 ||
+            miscmagic.mmpSawHardwoodTurns() != 1 ||
+            miscmagic.mmpSawTrunkFeet() != 4 ||
+            miscmagic.mmpSawTrunkTurns() != 3 ||
+            miscmagic.mmpSawSmallDiameterFeet() != 1 ||
+            miscmagic.mmpSawSmallRounds() != 3 ||
+            miscmagic.mmpSawWorkTurns() != 6 ||
+            miscmagic.mmpSawRestTurns() != 6) ++bad;
         // the work and rest turns match
-        if (miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSawWorkTurns() !=
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSawRestTurns()) ++bad;
+        if (miscmagic.mmpSawWorkTurns() !=
+            miscmagic.mmpSawRestTurns()) ++bad;
         // the scarab of death scalars
-        if (miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpDeathHoldRounds() != 1 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpDeathContainerFeet() != 1 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpDeathContainerTurns() != 1 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpDeathHeartRounds() != 1) ++bad;
+        if (miscmagic.mmpDeathHoldRounds() != 1 ||
+            miscmagic.mmpDeathContainerFeet() != 1 ||
+            miscmagic.mmpDeathContainerTurns() != 1 ||
+            miscmagic.mmpDeathHeartRounds() != 1) ++bad;
         // the scarab of enraging enemies scalars
-        if (miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEnrageRadiusInches() != 4 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEnrageToHitBonus() != 1 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEnrageDamageBonus() != 2 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEnrageAcPenalty() != 3 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEnrageRageMin() != 7 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEnrageRageMax() != 12 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEnrageChargesMin() != 19 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEnrageChargesMax() != 24) ++bad;
+        if (miscmagic.mmpEnrageRadiusInches() != 4 ||
+            miscmagic.mmpEnrageToHitBonus() != 1 ||
+            miscmagic.mmpEnrageDamageBonus() != 2 ||
+            miscmagic.mmpEnrageAcPenalty() != 3 ||
+            miscmagic.mmpEnrageRageMin() != 7 ||
+            miscmagic.mmpEnrageRageMax() != 12 ||
+            miscmagic.mmpEnrageChargesMin() != 19 ||
+            miscmagic.mmpEnrageChargesMax() != 24) ++bad;
         // the rage and charge bands are ordered
-        if (miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEnrageRageMin() >
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEnrageRageMax() ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEnrageChargesMin() >
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpEnrageChargesMax()) ++bad;
+        if (miscmagic.mmpEnrageRageMin() >
+            miscmagic.mmpEnrageRageMax() ||
+            miscmagic.mmpEnrageChargesMin() >
+            miscmagic.mmpEnrageChargesMax()) ++bad;
         // the scarab of insanity scalars
-        if (miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpInsanityRadiusInches() != 2 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpInsanitySavePenalty() != 2 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpInsanityMagicResistPenaltyPct() != 10 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpInsanityRoundsMin() != 9 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpInsanityRoundsMax() != 12 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpInsanityChargesMin() != 9 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpInsanityChargesMax() != 16) ++bad;
-        if (miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpInsanityRoundsMin() >
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpInsanityRoundsMax() ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpInsanityChargesMin() >
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpInsanityChargesMax()) ++bad;
+        if (miscmagic.mmpInsanityRadiusInches() != 2 ||
+            miscmagic.mmpInsanitySavePenalty() != 2 ||
+            miscmagic.mmpInsanityMagicResistPenaltyPct() != 10 ||
+            miscmagic.mmpInsanityRoundsMin() != 9 ||
+            miscmagic.mmpInsanityRoundsMax() != 12 ||
+            miscmagic.mmpInsanityChargesMin() != 9 ||
+            miscmagic.mmpInsanityChargesMax() != 16) ++bad;
+        if (miscmagic.mmpInsanityRoundsMin() >
+            miscmagic.mmpInsanityRoundsMax() ||
+            miscmagic.mmpInsanityChargesMin() >
+            miscmagic.mmpInsanityChargesMax()) ++bad;
         // the scarab of protection scalars
-        if (miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpProtectSaveBonus() != 1 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpProtectNoSaveBase() != 20 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpProtectAbsorbCount() != 12 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpProtectReversedOneIn() != 20 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpProtectReversedPenalty() != 2 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpProtectFixedOneIn() != 5 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpProtectFixedBonus() != 2 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpProtectRemoveClericLevel() != 16 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpProtectRemovedAbsorbCount() != 24) ++bad;
+        if (miscmagic.mmpProtectSaveBonus() != 1 ||
+            miscmagic.mmpProtectNoSaveBase() != 20 ||
+            miscmagic.mmpProtectAbsorbCount() != 12 ||
+            miscmagic.mmpProtectReversedOneIn() != 20 ||
+            miscmagic.mmpProtectReversedPenalty() != 2 ||
+            miscmagic.mmpProtectFixedOneIn() != 5 ||
+            miscmagic.mmpProtectFixedBonus() != 2 ||
+            miscmagic.mmpProtectRemoveClericLevel() != 16 ||
+            miscmagic.mmpProtectRemovedAbsorbCount() != 24) ++bad;
         // the fixed scarab absorbs double
-        if (2 * miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpProtectAbsorbCount() !=
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpProtectRemovedAbsorbCount()) ++bad;
+        if (2 * miscmagic.mmpProtectAbsorbCount() !=
+            miscmagic.mmpProtectRemovedAbsorbCount()) ++bad;
         // the fix rate is rarer than the curse rate
-        if (miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpProtectFixedOneIn() >
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpProtectReversedOneIn()) ++bad;
+        if (miscmagic.mmpProtectFixedOneIn() >
+            miscmagic.mmpProtectReversedOneIn()) ++bad;
         // the spade of colossal excavation scalars
-        if (miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSpadeLengthFeet() != 8 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSpadeBladeWidthFeet() != 2 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSpadeBladeLengthFeet() != 3 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSpadeUserStrength() != 18 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSpadeDigYardsPerRound() != 1 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSpadeWorkRounds() != 10 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSpadeRestRounds() != 5 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSpadeHardPanFactor() != 2 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSpadeGravelFactor() != 2 ||
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSpadeLooseSoilDivisor() != 2) ++bad;
+        if (miscmagic.mmpSpadeLengthFeet() != 8 ||
+            miscmagic.mmpSpadeBladeWidthFeet() != 2 ||
+            miscmagic.mmpSpadeBladeLengthFeet() != 3 ||
+            miscmagic.mmpSpadeUserStrength() != 18 ||
+            miscmagic.mmpSpadeDigYardsPerRound() != 1 ||
+            miscmagic.mmpSpadeWorkRounds() != 10 ||
+            miscmagic.mmpSpadeRestRounds() != 5 ||
+            miscmagic.mmpSpadeHardPanFactor() != 2 ||
+            miscmagic.mmpSpadeGravelFactor() != 2 ||
+            miscmagic.mmpSpadeLooseSoilDivisor() != 2) ++bad;
         // the work-to-rest ratio is 2 to 1
-        if (2 * miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSpadeRestRounds() !=
-            miscmagic_rope_of_climbing_to_spade_of_colossal_excavation.mmpSpadeWorkRounds()) ++bad;
+        if (2 * miscmagic.mmpSpadeRestRounds() !=
+            miscmagic.mmpSpadeWorkRounds()) ++bad;
         // the kMisc5 table rows 6-16 against static twins
         static const int kRlo[11] = {
             20, 26, 28, 32, 33, 34,

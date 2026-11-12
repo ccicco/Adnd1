@@ -8,57 +8,57 @@
     // Defense (engine row 25), not row 26
     // (80-81 Defenselessness).
     {
-        Miscmagic_bowl_commanding_water_elementals_to_bucknards_purse miscmagic_bowl_commanding_water_elementals_to_bucknards_purse;
+        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
         Miscmagic_table1_footnotes miscmagic_table1_footnotes;
         int bad = 0;
-        if (miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBowlCmdHd() != 12 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBowlCmdWordsRounds() != 1 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBowlCmdSaltBonusPerDie() != 2 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBowlCmdSaltMaxHpPerDie() != 8 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBowlCmdDiameterInches() != 12 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBowlCmdDepthInches() != 6) ++bad;
-        if (miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpWateryDeathSaltSavePenalty() != 2 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpWateryDeathDrownMinRounds() != 3 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpWateryDeathDrownMaxRounds() != 8 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpWateryDeathFreeSpellCount() != 3 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpWateryDeathDeathPermanent() != 1 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpWateryDeathSweetWaterAnotherSave() != 1) ++bad;
-        if (miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBracersDefRowCount() != 7 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBracersDefAcMin() != 2 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBracersDefAcMax() != 8 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpDefenselessAc() != 10 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpDefenselessNegatesProtections() != 1 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpDefenselessRemoveCurseOnly() != 1) ++bad;
-        if (miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBrazierFireHd() != 12 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBrazierFireLightRounds() != 1 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBrazierFireSulphurBonusPerDie() != 1 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBrazierFireSulphurHpMin() != 2 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBrazierFireSulphurHpMax() != 9 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpSleepSmokeRadiusInches() != 1 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpSleepSmokeHd() != 12 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpSleepSmokeAwakenSpellCount() != 2) ++bad;
-        if (miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBroochPctWithoutGems() != 90 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBroochAbsorbHp() != 101) ++bad;
-        if (miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBroomAttackDumpMinFeet() != 6 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBroomAttackDumpMaxFeet() != 9 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBroomAttackAttacksPerRound() != 2 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBroomAttackAsHd() != 4 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBroomAttackStrawBlindRounds() != 1 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBroomAttackHandleDmgMin() != 1 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBroomAttackHandleDmgMax() != 3 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBroomAttackAc() != 7 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBroomAttackHpToDestroy() != 18) ++bad;
-        if (miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBroomFlySpeedInches() != 30 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBroomFlyCapacityPounds() != 182 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBroomFlyPoundsPerInch() != 14 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBroomFlyClimbDiveDegrees() != 30 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBroomFlyFetchSpeedInches() != 30) ++bad;
-        if (miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpPurseCoinsPerType() != 26 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpPurseTypeRowCount() != 3 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpPurseGemsBaseGp() != 10 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpPurseGemsMaxGp() != 100 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpPurseAbilitiesNeverChange() != 1 ||
-            miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpPurseSpiceNote() != 1) ++bad;
+        if (miscmagic.mmpBowlCmdHd() != 12 ||
+            miscmagic.mmpBowlCmdWordsRounds() != 1 ||
+            miscmagic.mmpBowlCmdSaltBonusPerDie() != 2 ||
+            miscmagic.mmpBowlCmdSaltMaxHpPerDie() != 8 ||
+            miscmagic.mmpBowlCmdDiameterInches() != 12 ||
+            miscmagic.mmpBowlCmdDepthInches() != 6) ++bad;
+        if (miscmagic.mmpWateryDeathSaltSavePenalty() != 2 ||
+            miscmagic.mmpWateryDeathDrownMinRounds() != 3 ||
+            miscmagic.mmpWateryDeathDrownMaxRounds() != 8 ||
+            miscmagic.mmpWateryDeathFreeSpellCount() != 3 ||
+            miscmagic.mmpWateryDeathDeathPermanent() != 1 ||
+            miscmagic.mmpWateryDeathSweetWaterAnotherSave() != 1) ++bad;
+        if (miscmagic.mmpBracersDefRowCount() != 7 ||
+            miscmagic.mmpBracersDefAcMin() != 2 ||
+            miscmagic.mmpBracersDefAcMax() != 8 ||
+            miscmagic.mmpDefenselessAc() != 10 ||
+            miscmagic.mmpDefenselessNegatesProtections() != 1 ||
+            miscmagic.mmpDefenselessRemoveCurseOnly() != 1) ++bad;
+        if (miscmagic.mmpBrazierFireHd() != 12 ||
+            miscmagic.mmpBrazierFireLightRounds() != 1 ||
+            miscmagic.mmpBrazierFireSulphurBonusPerDie() != 1 ||
+            miscmagic.mmpBrazierFireSulphurHpMin() != 2 ||
+            miscmagic.mmpBrazierFireSulphurHpMax() != 9 ||
+            miscmagic.mmpSleepSmokeRadiusInches() != 1 ||
+            miscmagic.mmpSleepSmokeHd() != 12 ||
+            miscmagic.mmpSleepSmokeAwakenSpellCount() != 2) ++bad;
+        if (miscmagic.mmpBroochPctWithoutGems() != 90 ||
+            miscmagic.mmpBroochAbsorbHp() != 101) ++bad;
+        if (miscmagic.mmpBroomAttackDumpMinFeet() != 6 ||
+            miscmagic.mmpBroomAttackDumpMaxFeet() != 9 ||
+            miscmagic.mmpBroomAttackAttacksPerRound() != 2 ||
+            miscmagic.mmpBroomAttackAsHd() != 4 ||
+            miscmagic.mmpBroomAttackStrawBlindRounds() != 1 ||
+            miscmagic.mmpBroomAttackHandleDmgMin() != 1 ||
+            miscmagic.mmpBroomAttackHandleDmgMax() != 3 ||
+            miscmagic.mmpBroomAttackAc() != 7 ||
+            miscmagic.mmpBroomAttackHpToDestroy() != 18) ++bad;
+        if (miscmagic.mmpBroomFlySpeedInches() != 30 ||
+            miscmagic.mmpBroomFlyCapacityPounds() != 182 ||
+            miscmagic.mmpBroomFlyPoundsPerInch() != 14 ||
+            miscmagic.mmpBroomFlyClimbDiveDegrees() != 30 ||
+            miscmagic.mmpBroomFlyFetchSpeedInches() != 30) ++bad;
+        if (miscmagic.mmpPurseCoinsPerType() != 26 ||
+            miscmagic.mmpPurseTypeRowCount() != 3 ||
+            miscmagic.mmpPurseGemsBaseGp() != 10 ||
+            miscmagic.mmpPurseGemsMaxGp() != 100 ||
+            miscmagic.mmpPurseAbilitiesNeverChange() != 1 ||
+            miscmagic.mmpPurseSpiceNote() != 1) ++bad;
         static const int kBracersDefLo[7] = {
             1, 6, 16, 36, 51, 71, 86,
         };
@@ -69,9 +69,9 @@
             8, 7, 6, 5, 4, 3, 2,
         };
         for (int i = 0; i < 7; ++i)
-            if (miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBracersDefBandLo(i) != kBracersDefLo[i] ||
-                miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBracersDefBandHi(i) != kBracersDefHi[i] ||
-                miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBracersDefAc(i) != kBracersDefAc[i]) ++bad;
+            if (miscmagic.mmpBracersDefBandLo(i) != kBracersDefLo[i] ||
+                miscmagic.mmpBracersDefBandHi(i) != kBracersDefHi[i] ||
+                miscmagic.mmpBracersDefAc(i) != kBracersDefAc[i]) ++bad;
         static const int kPurseLo[3] = {
             1, 51, 91,
         };
@@ -79,8 +79,8 @@
             50, 90, 100,
         };
         for (int i = 0; i < 3; ++i)
-            if (miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpPurseTypeBandLo(i) != kPurseLo[i] ||
-                miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpPurseTypeBandHi(i) != kPurseHi[i]) ++bad;
+            if (miscmagic.mmpPurseTypeBandLo(i) != kPurseLo[i] ||
+                miscmagic.mmpPurseTypeBandHi(i) != kPurseHi[i]) ++bad;
         static const int kM1Lo[10] = {
             56, 59, 60, 80, 82, 85, 86, 93, 94, 99,
         };
@@ -109,11 +109,11 @@
         // the printed example: AC 6 (band row 2)
         // is 4 points above 10 = 2,000 xp /
         // 12,000 gp
-        if (miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBracersDefAc(2) != 6 ||
+        if (miscmagic.mmpBracersDefAc(2) != 6 ||
             miscmagic_table1_footnotes.m1BracersPerAcXp() *
-                (10 - miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBracersDefAc(2)) != 2000 ||
+                (10 - miscmagic.mmpBracersDefAc(2)) != 2000 ||
             miscmagic_table1_footnotes.m1BracersPerAcGp() *
-                (10 - miscmagic_bowl_commanding_water_elementals_to_bucknards_purse.mmpBracersDefAc(2)) != 12000) ++bad;
+                (10 - miscmagic.mmpBracersDefAc(2)) != 12000) ++bad;
         printf("R260 misc magic prose part 4 pins audit: bad %d\n", bad);
         if (bad) return 1;
     }

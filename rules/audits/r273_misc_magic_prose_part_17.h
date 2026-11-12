@@ -6,52 +6,52 @@
     // Action, part2 lines 806-841 - the slice pinning
     // the kMisc4 rows 0-8 of the 36-row III.E.4 table.
     {
-        Miscmagic_librams_lyre_and_manuals miscmagic_librams_lyre_and_manuals;
+        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
         Miscmagic_table4_footnotes miscmagic_table4_footnotes;
         int bad = 0;
         // the libram of gainful conjuration
-        if (miscmagic_librams_lyre_and_manuals.mmpLibramStudyWeeks() != 1 ||
-            miscmagic_librams_lyre_and_manuals.mmpLibramMisuseDamageMin() != 5 ||
-            miscmagic_librams_lyre_and_manuals.mmpLibramMisuseDamageMax() != 20 ||
-            miscmagic_librams_lyre_and_manuals.mmpLibramInsanityRestMonths() != 1 ||
-            miscmagic_librams_lyre_and_manuals.mmpLibramDamnationLevelLoss() != 1) ++bad;
+        if (miscmagic.mmpLibramStudyWeeks() != 1 ||
+            miscmagic.mmpLibramMisuseDamageMin() != 5 ||
+            miscmagic.mmpLibramMisuseDamageMax() != 20 ||
+            miscmagic.mmpLibramInsanityRestMonths() != 1 ||
+            miscmagic.mmpLibramDamnationLevelLoss() != 1) ++bad;
         // the unconscious turns are a like number, the
         // printed relation between the two pairs
-        if (miscmagic_librams_lyre_and_manuals.mmpLibramUnconsciousTurnsMin() !=
-            miscmagic_librams_lyre_and_manuals.mmpLibramMisuseDamageMin() ||
-            miscmagic_librams_lyre_and_manuals.mmpLibramUnconsciousTurnsMax() !=
-            miscmagic_librams_lyre_and_manuals.mmpLibramMisuseDamageMax()) ++bad;
+        if (miscmagic.mmpLibramUnconsciousTurnsMin() !=
+            miscmagic.mmpLibramMisuseDamageMin() ||
+            miscmagic.mmpLibramUnconsciousTurnsMax() !=
+            miscmagic.mmpLibramMisuseDamageMax()) ++bad;
         // the lyre of building
-        if (miscmagic_librams_lyre_and_manuals.mmpLyreNegateKindCount() != 3 ||
-            miscmagic_librams_lyre_and_manuals.mmpLyreNegateRounds() != 6 ||
-            miscmagic_librams_lyre_and_manuals.mmpLyreNegatePerDay() != 1 ||
-            miscmagic_librams_lyre_and_manuals.mmpLyreBuildPerWeek() != 1 ||
-            miscmagic_librams_lyre_and_manuals.mmpLyreBuildTurns() != 3 ||
-            miscmagic_librams_lyre_and_manuals.mmpLyreBuildMen() != 100 ||
-            miscmagic_librams_lyre_and_manuals.mmpLyreBuildDays() != 3 ||
-            miscmagic_librams_lyre_and_manuals.mmpLyreFalseChordPct() != 20 ||
-            miscmagic_librams_lyre_and_manuals.mmpLyreFalseChordKnownPct() != 5 ||
-            miscmagic_librams_lyre_and_manuals.mmpLyreFalseChordDisturbedPct() !=
+        if (miscmagic.mmpLyreNegateKindCount() != 3 ||
+            miscmagic.mmpLyreNegateRounds() != 6 ||
+            miscmagic.mmpLyreNegatePerDay() != 1 ||
+            miscmagic.mmpLyreBuildPerWeek() != 1 ||
+            miscmagic.mmpLyreBuildTurns() != 3 ||
+            miscmagic.mmpLyreBuildMen() != 100 ||
+            miscmagic.mmpLyreBuildDays() != 3 ||
+            miscmagic.mmpLyreFalseChordPct() != 20 ||
+            miscmagic.mmpLyreFalseChordKnownPct() != 5 ||
+            miscmagic.mmpLyreFalseChordDisturbedPct() !=
             50) ++bad;
         // the manual of bodily health and of gainful
         // exercise
-        if (miscmagic_librams_lyre_and_manuals.mmpHealthReadHours() != 24 ||
-            miscmagic_librams_lyre_and_manuals.mmpHealthReadDaysMin() != 3 ||
-            miscmagic_librams_lyre_and_manuals.mmpHealthReadDaysMax() != 5 ||
-            miscmagic_librams_lyre_and_manuals.mmpHealthConGain() != 1 ||
-            miscmagic_librams_lyre_and_manuals.mmpHealthRegimenMonths() != 1 ||
-            miscmagic_librams_lyre_and_manuals.mmpHealthForgetMonths() != 3) ++bad;
-        if (miscmagic_librams_lyre_and_manuals.mmpExerciseStrGain() != 1) ++bad;
+        if (miscmagic.mmpHealthReadHours() != 24 ||
+            miscmagic.mmpHealthReadDaysMin() != 3 ||
+            miscmagic.mmpHealthReadDaysMax() != 5 ||
+            miscmagic.mmpHealthConGain() != 1 ||
+            miscmagic.mmpHealthRegimenMonths() != 1 ||
+            miscmagic.mmpHealthForgetMonths() != 3) ++bad;
+        if (miscmagic.mmpExerciseStrGain() != 1) ++bad;
         // the manual of golems scalars
-        if (miscmagic_librams_lyre_and_manuals.mmpGolemKindCount() != 4 ||
-            miscmagic_librams_lyre_and_manuals.mmpGolemMinUserLevel() != 10 ||
-            miscmagic_librams_lyre_and_manuals.mmpGolemFailurePctPerLevel() != 10 ||
-            miscmagic_librams_lyre_and_manuals.mmpGolemFailureWindowTurns() != 1 ||
-            miscmagic_librams_lyre_and_manuals.mmpGolemClericXpLossMin() != 10000 ||
-            miscmagic_librams_lyre_and_manuals.mmpGolemClericXpLossMax() != 60000 ||
-            miscmagic_librams_lyre_and_manuals.mmpGolemMuLevelLoss() != 1 ||
-            miscmagic_librams_lyre_and_manuals.mmpGolemOtherDamageMin() != 6 ||
-            miscmagic_librams_lyre_and_manuals.mmpGolemOtherDamageMax() != 36) ++bad;
+        if (miscmagic.mmpGolemKindCount() != 4 ||
+            miscmagic.mmpGolemMinUserLevel() != 10 ||
+            miscmagic.mmpGolemFailurePctPerLevel() != 10 ||
+            miscmagic.mmpGolemFailureWindowTurns() != 1 ||
+            miscmagic.mmpGolemClericXpLossMin() != 10000 ||
+            miscmagic.mmpGolemClericXpLossMax() != 60000 ||
+            miscmagic.mmpGolemMuLevelLoss() != 1 ||
+            miscmagic.mmpGolemOtherDamageMin() != 6 ||
+            miscmagic.mmpGolemOtherDamageMax() != 36) ++bad;
         // the golem table against static twins
         static const int kGlo[4] = {
             1, 6, 18, 19,
@@ -66,32 +66,32 @@
             65000, 50000, 100000, 80000,
         };
         for (int i = 0; i < 4; ++i)
-            if (miscmagic_librams_lyre_and_manuals.mmpGolemDieLo(i) != kGlo[i] ||
-                miscmagic_librams_lyre_and_manuals.mmpGolemDieHi(i) != kGhi[i] ||
-                miscmagic_librams_lyre_and_manuals.mmpGolemMonths(i) != kGmo[i] ||
-                miscmagic_librams_lyre_and_manuals.mmpGolemCostGp(i) != kGco[i]) ++bad;
+            if (miscmagic.mmpGolemDieLo(i) != kGlo[i] ||
+                miscmagic.mmpGolemDieHi(i) != kGhi[i] ||
+                miscmagic.mmpGolemMonths(i) != kGmo[i] ||
+                miscmagic.mmpGolemCostGp(i) != kGco[i]) ++bad;
         // the golem die bands tile 1-20 without gaps
         for (int i = 0; i < 3; ++i)
-            if (miscmagic_librams_lyre_and_manuals.mmpGolemDieLo(i + 1) !=
-                miscmagic_librams_lyre_and_manuals.mmpGolemDieHi(i) +
+            if (miscmagic.mmpGolemDieLo(i + 1) !=
+                miscmagic.mmpGolemDieHi(i) +
                 1) ++bad;
-        if (miscmagic_librams_lyre_and_manuals.mmpGolemDieLo(0) != 1 ||
-            miscmagic_librams_lyre_and_manuals.mmpGolemDieHi(3) != 20) ++bad;
+        if (miscmagic.mmpGolemDieLo(0) != 1 ||
+            miscmagic.mmpGolemDieHi(3) != 20) ++bad;
         // the manual of puissant skill at arms
-        if (miscmagic_librams_lyre_and_manuals.mmpPuissantPracticeMonths() != 1 ||
-            miscmagic_librams_lyre_and_manuals.mmpPuissantForgetMonths() != 3 ||
-            miscmagic_librams_lyre_and_manuals.mmpPuissantStunTurnsMin() != 1 ||
-            miscmagic_librams_lyre_and_manuals.mmpPuissantStunTurnsMax() != 6) ++bad;
+        if (miscmagic.mmpPuissantPracticeMonths() != 1 ||
+            miscmagic.mmpPuissantForgetMonths() != 3 ||
+            miscmagic.mmpPuissantStunTurnsMin() != 1 ||
+            miscmagic.mmpPuissantStunTurnsMax() != 6) ++bad;
         // both printed 10,000-60,000 xp losses agree
-        if (miscmagic_librams_lyre_and_manuals.mmpPuissantXpLossMin() !=
-            miscmagic_librams_lyre_and_manuals.mmpGolemClericXpLossMin() ||
-            miscmagic_librams_lyre_and_manuals.mmpPuissantXpLossMax() !=
-            miscmagic_librams_lyre_and_manuals.mmpGolemClericXpLossMax()) ++bad;
+        if (miscmagic.mmpPuissantXpLossMin() !=
+            miscmagic.mmpGolemClericXpLossMin() ||
+            miscmagic.mmpPuissantXpLossMax() !=
+            miscmagic.mmpGolemClericXpLossMax()) ++bad;
         // the manual of quickness of action
-        if (miscmagic_librams_lyre_and_manuals.mmpQuicknessStudyDays() != 3 ||
-            miscmagic_librams_lyre_and_manuals.mmpQuicknessPracticeMonths() != 1 ||
-            miscmagic_librams_lyre_and_manuals.mmpQuicknessDexGain() != 1 ||
-            miscmagic_librams_lyre_and_manuals.mmpQuicknessRememberMonths() != 3) ++bad;
+        if (miscmagic.mmpQuicknessStudyDays() != 3 ||
+            miscmagic.mmpQuicknessPracticeMonths() != 1 ||
+            miscmagic.mmpQuicknessDexGain() != 1 ||
+            miscmagic.mmpQuicknessRememberMonths() != 3) ++bad;
         // the engine kMisc4 rows 0-8: single-die band
         // edges, the (M), (C) and (F) marks, no stars,
         // no dual rows

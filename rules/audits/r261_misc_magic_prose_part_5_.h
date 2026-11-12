@@ -6,59 +6,59 @@
     // R226 per-plus asterisk pin verified correct
     // (row 10, 33-55), no off-by-one.
     {
-        Miscmagic_candle_of_invocation_to_cloak_of_protection miscmagic_candle_of_invocation_to_cloak_of_protection;
+        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
         Miscmagic_table2_footnotes miscmagic_table2_footnotes;
         int bad = 0;
-        if (miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCandleAlignments() != 9 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCandleClericLevelBoost() != 2 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCandleBurnHours() != 4 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCandleGateSpell() != 1) ++bad;
-        if (miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCarpetRowCount() != 4 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCenserAirHd() != 12 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCenserAirMedBonusPerDie() != 3 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCenserAirWidthInches() != 6 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCenserAirHeightInches() != 12 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCenserAirTurnsIfExtinguished() != 1) ++bad;
-        if (miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCenserHostileMin() != 1 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCenserHostileMax() != 4 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCenserHostilePerRound() != 1) ++bad;
-        if (miscmagic_candle_of_invocation_to_cloak_of_protection.mmpChimeOpenLengthInches() != 12 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpChimeOpenWizardLockLevel() != 15 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpChimeOpenRoundPerFunction() != 1 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpChimeOpenSoundingsMin() != 4 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpChimeOpenSoundingsMax() != 5 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpChimeOpenChargesMin() != 20 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpChimeOpenChargesMax() != 80 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpChimeOpenChargesDieSides() != 6 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpChimeOpenChargesDieMult() != 10) ++bad;
-        if (miscmagic_candle_of_invocation_to_cloak_of_protection.mmpChimeHungerRadiusInches() != 6 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpChimeHungerMinEatRounds() != 1) ++bad;
-        if (miscmagic_candle_of_invocation_to_cloak_of_protection.mmpDisplacementMinFeet() != 1 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpDisplacementMaxFeet() != 2 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpDisplacementAcBonus() != 2 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpDisplacementSaveBonus() != 2 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpDisplacementHumanoidPct() != 75 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpDisplacementSmallPct() != 25) ++bad;
-        if (miscmagic_candle_of_invocation_to_cloak_of_protection.mmpElvenkindRowCount() != 9 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpElvenkindOutdoorNaturalRows() != 3 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpElvenkindOutdoorOtherRows() != 3 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpElvenkindUndergroundRows() != 3 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpElvenkindHumanoidPct() != 90 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpElvenkindSmallPct() != 10) ++bad;
-        if (miscmagic_candle_of_invocation_to_cloak_of_protection.mmpMantaRayLikenessPct() != 90 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpMantaRayMoveInches() != 18 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpMantaRayAc() != 6 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpMantaRayTailDmgMin() != 1 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpMantaRayTailDmgMax() != 6 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpMantaRayTailStun() != 0 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpMantaRaySaltWaterTrigger() != 1) ++bad;
-        if (miscmagic_candle_of_invocation_to_cloak_of_protection.mmpPoisonCloakRevivalPctPenalty() != 10 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpPoisonCloakRemoveCurseDestroys() != 1 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpPoisonCloakNeutralizeNoEffect() != 1) ++bad;
-        if (miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCloakProtRowCount() != 5 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCloakProtAcPerPlus() != 1 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCloakProtSavePerPlus() != 1 ||
-            miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCloakProtExampleBaseAc() != 10) ++bad;
+        if (miscmagic.mmpCandleAlignments() != 9 ||
+            miscmagic.mmpCandleClericLevelBoost() != 2 ||
+            miscmagic.mmpCandleBurnHours() != 4 ||
+            miscmagic.mmpCandleGateSpell() != 1) ++bad;
+        if (miscmagic.mmpCarpetRowCount() != 4 ||
+            miscmagic.mmpCenserAirHd() != 12 ||
+            miscmagic.mmpCenserAirMedBonusPerDie() != 3 ||
+            miscmagic.mmpCenserAirWidthInches() != 6 ||
+            miscmagic.mmpCenserAirHeightInches() != 12 ||
+            miscmagic.mmpCenserAirTurnsIfExtinguished() != 1) ++bad;
+        if (miscmagic.mmpCenserHostileMin() != 1 ||
+            miscmagic.mmpCenserHostileMax() != 4 ||
+            miscmagic.mmpCenserHostilePerRound() != 1) ++bad;
+        if (miscmagic.mmpChimeOpenLengthInches() != 12 ||
+            miscmagic.mmpChimeOpenWizardLockLevel() != 15 ||
+            miscmagic.mmpChimeOpenRoundPerFunction() != 1 ||
+            miscmagic.mmpChimeOpenSoundingsMin() != 4 ||
+            miscmagic.mmpChimeOpenSoundingsMax() != 5 ||
+            miscmagic.mmpChimeOpenChargesMin() != 20 ||
+            miscmagic.mmpChimeOpenChargesMax() != 80 ||
+            miscmagic.mmpChimeOpenChargesDieSides() != 6 ||
+            miscmagic.mmpChimeOpenChargesDieMult() != 10) ++bad;
+        if (miscmagic.mmpChimeHungerRadiusInches() != 6 ||
+            miscmagic.mmpChimeHungerMinEatRounds() != 1) ++bad;
+        if (miscmagic.mmpDisplacementMinFeet() != 1 ||
+            miscmagic.mmpDisplacementMaxFeet() != 2 ||
+            miscmagic.mmpDisplacementAcBonus() != 2 ||
+            miscmagic.mmpDisplacementSaveBonus() != 2 ||
+            miscmagic.mmpDisplacementHumanoidPct() != 75 ||
+            miscmagic.mmpDisplacementSmallPct() != 25) ++bad;
+        if (miscmagic.mmpElvenkindRowCount() != 9 ||
+            miscmagic.mmpElvenkindOutdoorNaturalRows() != 3 ||
+            miscmagic.mmpElvenkindOutdoorOtherRows() != 3 ||
+            miscmagic.mmpElvenkindUndergroundRows() != 3 ||
+            miscmagic.mmpElvenkindHumanoidPct() != 90 ||
+            miscmagic.mmpElvenkindSmallPct() != 10) ++bad;
+        if (miscmagic.mmpMantaRayLikenessPct() != 90 ||
+            miscmagic.mmpMantaRayMoveInches() != 18 ||
+            miscmagic.mmpMantaRayAc() != 6 ||
+            miscmagic.mmpMantaRayTailDmgMin() != 1 ||
+            miscmagic.mmpMantaRayTailDmgMax() != 6 ||
+            miscmagic.mmpMantaRayTailStun() != 0 ||
+            miscmagic.mmpMantaRaySaltWaterTrigger() != 1) ++bad;
+        if (miscmagic.mmpPoisonCloakRevivalPctPenalty() != 10 ||
+            miscmagic.mmpPoisonCloakRemoveCurseDestroys() != 1 ||
+            miscmagic.mmpPoisonCloakNeutralizeNoEffect() != 1) ++bad;
+        if (miscmagic.mmpCloakProtRowCount() != 5 ||
+            miscmagic.mmpCloakProtAcPerPlus() != 1 ||
+            miscmagic.mmpCloakProtSavePerPlus() != 1 ||
+            miscmagic.mmpCloakProtExampleBaseAc() != 10) ++bad;
         static const int kCarpetLo[4] = {
             1, 21, 56, 81,
         };
@@ -78,17 +78,17 @@
             42, 36, 30, 24,
         };
         for (int i = 0; i < 4; ++i)
-            if (miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCarpetBandLo(i) != kCarpetLo[i] ||
-                miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCarpetBandHi(i) != kCarpetHi[i] ||
-                miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCarpetWidthFeet(i) != kCarpetWidth[i] ||
-                miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCarpetLengthFeet(i) != kCarpetLength[i] ||
-                miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCarpetPersons(i) != kCarpetPersons[i] ||
-                miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCarpetSpeedInches(i) != kCarpetSpeed[i]) ++bad;
+            if (miscmagic.mmpCarpetBandLo(i) != kCarpetLo[i] ||
+                miscmagic.mmpCarpetBandHi(i) != kCarpetHi[i] ||
+                miscmagic.mmpCarpetWidthFeet(i) != kCarpetWidth[i] ||
+                miscmagic.mmpCarpetLengthFeet(i) != kCarpetLength[i] ||
+                miscmagic.mmpCarpetPersons(i) != kCarpetPersons[i] ||
+                miscmagic.mmpCarpetSpeedInches(i) != kCarpetSpeed[i]) ++bad;
         static const int kElvenkindPct[9] = {
             100, 99, 95, 98, 90, 50, 95, 90, 50,
         };
         for (int i = 0; i < 9; ++i)
-            if (miscmagic_candle_of_invocation_to_cloak_of_protection.mmpElvenkindInvisibilityPct(i) !=
+            if (miscmagic.mmpElvenkindInvisibilityPct(i) !=
                     kElvenkindPct[i]) ++bad;
         static const int kCloakProtLo[5] = {
             1, 36, 66, 86, 96,
@@ -100,9 +100,9 @@
             1, 2, 3, 4, 5,
         };
         for (int i = 0; i < 5; ++i)
-            if (miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCloakProtBandLo(i) != kCloakProtLo[i] ||
-                miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCloakProtBandHi(i) != kCloakProtHi[i] ||
-                miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCloakProtPlus(i) !=
+            if (miscmagic.mmpCloakProtBandLo(i) != kCloakProtLo[i] ||
+                miscmagic.mmpCloakProtBandHi(i) != kCloakProtHi[i] ||
+                miscmagic.mmpCloakProtPlus(i) !=
                     kCloakProtPlus[i]) ++bad;
         static const int kM2Lo[11] = {
             1, 7, 9, 11, 12, 14, 15, 19, 28, 31, 33,
@@ -130,11 +130,11 @@
         // the printed +2 cloak: 1000 xp / 10000 gp
         // per plus = 2000 / 20000, cross-pinned
         // against the prose plus table
-        if (miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCloakProtPlus(1) != 2 ||
+        if (miscmagic.mmpCloakProtPlus(1) != 2 ||
             miscmagic_table2_footnotes.m2CloakPerPlusXp() *
-                miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCloakProtPlus(1) != 2000 ||
+                miscmagic.mmpCloakProtPlus(1) != 2000 ||
             miscmagic_table2_footnotes.m2CloakPerPlusGp() *
-                miscmagic_candle_of_invocation_to_cloak_of_protection.mmpCloakProtPlus(1) != 20000) ++bad;
+                miscmagic.mmpCloakProtPlus(1) != 20000) ++bad;
         printf("R261 misc magic prose part 5 pins audit: bad %d\n", bad);
         if (bad) return 1;
     }

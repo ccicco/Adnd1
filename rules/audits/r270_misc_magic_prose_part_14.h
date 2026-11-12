@@ -4,43 +4,43 @@
     // Bandore, part2 lines 630-684 - the slice
     // pinning the kMisc3 rows 24-26.
     {
-        Miscmagic_incense_of_obsession_to_fochlucan_bandore miscmagic_incense_of_obsession_to_fochlucan_bandore;
+        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
         Miscmagic_table3_footnotes miscmagic_table3_footnotes;
         int bad = 0;
-        if (miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpObsessionDurationHours() != 24 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpObsessionPiecesMin() != 2 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpObsessionPiecesMax() != 8 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpObsessionBurnHours() != 1) ++bad;
-        if (miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounSortCount() != 14 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounOwnerRadiusFeet() != 3 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounOrbitMinFeet() != 1 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounOrbitMaxFeet() != 3 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounFoundMin() != 1 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounFoundMax() != 10) ++bad;
-        if (miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounTableRowCount() != 15 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounDeadRowLo() != 15 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounDeadRowHi() != 20 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounStatBonusPoints() != 1 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounStatCap() != 18 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounStatBonusRowCount() != 6) ++bad;
+        if (miscmagic.mmpObsessionDurationHours() != 24 ||
+            miscmagic.mmpObsessionPiecesMin() != 2 ||
+            miscmagic.mmpObsessionPiecesMax() != 8 ||
+            miscmagic.mmpObsessionBurnHours() != 1) ++bad;
+        if (miscmagic.mmpIounSortCount() != 14 ||
+            miscmagic.mmpIounOwnerRadiusFeet() != 3 ||
+            miscmagic.mmpIounOrbitMinFeet() != 1 ||
+            miscmagic.mmpIounOrbitMaxFeet() != 3 ||
+            miscmagic.mmpIounFoundMin() != 1 ||
+            miscmagic.mmpIounFoundMax() != 10) ++bad;
+        if (miscmagic.mmpIounTableRowCount() != 15 ||
+            miscmagic.mmpIounDeadRowLo() != 15 ||
+            miscmagic.mmpIounDeadRowHi() != 20 ||
+            miscmagic.mmpIounStatBonusPoints() != 1 ||
+            miscmagic.mmpIounStatCap() != 18 ||
+            miscmagic.mmpIounStatBonusRowCount() != 6) ++bad;
         // the orbit tops out at the owner radius, the
         // dead band rides the last table row
-        if (miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounOrbitMaxFeet() !=
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounOwnerRadiusFeet() ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounDeadRowLo() !=
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounRowRollLo(14) ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounDeadRowHi() !=
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounRowRollHi(14)) ++bad;
-        if (miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounLevelGainLevels() != 1 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounRegenHpPerTurn() != 1 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounPurpleStoreMin() != 2 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounPurpleStoreMax() != 12 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounRoseProtectionBonus() != 1) ++bad;
-        if (miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounGrayPsionicBonus() != 10 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounGrayPsionicCap() != 50 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounHpToDestroy() != 10 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounSaveBonus() != 3 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounAttackAc() != 4) ++bad;
+        if (miscmagic.mmpIounOrbitMaxFeet() !=
+            miscmagic.mmpIounOwnerRadiusFeet() ||
+            miscmagic.mmpIounDeadRowLo() !=
+            miscmagic.mmpIounRowRollLo(14) ||
+            miscmagic.mmpIounDeadRowHi() !=
+            miscmagic.mmpIounRowRollHi(14)) ++bad;
+        if (miscmagic.mmpIounLevelGainLevels() != 1 ||
+            miscmagic.mmpIounRegenHpPerTurn() != 1 ||
+            miscmagic.mmpIounPurpleStoreMin() != 2 ||
+            miscmagic.mmpIounPurpleStoreMax() != 12 ||
+            miscmagic.mmpIounRoseProtectionBonus() != 1) ++bad;
+        if (miscmagic.mmpIounGrayPsionicBonus() != 10 ||
+            miscmagic.mmpIounGrayPsionicCap() != 50 ||
+            miscmagic.mmpIounHpToDestroy() != 10 ||
+            miscmagic.mmpIounSaveBonus() != 3 ||
+            miscmagic.mmpIounAttackAc() != 4) ++bad;
         // the stone property table against static twins
         static const int kRlo[15] = {
             1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
@@ -67,51 +67,51 @@
             40, 80, 0, 0, 0,
         };
         for (int i = 0; i < 15; ++i)
-            if (miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounRowRollLo(i) != kRlo[i] ||
-                miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounRowRollHi(i) != kRhi[i] ||
-                miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounRowAddsStat(i) !=
+            if (miscmagic.mmpIounRowRollLo(i) != kRlo[i] ||
+                miscmagic.mmpIounRowRollHi(i) != kRhi[i] ||
+                miscmagic.mmpIounRowAddsStat(i) !=
                 kStat[i] ||
-                miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounRowAbsorbMaxLevel(i) !=
+                miscmagic.mmpIounRowAbsorbMaxLevel(i) !=
                 kAbs[i] ||
-                miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounRowBurnoutMin(i) !=
+                miscmagic.mmpIounRowBurnoutMin(i) !=
                 kBolo[i] ||
-                miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounRowBurnoutMax(i) !=
+                miscmagic.mmpIounRowBurnoutMax(i) !=
                 kBohi[i]) ++bad;
         // the property dice run 1-20 without gaps
         for (int i = 0; i < 14; ++i)
-            if (miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounRowRollLo(i + 1) !=
-                miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounRowRollHi(i) +
+            if (miscmagic.mmpIounRowRollLo(i + 1) !=
+                miscmagic.mmpIounRowRollHi(i) +
                 1) ++bad;
-        if (miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounRowRollLo(0) != 1 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounRowRollHi(14) != 20) ++bad;
+        if (miscmagic.mmpIounRowRollLo(0) != 1 ||
+            miscmagic.mmpIounRowRollHi(14) != 20) ++bad;
         // the six stat stones are rolls 1-6
-        if (miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounStatBonusRowCount() !=
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpIounRowRollHi(5)) ++bad;
-        if (miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpBardInstrumentCount() != 7 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpFochlucanLowestFaeriePct() != 50 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpFochlucanLowestReversePct() !=
+        if (miscmagic.mmpIounStatBonusRowCount() !=
+            miscmagic.mmpIounRowRollHi(5)) ++bad;
+        if (miscmagic.mmpBardInstrumentCount() != 7 ||
+            miscmagic.mmpFochlucanLowestFaeriePct() != 50 ||
+            miscmagic.mmpFochlucanLowestReversePct() !=
             10) ++bad;
         // the qualified base equals the lowest chance,
         // the reverse fades 1 percent per level
-        if (miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpFochlucanFaerieBasePct() !=
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpFochlucanLowestFaeriePct() ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpFochlucanReverseReductionPerLevelPct()
+        if (miscmagic.mmpFochlucanFaerieBasePct() !=
+            miscmagic.mmpFochlucanLowestFaeriePct() ||
+            miscmagic.mmpFochlucanReverseReductionPerLevelPct()
             != 1) ++bad;
-        if (miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpFochlucanStringCount() != 3 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpFochlucanSongCount() != 4 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpFochlucanCharmBonusPct() != 10 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpFochlucanEntanglePerDay() != 1 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpFochlucanShillelaghPerDay() != 1 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpFochlucanSpeakAnimalsPerDay() !=
+        if (miscmagic.mmpFochlucanStringCount() != 3 ||
+            miscmagic.mmpFochlucanSongCount() != 4 ||
+            miscmagic.mmpFochlucanCharmBonusPct() != 10 ||
+            miscmagic.mmpFochlucanEntanglePerDay() != 1 ||
+            miscmagic.mmpFochlucanShillelaghPerDay() != 1 ||
+            miscmagic.mmpFochlucanSpeakAnimalsPerDay() !=
             1) ++bad;
-        if (miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpFochlucanLowestSongWorkPct() != 30 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpFochlucanLowestSongFailPct() != 70 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpFochlucanLowestFailDamageMin() != 2 ||
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpFochlucanLowestFailDamageMax() !=
+        if (miscmagic.mmpFochlucanLowestSongWorkPct() != 30 ||
+            miscmagic.mmpFochlucanLowestSongFailPct() != 70 ||
+            miscmagic.mmpFochlucanLowestFailDamageMin() != 2 ||
+            miscmagic.mmpFochlucanLowestFailDamageMax() !=
             8) ++bad;
         // the 1st level attempt splits 30 and 70
-        if (miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpFochlucanLowestSongWorkPct() +
-            miscmagic_incense_of_obsession_to_fochlucan_bandore.mmpFochlucanLowestSongFailPct() !=
+        if (miscmagic.mmpFochlucanLowestSongWorkPct() +
+            miscmagic.mmpFochlucanLowestSongFailPct() !=
             100) ++bad;
         // the kMisc3 rows this slice pins: 24-26, the
         // (C) mark on row 24, the triple asterisk on

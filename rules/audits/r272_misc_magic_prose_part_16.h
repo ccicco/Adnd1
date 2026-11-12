@@ -4,15 +4,15 @@
     // lines 766-802 - the slice completing the
     // kMisc3 rows 27-32 (the 33-row III.E.3 table).
     {
-        Miscmagic_iron_flask_to_keoghtoms_ointment miscmagic_iron_flask_to_keoghtoms_ointment;
+        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
         Miscmagic_table3_footnotes miscmagic_table3_footnotes;
         int bad = 0;
         // the iron flask
-        if (miscmagic_iron_flask_to_keoghtoms_ointment.mmpFlaskRangeInches() != 6 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpFlaskMaxCreatures() != 1 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpFlaskServiceTurns() != 1 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpFlaskServiceHours() != 1 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpFlaskRepeatSaveBonus() != 2) ++bad;
+        if (miscmagic.mmpFlaskRangeInches() != 6 ||
+            miscmagic.mmpFlaskMaxCreatures() != 1 ||
+            miscmagic.mmpFlaskServiceTurns() != 1 ||
+            miscmagic.mmpFlaskServiceHours() != 1 ||
+            miscmagic.mmpFlaskRepeatSaveBonus() != 2) ++bad;
         // the flask contents die table against
         // static twins; the printed 00 row is the
         // d100 100 (the engine kMisc3 93-00
@@ -25,67 +25,67 @@
             50, 54, 56, 57, 59, 60, 65, 69, 72, 76,
             81, 83, 85, 86, 89, 93, 97, 99, 100,
         };
-        if (miscmagic_iron_flask_to_keoghtoms_ointment.mmpFlaskContentsRowCount() != 19) ++bad;
+        if (miscmagic.mmpFlaskContentsRowCount() != 19) ++bad;
         for (int i = 0; i < 19; ++i)
-            if (miscmagic_iron_flask_to_keoghtoms_ointment.mmpFlaskContentsLo(i) != kFlo[i] ||
-                miscmagic_iron_flask_to_keoghtoms_ointment.mmpFlaskContentsHi(i) != kFhi[i]) ++bad;
+            if (miscmagic.mmpFlaskContentsLo(i) != kFlo[i] ||
+                miscmagic.mmpFlaskContentsHi(i) != kFhi[i]) ++bad;
         // the d100 bands tile without gaps
         for (int i = 0; i < 18; ++i)
-            if (miscmagic_iron_flask_to_keoghtoms_ointment.mmpFlaskContentsLo(i + 1) !=
-                miscmagic_iron_flask_to_keoghtoms_ointment.mmpFlaskContentsHi(i) +
+            if (miscmagic.mmpFlaskContentsLo(i + 1) !=
+                miscmagic.mmpFlaskContentsHi(i) +
                 1) ++bad;
-        if (miscmagic_iron_flask_to_keoghtoms_ointment.mmpFlaskContentsLo(0) != 1 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpFlaskContentsHi(18) != 100) ++bad;
+        if (miscmagic.mmpFlaskContentsLo(0) != 1 ||
+            miscmagic.mmpFlaskContentsHi(18) != 100) ++bad;
         // the three rows whose pipe the upload drops
-        if (miscmagic_iron_flask_to_keoghtoms_ointment.mmpFlaskContentsLo(11) != 82 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpFlaskContentsHi(11) != 83 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpFlaskContentsLo(17) != 98 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpFlaskContentsHi(17) != 99) ++bad;
+        if (miscmagic.mmpFlaskContentsLo(11) != 82 ||
+            miscmagic.mmpFlaskContentsHi(11) != 83 ||
+            miscmagic.mmpFlaskContentsLo(17) != 98 ||
+            miscmagic.mmpFlaskContentsHi(17) != 99) ++bad;
         // the javelin of lightning
-        if (miscmagic_iron_flask_to_keoghtoms_ointment.mmpJavelinLightningPlus() != 2 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpJavelinLightningRangeInches() != 9 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpJavelinLightningStrokeWidthHalfInches()
+        if (miscmagic.mmpJavelinLightningPlus() != 2 ||
+            miscmagic.mmpJavelinLightningRangeInches() != 9 ||
+            miscmagic.mmpJavelinLightningStrokeWidthHalfInches()
             != 1 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpJavelinLightningStrokeLengthInches()
+            miscmagic.mmpJavelinLightningStrokeLengthInches()
             != 3 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpJavelinLightningDamageMin() != 1 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpJavelinLightningDamageMax() != 6 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpJavelinLightningElectricalDamage()
+            miscmagic.mmpJavelinLightningDamageMin() != 1 ||
+            miscmagic.mmpJavelinLightningDamageMax() != 6 ||
+            miscmagic.mmpJavelinLightningElectricalDamage()
             != 20 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpJavelinLightningBackstrokeMin() != 10 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpJavelinLightningBackstrokeMax() != 20 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpJavelinLightningBackstrokeInches() !=
+            miscmagic.mmpJavelinLightningBackstrokeMin() != 10 ||
+            miscmagic.mmpJavelinLightningBackstrokeMax() != 20 ||
+            miscmagic.mmpJavelinLightningBackstrokeInches() !=
             3 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpJavelinLightningFoundMin() != 2 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpJavelinLightningFoundMax() != 5) ++bad;
+            miscmagic.mmpJavelinLightningFoundMin() != 2 ||
+            miscmagic.mmpJavelinLightningFoundMax() != 5) ++bad;
         // the javelin of piercing
-        if (miscmagic_iron_flask_to_keoghtoms_ointment.mmpJavelinPiercingRangeInches() != 6 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpJavelinPiercingToHitBonus() != 6 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpJavelinPiercingDamageMin() != 7 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpJavelinPiercingDamageMax() != 12 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpJavelinPiercingFoundMin() != 2 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpJavelinPiercingFoundMax() != 8 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpJavelinPiercingThrows() != 1) ++bad;
+        if (miscmagic.mmpJavelinPiercingRangeInches() != 6 ||
+            miscmagic.mmpJavelinPiercingToHitBonus() != 6 ||
+            miscmagic.mmpJavelinPiercingDamageMin() != 7 ||
+            miscmagic.mmpJavelinPiercingDamageMax() != 12 ||
+            miscmagic.mmpJavelinPiercingFoundMin() != 2 ||
+            miscmagic.mmpJavelinPiercingFoundMax() != 8 ||
+            miscmagic.mmpJavelinPiercingThrows() != 1) ++bad;
         // the jewel of attacks
-        if (miscmagic_iron_flask_to_keoghtoms_ointment.mmpJewelAttacksWanderingPct() != 100 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpJewelAttacksPursuitPct() != 100) ++bad;
+        if (miscmagic.mmpJewelAttacksWanderingPct() != 100 ||
+            miscmagic.mmpJewelAttacksPursuitPct() != 100) ++bad;
         // the jewel of flawlessness
-        if (miscmagic_iron_flask_to_keoghtoms_ointment.mmpJewelFlawlessBoostPct() != 100 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpJewelFlawlessBaseTenths() != 1 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpJewelFlawlessBoostedTenths() != 2 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpJewelFlawlessFacetMin() != 10 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpJewelFlawlessFacetMax() != 100 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpJewelFlawlessTriggerD10() != 2 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpJewelFlawlessFacetsLostPerBoost() !=
+        if (miscmagic.mmpJewelFlawlessBoostPct() != 100 ||
+            miscmagic.mmpJewelFlawlessBaseTenths() != 1 ||
+            miscmagic.mmpJewelFlawlessBoostedTenths() != 2 ||
+            miscmagic.mmpJewelFlawlessFacetMin() != 10 ||
+            miscmagic.mmpJewelFlawlessFacetMax() != 100 ||
+            miscmagic.mmpJewelFlawlessTriggerD10() != 2 ||
+            miscmagic.mmpJewelFlawlessFacetsLostPerBoost() !=
             1) ++bad;
         // the Keoghtom ointment
-        if (miscmagic_iron_flask_to_keoghtoms_ointment.mmpOintmentJarDiameterInches() != 3 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpOintmentJarDepthInches() != 1 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpOintmentApplications() != 5 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpOintmentHealMin() != 9 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpOintmentHealMax() != 12 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpOintmentFoundMin() != 1 ||
-            miscmagic_iron_flask_to_keoghtoms_ointment.mmpOintmentFoundMax() != 3) ++bad;
+        if (miscmagic.mmpOintmentJarDiameterInches() != 3 ||
+            miscmagic.mmpOintmentJarDepthInches() != 1 ||
+            miscmagic.mmpOintmentApplications() != 5 ||
+            miscmagic.mmpOintmentHealMin() != 9 ||
+            miscmagic.mmpOintmentHealMax() != 12 ||
+            miscmagic.mmpOintmentFoundMin() != 1 ||
+            miscmagic.mmpOintmentFoundMax() != 3) ++bad;
         // the engine kMisc3 rows 27-32: band edges,
         // the javelin (F) marks, no asterisks, the
         // flawless per-facet row

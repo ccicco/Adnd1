@@ -6,51 +6,51 @@
     // stretch carries no class marks and no
     // asterisk rows (the negative control slice).
     {
-        Miscmagic_cube_of_force_to_decanter_of_endless_water miscmagic_cube_of_force_to_decanter_of_endless_water;
+        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
         Miscmagic_table2_footnotes miscmagic_table2_footnotes;
         int bad = 0;
-        if (miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubeForceWallInches() != 1 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubeForceCharges() != 36 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubeForceRestoreDays() != 1 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubeForceFaceCount() != 6 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubeForceSurchargeFormCount() != 14 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubeForceSpellsInOutBlocked() != 1 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubeForceMaterialCount() != 3) ++bad;
-        if (miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubeFrostSideInches() != 1 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubeFrostTempF() != 65 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubeFrostColdAttackCount() != 3 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubeFrostCollapseHp() != 50 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubeFrostTurnRounds() != 10 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubeFrostRenewHours() != 1 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubeFrostDestroyHp() != 100 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubeFrostColdPer10BelowF() != 2 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubeFrostAt40BelowHp() != 42) ++bad;
-        if (miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubicGateSideCount() != 6 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubicGatePrimeSides() != 1 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubicGateChosenSides() != 5 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubicGateNexusChancePct() != 10 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubicGateDrawRadiusFeet() != 5 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubicGateMaxLinks() != 1) ++bad;
-        if (miscmagic_cube_of_force_to_decanter_of_endless_water.mmpDaernSquareFeet() != 20 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpDaernHeightFeet() != 30 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpDaernGroundDepthFeet() != 10 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpDaernCollapseHp() != 200 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpDaernWishRepairHp() != 10 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpDaernSpringRounds() != 1 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpDaernGrowthDamageMin() != 10 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpDaernGrowthDamageMax() != 100 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpDaernDoorOwnerOnly() != 1 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpDaernNormalWeaponsAffect() != 0 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpDaernDamageCumulative() != 1) ++bad;
-        if (miscmagic_cube_of_force_to_decanter_of_endless_water.mmpDecanterModeCount() != 3 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpDecanterStreamGallonsPerRound() != 1 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpDecanterFountainLengthFeet() != 5 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpDecanterFountainGallonsPerRound() != 5 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpDecanterGeyserLengthFeet() != 20 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpDecanterGeyserGallonsPerRound() != 30 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpDecanterWaterTypeCount() != 2 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpDecanterGeyserKnockover() != 1 ||
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpDecanterStopsOnCommand() != 1) ++bad;
+        if (miscmagic.mmpCubeForceWallInches() != 1 ||
+            miscmagic.mmpCubeForceCharges() != 36 ||
+            miscmagic.mmpCubeForceRestoreDays() != 1 ||
+            miscmagic.mmpCubeForceFaceCount() != 6 ||
+            miscmagic.mmpCubeForceSurchargeFormCount() != 14 ||
+            miscmagic.mmpCubeForceSpellsInOutBlocked() != 1 ||
+            miscmagic.mmpCubeForceMaterialCount() != 3) ++bad;
+        if (miscmagic.mmpCubeFrostSideInches() != 1 ||
+            miscmagic.mmpCubeFrostTempF() != 65 ||
+            miscmagic.mmpCubeFrostColdAttackCount() != 3 ||
+            miscmagic.mmpCubeFrostCollapseHp() != 50 ||
+            miscmagic.mmpCubeFrostTurnRounds() != 10 ||
+            miscmagic.mmpCubeFrostRenewHours() != 1 ||
+            miscmagic.mmpCubeFrostDestroyHp() != 100 ||
+            miscmagic.mmpCubeFrostColdPer10BelowF() != 2 ||
+            miscmagic.mmpCubeFrostAt40BelowHp() != 42) ++bad;
+        if (miscmagic.mmpCubicGateSideCount() != 6 ||
+            miscmagic.mmpCubicGatePrimeSides() != 1 ||
+            miscmagic.mmpCubicGateChosenSides() != 5 ||
+            miscmagic.mmpCubicGateNexusChancePct() != 10 ||
+            miscmagic.mmpCubicGateDrawRadiusFeet() != 5 ||
+            miscmagic.mmpCubicGateMaxLinks() != 1) ++bad;
+        if (miscmagic.mmpDaernSquareFeet() != 20 ||
+            miscmagic.mmpDaernHeightFeet() != 30 ||
+            miscmagic.mmpDaernGroundDepthFeet() != 10 ||
+            miscmagic.mmpDaernCollapseHp() != 200 ||
+            miscmagic.mmpDaernWishRepairHp() != 10 ||
+            miscmagic.mmpDaernSpringRounds() != 1 ||
+            miscmagic.mmpDaernGrowthDamageMin() != 10 ||
+            miscmagic.mmpDaernGrowthDamageMax() != 100 ||
+            miscmagic.mmpDaernDoorOwnerOnly() != 1 ||
+            miscmagic.mmpDaernNormalWeaponsAffect() != 0 ||
+            miscmagic.mmpDaernDamageCumulative() != 1) ++bad;
+        if (miscmagic.mmpDecanterModeCount() != 3 ||
+            miscmagic.mmpDecanterStreamGallonsPerRound() != 1 ||
+            miscmagic.mmpDecanterFountainLengthFeet() != 5 ||
+            miscmagic.mmpDecanterFountainGallonsPerRound() != 5 ||
+            miscmagic.mmpDecanterGeyserLengthFeet() != 20 ||
+            miscmagic.mmpDecanterGeyserGallonsPerRound() != 30 ||
+            miscmagic.mmpDecanterWaterTypeCount() != 2 ||
+            miscmagic.mmpDecanterGeyserKnockover() != 1 ||
+            miscmagic.mmpDecanterStopsOnCommand() != 1) ++bad;
         static const int kFaceCost[6] = {
             1, 2, 3, 4, 6, 0,
         };
@@ -61,19 +61,19 @@
             1, 3, 2, 4, 6, 8, 3, 3, 6, 5, 3, 7, 3, 2,
         };
         for (int i = 0; i < 6; ++i)
-            if (miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubeForceCostPerTurn(i) !=
+            if (miscmagic.mmpCubeForceCostPerTurn(i) !=
                 kFaceCost[i] ||
-                miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubeForceMoveInches(i) !=
+                miscmagic.mmpCubeForceMoveInches(i) !=
                 kFaceMove[i]) ++bad;
         for (int i = 0; i < 14; ++i)
-            if (miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubeForceSurchargeAt(i) !=
+            if (miscmagic.mmpCubeForceSurchargeAt(i) !=
                 kSurcharge[i]) ++bad;
         // the printed frost math: at minus 40 F the
         // device withstands only 42 hp - 50 minus 2
         // hp per 10 degrees below zero
-        if (miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubeFrostCollapseHp() -
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubeFrostColdPer10BelowF() * 4 !=
-            miscmagic_cube_of_force_to_decanter_of_endless_water.mmpCubeFrostAt40BelowHp()) ++bad;
+        if (miscmagic.mmpCubeFrostCollapseHp() -
+            miscmagic.mmpCubeFrostColdPer10BelowF() * 4 !=
+            miscmagic.mmpCubeFrostAt40BelowHp()) ++bad;
         // the kMisc2 rows this slice completes:
         // 13 Cube of Force 62-63, 14 Frost 64-65,
         // 15 Cubic Gate 66-67, 16 Daern 68-69,

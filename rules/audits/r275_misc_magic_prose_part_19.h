@@ -9,24 +9,24 @@
     // the kMisc4 rows 19-29 of the 36-row III.E.4
     // table.
     {
-        Miscmagic_necklace_of_prayer_beads_to_periapts miscmagic_necklace_of_prayer_beads_to_periapts;
+        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
         Miscmagic_table4_footnotes miscmagic_table4_footnotes;
         int bad = 0;
         // the necklace of prayer beads scalars
-        if (miscmagic_necklace_of_prayer_beads_to_periapts.mmpBeadStoneMin() != 25 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpBeadStoneMax() != 30 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpBeadSemiPreciousPct() != 60 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpBeadFancyPct() != 40 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpBeadPetitionBonusPct() != 25 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpBeadSpecialMin() != 3 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpBeadSpecialMax() != 6 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpBeadGemBaseGp() != 1000 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpBeadUsesPerDay() != 1 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpBeadKarmaLevels() != 4 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpBeadSummonsPct() != 90) ++bad;
+        if (miscmagic.mmpBeadStoneMin() != 25 ||
+            miscmagic.mmpBeadStoneMax() != 30 ||
+            miscmagic.mmpBeadSemiPreciousPct() != 60 ||
+            miscmagic.mmpBeadFancyPct() != 40 ||
+            miscmagic.mmpBeadPetitionBonusPct() != 25 ||
+            miscmagic.mmpBeadSpecialMin() != 3 ||
+            miscmagic.mmpBeadSpecialMax() != 6 ||
+            miscmagic.mmpBeadGemBaseGp() != 1000 ||
+            miscmagic.mmpBeadUsesPerDay() != 1 ||
+            miscmagic.mmpBeadKarmaLevels() != 4 ||
+            miscmagic.mmpBeadSummonsPct() != 90) ++bad;
         // the stone split sums to the full necklace
-        if (miscmagic_necklace_of_prayer_beads_to_periapts.mmpBeadSemiPreciousPct() +
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpBeadFancyPct() != 100) ++bad;
+        if (miscmagic.mmpBeadSemiPreciousPct() +
+            miscmagic.mmpBeadFancyPct() != 100) ++bad;
         // the bead type table against static twins
         static const int kBlo[6] = {
             1, 6, 11, 16, 18, 19,
@@ -35,43 +35,43 @@
             5, 10, 15, 17, 18, 20,
         };
         for (int i = 0; i < 6; ++i)
-            if (miscmagic_necklace_of_prayer_beads_to_periapts.mmpBeadRowLo(i) != kBlo[i] ||
-                miscmagic_necklace_of_prayer_beads_to_periapts.mmpBeadRowHi(i) != kBhi[i]) ++bad;
+            if (miscmagic.mmpBeadRowLo(i) != kBlo[i] ||
+                miscmagic.mmpBeadRowHi(i) != kBhi[i]) ++bad;
         // the bead die bands tile 1-20 without gaps
         for (int i = 0; i < 5; ++i)
-            if (miscmagic_necklace_of_prayer_beads_to_periapts.mmpBeadRowLo(i + 1) !=
-                miscmagic_necklace_of_prayer_beads_to_periapts.mmpBeadRowHi(i) + 1) ++bad;
-        if (miscmagic_necklace_of_prayer_beads_to_periapts.mmpBeadRowLo(0) != 1 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpBeadRowHi(5) != 20) ++bad;
+            if (miscmagic.mmpBeadRowLo(i + 1) !=
+                miscmagic.mmpBeadRowHi(i) + 1) ++bad;
+        if (miscmagic.mmpBeadRowLo(0) != 1 ||
+            miscmagic.mmpBeadRowHi(5) != 20) ++bad;
         // the necklace of strangulation
-        if (miscmagic_necklace_of_prayer_beads_to_periapts.mmpStrangleDamagePerRound() != 6) ++bad;
+        if (miscmagic.mmpStrangleDamagePerRound() != 6) ++bad;
         // the net of entrapment
-        if (miscmagic_necklace_of_prayer_beads_to_periapts.mmpEntrapMinStrength() != 20 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpEntrapSizeFeet() != 10 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpEntrapMeshQuarterFeet() != 1 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpEntrapThrowFeet() != 20 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpEntrapCloseCubeFeet() != 5) ++bad;
+        if (miscmagic.mmpEntrapMinStrength() != 20 ||
+            miscmagic.mmpEntrapSizeFeet() != 10 ||
+            miscmagic.mmpEntrapMeshQuarterFeet() != 1 ||
+            miscmagic.mmpEntrapThrowFeet() != 20 ||
+            miscmagic.mmpEntrapCloseCubeFeet() != 5) ++bad;
         // AC -10 against cutting blows
-        if (miscmagic_necklace_of_prayer_beads_to_periapts.mmpEntrapCutAc() + 10 != 0) ++bad;
+        if (miscmagic.mmpEntrapCutAc() + 10 != 0) ++bad;
         // the net of snaring
-        if (miscmagic_necklace_of_prayer_beads_to_periapts.mmpSnareRangeInches() != 3) ++bad;
+        if (miscmagic.mmpSnareRangeInches() != 3) ++bad;
         // the marvelous pigments
-        if (miscmagic_necklace_of_prayer_beads_to_periapts.mmpPigPotCubicFeet() != 1000 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpPigDepictSquareFeet() != 100 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpPigContainersMin() != 1 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpPigContainersMax() != 4 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpPigInstrumentFeet() != 1 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpPigDepictTurns() != 1) ++bad;
+        if (miscmagic.mmpPigPotCubicFeet() != 1000 ||
+            miscmagic.mmpPigDepictSquareFeet() != 100 ||
+            miscmagic.mmpPigContainersMin() != 1 ||
+            miscmagic.mmpPigContainersMax() != 4 ||
+            miscmagic.mmpPigInstrumentFeet() != 1 ||
+            miscmagic.mmpPigDepictTurns() != 1) ++bad;
         // the pearl of power scalars
-        if (miscmagic_necklace_of_prayer_beads_to_periapts.mmpPowerRecallPerDay() != 1 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpPowerSpellsRecalled() != 1 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpPowerReverseOneIn() != 20 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpPowerDoubleMin() != 2 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpPowerDoubleMaxLevel() != 6 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpPowerDoubleDieSides() != 6) ++bad;
+        if (miscmagic.mmpPowerRecallPerDay() != 1 ||
+            miscmagic.mmpPowerSpellsRecalled() != 1 ||
+            miscmagic.mmpPowerReverseOneIn() != 20 ||
+            miscmagic.mmpPowerDoubleMin() != 2 ||
+            miscmagic.mmpPowerDoubleMaxLevel() != 6 ||
+            miscmagic.mmpPowerDoubleDieSides() != 6) ++bad;
         // the 00 row d6 equals the 1st to 6th ladder
-        if (miscmagic_necklace_of_prayer_beads_to_periapts.mmpPowerDoubleDieSides() !=
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpPowerDoubleMaxLevel()) ++bad;
+        if (miscmagic.mmpPowerDoubleDieSides() !=
+            miscmagic.mmpPowerDoubleMaxLevel()) ++bad;
         // the pearl power table against static twins
         static const int kPlo[10] = {
             1, 26, 46, 61, 76, 86, 93, 97, 99, 100,
@@ -83,37 +83,37 @@
             1, 2, 3, 4, 5, 6, 7, 8, 9, 0,
         };
         for (int i = 0; i < 10; ++i)
-            if (miscmagic_necklace_of_prayer_beads_to_periapts.mmpPowerRowLo(i) != kPlo[i] ||
-                miscmagic_necklace_of_prayer_beads_to_periapts.mmpPowerRowHi(i) != kPhi[i] ||
-                miscmagic_necklace_of_prayer_beads_to_periapts.mmpPowerSpellLevel(i) !=
+            if (miscmagic.mmpPowerRowLo(i) != kPlo[i] ||
+                miscmagic.mmpPowerRowHi(i) != kPhi[i] ||
+                miscmagic.mmpPowerSpellLevel(i) !=
                 kLvl[i]) ++bad;
         // the pearl die bands tile 1-100 without gaps
         for (int i = 0; i < 9; ++i)
-            if (miscmagic_necklace_of_prayer_beads_to_periapts.mmpPowerRowLo(i + 1) !=
-                miscmagic_necklace_of_prayer_beads_to_periapts.mmpPowerRowHi(i) + 1) ++bad;
-        if (miscmagic_necklace_of_prayer_beads_to_periapts.mmpPowerRowLo(0) != 1 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpPowerRowHi(9) != 100) ++bad;
+            if (miscmagic.mmpPowerRowLo(i + 1) !=
+                miscmagic.mmpPowerRowHi(i) + 1) ++bad;
+        if (miscmagic.mmpPowerRowLo(0) != 1 ||
+            miscmagic.mmpPowerRowHi(9) != 100) ++bad;
         // the spell levels ascend first to ninth
         for (int i = 0; i < 8; ++i)
-            if (miscmagic_necklace_of_prayer_beads_to_periapts.mmpPowerSpellLevel(i + 1) !=
-                miscmagic_necklace_of_prayer_beads_to_periapts.mmpPowerSpellLevel(i) + 1) ++bad;
+            if (miscmagic.mmpPowerSpellLevel(i + 1) !=
+                miscmagic.mmpPowerSpellLevel(i) + 1) ++bad;
         // the 00 row carries the double-spell mark
-        if (miscmagic_necklace_of_prayer_beads_to_periapts.mmpPowerSpellLevel(9) != 0) ++bad;
+        if (miscmagic.mmpPowerSpellLevel(9) != 0) ++bad;
         // the pearl of wisdom
-        if (miscmagic_necklace_of_prayer_beads_to_periapts.mmpWisdomGain() != 1 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpWisdomMonths() != 1 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpWisdomDays() != 30 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpWisdomReverseOneIn() != 20) ++bad;
+        if (miscmagic.mmpWisdomGain() != 1 ||
+            miscmagic.mmpWisdomMonths() != 1 ||
+            miscmagic.mmpWisdomDays() != 30 ||
+            miscmagic.mmpWisdomReverseOneIn() != 20) ++bad;
         // the month expires at the printed 30 days
-        if (miscmagic_necklace_of_prayer_beads_to_periapts.mmpWisdomMonths() * 30 !=
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpWisdomDays()) ++bad;
+        if (miscmagic.mmpWisdomMonths() * 30 !=
+            miscmagic.mmpWisdomDays()) ++bad;
         // the periapt of foul rotting
-        if (miscmagic_necklace_of_prayer_beads_to_periapts.mmpRotAbilityLossPerWeek() != 1 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpRotStartWeek() != 1 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpRotAbilityCount() != 3 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpRotDeathScore() != 0) ++bad;
+        if (miscmagic.mmpRotAbilityLossPerWeek() != 1 ||
+            miscmagic.mmpRotStartWeek() != 1 ||
+            miscmagic.mmpRotAbilityCount() != 3 ||
+            miscmagic.mmpRotDeathScore() != 0) ++bad;
         // the periapt of proof against poison
-        if (miscmagic_necklace_of_prayer_beads_to_periapts.mmpPoisonSavePctPerPlus() != 10) ++bad;
+        if (miscmagic.mmpPoisonSavePctPerPlus() != 10) ++bad;
         static const int kOlo[4] = {
             1, 9, 15, 19,
         };
@@ -124,17 +124,17 @@
             1, 2, 3, 4,
         };
         for (int i = 0; i < 4; ++i)
-            if (miscmagic_necklace_of_prayer_beads_to_periapts.mmpPoisonRowLo(i) != kOlo[i] ||
-                miscmagic_necklace_of_prayer_beads_to_periapts.mmpPoisonRowHi(i) != kOhi[i] ||
-                miscmagic_necklace_of_prayer_beads_to_periapts.mmpPoisonPlus(i) != kOpl[i]) ++bad;
+            if (miscmagic.mmpPoisonRowLo(i) != kOlo[i] ||
+                miscmagic.mmpPoisonRowHi(i) != kOhi[i] ||
+                miscmagic.mmpPoisonPlus(i) != kOpl[i]) ++bad;
         // the periapt bands tile 1-20 without gaps
         for (int i = 0; i < 3; ++i)
-            if (miscmagic_necklace_of_prayer_beads_to_periapts.mmpPoisonRowLo(i + 1) !=
-                miscmagic_necklace_of_prayer_beads_to_periapts.mmpPoisonRowHi(i) + 1) ++bad;
-        if (miscmagic_necklace_of_prayer_beads_to_periapts.mmpPoisonRowLo(0) != 1 ||
-            miscmagic_necklace_of_prayer_beads_to_periapts.mmpPoisonRowHi(3) != 20) ++bad;
+            if (miscmagic.mmpPoisonRowLo(i + 1) !=
+                miscmagic.mmpPoisonRowHi(i) + 1) ++bad;
+        if (miscmagic.mmpPoisonRowLo(0) != 1 ||
+            miscmagic.mmpPoisonRowHi(3) != 20) ++bad;
         // the periapt of wound closure
-        if (miscmagic_necklace_of_prayer_beads_to_periapts.mmpWoundHealRateMult() != 2) ++bad;
+        if (miscmagic.mmpWoundHealRateMult() != 2) ++bad;
         // the engine kMisc4 rows 19-29: the die band
         // edges, the double star on the beads, the
         // triple on the pigments, the quadruple on the

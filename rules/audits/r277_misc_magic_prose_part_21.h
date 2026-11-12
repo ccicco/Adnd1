@@ -7,100 +7,100 @@
     // pinning the kMisc5 rows 0-5 of the 35-row III.E.5
     // table (and opening it).
     {
-        Miscmagic_robes miscmagic_robes;
+        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
         Miscmagic_table5_footnotes miscmagic_table5_footnotes;
         int bad = 0;
         // the robe of the archmagi scalars
-        if (miscmagic_robes.mmpArchmagiWhitePct() != 45 ||
-            miscmagic_robes.mmpArchmagiGrayPct() != 30 ||
-            miscmagic_robes.mmpArchmagiBlackPct() != 25 ||
-            miscmagic_robes.mmpArchmagiAcClass() != 5 ||
-            miscmagic_robes.mmpArchmagiMagicResistPct() != 5 ||
-            miscmagic_robes.mmpArchmagiSaveBonus() != 1 ||
-            miscmagic_robes.mmpArchmagiPenaltyPct() != 20 ||
-            miscmagic_robes.mmpArchmagiPenaltyMinus() != 4 ||
-            miscmagic_robes.mmpArchmagiCharmFamilyCount() != 7) ++bad;
+        if (miscmagic.mmpArchmagiWhitePct() != 45 ||
+            miscmagic.mmpArchmagiGrayPct() != 30 ||
+            miscmagic.mmpArchmagiBlackPct() != 25 ||
+            miscmagic.mmpArchmagiAcClass() != 5 ||
+            miscmagic.mmpArchmagiMagicResistPct() != 5 ||
+            miscmagic.mmpArchmagiSaveBonus() != 1 ||
+            miscmagic.mmpArchmagiPenaltyPct() != 20 ||
+            miscmagic.mmpArchmagiPenaltyMinus() != 4 ||
+            miscmagic.mmpArchmagiCharmFamilyCount() != 7) ++bad;
         // the archmagi clash scalars
-        if (miscmagic_robes.mmpArchmagiClashDmgMin() != 18 ||
-            miscmagic_robes.mmpArchmagiClashDmgMax() != 51 ||
-            miscmagic_robes.mmpArchmagiClashDiceCount() != 11 ||
-            miscmagic_robes.mmpArchmagiClashDiceBonus() != 7 ||
-            miscmagic_robes.mmpArchmagiClashXpMin() != 18000 ||
-            miscmagic_robes.mmpArchmagiClashXpMax() != 51000 ||
-            miscmagic_robes.mmpArchmagiGrayDmgMin() != 6 ||
-            miscmagic_robes.mmpArchmagiGrayDmgMax() != 24 ||
-            miscmagic_robes.mmpArchmagiGrayXpMin() != 6000 ||
-            miscmagic_robes.mmpArchmagiGrayXpMax() != 24000) ++bad;
+        if (miscmagic.mmpArchmagiClashDmgMin() != 18 ||
+            miscmagic.mmpArchmagiClashDmgMax() != 51 ||
+            miscmagic.mmpArchmagiClashDiceCount() != 11 ||
+            miscmagic.mmpArchmagiClashDiceBonus() != 7 ||
+            miscmagic.mmpArchmagiClashXpMin() != 18000 ||
+            miscmagic.mmpArchmagiClashXpMax() != 51000 ||
+            miscmagic.mmpArchmagiGrayDmgMin() != 6 ||
+            miscmagic.mmpArchmagiGrayDmgMax() != 24 ||
+            miscmagic.mmpArchmagiGrayXpMin() != 6000 ||
+            miscmagic.mmpArchmagiGrayXpMax() != 24000) ++bad;
         // the color split sums to 100 percent
-        if (miscmagic_robes.mmpArchmagiWhitePct() +
-            miscmagic_robes.mmpArchmagiGrayPct() +
-            miscmagic_robes.mmpArchmagiBlackPct() != 100) ++bad;
+        if (miscmagic.mmpArchmagiWhitePct() +
+            miscmagic.mmpArchmagiGrayPct() +
+            miscmagic.mmpArchmagiBlackPct() != 100) ++bad;
         // the clash dice reproduce the printed damage
-        if (miscmagic_robes.mmpArchmagiClashDiceCount() +
-            miscmagic_robes.mmpArchmagiClashDiceBonus() !=
-            miscmagic_robes.mmpArchmagiClashDmgMin() ||
-            4 * miscmagic_robes.mmpArchmagiClashDiceCount() +
-            miscmagic_robes.mmpArchmagiClashDiceBonus() !=
-            miscmagic_robes.mmpArchmagiClashDmgMax()) ++bad;
+        if (miscmagic.mmpArchmagiClashDiceCount() +
+            miscmagic.mmpArchmagiClashDiceBonus() !=
+            miscmagic.mmpArchmagiClashDmgMin() ||
+            4 * miscmagic.mmpArchmagiClashDiceCount() +
+            miscmagic.mmpArchmagiClashDiceBonus() !=
+            miscmagic.mmpArchmagiClashDmgMax()) ++bad;
         // the robe of blending scalars
-        if (miscmagic_robes.mmpBlendDetectRangeInches() != 3 ||
-            miscmagic_robes.mmpBlendDetectPerIntPct() != 1 ||
-            miscmagic_robes.mmpBlendDetectIntMin() != 15 ||
-            miscmagic_robes.mmpBlendLevelDetectIntMin() != 5 ||
-            miscmagic_robes.mmpBlendLevelDetectLevelMin() != 10 ||
-            miscmagic_robes.mmpBlendDetectPerLevelPct() != 1 ||
-            miscmagic_robes.mmpBlendExamplePct() != 30) ++bad;
+        if (miscmagic.mmpBlendDetectRangeInches() != 3 ||
+            miscmagic.mmpBlendDetectPerIntPct() != 1 ||
+            miscmagic.mmpBlendDetectIntMin() != 15 ||
+            miscmagic.mmpBlendLevelDetectIntMin() != 5 ||
+            miscmagic.mmpBlendLevelDetectLevelMin() != 10 ||
+            miscmagic.mmpBlendDetectPerLevelPct() != 1 ||
+            miscmagic.mmpBlendExamplePct() != 30) ++bad;
         // the example is the two chances summed
-        if (18 * miscmagic_robes.mmpBlendDetectPerIntPct() +
-            12 * miscmagic_robes.mmpBlendDetectPerLevelPct() !=
-            miscmagic_robes.mmpBlendExamplePct()) ++bad;
+        if (18 * miscmagic.mmpBlendDetectPerIntPct() +
+            12 * miscmagic.mmpBlendDetectPerLevelPct() !=
+            miscmagic.mmpBlendExamplePct()) ++bad;
         // the robe of eyes scalars
-        if (miscmagic_robes.mmpEyesInfravisionInches() != 12 ||
-            miscmagic_robes.mmpEyesSeeInvisibleInches() != 24 ||
-            miscmagic_robes.mmpEyesSeeInfraredInches() != 12 ||
-            miscmagic_robes.mmpEyesTrackRangerLevel() != 12 ||
-            miscmagic_robes.mmpEyesBlindLightMin() != 1 ||
-            miscmagic_robes.mmpEyesBlindLightMax() != 3 ||
-            miscmagic_robes.mmpEyesBlindContinualMin() != 2 ||
-            miscmagic_robes.mmpEyesBlindContinualMax() != 8) ++bad;
+        if (miscmagic.mmpEyesInfravisionInches() != 12 ||
+            miscmagic.mmpEyesSeeInvisibleInches() != 24 ||
+            miscmagic.mmpEyesSeeInfraredInches() != 12 ||
+            miscmagic.mmpEyesTrackRangerLevel() != 12 ||
+            miscmagic.mmpEyesBlindLightMin() != 1 ||
+            miscmagic.mmpEyesBlindLightMax() != 3 ||
+            miscmagic.mmpEyesBlindContinualMin() != 2 ||
+            miscmagic.mmpEyesBlindContinualMax() != 8) ++bad;
         // the robe of powerlessness scalars
-        if (miscmagic_robes.mmpPowerlessIntelligence() != 3 ||
-            miscmagic_robes.mmpPowerlessStrength() != 3) ++bad;
+        if (miscmagic.mmpPowerlessIntelligence() != 3 ||
+            miscmagic.mmpPowerlessStrength() != 3) ++bad;
         // the robe of scintillating colors scalars
-        if (miscmagic_robes.mmpScintIntMin() != 15 ||
-            miscmagic_robes.mmpScintWisMin() != 13 ||
-            miscmagic_robes.mmpScintLightFeet() != 40 ||
-            miscmagic_robes.mmpScintStartRounds() != 1 ||
-            miscmagic_robes.mmpScintTransfixMin() != 2 ||
-            miscmagic_robes.mmpScintTransfixMax() != 5 ||
-            miscmagic_robes.mmpScintHitPctPerRound() != 5 ||
-            miscmagic_robes.mmpScintHitPctMax() != 25 ||
-            miscmagic_robes.mmpScintHitMaxRounds() != 5 ||
-            miscmagic_robes.mmpScintCastRangeInches() != 1 ||
-            miscmagic_robes.mmpScintHypnotizeMin() != 2 ||
-            miscmagic_robes.mmpScintHypnotizeMax() != 5) ++bad;
+        if (miscmagic.mmpScintIntMin() != 15 ||
+            miscmagic.mmpScintWisMin() != 13 ||
+            miscmagic.mmpScintLightFeet() != 40 ||
+            miscmagic.mmpScintStartRounds() != 1 ||
+            miscmagic.mmpScintTransfixMin() != 2 ||
+            miscmagic.mmpScintTransfixMax() != 5 ||
+            miscmagic.mmpScintHitPctPerRound() != 5 ||
+            miscmagic.mmpScintHitPctMax() != 25 ||
+            miscmagic.mmpScintHitMaxRounds() != 5 ||
+            miscmagic.mmpScintCastRangeInches() != 1 ||
+            miscmagic.mmpScintHypnotizeMin() != 2 ||
+            miscmagic.mmpScintHypnotizeMax() != 5) ++bad;
         // the hit ladder reaches the max at the max rounds
-        if (miscmagic_robes.mmpScintHitPctPerRound() *
-            miscmagic_robes.mmpScintHitMaxRounds() !=
-            miscmagic_robes.mmpScintHitPctMax()) ++bad;
+        if (miscmagic.mmpScintHitPctPerRound() *
+            miscmagic.mmpScintHitMaxRounds() !=
+            miscmagic.mmpScintHitPctMax()) ++bad;
         // the robe of useful items scalars
-        if (miscmagic_robes.mmpUsefulDetachRounds() != 1 ||
-            miscmagic_robes.mmpUsefulBaseEach() != 2 ||
-            miscmagic_robes.mmpUsefulBaseCount() != 6 ||
-            miscmagic_robes.mmpUsefulExtraMin() != 4 ||
-            miscmagic_robes.mmpUsefulExtraMax() != 16 ||
-            miscmagic_robes.mmpUsefulGpBag() != 100 ||
-            miscmagic_robes.mmpUsefulCofferGp() != 500 ||
-            miscmagic_robes.mmpUsefulGemsCount() != 10 ||
-            miscmagic_robes.mmpUsefulGemValueGp() != 100 ||
-            miscmagic_robes.mmpUsefulLadderFeet() != 24 ||
-            miscmagic_robes.mmpUsefulPitCubicFeet() != 10 ||
-            miscmagic_robes.mmpUsefulRowboatFeet() != 12 ||
-            miscmagic_robes.mmpUsefulWindowWidthFeet() != 2 ||
-            miscmagic_robes.mmpUsefulWindowHeightFeet() != 4 ||
-            miscmagic_robes.mmpUsefulWindowDepthFeet() != 2 ||
-            miscmagic_robes.mmpUsefulScrollSpells() != 1 ||
-            miscmagic_robes.mmpUsefulWarDogsPair() != 2) ++bad;
+        if (miscmagic.mmpUsefulDetachRounds() != 1 ||
+            miscmagic.mmpUsefulBaseEach() != 2 ||
+            miscmagic.mmpUsefulBaseCount() != 6 ||
+            miscmagic.mmpUsefulExtraMin() != 4 ||
+            miscmagic.mmpUsefulExtraMax() != 16 ||
+            miscmagic.mmpUsefulGpBag() != 100 ||
+            miscmagic.mmpUsefulCofferGp() != 500 ||
+            miscmagic.mmpUsefulGemsCount() != 10 ||
+            miscmagic.mmpUsefulGemValueGp() != 100 ||
+            miscmagic.mmpUsefulLadderFeet() != 24 ||
+            miscmagic.mmpUsefulPitCubicFeet() != 10 ||
+            miscmagic.mmpUsefulRowboatFeet() != 12 ||
+            miscmagic.mmpUsefulWindowWidthFeet() != 2 ||
+            miscmagic.mmpUsefulWindowHeightFeet() != 4 ||
+            miscmagic.mmpUsefulWindowDepthFeet() != 2 ||
+            miscmagic.mmpUsefulScrollSpells() != 1 ||
+            miscmagic.mmpUsefulWarDogsPair() != 2) ++bad;
         // the extra items dice table against static twins
         static const int kUlo[13] = {
             1, 9, 16, 23, 31, 45, 52,
@@ -111,17 +111,17 @@
             68, 75, 83, 90, 96, 100,
         };
         for (int i = 0; i < 13; ++i)
-            if (miscmagic_robes.mmpUsefulRowLo(i) != kUlo[i] ||
-                miscmagic_robes.mmpUsefulRowHi(i) != kUhi[i]) ++bad;
+            if (miscmagic.mmpUsefulRowLo(i) != kUlo[i] ||
+                miscmagic.mmpUsefulRowHi(i) != kUhi[i]) ++bad;
         // the bands run 01 through 00 with no gaps
-        if (miscmagic_robes.mmpUsefulRowLo(0) != 1 ||
-            miscmagic_robes.mmpUsefulRowHi(12) != 100) ++bad;
+        if (miscmagic.mmpUsefulRowLo(0) != 1 ||
+            miscmagic.mmpUsefulRowHi(12) != 100) ++bad;
         for (int i = 0; i < 12; ++i)
-            if (miscmagic_robes.mmpUsefulRowLo(i + 1) !=
-                miscmagic_robes.mmpUsefulRowHi(i) + 1) ++bad;
+            if (miscmagic.mmpUsefulRowLo(i + 1) !=
+                miscmagic.mmpUsefulRowHi(i) + 1) ++bad;
         for (int i = 0; i < 13; ++i)
-            if (miscmagic_robes.mmpUsefulRowLo(i) >
-                miscmagic_robes.mmpUsefulRowHi(i)) ++bad;
+            if (miscmagic.mmpUsefulRowLo(i) >
+                miscmagic.mmpUsefulRowHi(i)) ++bad;
         // the kMisc5 table opening cross-check
         static const int kRlo[6] = {
             1, 2, 9, 10, 11, 12,

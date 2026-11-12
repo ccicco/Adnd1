@@ -8,45 +8,45 @@
     // 35-row III.E.5 table (rows 0-5 by part 21 and
     // 6-16 by part 22; the table is complete).
     {
-        Miscmagic_sphere_of_annihilation_to_wings_of_flying miscmagic_sphere_of_annihilation_to_wings_of_flying;
+        Miscmagic_alchemy_jug_to_wings_of_flying miscmagic;
         Miscmagic_table5_footnotes miscmagic_table5_footnotes;
         int bad = 0;
         // the sphere of annihilation scalars
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereDiameterFeet() != 2 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereControlRangeFeet() != 40 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereControlPerLevelInches() != 1 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereBaseMoveFeetPerRound() != 10 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereIntBonusLowPct() != 1 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereIntBonusHighPct() != 3 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereIntBonusMaxPct() != 12 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereIntBonusLowStat() != 13 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereIntBonusHighStat() != 16 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereIntBonusMaxStat() != 18 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereDriftRoundsMin() != 1 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereDriftRoundsMax() != 4 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereDriftRangeFeet() != 30 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereMultiUserPenaltyPct() != 5 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereGateDestroyPct() != 50 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereGateNothingPct() != 35 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereGateTearPct() != 15 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereGateTearRadiusInches() != 18 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereCancelRadiusInches() != 6 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereCancelDmgMin() != 30 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereCancelDmgMax() != 120) ++bad;
+        if (miscmagic.mmpSphereDiameterFeet() != 2 ||
+            miscmagic.mmpSphereControlRangeFeet() != 40 ||
+            miscmagic.mmpSphereControlPerLevelInches() != 1 ||
+            miscmagic.mmpSphereBaseMoveFeetPerRound() != 10 ||
+            miscmagic.mmpSphereIntBonusLowPct() != 1 ||
+            miscmagic.mmpSphereIntBonusHighPct() != 3 ||
+            miscmagic.mmpSphereIntBonusMaxPct() != 12 ||
+            miscmagic.mmpSphereIntBonusLowStat() != 13 ||
+            miscmagic.mmpSphereIntBonusHighStat() != 16 ||
+            miscmagic.mmpSphereIntBonusMaxStat() != 18 ||
+            miscmagic.mmpSphereDriftRoundsMin() != 1 ||
+            miscmagic.mmpSphereDriftRoundsMax() != 4 ||
+            miscmagic.mmpSphereDriftRangeFeet() != 30 ||
+            miscmagic.mmpSphereMultiUserPenaltyPct() != 5 ||
+            miscmagic.mmpSphereGateDestroyPct() != 50 ||
+            miscmagic.mmpSphereGateNothingPct() != 35 ||
+            miscmagic.mmpSphereGateTearPct() != 15 ||
+            miscmagic.mmpSphereGateTearRadiusInches() != 18 ||
+            miscmagic.mmpSphereCancelRadiusInches() != 6 ||
+            miscmagic.mmpSphereCancelDmgMin() != 30 ||
+            miscmagic.mmpSphereCancelDmgMax() != 120) ++bad;
         // the intelligence bonus arithmetic: three low
         // points plus three high points make the 12
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereIntBonusLowPct() * 3 +
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereIntBonusHighPct() * 3 !=
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereIntBonusMaxPct()) ++bad;
+        if (miscmagic.mmpSphereIntBonusLowPct() * 3 +
+            miscmagic.mmpSphereIntBonusHighPct() * 3 !=
+            miscmagic.mmpSphereIntBonusMaxPct()) ++bad;
         // the gate spell chances sum to 100 percent
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereGateDestroyPct() +
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereGateNothingPct() +
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereGateTearPct() != 100) ++bad;
+        if (miscmagic.mmpSphereGateDestroyPct() +
+            miscmagic.mmpSphereGateNothingPct() +
+            miscmagic.mmpSphereGateTearPct() != 100) ++bad;
         // the drift band is ordered
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereDriftRoundsMin() >
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereDriftRoundsMax()) ++bad;
+        if (miscmagic.mmpSphereDriftRoundsMin() >
+            miscmagic.mmpSphereDriftRoundsMax()) ++bad;
         // the sphere control grid against static twins
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereCtlRows() != 9) ++bad;
+        if (miscmagic.mmpSphereCtlRows() != 9) ++bad;
         static const int kSlo[9] = {
             1, 6, 8, 10, 12, 14, 16, 18, 21,
         };
@@ -60,187 +60,187 @@
             15, 20, 30, 40, 50, 60, 70, 75, 80,
         };
         for (int i = 0; i < 9; ++i)
-            if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereCtlLevelLo(i) != kSlo[i] ||
-                miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereCtlLevelHi(i) != kShi[i] ||
-                miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereCtlMoveFeet(i) != kSmov[i] ||
-                miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereCtlProbPct(i) != kSprob[i]) ++bad;
+            if (miscmagic.mmpSphereCtlLevelLo(i) != kSlo[i] ||
+                miscmagic.mmpSphereCtlLevelHi(i) != kShi[i] ||
+                miscmagic.mmpSphereCtlMoveFeet(i) != kSmov[i] ||
+                miscmagic.mmpSphereCtlProbPct(i) != kSprob[i]) ++bad;
         // the level bands chain 1 through 20, the ninth
         // band open above the 20th (0 = no ceiling)
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereCtlLevelLo(0) != 1 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereCtlLevelHi(7) != 20 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereCtlLevelLo(8) != 21 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereCtlLevelHi(8) != 0) ++bad;
+        if (miscmagic.mmpSphereCtlLevelLo(0) != 1 ||
+            miscmagic.mmpSphereCtlLevelHi(7) != 20 ||
+            miscmagic.mmpSphereCtlLevelLo(8) != 21 ||
+            miscmagic.mmpSphereCtlLevelHi(8) != 0) ++bad;
         for (int i = 0; i < 8; ++i)
-            if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereCtlLevelLo(i + 1) !=
-                miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereCtlLevelHi(i) + 1) ++bad;
+            if (miscmagic.mmpSphereCtlLevelLo(i + 1) !=
+                miscmagic.mmpSphereCtlLevelHi(i) + 1) ++bad;
         // the movement and probability both rise
         for (int i = 0; i < 8; ++i)
-            if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereCtlMoveFeet(i) >=
-                miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereCtlMoveFeet(i + 1) ||
-                miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereCtlProbPct(i) >=
-                miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereCtlProbPct(i + 1)) ++bad;
+            if (miscmagic.mmpSphereCtlMoveFeet(i) >=
+                miscmagic.mmpSphereCtlMoveFeet(i + 1) ||
+                miscmagic.mmpSphereCtlProbPct(i) >=
+                miscmagic.mmpSphereCtlProbPct(i + 1)) ++bad;
         // the stone of controlling earth elementals scalars
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpEarthStoneEarthDice() != 12 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpEarthStoneRoughDice() != 8 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpEarthStoneWorkedStoneDice() != 0 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpEarthStoneAreaFeet() != 4 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpEarthStoneVolumeYards() != 4 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpEarthStoneRoundsMin() != 1 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpEarthStoneRoundsMax() != 4 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpEarthStonePerDay() != 1) ++bad;
+        if (miscmagic.mmpEarthStoneEarthDice() != 12 ||
+            miscmagic.mmpEarthStoneRoughDice() != 8 ||
+            miscmagic.mmpEarthStoneWorkedStoneDice() != 0 ||
+            miscmagic.mmpEarthStoneAreaFeet() != 4 ||
+            miscmagic.mmpEarthStoneVolumeYards() != 4 ||
+            miscmagic.mmpEarthStoneRoundsMin() != 1 ||
+            miscmagic.mmpEarthStoneRoundsMax() != 4 ||
+            miscmagic.mmpEarthStonePerDay() != 1) ++bad;
         // worked stone summons nothing, earth summons the 12
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpEarthStoneWorkedStoneDice() >=
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpEarthStoneEarthDice()) ++bad;
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpEarthStoneRoundsMin() >
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpEarthStoneRoundsMax()) ++bad;
+        if (miscmagic.mmpEarthStoneWorkedStoneDice() >=
+            miscmagic.mmpEarthStoneEarthDice()) ++bad;
+        if (miscmagic.mmpEarthStoneRoundsMin() >
+            miscmagic.mmpEarthStoneRoundsMax()) ++bad;
         // the stone of good luck scalars
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpLuckSaveBonus() != 1 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpLuckSavePctBonus() != 5 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpLuckItemPctMin() != 1 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpLuckItemPctMax() != 10) ++bad;
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpLuckItemPctMin() >
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpLuckItemPctMax()) ++bad;
+        if (miscmagic.mmpLuckSaveBonus() != 1 ||
+            miscmagic.mmpLuckSavePctBonus() != 5 ||
+            miscmagic.mmpLuckItemPctMin() != 1 ||
+            miscmagic.mmpLuckItemPctMax() != 10) ++bad;
+        if (miscmagic.mmpLuckItemPctMin() >
+            miscmagic.mmpLuckItemPctMax()) ++bad;
         // the stone of weight scalars
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpLoadMoveReductionPct() != 50 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpLoadAttackReductionPct() != 50 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpLoadDispelClears() != 1) ++bad;
+        if (miscmagic.mmpLoadMoveReductionPct() != 50 ||
+            miscmagic.mmpLoadAttackReductionPct() != 50 ||
+            miscmagic.mmpLoadDispelClears() != 1) ++bad;
         // the talisman of pure good scalars
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpPureGoodCharges() != 7 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpPureGoodRechargeable() != 0 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpPureGoodNeutralDmgMin() != 7 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpPureGoodNeutralDmgMax() != 28 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpPureGoodEvilDmgMin() != 12 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpPureGoodEvilDmgMax() != 48 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpPureGoodNonClericDmg() != 0) ++bad;
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpPureGoodNeutralDmgMin() >
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpPureGoodNeutralDmgMax() ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpPureGoodEvilDmgMin() >
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpPureGoodEvilDmgMax()) ++bad;
+        if (miscmagic.mmpPureGoodCharges() != 7 ||
+            miscmagic.mmpPureGoodRechargeable() != 0 ||
+            miscmagic.mmpPureGoodNeutralDmgMin() != 7 ||
+            miscmagic.mmpPureGoodNeutralDmgMax() != 28 ||
+            miscmagic.mmpPureGoodEvilDmgMin() != 12 ||
+            miscmagic.mmpPureGoodEvilDmgMax() != 48 ||
+            miscmagic.mmpPureGoodNonClericDmg() != 0) ++bad;
+        if (miscmagic.mmpPureGoodNeutralDmgMin() >
+            miscmagic.mmpPureGoodNeutralDmgMax() ||
+            miscmagic.mmpPureGoodEvilDmgMin() >
+            miscmagic.mmpPureGoodEvilDmgMax()) ++bad;
         // evil hands take the heavier damage of the two
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpPureGoodEvilDmgMax() <=
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpPureGoodNeutralDmgMax()) ++bad;
+        if (miscmagic.mmpPureGoodEvilDmgMax() <=
+            miscmagic.mmpPureGoodNeutralDmgMax()) ++bad;
         // the talisman of the sphere scalars
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereTaliNonMuDmgMin() != 5 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereTaliNonMuDmgMax() != 30 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereTaliLowPctPerPoint() != 2 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereTaliHighPctPerPoint() != 6 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereTaliCheckIntervalRounds() != 2 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereTaliMaxMoveFeet() != 16 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereWandNegationOnTalisman() != 1 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereWandNegationOnSphere() != 0) ++bad;
+        if (miscmagic.mmpSphereTaliNonMuDmgMin() != 5 ||
+            miscmagic.mmpSphereTaliNonMuDmgMax() != 30 ||
+            miscmagic.mmpSphereTaliLowPctPerPoint() != 2 ||
+            miscmagic.mmpSphereTaliHighPctPerPoint() != 6 ||
+            miscmagic.mmpSphereTaliCheckIntervalRounds() != 2 ||
+            miscmagic.mmpSphereTaliMaxMoveFeet() != 16 ||
+            miscmagic.mmpSphereWandNegationOnTalisman() != 1 ||
+            miscmagic.mmpSphereWandNegationOnSphere() != 0) ++bad;
         // the talisman doubles the sphere intelligence bonus
-        if (2 * miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereIntBonusLowPct() !=
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereTaliLowPctPerPoint() ||
-            2 * miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereIntBonusHighPct() !=
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereTaliHighPctPerPoint()) ++bad;
+        if (2 * miscmagic.mmpSphereIntBonusLowPct() !=
+            miscmagic.mmpSphereTaliLowPctPerPoint() ||
+            2 * miscmagic.mmpSphereIntBonusHighPct() !=
+            miscmagic.mmpSphereTaliHighPctPerPoint()) ++bad;
         // the talisman top speed equals the grid top move
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereTaliMaxMoveFeet() !=
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereCtlMoveFeet(8)) ++bad;
+        if (miscmagic.mmpSphereTaliMaxMoveFeet() !=
+            miscmagic.mmpSphereCtlMoveFeet(8)) ++bad;
         // the wand of negation stops the talisman only
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereWandNegationOnTalisman() ==
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSphereWandNegationOnSphere()) ++bad;
+        if (miscmagic.mmpSphereWandNegationOnTalisman() ==
+            miscmagic.mmpSphereWandNegationOnSphere()) ++bad;
         // the talisman of ultimate evil scalars
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpUltimateEvilCharges() != 6) ++bad;
+        if (miscmagic.mmpUltimateEvilCharges() != 6) ++bad;
         // the talisman of zagy scalars
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpZagyHostileDmgMin() != 5 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpZagyHostileDmgMax() != 30 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpZagyNeutralHoursMin() != 5 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpZagyNeutralHoursMax() != 30 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpZagyFriendlyMonthsPerChaPoint() != 1 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpZagyWishChaDivisor() != 6 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpZagyTrapRangeFeet() != 20 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpZagyDiamondGp() != 10000) ++bad;
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpZagyHostileDmgMin() >
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpZagyHostileDmgMax() ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpZagyNeutralHoursMin() >
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpZagyNeutralHoursMax()) ++bad;
+        if (miscmagic.mmpZagyHostileDmgMin() != 5 ||
+            miscmagic.mmpZagyHostileDmgMax() != 30 ||
+            miscmagic.mmpZagyNeutralHoursMin() != 5 ||
+            miscmagic.mmpZagyNeutralHoursMax() != 30 ||
+            miscmagic.mmpZagyFriendlyMonthsPerChaPoint() != 1 ||
+            miscmagic.mmpZagyWishChaDivisor() != 6 ||
+            miscmagic.mmpZagyTrapRangeFeet() != 20 ||
+            miscmagic.mmpZagyDiamondGp() != 10000) ++bad;
+        if (miscmagic.mmpZagyHostileDmgMin() >
+            miscmagic.mmpZagyHostileDmgMax() ||
+            miscmagic.mmpZagyNeutralHoursMin() >
+            miscmagic.mmpZagyNeutralHoursMax()) ++bad;
         // the tome of clear thought scalars
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpClearThoughtIntGain() != 1 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpClearThoughtReadHours() != 48 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpClearThoughtReadDays() != 6 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpClearThoughtStartWeeks() != 1 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpClearThoughtGainMonths() != 1 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpClearThoughtRereadGain() != 0) ++bad;
+        if (miscmagic.mmpClearThoughtIntGain() != 1 ||
+            miscmagic.mmpClearThoughtReadHours() != 48 ||
+            miscmagic.mmpClearThoughtReadDays() != 6 ||
+            miscmagic.mmpClearThoughtStartWeeks() != 1 ||
+            miscmagic.mmpClearThoughtGainMonths() != 1 ||
+            miscmagic.mmpClearThoughtRereadGain() != 0) ++bad;
         // the reading spreads 48 hours over 6 days
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpClearThoughtReadHours() !=
-            8 * miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpClearThoughtReadDays()) ++bad;
+        if (miscmagic.mmpClearThoughtReadHours() !=
+            8 * miscmagic.mmpClearThoughtReadDays()) ++bad;
         // the tome of leadership scalars
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpLeadershipChaGain() != 1) ++bad;
+        if (miscmagic.mmpLeadershipChaGain() != 1) ++bad;
         // the tome of understanding scalars
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpUnderstandingWisGain() != 1) ++bad;
+        if (miscmagic.mmpUnderstandingWisGain() != 1) ++bad;
         // the trident of fish command scalars
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpFishCmdRadiusInches() != 6 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpFishCmdChargeCost() != 1 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpFishCmdProtectFeet() != 10 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpFishCmdApproachFeet() != 10 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpFishCmdSchoolsAsOne() != 1 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpFishCmdChargesMin() != 17 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpFishCmdChargesMax() != 20 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpFishCmdMagicBonus() != 1) ++bad;
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpFishCmdChargesMin() >
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpFishCmdChargesMax()) ++bad;
+        if (miscmagic.mmpFishCmdRadiusInches() != 6 ||
+            miscmagic.mmpFishCmdChargeCost() != 1 ||
+            miscmagic.mmpFishCmdProtectFeet() != 10 ||
+            miscmagic.mmpFishCmdApproachFeet() != 10 ||
+            miscmagic.mmpFishCmdSchoolsAsOne() != 1 ||
+            miscmagic.mmpFishCmdChargesMin() != 17 ||
+            miscmagic.mmpFishCmdChargesMax() != 20 ||
+            miscmagic.mmpFishCmdMagicBonus() != 1) ++bad;
+        if (miscmagic.mmpFishCmdChargesMin() >
+            miscmagic.mmpFishCmdChargesMax()) ++bad;
         // the trident of submission scalars
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSubmitMoraleDelayRounds() != 1 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSubmitHopelessRoundsMin() != 2 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSubmitHopelessRoundsMax() != 8 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSubmitChargesMin() != 17 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSubmitChargesMax() != 20 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSubmitMagicBonus() != 1) ++bad;
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSubmitHopelessRoundsMin() >
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSubmitHopelessRoundsMax() ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSubmitChargesMin() >
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSubmitChargesMax()) ++bad;
+        if (miscmagic.mmpSubmitMoraleDelayRounds() != 1 ||
+            miscmagic.mmpSubmitHopelessRoundsMin() != 2 ||
+            miscmagic.mmpSubmitHopelessRoundsMax() != 8 ||
+            miscmagic.mmpSubmitChargesMin() != 17 ||
+            miscmagic.mmpSubmitChargesMax() != 20 ||
+            miscmagic.mmpSubmitMagicBonus() != 1) ++bad;
+        if (miscmagic.mmpSubmitHopelessRoundsMin() >
+            miscmagic.mmpSubmitHopelessRoundsMax() ||
+            miscmagic.mmpSubmitChargesMin() >
+            miscmagic.mmpSubmitChargesMax()) ++bad;
         // the trident of warning scalars
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpWarningRadiusInches() != 24 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpWarningScanRounds() != 1 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpWarningChargesMin() != 19 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpWarningChargesMax() != 24 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpWarningChargeRounds() != 2 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpWarningMagicBonus() != 2) ++bad;
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpWarningChargesMin() >
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpWarningChargesMax()) ++bad;
+        if (miscmagic.mmpWarningRadiusInches() != 24 ||
+            miscmagic.mmpWarningScanRounds() != 1 ||
+            miscmagic.mmpWarningChargesMin() != 19 ||
+            miscmagic.mmpWarningChargesMax() != 24 ||
+            miscmagic.mmpWarningChargeRounds() != 2 ||
+            miscmagic.mmpWarningMagicBonus() != 2) ++bad;
+        if (miscmagic.mmpWarningChargesMin() >
+            miscmagic.mmpWarningChargesMax()) ++bad;
         // the warning trident out-bonuses the other two
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpWarningMagicBonus() <=
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpFishCmdMagicBonus() ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpWarningMagicBonus() <=
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpSubmitMagicBonus()) ++bad;
+        if (miscmagic.mmpWarningMagicBonus() <=
+            miscmagic.mmpFishCmdMagicBonus() ||
+            miscmagic.mmpWarningMagicBonus() <=
+            miscmagic.mmpSubmitMagicBonus()) ++bad;
         // the trident of yearning scalars
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpYearningMagicPenalty() != 2 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpYearningFreeingSpells() != 3 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpYearningGrantsWaterBreathing() != 0) ++bad;
+        if (miscmagic.mmpYearningMagicPenalty() != 2 ||
+            miscmagic.mmpYearningFreeingSpells() != 3 ||
+            miscmagic.mmpYearningGrantsWaterBreathing() != 0) ++bad;
         // the vacuous grimoire scalars
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpVacuousSaveCount() != 2 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpVacuousIntLoss() != 1 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpVacuousWisLoss() != 2 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpVacuousBurnAfterRemoveCurse() != 1) ++bad;
+        if (miscmagic.mmpVacuousSaveCount() != 2 ||
+            miscmagic.mmpVacuousIntLoss() != 1 ||
+            miscmagic.mmpVacuousWisLoss() != 2 ||
+            miscmagic.mmpVacuousBurnAfterRemoveCurse() != 1) ++bad;
         // the wisdom loss doubles the intelligence loss
-        if (2 * miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpVacuousIntLoss() !=
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpVacuousWisLoss()) ++bad;
+        if (2 * miscmagic.mmpVacuousIntLoss() !=
+            miscmagic.mmpVacuousWisLoss()) ++bad;
         // the well of many worlds scalars
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpWellTwoWay() != 1) ++bad;
+        if (miscmagic.mmpWellTwoWay() != 1) ++bad;
         // the wings of flying scalars
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpWingsSpanFeet() != 20 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpWingsRestHours() != 1 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpWingsQuietHours() != 1 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpWingsNoRestTurns() != 1 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpWingsUsesPerDay() != 1 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpWingsSupportPounds() != 500) ++bad;
+        if (miscmagic.mmpWingsSpanFeet() != 20 ||
+            miscmagic.mmpWingsRestHours() != 1 ||
+            miscmagic.mmpWingsQuietHours() != 1 ||
+            miscmagic.mmpWingsNoRestTurns() != 1 ||
+            miscmagic.mmpWingsUsesPerDay() != 1 ||
+            miscmagic.mmpWingsSupportPounds() != 500) ++bad;
         // the flight duration list against static twins
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpWingsSpeedRows() != 3) ++bad;
+        if (miscmagic.mmpWingsSpeedRows() != 3) ++bad;
         static const int kWt[3] = { 2, 4, 8 };
         static const int kWi[3] = { 32, 18, 12 };
         for (int i = 0; i < 3; ++i)
-            if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpWingsSpeedTurns(i) != kWt[i] ||
-                miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpWingsSpeedInches(i) != kWi[i]) ++bad;
+            if (miscmagic.mmpWingsSpeedTurns(i) != kWt[i] ||
+                miscmagic.mmpWingsSpeedInches(i) != kWi[i]) ++bad;
         // the turns double down the list, the speeds fall
-        if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpWingsSpeedTurns(0) != 2 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpWingsSpeedTurns(1) != 4 ||
-            miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpWingsSpeedTurns(2) != 8) ++bad;
+        if (miscmagic.mmpWingsSpeedTurns(0) != 2 ||
+            miscmagic.mmpWingsSpeedTurns(1) != 4 ||
+            miscmagic.mmpWingsSpeedTurns(2) != 8) ++bad;
         for (int i = 0; i < 2; ++i)
-            if (miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpWingsSpeedTurns(i) >=
-                miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpWingsSpeedTurns(i + 1) ||
-                miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpWingsSpeedInches(i) <=
-                miscmagic_sphere_of_annihilation_to_wings_of_flying.mmpWingsSpeedInches(i + 1)) ++bad;
+            if (miscmagic.mmpWingsSpeedTurns(i) >=
+                miscmagic.mmpWingsSpeedTurns(i + 1) ||
+                miscmagic.mmpWingsSpeedInches(i) <=
+                miscmagic.mmpWingsSpeedInches(i + 1)) ++bad;
         // the kMisc5 table rows 17-34 against static twins
         static const int kRlo[18] = {
             48, 49, 51, 53, 55, 58, 59, 61, 67, 68,
