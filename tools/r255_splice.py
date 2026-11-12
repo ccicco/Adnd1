@@ -10,7 +10,7 @@
 # Control. This round swaps rows 9 and 11 everywhere
 # the divergence lives:
 #   - rules/dmg/rings.h: the array (comment names the fix)
-#   - rules/dmg/rings_prose_part2.h: the three divergence
+#   - rules/dmg/rings_explanation_part2.h: the three divergence
 #     comments now record the resolution
 #   - regtest.cpp: the R223 audit kChg array + the
 #     truthy/negative per-index asserts, and the R254
@@ -24,7 +24,7 @@
 import sys
 
 RH  = 'rules/dmg/rings.h'
-R2  = 'rules/dmg/rings_prose_part2.h'
+R2  = 'rules/dmg/rings_explanation_part2.h'
 REG = 'regtest.cpp'
 GAP = 'tools/reports/dmg_gap_report.md'
 

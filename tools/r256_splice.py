@@ -5,7 +5,7 @@
 # DMG pp.139-140, upload lines ~10458-10561 - the III.C
 # RINGS explanation prose, part 3: Spell Storing through
 # X-Ray Vision, the final ten rings. New header
-# rules/dmg/rings_prose_part3.h (the rgp prefix, 89 accessors:
+# rules/dmg/rings_explanation_part3.h (the rgp prefix, 89 accessors:
 # 78 scalars + 11 array walkers), the regtest include,
 # the audit block, the dmg-gap-report log.
 #
@@ -20,7 +20,7 @@
 
 import sys
 
-WD   = 'rules/dmg/rings_prose_part3.h'
+WD   = 'rules/dmg/rings_explanation_part3.h'
 REG  = 'regtest.cpp'
 GAP  = 'tools/reports/dmg_gap_report.md'
 
@@ -37,7 +37,7 @@ if t.count('audit: bad ') != 173 and t.count('audit: bad ') != 174:
 # ---- the new header ----
 hdr_lines = [
     '// ====================================================================',
-    '// Adnd1 - rules/dmg/rings_prose_part3.h',
+    '// Adnd1 - rules/dmg/rings_explanation_part3.h',
     '// R256: the III.C rings explanation prose part 3',
     '// pins (DMG pp.139-140) - Spell Storing',
     '// through X-Ray Vision, the final ten',
@@ -640,11 +640,11 @@ hdr_text = NL.join(hdr_lines) + NL
 
 # ---- the include patch ----
 inc_old = [
-    '#include "rules/dmg/rings_prose_part2.h"  // R254: pp.138-139 the III.C rings explanation prose part 2 pins',
+    '#include "rules/dmg/rings_explanation_part2.h"  // R254: pp.138-139 the III.C rings explanation prose part 2 pins',
 ]
 inc_new = [
-    '#include "rules/dmg/rings_prose_part2.h"  // R254: pp.138-139 the III.C rings explanation prose part 2 pins',
-    '#include "rules/dmg/rings_prose_part3.h"  // R256: pp.139-140 the III.C rings explanation prose part 3 pins',
+    '#include "rules/dmg/rings_explanation_part2.h"  // R254: pp.138-139 the III.C rings explanation prose part 2 pins',
+    '#include "rules/dmg/rings_explanation_part3.h"  // R256: pp.139-140 the III.C rings explanation prose part 3 pins',
 ]
 
 # ---- the regtest audit block ----
@@ -885,7 +885,7 @@ gap_new = [
     '(DMG pp.139-140, upload lines',
     '~10458-10561) - Spell Storing',
     'through X-Ray Vision.',
-    'rules/dmg/rings_prose_part3.h (the rgp',
+    'rules/dmg/rings_explanation_part3.h (the rgp',
     'prefix, part 3 - 89 accessors:',
     '78 scalars + 11 array walkers):',
     'Spell Storing (2-5 d4+1, the',
@@ -977,7 +977,7 @@ try:
     if marker in t:
         already += 1
     else:
-        print('R256 FAIL: rules/dmg/rings_prose_part3.h exists without the marker')
+        print('R256 FAIL: rules/dmg/rings_explanation_part3.h exists without the marker')
         sys.exit(1)
 except IOError:
     with open(WD, 'w') as f:
@@ -1015,7 +1015,7 @@ if applied + already == 4:
     if t.count('R256 rings prose part 3 pins audit') != 1:
         print('R256 FAIL: the R256 audit line must appear once')
         sys.exit(1)
-    if t.count('rules/dmg/rings_prose_part3.h') != 1:
+    if t.count('rules/dmg/rings_explanation_part3.h') != 1:
         print('R256 FAIL: the ringsprose3 include must appear once')
         sys.exit(1)
     g = open(GAP).read()

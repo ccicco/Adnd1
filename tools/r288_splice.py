@@ -411,7 +411,7 @@ for fn in sorted(os.listdir(os.path.join(ROOT, 'rules'))):
     pt = open(os.path.join(ROOT, 'rules', fn), encoding='utf-8').read()
     for n in defs:
         assert n not in pt, 'name collision with ' + fn
-s0 = rd('rules/dmg/specart_prose_part2.h')
+s0 = rd('rules/dmg/specart_explanation_part2.h')
 assert 'sapQuillMasterThiefBest' in s0, 'specartprose2.h missing the R287 accessors'
 assert 'sapFlaskHeavyUrn' in s0, 'specartprose2.h missing the R286 accessors'
 assert 'sapOrganPipeCount' in s0, 'specartprose2.h missing the R285 accessors'
@@ -441,8 +441,8 @@ for frag in ('part 9', 'The Mighty Servant of Leuk-O',
              '1498-1517', 'No seam restored'):
     assert any(frag in el for el in AUDIT), 'audit frag not contiguous: ' + frag
 
-# ---- patch 1: extend rules/dmg/specart_prose_part2.h ----
-p = 'rules/dmg/specart_prose_part2.h'
+# ---- patch 1: extend rules/dmg/specart_explanation_part2.h ----
+p = 'rules/dmg/specart_explanation_part2.h'
 s = rd(p)
 mark = 'inline int sapServantLumSameMake() {'
 if mark in s:

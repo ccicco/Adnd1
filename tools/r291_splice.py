@@ -502,7 +502,7 @@ for fn in sorted(os.listdir(os.path.join(ROOT, 'rules'))):
     pt = open(os.path.join(ROOT, 'rules', fn), encoding='utf-8').read()
     for n in defs:
         assert n not in pt, 'name collision with ' + fn
-s0 = rd('rules/dmg/specart_prose_part2.h')
+s0 = rd('rules/dmg/specart_explanation_part2.h')
 assert 'sapOrbMightPowerCount' in s0, 'specartprose2.h missing the R290 accessors'
 assert 'sapOrbGreatSerpentPowerCount' in s0, 'specartprose2.h missing the R289 accessors'
 assert 'sapServantLumSameMake' in s0, 'specartprose2.h missing the R288 accessors'
@@ -532,8 +532,8 @@ for frag in ('part 12', 'The Nightingale', 'the Ring of Gaxx',
              '1625-1676', 'No break absorbed'):
     assert any(frag in el for el in AUDIT), 'audit frag not contiguous: ' + frag
 
-# ---- patch 1: extend rules/dmg/specart_prose_part2.h ----
-p = 'rules/dmg/specart_prose_part2.h'
+# ---- patch 1: extend rules/dmg/specart_explanation_part2.h ----
+p = 'rules/dmg/specart_explanation_part2.h'
 s = rd(p)
 mark = 'inline int sapNightingaleMadeByXagy() {'
 if mark in s:

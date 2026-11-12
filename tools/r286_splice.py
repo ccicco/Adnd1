@@ -446,7 +446,7 @@ for fn in sorted(os.listdir(os.path.join(ROOT, 'rules'))):
     pt = open(os.path.join(ROOT, 'rules', fn), encoding='utf-8').read()
     for n in defs:
         assert n not in pt, 'name collision with ' + fn
-s0 = rd('rules/dmg/specart_prose_part2.h')
+s0 = rd('rules/dmg/specart_explanation_part2.h')
 assert 'sapOrganPipeCount' in s0, 'specartprose2.h missing the R285 accessors'
 assert 'sapEyeVecnaPhantomRoams' in s0, 'specartprose2.h missing the R284 accessors'
 assert 'sapCrystalOriginUnknown' in s0, 'specartprose2.h missing the R283 accessors'
@@ -478,8 +478,8 @@ for frag in ('part 7', 'The Iron Flask of Tuerny',
              '1405-1451', 'One seam restored'):
     assert any(frag in el for el in AUDIT), 'audit frag not contiguous: ' + frag
 
-# ---- patch 1: extend rules/dmg/specart_prose_part2.h ----
-p = 'rules/dmg/specart_prose_part2.h'
+# ---- patch 1: extend rules/dmg/specart_explanation_part2.h ----
+p = 'rules/dmg/specart_explanation_part2.h'
 s = rd(p)
 mark = 'inline int sapFlaskHeavyUrn() {'
 if mark in s:

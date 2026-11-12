@@ -12,7 +12,7 @@
 # type bands and counts are pinned, the per-animal
 # stats are not (the R256 lesson).
 #
-# New header rules/dmg/miscmagic_prose_part2.h (the mmp prefix
+# New header rules/dmg/miscmagic_explanation_part2.h (the mmp prefix
 # again, 83 accessors: 74 scalars + 9 array
 # walkers), the regtest include, the audit block,
 # the dmg-gap-report log.
@@ -21,7 +21,7 @@
 
 import sys
 
-WD   = 'rules/dmg/miscmagic_prose_part2.h'
+WD   = 'rules/dmg/miscmagic_explanation_part2.h'
 REG  = 'regtest.cpp'
 GAP  = 'tools/reports/dmg_gap_report.md'
 
@@ -38,7 +38,7 @@ if t.count('audit: bad ') != 175 and t.count('audit: bad ') != 176:
 # ---- the new header ----
 hdr_lines = [
     '// ====================================================================',
-    '// Adnd1 - rules/dmg/miscmagic_prose_part2.h',
+    '// Adnd1 - rules/dmg/miscmagic_explanation_part2.h',
     '// R258: the III.E misc magic explanation prose part 2',
     '// pins - part2 lines 5-66, Bag of Holding through',
     '// Book of Exalted Deeds (global line = 11065 +',
@@ -560,11 +560,11 @@ hdr_text = NL.join(hdr_lines) + NL
 
 # ---- the include patch ----
 inc_old = [
-    '#include "rules/dmg/miscmagic_prose_part1.h"  // R257: the III.E misc magic explanation prose part 1 pins',
+    '#include "rules/dmg/miscmagic_explanation_part1.h"  // R257: the III.E misc magic explanation prose part 1 pins',
 ]
 inc_new = [
-    '#include "rules/dmg/miscmagic_prose_part1.h"  // R257: the III.E misc magic explanation prose part 1 pins',
-    '#include "rules/dmg/miscmagic_prose_part2.h"  // R258: the III.E misc magic explanation prose part 2 pins',
+    '#include "rules/dmg/miscmagic_explanation_part1.h"  // R257: the III.E misc magic explanation prose part 1 pins',
+    '#include "rules/dmg/miscmagic_explanation_part2.h"  // R258: the III.E misc magic explanation prose part 2 pins',
 ]
 
 # ---- the regtest audit block ----
@@ -750,7 +750,7 @@ gap_new = [
     '(part2 lines 5-66; global =',
     '11065 + part2 line; no page',
     'headers inside the slice).',
-    'rules/dmg/miscmagic_prose_part2.h (the mmp',
+    'rules/dmg/miscmagic_explanation_part2.h (the mmp',
     'prefix again, 83 accessors: 74',
     'scalars + 9 array walkers): Bag',
     'of Holding (the 4-row quality',
@@ -818,7 +818,7 @@ try:
     if marker in t:
         already += 1
     else:
-        print('R258 FAIL: rules/dmg/miscmagic_prose_part2.h exists without the marker')
+        print('R258 FAIL: rules/dmg/miscmagic_explanation_part2.h exists without the marker')
         sys.exit(1)
 except IOError:
     with open(WD, 'w') as f:
@@ -856,7 +856,7 @@ if applied + already == 4:
     if t.count('R258 misc magic prose part 2 pins audit') != 1:
         print('R258 FAIL: the R258 audit line must appear once')
         sys.exit(1)
-    if t.count('rules/dmg/miscmagic_prose_part2.h') != 1:
+    if t.count('rules/dmg/miscmagic_explanation_part2.h') != 1:
         print('R258 FAIL: the miscprose2 include must appear once')
         sys.exit(1)
     g = open(GAP).read()

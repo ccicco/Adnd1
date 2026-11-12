@@ -76,7 +76,7 @@ def wr(p, s):
 
 HDR = [
     '// ====================================================================',
-    '// Adnd1 - rules/dmg/specart_prose_part1.h',
+    '// Adnd1 - rules/dmg/specart_explanation_part1.h',
     '// R280: the III.E Special artifacts explanation',
     '// prose part 1 (DMG p.158-159) - the Notes',
     '// Regarding Artifacts and Relics, part2 lines',
@@ -414,8 +414,8 @@ hfrags = ('part 1', 'one seam', 'III.E Special', 'p.158-159',
 for frag in hfrags:
     assert any(frag in el for el in HDR), 'header frag not contiguous: ' + frag
 
-# ---- patch 1: create rules/dmg/specart_prose_part1.h ----
-p = 'rules/dmg/specart_prose_part1.h'
+# ---- patch 1: create rules/dmg/specart_explanation_part1.h ----
+p = 'rules/dmg/specart_explanation_part1.h'
 if os.path.exists(os.path.join(ROOT, p)):
     assert rd(p) == HTEXT, 'specartprose.h exists but differs'
     already += 1
@@ -427,17 +427,17 @@ assert rd(p) == HTEXT, 'patch 1 failed'
 # ---- patch 2: the regtest include ----
 p = 'regtest.cpp'
 s = rd(p)
-inc = '#include "rules/dmg/specart_prose_part1.h"  // R280: the III.E Special artifacts explanation prose part 1 pins'
+inc = '#include "rules/dmg/specart_explanation_part1.h"  // R280: the III.E Special artifacts explanation prose part 1 pins'
 if inc in s:
     already += 1
 else:
-    anchor = '#include "rules/dmg/miscmagic_prose_part23.h"  // R279: the III.E misc magic explanation prose part 23 pins'
+    anchor = '#include "rules/dmg/miscmagic_explanation_part23.h"  // R279: the III.E misc magic explanation prose part 23 pins'
     assert s.count(anchor) == 1, 'include anchor not unique'
     s = s.replace(anchor, anchor + NL + inc, 1)
     wr(p, s)
     applied += 1
 assert inc in rd(p), 'patch 2 failed'
-assert rd(p).count('#include "rules/dmg/specart_prose_part1.h"') == 1, 'patch 2 doubled'
+assert rd(p).count('#include "rules/dmg/specart_explanation_part1.h"') == 1, 'patch 2 doubled'
 
 # ---- patch 3: the regtest audit block ----
 p = 'regtest.cpp'

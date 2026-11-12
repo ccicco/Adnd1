@@ -52,7 +52,7 @@
 # the ranked candidate for the next round. The R254
 # audit deliberately does NOT assert the divergent rows.
 #
-# Patches: 4 (new rules/dmg/rings_prose_part2.h, the regtest
+# Patches: 4 (new rules/dmg/rings_explanation_part2.h, the regtest
 # include, the audit block, the dmg-gap-report log
 # entry). Census 172 -> 173.
 #
@@ -60,7 +60,7 @@
 
 import sys
 
-WD   = 'rules/dmg/rings_prose_part2.h'
+WD   = 'rules/dmg/rings_explanation_part2.h'
 REG  = 'regtest.cpp'
 GAP  = 'tools/reports/dmg_gap_report.md'
 
@@ -78,7 +78,7 @@ if t.count('audit: bad ') != 172 and t.count('audit: bad ') != 173:
 # ---- the new header ----
 hdr_lines = [
     '// ====================================================================',
-    '// Adnd1 - rules/dmg/rings_prose_part2.h',
+    '// Adnd1 - rules/dmg/rings_explanation_part2.h',
     '// R254: the III.C rings explanation prose part 2',
     '// pins (DMG pp.138-139) - Feather Falling',
     '// through Shooting Stars, the second ten',
@@ -581,11 +581,11 @@ hdr_text = NL.join(hdr_lines) + NL
 
 # ---- the regtest include ----
 inc_old = [
-    '#include "rules/dmg/rings_prose_part1.h"  // R253: pp.137-138 the III.C rings explanation prose part 1 pins',
+    '#include "rules/dmg/rings_explanation_part1.h"  // R253: pp.137-138 the III.C rings explanation prose part 1 pins',
 ]
 inc_new = [
-    '#include "rules/dmg/rings_prose_part1.h"  // R253: pp.137-138 the III.C rings explanation prose part 1 pins',
-    '#include "rules/dmg/rings_prose_part2.h"  // R254: pp.138-139 the III.C rings explanation prose part 2 pins',
+    '#include "rules/dmg/rings_explanation_part1.h"  // R253: pp.137-138 the III.C rings explanation prose part 1 pins',
+    '#include "rules/dmg/rings_explanation_part2.h"  // R254: pp.138-139 the III.C rings explanation prose part 2 pins',
 ]
 
 # ---- the regtest audit block ----
@@ -763,7 +763,7 @@ gap_new = [
     '(DMG pp.138-139, upload lines',
     '~10393-10457) - Feather Falling',
     'through Shooting Stars.',
-    'rules/dmg/rings_prose_part2.h (the rgp',
+    'rules/dmg/rings_explanation_part2.h (the rgp',
     'prefix, part 2 - 67 accessors,',
     'of which 6 are array walkers):',
     'Feather Falling (5 feet),',
@@ -867,7 +867,7 @@ try:
     if marker in t:
         already += 1
     else:
-        print('R254 FAIL: rules/dmg/rings_prose_part2.h exists without the marker')
+        print('R254 FAIL: rules/dmg/rings_explanation_part2.h exists without the marker')
         sys.exit(1)
 except IOError:
     with open(WD, 'w') as f:
@@ -907,7 +907,7 @@ if applied + already == 4:
     if t.count('R254 rings prose part 2 pins audit') != 1:
         print('R254 FAIL: the R254 audit line must appear once')
         sys.exit(1)
-    if t.count('rules/dmg/rings_prose_part2.h') != 1:
+    if t.count('rules/dmg/rings_explanation_part2.h') != 1:
         print('R254 FAIL: the ringsprose2 include must appear once')
         sys.exit(1)
     g = open(GAP).read()

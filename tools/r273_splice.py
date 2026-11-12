@@ -48,7 +48,7 @@ def wr(p, s):
 
 HDR = [
     '// ====================================================================',
-    '// Adnd1 - rules/dmg/miscmagic_prose_part17.h',
+    '// Adnd1 - rules/dmg/miscmagic_explanation_part17.h',
     '// R273: the III.E misc magic explanation prose part 17',
     '// (DMG p.149-150) - the three Librams, the Lyre of',
     '// Building and the manuals of Bodily Health, Gainful',
@@ -602,8 +602,8 @@ assert AUDIT[-1] == '    }', 'audit block does not close'
 assert HDR[-1] == '}  // namespace rules', 'header does not close'
 assert ATEXT.count('R273 misc magic prose part 17 pins audit: bad %d' + BS + 'n') == 1, 'audit printf label not unique'
 
-# ---- patch 1: create rules/dmg/miscmagic_prose_part17.h ----
-p = 'rules/dmg/miscmagic_prose_part17.h'
+# ---- patch 1: create rules/dmg/miscmagic_explanation_part17.h ----
+p = 'rules/dmg/miscmagic_explanation_part17.h'
 if os.path.exists(os.path.join(ROOT, p)):
     assert rd(p) == HTEXT, 'miscprose17.h exists but differs'
     already += 1
@@ -615,17 +615,17 @@ assert rd(p) == HTEXT, 'patch 1 failed'
 # ---- patch 2: the regtest include ----
 p = 'regtest.cpp'
 s = rd(p)
-inc = '#include "rules/dmg/miscmagic_prose_part17.h"  // R273: the III.E misc magic explanation prose part 17 pins'
+inc = '#include "rules/dmg/miscmagic_explanation_part17.h"  // R273: the III.E misc magic explanation prose part 17 pins'
 if inc in s:
     already += 1
 else:
-    anchor = '#include "rules/dmg/miscmagic_prose_part16.h"  // R272: the III.E misc magic explanation prose part 16 pins'
+    anchor = '#include "rules/dmg/miscmagic_explanation_part16.h"  // R272: the III.E misc magic explanation prose part 16 pins'
     assert s.count(anchor) == 1, 'include anchor not unique'
     s = s.replace(anchor, anchor + NL + inc, 1)
     wr(p, s)
     applied += 1
 assert inc in rd(p), 'patch 2 failed'
-assert rd(p).count('#include "rules/dmg/miscmagic_prose_part17.h"') == 1, 'patch 2 doubled'
+assert rd(p).count('#include "rules/dmg/miscmagic_explanation_part17.h"') == 1, 'patch 2 doubled'
 
 # ---- patch 3: the regtest audit block ----
 p = 'regtest.cpp'
