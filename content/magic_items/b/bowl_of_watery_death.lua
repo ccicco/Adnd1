@@ -1,7 +1,7 @@
 -- misc magic item def: bowl_of_watery_death
 -- promoted from the III.E explanation prose part headers:
---   rules/dmg/miscmagic_prose_part4.h (R260)
--- The part headers remain in rules/dmg/ as the
+--   boneyard/dmg/miscmagic_prose_part4.h (R260)
+-- The part headers remain in boneyard/dmg/ as the
 -- print-fidelity record. DO NOT hand-edit this file; the
 -- part header pins are the adjudicated record.
 -- (tools/miscmagic2lua.py is the only writer.)

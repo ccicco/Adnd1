@@ -7,10 +7,11 @@
 # sub-items - 9 figurines of wondrous power, 7 bard instruments -
 # nest inside their parent defs).
 #
-# THE HEADERS STAY, untouched: they remain in rules/dmg/ as the
-# print-fidelity record (de-wiring regtest/audits is A2, a later
-# round). This land is pure data promotion - regtest, preflight and
-# the engine are NOT touched.
+# The headers retired to boneyard/dmg/ in R1027 (the A2 de-wire):
+# they remain the print-fidelity record - this tool still reads
+# them there - but the build no longer compiles them; the defs go
+# live through items/MiscItemRegistry, audited by the R1027
+# registry audit fragment.
 #
 # Pure stdlib. Idempotent: run 1 PROMOTE (writes the defs, then
 # verifies), run 2 VERIFY (same gates, byte-compares the on-disk
@@ -102,7 +103,7 @@ def parse_headers():
     static-array index walker; anything else dies loudly."""
     out = {}
     for n in range(1, 24):
-        path = os.path.join(ROOT, "rules", "dmg",
+        path = os.path.join(ROOT, "boneyard", "dmg",
                             "miscmagic_prose_part%d.h" % n)
         if not os.path.isfile(path):
             FAIL("missing part header: %s" % path)
@@ -293,9 +294,9 @@ def emit_def(stem, name, rowlist, sources, scalars, walkers, subs):
     L.append("-- misc magic item def: %s" % stem)
     L.append("-- promoted from the III.E explanation prose part headers:")
     for part, rno in sources:
-        L.append("--   rules/dmg/miscmagic_prose_part%d.h (R%d)"
+        L.append("--   boneyard/dmg/miscmagic_prose_part%d.h (R%d)"
                  % (part, rno))
-    L.append("-- The part headers remain in rules/dmg/ as the")
+    L.append("-- The part headers remain in boneyard/dmg/ as the")
     L.append("-- print-fidelity record. DO NOT hand-edit this file; the")
     L.append("-- part header pins are the adjudicated record.")
     L.append("-- (tools/miscmagic2lua.py is the only writer.)")
@@ -447,15 +448,29 @@ def main():
     phantoms = scan_phantoms(set(def_stems))
     if phantoms:
         FAIL("phantom defs in content/magic_items/: %s" % phantoms[:3])
-    mode = "PROMOTE" if (missing or legacy) else "VERIFY"
     badp = [s for s in present
             if open(def_path(s)).read() != defs[s]]
     badl = [s for s in legacy
             if open(legacy_path(s)).read() != defs[s]]
-    if badp or badl:
-        bad = badp or badl
-        FAIL("verify: %d present def(s) not byte-identical (%s...)"
-             % (len(bad), bad[0]))
+    if badl:
+        FAIL("verify: %d legacy def(s) not byte-identical (%s...)"
+             % (len(badl), badl[0]))
+    # present defs may drift ONLY in Lua comments (the tool reworded the
+    # header path note when the part headers moved to boneyard/dmg/);
+    # any other drift is real and stays RED
+    drifted = []
+    for s in badp:
+        old_lines = open(def_path(s)).read().splitlines()
+        new_lines = defs[s].splitlines()
+        if len(old_lines) != len(new_lines):
+            FAIL("verify: def %s drifted (line count %d -> %d)"
+                 % (s, len(old_lines), len(new_lines)))
+        for a, b in zip(old_lines, new_lines):
+            if a != b and not (a.lstrip().startswith("--")
+                               and b.lstrip().startswith("--")):
+                FAIL("verify: def %s drifted beyond comments" % s)
+        drifted.append(s)
+    mode = "PROMOTE" if (missing or legacy or drifted) else "VERIFY"
     written = 0
     moved = 0
     if mode == "PROMOTE":
@@ -467,7 +482,10 @@ def main():
         for s in missing:
             with open(def_path(s), "w") as f:
                 f.write(defs[s])
-        written = len(missing)
+        for s in drifted:
+            with open(def_path(s), "w") as f:
+                f.write(defs[s])
+        written = len(missing) + len(drifted)
 
     # final verify pass: byte-compare every def (letter-dir paths)
     bad = [stem for stem, text in defs.items()

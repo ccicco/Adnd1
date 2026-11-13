@@ -1,4 +1,5 @@
 #include "monsters/MonsterRegistry.h"
+#include "items/MiscItemRegistry.h"  // R1027: the misc magic item registry (the A2 de-wire)
 #include "dm/encounters.h"
 #include "dm/outdoormove.h"   // R123: pp.58-59 daily rates
 #include "dm/appendixa.h"   // R124: pp.169-172 Appendix A tables
@@ -790,29 +791,6 @@
 #include "rules/dmg/rings_prose_part1.h"  // R253: pp.137-138 the III.C rings explanation prose part 1 pins
 #include "rules/dmg/rings_prose_part2.h"  // R254: pp.138-139 the III.C rings explanation prose part 2 pins
 #include "rules/dmg/rings_prose_part3.h"  // R256: pp.139-140 the III.C rings explanation prose part 3 pins
-#include "rules/dmg/miscmagic_prose_part1.h"  // R257: the III.E misc magic explanation prose part 1 pins
-#include "rules/dmg/miscmagic_prose_part2.h"  // R258: the III.E misc magic explanation prose part 2 pins
-#include "rules/dmg/miscmagic_prose_part3.h"  // R259: the III.E misc magic explanation prose part 3 pins
-#include "rules/dmg/miscmagic_prose_part4.h"  // R260: the III.E misc magic explanation prose part 4 pins
-#include "rules/dmg/miscmagic_prose_part5.h"  // R261: the III.E misc magic explanation prose part 5 pins
-#include "rules/dmg/miscmagic_prose_part6.h"  // R262: the III.E misc magic explanation prose part 6 pins
-#include "rules/dmg/miscmagic_prose_part7.h"  // R263: the III.E misc magic explanation prose part 7 pins
-#include "rules/dmg/miscmagic_prose_part8.h"  // R264: the III.E misc magic explanation prose part 8 pins
-#include "rules/dmg/miscmagic_prose_part9.h"  // R265: the III.E misc magic explanation prose part 9 pins
-#include "rules/dmg/miscmagic_prose_part10.h"  // R266: the III.E misc magic explanation prose part 10 pins
-#include "rules/dmg/miscmagic_prose_part11.h"  // R267: the III.E misc magic explanation prose part 11 pins
-#include "rules/dmg/miscmagic_prose_part12.h"  // R268: the III.E misc magic explanation prose part 12 pins
-#include "rules/dmg/miscmagic_prose_part13.h"  // R269: the III.E misc magic explanation prose part 13 pins
-#include "rules/dmg/miscmagic_prose_part14.h"  // R270: the III.E misc magic explanation prose part 14 pins
-#include "rules/dmg/miscmagic_prose_part15.h"  // R271: the III.E misc magic explanation prose part 15 pins
-#include "rules/dmg/miscmagic_prose_part16.h"  // R272: the III.E misc magic explanation prose part 16 pins
-#include "rules/dmg/miscmagic_prose_part17.h"  // R273: the III.E misc magic explanation prose part 17 pins
-#include "rules/dmg/miscmagic_prose_part18.h"  // R274: the III.E misc magic explanation prose part 18 pins
-#include "rules/dmg/miscmagic_prose_part19.h"  // R275: the III.E misc magic explanation prose part 19 pins
-#include "rules/dmg/miscmagic_prose_part20.h"  // R276: the III.E misc magic explanation prose part 20 pins
-#include "rules/dmg/miscmagic_prose_part21.h"  // R277: the III.E misc magic explanation prose part 21 pins
-#include "rules/dmg/miscmagic_prose_part22.h"  // R278: the III.E misc magic explanation prose part 22 pins
-#include "rules/dmg/miscmagic_prose_part23.h"  // R279: the III.E misc magic explanation prose part 23 pins
 #include "rules/dmg/specart_prose_part1.h"  // R280: the III.E Special artifacts explanation prose part 1 pins
 #include "rules/dmg/specart_prose_part2.h"  // R281: the III.E Special artifacts explanation prose part 2 pins
 #include "rules/phb/weaponprof.h"  // R297: the PHB Weapon Proficiency Table
@@ -1297,9 +1275,7 @@ int main() {
     #include "rules/audits/r218_use_of_magic_items_and.h"  // R835: migrated
     #include "rules/audits/r219_treasure_random_tables.h"  // R835: migrated
     #include "rules/audits/r243_misc_weapons_pins.h"  // R835: migrated
-    #include "rules/audits/r257_misc_magic_prose_part_1.h"  // R835: migrated
-    #include "rules/audits/r258_misc_magic_prose_part_2.h"  // R835: migrated
-    #include "rules/audits/r259_misc_magic_prose_part_3.h"  // R835: migrated
+    #include "rules/audits/r1027_misc_magic_registry.h"  // R1027: migrated
     #include "rules/audits/r280_special_artifacts_prose.h"  // R835: migrated
     #include "rules/audits/r281_special_artifacts_prose.h"  // R835: migrated
     #include "rules/audits/r282_special_artifacts_prose.h"  // R835: migrated

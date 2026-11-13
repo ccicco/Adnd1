@@ -1,8 +1,8 @@
 -- misc magic item def: instrument_of_the_bards
 -- promoted from the III.E explanation prose part headers:
---   rules/dmg/miscmagic_prose_part14.h (R270)
---   rules/dmg/miscmagic_prose_part15.h (R271)
--- The part headers remain in rules/dmg/ as the
+--   boneyard/dmg/miscmagic_prose_part14.h (R270)
+--   boneyard/dmg/miscmagic_prose_part15.h (R271)
+-- The part headers remain in boneyard/dmg/ as the
 -- print-fidelity record. DO NOT hand-edit this file; the
 -- part header pins are the adjudicated record.
 -- (tools/miscmagic2lua.py is the only writer.)

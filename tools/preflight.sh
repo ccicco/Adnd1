@@ -87,7 +87,7 @@ if g++ -std=c++17 -I. -I"$PREFIX/include/lua5.4" \
   rules/engine/saves.cpp rules/engine/turn.cpp rules/engine/races.cpp \
   dm/dm.cpp dm/dungeon.cpp dm/encounters.cpp \
   dm/treasure.cpp monsters/MonsterRegistry.cpp spells/spells.cpp \
-  abilities/abilities.cpp items/items.cpp ai/actor.cpp \
+  abilities/abilities.cpp items/items.cpp items/MiscItemRegistry.cpp ai/actor.cpp \
   game/state_core.cpp game/state_dungeon.cpp \
   game/state_combat.cpp game/state_town.cpp \
   game/state_overland.cpp game/state_sea.cpp \
