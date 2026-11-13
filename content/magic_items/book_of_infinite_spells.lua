@@ -1,0 +1,83 @@
+-- misc magic item def: book_of_infinite_spells
+-- promoted from the III.E explanation prose part headers:
+--   rules/dmg/miscmagic_prose_part3.h (R259)
+-- The part headers remain in rules/dmg/ as the
+-- print-fidelity record. DO NOT hand-edit this file; the
+-- part header pins are the adjudicated record.
+-- (tools/miscmagic2lua.py is the only writer.)
+return {
+  key = "book_of_infinite_spells",
+  name = "Book of Infinite Spells",
+  rows = {
+    { name = "Book of Infinite Spells",
+      set = "kMisc1", band = { 34, 34 }, xp = 9000, xp_hi = 0,
+      gp = 50000, gp_hi = 0, qty = { 0, 0 } },
+  },
+  sources = {
+    { part = 3, round = 259 },
+  },
+  pins = {
+    { name = "infiniteFirstReadHpMin", value = 5,
+      comment = "non-casters suffer 5-20 hit points" },
+    { name = "infiniteFirstReadHpMax", value = 20,
+      comment = "the top of the first-read damage" },
+    { name = "infiniteFirstReadStunTurnsMin", value = 5,
+      comment = "and are stunned 5-20 turns" },
+    { name = "infiniteFirstReadStunTurnsMax", value = 20,
+      comment = "the top of the stun range" },
+    { name = "infinitePageMin", value = 23,
+      comment = "contains from 23-30 pages" },
+    { name = "infinitePageMax", value = 30,
+      comment = "the top of the page range" },
+    { name = "infinitePageBase", value = 22,
+      comment = "22 + d8 pages" },
+    { name = "infinitePageDieSides", value = 8,
+      comment = "the d8 on the page count" },
+    { name = "infinitePageRowCount", value = 5,
+      comment = "the 5-row page table" },
+    { name = "infiniteLevelDieSides", value = 10,
+      comment = "roll d10 for spell level, all but magic-user" },
+    { name = "infiniteMuLevelDieSides", value = 12,
+      comment = "the magic-user level die is a d12" },
+    { name = "infiniteLevelRerollLo", value = 8,
+      comment = "results 8-10 reroll to d6" },
+    { name = "infiniteLevelRerollHi", value = 10,
+      comment = "the top of the 8-10 reroll band" },
+    { name = "infiniteMuLevelRerollLo", value = 10,
+      comment = "magic-user 10-12 reroll to d8" },
+    { name = "infiniteMuLevelRerollHi", value = 12,
+      comment = "the top of the 10-12 reroll band" },
+    { name = "infiniteRerollDieSides", value = 6,
+      comment = "the reroll die" },
+    { name = "infiniteMuRerollDieSides", value = 8,
+      comment = "the magic-user reroll die" },
+    { name = "infiniteVanishesAtLastPage", value = 1,
+      comment = "the last page turned, the book vanishes" },
+    { name = "infiniteCastPerDay", value = 1,
+      comment = "cast the open page once per day" },
+    { name = "infiniteCastPerDayIfKnown", value = 4,
+      comment = "4 per day if already castable by class" },
+    { name = "infiniteTurnPctUsable", value = 10,
+      comment = "page turns: usable by class and level" },
+    { name = "infiniteTurnPctForeign", value = 20,
+      comment = "foreign to class and/or level" },
+    { name = "infiniteTurnPctNonCasterCleric", value = 25,
+      comment = "non-caster using a cleric spell" },
+    { name = "infiniteTurnPctNonCasterMu", value = 30,
+      comment = "non-caster using a magic-user spell" },
+  },
+  tables = {
+    { name = "infinitePageLo",
+      comment = "the d100 page-band lower edges; i clamps",
+      clamp_hi = 4,
+      values = {
+        1, 31, 51, 61, 96,
+      } },
+    { name = "infinitePageHi",
+      comment = "the d100 page-band upper edges (00 = 100)",
+      clamp_hi = 4,
+      values = {
+        30, 50, 60, 95, 100,
+      } },
+  },
+}
