@@ -2,7 +2,8 @@
 # tools/miscmagic2lua.py - the A1 data-only land of the misc magic lua
 # promotion: the 23 III.E explanation prose part headers
 # (rules/dmg/miscmagic_prose_part1..23.h, R257-R279) promote to 166
-# item defs in content/items/misc/ (one .lua per roster item; the 16
+# item defs in content/magic_items/<letter>/ (one .lua per roster
+# item, bucketed by first letter the content/monsters way; the 16
 # sub-items - 9 figurines of wondrous power, 7 bard instruments -
 # nest inside their parent defs).
 #
@@ -13,7 +14,9 @@
 #
 # Pure stdlib. Idempotent: run 1 PROMOTE (writes the defs, then
 # verifies), run 2 VERIFY (same gates, byte-compares the on-disk
-# defs). Dies loudly (RED) on anything unexpected.
+# defs). Dies loudly (RED) on anything unexpected. PROMOTE also
+# migrates defs found at the legacy flat content/magic_items/ root
+# into their letter dirs (pure os.replace, bytes untouched).
 
 import os
 import re
@@ -37,6 +40,56 @@ def repo_root():
 
 ROOT = repo_root()
 MISC = os.path.join(ROOT, "content", "magic_items")
+
+
+def def_dir(stem):
+    """content/magic_items/<first letter>/ - the monsters layout."""
+    return os.path.join(MISC, stem[0])
+
+
+def def_path(stem):
+    """The one legal on-disk location of stem's def."""
+    return os.path.join(def_dir(stem), stem + ".lua")
+
+
+def legacy_path(stem):
+    """The pre-letter-layout flat location (PROMOTE migrates)."""
+    return os.path.join(MISC, stem + ".lua")
+
+
+def scan_phantoms(stems):
+    """Everything under content/magic_items/ that is not a known
+    def at its letter-dir path (or a legacy flat def of a known
+    stem, which PROMOTE migrates): unknown .lua stems, stray
+    files, non-letter dirs, unknown entries inside letter dirs.
+    An empty letter dir of the roster's letters is fine (PROMOTE
+    refills it); an empty dir of any other letter is a phantom."""
+    phantoms = []
+    if not os.path.isdir(MISC):
+        return phantoms
+    letters = {s[0] for s in stems}
+    for e in sorted(os.listdir(MISC)):
+        p = os.path.join(MISC, e)
+        if os.path.isfile(p):
+            if e.endswith(".lua") and e[:-4] in stems:
+                continue  # legacy flat def, PROMOTE migrates it
+            phantoms.append(e)
+        else:
+            if len(e) != 1 or not "a" <= e <= "z":
+                phantoms.append(e + "/")
+                continue
+            entries = sorted(os.listdir(p))
+            if not entries:
+                if e in letters:
+                    continue  # emptied by a delete, PROMOTE refills
+                phantoms.append(e + "/ (empty)")
+            for f in entries:
+                if os.path.isfile(os.path.join(p, f)):
+                    if not f.endswith(".lua") or f[:-4] not in stems:
+                        phantoms.append(e + "/" + f)
+                else:
+                    phantoms.append(e + "/" + f + "/")
+    return phantoms
 
 
 # ---- header parsing -----------------------------------------------------
@@ -377,32 +430,48 @@ def main():
     # mode: any missing def -> PROMOTE (self-healing: the headers are
     # the record, the tool is the only writer), all present -> VERIFY.
     # Present-but-different defs and phantom files always die loudly.
-    present = [s for s in def_stems
-               if os.path.isfile(os.path.join(MISC, s + ".lua"))]
-    missing = [s for s in def_stems if s not in set(present)]
-    if os.path.isdir(MISC):
-        phantoms = sorted(
-            f[:-4] for f in os.listdir(MISC)
-            if f.endswith(".lua") and f[:-4] not in set(def_stems))
-        if phantoms:
-            FAIL("phantom defs in content/magic_items/: %s" % phantoms[:3])
-    mode = "PROMOTE" if missing else "VERIFY"
+    # Layout is the content/monsters way: defs live in letter dirs;
+    # PROMOTE migrates any legacy flat defs (bytes gated first).
+    for s in def_stems:
+        if not "a" <= s[0] <= "z":
+            FAIL("def stem %r does not start a-z (letter-dir layout)"
+                 % s)
+        if os.path.isfile(def_path(s)) and os.path.isfile(legacy_path(s)):
+            FAIL("def %s exists both flat and in %s/ (delete the flat "
+                 "copy)" % (s, s[0]))
+    present = [s for s in def_stems if os.path.isfile(def_path(s))]
+    legacy = [s for s in def_stems
+              if s not in set(present) and os.path.isfile(legacy_path(s))]
+    missing = [s for s in def_stems
+               if s not in set(present) and s not in set(legacy)]
+    phantoms = scan_phantoms(set(def_stems))
+    if phantoms:
+        FAIL("phantom defs in content/magic_items/: %s" % phantoms[:3])
+    mode = "PROMOTE" if (missing or legacy) else "VERIFY"
     badp = [s for s in present
-            if open(os.path.join(MISC, s + ".lua")).read() != defs[s]]
-    if badp:
+            if open(def_path(s)).read() != defs[s]]
+    badl = [s for s in legacy
+            if open(legacy_path(s)).read() != defs[s]]
+    if badp or badl:
+        bad = badp or badl
         FAIL("verify: %d present def(s) not byte-identical (%s...)"
-             % (len(badp), badp[0]))
+             % (len(bad), bad[0]))
     written = 0
+    moved = 0
     if mode == "PROMOTE":
-        os.makedirs(MISC, exist_ok=True)
+        for s in legacy + missing:
+            os.makedirs(def_dir(s), exist_ok=True)
+        for s in legacy:
+            os.replace(legacy_path(s), def_path(s))
+            moved += 1
         for s in missing:
-            with open(os.path.join(MISC, s + ".lua"), "w") as f:
+            with open(def_path(s), "w") as f:
                 f.write(defs[s])
         written = len(missing)
 
-    # final verify pass: byte-compare every def
+    # final verify pass: byte-compare every def (letter-dir paths)
     bad = [stem for stem, text in defs.items()
-           if open(os.path.join(MISC, stem + ".lua")).read() != text]
+           if open(def_path(stem)).read() != text]
     if bad:
         FAIL("verify: %d def(s) not byte-identical (%s...)"
              % (len(bad), bad[0]))
@@ -417,7 +486,10 @@ def main():
     print("  kMisc rows reconciled: %d (167 rows, artifact excluded)"
           % nrows)
     print("  header-only defs: %d" % len(hdr_only))
-    print("  defs: %d present, %d written" % (len(present), written))
+    print("  defs: %d present, %d written, %d legacy moved"
+          % (len(present), written, moved))
+    letters = sorted({s[0] for s in def_stems})
+    print("  letters: %d (%s)" % (len(letters), " ".join(letters)))
     print("  verify: %d/%d byte-identical" % (len(defs) - len(bad),
                                               len(defs)))
     print("  GREEN: the misc magic lua promotion is verified")
