@@ -1,4 +1,5 @@
 #include "monsters/MonsterRegistry.h"
+#include "dm/EncounterTableRegistry.h"  // R1032: the registry-native dungeon tables
 #include "items/MiscItemRegistry.h"  // R1027: the misc magic item registry (the A2 de-wire)
 #include "dm/encounters.h"
 #include "dm/outdoormove.h"   // R123: pp.58-59 daily rates
@@ -1277,6 +1278,7 @@ int main() {
     #include "rules/audits/r243_misc_weapons_pins.h"  // R835: migrated
     #include "rules/audits/r1027_misc_magic_registry.h"  // R1027: migrated
     #include "rules/audits/r1028_misc_engine_registry.h"  // R1028
+    #include "rules/audits/r1032_encounter_engine_registry.h"  // R1032
     #include "rules/audits/r280_special_artifacts_prose.h"  // R835: migrated
     #include "rules/audits/r281_special_artifacts_prose.h"  // R835: migrated
     #include "rules/audits/r282_special_artifacts_prose.h"  // R835: migrated
