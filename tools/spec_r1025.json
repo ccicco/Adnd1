@@ -49,7 +49,7 @@
   "    twice, WSG+MOP 23/23",
   "    canonical byte-exact against",
   "    the landed normalizer,",
-  "    wt1.h after rules/ff/normalization_batch3.h,",
+  "    wt1.h after rules/ff/book_closer.h,",
   "    r1024_batch.h above",
   "    r1023_batch.h, the R1023",
   "    LANDED record seated",

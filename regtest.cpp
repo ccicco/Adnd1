@@ -526,28 +526,28 @@
 #include "rules/ff/lung_dragons_promotion.h"  // R821: the lung promotion
 #include "rules/engine/audit_wiring.h"  // R822: the audit files decomposition wiring
 #include "rules/meta/migration_wiring.h"  // R823: the audit blocks migration wiring
-#include "rules/meta/migration_batch_pilot.h"  // R824: the pilot migration round
-#include "rules/meta/migration_batch_dmg_appendix.h"  // R825: the DMG appendix migration batch
-#include "rules/meta/migration_batch_dmg_tables.h"  // R826: the DMG tables migration batch
-#include "rules/meta/migration_batch_subclass.h"  // R827: the subclass migration batch
-#include "rules/meta/migration_batch_hundred.h"  // R828: the hundred-block migration batch
-#include "rules/meta/migration_batch_ua_wsg.h"  // R829: the UA and WSG migration batch
-#include "rules/meta/migration_batch_wsg_tail_dsg.h"  // R830: the WSG tail and DSG migration batch
-#include "rules/meta/migration_batch_planes_oa.h"  // R831: the planes and OA migration batch
-#include "rules/meta/migration_batch_oa_tail.h"  // R832: the OA tail migration batch
-#include "rules/meta/migration_batch_final_digest.h"  // R833: the final digest migration batch
+#include "rules/meta/migration_pilot.h"  // R824: the pilot migration round
+#include "rules/meta/migration_dmg_appendix.h"  // R825: the DMG appendix migration batch
+#include "rules/meta/migration_dmg_tables.h"  // R826: the DMG tables migration batch
+#include "rules/meta/migration_subclass.h"  // R827: the subclass migration batch
+#include "rules/meta/migration_hundred_blocks.h"  // R828: the hundred-block migration batch
+#include "rules/meta/migration_ua_and_wsg.h"  // R829: the UA and WSG migration batch
+#include "rules/meta/migration_wsg_tail_and_dsg.h"  // R830: the WSG tail and DSG migration batch
+#include "rules/meta/migration_planes_and_oa.h"  // R831: the planes and OA migration batch
+#include "rules/meta/migration_oa_tail.h"  // R832: the OA tail migration batch
+#include "rules/meta/migration_final_digest.h"  // R833: the final digest migration batch
 #include "rules/meta/tooling_holdback_patch.h"  // R834: the holdback tooling patch
-#include "rules/meta/migration_batch_final_holdback.h"  // R835: the final holdback batch
-#include "rules/ff/promo_batch1.h"  // R836: the first FF promotion batch
-#include "rules/ff/promo_batch2.h"  // R837: the second FF promotion batch
-#include "rules/ff/promo_batch3.h"  // R838: the third FF promotion batch
-#include "rules/ff/promo_batch4.h"  // R839: the fourth FF promotion batch
+#include "rules/meta/migration_final_holdback.h"  // R835: the final holdback batch
+#include "rules/ff/promotion_arc_opener.h"  // R836: the first FF promotion batch
+#include "rules/ff/promotion_disenchanter_to_sandman.h"  // R837: the second FF promotion batch
+#include "rules/ff/promotion_outdoor_tail.h"  // R838: the third FF promotion batch
+#include "rules/ff/promotion_dungeon_cells.h"  // R839: the fourth FF promotion batch
 #include "rules/ff/hornet_promotion.h"  // R840: the hornet promotion
 #include "rules/ff/index_walk.h"  // R841: the FF index line walk
-#include "rules/ff/promo_batch5.h"  // R842: the fifth FF promotion batch
-#include "rules/ff/promo_batch6.h"  // R843: the sixth FF promotion batch
-#include "rules/ff/promo_batch7.h"  // R844: the seventh FF promotion batch
-#include "rules/ff/promo_batch8.h"  // R845: the eighth FF promotion batch
+#include "rules/ff/promotion_missing_prints_opener.h"  // R842: the fifth FF promotion batch
+#include "rules/ff/promotion_prints_flind_to_kuo_toa.h"  // R843: the sixth FF promotion batch
+#include "rules/ff/promotion_prints_lamia_noble_to_umpleby.h"  // R844: the seventh FF promotion batch
+#include "rules/ff/promotion_print_walk_closer.h"  // R845: the eighth FF promotion batch
 #include "rules/ff/monster_level_tables.h"  // R846: the FF monster level tables
 #include "rules/ff/encounter_listings.h"  // R847: the FF encounter listings
 #include "rules/ff/magic_item_tables.h"  // R848: the FF magic item tables
@@ -671,18 +671,18 @@
 #include "rules/meta/content_structure_charter.h"  // R966: the content-structure charter round
 #include "rules/meta/content_tree_creation.h"  // R967: the content tree creation round
 #include "rules/meta/rules_record_format.h"  // R968: the rules record format round
-#include "rules/dragon/promo_batch01.h"  // R969: the Dragon promotion batch one
-#include "rules/dragon/promo_batch02.h"  // R970: the Dragon promotion batch two
-#include "rules/dragon/promo_batch03.h"  // R971: the Dragon promotion batch three
-#include "rules/dragon/promo_batch04.h"  // R972: the Dragon promotion batch four
-#include "rules/dragon/promo_batch05.h"  // R973: the Dragon promotion batch five
-#include "rules/dragon/promo_batch06.h"  // R974: the Dragon promotion batch six
-#include "rules/dragon/promo_batch07.h"  // R975: the Dragon promotion batch seven
-#include "rules/dragon/promo_batch08.h"  // R976: the Dragon promotion batch eight
-#include "rules/dragon/promo_batch09.h"  // R977: the Dragon promotion batch nine
-#include "rules/dragon/promo_batch10.h"  // R978: the Dragon promotion batch ten
-#include "rules/dragon/promo_batch11.h"  // R979: the Dragon promotion batch eleven
-#include "rules/dragon/promo_batch12.h"  // R980: the Dragon promotion batch twelve
+#include "rules/dragon/promotion_pre_walk_trio_and_issue_2.h"  // R969: the Dragon promotion batch one
+#include "rules/dragon/promotion_issue_3.h"  // R970: the Dragon promotion batch two
+#include "rules/dragon/promotion_issue_4.h"  // R971: the Dragon promotion batch three
+#include "rules/dragon/promotion_issues_5_to_7.h"  // R972: the Dragon promotion batch four
+#include "rules/dragon/promotion_issues_8_to_10.h"  // R973: the Dragon promotion batch five
+#include "rules/dragon/promotion_issues_11_to_12.h"  // R974: the Dragon promotion batch six
+#include "rules/dragon/promotion_issues_13_to_14.h"  // R975: the Dragon promotion batch seven
+#include "rules/dragon/promotion_issues_15_to_16.h"  // R976: the Dragon promotion batch eight
+#include "rules/dragon/promotion_issues_17_to_18.h"  // R977: the Dragon promotion batch nine
+#include "rules/dragon/promotion_issues_19_to_20.h"  // R978: the Dragon promotion batch ten
+#include "rules/dragon/promotion_issues_21_to_23.h"  // R979: the Dragon promotion batch eleven
+#include "rules/dragon/promotion_issues_24_to_26.h"  // R980: the Dragon promotion batch twelve
 #include "rules/oa/oa1.h"  // R981: the OA promotion batch one
 #include "rules/oa/oa2.h"  // R982: the OA promotion batch two
 #include "rules/oa/oa3.h"  // R983: the OA promotion batch three
@@ -708,9 +708,9 @@
 #include "rules/ua/ua5.h"  // R1003: the UA promotion batch five
 #include "rules/ua/ua6.h"  // R1004: the UA promotion batch six
 #include "rules/ua/ua7.h"  // R1005: the UA promotion batch seven
-#include "rules/meta/promotions_mop_batch1.h"  // R1006: the promotions mop round one - the FF never-load repair
-#include "rules/meta/promotions_mop_batch2.h"  // R1007: the promotions mop round two - the MM1 text completion
-#include "rules/meta/promotions_mop_batch3.h"  // R1008: the promotions mop round three - the MM1 collation half
+#include "rules/meta/promotions_mop_ff_never_load_repairs.h"  // R1006: the promotions mop round one - the FF never-load repair
+#include "rules/meta/promotions_mop_mm1_text_completion.h"  // R1007: the promotions mop round two - the MM1 text completion
+#include "rules/meta/promotions_mop_mm1_collation.h"  // R1008: the promotions mop round three - the MM1 collation half
 #include "rules/mm/mm1_letters_a_to_f.h"  // R1009: the MM1 normalization batch one
 #include "rules/mm/mm1_letters_g_to_k.h"  // R1010: the MM1 normalization batch two
 #include "rules/mm/mm1_letters_l_to_p.h"  // R1011: the MM1 normalization batch three
@@ -723,9 +723,9 @@
 #include "rules/mm/mm2_letters_d_to_m.h"  // R1018: the MM2 normalization batch two
 #include "rules/mm/mm2_letters_m_to_s.h"  // R1019: the MM2 normalization batch three
 #include "rules/mm/mm2_letters_s_to_z.h"  // R1020: the MM2 normalization batch four
-#include "rules/ff/normalization_batch1.h"  // R1021: the FF normalization batch one
-#include "rules/ff/normalization_batch2.h"  // R1022: the FF normalization batch two
-#include "rules/ff/normalization_batch3.h"  // R1023: the FF normalization batch three
+#include "rules/ff/letters_a_to_g.h"  // R1021: the FF normalization batch one
+#include "rules/ff/letters_h_to_r.h"  // R1022: the FF normalization batch two
+#include "rules/ff/book_closer.h"  // R1023: the FF normalization batch three
 #include "rules/meta/wt1.h"  // R1024: the WSG+MOP normalization tail batch
 #include "rules/dragon/registry_normalization.h"  // R1025: the DRG normalization batch
 #include "rules/ddg/legends_lore_parity.h"  // R1026: the deity seam close

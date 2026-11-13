@@ -3,7 +3,7 @@
   "title": "the final holdback batch",
   "prefix": "ymb",
   "regtest": "regtest.cpp",
-  "header_file": "rules/meta/migration_batch_final_holdback.h",
+  "header_file": "rules/meta/migration_final_holdback.h",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
   "gap_report": "tools/reports/mm2_gap_report.md",
   "banner": {

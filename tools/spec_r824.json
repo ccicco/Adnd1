@@ -3,7 +3,7 @@
   "title": "the pilot migration round",
   "prefix": "pmb",
   "regtest": "regtest.cpp",
-  "header_file": "rules/meta/migration_batch_pilot.h",
+  "header_file": "rules/meta/migration_pilot.h",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
   "gap_report": "tools/reports/mm2_gap_report.md",
   "banner": {

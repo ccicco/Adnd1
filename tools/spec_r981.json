@@ -13,7 +13,7 @@
  "audit_label": "R981 OA promotion batch one audit",
  "audit_comment": "the batch one audit - eleven records, 778 model items, rounds R614 through R624 complete, cumulative 11 of the 160-round OA set, the parse-back proof green on every record, every fact fail-on-wrong",
  "audit_anchor": "#include \"rules/audits/r980_dragon_promotion_batch_twelve.h\"  // R980: R980 dragon promotion batch twelve audit",
- "include_after": "#include \"rules/dragon/promo_batch12.h\"  // R980: the Dragon promotion batch twelve",
+ "include_after": "#include \"rules/dragon/promotion_issues_24_to_26.h\"  // R980: the Dragon promotion batch twelve",
  "include_comment": "the OA promotion batch one",
  "regtest": "regtest.cpp",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",

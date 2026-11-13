@@ -3,7 +3,7 @@
  "title": "the fifth FF promotion batch",
  "prefix": "ffj",
  "regtest": "regtest.cpp",
- "header_file": "rules/ff/promo_batch5.h",
+ "header_file": "rules/ff/promotion_missing_prints_opener.h",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "gap_report": "tools/reports/mm2_gap_report.md",
  "banner": {

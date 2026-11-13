@@ -3,7 +3,7 @@
  "title": "the fourth FF promotion batch",
  "prefix": "ffu",
  "regtest": "regtest.cpp",
- "header_file": "rules/ff/promo_batch4.h",
+ "header_file": "rules/ff/promotion_dungeon_cells.h",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
  "gap_report": "tools/reports/mm2_gap_report.md",
  "banner": {
@@ -316,7 +316,7 @@
  "audit_comment": "the fourth promotion wave of the ff arc: twenty-five defs, the twenty-four cells (nine ride the standing defs), the dungeon walk-key census re-pinned, the registry and ff def censuses carried, the two keyless FF rows pinned (the Elemental Prince and Hornet Giant rows); the constants check themselves",
  "audit_file": "rules/audits/r839_fourth_ff_promotion.h",
  "audit_anchor": "#include \"rules/audits/r838_third_ff_promotion.h\"  // R838: R838 third FF promotion audit",
- "include_after": "#include \"rules/ff/promo_batch3.h\"  // R838: the third FF promotion batch",
+ "include_after": "#include \"rules/ff/promotion_outdoor_tail.h\"  // R838: the third FF promotion batch",
  "include_comment": "the fourth FF promotion batch",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R838 LANDED 2026-10-25: commit",

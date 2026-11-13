@@ -3,7 +3,7 @@
   "title": "the first FF promotion batch",
   "prefix": "ffp",
   "regtest": "regtest.cpp",
-  "header_file": "rules/ff/promo_batch1.h",
+  "header_file": "rules/ff/promotion_arc_opener.h",
   "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
   "gap_report": "tools/reports/mm2_gap_report.md",
   "banner": {
@@ -225,7 +225,7 @@
   "audit_file": "rules/audits/r836_first_ff_promotion.h",
   "audit_anchor": "#include \"rules/audits/r835_final_holdback_batch.h\"  // R835: R835 final holdback batch audit",
   "include_comment": "the first FF promotion batch",
-  "include_after": "#include \"rules/meta/migration_batch_final_holdback.h\"  // R835: the final holdback batch",
+  "include_after": "#include \"rules/meta/migration_final_holdback.h\"  // R835: the final holdback batch",
   "seed_anchor": "## Knowledge maintenance",
   "prev_seed_key": "- R835 LANDED 2026-10-25: commit",
   "prev_record": [
@@ -259,7 +259,7 @@
     "  rules/audits/r835_final_holdback_batch.h at the",
     "  R834 include anchor (the R834",
     "  anchor discovery carried",
-    "  forward). Header rules/meta/migration_batch_final_holdback.h,",
+    "  forward). Header rules/meta/migration_final_holdback.h,",
     "  prefix ymb (verified free at",
     "  cff3ab1, 0 hits), 6 consts + 4",
     "  bools (inline 10), 4 examples,",
