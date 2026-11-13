@@ -15,6 +15,9 @@
 #include "../rules/ua/uatreasuredial.h"
 #include "../rules/ua/uadetskel.h"
 #include "../rules/ua/uadetrows.h"
+#include "items/MiscItemRegistry.h"
+
+#include <algorithm>
 
 #include <cstdio>
 #include <cstdlib>
@@ -348,192 +351,80 @@ static const ItemRow kRods[] = {
     { 95,100, "Wand of Wonder", 6000,0, 10000,0, 0,0 },
 };
 
-// ---- III.E.1 Miscellaneous Magic ----------------------------------------------
-static const ItemRow kMisc1[] = {
-    { 1,2,    "Alchemy Jug", 3000,0, 12000,0, 0,0 },
-    { 3,4,    "Amulet of Inescapable Location", 0,0, 1000,0, 0,0 },
-    { 5,5,    "Amulet of Life Protection", 5000,0, 20000,0, 0,0 },
-    { 6,7,    "Amulet of the Planes", 6000,0, 30000,0, 0,0 },
-    { 8,11,   "Amulet of Proof Against Detection and Location", 4000,0, 15000,0, 0,0 },
-    { 12,13,  "Apparatus of Kwalish", 8000,0, 35000,0, 0,0 },
-    { 14,16,  "Arrow of Direction", 2500,0, 17500,0, 0,0 },
-    { 17,17,  "Artifact or Relic", 0,0, 0,0, 0,0 },   // Special table below
-    { 18,20,  "Bag of Beans", 1000,0, 5000,0, 0,0 },
-    { 21,21,  "Bag of Devouring", 0,0, 1500,0, 0,0 },
-    { 22,26,  "Bag of Holding", 5000,0, 25000,0, 0,0 },
-    { 27,27,  "Bag of Transmuting", 0,0, 500,0, 0,0 },
-    { 28,29,  "Bag of Tricks", 2500,0, 15000,0, 0,0 },
-    { 30,31,  "Beaker of Plentiful Potions", 1500,0, 12500,0, 0,0 },
-    { 32,32,  "Boat, Folding", 10000,0, 25000,0, 0,0 },
-    { 33,33,  "Book of Exalted Deeds", 8000,0, 40000,0, 0,0 },
-    { 34,34,  "Book of Infinite Spells", 9000,0, 50000,0, 0,0 },
-    { 35,35,  "Book of Vile Darkness", 8000,0, 40000,0, 0,0 },
-    { 36,36,  "Boots of Dancing", 0,0, 5000,0, 0,0 },
-    { 37,42,  "Boots of Elvenkind", 1000,0, 5000,0, 0,0 },
-    { 43,47,  "Boots of Levitation", 2000,0, 15000,0, 0,0 },
-    { 48,51,  "Boots of Speed", 2500,0, 20000,0, 0,0 },
-    { 52,55,  "Boots of Striding and Springing", 2500,0, 20000,0, 0,0 },
-    { 56,58,  "Bowl Commanding Water Elementals", 4000,0, 25000,0, 0,0 },
-    { 59,59,  "Bowl of Watery Death", 0,0, 1000,0, 0,0 },
-    { 60,79,  "Bracers of Defense", 500,0, 3000,0, 0,0 },  // per AC pt, below
-    { 80,81,  "Bracers of Defenselessness", 0,0, 2000,0, 0,0 },
-    { 82,84,  "Brazier Commanding Fire Elementals", 4000,0, 25000,0, 0,0 },
-    { 85,85,  "Brazier of Sleep Smoke", 0,0, 1000,0, 0,0 },
-    { 86,92,  "Brooch of Shielding", 1000,0, 10000,0, 0,0 },
-    { 93,93,  "Broom of Animated Attack", 0,0, 3000,0, 0,0 },
-    { 94,98,  "Broom of Flying", 2000,0, 10000,0, 0,0 },
-    { 99,100, "Bucknard's Everfull Purse", 1500,4000, 15000,40000, 0,0 },
-};
+// ---- III.E.1-5 Miscellaneous Magic (R1028: registry-native) ---------------------
+// The five hardcoded kMisc ItemRow arrays are retired: the tables are the
+// 166 def rows at content/magic_items/<letter>/<stem>.lua, loaded through
+// items::MiscItemRegistry. The one hardcoded survivor is the Artifact or
+// Relic dispatch row (band 17-17 of table 1): it is the trigger for the
+// Special artifact table, so the A1 ruling keeps it out of the defs and it
+// is injected into the view below; adjustSpecial dispatches on its exact
+// printed name.
+static items::MiscItemRegistry& miscReg() {
+    // One-time lazy load (adnd1.cpp is a Win32 shell TU that preflight
+    // skips, so the engine loads its own registries; R71fix letter-dir
+    // loop: a missing letter dir is normal, loadDirectory returns -1).
+    static items::MiscItemRegistry reg;
+    static bool loaded = false;
+    if (!loaded) {
+        loaded = true;
+        for (char c = 'a'; c <= 'z'; ++c) {
+            std::string dir = "content/magic_items/";
+            dir.push_back(c);
+            reg.loadDirectory(dir);
+        }
+    }
+    return reg;
+}
 
-// ---- III.E.2 ------------------------------------------------------------------
-static const ItemRow kMisc2[] = {
-    { 1,6,    "Candle of Invocation", 1000,0, 5000,0, 0,0 },
-    { 7,8,    "Carpet of Flying", 7500,0, 25000,0, 0,0 },
-    { 9,10,   "Censer Controlling Air Elementals", 4000,0, 25000,0, 0,0 },
-    { 11,11,  "Censer of Summoning Hostile Air Elementals", 0,0, 1000,0, 0,0 },
-    { 12,13,  "Chime of Opening", 3500,0, 20000,0, 0,0 },
-    { 14,14,  "Chime of Hunger", 0,0, 0,0, 0,0 },
-    { 15,18,  "Cloak of Displacement", 3000,0, 17500,0, 0,0 },
-    { 19,27,  "Cloak of Elvenkind", 1000,0, 6000,0, 0,0 },
-    { 28,30,  "Cloak of Manta Ray", 2000,0, 12500,0, 0,0 },
-    { 31,32,  "Cloak of Poisonousness", 0,0, 2500,0, 0,0 },
-    { 33,55,  "Cloak of Protection", 1000,0, 10000,0, 0,0 }, // per plus, below
-    { 56,60,  "Crystal Ball", 1000,0, 5000,0, 0,0 },
-    { 61,61,  "Crystal Hypnosis Ball", 0,0, 3000,0, 0,0 },
-    { 62,63,  "Cube of Force", 3000,0, 20000,0, 0,0 },
-    { 64,65,  "Cube of Frost Resistance", 2000,0, 14000,0, 0,0 },
-    { 66,67,  "Cubic Gate", 5000,0, 17500,0, 0,0 },
-    { 68,69,  "Daern's Instant Fortress", 7000,0, 27500,0, 0,0 },
-    { 70,72,  "Decanter of Endless Water", 1000,0, 3000,0, 0,0 },
-    { 73,76,  "Deck of Many Things", 0,0, 10000,0, 0,0 },
-    { 77,77,  "Drums of Deafening", 0,0, 500,0, 0,0 },
-    { 78,79,  "Drums of Panic", 6500,0, 35000,0, 0,0 },
-    { 80,85,  "Dust of Appearance", 1000,0, 4000,0, 0,0 },
-    { 86,91,  "Dust of Disappearance", 2000,0, 8000,0, 0,0 },
-    { 92,92,  "Dust of Sneezing and Choking", 0,0, 1000,0, 0,0 },
-    { 93,93,  "Efreeti Bottle", 9000,0, 45000,0, 0,0 },
-    { 94,94,  "Eversmoking Bottle", 500,0, 2500,0, 0,0 },
-    { 95,95,  "Eyes of Charming", 4000,0, 24000,0, 0,0 },
-    { 96,97,  "Eyes of the Eagle", 3500,0, 18000,0, 0,0 },
-    { 98,99,  "Eyes of Minute Seeing", 2000,0, 12500,0, 0,0 },
-    { 100,100,"Eyes of Petrification", 0,0, 0,0, 0,0 },
-};
+// Per-table views of the registry rows, band-sorted (registry key order
+// is alphabetical, NOT band order). Counts: 33/30/33/36/35 (the 166
+// def rows + the injected artifact row), matching mNRowCount() and the
+// retired arrays, so the R122 pin audits read the same table.
+static const std::vector<items::MiscItemRow>& miscView(int n) {
+    static std::vector<items::MiscItemRow> v[6];
+    static bool built = false;
+    if (!built) {
+        built = true;
+        for (const auto& kv : miscReg().all())
+            for (const auto& r : kv.second.rows)
+                if (r.set.size() == 6 && r.set.compare(0, 5, "kMisc") == 0
+                    && r.set[5] >= '1' && r.set[5] <= '5')
+                    v[r.set[5] - '0'].push_back(r);
+        items::MiscItemRow art;   // the A1-ruling dispatch row
+        art.name = "Artifact or Relic";
+        art.set = "kMisc1";
+        art.bandLo = art.bandHi = 17;
+        v[1].push_back(art);
+        for (int i = 1; i <= 5; ++i)
+            std::sort(v[i].begin(), v[i].end(),
+                      [](const items::MiscItemRow& a,
+                         const items::MiscItemRow& b) {
+                          return a.bandLo < b.bandLo;
+                      });
+    }
+    return v[n];
+}
 
-// ---- III.E.3 ------------------------------------------------------------------
-static const ItemRow kMisc3[] = {
-    { 1,15,   "Figurine of Wondrous Power", 100,0, 1000,0, 0,0 }, // per hit die
-    { 16,16,  "Flask of Curses", 0,0, 1000,0, 0,0 },
-    { 17,18,  "Gauntlets of Dexterity", 1000,0, 10000,0, 0,0 },
-    { 19,20,  "Gauntlets of Fumbling", 0,0, 1000,0, 0,0 },
-    { 21,22,  "Gauntlets of Ogre Power", 1000,0, 15000,0, 0,0 },
-    { 23,25,  "Gauntlets of Swimming and Climbing", 1000,0, 10000,0, 0,0 },
-    { 26,26,  "Gem of Brightness", 2000,0, 17500,0, 0,0 },
-    { 27,27,  "Gem of Seeing", 2000,0, 25000,0, 0,0 },
-    { 28,28,  "Girdle of Femininity/Masculinity", 0,0, 1000,0, 0,0 },
-    { 29,29,  "Girdle of Giant Strength", 200,0, 2500,0, 0,0 },
-    { 30,30,  "Helm of Brilliance", 2500,0, 60000,0, 0,0 },
-    { 31,35,  "Helm of Comprehending Languages & Reading Magic", 1000,0, 12500,0, 0,0 },
-    { 36,37,  "Helm of Opposite Alignment", 0,0, 1000,0, 0,0 },
-    { 38,39,  "Helm of Telepathy", 3000,0, 35000,0, 0,0 },
-    { 40,40,  "Helm of Teleportation", 2500,0, 30000,0, 0,0 },
-    { 41,45,  "Helm of Underwater Action", 1000,0, 10000,0, 0,0 },
-    { 46,46,  "Horn of Blasting", 5000,0, 55000,0, 0,0 },
-    { 47,48,  "Horn of Bubbles", 0,0, 0,0, 0,0 },
-    { 49,49,  "Horn of Collapsing", 1500,0, 25000,0, 0,0 },
-    { 50,53,  "Horn of the Tritons", 2000,0, 17500,0, 0,0 },
-    { 54,60,  "Horn of Valhalla", 1000,0, 15000,0, 0,0 },
-    { 61,63,  "Horseshoes of Speed", 2000,0, 10000,0, 0,0 },
-    { 64,65,  "Horseshoes of a Zephyr", 1500,0, 7500,0, 0,0 },
-    { 66,70,  "Incense of Meditation", 500,0, 7500,0, 0,0 },
-    { 71,71,  "Incense of Obsession", 0,0, 500,0, 0,0 },
-    { 72,72,  "Ioun Stone", 300,0, 5000,0, 0,0 },
-    { 73,78,  "Instrument of the Bards", 1000,0, 5000,0, 0,0 },
-    { 79,80,  "Iron Flask", 0,0, 0,0, 0,0 },
-    { 81,85,  "Javelin of Lightning", 250,0, 3000,0, 0,0 },
-    { 86,90,  "Javelin of Piercing", 250,0, 3000,0, 0,0 },
-    { 91,91,  "Jewel of Attacks", 0,0, 1000,0, 0,0 },
-    { 92,92,  "Jewel of Flawlessness", 0,0, 1000,0, 0,0 },
-    { 93,100, "Keoghtom's Ointment", 500,0, 10000,0, 0,0 },
-};
+static MagicItem makeMiscItem(rules::Dice& dice,
+                              const items::MiscItemRow& r) {
+    MagicItem m;
+    m.name = r.name;
+    m.xp = valIn(dice, r.xp, r.xpHi);
+    m.gp = valIn(dice, r.gp, r.gpHi);
+    if (r.qtyHi > 0) m.qty = inRange(dice, r.qtyLo, r.qtyHi);
+    return m;
+}
 
-// ---- III.E.4 ------------------------------------------------------------------
-static const ItemRow kMisc4[] = {
-    { 1,1,    "Libram of Gainful Conjuration", 8000,0, 40000,0, 0,0 },
-    { 2,2,    "Libram of Ineffable Damnation", 8000,0, 40000,0, 0,0 },
-    { 3,3,    "Libram of Silver Magic", 8000,0, 40000,0, 0,0 },
-    { 4,4,    "Lyre of Building", 5000,0, 30000,0, 0,0 },
-    { 5,5,    "Manual of Bodily Health", 5000,0, 50000,0, 0,0 },
-    { 6,6,    "Manual of Gainful Exercise", 5000,0, 50000,0, 0,0 },
-    { 7,7,    "Manual of Golems", 3000,0, 30000,0, 0,0 },
-    { 8,8,    "Manual of Puissant Skill at Arms", 8000,0, 40000,0, 0,0 },
-    { 9,9,    "Manual of Quickness of Action", 5000,0, 50000,0, 0,0 },
-    { 10,10,  "Manual of Stealthy Pilfering", 8000,0, 40000,0, 0,0 },
-    { 11,11,  "Mattock of the Titans", 3500,0, 7000,0, 0,0 },
-    { 12,12,  "Maul of the Titans", 4000,0, 12000,0, 0,0 },
-    { 13,15,  "Medallion of ESP", 1000,3000, 10000,30000, 0,0 },
-    { 16,17,  "Medallion of Thought Projection", 0,0, 1000,0, 0,0 },
-    { 18,18,  "Mirror of Life Trapping", 2500,0, 25000,0, 0,0 },
-    { 19,19,  "Mirror of Mental Prowess", 5000,0, 50000,0, 0,0 },
-    { 20,20,  "Mirror of Opposition", 0,0, 2000,0, 0,0 },
-    { 21,23,  "Necklace of Adaptation", 1000,0, 10000,0, 0,0 },
-    { 24,27,  "Necklace of Missiles", 50,0, 200,0, 0,0 },
-    { 28,33,  "Necklace of Prayer Beads", 500,0, 3000,0, 0,0 },
-    { 34,35,  "Necklace of Strangulation", 0,0, 1000,0, 0,0 },
-    { 36,38,  "Net of Entrapment", 1000,0, 7500,0, 0,0 },
-    { 39,42,  "Net of Snaring", 1000,0, 6000,0, 0,0 },
-    { 43,44,  "Nolzur's Marvelous Pigments", 500,0, 3000,0, 0,0 },
-    { 45,46,  "Pearl of Power", 200,0, 2000,0, 0,0 },
-    { 47,48,  "Pearl of Wisdom", 500,0, 5000,0, 0,0 },
-    { 49,50,  "Periapt of Foul Rotting", 0,0, 1000,0, 0,0 },
-    { 51,53,  "Periapt of Health", 1000,0, 10000,0, 0,0 },
-    { 54,60,  "Periapt of Proof Against Poison", 1500,0, 12500,0, 0,0 },
-    { 61,64,  "Periapt of Wound Closure", 1000,0, 10000,0, 0,0 },
-    { 65,70,  "Phylactery of Faithfulness", 1000,0, 7500,0, 0,0 },
-    { 71,74,  "Phylactery of Long Years", 3000,0, 25000,0, 0,0 },
-    { 75,76,  "Phylactery of Monstrous Attention", 0,0, 2000,0, 0,0 },
-    { 77,84,  "Pipes of the Sewers", 1750,0, 8500,0, 0,0 },
-    { 85,85,  "Portable Hole", 5000,0, 50000,0, 0,0 },
-    { 86,100, "Quaal's Feather Token", 500,1000, 2000,7000, 0,0 },
-};
-
-// ---- III.E.5 (Robe/Rope split verified against the printed book) --------------
-static const ItemRow kMisc5[] = {
-    { 1,1,    "Robe of the Archmagi", 6000,0, 65000,0, 0,0 },
-    { 2,8,    "Robe of Blending", 3500,0, 35000,0, 0,0 },
-    { 9,9,    "Robe of Eyes", 4500,0, 50000,0, 0,0 },
-    { 10,10,  "Robe of Powerlessness", 0,0, 1000,0, 0,0 },
-    { 11,11,  "Robe of Scintillating Colors", 2750,0, 25000,0, 0,0 },
-    { 12,19,  "Robe of Useful Items", 1500,0, 15000,0, 0,0 },
-    { 20,25,  "Rope of Climbing", 1000,0, 10000,0, 0,0 },
-    { 26,27,  "Rope of Constriction", 0,0, 1000,0, 0,0 },
-    { 28,31,  "Rope of Entanglement", 1250,0, 12000,0, 0,0 },
-    { 32,32,  "Rug of Smothering", 0,0, 1500,0, 0,0 },
-    { 33,33,  "Rug of Welcome", 6500,0, 45000,0, 0,0 },
-    { 34,34,  "Saw of Mighty Cutting", 1750,0, 12500,0, 0,0 },
-    { 35,35,  "Scarab of Death", 0,0, 2500,0, 0,0 },
-    { 36,38,  "Scarab of Enraging Enemies", 1000,0, 8000,0, 0,0 },
-    { 39,40,  "Scarab of Insanity", 1500,0, 11000,0, 0,0 },
-    { 41,46,  "Scarab of Protection", 2500,0, 25000,0, 0,0 },
-    { 47,47,  "Spade of Colossal Excavation", 1000,0, 6500,0, 0,0 },
-    { 48,48,  "Sphere of Annihilation", 3750,0, 30000,0, 0,0 },
-    { 49,50,  "Stone of Controlling Earth Elementals", 1500,0, 12500,0, 0,0 },
-    { 51,52,  "Stone of Good Luck (Luckstone)", 3000,0, 25000,0, 0,0 },
-    { 53,54,  "Stone of Weight (Loadstone)", 0,0, 1000,0, 0,0 },
-    { 55,57,  "Talisman of Pure Good", 3500,0, 27500,0, 0,0 },
-    { 58,58,  "Talisman of the Sphere", 100,0, 10000,0, 0,0 },
-    { 59,60,  "Talisman of Ultimate Evil", 3500,0, 32500,0, 0,0 },
-    { 61,66,  "Talisman of Zagy", 1000,0, 10000,0, 0,0 },
-    { 67,67,  "Tome of Clear Thought", 8000,0, 48000,0, 0,0 },
-    { 68,68,  "Tome of Leadership and Influence", 7500,0, 40000,0, 0,0 },
-    { 69,69,  "Tome of Understanding", 8000,0, 43500,0, 0,0 },
-    { 70,76,  "Trident of Fish Command", 500,0, 4000,0, 0,0 },
-    { 77,78,  "Trident of Submission", 1250,0, 12500,0, 0,0 },
-    { 79,83,  "Trident of Warning", 1000,0, 10000,0, 0,0 },
-    { 84,85,  "Trident of Yearning", 0,0, 1000,0, 0,0 },
-    { 86,87,  "Vacuous Grimoire", 0,0, 1000,0, 0,0 },
-    { 88,90,  "Well of Many Worlds", 6000,0, 12000,0, 0,0 },
-    { 91,100, "Wings of Flying", 750,0, 7500,0, 0,0 },
-};
+// The pickRow semantics on registry rows: linear band scan on 1+d100,
+// fallback the last row.
+static MagicItem pickMiscRow(rules::Dice& dice,
+                             const std::vector<items::MiscItemRow>& rows) {
+    int r = 1 + d100(dice);
+    for (const auto& row : rows)
+        if (r >= row.bandLo && r <= row.bandHi)
+            return makeMiscItem(dice, row);
+    return makeMiscItem(dice, rows.back());
+}
 
 // ---- III.E. Special: Artifacts (no x.p.; printed g.p. sale values) -----------
 static const ItemRow kArtifacts[] = {
@@ -781,16 +672,11 @@ static MagicItem rollFromCategoryUnset(rules::Dice& dice, int cat) {
         case 1:  return rollScroll(dice);
         case 2:  return pickRow(dice, kRings, COUNT_OF(kRings));
         case 3:  return pickRow(dice, kRods, COUNT_OF(kRods));
-        case 4:  return adjustSpecial(dice,
-                     pickRow(dice, kMisc1, COUNT_OF(kMisc1)));
-        case 5:  return adjustSpecial(dice,
-                     pickRow(dice, kMisc2, COUNT_OF(kMisc2)));
-        case 6:  return adjustSpecial(dice,
-                     pickRow(dice, kMisc3, COUNT_OF(kMisc3)));
-        case 7:  return adjustSpecial(dice,
-                     pickRow(dice, kMisc4, COUNT_OF(kMisc4)));
-        case 8:  return adjustSpecial(dice,
-                     pickRow(dice, kMisc5, COUNT_OF(kMisc5)));
+        case 4:  return adjustSpecial(dice, pickMiscRow(dice, miscView(1)));
+        case 5:  return adjustSpecial(dice, pickMiscRow(dice, miscView(2)));
+        case 6:  return adjustSpecial(dice, pickMiscRow(dice, miscView(3)));
+        case 7:  return adjustSpecial(dice, pickMiscRow(dice, miscView(4)));
+        case 8:  return adjustSpecial(dice, pickMiscRow(dice, miscView(5)));
         case 9:  return pickRow(dice, kArmor, COUNT_OF(kArmor));
         case 10: return pickRow(dice, kSwords, COUNT_OF(kSwords));
         default: return pickRow(dice, kWeapons, COUNT_OF(kWeapons));
@@ -1003,11 +889,8 @@ static const ItemRow* pinTableFor(int category, int* n) {
         case 0:  *n = COUNT_OF(kPotions);   return kPotions;
         case 2:  *n = COUNT_OF(kRings);     return kRings;
         case 3:  *n = COUNT_OF(kRods);      return kRods;
-        case 4:  *n = COUNT_OF(kMisc1);     return kMisc1;
-        case 5:  *n = COUNT_OF(kMisc2);     return kMisc2;
-        case 6:  *n = COUNT_OF(kMisc3);     return kMisc3;
-        case 7:  *n = COUNT_OF(kMisc4);     return kMisc4;
-        case 8:  *n = COUNT_OF(kMisc5);     return kMisc5;
+        // 4-8 (the misc tables) are registry-native: magicTablePinCount
+        // and magicTablePin read the miscView() rows directly
         case 9:  *n = COUNT_OF(kArmor);     return kArmor;
         case 10: *n = COUNT_OF(kSwords);    return kSwords;
         case 11: *n = COUNT_OF(kWeapons);   return kWeapons;
@@ -1019,6 +902,8 @@ static const ItemRow* pinTableFor(int category, int* n) {
 int magicTablePinCount(int category) {
     if (category == 1)
         return COUNT_OF(kSpellScrolls) + 9;  // + protection & curse
+    if (category >= 4 && category <= 8)     // registry-native misc tables
+        return (int)miscView(category - 3).size();
     int n = 0;
     pinTableFor(category, &n);
     return n;
@@ -1026,6 +911,17 @@ int magicTablePinCount(int category) {
 
 bool magicTablePin(int category, int row, TablePin* out) {
     if (!out || category == 1) return false;
+    if (category >= 4 && category <= 8) {    // registry-native misc tables
+        const auto& rows = miscView(category - 3);
+        if (row < 0 || row >= (int)rows.size()) return false;
+        const auto& r = rows[row];           // views are static: name lives
+        out->lo = r.bandLo;  out->hi = r.bandHi;
+        out->name = r.name.c_str();
+        out->xp = r.xp;      out->xpHi = r.xpHi;
+        out->gp = r.gp;      out->gpHi = r.gpHi;
+        out->qtyLo = r.qtyLo; out->qtyHi = r.qtyHi;
+        return true;
+    }
     int n = 0;
     const ItemRow* t = pinTableFor(category, &n);
     if (!t || row < 0 || row >= n) return false;

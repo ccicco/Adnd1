@@ -1276,6 +1276,7 @@ int main() {
     #include "rules/audits/r219_treasure_random_tables.h"  // R835: migrated
     #include "rules/audits/r243_misc_weapons_pins.h"  // R835: migrated
     #include "rules/audits/r1027_misc_magic_registry.h"  // R1027: migrated
+    #include "rules/audits/r1028_misc_engine_registry.h"  // R1028
     #include "rules/audits/r280_special_artifacts_prose.h"  // R835: migrated
     #include "rules/audits/r281_special_artifacts_prose.h"  // R835: migrated
     #include "rules/audits/r282_special_artifacts_prose.h"  // R835: migrated
