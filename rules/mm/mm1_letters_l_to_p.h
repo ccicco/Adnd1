@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/mm/mm1_normalization_batch3.h
+// Adnd1 - rules/mm/mm1_letters_l_to_p.h
 // The MM1 normalization batch three - 86 defs rewritten to the full-field
 // 57-key emission, the letters l through p
 // census 933 -> 934.

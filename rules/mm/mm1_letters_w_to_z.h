@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/mm/mm1_normalization_batch6.h
+// Adnd1 - rules/mm/mm1_letters_w_to_z.h
 // The MM1 normalization batch six - 36 defs rewritten to the full-field
 // 57-key emission, the letters w through z - MM1 closes complete
 // census 936 -> 937.

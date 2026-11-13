@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/mm/mm1_normalization_batch5.h
+// Adnd1 - rules/mm/mm1_letters_t_to_v.h
 // The MM1 normalization batch five - 40 defs rewritten to the full-field
 // 57-key emission, the letters t through v
 // census 935 -> 936.

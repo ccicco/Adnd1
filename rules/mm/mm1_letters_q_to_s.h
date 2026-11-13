@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/mm/mm1_normalization_batch4.h
+// Adnd1 - rules/mm/mm1_letters_q_to_s.h
 // The MM1 normalization batch four - 57 defs rewritten to the full-field
 // 57-key emission, the letters q through s
 // census 934 -> 935.

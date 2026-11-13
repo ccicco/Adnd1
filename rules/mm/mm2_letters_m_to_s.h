@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/mm/mm2_normalization_batch3.h
+// Adnd1 - rules/mm/mm2_letters_m_to_s.h
 // The MM2 normalization batch three - 83 of 332 defs rewritten to the
 // full-field 57-key emission, the mongrelman and myconid by_level pin repairs
 // riding

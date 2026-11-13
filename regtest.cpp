@@ -711,18 +711,18 @@
 #include "rules/meta/promotions_mop_batch1.h"  // R1006: the promotions mop round one - the FF never-load repair
 #include "rules/meta/promotions_mop_batch2.h"  // R1007: the promotions mop round two - the MM1 text completion
 #include "rules/meta/promotions_mop_batch3.h"  // R1008: the promotions mop round three - the MM1 collation half
-#include "rules/mm/mm1_normalization_batch1.h"  // R1009: the MM1 normalization batch one
-#include "rules/mm/mm1_normalization_batch2.h"  // R1010: the MM1 normalization batch two
-#include "rules/mm/mm1_normalization_batch3.h"  // R1011: the MM1 normalization batch three
-#include "rules/mm/mm1_normalization_batch4.h"  // R1012: the MM1 normalization batch four
-#include "rules/mm/mm1_normalization_batch5.h"  // R1013: the MM1 normalization batch five
-#include "rules/mm/mm1_normalization_batch6.h"  // R1014: the MM1 normalization batch six
+#include "rules/mm/mm1_letters_a_to_f.h"  // R1009: the MM1 normalization batch one
+#include "rules/mm/mm1_letters_g_to_k.h"  // R1010: the MM1 normalization batch two
+#include "rules/mm/mm1_letters_l_to_p.h"  // R1011: the MM1 normalization batch three
+#include "rules/mm/mm1_letters_q_to_s.h"  // R1012: the MM1 normalization batch four
+#include "rules/mm/mm1_letters_t_to_v.h"  // R1013: the MM1 normalization batch five
+#include "rules/mm/mm1_letters_w_to_z.h"  // R1014: the MM1 normalization batch six
 #include "rules/oa/oa9.h"  // R1015: the OA table promotion batch nine
 #include "rules/oa/oap1.h"  // R1016: the OA normalization batch
-#include "rules/mm/mm2_normalization_batch1.h"  // R1017: the MM2 normalization batch one
-#include "rules/mm/mm2_normalization_batch2.h"  // R1018: the MM2 normalization batch two
-#include "rules/mm/mm2_normalization_batch3.h"  // R1019: the MM2 normalization batch three
-#include "rules/mm/mm2_normalization_batch4.h"  // R1020: the MM2 normalization batch four
+#include "rules/mm/mm2_letters_a_to_d.h"  // R1017: the MM2 normalization batch one
+#include "rules/mm/mm2_letters_d_to_m.h"  // R1018: the MM2 normalization batch two
+#include "rules/mm/mm2_letters_m_to_s.h"  // R1019: the MM2 normalization batch three
+#include "rules/mm/mm2_letters_s_to_z.h"  // R1020: the MM2 normalization batch four
 #include "rules/ff/normalization_batch1.h"  // R1021: the FF normalization batch one
 #include "rules/ff/normalization_batch2.h"  // R1022: the FF normalization batch two
 #include "rules/ff/normalization_batch3.h"  // R1023: the FF normalization batch three

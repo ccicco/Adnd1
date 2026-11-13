@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/mm/mm2_normalization_batch4.h
+// Adnd1 - rules/mm/mm2_letters_s_to_z.h
 // The MM2 normalization batch four - the book closer, the last 83 of 332 defs
 // rewritten to the full-field 57-key emission, the monster zombie pin repairs
 // riding

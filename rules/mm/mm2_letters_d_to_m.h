@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/mm/mm2_normalization_batch2.h
+// Adnd1 - rules/mm/mm2_letters_d_to_m.h
 // The MM2 normalization batch two - 83 of 332 defs rewritten to the
 // full-field 57-key emission, the by_level pin repairs riding
 // census 940 -> 941.

@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/mm/mm1_normalization_batch1.h
+// Adnd1 - rules/mm/mm1_letters_a_to_f.h
 // The MM1 normalization batch one - 99 defs rewritten to the full-field
 // 57-key emission, the letters a through f, plus the two
 // normalize_registry.py repairs
