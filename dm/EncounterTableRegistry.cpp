@@ -1,6 +1,7 @@
 // ============================================================================
 // Adnd1 - dm/EncounterTableRegistry.cpp
-// The dungeon encounter table registry loader (R1032). The shape
+// The dungeon encounter table registry loader (R1032; R1033 added
+// the water family loader). The shape
 // follows items::MiscItemRegistry.cpp: a fresh lua_State per file,
 // luaL_dofile, the file must leave a table on the stack, typed getters
 // with no defaults, errors accumulated in errors(), loadDirectory
@@ -103,12 +104,22 @@ const char* const kLevelRowKeys[] =
     { "kind", "band", "key", "count", "heads", "number", nullptr };
 const char* const kDragonRowKeys[] =
     { "band", "key", "age", nullptr };
+const char* const kWaterRowKeys[] =
+    { "band", "key", "flags", nullptr };
+const char* const kWaterFileKeys[] = { "key", "rows", nullptr };
 const char* const kMatrixKeys[]  = { "key", "bands", nullptr };
 const char* const kLevelKeys[]   = { "key", "rows", nullptr };
 const char* const kDragonKeys[]  = { "key", "rows", nullptr };
 const char* const kListsKeys[]  =
     { "key", "princes", "arch_devils", "elementals",
       "hill_stone", "fire_frost", "piercers", nullptr };
+
+// R1033: the water family file keys.
+bool isWaterKey(const std::string& k) {
+    return k.rfind("underwater_", 0) == 0
+        || k.rfind("waterborne_", 0) == 0
+        || k == "dinosaur_sub";
+}
 
 bool isLevelKind(const std::string& k) {
     return k == "monster" || k == "human" || k == "character"
@@ -325,6 +336,55 @@ bool EncounterTableRegistry::loadFile(const std::string& path,
                 m_lists[names[i]] = vals;
             }
         }
+    } else if (isWaterKey(key)) {
+        const int t = lua_gettop(L);
+        if (!checkAllowedKeys(L, t, kWaterFileKeys, key, &err)) goto bad;
+        {
+            std::string k;
+            if (!getStr(L, t, "key", &k, &err)) goto bad;
+            if (k != key) { err = "def key '" + k + "' does not match file";
+                            goto bad; }
+        }
+        lua_getfield(L, t, "rows");
+        if (!lua_istable(L, -1)) { err = "rows is not a table"; goto bad; }
+        {
+            const int n = (int)lua_rawlen(L, -1);
+            std::vector<EncounterWaterRow> rows;
+            for (int i = 1; i <= n; ++i) {
+                lua_rawgeti(L, -1, i);
+                const int rt = lua_gettop(L);
+                if (!lua_istable(L, rt)) {
+                    err = "rows[" + std::to_string(i) + "] is not a table";
+                    goto bad;
+                }
+                if (!checkAllowedKeys(L, rt, kWaterRowKeys,
+                        key + " rows[" + std::to_string(i) + "]", &err))
+                    goto bad;
+                EncounterWaterRow row;
+                if (!getIntPair(L, rt, "band", &row.lo, &row.hi, &err))
+                    goto bad;
+                if (!getStr(L, rt, "key", &row.key, &err)) goto bad;
+                lua_getfield(L, rt, "flags");
+                if (!lua_isinteger(L, -1)) {
+                    err = "'flags' is not an integer";
+                    lua_pop(L, 1);
+                    goto bad;
+                }
+                row.flags = (int)lua_tointeger(L, -1);
+                lua_pop(L, 1);
+                // STRICT: the gates are single footnote bits
+                if (row.flags != 0 && row.flags != 1
+                    && row.flags != 2 && row.flags != 4) {
+                    err = "'flags' outside the gate bits";
+                    goto bad;
+                }
+                rows.push_back(row);
+                lua_pop(L, 1);            // row
+            }
+            lua_pop(L, 1);                // rows array
+            if (m_waters.count(key)) { err = "duplicate def key"; goto bad; }
+            m_waters[key] = rows;
+        }
     } else {
         err = "unknown file shape for key '" + key + "'";
         goto bad;
@@ -420,6 +480,17 @@ EncounterTableRegistry::matrixBand(int band) const {
     static const std::vector<MatrixEntry> none;
     if (band < 0 || band >= (int)m_matrix.size()) return none;
     return m_matrix[band];
+}
+
+bool EncounterTableRegistry::hasWater(const std::string& name) const {
+    return m_waters.count(name) != 0;
+}
+
+const std::vector<EncounterWaterRow>&
+EncounterTableRegistry::waterRows(const std::string& name) const {
+    static const std::vector<EncounterWaterRow> none;
+    auto it = m_waters.find(name);
+    return it == m_waters.end() ? none : it->second;
 }
 
 const std::vector<std::string>&
