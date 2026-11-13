@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/dmo/dmohighwizpri.h
+// Adnd1 - rules/dmo/wizards_and_priests_beyond_20th.h
 // WIZARDS AND PRIESTS BEYOND 20TH - DMO Chapter 7, round three of five: the
 // wizard advancement grid (Table 43: 3,750,000 XP at 20th in 375K steps to
 // 7,500,000 at 30th, weapon and nonweapon proficiencies, the 10+N d4 hit

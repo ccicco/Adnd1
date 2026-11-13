@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/dmo/dmodweomers.h
+// Adnd1 - rules/dmo/true_dweomers.h
 // TRUE DWEOMERS - DMO Chapter 6 closes: the requirement gates (wizards and
 // priests of 20th level with ability 18, at most four dweomers a day, never
 // scrollable or storable), the difficulty calculus (the combined

@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/dmo/dmohighascend.h
+// Adnd1 - rules/dmo/demihumans_divine_ascension.h
 // DEMIHUMANS AND DIVINE ASCENSION - DMO Chapter 7, round five of five: the
 // demihuman advancement doctrine (retirement is what is supposed to happen,
 // do not ignore the limits, the limits are the price of the demihuman

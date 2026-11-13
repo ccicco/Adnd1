@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/dmo/dmohighrogues.h
+// Adnd1 - rules/dmo/rogues_beyond_20th.h
 // ROGUES BEYOND 20TH - DMO Chapter 7, round four of five: the rogue
 // advancement grid (the printed body caption reads Table 47 - the same number
 // the priest spell progression caption printed - with 2,200,000 XP at 20th in

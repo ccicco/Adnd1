@@ -301,21 +301,21 @@
 #include "rules/mop/appendixivabilitiespowers.h"  // R595: the Appendix IV Powers abilities pins
 #include "rules/mop/indices.h"  // R596: the Indices closing pins
 #include "rules/mop/motpethcyclone.h"  // R598: the MotP Ether cyclone pins
-#include "rules/dmo/dmomaxims.h"  // R599: the DMO arc opener pins
-#include "rules/dmo/dmocampaign.h"  // R600: the DMO maxim-doctrine pins
-#include "rules/dmo/dmoadventures.h"  // R601: the DMO adventure-doctrine pins
-#include "rules/dmo/dmoworlds.h"  // R602: the DMO world-rating pins
-#include "rules/dmo/dmomonsters.h"  // R603: the DMO monster-doctrine pins
-#include "rules/dmo/dmospells.h"  // R604: the DMO spells-and-items pins
-#include "rules/dmo/dmoitems.h"  // R605: the DMO item-creation pins
-#include "rules/dmo/dmoduels.h"  // R606: the DMO magical-duels pins
-#include "rules/dmo/dmodweomers.h"  // R607: the DMO true-dweomer pins
-#include "rules/dmo/dmohighlevel.h"  // R608: the DMO high-level save pins
-#include "rules/dmo/dmohighskills.h"  // R609: the DMO high-level skills pins
-#include "rules/dmo/dmohighwizpri.h"  // R610: the DMO wizard and priest pins
-#include "rules/dmo/dmohighrogues.h"  // R611: the DMO rogue pins
-#include "rules/dmo/dmohighascend.h"  // R612: the DMO demihuman and ascension pins
-#include "rules/dmo/dmoduelroster.h"  // R613: the DMO spell dueling roster pins
+#include "rules/dmo/seven_maxims.h"  // R599: the DMO arc opener pins
+#include "rules/dmo/remaining_maxims.h"  // R600: the DMO maxim-doctrine pins
+#include "rules/dmo/adventure_doctrines.h"  // R601: the DMO adventure-doctrine pins
+#include "rules/dmo/world_ratings.h"  // R602: the DMO world-rating pins
+#include "rules/dmo/legendary_ladder.h"  // R603: the DMO monster-doctrine pins
+#include "rules/dmo/spells_and_magical_items.h"  // R604: the DMO spells-and-items pins
+#include "rules/dmo/creating_magical_items.h"  // R605: the DMO item-creation pins
+#include "rules/dmo/magical_duels.h"  // R606: the DMO magical-duels pins
+#include "rules/dmo/true_dweomers.h"  // R607: the DMO true-dweomer pins
+#include "rules/dmo/high_level_characters.h"  // R608: the DMO high-level save pins
+#include "rules/dmo/high_level_skills_and_warriors.h"  // R609: the DMO high-level skills pins
+#include "rules/dmo/wizards_and_priests_beyond_20th.h"  // R610: the DMO wizard and priest pins
+#include "rules/dmo/rogues_beyond_20th.h"  // R611: the DMO rogue pins
+#include "rules/dmo/demihumans_divine_ascension.h"  // R612: the DMO demihuman and ascension pins
+#include "rules/dmo/spell_dueling_roster_and_index.h"  // R613: the DMO spell dueling roster pins
 #include "rules/oa/oacreating.h"  // R614: the OA arc opener pins
 #include "rules/oa/oaabilities.h"  // R615: the OA ability tables pins
 #include "rules/oa/oaabilityprose.h"  // R616: the OA ability prose pins
@@ -571,24 +571,24 @@
 #include "rules/ddg/mythos_sumerian.h"  // R866: the Sumerian mythos
 #include "rules/ddg/appendix1_known_planes.h"  // R867: the known planes of existence
 #include "rules/ddg/appendix2_temple_trappings.h"  // R868: temple trappings
-#include "rules/ddg/cqc_batch1.h"  // R869: the clerical chart, batch one
-#include "rules/ddg/cqc_batch2.h"  // R870: the clerical chart, batch two
-#include "rules/ddg/cqc_batch3.h"  // R871: the clerical chart, batch three
-#include "rules/ddg/cqc_batch4.h"  // R872: the clerical chart, batch four
-#include "rules/ddg/cqc_batch5.h"  // R873: the clerical chart, batch five
-#include "rules/ddg/cqc_batch6.h"  // R874: the clerical chart, batch six
-#include "rules/ddg/cqc_batch7.h"  // R875: the clerical chart, batch seven
-#include "rules/ddg/cqc_batch8.h"  // R876: the clerical chart, batch eight
+#include "rules/ddg/appendix3_american_indian_to_celtic.h"  // R869: the clerical chart, batch one
+#include "rules/ddg/appendix3_central_american_to_cthulhu.h"  // R870: the clerical chart, batch two
+#include "rules/ddg/appendix3_egyptian_to_finnish.h"  // R871: the clerical chart, batch three
+#include "rules/ddg/appendix3_greek_to_indian.h"  // R872: the clerical chart, batch four
+#include "rules/ddg/appendix3_japanese_to_melnibonean.h"  // R873: the clerical chart, batch five
+#include "rules/ddg/appendix3_nehwon.h"  // R874: the clerical chart, batch six
+#include "rules/ddg/appendix3_nonhumans_deities.h"  // R875: the clerical chart, batch seven
+#include "rules/ddg/appendix3_norse_to_sumerian.h"  // R876: the clerical chart, batch eight
 #include "rules/ddg/appendix4_index.h"  // R877: Appendix 4 and the index
 #include "rules/ddg/alignment_figures.h"  // R878: the alignment figures
 #include "rules/meta/registry_schema.h"  // R879: the registry schema
-#include "rules/ddg/lua_promo_batch1.h"  // R880: the DDG lua promotion, batch one
-#include "rules/ddg/lua_promo_batch2.h"  // R881: the DDG lua promotion, batch two
-#include "rules/ddg/lua_promo_batch3.h"  // R882: the DDG lua promotion, batch three
-#include "rules/ddg/lua_promo_batch4.h"  // R883: the DDG lua promotion, batch four
-#include "rules/ddg/lua_promo_batch5.h"  // R884: the DDG lua promotion, batch five
-#include "rules/ddg/lua_promo_batch6.h"  // R885: the DDG lua promotion, batch six
-#include "rules/ddg/lua_promo_batch7.h"  // R886: the DDG lua promotion, batch seven
+#include "rules/ddg/defs_american_indian_to_celtic.h"  // R880: the DDG lua promotion, batch one
+#include "rules/ddg/defs_central_american_to_egyptian.h"  // R881: the DDG lua promotion, batch two
+#include "rules/ddg/defs_finnish_to_greek.h"  // R882: the DDG lua promotion, batch three
+#include "rules/ddg/defs_indian_to_japanese.h"  // R883: the DDG lua promotion, batch four
+#include "rules/ddg/defs_melnibonean.h"  // R884: the DDG lua promotion, batch five
+#include "rules/ddg/defs_nehwon_to_nonhumans_deities.h"  // R885: the DDG lua promotion, batch six
+#include "rules/ddg/defs_norse_to_sumerian.h"  // R886: the DDG lua promotion, batch seven
 #include "rules/dragon/issue001_ives_tables.h"  // R887: the Ives attribute tables, the Dragon opener
 #include "rules/dragon/issue001_small_variants.h"  // R888: the Dragon small-variant set
 #include "rules/dragon/aronson_illusionist_deltas.h"  // R889: the Aronson illusionist deltas

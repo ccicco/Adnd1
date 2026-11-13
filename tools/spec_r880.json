@@ -64,7 +64,7 @@
  ],
  "include_after": "#include \"rules/meta/registry_schema.h\"  // R879: the registry schema",
  "include_comment": "the DDG lua promotion, batch one",
- "header_file": "rules/ddg/lua_promo_batch1.h",
+ "header_file": "rules/ddg/defs_american_indian_to_celtic.h",
  "audit_file": "rules/audits/r880_ddg_promotion.h",
  "audit_label": "R880 DDG promotion audit",
  "audit_anchor": "#include \"rules/audits/r879_registry_schema.h\"  // R879: R879 registry schema audit",

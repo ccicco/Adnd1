@@ -1,17 +1,17 @@
 // =========================================================================================
-// Adnd1 - rules/ddg/lua_promo_batch7.h
-// The DDG lua promotion, batch seven - 42 full-field defs (the Norse mythos
-// and the Sumerian mythos) generated ONLY from the adjudicated pin headers,
-// the registry floor 1291 -> 1333.
-// census 808 -> 809.
+// Adnd1 - rules/ddg/defs_nehwon_to_nonhumans_deities.h
+// The DDG lua promotion, batch six - 49 full-field defs (the Nehwon mythos
+// and the Nonhumans' Deities) generated ONLY from the adjudicated pin
+// headers, the registry floor 1242 -> 1291.
+// census 807 -> 808.
 //
-// Generated from rules/ddg/mythos_norse.h and rules/ddg/mythos_sumerian.h at a187f50: the four grids x
+// Generated from rules/ddg/mythos_nehwon.h and rules/ddg/nonhumans_deities.h at d838c9a: the four grids x
 // rows (combat, class, ability, roster) per mythos, the being name orders
-// locked by the pinned cross-references (the Odin-through-Valkyries and
-// Enlil-through-Utu print orders) and verified against the 2nd-print ink (the
-// tesseract tsv voice) with the 1eonline L&L pages as the parity voice; the
-// legend tables decode verbatim from the header comments; the unpinned cells
-// emit the sentinels.
+// locked by the pinned cross-references (the Fafhrd-through-Water-Cobra and
+// Hruggek-through-Laogzed print orders) and verified against the 2nd-print
+// ink (the tesseract tsv voice) with the 1eonline L&L pages as the parity
+// voice; the legend tables decode verbatim from the header comments; the
+// unpinned cells emit the sentinels.
 //
 // The sentinels ride the R879 doctrine unchanged: n/a for strings, -1 for
 // ints, distinct from every real print value; the printed See below,
@@ -22,131 +22,126 @@ namespace rules {
 
 // ---- the promotion census ----
 
-// the DDG lua promotion round, batch seven: the Norse and Sumerian mythoi
-// (Curtiss 2026-10-27: the print-order batches)
-inline int dpzRound()
-    { return 886; }
+// the DDG lua promotion round, batch six: the Nehwon mythos and the
+// Nonhumans' Deities (Curtiss 2026-10-27: the print-order batches)
+inline int dpyRound()
+    { return 885; }
 
-// the audit census at a187f50 (the R885 land)
-inline int dpzCensusBefore()
+// the audit census at d838c9a (the R884 land)
+inline int dpyCensusBefore()
+    { return 807; }
+
+// the audit census after this round (one new audit line, the batch-six
+// promotion audit)
+inline int dpyCensusAfter()
     { return 808; }
 
-// the audit census after this round (one new audit line, the batch-seven
-// promotion audit)
-inline int dpzCensusAfter()
-    { return 809; }
+// the promoted defs this round, one per adjudicated stat-block row (Fafhrd
+// through the Water Cobra, then Hruggek through Laogzed, the print orders)
+inline int dpyDefs()
+    { return 49; }
 
-// the promoted defs this round, one per adjudicated stat-block row (Odin
-// through the Valkyries, then Enlil through Utu, the print orders)
-inline int dpzDefs()
-    { return 42; }
-
-// the mythoi of batch seven (the print order: the Norse mythos, the Sumerian
-// mythos)
-inline int dpzMythoi()
+// the mythoi of batch six (the print order: Nehwon, the Nonhumans' Deities)
+inline int dpyMythoi()
     { return 2; }
 
-// the registry floor at a187f50 (the batch-six promotion land)
-inline int dpzFloorBefore()
-    { return 1291; }
+// the registry floor at d838c9a (the batch-five promotion land)
+inline int dpyFloorBefore()
+    { return 1242; }
 
-// the registry floor after this round (1291 + 42)
-inline int dpzFloorAfter()
-    { return 1333; }
+// the registry floor after this round (1242 + 49)
+inline int dpyFloorAfter()
+    { return 1291; }
 
 // ---- the promotion doctrine ----
 
 // every DDG def carries every key of the final schema (the R879 57-key
 // FIELD_ORDER)
-inline int dpzFullFieldKeys()
+inline int dpyFullFieldKeys()
     { return 57; }
 
-// the monster-format rows promoted (the pin nrsMonsterCount 11 - the eleven
-// MM-style blocks wording against the ten rank-5 grid rows, the pin-internal
-// flag; Hugin and Munin, Sleipner, Freke and Gere, the Fenris Wolf,
-// Fossergrim, Blodug-Hofi, Gullin-Bursti, Garm, Jormungandr and the Thor
-// goats all promote)
-inline int dpzMonsterRows()
-    { return 11; }
+// the monster-format rows promoted (the Astral Wolf, the Behemoth, the Bird
+// of Tyaa, the Cold Woman, the Devourer, the Nehwon Ghoul, the Leviathan, the
+// Snow Serpent, the Salt Spider, the Water Cobra - the Nehwon ten; the
+// Nonhumans' Deities rows are all divine)
+inline int dpyMonsterRows()
+    { return 10; }
 
-// the hit-dice rows promoted (the Fossergrim 5 HD print - the CbtHP 5 cell is
-// hit dice, not points, the lone Norse hit-dice row)
-inline int dpzHitDiceRows()
-    { return 1; }
+// the hit-dice rows promoted (the Astral Wolf 3, the Behemoth 15, the Nehwon
+// Ghoul 3, the Leviathan 40, the Snow Serpent 10, the Salt Spider 3, the
+// Water Cobra 3 with the +3 bonus - the first DDG hit-dice bonus cell)
+inline int dpyHitDiceRows()
+    { return 7; }
 
 // the fixed-damage cells emitted (the verbatim print figures cross-checked
-// against the strength-bonus grids; nrs 27, smr 5 - the Fossergrim by-weapon
-// print against its DmgFixed 1 and the Nin-hursag 2-20 dice print against its
-// 0 ride the pin-internal flags, both emitting the n/a sentinel)
-inline int dpzPinnedDamage()
-    { return 32; }
+// against the strength-bonus grids; nhw 17, nhg 17 - the ghoul by-weapon
+// print and the earth god 5-50 ride the pin-internal flags, both emitting the
+// n/a sentinel)
+inline int dpyPinnedDamage()
+    { return 34; }
 
-// the grid code for the printed See below (no class cells carry it this batch
-// - the Norse 99s are the literal prints: the Fjalar and Skirnir 99 hit
-// points and the Fenris Wolf and Jormungandr 99 magic resistances)
-inline int dpzSeeBelowCode()
+// the grid code for the printed See below (the Hate MU/I pair and the Lolth
+// clr/drd and mu/ill pairs)
+inline int dpySeeBelowCode()
     { return 99; }
 
-// this round is the DDG lua promotion, batch seven - the print-order
-// continuation (the Norse and Sumerian mythoi)
-inline bool dpzPromotionBatchSeven()
+// this round is the DDG lua promotion, batch six - the print-order
+// continuation (the Nehwon mythos and the Nonhumans' Deities)
+inline bool dpyPromotionBatchSix()
     { return true; }
 
-// every value is generated ONLY from the adjudicated pin headers (the nrs and
-// smr grids and consts; the pin rounds are the firewall)
-inline bool dpzFromHeadersOnly()
+// every value is generated ONLY from the adjudicated pin headers (the nhw and
+// nhg grids and consts; the pin rounds are the firewall)
+inline bool dpyFromHeadersOnly()
     { return true; }
 
 // the being-to-row name orders are locked by the pinned cross-references (the
-// R865 and R866 walk records; the Odin-through-Valkyries and
-// Enlil-through-Utu print orders)
-inline bool dpzNameOrdersLocked()
+// R863 and R864 walk records; the Fafhrd-through-Water-Cobra and
+// Hruggek-through-Laogzed print orders)
+inline bool dpyNameOrdersLocked()
     { return true; }
 
 // every promoted def is full-field: all 57 keys, the sentinels where the
 // print or the headers pin nothing
-inline bool dpzFullFieldDdg()
+inline bool dpyFullFieldDdg()
     { return true; }
 
 // the sentinels ride the R879 doctrine: n/a for strings, -1 for ints,
 // distinct from every real print value; the printed See below, Standard, Nil,
 // None and Infinite are REAL values and stay
-inline bool dpzSentinelsDistinct()
+inline bool dpySentinelsDistinct()
     { return true; }
 
 // the prose stays contract-side: text, specials, symbols, areas of control
-// and worshipper alignments emit the sentinels (unpinned this batch - the
-// Inanna warriors-and-lovers odd cell rides the boundary noted)
-inline bool dpzProseContractSide()
+// and worshipper alignments emit the sentinels (unpinned this batch)
+inline bool dpyProseContractSide()
     { return true; }
 
 // damage emits ONLY the fixed-damage rows (the verbatim print cells
 // cross-checked against the strength-bonus grids); every by-weapon, Nil,
 // Special, See below and Variable cell emits the sentinel
-inline bool dpzDamagePinnedOnly()
+inline bool dpyDamagePinnedOnly()
     { return true; }
 
 // the symbols and areas of control stay n/a (no symbol grids pinned for these
 // mythoi, though the prints carry the lines)
-inline bool dpzSymbolsUnpinned()
+inline bool dpySymbolsUnpinned()
     { return true; }
 
-// the worshipper alignments stay n/a (no RosWorship alignment grids pinned -
-// the smrRosWorshipOdd Inanna cell flags the warriors-and-lovers line without
-// pinning an alignment; the batch-three boundary carried forward)
-inline bool dpzWorshipUnpinned()
+// the worshipper alignments stay n/a (no RosWorship grids pinned - the
+// batch-three boundary carried forward)
+inline bool dpyWorshipUnpinned()
     { return true; }
 
 // the normalizer census reads the promoted defs: every DDG def full-field,
 // the DDG column and the floor refreshed by the census patch
-inline bool dpzNormalizerDdgAware()
+inline bool dpyNormalizerDdgAware()
     { return true; }
 
-// ---- the batch-seven grids ----
+// ---- the batch-six grids ----
 
-// The mythos ordinals (0-1, the print order: the Norse mythos, the Sumerian
-// mythos)
-inline int dpzMythOrd(int b)
+// The mythos ordinals (0-1, the print order: Nehwon, the Nonhumans' Deities)
+inline int dpyMythOrd(int b)
     {
         switch (b) {
         case 0:
@@ -159,46 +154,46 @@ inline int dpzMythOrd(int b)
     }
 
 // The first print page of the mythos (the folio offset PRINT = PDF - 1)
-inline int dpzMythPageLo(int b)
+inline int dpyMythPageLo(int b)
     {
         switch (b) {
         case 0:
-            return 113;
+            return 96;
         case 1:
-            return 125;
+            return 105;
         default:
             return -1;
         }
     }
 
 // The last print page of the mythos
-inline int dpzMythPageHi(int b)
+inline int dpyMythPageHi(int b)
     {
         switch (b) {
         case 0:
-            return 124;
+            return 104;
         case 1:
-            return 127;
+            return 112;
         default:
             return -1;
         }
     }
 
 // The promoted defs of the mythos (one per adjudicated stat-block row)
-inline int dpzMythDefs(int b)
+inline int dpyMythDefs(int b)
     {
         switch (b) {
         case 0:
-            return 35;
+            return 29;
         case 1:
-            return 7;
+            return 20;
         default:
             return -1;
         }
     }
 
 // The key ordinals (0-56, the R879 FIELD_ORDER walk)
-inline int dpzKeyOrd(int b)
+inline int dpyKeyOrd(int b)
     {
         switch (b) {
         case 0:
@@ -320,124 +315,124 @@ inline int dpzKeyOrd(int b)
         }
     }
 
-// The DDG defs carrying the key (every def full-field: 57 x 42)
-inline int dpzKeyDdgCount(int b)
+// The DDG defs carrying the key (every def full-field: 57 x 49)
+inline int dpyKeyDdgCount(int b)
     {
         switch (b) {
         case 0:
-            return 42;
+            return 49;
         case 1:
-            return 42;
+            return 49;
         case 2:
-            return 42;
+            return 49;
         case 3:
-            return 42;
+            return 49;
         case 4:
-            return 42;
+            return 49;
         case 5:
-            return 42;
+            return 49;
         case 6:
-            return 42;
+            return 49;
         case 7:
-            return 42;
+            return 49;
         case 8:
-            return 42;
+            return 49;
         case 9:
-            return 42;
+            return 49;
         case 10:
-            return 42;
+            return 49;
         case 11:
-            return 42;
+            return 49;
         case 12:
-            return 42;
+            return 49;
         case 13:
-            return 42;
+            return 49;
         case 14:
-            return 42;
+            return 49;
         case 15:
-            return 42;
+            return 49;
         case 16:
-            return 42;
+            return 49;
         case 17:
-            return 42;
+            return 49;
         case 18:
-            return 42;
+            return 49;
         case 19:
-            return 42;
+            return 49;
         case 20:
-            return 42;
+            return 49;
         case 21:
-            return 42;
+            return 49;
         case 22:
-            return 42;
+            return 49;
         case 23:
-            return 42;
+            return 49;
         case 24:
-            return 42;
+            return 49;
         case 25:
-            return 42;
+            return 49;
         case 26:
-            return 42;
+            return 49;
         case 27:
-            return 42;
+            return 49;
         case 28:
-            return 42;
+            return 49;
         case 29:
-            return 42;
+            return 49;
         case 30:
-            return 42;
+            return 49;
         case 31:
-            return 42;
+            return 49;
         case 32:
-            return 42;
+            return 49;
         case 33:
-            return 42;
+            return 49;
         case 34:
-            return 42;
+            return 49;
         case 35:
-            return 42;
+            return 49;
         case 36:
-            return 42;
+            return 49;
         case 37:
-            return 42;
+            return 49;
         case 38:
-            return 42;
+            return 49;
         case 39:
-            return 42;
+            return 49;
         case 40:
-            return 42;
+            return 49;
         case 41:
-            return 42;
+            return 49;
         case 42:
-            return 42;
+            return 49;
         case 43:
-            return 42;
+            return 49;
         case 44:
-            return 42;
+            return 49;
         case 45:
-            return 42;
+            return 49;
         case 46:
-            return 42;
+            return 49;
         case 47:
-            return 42;
+            return 49;
         case 48:
-            return 42;
+            return 49;
         case 49:
-            return 42;
+            return 49;
         case 50:
-            return 42;
+            return 49;
         case 51:
-            return 42;
+            return 49;
         case 52:
-            return 42;
+            return 49;
         case 53:
-            return 42;
+            return 49;
         case 54:
-            return 42;
+            return 49;
         case 55:
-            return 42;
+            return 49;
         case 56:
-            return 42;
+            return 49;
         default:
             return -1;
         }

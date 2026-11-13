@@ -1,7 +1,7 @@
 {
  "round": 609,
  "prefix": "dey",
- "header_file": "rules/dmo/dmohighskills.h",
+ "header_file": "rules/dmo/high_level_skills_and_warriors.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/reports/dmo_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -9,7 +9,7 @@
  "title": "High-Level Skills and Warriors",
  "audit_label": "R609 DMO high-level skills audit",
  "include_comment": "the DMO high-level skills pins",
- "include_after": "#include \"rules/dmo/dmohighlevel.h\"  // R608: the DMO high-level save pins",
+ "include_after": "#include \"rules/dmo/high_level_characters.h\"  // R608: the DMO high-level save pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R608 LANDED 2026-10-18: commit",
@@ -24,7 +24,7 @@
   "  boxes flip (all children; the Chapter 7",
   "  parent stays open until R612; gap",
   "  census now 84 closed / 12 open):",
-  "  rules/dmo/dmohighlevel.h, prefix dew",
+  "  rules/dmo/high_level_characters.h, prefix dew",
   "  (verified free; only regtest hit was",
   "  the word dewberry), 51 inlines (27",
   "  consts, 15 bools, 5 chains, 4 table",
@@ -58,7 +58,7 @@
   "  at HEAD a3960f0; verify next prefix",
   "  free (dex family next). Audit:",
   "  \"R609 DMO high-level skills audit\";",
-  "  include after rules/dmo/dmohighlevel.h."
+  "  include after rules/dmo/high_level_characters.h."
  ],
  "banner": {
   "title": "HIGH-LEVEL SKILLS AND WARRIORS - DMO Chapter 7, round two of five: the skills doctrine (success as the number or less on 1d20, the Table 41 ability adjustments, the fixed drop of limited-use skills with the zero-or-less lockout that ability adjustments cannot lift and that spreads to dependent skills, the opposed-roll cases with re-rolled ties, the slot-and-character-point cost reading, the 16 mortal base-score ceiling that wishes cannot touch), the Table 40 skill roster (33 rows in four class bands - eleven warriors, three wizards, eight priests, eleven rogues - with the level requirements, base scores, relevant abilities and costs; the two blank priest cost cells pinned as printed blanks), the Table 42 warrior advancement grid (fighter 3.0M to 5.5M XP in 250K steps, paladin/ranger 3.6M to 6.6M in 300K steps, the weapon and nonweapon proficiency columns, the 9+N hit points with the Con-bonus footnote), the fighter breech-immunity ladder (+1 at 21st to +4 at 30th, any weapon including bare hands, no bonus, not magical, undiminished by planar distance or magic disruption) and intimidation (the 10-yard plain-sight use, the 4+1 auto-retreat, the 4+2 save vs. death magic, the -2 within 60 feet, the per-three-levels -2 growth to -6), the ranger followers/scroll/scrying powers and the paladin scroll/cure/disease-immunity powers, and all eleven warrior skills - adaptation, all-around attack, bravery, captivate, death blow, frighten/challenge, hardiness, inner focus, sense danger, signature item and signature mount.",

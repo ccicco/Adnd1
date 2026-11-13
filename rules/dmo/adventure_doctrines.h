@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/dmo/dmoadventures.h
+// Adnd1 - rules/dmo/adventure_doctrines.h
 // THE ADVENTURE DOCTRINES - DMO Chapter 2 opens: the construction rules (show
 // don't tell; prepare, don't over-plan; don't force the action - the backup
 // plan; enhance, don't inflate; gifts vs. rewards; multiple threats; don't

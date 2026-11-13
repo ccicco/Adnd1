@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/ddg/cqc_batch3.h
+// Adnd1 - rules/ddg/appendix3_egyptian_to_finnish.h
 // Appendix 3: the clerical quick-reference chart, batch three - the D&DG walk
 // round twenty-three, print pp. 138-139: the 28 rows of the Egyptian and
 // Finnish pantheons across the 13 printed columns.

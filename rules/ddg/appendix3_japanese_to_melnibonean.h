@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/ddg/cqc_batch5.h
+// Adnd1 - rules/ddg/appendix3_japanese_to_melnibonean.h
 // Appendix 3: the clerical quick-reference chart, batch five - the D&DG walk
 // round twenty-five, print pp. 140-141: the 25 rows of the Japanese and
 // Melnibonean pantheons across the 13 printed columns.

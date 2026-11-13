@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/ddg/lua_promo_batch3.h
+// Adnd1 - rules/ddg/defs_finnish_to_greek.h
 // The DDG lua promotion, batch three - 60 full-field defs (Finnish 20, Greek
 // 40) generated ONLY from the adjudicated pin headers, the registry floor
 // 1118 -> 1178.

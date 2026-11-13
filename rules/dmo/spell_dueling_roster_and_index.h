@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/dmo/dmoduelroster.h
+// Adnd1 - rules/dmo/spell_dueling_roster_and_index.h
 // THE SPELL DUELING ROSTER AND INDEX - the DMO Appendix (Spell Dueling
 // Characteristics, printed pp. 180-188) and the closing Index (pp. 189-192):
 // the complete per-spell dueling roster, 707 entries in 24 letter sections A

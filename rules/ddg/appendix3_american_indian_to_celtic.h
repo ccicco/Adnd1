@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/ddg/cqc_batch1.h
+// Adnd1 - rules/ddg/appendix3_american_indian_to_celtic.h
 // Appendix 3: the clerical quick-reference chart, batch one - the D&DG walk
 // round twenty-one, print pp. 134-135: the chart doctrine (alphabetical
 // within pantheon, most important first, guidelines only), the legend

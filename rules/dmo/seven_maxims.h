@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/dmo/dmomaxims.h
+// Adnd1 - rules/dmo/seven_maxims.h
 // THE SEVEN MAXIMS - the DMO arc opener: the front matter and the campaign
 // doctrine of printed pp. 1-23 - the seven-principle roster, the high-level
 // definitions (level 10 or more, the 30th-level cap, the level-20 retirement

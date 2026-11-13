@@ -1,122 +1,128 @@
 // =========================================================================================
-// Adnd1 - rules/ddg/cqc_batch4.h
-// Appendix 3: the clerical quick-reference chart, batch four - the D&DG walk
-// round twenty-four, print pp. 139-140: the 31 rows of the Greek and Indian
-// pantheons across the 13 printed columns.
-// census 794 -> 795.
+// Adnd1 - rules/ddg/appendix3_norse_to_sumerian.h
+// Appendix 3: the clerical quick-reference chart, batch eight - the D&DG walk
+// round twenty-eight, print p. 143: the 21 Norse and 7 Sumerian rows across
+// the 13 printed columns.
+// census 798 -> 799.
 //
 // primary ink: the ROTATED extract/ddg tesseract pass (pNNN_rot_full.txt +
-// pNNN_rot_tsv.tsv, pdf pages 139-140; the second printing) - the Greek block
-// sits below the R871 Finnish tail on pdf 139, the Indian block spans the pdf
-// 139 tail and the pdf 140 head; the collation voice: the 1eonline L&L
-// per-deity chart rows (the zeus and aphrodite slugs plain). The
-// adjudications: the Aphrodite X pair (print over the L&L female-only read,
-// eyeball flag, the Druaga precedent), the Zeus white / red sunrise column
-// split (both voices agree - an eyeball oddity), the Poseidon seqa garble
-// restored to sea; earthquakes from L&L, the Apollo laure! garble restored to
-// laurel wreath, the Indra rainbow pinned plain (the L&L <> glyph an
-// artifact), the Yama no-article form pinned (the L&L a noted) with the stray
-// colon glyph noted, the Ushas at-dawn fold restored (the Arawn class), and
-// the Rudra red, black comma pinned. The batch order runs Greek, Indian.
+// pNNN_rot_tsv.tsv, pdf page 143; the second printing); the collation voice:
+// the 1eonline L&L per-deity chart rows. The adjudications: the Frigga
+// female-only and Hel male-only single-X flags (the TSV geometry seats them,
+// both voices agree); the Thor form burnt animals pinned by print over the
+// L&L crafted items (eyeball flag); the Frey ornate helm restored over the
+// L&L orntate garble; the Loki strife; fire semicolon pinned by print; the
+// Uty and idun garbles restored per the R865/R866 crossref pins; the
+// Nin-Hursag chart capitalization pinned per the chart print; the Surtur and
+// Thrym cross-reference rows pinned as grid rows with 0-sentinel fields
+// (their chart data landed in R875). NO GAP FLIP: the App 3 box stays open -
+// the flip held one more round per Curtiss. The batch order runs the
+// alphabetical Norse walk then the alphabetical Sumerian walk.
 //
 namespace rules {
 
-// ---- the batch four census ----
+// ---- the batch eight census ----
 
-// the clerical chart batch four round: the D&DG walk round twenty-four
-inline int cqc4Round()
-    { return 872; }
+// the clerical chart batch eight round: the D&DG walk round twenty-eight
+inline int cqc8Round()
+    { return 876; }
 
-// the fourth chart batch (the App 3 box stays open until the last batch
-// lands)
-inline int cqc4Batch()
-    { return 4; }
+// the eighth chart batch (the LAST chart batch of the App 3 walk)
+inline int cqc8Batch()
+    { return 8; }
 
-// the chart batch four print pages open at 139
-inline int cqc4PrintStart()
-    { return 139; }
+// the chart batch eight print page opens at 143
+inline int cqc8PrintStart()
+    { return 143; }
 
-// the chart batch four print pages close at 140
-inline int cqc4PrintEnd()
-    { return 140; }
+// the chart batch eight print page closes at 143
+inline int cqc8PrintEnd()
+    { return 143; }
 
-// the batch rows (Greek 18, Indian 13)
-inline int cqc4Rows()
-    { return 31; }
+// the batch rows (the twenty-one Norse and seven Sumerian rows)
+inline int cqc8Rows()
+    { return 28; }
 
-// the Greek pantheon rows
-inline int cqc4GreekRows()
-    { return 18; }
+// the Norse rows (the nineteen data rows plus the Surtur and Thrym
+// cross-references)
+inline int cqc8NorseRows()
+    { return 21; }
 
-// the Indian pantheon rows
-inline int cqc4IndianRows()
-    { return 13; }
+// the Sumerian rows (the R866 mythos beings)
+inline int cqc8SumerianRows()
+    { return 7; }
 
-// the rows reading a male-clerics X (Artemis and Ushas the rows without)
-inline int cqc4MaleRows()
-    { return 29; }
+// the cross-reference rows (Surtur and Thrym - see Nonhumans' Deities; their
+// chart data landed R875)
+inline int cqc8CrossrefRows()
+    { return 2; }
 
-// the rows reading a female-clerics X (Apollo, Pan, Indra, Karttikeya and
-// Yama the rows without)
-inline int cqc4FemaleRows()
-    { return 26; }
+// the rows reading a male-clerics X
+inline int cqc8MaleRows()
+    { return 25; }
 
-// the rows reading a non-human clerics X (5 Greek, 4 Indian)
-inline int cqc4NonHumanRows()
-    { return 9; }
+// the rows reading a female-clerics X (twelve Norse, five Sumerian)
+inline int cqc8FemaleRows()
+    { return 17; }
+
+// the rows reading a non-human clerics X (Frey, Enki and Ki)
+inline int cqc8NonHumanFlagRows()
+    { return 3; }
 
 // the printed columns of the chart (the 13 the batch grids encode)
-inline int cqc4PrintedColumns()
+inline int cqc8PrintedColumns()
     { return 13; }
 
 // the sphere-of-control roster ordinals of the batch
-inline int cqc4SphereCount()
-    { return 30; }
+inline int cqc8SphereCount()
+    { return 25; }
 
 // the animal roster ordinals of the batch
-inline int cqc4AnimalCount()
-    { return 29; }
+inline int cqc8AnimalCount()
+    { return 22; }
 
 // the raiment head roster ordinals of the batch
-inline int cqc4HeadCount()
-    { return 9; }
+inline int cqc8HeadCount()
+    { return 10; }
 
 // the raiment body roster ordinals of the batch
-inline int cqc4BodyCount()
-    { return 18; }
-
-// the color roster ordinals of the batch
-inline int cqc4ColorCount()
-    { return 24; }
-
-// the holy-days roster ordinals of the batch
-inline int cqc4HolyDayCount()
+inline int cqc8BodyCount()
     { return 13; }
 
+// the color roster ordinals of the batch (one color per data row)
+inline int cqc8ColorCount()
+    { return 24; }
+
+// the holy-days roster ordinals of the batch (the n/a rows ride the roster)
+inline int cqc8HolyDayCount()
+    { return 12; }
+
 // the sacrifice-frequency roster ordinals of the batch
-inline int cqc4FreqCount()
-    { return 15; }
+inline int cqc8FreqCount()
+    { return 5; }
 
 // the sacrifice-form roster ordinals of the batch
-inline int cqc4FormCount()
-    { return 23; }
+inline int cqc8FormCount()
+    { return 10; }
 
 // the place-of-worship roster ordinals of the batch
-inline int cqc4PlaceCount()
-    { return 17; }
+inline int cqc8PlaceCount()
+    { return 5; }
 
 // the batch grid count (one grid per batch round)
-inline int cqc4TableCount()
+inline int cqc8TableCount()
     { return 1; }
 
 // the batch chain count (the chart grids carry no chains)
-inline int cqc4ChainCount()
+inline int cqc8ChainCount()
     { return 0; }
 
-// ---- the clerical chart batch four grid ----
+// ---- the clerical chart batch eight grid ----
 
-// The row ordinals (0-30, the batch walk order: Greek 0-17, Indian 18-30)
-inline int cqc4ChartOrd(int b)
+// The row ordinals (0-27, the batch walk order: the Norse rows then the
+// Sumerian rows; the Surtur and Thrym cross-reference rows read 0-sentinel
+// fields)
+inline int cqc8ChartOrd(int b)
     {
         switch (b) {
         case 0:
@@ -175,19 +181,13 @@ inline int cqc4ChartOrd(int b)
             return 26;
         case 27:
             return 27;
-        case 28:
-            return 28;
-        case 29:
-            return 29;
-        case 30:
-            return 30;
         default:
             return 0;
         }
     }
 
 // The sphere-of-control roster ordinals (the labels ride the data file)
-inline int cqc4ChartSphere(int b)
+inline int cqc8ChartSphere(int b)
     {
         switch (b) {
         case 0:
@@ -221,44 +221,38 @@ inline int cqc4ChartSphere(int b)
         case 14:
             return 14;
         case 15:
-            return 15;
+            return 0;
         case 16:
-            return 16;
+            return 15;
         case 17:
-            return 17;
+            return 0;
         case 18:
-            return 18;
+            return 16;
         case 19:
-            return 19;
+            return 17;
         case 20:
-            return 20;
+            return 12;
         case 21:
-            return 3;
+            return 18;
         case 22:
-            return 21;
+            return 19;
         case 23:
-            return 22;
+            return 20;
         case 24:
-            return 23;
+            return 21;
         case 25:
-            return 24;
+            return 22;
         case 26:
-            return 25;
+            return 23;
         case 27:
-            return 26;
-        case 28:
-            return 27;
-        case 29:
-            return 28;
-        case 30:
-            return 29;
+            return 24;
         default:
             return 0;
         }
     }
 
 // The animal roster ordinals
-inline int cqc4ChartAnimal(int b)
+inline int cqc8ChartAnimal(int b)
     {
         switch (b) {
         case 0:
@@ -292,45 +286,38 @@ inline int cqc4ChartAnimal(int b)
         case 14:
             return 14;
         case 15:
+            return 0;
+        case 16:
             return 15;
-        case 16:
+        case 17:
+            return 0;
+        case 18:
             return 16;
-        case 17:
+        case 19:
             return 17;
-        case 18:
+        case 20:
+            return 2;
+        case 21:
             return 18;
-        case 19:
+        case 22:
             return 19;
-        case 20:
+        case 23:
+            return 7;
+        case 24:
             return 20;
-        case 21:
-            return 11;
-        case 22:
+        case 25:
+            return 4;
+        case 26:
             return 21;
-        case 23:
-            return 22;
-        case 24:
-            return 23;
-        case 25:
-            return 13;
-        case 26:
-            return 24;
         case 27:
-            return 25;
-        case 28:
-            return 26;
-        case 29:
-            return 27;
-        case 30:
-            return 28;
+            return 6;
         default:
             return 0;
         }
     }
 
-// The male clerics flag (the printed X reads 1; Artemis and Ushas the rows
-// without)
-inline int cqc4ChartM(int b)
+// The male clerics flag (the printed X reads 1; Frigga the only row without)
+inline int cqc8ChartM(int b)
     {
         switch (b) {
         case 0:
@@ -342,13 +329,13 @@ inline int cqc4ChartM(int b)
         case 3:
             return 1;
         case 4:
-            return 0;
+            return 1;
         case 5:
             return 1;
         case 6:
             return 1;
         case 7:
-            return 1;
+            return 0;
         case 8:
             return 1;
         case 9:
@@ -364,11 +351,11 @@ inline int cqc4ChartM(int b)
         case 14:
             return 1;
         case 15:
-            return 1;
+            return 0;
         case 16:
             return 1;
         case 17:
-            return 1;
+            return 0;
         case 18:
             return 1;
         case 19:
@@ -388,29 +375,22 @@ inline int cqc4ChartM(int b)
         case 26:
             return 1;
         case 27:
-            return 0;
-        case 28:
-            return 1;
-        case 29:
-            return 1;
-        case 30:
             return 1;
         default:
             return 0;
         }
     }
 
-// The female clerics flag (the printed X reads 1; the Aphrodite X pair is the
-// round divergence pin)
-inline int cqc4ChartF(int b)
+// The female clerics flag (the printed X reads 1)
+inline int cqc8ChartF(int b)
     {
         switch (b) {
         case 0:
-            return 1;
+            return 0;
         case 1:
             return 1;
         case 2:
-            return 0;
+            return 1;
         case 3:
             return 1;
         case 4:
@@ -422,78 +402,7 @@ inline int cqc4ChartF(int b)
         case 7:
             return 1;
         case 8:
-            return 1;
-        case 9:
-            return 1;
-        case 10:
-            return 1;
-        case 11:
-            return 1;
-        case 12:
-            return 1;
-        case 13:
-            return 1;
-        case 14:
             return 0;
-        case 15:
-            return 1;
-        case 16:
-            return 1;
-        case 17:
-            return 1;
-        case 18:
-            return 0;
-        case 19:
-            return 1;
-        case 20:
-            return 1;
-        case 21:
-            return 0;
-        case 22:
-            return 1;
-        case 23:
-            return 1;
-        case 24:
-            return 1;
-        case 25:
-            return 1;
-        case 26:
-            return 1;
-        case 27:
-            return 1;
-        case 28:
-            return 1;
-        case 29:
-            return 1;
-        case 30:
-            return 0;
-        default:
-            return 0;
-        }
-    }
-
-// The non-human clerics flag (the printed X reads 1)
-inline int cqc4ChartNh(int b)
-    {
-        switch (b) {
-        case 0:
-            return 0;
-        case 1:
-            return 0;
-        case 2:
-            return 0;
-        case 3:
-            return 0;
-        case 4:
-            return 1;
-        case 5:
-            return 0;
-        case 6:
-            return 0;
-        case 7:
-            return 0;
-        case 8:
-            return 1;
         case 9:
             return 0;
         case 10:
@@ -507,7 +416,72 @@ inline int cqc4ChartNh(int b)
         case 14:
             return 1;
         case 15:
+            return 0;
+        case 16:
             return 1;
+        case 17:
+            return 0;
+        case 18:
+            return 1;
+        case 19:
+            return 1;
+        case 20:
+            return 0;
+        case 21:
+            return 1;
+        case 22:
+            return 1;
+        case 23:
+            return 1;
+        case 24:
+            return 1;
+        case 25:
+            return 0;
+        case 26:
+            return 1;
+        case 27:
+            return 0;
+        default:
+            return 0;
+        }
+    }
+
+// The non-human clerics flag (the printed X reads 1; Frey, Enki and Ki)
+inline int cqc8ChartNh(int b)
+    {
+        switch (b) {
+        case 0:
+            return 0;
+        case 1:
+            return 0;
+        case 2:
+            return 0;
+        case 3:
+            return 0;
+        case 4:
+            return 0;
+        case 5:
+            return 1;
+        case 6:
+            return 0;
+        case 7:
+            return 0;
+        case 8:
+            return 0;
+        case 9:
+            return 0;
+        case 10:
+            return 0;
+        case 11:
+            return 0;
+        case 12:
+            return 0;
+        case 13:
+            return 0;
+        case 14:
+            return 0;
+        case 15:
+            return 0;
         case 16:
             return 0;
         case 17:
@@ -517,26 +491,20 @@ inline int cqc4ChartNh(int b)
         case 19:
             return 0;
         case 20:
-            return 1;
+            return 0;
         case 21:
             return 0;
         case 22:
-            return 0;
-        case 23:
             return 1;
-        case 24:
+        case 23:
             return 0;
+        case 24:
+            return 1;
         case 25:
             return 0;
         case 26:
-            return 1;
+            return 0;
         case 27:
-            return 0;
-        case 28:
-            return 0;
-        case 29:
-            return 1;
-        case 30:
             return 0;
         default:
             return 0;
@@ -544,39 +512,39 @@ inline int cqc4ChartNh(int b)
     }
 
 // The raiment head roster ordinals
-inline int cqc4ChartHead(int b)
+inline int cqc8ChartHead(int b)
     {
         switch (b) {
         case 0:
             return 0;
         case 1:
-            return 0;
-        case 2:
             return 1;
+        case 2:
+            return 2;
         case 3:
-            return 2;
+            return 3;
         case 4:
-            return 0;
+            return 4;
         case 5:
-            return 2;
+            return 5;
         case 6:
-            return 0;
+            return 6;
         case 7:
-            return 0;
+            return 4;
         case 8:
-            return 2;
+            return 0;
         case 9:
-            return 0;
+            return 4;
         case 10:
-            return 0;
+            return 4;
         case 11:
             return 0;
         case 12:
-            return 3;
+            return 7;
         case 13:
-            return 4;
+            return 0;
         case 14:
-            return 5;
+            return 0;
         case 15:
             return 0;
         case 16:
@@ -584,70 +552,64 @@ inline int cqc4ChartHead(int b)
         case 17:
             return 0;
         case 18:
-            return 6;
+            return 0;
         case 19:
-            return 6;
-        case 20:
-            return 6;
-        case 21:
-            return 6;
-        case 22:
-            return 6;
-        case 23:
-            return 6;
-        case 24:
-            return 7;
-        case 25:
-            return 6;
-        case 26:
-            return 6;
-        case 27:
             return 8;
-        case 28:
-            return 6;
-        case 29:
-            return 6;
-        case 30:
-            return 6;
+        case 20:
+            return 4;
+        case 21:
+            return 4;
+        case 22:
+            return 4;
+        case 23:
+            return 9;
+        case 24:
+            return 9;
+        case 25:
+            return 4;
+        case 26:
+            return 4;
+        case 27:
+            return 4;
         default:
             return 0;
         }
     }
 
 // The raiment body roster ordinals
-inline int cqc4ChartBody(int b)
+inline int cqc8ChartBody(int b)
     {
         switch (b) {
         case 0:
             return 0;
         case 1:
-            return 0;
+            return 1;
         case 2:
             return 0;
         case 3:
-            return 1;
-        case 4:
             return 2;
+        case 4:
+            return 0;
         case 5:
             return 3;
         case 6:
-            return 0;
-        case 7:
-            return 0;
-        case 8:
             return 4;
-        case 9:
-            return 0;
-        case 10:
+        case 7:
             return 5;
+        case 8:
+            return 6;
+        case 9:
+            return 7;
+        case 10:
+            return 8;
         case 11:
-            return 0;
+            return 3;
         case 12:
             return 0;
         case 13:
             return 0;
         case 14:
-            return 6;
+            return 9;
         case 15:
             return 0;
         case 16:
@@ -655,39 +617,32 @@ inline int cqc4ChartBody(int b)
         case 17:
             return 0;
         case 18:
-            return 7;
-        case 19:
-            return 8;
-        case 20:
-            return 9;
-        case 21:
             return 10;
-        case 22:
+        case 19:
             return 11;
+        case 20:
+            return 3;
+        case 21:
+            return 12;
+        case 22:
+            return 12;
         case 23:
             return 12;
         case 24:
-            return 13;
+            return 12;
         case 25:
-            return 13;
+            return 12;
         case 26:
-            return 14;
+            return 12;
         case 27:
-            return 11;
-        case 28:
-            return 15;
-        case 29:
-            return 16;
-        case 30:
-            return 17;
+            return 12;
         default:
             return 0;
         }
     }
 
-// The color roster ordinals (the Zeus white / red sunrise split is the
-// eyeball oddity pin)
-inline int cqc4ChartColor(int b)
+// The color roster ordinals (one color per data row)
+inline int cqc8ChartColor(int b)
     {
         switch (b) {
         case 0:
@@ -721,321 +676,291 @@ inline int cqc4ChartColor(int b)
         case 14:
             return 14;
         case 15:
-            return 15;
-        case 16:
-            return 16;
-        case 17:
-            return 17;
-        case 18:
-            return 18;
-        case 19:
-            return 19;
-        case 20:
-            return 8;
-        case 21:
-            return 17;
-        case 22:
-            return 2;
-        case 23:
-            return 20;
-        case 24:
-            return 21;
-        case 25:
-            return 13;
-        case 26:
-            return 6;
-        case 27:
-            return 22;
-        case 28:
             return 0;
-        case 29:
-            return 12;
-        case 30:
+        case 16:
+            return 15;
+        case 17:
+            return 0;
+        case 18:
+            return 16;
+        case 19:
+            return 17;
+        case 20:
+            return 18;
+        case 21:
+            return 19;
+        case 22:
+            return 20;
+        case 23:
+            return 21;
+        case 24:
+            return 17;
+        case 25:
+            return 22;
+        case 26:
             return 23;
-        default:
-            return 0;
-        }
-    }
-
-// The holy-days roster ordinals
-inline int cqc4ChartHolyday(int b)
-    {
-        switch (b) {
-        case 0:
-            return 0;
-        case 1:
-            return 1;
-        case 2:
-            return 2;
-        case 3:
-            return 3;
-        case 4:
-            return 4;
-        case 5:
-            return 5;
-        case 6:
-            return 6;
-        case 7:
-            return 6;
-        case 8:
-            return 5;
-        case 9:
-            return 7;
-        case 10:
-            return 5;
-        case 11:
-            return 8;
-        case 12:
-            return 5;
-        case 13:
-            return 9;
-        case 14:
-            return 6;
-        case 15:
-            return 5;
-        case 16:
-            return 4;
-        case 17:
-            return 5;
-        case 18:
-            return 5;
-        case 19:
-            return 5;
-        case 20:
-            return 5;
-        case 21:
-            return 10;
-        case 22:
-            return 5;
-        case 23:
-            return 11;
-        case 24:
-            return 5;
-        case 25:
-            return 12;
-        case 26:
-            return 5;
         case 27:
-            return 5;
-        case 28:
-            return 8;
-        case 29:
-            return 11;
-        case 30:
-            return 5;
-        default:
-            return 0;
-        }
-    }
-
-// The sacrifice-frequency roster ordinals (the Ushas at-dawn fold restored)
-inline int cqc4ChartFreq(int b)
-    {
-        switch (b) {
-        case 0:
-            return 0;
-        case 1:
-            return 1;
-        case 2:
-            return 2;
-        case 3:
-            return 3;
-        case 4:
-            return 0;
-        case 5:
-            return 2;
-        case 6:
-            return 4;
-        case 7:
-            return 4;
-        case 8:
-            return 5;
-        case 9:
-            return 6;
-        case 10:
-            return 7;
-        case 11:
-            return 8;
-        case 12:
-            return 9;
-        case 13:
-            return 10;
-        case 14:
-            return 4;
-        case 15:
-            return 7;
-        case 16:
-            return 11;
-        case 17:
-            return 7;
-        case 18:
-            return 8;
-        case 19:
-            return 8;
-        case 20:
-            return 12;
-        case 21:
-            return 13;
-        case 22:
-            return 8;
-        case 23:
-            return 8;
-        case 24:
-            return 5;
-        case 25:
-            return 4;
-        case 26:
-            return 8;
-        case 27:
-            return 14;
-        case 28:
-            return 8;
-        case 29:
-            return 8;
-        case 30:
-            return 5;
-        default:
-            return 0;
-        }
-    }
-
-// The sacrifice-form roster ordinals
-inline int cqc4ChartForm(int b)
-    {
-        switch (b) {
-        case 0:
-            return 0;
-        case 1:
-            return 1;
-        case 2:
-            return 2;
-        case 3:
-            return 3;
-        case 4:
-            return 4;
-        case 5:
-            return 0;
-        case 6:
-            return 5;
-        case 7:
-            return 6;
-        case 8:
-            return 2;
-        case 9:
-            return 3;
-        case 10:
-            return 7;
-        case 11:
-            return 8;
-        case 12:
-            return 9;
-        case 13:
-            return 3;
-        case 14:
-            return 10;
-        case 15:
-            return 11;
-        case 16:
-            return 12;
-        case 17:
-            return 6;
-        case 18:
-            return 2;
-        case 19:
-            return 13;
-        case 20:
-            return 14;
-        case 21:
-            return 15;
-        case 22:
-            return 16;
-        case 23:
-            return 17;
-        case 24:
-            return 2;
-        case 25:
             return 18;
-        case 26:
-            return 19;
-        case 27:
-            return 20;
-        case 28:
+        default:
+            return 0;
+        }
+    }
+
+// The holy-days roster ordinals (the n/a rows ride the roster)
+inline int cqc8ChartHolyday(int b)
+    {
+        switch (b) {
+        case 0:
+            return 0;
+        case 1:
+            return 1;
+        case 2:
             return 2;
-        case 29:
-            return 21;
-        case 30:
-            return 22;
+        case 3:
+            return 0;
+        case 4:
+            return 3;
+        case 5:
+            return 3;
+        case 6:
+            return 2;
+        case 7:
+            return 4;
+        case 8:
+            return 5;
+        case 9:
+            return 6;
+        case 10:
+            return 7;
+        case 11:
+            return 6;
+        case 12:
+            return 2;
+        case 13:
+            return 8;
+        case 14:
+            return 2;
+        case 15:
+            return 0;
+        case 16:
+            return 4;
+        case 17:
+            return 0;
+        case 18:
+            return 4;
+        case 19:
+            return 0;
+        case 20:
+            return 9;
+        case 21:
+            return 2;
+        case 22:
+            return 10;
+        case 23:
+            return 2;
+        case 24:
+            return 0;
+        case 25:
+            return 2;
+        case 26:
+            return 7;
+        case 27:
+            return 11;
+        default:
+            return 0;
+        }
+    }
+
+// The sacrifice-frequency roster ordinals
+inline int cqc8ChartFreq(int b)
+    {
+        switch (b) {
+        case 0:
+            return 0;
+        case 1:
+            return 1;
+        case 2:
+            return 1;
+        case 3:
+            return 0;
+        case 4:
+            return 2;
+        case 5:
+            return 2;
+        case 6:
+            return 1;
+        case 7:
+            return 1;
+        case 8:
+            return 3;
+        case 9:
+            return 3;
+        case 10:
+            return 3;
+        case 11:
+            return 3;
+        case 12:
+            return 1;
+        case 13:
+            return 4;
+        case 14:
+            return 1;
+        case 15:
+            return 0;
+        case 16:
+            return 1;
+        case 17:
+            return 0;
+        case 18:
+            return 1;
+        case 19:
+            return 0;
+        case 20:
+            return 3;
+        case 21:
+            return 1;
+        case 22:
+            return 1;
+        case 23:
+            return 1;
+        case 24:
+            return 0;
+        case 25:
+            return 1;
+        case 26:
+            return 3;
+        case 27:
+            return 3;
+        default:
+            return 0;
+        }
+    }
+
+// The sacrifice-form roster ordinals (the n/a rows ride the roster)
+inline int cqc8ChartForm(int b)
+    {
+        switch (b) {
+        case 0:
+            return 0;
+        case 1:
+            return 0;
+        case 2:
+            return 1;
+        case 3:
+            return 1;
+        case 4:
+            return 2;
+        case 5:
+            return 2;
+        case 6:
+            return 1;
+        case 7:
+            return 0;
+        case 8:
+            return 0;
+        case 9:
+            return 3;
+        case 10:
+            return 1;
+        case 11:
+            return 0;
+        case 12:
+            return 4;
+        case 13:
+            return 0;
+        case 14:
+            return 5;
+        case 15:
+            return 0;
+        case 16:
+            return 6;
+        case 17:
+            return 0;
+        case 18:
+            return 1;
+        case 19:
+            return 0;
+        case 20:
+            return 0;
+        case 21:
+            return 7;
+        case 22:
+            return 4;
+        case 23:
+            return 8;
+        case 24:
+            return 9;
+        case 25:
+            return 7;
+        case 26:
+            return 5;
+        case 27:
+            return 5;
         default:
             return 0;
         }
     }
 
 // The place-of-worship roster ordinals
-inline int cqc4ChartPlace(int b)
+inline int cqc8ChartPlace(int b)
     {
         switch (b) {
         case 0:
             return 0;
         case 1:
-            return 1;
+            return 0;
         case 2:
-            return 2;
+            return 1;
         case 3:
-            return 3;
+            return 1;
         case 4:
-            return 4;
+            return 2;
         case 5:
-            return 1;
+            return 2;
         case 6:
-            return 5;
+            return 0;
         case 7:
-            return 6;
+            return 0;
         case 8:
-            return 7;
+            return 0;
         case 9:
-            return 8;
+            return 0;
         case 10:
-            return 9;
+            return 3;
         case 11:
-            return 1;
+            return 0;
         case 12:
-            return 10;
+            return 0;
         case 13:
-            return 1;
+            return 0;
         case 14:
-            return 4;
+            return 0;
         case 15:
-            return 1;
+            return 0;
         case 16:
-            return 11;
+            return 0;
         case 17:
-            return 6;
+            return 0;
         case 18:
-            return 1;
+            return 0;
         case 19:
-            return 1;
+            return 3;
         case 20:
-            return 12;
+            return 0;
         case 21:
-            return 13;
+            return 4;
         case 22:
-            return 1;
+            return 4;
         case 23:
-            return 1;
+            return 4;
         case 24:
-            return 14;
+            return 4;
         case 25:
-            return 1;
+            return 4;
         case 26:
-            return 15;
+            return 4;
         case 27:
-            return 1;
-        case 28:
-            return 1;
-        case 29:
-            return 1;
-        case 30:
-            return 16;
+            return 4;
         default:
             return 0;
         }
@@ -1043,55 +968,51 @@ inline int cqc4ChartPlace(int b)
 
 // ---- the parity pins ----
 
-// the headline divergence: the print reads two X marks for Aphrodite (M and
-// F, the geometry at x 1049/1104) where the L&L voice reads female-only -
-// pinned by print, eyeball flag (the Druaga precedent)
-inline bool cqc4AphroditeMaleClericsPrint()
+// the App 3 gap flip held one more round per Curtiss - the R869 no-flip
+// precedent extends past the last chart batch; gap_flips reads empty and the
+// census holds 20/4
+inline bool cqc8NoGapFlip()
     { return true; }
 
-// the print reads the Zeus color white and the holy days red sunrise (the odd
-// column split both voices carry) - pinned, eyeball oddity
-inline bool cqc4ZeusRedSunrise()
+// the Surtur and Thrym cross-reference rows print as see Nonhumans' Deities
+// rows - pinned as grid rows with 0-sentinel fields (their chart data landed
+// in the R875 batch seven)
+inline bool cqc8CrossrefRowsPinned()
     { return true; }
 
-// the print garbles the Poseidon sphere (seqa;) - restored to sea;
-// earthquakes from the L&L voice (the sea/seas ambiguity rides the
-// restoration)
-inline bool cqc4PoseidonSphereRestored()
+// the Frigga single X seats at the F column (the geometry, no M mark) - the
+// L&L voice agrees (the walk's first female-only Norse row)
+inline bool cqc8FriggaFemaleOnly()
     { return true; }
 
-// the print garbles the Apollo head (the laure! glyph run) - the laurel
-// wreath restored from the L&L voice
-inline bool cqc4ApolloLaurelRestored()
+// the Hel single X seats at the M column - the L&L voice agrees (X - -)
+inline bool cqc8HelMaleOnly()
     { return true; }
 
-// the L&L rainbow <> gloss glyph on the Indra color is an artifact - the
-// print reads the plain rainbow, pinned
-inline bool cqc4IndraRainbowNoGlyph()
+// the Thor form reads burnt animals in the print where the L&L voice reads
+// crafted items - pinned by print, eyeball flag (the R869 Druaga precedent)
+inline bool cqc8ThorFormPrintPin()
     { return true; }
 
-// the print reads the Yama form tales of dead one's deeds, valuables (no
-// article) where the L&L voice inserts a - pinned by print
-inline bool cqc4YamaTalesNoArticle()
+// the Frey head reads ornate helm in the print - the L&L voice garbles it
+// orntate; the print pinned
+inline bool cqc8OrnateHelmRestored()
     { return true; }
 
-// the stray : glyph in the Yama raiment fold is a print artifact, not ink -
-// noted, the red robes with copper tracery restored
-inline bool cqc4YamaStrayColon()
+// the Loki sphere semicolon strife; fire pinned by print (the L&L
+// transcription comma an artifact - the R869 sphere-semicolon class)
+inline bool cqc8LokiSemicolonPinned()
     { return true; }
 
-// the Ushas atdawn fold merged (the Arawn at death and Hades atdeath fold
-// class) - the monthly, at dawn frequency restored
-inline bool cqc4AtDawnFoldRestored()
+// the Uty garble restored to Utu and the lowercase idun cap restored to Idun
+// (the R865/R866 crossref pins); the Nin-Hursag chart capitalization pinned
+// per the chart print
+inline bool cqc8NameGarblesRestored()
     { return true; }
 
-// the print reads the Rudra color red, black (with the comma) - the L&L red
-// black noted, the print pinned
-inline bool cqc4RudraRedBlackComma()
-    { return true; }
-
-// the batch four female-only rows run Artemis and Ushas
-inline bool cqc4TwoFemaleOnlyRows()
+// the fold wraps restored - Odin wolves, ravens; Heimdall white plate mail;
+// Idun forest meadows (both voices agree on the joined field text)
+inline bool cqc8WrapLinesRestored()
     { return true; }
 
 }   // namespace rules

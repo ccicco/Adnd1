@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/dmo/dmocampaign.h
+// Adnd1 - rules/dmo/remaining_maxims.h
 // THE REMAINING MAXIMS - DMO Chapter 1 closed: the intelligent-adversary
 // doctrines (act as smart as the intelligence says, shield the weaknesses,
 // maximize the strengths, handle defeat by motivation), the villain

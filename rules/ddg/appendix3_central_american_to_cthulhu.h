@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/ddg/cqc_batch2.h
+// Adnd1 - rules/ddg/appendix3_central_american_to_cthulhu.h
 // Appendix 3: the clerical quick-reference chart, batch two - the D&DG walk
 // round twenty-two, print pp. 136-137: the 35 rows of the Central American,
 // Chinese and Cthulhu pantheons across the 13 printed columns.

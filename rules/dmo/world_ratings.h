@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/dmo/dmoworlds.h
+// Adnd1 - rules/dmo/world_ratings.h
 // THE WORLD RATINGS - DMO Chapter 2 continues: Table 2 the chronological
 // ladder (one local week = one base second on C2, one hundred base years on
 // C20; visitors age at local time, spell durations local), Table 3 the

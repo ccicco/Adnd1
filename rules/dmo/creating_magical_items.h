@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/dmo/dmoitems.h
+// Adnd1 - rules/dmo/creating_magical_items.h
 // CREATING MAGICAL ITEMS - DMO Chapter 4 closes: the holy water ceremony (the
 // five-spell chain with the two reversed unholy forms, the eight-hour
 // meditations, the chant turn, the -4 combat window, the one-font-one-week

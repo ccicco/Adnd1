@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/ddg/cqc_batch7.h
+// Adnd1 - rules/ddg/appendix3_nonhumans_deities.h
 // Appendix 3: the clerical quick-reference chart, batch seven - the D&DG walk
 // round twenty-seven, print p. 142: the 24 rows of the Nonhumans' Deities
 // across the 13 printed columns.

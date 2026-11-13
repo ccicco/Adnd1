@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/ddg/lua_promo_batch5.h
+// Adnd1 - rules/ddg/defs_melnibonean.h
 // The DDG lua promotion, batch five - 33 full-field defs (the Melnibonean
 // mythos) generated ONLY from the adjudicated pin headers, the registry floor
 // 1209 -> 1242.

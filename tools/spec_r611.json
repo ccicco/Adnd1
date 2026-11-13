@@ -1,7 +1,7 @@
 {
  "round": 611,
  "prefix": "dfa",
- "header_file": "rules/dmo/dmohighrogues.h",
+ "header_file": "rules/dmo/rogues_beyond_20th.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/reports/dmo_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -9,7 +9,7 @@
  "title": "Rogues",
  "audit_label": "R611 DMO rogues audit",
  "include_comment": "the DMO rogue pins",
- "include_after": "#include \"rules/dmo/dmohighwizpri.h\"  // R610: the DMO wizard and priest pins",
+ "include_after": "#include \"rules/dmo/wizards_and_priests_beyond_20th.h\"  // R610: the DMO wizard and priest pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R610 LANDED 2026-10-18: commit",
@@ -24,7 +24,7 @@
   "  split plan - TWO boxes flip",
   "  (Wizards, Priests; gap census",
   "  now 89 closed / 7 open):",
-  "  rules/dmo/dmohighwizpri.h, prefix",
+  "  rules/dmo/wizards_and_priests_beyond_20th.h, prefix",
   "  dez (verified free), 390",
   "  inlines (167 consts, 184",
   "  bools, 7 chains, 32 table",
@@ -66,7 +66,7 @@
   "  free (dfa family next).",
   "  Audit: \"R611 DMO rogues",
   "  audit\"; include after",
-  "  rules/dmo/dmohighwizpri.h."
+  "  rules/dmo/wizards_and_priests_beyond_20th.h."
  ],
  "banner": {
   "title": "ROGUES BEYOND 20TH - DMO Chapter 7, round four of five: the rogue advancement grid (the printed body caption reads Table 47 - the same number the priest spell progression caption printed - with 2,200,000 XP at 20th in 220K steps and the printed 120K final step to 4,300,000 at 30th, weapon and nonweapon proficiencies, the 10+N d6 hit points with the Con-bonus-after-10th footnote), the thieving doctrine (the 95 percent cap below 11th, no limit from 11th, 96-or-higher automatic failure, penalties from the base score), the five new thieving skills with their base scores and the racial, Dexterity-aim and armor adjustment grids (Tables 48 through 51), the thief powers (five skills at 21st, 50 S&P character points with the 9-skill overflow rule, the 24th-level scroll ladder at 25 percent), the bard powers (two skills at 21st, 20 points, the 21st-level scroll ladder at 15 percent, 55 percent item identification, wands at 24th, item creation at 27th) with the Table 52 bard spell progression, and all eleven rogue skills (adaptation, classify traps, evasion, fall and jump, featherfoot, improvised attack, inner focus, nondetection, sense danger, shadow flight and shadow travel).",

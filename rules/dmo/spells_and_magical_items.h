@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/dmo/dmospells.h
+// Adnd1 - rules/dmo/spells_and_magical_items.h
 // SPELLS AND MAGICAL ITEMS - DMO Chapter 3 closes: the daily recovery
 // doctrine (the good night's sleep and the eight-hour minimum, the ten
 // minutes a level, the distraction restart, the eight-hour study cap), the

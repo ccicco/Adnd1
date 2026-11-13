@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/dmo/dmomonsters.h
+// Adnd1 - rules/dmo/legendary_ladder.h
 // THE LEGENDARY LADDER - DMO Chapter 2 closes: the altering-monsters doctrine
 // (the +/-1/2/3 modifier used throughout - hit points floored at one a die,
 // damage at one a die, saves capped at 20 and floored at 3, XP floored at

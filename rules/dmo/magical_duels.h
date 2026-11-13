@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/dmo/dmoduels.h
+// Adnd1 - rules/dmo/magical_duels.h
 // MAGICAL DUELS - DMO Chapter 5 closes: the arena protocol (the one-turn
 // circling chant, the restart on disturbance, the mediator's protective
 // spell, the contributed memorized spells lost as cast, the secret recording,

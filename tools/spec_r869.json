@@ -2,7 +2,7 @@
  "prefix": "cqc",
  "round": 869,
  "title": "the clerical chart, batch one",
- "header_file": "rules/ddg/cqc_batch1.h",
+ "header_file": "rules/ddg/appendix3_american_indian_to_celtic.h",
  "audit_file": "rules/audits/r869_clerical_chart_batch_one.h",
  "audit_label": "R869 clerical chart batch one audit",
  "include_after": "#include \"rules/ddg/appendix2_temple_trappings.h\"  // R868: temple trappings",

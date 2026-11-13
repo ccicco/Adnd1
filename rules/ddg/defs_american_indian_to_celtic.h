@@ -1,11 +1,11 @@
 // =========================================================================================
-// Adnd1 - rules/ddg/lua_promo_batch2.h
-// The DDG lua promotion, batch two - 68 full-field defs (Central American 14,
-// Chinese 18, Cthulhu 15, Egyptian 21) generated ONLY from the adjudicated
-// pin headers, the registry floor 1050 -> 1118.
-// census 803 -> 804.
+// Adnd1 - rules/ddg/defs_american_indian_to_celtic.h
+// The DDG lua promotion, batch one - 55 full-field defs (American Indian 14,
+// Arthurian 15, Babylonian 10, Celtic 16) generated ONLY from the adjudicated
+// pin headers, the registry floor 995 -> 1050.
+// census 802 -> 803.
 //
-// Generated from rules/ddg/mythos_central_american.h, rules/ddg/mythos_chinese.h, rules/ddg/mythos_cthulhu.h and rules/ddg/mythos_egyptian.h at 22f9d1b: the four
+// Generated from rules/ddg/mythos_american_indian.h, rules/ddg/mythos_arthurian.h, rules/ddg/mythos_babylonian.h and rules/ddg/mythos_celtic.h at dbe3170: the four
 // grids x rows (combat, class, ability, roster), the being name orders locked
 // by the pinned cross-references and verified against the primary ink extract
 // pages; the legend tables decode verbatim from the header comments; the
@@ -13,132 +13,131 @@
 //
 // The sentinels ride the R879 doctrine unchanged: n/a for strings, -1 for
 // ints, distinct from every real print value; the printed See below,
-// Standard, Nil, None and Infinite are REAL values and stay. The audits read
-// the sentinels exactly, so fail-on-wrong stays the rule.
+// Standard, Nil and Infinite are REAL values and stay. The audits read the
+// sentinels exactly, so fail-on-wrong stays the rule.
 //
 namespace rules {
 
 // ---- the promotion census ----
 
-// the DDG lua promotion round, batch two: the Central American, Chinese,
-// Cthulhu and Egyptian mythoi (Curtiss 2026-10-27: the print-order batches)
-inline int dptRound()
-    { return 881; }
+// the DDG lua promotion round, batch one: the American Indian, Arthurian,
+// Babylonian and Celtic mythoi (Curtiss 2026-10-27: the promotion after the
+// arc opener)
+inline int dpeRound()
+    { return 880; }
 
-// the audit census at 22f9d1b (the R880 land)
-inline int dptCensusBefore()
+// the audit census at dbe3170 (the R879 land)
+inline int dpeCensusBefore()
+    { return 802; }
+
+// the audit census after this round (one new audit line, the batch-one
+// promotion audit)
+inline int dpeCensusAfter()
     { return 803; }
 
-// the audit census after this round (one new audit line, the batch-two
-// promotion audit)
-inline int dptCensusAfter()
-    { return 804; }
-
-// the promoted defs this round: 14 + 18 + 15 + 21, one per adjudicated
+// the promoted defs this round: 14 + 15 + 10 + 16, one per adjudicated
 // stat-block row
-inline int dptDefs()
-    { return 68; }
+inline int dpeDefs()
+    { return 55; }
 
-// the mythoi of batch two (the print order: Central American, Chinese,
-// Cthulhu, Egyptian)
-inline int dptMythoi()
+// the mythoi of batch one (the print order: American Indian, Arthurian,
+// Babylonian, Celtic)
+inline int dpeMythoi()
     { return 4; }
 
-// the registry floor at 22f9d1b (the batch-one promotion land)
-inline int dptFloorBefore()
-    { return 1050; }
+// the registry floor at dbe3170 (the arc opener touched zero defs)
+inline int dpeFloorBefore()
+    { return 995; }
 
-// the registry floor after this round (1050 + 68)
-inline int dptFloorAfter()
-    { return 1118; }
+// the registry floor after this round (995 + 55)
+inline int dpeFloorAfter()
+    { return 1050; }
 
 // ---- the promotion doctrine ----
 
 // every DDG def carries every key of the final schema (the R879 57-key
 // FIELD_ORDER)
-inline int dptFullFieldKeys()
+inline int dpeFullFieldKeys()
     { return 57; }
 
-// the monster-format rows promoted (Ma Yuan and the Spirits, the seven
-// Cthulhu races, Apep, the Flame Snake, the Phoenix and the Minions of Set)
-inline int dptMonsterRows()
-    { return 13; }
-
-// the hit-dice rows promoted (the seven Cthulhu races and the Flame Snake;
-// the other monsters print hit points)
-inline int dptHitDiceRows()
+// the pinned fixed-damage figures emitted (the dgb strength bonuses ride the
+// damage field one-for-one; Merlin and Morgan; the six Babylonian figures)
+inline int dpePinnedDamage()
     { return 8; }
 
-// the fixed-damage cells emitted (the pinned const figures and the
-// primary-ink-verified cells; the Spirits of the Air figure is garbled in
-// both voices and stays sentinel - flagged)
-inline int dptPinnedDamage()
-    { return 50; }
-
-// the grid code for the printed See below (the magic-user cells, Cthugha,
-// Isis, Kuan Yin)
-inline int dptSeeBelowCode()
+// the grid code for the printed See below (the magic-user cells, Nergal magic
+// resistance, Bernlad armor class)
+inline int dpeSeeBelowCode()
     { return 99; }
 
-// this round is the DDG lua promotion, batch two - the print-order
-// continuation of batch one (Central American through Egyptian)
-inline bool dptPromotionBatchTwo()
+// this round is the DDG lua promotion, batch one - the first registry growth
+// since the 995 floor
+inline bool dpePromotionBatchOne()
     { return true; }
 
-// every value is generated ONLY from the adjudicated pin headers (the dgf,
-// dgg, cth and egp grids and consts; the pin rounds are the firewall)
-inline bool dptFromHeadersOnly()
+// every value is generated ONLY from the adjudicated pin headers (the dgb,
+// dgc, dgd and dge grids and consts; the pin rounds are the firewall)
+inline bool dpeFromHeadersOnly()
     { return true; }
 
 // the being-to-row name orders are locked by the pinned cross-references (the
-// summon-list flags, the Set-enmity flags, the twin pairs, the Minion and
-// Phoenix size and hit-point cells, the primary ink extract pages)
-inline bool dptNameOrdersLocked()
+// 3/2 attacks comment, the Standard magic-resistance trio, the CH -1 and CH 6
+// cells, the Thunder Bird xp, the primary ink extract pages)
+inline bool dpeNameOrdersLocked()
     { return true; }
 
 // every promoted def is full-field: all 57 keys, the sentinels where the
 // print or the headers pin nothing
-inline bool dptFullFieldDdg()
+inline bool dpeFullFieldDdg()
     { return true; }
 
 // the sentinels ride the R879 doctrine unchanged: n/a strings, -1 ints,
 // distinct from every real print value
-inline bool dptSentinelsDistinct()
+inline bool dpeSentinelsDistinct()
     { return true; }
 
 // the prose fields (text, familyText, the specials) stay sentinel - the walk
 // rounds pin the grids and the doctrine, not the prose
-inline bool dptProseContractSide()
+inline bool dpeProseContractSide()
     { return true; }
 
-// the damage field emits the adjudicated fixed-damage cells only: the pinned
-// const figures and the primary-ink-verified cells; the Spirits garble stays
-// sentinel - flagged for a pin amendment
-inline bool dptDamagePinnedOnly()
+// the damage field emits only the pinned figures; an unpinned stat-block
+// figure stays the sentinel (the eleven Celtic figures were never adjudicated
+// into the header)
+inline bool dpeDamagePinnedOnly()
     { return true; }
 
 // the symbol and areaOfControl fields stay sentinel this batch - the walk
 // rounds pinned no symbol grids for these four mythoi
-inline bool dptSymbolsUnpinned()
+inline bool dpeSymbolsUnpinned()
     { return true; }
 
-// the worshippersAlignment field stays sentinel this batch - the dgf, dgg,
-// cth and egp headers pin no worshipper-alignment grids (the prints read All
-// alignments, Warriors, Chaotics of all types and the like) - flagged for a
-// pin amendment
-inline bool dptWorshipUnpinned()
+// ---- the grid widths ----
+
+// the class-grid columns the classLevels fields cook (cleric through bard)
+inline int dpeClassGridCols()
+    { return 10; }
+
+// the ability-grid columns (the strength triplet, the six scores, the psionic
+// cells)
+inline int dpeAbilityGridCols()
+    { return 9; }
+
+// tools/normalize_registry.py accepts the DDG source book (the book_of patch)
+// - the census and the idempotent rewrite cover the promoted defs
+inline bool dpeNormalizerDdgAware()
     { return true; }
 
-// tools/normalize_registry.py accepts the DDG source book (the R880 book_of
-// patch) - the census and the idempotent rewrite cover the promoted defs
-inline bool dptNormalizerDdgAware()
+// tools/splice_engine.py makedirs before a data-file write (the R851 lesson:
+// the lettered registry subdirectories of the promoted defs are new paths)
+inline bool dpeEngineMakedirs()
     { return true; }
 
-// ---- the batch-two grids ----
+// ---- the batch-one grids ----
 
-// The mythos ordinals (0-3, the print order: Central American, Chinese,
-// Cthulhu, Egyptian)
-inline int dptMythOrd(int b)
+// The mythos ordinals (0-3, the print order: American Indian, Arthurian,
+// Babylonian, Celtic)
+inline int dpeMythOrd(int b)
     {
         switch (b) {
         case 0:
@@ -155,58 +154,58 @@ inline int dptMythOrd(int b)
     }
 
 // The first print page of the mythos (the folio offset PRINT = PDF - 1)
-inline int dptMythPageLo(int b)
+inline int dpeMythPageLo(int b)
     {
         switch (b) {
         case 0:
-            return 32;
+            return 12;
         case 1:
-            return 37;
+            return 17;
         case 2:
-            return 43;
+            return 22;
         case 3:
-            return 49;
+            return 26;
         default:
             return -1;
         }
     }
 
 // The last print page of the mythos
-inline int dptMythPageHi(int b)
+inline int dpeMythPageHi(int b)
     {
         switch (b) {
         case 0:
-            return 36;
+            return 16;
         case 1:
-            return 42;
+            return 21;
         case 2:
-            return 47;
+            return 25;
         case 3:
-            return 55;
+            return 31;
         default:
             return -1;
         }
     }
 
 // The promoted defs of the mythos (one per adjudicated stat-block row)
-inline int dptMythDefs(int b)
+inline int dpeMythDefs(int b)
     {
         switch (b) {
         case 0:
             return 14;
         case 1:
-            return 18;
-        case 2:
             return 15;
+        case 2:
+            return 10;
         case 3:
-            return 21;
+            return 16;
         default:
             return -1;
         }
     }
 
 // The key ordinals (0-56, the R879 FIELD_ORDER walk)
-inline int dptKeyOrd(int b)
+inline int dpeKeyOrd(int b)
     {
         switch (b) {
         case 0:
@@ -328,124 +327,124 @@ inline int dptKeyOrd(int b)
         }
     }
 
-// The DDG defs carrying the key (every def full-field: 57 x 68)
-inline int dptKeyDdgCount(int b)
+// The DDG defs carrying the key (every def full-field: 57 x 55)
+inline int dpeKeyDdgCount(int b)
     {
         switch (b) {
         case 0:
-            return 68;
+            return 55;
         case 1:
-            return 68;
+            return 55;
         case 2:
-            return 68;
+            return 55;
         case 3:
-            return 68;
+            return 55;
         case 4:
-            return 68;
+            return 55;
         case 5:
-            return 68;
+            return 55;
         case 6:
-            return 68;
+            return 55;
         case 7:
-            return 68;
+            return 55;
         case 8:
-            return 68;
+            return 55;
         case 9:
-            return 68;
+            return 55;
         case 10:
-            return 68;
+            return 55;
         case 11:
-            return 68;
+            return 55;
         case 12:
-            return 68;
+            return 55;
         case 13:
-            return 68;
+            return 55;
         case 14:
-            return 68;
+            return 55;
         case 15:
-            return 68;
+            return 55;
         case 16:
-            return 68;
+            return 55;
         case 17:
-            return 68;
+            return 55;
         case 18:
-            return 68;
+            return 55;
         case 19:
-            return 68;
+            return 55;
         case 20:
-            return 68;
+            return 55;
         case 21:
-            return 68;
+            return 55;
         case 22:
-            return 68;
+            return 55;
         case 23:
-            return 68;
+            return 55;
         case 24:
-            return 68;
+            return 55;
         case 25:
-            return 68;
+            return 55;
         case 26:
-            return 68;
+            return 55;
         case 27:
-            return 68;
+            return 55;
         case 28:
-            return 68;
+            return 55;
         case 29:
-            return 68;
+            return 55;
         case 30:
-            return 68;
+            return 55;
         case 31:
-            return 68;
+            return 55;
         case 32:
-            return 68;
+            return 55;
         case 33:
-            return 68;
+            return 55;
         case 34:
-            return 68;
+            return 55;
         case 35:
-            return 68;
+            return 55;
         case 36:
-            return 68;
+            return 55;
         case 37:
-            return 68;
+            return 55;
         case 38:
-            return 68;
+            return 55;
         case 39:
-            return 68;
+            return 55;
         case 40:
-            return 68;
+            return 55;
         case 41:
-            return 68;
+            return 55;
         case 42:
-            return 68;
+            return 55;
         case 43:
-            return 68;
+            return 55;
         case 44:
-            return 68;
+            return 55;
         case 45:
-            return 68;
+            return 55;
         case 46:
-            return 68;
+            return 55;
         case 47:
-            return 68;
+            return 55;
         case 48:
-            return 68;
+            return 55;
         case 49:
-            return 68;
+            return 55;
         case 50:
-            return 68;
+            return 55;
         case 51:
-            return 68;
+            return 55;
         case 52:
-            return 68;
+            return 55;
         case 53:
-            return 68;
+            return 55;
         case 54:
-            return 68;
+            return 55;
         case 55:
-            return 68;
+            return 55;
         case 56:
-            return 68;
+            return 55;
         default:
             return -1;
         }

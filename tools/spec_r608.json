@@ -1,7 +1,7 @@
 {
  "round": 608,
  "prefix": "dew",
- "header_file": "rules/dmo/dmohighlevel.h",
+ "header_file": "rules/dmo/high_level_characters.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/reports/dmo_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -9,7 +9,7 @@
  "title": "High-Level Saves and THACO",
  "audit_label": "R608 DMO auto-save-failure audit",
  "include_comment": "the DMO high-level save pins",
- "include_after": "#include \"rules/dmo/dmodweomers.h\"  // R607: the DMO true-dweomer pins",
+ "include_after": "#include \"rules/dmo/true_dweomers.h\"  // R607: the DMO true-dweomer pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R607 LANDED 2026-10-18: commit",
@@ -24,7 +24,7 @@
   "  children + parent; gap census now",
   "  79 closed / 17 open) - the",
   "  10th-level spell system:",
-  "  rules/dmo/dmodweomers.h, prefix dev,",
+  "  rules/dmo/true_dweomers.h, prefix dev,",
   "  238 inlines (180 consts, 42",
   "  bools, 16 table columns), 8",
   "  grids (T42 Table 28 true dweomers",
@@ -69,7 +69,7 @@
   "  prefix free (likely dew family).",
   "  Audit: \"R607 DMO true-dweomers",
   "  audit\"; include after",
-  "  rules/dmo/dmoduels.h."
+  "  rules/dmo/magical_duels.h."
  ],
  "banner": {
   "title": "HIGH-LEVEL CHARACTERS OPENS - DMO Chapter 7, round one of five: the saving-throw improvement limits by group (priest 19, rogue 21, warrior 17, wizard 21, read from the PHB Table 60 reference), the automatic saving-throw failure doctrine (the universal fail on 3 or less on 1d20, the lesser-deity 2, the intermediate 1, the greater never, the bonus-proof and always-a-chance rules, the adjusted-roll reading of 3-or-less numbers, the Wulf worked example reading 5 - 3 = 2 with the actual 1, 2 or 3 still failing), the Table 36 saving-throw grid (28 rows in four group bands by the defender-minus-caster difference: priest 7 rows, rogue 6, warrior 10, wizard 5, in the paralyzation-or-death, petrification-or-polymorph and spell columns) with its four row-band chains, the Table 37 device casting levels (rod 12, staff 8, wand 6, other item 12, artifact 20), the Table 38 caster-level penalty ladder (0 at 1-12 down to -6 at 28-30, the either-or rule that excludes Table 36 in favor of the PHB Table 60), and the Table 39 THACO limits (priest 8, rogue 11, warrior 1, wizard 14, the attack roll of 1 always a miss, monsters unlimited).",

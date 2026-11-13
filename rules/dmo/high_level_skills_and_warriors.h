@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/dmo/dmohighskills.h
+// Adnd1 - rules/dmo/high_level_skills_and_warriors.h
 // HIGH-LEVEL SKILLS AND WARRIORS - DMO Chapter 7, round two of five: the
 // skills doctrine (success as the number or less on 1d20, the Table 41
 // ability adjustments, the fixed drop of limited-use skills with the

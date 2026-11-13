@@ -1,5 +1,5 @@
 // =========================================================================================
-// Adnd1 - rules/ddg/cqc_batch6.h
+// Adnd1 - rules/ddg/appendix3_nehwon.h
 // Appendix 3: the clerical quick-reference chart, batch six - the D&DG walk
 // round twenty-six, print p. 141: the 13 rows of the Nehwon mythos across the
 // 13 printed columns.

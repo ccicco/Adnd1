@@ -1,7 +1,7 @@
 {
  "round": 610,
  "prefix": "dez",
- "header_file": "rules/dmo/dmohighwizpri.h",
+ "header_file": "rules/dmo/wizards_and_priests_beyond_20th.h",
  "regtest": "regtest.cpp",
  "gap_report": "tools/reports/dmo_gap_report.md",
  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
@@ -9,7 +9,7 @@
  "title": "Wizards and Priests",
  "audit_label": "R610 DMO wizard-priest audit",
  "include_comment": "the DMO wizard and priest pins",
- "include_after": "#include \"rules/dmo/dmohighskills.h\"  // R609: the DMO high-level skills pins",
+ "include_after": "#include \"rules/dmo/high_level_skills_and_warriors.h\"  // R609: the DMO high-level skills pins",
  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
  "seed_anchor": "## Knowledge maintenance",
  "prev_seed_key": "- R609 LANDED 2026-10-18: commit",
@@ -25,7 +25,7 @@
   "  Table 41, Warriors; the Chapter 7",
   "  parent stays open until R612; gap",
   "  census now 87 closed / 9 open):",
-  "  rules/dmo/dmohighskills.h, prefix dey",
+  "  rules/dmo/high_level_skills_and_warriors.h, prefix dey",
   "  (verified free), 293 inlines (110",
   "  consts, 164 bools, 7 chains, 12",
   "  table columns), 3 grids (T40 roster",
@@ -57,7 +57,7 @@
   "  HEAD d92d4d5; verify next prefix",
   "  free (dez family next). Audit:",
   "  \"R610 DMO wizard-priest audit\";",
-  "  include after rules/dmo/dmohighskills.h."
+  "  include after rules/dmo/high_level_skills_and_warriors.h."
  ],
  "banner": {
   "title": "WIZARDS AND PRIESTS BEYOND 20TH - DMO Chapter 7, round three of five: the wizard advancement grid (Table 43: 3,750,000 XP at 20th in 375K steps to 7,500,000 at 30th, weapon and nonweapon proficiencies, the 10+N d4 hit points with the Con-bonus footnote) and spell progression (Table 44: levels 20-30 by spell level 1-10, the true dweomers climbing 1-1-1-2-2-2-3-3-3-4-4), the sage ability (21st: two categories with one Alchemy or Chemistry, 6-or-less on 1d20; 24th specific and 27th exacting questions at 1d6 books of 1,000 gp each), the three wizard skills (mental focus with its 18-to-22 boost ladder, signature item with its six categories, spell sculpting with its 500-gp-per-level focus, the damage/duration/range/casting-time sculptings and the 1st-to-7th cap ladder), the priest doctrine (all priests cast true dweomers at 20th, divine power, the deity-interest rules), the priest advancement grid (Table 45: cleric 225K and druid 500K XP steps, the 9+N d8 hit points), the priest spell progression grid (the printed body caption reads Table 47 while the contents lists Table 46 - held per the body caption; spells by level 1-7 plus the true dweomer column 1-1-2-2-2-3-3-4-4-4-4), the priest powers (quest spells without sacrifice, improved undead turning at 21st with the Wulf lich-and-vampires example, spell selection at 21/25/27, the holy army at 1 troop per 1,000 XP with its officer chain and pay rules), and all nine priest skills (divine strength, divine voice, divine will, detect deception, eminence, invincibility, loan, smite and spell talisman).",
