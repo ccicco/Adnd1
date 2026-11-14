@@ -1,6 +1,13 @@
 // ============================================================================
 // Adnd1 - dm/appendixa.h
-// R124: DMG pp.169-172 - APPENDIX A, RANDOM DUNGEON
+// R124: DMG pp.169-172 - APPENDIX A, RANDOM
+// R1046: the 32 band tables are registry-native
+// (content/tables/appendixa/, the seam below);
+// the printed cascades are gone from this header
+// and the accessors read registry views. The
+// enums and structs stay in-file as constants
+// (the band identity API); the fall-through
+// semantics stay verbatim.
 // GENERATION - every table pinned row-by-row as pure
 // data (inline accessors, no dice: the caller rolls;
 // any table luck beyond a row is the caller's). The
@@ -30,9 +37,63 @@
 #pragma once
 
 #include "dm.h"   // dm::RoomContents
+#include "items/MiscItemRegistry.h"   // R1046: the dressing bands ride
+                                     // the registry
 
 namespace dm {
 namespace appendixa {
+
+// ---- the R1046 registry seam ----------------------------------------
+// The 32 Appendix A dressing band tables
+// ride items::MiscItemRegistry from
+// content/tables/appendixa/ (def keys
+// appendixa_*). Row encoding: name the
+// enum tag or the synthetic tag, band the
+// printed roll band, and the shape payload
+// in gp/gpHi/xp/xpHi/qty (qty[1] the enum
+// ordinal - cascade order is not enum
+// order; the RoomContents lesson). This
+// seam is header-only (the R1040-R1045
+// idiom); every accessor signature below
+// is unchanged (the r124 audit and dm.cpp
+// pin them); the enums and structs stay
+// in-file as constants and the fall-through
+// semantics (under the first band -> row
+// 0, past the last -> the last row) are
+// reproduced verbatim by the band scan.
+// The one-threshold helpers stay in-file
+// constants (the R1044 subclass-scalar
+// ruling): streamBridged,
+// containerGuarded, goldBecomesPlatinum,
+// stairEgressDoorIn20, kExitsRollD4.
+
+inline items::MiscItemRegistry& aaReg() {
+    static items::MiscItemRegistry reg;
+    static bool loaded = false;
+    if (!loaded) {
+        loaded = true;
+        reg.loadDirectory("content/tables/appendixa");
+    }
+    return reg;
+}
+
+// the registry-backed per-view cache (the
+// R1032-R1045 idiom; function-local statics in
+// inline functions are shared across TUs)
+inline const std::vector<items::MiscItemRow>&
+aaView(const char* name) {
+    static std::map<std::string,
+        std::vector<items::MiscItemRow>> cache;
+    auto it = cache.find(name);
+    if (it == cache.end()) {
+        const items::MiscItemDef* d =
+            aaReg().find(name);
+        it = cache.emplace(
+            name, d ? d->rows
+                   : std::vector<items::MiscItemRow>()).first;
+    }
+    return it->second;
+}
 
 // ---- TABLE I.: PERIODIC CHECK (p.170, d20) ---------------------------------
 enum PassageCheck {
@@ -49,16 +110,16 @@ enum PassageCheck {
 };
 
 inline PassageCheck passageCheckFor(int r) {
-    if (r <= 2)  return PC_STRAIGHT;
-    if (r <= 5)  return PC_DOOR;
-    if (r <= 10) return PC_SIDE;
-    if (r <= 13) return PC_TURN;
-    if (r <= 16) return PC_CHAMBER;
-    if (r == 17) return PC_STAIRS;
-    if (r == 18) return PC_DEAD_END;
-    if (r == 19) return PC_TRICK_TRAP;
-    return PC_WANDERER;
+    const auto& rows = aaView("appendixa_periodic_check");
+    if (rows.empty())
+        return PC_STRAIGHT;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return PassageCheck(rows[i].qtyLo);
+    return PassageCheck(rows[(int)rows.size() - 1]
+.qtyLo);
 }
+
 
 // ---- TABLE II.: DOORS (p.170, d20, both halves) ----------------------------
 enum DoorLocation {
@@ -68,10 +129,16 @@ enum DoorLocation {
 };
 
 inline DoorLocation doorLocationFor(int r) {
-    if (r <= 6)  return DL_LEFT;
-    if (r <= 12) return DL_RIGHT;
-    return DL_AHEAD;
+    const auto& rows = aaView("appendixa_door_location");
+    if (rows.empty())
+        return DL_LEFT;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return DoorLocation(rows[i].qtyLo);
+    return DoorLocation(rows[(int)rows.size() - 1]
+.qtyLo);
 }
+
 
 enum SpaceBeyond {
     SB_PARALLEL = 0,   // 1-4: parallel passage (30' both
@@ -85,13 +152,16 @@ enum SpaceBeyond {
 };
 
 inline SpaceBeyond spaceBeyondFor(int r) {
-    if (r <= 4)  return SB_PARALLEL;
-    if (r <= 8)  return SB_STRAIGHT_AHEAD;
-    if (r == 9)  return SB_45_AHEAD;
-    if (r == 10) return SB_45_BEHIND;
-    if (r <= 18) return SB_ROOM;
-    return SB_CHAMBER;
+    const auto& rows = aaView("appendixa_space_beyond");
+    if (rows.empty())
+        return SB_PARALLEL;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return SpaceBeyond(rows[i].qtyLo);
+    return SpaceBeyond(rows[(int)rows.size() - 1]
+.qtyLo);
 }
+
 
 // ---- TABLE III.: SIDE PASSAGES (p.170, d20) --------------------------------
 enum SidePassage {
@@ -111,29 +181,29 @@ enum SidePassage {
 };
 
 inline SidePassage sidePassageFor(int r) {
-    if (r <= 2)  return SP_L90;
-    if (r <= 4)  return SP_R90;
-    if (r == 5)  return SP_L45_AHEAD;
-    if (r == 6)  return SP_R45_AHEAD;
-    if (r == 7)  return SP_L45_BEHIND;
-    if (r == 8)  return SP_R45_BEHIND;
-    if (r == 9)  return SP_L_CURVE;
-    if (r == 10) return SP_R_CURVE;
-    if (r <= 13) return SP_T;
-    if (r <= 15) return SP_Y;
-    if (r <= 19) return SP_FOURWAY;
-    return SP_X;
+    const auto& rows = aaView("appendixa_side_passage");
+    if (rows.empty())
+        return SP_L90;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return SidePassage(rows[i].qtyLo);
+    return SidePassage(rows[(int)rows.size() - 1]
+.qtyLo);
 }
+
 
 // ---- TABLE III.A.: PASSAGE WIDTH (p.170, d20) ------------------------------
 // Feet; -1 = SPECIAL PASSAGE (TABLE III.B. below).
 inline int passageWidthFeetFor(int r) {
-    if (r <= 12) return 10;
-    if (r <= 16) return 20;
-    if (r == 17) return 30;
-    if (r == 18) return 5;
-    return -1;
+    const auto& rows = aaView("appendixa_passage_width");
+    if (rows.empty())
+        return 10;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return rows[i].gp;
+    return rows[(int)rows.size() - 1].gp;
 }
+
 
 // ---- TABLE III.B.: SPECIAL PASSAGE (p.170, d20) -----------------------------
 enum SpecialPassage {
@@ -155,17 +225,20 @@ struct SpecialPass {
 inline SpecialPass specialPassageFor(int r) {
     SpecialPass s;
     s.widthFt = 0;
-    if (r <= 4)  { s.kind = SPEC_COLUMNS_CENTER;   s.widthFt = 40; }
-    else if (r <= 7)  { s.kind = SPEC_COLUMNS_DOUBLE; s.widthFt = 40; }
-    else if (r <= 10) { s.kind = SPEC_COLUMNS_DOUBLE; s.widthFt = 50; }
-    else if (r <= 12) { s.kind = SPEC_COLUMNS_GALLERIES; s.widthFt = 50; }
-    else if (r <= 15) { s.kind = SPEC_STREAM;     s.widthFt = 10; }
-    else if (r <= 17) { s.kind = SPEC_RIVER;      s.widthFt = 20; }
-    else if (r == 18) { s.kind = SPEC_RIVER;      s.widthFt = 40; }
-    else if (r == 19) { s.kind = SPEC_RIVER;      s.widthFt = 60; }
-    else              { s.kind = SPEC_CHASM;      s.widthFt = 20; }
+    s.kind = SPEC_COLUMNS_CENTER;   // defensive
+    const auto& rows = aaView("appendixa_special_passage");
+    if (!rows.empty()) {
+        int i = 0;
+        for (; i < (int)rows.size(); ++i)
+            if (r <= rows[i].bandHi) break;
+        if (i >= (int)rows.size())
+            i = (int)rows.size() - 1;
+        s.kind = SpecialPassage(rows[i].qtyLo);
+        s.widthFt = rows[i].gp;
+    }
     return s;
 }
+
 
 // the III.B footnotes' sub-chances (d20 rolls of their own)
 inline bool streamBridged(int r) {   // 75%: 1-15
@@ -179,10 +252,16 @@ enum WaterFeature {
 };
 
 inline WaterFeature riverFeature(int r) {
-    if (r <= 10) return WF_BRIDGED;
-    if (r <= 15) return WF_BOAT;
-    return WF_OBSTACLE;
+    const auto& rows = aaView("appendixa_river_feature");
+    if (rows.empty())
+        return WF_BRIDGED;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return WaterFeature(rows[i].qtyLo);
+    return WaterFeature(rows[(int)rows.size() - 1]
+.qtyLo);
 }
+
 
 enum ChasmFeature {
     CF_BRIDGED = 0,   // 1-10
@@ -191,10 +270,16 @@ enum ChasmFeature {
 };
 
 inline ChasmFeature chasmFeature(int r) {
-    if (r <= 10) return CF_BRIDGED;
-    if (r <= 15) return CF_JUMPING;
-    return CF_OBSTACLE;
+    const auto& rows = aaView("appendixa_chasm_feature");
+    if (rows.empty())
+        return CF_BRIDGED;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return ChasmFeature(rows[i].qtyLo);
+    return ChasmFeature(rows[(int)rows.size() - 1]
+.qtyLo);
 }
+
 
 // ---- TABLE IV.: TURNS (p.170, d20) -----------------------------------------
 enum TurnKind {
@@ -207,13 +292,16 @@ enum TurnKind {
 };
 
 inline TurnKind turnFor(int r) {
-    if (r <= 8)   return T_L90;
-    if (r == 9)   return T_L45_AHEAD;
-    if (r == 10)  return T_L45_BEHIND;
-    if (r <= 18)  return T_R90;
-    if (r == 19)  return T_R45_AHEAD;
-    return T_R45_BEHIND;
+    const auto& rows = aaView("appendixa_turn");
+    if (rows.empty())
+        return T_L90;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return TurnKind(rows[i].qtyLo);
+    return TurnKind(rows[(int)rows.size() - 1]
+.qtyLo);
 }
+
 
 // ---- TABLE V.: CHAMBERS AND ROOMS SHAPE AND SIZE (p.171, d20) --------------
 struct SpaceShape {
@@ -224,30 +312,45 @@ struct SpaceShape {
 // The chamber column (18-20 = unusual -> V.A./V.B.).
 inline void chamberShapeFor(int r, SpaceShape& s) {
     s.wFt = 0; s.hFt = 0; s.unusual = false;
-    if (r <= 4)  { s.wFt = 20; s.hFt = 20; }
-    else if (r <= 6)  { s.wFt = 30; s.hFt = 30; }
-    else if (r <= 8)  { s.wFt = 40; s.hFt = 40; }
-    else if (r <= 13) { s.wFt = 20; s.hFt = 30; }
-    else if (r <= 15) { s.wFt = 30; s.hFt = 50; }
-    else if (r <= 17) { s.wFt = 40; s.hFt = 60; }
-    else s.unusual = true;   // 18-20
+    const auto& rows = aaView("appendixa_chamber_shape");
+    if (rows.empty()) {
+        return;   // defensive
+    }
+    int i = 0;
+    for (; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi) break;
+    if (i >= (int)rows.size())
+        i = (int)rows.size() - 1;
+    s.wFt = rows[i].gp;
+    s.hFt = rows[i].gpHi;
+    s.unusual = rows[i].qtyLo != 0;
 }
+
 
 // The room column; false = the book prints it blank
 // at 18-20 (unusual is chamber-only) - re-roll.
 inline bool roomShapeFor(int r, SpaceShape& s) {
     s.wFt = 0; s.hFt = 0; s.unusual = false;
-    if (r <= 2)  { s.wFt = 10; s.hFt = 10; }
-    else if (r <= 4)  { s.wFt = 20; s.hFt = 20; }
-    else if (r <= 6)  { s.wFt = 30; s.hFt = 30; }
-    else if (r <= 8)  { s.wFt = 40; s.hFt = 40; }
-    else if (r <= 10) { s.wFt = 10; s.hFt = 20; }
-    else if (r <= 13) { s.wFt = 20; s.hFt = 30; }
-    else if (r <= 15) { s.wFt = 20; s.hFt = 40; }
-    else if (r <= 17) { s.wFt = 30; s.hFt = 40; }
-    else return false;   // 18-20: blank in the book
+    const auto& rows = aaView("appendixa_room_shape");
+    if (rows.empty()) {
+        s.wFt = 10; s.hFt = 10;
+        return true;   // defensive: a load
+        // failure must never hang the dm.cpp
+        // re-roll while-loop (10'x10' room)
+    }
+    int i = 0;
+    for (; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi) break;
+    if (i >= (int)rows.size())
+        i = (int)rows.size() - 1;
+    if (rows[i].name == "RMS_BLANK")   // 18-20: blank
+        return false;   // in the book - re-roll
+    s.wFt = rows[i].gp;
+    s.hFt = rows[i].gpHi;
+    s.unusual = rows[i].qtyLo != 0;
     return true;
 }
+
 
 // ---- TABLE V.A.: UNUSUAL SHAPE (p.171, d20) --------------------------------
 enum UnusualShape {
@@ -262,15 +365,16 @@ enum UnusualShape {
 };
 
 inline UnusualShape unusualShapeFor(int r) {
-    if (r <= 5)  return US_CIRCULAR;
-    if (r <= 8)  return US_TRIANGULAR;
-    if (r <= 11) return US_TRAPEZOIDAL;
-    if (r <= 13) return US_ODD;
-    if (r <= 15) return US_OVAL;
-    if (r <= 17) return US_HEXAGONAL;
-    if (r <= 19) return US_OCTAGONAL;
-    return US_CAVE;
+    const auto& rows = aaView("appendixa_unusual_shape");
+    if (rows.empty())
+        return US_CIRCULAR;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return UnusualShape(rows[i].qtyLo);
+    return UnusualShape(rows[(int)rows.size() - 1]
+.qtyLo);
 }
+
 
 // the circular chamber's own d20: 1-5 pool,
 // 6-7 well, 8-10 shaft, 11-20 normal
@@ -279,25 +383,31 @@ enum CircularFeature {
 };
 
 inline CircularFeature circularFeatureFor(int r) {
-    if (r <= 5)  return CIRC_POOL;
-    if (r <= 7)  return CIRC_WELL;
-    if (r <= 10) return CIRC_SHAFT;
-    return CIRC_NORMAL;
+    const auto& rows = aaView("appendixa_circular_feature");
+    if (rows.empty())
+        return CIRC_POOL;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return CircularFeature(rows[i].qtyLo);
+    return CircularFeature(rows[(int)rows.size() - 1]
+.qtyLo);
 }
+
 
 // ---- TABLE V.B.: UNUSUAL SIZE (p.171, d20) ---------------------------------
 // Square feet; -1 = the 15-20 rule: roll again
 // and add the result to the 9-10 row (2000),
 // repeating on another 15-20.
 inline int unusualSizeBaseFor(int r) {
-    if (r <= 3)  return 500;
-    if (r <= 6)  return 900;
-    if (r <= 8)  return 1300;
-    if (r <= 10) return 2000;
-    if (r <= 12) return 2700;
-    if (r <= 14) return 3400;
-    return -1;
+    const auto& rows = aaView("appendixa_unusual_size");
+    if (rows.empty())
+        return 500;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return rows[i].gp;
+    return rows[(int)rows.size() - 1].gp;
 }
+
 
 // ---- TABLE V.C.: NUMBER OF EXITS (p.171, d20) ------------------------------
 // overThreshold: the room area is over the row's
@@ -305,14 +415,18 @@ inline int unusualSizeBaseFor(int r) {
 const int kExitsRollD4 = -1;
 
 inline int exitsFor(int r, bool overThreshold) {
-    if (r <= 3)  return overThreshold ? 2 : 1;
-    if (r <= 6)  return overThreshold ? 3 : 2;
-    if (r <= 9)  return overThreshold ? 4 : 3;
-    if (r <= 12) return overThreshold ? 1 : 0;
-    if (r <= 15) return overThreshold ? 1 : 0;
-    if (r <= 18) return kExitsRollD4;
-    return 1;   // 19-20: door in chamber, passage in room
+    const auto& rows = aaView("appendixa_exits");
+    if (rows.empty())
+        return overThreshold ? 2 : 1;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return overThreshold ? rows[i].gpHi
+                              : rows[i].gp;
+    return overThreshold
+        ? rows[(int)rows.size() - 1].gpHi
+        : rows[(int)rows.size() - 1].gp;
 }
+
 
 // ---- TABLE V.D.: EXIT LOCATION (p.171, d20) --------------------------------
 enum ExitLocation {
@@ -323,11 +437,16 @@ enum ExitLocation {
 };
 
 inline ExitLocation exitLocationFor(int r) {
-    if (r <= 7)  return EL_OPPOSITE;
-    if (r <= 12) return EL_LEFT;
-    if (r <= 17) return EL_RIGHT;
-    return EL_SAME;
+    const auto& rows = aaView("appendixa_exit_location");
+    if (rows.empty())
+        return EL_OPPOSITE;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return ExitLocation(rows[i].qtyLo);
+    return ExitLocation(rows[(int)rows.size() - 1]
+.qtyLo);
 }
+
 
 // ---- TABLE V.E.: EXIT DIRECTION (p.171, d20) --------------------------------
 enum ExitDirection {
@@ -337,22 +456,31 @@ enum ExitDirection {
 };
 
 inline ExitDirection exitDirectionFor(int r) {
-    if (r <= 16) return ED_STRAIGHT;
-    if (r <= 18) return ED_45_LR;
-    return ED_45_RL;
+    const auto& rows = aaView("appendixa_exit_direction");
+    if (rows.empty())
+        return ED_STRAIGHT;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return ExitDirection(rows[i].qtyLo);
+    return ExitDirection(rows[(int)rows.size() - 1]
+.qtyLo);
 }
+
 
 // ---- TABLE V.F.: CHAMBER OR ROOM CONTENTS (p.171, d20) ----------------------
 // The repo's dm::RoomContents; 19 = trick/trap, 20
 // = treasure.
 inline RoomContents roomContentsFor(int r) {
-    if (r <= 12) return ROOM_EMPTY;
-    if (r <= 14) return ROOM_MONSTER;
-    if (r <= 17) return ROOM_MONSTER_TREASURE;
-    if (r == 18) return ROOM_SPECIAL;
-    if (r == 19) return ROOM_TRAP;
-    return ROOM_TREASURE;
+    const auto& rows = aaView("appendixa_room_contents");
+    if (rows.empty())
+        return ROOM_EMPTY;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return RoomContents(rows[i].qtyLo);
+    return RoomContents(rows[(int)rows.size() - 1]
+.qtyLo);
 }
+
 
 // the contents-18 stairway variant (its own d20). The
 // book's print covers 1-5, 7-8, 9-14, 15-19, 20 -
@@ -363,13 +491,16 @@ enum StairVariant {
 };
 
 inline StairVariant stairwayVariantFor(int r) {
-    if (r <= 6)  return SV_UP1;   // 1-5 (+ the 6 gap)
-    if (r <= 8)  return SV_UP2;
-    if (r <= 14) return SV_DOWN1;
-    if (r <= 19) return SV_DOWN2;
-    return SV_DOWN3;   // 20: 2 flights and a slanting
-                       // passage
+    const auto& rows = aaView("appendixa_stairway_variant");
+    if (rows.empty())
+        return SV_UP1;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return StairVariant(rows[i].qtyLo);
+    return StairVariant(rows[(int)rows.size() - 1]
+.qtyLo);
 }
+
 
 // ---- TABLE V.G.: TREASURE (p.171, d%) --------------------------------------
 // Without monster. With monster: two rolls on this
@@ -388,17 +519,21 @@ struct TreasureRow {
 
 inline TreasureRow treasureFor(int r) {
     TreasureRow t;
-    t.kind = TR_CP; t.basePerLevel = 0;
-    if (r <= 25) { t.kind = TR_CP; t.basePerLevel = 1000; }
-    else if (r <= 50) { t.kind = TR_SP; t.basePerLevel = 1000; }
-    else if (r <= 65) { t.kind = TR_EP; t.basePerLevel = 750; }
-    else if (r <= 80) { t.kind = TR_GP; t.basePerLevel = 250; }
-    else if (r <= 90) { t.kind = TR_PP; t.basePerLevel = 100; }
-    else if (r <= 94) { t.kind = TR_GEMS; t.basePerLevel = 1; }
-    else if (r <= 97) { t.kind = TR_JEWELRY; t.basePerLevel = 1; }
-    else t.kind = TR_MAGIC;
+    t.kind = TR_CP;
+    t.basePerLevel = 0;
+    const auto& rows = aaView("appendixa_treasure");
+    if (!rows.empty()) {
+        int i = 0;
+        for (; i < (int)rows.size(); ++i)
+            if (r <= rows[i].bandHi) break;
+        if (i >= (int)rows.size())
+            i = (int)rows.size() - 1;
+        t.kind = TreasureKind(rows[i].qtyLo);
+        t.basePerLevel = rows[i].gp;
+    }
     return t;
 }
+
 
 // ---- TABLE V.H.: TREASURE IS CONTAINED IN (p.171, d20) ---------------------
 enum Container {
@@ -415,17 +550,16 @@ enum Container {
 };
 
 inline Container containerFor(int r) {
-    if (r <= 2)  return C_BAGS;
-    if (r <= 4)  return C_SACKS;
-    if (r <= 6)  return C_SMALL_COFFERS;
-    if (r <= 8)  return C_CHESTS;
-    if (r <= 10) return C_HUGE_CHESTS;
-    if (r <= 12) return C_POTTERY_JARS;
-    if (r <= 14) return C_METAL_URNS;
-    if (r <= 16) return C_STONE_CONTAINERS;
-    if (r <= 18) return C_IRON_TRUNKS;
-    return C_LOOSE;
+    const auto& rows = aaView("appendixa_container");
+    if (rows.empty())
+        return C_BAGS;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return Container(rows[i].qtyLo);
+    return Container(rows[(int)rows.size() - 1]
+.qtyLo);
 }
+
 
 // the V.H footnote: 1-8 -> guarded (V.I.),
 // 9-20 -> hidden (V.J.)
@@ -452,23 +586,16 @@ enum Guard {
 };
 
 inline Guard guardedByFor(int r) {
-    if (r <= 2)  return G_CONTACT_POISON_CONTAINER;
-    if (r <= 4)  return G_CONTACT_POISON_TREASURE;
-    if (r <= 6)  return G_NEEDLES_LOCK;
-    if (r == 7)  return G_NEEDLES_HANDLES;
-    if (r == 8)  return G_DARTS_FRONT;
-    if (r == 9)  return G_DARTS_TOP;
-    if (r == 10) return G_DARTS_BOTTOM;
-    if (r <= 12) return G_BLADE_SCYTHE;
-    if (r == 13) return G_CREATURES;
-    if (r == 14) return G_GAS;
-    if (r == 15) return G_TRAPDOOR_FRONT;
-    if (r == 16) return G_TRAPDOOR_6FT;
-    if (r == 17) return G_STONE_BLOCK;
-    if (r == 18) return G_SPEARS;
-    if (r == 19) return G_EXPLOSIVE_RUNES;
-    return G_SYMBOL;
+    const auto& rows = aaView("appendixa_guard");
+    if (rows.empty())
+        return G_CONTACT_POISON_CONTAINER;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return Guard(rows[i].qtyLo);
+    return Guard(rows[(int)rows.size() - 1]
+.qtyLo);
 }
+
 
 // ---- TABLE V.J.: TREASURE IS HIDDEN BY/IN (p.171, d20) ---------------------
 enum Hidden {
@@ -485,17 +612,16 @@ enum Hidden {
 };
 
 inline Hidden hiddenByFor(int r) {
-    if (r <= 3)  return H_INVISIBILITY;
-    if (r <= 5)  return H_ILLUSION;
-    if (r == 6)  return H_SECRET_SPACE_UNDER;
-    if (r <= 8)  return H_SECRET_COMPARTMENT;
-    if (r == 9)  return H_ORDINARY_ITEM;
-    if (r == 10) return H_DISGUISED;
-    if (r == 11) return H_TRASH_DUNG;
-    if (r <= 13) return H_LOOSE_FLOOR_STONE;
-    if (r <= 15) return H_LOOSE_WALL_STONE;
-    return H_SECRET_ROOM;
+    const auto& rows = aaView("appendixa_hidden");
+    if (rows.empty())
+        return H_INVISIBILITY;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return Hidden(rows[i].qtyLo);
+    return Hidden(rows[(int)rows.size() - 1]
+.qtyLo);
 }
+
 
 // ---- TABLE VI.: STAIRS (p.172, d20) ----------------------------------------
 enum StairKind {
@@ -515,19 +641,16 @@ enum StairKind {
 };
 
 inline StairKind stairsFor(int r) {
-    if (r <= 5)  return ST_DOWN1;
-    if (r == 6)  return ST_DOWN2;
-    if (r == 7)  return ST_DOWN3;
-    if (r == 8)  return ST_UP1;
-    if (r == 9)  return ST_UP_DEAD;
-    if (r == 10) return ST_DOWN_DEAD;
-    if (r == 11) return ST_CHIMNEY_UP1;
-    if (r == 12) return ST_CHIMNEY_UP2;
-    if (r == 13) return ST_CHIMNEY_DOWN2;
-    if (r <= 16) return ST_TRAPDOOR_DOWN1;
-    if (r == 17) return ST_TRAPDOOR_DOWN2;
-    return ST_UP1_DOWN2;
+    const auto& rows = aaView("appendixa_stairs");
+    if (rows.empty())
+        return ST_DOWN1;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return StairKind(rows[i].qtyLo);
+    return StairKind(rows[(int)rows.size() - 1]
+.qtyLo);
 }
+
 
 // the VI footnote: a door closes egress for the
 // day - 1, 2, 3 in 20 on the three down stairs
@@ -561,22 +684,16 @@ enum TrickTrap {
 };
 
 inline TrickTrap trickTrapFor(int r) {
-    if (r <= 5)  return TT_SECRET_DOOR;
-    if (r <= 7)  return TT_PIT;
-    if (r == 8)  return TT_PIT_SPIKED;
-    if (r == 9)  return TT_ELEVATOR_DOWN1;
-    if (r == 10) return TT_ELEVATOR_DOWN2;
-    if (r == 11) return TT_ELEVATOR_2TO5;
-    if (r == 12) return TT_SLIDING_WALL;
-    if (r == 13) return TT_OIL_CINDER;
-    if (r == 14) return TT_PIT_CRUSHING;
-    if (r == 15) return TT_ARROW_TRAP;
-    if (r == 16) return TT_SPEAR_TRAP;
-    if (r == 17) return TT_GAS;
-    if (r == 18) return TT_FALLING_DOOR_STONE;
-    if (r == 19) return TT_ILLUSIONARY_WALL;
-    return TT_CHUTE;
+    const auto& rows = aaView("appendixa_trick_trap");
+    if (rows.empty())
+        return TT_SECRET_DOOR;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return TrickTrap(rows[i].qtyLo);
+    return TrickTrap(rows[(int)rows.size() - 1]
+.qtyLo);
 }
+
 
 // ---- TABLE VII.A.: GAS SUB-TABLE (p.172, d20) ------------------------------
 enum GasKind {
@@ -592,14 +709,16 @@ enum GasKind {
 };
 
 inline GasKind gasFor(int r) {
-    if (r <= 7)  return GAS_OBSCURE;
-    if (r <= 9)  return GAS_BLIND;
-    if (r <= 12) return GAS_FEAR;
-    if (r == 13) return GAS_SLEEP;
-    if (r <= 18) return GAS_STRENGTH;
-    if (r == 19) return GAS_SICKNESS;
-    return GAS_POISON;
+    const auto& rows = aaView("appendixa_gas");
+    if (rows.empty())
+        return GAS_OBSCURE;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return GasKind(rows[i].qtyLo);
+    return GasKind(rows[(int)rows.size() - 1]
+.qtyLo);
 }
+
 
 // ---- TABLE VIII.: CAVES AND CAVERNS (p.172, d20) ----------------------------
 struct CaveSize {
@@ -611,22 +730,23 @@ struct CaveSize {
 
 inline CaveSize caveFor(int r) {
     CaveSize c;
-    if (r <= 5)  { c.wFt = 40;  c.hFt = 60; }
-    else if (r <= 7)  { c.wFt = 50;  c.hFt = 75; }
-    else if (r <= 9)  { c.wFt = 20;  c.hFt = 30;
-                        c.w2Ft = 60; c.h2Ft = 60; }
-    else if (r <= 11) { c.wFt = 35;  c.hFt = 50;
-                        c.w2Ft = 80; c.h2Ft = 90;
-                        c.pool = true; }
-    else if (r <= 14) { c.wFt = 95;  c.hFt = 125;
-                        c.pool = true; }
-    else if (r <= 16) { c.wFt = 120; c.hFt = 150; }
-    else if (r <= 18) { c.wFt = 150; c.hFt = 200;
-                        c.pool = true; }
-    else { c.wFt = 275; c.hFt = 375;   // 250-300 x
-          c.lake = true; }             // 350-400
+    const auto& rows = aaView("appendixa_cave");
+    if (rows.empty())
+        return c;   // defensive
+    int i = 0;
+    for (; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi) break;
+    if (i >= (int)rows.size())
+        i = (int)rows.size() - 1;
+    c.wFt = rows[i].gp;
+    c.hFt = rows[i].gpHi;
+    c.w2Ft = rows[i].xp;
+    c.h2Ft = rows[i].xpHi;
+    c.pool = rows[i].qtyLo != 0;
+    c.lake = rows[i].qtyHi != 0;
     return c;
 }
+
 
 // ---- TABLE VIII.A.: POOLS (p.172, d20) -------------------------------------
 enum PoolKind {
@@ -638,12 +758,16 @@ enum PoolKind {
 };
 
 inline PoolKind poolFor(int r) {
-    if (r <= 8)   return POOL_NONE;
-    if (r <= 10)  return POOL_NO_MONSTER;
-    if (r <= 12)  return POOL_MONSTER;
-    if (r <= 18)  return POOL_MONSTER_TREASURE;
-    return POOL_MAGICAL;
+    const auto& rows = aaView("appendixa_pool");
+    if (rows.empty())
+        return POOL_NONE;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return PoolKind(rows[i].qtyLo);
+    return PoolKind(rows[(int)rows.size() - 1]
+.qtyLo);
 }
+
 
 // ---- TABLE VIII.B.: LAKES (p.172, d20) --------------------------------------
 enum LakeKind {
@@ -655,11 +779,16 @@ enum LakeKind {
 };
 
 inline LakeKind lakeFor(int r) {
-    if (r <= 10) return LAKE_NONE;
-    if (r <= 15) return LAKE_NO_MONSTERS;
-    if (r <= 18) return LAKE_MONSTERS;
-    return LAKE_ENCHANTED;
+    const auto& rows = aaView("appendixa_lake");
+    if (rows.empty())
+        return LAKE_NONE;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return LakeKind(rows[i].qtyLo);
+    return LakeKind(rows[(int)rows.size() - 1]
+.qtyLo);
 }
+
 
 // ---- TABLE VIII.C.: MAGIC POOLS (p.172, d20) --------------------------------
 enum MagicPool {
@@ -673,11 +802,16 @@ enum MagicPool {
 };
 
 inline MagicPool magicPoolFor(int r) {
-    if (r <= 8)  return MP_GOLD_TO_PLATINUM_LEAD;
-    if (r <= 15) return MP_CHARACTERISTIC;
-    if (r <= 17) return MP_TALKING;
-    return MP_TRANSPORTER;
+    const auto& rows = aaView("appendixa_magic_pool");
+    if (rows.empty())
+        return MP_GOLD_TO_PLATINUM_LEAD;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return MagicPool(rows[i].qtyLo);
+    return MagicPool(rows[(int)rows.size() - 1]
+.qtyLo);
 }
+
 
 // the gold pool's own d20: platinum 1-11, lead 12-20
 inline bool goldBecomesPlatinum(int r) { return r <= 11; }
@@ -692,12 +826,16 @@ enum PoolAlignment {
 };
 
 inline PoolAlignment talkingPoolAlignmentFor(int r) {
-    if (r <= 6)   return PA_LAWFUL_GOOD;
-    if (r <= 9)   return PA_LAWFUL_EVIL;
-    if (r <= 12)  return PA_CHAOTIC_GOOD;
-    if (r <= 17)  return PA_CHAOTIC_EVIL;
-    return PA_NEUTRAL;
+    const auto& rows = aaView("appendixa_talking_pool_alignment");
+    if (rows.empty())
+        return PA_LAWFUL_GOOD;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return PoolAlignment(rows[i].qtyLo);
+    return PoolAlignment(rows[(int)rows.size() - 1]
+.qtyLo);
 }
+
 
 // the transporter's destination (its own d20)
 enum TransportDest {
@@ -708,11 +846,16 @@ enum TransportDest {
 };
 
 inline TransportDest transportDestFor(int r) {
-    if (r <= 7)   return TD_SURFACE;
-    if (r <= 12)  return TD_ELSEWHERE_LEVEL;
-    if (r <= 16)  return TD_ONE_DOWN;
-    return TD_100_MILES;
+    const auto& rows = aaView("appendixa_transport_dest");
+    if (rows.empty())
+        return TD_SURFACE;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return TransportDest(rows[i].qtyLo);
+    return TransportDest(rows[(int)rows.size() - 1]
+.qtyLo);
 }
+
 
 } // namespace appendixa
 } // namespace dm
