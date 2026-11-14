@@ -86,6 +86,7 @@ static dm::EncounterTableRegistry& encReg() {
         reg.loadDirectory("content/tables/encounters_city");
         reg.loadDirectory("content/tables/encounters_planar");
         reg.loadDirectory("content/tables/encounters_psionic");
+        reg.loadDirectory("content/tables/encounters_castle");
     }
     return reg;
 }
@@ -2617,136 +2618,96 @@ std::vector<std::string> psionicEncounterKeys(
 //   with normal chances for magic items, in addition to the
 //   figures shown.
 
+// R1038 (the registry-native de-wire, the R1032-R1037
+// shape): the five printed tables retired into
+// content/tables/encounters_castle/ - CASTLE TABLE I
+// (size class and type) into castle_type.lua, the per-size
+// CASTLE TABLE II into castle_inh_small/medium/large.lua,
+// SUB-TABLE II.A into castle_humans.lua, SUB-TABLE II.B
+// into castle_master.lua, the ARTILLERY table into
+// castle_artillery.lua. One registry row shape
+// (EncounterCastleRow) carries all five; the enums ride as
+// printed tokens, mapped here. The public signatures are
+// unchanged (game/state_overland.cpp calls them); what
+// stays here is the mechanics: the percentile lookups
+// (rewritten onto castleView), the registry noAppearing
+// fallback (R60), the master/henchmen construction
+// (R53/R55/R62), the shell-keep artillery fallback, the
+// surprise-die awareness mapping, and the patrol
+// construction (no table).
+
 namespace {
 
-struct CastleTypeRow {
-    short lo, hi;
-    CastleSize size;
-    const char* type;
-};
+// the registry-backed static cache (the R1032-R1037 idiom)
+static const std::vector<dm::EncounterCastleRow>& castleView(
+        const char* name) {
+    static std::map<std::string,
+        std::vector<dm::EncounterCastleRow>> cache;
+    auto it = cache.find(name);
+    if (it == cache.end())
+        it = cache.emplace(
+            name, dm::encReg().castleRows(name)).first;
+    return it->second;
+}
 
-// CASTLE TABLE I: SIZE CLASS AND TYPE (DMG p.182)
-static const CastleTypeRow kCastleTypeTable[] = {
-{1, 10, CASTLE_SMALL, "small shell keep"},
-{11, 25, CASTLE_SMALL, "tower"},
-{26, 35, CASTLE_SMALL, "moat house or friary"},
-{36, 45, CASTLE_MEDIUM, "large shell keep"},
-{46, 65, CASTLE_MEDIUM, "small walled castle with keep"},
-{66, 80, CASTLE_MEDIUM, "medium walled castle with keep"},
-{81, 88, CASTLE_LARGE, "concentric castle"},
-{89, 95, CASTLE_LARGE, "large walled castle with keep"},
-{96, 100, CASTLE_LARGE, "fortress complex"}
-};
+// the printed tokens -> the engine enums. The defensive
+// defaults mirror the retired fallbacks: the large
+// inhabitants table served the retired default case, an
+// unknown category reads as totally deserted, an unknown
+// profession reads as fighter (the classForProf default).
+static CastleSize sizeForToken(const std::string& t) {
+    if (t == "small") return CASTLE_SMALL;
+    if (t == "medium") return CASTLE_MEDIUM;
+    return CASTLE_LARGE;
+}
 
-struct CastleInhRow {
-    short lo, hi;
-    CastleInhabitants cat;
-};
+static CastleInhabitants catForToken(const std::string& t) {
+    if (t == "deserted_monster") return CASTLE_DESERTED_MONSTER;
+    if (t == "humans") return CASTLE_HUMANS;
+    if (t == "character_types") return CASTLE_CHARACTER_TYPES;
+    return CASTLE_TOTALLY_DESERTED;
+}
 
-// CASTLE TABLE II: INHABITANTS (per size class)
-static const CastleInhRow kCastleInhSmall[] = {
-{1, 45, CASTLE_TOTALLY_DESERTED},
-{46, 60, CASTLE_DESERTED_MONSTER},
-{61, 70, CASTLE_HUMANS},
-{71, 100, CASTLE_CHARACTER_TYPES}
-};
-static const CastleInhRow kCastleInhMedium[] = {
-{1, 30, CASTLE_TOTALLY_DESERTED},
-{31, 50, CASTLE_DESERTED_MONSTER},
-{51, 65, CASTLE_HUMANS},
-{66, 100, CASTLE_CHARACTER_TYPES}
-};
-static const CastleInhRow kCastleInhLarge[] = {
-{1, 15, CASTLE_TOTALLY_DESERTED},
-{16, 40, CASTLE_DESERTED_MONSTER},
-{41, 60, CASTLE_HUMANS},
-{61, 100, CASTLE_CHARACTER_TYPES}
-};
-
-// CASTLE SUB-TABLE II.A: HUMANS ARE (brigand -> bandit, the
-// R63 substitution, documented)
-static const struct { short lo, hi; const char* key; } kCastleHumansAre[] = {
-{1, 25, "bandit"},
-{26, 85, "bandit"},
-{86, 97, "berserker"},
-{98, 100, "dervish"}
-};
-
-struct CastleMasterRow {
-    short lo, hi;
-    int prof;      // ProfId
-    short lvlLo, lvlHi;
-};
-
-// CASTLE SUB-TABLE II.B: MASTER'S CLASS AND LEVEL. The OCR
-// printed Assassin 94-96 overlapping Monk 94-99; the
-// original prints Assassin 94-96 / Monk 97-99 / Bard 00
-// (corrected, documented above).
-static const CastleMasterRow kCastleMaster[] = {
-{1, 18, PROF_CLERIC, 9, 12},
-{19, 20, PROF_DRUID, 12, 13},
-{21, 65, PROF_FIGHTER, 9, 12},
-{66, 66, PROF_PALADIN, 9, 10},
-{67, 68, PROF_RANGER, 10, 13},
-{69, 80, PROF_MU, 11, 14},
-{81, 85, PROF_ILLUSIONIST, 10, 13},
-{86, 93, PROF_THIEF, 10, 14},
-{94, 96, PROF_ASSASSIN, 14, 14},
-{97, 99, PROF_MONK_BARD, 9, 12}, // monk,
-{100, 100, PROF_MONK_BARD, 23, 23}   // bard, 23rd
-};
-
-struct ArtilleryRow {
-    const char* type;
-    int ballistae, lightCatapults, oilCauldrons;
-};
-
-// ARTILLERY per fortress type (DMG p.183)
-static const ArtilleryRow kCastleArtillery[] = {
-{"moat house or friary", 2, 0, 1},
-{"tower", 1, 0, 1},
-{"shell keep", 0, 1, 2},
-{"small walled castle with keep", 1, 1, 2},
-{"medium walled castle with keep", 2, 2, 5},
-{"concentric castle", 4, 2, 6},
-{"large walled castle with keep", 4, 4, 8},
-{"fortress complex", 4, 4, 8}
-};
+static int profForToken(const std::string& t) {
+    if (t == "cleric")       return PROF_CLERIC;
+    if (t == "druid")        return PROF_DRUID;
+    if (t == "paladin")      return PROF_PALADIN;
+    if (t == "ranger")       return PROF_RANGER;
+    if (t == "magic_user")   return PROF_MU;
+    if (t == "illusionist")  return PROF_ILLUSIONIST;
+    if (t == "thief")        return PROF_THIEF;
+    if (t == "assassin")     return PROF_ASSASSIN;
+    if (t == "monk_bard")    return PROF_MONK_BARD;
+    return PROF_FIGHTER;
+}
 
 } // namespace
 
 CastleType rollCastleType(int pctile) {
-    CastleType t;
-    size_t n = sizeof kCastleTypeTable / sizeof kCastleTypeTable[0];
-    for (size_t i = 0; i < n; ++i)
-        if (pctile >= kCastleTypeTable[i].lo &&
-            pctile <= kCastleTypeTable[i].hi) {
-            t.size = kCastleTypeTable[i].size;
-            t.type = kCastleTypeTable[i].type;
+    CastleType t{};
+    for (const auto& r : castleView("castle_type"))
+        if (pctile >= r.lo && pctile <= r.hi) {
+            t.size = sizeForToken(r.size);
+            t.type = r.type.c_str();
             return t;
         }
     return t;   // defensive: column covers 01-00
 }
 
 CastleInhabitants castleInhabitants(int pctile, CastleSize size) {
-    const CastleInhRow* t = nullptr; size_t n = 0;
-    switch (size) {
-        case CASTLE_SMALL:  t = kCastleInhSmall;  n = sizeof kCastleInhSmall  / sizeof kCastleInhSmall[0];  break;
-        case CASTLE_MEDIUM: t = kCastleInhMedium; n = sizeof kCastleInhMedium / sizeof kCastleInhMedium[0]; break;
-        default:            t = kCastleInhLarge;  n = sizeof kCastleInhLarge  / sizeof kCastleInhLarge[0];  break;
-    }
-    for (size_t i = 0; i < n; ++i)
-        if (pctile >= t[i].lo && pctile <= t[i].hi)
-            return t[i].cat;
+    const char* table = "castle_inh_large";
+    if (size == CASTLE_SMALL)       table = "castle_inh_small";
+    else if (size == CASTLE_MEDIUM) table = "castle_inh_medium";
+    for (const auto& r : castleView(table))
+        if (pctile >= r.lo && pctile <= r.hi)
+            return catForToken(r.cat);
     return CASTLE_TOTALLY_DESERTED;   // defensive
 }
 
 const char* castleHumansType(int pctile) {
-    size_t n = sizeof kCastleHumansAre / sizeof kCastleHumansAre[0];
-    for (size_t i = 0; i < n; ++i)
-        if (pctile >= kCastleHumansAre[i].lo &&
-            pctile <= kCastleHumansAre[i].hi)
-            return kCastleHumansAre[i].key;
+    for (const auto& r : castleView("castle_humans"))
+        if (pctile >= r.lo && pctile <= r.hi)
+            return r.key.c_str();
     return "bandit";   // defensive
 }
 
@@ -2767,20 +2728,18 @@ int castleHumansCount(const monsters::MonsterRegistry& reg,
     return 1;
 }
 
-// R67: the stronghold's master per Sub-Table II.B - class by
+// the stronghold's master per Sub-Table II.B - class by
 // percentile, level uniform over the printed range, race per
 // R62, magic items per the R55 ladder (the book's Character
 // Subtable pointer).
 PartyMember rollCastleMaster(rules::Dice& dice, int pctile) {
     PartyMember m;
-    size_t n = sizeof kCastleMaster / sizeof kCastleMaster[0];
-    const CastleMasterRow* row = nullptr;
-    for (size_t i = 0; i < n; ++i)
-        if (pctile >= kCastleMaster[i].lo &&
-            pctile <= kCastleMaster[i].hi)
-            { row = &kCastleMaster[i]; break; }
+    const dm::EncounterCastleRow* row = nullptr;
+    for (const auto& r : castleView("castle_master"))
+        if (pctile >= r.lo && pctile <= r.hi)
+            { row = &r; break; }
     if (!row) return m;   // defensive: column covers 01-00
-    m.classIndex = classForProf(row->prof);
+    m.classIndex = classForProf(profForToken(row->prof));
     m.level = (row->lvlLo == row->lvlHi)
         ? row->lvlLo
         : row->lvlLo + (int)dice.roll(
@@ -2790,10 +2749,10 @@ PartyMember rollCastleMaster(rules::Dice& dice, int pctile) {
     return m;
 }
 
-// R67: the master's henchmen - "from 2-5 henchmen found
+// the master's henchmen - "from 2-5 henchmen found
 // within a fortress," levels and magic items per the
-// Character Subtable (henchmanLevelFor, one-third of the
-// master's, R53; R62 race follows the master's folk where
+// Character Subtable (henchmanLevelFor, one-third of
+// the master's, R53; R62 race follows the master's folk where
 // the class allows - the R63 convention).
 CharacterParty rollCastleHenchmen(rules::Dice& dice,
                                   const PartyMember& master) {
@@ -2813,30 +2772,26 @@ CharacterParty rollCastleHenchmen(rules::Dice& dice,
     return p;
 }
 
-// R67: the artillery of the fortress, per the printed table.
+// the artillery of the fortress, per the printed table.
 // The book's eight rows group the nine castle types; the
 // engine maps by nearest type (concentric -> the medium
 // concentric row; large walled / fortress complex -> the
 // large castle row), documented.
 CastleArtillery castleArtillery(const CastleType& castle) {
-    size_t n = sizeof kCastleArtillery / sizeof kCastleArtillery[0];
-    for (size_t i = 0; i < n; ++i)
-        if (std::string(kCastleArtillery[i].type) == castle.type)
-            return { kCastleArtillery[i].ballistae,
-                     kCastleArtillery[i].lightCatapults,
-                     kCastleArtillery[i].oilCauldrons };
+    const auto& rows = castleView("castle_artillery");
+    for (const auto& r : rows)
+        if (r.type == castle.type)
+            return { r.n1, r.n2, r.n3 };
     // shell keeps share a row keyed "shell keep" (documented)
     if (std::string(castle.type).find("shell keep") !=
         std::string::npos)
-        for (size_t i = 0; i < n; ++i)
-            if (std::string(kCastleArtillery[i].type) == "shell keep")
-                return { kCastleArtillery[i].ballistae,
-                         kCastleArtillery[i].lightCatapults,
-                         kCastleArtillery[i].oilCauldrons };
+        for (const auto& r : rows)
+            if (r.type == "shell keep")
+                return { r.n1, r.n2, r.n3 };
     return { 0, 0, 0 };
 }
 
-// R67: fortress detection per the p.183 rule - "roll a
+// fortress detection per the p.183 rule - "roll a
 // surprise die ... if they are surprised, then the fortress
 // occupants know they are there - if surprise is 2 or
 // greater, the occupants are actually outside the place and
@@ -2850,7 +2805,7 @@ CastleAwareness castleAwareness(int surpriseDie) {
     return CASTLE_UNDETECTED;
 }
 
-// R67: build a patrol per the p.182 text - fighter (or
+// build a patrol per the p.182 text - fighter (or
 // ranger) leader 6th-8th, lieutenant 4th-5th, sergeant
 // 2nd-3rd, 3-4 1st-level men, 13-24 men-at-arms, plus a
 // cleric 6th-7th (40%) or magic-user 5th-8th (60%). Classed

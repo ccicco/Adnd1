@@ -131,6 +131,21 @@ const char* const kPlanarFileKeys[]  = { "key", "rows", nullptr };
 // dispatch-order lesson).
 const char* const kPsionicSpellKeys[] =
     { "key", "exact", "family", nullptr };
+// R1038: the castle family file/row keys. Exact keys only -
+// no prefix, no exceptions (the R1034 dispatch-order
+// lesson); the per-table row key lists below keep each
+// file's shape strict.
+const char* const kCastleFileKeys[] = { "key", "rows", nullptr };
+const char* const kCastleTypeKeys[]  =
+    { "band", "size", "type", nullptr };
+const char* const kCastleInhKeys[]   = { "band", "cat", nullptr };
+const char* const kCastleHumansKeys[] =
+    { "band", "key", nullptr };
+const char* const kCastleMasterKeys[] =
+    { "band", "prof", "level", nullptr };
+const char* const kCastleArtilleryKeys[] =
+    { "type", "ballistae", "lightCatapults", "oilCauldrons",
+      nullptr };
 const char* const kPlanarRowKeys[]   =
     { "band", "key", "numbers", "primeOnly", nullptr };
 const char* const kPlanarPickKeys[] =
@@ -1166,6 +1181,186 @@ bool EncounterTableRegistry::loadFile(const std::string& path,
                 m_lists[setKey] = vals;
             }
         }
+    } else if (key == "castle_type"
+               || key == "castle_inh_small"
+               || key == "castle_inh_medium"
+               || key == "castle_inh_large"
+               || key == "castle_humans"
+               || key == "castle_master"
+               || key == "castle_artillery") {
+        const int t = lua_gettop(L);
+        const char* const* rowKeys = kCastleInhKeys;
+        bool banded = true;
+        if      (key == "castle_type")   rowKeys = kCastleTypeKeys;
+        else if (key == "castle_humans") rowKeys = kCastleHumansKeys;
+        else if (key == "castle_master")
+            rowKeys = kCastleMasterKeys;
+        else if (key == "castle_artillery") {
+            rowKeys = kCastleArtilleryKeys;
+            banded = false;       // keyed by type, not band
+        }
+        if (!checkAllowedKeys(L, t, kCastleFileKeys, key, &err)) goto bad;
+        {
+            std::string k;
+            if (!getStr(L, t, "key", &k, &err)) goto bad;
+            if (k != key) { err = "def key mismatch";
+                                         goto bad; }
+        }
+        lua_getfield(L, t, "rows");
+        if (!lua_istable(L, -1)) { err = "rows is not a table"; goto bad; }
+        {
+            const int n = (int)lua_rawlen(L, -1);
+            std::vector<EncounterCastleRow> rows;
+            int prev = 0;
+            for (int i = 1; i <= n; ++i) {
+                lua_rawgeti(L, -1, i);
+                const int rt = lua_gettop(L);
+                if (!lua_istable(L, rt)
+                    || !checkAllowedKeys(L, rt, rowKeys,
+                        key + " rows[" + std::to_string(i) + "]", &err)) {
+                    if (lua_istable(L, rt))
+                        lua_pop(L, 1);
+                    goto bad;
+                }
+                EncounterCastleRow row;
+                if (banded) {
+                    lua_getfield(L, rt, "band");
+                    if (!lua_istable(L, -1)
+                        || (int)lua_rawlen(L, -1) != 2) {
+                        err = "band must be a {lo, hi} pair";
+                        lua_pop(L, 1);
+                        goto bad;
+                    }
+                    long long v[2];
+                    for (int j = 0; j < 2; ++j) {
+                        lua_rawgeti(L, -1, j + 1);
+                        if (!lua_isinteger(L, -1)) {
+                            err = "band pair field is not an integer";
+                            goto bad;
+                        }
+                        v[j] = lua_tointeger(L, -1);
+                        lua_pop(L, 1);
+                    }
+                    lua_pop(L, 1);
+                    if (v[0] < 1 || v[0] > 100
+                        || v[1] < v[0] || v[1] > 100) {
+                        err = "band outside 01-00";
+                        goto bad;
+                    }
+                    row.lo = (int)v[0]; row.hi = (int)v[1];
+                    prev = row.hi;
+                }
+                if (key == "castle_type") {
+                    if (!getStr(L, rt, "size", &row.size, &err))
+                        goto bad;
+                    if (row.size != "small"
+                        && row.size != "medium"
+                        && row.size != "large") {
+                        err = "unknown size token '" + row.size + "'";
+                        goto bad;
+                    }
+                    if (!getStr(L, rt, "type", &row.type, &err))
+                        goto bad;
+                    if (row.type.empty()) {
+                        err = "empty castle type";
+                        goto bad;
+                    }
+                } else if (key == "castle_humans") {
+                    if (!getStr(L, rt, "key", &row.key, &err))
+                        goto bad;
+                    if (row.key.empty()) {
+                        err = "empty humans key";
+                        goto bad;
+                    }
+                } else if (key == "castle_master") {
+                    if (!getStr(L, rt, "prof", &row.prof, &err))
+                        goto bad;
+                    static const char* const kProfs[] = {
+                        "cleric", "druid", "fighter", "paladin",
+                        "ranger", "magic_user", "illusionist",
+                        "thief", "assassin", "monk_bard",
+                        nullptr };
+                    bool ok = false;
+                    for (int p = 0; kProfs[p]; ++p)
+                        if (row.prof == kProfs[p]) { ok = true; break; }
+                    if (!ok) {
+                        err = "unknown profession token '" + row.prof + "'";
+                        goto bad;
+                    }
+                    lua_getfield(L, rt, "level");
+                    if (!lua_istable(L, -1)
+                        || (int)lua_rawlen(L, -1) != 2) {
+                        err = "level must be a {lo, hi} pair";
+                        lua_pop(L, 1);
+                        goto bad;
+                    }
+                    long long lv[2];
+                    for (int j = 0; j < 2; ++j) {
+                        lua_rawgeti(L, -1, j + 1);
+                        if (!lua_isinteger(L, -1)) {
+                            err = "level pair field is not an integer";
+                            goto bad;
+                        }
+                        lv[j] = lua_tointeger(L, -1);
+                        lua_pop(L, 1);
+                    }
+                    lua_pop(L, 1);
+                    if (lv[0] < 1 || lv[1] < lv[0] || lv[1] > 23) {
+                        err = "level outside 1-23";
+                        goto bad;
+                    }
+                    row.lvlLo = (int)lv[0]; row.lvlHi = (int)lv[1];
+                } else if (key == "castle_artillery") {
+                    if (!getStr(L, rt, "type", &row.type, &err))
+                        goto bad;
+                    if (row.type.empty()) {
+                        err = "empty artillery type";
+                        goto bad;
+                    }
+                    static const char* const kCounts[3] = {
+                        "ballistae", "lightCatapults",
+                        "oilCauldrons" };
+                    long long cv[3];
+                    for (int j = 0; j < 3; ++j) {
+                        lua_getfield(L, rt, kCounts[j]);
+                        if (!lua_isinteger(L, -1)) {
+                            err = std::string(kCounts[j])
+                                + " is not an integer";
+                            goto bad;
+                        }
+                        cv[j] = lua_tointeger(L, -1);
+                        lua_pop(L, 1);
+                        if (cv[j] < 0 || cv[j] > 100) {
+                            err = std::string(kCounts[j])
+                                + " outside 0-100";
+                            goto bad;
+                        }
+                    }
+                    row.n1 = (int)cv[0];
+                    row.n2 = (int)cv[1];
+                    row.n3 = (int)cv[2];
+                } else {
+                    // castle_inh_small / medium / large
+                    if (!getStr(L, rt, "cat", &row.cat, &err))
+                        goto bad;
+                    if (row.cat != "totally_deserted"
+                        && row.cat != "deserted_monster"
+                        && row.cat != "humans"
+                        && row.cat != "character_types") {
+                        err = "unknown category token '" + row.cat + "'";
+                        goto bad;
+                    }
+                }
+                rows.push_back(row);
+                lua_pop(L, 1);            // row
+            }
+            lua_pop(L, 1);                // rows array
+            if (banded && prev != 100) { err = "bands do not reach 100";
+                                         goto bad; }
+            if (m_castle.count(key)) { err = "duplicate def key";
+                                       goto bad; }
+            m_castle[key] = rows;
+        }
     } else {
         err = "unknown file shape for key '" + key + "'";
         goto bad;
@@ -1357,6 +1552,19 @@ EncounterTableRegistry::planarBands(
     static const std::vector<EncounterPlanarBand> none;
     auto it = m_planarBands.find(name);
     return it == m_planarBands.end() ? none : it->second;
+}
+
+bool EncounterTableRegistry::hasCastle(
+    const std::string& name) const {
+    return m_castle.count(name) != 0;
+}
+
+const std::vector<EncounterCastleRow>&
+EncounterTableRegistry::castleRows(
+    const std::string& name) const {
+    static const std::vector<EncounterCastleRow> none;
+    auto it = m_castle.find(name);
+    return it == m_castle.end() ? none : it->second;
 }
 
 const std::vector<std::string>&

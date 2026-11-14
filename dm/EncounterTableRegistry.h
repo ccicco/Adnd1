@@ -11,8 +11,9 @@
 // tools/r1033_splice.py (water family),
 // tools/r1034_splice.py (outdoor family),
 // tools/r1035_splice.py (city family),
-// tools/r1036_splice.py (planar family) and
-// tools/r1037_splice.py (psionic family) are the only writers.
+// tools/r1036_splice.py (planar family),
+// tools/r1037_splice.py (psionic family) and
+// tools/r1038_splice.py (castle family) are the only writers.
 // ============================================================================
 
 #pragma once
@@ -109,6 +110,28 @@ struct EncounterPlanarBand {
     int dMin = -1, dMax = -1;    // -1: no printed days
 };
 
+// R1038: the castle family row (the R67 de-wire). The five
+// printed tables ride one row shape: lo/hi = the percentile
+// band (0,0 = the artillery table, which keys by type);
+// size = the Table I size-class token (small/medium/large);
+// cat = the Table II inhabitants token; key = the II.A
+// bestiary key; type = the Table I / artillery type string;
+// prof = the II.B profession token; lvlLo/lvlHi = the
+// master's printed level range; n1/n2/n3 = the artillery
+// counts (ballistae/lightCatapults/oilCauldrons). Unused
+// columns stay empty - the per-file key lists in the loader
+// keep each file strict (the R1034 dispatch-order lesson).
+struct EncounterCastleRow {
+    int lo = 0, hi = 0;
+    std::string size;
+    std::string cat;
+    std::string key;
+    std::string type;
+    std::string prof;
+    int lvlLo = 0, lvlHi = 0;
+    int n1 = 0, n2 = 0, n3 = 0;
+};
+
 // One Determination Matrix entry (d20 range -> monster level).
 struct MatrixEntry { int lo = 0, hi = 0, mlv = 0; };
 
@@ -156,6 +179,12 @@ public:
     bool hasPlanarBands(const std::string& name) const;
     const std::vector<EncounterPlanarBand>& planarBands(
         const std::string& name) const;
+    // R1038: the castle family views. name: castle_type /
+    // castle_inh_small / castle_inh_medium / castle_inh_large /
+    // castle_humans / castle_master / castle_artillery.
+    bool hasCastle(const std::string& name) const;
+    const std::vector<EncounterCastleRow>& castleRows(
+        const std::string& name) const;
     // R1035: the city family views. cityBandLookup clamps the
     // percentile to 1-100 and returns false when no band matches
     // (the flavorKindFor contract). cityCount returns nullptr for
@@ -191,6 +220,10 @@ private:
     std::map<std::string, std::vector<EncounterPlanarRow>> m_planar;
     std::map<std::string, std::vector<EncounterPlanarBand>>
         m_planarBands;
+    // R1038: the castle family (the five printed R67 tables;
+    // the artillery rows ride the same shape, unbanded).
+    std::map<std::string, std::vector<EncounterCastleRow>>
+        m_castle;
     std::vector<std::string> m_errors;
 };
 
