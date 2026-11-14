@@ -8,6 +8,13 @@
 // DMG upload (2026-10-04), which the R149 book-verify
 // pass read cell for cell against a clean book read.
 //
+// R1045: the five band tables are registry-native
+// (content/tables/appendixi/, the seam below);
+// the printed cascades are gone from this header
+// and the accessors read registry views. The enums
+// stay in-file as constants (the band identity API);
+// the 00-fold and the clamp semantics stay verbatim.
+//
 // Conventions, all named in place:
 //   - All five lists are d100 band tables: the
 //     accessor takes the percentile roll (1-100) and
@@ -38,8 +45,54 @@
 
 #pragma once
 
+#include "items/MiscItemRegistry.h"   // R1045: the dressing bands ride the registry
+
 namespace dm {
 namespace appendixi {
+
+// ---- the R1045 registry seam ----------------------------------------
+// The five dressing band tables ride
+// items::MiscItemRegistry from
+// content/tables/appendixi/ (def keys
+// appendixi_*). Row encoding: name = the
+// enum tag at the row index, band = the
+// printed percentile band; the rest zero.
+// This seam is header-only (the
+// R1040-R1044 idiom); every accessor
+// signature below is unchanged (the r150
+// audit pins them); the enums stay in-file
+// as constants and the 00-fold and clamp
+// semantics stay verbatim. The band scan
+// relies on the battery-pinned band chain
+// (1..100, contiguous, last band 100).
+
+inline items::MiscItemRegistry& aiReg() {
+    static items::MiscItemRegistry reg;
+    static bool loaded = false;
+    if (!loaded) {
+        loaded = true;
+        reg.loadDirectory("content/tables/appendixi");
+    }
+    return reg;
+}
+
+// the registry-backed per-view cache (the
+// R1032-R1044 idiom; function-local statics in
+// inline functions are shared across TUs)
+inline const std::vector<items::MiscItemRow>& aiView(
+        const char* name) {
+    static std::map<std::string,
+        std::vector<items::MiscItemRow>> cache;
+    auto it = cache.find(name);
+    if (it == cache.end()) {
+        const items::MiscItemDef* d = aiReg().find(name);
+        it = cache.emplace(
+            name, d ? d->rows
+                   : std::vector<items::MiscItemRow>()).first;
+    }
+    return it->second;
+}
+
 
 // ---- AIR CURRENTS (p.217): 14 printed bands ------------------------------
 enum AirCurrent {
@@ -63,20 +116,12 @@ enum AirCurrent {
 inline AirCurrent airCurrentFor(int r) {
     if (r <= 0)   r = 100;              // 00 folds to 100
     if (r > 100)  r = 100;
-    if (r <= 5)   return AC_BREEZE_SLIGHT;
-    if (r <= 10)  return AC_BREEZE_SLIGHT_DAMP;
-    if (r <= 12)  return AC_BREEZE_GUSTING;
-    if (r <= 18)  return AC_COLD_CURRENT;
-    if (r <= 20)  return AC_DOWNDRAFT_SLIGHT;
-    if (r <= 22)  return AC_DOWNDRAFT_STRONG;
-    if (r <= 69)  return AC_STILL;
-    if (r <= 75)  return AC_STILL_VERY_CHILL;
-    if (r <= 85)  return AC_STILL_WARM;
-    if (r <= 87)  return AC_UPDRAFT_SLIGHT;
-    if (r <= 89)  return AC_UPDRAFT_STRONG;
-    if (r <= 93)  return AC_WIND_STRONG;
-    if (r <= 95)  return AC_WIND_STRONG_GUSTING;
-    return AC_WIND_STRONG_MOANING;
+    const auto& rows = aiView("appendixi_air_currents");
+    if (rows.empty()) return AC_BREEZE_SLIGHT;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return AirCurrent(i);
+    return AirCurrent((int)rows.size() - 1);
 }
 
 // ---- ODORS (p.217): 14 printed bands ------------------------------------
@@ -99,22 +144,14 @@ enum Odor {
 };
 
 inline Odor odorFor(int r) {
-    if (r <= 0)   r = 100;
+    if (r <= 0)   r = 100;              // 00 folds to 100
     if (r > 100)  r = 100;
-    if (r <= 3)   return OD_ACRID;
-    if (r <= 5)   return OD_CHLORINE;
-    if (r <= 39)  return OD_DANK_MOULDY;
-    if (r <= 49)  return OD_EARTHY;
-    if (r <= 57)  return OD_MANURE;
-    if (r <= 61)  return OD_METALLIC;
-    if (r <= 65)  return OD_OZONE;
-    if (r <= 70)  return OD_PUTRID;
-    if (r <= 75)  return OD_ROTTING_VEGETATION;
-    if (r <= 77)  return OD_SALTY_WET;
-    if (r <= 82)  return OD_SMOKY;
-    if (r <= 89)  return OD_STALE_FETID;
-    if (r <= 95)  return OD_SULPHUROUS;
-    return OD_URINE;
+    const auto& rows = aiView("appendixi_odors");
+    if (rows.empty()) return OD_ACRID;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return Odor(i);
+    return Odor((int)rows.size() - 1);
 }
 
 // ---- AIR (p.219): 6 printed bands ----------------------------------------
@@ -129,14 +166,14 @@ enum AirState {
 };
 
 inline AirState airStateFor(int r) {
-    if (r <= 0)   r = 100;
+    if (r <= 0)   r = 100;              // 00 folds to 100
     if (r > 100)  r = 100;
-    if (r <= 70)  return AIR_CLEAR;
-    if (r <= 80)  return AIR_FOGGY;
-    if (r <= 88)  return AIR_FOGGY_NEAR_FLOOR;
-    if (r <= 90)  return AIR_HAZY_DUST;
-    if (r <= 98)  return AIR_HAZY_SMOKE;
-    return AIR_MISTED;
+    const auto& rows = aiView("appendixi_air_states");
+    if (rows.empty()) return AIR_CLEAR;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return AirState(i);
+    return AirState((int)rows.size() - 1);
 }
 
 // ---- GENERAL ITEMS (p.218): 54 printed bands ------------------------------
@@ -199,62 +236,14 @@ enum GeneralItem {
 };
 
 inline GeneralItem generalItemFor(int r) {
-    if (r <= 0)   r = 100;
+    if (r <= 0)   r = 100;              // 00 folds to 100
     if (r > 100)  r = 100;
-    if (r <= 1)   return GI_ARROW_BROKEN;
-    if (r <= 4)   return GI_ASHES;
-    if (r <= 6)   return GI_BONES;
-    if (r <= 7)   return GI_BOTTLE_BROKEN;
-    if (r <= 8)   return GI_CHAIN_CORRODED;
-    if (r <= 9)   return GI_CLUB_SPLINTERED;
-    if (r <= 19)  return GI_COBWEBS;
-    if (r <= 20)  return GI_COIN_COPPER_BENT;
-    if (r <= 22)  return GI_CRACKS_CEILING;
-    if (r <= 24)  return GI_CRACKS_FLOOR;
-    if (r <= 26)  return GI_CRACKS_WALL;
-    if (r <= 27)  return GI_DAGGER_HILT;
-    if (r <= 29)  return GI_DAMPNESS_CEILING;
-    if (r <= 33)  return GI_DAMPNESS_WALL;
-    if (r <= 40)  return GI_DRIPPING;
-    if (r <= 41)  return GI_DRIED_BLOOD;
-    if (r <= 44)  return GI_DUNG;
-    if (r <= 49)  return GI_DUST;
-    if (r <= 50)  return GI_FLASK_CRACKED;
-    if (r <= 51)  return GI_FOOD_SCRAPS;
-    if (r <= 52)  return GI_FUNGI_COMMON;
-    if (r <= 55)  return GI_GUANO;
-    if (r <= 56)  return GI_HAIR_FUR_BITS;
-    if (r <= 57)  return GI_HAMMER_HEAD_CRACKED;
-    if (r <= 58)  return GI_HELMET_DENTED;
-    if (r <= 59)  return GI_IRON_BAR_BENT;
-    if (r <= 60)  return GI_JAVELIN_HEAD_BLUNT;
-    if (r <= 61)  return GI_LEATHER_BOOT;
-    if (r <= 64)  return GI_LEAVES_TWIGS;
-    if (r <= 68)  return GI_MOLD;
-    if (r <= 69)  return GI_PICK_HANDLE;
-    if (r <= 70)  return GI_POLE_BROKEN;
-    if (r <= 71)  return GI_POTTERY_SHARDS;
-    if (r <= 73)  return GI_RAGS;
-    if (r <= 74)  return GI_ROPE_ROTTEN;
-    if (r <= 76)  return GI_RUBBLE_DIRT;
-    if (r <= 77)  return GI_SACK_TORN;
-    if (r <= 78)  return GI_SLIMY_CEILING;
-    if (r <= 79)  return GI_SLIMY_FLOOR;
-    if (r <= 80)  return GI_SLIMY_WALL;
-    if (r <= 81)  return GI_SPIKE_RUSTED;
-    if (r <= 83)  return GI_STICKS;
-    if (r <= 84)  return GI_STONES_SMALL;
-    if (r <= 85)  return GI_STRAW;
-    if (r <= 86)  return GI_SWORD_BLADE_BROKEN;
-    if (r <= 87)  return GI_TEETH_SCATTERED;
-    if (r <= 88)  return GI_TORCH_STUB;
-    if (r <= 89)  return GI_WALL_SCRATCHINGS;
-    if (r <= 91)  return GI_WATER_SMALL_PUDDLE;
-    if (r <= 93)  return GI_WATER_LARGE_PUDDLE;
-    if (r <= 95)  return GI_WATER_TRICKLE;
-    if (r <= 96)  return GI_WAX_DRIPPINGS;
-    if (r <= 97)  return GI_WAX_BLOB;
-    return GI_WOOD_PIECES_ROTTING;
+    const auto& rows = aiView("appendixi_general_items");
+    if (rows.empty()) return GI_ARROW_BROKEN;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return GeneralItem(i);
+    return GeneralItem((int)rows.size() - 1);
 }
 
 // ---- UNEXPLAINED SOUNDS (p.219): 58 printed bands --------------------------
@@ -321,66 +310,14 @@ enum SoundKind {
 };
 
 inline SoundKind soundFor(int r) {
-    if (r <= 0)   r = 100;
+    if (r <= 0)   r = 100;              // 00 folds to 100
     if (r > 100)  r = 100;
-    if (r <= 5)   return SK_BANG_SLAM;
-    if (r <= 6)   return SK_BELLOW;
-    if (r <= 7)   return SK_BONG;
-    if (r <= 8)   return SK_BUZZING;
-    if (r <= 10)  return SK_CHANTING;
-    if (r <= 11)  return SK_CHIMING;
-    if (r <= 12)  return SK_CHIRPING;
-    if (r <= 13)  return SK_CLANKING;
-    if (r <= 14)  return SK_CLASHING;
-    if (r <= 15)  return SK_CLICKING;
-    if (r <= 16)  return SK_COUGHING;
-    if (r <= 18)  return SK_CREAKING;
-    if (r <= 19)  return SK_DRUMMING;
-    if (r <= 23)  return SK_FOOTSTEPS_AHEAD;
-    if (r <= 26)  return SK_FOOTSTEPS_APPROACHING;
-    if (r <= 29)  return SK_FOOTSTEPS_BEHIND;
-    if (r <= 31)  return SK_FOOTSTEPS_RECEDING;
-    if (r <= 33)  return SK_FOOTSTEPS_SIDE;
-    if (r <= 35)  return SK_GIGGLING;
-    if (r <= 36)  return SK_GONG;
-    if (r <= 39)  return SK_GRATING;
-    if (r <= 41)  return SK_GROANING;
-    if (r <= 42)  return SK_GRUNTING;
-    if (r <= 44)  return SK_HISSING;
-    if (r <= 45)  return SK_HOOTING;
-    if (r <= 46)  return SK_HORN;
-    if (r <= 47)  return SK_HOWLING;
-    if (r <= 48)  return SK_HUMMING;
-    if (r <= 49)  return SK_JINGLING;
-    if (r <= 53)  return SK_KNOCKING;
-    if (r <= 55)  return SK_LAUGHTER;
-    if (r <= 57)  return SK_MOANING;
-    if (r <= 60)  return SK_MURMURING;
-    if (r <= 61)  return SK_MUSIC;
-    if (r <= 62)  return SK_RATTLING;
-    if (r <= 63)  return SK_RINGING;
-    if (r <= 64)  return SK_ROAR;
-    if (r <= 68)  return SK_RUSTLING;
-    if (r <= 72)  return SK_SCRATCHING;
-    if (r <= 74)  return SK_SCREAMING;
-    if (r <= 77)  return SK_SCUTTLING;
-    if (r <= 78)  return SK_SHUFFLING;
-    if (r <= 80)  return SK_SLITHERING;
-    if (r <= 81)  return SK_SNAPPING;
-    if (r <= 82)  return SK_SNEEZING;
-    if (r <= 83)  return SK_SOBBING;
-    if (r <= 84)  return SK_SPLASHING;
-    if (r <= 85)  return SK_SPLINTERING;
-    if (r <= 87)  return SK_SQUEAKING;
-    if (r <= 88)  return SK_SQUEALING;
-    if (r <= 90)  return SK_TAPPING;
-    if (r <= 92)  return SK_THUD;
-    if (r <= 94)  return SK_THUMPING;
-    if (r <= 95)  return SK_TINKLING;
-    if (r <= 96)  return SK_TWANGING;
-    if (r <= 97)  return SK_WHINING;
-    if (r <= 98)  return SK_WHISPERING;
-    return SK_WHISTLING;
+    const auto& rows = aiView("appendixi_unexplained_sounds");
+    if (rows.empty()) return SK_BANG_SLAM;   // defensive
+    for (int i = 0; i < (int)rows.size(); ++i)
+        if (r <= rows[i].bandHi)
+            return SoundKind(i);
+    return SoundKind((int)rows.size() - 1);
 }
 
 } // namespace appendixi
