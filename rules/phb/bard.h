@@ -51,12 +51,22 @@
 //     round consumes it.
 //
 // DATA-DRIVEN (the standing scope).
+//
+// R1044: the xp-title ladder is registry-native
+// (content/tables/class_ladders/bard_ladder.lua,
+// the R1044 seam in subclasses.h); the printed
+// arrays are gone from this header and the
+// accessors read the registry view. The colleges,
+// the druid slots and the gates stay in-file
+// (constants and code, not tables).
 // ============================================================================
 
 #pragma once
 
 #include <cstdint>
 #include <string>
+
+#include "subclasses.h"   // R1044: the ladder registry seam
 
 namespace rules {
 
@@ -118,67 +128,21 @@ inline bool bardNeutralOnly() {
 // only; previously earned XP is not
 // considered). Level clamps to 1-23.
 inline int bardXpForLevel(int level) {
-    static const int kXp[23] = {
-        0,
-        2001,
-        4001,
-        8001,
-        16001,
-        25001,
-        40001,
-        60001,
-        85001,
-        110001,
-        150001,
-        200001,
-        400001,
-        600001,
-        800001,
-        1000001,
-        1200001,
-        1400001,
-        1600001,
-        1800001,
-        2000001,
-        2200001,
-        3000001,
-    };
+    const auto& rows = scLadder("bard_ladder");
+    if (rows.empty()) return 0;   // defensive: unloaded view
     if (level < 1) level = 1;
-    if (level > 23) level = 23;
-    return kXp[level - 1];
+    if (level > (int)rows.size()) level = (int)rows.size();
+    return rows[level - 1].gp;
 }
 
 // The level titles (Rhymer through M.
 // Bard 23rd).
 inline const char* bardTitle(int level) {
-    static const char* const kTitles[23] = {
-        "Rhymer",
-        "Lyrist",
-        "Sonnateer",
-        "Skald",
-        "Racaraide",
-        "Joungleur",
-        "Troubador",
-        "Minstrel",
-        "Muse",
-        "Lorist",
-        "Bard",
-        "Master Bard",
-        "M. Bard 13th",
-        "M. Bard 14th",
-        "M. Bard 15th",
-        "M. Bard 16th",
-        "M. Bard 17th",
-        "M. Bard 18th",
-        "M. Bard 19th",
-        "M. Bard 20th",
-        "M. Bard 21st",
-        "M. Bard 22nd",
-        "M. Bard 23rd",
-    };
+    const auto& rows = scLadder("bard_ladder");
+    if (rows.empty()) return "";   // defensive: unloaded
     if (level < 1) level = 1;
-    if (level > 23) level = 23;
-    return kTitles[level - 1];
+    if (level > (int)rows.size()) level = (int)rows.size();
+    return rows[level - 1].name.c_str();
 }
 
 // The accumulated bard hit dice: 0 at 1st

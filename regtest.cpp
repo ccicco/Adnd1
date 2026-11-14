@@ -1290,6 +1290,7 @@ int main() {
     #include "rules/audits/r1041_treasure_item_registry.h"  // R1041
     #include "rules/audits/r1042_equipment_cost_registry.h"  // R1042
     #include "rules/audits/r1043_weapon_chart_registry.h"  // R1043
+    #include "rules/audits/r1044_class_ladder_registry.h"  // R1044
     #include "rules/audits/r280_special_artifacts_prose.h"  // R835: migrated
     #include "rules/audits/r281_special_artifacts_prose.h"  // R835: migrated
     #include "rules/audits/r282_special_artifacts_prose.h"  // R835: migrated
