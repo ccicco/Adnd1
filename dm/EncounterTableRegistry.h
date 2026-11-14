@@ -13,8 +13,9 @@
 // tools/r1035_splice.py (city family),
 // tools/r1036_splice.py (planar family),
 // tools/r1037_splice.py (psionic family),
-// tools/r1038_splice.py (castle family) and
-// tools/r1039_splice.py (party family) are the only writers.
+// tools/r1038_splice.py (castle family),
+// tools/r1039_splice.py (party family) and
+// tools/r1040_splice.py (Appendix P family) are the only writers.
 // ============================================================================
 
 #pragma once
@@ -154,6 +155,26 @@ struct EncounterPartyRow {
     int t3pct = 0, t3n = 0, t4pct = 0, t4n = 0;
 };
 
+// R1040: the Appendix P family row (the DMG pp.225-226
+// convention-party de-wire). The six printed tables ride one
+// row shape: lo/hi = the band_level printed level range
+// (elsewhere lo == hi = the row key: the printed column, the
+// class index or the die face); key = the potion type string;
+// band/option = the band_level axes (1-3 each); fighter/
+// magic_user/cleric/thief = the transposed gear-table chance
+// columns; pct/max = the potion chance and most-carried;
+// armorPct/weaponPct/shieldPct = the kit builder chances.
+// Unused columns stay defaulted - the per-file key lists in
+// the loader keep each file strict (the R1034 lesson).
+struct EncounterAppendixPRow {
+    int lo = 0, hi = 0;
+    std::string key;
+    int band = 0, option = 0;
+    int fighter = 0, magic_user = 0, cleric = 0, thief = 0;
+    int pct = 0, max = 0;
+    int armorPct = 0, weaponPct = 0, shieldPct = 0;
+};
+
 // One Determination Matrix entry (d20 range -> monster level).
 struct MatrixEntry { int lo = 0, hi = 0, mlv = 0; };
 
@@ -213,6 +234,13 @@ public:
     bool hasParty(const std::string& name) const;
     const std::vector<EncounterPartyRow>& partyRows(
         const std::string& name) const;
+    // R1040: the Appendix P family views. name:
+    // appendixp_band_level / appendixp_protective /
+    // appendixp_weapons / appendixp_potions /
+    // appendixp_potion_types / appendixp_kit.
+    bool hasAppendixP(const std::string& name) const;
+    const std::vector<EncounterAppendixPRow>& appendixPRows(
+        const std::string& name) const;
     // R1035: the city family views. cityBandLookup clamps the
     // percentile to 1-100 and returns false when no band matches
     // (the flavorKindFor contract). cityCount returns nullptr for
@@ -257,6 +285,11 @@ private:
     // keyed by level / die face instead of a band).
     std::map<std::string, std::vector<EncounterPartyRow>>
         m_party;
+    // R1040: the Appendix P family (the six printed
+    // convention-party tables; the gear rows are transposed -
+    // one row per printed column).
+    std::map<std::string, std::vector<EncounterAppendixPRow>>
+        m_appendixp;
     std::vector<std::string> m_errors;
 };
 

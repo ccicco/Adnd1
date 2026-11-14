@@ -158,6 +158,24 @@ const char* const kPartyLadderKeys[] =
       "t3pct", "t3n", "t4pct", "t4n", nullptr };
 const char* const kPartyItemKeys[] =
     { "die", "kind", "a", "b", nullptr };
+// R1040: the Appendix P family file/row keys. Exact keys
+// only - no prefix, no exceptions (the R1034 dispatch-order
+// lesson); the per-table row key lists keep each file's
+// shape strict.
+const char* const kAppendixPFileKeys[] =
+    { "key", "rows", nullptr };
+const char* const kAppendixPBandKeys[] =
+    { "band", "option", "level", nullptr };
+const char* const kAppendixPGearKeys[] =
+    { "col", "fighter", "magic_user", "cleric", "thief",
+      nullptr };
+const char* const kAppendixPPotionKeys[] =
+    { "class", "pct", "max", nullptr };
+const char* const kAppendixPTypeKeys[] =
+    { "die", "key", nullptr };
+const char* const kAppendixPKitKeys[] =
+    { "class", "armorPct", "weaponPct", "shieldPct",
+      nullptr };
 const char* const kPlanarRowKeys[]   =
     { "band", "key", "numbers", "primeOnly", nullptr };
 const char* const kPlanarPickKeys[] =
@@ -1563,6 +1581,234 @@ bool EncounterTableRegistry::loadFile(const std::string& path,
                                        goto bad; }
             m_party[key] = rows;
         }
+    } else if (key == "appendixp_band_level"
+               || key == "appendixp_protective"
+               || key == "appendixp_weapons"
+               || key == "appendixp_potions"
+               || key == "appendixp_potion_types"
+               || key == "appendixp_kit") {
+        const int t = lua_gettop(L);
+        const char* const* rowKeys = kAppendixPGearKeys;
+        if (key == "appendixp_band_level")
+            rowKeys = kAppendixPBandKeys;
+        else if (key == "appendixp_potions")
+            rowKeys = kAppendixPPotionKeys;
+        else if (key == "appendixp_potion_types")
+            rowKeys = kAppendixPTypeKeys;
+        else if (key == "appendixp_kit")
+            rowKeys = kAppendixPKitKeys;
+        if (!checkAllowedKeys(L, t, kAppendixPFileKeys, key, &err)) goto bad;
+        {
+            std::string k;
+            if (!getStr(L, t, "key", &k, &err)) goto bad;
+            if (k != key) { err = "def key mismatch";
+                                         goto bad; }
+        }
+        lua_getfield(L, t, "rows");
+        if (!lua_istable(L, -1)) { err = "rows is not a table"; goto bad; }
+        {
+            const int n = (int)lua_rawlen(L, -1);
+            std::vector<EncounterAppendixPRow> rows;
+            int prevKey = 0;
+            int prevBand = 0, prevOpt = 0;
+            for (int i = 1; i <= n; ++i) {
+                lua_rawgeti(L, -1, i);
+                const int rt = lua_gettop(L);
+                if (!lua_istable(L, rt)
+                    || !checkAllowedKeys(L, rt, rowKeys,
+                        key + " rows[" + std::to_string(i) + "]", &err)) {
+                    if (lua_istable(L, rt))
+                        lua_pop(L, 1);
+                    goto bad;
+                }
+                EncounterAppendixPRow row;
+                if (key == "appendixp_band_level") {
+                    lua_getfield(L, rt, "band");
+                    if (!lua_isinteger(L, -1)) {
+                        err = "band is not an integer"; goto bad;
+                    }
+                    const long long bd = lua_tointeger(L, -1);
+                    lua_pop(L, 1);
+                    lua_getfield(L, rt, "option");
+                    if (!lua_isinteger(L, -1)) {
+                        err = "option is not an integer"; goto bad;
+                    }
+                    const long long op = lua_tointeger(L, -1);
+                    lua_pop(L, 1);
+                    if (bd < 1 || bd > 3 || op < 1 || op > 3) {
+                        err = "band/option outside 1-3"; goto bad;
+                    }
+                    if (bd != prevBand) {
+                        if (prevBand != 0
+                            && (bd != prevBand + 1
+                                || prevOpt != 3)) {
+                            err = "band must continue 1-3";
+                            goto bad;
+                        }
+                        prevBand = (int)bd; prevOpt = 0;
+                    }
+                    if (op != prevOpt + 1) {
+                        err = "option must continue 1-3 in order";
+                        goto bad;
+                    }
+                    prevOpt = (int)op;
+                    row.band = (int)bd; row.option = (int)op;
+                    lua_getfield(L, rt, "level");
+                    if (!lua_istable(L, -1)
+                        || (int)lua_rawlen(L, -1) != 2) {
+                        err = "level must be a {lo, hi} pair";
+                        lua_pop(L, 1);
+                        goto bad;
+                    }
+                    long long lv[2];
+                    for (int j = 0; j < 2; ++j) {
+                        lua_rawgeti(L, -1, j + 1);
+                        if (!lua_isinteger(L, -1)) {
+                            err = "level pair field is not an integer";
+                            goto bad;
+                        }
+                        lv[j] = lua_tointeger(L, -1);
+                        lua_pop(L, 1);
+                    }
+                    lua_pop(L, 1);
+                    if (lv[0] < 1 || lv[1] < lv[0] || lv[1] > 12) {
+                        err = "level outside 1-12"; goto bad;
+                    }
+                    row.lo = (int)lv[0]; row.hi = (int)lv[1];
+                } else if (key == "appendixp_protective"
+                           || key == "appendixp_weapons") {
+                    lua_getfield(L, rt, "col");
+                    if (!lua_isinteger(L, -1)) {
+                        err = "col is not an integer"; goto bad;
+                    }
+                    const long long c = lua_tointeger(L, -1);
+                    lua_pop(L, 1);
+                    if (c != prevKey + 1 || c < 1 || c > 7) {
+                        err = "col must continue 1-7 in order";
+                        goto bad;
+                    }
+                    prevKey = (int)c;
+                    row.lo = row.hi = (int)c;
+                    static const char* const kCls[4] = {
+                        "fighter", "magic_user", "cleric",
+                        "thief" };
+                    int* dst[4] = { &row.fighter,
+                        &row.magic_user, &row.cleric,
+                        &row.thief };
+                    for (int j = 0; j < 4; ++j) {
+                        lua_getfield(L, rt, kCls[j]);
+                        if (!lua_isinteger(L, -1)) {
+                            err = std::string(kCls[j])
+                                + " is not an integer";
+                            goto bad;
+                        }
+                        const long long v = lua_tointeger(L, -1);
+                        lua_pop(L, 1);
+                        if (v < 0 || v > 15) {
+                            err = std::string(kCls[j])
+                                + " outside 0-15";
+                            goto bad;
+                        }
+                        *dst[j] = (int)v;
+                    }
+                } else if (key == "appendixp_potions") {
+                    lua_getfield(L, rt, "class");
+                    if (!lua_isinteger(L, -1)) {
+                        err = "class is not an integer"; goto bad;
+                    }
+                    const long long c = lua_tointeger(L, -1);
+                    lua_pop(L, 1);
+                    if (c != prevKey + 1 || c < 1 || c > 4) {
+                        err = "class must continue 1-4 in order";
+                        goto bad;
+                    }
+                    prevKey = (int)c;
+                    row.lo = row.hi = (int)c;
+                    lua_getfield(L, rt, "pct");
+                    if (!lua_isinteger(L, -1)) {
+                        err = "pct is not an integer"; goto bad;
+                    }
+                    const long long p = lua_tointeger(L, -1);
+                    lua_pop(L, 1);
+                    lua_getfield(L, rt, "max");
+                    if (!lua_isinteger(L, -1)) {
+                        err = "max is not an integer"; goto bad;
+                    }
+                    const long long mx = lua_tointeger(L, -1);
+                    lua_pop(L, 1);
+                    if (p < 0 || p > 15) {
+                        err = "pct outside 0-15"; goto bad;
+                    }
+                    if (mx < 1 || mx > 3) {
+                        err = "max outside 1-3"; goto bad;
+                    }
+                    row.pct = (int)p; row.max = (int)mx;
+                } else if (key == "appendixp_potion_types") {
+                    lua_getfield(L, rt, "die");
+                    if (!lua_isinteger(L, -1)) {
+                        err = "die is not an integer"; goto bad;
+                    }
+                    const long long d = lua_tointeger(L, -1);
+                    lua_pop(L, 1);
+                    if (d != prevKey + 1 || d < 1 || d > 10) {
+                        err = "die must continue 1-10 in order";
+                        goto bad;
+                    }
+                    prevKey = (int)d;
+                    row.lo = row.hi = (int)d;
+                    if (!getStr(L, rt, "key", &row.key, &err))
+                        goto bad;
+                    if (row.key.empty()) {
+                        err = "empty potion type"; goto bad;
+                    }
+                } else {
+                    // appendixp_kit
+                    lua_getfield(L, rt, "class");
+                    if (!lua_isinteger(L, -1)) {
+                        err = "class is not an integer"; goto bad;
+                    }
+                    const long long c = lua_tointeger(L, -1);
+                    lua_pop(L, 1);
+                    if (c != prevKey + 1 || c < 1 || c > 4) {
+                        err = "class must continue 1-4 in order";
+                        goto bad;
+                    }
+                    prevKey = (int)c;
+                    row.lo = row.hi = (int)c;
+                    static const char* const kKit[3] = {
+                        "armorPct", "weaponPct", "shieldPct" };
+                    int* dst[3] = { &row.armorPct,
+                        &row.weaponPct, &row.shieldPct };
+                    for (int j = 0; j < 3; ++j) {
+                        lua_getfield(L, rt, kKit[j]);
+                        if (!lua_isinteger(L, -1)) {
+                            err = std::string(kKit[j])
+                                + " is not an integer";
+                            goto bad;
+                        }
+                        const long long v = lua_tointeger(L, -1);
+                        lua_pop(L, 1);
+                        if (v < 0 || v > 15) {
+                            err = std::string(kKit[j])
+                                + " outside 0-15";
+                            goto bad;
+                        }
+                        *dst[j] = (int)v;
+                    }
+                }
+                rows.push_back(row);
+                lua_pop(L, 1);            // row
+            }
+            lua_pop(L, 1);                // rows array
+            if (key == "appendixp_band_level"
+                && (prevBand != 3 || prevOpt != 3)) {
+                err = "band options do not complete 3x3";
+                goto bad;
+            }
+            if (m_appendixp.count(key)) { err = "duplicate def key";
+                                           goto bad; }
+            m_appendixp[key] = rows;
+        }
     } else {
         err = "unknown file shape for key '" + key + "'";
         goto bad;
@@ -1780,6 +2026,19 @@ EncounterTableRegistry::partyRows(
     static const std::vector<EncounterPartyRow> none;
     auto it = m_party.find(name);
     return it == m_party.end() ? none : it->second;
+}
+
+bool EncounterTableRegistry::hasAppendixP(
+    const std::string& name) const {
+    return m_appendixp.count(name) != 0;
+}
+
+const std::vector<EncounterAppendixPRow>&
+EncounterTableRegistry::appendixPRows(
+    const std::string& name) const {
+    static const std::vector<EncounterAppendixPRow> none;
+    auto it = m_appendixp.find(name);
+    return it == m_appendixp.end() ? none : it->second;
 }
 
 const std::vector<std::string>&

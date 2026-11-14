@@ -27,37 +27,72 @@
 #pragma once
 
 #include "../rules/engine/dice.h"
+#include "EncounterTableRegistry.h"   // R1040: the kit tables ride the registry
 
 namespace dm {
 namespace appendixp {
 
 // ---- LEVEL (p.225): three printed options per band -----
+
+// R1040 (the registry-native de-wire, the R1032-R1039 shape):
+// the printed pp.225-226 tables retired into
+// content/tables/appendixp/ (six files; the gear tables
+// transposed to one row per printed column). This seam is
+// header-only like the module: the registry rides its own
+// inline singleton below (encReg() in encounters.cpp is
+// file-static and out of reach from a header - the load is
+// this module's own concern). Every signature above and
+// below is unchanged (rules/audits/r147_appendix_p.h and
+// r156_convention_party.h pin them); the mechanics - the
+// abilityRoll, the itemChance chain with the Gonzo worked
+// example, rollItemPlus, the member builders - stay verbatim.
+
+inline dm::EncounterTableRegistry& apReg() {
+    static dm::EncounterTableRegistry reg;
+    static bool loaded = false;
+    if (!loaded) {
+        loaded = true;
+        reg.loadDirectory("content/tables/appendixp");
+    }
+    return reg;
+}
+
+// the registry-backed per-TU static cache (the R1032-R1039
+// idiom; function-local statics in inline functions are
+// shared across TUs)
+inline const std::vector<dm::EncounterAppendixPRow>& apView(
+        const char* name) {
+    static std::map<std::string,
+        std::vector<dm::EncounterAppendixPRow>> cache;
+    auto it = cache.find(name);
+    if (it == cache.end())
+        it = cache.emplace(
+            name, apReg().appendixPRows(name)).first;
+    return it->second;
+}
+
 enum LevelBand { BAND_LOW = 0, BAND_MEDIUM, BAND_UPPER };
 
 inline int bandLevelLo(int band, int option) {
-    static const int lo[3][3] = {
-        { 1, 1, 2 },    // low: 1-2 / 1-3 / 2-4
-        { 5, 5, 7 },    // medium: 5-7 / 5-8 / 7-9
-        { 8, 8, 9 },    // upper: 8-10 / 8-11 / 9-12
-    };
     if (band < 0) band = 0;
     if (band > 2) band = 2;
     if (option < 0) option = 0;
     if (option > 2) option = 2;
-    return lo[band][option];
+    for (const auto& r : apView("appendixp_band_level"))
+        if (r.band == band + 1 && r.option == option + 1)
+            return r.lo;
+    return 1;   // defensive: the printed table covers 3x3
 }
 
 inline int bandLevelHi(int band, int option) {
-    static const int hi[3][3] = {
-        { 2, 3, 4 },
-        { 7, 8, 9 },
-        { 10, 11, 12 },
-    };
     if (band < 0) band = 0;
     if (band > 2) band = 2;
     if (option < 0) option = 0;
     if (option > 2) option = 2;
-    return hi[band][option];
+    for (const auto& r : apView("appendixp_band_level"))
+        if (r.band == band + 1 && r.option == option + 1)
+            return r.hi;
+    return 2;   // defensive: the printed table covers 3x3
 }
 
 // ---- ABILITIES (p.225): 4d6, discard the low die -------
@@ -72,34 +107,34 @@ inline int abilityRoll(rules::Dice& dice) {
 // value). Rows: 0 fighter, 1 magic-user, 2 cleric,
 // 3 thief.
 inline int protectivePct(int classIndex, int col) {
-    static const int t[4][7] = {
-        { 10, 6, 8, 10,  0,  0, 0 },   // fighter
-        {  0, 0, 0,  0,  0, 15, 4 },   // magic-user
-        { 10, 5, 6,  8,  0,  2, 0 },   // cleric
-        {  0, 0, 0,  0, 10,  4, 0 },   // thief
-    };
     if (classIndex < 0) classIndex = 0;
     if (classIndex > 3) classIndex = 3;
     if (col < 0) col = 0;
     if (col > 6) col = 6;
-    return t[classIndex][col];
+    for (const auto& r : apView("appendixp_protective"))
+        if (r.lo == col + 1)
+            return classIndex == 0 ? r.fighter
+                 : classIndex == 1 ? r.magic_user
+                 : classIndex == 2 ? r.cleric
+                 : r.thief;
+    return 0;   // defensive: a printed dash encodes as 0
 }
 
 // ---- WEAPONS TABLE (p.225-226) -------------------------
 // Columns: 0 dagger, 1 sword, 2 mace, 3 battle axe,
 // 4 spear, 5 bow, 6 the 15 bolts +2. Same row order.
 inline int weaponPct(int classIndex, int col) {
-    static const int t[4][7] = {
-        { 10, 10,  0, 7, 8, 1, 10 },   // fighter
-        { 15,  0,  0, 0, 0, 0,  0 },   // magic-user
-        {  0,  0, 12, 0, 0, 0,  0 },   // cleric
-        { 12, 11,  0, 0, 0, 0,  0 },   // thief
-    };
     if (classIndex < 0) classIndex = 0;
     if (classIndex > 3) classIndex = 3;
     if (col < 0) col = 0;
     if (col > 6) col = 6;
-    return t[classIndex][col];
+    for (const auto& r : apView("appendixp_weapons"))
+        if (r.lo == col + 1)
+            return classIndex == 0 ? r.fighter
+                 : classIndex == 1 ? r.magic_user
+                 : classIndex == 2 ? r.cleric
+                 : r.thief;
+    return 0;   // defensive: a printed dash encodes as 0
 }
 
 // ---- POTIONS TABLE (p.226) -----------------------------
@@ -107,29 +142,30 @@ inline int weaponPct(int classIndex, int col) {
 // and the 10 printed types (roll 10 = the book's "0.",
 // Polymorph Self).
 inline int potionPct(int classIndex) {
-    static const int t[4] = { 8, 10, 6, 9 };
     if (classIndex < 0) classIndex = 0;
     if (classIndex > 3) classIndex = 3;
-    return t[classIndex];
+    for (const auto& r : apView("appendixp_potions"))
+        if (r.lo == classIndex + 1)
+            return r.pct;
+    return 0;   // defensive
 }
 
 inline int potionMax(int classIndex) {
-    static const int t[4] = { 1, 3, 1, 2 };
     if (classIndex < 0) classIndex = 0;
     if (classIndex > 3) classIndex = 3;
-    return t[classIndex];
+    for (const auto& r : apView("appendixp_potions"))
+        if (r.lo == classIndex + 1)
+            return r.max;
+    return 1;   // defensive
 }
 
 inline const char* potionType(int roll) {
-    static const char* const k[10] = {
-        "Climbing", "Diminution", "Extra-Healing",
-        "Fire Resistance", "Flying", "Gaseous Form",
-        "Growth", "Healing", "Invisibility",
-        "Polymorph Self",
-    };
     if (roll < 1) roll = 1;
     if (roll > 10) roll = 10;
-    return k[roll - 1];
+    for (const auto& r : apView("appendixp_potion_types"))
+        if (r.lo == roll)
+            return r.key.c_str();
+    return "";   // defensive: the table covers 1-10
 }
 
 // ---- THE CHANCE CHAIN (p.225) --------------------------
@@ -187,15 +223,19 @@ struct MemberMagic {
 
 inline MemberMagic rollMemberMagic(rules::Dice& dice,
                                    int classIndex, int level) {
-    static const int kArmor[4]  = { 10, 15, 8, 10 };
-    static const int kWeapon[4] = { 10, 15, 12, 11 };
     if (classIndex < 0) classIndex = 0;
     if (classIndex > 3) classIndex = 3;
     MemberMagic m;
-    m.armorPlus  = rollItemPlus(dice, kArmor[classIndex], level);
-    m.weaponPlus = rollItemPlus(dice, kWeapon[classIndex], level);
+    const dm::EncounterAppendixPRow* k = nullptr;
+    for (const auto& r : apView("appendixp_kit"))
+        if (r.lo == classIndex + 1) { k = &r; break; }
+    if (!k) return m;   // defensive: the table covers 1-4
+    m.armorPlus  = rollItemPlus(dice, k->armorPct, level);
+    m.weaponPlus = rollItemPlus(dice, k->weaponPct, level);
+    // the shield try is the armored classes' printed row
+    // (fighter and cleric at 10%; the others carry none)
     if (classIndex == 0 || classIndex == 2)
-        m.shieldPlus = rollItemPlus(dice, 10, level);
+        m.shieldPlus = rollItemPlus(dice, k->shieldPct, level);
     return m;
 }
 
