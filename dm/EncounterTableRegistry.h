@@ -7,8 +7,9 @@
 // with no defaults, STRICT unknown-key rejection, errors accumulated
 // in errors(), the R74 directory contract. The R52 print-fidelity
 // record (Premium reprint p.174-179, OCR-verified) is the source;
-// tools/r1032_splice.py (dungeon family) and
-// tools/r1033_splice.py (water family) are the only writers.
+// tools/r1032_splice.py (dungeon family),
+// tools/r1033_splice.py (water family) and
+// tools/r1034_splice.py (outdoor family) are the only writers.
 // ============================================================================
 
 #pragma once
@@ -46,6 +47,19 @@ struct EncounterWaterRow {
     int flags = 0;
 };
 
+// One outdoor (wilderness) encounter table row (R1034): the R63
+// eight climate tables, the eleven SUB_* terrain subtables and the
+// single-column tropical Sphinx Subtable (replicated across the
+// eight terrain columns - the footnote is terrain-independent).
+// lo/hi carry one percentile band per terrain column
+// (Plain/Scrub/Forest/Rough/Desert/Hills/Mountains/Marsh);
+// -1 = the row prints no entry in that column.
+struct EncounterOutdoorRow {
+    std::string key;
+    int lo[8] = { -1, -1, -1, -1, -1, -1, -1, -1 };
+    int hi[8] = { -1, -1, -1, -1, -1, -1, -1, -1 };
+};
+
 // One Determination Matrix entry (d20 range -> monster level).
 struct MatrixEntry { int lo = 0, hi = 0, mlv = 0; };
 
@@ -67,10 +81,22 @@ public:
     bool hasWater(const std::string& name) const;
     const std::vector<EncounterWaterRow>& waterRows(
         const std::string& name) const;
+    // name: outdoor_arctic / outdoor_sub_arctic /
+    // outdoor_temperate_wild / outdoor_temperate_inhabited /
+    // outdoor_faerie / outdoor_pleistocene / outdoor_dinosaur_age /
+    // outdoor_tropical / outdoor_sub_demihuman / outdoor_sub_dragon /
+    // outdoor_sub_frog / outdoor_sub_giant / outdoor_sub_humanoid /
+    // outdoor_sub_lycanthrope / outdoor_sub_men / outdoor_sub_snake /
+    // outdoor_sub_sphinx / outdoor_sub_spider / outdoor_sub_undead /
+    // outdoor_sphinx_t (R1034)
+    bool hasOutdoor(const std::string& name) const;
+    const std::vector<EncounterOutdoorRow>& outdoorRows(
+        const std::string& name) const;
     // band 0..11 -> the 10 matrix entries of that dungeon-level band
     const std::vector<MatrixEntry>& matrixBand(int band) const;
     // set: princes / arch_devils / elementals / hill_stone /
-    // fire_frost / piercers
+    // fire_frost / piercers / ki_rin_set / leprechaun_set /
+    // porcupine_set / iguanodon_set / lammasu_set / wolf_dog_set
     const std::vector<std::string>& list(const std::string& set) const;
 
     const std::vector<std::string>& errors() const { return m_errors; }
@@ -80,6 +106,7 @@ private:
     std::map<std::string, std::vector<EncounterRow>> m_levels;
     std::map<std::string, std::vector<DragonAgeRow>> m_dragons;
     std::map<std::string, std::vector<EncounterWaterRow>> m_waters;
+    std::map<std::string, std::vector<EncounterOutdoorRow>> m_outdoors;
     std::vector<std::vector<MatrixEntry>> m_matrix;   // 12 x 10
     std::map<std::string, std::vector<std::string>> m_lists;
     std::vector<std::string> m_errors;

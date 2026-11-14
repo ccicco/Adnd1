@@ -1,7 +1,8 @@
 // ============================================================================
 // Adnd1 - dm/EncounterTableRegistry.cpp
 // The dungeon encounter table registry loader (R1032; R1033 added
-// the water family loader). The shape
+// the water family loader; R1034 the outdoor family and its pick-sets).
+// The shape
 // follows items::MiscItemRegistry.cpp: a fresh lua_State per file,
 // luaL_dofile, the file must leave a table on the stack, typed getters
 // with no defaults, errors accumulated in errors(), loadDirectory
@@ -107,6 +108,11 @@ const char* const kDragonRowKeys[] =
 const char* const kWaterRowKeys[] =
     { "band", "key", "flags", nullptr };
 const char* const kWaterFileKeys[] = { "key", "rows", nullptr };
+const char* const kOutdoorRowKeys[] = { "key", "cols", nullptr };
+const char* const kOutdoorFileKeys[] = { "key", "rows", nullptr };
+const char* const kOutdoorSetKeys[] =
+    { "key", "ki_rin", "leprechaun", "porcupine", "iguanodon",
+      "lammasu", "wolf_dog", nullptr };
 const char* const kMatrixKeys[]  = { "key", "bands", nullptr };
 const char* const kLevelKeys[]   = { "key", "rows", nullptr };
 const char* const kDragonKeys[]  = { "key", "rows", nullptr };
@@ -119,6 +125,13 @@ bool isWaterKey(const std::string& k) {
     return k.rfind("underwater_", 0) == 0
         || k.rfind("waterborne_", 0) == 0
         || k == "dinosaur_sub";
+}
+
+// R1034: the outdoor family file keys. NOTE: outdoor_sets is
+// excluded - it must fall through to its own shape branch (the
+// outdoor_sets pick-set loader), not the STRICT rows loader.
+bool isOutdoorKey(const std::string& k) {
+    return k.rfind("outdoor_", 0) == 0 && k != "outdoor_sets";
 }
 
 bool isLevelKind(const std::string& k) {
@@ -385,6 +398,125 @@ bool EncounterTableRegistry::loadFile(const std::string& path,
             if (m_waters.count(key)) { err = "duplicate def key"; goto bad; }
             m_waters[key] = rows;
         }
+    } else if (isOutdoorKey(key)) {
+        const int t = lua_gettop(L);
+        if (!checkAllowedKeys(L, t, kOutdoorFileKeys, key, &err)) goto bad;
+        {
+            std::string k;
+            if (!getStr(L, t, "key", &k, &err)) goto bad;
+            if (k != key) { err = "def key '" + k + "' does not match file";
+                            goto bad; }
+        }
+        lua_getfield(L, t, "rows");
+        if (!lua_istable(L, -1)) { err = "rows is not a table"; goto bad; }
+        {
+            const int n = (int)lua_rawlen(L, -1);
+            std::vector<EncounterOutdoorRow> rows;
+            for (int i = 1; i <= n; ++i) {
+                lua_rawgeti(L, -1, i);
+                const int rt = lua_gettop(L);
+                if (!lua_istable(L, rt)) {
+                    err = "rows[" + std::to_string(i) + "] is not a table";
+                    goto bad;
+                }
+                if (!checkAllowedKeys(L, rt, kOutdoorRowKeys,
+                        key + " rows[" + std::to_string(i) + "]", &err))
+                    goto bad;
+                EncounterOutdoorRow row;
+                if (!getStr(L, rt, "key", &row.key, &err)) goto bad;
+                lua_getfield(L, rt, "cols");
+                if (!lua_istable(L, -1)
+                    || (int)lua_rawlen(L, -1) != 8) {
+                    err = "'cols' must carry 8 terrain pairs";
+                    lua_pop(L, 1);
+                    goto bad;
+                }
+                for (int c = 0; c < 8; ++c) {
+                    lua_rawgeti(L, -1, c + 1);
+                    const int ct = lua_gettop(L);
+                    if (!lua_istable(L, ct)
+                        || (int)lua_rawlen(L, ct) != 2) {
+                        err = "cols pair must be {lo, hi}";
+                        goto bad;
+                    }
+                    long long v[2];
+                    for (int j = 0; j < 2; ++j) {
+                        lua_rawgeti(L, ct, j + 1);
+                        if (!lua_isinteger(L, -1)) {
+                            err = "cols pair field is not an integer";
+                            goto bad;
+                        }
+                        v[j] = lua_tointeger(L, -1);
+                        lua_pop(L, 1);
+                    }
+                    lua_pop(L, 1);        // pair
+                    const int clo = (int)v[0], chi = (int)v[1];
+                    if (clo == -1 && chi == -1) {
+                        // no entry in this terrain column
+                    } else if (clo >= 1 && clo <= 100
+                               && chi >= clo && chi <= 100) {
+                        row.lo[c] = clo;
+                        row.hi[c] = chi;
+                    } else {
+                        err = "cols pair outside 01-00";
+                        goto bad;
+                    }
+                }
+                lua_pop(L, 1);            // cols
+                rows.push_back(row);
+                lua_pop(L, 1);            // row
+            }
+            lua_pop(L, 1);                // rows array
+            if (m_outdoors.count(key)) { err = "duplicate def key"; goto bad; }
+            m_outdoors[key] = rows;
+        }
+    } else if (key == "outdoor_sets") {
+        const int t = lua_gettop(L);
+        if (!checkAllowedKeys(L, t, kOutdoorSetKeys, key, &err)) goto bad;
+        {
+            std::string k;
+            if (!getStr(L, t, "key", &k, &err)) goto bad;
+            if (k != "outdoor_sets") { err = "def key mismatch"; goto bad; }
+        }
+        {
+            const char* const names[6] = { "ki_rin", "leprechaun",
+                "porcupine", "iguanodon", "lammasu", "wolf_dog" };
+            for (int i = 0; i < 6; ++i) {
+                lua_getfield(L, t, names[i]);
+                if (!lua_istable(L, -1)) {
+                    err = std::string("'") + names[i]
+                        + "' is not a table";
+                    goto bad;
+                }
+                const int cnt = (int)lua_rawlen(L, -1);
+                if (cnt < 2) {
+                    err = std::string("'") + names[i]
+                        + "' must carry at least two keys";
+                    goto bad;
+                }
+                std::vector<std::string> vals;
+                for (int j = 1; j <= cnt; ++j) {
+                    lua_rawgeti(L, -1, j);
+                    if (!lua_isstring(L, -1)) {
+                        err = std::string("'") + names[i]
+                            + "' element is not a string";
+                        goto bad;
+                    }
+                    size_t len = 0;
+                    const char* s = lua_tolstring(L, -1, &len);
+                    vals.push_back(std::string(s, len));
+                    lua_pop(L, 1);
+                }
+                lua_pop(L, 1);
+                const std::string setKey =
+                    std::string(names[i]) + "_set";
+                if (m_lists.count(setKey)) {
+                    err = "duplicate def key";
+                    goto bad;
+                }
+                m_lists[setKey] = vals;
+            }
+        }
     } else {
         err = "unknown file shape for key '" + key + "'";
         goto bad;
@@ -491,6 +623,17 @@ EncounterTableRegistry::waterRows(const std::string& name) const {
     static const std::vector<EncounterWaterRow> none;
     auto it = m_waters.find(name);
     return it == m_waters.end() ? none : it->second;
+}
+
+bool EncounterTableRegistry::hasOutdoor(const std::string& name) const {
+    return m_outdoors.count(name) != 0;
+}
+
+const std::vector<EncounterOutdoorRow>&
+EncounterTableRegistry::outdoorRows(const std::string& name) const {
+    static const std::vector<EncounterOutdoorRow> none;
+    auto it = m_outdoors.find(name);
+    return it == m_outdoors.end() ? none : it->second;
 }
 
 const std::vector<std::string>&
