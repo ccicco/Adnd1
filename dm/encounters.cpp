@@ -87,6 +87,7 @@ static dm::EncounterTableRegistry& encReg() {
         reg.loadDirectory("content/tables/encounters_planar");
         reg.loadDirectory("content/tables/encounters_psionic");
         reg.loadDirectory("content/tables/encounters_castle");
+        reg.loadDirectory("content/tables/encounters_party");
     }
     return reg;
 }
@@ -370,9 +371,8 @@ std::vector<std::string> encounterKeys(
 // per-profession maxima. The engine's four classes absorb the
 // rest per the book's closest-approximation advice.
 // ----------------------------------------------------------------------------
-namespace {
 
-struct ProfRow { int lo, hi, max; };   // subtable percentile + max/party
+namespace {
 
 enum ProfId {
     PROF_CLERIC, PROF_DRUID, PROF_FIGHTER, PROF_PALADIN, PROF_RANGER,
@@ -383,24 +383,65 @@ enum ProfId {
 // 01-17 Cleric / 18-20 Druid / 21-60 Fighter / 61-62 Paladin /
 // 63-65 Ranger / 66-86 Magic-user / 87-88 Illusionist /
 // 89-98 Thief / 99 Assassin / 00 Monk or Bard
-const ProfRow kProfTable[PROF_COUNT] = {
-    {  1, 17, 3},   // cleric
-    { 18, 20, 2},   // druid
-    { 21, 60, 5},   // fighter
-    { 61, 62, 2},   // paladin
-    { 63, 65, 2},   // ranger
-    { 66, 86, 3},   // magic-user
-    { 87, 88, 1},   // illusionist
-    { 89, 98, 4},   // thief
-    { 99, 99, 2},   // assassin
-    {100,100, 1},   // monk or bard
-};
 
-int profFor(int pctile) {
-    for (int i = 0; i < PROF_COUNT; ++i)
-        if (pctile >= kProfTable[i].lo && pctile <= kProfTable[i].hi)
-            return i;
+// R1039 (the registry-native de-wire, the R1032-R1038
+// shape): the printed Character Subtable retired into
+// content/tables/encounters_party/character_subtable.lua -
+// the percentile bands, the profession tokens and the
+// per-party maxima all ride the registry now (the enums map
+// here). classForProf, characterLevelFor and henchmanLevelFor
+// stay verbatim below (mechanics, not tables); the R62 race
+// allowance and raceAllowsClass stay untouched between the
+// blocks. profFor keeps its signature (the R64 city, R65
+// planar and rollCharacterParty callers); the retired
+// per-profession maxima reads became profMax(cand).
+
+// the registry-backed static cache (the R1032-R1038 idiom)
+static const std::vector<dm::EncounterPartyRow>& partyView(
+        const char* name) {
+    static std::map<std::string,
+        std::vector<dm::EncounterPartyRow>> cache;
+    auto it = cache.find(name);
+    if (it == cache.end())
+        it = cache.emplace(
+            name, dm::encReg().partyRows(name)).first;
+    return it->second;
+}
+
+// the printed token -> the dm-local ProfId (the R1038 idiom;
+// a distinct name - the castle seam's profForToken lives in
+// this same unnamed namespace below). Unknown tokens read as
+// fighter (the classForProf default).
+static int subtableProfForToken(const std::string& t) {
+    if (t == "cleric")       return PROF_CLERIC;
+    if (t == "druid")        return PROF_DRUID;
+    if (t == "paladin")      return PROF_PALADIN;
+    if (t == "ranger")       return PROF_RANGER;
+    if (t == "magic_user")   return PROF_MU;
+    if (t == "illusionist")  return PROF_ILLUSIONIST;
+    if (t == "thief")        return PROF_THIEF;
+    if (t == "assassin")     return PROF_ASSASSIN;
+    if (t == "monk_bard")    return PROF_MONK_BARD;
     return PROF_FIGHTER;
+}
+
+// DMG p.176: profession by percentile - the printed ranges
+// now ride the registry (defensive default: fighter, the
+// column covers 01-00).
+int profFor(int pctile) {
+    for (const auto& r : partyView("character_subtable"))
+        if (pctile >= r.lo && pctile <= r.hi)
+            return subtableProfForToken(r.prof);
+    return PROF_FIGHTER;
+}
+
+// the per-profession maximum off the same table (the retired
+// maxima reads in rollCharacterParty).
+int profMax(int prof) {
+    for (const auto& r : partyView("character_subtable"))
+        if (subtableProfForToken(r.prof) == prof)
+            return r.max;
+    return 1;   // defensive
 }
 
 // engine class per profession (closest approximation, DMG advice)
@@ -476,64 +517,27 @@ namespace {
 enum ItemKind { ITEM_NONE, ITEM_WPN, ITEM_RNG, ITEM_ARM, ITEM_SHD,
                 ITEM_ARM_SET };   // armor+shield sold as one set
 
-struct ItemRow {
-    int kind;   // ItemKind
-    int a, b;   // pluses (b = shield plus for ARM_SET rows)
-};
+// the printed kind token -> ItemKind (unknown reads as
+// none - fiction only, the retired default).
+static int kindForToken(const std::string& t) {
+    if (t == "wpn")     return ITEM_WPN;
+    if (t == "rng")     return ITEM_RNG;
+    if (t == "arm")     return ITEM_ARM;
+    if (t == "shd")     return ITEM_SHD;
+    if (t == "arm_set") return ITEM_ARM_SET;
+    return ITEM_NONE;
+}
 
-// Table I (d20)
-const ItemRow kTableI[20] = {
-    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 1-3
-    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 4-6
-    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 7-9
-    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 10-12
-    {ITEM_ARM,1,0},    // 13: leather +1
-    {ITEM_SHD,1,0},    // 14: shield +1
-    {ITEM_WPN,1,0},    // 15: sword +1
-    {ITEM_RNG,1,0},    // 16: 10 arrows +1
-    {ITEM_RNG,2,0},    // 17: 4 bolts +2
-    {ITEM_WPN,1,0},    // 18: dagger +1 or +2 (+1 taken)
-    {ITEM_WPN,2,0},    // 19: javelin +2
-    {ITEM_WPN,1,0},    // 20: mace +1
-};
-
-// Table II (d8 + d6-half, 16 rows)
-const ItemRow kTableII[16] = {
-    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 1-3
-    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 4-6
-    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 7-9
-    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 10-12
-    {ITEM_ARM_SET,1,2},  // 13: chainmail +1, shield +2
-    {ITEM_ARM,4,0},      // 14: splint mail +4
-    {ITEM_WPN,3,0},      // 15: sword +3
-    {ITEM_WPN,2,0},      // 16: crossbow of speed / hammer +2
-};
-
-// Table III (d8 + d6-half, 16 rows)
-const ItemRow kTableIII[16] = {
-    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 1-3
-    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 4-6
-    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 7-9
-    {ITEM_NONE,0,0}, {ITEM_NONE,0,0},                    // 10-11
-    {ITEM_ARM_SET,3,2},  // 12: plate +3, shield +2
-    {ITEM_SHD,5,0},      // 13: shield +5
-    {ITEM_WPN,4,0},      // 14: sword +4, defender
-    {ITEM_WPN,3,0},      // 15: mace +3
-    {ITEM_WPN,3,0},      // 16: spear +3
-};
-
-// Table IV (d12)
-const ItemRow kTableIV[12] = {
-    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 1-3
-    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 4-6
-    {ITEM_NONE,0,0}, {ITEM_NONE,0,0}, {ITEM_NONE,0,0},   // 7-9
-    {ITEM_ARM_SET,4,3},  // 10: plate +4, shield +3
-    {ITEM_WPN,1,0},      // 11: sword of wounding (+1 to-hit)
-    {ITEM_NONE,0,0},     // 12: arrow of slaying
-};
-
-const ItemRow& rollTable(rules::Dice& dice, const ItemRow* t, int n,
-                        bool halfDice) {
+// one row off a die-indexed item table (the retired rollTable).
+// Table II/III keep the printed "(d8, d6)" reading: d8 within
+// a half, d6 1-3/4-6 picking the half (a uniform 1-16 reading
+// of the two-dice notation).
+static const dm::EncounterPartyRow& rollPartyTable(
+        rules::Dice& dice, const char* name, bool halfDice) {
+    static const dm::EncounterPartyRow none{};
+    const auto& rows = partyView(name);
+    const int n = (int)rows.size();
+    if (n <= 0) return none;   // defensive
     int row;
     if (halfDice)   // "(d8, d6)": d6 1-3 -> first half, 4-6 second
         row = (int)dice.roll(1, 8, 0) +
@@ -542,11 +546,11 @@ const ItemRow& rollTable(rules::Dice& dice, const ItemRow* t, int n,
         row = (int)dice.roll(1, (uint32_t)n, 0) - 1;
     if (row < 0) row = 0;
     if (row >= n) row = n - 1;
-    return t[row];
+    return rows[(size_t)row];
 }
 
-void applyItem(const ItemRow& r, PartyMember& m) {
-    switch (r.kind) {
+void applyItem(const dm::EncounterPartyRow& r, PartyMember& m) {
+    switch (kindForToken(r.kind)) {
         case ITEM_WPN: if (r.a > m.wpnPlus) m.wpnPlus = r.a; break;
         case ITEM_RNG: if (r.a > m.rngPlus) m.rngPlus = r.a; break;
         case ITEM_ARM: if (r.a > m.armPlus) m.armPlus = r.a; break;
@@ -559,42 +563,30 @@ void applyItem(const ItemRow& r, PartyMember& m) {
     }
 }
 
-// DMG p.176 level-chance ladder: {level, pctI, nI, pctII, nII,
-// pctIII, nIII, pctIV, nIV}. pct -1 = automatic (the printed
-// "3 items" rows). Level 13+ uses the 13th row.
-const int kLadder[13][9] = {
-    { 1,  10, 1,   0, 0,   0, 0,   0, 0},
-    { 2,  20, 2,   0, 0,   0, 0,   0, 0},
-    { 3,  30, 2,  10, 1,   0, 0,   0, 0},
-    { 4,  40, 2,  20, 1,   0, 0,   0, 0},
-    { 5,  50, 2,  30, 1,   0, 0,   0, 0},
-    { 6,  60, 3,  40, 2,   0, 0,   0, 0},
-    { 7,  70, 3,  50, 2,  10, 1,   0, 0},
-    { 8,  80, 3,  60, 2,  20, 1,   0, 0},
-    { 9,  90, 3,  70, 2,  30, 1,   0, 0},
-    {10,  -1, 3,  80, 2,  40, 1,   0, 0},
-    {11,  -1, 3,  90, 2,  50, 1,  10, 1},
-    {12,  -1, 3,  -1, 2,  60, 1,  20, 1},
-    {13,  -1, 3,  -1, 2,  -1, 1,  60, 1},
-};
-
+// DMG p.176-177: the level-chance ladder and the item rolls -
+// the tables now ride the registry (magic_ladder.lua,
+// magic_table_1..4.lua); pct -1 = automatic, level 13+ uses
+// the 13th row, men-at-arms get nothing (level < 1).
 void rollMagicItemsFor(rules::Dice& dice, PartyMember& m) {
     if (m.level < 1) return;   // men-at-arms: hp is all they need
     int li = m.level - 1;
     if (li > 12) li = 12;
-    const int* row = kLadder[li];
-    for (int t = 0; t < row[2]; ++t)                     // Table I
-        if (row[1] < 0 || (int)dice.roll(1, 100, 0) <= row[1])
-            applyItem(rollTable(dice, kTableI, 20, false), m);
-    for (int t = 0; t < row[4]; ++t)                     // Table II
-        if (row[3] < 0 || (int)dice.roll(1, 100, 0) <= row[3])
-            applyItem(rollTable(dice, kTableII, 16, true), m);
-    for (int t = 0; t < row[6]; ++t)                     // Table III
-        if (row[5] < 0 || (int)dice.roll(1, 100, 0) <= row[5])
-            applyItem(rollTable(dice, kTableIII, 16, true), m);
-    for (int t = 0; t < row[8]; ++t)                     // Table IV
-        if (row[7] < 0 || (int)dice.roll(1, 100, 0) <= row[7])
-            applyItem(rollTable(dice, kTableIV, 12, false), m);
+    static const dm::EncounterPartyRow none{};
+    const auto& lad = partyView("magic_ladder");
+    const dm::EncounterPartyRow& row =
+        (size_t)li < lad.size() ? lad[(size_t)li] : none;
+    for (int t = 0; t < row.t1n; ++t)                     // Table I
+        if (row.t1pct < 0 || (int)dice.roll(1, 100, 0) <= row.t1pct)
+            applyItem(rollPartyTable(dice, "magic_table_1", false), m);
+    for (int t = 0; t < row.t2n; ++t)                     // Table II
+        if (row.t2pct < 0 || (int)dice.roll(1, 100, 0) <= row.t2pct)
+            applyItem(rollPartyTable(dice, "magic_table_2", true), m);
+    for (int t = 0; t < row.t3n; ++t)                     // Table III
+        if (row.t3pct < 0 || (int)dice.roll(1, 100, 0) <= row.t3pct)
+            applyItem(rollPartyTable(dice, "magic_table_3", true), m);
+    for (int t = 0; t < row.t4n; ++t)                     // Table IV
+        if (row.t4pct < 0 || (int)dice.roll(1, 100, 0) <= row.t4pct)
+            applyItem(rollPartyTable(dice, "magic_table_4", false), m);
 }
 
 } // namespace
@@ -616,7 +608,7 @@ CharacterParty rollCharacterParty(rules::Dice& dice,
         for (int attempt = 0; attempt < 24; ++attempt) {
             int pct = (int)dice.roll(1, 100, 0);
             int cand = profFor(pct);
-            if (perProf[cand] >= kProfTable[cand].max) continue;
+            if (perProf[cand] >= profMax(cand)) continue;
             if ((cand == PROF_ASSASSIN && hasPaladin) ||
                 (cand == PROF_PALADIN && hasAssassin)) continue;
             prof = cand;
@@ -657,7 +649,7 @@ CharacterParty rollCharacterParty(rules::Dice& dice,
                 if (cand == PROF_PALADIN) continue;
                 if (cand == PROF_ASSASSIN &&
                     (hasAssassin || hasPaladin)) continue;
-                if (perProf[cand] >= kProfTable[cand].max) continue;
+                if (perProf[cand] >= profMax(cand)) continue;
                 prof = cand;
                 break;
             }

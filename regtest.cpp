@@ -1285,6 +1285,7 @@ int main() {
     #include "rules/audits/r1036_planar_encounter_registry.h"  // R1036
     #include "rules/audits/r1037_psionic_encounter_registry.h"  // R1037
     #include "rules/audits/r1038_castle_encounter_registry.h"  // R1038
+    #include "rules/audits/r1039_party_encounter_registry.h"  // R1039
     #include "rules/audits/r280_special_artifacts_prose.h"  // R835: migrated
     #include "rules/audits/r281_special_artifacts_prose.h"  // R835: migrated
     #include "rules/audits/r282_special_artifacts_prose.h"  // R835: migrated

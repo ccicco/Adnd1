@@ -12,8 +12,9 @@
 // tools/r1034_splice.py (outdoor family),
 // tools/r1035_splice.py (city family),
 // tools/r1036_splice.py (planar family),
-// tools/r1037_splice.py (psionic family) and
-// tools/r1038_splice.py (castle family) are the only writers.
+// tools/r1037_splice.py (psionic family),
+// tools/r1038_splice.py (castle family) and
+// tools/r1039_splice.py (party family) are the only writers.
 // ============================================================================
 
 #pragma once
@@ -132,6 +133,27 @@ struct EncounterCastleRow {
     int n1 = 0, n2 = 0, n3 = 0;
 };
 
+// R1039: the party family row (the R53/R55 de-wire). The six
+// printed tables ride one row shape: lo/hi = the Character
+// Subtable percentile band, or the ladder row's level, or the
+// item table's die face (lo == hi for the unbanded rows);
+// prof = the subtable profession token; kind = the item-kind
+// token (none/wpn/rng/arm/shd/arm_set); max = the subtable
+// per-party maximum; a/b = the item pluses (b = the shield
+// plus on arm_set rows); t1pct..t4n = the ladder's per-table
+// chance and count (pct -1 = automatic). Unused columns stay
+// defaulted - the per-file key lists in the loader keep each
+// file strict (the R1034 dispatch-order lesson).
+struct EncounterPartyRow {
+    int lo = 0, hi = 0;
+    std::string prof;
+    std::string kind;
+    int max = 0;
+    int a = 0, b = 0;
+    int t1pct = 0, t1n = 0, t2pct = 0, t2n = 0;
+    int t3pct = 0, t3n = 0, t4pct = 0, t4n = 0;
+};
+
 // One Determination Matrix entry (d20 range -> monster level).
 struct MatrixEntry { int lo = 0, hi = 0, mlv = 0; };
 
@@ -185,6 +207,12 @@ public:
     bool hasCastle(const std::string& name) const;
     const std::vector<EncounterCastleRow>& castleRows(
         const std::string& name) const;
+    // R1039: the party family views. name: character_subtable /
+    // magic_ladder / magic_table_1 / magic_table_2 /
+    // magic_table_3 / magic_table_4.
+    bool hasParty(const std::string& name) const;
+    const std::vector<EncounterPartyRow>& partyRows(
+        const std::string& name) const;
     // R1035: the city family views. cityBandLookup clamps the
     // percentile to 1-100 and returns false when no band matches
     // (the flavorKindFor contract). cityCount returns nullptr for
@@ -224,6 +252,11 @@ private:
     // the artillery rows ride the same shape, unbanded).
     std::map<std::string, std::vector<EncounterCastleRow>>
         m_castle;
+    // R1039: the party family (the six printed R53/R55
+    // tables; the ladder and item rows ride the same shape,
+    // keyed by level / die face instead of a band).
+    std::map<std::string, std::vector<EncounterPartyRow>>
+        m_party;
     std::vector<std::string> m_errors;
 };
 

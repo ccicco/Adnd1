@@ -146,6 +146,18 @@ const char* const kCastleMasterKeys[] =
 const char* const kCastleArtilleryKeys[] =
     { "type", "ballistae", "lightCatapults", "oilCauldrons",
       nullptr };
+// R1039: the party family file/row keys. Exact keys only -
+// no prefix, no exceptions (the R1034 dispatch-order
+// lesson); the per-table row key lists below keep each
+// file's shape strict.
+const char* const kPartyFileKeys[] = { "key", "rows", nullptr };
+const char* const kPartySubKeys[] =
+    { "band", "prof", "max", nullptr };
+const char* const kPartyLadderKeys[] =
+    { "level", "t1pct", "t1n", "t2pct", "t2n",
+      "t3pct", "t3n", "t4pct", "t4n", nullptr };
+const char* const kPartyItemKeys[] =
+    { "die", "kind", "a", "b", nullptr };
 const char* const kPlanarRowKeys[]   =
     { "band", "key", "numbers", "primeOnly", nullptr };
 const char* const kPlanarPickKeys[] =
@@ -1361,6 +1373,196 @@ bool EncounterTableRegistry::loadFile(const std::string& path,
                                        goto bad; }
             m_castle[key] = rows;
         }
+    } else if (key == "character_subtable"
+               || key == "magic_ladder"
+               || key == "magic_table_1"
+               || key == "magic_table_2"
+               || key == "magic_table_3"
+               || key == "magic_table_4") {
+        const int t = lua_gettop(L);
+        const char* const* rowKeys = kPartyItemKeys;
+        if (key == "character_subtable")
+            rowKeys = kPartySubKeys;
+        else if (key == "magic_ladder")
+            rowKeys = kPartyLadderKeys;
+        if (!checkAllowedKeys(L, t, kPartyFileKeys, key, &err)) goto bad;
+        {
+            std::string k;
+            if (!getStr(L, t, "key", &k, &err)) goto bad;
+            if (k != key) { err = "def key mismatch";
+                                         goto bad; }
+        }
+        lua_getfield(L, t, "rows");
+        if (!lua_istable(L, -1)) { err = "rows is not a table"; goto bad; }
+        {
+            const int n = (int)lua_rawlen(L, -1);
+            std::vector<EncounterPartyRow> rows;
+            int prev = 0;
+            for (int i = 1; i <= n; ++i) {
+                lua_rawgeti(L, -1, i);
+                const int rt = lua_gettop(L);
+                if (!lua_istable(L, rt)
+                    || !checkAllowedKeys(L, rt, rowKeys,
+                        key + " rows[" + std::to_string(i) + "]", &err)) {
+                    if (lua_istable(L, rt))
+                        lua_pop(L, 1);
+                    goto bad;
+                }
+                EncounterPartyRow row;
+                if (key == "character_subtable") {
+                    lua_getfield(L, rt, "band");
+                    if (!lua_istable(L, -1)
+                        || (int)lua_rawlen(L, -1) != 2) {
+                        err = "band must be a {lo, hi} pair";
+                        lua_pop(L, 1);
+                        goto bad;
+                    }
+                    long long v[2];
+                    for (int j = 0; j < 2; ++j) {
+                        lua_rawgeti(L, -1, j + 1);
+                        if (!lua_isinteger(L, -1)) {
+                            err = "band pair field is not an integer";
+                            goto bad;
+                        }
+                        v[j] = lua_tointeger(L, -1);
+                        lua_pop(L, 1);
+                    }
+                    lua_pop(L, 1);
+                    if (v[0] < 1 || v[0] > 100
+                        || v[1] < v[0] || v[1] > 100) {
+                        err = "band outside 01-00";
+                        goto bad;
+                    }
+                    row.lo = (int)v[0]; row.hi = (int)v[1];
+                    prev = row.hi;
+                    if (!getStr(L, rt, "prof", &row.prof, &err))
+                        goto bad;
+                    static const char* const kProfs[] = {
+                        "cleric", "druid", "fighter", "paladin",
+                        "ranger", "magic_user", "illusionist",
+                        "thief", "assassin", "monk_bard",
+                        nullptr };
+                    bool ok = false;
+                    for (int p = 0; kProfs[p]; ++p)
+                        if (row.prof == kProfs[p]) { ok = true; break; }
+                    if (!ok) {
+                        err = "unknown profession token '" + row.prof + "'";
+                        goto bad;
+                    }
+                    lua_getfield(L, rt, "max");
+                    if (!lua_isinteger(L, -1)) {
+                        err = "max is not an integer";
+                        goto bad;
+                    }
+                    const long long mx = lua_tointeger(L, -1);
+                    lua_pop(L, 1);
+                    if (mx < 1 || mx > 5) {
+                        err = "max outside 1-5";
+                        goto bad;
+                    }
+                    row.max = (int)mx;
+                } else if (key == "magic_ladder") {
+                    lua_getfield(L, rt, "level");
+                    if (!lua_isinteger(L, -1)) {
+                        err = "level is not an integer";
+                        goto bad;
+                    }
+                    const long long lvl = lua_tointeger(L, -1);
+                    lua_pop(L, 1);
+                    if (lvl != prev + 1 || lvl < 1 || lvl > 13) {
+                        err = "level must continue 1-13 in order";
+                        goto bad;
+                    }
+                    row.lo = row.hi = (int)lvl;
+                    prev = (int)lvl;
+                    static const char* const kLad[8] = {
+                        "t1pct", "t1n", "t2pct", "t2n",
+                        "t3pct", "t3n", "t4pct", "t4n" };
+                    long long lv[8];
+                    for (int j = 0; j < 8; ++j) {
+                        lua_getfield(L, rt, kLad[j]);
+                        if (!lua_isinteger(L, -1)) {
+                            err = std::string(kLad[j])
+                                + " is not an integer";
+                            goto bad;
+                        }
+                        lv[j] = lua_tointeger(L, -1);
+                        lua_pop(L, 1);
+                    }
+                    for (int j = 0; j < 8; ++j) {
+                        if ((j % 2 == 0 && (lv[j] < -1 || lv[j] > 100))
+                            || (j % 2 == 1 && (lv[j] < 0 || lv[j] > 3))) {
+                            err = std::string(kLad[j])
+                                + " outside the printed range";
+                            goto bad;
+                        }
+                    }
+                    row.t1pct = (int)lv[0]; row.t1n = (int)lv[1];
+                    row.t2pct = (int)lv[2]; row.t2n = (int)lv[3];
+                    row.t3pct = (int)lv[4]; row.t3n = (int)lv[5];
+                    row.t4pct = (int)lv[6]; row.t4n = (int)lv[7];
+                } else {
+                    // magic_table_1 .. magic_table_4
+                    lua_getfield(L, rt, "die");
+                    if (!lua_isinteger(L, -1)) {
+                        err = "die is not an integer";
+                        goto bad;
+                    }
+                    const long long die = lua_tointeger(L, -1);
+                    lua_pop(L, 1);
+                    if (die != prev + 1 || die < 1 || die > 100) {
+                        err = "die faces must continue from 1 in order";
+                        goto bad;
+                    }
+                    row.lo = row.hi = (int)die;
+                    prev = (int)die;
+                    if (!getStr(L, rt, "kind", &row.kind, &err))
+                        goto bad;
+                    static const char* const kKinds[] = {
+                        "none", "wpn", "rng", "arm", "shd",
+                        "arm_set", nullptr };
+                    bool ok = false;
+                    for (int p = 0; kKinds[p]; ++p)
+                        if (row.kind == kKinds[p]) { ok = true; break; }
+                    if (!ok) {
+                        err = "unknown item-kind token '" + row.kind + "'";
+                        goto bad;
+                    }
+                    static const char* const kPlus[2] = { "a", "b" };
+                    long long pv[2];
+                    for (int j = 0; j < 2; ++j) {
+                        lua_getfield(L, rt, kPlus[j]);
+                        if (!lua_isinteger(L, -1)) {
+                            err = std::string(kPlus[j])
+                                + " is not an integer";
+                            goto bad;
+                        }
+                        pv[j] = lua_tointeger(L, -1);
+                        lua_pop(L, 1);
+                        if (pv[j] < 0 || pv[j] > 5) {
+                            err = std::string(kPlus[j])
+                                + " outside 0-5";
+                            goto bad;
+                        }
+                    }
+                    row.a = (int)pv[0]; row.b = (int)pv[1];
+                }
+                rows.push_back(row);
+                lua_pop(L, 1);            // row
+            }
+            lua_pop(L, 1);                // rows array
+            if (key == "character_subtable" && prev != 100) {
+                err = "bands do not reach 100";
+                goto bad;
+            }
+            if (key == "magic_ladder" && prev != 13) {
+                err = "ladder does not reach level 13";
+                goto bad;
+            }
+            if (m_party.count(key)) { err = "duplicate def key";
+                                       goto bad; }
+            m_party[key] = rows;
+        }
     } else {
         err = "unknown file shape for key '" + key + "'";
         goto bad;
@@ -1565,6 +1767,19 @@ EncounterTableRegistry::castleRows(
     static const std::vector<EncounterCastleRow> none;
     auto it = m_castle.find(name);
     return it == m_castle.end() ? none : it->second;
+}
+
+bool EncounterTableRegistry::hasParty(
+    const std::string& name) const {
+    return m_party.count(name) != 0;
+}
+
+const std::vector<EncounterPartyRow>&
+EncounterTableRegistry::partyRows(
+    const std::string& name) const {
+    static const std::vector<EncounterPartyRow> none;
+    auto it = m_party.find(name);
+    return it == m_party.end() ? none : it->second;
 }
 
 const std::vector<std::string>&
