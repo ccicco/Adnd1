@@ -9,8 +9,9 @@
 // record (Premium reprint p.174-179, OCR-verified) is the source;
 // tools/r1032_splice.py (dungeon family),
 // tools/r1033_splice.py (water family),
-// tools/r1034_splice.py (outdoor family) and
-// tools/r1035_splice.py (city family) are the only writers.
+// tools/r1034_splice.py (outdoor family),
+// tools/r1035_splice.py (city family) and
+// tools/r1036_splice.py (planar family) are the only writers.
 // ============================================================================
 
 #pragma once
@@ -88,6 +89,25 @@ struct EncounterCityMagic {
     int groups[3] = { 0, 0, 0 };
 };
 
+// R1036: the planar family. One row carries the percentile
+// band, the bestiary key or the printed pseudo-key (the
+// PLANAR_* rows resolve through the pick-set lists), the
+// printed Numbers column (uniform lo..hi; 0,0 = the traveller
+// party) and the (*) prime-material footnote flag. The
+// wind/cyclone band rows carry the d20 band, the printed
+// effect key and the printed day range (-1 = no printed days).
+struct EncounterPlanarRow {
+    std::string key;
+    int lo = 0, hi = 0;
+    int nMin = 0, nMax = 0;
+    bool primeOnly = false;
+};
+struct EncounterPlanarBand {
+    int lo = 0, hi = 0;
+    std::string effect;
+    int dMin = -1, dMax = -1;    // -1: no printed days
+};
+
 // One Determination Matrix entry (d20 range -> monster level).
 struct MatrixEntry { int lo = 0, hi = 0, mlv = 0; };
 
@@ -126,6 +146,15 @@ public:
     // fire_frost / piercers / ki_rin_set / leprechaun_set /
     // porcupine_set / iguanodon_set / lammasu_set / wolf_dog_set
     const std::vector<std::string>& list(const std::string& set) const;
+    // R1036: the planar family views. planarRows/planarBands
+    // return an empty vector for an absent table (the callers'
+    // defensive paths re-roll).
+    bool hasPlanar(const std::string& name) const;
+    const std::vector<EncounterPlanarRow>& planarRows(
+        const std::string& name) const;
+    bool hasPlanarBands(const std::string& name) const;
+    const std::vector<EncounterPlanarBand>& planarBands(
+        const std::string& name) const;
     // R1035: the city family views. cityBandLookup clamps the
     // percentile to 1-100 and returns false when no band matches
     // (the flavorKindFor contract). cityCount returns nullptr for
@@ -156,6 +185,11 @@ private:
     std::map<std::string, std::vector<EncounterCityBand>> m_cityBands;
     std::map<std::string, EncounterCityCount> m_cityCounts;
     std::vector<EncounterCityMagic> m_cityMagic;
+    // R1036: the planar family (the two row tables and the two
+    // d20 band tables; the pick-sets ride m_lists above).
+    std::map<std::string, std::vector<EncounterPlanarRow>> m_planar;
+    std::map<std::string, std::vector<EncounterPlanarBand>>
+        m_planarBands;
     std::vector<std::string> m_errors;
 };
 

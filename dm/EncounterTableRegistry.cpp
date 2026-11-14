@@ -123,6 +123,23 @@ const char* const kCityCountKeys[] =
     { "key", "dice", "nightDice", "fixed", nullptr };
 const char* const kCityMagicKeys[] = { "category", "groups", nullptr };
 const char* const kCityBandKeys[]  = { "band", "kind", nullptr };
+// R1036: the planar family file/row keys. Exact keys only -
+// no prefix, no exceptions (the R1034 dispatch-order lesson).
+const char* const kPlanarFileKeys[]  = { "key", "rows", nullptr };
+const char* const kPlanarRowKeys[]   =
+    { "band", "key", "numbers", "primeOnly", nullptr };
+const char* const kPlanarPickKeys[] =
+    { "key", "demon_minor", "demon_major", "devil_greater",
+      "devil_lesser", "titan_elder", "titan_lesser",
+      "titan_major", nullptr };
+const char* const kPlanarBandFileKeys[] = { "key", "rows", nullptr };
+const char* const kPlanarBandKeys[] =
+    { "band", "effect", "days", nullptr };
+const char* const kWindEffects[] =
+    { "slowed", "lost_return", "off_course", "storm", nullptr };
+const char* const kCycloneEffects[] =
+    { "blown_about", "different_plane", "lost_new_plane",
+      "storm_astral", nullptr };
 const char* const kMatrixKeys[]  = { "key", "bands", nullptr };
 const char* const kLevelKeys[]   = { "key", "rows", nullptr };
 const char* const kDragonKeys[]  = { "key", "rows", nullptr };
@@ -856,6 +873,244 @@ bool EncounterTableRegistry::loadFile(const std::string& path,
                                           goto bad; }
             m_cityBands[key] = rows;
         }
+    } else if (key == "planar_astral"
+               || key == "planar_ethereal") {
+        const int t = lua_gettop(L);
+        if (!checkAllowedKeys(L, t, kPlanarFileKeys, key, &err)) goto bad;
+        {
+            std::string k;
+            if (!getStr(L, t, "key", &k, &err)) goto bad;
+            if (k != key) { err = "def key mismatch"; goto bad; }
+        }
+        lua_getfield(L, t, "rows");
+        if (!lua_istable(L, -1)) { err = "rows is not a table"; goto bad; }
+        {
+            const int n = (int)lua_rawlen(L, -1);
+            std::vector<EncounterPlanarRow> rows;
+            for (int i = 1; i <= n; ++i) {
+                lua_rawgeti(L, -1, i);
+                const int rt = lua_gettop(L);
+                if (!lua_istable(L, rt)
+                    || !checkAllowedKeys(L, rt, kPlanarRowKeys,
+                        key + " rows[" + std::to_string(i) + "]", &err)) {
+                    if (lua_istable(L, rt))
+                        lua_pop(L, 1);
+                    goto bad;
+                }
+                EncounterPlanarRow row;
+                lua_getfield(L, rt, "band");
+                if (!lua_istable(L, -1)
+                    || (int)lua_rawlen(L, -1) != 2) {
+                    err = "band must be a {lo, hi} pair";
+                    lua_pop(L, 1);
+                    goto bad;
+                }
+                long long v[2];
+                for (int j = 0; j < 2; ++j) {
+                    lua_rawgeti(L, -1, j + 1);
+                    if (!lua_isinteger(L, -1)) {
+                        err = "band pair field is not an integer";
+                        goto bad;
+                    }
+                    v[j] = lua_tointeger(L, -1);
+                    lua_pop(L, 1);
+                }
+                lua_pop(L, 1);
+                if (v[0] < 1 || v[0] > 100
+                    || v[1] < v[0] || v[1] > 100) {
+                    err = "band outside 01-00";
+                    goto bad;
+                }
+                row.lo = (int)v[0]; row.hi = (int)v[1];
+                if (!getStr(L, rt, "key", &row.key, &err)) goto bad;
+                lua_getfield(L, rt, "numbers");
+                if (!lua_istable(L, -1)
+                    || (int)lua_rawlen(L, -1) != 2) {
+                    err = "numbers must be {nMin, nMax}";
+                    lua_pop(L, 1);
+                    goto bad;
+                }
+                for (int j = 0; j < 2; ++j) {
+                    lua_rawgeti(L, -1, j + 1);
+                    if (!lua_isinteger(L, -1)) {
+                        err = "numbers field is not an integer";
+                        goto bad;
+                    }
+                    v[j] = lua_tointeger(L, -1);
+                    lua_pop(L, 1);
+                }
+                lua_pop(L, 1);
+                if (v[0] < 0 || v[1] < v[0] || v[1] > 100) {
+                    err = "numbers outside 0-100";
+                    goto bad;
+                }
+                row.nMin = (int)v[0]; row.nMax = (int)v[1];
+                lua_getfield(L, rt, "primeOnly");
+                if (!lua_isboolean(L, -1)) {
+                    err = "primeOnly is not a boolean";
+                    lua_pop(L, 1);
+                    goto bad;
+                }
+                row.primeOnly = lua_toboolean(L, -1) != 0;
+                lua_pop(L, 1);
+                rows.push_back(row);
+                lua_pop(L, 1);            // row
+            }
+            lua_pop(L, 1);                // rows array
+            if (m_planar.count(key)) { err = "duplicate def key";
+                                       goto bad; }
+            m_planar[key] = rows;
+        }
+    } else if (key == "planar_picks") {
+        const int t = lua_gettop(L);
+        if (!checkAllowedKeys(L, t, kPlanarPickKeys, key, &err)) goto bad;
+        {
+            std::string k;
+            if (!getStr(L, t, "key", &k, &err)) goto bad;
+            if (k != "planar_picks") { err = "def key mismatch";
+                                       goto bad; }
+        }
+        {
+            static const char* const names[7] = { "demon_minor",
+                "demon_major", "devil_greater", "devil_lesser",
+                "titan_elder", "titan_lesser", "titan_major" };
+            for (int i = 0; i < 7; ++i) {
+                lua_getfield(L, t, names[i]);
+                if (!lua_istable(L, -1)) {
+                    err = std::string("'") + names[i]
+                        + "' is not a table";
+                    goto bad;
+                }
+                const int cnt = (int)lua_rawlen(L, -1);
+                if (cnt < 2) {
+                    err = std::string("'") + names[i]
+                        + "' must carry at least two keys";
+                    goto bad;
+                }
+                std::vector<std::string> vals;
+                for (int j = 1; j <= cnt; ++j) {
+                    lua_rawgeti(L, -1, j);
+                    if (!lua_isstring(L, -1)) {
+                        err = std::string("'") + names[i]
+                            + "' element is not a string";
+                        goto bad;
+                    }
+                    size_t len = 0;
+                    const char* s = lua_tolstring(L, -1, &len);
+                    vals.push_back(std::string(s, len));
+                    lua_pop(L, 1);
+                }
+                lua_pop(L, 1);
+                const std::string setKey =
+                    std::string(names[i]) + "_set";
+                if (m_lists.count(setKey)) {
+                    err = "duplicate def key";
+                    goto bad;
+                }
+                m_lists[setKey] = vals;
+            }
+        }
+    } else if (key == "planar_wind" || key == "planar_cyclone") {
+        const int t = lua_gettop(L);
+        if (!checkAllowedKeys(L, t, kPlanarBandFileKeys, key, &err))
+            goto bad;
+        {
+            std::string k;
+            if (!getStr(L, t, "key", &k, &err)) goto bad;
+            if (k != key) { err = "def key mismatch"; goto bad; }
+        }
+        lua_getfield(L, t, "rows");
+        if (!lua_istable(L, -1)) { err = "rows is not a table"; goto bad; }
+        {
+            const char* const* effects = key == "planar_wind"
+                ? kWindEffects : kCycloneEffects;
+            const int n = (int)lua_rawlen(L, -1);
+            std::vector<EncounterPlanarBand> rows;
+            for (int i = 1; i <= n; ++i) {
+                lua_rawgeti(L, -1, i);
+                const int rt = lua_gettop(L);
+                if (!lua_istable(L, rt)
+                    || !checkAllowedKeys(L, rt, kPlanarBandKeys,
+                        key + " rows[" + std::to_string(i) + "]", &err)) {
+                    if (lua_istable(L, rt))
+                        lua_pop(L, 1);
+                    goto bad;
+                }
+                EncounterPlanarBand row;
+                lua_getfield(L, rt, "band");
+                if (!lua_istable(L, -1)
+                    || (int)lua_rawlen(L, -1) != 2) {
+                    err = "band must be a {lo, hi} pair";
+                    lua_pop(L, 1);
+                    goto bad;
+                }
+                long long v[2];
+                for (int j = 0; j < 2; ++j) {
+                    lua_rawgeti(L, -1, j + 1);
+                    if (!lua_isinteger(L, -1)) {
+                        err = "band pair field is not an integer";
+                        goto bad;
+                    }
+                    v[j] = lua_tointeger(L, -1);
+                    lua_pop(L, 1);
+                }
+                lua_pop(L, 1);
+                if (v[0] < 1 || v[0] > 20
+                    || v[1] < v[0] || v[1] > 20) {
+                    err = "band outside the d20 range";
+                    goto bad;
+                }
+                row.lo = (int)v[0]; row.hi = (int)v[1];
+                lua_getfield(L, rt, "effect");
+                if (!lua_isstring(L, -1)) {
+                    err = "effect is not a string";
+                    lua_pop(L, 1);
+                    goto bad;
+                }
+                size_t len = 0;
+                const char* s = lua_tolstring(L, -1, &len);
+                row.effect = std::string(s, len);
+                lua_pop(L, 1);
+                bool okEff = false;
+                for (int e = 0; effects[e]; ++e)
+                    if (row.effect == effects[e])
+                        { okEff = true; break; }
+                if (!okEff) {
+                    err = "unknown effect '" + row.effect + "'";
+                    goto bad;
+                }
+                lua_getfield(L, rt, "days");
+                if (!lua_istable(L, -1)
+                    || (int)lua_rawlen(L, -1) != 2) {
+                    err = "days must be a {lo, hi} pair";
+                    lua_pop(L, 1);
+                    goto bad;
+                }
+                for (int j = 0; j < 2; ++j) {
+                    lua_rawgeti(L, -1, j + 1);
+                    if (!lua_isinteger(L, -1)) {
+                        err = "days pair field is not an integer";
+                        goto bad;
+                    }
+                    v[j] = lua_tointeger(L, -1);
+                    lua_pop(L, 1);
+                }
+                lua_pop(L, 1);
+                const bool none = v[0] == -1 && v[1] == -1;
+                if (!none && (v[0] < 1 || v[1] < v[0]
+                              || v[1] > 200)) {
+                    err = "days outside 1-200 or {-1,-1}";
+                    goto bad;
+                }
+                row.dMin = (int)v[0]; row.dMax = (int)v[1];
+                rows.push_back(row);
+                lua_pop(L, 1);            // row
+            }
+            lua_pop(L, 1);                // rows array
+            if (m_planarBands.count(key)) { err = "duplicate def key";
+                                            goto bad; }
+            m_planarBands[key] = rows;
+        }
     } else {
         err = "unknown file shape for key '" + key + "'";
         goto bad;
@@ -1021,6 +1276,32 @@ EncounterTableRegistry::cityCount(const std::string& key) const {
 const std::vector<EncounterCityMagic>&
 EncounterTableRegistry::cityMagic() const {
     return m_cityMagic;
+}
+
+bool EncounterTableRegistry::hasPlanar(
+    const std::string& name) const {
+    return m_planar.count(name) != 0;
+}
+
+const std::vector<EncounterPlanarRow>&
+EncounterTableRegistry::planarRows(
+    const std::string& name) const {
+    static const std::vector<EncounterPlanarRow> none;
+    auto it = m_planar.find(name);
+    return it == m_planar.end() ? none : it->second;
+}
+
+bool EncounterTableRegistry::hasPlanarBands(
+    const std::string& name) const {
+    return m_planarBands.count(name) != 0;
+}
+
+const std::vector<EncounterPlanarBand>&
+EncounterTableRegistry::planarBands(
+    const std::string& name) const {
+    static const std::vector<EncounterPlanarBand> none;
+    auto it = m_planarBands.find(name);
+    return it == m_planarBands.end() ? none : it->second;
 }
 
 const std::vector<std::string>&

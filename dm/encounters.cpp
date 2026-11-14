@@ -84,6 +84,7 @@ static dm::EncounterTableRegistry& encReg() {
         // R1035: the city family joined likewise (the R1034
         // audit pins 21 files in encounters_outdoor/).
         reg.loadDirectory("content/tables/encounters_city");
+        reg.loadDirectory("content/tables/encounters_planar");
     }
     return reg;
 }
@@ -2010,103 +2011,70 @@ std::vector<std::string> cityEncounterKeys(
 // cord effects are fiction-only (documented; R60/R63 no-
 // wiring precedent).
 
+// R1036 (the registry-native de-wire, the R1032-R1035 shape):
+// the astral/ethereal rows retired into content/tables/
+// encounters_planar/planar_astral.lua and planar_ethereal.lua
+// (band = the percentile, key = the bestiary key or the printed
+// pseudo-key, numbers = the printed Numbers column, primeOnly
+// = the (*) footnote); the seven demon/devil/titan pick-sets
+// into planar_picks.lua (the demon-prince and arch-devil pools
+// stay engine-side, retained verbatim above); the psychic wind
+// and ether cyclone d20 bands into planar_wind.lua and
+// planar_cyclone.lua. The registry loads the directory (encReg()
+// above). What stays here is the mechanics: the (*) footnote
+// re-roll, the second-percentile pick-set modulo selection, the
+// printed Numbers column count, the ** modified Human Subtable
+// traveller party (verbatim below), and the wind/cyclone save
+// logic (a storm save failure snaps the cord / blows the
+// traveller to the astral plane). Signatures and behavior are
+// unchanged - the views are registry-backed. The R66 psionic
+// table's (*) demon/devil rows resolved through the retired
+// arrays below; they are rewired to the same planarSetView
+// (mechanics unchanged, modulo the pinned set sizes).
+
 namespace {
 
-struct PlanarRow {
-    short lo, hi;             // percentile
-    const char* key;          // registry key or pseudo-key
-    short nMin, nMax;         // printed Numbers column
-    int flags;
-};
-enum { PF_NONE = 0, PF_PRIME_ONLY = 1 };
+// the registry-backed static caches (the R1032-R1035 idiom)
+static const std::vector<dm::EncounterPlanarRow>& planarView(
+        const char* name) {
+    static std::map<std::string,
+        std::vector<dm::EncounterPlanarRow>> cache;
+    auto it = cache.find(name);
+    if (it == cache.end())
+        it = cache.emplace(
+            name, dm::encReg().planarRows(name)).first;
+    return it->second;
+}
 
-static const PlanarRow kAstralTable[] = {
-{1, 4, "aerial_servant", 1, 1},
-{5, 10, "basilisk", 1, 2 | PF_PRIME_ONLY}, // * prime-adjacent only,
-{11, 13, "cockatrice", 1, 4 | PF_PRIME_ONLY}, // * prime-adjacent only,
-{14, 16, "PLANAR_DEMON_MAJOR", 1, 1}, // Demon, major -> type V/VI pick-set,
-{17, 22, "PLANAR_DEMON_MINOR", 1, 3}, // Demon, minor -> type I-IV pick-set,
-{23, 23, "PLANAR_DEMON_PRINCE", 1, 1}, // Demon, prince -> R52 kPrinces pool,
-{24, 24, "PLANAR_DEVIL_ARCH", 1, 1}, // Devil, arch- -> R52 kArchDevils pool,
-{25, 28, "PLANAR_DEVIL_GREATER", 1, 1}, // Devil, greater- -> horned/ice/pit_fiend,
-{29, 37, "PLANAR_DEVIL_LESSER", 1, 3}, // Devil, lesser- -> succubus/erinyes/barbed/bone,
-{38, 38, "chromatic_dragon", 1, 1}, // Dragon, chromatic (Tiamat),
-{39, 39, "platinum_dragon", 1, 1}, // Dragon, platinum (Bahamut),
-{40, 41, "gorgon", 1, 2 | PF_PRIME_ONLY}, // * prime-adjacent only,
-{42, 46, "PLANAR_TRAVELLER", 0, 0}, // Human traveller - modified Human Subtable (**),
-{47, 49, "intellect_devourer", 1, 2},
-{50, 55, "invisible_stalker", 1, 3},
-{56, 61, "ki_rin", 1, 1},
-{62, 63, "medusa", 1, 2 | PF_PRIME_ONLY}, // * prime-adjacent only,
-{64, 71, "night_hag", 1, 4},
-{72, 74, "nightmare", 1, 4},
-{75, 79, "rakshasa", 1, 3},
-{80, 91, "shedu", 2, 5},
-{92, 92, "PLANAR_TITAN_ELDER", 1, 1}, // Titan, elder -> AC -2/-3 variants,
-{93, 97, "PLANAR_TITAN_LESSER", 1, 1}, // Titan, lesser -> AC 1/2 variants,
-{98, 100, "PLANAR_TITAN_MAJOR", 1, 1}   // Titan, major -> AC 0/1 variants
-};
+static const std::vector<dm::EncounterPlanarBand>& planarBandView(
+        const char* name) {
+    static std::map<std::string,
+        std::vector<dm::EncounterPlanarBand>> cache;
+    auto it = cache.find(name);
+    if (it == cache.end())
+        it = cache.emplace(
+            name, dm::encReg().planarBands(name)).first;
+    return it->second;
+}
 
-static const PlanarRow kEtherealTable[] = {
-{1, 5, "aerial_servant", 1, 1},
-{6, 10, "basilisk", 1, 2 | PF_PRIME_ONLY}, // * prime-adjacent only,
-{11, 13, "cockatrice", 1, 4 | PF_PRIME_ONLY}, // * prime-adjacent only,
-{14, 18, "couatl", 1, 4},
-{19, 26, "djinni", 1, 6},
-{27, 27, "chromatic_dragon", 1, 1}, // Dragon, chromatic (Tiamat),
-{28, 28, "platinum_dragon", 1, 1}, // Dragon, platinum (Bahamut),
-{29, 30, "efreeti", 1, 3},
-{31, 37, "air_elemental", 1, 1}, // Elemental, air,
-{38, 39, "earth_elemental", 1, 1}, // Elemental, earth,
-{40, 41, "fire_elemental", 1, 1}, // Elemental, fire,
-{42, 42, "water_elemental", 1, 1}, // Elemental, water,
-{43, 48, "ghost", 1, 1},
-{49, 50, "gorgon", 1, 2 | PF_PRIME_ONLY}, // * prime-adjacent only,
-{51, 52, "groaning_spirit", 1, 2},
-{53, 57, "PLANAR_TRAVELLER", 0, 0}, // Human traveller - same ** note,
-{58, 59, "intellect_devourer", 1, 2},
-{60, 62, "invisible_stalker", 1, 3},
-{63, 68, "ki_rin", 1, 1},
-{69, 76, "lammasu", 2, 8},
-{77, 78, "medusa", 1, 2 | PF_PRIME_ONLY}, // * prime-adjacent only,
-{79, 80, "nightmare", 1, 4},
-{81, 82, "salamander", 2, 5},
-{83, 87, "phase_spider", 1, 6}, // Spider, phase,
-{88, 94, "thought_eater", 1, 3}, // Thought eaters,
-{95, 97, "wind_walker", 2, 5}, // Wind walkers,
-{98, 100, "xorn", 3, 6}
-};
-
-// pick-sets (second percentile modulo size)
-static const char* const kDemonMinor[] = {
-    "type_i_vrock", "type_ii_hezrou", "type_iii_glabrezu",
-    "type_iv_demon_bilwhr", "type_iv_demon_johud",
-    "type_iv_demon_nalfeshnee"
-};
-static const char* const kDemonMajor[] = {
-    "type_v_demon_aishapra", "type_v_demon_kevokulli",
-    "type_v_demon_marilith", "type_v_demon_rehnaremme",
-    "type_vi_demon_alzoll", "type_vi_demon_balor",
-    "type_vi_demon_errtu", "type_vi_demon_ndulu",
-    "type_vi_demon_tersath", "type_vi_demon_wendonai"
-};
-static const char* const kDevilGreater[] = {
-    "horned_devil", "ice_devil", "pit_fiend"
-};
-static const char* const kDevilLesser[] = {
-    "succubus", "erinyes", "barbed_devil", "bone_devil"
-};
-static const char* const kTitanElder[]  = { "elder_titan_ac_2", "elder_titan_ac_3" };
-static const char* const kTitanLesser[] = { "lesser_titan_ac_1", "lesser_titan_ac_2" };
-static const char* const kTitanMajor[]  = { "major_titan_ac_0", "major_titan_ac_1" };
-
-const PlanarRow* planarTable(PlanarBody body, size_t& n) {
-    if (body == PB_ASTRAL) {
-        n = sizeof kAstralTable / sizeof kAstralTable[0];
-        return kAstralTable;
+// the seven pick-sets (planar_picks.lua -> the registry lists)
+static const std::vector<std::string>& planarSetView(
+        const char* set) {
+    static const char* const kNames[7] = {
+        "demon_minor", "demon_major", "devil_greater",
+        "devil_lesser", "titan_elder", "titan_lesser",
+        "titan_major" };
+    static std::map<std::string, std::vector<std::string>> m;
+    static bool loaded = false;
+    if (!loaded) {
+        loaded = true;
+        for (const char* s : kNames)
+            m[std::string(s) + "_set"] =
+                dm::encReg().list(std::string(s) + "_set");
     }
-    n = sizeof kEtherealTable / sizeof kEtherealTable[0];
-    return kEtherealTable;
+    static const std::vector<std::string> none;
+    auto it = m.find(set);
+    return it == m.end() ? none : it->second;
 }
 
 } // namespace
@@ -2173,35 +2141,52 @@ DungeonEncounter rollPlanarEncounter(
         PlanarBody body, bool primeAdjacent) {
     DungeonEncounter e;
 
-    size_t n = 0;
-    const PlanarRow* t = planarTable(body, n);
+    const char* tableName =
+        body == PB_ASTRAL ? "planar_astral" : "planar_ethereal";
+    const std::vector<dm::EncounterPlanarRow>& t =
+        planarView(tableName);
 
     for (int attempt = 0; attempt < 24; ++attempt) {
-        const PlanarRow* row = nullptr;
-        for (size_t i = 0; i < n; ++i)
-            if (pctile >= t[i].lo && pctile <= t[i].hi)
-                { row = &t[i]; break; }
+        const dm::EncounterPlanarRow* row = nullptr;
+        for (const auto& r : t)
+            if (pctile >= r.lo && pctile <= r.hi)
+                { row = &r; break; }
         if (!row) return e;   // defensive: columns cover 01-00
 
         // * footnote: prime-material perception creatures
         // "otherwise, ignore the encounter result and roll
         // again"
-        if ((row->flags & PF_PRIME_ONLY) && !primeAdjacent) {
+        if (row->primeOnly && !primeAdjacent) {
             pctile  = 1 + (int)dice.roll(1, 100, 0) - 1;
             pctile2 = 1 + (int)dice.roll(1, 100, 0) - 1;
             continue;
         }
 
+        auto pick = [&](const char* set) -> std::string {
+            const auto& v = planarSetView(set);
+            return v.empty() ? std::string()
+                             : v[pctile2 % (int)v.size()];
+        };
         std::string key = row->key;
-        if      (key == "PLANAR_DEMON_MINOR")  key = kDemonMinor[pctile2 % 6];
-        else if (key == "PLANAR_DEMON_MAJOR")  key = kDemonMajor[pctile2 % 10];
-        else if (key == "PLANAR_DEMON_PRINCE") key = kPrinces[pctile2 % 4];
-        else if (key == "PLANAR_DEVIL_ARCH")   key = kArchDevils[pctile2 % 4];
-        else if (key == "PLANAR_DEVIL_GREATER") key = kDevilGreater[pctile2 % 3];
-        else if (key == "PLANAR_DEVIL_LESSER")  key = kDevilLesser[pctile2 % 4];
-        else if (key == "PLANAR_TITAN_ELDER")   key = kTitanElder[pctile2 % 2];
-        else if (key == "PLANAR_TITAN_LESSER")  key = kTitanLesser[pctile2 % 2];
-        else if (key == "PLANAR_TITAN_MAJOR")   key = kTitanMajor[pctile2 % 2];
+        if      (key == "PLANAR_DEMON_MINOR")
+            key = pick("demon_minor_set");
+        else if (key == "PLANAR_DEMON_MAJOR")
+            key = pick("demon_major_set");
+        else if (key == "PLANAR_DEMON_PRINCE")
+            key = kPrinces[pctile2 % 4];
+        else if (key == "PLANAR_DEVIL_ARCH")
+            key = kArchDevils[pctile2 % 4];
+        else if (key == "PLANAR_DEVIL_GREATER")
+            key = pick("devil_greater_set");
+        else if (key == "PLANAR_DEVIL_LESSER")
+            key = pick("devil_lesser_set");
+        else if (key == "PLANAR_TITAN_ELDER")
+            key = pick("titan_elder_set");
+        else if (key == "PLANAR_TITAN_LESSER")
+            key = pick("titan_lesser_set");
+        else if (key == "PLANAR_TITAN_MAJOR")
+            key = pick("titan_major_set");
+        if (key.empty()) return e;   // a missing set file
 
         if (key == "PLANAR_TRAVELLER") {
             // ** modified Human Subtable party
@@ -2239,28 +2224,35 @@ DungeonEncounter rollPlanarEncounter(
 std::vector<std::string> planarEncounterKeys(
         const monsters::MonsterRegistry& reg, PlanarBody body) {
     std::vector<std::string> out;
-    size_t n = 0;
-    const PlanarRow* t = planarTable(body, n);
-    for (size_t i = 0; i < n; ++i) {
-        const std::string key = t[i].key;
+    const char* tableName =
+        body == PB_ASTRAL ? "planar_astral" : "planar_ethereal";
+    for (const auto& r : planarView(tableName)) {
+        const std::string key = r.key;
         if      (key == "PLANAR_DEMON_MINOR")
-            for (const char* k : kDemonMinor) pushUnique(out, k);
+            for (const auto& k : planarSetView("demon_minor_set"))
+                pushUnique(out, k.c_str());
         else if (key == "PLANAR_DEMON_MAJOR")
-            for (const char* k : kDemonMajor) pushUnique(out, k);
+            for (const auto& k : planarSetView("demon_major_set"))
+                pushUnique(out, k.c_str());
         else if (key == "PLANAR_DEMON_PRINCE")
             for (const char* k : kPrinces) pushUnique(out, k);
         else if (key == "PLANAR_DEVIL_ARCH")
             for (const char* k : kArchDevils) pushUnique(out, k);
         else if (key == "PLANAR_DEVIL_GREATER")
-            for (const char* k : kDevilGreater) pushUnique(out, k);
+            for (const auto& k : planarSetView("devil_greater_set"))
+                pushUnique(out, k.c_str());
         else if (key == "PLANAR_DEVIL_LESSER")
-            for (const char* k : kDevilLesser) pushUnique(out, k);
+            for (const auto& k : planarSetView("devil_lesser_set"))
+                pushUnique(out, k.c_str());
         else if (key == "PLANAR_TITAN_ELDER")
-            for (const char* k : kTitanElder) pushUnique(out, k);
+            for (const auto& k : planarSetView("titan_elder_set"))
+                pushUnique(out, k.c_str());
         else if (key == "PLANAR_TITAN_LESSER")
-            for (const char* k : kTitanLesser) pushUnique(out, k);
+            for (const auto& k : planarSetView("titan_lesser_set"))
+                pushUnique(out, k.c_str());
         else if (key == "PLANAR_TITAN_MAJOR")
-            for (const char* k : kTitanMajor) pushUnique(out, k);
+            for (const auto& k : planarSetView("titan_major_set"))
+                pushUnique(out, k.c_str());
         else if (key == "PLANAR_TRAVELLER")
             pushUnique(out, "planar_traveller_party");
         else if (reg.find(key))
@@ -2269,7 +2261,6 @@ std::vector<std::string> planarEncounterKeys(
     return out;
 }
 
-// ----------------------------------------------------------------------------
 // R65: PSYCHIC WIND (astral) & ETHER CYCLONE (ethereal) - DMG
 // p.181, transcribed verbatim. "The chance of a delayed or
 // disrupted journey is 5% per plane crossed." The effects
@@ -2281,48 +2272,76 @@ std::vector<std::string> planarEncounterKeys(
 // throw versus magic (wind 20 / cyclone 19-20) is the
 // caller's - passed in as saveMade.
 
+namespace {
+
+// the band effect key -> the engine enum (the enum is the
+// engine's contract; the band table is the data)
+PsychicWindEffect windEffectFor(const std::string& e) {
+    if (e == "slowed") return PsychicWindEffect::Slowed;
+    if (e == "lost_return") return PsychicWindEffect::LostReturn;
+    if (e == "off_course") return PsychicWindEffect::OffCourse;
+    return PsychicWindEffect::Storm;   // validated at load
+}
+
+EtherCycloneEffect cycloneEffectFor(const std::string& e) {
+    if (e == "blown_about")
+        return EtherCycloneEffect::BlownAbout;
+    if (e == "different_plane")
+        return EtherCycloneEffect::DifferentPlane;
+    if (e == "lost_new_plane")
+        return EtherCycloneEffect::LostNewPlane;
+    return EtherCycloneEffect::StormAstral;   // validated at load
+}
+
+} // namespace
+
 PsychicWindResult rollPsychicWind(rules::Dice& dice, int d20,
                                   bool saveMade) {
-    PsychicWindResult r;
-    if (d20 <= 12) {
-        r.effect = PsychicWindEffect::Slowed;
-    } else if (d20 <= 16) {
-        r.effect = PsychicWindEffect::LostReturn;
-        r.days = 1 + (int)dice.roll(1, 19, 0);       // 2-20
-    } else if (d20 <= 19) {
-        r.effect = PsychicWindEffect::OffCourse;
-    } else {
-        r.effect = PsychicWindEffect::Storm;
-        if (saveMade)
-            r.days = 3 + (int)dice.roll(1, 37, 0);    // 4-40
-        else
+    // {} value-init: the result struct carries no default
+    // members, and the retired code left untraveled fields
+    // (days/cordBroken off their paths) indeterminate - the
+    // parity audit requires deterministic untouched fields
+    PsychicWindResult r{};
+    for (const auto& b : planarBandView("planar_wind")) {
+        if (d20 < b.lo || d20 > b.hi) continue;
+        r.effect = windEffectFor(b.effect);
+        // uniform over the printed day range (the retired
+        // expressions produced the same spread); a storm save
+        // failure snaps the cord instead of costing days
+        if (b.dMin >= 1
+            && (r.effect != PsychicWindEffect::Storm || saveMade))
+            r.days = b.dMin + (int)dice.roll(
+                1, (uint32_t)(b.dMax - b.dMin + 1), 0) - 1;
+        if (r.effect == PsychicWindEffect::Storm && !saveMade)
             r.cordBroken = true;
         // no-cord projection: lost AND different destination
         // (p.181 note) - the caller reads cordBroken plus
         // OffCourse semantics; fiction, documented
+        return r;
     }
-    return r;
+    return r;   // defensive: the bands cover 1-20
 }
 
 
 EtherCycloneResult rollEtherCyclone(rules::Dice& dice, int d20,
                                     bool saveMade) {
-    EtherCycloneResult r;
-    if (d20 <= 10) {
-        r.effect = EtherCycloneEffect::BlownAbout;
-    } else if (d20 <= 15) {
-        r.effect = EtherCycloneEffect::DifferentPlane;
-    } else if (d20 <= 18) {
-        r.effect = EtherCycloneEffect::LostNewPlane;
-        r.days = 4 + (int)dice.roll(1, 56, 0);        // 5-60
-    } else {
-        r.effect = EtherCycloneEffect::StormAstral;
-        r.days = 9 + (int)dice.roll(1, 111, 0);      // 10-120
-        r.blownToAstral = !saveMade;   // save: random ether-touched plane
+    // {} value-init: same as the wind roll above
+    EtherCycloneResult r{};
+    for (const auto& b : planarBandView("planar_cyclone")) {
+        if (d20 < b.lo || d20 > b.hi) continue;
+        r.effect = cycloneEffectFor(b.effect);
+        // uniform over the printed day range (the retired
+        // expressions produced the same spread)
+        if (b.dMin >= 1)
+            r.days = b.dMin + (int)dice.roll(
+                1, (uint32_t)(b.dMax - b.dMin + 1), 0) - 1;
+        if (r.effect == EtherCycloneEffect::StormAstral)
+            r.blownToAstral = !saveMade;   // save: random
+                                           // ether-touched plane
+        return r;
     }
-    return r;
+    return r;   // defensive: the bands cover 1-20
 }
-
 
 // ----------------------------------------------------------------------------
 // R66: the PSIONIC ENCOUNTER TABLE - DMG Appendix C (Premium
@@ -2439,11 +2458,26 @@ DungeonEncounter rollPsionicEncounter(
         if (!row) return e;   // defensive: column covers 01-00
 
         std::string key = row->key;
-        if      (key == "PSI_DEMON_MAJOR")   key = kDemonMajor[pctile2 % 10];
-        else if (key == "PSI_DEMON_MINOR")   key = kDemonMinor[pctile2 % 6];
+        if      (key == "PSI_DEMON_MAJOR")   {
+            const auto& v =
+                planarSetView("demon_major_set");
+            if (!v.empty())
+                key = v[pctile2 % (int)v.size()];
+        }
+        else if (key == "PSI_DEMON_MINOR")   {
+            const auto& v =
+                planarSetView("demon_minor_set");
+            if (!v.empty())
+                key = v[pctile2 % (int)v.size()];
+        }
         else if (key == "PSI_DEMON_PRINCE")  key = kPrinces[pctile2 % 4];
         else if (key == "PSI_DEVIL_ARCH")    key = kArchDevils[pctile2 % 4];
-        else if (key == "PSI_DEVIL_GREATER") key = kDevilGreater[pctile2 % 3];
+        else if (key == "PSI_DEVIL_GREATER") {
+            const auto& v =
+                planarSetView("devil_greater_set");
+            if (!v.empty())
+                key = v[pctile2 % (int)v.size()];
+        }
 
         if (key == "PSI_MEN") {
             // (**) Character Subtable party - the R63
@@ -2498,15 +2532,21 @@ std::vector<std::string> psionicEncounterKeys(
     for (size_t i = 0; i < n; ++i) {
         const std::string key = kPsionicTable[i].key;
         if      (key == "PSI_DEMON_MAJOR")
-            for (const char* k : kDemonMajor) pushUnique(out, k);
+            for (const auto& k :
+                 planarSetView("demon_major_set"))
+                pushUnique(out, k.c_str());
         else if (key == "PSI_DEMON_MINOR")
-            for (const char* k : kDemonMinor) pushUnique(out, k);
+            for (const auto& k :
+                 planarSetView("demon_minor_set"))
+                pushUnique(out, k.c_str());
         else if (key == "PSI_DEMON_PRINCE")
             for (const char* k : kPrinces) pushUnique(out, k);
         else if (key == "PSI_DEVIL_ARCH")
             for (const char* k : kArchDevils) pushUnique(out, k);
         else if (key == "PSI_DEVIL_GREATER")
-            for (const char* k : kDevilGreater) pushUnique(out, k);
+            for (const auto& k :
+                 planarSetView("devil_greater_set"))
+                pushUnique(out, k.c_str());
         else if (key == "PSI_MEN")
             pushUnique(out, "character_party");
         else if (reg.find(key))
