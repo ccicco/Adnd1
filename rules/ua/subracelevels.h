@@ -53,9 +53,11 @@
 // the caller passes the key.
 // ===========================================================================
 
+// R1049 applied
 #pragma once
 
 #include "subraces.h"
+#include "items/MiscItemRegistry.h"
 
 namespace rules {
 
@@ -90,379 +92,168 @@ inline int subraceStrengthLevelKey(
 // printed rows; the audit re-reads
 // them against the OCR.
 
-// ---- II.A: dwarves (UA p.8) ----
-static const int kIiaClericK[] = {
-    15000, 16000, 17000, 18000, 19000, 20000, 21000
-};
-static const int kIiaClericL[] = { 8, 9, 10, 11, 13, 16, 16 };
-static const RaceLevelColumn kIiaCleric = {
-    7, kIiaClericK, kIiaClericL, 0 };
-static const int kIiaFighterHillK[] = {
-    15000, 16000, 17000, 18000, 18990, 18999, 19000, 20000, 21000
-};
-static const int kIiaFighterHillL[] = { 6, 6, 7, 8, 8, 9, 10, 12, 15 };
-static const RaceLevelColumn kIiaFighterHill = {
-    9, kIiaFighterHillK, kIiaFighterHillL, 0 };
-static const int kIiaFighterMGK[] = {
-    15000, 16000, 17000, 18000, 18990, 18999, 19000, 20000, 21000
-};
-static const int kIiaFighterMGL[] = { 7, 7, 8, 9, 9, 10, 11, 13, 16 };
-static const RaceLevelColumn kIiaFighterMG = {
-    9, kIiaFighterMGK, kIiaFighterMGL, 0 };
-static const int kIiaThiefK[] = {
-    15000, 16000, 17000, 18000, 19000, 20000, 21000
-};
-static const int kIiaThiefL[] = { 0, 0, 0, 0, 0, 0, 0 };
-static const RaceLevelColumn kIiaThief = {
-    7, kIiaThiefK, kIiaThiefL, 0 };
-static const int kIiaAssassinK[] = {
-    15000, 16000, 17000, 18000, 18990, 18999, 19000, 20000, 21000
-};
-static const int kIiaAssassinL[] = { 9, 9, 9, 9, 11, 12, 12, 12, 12 };
-static const int kIiaAssassinF[] = { 0, 0, 0, 0, 1, 2, 2, 2, 2 };
-static const RaceLevelColumn kIiaAssassin = {
-    9, kIiaAssassinK, kIiaAssassinL, kIiaAssassinF };
-
-// ---- II.B: gnomes (UA p.8) ----
-static const int kIibClericK[] = {
-    15000, 16000, 17000, 18000, 19000, 20000, 21000
-};
-static const int kIibClericL[] = { 7, 8, 9, 10, 12, 14, 14 };
-static const RaceLevelColumn kIibCleric = {
-    7, kIibClericK, kIibClericL, 0 };
-static const int kIibFighterK[] = {
-    15000, 16000, 17000, 18000, 18500, 18750, 18990, 19000, 20000, 21000
-};
-static const int kIibFighterL[] = { 5, 5, 5, 5, 6, 7, 8, 9, 9, 9 };
-static const RaceLevelColumn kIibFighter = {
-    10, kIibFighterK, kIibFighterL, 0 };
-static const int kIibIllusionistK[] = {
-    15000, 16000, 17000, 18000, 19000, 20000, 21000
-};
-static const int kIibIllusionistL[] = { 6, 6, 6, 7, 8, 10, 13 };
-static const RaceLevelColumn kIibIllusionist = {
-    7, kIibIllusionistK, kIibIllusionistL, 0 };
-static const int kIibThiefK[] = {
-    15000, 16000, 17000, 18000, 19000, 20000, 21000
-};
-static const int kIibThiefL[] = { 0, 0, 0, 0, 0, 0, 0 };
-static const RaceLevelColumn kIibThief = {
-    7, kIibThiefK, kIibThiefL, 0 };
-static const int kIibAssassinK[] = {
-    15000, 16000, 17000, 18000, 18500, 18750, 18990, 19000, 20000, 21000
-};
-static const int kIibAssassinL[] = { 8, 8, 8, 8, 9, 10, 10, 10, 10, 10 };
-static const int kIibAssassinF[] = { 0, 0, 0, 0, 1, 2, 2, 2, 2, 2 };
-static const RaceLevelColumn kIibAssassin = {
-    10, kIibAssassinK, kIibAssassinL, kIibAssassinF };
-
-// ---- II.C: elves, block 1 (UA p.8) ----
-static const int kIicClericDMK[] = {
-    12000, 13000, 14000, 15000, 16000, 17000, 18000, 19000, 20000, 21000
-};
-static const int kIicClericDML[] = { 4, 5, 6, 7, 7, 7, 7, 7, 7, 7 };
-static const RaceLevelColumn kIicClericDM = {
-    10, kIicClericDMK, kIicClericDML, 0 };
-static const int kIicClericDFK[] = {
-    12000, 13000, 14000, 15000, 16000, 17000, 18000, 19000, 20000, 21000
-};
-static const int kIicClericDFL[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-static const RaceLevelColumn kIicClericDF = {
-    10, kIicClericDFK, kIicClericDFL, 0 };
-static const int kIicClericAOK[] = {
-    12000, 13000, 14000, 15000, 16000, 17000, 18000, 19000, 20000, 21000
-};
-static const int kIicClericAOL[] = { 7, 7, 7, 7, 8, 9, 10, 11, 12, 12 };
-static const RaceLevelColumn kIicClericAO = {
-    10, kIicClericAOK, kIicClericAOL, 0 };
-static const int kIicDruidWildK[] = {
-    12000, 13000, 14000, 15000, 16000, 17000, 18000, 19000, 20000, 21000
-};
-static const int kIicDruidWildL[] = {
-    10, 10, 10, 10, 10, 10, 11, 12, 14, 17
-};
-static const int kIicDruidWildF[] = { 0, 0, 0, 0, 0, 0, 1, 1, 1, 2 };
-static const RaceLevelColumn kIicDruidWild = {
-    10, kIicDruidWildK, kIicDruidWildL, kIicDruidWildF };
-static const int kIicDruidAOK[] = {
-    12000, 13000, 14000, 15000, 16000, 17000, 18000, 19000, 20000, 21000
-};
-static const int kIicDruidAOL[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-static const RaceLevelColumn kIicDruidAO = {
-    10, kIicDruidAOK, kIicDruidAOL, 0 };
-static const int kIicFighterDMK[] = {
-    12000, 13000, 14000, 15000, 16000, 17000, 18000, 18750, 18900, 18990,
-    18999, 19000, 20000
-};
-static const int kIicFighterDML[] = {
-    7, 8, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10
-};
-static const RaceLevelColumn kIicFighterDM = {
-    13, kIicFighterDMK, kIicFighterDML, 0 };
-static const int kIicFighterDFK[] = {
-    12000, 13000, 14000, 15000, 16000, 17000, 18000, 18750, 18900, 18990,
-    18999, 19000, 20000
-};
-static const int kIicFighterDFL[] = {
-    9, 10, 11, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12
-};
-static const RaceLevelColumn kIicFighterDF = {
-    13, kIicFighterDFK, kIicFighterDFL, 0 };
-static const int kIicFighterGHK[] = {
-    12000, 13000, 14000, 15000, 16000, 17000, 18000, 18750, 18900, 18990,
-    18999, 19000, 20000
-};
-static const int kIicFighterGHL[] = {
-    5, 5, 5, 5, 5, 5, 6, 7, 8, 9, 10, 11, 11
-};
-static const RaceLevelColumn kIicFighterGH = {
-    13, kIicFighterGHK, kIicFighterGHL, 0 };
-static const int kIicFighterVaK[] = {
-    12000, 13000, 14000, 15000, 16000, 17000, 18000, 18750, 18900, 18990,
-    18999, 19000, 20000
-};
-static const int kIicFighterVaL[] = {
-    5, 5, 5, 5, 5, 5, 6, 6, 8, 9, 10, 11, 13
-};
-static const RaceLevelColumn kIicFighterVa = {
-    13, kIicFighterVaK, kIicFighterVaL, 0 };
-static const int kIicFighterWiK[] = {
-    12000, 13000, 14000, 15000, 16000, 17000, 18000, 18750, 18900, 18990,
-    18999, 19000, 20000
-};
-static const int kIicFighterWiL[] = {
-    7, 7, 7, 7, 7, 7, 8, 8, 10, 11, 12, 13, 13
-};
-static const RaceLevelColumn kIicFighterWi = {
-    13, kIicFighterWiK, kIicFighterWiL, 0 };
-static const int kIicFighterWoK[] = {
-    12000, 13000, 14000, 15000, 16000, 17000, 18000, 18750, 18900, 18990,
-    18999, 19000, 20000
-};
-static const int kIicFighterWoL[] = {
-    6, 6, 6, 6, 6, 6, 7, 8, 9, 10, 11, 11, 14
-};
-static const RaceLevelColumn kIicFighterWo = {
-    13, kIicFighterWoK, kIicFighterWoL, 0 };
-
-// ---- II.C: elves, block 2 (UA p.9) ----
-static const int kIicMuDMK[] = { 17000, 18000, 19000, 20000, 21000, 22000 };
-static const int kIicMuDML[] = { 12, 12, 13, 15, 18, 18 };
-static const RaceLevelColumn kIicMuDM = {
-    6, kIicMuDMK, kIicMuDML, 0 };
-static const int kIicMuDFK[] = { 17000, 18000, 19000, 20000, 21000, 22000 };
-static const int kIicMuDFL[] = { 5, 5, 7, 9, 11, 11 };
-static const RaceLevelColumn kIicMuDF = {
-    6, kIicMuDFK, kIicMuDFL, 0 };
-static const int kIicMuGrayK[] = { 17000, 18000, 19000, 20000, 21000, 22000 };
-static const int kIicMuGrayL[] = { 11, 11, 12, 13, 15, 18 };
-static const RaceLevelColumn kIicMuGray = {
-    6, kIicMuGrayK, kIicMuGrayL, 0 };
-static const int kIicMuHighK[] = { 17000, 18000, 19000, 20000, 21000, 22000 };
-static const int kIicMuHighL[] = { 10, 10, 11, 12, 14, 17 };
-static const RaceLevelColumn kIicMuHigh = {
-    6, kIicMuHighK, kIicMuHighL, 0 };
-static const int kIicMuValK[] = { 17000, 18000, 19000, 20000, 21000, 22000 };
-static const int kIicMuValL[] = { 11, 11, 12, 13, 15, 15 };
-static const RaceLevelColumn kIicMuVal = {
-    6, kIicMuValK, kIicMuValL, 0 };
-static const int kIicMuWoodK[] = { 17000, 18000, 19000, 20000, 21000, 22000 };
-static const int kIicMuWoodL[] = { 9, 9, 10, 11, 13, 13 };
-static const RaceLevelColumn kIicMuWood = {
-    6, kIicMuWoodK, kIicMuWoodL, 0 };
-static const int kIicThiefK[] = { 17000, 18000, 19000, 20000 };
-static const int kIicThiefL[] = { 0, 0, 0, 0 };
-static const RaceLevelColumn kIicThief = {
-    4, kIicThiefK, kIicThiefL, 0 };
-static const int kIicAssassinK[] = {
-    18000, 18010, 18510, 18760, 18990, 18999, 19000, 20000
-};
-static const int kIicAssassinL[] = { 10, 10, 10, 10, 11, 12, 12, 12 };
-static const int kIicAssassinF[] = { 0, 0, 0, 0, 3, 3, 4, 5 };
-static const RaceLevelColumn kIicAssassin = {
-    8, kIicAssassinK, kIicAssassinL, kIicAssassinF };
-static const int kIicRangerK[] = {
-    18000, 18010, 18510, 18760, 18990, 18999, 19000, 20000
-};
-static const int kIicRangerL[] = { 6, 7, 9, 10, 10, 10, 12, 14 };
-static const int kIicRangerF[] = { 0, 1, 2, 3, 3, 3, 4, 4 };
-static const RaceLevelColumn kIicRanger = {
-    8, kIicRangerK, kIicRangerL, kIicRangerF };
-
-// ---- II.D: half-elves (UA p.9) ----
-static const int kIidClericK[] = { 15000, 16000, 17000, 18000, 19000, 20000 };
-static const int kIidClericL[] = { 5, 6, 7, 8, 10, 12 };
-static const RaceLevelColumn kIidCleric = {
-    6, kIidClericK, kIidClericL, 0 };
-static const int kIidDruidK[] = { 15000, 16000, 17000, 18000, 19000, 20000 };
-static const int kIidDruidL[] = { 0, 0, 0, 0, 0, 0 };
-static const RaceLevelColumn kIidDruid = {
-    6, kIidDruidK, kIidDruidL, 0 };
-static const int kIidFighterK[] = {
-    15000, 16000, 17000, 18000, 18900, 18990, 18999, 19000, 20000
-};
-static const int kIidFighterL[] = { 6, 6, 7, 7, 8, 9, 10, 11, 13 };
-static const RaceLevelColumn kIidFighter = {
-    9, kIidFighterK, kIidFighterL, 0 };
-static const int kIidRangerK[] = {
-    15000, 16000, 17000, 18000, 18900, 18990, 18999, 19000, 20000
-};
-static const int kIidRangerL[] = { 6, 6, 7, 8, 9, 10, 11, 15, 15 };
-static const int kIidRangerF[] = { 0, 0, 0, 0, 1, 1, 2, 3, 3 };
-static const RaceLevelColumn kIidRanger = {
-    9, kIidRangerK, kIidRangerL, kIidRangerF };
-static const int kIidMUK[] = { 15000, 16000, 17000, 18000, 19000, 20000 };
-static const int kIidMUL[] = { 7, 7, 7, 8, 8, 8 };
-static const RaceLevelColumn kIidMU = {
-    6, kIidMUK, kIidMUL, 0 };
-static const int kIidThiefK[] = { 15000, 16000, 17000, 18000, 19000, 20000 };
-static const int kIidThiefL[] = { 0, 0, 0, 0, 0, 0 };
-static const RaceLevelColumn kIidThief = {
-    6, kIidThiefK, kIidThiefL, 0 };
-static const int kIidAssassinK[] = {
-    15000, 16000, 17000, 18000, 18900, 18990, 18999, 19000, 20000
-};
-static const int kIidAssassinL[] = { 11, 11, 11, 11, 11, 11, 11, 11, 11 };
-static const RaceLevelColumn kIidAssassin = {
-    9, kIidAssassinK, kIidAssassinL, 0 };
-
-// ---- II.E: halflings (UA p.9) ----
-static const int kIieClericK[] = { 15000, 16000, 17000, 18000, 19000, 20000 };
-static const int kIieClericL[] = { 4, 4, 5, 6, 8, 10 };
-static const RaceLevelColumn kIieCleric = {
-    6, kIieClericK, kIieClericL, 0 };
-static const int kIieDruidK[] = { 15000, 16000, 17000, 18000, 19000, 20000 };
-static const int kIieDruidL[] = { 6, 7, 9, 11, 13, 13 };
-static const int kIieDruidF[] = { 1, 2, 3, 4, 5, 5 };
-static const RaceLevelColumn kIieDruid = {
-    6, kIieDruidK, kIieDruidL, kIieDruidF };
-static const int kIieFighterHFK[] = {
-    15000, 16000, 17000, 18000, 18500, 18900, 19000, 20000
-};
-static const int kIieFighterHFL[] = { 4, 4, 5, 5, 6, 7, 8, 8 };
-static const RaceLevelColumn kIieFighterHF = {
-    8, kIieFighterHFK, kIieFighterHFL, 0 };
-static const int kIieFighterStK[] = {
-    15000, 16000, 17000, 18000, 18500, 18900, 19000, 20000
-};
-static const int kIieFighterStL[] = { 5, 5, 6, 6, 7, 8, 9, 9 };
-static const RaceLevelColumn kIieFighterSt = {
-    8, kIieFighterStK, kIieFighterStL, 0 };
-static const int kIieFighterTFK[] = {
-    15000, 16000, 17000, 18000, 18500, 18900, 19000, 20000
-};
-static const int kIieFighterTFL[] = { 6, 6, 7, 7, 8, 9, 10, 10 };
-static const RaceLevelColumn kIieFighterTF = {
-    8, kIieFighterTFK, kIieFighterTFL, 0 };
-static const int kIieThiefK[] = { 15000, 16000, 17000, 18000, 19000, 20000 };
-static const int kIieThiefL[] = { 0, 0, 0, 0, 0, 0 };
-static const RaceLevelColumn kIieThief = {
-    6, kIieThiefK, kIieThiefL, 0 };
-
-// ---- II.F: half-orcs (UA p.9) ----
-static const int kIifClericK[] = {
-    14000, 15000, 16000, 17000, 18000, 19000, 20000, 21000
-};
-static const int kIifClericL[] = { 4, 5, 6, 7, 7, 7, 7, 7 };
-static const RaceLevelColumn kIifCleric = {
-    8, kIifClericK, kIifClericL, 0 };
-static const int kIifFighterK[] = {
-    14000, 15000, 16000, 17000, 18000, 18990, 18999, 19000, 20000, 21000
-};
-static const int kIifFighterL[] = { 10, 10, 10, 10, 10, 10, 11, 12, 14, 17 };
-static const RaceLevelColumn kIifFighter = {
-    10, kIifFighterK, kIifFighterL, 0 };
-static const int kIifThiefK[] = {
-    14000, 15000, 16000, 17000, 18000, 19000, 20000, 21000
-};
-static const int kIifThiefL[] = { 8, 9, 10, 11, 11, 11, 11, 11 };
-static const RaceLevelColumn kIifThief = {
-    8, kIifThiefK, kIifThiefL, 0 };
-static const int kIifAssassinK[] = {
-    14000, 15000, 16000, 17000, 18000, 19000, 20000, 21000
-};
-static const int kIifAssassinL[] = { 0, 0, 0, 0, 0, 0, 0, 0 };
-static const RaceLevelColumn kIifAssassin = {
-    8, kIifAssassinK, kIifAssassinL, 0 };
-// ---------------------------------------------------------------------------
-// The footnoted ability gates. Each
-// gate list holds the extra ability
-// minimums a row demands beyond the
-// ladder score. orMode 0 = every
-// gate must pass; orMode 1 = any one
-// (the II.C footnote 6 read:
-// intelligence 19 OR wisdom 19).
-// ---------------------------------------------------------------------------
+// ---- the retired Table II ladders ----------
+// The 101 ladder arrays, the 47 column
+// descriptors and the 19 gate lists
+// are registry rows now (R1049):
+// content/tables/ua_levels/ - the six
+// sub-table defs and the gates def.
+// The tags map kIiaCleric ->
+// iia_cleric and so on. DO NOT
+// hand-edit: tools/r1049_splice.py is
+// the only writer.
 
 struct LevelGate {
     int stat;   // ABILITY_*
     int min;
 };
+// -------------------------------------------------
+// the R1049 UA levels registry seam
+//
+// One registry behind the Table II
+// reads: content/tables/ua_levels/ (the
+// six sub-tables plus the gates). The
+// per-tag views below build the column
+// and gate structures on first use -
+// every accessor signature and every
+// clamp stays as the print reads it.
+// DO NOT hand-edit: tools/r1049_splice.py
+// is the only writer.
+inline items::MiscItemRegistry&
+uaLevelsReg() {
+    static items::MiscItemRegistry reg;
+    static bool loaded = false;
+    if (!loaded) {
+        loaded = true;
+        reg.loadDirectory(
+            "content/tables/ua_levels");
+    }
+    return reg;
+}
 
-// II.A assassin: fn1 INT 18 DEX 19;
-// fn2 INT 19 DEX 19
-static const LevelGate kIiaG1[] = {
-    { ABILITY_INT, 18 },
-    { ABILITY_DEX, 19 } };
-static const LevelGate kIiaG2[] = {
-    { ABILITY_INT, 19 },
-    { ABILITY_DEX, 19 } };
-// II.B assassin: fn1 INT 18 DEX 18;
-// fn2 INT 19 DEX 19
-static const LevelGate kIibG1[] = {
-    { ABILITY_INT, 18 },
-    { ABILITY_DEX, 18 } };
-static const LevelGate kIibG2[] = {
-    { ABILITY_INT, 19 },
-    { ABILITY_DEX, 19 } };
-// II.C druid (the wild-elf column):
-// fn1 CHA 18; fn2 CHA 19
-static const LevelGate kIicDG1[] = {
-    { ABILITY_CHA, 18 } };
-static const LevelGate kIicDG2[] = {
-    { ABILITY_CHA, 19 } };
-// II.C assassin/ranger: fn1-fn5 all
-// INT/WIS pairs, fn6 INT 19 or
-// WIS 19
-static const LevelGate kIicAG1[] = {
-    { ABILITY_INT, 15 },
-    { ABILITY_WIS, 15 } };
-static const LevelGate kIicAG2[] = {
-    { ABILITY_INT, 16 },
-    { ABILITY_WIS, 16 } };
-static const LevelGate kIicAG3[] = {
-    { ABILITY_INT, 17 },
-    { ABILITY_WIS, 17 } };
-static const LevelGate kIicAG4[] = {
-    { ABILITY_INT, 18 },
-    { ABILITY_WIS, 18 } };
-static const LevelGate kIicAG5[] = {
-    { ABILITY_INT, 18 },
-    { ABILITY_WIS, 19 } };
-static const LevelGate kIicAG6[] = {
-    { ABILITY_INT, 19 },
-    { ABILITY_WIS, 19 } };
-// II.D ranger: fn1/fn2 the INT/WIS/
-// CON 18 trio, fn3 the 19 trio
-static const LevelGate kIidG1[] = {
-    { ABILITY_INT, 18 },
-    { ABILITY_WIS, 18 },
-    { ABILITY_CON, 18 } };
-static const LevelGate kIidG3[] = {
-    { ABILITY_INT, 19 },
-    { ABILITY_WIS, 19 },
-    { ABILITY_CON, 19 } };
-// II.E druid: the CHA riders
-static const LevelGate kIieG1[] = {
-    { ABILITY_CHA, 15 } };
-static const LevelGate kIieG2[] = {
-    { ABILITY_CHA, 15 } };
-static const LevelGate kIieG3[] = {
-    { ABILITY_CHA, 16 } };
-static const LevelGate kIieG4[] = {
-    { ABILITY_CHA, 17 } };
-static const LevelGate kIieG5[] = {
-    { ABILITY_CHA, 19 } };
+inline const rules::RaceLevelColumn*
+uaLevelColumn(const char* tag) {
+    struct ColCache {
+        std::map<std::string,
+            RaceLevelColumn> cols;
+        std::map<std::string,
+            std::vector<int>> keys,
+            levels, fns;
+    };
+    static ColCache cache;
+    static bool built = false;
+    if (!built) {
+        built = true;
+        std::map<std::string,
+            std::vector<const items::
+            MiscItemRow*>> byTag;
+        for (const auto& kv :
+                 uaLevelsReg().all()) {
+            if (kv.first ==
+                "ua_level_gates") continue;
+            for (const auto& r :
+                     kv.second.rows)
+                byTag[r.name]
+                    .push_back(&r);
+        }
+        for (auto& kv : byTag) {
+            std::sort(kv.second.begin(),
+                kv.second.end(),
+                [](const items::
+                MiscItemRow* a,
+                const items::
+                MiscItemRow* b) {
+                    return a->bandLo
+                           < b->bandLo; });
+            cache.keys[kv.first]
+                = std::vector<int>();
+            cache.levels[kv.first]
+                = std::vector<int>();
+            cache.fns[kv.first]
+                = std::vector<int>();
+            for (const auto* r :
+                     kv.second) {
+                cache.keys[kv.first]
+                    .push_back(r->bandLo);
+                cache.levels[kv.first]
+                    .push_back(r->gp);
+                cache.fns[kv.first]
+                    .push_back(r->xp);
+            }
+            RaceLevelColumn c;
+            c.n = (int)cache
+                .keys[kv.first].size();
+            c.keys = cache
+                .keys[kv.first].data();
+            c.levels = cache
+                .levels[kv.first].data();
+            c.fns = cache
+                .fns[kv.first].data();
+            cache.cols[kv.first] = c;
+        }
+    }
+    auto it = cache.cols.find(tag);
+    return it == cache.cols.end()
+               ? 0 : &it->second;
+}
+
+inline void uaLevelGateList(
+        const char* tag,
+        const rules::LevelGate*& g, int& n) {
+    struct GateCache {
+        std::map<std::string,
+            std::vector<LevelGate>> lists;
+    };
+    static GateCache cache;
+    static bool built = false;
+    if (!built) {
+        built = true;
+        const items::MiscItemDef* d =
+            uaLevelsReg().find(
+                "ua_level_gates");
+        if (d) {
+            std::map<std::string,
+                std::vector<const items::
+                MiscItemRow*>> byTag;
+            for (const auto& r : d->rows)
+                byTag[r.name]
+                    .push_back(&r);
+            for (auto& kv : byTag) {
+                std::sort(kv.second.begin(),
+                    kv.second.end(),
+                    [](const items::
+                    MiscItemRow* a,
+                    const items::
+                    MiscItemRow* b) {
+                        return a->bandLo
+                               < b->bandLo; });
+                std::vector<LevelGate> lg;
+                for (const auto* r :
+                         kv.second)
+                    lg.push_back(LevelGate{
+                        r->bandLo,
+                        r->bandHi });
+                cache.lists[kv.first] = lg;
+            }
+        }
+    }
+    auto it = cache.lists.find(tag);
+    if (it == cache.lists.end()) {
+        g = 0; n = 0; return;
+    }
+    g = it->second.data();
+    n = (int)it->second.size();
+}
+
+
+// ---- the retired gate lists -------------
+// The footnoted ability gates are
+// registry rows now (R1049): the
+// ua_level_gates def, one row per
+// ability pair, name = the gate tag.
+// The orMode rider (the fn6 elf
+// assassin either-pair read) stays
+// explicit in subraceLevelGates.
 
 // The escalation riders (the prose
 // reads that lift a limit when a
@@ -512,154 +303,154 @@ subraceLevelColumn(CharSubRace s,
         case SUB_DWARF_MOUNTAIN:
             switch (c) {
                 case UACLASS_CLERIC:
-                    return &kIiaCleric;
+                    return uaLevelColumn("iia_cleric");
                 case UACLASS_FIGHTER:
                     return
-                        &kIiaFighterMG;
+                        uaLevelColumn("iia_fighter_m_g");
                 case UACLASS_THIEF:
-                    return &kIiaThief;
+                    return uaLevelColumn("iia_thief");
                 case UACLASS_ASSASSIN:
-                    return &kIiaAssassin;
+                    return uaLevelColumn("iia_assassin");
                 default: return 0;
             }
         case SUB_DWARF_HILL:
             switch (c) {
                 case UACLASS_CLERIC:
-                    return &kIiaCleric;
+                    return uaLevelColumn("iia_cleric");
                 case UACLASS_FIGHTER:
                     return
-                        &kIiaFighterHill;
+                        uaLevelColumn("iia_fighter_hill");
                 case UACLASS_THIEF:
-                    return &kIiaThief;
+                    return uaLevelColumn("iia_thief");
                 case UACLASS_ASSASSIN:
-                    return &kIiaAssassin;
+                    return uaLevelColumn("iia_assassin");
                 default: return 0;
             }
         case SUB_GNOME_DEEP:
         case SUB_GNOME_SURFACE:
             switch (c) {
                 case UACLASS_CLERIC:
-                    return &kIibCleric;
+                    return uaLevelColumn("iib_cleric");
                 case UACLASS_FIGHTER:
-                    return &kIibFighter;
+                    return uaLevelColumn("iib_fighter");
                 case UACLASS_ILLUSIONIST:
                     return
-                        &kIibIllusionist;
+                        uaLevelColumn("iib_illusionist");
                 case UACLASS_THIEF:
-                    return &kIibThief;
+                    return uaLevelColumn("iib_thief");
                 case UACLASS_ASSASSIN:
-                    return &kIibAssassin;
+                    return uaLevelColumn("iib_assassin");
                 default: return 0;
             }
         case SUB_ELF_DARK:
             switch (c) {
                 case UACLASS_CLERIC:
                     return female
-                        ? &kIicClericDF
-                        : &kIicClericDM;
+                        ? uaLevelColumn("iic_cleric_d_f")
+                        : uaLevelColumn("iic_cleric_d_m");
                 case UACLASS_DRUID:
-                    return &kIicDruidAO;
+                    return uaLevelColumn("iic_druid_a_o");
                 case UACLASS_FIGHTER:
                     return female
-                        ? &kIicFighterDF
-                        : &kIicFighterDM;
+                        ? uaLevelColumn("iic_fighter_d_f")
+                        : uaLevelColumn("iic_fighter_d_m");
                 case UACLASS_MAGIC_USER:
                     return female
-                        ? &kIicMuDF
-                        : &kIicMuDM;
+                        ? uaLevelColumn("iic_mu_d_f")
+                        : uaLevelColumn("iic_mu_d_m");
                 case UACLASS_THIEF:
-                    return &kIicThief;
+                    return uaLevelColumn("iic_thief");
                 case UACLASS_ASSASSIN:
-                    return &kIicAssassin;
+                    return uaLevelColumn("iic_assassin");
                 case UACLASS_RANGER:
-                    return &kIicRanger;
+                    return uaLevelColumn("iic_ranger");
                 default: return 0;
             }
         case SUB_ELF_GRAY:
         case SUB_ELF_HIGH:
             switch (c) {
                 case UACLASS_CLERIC:
-                    return &kIicClericAO;
+                    return uaLevelColumn("iic_cleric_a_o");
                 case UACLASS_DRUID:
-                    return &kIicDruidAO;
+                    return uaLevelColumn("iic_druid_a_o");
                 case UACLASS_FIGHTER:
-                    return &kIicFighterGH;
+                    return uaLevelColumn("iic_fighter_g_h");
                 case UACLASS_MAGIC_USER:
                     return (s == SUB_ELF_GRAY)
-                        ? &kIicMuGray
-                        : &kIicMuHigh;
+                        ? uaLevelColumn("iic_mu_gray")
+                        : uaLevelColumn("iic_mu_high");
                 case UACLASS_THIEF:
-                    return &kIicThief;
+                    return uaLevelColumn("iic_thief");
                 case UACLASS_ASSASSIN:
-                    return &kIicAssassin;
+                    return uaLevelColumn("iic_assassin");
                 case UACLASS_RANGER:
-                    return &kIicRanger;
+                    return uaLevelColumn("iic_ranger");
                 default: return 0;
             }
         case SUB_ELF_VALLEY:
             switch (c) {
                 case UACLASS_CLERIC:
-                    return &kIicClericAO;
+                    return uaLevelColumn("iic_cleric_a_o");
                 case UACLASS_DRUID:
-                    return &kIicDruidAO;
+                    return uaLevelColumn("iic_druid_a_o");
                 case UACLASS_FIGHTER:
-                    return &kIicFighterVa;
+                    return uaLevelColumn("iic_fighter_va");
                 case UACLASS_MAGIC_USER:
-                    return &kIicMuVal;
+                    return uaLevelColumn("iic_mu_val");
                 case UACLASS_THIEF:
-                    return &kIicThief;
+                    return uaLevelColumn("iic_thief");
                 case UACLASS_ASSASSIN:
-                    return &kIicAssassin;
+                    return uaLevelColumn("iic_assassin");
                 default: return 0;
             }
         case SUB_ELF_WILD:
             switch (c) {
                 case UACLASS_CLERIC:
-                    return &kIicClericAO;
+                    return uaLevelColumn("iic_cleric_a_o");
                 case UACLASS_DRUID:
-                    return &kIicDruidWild;
+                    return uaLevelColumn("iic_druid_wild");
                 case UACLASS_FIGHTER:
-                    return &kIicFighterWi;
+                    return uaLevelColumn("iic_fighter_wi");
                 case UACLASS_THIEF:
-                    return &kIicThief;
+                    return uaLevelColumn("iic_thief");
                 case UACLASS_ASSASSIN:
-                    return &kIicAssassin;
+                    return uaLevelColumn("iic_assassin");
                 default: return 0;
             }
         case SUB_ELF_WOOD:
             switch (c) {
                 case UACLASS_CLERIC:
-                    return &kIicClericAO;
+                    return uaLevelColumn("iic_cleric_a_o");
                 case UACLASS_DRUID:
-                    return &kIicDruidAO;
+                    return uaLevelColumn("iic_druid_a_o");
                 case UACLASS_FIGHTER:
-                    return &kIicFighterWo;
+                    return uaLevelColumn("iic_fighter_wo");
                 case UACLASS_MAGIC_USER:
-                    return &kIicMuWood;
+                    return uaLevelColumn("iic_mu_wood");
                 case UACLASS_THIEF:
-                    return &kIicThief;
+                    return uaLevelColumn("iic_thief");
                 case UACLASS_ASSASSIN:
-                    return &kIicAssassin;
+                    return uaLevelColumn("iic_assassin");
                 case UACLASS_RANGER:
-                    return &kIicRanger;
+                    return uaLevelColumn("iic_ranger");
                 default: return 0;
             }
         case SUB_HALFELF:
             switch (c) {
                 case UACLASS_CLERIC:
-                    return &kIidCleric;
+                    return uaLevelColumn("iid_cleric");
                 case UACLASS_DRUID:
-                    return &kIidDruid;
+                    return uaLevelColumn("iid_druid");
                 case UACLASS_FIGHTER:
-                    return &kIidFighter;
+                    return uaLevelColumn("iid_fighter");
                 case UACLASS_RANGER:
-                    return &kIidRanger;
+                    return uaLevelColumn("iid_ranger");
                 case UACLASS_MAGIC_USER:
-                    return &kIidMU;
+                    return uaLevelColumn("iid_m_u");
                 case UACLASS_THIEF:
-                    return &kIidThief;
+                    return uaLevelColumn("iid_thief");
                 case UACLASS_ASSASSIN:
-                    return &kIidAssassin;
+                    return uaLevelColumn("iid_assassin");
                 default: return 0;
             }
         case SUB_HALFLING_HAIRFOOT:
@@ -667,32 +458,32 @@ subraceLevelColumn(CharSubRace s,
         case SUB_HALFLING_TALLFELLOW:
             switch (c) {
                 case UACLASS_CLERIC:
-                    return &kIieCleric;
+                    return uaLevelColumn("iie_cleric");
                 case UACLASS_DRUID:
-                    return &kIieDruid;
+                    return uaLevelColumn("iie_druid");
                 case UACLASS_FIGHTER:
                     return
                         (s ==
                          SUB_HALFLING_HAIRFOOT)
-                        ? &kIieFighterHF
+                        ? uaLevelColumn("iie_fighter_h_f")
                         : (s ==
                           SUB_HALFLING_STOUT)
-                        ? &kIieFighterSt
-                        : &kIieFighterTF;
+                        ? uaLevelColumn("iie_fighter_st")
+                        : uaLevelColumn("iie_fighter_t_f");
                 case UACLASS_THIEF:
-                    return &kIieThief;
+                    return uaLevelColumn("iie_thief");
                 default: return 0;
             }
         case SUB_HALF_ORC:
             switch (c) {
                 case UACLASS_CLERIC:
-                    return &kIifCleric;
+                    return uaLevelColumn("iif_cleric");
                 case UACLASS_FIGHTER:
-                    return &kIifFighter;
+                    return uaLevelColumn("iif_fighter");
                 case UACLASS_THIEF:
-                    return &kIifThief;
+                    return uaLevelColumn("iif_thief");
                 case UACLASS_ASSASSIN:
-                    return &kIifAssassin;
+                    return uaLevelColumn("iif_assassin");
                 default: return 0;
             }
         case SUB_HUMAN:
@@ -752,18 +543,18 @@ inline void subraceLevelGates(
             if (c != UACLASS_ASSASSIN)
                 return;
             if (fn == 1) {
-                g = kIiaG1; n = 2;
+                uaLevelGateList("iia_g1", g, n);
             } else if (fn == 2) {
-                g = kIiaG2; n = 2; }
+                uaLevelGateList("iia_g2", g, n); }
             return;
         case SUB_GNOME_DEEP:
         case SUB_GNOME_SURFACE:
             if (c != UACLASS_ASSASSIN)
                 return;
             if (fn == 1) {
-                g = kIibG1; n = 2;
+                uaLevelGateList("iib_g1", g, n);
             } else if (fn == 2) {
-                g = kIibG2; n = 2; }
+                uaLevelGateList("iib_g2", g, n); }
             return;
         case SUB_ELF_DARK:
         case SUB_ELF_GRAY:
@@ -775,9 +566,9 @@ inline void subraceLevelGates(
                 if (s != SUB_ELF_WILD)
                     return;
                 if (fn == 1) {
-                    g = kIicDG1; n = 1;
+                    uaLevelGateList("iic_d_g1", g, n);
                 } else if (fn == 2) {
-                    g = kIicDG2; n = 1;
+                    uaLevelGateList("iic_d_g2", g, n);
                 }
                 return;
             }
@@ -785,17 +576,17 @@ inline void subraceLevelGates(
                 && c != UACLASS_RANGER)
                 return;
             switch (fn) {
-                case 1: g = kIicAG1; n = 2;
+                case 1: uaLevelGateList("iic_a_g1", g, n);
                     return;
-                case 2: g = kIicAG2; n = 2;
+                case 2: uaLevelGateList("iic_a_g2", g, n);
                     return;
-                case 3: g = kIicAG3; n = 2;
+                case 3: uaLevelGateList("iic_a_g3", g, n);
                     return;
-                case 4: g = kIicAG4; n = 2;
+                case 4: uaLevelGateList("iic_a_g4", g, n);
                     return;
-                case 5: g = kIicAG5; n = 2;
+                case 5: uaLevelGateList("iic_a_g5", g, n);
                     return;
-                case 6: g = kIicAG6; n = 2;
+                case 6: uaLevelGateList("iic_a_g6", g, n);
                     orMode = 1; return;
             }
             return;
@@ -803,9 +594,9 @@ inline void subraceLevelGates(
             if (c != UACLASS_RANGER)
                 return;
             if (fn == 1 || fn == 2) {
-                g = kIidG1; n = 3;
+                uaLevelGateList("iid_g1", g, n);
             } else if (fn == 3) {
-                g = kIidG3; n = 3; }
+                uaLevelGateList("iid_g3", g, n); }
             return;
         case SUB_HALFLING_HAIRFOOT:
         case SUB_HALFLING_STOUT:
@@ -813,15 +604,15 @@ inline void subraceLevelGates(
             if (c != UACLASS_DRUID)
                 return;
             switch (fn) {
-                case 1: g = kIieG1; n = 1;
+                case 1: uaLevelGateList("iie_g1", g, n);
                     return;
-                case 2: g = kIieG2; n = 1;
+                case 2: uaLevelGateList("iie_g2", g, n);
                     return;
-                case 3: g = kIieG3; n = 1;
+                case 3: uaLevelGateList("iie_g3", g, n);
                     return;
-                case 4: g = kIieG4; n = 1;
+                case 4: uaLevelGateList("iie_g4", g, n);
                     return;
-                case 5: g = kIieG5; n = 1;
+                case 5: uaLevelGateList("iie_g5", g, n);
                     return;
             }
             return;
