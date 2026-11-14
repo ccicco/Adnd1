@@ -47,6 +47,49 @@
 #include <cstdint>
 #include <string>
 
+#include "items/MiscItemRegistry.h"   // R1048: the slot grids ride the registry
+
+// ---- the R1048 slots registry seam ----------------------------
+// The paladin and ranger spell-slot grids ride
+// items::MiscItemRegistry from
+// content/tables/class_slots/ (def keys
+// paladin_slots, ranger_slots; tables[1]
+// "grid", values flat row-major - the R1047
+// grid encoding, but its OWN directory: the
+// R1047 fragment pins class_grids at 3 defs).
+// Header-only seam (the R1040-R1044 idiom);
+// the accessor signatures and clamp semantics
+// below are unchanged.
+
+inline items::MiscItemRegistry& slotsReg() {
+    static items::MiscItemRegistry reg;
+    static bool loaded = false;
+    if (!loaded) {
+        loaded = true;
+        reg.loadDirectory("content/tables/class_slots");
+    }
+    return reg;
+}
+
+// the per-view cache (the R1032-R1044 idiom)
+inline const std::vector<long long>&
+slotValues(const char* name) {
+    static std::map<std::string,
+        std::vector<long long>> cache;
+    auto it = cache.find(name);
+    if (it == cache.end()) {
+        std::vector<long long> v;
+        const items::MiscItemDef* d =
+            slotsReg().find(name);
+        if (d && d->tables.size() == 1
+            && d->tables[0].name == "grid")
+            v = d->tables[0].values;
+        it = cache.emplace(name, v).first;
+    }
+    return it->second;
+}
+
+
 namespace rules {
 
 // ---- the paladin progression ----
@@ -57,25 +100,14 @@ namespace rules {
 // the 20th row (maximum spell ability).
 inline int paladinSpellSlots(int paladinLevel,
                         int spellLevel) {
-    static const int kSlots[12][4] = {
-        { 1, 0, 0, 0 },
-        { 2, 0, 0, 0 },
-        { 2, 1, 0, 0 },
-        { 2, 2, 0, 0 },
-        { 2, 2, 1, 0 },
-        { 3, 2, 1, 0 },
-        { 3, 2, 1, 1 },
-        { 3, 3, 1, 1 },
-        { 3, 3, 2, 1 },
-        { 3, 3, 3, 1 },
-        { 3, 3, 3, 2 },
-        { 3, 3, 3, 3 },
-    };
     if (paladinLevel < 9) return 0;
     if (paladinLevel > 20) paladinLevel = 20;
     if (spellLevel < 1) spellLevel = 1;
     if (spellLevel > 4) spellLevel = 4;
-    return kSlots[paladinLevel - 9][spellLevel - 1];
+    const auto& v = slotValues("paladin_slots");
+    if (v.empty()) return 0;   // defensive: unloaded view
+    return (int)v[(paladinLevel - 9) * 4
+                 + (spellLevel - 1)];
 }
 
 // The shared-list wiring: the paladin casts
@@ -92,18 +124,6 @@ inline int paladinSpellListClass() {
 // the 17th row (maximum spell ability).
 inline int rangerSpellSlots(int rangerLevel, int kind,
                        int spellLevel) {
-    static const int kSlots[10][5] = {
-        { 1, 0, 0, 0, 0 },
-        { 1, 0, 0, 1, 0 },
-        { 2, 0, 0, 1, 0 },
-        { 2, 0, 0, 2, 0 },
-        { 2, 1, 0, 2, 1 },
-        { 2, 1, 0, 2, 1 },
-        { 2, 2, 0, 2, 2 },
-        { 2, 2, 0, 2, 2 },
-        { 2, 2, 1, 2, 2 },
-        { 2, 2, 2, 2, 2 },
-    };
     if (rangerLevel < 8) return 0;
     if (rangerLevel > 17) rangerLevel = 17;
     int col;
@@ -116,7 +136,10 @@ inline int rangerSpellSlots(int rangerLevel, int kind,
         if (spellLevel > 2) spellLevel = 2;
         col = spellLevel + 3;
     }
-    return kSlots[rangerLevel - 8][col - 1];
+    const auto& v = slotValues("ranger_slots");
+    if (v.empty()) return 0;   // defensive: unloaded view
+    return (int)v[(rangerLevel - 8) * 5
+                 + (col - 1)];
 }
 
 // The shared-list wiring: the ranger casts

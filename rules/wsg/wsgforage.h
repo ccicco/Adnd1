@@ -19,6 +19,8 @@
 // proficient 2-in-2 or 1-in-1, the -20 inedible shift, the four-turn search
 // limit, the one-mile move-on, the 1d8 inedible bands) are audit examples.
 //
+#include "wsgbands.h"   // R1048: the WSG band tables ride the registry
+
 namespace rules {
 
 // ---- Table 30: the foraging success grid ----
@@ -992,9 +994,12 @@ inline bool wfgGroupMustMoveOn()
 // 5-8 no food value band 2
 inline int wfgInedBandFor(int r)
     {
-        if (r <= 1) return 0;
-        if (r <= 4) return 1;
-        return 2;
+        const auto& rows =
+            wsgBandRows("wsg_inedible_bands");
+        if (rows.empty()) return 2;   // defensive: TERMINAL
+        for (int i = 0; i < (int)rows.size(); ++i)
+            if (r <= rows[i].bandHi) return i;
+        return (int)rows.size() - 1;
     }
 
 // the inedible-plants dispatch roll is 1d8

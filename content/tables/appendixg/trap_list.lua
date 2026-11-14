@@ -1,0 +1,66 @@
+-- trap_list
+-- The R1048 straggler de-wire. The Appendix G trap list d% bands (46 rows)
+-- The accessor and the clamp semantics live in
+-- the source header and are unchanged.
+-- DO NOT hand-edit: tools/r1048_splice.py is
+-- the only writer.
+
+return {
+  key = "trap_list",
+  name = "The Appendix G trap list d% bands (46 rows)",
+  rows = {
+    { name = "TRAP_ARROW", set = "trap_list", band = { 1, 5 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_ARROW_POISONED", set = "trap_list", band = { 6, 6 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_BALL", set = "trap_list", band = { 7, 7 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_CALTROPS", set = "trap_list", band = { 8, 9 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_CALTROPS_POISONED", set = "trap_list", band = { 10, 10 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_CEILING_BLOCK", set = "trap_list", band = { 11, 11 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_CEILING_COLLAPSE", set = "trap_list", band = { 12, 12 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_CEILING_LOWER", set = "trap_list", band = { 13, 13 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_CHUTE", set = "trap_list", band = { 14, 16 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_DOOR_FALLING", set = "trap_list", band = { 17, 18 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_DOOR_ONE_WAY", set = "trap_list", band = { 19, 23 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_DOOR_RESISTING", set = "trap_list", band = { 24, 30 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_DOOR_SPECIFIC", set = "trap_list", band = { 31, 31 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_DOOR_SPRING", set = "trap_list", band = { 32, 32 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_FLOOR_COLLAPSE", set = "trap_list", band = { 33, 33 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_FLOOR_ILLUSIONARY", set = "trap_list", band = { 34, 34 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_GAS_BLINDING", set = "trap_list", band = { 35, 36 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_GAS_CORRODING", set = "trap_list", band = { 37, 38 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_GAS_FEAR", set = "trap_list", band = { 39, 40 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_GAS_NAUSEA", set = "trap_list", band = { 41, 42 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_GAS_OBSCURING", set = "trap_list", band = { 43, 46 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_GAS_POISON", set = "trap_list", band = { 47, 48 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_GAS_SLEEP", set = "trap_list", band = { 49, 50 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_GAS_SLOWING", set = "trap_list", band = { 51, 52 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_GAS_WEAKNESS", set = "trap_list", band = { 53, 54 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_JAW", set = "trap_list", band = { 55, 56 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_LIGHTNING_BOLT", set = "trap_list", band = { 57, 57 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_PENDULUM", set = "trap_list", band = { 58, 59 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_PIT", set = "trap_list", band = { 60, 63 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_PIT_LOCKING", set = "trap_list", band = { 64, 65 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_PIT_LOCKING_FLOODING", set = "trap_list", band = { 66, 67 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_PIT_SPIKES", set = "trap_list", band = { 68, 70 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_PIT_POISONED_SPIKES", set = "trap_list", band = { 71, 72 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_BARS_FALLING", set = "trap_list", band = { 73, 77 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_STONE_BLOCK", set = "trap_list", band = { 78, 79 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_ROOM_ELEVATOR", set = "trap_list", band = { 80, 80 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_ROOM_FLOODING", set = "trap_list", band = { 81, 81 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_ROOM_SLIDING", set = "trap_list", band = { 82, 82 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_SCYTHE", set = "trap_list", band = { 83, 84 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_SPEAR", set = "trap_list", band = { 85, 87 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_SPEAR_POISONED", set = "trap_list", band = { 88, 88 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_STAIRS_COLLAPSE", set = "trap_list", band = { 89, 89 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_TELEPORTER", set = "trap_list", band = { 90, 91 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_VENT_ACID", set = "trap_list", band = { 92, 92 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_VENT_FIRE", set = "trap_list", band = { 93, 94 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+    { name = "TRAP_VENT_GAS", set = "trap_list", band = { 95, 100 }, xp = 0, xp_hi = 0, gp = 0, gp_hi = 0, qty = { 0, 0 } },
+  },
+  sources = {
+    { part = 0, round = 1048 },
+  },
+  pins = {
+    { name = "trap_listRowCount", value = 46, comment = "the printed band count" },
+  },
+  tables = {},
+}

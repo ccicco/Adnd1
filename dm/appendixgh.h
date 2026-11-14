@@ -27,6 +27,48 @@
 
 #include <string>
 
+#include "items/MiscItemRegistry.h"   // R1048: the trap bands ride the registry
+
+// ---- the R1048 trap-list registry seam ---------------------------
+// The Appendix G trap-list d% bands ride
+// items::MiscItemRegistry from
+// content/tables/appendixg/ (def key
+// trap_list; rows name = the enum tag,
+// band = the printed percentile band, the
+// 00 band stored as 100). Header-only seam
+// (the R1045 aiReg idiom); every accessor
+// signature below is unchanged (the r125
+// audit and state_dungeon pin them); the
+// band chain is battery-pinned (1..100,
+// contiguous, last band 100). The NAMES
+// array stays in-file as the printed record.
+
+inline items::MiscItemRegistry& ghReg() {
+    static items::MiscItemRegistry reg;
+    static bool loaded = false;
+    if (!loaded) {
+        loaded = true;
+        reg.loadDirectory("content/tables/appendixg");
+    }
+    return reg;
+}
+
+inline const std::vector<items::MiscItemRow>&
+ghView(const char* name) {
+    static std::map<std::string,
+        std::vector<items::MiscItemRow>> cache;
+    auto it = cache.find(name);
+    if (it == cache.end()) {
+        const items::MiscItemDef* d =
+            ghReg().find(name);
+        it = cache.emplace(
+            name, d ? d->rows
+                   : std::vector<items::MiscItemRow>()).first;
+    }
+    return it->second;
+}
+
+
 namespace dm {
 namespace appendixg {
 
@@ -85,23 +127,17 @@ enum TrapKind {
 // the printed d% band edges, row by row (lo, hi; 95-00
 // is stored as 95-100)
 inline int trapBandLo(int kind) {
-    static const int LO[TRAP_KIND_COUNT] = {
-        1, 6, 7, 8, 10, 11, 12, 13, 14, 17, 19, 24, 31,
-        32, 33, 34, 35, 37, 39, 41, 43, 47, 49, 51, 53,
-        55, 57, 58, 60, 64, 66, 68, 71, 73, 78, 80, 81,
-        82, 83, 85, 88, 89, 90, 92, 93, 95 };
-    if (kind < 0 || kind >= TRAP_KIND_COUNT) return 0;
-    return LO[kind];
+    const auto& rows = ghView("trap_list");
+    if (kind < 0 || kind >= (int)rows.size())
+        return 0;   // defensive: unloaded view
+    return rows[kind].bandLo;
 }
 
 inline int trapBandHi(int kind) {
-    static const int HI[TRAP_KIND_COUNT] = {
-        5, 6, 7, 9, 10, 11, 12, 13, 16, 18, 23, 30, 31,
-        32, 33, 34, 36, 38, 40, 42, 46, 48, 50, 52, 54,
-        56, 57, 59, 63, 65, 67, 70, 72, 77, 79, 80, 81,
-        82, 84, 87, 88, 89, 91, 92, 94, 100 };
-    if (kind < 0 || kind >= TRAP_KIND_COUNT) return 0;
-    return HI[kind];
+    const auto& rows = ghView("trap_list");
+    if (kind < 0 || kind >= (int)rows.size())
+        return 0;   // defensive: unloaded view
+    return rows[kind].bandHi;
 }
 
 // d% roll 1-100 -> kind (faces outside 1-100 clamp to the
@@ -109,9 +145,12 @@ inline int trapBandHi(int kind) {
 inline int trapFor(int r) {
     if (r < 1) r = 1;
     if (r > 100) r = 100;
-    for (int k = 0; k < TRAP_KIND_COUNT; ++k)
-        if (r <= trapBandHi(k)) return k;
-    return TRAP_KIND_COUNT - 1;
+    const auto& rows = ghView("trap_list");
+    if (rows.empty())   // defensive: unload - TERMINAL
+        return TRAP_KIND_COUNT - 1;
+    for (int k = 0; k < (int)rows.size(); ++k)
+        if (r <= rows[k].bandHi) return k;
+    return (int)rows.size() - 1;
 }
 
 // the printed name, verbatim (out-of-range kinds report

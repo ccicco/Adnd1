@@ -38,6 +38,8 @@
 // note was a miscount), cross-checked against the pdf layout read; the prose
 // pages read clean throughout.
 //
+#include "wsgbands.h"   // R1048: the WSG band tables ride the registry
+
 namespace rules {
 
 // ---- How to use Table A4: the Roll 1 / Roll 2 cross-index ----
@@ -715,9 +717,13 @@ inline int wwyCycloneNoChangeDays()
 // step (band 2).
 inline int wwyCycloneDriftFor(int roll)
     {
-        if (roll <= 6) return 0;
-        if (roll <= 7) return 1;
-        return 2;
+        const auto& rows =
+            wsgBandRows("wsg_cyclone_drift_bands");
+        if (rows.empty()) return 2;   // defensive: TERMINAL
+        for (int i = 0; i < (int)rows.size(); ++i)
+            if (roll <= rows[i].bandHi)
+                return i;
+        return (int)rows.size() - 1;
     }
 
 // the frequency cap radius: an area within 200 miles of a cyclone path can be
