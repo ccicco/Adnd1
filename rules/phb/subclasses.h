@@ -96,6 +96,68 @@ inline const std::vector<items::MiscItemRow>& scLadder(
     return it->second;
 }
 
+// ---- the R1047 grid registry seam ----------------------------------
+// The PHB class grids (the bard college
+// column, the bard druid slots grid, the
+// druid slots grid) ride
+// items::MiscItemRegistry from
+// content/tables/class_grids/ (def keys
+// bard_colleges, bard_druid_slots,
+// druid_slots). The slots defs encode the
+// grid as tables[1] name "grid", values
+// flat row-major (RowCount x ColCount pins);
+// the colleges def encodes rows (name the
+// college, band { level, level }). This seam
+// is header-only (the R1040-R1044 idiom);
+// every accessor signature is unchanged (the
+// r186/r228/r235a audits and the engine pin
+// them); the clamp semantics stay verbatim.
+
+inline items::MiscItemRegistry& gridReg() {
+    static items::MiscItemRegistry reg;
+    static bool loaded = false;
+    if (!loaded) {
+        loaded = true;
+        reg.loadDirectory("content/tables/class_grids");
+    }
+    return reg;
+}
+
+// the registry-backed per-view caches (the
+// R1032-R1044 idiom; function-local statics in
+// inline functions are shared across TUs)
+inline const std::vector<items::MiscItemRow>&
+gridRows(const char* name) {
+    static std::map<std::string,
+        std::vector<items::MiscItemRow>> cache;
+    auto it = cache.find(name);
+    if (it == cache.end()) {
+        const items::MiscItemDef* d =
+            gridReg().find(name);
+        it = cache.emplace(
+            name, d ? d->rows
+                   : std::vector<items::MiscItemRow>()).first;
+    }
+    return it->second;
+}
+
+inline const std::vector<long long>&
+gridValues(const char* name) {
+    static std::map<std::string,
+        std::vector<long long>> cache;
+    auto it = cache.find(name);
+    if (it == cache.end()) {
+        std::vector<long long> v;
+        const items::MiscItemDef* d =
+            gridReg().find(name);
+        if (d && d->tables.size() == 1
+            && d->tables[0].name == "grid")
+            v = d->tables[0].values;
+        it = cache.emplace(name, v).first;
+    }
+    return it->second;
+}
+
 
 // The subclass indices (stable; append only)
 enum Subclass : int {

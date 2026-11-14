@@ -56,9 +56,12 @@
 // (content/tables/class_ladders/bard_ladder.lua,
 // the R1044 seam in subclasses.h); the printed
 // arrays are gone from this header and the
-// accessors read the registry view. The colleges,
-// the druid slots and the gates stay in-file
-// (constants and code, not tables).
+// accessors read the registry view. R1047: the
+// college column and the druid slots grid ride
+// content/tables/class_grids/ (the R1047 grid
+// seam in subclasses.h); the gates and the
+// career constants stay in-file (constants and
+// code, not tables).
 // ============================================================================
 
 #pragma once
@@ -163,36 +166,14 @@ inline int bardHitDice(int level) {
 // The druid spell slots of spellLevel
 // (1-5) at bard level. Dashes pin as 0.
 inline int bardDruidSlots(int level, int spellLevel) {
-    static const int kSlots[23][5] = {
-        { 1, 0, 0, 0, 0 },
-        { 2, 0, 0, 0, 0 },
-        { 3, 0, 0, 0, 0 },
-        { 3, 1, 0, 0, 0 },
-        { 3, 2, 0, 0, 0 },
-        { 3, 3, 0, 0, 0 },
-        { 3, 3, 1, 0, 0 },
-        { 3, 3, 2, 0, 0 },
-        { 3, 3, 3, 0, 0 },
-        { 3, 3, 3, 1, 0 },
-        { 3, 3, 3, 2, 0 },
-        { 3, 3, 3, 3, 0 },
-        { 3, 3, 3, 3, 1 },
-        { 3, 3, 3, 3, 2 },
-        { 3, 3, 3, 3, 3 },
-        { 4, 3, 3, 3, 3 },
-        { 4, 4, 3, 3, 3 },
-        { 4, 4, 4, 3, 3 },
-        { 5, 4, 4, 4, 3 },
-        { 5, 4, 4, 4, 4 },
-        { 5, 5, 4, 4, 4 },
-        { 5, 5, 5, 4, 4 },
-        { 5, 5, 5, 5, 5 },
-    };
     if (level < 1) return 0;
     if (level > 23) level = 23;
     if (spellLevel < 1) spellLevel = 1;
     if (spellLevel > 5) spellLevel = 5;
-    return kSlots[level - 1][spellLevel - 1];
+    const auto& v = gridValues("bard_druid_slots");
+    if (v.empty()) return 0;   // defensive: unloaded view
+    return (int)v[(level - 1) * 5
+                 + (spellLevel - 1)];
 }
 
 // The druid ability the bard casts at:
@@ -211,34 +192,11 @@ inline int bardDruidCastLevel(int level) {
 // The college of the level (Probationer
 // through Magna Alumnae).
 inline const char* bardCollege(int level) {
-    static const char* const kCollege[23] = {
-        "Probationer",
-        "Fochlucan",
-        "Fochlucan",
-        "Fochlucan",
-        "Mac-Fuirmidh",
-        "Mac-Fuirmidh",
-        "Mac-Fuirmidh",
-        "Doss",
-        "Doss",
-        "Doss",
-        "Canaith",
-        "Canaith",
-        "Canaith",
-        "Cli",
-        "Cli",
-        "Cli",
-        "Anstruth",
-        "Anstruth",
-        "Anstruth",
-        "Ollamh",
-        "Ollamh",
-        "Ollamh",
-        "Magna Alumnae",
-    };
+    const auto& rows = gridRows("bard_colleges");
+    if (rows.empty()) return "";   // defensive: unloaded view
     if (level < 1) level = 1;
     if (level > 23) level = 23;
-    return kCollege[level - 1];
+    return rows[level - 1].name.c_str();
 }
 
 // The new languages gained upon achieving

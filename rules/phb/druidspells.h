@@ -24,38 +24,33 @@
 // DATA-DRIVEN (the standing scope): a future spell list
 // (the illusionist layer, the bard druidical casting)
 // lands as its own roster file with the same shape.
+//
+// R1047: the 14 x 7 slots grid is
+// registry-native (content/tables/
+// class_grids/druid_slots.lua, the R1047
+// grid seam in subclasses.h); the roster
+// stays in-file as the printed record.
 // ============================================================================
 
 #pragma once
 
 #include <cstdint>
 
+#include "subclasses.h"   // R1047: the grid registry seam
+
 namespace rules {
 
 // The number of spell slots of spellLevel (1-7) usable
 // by a druid of druidLevel (1-14; past it, the 14th row).
 inline int druidSpellSlots(int druidLevel, int spellLevel) {
-    static const int kSlots[14][7] = {
-        { 2, 0, 0, 0, 0, 0, 0 },
-        { 2, 1, 0, 0, 0, 0, 0 },
-        { 3, 2, 1, 0, 0, 0, 0 },
-        { 4, 2, 2, 0, 0, 0, 0 },
-        { 4, 3, 2, 0, 0, 0, 0 },
-        { 4, 3, 2, 1, 0, 0, 0 },
-        { 4, 4, 3, 1, 0, 0, 0 },
-        { 4, 4, 3, 2, 0, 0, 0 },
-        { 5, 4, 3, 2, 1, 0, 0 },
-        { 5, 4, 3, 3, 2, 0, 0 },
-        { 5, 5, 3, 3, 2, 1, 0 },
-        { 5, 5, 4, 4, 3, 2, 1 },
-        { 6, 5, 5, 5, 4, 3, 2 },
-        { 6, 6, 6, 6, 5, 4, 3 },
-    };
     if (druidLevel < 1) druidLevel = 1;
     if (druidLevel > 14) druidLevel = 14;
     if (spellLevel < 1) spellLevel = 1;
     if (spellLevel > 7) spellLevel = 7;
-    return kSlots[druidLevel - 1][spellLevel - 1];
+    const auto& v = gridValues("druid_slots");
+    if (v.empty()) return 0;   // defensive: unloaded view
+    return (int)v[(druidLevel - 1) * 7
+                 + (spellLevel - 1)];
 }
 
 // ---- the roster (77 printed spells) ----
