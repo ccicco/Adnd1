@@ -1283,6 +1283,7 @@ int main() {
     #include "rules/audits/r1034_outdoor_encounter_registry.h"  // R1034
     #include "rules/audits/r1035_city_encounter_registry.h"  // R1035
     #include "rules/audits/r1036_planar_encounter_registry.h"  // R1036
+    #include "rules/audits/r1037_psionic_encounter_registry.h"  // R1037
     #include "rules/audits/r280_special_artifacts_prose.h"  // R835: migrated
     #include "rules/audits/r281_special_artifacts_prose.h"  // R835: migrated
     #include "rules/audits/r282_special_artifacts_prose.h"  // R835: migrated

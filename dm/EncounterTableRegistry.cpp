@@ -126,6 +126,11 @@ const char* const kCityBandKeys[]  = { "band", "kind", nullptr };
 // R1036: the planar family file/row keys. Exact keys only -
 // no prefix, no exceptions (the R1034 dispatch-order lesson).
 const char* const kPlanarFileKeys[]  = { "key", "rows", nullptr };
+// R1037: the psionic spells file keys (two registry lists).
+// Exact keys only - no prefix, no exceptions (the R1034
+// dispatch-order lesson).
+const char* const kPsionicSpellKeys[] =
+    { "key", "exact", "family", nullptr };
 const char* const kPlanarRowKeys[]   =
     { "band", "key", "numbers", "primeOnly", nullptr };
 const char* const kPlanarPickKeys[] =
@@ -874,7 +879,8 @@ bool EncounterTableRegistry::loadFile(const std::string& path,
             m_cityBands[key] = rows;
         }
     } else if (key == "planar_astral"
-               || key == "planar_ethereal") {
+               || key == "planar_ethereal"
+               || key == "psionic_table") {
         const int t = lua_gettop(L);
         if (!checkAllowedKeys(L, t, kPlanarFileKeys, key, &err)) goto bad;
         {
@@ -1110,6 +1116,55 @@ bool EncounterTableRegistry::loadFile(const std::string& path,
             if (m_planarBands.count(key)) { err = "duplicate def key";
                                             goto bad; }
             m_planarBands[key] = rows;
+        }
+    } else if (key == "psionic_spells") {
+        const int t = lua_gettop(L);
+        if (!checkAllowedKeys(L, t, kPsionicSpellKeys, key, &err))
+            goto bad;
+        {
+            std::string k;
+            if (!getStr(L, t, "key", &k, &err)) goto bad;
+            if (k != "psionic_spells") { err = "def key mismatch";
+                                         goto bad; }
+        }
+        {
+            static const char* const names[2] = { "exact",
+                                                  "family" };
+            for (int i = 0; i < 2; ++i) {
+                lua_getfield(L, t, names[i]);
+                if (!lua_istable(L, -1)) {
+                    err = std::string("'") + names[i]
+                        + "' is not a table";
+                    goto bad;
+                }
+                const int cnt = (int)lua_rawlen(L, -1);
+                if (cnt < 1) {
+                    err = std::string("'") + names[i]
+                        + "' must carry at least one entry";
+                    goto bad;
+                }
+                std::vector<std::string> vals;
+                for (int j = 1; j <= cnt; ++j) {
+                    lua_rawgeti(L, -1, j);
+                    if (!lua_isstring(L, -1)) {
+                        err = std::string("'") + names[i]
+                            + "' element is not a string";
+                        goto bad;
+                    }
+                    size_t len = 0;
+                    const char* s = lua_tolstring(L, -1, &len);
+                    vals.push_back(std::string(s, len));
+                    lua_pop(L, 1);
+                }
+                lua_pop(L, 1);
+                const std::string setKey =
+                    std::string("psionic_spell_") + names[i];
+                if (m_lists.count(setKey)) {
+                    err = "duplicate def key";
+                    goto bad;
+                }
+                m_lists[setKey] = vals;
+            }
         }
     } else {
         err = "unknown file shape for key '" + key + "'";

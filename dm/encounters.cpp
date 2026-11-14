@@ -85,6 +85,7 @@ static dm::EncounterTableRegistry& encReg() {
         // audit pins 21 files in encounters_outdoor/).
         reg.loadDirectory("content/tables/encounters_city");
         reg.loadDirectory("content/tables/encounters_planar");
+        reg.loadDirectory("content/tables/encounters_psionic");
     }
     return reg;
 }
@@ -2371,90 +2372,82 @@ EtherCycloneResult rollEtherCyclone(rules::Dice& dice, int d20,
 // count is the printed 10-60). No appstate wiring (R60/R63
 // no-wiring precedent).
 
+// R1037 (the registry-native de-wire, the R1032-R1036 shape):
+// the 19-row psionic table retired into content/tables/
+// encounters_psionic/psionic_table.lua (band = the percentile,
+// key = the bestiary key or the printed PSI_* pseudo-key,
+// numbers = the printed Numbers column; 0,0 marks the (**) Men
+// party and the yellow mold dash); the printed "Spells
+// Resembling Psionic Powers" lists into psionic_spells.lua
+// (the registry lists psionic_spell_exact /
+// psionic_spell_family). The rows ride the R1036 planar row
+// shape and the loader branch's exact keys; the PSI_* demon/
+// devil rows resolve through the R1036 planarSetView (the
+// R1036 rewire, already in place); kPrinces/kArchDevils stay
+// engine-side (the R52 record). What stays here is the
+// mechanics: the 24-attempt ignore-&-reroll, the
+// second-percentile modulo selection, the (**) Men character
+// party (rollCharacterParty(dice, 8, 8), the R63 convention),
+// the yellow mold printed dash (registry noAppearing
+// fallback), the printed Numbers column, and the
+// case-insensitive spell matching. Signatures and behavior
+// are unchanged - the views are registry-backed.
+
 namespace {
 
-struct PsionicRow {
-    short lo, hi;         // percentile
-    const char* key;      // registry key or PSI_* pseudo-key
-    short nMin, nMax;     // printed Numbers column
-};
-
-// PSIONIC ENCOUNTER TABLE (DMG p.182)
-static const PsionicRow kPsionicTable[] = {
-{1, 5, "brain_mole", 1, 3},
-{6, 12, "cerebral_parasite", 3, 12},
-{13, 15, "couatl", 1, 4},
-{16, 18, "PSI_DEMON_MAJOR", 1, 2}, // Demon, major* -> R65 kDemonMajor,
-{19, 24, "PSI_DEMON_MINOR", 1, 4}, // Demon, minor* -> R65 kDemonMinor,
-{25, 26, "PSI_DEMON_PRINCE", 1, 1}, // Demon, prince* -> R52 kPrinces,
-{27, 28, "PSI_DEVIL_ARCH", 1, 1}, // Devil, arch-* -> R52 kArchDevils,
-{29, 34, "PSI_DEVIL_GREATER", 1, 2}, // Devil, greater-* -> R65 kDevilGreater,
-{35, 38, "gray_ooze", 1, 3},
-{39, 48, "intellect_devourer", 1, 2},
-{49, 51, "ki_rin", 1, 1}, // Ki-rin,
-{52, 56, "lich", 1, 1},
-{57, 62, "PSI_MEN", 0, 0}, // Men (human psionic)** -> Character Subtable party,
-{63, 69, "mind_flayer", 1, 4},
-{70, 72, "yellow_mold", 0, 0}, // Mold, yellow (dash) -> registry noAppearing (R60),
-{73, 82, "shedu", 2, 8},
-{83, 92, "su_monster", 1, 12}, // Su-monster,
-{93, 98, "titan", 1, 2}, // Titan -> bestiary's plain titan key,
-{99, 100, "triton", 10, 60}   // 1-3 of total are psionic (fiction, documented)
-};
+// the two printed spells lists (psionic_spells.lua -> the
+// registry lists); the lazy-load idiom of planarSetView
+static const std::vector<std::string>& psionicSpellView(
+        const char* which) {
+    static std::map<std::string, std::vector<std::string>> m;
+    static bool loaded = false;
+    if (!loaded) {
+        loaded = true;
+        m["psionic_spell_exact"] =
+            dm::encReg().list("psionic_spell_exact");
+        m["psionic_spell_family"] =
+            dm::encReg().list("psionic_spell_family");
+    }
+    static const std::vector<std::string> none;
+    auto it = m.find(which);
+    return it == m.end() ? none : it->second;
+}
 
 } // namespace
 
+
 // R66: the printed "Spells Resembling Psionic Powers" list
-// (p.182). The families - astral spell, augury, blink,
-// charm (any), clairadience, clairvoyance, cure (any),
-// detect (any), dimension door, enlarge, ESP, feather fall,
-// feign death, heat metal, heal, hypnotism, invisibility
-// (any), know alignment, levitation, plane shift,
-// polymorph (any), remove curse, shape change, stone tell,
-// tele- (any), temporal stasis. Matching is
-// case-insensitive on the full name; "(any)" families match
-// by the leading word (charm, cure, detect, invisibility,
-// polymorph, tele-). Magic items performing these powers
-// count as well (the book's note) - the caller's call.
+// (p.182) - the exact names and the "(any)" family prefixes
+// now live in psionic_spells.lua (the registry lists); the
+// case-insensitive matching is the engine's, unchanged.
 bool spellResemblesPsionicPower(const std::string& name) {
-    static const char* const exact[] = {
-        "astral spell", "augury", "blink", "clairadience",
-        "clairvoyance", "dimension door", "enlarge", "esp",
-        "feather fall", "feign death", "heat metal", "heal",
-        "hypnotism", "know alignment", "levitation",
-        "plane shift", "remove curse", "shape change",
-        "stone tell", "temporal stasis"
-    };
     std::string lower;
     for (char c : name) {
         unsigned char u = (unsigned char)c;
         lower.push_back((char)(u >= 'A' && u <= 'Z' ? u + 32 : u));
     }
-    for (const char* e : exact)
+    for (const auto& e : psionicSpellView("psionic_spell_exact"))
         if (lower == e) return true;
     // "(any)" families - the printed leading word
-    static const char* const family[] = {
-        "charm", "cure", "detect", "invisibility",
-        "polymorph", "tele"
-    };
-    for (const char* f : family)
+    for (const auto& f : psionicSpellView("psionic_spell_family"))
         if (lower.rfind(f, 0) == 0) return true;
     return false;
 }
+
 
 DungeonEncounter rollPsionicEncounter(
         const monsters::MonsterRegistry& reg, rules::Dice& dice,
         int pctile, int pctile2) {
     DungeonEncounter e;
 
-    size_t n = sizeof kPsionicTable / sizeof kPsionicTable[0];
+    const std::vector<dm::EncounterPlanarRow>& t =
+        planarView("psionic_table");
 
     for (int attempt = 0; attempt < 24; ++attempt) {
-        const PsionicRow* row = nullptr;
-        for (size_t i = 0; i < n; ++i)
-            if (pctile >= kPsionicTable[i].lo &&
-                pctile <= kPsionicTable[i].hi)
-                { row = &kPsionicTable[i]; break; }
+        const dm::EncounterPlanarRow* row = nullptr;
+        for (const auto& r : t)
+            if (pctile >= r.lo && pctile <= r.hi)
+                { row = &r; break; }
         if (!row) return e;   // defensive: column covers 01-00
 
         std::string key = row->key;
@@ -2511,7 +2504,8 @@ DungeonEncounter rollPsionicEncounter(
             } else {
                 // printed Numbers column
                 e.count = row->nMin + (int)dice.roll(
-                    1, (uint32_t)(row->nMax - row->nMin + 1), 0) - 1;
+                    1, (uint32_t)(row->nMax - row->nMin + 1), 0)
+                    - 1;
             }
             return e;
         }
@@ -2523,29 +2517,26 @@ DungeonEncounter rollPsionicEncounter(
     return e;
 }
 
+
 // Every result key the table can produce - the regtest-style
 // companion of rollPsionicEncounter.
 std::vector<std::string> psionicEncounterKeys(
         const monsters::MonsterRegistry& reg) {
     std::vector<std::string> out;
-    size_t n = sizeof kPsionicTable / sizeof kPsionicTable[0];
-    for (size_t i = 0; i < n; ++i) {
-        const std::string key = kPsionicTable[i].key;
+    for (const auto& r : planarView("psionic_table")) {
+        const std::string key = r.key;
         if      (key == "PSI_DEMON_MAJOR")
-            for (const auto& k :
-                 planarSetView("demon_major_set"))
+            for (const auto& k : planarSetView("demon_major_set"))
                 pushUnique(out, k.c_str());
         else if (key == "PSI_DEMON_MINOR")
-            for (const auto& k :
-                 planarSetView("demon_minor_set"))
+            for (const auto& k : planarSetView("demon_minor_set"))
                 pushUnique(out, k.c_str());
         else if (key == "PSI_DEMON_PRINCE")
             for (const char* k : kPrinces) pushUnique(out, k);
         else if (key == "PSI_DEVIL_ARCH")
             for (const char* k : kArchDevils) pushUnique(out, k);
         else if (key == "PSI_DEVIL_GREATER")
-            for (const auto& k :
-                 planarSetView("devil_greater_set"))
+            for (const auto& k : planarSetView("devil_greater_set"))
                 pushUnique(out, k.c_str());
         else if (key == "PSI_MEN")
             pushUnique(out, "character_party");
@@ -2554,7 +2545,6 @@ std::vector<std::string> psionicEncounterKeys(
     }
     return out;
 }
-
 
 // ----------------------------------------------------------------------------
 // R67: the PATROL and CASTLE/FORTRESS tables - DMG Appendix C

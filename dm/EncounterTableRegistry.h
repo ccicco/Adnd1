@@ -10,8 +10,9 @@
 // tools/r1032_splice.py (dungeon family),
 // tools/r1033_splice.py (water family),
 // tools/r1034_splice.py (outdoor family),
-// tools/r1035_splice.py (city family) and
-// tools/r1036_splice.py (planar family) are the only writers.
+// tools/r1035_splice.py (city family),
+// tools/r1036_splice.py (planar family) and
+// tools/r1037_splice.py (psionic family) are the only writers.
 // ============================================================================
 
 #pragma once
