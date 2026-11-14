@@ -81,6 +81,9 @@ static dm::EncounterTableRegistry& encReg() {
         // R1034: the outdoor family joined likewise (the R1033
         // audit pins 9 files in encounters_water/).
         reg.loadDirectory("content/tables/encounters_outdoor");
+        // R1035: the city family joined likewise (the R1034
+        // audit pins 21 files in encounters_outdoor/).
+        reg.loadDirectory("content/tables/encounters_city");
     }
     return reg;
 }
@@ -1476,146 +1479,60 @@ std::vector<OutdoorBand> outdoorSubBands(
 
 namespace {
 
-struct CityRow {
-    short loDay, hiDay;      // daytime percentile (-0 = no row)
-    short loNight, hiNight;  // nighttime percentile
-    const char* key;
-};
-
-// CITY/TOWN ENCOUNTER MATRIX (DMG p.191)
-static const CityRow kCityMatrix[] = {
-{1,1,1,3,"assassin"},
-{2,2,4,5,"bandit"},
-{3,12,6,8,"beggar"},
-{13,13,9,10,"brigand"},
-{14,18,11,11,"city_guard"},
-{19,21,12,12,"city_official"},
-{22,23,13,21,"city_watchman"},
-{24,25,22,22,"cleric"},
-{0,0,23,23,"demon_or_nycadaemon"},
-{0,0,24,24,"devil_or_mezzadaemon"},
-{0,0,25,25,"doppelganger"},
-{26,26,26,26,"druid"},
-{27,27,27,31,"drunk"},
-{28,29,32,33,"fighter"},
-{30,33,34,35,"gentleman"},
-{0,0,36,36,"ghoul_or_ghast"},
-{0,0,37,37,"ghost"},
-{34,34,38,42,"giant_rat"},
-{35,39,43,43,"goodwife"},
-{40,41,44,50,"harlot"},
-{42,42,51,51,"illusionist"},
-{43,50,52,52,"laborer_or_peddler"},
-{51,51,53,53,"magic_user"},
-{52,55,54,58,"mercenary"},
-{56,62,59,60,"merchant"},
-{63,63,61,61,"monk_or_bard"},
-{0,0,62,62,"night_hag"},
-{64,65,63,64,"noble"},
-{66,66,65,65,"paladin"},
-{67,69,66,66,"pilgrim"},
-{70,70,67,67,"press_gang"},
-{71,72,68,71,"rake"},
-{0,0,72,72,"rakshasa"},
-{73,73,73,73,"ranger"},
-{74,78,74,80,"ruffian"},
-{0,0,81,81,"shadow"},
-{0,0,82,82,"spectre"},
-{79,82,83,88,"thief"},
-{83,97,89,90,"tradesman"},
-{98,98,91,93,"wererat"},
-{99,99,94,94,"weretiger"},
-{100,100,95,96,"werewolf"},
-{0,0,97,97,"wight"},
-{0,0,98,98,"will_o_wisp"},
-{0,0,99,99,"wraith"},
-{0,0,100,100,"vampire_or_lich"}
-};
-
-// printed encounter numbers for the non-party results
+// R1035 (the registry-native de-wire, the R1032-R1034 shape): the
+// matrix rows retired into content/tables/encounters_city/
+// city_matrix.lua; the printed count dice into city_counts.lua (the
+// dead bard entry preserved, documented); the p.192 protection
+// subtable into city_band_protection.lua; the p.192 chance-per-
+// level table into city_magic.lua; the R146/R174 flavor bands
+// into city_band_drunk/_harlot/_noble/_sedan/_ruffian.lua. The
+// registry loads the directory (encReg() above). What stays here
+// is the mechanics: the classed party builds (rollCityParty,
+// verbatim below), the second-percentile splits, the nycadaemon/
+// mezzadaemon re-roll advice (p.191), plusForLevel and the PROT_*
+// device enum mapping. Signatures and behavior are unchanged -
+// the views are registry-backed.
 int cityCountFor(rules::Dice& dice, const std::string& key, bool night) {
-    (void)night;
-    if (key == "bandit" || key == "brigand")
-        return 2 + (int)dice.roll(1, 10, 0);          // 3-12 night; day documented
-    if (key == "beggar")
-        return (int)dice.roll(1, 2, 0);               // 1, possibly 2
-    if (key == "doppelganger")
-        return 2 + (int)dice.roll(1, 4, 0);           // d4+2 = 3-6
-    if (key == "giant_rat")
-        return night
-            ? 1 + (int)dice.roll(1, 24, 0)            // 4-24 night
-            : (int)dice.roll(2, 4, 0);                // 2-8 day
-    if (key == "ghoul" || key == "ghast")
-        return 4 + (int)dice.roll(1, 13, 0);          // 4-16
-    if (key == "drunk")
-        return (int)dice.roll(1, 4, 0);               // 1-4 revelers/bums
-    if (key == "gentleman")
-        return (int)dice.roll(1, 5, 0);               // 1 + 0-4 company
-    if (key == "laborer")
-        return 2 + (int)dice.roll(1, 11, 0);          // 3-12
-    if (key == "peddler")
+    const dm::EncounterCityCount* c = dm::encReg().cityCount(key);
+    if (!c)
+        // one specimen (ghost, ghoul's kin, vampire, lich,
+        // doppelganger's kin, goodwife, harlot, paladin-less
+        // singles)
         return 1;
-    if (key == "mercenary")
-        return 2 + (int)dice.roll(1, 11, 0);          // 3-12
-    if (key == "merchant")
-        return (int)dice.roll(1, 3, 0);               // 1-3 (night guards fiction)
-    if (key == "bard")
-        return 1;
-    if (key == "night_hag")
-        return (int)dice.roll(1, 2, 0);               // 1-2
-    if (key == "noble")
-        return 1;
-    if (key == "pilgrim")
-        return 2 + (int)dice.roll(1, 11, 0);          // 3-12
-    if (key == "press_gang")
-        return 1 + (int)dice.roll(1, 16, 0);          // 2-16
-    if (key == "rakshasa")
-        return (int)dice.roll(1, 3, 0);               // 1-3
-    if (key == "ruffian")
-        return 6 + (int)dice.roll(1, 6, 0);           // d6+6 = 7-12
-    if (key == "shadow")
-        return 2 + (int)dice.roll(1, 7, 0);           // 2-8
-    if (key == "spectre")
-        return (int)dice.roll(1, 3, 0);               // 1-3
-    if (key == "tradesman")
-        return (int)dice.roll(2, 4, 0);               // 2-8
-    if (key == "wererat")
-        return 2 + (int)dice.roll(1, 4, 0);           // 2-5
-    if (key == "weretiger")
-        return (int)dice.roll(1, 2, 0);               // 1-2
-    if (key == "werewolf")
-        return 2 + (int)dice.roll(1, 4, 0);           // 2-5
-    if (key == "wight")
-        return 2 + (int)dice.roll(1, 4, 0);           // 2-5
-    if (key == "will_o_wisp")
-        return (int)dice.roll(1, 2, 0);               // 1-2
-    if (key == "wraith")
-        return (int)dice.roll(1, 4, 0);              // 1-4
-    // ghost, ghoul's kin, vampire, lich, doppelganger's kin,
-    // goodwife, harlot, paladin-less singles: one specimen
-    return 1;
+    if (c->fixed >= 0)
+        return c->fixed;
+    if (c->hasNight && night)
+        return c->plusN + (int)dice.roll(c->nN, c->dN, 0);
+    return c->plus + (int)dice.roll(c->n, c->d, 0);
 }
 
-// p.192 protection device subtable (the mechanically usable
-// outcomes; the amulet of life protection has no mechanical
-// effect here - R55 precedent)
+// p.192 protection device subtable: the bands retired to the
+// registry (city_band_protection); the enum and the mechanical
+// mapping stay here (the R1034 PROT semantics unchanged).
 enum { PROT_RING1, PROT_RING2, PROT_RING3, PROT_AMULET,
        PROT_BRACERS6, PROT_BRACERS4, PROT_BRACERS2,
        PROT_DISPLACEMENT, PROT_CLOAK1, PROT_CLOAK2, PROT_CLOAK3 };
 
+static int protectionDeviceFromKind(const std::string& k) {
+    if (k == "prot_ring1")        return PROT_RING1;
+    if (k == "prot_ring2")        return PROT_RING2;
+    if (k == "prot_ring3")        return PROT_RING3;
+    if (k == "prot_amulet")       return PROT_AMULET;
+    if (k == "prot_bracers6")     return PROT_BRACERS6;
+    if (k == "prot_bracers4")     return PROT_BRACERS4;
+    if (k == "prot_bracers2")     return PROT_BRACERS2;
+    if (k == "prot_displacement") return PROT_DISPLACEMENT;
+    if (k == "prot_cloak1")       return PROT_CLOAK1;
+    if (k == "prot_cloak2")       return PROT_CLOAK2;
+    if (k == "prot_cloak3")       return PROT_CLOAK3;
+    return PROT_AMULET;   // unreachable: the bands chain to 100
+}
+
 static int rollProtectionDevice(rules::Dice& dice) {
-    int p = (int)dice.roll(1, 100, 0);
-    if (p <= 25) return PROT_RING1;
-    if (p <= 30) return PROT_RING2;
-    if (p == 31) return PROT_RING3;
-    if (p == 32) return PROT_AMULET;
-    if (p <= 55) return PROT_BRACERS6;
-    if (p <= 70) return PROT_BRACERS4;
-    if (p <= 75) return PROT_BRACERS2;
-    if (p <= 82) return PROT_DISPLACEMENT;
-    if (p <= 95) return PROT_CLOAK1;
-    if (p <= 99) return PROT_CLOAK2;
-    return PROT_CLOAK3;
+    std::string kind;
+    dm::encReg().cityBandLookup("city_band_protection",
+                                (int)dice.roll(1, 100, 0), &kind);
+    return protectionDeviceFromKind(kind);
 }
 
 // "The power of the item must be commensurate with the level of
@@ -1629,38 +1546,129 @@ static int plusForLevel(int level) {
 
 } // namespace
 
+// R1035: the matrix view, cached once (the R1032 levelView shape).
+static const std::vector<dm::EncounterCityRow>& cityView() {
+    static std::vector<dm::EncounterCityRow> cache;
+    static bool loaded = false;
+    if (!loaded) {
+        loaded = true;
+        cache = dm::encReg().cityRows();
+    }
+    return cache;
+}
+// R146: the city flavor subtables R64 named as unmodeled -
+// the p.191 drunk identity table ("the character(s) found
+// drunk should be diced for") and the p.192 harlot type
+// table, both transcribed from the 1eonline.info
+// compilation (the repo-trusted source; the DMG re-upload's
+// OCR debt stands). Fiction-only descriptors: the app's
+// cityFlavor strings dress the "drunk" and "harlot" rows
+// with them; no combat effect. The book prints "MU" and
+// "Merc" in full as the fiction strings (magic-user,
+// mercenary); the printed book reads "haughty", the
+// compilation "Haughy" an OCR defect (corrected,
+// documented). R174 pins the two remaining R64 flavor
+// notes below (the R149-corrected reading): noble
+// gender is a clean nobleman-with-retainers 75% /
+// noblewoman 25% coin; the noblewoman is 75% likely
+// to have a sedan chair, carriers and linkboys (at
+// night); the printed matrix footnote - 1 in 4
+// ruffians can be half-orc or of humanoid race
+// (goblin, hobgoblin, kobold, orc) - is banded as
+// five equal fifths of the quarter, the weights the
+// book leaves unstated (documented).
+
+namespace {
+
+// R1035: the flavor band scan (the retired R146/R174 helper,
+// registry-backed; the clamp contract unchanged).
+static const char* cityKindFor(const char* table, int pctile) {
+    if (pctile < 1)   pctile = 1;
+    if (pctile > 100) pctile = 100;
+    const auto& bands = dm::encReg().cityBands(table);
+    for (const auto& b : bands)
+        if (pctile >= b.lo && pctile <= b.hi)
+            return b.kind.c_str();
+    return "";
+}
+
+}   // namespace
+
+const char* cityDrunkKind(int pctile) {
+    return cityKindFor("city_band_drunk", pctile);
+}
+
+const char* cityHarlotKind(int pctile) {
+    return cityKindFor("city_band_harlot", pctile);
+}
+
+// R174: the two remaining R64 city flavor notes, pinned
+// from the fresh DMG upload (p.191-192, both confirmed
+// by the R149 book-verify pass): the noble gender coin
+// - nobleman-with-retainers 75% / noblewoman 25% (the
+// corrected reading; the 70/25/no-last-5 guess is dead)
+// - and the noblewoman 75% sedan-chair likelihood (with
+// carriers and linkboys at night; the complement reads
+// her on foot). The ruffian matrix footnote (if
+// desired, 1 in 4 can be half-orc or of humanoid
+// race - goblin, hobgoblin, kobold, orc) is banded
+// as the printed 25% quarter split into five equal
+// fifths, the weights the book leaves unstated
+// (documented); the first band is the human
+// three-quarters. Like the R146 tables these are
+// fiction-only descriptors dressing the city flavor
+// strings - no combat effect. The note says CAN be:
+// the fiction never summons the bestiary half-orc /
+// goblin / hobgoblin / kobold / orc records.
+
+const char* cityNobleKind(int pctile) {
+    return cityKindFor("city_band_noble", pctile);
+}
+
+const char* cityNoblewomanSedan(int pctile) {
+    return cityKindFor("city_band_sedan", pctile);
+}
+
+const char* cityRuffianKind(int pctile) {
+    return cityKindFor("city_band_ruffian", pctile);
+}
+
 // R64: p.192 CHANCE PER LEVEL FOR MAGIC ITEM - one percentile
-// roll per category at (chance x level). Group 0: assassin,
-// fighter, thief, etc.; group 1: cleric, druid; group 2:
-// magic-user. The printed monk column has no engine class
-// (monks resolve as fighters per R53) - documented. Potions,
-// scrolls, rings, wands/staffs/rods and misc magic exist in
-// the fiction but have no mechanical effect here (R55).
+// roll per category at (chance x level), the chances read from
+// the registry (city_magic.lua; the retired 4x3 array's values
+// unchanged). Group 0: assassin, fighter, thief, etc.; group 1:
+// cleric, druid; group 2: magic-user. The printed monk column
+// has no engine class (monks resolve as fighters per R53) -
+// documented. Potions, scrolls, rings, wands/staffs/rods and
+// misc magic exist in the fiction but have no mechanical effect
+// here (R55).
 static void rollCityMagicItems(rules::Dice& dice, PartyMember& m) {
     if (m.level < 1) return;   // 0-level men: hp is all they need
 
     int group = (m.classIndex == rules::CLASS_CLERIC) ? 1
               : (m.classIndex == rules::CLASS_MAGIC_USER) ? 2 : 0;
 
-    //                g0   g1   g2   (percent per level)
-    const int sword   [3] = { 10,  0,  0 };
-    const int miscWpn [3] = {  5, 10,  5 };
-    const int armor   [3] = { 10, 10,  0 };
-    const int protect [3] = {  2,  2, 10 };
+    const auto& magic = dm::encReg().cityMagic();
+    auto chance = [&](const char* category) -> int {
+        for (const auto& r : magic)
+            if (r.category == category)
+                return r.groups[group];
+        return 0;
+    };
 
     int lvl = m.level;
-    if ((int)dice.roll(1, 100, 0) <= sword[group] * lvl)
+    if ((int)dice.roll(1, 100, 0) <= chance("sword") * lvl)
         m.wpnPlus = plusForLevel(lvl);
-    if ((int)dice.roll(1, 100, 0) <= miscWpn[group] * lvl)
+    if ((int)dice.roll(1, 100, 0) <= chance("misc_weapon") * lvl)
         m.rngPlus = plusForLevel(lvl);
-    if ((int)dice.roll(1, 100, 0) <= armor[group] * lvl) {
+    if ((int)dice.roll(1, 100, 0) <= chance("armor") * lvl) {
         m.armPlus = plusForLevel(lvl);
         // "Armor &/or Shield" - the shield is a coin-flip half
         // of the category (documented split)
         if ((int)dice.roll(1, 2, 0) == 2)
             m.shdPlus = plusForLevel(lvl);
     }
-    if ((int)dice.roll(1, 100, 0) <= protect[group] * lvl) {
+    if ((int)dice.roll(1, 100, 0) <= chance("protection") * lvl) {
         switch (rollProtectionDevice(dice)) {
             case PROT_RING1: case PROT_CLOAK1: m.shdPlus += 1; break;
             case PROT_RING2: case PROT_CLOAK2: m.shdPlus += 2; break;
@@ -1682,6 +1690,7 @@ static void rollCityMagicItems(rules::Dice& dice, PartyMember& m) {
 // asterisk = rollNpcRace (R62); unasterisked classed types are
 // human (1e class restrictions). Followers and leaders are
 // henchmen; 0-level guardsmen are men-at-arms (R53 shapes).
+// VERBATIM (R1035 kept the mechanics; only the tables retired).
 static CharacterParty rollCityParty(rules::Dice& dice,
                                     const char* type, bool night) {
     CharacterParty p;
@@ -1844,8 +1853,8 @@ static CharacterParty rollCityParty(rules::Dice& dice,
     } else if (t == "city_official") {
         // a minor bureaucrat (10% a major official with 2-8
         // guards); always 1-4 personal fighters (d4 level).
-        // The official is fiction - a man-at-arms shape -
-        // the guards are classed. No asterisk: human.
+        // The official is fiction - a man-at-arms shape - the
+        // guards are classed. No asterisk: human.
         addMan(1);
         bool major = (int)dice.roll(1, 10, 0) == 10;
         if (major)
@@ -1863,16 +1872,16 @@ DungeonEncounter rollCityEncounter(
         const monsters::MonsterRegistry& reg, rules::Dice& dice,
         int pctile, int pctile2, CityTime time) {
     DungeonEncounter e;
+    const std::vector<dm::EncounterCityRow>& matrix = cityView();
 
     for (int attempt = 0; attempt < 24; ++attempt) {
-        const CityRow* row = nullptr;
-        for (size_t i = 0;
-             i < sizeof kCityMatrix / sizeof kCityMatrix[0]; ++i) {
-            short lo, hi;
-            if (time == CITY_DAY) { lo = kCityMatrix[i].loDay;  hi = kCityMatrix[i].hiDay;  }
-            else                  { lo = kCityMatrix[i].loNight; hi = kCityMatrix[i].hiNight; }
+        const dm::EncounterCityRow* row = nullptr;
+        for (size_t i = 0; i < matrix.size(); ++i) {
+            int lo, hi;
+            if (time == CITY_DAY) { lo = matrix[i].loDay;  hi = matrix[i].hiDay;  }
+            else                  { lo = matrix[i].loNight; hi = matrix[i].hiNight; }
             if (lo > 0 && pctile >= lo && pctile <= hi)
-                { row = &kCityMatrix[i]; break; }
+                { row = &matrix[i]; break; }
         }
         if (!row) return e;   // defensive: columns cover 01-00
 
@@ -1934,9 +1943,9 @@ DungeonEncounter rollCityEncounter(
 std::vector<std::string> cityEncounterKeys(
         const monsters::MonsterRegistry& reg) {
     std::vector<std::string> out;
-    for (size_t i = 0;
-         i < sizeof kCityMatrix / sizeof kCityMatrix[0]; ++i) {
-        std::string key = kCityMatrix[i].key;
+    const std::vector<dm::EncounterCityRow>& matrix = cityView();
+    for (size_t i = 0; i < matrix.size(); ++i) {
+        std::string key = matrix[i].key;
         if (key == "laborer_or_peddler") {
             pushUnique(out, "laborer");
             pushUnique(out, "peddler");
@@ -1969,158 +1978,6 @@ std::vector<std::string> cityEncounterKeys(
     (void)reg;
     return out;
 }
-
-// ----------------------------------------------------------------------------
-// R146: the city flavor subtables R64 named as unmodeled -
-// the p.191 drunk identity table ("the character(s) found
-// drunk should be diced for") and the p.192 harlot type
-// table, both transcribed from the 1eonline.info
-// compilation (the repo-trusted source; the DMG re-upload's
-// OCR debt stands). Fiction-only descriptors: the app's
-// cityFlavor strings dress the "drunk" and "harlot" rows
-// with them; no combat effect. The book prints "MU" and
-// "Merc" in full as the fiction strings (magic-user,
-// mercenary); the printed book reads "haughty", the
-// compilation "Haughy" an OCR defect (corrected,
-// documented). R174 pins the two remaining R64 flavor
-// notes below (the R149-corrected reading): noble
-// gender is a clean nobleman-with-retainers 75% /
-// noblewoman 25% coin; the noblewoman is 75% likely
-// to have a sedan chair, carriers and linkboys (at
-// night); the printed matrix footnote - 1 in 4
-// ruffians can be half-orc or of humanoid race
-// (goblin, hobgoblin, kobold, orc) - is banded as
-// five equal fifths of the quarter, the weights the
-// book leaves unstated (documented).
-namespace {
-
-struct FlavorBand {
-    short lo, hi;
-    const char* kind;
-};
-
-// p.191: the drunk's dice-for identity (20 bands)
-static const FlavorBand kDrunkKinds[] = {
-    {   1,  2, "assassin" },
-    {   3,10, "bandit" },
-    { 11,18, "brigand" },
-    { 19,20, "city guard" },
-    { 21,22, "city official" },
-    { 23,25, "city watchman" },
-    { 26,27, "cleric" },
-    { 28,29, "druid" },
-    { 30,38, "fighter" },
-    { 39,45, "gentleman" },
-    { 46,48, "illusionist" },
-    { 49,63, "laborer" },
-    { 64,65, "magic-user" },
-    { 66,73, "mercenary" },
-    { 74,80, "merchant" },
-    { 81,82, "noble" },
-    { 83,90, "rake" },
-    { 91,95, "ruffian" },
-    { 96,97, "thief" },
-    { 98,100, "tradesman" },
-};
-
-// p.192: the harlot encounter type (12 bands)
-static const FlavorBand kHarlotKinds[] = {
-    {   1,10, "slovenly trull" },
-    { 11,25, "brazen strumpet" },
-    { 26,35, "cheap trollop" },
-    { 36,50, "typical streetwalker" },
-    { 51,65, "saucy tart" },
-    { 66,75, "wanton wench" },
-    { 76,85, "expensive doxy" },
-    { 86,90, "haughty courtesan" },
-    { 91,92, "aged madam" },
-    { 93,94, "wealthy procuress" },
-    { 95,98, "sly pimp" },
-    { 99,100, "rich panderer" },
-};
-
-const char* flavorKindFor(const FlavorBand* t, size_t n,
-                          int pctile) {
-    if (pctile < 1)   pctile = 1;
-    if (pctile > 100) pctile = 100;
-    for (size_t i = 0; i < n; ++i)
-        if (pctile >= t[i].lo && pctile <= t[i].hi)
-            return t[i].kind;
-    return "";
-}
-
-}   // namespace
-
-const char* cityDrunkKind(int pctile) {
-    return flavorKindFor(kDrunkKinds,
-        sizeof kDrunkKinds / sizeof kDrunkKinds[0], pctile);
-}
-
-const char* cityHarlotKind(int pctile) {
-    return flavorKindFor(kHarlotKinds,
-        sizeof kHarlotKinds / sizeof kHarlotKinds[0], pctile);
-}
-
-
-// ----------------------------------------------------------------------------
-// R174: the two remaining R64 city flavor notes, pinned
-// from the fresh DMG upload (p.191-192, both confirmed
-// by the R149 book-verify pass): the noble gender coin
-// - nobleman-with-retainers 75% / noblewoman 25% (the
-// corrected reading; the 70/25/no-last-5 guess is dead)
-// - and the noblewoman 75% sedan-chair likelihood (with
-// carriers and linkboys at night; the complement reads
-// her on foot). The ruffian matrix footnote (if
-// desired, 1 in 4 can be half-orc or of humanoid
-// race - goblin, hobgoblin, kobold, orc) is banded
-// as the printed 25% quarter split into five equal
-// fifths, the weights the book leaves unstated
-// (documented); the first band is the human
-// three-quarters. Like the R146 tables these are
-// fiction-only descriptors dressing the city flavor
-// strings - no combat effect. The note says CAN be:
-// the fiction never summons the bestiary half-orc /
-// goblin / hobgoblin / kobold / orc records.
-
-// p.191-192: the noble gender coin (2 bands)
-static const FlavorBand kNobleKinds[] = {
-    {  1, 75, "nobleman" },
-    { 76,100, "noblewoman" },
-};
-
-// p.192: the noblewoman ride (2 bands)
-static const FlavorBand kSedanKinds[] = {
-    {  1, 75, "sedan chair" },
-    { 76,100, "on foot" },
-};
-
-// p.191: the ruffian 1-in-4 matrix footnote (6 bands)
-static const FlavorBand kRuffianKinds[] = {
-    {   1, 75, "human" },
-    {  76, 80, "half-orc" },
-    {  81, 85, "goblin" },
-    {  86, 90, "hobgoblin" },
-    {  91, 95, "kobold" },
-    {  96,100, "orc" },
-};
-
-const char* cityNobleKind(int pctile) {
-    return flavorKindFor(kNobleKinds,
-        sizeof kNobleKinds / sizeof kNobleKinds[0], pctile);
-}
-
-const char* cityNoblewomanSedan(int pctile) {
-    return flavorKindFor(kSedanKinds,
-        sizeof kSedanKinds / sizeof kSedanKinds[0], pctile);
-}
-
-const char* cityRuffianKind(int pctile) {
-    return flavorKindFor(kRuffianKinds,
-        sizeof kRuffianKinds / sizeof kRuffianKinds[0], pctile);
-}
-
-
-
 // ----------------------------------------------------------------------------
 // R65: the ASTRAL & ETHEREAL encounter tables - DMG Appendix C
 // (Premium reprint p.181, OCR-verified against the uploaded

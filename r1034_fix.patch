@@ -1,0 +1,26 @@
+--- a/tools/r1034_splice.py
++++ b/tools/r1034_splice.py
+@@ -913,9 +913,11 @@
+       "lammasu", "wolf_dog", nullptr };"""
+ 
+ CPP_KIND_ANCHOR = """bool isLevelKind(const std::string& k) {"""
+-CPP_KIND_ADD = """// R1034: the outdoor family file keys.
++CPP_KIND_ADD = """// R1034: the outdoor family file keys. NOTE: outdoor_sets is
++// excluded - it must fall through to its own shape branch (the
++// outdoor_sets pick-set loader), not the STRICT rows loader.
+ bool isOutdoorKey(const std::string& k) {
+-    return k.rfind("outdoor_", 0) == 0;
++    return k.rfind("outdoor_", 0) == 0 && k != "outdoor_sets";
+ }
+ 
+ bool isLevelKind(const std::string& k) {"""
+@@ -1214,6 +1216,9 @@
+     A("        if (total != 348) ++bad;")
+     A('        if (ereg.hasOutdoor("dungeon_level_1")) ++bad;   // STRICT shapes')
+     A('        if (ereg.hasOutdoor("underwater_fresh_shallow")) ++bad;')
++    A('        // the sets file is its own shape, never an outdoor')
++    A('        // table (the R1034 preflight dispatch-order bug)')
++    A('        if (ereg.hasOutdoor("outdoor_sets")) ++bad;')
+     A("        // the pick-sets ride the registry lists")
+     A("        static const char* const kSets[6] =")
+     A('            { "ki_rin_set", "leprechaun_set", "porcupine_set",')

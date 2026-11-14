@@ -1,0 +1,58 @@
+-- encounter table def: city_matrix
+-- The R64 city family (R1035 de-wire): extracted verbatim from
+-- the retired kCityMatrix of dm/encounters.cpp (DMG Appendix C
+-- Premium reprint p.190-192, OCR-verified; the R146/R174 flavor
+-- records 1eonline.info-verified). rows carry the day and night percentile bands; -1,-1 = night-only row (the book prints "-").
+-- DO NOT hand-edit: tools/r1035_splice.py is the only writer.
+
+return {
+  key = "city_matrix",
+  rows = {
+    { key = "assassin", day = {1,1}, night = {1,3} },
+    { key = "bandit", day = {2,2}, night = {4,5} },
+    { key = "beggar", day = {3,12}, night = {6,8} },
+    { key = "brigand", day = {13,13}, night = {9,10} },
+    { key = "city_guard", day = {14,18}, night = {11,11} },
+    { key = "city_official", day = {19,21}, night = {12,12} },
+    { key = "city_watchman", day = {22,23}, night = {13,21} },
+    { key = "cleric", day = {24,25}, night = {22,22} },
+    { key = "demon_or_nycadaemon", day = {-1,-1}, night = {23,23} },
+    { key = "devil_or_mezzadaemon", day = {-1,-1}, night = {24,24} },
+    { key = "doppelganger", day = {-1,-1}, night = {25,25} },
+    { key = "druid", day = {26,26}, night = {26,26} },
+    { key = "drunk", day = {27,27}, night = {27,31} },
+    { key = "fighter", day = {28,29}, night = {32,33} },
+    { key = "gentleman", day = {30,33}, night = {34,35} },
+    { key = "ghoul_or_ghast", day = {-1,-1}, night = {36,36} },
+    { key = "ghost", day = {-1,-1}, night = {37,37} },
+    { key = "giant_rat", day = {34,34}, night = {38,42} },
+    { key = "goodwife", day = {35,39}, night = {43,43} },
+    { key = "harlot", day = {40,41}, night = {44,50} },
+    { key = "illusionist", day = {42,42}, night = {51,51} },
+    { key = "laborer_or_peddler", day = {43,50}, night = {52,52} },
+    { key = "magic_user", day = {51,51}, night = {53,53} },
+    { key = "mercenary", day = {52,55}, night = {54,58} },
+    { key = "merchant", day = {56,62}, night = {59,60} },
+    { key = "monk_or_bard", day = {63,63}, night = {61,61} },
+    { key = "night_hag", day = {-1,-1}, night = {62,62} },
+    { key = "noble", day = {64,65}, night = {63,64} },
+    { key = "paladin", day = {66,66}, night = {65,65} },
+    { key = "pilgrim", day = {67,69}, night = {66,66} },
+    { key = "press_gang", day = {70,70}, night = {67,67} },
+    { key = "rake", day = {71,72}, night = {68,71} },
+    { key = "rakshasa", day = {-1,-1}, night = {72,72} },
+    { key = "ranger", day = {73,73}, night = {73,73} },
+    { key = "ruffian", day = {74,78}, night = {74,80} },
+    { key = "shadow", day = {-1,-1}, night = {81,81} },
+    { key = "spectre", day = {-1,-1}, night = {82,82} },
+    { key = "thief", day = {79,82}, night = {83,88} },
+    { key = "tradesman", day = {83,97}, night = {89,90} },
+    { key = "wererat", day = {98,98}, night = {91,93} },
+    { key = "weretiger", day = {99,99}, night = {94,94} },
+    { key = "werewolf", day = {100,100}, night = {95,96} },
+    { key = "wight", day = {-1,-1}, night = {97,97} },
+    { key = "will_o_wisp", day = {-1,-1}, night = {98,98} },
+    { key = "wraith", day = {-1,-1}, night = {99,99} },
+    { key = "vampire_or_lich", day = {-1,-1}, night = {100,100} },
+  },
+}

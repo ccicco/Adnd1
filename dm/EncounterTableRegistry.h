@@ -8,8 +8,9 @@
 // in errors(), the R74 directory contract. The R52 print-fidelity
 // record (Premium reprint p.174-179, OCR-verified) is the source;
 // tools/r1032_splice.py (dungeon family),
-// tools/r1033_splice.py (water family) and
-// tools/r1034_splice.py (outdoor family) are the only writers.
+// tools/r1033_splice.py (water family),
+// tools/r1034_splice.py (outdoor family) and
+// tools/r1035_splice.py (city family) are the only writers.
 // ============================================================================
 
 #pragma once
@@ -60,6 +61,33 @@ struct EncounterOutdoorRow {
     int hi[8] = { -1, -1, -1, -1, -1, -1, -1, -1 };
 };
 
+// R1035: the city family. One matrix row carries the day and
+// night percentile bands of the DMG p.191 city matrix
+// (-1 = the book prints no band there); the flavor and
+// protection band tables share EncounterCityBand; the printed
+// encounter numbers roll plus + nDd (fixed >= 0 overrides);
+// the p.192 magic chances carry one percent-per-level entry
+// per group (0 fighter-ish, 1 cleric, 2 magic-user).
+struct EncounterCityRow {
+    std::string key;
+    int loDay = -1, hiDay = -1;
+    int loNight = -1, hiNight = -1;
+};
+struct EncounterCityBand {
+    int lo = 0, hi = 0;
+    std::string kind;
+};
+struct EncounterCityCount {
+    int n = 0, d = 0, plus = 0;
+    int nN = 0, dN = 0, plusN = 0;
+    bool hasNight = false;
+    int fixed = -1;             // -1: dice path; >= 0: printed constant
+};
+struct EncounterCityMagic {
+    std::string category;
+    int groups[3] = { 0, 0, 0 };
+};
+
 // One Determination Matrix entry (d20 range -> monster level).
 struct MatrixEntry { int lo = 0, hi = 0, mlv = 0; };
 
@@ -98,6 +126,19 @@ public:
     // fire_frost / piercers / ki_rin_set / leprechaun_set /
     // porcupine_set / iguanodon_set / lammasu_set / wolf_dog_set
     const std::vector<std::string>& list(const std::string& set) const;
+    // R1035: the city family views. cityBandLookup clamps the
+    // percentile to 1-100 and returns false when no band matches
+    // (the flavorKindFor contract). cityCount returns nullptr for
+    // an absent key - the caller rolls one specimen.
+    bool hasCityMatrix() const;
+    const std::vector<EncounterCityRow>& cityRows() const;
+    bool hasCityBands(const std::string& name) const;
+    const std::vector<EncounterCityBand>& cityBands(
+        const std::string& name) const;
+    bool cityBandLookup(const std::string& name, int pctile,
+                        std::string* kind) const;
+    const EncounterCityCount* cityCount(const std::string& key) const;
+    const std::vector<EncounterCityMagic>& cityMagic() const;
 
     const std::vector<std::string>& errors() const { return m_errors; }
 
@@ -109,6 +150,12 @@ private:
     std::map<std::string, std::vector<EncounterOutdoorRow>> m_outdoors;
     std::vector<std::vector<MatrixEntry>> m_matrix;   // 12 x 10
     std::map<std::string, std::vector<std::string>> m_lists;
+    // R1035: the city family (one matrix, the band tables, the
+    // count dice and the magic chances).
+    std::vector<EncounterCityRow> m_city;
+    std::map<std::string, std::vector<EncounterCityBand>> m_cityBands;
+    std::map<std::string, EncounterCityCount> m_cityCounts;
+    std::vector<EncounterCityMagic> m_cityMagic;
     std::vector<std::string> m_errors;
 };
 

@@ -113,6 +113,16 @@ const char* const kOutdoorFileKeys[] = { "key", "rows", nullptr };
 const char* const kOutdoorSetKeys[] =
     { "key", "ki_rin", "leprechaun", "porcupine", "iguanodon",
       "lammasu", "wolf_dog", nullptr };
+// R1035: the city family file/row keys. The dispatch uses exact
+// keys (city_matrix/city_counts/city_magic) plus the exception-free
+// city_band_ prefix - the predicates do not overlap (the R1034
+// dispatch-order lesson).
+const char* const kCityFileKeys[]  = { "key", "rows", nullptr };
+const char* const kCityRowKeys[]   = { "key", "day", "night", nullptr };
+const char* const kCityCountKeys[] =
+    { "key", "dice", "nightDice", "fixed", nullptr };
+const char* const kCityMagicKeys[] = { "category", "groups", nullptr };
+const char* const kCityBandKeys[]  = { "band", "kind", nullptr };
 const char* const kMatrixKeys[]  = { "key", "bands", nullptr };
 const char* const kLevelKeys[]   = { "key", "rows", nullptr };
 const char* const kDragonKeys[]  = { "key", "rows", nullptr };
@@ -132,6 +142,15 @@ bool isWaterKey(const std::string& k) {
 // outdoor_sets pick-set loader), not the STRICT rows loader.
 bool isOutdoorKey(const std::string& k) {
     return k.rfind("outdoor_", 0) == 0 && k != "outdoor_sets";
+}
+
+// R1035: the city family. The three exact keys and the prefix are
+// mutually exclusive by construction - no exceptions anywhere.
+bool isCityKey(const std::string& k) {
+    return k == "city_matrix" || k == "city_counts" || k == "city_magic";
+}
+bool isCityBandKey(const std::string& k) {
+    return k.rfind("city_band_", 0) == 0;
 }
 
 bool isLevelKind(const std::string& k) {
@@ -517,6 +536,326 @@ bool EncounterTableRegistry::loadFile(const std::string& path,
                 m_lists[setKey] = vals;
             }
         }
+    } else if (key == "city_matrix") {
+        const int t = lua_gettop(L);
+        if (!checkAllowedKeys(L, t, kCityFileKeys, key, &err)) goto bad;
+        {
+            std::string k;
+            if (!getStr(L, t, "key", &k, &err)) goto bad;
+            if (k != key) { err = "def key mismatch"; goto bad; }
+        }
+        lua_getfield(L, t, "rows");
+        if (!lua_istable(L, -1)) { err = "rows is not a table"; goto bad; }
+        {
+            const int n = (int)lua_rawlen(L, -1);
+            std::vector<EncounterCityRow> rows;
+            for (int i = 1; i <= n; ++i) {
+                lua_rawgeti(L, -1, i);
+                const int rt = lua_gettop(L);
+                if (!lua_istable(L, rt)) {
+                    err = "rows[" + std::to_string(i)
+                        + "] is not a table";
+                    goto bad;
+                }
+                if (!checkAllowedKeys(L, rt, kCityRowKeys,
+                        key + " rows[" + std::to_string(i) + "]", &err))
+                    goto bad;
+                EncounterCityRow row;
+                if (!getStr(L, rt, "key", &row.key, &err)) goto bad;
+                for (int pass = 0; pass < 2; ++pass) {
+                    lua_getfield(L, rt, pass == 0 ? "day" : "night");
+                    if (!lua_istable(L, -1)
+                        || (int)lua_rawlen(L, -1) != 2) {
+                        err = std::string(pass == 0 ? "day" : "night")
+                            + " must be a {lo, hi} pair";
+                        goto bad;
+                    }
+                    long long v[2];
+                    for (int j = 0; j < 2; ++j) {
+                        lua_rawgeti(L, -1, j + 1);
+                        if (!lua_isinteger(L, -1)) {
+                            err = "band pair field is not an integer";
+                            goto bad;
+                        }
+                        v[j] = lua_tointeger(L, -1);
+                        lua_pop(L, 1);
+                    }
+                    lua_pop(L, 1);
+                    const int clo = (int)v[0], chi = (int)v[1];
+                    if (clo == -1 && chi == -1) {
+                        // no band in this column (legal)
+                    } else if (clo >= 1 && clo <= 100
+                               && chi >= clo && chi <= 100) {
+                        if (pass == 0) { row.loDay = clo; row.hiDay = chi; }
+                        else { row.loNight = clo; row.hiNight = chi; }
+                    } else {
+                        err = "band pair outside 01-00";
+                        goto bad;
+                    }
+                }
+                rows.push_back(row);
+                lua_pop(L, 1);            // row
+            }
+            lua_pop(L, 1);                // rows array
+            if (!m_city.empty()) { err = "duplicate def key"; goto bad; }
+            m_city = rows;
+        }
+    } else if (key == "city_counts") {
+        const int t = lua_gettop(L);
+        if (!checkAllowedKeys(L, t, kCityFileKeys, key, &err)) goto bad;
+        {
+            std::string k;
+            if (!getStr(L, t, "key", &k, &err)) goto bad;
+            if (k != key) { err = "def key mismatch"; goto bad; }
+        }
+        lua_getfield(L, t, "rows");
+        if (!lua_istable(L, -1)) { err = "rows is not a table"; goto bad; }
+        {
+            const int n = (int)lua_rawlen(L, -1);
+            std::map<std::string, EncounterCityCount> rows;
+            for (int i = 1; i <= n; ++i) {
+                lua_rawgeti(L, -1, i);
+                const int rt = lua_gettop(L);
+                if (!lua_istable(L, rt)
+                    || !checkAllowedKeys(L, rt, kCityCountKeys,
+                        key + " rows[" + std::to_string(i) + "]", &err)) {
+                    if (lua_istable(L, rt))
+                        lua_pop(L, 1);
+                    goto bad;
+                }
+                EncounterCityCount c;
+                std::string ck;
+                if (!getStr(L, rt, "key", &ck, &err)) goto bad;
+                if (rows.count(ck)) { err = "duplicate count key";
+                                      goto bad; }
+                bool haveDice = false, haveFixed = false;
+                lua_getfield(L, rt, "dice");
+                if (!lua_isnil(L, -1)) {
+                    if (!lua_istable(L, -1)
+                        || (int)lua_rawlen(L, -1) != 3) {
+                        err = "dice must be {n, d, plus}";
+                        lua_pop(L, 1);
+                        goto bad;
+                    }
+                    long long v[3];
+                    for (int j = 0; j < 3; ++j) {
+                        lua_rawgeti(L, -1, j + 1);
+                        if (!lua_isinteger(L, -1)) {
+                            err = "dice field is not an integer";
+                            goto bad;
+                        }
+                        v[j] = lua_tointeger(L, -1);
+                        lua_pop(L, 1);
+                    }
+                    lua_pop(L, 1);
+                    if (v[0] < 1 || v[1] < 1 || v[2] < 0) {
+                        err = "dice outside n>=1, d>=1, plus>=0";
+                        goto bad;
+                    }
+                    c.n = (int)v[0]; c.d = (int)v[1];
+                    c.plus = (int)v[2];
+                    haveDice = true;
+                } else {
+                    lua_pop(L, 1);
+                }
+                lua_getfield(L, rt, "nightDice");
+                if (!lua_isnil(L, -1)) {
+                    if (!haveDice) {
+                        err = "nightDice without dice";
+                        lua_pop(L, 1);
+                        goto bad;
+                    }
+                    if (!lua_istable(L, -1)
+                        || (int)lua_rawlen(L, -1) != 3) {
+                        err = "nightDice must be {n, d, plus}";
+                        lua_pop(L, 1);
+                        goto bad;
+                    }
+                    long long v[3];
+                    for (int j = 0; j < 3; ++j) {
+                        lua_rawgeti(L, -1, j + 1);
+                        if (!lua_isinteger(L, -1)) {
+                            err = "nightDice field is not an integer";
+                            goto bad;
+                        }
+                        v[j] = lua_tointeger(L, -1);
+                        lua_pop(L, 1);
+                    }
+                    lua_pop(L, 1);
+                    if (v[0] < 1 || v[1] < 1 || v[2] < 0) {
+                        err = "nightDice outside n>=1, d>=1, plus>=0";
+                        goto bad;
+                    }
+                    c.nN = (int)v[0]; c.dN = (int)v[1];
+                    c.plusN = (int)v[2];
+                    c.hasNight = true;
+                } else {
+                    lua_pop(L, 1);
+                }
+                lua_getfield(L, rt, "fixed");
+                if (!lua_isnil(L, -1)) {
+                    if (!lua_isinteger(L, -1)) {
+                        err = "'fixed' is not an integer";
+                        lua_pop(L, 1);
+                        goto bad;
+                    }
+                    const long long fv = lua_tointeger(L, -1);
+                    lua_pop(L, 1);
+                    if (fv < 1 || fv > 100) {
+                        err = "'fixed' outside 1-100";
+                        goto bad;
+                    }
+                    if (haveDice) {
+                        err = "dice and fixed are mutually exclusive";
+                        goto bad;
+                    }
+                    c.fixed = (int)fv;
+                    haveFixed = true;
+                } else {
+                    lua_pop(L, 1);
+                }
+                if (!haveDice && !haveFixed) {
+                    err = "row needs dice or fixed";
+                    goto bad;
+                }
+                rows[ck] = c;
+                lua_pop(L, 1);            // row
+            }
+            lua_pop(L, 1);                // rows array
+            if (m_cityCounts.size()) { err = "duplicate def key";
+                                       goto bad; }
+            m_cityCounts = rows;
+        }
+    } else if (key == "city_magic") {
+        const int t = lua_gettop(L);
+        if (!checkAllowedKeys(L, t, kCityFileKeys, key, &err)) goto bad;
+        {
+            std::string k;
+            if (!getStr(L, t, "key", &k, &err)) goto bad;
+            if (k != key) { err = "def key mismatch"; goto bad; }
+        }
+        lua_getfield(L, t, "rows");
+        if (!lua_istable(L, -1)) { err = "rows is not a table"; goto bad; }
+        {
+            const int n = (int)lua_rawlen(L, -1);
+            std::vector<EncounterCityMagic> rows;
+            for (int i = 1; i <= n; ++i) {
+                lua_rawgeti(L, -1, i);
+                const int rt = lua_gettop(L);
+                if (!lua_istable(L, rt)) {
+                    err = "rows[" + std::to_string(i)
+                        + "] is not a table";
+                    goto bad;
+                }
+                if (!checkAllowedKeys(L, rt, kCityMagicKeys,
+                        key + " rows[" + std::to_string(i) + "]", &err))
+                    goto bad;
+                EncounterCityMagic row;
+                if (!getStr(L, rt, "category", &row.category, &err))
+                    goto bad;
+                if (row.category != "sword"
+                    && row.category != "misc_weapon"
+                    && row.category != "armor"
+                    && row.category != "protection") {
+                    err = "unknown magic category '" + row.category + "'";
+                    goto bad;
+                }
+                for (const auto& prev : rows)
+                    if (prev.category == row.category) {
+                        err = "duplicate magic category";
+                        goto bad;
+                    }
+                lua_getfield(L, rt, "groups");
+                if (!lua_istable(L, -1)
+                    || (int)lua_rawlen(L, -1) != 3) {
+                    err = "groups must carry 3 chances";
+                    goto bad;
+                }
+                for (int j = 0; j < 3; ++j) {
+                    lua_rawgeti(L, -1, j + 1);
+                    if (!lua_isinteger(L, -1)) {
+                        err = "groups field is not an integer";
+                        goto bad;
+                    }
+                    const long long v = lua_tointeger(L, -1);
+                    lua_pop(L, 1);
+                    if (v < 0 || v > 100) {
+                        err = "groups chance outside 0-100";
+                        goto bad;
+                    }
+                    row.groups[j] = (int)v;
+                }
+                lua_pop(L, 1);            // groups
+                rows.push_back(row);
+                lua_pop(L, 1);            // row
+            }
+            lua_pop(L, 1);                // rows array
+            if (m_cityMagic.size()) { err = "duplicate def key";
+                                      goto bad; }
+            m_cityMagic = rows;
+        }
+    } else if (isCityBandKey(key)) {
+        const int t = lua_gettop(L);
+        if (!checkAllowedKeys(L, t, kCityFileKeys, key, &err)) goto bad;
+        {
+            std::string k;
+            if (!getStr(L, t, "key", &k, &err)) goto bad;
+            if (k != key) { err = "def key mismatch"; goto bad; }
+        }
+        lua_getfield(L, t, "rows");
+        if (!lua_istable(L, -1)) { err = "rows is not a table"; goto bad; }
+        {
+            const int n = (int)lua_rawlen(L, -1);
+            std::vector<EncounterCityBand> rows;
+            int prev = 0;
+            for (int i = 1; i <= n; ++i) {
+                lua_rawgeti(L, -1, i);
+                const int rt = lua_gettop(L);
+                if (!lua_istable(L, rt)
+                    || !checkAllowedKeys(L, rt, kCityBandKeys,
+                        key + " rows[" + std::to_string(i) + "]", &err)) {
+                    if (lua_istable(L, rt))
+                        lua_pop(L, 1);
+                    goto bad;
+                }
+                lua_getfield(L, rt, "band");
+                if (!lua_istable(L, -1)
+                    || (int)lua_rawlen(L, -1) != 2) {
+                    err = "band must be a {lo, hi} pair";
+                    goto bad;
+                }
+                long long v[2];
+                for (int j = 0; j < 2; ++j) {
+                    lua_rawgeti(L, -1, j + 1);
+                    if (!lua_isinteger(L, -1)) {
+                        err = "band field is not an integer";
+                        goto bad;
+                    }
+                    v[j] = lua_tointeger(L, -1);
+                    lua_pop(L, 1);
+                }
+                lua_pop(L, 1);
+                const int clo = (int)v[0], chi = (int)v[1];
+                // STRICT: the flavor tables chain 1 -> 100 with no
+                // holes (every R1035 band table is a full chain)
+                if (clo != prev + 1 || chi < clo || chi > 100) {
+                    err = "band breaks the 1-100 chain";
+                    goto bad;
+                }
+                prev = chi;
+                EncounterCityBand row;
+                row.lo = clo;
+                row.hi = chi;
+                if (!getStr(L, rt, "kind", &row.kind, &err)) goto bad;
+                rows.push_back(row);
+                lua_pop(L, 1);            // row
+            }
+            lua_pop(L, 1);                // rows array
+            if (prev != 100) { err = "bands do not reach 100"; goto bad; }
+            if (m_cityBands.count(key)) { err = "duplicate def key";
+                                          goto bad; }
+            m_cityBands[key] = rows;
+        }
     } else {
         err = "unknown file shape for key '" + key + "'";
         goto bad;
@@ -634,6 +973,54 @@ EncounterTableRegistry::outdoorRows(const std::string& name) const {
     static const std::vector<EncounterOutdoorRow> none;
     auto it = m_outdoors.find(name);
     return it == m_outdoors.end() ? none : it->second;
+}
+
+// ----------------------------------------------------------------------------
+// R1035: the city family accessors.
+// ----------------------------------------------------------------------------
+
+bool EncounterTableRegistry::hasCityMatrix() const {
+    return !m_city.empty();
+}
+
+const std::vector<EncounterCityRow>&
+EncounterTableRegistry::cityRows() const {
+    return m_city;
+}
+
+bool EncounterTableRegistry::hasCityBands(
+    const std::string& name) const {
+    return m_cityBands.count(name) != 0;
+}
+
+const std::vector<EncounterCityBand>&
+EncounterTableRegistry::cityBands(const std::string& name) const {
+    static const std::vector<EncounterCityBand> none;
+    auto it = m_cityBands.find(name);
+    return it == m_cityBands.end() ? none : it->second;
+}
+
+bool EncounterTableRegistry::cityBandLookup(
+    const std::string& name, int pctile, std::string* kind) const {
+    if (pctile < 1)   pctile = 1;
+    if (pctile > 100) pctile = 100;
+    for (const auto& b : cityBands(name))
+        if (pctile >= b.lo && pctile <= b.hi) {
+            if (kind) *kind = b.kind;
+            return true;
+        }
+    return false;
+}
+
+const EncounterCityCount*
+EncounterTableRegistry::cityCount(const std::string& key) const {
+    auto it = m_cityCounts.find(key);
+    return it == m_cityCounts.end() ? nullptr : &it->second;
+}
+
+const std::vector<EncounterCityMagic>&
+EncounterTableRegistry::cityMagic() const {
+    return m_cityMagic;
 }
 
 const std::vector<std::string>&
