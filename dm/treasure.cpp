@@ -181,21 +181,48 @@ static long long rollJewelry(rules::Dice& dice, const char** desc) {
 // mark printed ranges, rolled uniform). qlo/qhi > 0 mark bundled finds.
 // ----------------------------------------------------------------------------
 
-struct ItemRow {
-    int lo, hi;
-    const char* name;
-    int xp, xpHi;      // xpHi > xp => uniform [xp, xpHi]
-    int gp, gpHi;      // gpHi > gp => uniform [gp, gpHi]
-    int qlo, qhi;      // qty range (0 = single)
-};
+// R1041 (the registry-native de-wire, the R1028/R1032-R1040
+// shape): the seven printed percentile tables (DMG pp.121-125)
+// retired into content/tables/treasure/ - one lua per family,
+// rows the items::MiscItemRow schema, set names = the def keys.
+// The roller and the pin surface read the registry views below;
+// the roll semantics (band scan on 1+d100, fallback the last
+// row) are the pickMiscRow semantics, unchanged. The scrolls
+// family (III.B) keeps its in-file shape. The R122 pin audits
+// read through the public accessors, so they pin the same
+// rows untouched.
+static items::MiscItemRegistry& tReg() {
+    // One-time lazy load (the miscReg shape: the engine loads
+    // its own registries).
+    static items::MiscItemRegistry reg;
+    static bool loaded = false;
+    if (!loaded) {
+        loaded = true;
+        reg.loadDirectory("content/tables/treasure");
+    }
+    return reg;
+}
 
-static MagicItem makeItem(rules::Dice& dice, const ItemRow& r) {
-    MagicItem m;
-    m.name = r.name;
-    m.xp = valIn(dice, r.xp, r.xpHi);
-    m.gp = valIn(dice, r.gp, r.gpHi);
-    if (r.qhi > 0) m.qty = inRange(dice, r.qlo, r.qhi);
-    return m;
+// Per-table views, band-sorted (the miscView idiom; the defs
+// arrive in band order, the sort is the stability belt).
+static const std::vector<items::MiscItemRow>& itemView(
+        const char* set) {
+    static std::map<std::string,
+        std::vector<items::MiscItemRow>> cache;
+    auto it = cache.find(set);
+    if (it == cache.end()) {
+        std::vector<items::MiscItemRow> v;
+        for (const auto& kv : tReg().all())
+            for (const auto& r : kv.second.rows)
+                if (r.set == set) v.push_back(r);
+        std::stable_sort(v.begin(), v.end(),
+                        [](const items::MiscItemRow& a,
+                           const items::MiscItemRow& b) {
+                            return a.bandLo < b.bandLo;
+                        });
+        it = cache.emplace(set, std::move(v)).first;
+    }
+    return it->second;
 }
 
 // ---- R76 helpers ------------------------------------------------------------
@@ -250,106 +277,11 @@ int MagicItem::weaponPlus() const {
     return 0;
 }
 
-// ---- III.A Potions ----------------------------------------------------------
-static const ItemRow kPotions[] = {
-    { 1, 3,   "Potion of Animal Control", 250,0, 400,0, 0,0 },
-    { 4, 6,   "Potion of Clairaudience", 250,0, 400,0, 0,0 },
-    { 7, 9,   "Potion of Clairvoyance", 300,0, 500,0, 0,0 },
-    { 10,12,  "Potion of Climbing", 300,0, 500,0, 0,0 },
-    { 13,15,  "Potion of Delusion", 0,0, 150,0, 0,0 },
-    { 16,18,  "Potion of Diminution", 300,0, 500,0, 0,0 },
-    { 19,20,  "Potion of Dragon Control", 500,1000, 5000,9000, 0,0 },
-    { 21,23,  "Potion of ESP", 500,0, 850,0, 0,0 },
-    { 24,26,  "Potion of Extra-Healing", 400,0, 800,0, 0,0 },
-    { 27,29,  "Potion of Fire Resistance", 250,0, 400,0, 0,0 },
-    { 30,32,  "Potion of Flying", 500,0, 750,0, 0,0 },
-    { 33,34,  "Potion of Gaseous Form", 300,0, 400,0, 0,0 },
-    { 35,36,  "Potion of Giant Control", 400,900, 1000,6000, 0,0 },
-    { 37,39,  "Potion of Giant Strength", 500,750, 900,1400, 0,0 },
-    { 40,41,  "Potion of Growth", 250,0, 300,0, 0,0 },
-    { 42,47,  "Potion of Healing", 200,0, 400,0, 0,0 },
-    { 48,49,  "Potion of Heroism", 300,0, 500,0, 0,0 },
-    { 50,51,  "Potion of Human Control", 500,0, 900,0, 0,0 },
-    { 52,54,  "Potion of Invisibility", 250,0, 500,0, 0,0 },
-    { 55,57,  "Potion of Invulnerability", 350,0, 500,0, 0,0 },
-    { 58,60,  "Potion of Levitation", 250,0, 400,0, 0,0 },
-    { 61,63,  "Potion of Longevity", 500,0, 1000,0, 0,0 },
-    { 64,66,  "Oil of Etherealness", 600,0, 1500,0, 0,0 },
-    { 67,69,  "Oil of Slipperiness", 400,0, 750,0, 0,0 },
-    { 70,72,  "Philter of Love", 200,0, 300,0, 0,0 },
-    { 73,75,  "Philter of Persuasiveness", 400,0, 850,0, 0,0 },
-    { 76,78,  "Potion of Plant Control", 250,0, 300,0, 0,0 },
-    { 79,81,  "Potion of Polymorph (self)", 200,0, 350,0, 0,0 },
-    { 82,84,  "Potion of Poison", 0,0, 0,0, 0,0 },
-    { 85,87,  "Potion of Speed", 200,0, 450,0, 0,0 },
-    { 88,90,  "Potion of Super-Heroism", 450,0, 750,0, 0,0 },
-    { 91,93,  "Potion of Sweet Water", 200,0, 250,0, 0,0 },
-    { 94,96,  "Potion of Treasure Finding", 600,0, 2000,0, 0,0 },
-    { 97,97,  "Potion of Undead Control", 700,0, 2500,0, 0,0 },
-    { 98,100, "Potion of Water Breathing", 400,0, 900,0, 0,0 },
-};
+// III.A Potions ---------------------------------------------------------- retired into content/tables/treasure/treasure_potions.lua (R1041)
 
-// ---- III.C Rings ------------------------------------------------------------
-static const ItemRow kRings[] = {
-    { 1,6,    "Ring of Contrariness", 0,0, 1000,0, 0,0 },
-    { 7,12,   "Ring of Delusion", 0,0, 2000,0, 0,0 },
-    { 13,14,  "Ring of Djinni Summoning", 3000,0, 20000,0, 0,0 },
-    { 15,15,  "Ring of Elemental Command", 5000,0, 25000,0, 0,0 },
-    { 16,21,  "Ring of Feather Falling", 1000,0, 5000,0, 0,0 },
-    { 22,27,  "Ring of Fire Resistance", 1000,0, 5000,0, 0,0 },
-    { 28,30,  "Ring of Free Action", 1000,0, 5000,0, 0,0 },
-    { 31,33,  "Ring of Human Influence", 2000,0, 10000,0, 0,0 },
-    { 34,40,  "Ring of Invisibility", 1500,0, 7500,0, 0,0 },
-    { 41,43,  "Ring of Mammal Control", 1000,0, 5000,0, 0,0 },
-    { 44,44,  "Ring of Multiple Wishes", 5000,0, 25000,0, 0,0 },
-    { 45,60,  "Ring of Protection", 2000,4000, 10000,20000, 0,0 },
-    { 61,61,  "Ring of Regeneration", 5000,0, 40000,0, 0,0 },
-    { 62,63,  "Ring of Shooting Stars", 3000,0, 15000,0, 0,0 },
-    { 64,65,  "Ring of Spell Storing", 2500,0, 22500,0, 0,0 },
-    { 66,69,  "Ring of Spell Turning", 2000,0, 17500,0, 0,0 },
-    { 70,75,  "Ring of Swimming", 1000,0, 5000,0, 0,0 },
-    { 76,77,  "Ring of Telekinesis", 2000,0, 10000,0, 0,0 },
-    { 78,79,  "Ring of Three Wishes", 3000,0, 15000,0, 0,0 },
-    { 80,85,  "Ring of Warmth", 1000,0, 5000,0, 0,0 },
-    { 86,90,  "Ring of Water Walking", 1000,0, 5000,0, 0,0 },
-    { 91,98,  "Ring of Weakness", 0,0, 1000,0, 0,0 },
-    { 99,99,  "Ring of Wizardry", 4000,0, 50000,0, 0,0 },
-    { 100,100,"Ring of X-Ray Vision", 4000,0, 35000,0, 0,0 },
-};
+// III.C Rings ------------------------------------------------------------ retired into content/tables/treasure/treasure_rings.lua (R1041)
 
-// ---- III.D Rods, Staves & Wands ---------------------------------------------
-static const ItemRow kRods[] = {
-    { 1,3,    "Rod of Absorption", 7500,0, 40000,0, 0,0 },
-    { 4,4,    "Rod of Beguiling", 5000,0, 30000,0, 0,0 },
-    { 5,14,   "Rod of Cancellation", 10000,0, 15000,0, 0,0 },
-    { 15,16,  "Rod of Lordly Might", 6000,0, 20000,0, 0,0 },
-    { 17,17,  "Rod of Resurrection", 10000,0, 35000,0, 0,0 },
-    { 18,18,  "Rod of Rulership", 8000,0, 35000,0, 0,0 },
-    { 19,19,  "Rod of Smiting", 4000,0, 15000,0, 0,0 },
-    { 20,20,  "Staff of Command", 5000,0, 25000,0, 0,0 },
-    { 21,22,  "Staff of Curing", 6000,0, 25000,0, 0,0 },
-    { 23,23,  "Staff of the Magi", 15000,0, 75000,0, 0,0 },
-    { 24,24,  "Staff of Power", 12000,0, 60000,0, 0,0 },
-    { 25,27,  "Staff of the Serpent", 7000,0, 35000,0, 0,0 },
-    { 28,31,  "Staff of Striking", 6000,0, 15000,0, 0,0 },
-    { 32,33,  "Staff of Withering", 8000,0, 35000,0, 0,0 },
-    { 34,34,  "Wand of Conjuration", 7000,0, 35000,0, 0,0 },
-    { 35,38,  "Wand of Enemy Detection", 2000,0, 10000,0, 0,0 },
-    { 39,41,  "Wand of Fear", 3000,0, 15000,0, 0,0 },
-    { 42,44,  "Wand of Fire", 4500,0, 25000,0, 0,0 },
-    { 45,47,  "Wand of Frost", 6000,0, 50000,0, 0,0 },
-    { 48,52,  "Wand of Illumination", 2000,0, 10000,0, 0,0 },
-    { 53,56,  "Wand of Illusion", 3000,0, 20000,0, 0,0 },
-    { 57,59,  "Wand of Lightning", 4000,0, 30000,0, 0,0 },
-    { 60,68,  "Wand of Magic Detection", 2500,0, 25000,0, 0,0 },
-    { 69,73,  "Wand of Metal & Mineral Detection", 1500,0, 7500,0, 0,0 },
-    { 74,78,  "Wand of Magic Missiles", 4000,0, 35000,0, 0,0 },
-    { 79,86,  "Wand of Negation", 3500,0, 15000,0, 0,0 },
-    { 87,89,  "Wand of Paralyzation", 3500,0, 25000,0, 0,0 },
-    { 90,92,  "Wand of Polymorphing", 3500,0, 25000,0, 0,0 },
-    { 93,94,  "Wand of Secret Door & Trap Location", 5000,0, 40000,0, 0,0 },
-    { 95,100, "Wand of Wonder", 6000,0, 10000,0, 0,0 },
-};
+// III.D Rods, Staves & Wands --------------------------------------------- retired into content/tables/treasure/treasure_rods.lua (R1041)
 
 // ---- III.E.1-5 Miscellaneous Magic (R1028: registry-native) ---------------------
 // The five hardcoded kMisc ItemRow arrays are retired: the tables are the
@@ -415,8 +347,8 @@ static MagicItem makeMiscItem(rules::Dice& dice,
     return m;
 }
 
-// The pickRow semantics on registry rows: linear band scan on 1+d100,
-// fallback the last row.
+// The band-scan row-picker semantics on registry rows:
+// linear scan on 1+d100, fallback the last row.
 static MagicItem pickMiscRow(rules::Dice& dice,
                              const std::vector<items::MiscItemRow>& rows) {
     int r = 1 + d100(dice);
@@ -426,140 +358,13 @@ static MagicItem pickMiscRow(rules::Dice& dice,
     return makeMiscItem(dice, rows.back());
 }
 
-// ---- III.E. Special: Artifacts (no x.p.; printed g.p. sale values) -----------
-static const ItemRow kArtifacts[] = {
-    { 1,1,    "Axe of the Dwarvish Lords", 0,0, 55000,0, 0,0 },
-    { 2,2,    "Baba Yaga's Hut", 0,0, 90000,0, 0,0 },
-    { 3,4,    "Codex of the Infinite Planes", 0,0, 62500,0, 0,0 },
-    { 5,20,   "Crown of Might", 0,0, 50000,0, 0,0 },
-    { 21,21,  "Crystal of the Ebon Flame", 0,0, 75000,0, 0,0 },
-    { 22,22,  "Cup and Talisman of Al'Akbar", 0,0, 85000,0, 0,0 },
-    { 23,24,  "Eye of Vecna", 0,0, 35000,0, 0,0 },
-    { 25,25,  "Hand of Vecna", 0,0, 60000,0, 0,0 },
-    { 26,26,  "Heward's Mystical Organ", 0,0, 25000,0, 0,0 },
-    { 27,27,  "Horn of Change", 0,0, 20000,0, 0,0 },
-    { 28,29,  "Invulnerable Coat of Arnd", 0,0, 47500,0, 0,0 },
-    { 30,31,  "Iron Flask of Tuerny the Merciless", 0,0, 50000,0, 0,0 },
-    { 32,32,  "Jacinth of Inestimable Beauty", 0,0, 100000,0, 0,0 },
-    { 33,33,  "Johydee's Mask", 0,0, 40000,0, 0,0 },
-    { 34,35,  "Kuroth's Quill", 0,0, 27500,0, 0,0 },
-    { 36,37,  "Mace of Cuthbert", 0,0, 35000,0, 0,0 },
-    { 38,38,  "Machine of Lum the Mad", 0,0, 72500,0, 0,0 },
-    { 39,40,  "Mighty Servant of Leuk-O", 0,0, 185000,0, 0,0 },
-    { 41,47,  "Orb of the Dragonkind", 0,0, 10000,80000, 0,0 },
-    { 48,63,  "Orb of Might", 0,0, 100000,0, 0,0 },
-    { 64,64,  "Queen Ehlissa's Marvelous Nightingale", 0,0, 112500,0, 0,0 },
-    { 65,66,  "Recorder of Ye'Cind", 0,0, 80000,0, 0,0 },
-    { 67,68,  "Ring of Gaxx", 0,0, 17500,0, 0,0 },
-    { 69,74,  "Rod of Seven Parts", 0,0, 25000,0, 0,0 },
-    { 75,91,  "Sceptre of Might", 0,0, 150000,0, 0,0 },
-    { 92,92,  "Sword of Kas", 0,0, 97000,0, 0,0 },
-    { 93,98,  "Teeth of Dahlver-Nar", 0,0, 5000,0, 0,0 },  // per tooth
-    { 99,99,  "Throne of the Gods", 0,0, 0,0, 0,0 },
-    { 100,100,"Wand of Orcus", 0,0, 10000,0, 0,0 },
-};
+// III.E. Special: Artifacts (no x.p.; printed g.p. sale values) ----------- retired into content/tables/treasure/treasure_artifacts.lua (R1041)
 
-// ---- III.F Armor and Shield ---------------------------------------------------
-static const ItemRow kArmor[] = {
-    { 1,5,    "Chain Mail +1", 600,0, 3500,0, 0,0 },
-    { 6,9,    "Chain Mail +2", 1200,0, 7500,0, 0,0 },
-    { 10,11,  "Chain Mail +3", 2000,0, 12500,0, 0,0 },
-    { 12,19,  "Leather Armor +1", 300,0, 2000,0, 0,0 },
-    { 20,26,  "Plate Mail +1", 800,0, 5000,0, 0,0 },
-    { 27,32,  "Plate Mail +2", 1750,0, 10500,0, 0,0 },
-    { 33,35,  "Plate Mail +3", 2750,0, 15500,0, 0,0 },
-    { 36,37,  "Plate Mail +4", 3500,0, 20500,0, 0,0 },
-    { 38,38,  "Plate Mail +5", 4500,0, 27500,0, 0,0 },
-    { 39,39,  "Plate Mail of Etherealness", 5000,0, 30000,0, 0,0 },
-    { 40,44,  "Plate Mail of Vulnerability", 0,0, 1500,0, 0,0 },
-    { 45,50,  "Ring Mail +1", 400,0, 2500,0, 0,0 },
-    { 51,55,  "Scale Mail +1", 500,0, 3000,0, 0,0 },
-    { 56,59,  "Scale Mail +2", 1100,0, 6750,0, 0,0 },
-    { 60,63,  "Splint Mail +1", 700,0, 4000,0, 0,0 },
-    { 64,66,  "Splint Mail +2", 1500,0, 8500,0, 0,0 },
-    { 67,68,  "Splint Mail +3", 2250,0, 14500,0, 0,0 },
-    { 69,69,  "Splint Mail +4", 3000,0, 19000,0, 0,0 },
-    { 70,75,  "Studded Leather +1", 400,0, 2500,0, 0,0 },
-    { 76,84,  "Shield +1", 250,0, 2500,0, 0,0 },
-    { 85,89,  "Shield +2", 500,0, 5000,0, 0,0 },
-    { 90,93,  "Shield +3", 800,0, 8000,0, 0,0 },
-    { 94,95,  "Shield +4", 1200,0, 12000,0, 0,0 },
-    { 96,96,  "Shield +5", 1750,0, 17500,0, 0,0 },
-    { 97,97,  "Shield, large, +1, +4 vs. missiles", 400,0, 4000,0, 0,0 },
-    { 98,100, "Shield -1, missile attractor", 0,0, 750,0, 0,0 },
-};
+// III.F Armor and Shield --------------------------------------------------- retired into content/tables/treasure/treasure_armor.lua (R1041)
 
-// ---- III.G Swords ---------------------------------------------------------------
-static const ItemRow kSwords[] = {
-    { 1,25,   "Sword +1", 400,0, 2000,0, 0,0 },
-    { 26,30,  "Sword +1, +2 vs. magic-using & enchanted creatures", 600,0, 3000,0, 0,0 },
-    { 31,35,  "Sword +1, +3 vs. lycanthropes & shape changers", 700,0, 3500,0, 0,0 },
-    { 36,40,  "Sword +1, +3 vs. regenerating creatures", 800,0, 4000,0, 0,0 },
-    { 41,45,  "Sword +1, +4 vs. reptiles", 800,0, 4000,0, 0,0 },
-    { 46,49,  "Sword +1, Flame Tongue", 900,0, 4500,0, 0,0 },
-    { 50,50,  "Sword +1, Luck Blade", 1000,0, 5000,0, 0,0 },
-    { 51,58,  "Sword +2", 800,0, 4000,0, 0,0 },
-    { 59,62,  "Sword +2, Giant Slayer", 900,0, 4500,0, 0,0 },
-    { 63,66,  "Sword +2, Dragon Slayer", 900,0, 4500,0, 0,0 },
-    { 67,67,  "Sword +2, Nine Lives Stealer", 1600,0, 8000,0, 0,0 },
-    { 68,71,  "Sword +3", 1400,0, 7000,0, 0,0 },
-    { 72,74,  "Sword +3, Frost Brand", 1600,0, 8000,0, 0,0 },
-    { 75,76,  "Sword +4", 2000,0, 10000,0, 0,0 },
-    { 77,77,  "Sword +4, Defender", 3000,0, 15000,0, 0,0 },
-    { 78,78,  "Sword +5", 3000,0, 15000,0, 0,0 },
-    { 79,79,  "Sword +5, Defender", 3600,0, 18000,0, 0,0 },
-    { 80,80,  "Sword +5, Holy Avenger", 4000,0, 20000,0, 0,0 },
-    { 81,81,  "Sword of Dancing", 4400,0, 22000,0, 0,0 },
-    { 82,82,  "Sword of Wounding", 4400,0, 22000,0, 0,0 },
-    { 83,83,  "Sword of Life Stealing", 5000,0, 25000,0, 0,0 },
-    { 84,84,  "Sword of Sharpness", 7000,0, 35000,0, 0,0 },
-    { 85,85,  "Sword, Vorpal Weapon", 10000,0, 50000,0, 0,0 },
-    { 86,90,  "Sword +1, Cursed", 400,0, 0,0, 0,0 },
-    { 91,95,  "Sword -2, Cursed", 600,0, 0,0, 0,0 },
-    { 96,100, "Sword, Cursed Berserking", 900,0, 0,0, 0,0 },
-};
+// III.G Swords --------------------------------------------------------------- retired into content/tables/treasure/treasure_swords.lua (R1041)
 
-// ---- III.H Miscellaneous Weapons ------------------------------------------------
-// NOTE: rows 57-60 and 61-62 are BOTH printed "Hammer +2" with different
-// values (Curtiss-verified against p.125) - transcribed verbatim.
-static const ItemRow kWeapons[] = {
-    { 1,8,    "Arrow +1", 20,0, 120,0, 2,24 },
-    { 9,12,   "Arrow +2", 50,0, 300,0, 2,16 },
-    { 13,14,  "Arrow +3", 75,0, 450,0, 2,12 },
-    { 15,15,  "Arrow of Slaying", 250,0, 2500,0, 0,0 },
-    { 16,20,  "Axe +1", 300,0, 1750,0, 0,0 },
-    { 21,22,  "Axe +2", 600,0, 3750,0, 0,0 },
-    { 23,23,  "Axe +2, Throwing", 750,0, 4500,0, 0,0 },
-    { 24,24,  "Axe +3", 1000,0, 7000,0, 0,0 },
-    { 25,27,  "Battle Axe +1", 400,0, 2500,0, 0,0 },
-    { 28,32,  "Bolt +2", 50,0, 300,0, 2,20 },
-    { 33,35,  "Bow +1", 500,0, 3500,0, 0,0 },
-    { 36,36,  "Crossbow of Accuracy, +3", 2000,0, 12000,0, 0,0 },
-    { 37,37,  "Crossbow of Distance", 1500,0, 7500,0, 0,0 },
-    { 38,38,  "Crossbow of Speed", 1500,0, 7500,0, 0,0 },
-    { 39,46,  "Dagger +1, +2 vs. creatures smaller than man-sized", 100,0, 750,0, 0,0 },
-    { 47,50,  "Dagger +2, +3 vs. creatures larger than man-sized", 250,0, 2000,0, 0,0 },
-    { 51,51,  "Dagger of Venom", 350,0, 3000,0, 0,0 },
-    { 52,56,  "Flail +1", 450,0, 4000,0, 0,0 },
-    { 57,60,  "Hammer +2", 300,0, 2500,0, 0,0 },
-    { 61,62,  "Hammer +2", 650,0, 6000,0, 0,0 },
-    { 63,63,  "Hammer +3, Dwarven Thrower", 1500,0, 15000,0, 0,0 },
-    { 64,64,  "Hammer of Thunderbolts", 2500,0, 25000,0, 0,0 },
-    { 65,67,  "Javelin +2", 750,0, 5000,0, 0,0 },
-    { 68,72,  "Mace +1", 350,0, 3000,0, 0,0 },
-    { 73,75,  "Mace +2", 700,0, 4500,0, 0,0 },
-    { 76,76,  "Mace of Disruption", 1750,0, 17500,0, 0,0 },
-    { 77,77,  "Mace +4", 1500,0, 15000,0, 0,0 },
-    { 78,80,  "Military Pick +1", 350,0, 2500,0, 0,0 },
-    { 81,83,  "Morning Star +1", 400,0, 3000,0, 0,0 },
-    { 84,88,  "Scimitar +2", 750,0, 6000,0, 0,0 },
-    { 89,89,  "Sling of Seeking +2", 700,0, 7000,0, 0,0 },
-    { 90,94,  "Spear +1", 500,0, 3000,0, 0,0 },
-    { 95,96,  "Spear +2", 1000,0, 6500,0, 0,0 },
-    { 97,97,  "Spear +3", 1750,0, 15000,0, 0,0 },
-    { 98,99,  "Spear, Cursed Backbiter", 0,0, 1000,0, 0,0 },
-    { 100,100,"Trident (Military Fork) +3", 1500,0, 12500,0, 0,0 },
-};
+// III.H Miscellaneous Weapons ------------------------------------------------ retired into content/tables/treasure/treasure_weapons.lua (R1041)
 
 // ---- III.B Scrolls -----------------------------------------------------------
 // 01-60: N spells of the given level range (30% clerical, of which 25%
@@ -624,15 +429,6 @@ static MagicItem rollScroll(rules::Dice& dice) {
     return m;
 }
 
-// ---- table row picker ------------------------------------------------------------
-static MagicItem pickRow(rules::Dice& dice, const ItemRow* rows, int n) {
-    int r = 1 + d100(dice);
-    for (int i = 0; i < n; ++i)
-        if (r >= rows[i].lo && r <= rows[i].hi)
-            return makeItem(dice, rows[i]);
-    return makeItem(dice, rows[n - 1]);
-}
-
 #define COUNT_OF(a) (int)(sizeof(a) / sizeof((a)[0]))
 
 // Special-value rows with printed footnotes get their multipliers rolled
@@ -657,7 +453,7 @@ static MagicItem adjustSpecial(rules::Dice& dice, const MagicItem& m) {
         std::snprintf(buf, sizeof buf, "Cloak of Protection +%d", plus);
         r.name = buf;
     } else if (r.name == std::string("Artifact or Relic")) {
-        return pickRow(dice, kArtifacts, COUNT_OF(kArtifacts));
+        return pickMiscRow(dice, itemView("treasure_artifacts"));
     }
     return r;
 }
@@ -668,18 +464,18 @@ static MagicItem adjustSpecial(rules::Dice& dice, const MagicItem& m) {
 // app can act on what it is without re-parsing names.
 static MagicItem rollFromCategoryUnset(rules::Dice& dice, int cat) {
     switch (cat) {
-        case 0:  return pickRow(dice, kPotions, COUNT_OF(kPotions));
+        case 0:  return pickMiscRow(dice, itemView("treasure_potions"));
         case 1:  return rollScroll(dice);
-        case 2:  return pickRow(dice, kRings, COUNT_OF(kRings));
-        case 3:  return pickRow(dice, kRods, COUNT_OF(kRods));
+        case 2:  return pickMiscRow(dice, itemView("treasure_rings"));
+        case 3:  return pickMiscRow(dice, itemView("treasure_rods"));
         case 4:  return adjustSpecial(dice, pickMiscRow(dice, miscView(1)));
         case 5:  return adjustSpecial(dice, pickMiscRow(dice, miscView(2)));
         case 6:  return adjustSpecial(dice, pickMiscRow(dice, miscView(3)));
         case 7:  return adjustSpecial(dice, pickMiscRow(dice, miscView(4)));
         case 8:  return adjustSpecial(dice, pickMiscRow(dice, miscView(5)));
-        case 9:  return pickRow(dice, kArmor, COUNT_OF(kArmor));
-        case 10: return pickRow(dice, kSwords, COUNT_OF(kSwords));
-        default: return pickRow(dice, kWeapons, COUNT_OF(kWeapons));
+        case 9:  return pickMiscRow(dice, itemView("treasure_armor"));
+        case 10: return pickMiscRow(dice, itemView("treasure_swords"));
+        default: return pickMiscRow(dice, itemView("treasure_weapons"));
     }
 }
 
@@ -881,32 +677,34 @@ MagicItem rollMagicItem(rules::Dice& dice) {
 // ---- R122: line-diff pins ---------------------------------------------------
 // The battery reads any printed row of the pp.121-125 tables so they
 // are pinned, not just rolled (the R122 line-diff found all 383 rows
-// faithful). Category 1 (scrolls) has no ItemRow rows - its pin count
-// is the structure: 16 spell bands + 8 protection scrolls + 1 curse
-// row. Category 12 is the Special artifact table.
-static const ItemRow* pinTableFor(int category, int* n) {
-    switch (category) {
-        case 0:  *n = COUNT_OF(kPotions);   return kPotions;
-        case 2:  *n = COUNT_OF(kRings);     return kRings;
-        case 3:  *n = COUNT_OF(kRods);      return kRods;
-        // 4-8 (the misc tables) are registry-native: magicTablePinCount
-        // and magicTablePin read the miscView() rows directly
-        case 9:  *n = COUNT_OF(kArmor);     return kArmor;
-        case 10: *n = COUNT_OF(kSwords);    return kSwords;
-        case 11: *n = COUNT_OF(kWeapons);   return kWeapons;
-        case 12: *n = COUNT_OF(kArtifacts); return kArtifacts;
-        default: *n = 0; return nullptr;
-    }
-}
+// faithful). Category 1 (scrolls) keeps its in-file shape - its pin
+// count is the structure: 16 spell bands + 8 protection scrolls + 1
+// curse row. The seven percentile families and the Special artifact
+// table read the R1041 registry views (set names = def keys).
+static const char* const kSetFor[13] = {
+    "treasure_potions",          // 0  III.A
+    nullptr,                     // 1  III.B scrolls (in-file)
+    "treasure_rings",            // 2  III.C
+    "treasure_rods",             // 3  III.D
+    nullptr,                     // 4-8 III.E.1-5 (miscView)
+    nullptr,
+    nullptr,
+    nullptr,
+    nullptr,
+    "treasure_armor",            // 9  III.F
+    "treasure_swords",           // 10 III.G
+    "treasure_weapons",          // 11 III.H
+    "treasure_artifacts"         // 12 Special
+};
 
 int magicTablePinCount(int category) {
     if (category == 1)
         return COUNT_OF(kSpellScrolls) + 9;  // + protection & curse
     if (category >= 4 && category <= 8)     // registry-native misc tables
         return (int)miscView(category - 3).size();
-    int n = 0;
-    pinTableFor(category, &n);
-    return n;
+    if (category < 0 || category > 12 || !kSetFor[category])
+        return 0;
+    return (int)itemView(kSetFor[category]).size();
 }
 
 bool magicTablePin(int category, int row, TablePin* out) {
@@ -920,17 +718,18 @@ bool magicTablePin(int category, int row, TablePin* out) {
         out->xp = r.xp;      out->xpHi = r.xpHi;
         out->gp = r.gp;      out->gpHi = r.gpHi;
         out->qtyLo = r.qtyLo; out->qtyHi = r.qtyHi;
-        return true;
+    return true;
     }
-    int n = 0;
-    const ItemRow* t = pinTableFor(category, &n);
-    if (!t || row < 0 || row >= n) return false;
-    const ItemRow& r = t[row];
-    out->lo = r.lo;      out->hi = r.hi;
-    out->name = r.name;
+    if (category < 0 || category > 12 || !kSetFor[category])
+        return false;
+    const auto& rows = itemView(kSetFor[category]);
+    if (row < 0 || row >= (int)rows.size()) return false;
+    const auto& r = rows[row];               // views are static: name lives
+    out->lo = r.bandLo;  out->hi = r.bandHi;
+    out->name = r.name.c_str();
     out->xp = r.xp;      out->xpHi = r.xpHi;
     out->gp = r.gp;      out->gpHi = r.gpHi;
-    out->qtyLo = r.qlo;  out->qtyHi = r.qhi;
+    out->qtyLo = r.qtyLo; out->qtyHi = r.qtyHi;
     return true;
 }
 
