@@ -54,7 +54,96 @@
 
 #pragma once
 
+// R1051 applied
+#include "items/MiscItemRegistry.h"
+
 namespace rules {
+
+// ---- the R1051 registry seam ---------------
+// content/tables/dm_disease/ via
+// items::MiscItemRegistry: the R1042
+// equipment rows idiom (name rows,
+// band the row index) plus named
+// tables per def (the R1047 values
+// shape). Header-only singleton (the
+// R1040 appendixp.h idiom). Every
+// accessor below keeps its signature
+// and clamp; only the array read
+// moves behind the registry.
+
+inline items::MiscItemRegistry&
+dzReg() {
+    static items::MiscItemRegistry
+        reg;
+    static bool loaded = false;
+    if (!loaded) {
+        loaded = true;
+        reg.loadDirectory(
+            "content/tables/"
+            "dm_disease");
+    }
+    return reg;
+}
+
+// the name rows of one def (the
+// printed areas, band the index)
+inline const std::vector<
+    items::MiscItemRow>& dzRows(
+        const char* key) {
+    static std::map<std::string,
+        std::vector<
+            items::MiscItemRow>>
+        cache;
+    auto it = cache.find(key);
+    if (it == cache.end()) {
+        const items::MiscItemDef*
+            d = dzReg().find(key);
+        it = cache.emplace(
+            key, d ? d->rows
+                   : std::vector<
+                        items::
+                        MiscItemRow>()
+                   ).first;
+    }
+    return it->second;
+}
+
+// one named int table of one def
+// (null when absent or empty)
+inline const std::vector<long
+    long>* dzTable(const char* key,
+                  const char* tag) {
+    static std::map<std::string,
+        std::vector<long long>>
+        cache;
+    const std::string kk =
+        std::string(key) + "/"
+        + tag;
+    auto it = cache.find(kk);
+    if (it == cache.end()) {
+        const items::MiscItemDef*
+            d = dzReg().find(key);
+        const std::vector<long
+            long>* v = nullptr;
+        if (d) {
+            for (const auto& t :
+                 d->tables) {
+                if (t.name == tag) {
+                    v = &t.values;
+                    break;
+                }
+            }
+        }
+        it = cache.emplace(
+            kk, v ? *v
+                  : std::vector<
+                        long long>()
+                   ).first;
+    }
+    return it->second.empty()
+        ? nullptr
+        : &it->second;
+}
 
 // ----------------------------------------------------------------------------
 // Contraction chances (p.13)
@@ -96,52 +185,33 @@ inline bool diseaseCheckOnEachCarrierExposure() { return true; }
 inline int diseaseAreaCount() { return 16; }
 
 inline const char* diseaseAreaName(int idx) {
-    static const char* const k[16] = {
-        "blood/blood forming organs",
-        "bones",
-        "brain/nervous system",
-        "cardiovascular-renal",
-        "connective tissue",
-        "ears",
-        "eyes",
-        "gastro-intestinal",
-        "generative organs",
-        "joints",
-        "mucous membranes",
-        "muscles",
-        "nose-throat",
-        "respiratory system",
-        "skin",
-        "urinary system"
-    };
+    const auto& rows = dzRows("dm_disease_areas");
+    if (rows.empty()) return "";
     if (idx < 0) idx = 0;
     if (idx > 15) idx = 15;
-    return k[idx];
+    return rows[idx].name.c_str();
 }
 
 // Row index for a d100 score (97-00 reads as 97-100).
 inline int diseaseAreaForD100(int d100) {
-    static const int kLo[16] = {
-        1, 4, 5, 6, 8, 10, 13, 19, 41, 43,
-        49, 51, 53, 66, 86, 97
-    };
+    const auto* g = dzTable("dm_disease_areas", "d100");
+    if (!g) return 0;
     if (d100 < 1) d100 = 1;
     if (d100 > 100) d100 = 100;
-    for (int i = 15; i >= 0; --i)
-        if (d100 >= kLo[i]) return i;
+    for (int i = (int)g->size() - 1;
+         i >= 0; --i)
+        if (d100 >= (int)(*g)[i]) return i;
     return 0;
 }
 
 // Occurrence by d8: acute up to kAcuteHi, chronic
 // from kChronicLo (chronic always runs to 8).
 inline int diseaseAcuteHi(int idx) {
-    static const int k[16] = {
-        3, 1, 6, 3, 1, 7, 7, 6, 2, 4,
-        7, 5, 6, 6, 5, 6
-    };
+    const auto* g = dzTable("dm_disease_areas", "acute_hi");
+    if (!g) return 0;
     if (idx < 0) idx = 0;
     if (idx > 15) idx = 15;
-    return k[idx];
+    return (int)(*g)[idx];
 }
 inline int diseaseChronicLo(int idx) {
     return diseaseAcuteHi(idx) + 1;
@@ -156,31 +226,25 @@ inline bool diseaseIsChronic(int idx, int d8) {
 // Severity by d8: 0 means the column prints a dash
 // (no terminal result for that area).
 inline int diseaseSeverityMildHi(int idx) {
-    static const int k[16] = {
-        2, 1, 2, 2, 1, 6, 5, 5, 3, 6,
-        6, 5, 6, 5, 5, 5
-    };
+    const auto* g = dzTable("dm_disease_areas", "sev_mild_hi");
+    if (!g) return 0;
     if (idx < 0) idx = 0;
     if (idx > 15) idx = 15;
-    return k[idx];
+    return (int)(*g)[idx];
 }
 inline int diseaseSeveritySevereHi(int idx) {
-    static const int k[16] = {
-        5, 3, 5, 4, 3, 7, 7, 7, 7, 8,
-        8, 7, 8, 7, 7, 7
-    };
+    const auto* g = dzTable("dm_disease_areas", "sev_severe_hi");
+    if (!g) return 0;
     if (idx < 0) idx = 0;
     if (idx > 15) idx = 15;
-    return k[idx];
+    return (int)(*g)[idx];
 }
 inline int diseaseSeverityTerminalHi(int idx) {
-    static const int k[16] = {
-        8, 8, 8, 8, 8, 8, 8, 8, 8, 0,
-        0, 8, 0, 8, 8, 8
-    };
+    const auto* g = dzTable("dm_disease_areas", "sev_terminal_hi");
+    if (!g) return 0;
     if (idx < 0) idx = 0;
     if (idx > 15) idx = 15;
-    return k[idx];
+    return (int)(*g)[idx];
 }
 
 // ----------------------------------------------------------------------------
@@ -190,46 +254,45 @@ inline int diseaseSeverityTerminalHi(int idx) {
 inline int parasiteAreaCount() { return 6; }
 
 inline const char* parasiteAreaName(int idx) {
-    static const char* const k[6] = {
-        "cardiovascular system",
-        "intestines",
-        "muscles",
-        "respiratory system",
-        "skin/hair",
-        "stomach"
-    };
+    const auto& rows = dzRows("dm_parasite_areas");
+    if (rows.empty()) return "";
     if (idx < 0) idx = 0;
     if (idx > 5) idx = 5;
-    return k[idx];
+    return rows[idx].name.c_str();
 }
 
 inline int parasiteAreaForD100(int d100) {
-    static const int kLo[6] = { 1, 11, 36, 41, 46, 76 };
+    const auto* g = dzTable("dm_parasite_areas", "d100");
+    if (!g) return 0;
     if (d100 < 1) d100 = 1;
     if (d100 > 100) d100 = 100;
-    for (int i = 5; i >= 0; --i)
-        if (d100 >= kLo[i]) return i;
+    for (int i = (int)g->size() - 1;
+         i >= 0; --i)
+        if (d100 >= (int)(*g)[i]) return i;
     return 0;
 }
 
 // Severity by d8 (no occurrence roll for parasites).
 inline int parasiteSeverityMildHi(int idx) {
-    static const int k[6] = { 2, 2, 1, 1, 7, 2 };
+    const auto* g = dzTable("dm_parasite_areas", "sev_mild_hi");
+    if (!g) return 0;
     if (idx < 0) idx = 0;
     if (idx > 5) idx = 5;
-    return k[idx];
+    return (int)(*g)[idx];
 }
 inline int parasiteSeveritySevereHi(int idx) {
-    static const int k[6] = { 5, 7, 3, 4, 8, 7 };
+    const auto* g = dzTable("dm_parasite_areas", "sev_severe_hi");
+    if (!g) return 0;
     if (idx < 0) idx = 0;
     if (idx > 5) idx = 5;
-    return k[idx];
+    return (int)(*g)[idx];
 }
 inline int parasiteSeverityTerminalHi(int idx) {
-    static const int k[6] = { 8, 8, 8, 8, 0, 8 };
+    const auto* g = dzTable("dm_parasite_areas", "sev_terminal_hi");
+    if (!g) return 0;
     if (idx < 0) idx = 0;
     if (idx > 5) idx = 5;
-    return k[idx];
+    return (int)(*g)[idx];
 }
 
 // ----------------------------------------------------------------------------
@@ -258,23 +321,11 @@ enum DiseaseDurationUnit {
 };
 
 inline DiseaseDurationUnit diseaseTerminalUnit(int idx) {
-    // blood and bones: 1-12 weeks; brain: 1-12
-    // hours; cardiovascular-renal: 1-12 days;
-    // connective tissue: terminal treated as
-    // chronic severe (no duration); ears and eyes:
-    // function loss; gastro-intestinal and skin and
-    // urinary: 1-12 weeks; generative organs,
-    // muscles, respiratory: 1-12 months;
-    // joints, mucous membranes, nose-throat: none
-    static const DiseaseDurationUnit k[16] = {
-        DUR_WEEKS, DUR_WEEKS, DUR_HOURS, DUR_DAYS,
-        DUR_NONE, DUR_NONE, DUR_NONE, DUR_WEEKS,
-        DUR_MONTHS, DUR_NONE, DUR_NONE, DUR_MONTHS,
-        DUR_NONE, DUR_MONTHS, DUR_WEEKS, DUR_WEEKS
-    };
+    const auto* g = dzTable("dm_disease_areas", "terminal_unit");
+    if (!g) return DUR_NONE;
     if (idx < 0) idx = 0;
     if (idx > 15) idx = 15;
-    return k[idx];
+    return (DiseaseDurationUnit)(*g)[idx];
 }
 
 // The three areas with no terminal column at all
