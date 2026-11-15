@@ -70,7 +70,104 @@
 
 #pragma once
 
+// R1054 applied
+#include "items/MiscItemRegistry.h"
+
 namespace rules {
+
+// ---- the R1054 registry seam ---------------
+// content/tables/dm_sage/ via
+// items::MiscItemRegistry: the
+// R1042 rows idiom plus named
+// tables per def (the R1051 dzTable
+// idiom) and the rows readers (the
+// R1051 dzRows idiom - the three
+// name accessors are rows readers
+// now). Header-only singleton (the
+// R1040 appendixp.h idiom). Every
+// accessor below keeps its
+// signature, clamp and branch; only
+// the array read moves behind the
+// registry. The five [4][3] grids
+// retire FLATTENED scope-major;
+// the grid accessors keep BOTH
+// clamps then read the cell
+// [scope * 3 + nature].
+
+inline items::MiscItemRegistry&
+szReg() {
+    static items::MiscItemRegistry
+        reg;
+    static bool loaded = false;
+    if (!loaded) {
+        loaded = true;
+        reg.loadDirectory(
+            "content/tables/"
+            "dm_sage");
+    }
+    return reg;
+}
+
+// the name rows of one def (the
+// band is the index; the name
+// accessors index them 0-based)
+inline const std::vector<
+    items::MiscItemRow>& szRows(
+        const char* key) {
+    static std::map<std::string,
+        std::vector<
+            items::MiscItemRow>>
+        cache;
+    auto it = cache.find(key);
+    if (it == cache.end()) {
+        const items::MiscItemDef*
+            d = szReg().find(key);
+        it = cache.emplace(
+            key, d ? d->rows
+                   : std::vector<
+                        items::
+                        MiscItemRow>()
+                   ).first;
+    }
+    return it->second;
+}
+
+// one named int table of one def
+// (null when absent or empty)
+inline const std::vector<long
+    long>* szTable(const char* key,
+                  const char* tag) {
+    static std::map<std::string,
+        std::vector<long long>>
+        cache;
+    const std::string kk =
+        std::string(key) + "/"
+        + tag;
+    auto it = cache.find(kk);
+    if (it == cache.end()) {
+        const items::MiscItemDef*
+            d = szReg().find(key);
+        const std::vector<long
+            long>* v = nullptr;
+        if (d) {
+            for (const auto& t :
+                 d->tables) {
+                if (t.name == tag) {
+                    v = &t.values;
+                    break;
+                }
+            }
+        }
+        it = cache.emplace(
+            kk, v ? *v
+                  : std::vector<
+                        long long>()
+                   ).first;
+    }
+    return it->second.empty()
+        ? nullptr
+        : &it->second;
+}
 
 // ---- the fields of study ----
 
@@ -81,62 +178,59 @@ inline int sageFieldCount() {
 
 // The field name at index f (clamped).
 inline const char* sageFieldName(int f) {
-    static const char* const kNames[7] = {
-        "Humankind",
-        "Demi-Humankind",
-        "Humanoids & Giantkind",
-        "Physical Universe(s)",
-        "Fauna",
-        "Flora",
-        "Supernatural & Unusual",
-    };
+    const auto& rows = 
+        szRows("dm_sage_fields");
+    if (rows.empty())
+        return "";
     if (f < 0) f = 0;
     if (f > 6) f = 6;
-    return kNames[f];
+    if ((int)rows.size() <= f)
+        return "";
+    return rows[f].name.c_str();
 }
 
 // The field percent band low (clamped; the
 // seven bands tile 1-100).
 inline int sageFieldLo(int f) {
-    static const int kLo[7] = {
-           1,   31,   51,   61,   71,   81,   91,
-    };
+    const auto* g = szTable(
+        "dm_sage_fields", "field_lo");
     if (f < 0) f = 0;
     if (f > 6) f = 6;
-    return kLo[f];
+    if (!g) return 1;
+    return (int)(*g)[f];
 }
 
 // The field percent band high (clamped).
 inline int sageFieldHi(int f) {
-    static const int kHi[7] = {
-          30,   50,   60,   70,   80,   90,  100,
-    };
+    const auto* g = szTable(
+        "dm_sage_fields", "field_hi");
     if (f < 0) f = 0;
     if (f > 6) f = 6;
-    return kHi[f];
+    if (!g) return 30;
+    return (int)(*g)[f];
 }
 
 // The special knowledge categories in the
 // field (clamped).
 inline int sageFieldCategoryCount(int f) {
-    static const int kCount[7] = {
-          12,   11,    8,   10,   10,    8,    9,
-    };
+    const auto* g = szTable(
+        "dm_sage_fields", "field_category_count");
     if (f < 0) f = 0;
     if (f > 6) f = 6;
-    return kCount[f];
+    if (!g) return 12;
+    return (int)(*g)[f];
 }
 
 // The flat index of the first category in the
 // field (clamped); the categories run field by
 // field in the print order.
 inline int sageFieldCategoryFirst(int f) {
-    static const int kFirst[7] = {
-           0,   12,   23,   31,   41,   51,   59,
-    };
+    const auto* g = szTable(
+        "dm_sage_fields", "field_category_first");
     if (f < 0) f = 0;
     if (f > 6) f = 6;
-    return kFirst[f];
+    if (!g) return 0;
+    return (int)(*g)[f];
 }
 
 // ---- the special knowledge categories ----
@@ -149,96 +243,26 @@ inline int sageCategoryCount() {
 
 // The category name at flat index i (clamped).
 inline const char* sageCategoryName(int i) {
-    static const char* const kNames[68] = {
-        "Art & Music",
-        "Biology",
-        "Demography",
-        "History",
-        "Languages",
-        "Legends & Folklore",
-        "Law & Customs",
-        "Philosophy & Ethics",
-        "Politics & Genealogy",
-        "Psychology",
-        "Sociology",
-        "Theology & Myth",
-        "Art & Music",
-        "Biology",
-        "Demography",
-        "Languages",
-        "Legends & Folklore",
-        "Law & Customs",
-        "Philosophy & Ethics",
-        "Politics & Genealogy",
-        "Psychology",
-        "Sociology",
-        "Theology & Myth",
-        "Biology",
-        "Demography",
-        "History",
-        "Languages",
-        "Legends & Folklore",
-        "Law & Customs",
-        "Sociology",
-        "Theology & Myth",
-        "Architecture & Engineering",
-        "Astronomy",
-        "Chemistry",
-        "Geography",
-        "Geology & Mineralogy",
-        "Mathematics",
-        "Meteorology & Climatology",
-        "Oceanography",
-        "Physics",
-        "Topography & Cartography",
-        "Amphibians",
-        "Arachnids",
-        "Avians",
-        "Cephalopods & Echinoderms",
-        "Crustaceans & Mollusks",
-        "Ichthyoids",
-        "Insects",
-        "Mammals",
-        "Marsupials",
-        "Reptiles",
-        "Bushes & Shrubs",
-        "Flowers",
-        "Fungi",
-        "Grasses & Grains",
-        "Herbs",
-        "Mosses & Ferns",
-        "Trees",
-        "Weeds",
-        "Astrology & Numerology",
-        "Cryptography",
-        "Divination",
-        "Dweomercraeft",
-        "Heraldry, Signs & Sigils",
-        "Medicine",
-        "Metaphysics",
-        "Planes (Astral, Elemental & Ethereal)",
-        "Planes (Outer)",
-    };
+    const auto& rows = 
+        szRows("dm_sage_categories");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 67) i = 67;
-    return kNames[i];
+    if ((int)rows.size() <= i)
+        return "";
+    return rows[i].name.c_str();
 }
 
 // The owning field of the category at flat
 // index i (clamped).
 inline int sageCategoryField(int i) {
-    static const int kField[68] = {
-           0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-           0,    0,    1,    1,    1,    1,    1,    1,    1,    1,
-           1,    1,    1,    2,    2,    2,    2,    2,    2,    2,
-           2,    3,    3,    3,    3,    3,    3,    3,    3,    3,
-           3,    4,    4,    4,    4,    4,    4,    4,    4,    4,
-           4,    5,    5,    5,    5,    5,    5,    5,    5,    6,
-           6,    6,    6,    6,    6,    6,    6,    6,
-    };
+    const auto* g = szTable(
+        "dm_sage_categories", "category_field");
     if (i < 0) i = 0;
     if (i > 67) i = 67;
-    return kField[i];
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 // ---- the fields-count table ----
@@ -251,43 +275,43 @@ inline int sageFieldsBandCount() {
 // The dice band low (clamped; the six bands
 // tile 1-100).
 inline int sageFieldsBandLo(int b) {
-    static const int kLo[6] = {
-           1,   11,   31,   51,   71,   91,
-    };
+    const auto* g = szTable(
+        "dm_sage_fields", "band_lo");
     if (b < 0) b = 0;
     if (b > 5) b = 5;
-    return kLo[b];
+    if (!g) return 1;
+    return (int)(*g)[b];
 }
 
 // The dice band high (clamped).
 inline int sageFieldsBandHi(int b) {
-    static const int kHi[6] = {
-          10,   30,   50,   70,   90,  100,
-    };
+    const auto* g = szTable(
+        "dm_sage_fields", "band_hi");
     if (b < 0) b = 0;
     if (b > 5) b = 5;
-    return kHi[b];
+    if (!g) return 10;
+    return (int)(*g)[b];
 }
 
 // The minor fields in the band (clamped).
 inline int sageFieldsBandMinor(int b) {
-    static const int kMinor[6] = {
-           1,    1,    1,    2,    2,    2,
-    };
+    const auto* g = szTable(
+        "dm_sage_fields", "band_minor");
     if (b < 0) b = 0;
     if (b > 5) b = 5;
-    return kMinor[b];
+    if (!g) return 1;
+    return (int)(*g)[b];
 }
 
 // The special categories in the major field
 // (clamped).
 inline int sageFieldsBandSpecial(int b) {
-    static const int kSpecial[6] = {
-           2,    3,    4,    2,    3,    4,
-    };
+    const auto* g = szTable(
+        "dm_sage_fields", "band_special");
     if (b < 0) b = 0;
     if (b > 5) b = 5;
-    return kSpecial[b];
+    if (!g) return 2;
+    return (int)(*g)[b];
 }
 
 // ---- the chance of knowing an answer ----
@@ -299,32 +323,26 @@ inline int sageFieldsBandSpecial(int b) {
 // (the print dash - an exacting question out of
 // the fields cannot be answered at all).
 inline int sageKnowLo(int scope, int nature) {
-    static const int kLo[4][3] = {
-        {  31,   11,   -1},
-        {  46,   31,   11},
-        {  61,   57,   26},
-        {  81,   76,   61},
-    };
+    const auto* g = szTable(
+        "dm_sage_knowing", "know_lo");
     if (scope < 0) scope = 0;
     if (scope > 3) scope = 3;
     if (nature < 0) nature = 0;
     if (nature > 2) nature = 2;
-    return kLo[scope][nature];
+    if (!g) return 31;
+    return (int)(*g)[scope * 3 + nature];
 }
 
 // The knowing percent band high (both clamped).
 inline int sageKnowHi(int scope, int nature) {
-    static const int kHi[4][3] = {
-        {  50,   20,   -1},
-        {  65,   40,   20},
-        {  80,   60,   35},
-        { 100,   96,   80},
-    };
+    const auto* g = szTable(
+        "dm_sage_knowing", "know_hi");
     if (scope < 0) scope = 0;
     if (scope > 3) scope = 3;
     if (nature < 0) nature = 0;
     if (nature > 2) nature = 2;
-    return kHi[scope][nature];
+    if (!g) return 50;
+    return (int)(*g)[scope * 3 + nature];
 }
 
 // The none flag: 1 when the cell prints a dash.
@@ -342,33 +360,33 @@ inline int sageAbilityCount() {
 
 // The ability die (clamped).
 inline int sageAbilityDice(int a) {
-    static const int kDice[6] = {
-           8,    4,    6,    6,    6,    6,
-    };
+    const auto* g = szTable(
+        "dm_sage_characteristics", "ability_dice");
     if (a < 0) a = 0;
     if (a > 5) a = 5;
-    return kDice[a];
+    if (!g) return 8;
+    return (int)(*g)[a];
 }
 
 // The ability dice count (clamped).
 inline int sageAbilityDiceCount(int a) {
-    static const int kCount[6] = {
-           1,    1,    1,    3,    2,    2,
-    };
+    const auto* g = szTable(
+        "dm_sage_characteristics", "ability_dice_count");
     if (a < 0) a = 0;
     if (a > 5) a = 5;
-    return kCount[a];
+    if (!g) return 1;
+    return (int)(*g)[a];
 }
 
 // The ability plus (clamped); the score bands
 // run plus + count to plus + count * dice.
 inline int sageAbilityPlus(int a) {
-    static const int kPlus[6] = {
-           7,   14,   12,    0,    3,    2,
-    };
+    const auto* g = szTable(
+        "dm_sage_characteristics", "ability_plus");
     if (a < 0) a = 0;
     if (a > 5) a = 5;
-    return kPlus[a];
+    if (!g) return 7;
+    return (int)(*g)[a];
 }
 
 // The alignment band count (ascending dice
@@ -379,40 +397,35 @@ inline int sageAlignBandCount() {
 
 // The alignment band low (clamped).
 inline int sageAlignLo(int b) {
-    static const int kLo[9] = {
-           1,    6,   11,   21,   31,   41,   61,   81,   91,
-    };
+    const auto* g = szTable(
+        "dm_sage_characteristics", "align_lo");
     if (b < 0) b = 0;
     if (b > 8) b = 8;
-    return kLo[b];
+    if (!g) return 1;
+    return (int)(*g)[b];
 }
 
 // The alignment band high (clamped).
 inline int sageAlignHi(int b) {
-    static const int kHi[9] = {
-           5,   10,   20,   30,   40,   60,   80,   90,  100,
-    };
+    const auto* g = szTable(
+        "dm_sage_characteristics", "align_hi");
     if (b < 0) b = 0;
     if (b > 8) b = 8;
-    return kHi[b];
+    if (!g) return 5;
+    return (int)(*g)[b];
 }
 
 // The alignment band name (clamped).
 inline const char* sageAlignName(int b) {
-    static const char* const kNames[9] = {
-        "chaotic evil",
-        "chaotic good",
-        "chaotic neutral",
-        "lawful evil",
-        "lawful good",
-        "lawful neutral",
-        "neutral",
-        "neutral evil",
-        "neutral good",
-    };
+    const auto& rows = 
+        szRows("dm_sage_characteristics");
+    if (rows.empty())
+        return "";
     if (b < 0) b = 0;
     if (b > 8) b = 8;
-    return kNames[b];
+    if ((int)rows.size() <= b)
+        return "";
+    return rows[b].name.c_str();
 }
 
 // The hit points: 8d4 plus the constitution
@@ -437,12 +450,12 @@ inline int sageSpellKindCount() {
 // art and music and legends and folklore
 // categories read clerical or magic-user).
 inline int sageSpellKind(int f) {
-    static const int kKind[7] = {
-           0,    0,    0,    0,    1,    1,    2,
-    };
+    const auto* g = szTable(
+        "dm_sage_fields", "spell_kind");
     if (f < 0) f = 0;
     if (f > 6) f = 6;
-    return kKind[f];
+    if (!g) return 0;
+    return (int)(*g)[f];
 }
 
 // The maximum spell level: d4 + 2, the 3-6
@@ -491,22 +504,22 @@ inline int sageOfferCount() {
 
 // The offer row low (clamped; g.p. per month).
 inline int sageOfferLo(int i) {
-    static const int kLo[3] = {
-         200,  200, 20000,
-    };
+    const auto* g = szTable(
+        "dm_sage_terms", "offer_lo");
     if (i < 0) i = 0;
     if (i > 2) i = 2;
-    return kLo[i];
+    if (!g) return 200;
+    return (int)(*g)[i];
 }
 
 // The offer row high (clamped; g.p. per month).
 inline int sageOfferHi(int i) {
-    static const int kHi[3] = {
-        1200, 1200, 20000,
-    };
+    const auto* g = szTable(
+        "dm_sage_terms", "offer_hi");
     if (i < 0) i = 0;
     if (i > 2) i = 2;
-    return kHi[i];
+    if (!g) return 1200;
+    return (int)(*g)[i];
 }
 
 // ---- the efficiency economics ----
@@ -521,22 +534,22 @@ inline int sageEffMilestoneCount() {
 // 100,000 the full 100 (the specific and
 // exacting areas).
 inline int sageEffMilestoneCost(int i) {
-    static const int kCost[3] = {
-        20000, 60000, 100000,
-    };
+    const auto* g = szTable(
+        "dm_sage_terms", "eff_milestone_cost");
     if (i < 0) i = 0;
     if (i > 2) i = 2;
-    return kCost[i];
+    if (!g) return 20000;
+    return (int)(*g)[i];
 }
 
 // The milestone efficiency percent (clamped).
 inline int sageEffMilestonePercent(int i) {
-    static const int kPct[3] = {
-          50,   90,  100,
-    };
+    const auto* g = szTable(
+        "dm_sage_terms", "eff_milestone_percent");
     if (i < 0) i = 0;
     if (i > 2) i = 2;
-    return kPct[i];
+    if (!g) return 50;
+    return (int)(*g)[i];
 }
 
 // The +1 percent step cost to 90 percent.
@@ -566,33 +579,33 @@ inline int sageImproveCount() {
 
 // The improvement cost in g.p. (clamped).
 inline int sageImproveCost(int i) {
-    static const int kCost[4] = {
-        5000, 10000, 100000, 200000,
-    };
+    const auto* g = szTable(
+        "dm_sage_terms", "improve_cost");
     if (i < 0) i = 0;
     if (i > 3) i = 3;
-    return kCost[i];
+    if (!g) return 5000;
+    return (int)(*g)[i];
 }
 
 // The improvement time in months (clamped).
 inline int sageImproveMonths(int i) {
-    static const int kMonths[4] = {
-           1,    1,   24,   24,
-    };
+    const auto* g = szTable(
+        "dm_sage_terms", "improve_months");
     if (i < 0) i = 0;
     if (i > 3) i = 3;
-    return kMonths[i];
+    if (!g) return 1;
+    return (int)(*g)[i];
 }
 
 // The improvement maximum (clamped; -1 pins
 // no stated maximum).
 inline int sageImproveMax(int i) {
-    static const int kMax[4] = {
-           5,    5,    3,   -1,
-    };
+    const auto* g = szTable(
+        "dm_sage_terms", "improve_max");
     if (i < 0) i = 0;
     if (i > 3) i = 3;
-    return kMax[i];
+    if (!g) return 5;
+    return (int)(*g)[i];
 }
 
 // ---- the information discovery table ----
@@ -601,49 +614,40 @@ inline int sageImproveMax(int i) {
 // Scope and nature read as the knowing table;
 // -1 pins the none cell (the print dash).
 inline int sageTimeLo(int scope, int nature) {
-    static const int kLo[4][3] = {
-        {   1,    2,   -1},
-        {   1,    2,    5},
-        {   1,    1,    3},
-        {   1,    1,    2},
-    };
+    const auto* g = szTable(
+        "dm_sage_discovery", "time_lo");
     if (scope < 0) scope = 0;
     if (scope > 3) scope = 3;
     if (nature < 0) nature = 0;
     if (nature > 2) nature = 2;
-    return kLo[scope][nature];
+    if (!g) return 1;
+    return (int)(*g)[scope * 3 + nature];
 }
 
 // The discovery time band high (both clamped).
 inline int sageTimeHi(int scope, int nature) {
-    static const int kHi[4][3] = {
-        {   6,   24,   -1},
-        {   4,   20,   40},
-        {   3,   12,   30},
-        {   2,   10,   12},
-    };
+    const auto* g = szTable(
+        "dm_sage_discovery", "time_hi");
     if (scope < 0) scope = 0;
     if (scope > 3) scope = 3;
     if (nature < 0) nature = 0;
     if (nature > 2) nature = 2;
-    return kHi[scope][nature];
+    if (!g) return 6;
+    return (int)(*g)[scope * 3 + nature];
 }
 
 // The discovery time unit (both clamped):
 // 0 rounds, 1 hours, 2 days (the lone HOURS
 // cell the special-category specific band).
 inline int sageTimeUnit(int scope, int nature) {
-    static const int kUnit[4][3] = {
-        {   0,    2,    0},
-        {   0,    2,    2},
-        {   0,    2,    2},
-        {   0,    1,    2},
-    };
+    const auto* g = szTable(
+        "dm_sage_discovery", "time_unit");
     if (scope < 0) scope = 0;
     if (scope > 3) scope = 3;
     if (nature < 0) nature = 0;
     if (nature > 2) nature = 2;
-    return kUnit[scope][nature];
+    if (!g) return 0;
+    return (int)(*g)[scope * 3 + nature];
 }
 
 // The none flag: 1 when the cell prints a dash.
@@ -653,12 +657,12 @@ inline int sageTimeNone(int scope, int nature) {
 
 // The g.p. cost per day for the scope (clamped).
 inline int sageCostPerDay(int scope) {
-    static const int kCost[4] = {
-         100, 1000,  500,  200,
-    };
+    const auto* g = szTable(
+        "dm_sage_discovery", "cost_per_day");
     if (scope < 0) scope = 0;
     if (scope > 3) scope = 3;
-    return kCost[scope];
+    if (!g) return 100;
+    return (int)(*g)[scope];
 }
 
 // The free-cost spread threshold (clamped):
@@ -667,12 +671,12 @@ inline int sageCostPerDay(int scope) {
 // the special category widens to the lower 80
 // percent.
 inline int sageFreeSpreadPercent(int scope) {
-    static const int kFree[4] = {
-          20,   20,   20,   80,
-    };
+    const auto* g = szTable(
+        "dm_sage_discovery", "free_spread_percent");
     if (scope < 0) scope = 0;
     if (scope > 3) scope = 3;
-    return kFree[scope];
+    if (!g) return 20;
+    return (int)(*g)[scope];
 }
 
 // The unknown-information band: 51-100
