@@ -35,7 +35,73 @@
 
 #pragma once
 
+// R1052 applied
+#include "items/MiscItemRegistry.h"
+
 namespace rules {
+
+// ---- the R1052 registry seam ---------------
+// content/tables/dm_poison/ via
+// items::MiscItemRegistry: the
+// R1042 grade rows plus named
+// tables per def (the R1051
+// dzTable idiom). Header-only
+// singleton (the R1040 appendixp.h
+// idiom). Every accessor below
+// keeps its signature, guard and
+// route branch; only the array
+// read moves behind the registry.
+
+inline items::MiscItemRegistry&
+pzReg() {
+    static items::MiscItemRegistry
+        reg;
+    static bool loaded = false;
+    if (!loaded) {
+        loaded = true;
+        reg.loadDirectory(
+            "content/tables/"
+            "dm_poison");
+    }
+    return reg;
+}
+
+// one named int table of one def
+// (null when absent or empty)
+inline const std::vector<long
+    long>* pzTable(const char* key,
+                  const char* tag) {
+    static std::map<std::string,
+        std::vector<long long>>
+        cache;
+    const std::string kk =
+        std::string(key) + "/"
+        + tag;
+    auto it = cache.find(kk);
+    if (it == cache.end()) {
+        const items::MiscItemDef*
+            d = pzReg().find(key);
+        const std::vector<long
+            long>* v = nullptr;
+        if (d) {
+            for (const auto& t :
+                 d->tables) {
+                if (t.name == tag) {
+                    v = &t.values;
+                    break;
+                }
+            }
+        }
+        it = cache.emplace(
+            kk, v ? *v
+                  : std::vector<
+                        long long>()
+                   ).first;
+    }
+    return it->second.empty()
+        ? nullptr
+        : &it->second;
+}
 
 // ----------------------------------------------------------------------------
 // Routes and grades
@@ -69,28 +135,37 @@ inline bool poisonGradeExists(int route, int grade) {
 
 inline int poisonCostPerDose(int route, int grade) {
     if (!poisonGradeExists(route, grade)) return 0;
-    static const int kIngestive[5] = { 5, 30, 200, 500, 1000 };
-    static const int kInsinuative[4] = { 10, 75, 600, 1500 };
-    if (route == POISON_INSINUATIVE) return kInsinuative[grade];
-    return kIngestive[grade];
+    const auto* g = pzTable(
+        route == POISON_INSINUATIVE
+            ? "dm_poison_insinuative"
+            : "dm_poison_ingestive",
+        "cost_per_dose");
+    if (!g) return 0;
+    return (int)(*g)[grade];
 }
 
 // Onset: minimum and maximum on the printed range plus
 // the unit the row prints in.
 inline int poisonOnsetMin(int route, int grade) {
-    static const int kIn[5] = { 2, 2, 1, 1, 1 };
-    static const int kIns[4] = { 2, 1, 1, 1 };
     if (!poisonGradeExists(route, grade)) return 0;
-    if (route == POISON_INSINUATIVE) return kIns[grade];
-    return kIn[grade];
+    const auto* g = pzTable(
+        route == POISON_INSINUATIVE
+            ? "dm_poison_insinuative"
+            : "dm_poison_ingestive",
+        "onset_min");
+    if (!g) return 0;
+    return (int)(*g)[grade];
 }
 
 inline int poisonOnsetMax(int route, int grade) {
-    static const int kIn[5] = { 8, 5, 2, 1, 4 };
-    static const int kIns[4] = { 5, 3, 1, 1 };
     if (!poisonGradeExists(route, grade)) return 0;
-    if (route == POISON_INSINUATIVE) return kIns[grade];
-    return kIn[grade];
+    const auto* g = pzTable(
+        route == POISON_INSINUATIVE
+            ? "dm_poison_insinuative"
+            : "dm_poison_ingestive",
+        "onset_max");
+    if (!g) return 0;
+    return (int)(*g)[grade];
 }
 
 inline PoisonUnit poisonOnsetUnit(int route, int grade) {
@@ -122,8 +197,9 @@ inline int poisonVictimSaveBonus(int route, int grade) {
 // E prints none - JUDGMENT: 0).
 inline int poisonDetectChance(int route, int grade) {
     if (!poisonGradeExists(route, grade)) return 0;
-    static const int k[5] = { 80, 65, 40, 15, 0 };
-    return k[grade];
+    const auto* g = pzTable("dm_poison_ingestive", "detect_chance");
+    if (!g) return 0;
+    return (int)(*g)[grade];
 }
 
 // Damage if the save is made (the ingestive table only;
@@ -131,8 +207,9 @@ inline int poisonDetectChance(int route, int grade) {
 inline int poisonDamageIfSave(int route, int grade) {
     if (!poisonGradeExists(route, grade)) return -1;
     if (route == POISON_INSINUATIVE) return 0;
-    static const int k[5] = { 10, 15, 20, 25, 30 };
-    return k[grade];
+    const auto* g = pzTable("dm_poison_ingestive", "damage_if_save");
+    if (!g) return -1;
+    return (int)(*g)[grade];
 }
 
 // A failed save: death (true) or the printed damage.
@@ -145,12 +222,13 @@ inline bool poisonKillsIfNoSave(int route, int grade) {
 inline int poisonDamageIfNoSave(int route, int grade) {
     if (poisonKillsIfNoSave(route, grade)) return -1;
     if (!poisonGradeExists(route, grade)) return -1;
-    if (route == POISON_INSINUATIVE) {
-        static const int k[4] = { 15, 25, 35, 0 };
-        return k[grade];
-    }
-    static const int k[5] = { 20, 30, 40, 0, 0 };
-    return k[grade];
+    const auto* g = pzTable(
+        route == POISON_INSINUATIVE
+            ? "dm_poison_insinuative"
+            : "dm_poison_ingestive",
+        "damage_if_no_save");
+    if (!g) return 0;
+    return (int)(*g)[grade];
 }
 
 // ----------------------------------------------------------------------------
