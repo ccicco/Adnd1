@@ -1299,6 +1299,7 @@ int main() {
     #include "rules/audits/r1050_dm_movement_registry.h"  // R1050
     #include "rules/audits/r1051_disease_registry.h"  // R1051
     #include "rules/audits/r1052_poison_registry.h"  // R1052
+    #include "rules/audits/r1053_insanity_registry.h"  // R1053
     #include "rules/audits/r280_special_artifacts_prose.h"  // R835: migrated
     #include "rules/audits/r281_special_artifacts_prose.h"  // R835: migrated
     #include "rules/audits/r282_special_artifacts_prose.h"  // R835: migrated

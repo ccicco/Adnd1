@@ -40,7 +40,104 @@
 
 #pragma once
 
+// R1053 applied
+#include "items/MiscItemRegistry.h"
+
 namespace rules {
+
+// ---- the R1053 registry seam ---------------
+// content/tables/dm_insanity/ via
+// items::MiscItemRegistry: the
+// R1042 rows idiom plus named
+// tables per def (the R1051 dzTable
+// idiom) and the rows reader (the
+// R1051 dzRows idiom - insanityName
+// is a rows reader now). Header-only
+// singleton (the R1040 appendixp.h
+// idiom). Every accessor below
+// keeps its signature, clamp and
+// branch; only the array read moves
+// behind the registry. The stimulant
+// accessor keeps its strong branch
+// as a TAG-level ternary on the same
+// def key (each ternary arm closes
+// its own string - the R1052 adjacent
+// literal lesson).
+
+inline items::MiscItemRegistry&
+izReg() {
+    static items::MiscItemRegistry
+        reg;
+    static bool loaded = false;
+    if (!loaded) {
+        loaded = true;
+        reg.loadDirectory(
+            "content/tables/"
+            "dm_insanity");
+    }
+    return reg;
+}
+
+// the name rows of one def (the
+// band is the index; insanityName
+// maps type-1 onto them)
+inline const std::vector<
+    items::MiscItemRow>& izRows(
+        const char* key) {
+    static std::map<std::string,
+        std::vector<
+            items::MiscItemRow>>
+        cache;
+    auto it = cache.find(key);
+    if (it == cache.end()) {
+        const items::MiscItemDef*
+            d = izReg().find(key);
+        it = cache.emplace(
+            key, d ? d->rows
+                   : std::vector<
+                        items::
+                        MiscItemRow>()
+                   ).first;
+    }
+    return it->second;
+}
+
+// one named int table of one def
+// (null when absent or empty)
+inline const std::vector<long
+    long>* izTable(const char* key,
+                  const char* tag) {
+    static std::map<std::string,
+        std::vector<long long>>
+        cache;
+    const std::string kk =
+        std::string(key) + "/"
+        + tag;
+    auto it = cache.find(kk);
+    if (it == cache.end()) {
+        const items::MiscItemDef*
+            d = izReg().find(key);
+        const std::vector<long
+            long>* v = nullptr;
+        if (d) {
+            for (const auto& t :
+                 d->tables) {
+                if (t.name == tag) {
+                    v = &t.values;
+                    break;
+                }
+            }
+        }
+        it = cache.emplace(
+            kk, v ? *v
+                  : std::vector<
+                        long long>()
+                   ).first;
+    }
+    return it->second.empty()
+        ? nullptr
+        : &it->second;
+}
 
 // ----------------------------------------------------------------------------
 // Intoxication (p.82)
@@ -64,36 +161,52 @@ inline IntoxState intoxicationClamp(IntoxState s) {
 // Bravery moves up towards foolhardy; morale is
 // NPC-only; hp RISE with the drug.
 inline int intoxicationBraveryAdjust(IntoxState s) {
-    static const int k[5] = { 0, 1, 2, 4, 0 };
-    return k[intoxicationClamp(s)];
+    const auto* g = izTable(
+        "dm_intoxication", "bravery_adjust");
+    if (!g) return 0;
+    return (int)(*g)[intoxicationClamp(s)];
 }
 inline int intoxicationMoraleAdjust(IntoxState s) {
-    static const int k[5] = { 0, 5, 10, 15, 0 };
-    return k[intoxicationClamp(s)];
+    const auto* g = izTable(
+        "dm_intoxication", "morale_adjust");
+    if (!g) return 0;
+    return (int)(*g)[intoxicationClamp(s)];
 }
 inline int intoxicationIntelligenceAdjust(IntoxState s) {
-    static const int k[5] = { 0, -1, -3, -6, 0 };
-    return k[intoxicationClamp(s)];
+    const auto* g = izTable(
+        "dm_intoxication", "intelligence_adjust");
+    if (!g) return 0;
+    return (int)(*g)[intoxicationClamp(s)];
 }
 inline int intoxicationWisdomAdjust(IntoxState s) {
-    static const int k[5] = { 0, -1, -4, -7, 0 };
-    return k[intoxicationClamp(s)];
+    const auto* g = izTable(
+        "dm_intoxication", "wisdom_adjust");
+    if (!g) return 0;
+    return (int)(*g)[intoxicationClamp(s)];
 }
 inline int intoxicationDexterityAdjust(IntoxState s) {
-    static const int k[5] = { 0, 0, -2, -5, 0 };
-    return k[intoxicationClamp(s)];
+    const auto* g = izTable(
+        "dm_intoxication", "dexterity_adjust");
+    if (!g) return 0;
+    return (int)(*g)[intoxicationClamp(s)];
 }
 inline int intoxicationCharismaAdjust(IntoxState s) {
-    static const int k[5] = { 0, 0, -1, -4, 0 };
-    return k[intoxicationClamp(s)];
+    const auto* g = izTable(
+        "dm_intoxication", "charisma_adjust");
+    if (!g) return 0;
+    return (int)(*g)[intoxicationClamp(s)];
 }
 inline int intoxicationAttackDiceAdjust(IntoxState s) {
-    static const int k[5] = { 0, 0, -1, -5, 0 };
-    return k[intoxicationClamp(s)];
+    const auto* g = izTable(
+        "dm_intoxication", "attack_dice_adjust");
+    if (!g) return 0;
+    return (int)(*g)[intoxicationClamp(s)];
 }
 inline int intoxicationHitPointAdjust(IntoxState s) {
-    static const int k[5] = { 0, 0, 1, 3, 0 };
-    return k[intoxicationClamp(s)];
+    const auto* g = izTable(
+        "dm_intoxication", "hit_point_adjust");
+    if (!g) return 0;
+    return (int)(*g)[intoxicationClamp(s)];
 }
 
 // Opponent saves vs magic from the intoxicated
@@ -104,8 +217,10 @@ inline int intoxicationMagicSaveRaise(IntoxState s) {
     return -intoxicationAttackDiceAdjust(s);
 }
 inline int intoxicationMagicSaveRaisePercent(IntoxState s) {
-    static const int k[5] = { 0, 0, 5, 25, 0 };
-    return k[intoxicationClamp(s)];
+    const auto* g = izTable(
+        "dm_intoxication", "magic_save_raise_percent");
+    if (!g) return 0;
+    return (int)(*g)[intoxicationClamp(s)];
 }
 
 // Comatose sleep: 7-10 hours.
@@ -119,12 +234,16 @@ inline int intoxicationComatoseSleepMax() { return 10; }
 // Recovery time in hours per state (time is the
 // only cure).
 inline int intoxicationRecoveryMin(IntoxState s) {
-    static const int k[5] = { 0, 1, 2, 4, 7 };
-    return k[intoxicationClamp(s)];
+    const auto* g = izTable(
+        "dm_intoxication", "recovery_min_hours");
+    if (!g) return 0;
+    return (int)(*g)[intoxicationClamp(s)];
 }
 inline int intoxicationRecoveryMax(IntoxState s) {
-    static const int k[5] = { 0, 2, 4, 6, 10 };
-    return k[intoxicationClamp(s)];
+    const auto* g = izTable(
+        "dm_intoxication", "recovery_max_hours");
+    if (!g) return 0;
+    return (int)(*g)[intoxicationClamp(s)];
 }
 
 // Stimulant effect as a percent multiplier on the
@@ -132,10 +251,13 @@ inline int intoxicationRecoveryMax(IntoxState s) {
 // x .50/.55/.55/.60 strong).
 inline int intoxicationStimulantPercent(
         IntoxState s, bool strong) {
-    static const int kMild[5] = { 100, 80, 85, 90, 95 };
-    static const int kStrong[5] = { 100, 50, 55, 55, 60 };
-    return strong ? kStrong[intoxicationClamp(s)]
-                  : kMild[intoxicationClamp(s)];
+    const auto* g = izTable(
+        "dm_intoxication",
+        strong
+            ? "stimulant_strong_percent"
+            : "stimulant_mild_percent");
+    if (!g) return 100;
+    return (int)(*g)[intoxicationClamp(s)];
 }
 
 // A strong stimulant: 5 percent per application of
@@ -156,32 +278,15 @@ inline int intoxicationStrongStimulantConLoss() {
 // 1-4 are MILD (subject to psionic attack); 11-20
 // the print lists under COMBAT (INSANITY).
 inline const char* insanityName(int type) {
-    static const char* const k[21] = {
-        "",
-        "dipsomania",
-        "kleptomania",
-        "schizoid",
-        "pathological liar",
-        "monomania",
-        "dementia praecox",
-        "melancholia",
-        "megalomania",
-        "delusional insanity",
-        "schizophrenia",
-        "mania",
-        "lunacy",
-        "paranoia",
-        "manic-depressive",
-        "hallucinatory insanity",
-        "sado-masochism",
-        "homicidal mania",
-        "hebephrenia",
-        "suicidal mania",
-        "catatonia"
-    };
+    const auto& rows = 
+        izRows("dm_insanity");
+    if (rows.empty())
+        return "";
     if (type < 1) type = 1;
     if (type > 20) type = 20;
-    return k[type];
+    if ((int)rows.size() < type)
+        return "";
+    return rows[type - 1].name.c_str();
 }
 
 // The four mild forms (the print star): subject to
@@ -235,10 +340,12 @@ inline int insanityOnsetChanceIn6() { return 1; }
 inline int insanityManiaDurationMinTurns() { return 2; }
 inline int insanityManiaDurationMaxTurns() { return 12; }
 inline int insanityManiaStrengthState(int d6) {
-    static const int k[7] = { 0, 50, 75, 100, 100, 100, 100 };
+    const auto* g = izTable(
+        "dm_insanity", "mania_strength_state");
     if (d6 < 1) d6 = 1;
     if (d6 > 6) d6 = 6;
-    return k[d6];
+    if (!g) return 0;
+    return (int)(*g)[d6];
 }
 
 // 14. Manic-depressive: 1-4 day cycle; 90 percent
