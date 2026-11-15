@@ -54,6 +54,9 @@
 
 #pragma once
 
+// R1059 applied
+#include "rules/seams/miscreg.h"
+
 namespace rules {
 
 inline int m3RowCount() {
@@ -62,99 +65,66 @@ inline int m3RowCount() {
 }
 
 inline int m3RowLo(int i) {
-    // the printed band lower edges; i clamps
+    const auto* g = mTable(
+        "misc_m3", "row_lo");
     if (i < 0) i = 0;
     if (i > 32) i = 32;
-    static const int t[33] = {
-        1, 16, 17, 19, 21, 23, 26, 27, 28, 29,
-        30, 31, 36, 38, 40, 41, 46, 47, 49, 50,
-        54, 61, 64, 66, 71, 72, 73, 79, 81, 86,
-        91, 92, 93,
-    };
-    return t[i];
+    if (!g) return 1;
+    return (int)(*g)[i];
 }
 
 inline int m3RowHi(int i) {
-    // the printed band upper edges; i clamps
+    const auto* g = mTable(
+        "misc_m3", "row_hi");
     if (i < 0) i = 0;
     if (i > 32) i = 32;
-    static const int t[33] = {
-        15, 16, 18, 20, 22, 25, 26, 27, 28, 29,
-        30, 35, 37, 39, 40, 45, 46, 48, 49, 53,
-        60, 63, 65, 70, 71, 72, 78, 80, 85, 90,
-        91, 92, 100,
-    };
-    return t[i];
+    if (!g) return 15;
+    return (int)(*g)[i];
 }
 
 inline int m3UsableByCleric(int i) {
-    // the (C) mark; i clamps
+    const auto* g = mTable(
+        "misc_m3", "usable_by_cleric");
     if (i < 0) i = 0;
     if (i > 32) i = 32;
-    static const int t[33] = {
-        0, 0, 0, 0, 1, 1, 0, 0, 1, 1,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-        0, 0, 0, 1, 1, 0, 0, 0, 0, 0,
-        0, 0, 0,
-    };
-    return t[i];
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int m3UsableByFighter(int i) {
-    // the (F) mark; i clamps
+    const auto* g = mTable(
+        "misc_m3", "usable_by_fighter");
     if (i < 0) i = 0;
     if (i > 32) i = 32;
-    static const int t[33] = {
-        0, 0, 0, 0, 1, 1, 0, 0, 1, 1,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-        0, 0, 0, 0, 0, 0, 0, 0, 1, 1,
-        0, 0, 0,
-    };
-    return t[i];
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int m3UsableByThief(int i) {
-    // the (T) mark; i clamps
+    const auto* g = mTable(
+        "misc_m3", "usable_by_thief");
     if (i < 0) i = 0;
     if (i > 32) i = 32;
-    static const int t[33] = {
-        0, 0, 0, 0, 1, 1, 0, 0, 1, 1,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0,
-    };
-    return t[i];
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int m3StarCount(int i) {
-    // the asterisk ladder: 1 the Figurine
-    // (per hit die), 2 the Horn of Valhalla
-    // (bronze/iron), 3 the Ioun Stones (per
-    // stone), 4 the Instrument of the Bards
-    // (per level of instrument); i clamps
+    const auto* g = mTable(
+        "misc_m3", "star_count");
     if (i < 0) i = 0;
     if (i > 32) i = 32;
-    static const int t[33] = {
-        1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        2, 0, 0, 0, 0, 3, 4, 0, 0, 0,
-        0, 0, 0,
-    };
-    return t[i];
+    if (!g) return 1;
+    return (int)(*g)[i];
 }
 
 inline int m3IsPerFacetValued(int i) {
-    // the Jewel of Flawlessness (92): 1,000
-    // g.p. per facet; i clamps
+    const auto* g = mTable(
+        "misc_m3", "is_per_facet");
     if (i < 0) i = 0;
     if (i > 32) i = 32;
-    static const int t[33] = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 1, 0,
-    };
-    return t[i];
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int m3ClericCount() {

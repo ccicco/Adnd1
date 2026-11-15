@@ -54,6 +54,9 @@
 
 #pragma once
 
+// R1059 applied
+#include "rules/seams/miscreg.h"
+
 namespace rules {
 
 inline int m4RowCount() {
@@ -62,114 +65,75 @@ inline int m4RowCount() {
 }
 
 inline int m4RowLo(int i) {
-    // the printed band lower edges; i clamps
+    const auto* g = mTable(
+        "misc_m4", "row_lo");
     if (i < 0) i = 0;
     if (i > 35) i = 35;
-    static const int t[36] = {
-        1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-        11, 12, 13, 16, 18, 19, 20, 21, 24, 28,
-        34, 36, 39, 43, 45, 47, 49, 51, 54, 61,
-        65, 71, 75, 77, 85, 86,
-    };
-    return t[i];
+    if (!g) return 1;
+    return (int)(*g)[i];
 }
 
 inline int m4RowHi(int i) {
-    // the printed band upper edges; i clamps
+    const auto* g = mTable(
+        "misc_m4", "row_hi");
     if (i < 0) i = 0;
     if (i > 35) i = 35;
-    static const int t[36] = {
-        1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-        11, 12, 15, 17, 18, 19, 20, 23, 27, 33,
-        35, 38, 42, 44, 46, 48, 50, 53, 60, 64,
-        70, 74, 76, 84, 85, 100,
-    };
-    return t[i];
+    if (!g) return 1;
+    return (int)(*g)[i];
 }
 
 inline int m4UsableByCleric(int i) {
-    // the (C) mark; i clamps
+    const auto* g = mTable(
+        "misc_m4", "usable_by_cleric");
     if (i < 0) i = 0;
     if (i > 35) i = 35;
-    static const int t[36] = {
-        0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-        0, 1, 1, 0, 0, 1, 0, 0, 0, 0,
-        1, 1, 1, 0, 0, 0,
-    };
-    return t[i];
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int m4UsableByFighter(int i) {
-    // the (F) mark; i clamps
+    const auto* g = mTable(
+        "misc_m4", "usable_by_fighter");
     if (i < 0) i = 0;
     if (i > 35) i = 35;
-    static const int t[36] = {
-        0, 0, 0, 0, 0, 0, 0, 1, 0, 0,
-        1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 1, 1, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0,
-    };
-    return t[i];
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int m4UsableByMagicUser(int i) {
-    // the (M) mark; i clamps
+    const auto* g = mTable(
+        "misc_m4", "usable_by_mu");
     if (i < 0) i = 0;
     if (i > 35) i = 35;
-    static const int t[36] = {
-        1, 1, 1, 0, 0, 0, 1, 0, 0, 0,
-        0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0,
-    };
-    return t[i];
+    if (!g) return 1;
+    return (int)(*g)[i];
 }
 
 inline int m4UsableByThief(int i) {
-    // the (T) mark; i clamps
+    const auto* g = mTable(
+        "misc_m4", "usable_by_thief");
     if (i < 0) i = 0;
     if (i > 35) i = 35;
-    static const int t[36] = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 1, 1, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0,
-    };
-    return t[i];
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int m4StarCount(int i) {
-    // the asterisk ladder: 1 the Necklace of
-    // Missiles (per hit die of each missile),
-    // 2 the Prayer Beads (per special bead),
-    // 3 the Marvelous Pigments (per pot),
-    // 4 the Pearl of Power (per level of
-    // spell); i clamps
+    const auto* g = mTable(
+        "misc_m4", "star_count");
     if (i < 0) i = 0;
     if (i > 35) i = 35;
-    static const int t[36] = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 1, 2,
-        0, 0, 0, 3, 4, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0,
-    };
-    return t[i];
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int m4IsDualValued(int i) {
-    // the dual-value rows: the Medallion of
-    // ESP (13-15) and the Feather Token
-    // (86-00); i clamps
+    const auto* g = mTable(
+        "misc_m4", "is_dual_valued");
     if (i < 0) i = 0;
     if (i > 35) i = 35;
-    static const int t[36] = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 1, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 1,
-    };
-    return t[i];
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int m4ClericCount() {

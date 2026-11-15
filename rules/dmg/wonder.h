@@ -57,6 +57,9 @@
 
 #pragma once
 
+// R1059 applied
+#include "rules/seams/miscreg.h"
+
 namespace rules {
 
 inline int wonderRowCount() {
@@ -65,25 +68,21 @@ inline int wonderRowCount() {
 }
 
 inline int wonderRowLo(int i) {
-    // the printed band lower edges; i clamps
+    const auto* g = mTable(
+        "wonder", "row_lo");
     if (i < 0) i = 0;
     if (i > 18) i = 18;
-    static const int t[19] = {
-        1, 11, 19, 26, 31, 34, 37, 47, 50, 54,
-        59, 63, 66, 70, 80, 85, 88, 91, 98,
-    };
-    return t[i];
+    if (!g) return 1;
+    return (int)(*g)[i];
 }
 
 inline int wonderRowHi(int i) {
-    // the printed band upper edges; i clamps
+    const auto* g = mTable(
+        "wonder", "row_hi");
     if (i < 0) i = 0;
     if (i > 18) i = 18;
-    static const int t[19] = {
-        10, 18, 25, 30, 33, 36, 46, 49, 53, 58,
-        62, 65, 69, 79, 84, 87, 90, 97, 100,
-    };
-    return t[i];
+    if (!g) return 10;
+    return (int)(*g)[i];
 }
 
 inline int wonderChargesPerFunction() {

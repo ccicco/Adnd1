@@ -36,6 +36,9 @@
 
 #pragma once
 
+// R1059 applied
+#include "rules/seams/miscreg.h"
+
 namespace rules {
 
 inline int m2RowCount() {
@@ -44,87 +47,66 @@ inline int m2RowCount() {
 }
 
 inline int m2RowLo(int i) {
-    // the printed band lower edges; i clamps
+    const auto* g = mTable(
+        "misc_m2", "row_lo");
     if (i < 0) i = 0;
     if (i > 29) i = 29;
-    static const int t[30] = {
-        1, 7, 9, 11, 12, 14, 15, 19, 28, 31,
-        33, 56, 61, 62, 64, 66, 68, 70, 73, 77,
-        78, 80, 86, 92, 93, 94, 95, 96, 98, 100,
-    };
-    return t[i];
+    if (!g) return 1;
+    return (int)(*g)[i];
 }
 
 inline int m2RowHi(int i) {
-    // the printed band upper edges; i clamps
+    const auto* g = mTable(
+        "misc_m2", "row_hi");
     if (i < 0) i = 0;
     if (i > 29) i = 29;
-    static const int t[30] = {
-        6, 8, 10, 11, 13, 14, 18, 27, 30, 32,
-        55, 60, 61, 63, 65, 67, 69, 72, 76, 77,
-        79, 85, 91, 92, 93, 94, 95, 97, 99, 100,
-    };
-    return t[i];
+    if (!g) return 6;
+    return (int)(*g)[i];
 }
 
 inline int m2UsableByCleric(int i) {
-    // the (C) mark; i clamps
+    const auto* g = mTable(
+        "misc_m2", "usable_by_cleric");
     if (i < 0) i = 0;
     if (i > 29) i = 29;
-    static const int t[30] = {
-        1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    };
-    return t[i];
+    if (!g) return 1;
+    return (int)(*g)[i];
 }
 
 inline int m2UsableByMagicUser(int i) {
-    // the (M) mark; i clamps
+    const auto* g = mTable(
+        "misc_m2", "usable_by_mu");
     if (i < 0) i = 0;
     if (i > 29) i = 29;
-    static const int t[30] = {
-        0, 0, 1, 1, 0, 0, 0, 0, 0, 0,
-        0, 1, 1, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
-    };
-    return t[i];
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int m2IsPerPlusValued(int i) {
-    // the Cloak of Protection per-plus asterisk row; i clamps
+    const auto* g = mTable(
+        "misc_m2", "is_per_plus_valued");
     if (i < 0) i = 0;
     if (i > 29) i = 29;
-    static const int t[30] = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    };
-    return t[i];
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int m2HasFeatureAsterisk(int i) {
-    // the Crystal Ball double-asterisk row; i clamps
+    const auto* g = mTable(
+        "misc_m2", "has_feature_asterisk");
     if (i < 0) i = 0;
     if (i > 29) i = 29;
-    static const int t[30] = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 1, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    };
-    return t[i];
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int m2IsTripleStar(int i) {
-    // the Eyes of Petrification triple-asterisk row; i clamps
+    const auto* g = mTable(
+        "misc_m2", "is_triple_star");
     if (i < 0) i = 0;
     if (i > 29) i = 29;
-    static const int t[30] = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-    };
-    return t[i];
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int m2ClericCount() {
