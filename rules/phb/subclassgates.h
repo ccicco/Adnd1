@@ -50,7 +50,84 @@
 
 #include <cstdint>
 
+// R1055 applied
+#include "items/MiscItemRegistry.h"
+
 namespace rules {
+
+// ---- the R1055 registry seam ---------------
+// content/tables/ph_subgates/ via
+// items::MiscItemRegistry: the R1042
+// rows idiom plus named tables per def
+// (the R1051 dzTable idiom). NO rows
+// readers this round (the def rows are
+// structural - the file prints no
+// string-name arrays). Header-only
+// singleton (the R1040 appendixp.h
+// idiom). Every accessor below keeps
+// its signature, clamp and branch; only
+// the array read moves behind the
+// registry. The [6][6] and [6][7]
+// matrices retire FLATTENED sub-major;
+// the matrix accessors read the cell
+// [sub * W + col]. The R230 private
+// flat copies kAllow/kCap retire ONTO
+// the same race_allowed/race_cap tables
+// (the dedupe: one copy of the data,
+// two accessors). The fallback of every
+// accessor is the parsed cell (0,0) of
+// its table.
+
+inline items::MiscItemRegistry&
+gtReg() {
+    static items::MiscItemRegistry
+        reg;
+    static bool loaded = false;
+    if (!loaded) {
+        loaded = true;
+        reg.loadDirectory(
+            "content/tables/"
+            "ph_subgates");
+    }
+    return reg;
+}
+
+// one named int table of one def
+// (null when absent or empty)
+inline const std::vector<long
+    long>* gtTable(const char* key,
+                  const char* tag) {
+    static std::map<std::string,
+        std::vector<long long>>
+        cache;
+    const std::string kk =
+        std::string(key) + "/"
+        + tag;
+    auto it = cache.find(kk);
+    if (it == cache.end()) {
+        const items::MiscItemDef*
+            d = gtReg().find(key);
+        const std::vector<long
+            long>* v = nullptr;
+        if (d) {
+            for (const auto& t :
+                 d->tables) {
+                if (t.name == tag) {
+                    v = &t.values;
+                    break;
+                }
+            }
+        }
+        it = cache.emplace(
+            kk, v ? *v
+                  : std::vector<
+                        long long>()
+                   ).first;
+    }
+    return it->second.empty()
+        ? nullptr
+        : &it->second;
+}
 
 // The alignment requirement codes (the Table I letters).
 enum SubAlignReq : int {
@@ -71,73 +148,20 @@ enum SubXpBonusRule : int {
     SUB_XP_BONUS_WIS_CHA       // both over 15 (druid)
 };
 
-// The ability minimums, in Ability enum order
-// (STR INT WIS DEX CON CHA); 0 = no requirement.
-//   paladin  12  9 13  0  9 17   (p.22)
-//   ranger   13 13 14  0 14  0   (p.24)
-//   druid     0  0 12  0  0 15   (p.21)
-//   illusionist 0 15 0 16 0  0   (p.26)
-//   assassin 12 11  0 12  0  0   (p.31)
-//   monk     15  0 15 15 11  0   (p.30)
-static const int kGateAbilityMin[SUB_COUNT][6] = {
-    { 12,  9, 13,  0,  9, 17 },
-    { 13, 13, 14,  0, 14,  0 },
-    {  0,  0, 12,  0,  0, 15 },
-    {  0, 15,  0, 16,  0,  0 },
-    { 12, 11,  0, 12,  0,  0 },
-    { 15,  0, 15, 15, 11,  0 }
-};
-
-// Character Race Table I (class limitations), columns in
-// CharRace order (human dwarf elf gnome half-elf halfling
-// half-orc): 1 = player-character eligible.
-static const int kGateRaceAllowed[SUB_COUNT][7] = {
-    { 1, 0, 0, 0, 0, 0, 0 },  // paladin
-    { 1, 0, 0, 0, 1, 0, 0 },  // ranger
-    { 1, 0, 0, 0, 1, 0, 0 },  // druid
-    { 1, 0, 0, 1, 0, 0, 0 },  // illusionist
-    { 1, 1, 1, 1, 1, 0, 1 },  // assassin
-    { 1, 0, 0, 0, 0, 0, 0 }   // monk
-};
-
-// Character Race Table II (level caps), same column order.
-// 0 = forbidden; -1 = unlimited; positive = the printed
-// player cap; negative n (>= 2) = NPC-only cap n.
-static const int kGateRaceCap[SUB_COUNT][7] = {
-    { -1,  0,  0,  0,  0,  0,  0 },  // paladin
-    { -1,  0,  0,  0,  8,  0,  0 },  // ranger
-    { -1,  0,  0,  0, -1, -6,  0 },  // druid (halfling NPC-only 6)
-    { -1,  0,  0,  7,  0,  0,  0 },  // illusionist (footnote 8)
-    { -1,  9, 10,  8, 11,  0, -1 },  // assassin
-    { -1,  0,  0,  0,  0,  0,  0 }   // monk
-};
-
-// The Table I alignment letters and the printed bonus rules.
-static const int kGateAlignReq[SUB_COUNT] = {
-    SUB_ALIGN_LG_ONLY,        // paladin
-    SUB_ALIGN_GOOD_ONLY,      // ranger
-    SUB_ALIGN_TRUE_NEUTRAL,   // druid
-    SUB_ALIGN_ANY,            // illusionist
-    SUB_ALIGN_EVIL_ONLY,     // assassin
-    SUB_ALIGN_LAWFUL_ONLY     // monk
-};
-
-static const int kGateXpBonus[SUB_COUNT] = {
-    SUB_XP_BONUS_STR_WIS,     // paladin: strength and wisdom over 15
-    SUB_XP_BONUS_STR_INT_WIS, // ranger: all three over 15
-    SUB_XP_BONUS_WIS_CHA,      // druid: wisdom and charisma over 15
-    SUB_XP_BONUS_NONE,        // illusionist prints none
-    SUB_XP_BONUS_NONE,        // assassin prints none
-    SUB_XP_BONUS_NONE         // monk: never gains bonuses
-};
-
 // ---- accessors (indices clamped; unknown abilities score 0) ----
 
 inline int subclassAbilityMin(int sub, Ability ab) {
+    const auto* g = gtTable(
+        "ph_subgates_qualify", "ability_min");
     if (sub < 0) sub = 0;
-    if (sub >= SUB_COUNT) sub = SUB_COUNT - 1;
-    if ((int)ab < 0 || (int)ab >= ABILITY_COUNT) return 0;
-    return kGateAbilityMin[sub][(int)ab];
+    if (sub >= SUB_COUNT)
+        sub = SUB_COUNT - 1;
+    if ((int)ab < 0
+        || (int)ab >= ABILITY_COUNT)
+        return 0;
+    if (!g) return 12;
+    return (int)(*g)
+        [sub * 6 + (int)ab];
 }
 
 // True when every printed minimum is met.
@@ -151,20 +175,34 @@ inline bool subclassMeetsAbilityMin(int sub, const AbilityScores& s) {
 
 // Table I: 1 = player-character eligible.
 inline int subclassRaceAllowed(int sub, CharRace r) {
+    const auto* g = gtTable(
+        "ph_subgates_race", "race_allowed");
     if (sub < 0) sub = 0;
-    if (sub >= SUB_COUNT) sub = SUB_COUNT - 1;
-    if ((int)r < 0 || (int)r >= RACE_CHAR_COUNT) return 0;
-    return kGateRaceAllowed[sub][(int)r];
+    if (sub >= SUB_COUNT)
+        sub = SUB_COUNT - 1;
+    if ((int)r < 0
+        || (int)r >= RACE_CHAR_COUNT)
+        return 0;
+    if (!g) return 1;
+    return (int)(*g)
+        [sub * 7 + (int)r];
 }
 
 // Table II: 0 = forbidden; -1 = unlimited; positive =
 // the printed player cap; negative n (>= 2) = NPC-only,
 // cap level n.
 inline int subclassRaceCap(int sub, CharRace r) {
+    const auto* g = gtTable(
+        "ph_subgates_race", "race_cap");
     if (sub < 0) sub = 0;
-    if (sub >= SUB_COUNT) sub = SUB_COUNT - 1;
-    if ((int)r < 0 || (int)r >= RACE_CHAR_COUNT) return 0;
-    return kGateRaceCap[sub][(int)r];
+    if (sub >= SUB_COUNT)
+        sub = SUB_COUNT - 1;
+    if ((int)r < 0
+        || (int)r >= RACE_CHAR_COUNT)
+        return 0;
+    if (!g) return -1;
+    return (int)(*g)
+        [sub * 7 + (int)r];
 }
 
 // True when the Table II entry is a parenthesized
@@ -186,16 +224,24 @@ inline int illusionistGnomeCap(int intScore, int dexScore) {
 
 // The Table I alignment letters.
 inline int subclassAlignmentReq(int sub) {
+    const auto* g = gtTable(
+        "ph_subgates_qualify", "align_req");
     if (sub < 0) sub = 0;
-    if (sub >= SUB_COUNT) sub = SUB_COUNT - 1;
-    return kGateAlignReq[sub];
+    if (sub >= SUB_COUNT)
+        sub = SUB_COUNT - 1;
+    if (!g) return 1;
+    return (int)(*g)[sub];
 }
 
 // The printed bonus rule code.
 inline int subclassXpBonusRule(int sub) {
+    const auto* g = gtTable(
+        "ph_subgates_qualify", "xp_bonus");
     if (sub < 0) sub = 0;
-    if (sub >= SUB_COUNT) sub = SUB_COUNT - 1;
-    return kGateXpBonus[sub];
+    if (sub >= SUB_COUNT)
+        sub = SUB_COUNT - 1;
+    if (!g) return 1;
+    return (int)(*g)[sub];
 }
 
 // True when the printed bonus is earned for the scores.
@@ -290,32 +336,29 @@ inline int subclassTwoDiceFirstLevel(int sub) {
 // paladin d10, ranger d8, druid d8, illusionist d4,
 // assassin d6, monk d4).
 inline int subclassHitDie(int sub) {
-    static const int kDie[6] = {
-        10, 8, 8, 4, 6, 4
-    };
-    if (sub < 0) sub = 0;
-    if (sub > 5) sub = 5;
-    return kDie[sub];
+    const auto* g = gtTable(
+        "ph_subgates_leveling", "hit_die");
+    int si = sub;
+    if (si < 0) si = 0;
+    if (si > 5) si = 5;
+    if (!g) return 10;
+    return (int)(*g)[si];
 }
 
 // Player eligibility: Race Table I, flat 42 (a private
 // copy - see the EVAL NOTE).
 inline int subclassPlayerAllowed(int sub, CharRace r) {
-    static const int kAllow[42] = {
-        1, 0, 0, 0, 0, 0, 0,
-        1, 0, 0, 0, 1, 0, 0,
-        1, 0, 0, 0, 1, 0, 0,
-        1, 0, 0, 1, 0, 0, 0,
-        1, 1, 1, 1, 1, 0, 1,
-        1, 0, 0, 0, 0, 0, 0
-    };
+    const auto* g = gtTable(
+        "ph_subgates_race", "race_allowed");
     int si = sub;
     if (si < 0) si = 0;
     if (si > 5) si = 5;
     int ri = (int)r;
     if (ri < 0) ri = 0;
     if (ri > 6) ri = 6;
-    return kAllow[si * 7 + ri];
+    if (!g) return 1;
+    return (int)(*g)
+        [si * 7 + ri];
 }
 
 // The effective level cap: Race Table II, flat 42 (a
@@ -324,15 +367,9 @@ inline int subclassPlayerAllowed(int sub, CharRace r) {
 // forbidden; -1 = unlimited; positive = the printed
 // player cap; -n (n >= 2) = NPC-only cap n.
 inline int subclassLevelCapFor(int sub, CharRace r,
-                               int intScore, int dexScore) {
-    static const int kCap[42] = {
-        -1,  0,  0,  0,  0,  0,  0,
-        -1,  0,  0,  0,  8,  0,  0,
-        -1,  0,  0,  0, -1, -6,  0,
-        -1,  0,  0,  7,  0,  0,  0,
-        -1,  9, 10,  8, 11,  0, -1,
-        -1,  0,  0,  0,  0,  0,  0
-    };
+                        int intScore, int dexScore) {
+    const auto* g = gtTable(
+        "ph_subgates_race", "race_cap");
     int si = sub;
     if (si < 0) si = 0;
     if (si > 5) si = 5;
@@ -340,8 +377,11 @@ inline int subclassLevelCapFor(int sub, CharRace r,
     if (ri < 0) ri = 0;
     if (ri > 6) ri = 6;
     if (si == 3 && ri == 3)
-        return illusionistGnomeCap(intScore, dexScore);
-    return kCap[si * 7 + ri];
+        return illusionistGnomeCap(
+            intScore, dexScore);
+    if (!g) return -1;
+    return (int)(*g)
+        [si * 7 + ri];
 }
 
 // ---------------------------------------------------------------------------
@@ -367,40 +407,27 @@ inline int subclassLevelCapFor(int sub, CharRace r,
 // ceiling. Ragged rows pad with 0 (never read:
 // kLen guards).
 inline int subclassXpToAttain(int sub, int level) {
-    static const int kLen[6] = {
-        11, 12, 14, 12, 15, 17
-    };
-    static const int kXp[6][17] = {
-        { 0, 2750, 5500, 12000, 24000, 45000,
-          95000, 175000, 350000, 700000, 1050000,
-          0, 0, 0, 0, 0, 0 },
-        { 0, 2250, 4500, 10000, 20000, 40000,
-          90000, 150000, 225000, 325000, 650000,
-          975000, 0, 0, 0, 0, 0 },
-        { 0, 2000, 4000, 7500, 12500, 20000,
-          35000, 60000, 90000, 125000, 200000,
-          300000, 750000, 1500000, 0, 0, 0 },
-        { 0, 2250, 4500, 9000, 18000, 35000,
-          60000, 95000, 145000, 220000, 440000,
-          660000, 0, 0, 0, 0, 0 },
-        { 0, 1500, 3000, 6000, 12000, 25000,
-          50000, 100000, 200000, 300000, 425000,
-          575000, 750000, 1000000, 1500000, 0, 0 },
-        { 0, 2250, 4750, 10000, 22500, 47500,
-          98000, 200000, 350000, 500000, 700000,
-          950000, 1250000, 1750000, 2250000,
-          2750000, 3250000 }
-    };
-    static const int kAdd[6] = {
-        350000, 325000, 0, 220000, 0, 0
-    };
+    const auto* gl = gtTable(
+        "ph_subgates_leveling", "xp_len");
+    const auto* gx = gtTable(
+        "ph_subgates_leveling", "xp_attain");
+    const auto* ga = gtTable(
+        "ph_subgates_leveling", "xp_add");
     int si = sub;
     if (si < 0) si = 0;
     if (si > 5) si = 5;
     if (level <= 1) return 0;
-    int n = kLen[si];
-    if (level <= n) return kXp[si][level - 1];
-    return kXp[si][n - 1] + (level - n) * kAdd[si];
+    int n = gl
+        ? (int)(*gl)[si] : 11;
+    int add = ga
+        ? (int)(*ga)[si] : 350000;
+    if (!gx) return 0;
+    if (level <= n)
+        return (int)(*gx)
+            [si * 17 + level - 1];
+    return (int)(*gx)
+        [si * 17 + n - 1]
+        + (level - n) * add;
 }
 
 // The fixed-hp level (the R179 levelCap pin: past
@@ -408,25 +435,25 @@ inline int subclassXpToAttain(int sub, int level) {
 // 10, druid 9, illusionist 10, assassin 10, monk
 // 17 (the monk rolls through all 17).
 inline int subclassFixedHpLevel(int sub) {
-    static const int kFixed[6] = {
-        9, 10, 9, 10, 10, 17
-    };
+    const auto* g = gtTable(
+        "ph_subgates_leveling", "fixed_hp_level");
     int si = sub;
     if (si < 0) si = 0;
     if (si > 5) si = 5;
-    return kFixed[si];
+    if (!g) return 9;
+    return (int)(*g)[si];
 }
 
 // The fixed hp per level past the fixed-hp level
 // (the R179 hpBeyondCap pin); the monk 0.
 inline int subclassHpBeyondFixed(int sub) {
-    static const int kHpB[6] = {
-        3, 2, 2, 1, 2, 0
-    };
+    const auto* g = gtTable(
+        "ph_subgates_leveling", "hp_beyond_fixed");
     int si = sub;
     if (si < 0) si = 0;
     if (si > 5) si = 5;
-    return kHpB[si];
+    if (!g) return 3;
+    return (int)(*g)[si];
 }
 
 // The leveling stop (the R179 levelCap pin: the
@@ -438,13 +465,13 @@ inline int subclassHpBeyondFixed(int sub) {
 // the fixed hp starts at the 9th (the print pin -
 // the two levels differ for the druid only).
 inline int subclassLevelStop(int sub) {
-    static const int kStop[6] = {
-        9, 10, 14, 10, 10, 17
-    };
+    const auto* g = gtTable(
+        "ph_subgates_leveling", "level_stop");
     int si = sub;
     if (si < 0) si = 0;
     if (si > 5) si = 5;
-    return kStop[si];
+    if (!g) return 9;
+    return (int)(*g)[si];
 }
 
 // The effective leveling cap: the leveling stop,
