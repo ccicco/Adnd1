@@ -30,6 +30,9 @@
 
 #pragma once
 
+// R1058 applied
+#include "rules/seams/weaponsreg.h"
+
 #include "subraces.h"  // UaClass (the 14)
 
 namespace rules {
@@ -231,52 +234,49 @@ inline int weaponSpecTableColumnCount()
 
 inline const char* weaponSpecTableColumnName(
         int i) {
-    static const char* const k[8] = {
-        "Melee Weapon", "Bow",
-        "Light Crossbow", "Heavy Crossbow",
-        "Lasso and Staff Sling",
-        "Thrown Dagger", "Thrown Dart",
-        "Other Missiles and Hurled"
-        " Weapons"
-    };
+    const auto& rows = wRows("wspec_cols");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 7) i = 7;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 inline int weaponSpecTableBandLow(int b) {
-    static const int k[3] = {1, 7, 13};
+    const auto* g = wTable(
+        "wspec", "band_low");
     if (b < 0) b = 0;
     if (b > 2) b = 2;
-    return k[b];
+    if (!g) return 1;
+    return (int)(*g)[b];
 }
 
 inline int weaponSpecTableBandHigh(int b) {
-    // band 0: 1-6; band 1: 7-12;
-    // band 2: 13+ (no upper bound;
-    // returns 0 to mean open)
-    static const int k[3] = {6, 12, 0};
+    const auto* g = wTable(
+        "wspec", "band_high");
     if (b < 0) b = 0;
     if (b > 2) b = 2;
-    return k[b];
+    if (!g) return 6;
+    return (int)(*g)[b];
 }
 
 // The R393 clean read: all 24 cells.
 inline const char* weaponSpecTableCellKnown(
         int band, int col) {
-    static const char* const k[3][8] = {
-        {"3/2", "2/1", "1/1", "1/2",
-         "1/1", "3/1", "4/1", "3/2"},
-        {"2/1", "3/1", "3/2", "1/1",
-         "3/2", "4/1", "5/1", "2/1"},
-        {"5/2", "4/1", "2/1", "3/2",
-         "2/1", "5/1", "6/1", "5/2"}
-    };
+    const auto& rows = wRows("wspec_cells");
+    if (rows.empty())
+        return "";
     if (band < 0) band = 0;
     if (band > 2) band = 2;
     if (col < 0) col = 0;
     if (col > 7) col = 7;
-    return k[band][col];
+    if ((int)rows.size() <= (band) * 8
+        + (col))
+        return "";
+    return rows[(band) * 8
+        + (col)].name.c_str();
 }
 
 // The printed note under the table:

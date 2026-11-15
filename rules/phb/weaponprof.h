@@ -61,6 +61,9 @@
 
 #pragma once
 
+// R1058 applied
+#include "rules/seams/weaponsreg.h"
+
 namespace rules {
 
 // The printed row order (the table top to bottom).
@@ -83,33 +86,30 @@ inline int wpfRowCount() {
 }
 
 inline int wpfInitialSlots(int row) {
-    // the initial number of weapons; row clamps
+    const auto* g = wTable(
+        "wpf", "initial_slots");
     if (row < 0) row = 0;
     if (row > 9) row = 9;
-    static const int t[10] = {
-        2, 2, 4, 3, 3, 1, 1, 2, 3, 1,
-    };
-    return t[row];
+    if (!g) return 2;
+    return (int)(*g)[row];
 }
 
 inline int wpfNonProfPenalty(int row) {
-    // the non-proficiency to-hit penalty MAGNITUDE
+    const auto* g = wTable(
+        "wpf", "nonprof_penalty");
     if (row < 0) row = 0;
     if (row > 9) row = 9;
-    static const int t[10] = {
-        3, 4, 2, 2, 2, 5, 5, 3, 2, 3,
-    };
-    return t[row];
+    if (!g) return 3;
+    return (int)(*g)[row];
 }
 
 inline int wpfAddedCadence(int row) {
-    // the added-proficiency levels-per-slot
+    const auto* g = wTable(
+        "wpf", "added_cadence");
     if (row < 0) row = 0;
     if (row > 9) row = 9;
-    static const int t[10] = {
-        4, 5, 3, 3, 3, 6, 6, 4, 4, 2,
-    };
-    return t[row];
+    if (!g) return 4;
+    return (int)(*g)[row];
 }
 
 inline int wpfSlotsAt(int row, int level) {

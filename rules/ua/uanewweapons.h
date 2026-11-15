@@ -37,6 +37,9 @@
 
 #pragma once
 
+// R1058 applied
+#include "rules/seams/weaponsreg.h"
+
 namespace rules {
 
 // The prose entry count (16 printed entries; the 10 PHB-style
@@ -46,27 +49,25 @@ inline int uanwCount()
 
 // The entry name (printed).
 inline const char* uanwName(int i) {
-    static const char* const k[16] = {
-        "Aklys", "Atlatl", "Blowgun", "Caltrop",
-        "Crossbow, Hand-held", "Garrot", "Harpoon",
-        "Hook Fauchard", "Lasso", "Man Catcher", "Sap",
-        "Spiked Buckler", "Staff Sling", "Sword, Falchion",
-        "Sword, Khopesh", "Whip",
-    };
+    const auto& rows = wRows("uanw");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 15) i = 15;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // True when the entry is among the 14 types the gap item names
 // (the hand-held crossbow and the falchion are extra prose).
 inline bool uanwInGapItemList(int i) {
-    static const bool k[16] = {
-        1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1
-    };
+    const auto* g = wTable(
+        "uanw", "in_gap");
     if (i < 0) i = 0;
     if (i > 15) i = 15;
-    return k[i];
+    if (!g) return 1;
+    return (int)(*g)[i];
 }
 
 // ---- the aklys ----

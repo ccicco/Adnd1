@@ -60,6 +60,9 @@
 
 #pragma once
 
+// R1058 applied
+#include "rules/seams/weaponsreg.h"
+
 namespace rules {
 
 // The row count (14 = the 10 PHB classes plus the cavalier,
@@ -70,42 +73,37 @@ inline int uapfRowCount()
 // The row name (printed; the three attributed rows carry the
 // attribution JUDGMENT - uapfNameIsAttributed flags them).
 inline const char* uapfName(int i) {
-    static const char* const k[14] = {
-        "Cavalier", "Paladin", "Cleric", "Druid",
-        "Fighter", "Barbarian", "Ranger", "Magic-User",
-        "Illusionist", "Thief", "Acrobat", "Assassin",
-        "Monk", "Bard"
-    };
+    const auto& rows = wRows("uapf");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 13) i = 13;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // The R297 ProfRow each row seam-verifies against; -1 = a
 // UA-new row (no PHB row). The acrobat seam-closes to the
 // thief row's values by print (not by PHB membership).
 inline int uapfPhbSeamRow(int i) {
-    // cavalier, paladin, cleric, druid, fighter,
-    // barbarian, ranger, magic-user, illusionist,
-    // thief, acrobat, assassin, monk, bard
-    static const int k[14] = {
-        -1, 3, 0, 1, 2, -1, 4, 5, 6, 7, 7, 8, 9, -1
-    };
+    const auto* g = wTable(
+        "uapf", "phb_seam");
     if (i < 0) i = 0;
     if (i > 13) i = 13;
-    return k[i];
+    if (!g) return -1;
+    return (int)(*g)[i];
 }
 
 // True when the row name is an attribution (the printed name
 // is OCR-lost or garbled; the data assigns the row).
 inline bool uapfNameIsAttributed(int i) {
-    // illusionist, thief, assassin
-    static const bool k[14] = {
-        0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0
-    };
+    const auto* g = wTable(
+        "uapf", "attributed");
     if (i < 0) i = 0;
     if (i > 13) i = 13;
-    return k[i];
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 // The initial number of weapons (the R392 clean read: the
@@ -113,35 +111,35 @@ inline bool uapfNameIsAttributed(int i) {
 // the ranger 3 - the asterisk rows carry the choice
 // restriction).
 inline int uapfInitialSlots(int i) {
-    static const int k[14] = {
-        3, 3, 2, 2, 4, 6, 3, 1, 1, 2, 2, 3, 1, 5
-    };
+    const auto* g = wTable(
+        "uapf", "initial_slots");
     if (i < 0) i = 0;
     if (i > 13) i = 13;
-    return k[i];
+    if (!g) return 3;
+    return (int)(*g)[i];
 }
 
 // The non-proficiency to-hit penalty MAGNITUDE (the R297
 // convention; the adjustment is negative). The R392 clean
 // read: the cavalier cell prints 3.
 inline int uapfNonProfPenalty(int i) {
-    static const int k[14] = {
-        3, 3, 3, 4, 2, 1, 2, 5, 5, 3, 3, 2, 3, 2
-    };
+    const auto* g = wTable(
+        "uapf", "nonprof_penalty");
     if (i < 0) i = 0;
     if (i > 13) i = 13;
-    return k[i];
+    if (!g) return 3;
+    return (int)(*g)[i];
 }
 
 // The added-proficiency levels-per-slot (one new proficiency
 // per N levels above the 1st, the R297 note).
 inline int uapfAddedCadence(int i) {
-    static const int k[14] = {
-        2, 2, 4, 5, 3, 2, 3, 6, 6, 4, 4, 4, 2, 4
-    };
+    const auto* g = wTable(
+        "uapf", "added_cadence");
     if (i < 0) i = 0;
     if (i > 13) i = 13;
-    return k[i];
+    if (!g) return 2;
+    return (int)(*g)[i];
 }
 
 // The facing-page notes: the R392 clean read - the lost
@@ -171,12 +169,12 @@ inline bool uapfRestrictedWeaponChoice()
 // True when the row's initial cell prints the restriction
 // asterisk (the cavalier, paladin and ranger rows).
 inline bool uapfInitialAsterisk(int i) {
-    static const bool k[14] = {
-        1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0
-    };
+    const auto* g = wTable(
+        "uapf", "initial_asterisk");
     if (i < 0) i = 0;
     if (i > 13) i = 13;
-    return k[i];
+    if (!g) return 1;
+    return (int)(*g)[i];
 }
 
 }   // namespace rules

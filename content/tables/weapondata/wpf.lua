@@ -1,0 +1,88 @@
+-- wpf
+-- The R1058 weapons-family de-wire.
+-- PHB weapon proficiency rows.
+-- rows[]: the def's row names - the R1042 equipment rows idiom (computed names where the print has no name list).
+-- tables[]: the printed columns; the accessors live in the family headers and keep their clamps.
+-- DO NOT hand-edit: tools/r1058_splice.py is the only writer.
+
+return {
+  key = "wpf",
+  name = "PHB weapon proficiency rows",
+  sources = {
+    { part = 0, round = 1058 },
+  },
+  pins = {
+    { name = "wpfRowCount",
+      value = 10,
+      comment = "the table rows" },
+  },
+  rows = {
+    { name = "row_0",
+      set = "wpf",
+      band = { 0, 0 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "row_1",
+      set = "wpf",
+      band = { 1, 1 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "row_2",
+      set = "wpf",
+      band = { 2, 2 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "row_3",
+      set = "wpf",
+      band = { 3, 3 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "row_4",
+      set = "wpf",
+      band = { 4, 4 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "row_5",
+      set = "wpf",
+      band = { 5, 5 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "row_6",
+      set = "wpf",
+      band = { 6, 6 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "row_7",
+      set = "wpf",
+      band = { 7, 7 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "row_8",
+      set = "wpf",
+      band = { 8, 8 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "row_9",
+      set = "wpf",
+      band = { 9, 9 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+  },
+  tables = {
+    { name = "added_cadence",
+      values = {
+        4, 5, 3, 3, 3, 6, 6, 4, 4, 2, 
+      },
+      comment = "the PHB weapon proficiency rows added_cadence column" },
+    { name = "initial_slots",
+      values = {
+        2, 2, 4, 3, 3, 1, 1, 2, 3, 1, 
+      },
+      comment = "the PHB weapon proficiency rows initial_slots column" },
+    { name = "nonprof_penalty",
+      values = {
+        3, 4, 2, 2, 2, 5, 5, 3, 2, 3, 
+      },
+      comment = "the PHB weapon proficiency rows nonprof_penalty column" },
+  },
+}

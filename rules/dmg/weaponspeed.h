@@ -23,6 +23,9 @@
 
 #pragma once
 
+// R1058 applied
+#include "rules/seams/weaponsreg.h"
+
 #include <cstring>
 
 namespace rules {
@@ -36,37 +39,16 @@ namespace rules {
 // (the engine items Mace/Flail read the footman rows).
 // ----------------------------------------------------------------------------
 inline int weaponSpeedFactor(const char* name) {
-    static const struct { const char* n; int sf; } t[] = {
-        { "fist",             1 },   // DMG p.66 example
-        { "dagger",           2 },
-        { "short sword",      3 },
-        { "hammer",           4 },   // DMG p.66 example
-        { "club",             4 },
-        { "hand axe",         4 },
-        { "quarterstaff",     4 },
-        { "scimitar",         4 },
-        { "long sword",       5 },   // DMG: broad or long
-        { "broad sword",      5 },
-        { "horseman mace",    6 },
-        { "horseman flail",   6 },
-        { "spear",            7 },   // print 6-8, default 7
-        { "footman mace",     7 },
-        { "footman flail",    7 },
-        { "morning star",     7 },
-        { "battle axe",       7 },
-        { "two-handed sword", 10 },  // DMG p.64/p.66
-        { "pike",             13 },  // the DMG p.66 example
-        // R780: the three lances ride the ladder -
-        // the PHB p.38 speed column cells (the medium
-        // horse 6 outruns the light horse 7 - the print
-        // is the print)
-        { "lance, medium horse", 6 },
-        { "lance, light horse",  7 },
-        { "lance, heavy horse",  8 },
-    };
-    for (int i = 0; i < (int)(sizeof(t) / sizeof(t[0])); ++i)
-        if (std::strcmp(name, t[i].n) == 0) return t[i].sf;
-    return 0;   // unknown: caller decides
+    const auto& rows = wRows("wspeed");
+    const auto* g = wTable("wspeed", "sf");
+    if (rows.empty() || !g)
+        return 0;
+    for (int i = 0; i < (int)rows.size(); ++i) {
+        if (std::strcmp(name, rows[i].name.c_str())
+                == 0)
+            return (int)(*g)[i];
+    }
+    return 0;
 }
 
 inline void spearSpeedFactorRange(int& lo, int& hi) {

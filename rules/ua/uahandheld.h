@@ -24,6 +24,9 @@
 
 #pragma once
 
+// R1058 applied
+#include "rules/seams/weaponsreg.h"
+
 namespace rules {
 
 // The row count (60).
@@ -32,90 +35,60 @@ inline int uahhRowCount()
 
 // The row name (printed).
 inline const char* uahhName(int i) {
-    static const char* const k[60] = {
-        "Aklys", "Atlatl", "Axe, Battle", "Axe, Hand", "Bardiche",
-        "Bec de Corbin", "Bill-Guisarme", "Blowgun", "Bo Stick",
-        "Caltrop", "Club", "Dagger", "Fauchard", "Fauchard-Fork",
-        "Fist or Open Hand", "Flail, Footman's", "Flail, Horseman's",
-        "Fork, Military", "Garrot", "Glaive", "Glaive-Guisarme",
-        "Guisarme", "Guisarme-Voulge", "Halberd", "Harpoon",
-        "Hammer, Lucern", "Hammer", "Hook Fauchard", "Jo Stick",
-        "Knife", "Lance (light horse)", "Lance (medium horse)",
-        "Lance (heavy horse)", "Lasso", "Mace, Footman's",
-        "Mace, Horseman's", "Man Catcher", "Morning Star", "Partisan",
-        "Pick, Military, Footman's", "Pick, Military, Horseman's",
-        "Pike, Awl", "Ranseur", "Sap", "Scimitar", "Spear", "Spetum",
-        "Spiked Buckler", "Staff, Quarter", "Staff Sling",
-        "Sword, Bastard", "Sword, Broad", "Sword, Falchion",
-        "Sword, Khopesh", "Sword, Long", "Sword, Short",
-        "Sword, Two-handed", "Trident", "Voulge", "Whip",
-    };
+    const auto& rows = wRows("uahh");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 59) i = 59;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // The length (printed; "n/a" = the not-applicable rows).
 inline const char* uahhLength(int i) {
-    static const char* const k[60] = {
-        "c. 2'", "c. 3'", "c. 4'", "c. 1 1/2'", "c. 5'", "c. 6'",
-        "8' +", "4'-7'", "c. 5'", "n/a", "c. 3'", "c. 15\"", "8' +",
-        "8'", "2' +", "c. 4'", "c. 2'", "7' +", "c. 3'", "8' +",
-        "8' +", "6' +", "7' +", "5' +", "6'-8'", "5' +", "c. 1 1/2'",
-        "8' +", "c. 3'", "c. 1'", "10'", "12'", "c. 14'", "(10'-20')",
-        "c. 2 1/2'", "c. 1 1/2'", "8' +", "c. 4'", "7' +", "c. 4'",
-        "c. 2'", "18'", "8' +", "1/2'", "c. 3'", "5'-13' +", "8' +",
-        "1'", "6'-8'", "5'", "c. 4 1/2'", "c. 3 1/2'", "c. 3 1/2'",
-        "c. 3 1/2'", "c. 3 1/2'", "c. 2'", "c. 6'", "4'-8' +", "8' +",
-        "8'-20'",
-    };
+    const auto& rows = wRows("uahh_length");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 59) i = 59;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // The space required (printed; "n/a" = the caltrop).
 inline const char* uahhSpaceRequired(int i) {
-    static const char* const k[60] = {
-        "2'", "1'", "4'", "1'", "5'", "6'", "2'", "1'", "3'", "n/a",
-        "1'-3'", "1'", "2'", "2'", "n/a", "6'", "4'", "1'", "1 1/2'",
-        "1'", "1'", "2'", "2'", "5'", "1 1/2'", "5'", "2'", "2 1/2'",
-        "2'", "1'", "1'", "1'", "1'", "8' +", "4'", "2'", "2 1/2'",
-        "5'", "3'", "4'", "2'", "1'", "1'", "1'", "2'", "1'", "1'",
-        "2'", "3'", "6'", "4' +", "4'", "3 1/2'", "4'", "3'", "1'",
-        "6'", "1'", "2'", "8'-20'",
-    };
+    const auto& rows = wRows("uahh_space");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 59) i = 59;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // The speed factor minimum; -1 = the n/a rows (the atlatl,
 // the blowgun, the caltrop).
 inline int uahhSpeedFactorMin(int i) {
-    static const int k[60] = {
-        4, -1, 7, 4, 9, 9, 10, -1, 3, -1, 4, 2, 8, 8, 1, 7, 6, 7, 2,
-        8, 9, 8, 10, 9, 6, 9, 4, 9, 2, 2, 7, 6, 8, 10, 7, 6, 7, 7, 9,
-        7, 5, 13, 8, 2, 4, 6, 8, 4, 4, 11, 6, 5, 5, 9, 5, 3, 10, 6,
-        10, 5,
-    };
+    const auto* g = wTable(
+        "uahh", "speed_min");
     if (i < 0) i = 0;
     if (i > 59) i = 59;
-    return k[i];
+    if (!g) return 4;
+    return (int)(*g)[i];
 }
 
 // The speed factor maximum (the Spear and Trident print the
 // range 6-8, the Whip 5-8).
 inline int uahhSpeedFactorMax(int i) {
-    static const int k[60] = {
-        4, -1, 7, 4, 9, 9, 10, -1, 3, -1, 4, 2, 8, 8, 1, 7, 6, 7, 2,
-        8, 9, 8, 10, 9, 6, 9, 4, 9, 2, 2, 7, 6, 8, 10, 7, 6, 7, 7, 9,
-        7, 5, 13, 8, 2, 4, 8, 8, 4, 4, 11, 6, 5, 5, 9, 5, 3, 10, 8,
-        10, 8,
-    };
+    const auto* g = wTable(
+        "uahh", "speed_max");
     if (i < 0) i = 0;
     if (i > 59) i = 59;
-    return k[i];
+    if (!g) return 4;
+    return (int)(*g)[i];
 }
 
 // The aklys speed-factor bonus (the print "4 (+ 1)").
@@ -124,99 +97,37 @@ inline int uahhAklysSpeedBonus()
 
 // The AC adjustment by AC 0..10 (the full printed ladder).
 inline int uahhAcAdjustment(int i, int ac) {
-    static const int k[60][11] = {
-        { -7, -6, -5, -4, -3, -2, -1, -1, 0, 0, 1 },
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        { -5, -4, -3, -2, -1, -1, 0, 0, 1, 1, 2 },
-        { -5, -4, -3, -2, -2, -1, 0, 0, 1, 1, 1 },
-        { -3, -2, -2, -1, 0, 0, 1, 1, 2, 2, 3 },
-        { 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, -1 },
-        { 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0 },
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        { -13, -11, -9, -7, -5, -3, -1, 0, 1, 0, 3 },
-        { -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2 },
-        { -7, -6, -5, -4, -3, -2, -1, -1, 0, 0, 1 },
-        { -4, -4, -3, -3, -2, -2, 0, 0, 1, 1, 3 },
-        { -3, -3, -2, -2, -1, -1, 0, 0, 0, -1, -1 },
-        { -2, -2, -1, -1, -1, 0, 0, 0, 1, 0, 1 },
-        { -9, -8, -7, -5, -3, -1, 0, 0, 2, 0, 4 },
-        { 3, 3, 2, 2, 1, 2, 1, 1, 1, 1, -1 },
-        { 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0 },
-        { -3, -3, -2, -2, -1, 0, 0, 1, 1, 0, 1 },
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        { -2, -2, -1, -1, 0, 0, 0, 0, 0, 0, 0 },
-        { -2, -2, -1, -1, 0, 0, 0, 0, 0, 0, 0 },
-        { -3, -3, -2, -2, -1, -1, 0, 0, 0, -1, -1 },
-        { -2, -2, -1, -1, 0, 1, 1, 1, 0, 0, 0 },
-        { 0, 1, 1, 1, 1, 2, 2, 2, 1, 1, 0 },
-        { -3, -2, -2, -1, -1, -1, 0, 0, 0, 0, 0 },
-        { 0, 1, 1, 1, 2, 2, 2, 1, 1, 0, 0 },
-        { 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0 },
-        { -3, -3, -2, -2, -1, -1, 0, 0, 0, 0, -1 },
-        { -10, -9, -8, -6, -4, -2, -1, 0, 1, 0, 2 },
-        { -6, -5, -5, -4, -3, -2, -1, 0, 1, 1, 3 },
-        { -3, -3, -2, -2, -1, 0, 0, 0, 0, 0, 0 },
-        { -1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0 },
-        { 4, 4, 3, 3, 2, 2, 2, 1, 1, 0, 0 },
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        { 2, 2, 1, 1, 0, 0, 0, 0, 0, 1, -1 },
-        { 2, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0 },
-        { 0, 0, 0, 0, 0, 0, 0, 0, -1, -2, -3 },
-        { 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2 },
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        { 3, 3, 2, 2, 1, 1, 0, -1, -1, -1, -2 },
-        { 2, 2, 1, 1, 1, 1, 0, 0, -1, -1, -1 },
-        { -1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -2 },
-        { -3, -3, -2, -1, -1, 0, 0, 0, 0, 0, 1 },
-        { -14, -13, -12, -10, -8, -6, -5, -4, -3, -2, 0 },
-        { -4, -3, -3, -2, -2, -1, 0, 0, 1, 1, 3 },
-        { -2, -2, -2, -1, -1, -1, 0, 0, 0, 0, 0 },
-        { -2, -2, -2, -1, 0, 0, 0, 0, 0, 1, 2 },
-        { -7, -6, -5, -4, -3, -2, -1, 0, 0, 0, 2 },
-        { -9, -8, -7, -5, -3, -1, 0, 0, 1, 1, 1 },
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        { 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0 },
-        { -5, -4, -3, -2, -1, 0, 0, 1, 1, 1, 2 },
-        { -3, -2, -2, -1, 0, 1, 1, 1, 1, 0, 0 },
-        { -7, -6, -5, -4, -2, -1, 0, 0, 1, 1, 2 },
-        { -4, -3, -2, -1, 0, 0, 0, 0, 0, 1, 2 },
-        { -5, -4, -3, -2, -1, 0, 0, 0, 1, 0, 2 },
-        { 2, 2, 2, 2, 2, 2, 3, 3, 3, 1, 0 },
-        { -4, -3, -3, -2, -1, -1, 0, 0, 1, 0, 1 },
-        { -2, -2, -1, -1, 0, 1, 1, 1, 0, 0, 0 },
-        { -14, -12, -10, -8, -6, -4, -2, -1, 1, 0, 3 },
-    };
+    const auto* g = wTable(
+        "uahh", "ac_adjustment");
     if (i < 0) i = 0;
     if (i > 59) i = 59;
     if (ac < 0) ac = 0;
     if (ac > 10) ac = 10;
-    return k[i][ac];
+    if (!g) return -7;
+    return (int)(*g)[(i) * 11
+        + (ac)];
 }
 
 // True when the row carries the * footnote (set to receive
 // a charge: double damage - the spetum, the bastard sword).
 inline bool uahhSetDoubleFlag(int i) {
-    static const bool k[60] = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    };
+    const auto* g = wTable(
+        "uahh", "set_double");
     if (i < 0) i = 0;
     if (i > 59) i = 59;
-    return k[i];
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 // True when the row carries the ** footnote (the dismount
 // capability - eight rows).
 inline bool uahhDismountFlag(int i) {
-    static const bool k[60] = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1,
-        1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    };
+    const auto* g = wTable(
+        "uahh", "dismount");
     if (i < 0) i = 0;
     if (i > 59) i = 59;
-    return k[i];
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 // The general note: any weapon strikes at +2 vs the back.
