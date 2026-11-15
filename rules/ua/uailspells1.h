@@ -40,6 +40,9 @@
 
 #pragma once
 
+// R1057 applied
+#include "rules/ua/uaregistry.h"
+
 namespace rules {
 
 // ---- the chromatic orb ----
@@ -138,44 +141,44 @@ inline int uail1OrbRowCount()
     { return 9; }
 
 inline int uail1OrbRowLevel(int i) {
-    static const int k[9] = {
-        1, 2, 3, 4, 5, 6, 7, 10, 12,
-    };
+    const auto* g = uaTable(
+        "ua_uail1_orb", "orb_level");
     if (i < 0) i = 0;
     if (i > 8) i = 8;
-    return k[i];
+    if (!g) return 1;
+    return (int)(*g)[i];
 }
 
 inline const char* uail1OrbRowName(int i) {
-    static const char* const k[9] = {
-        "Pearly", "Ruby", "Flame", "Amber",
-        "Emerald", "Turquoise", "Sapphire",
-        "Amethyst", "Ashen",
-    };
+    const auto& rows = uaRows("ua_uail1_orb");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 8) i = 8;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // The 10th and 12th damage cells print empty - holes
 // pending the PDF, pinned as zero with the lost
 // flag.
 inline int uail1OrbRowDamageMin(int i) {
-    static const int k[9] = {
-        1, 1, 1, 1, 1, 2, 2, 0, 0,
-    };
+    const auto* g = uaTable(
+        "ua_uail1_orb", "orb_damage_min");
     if (i < 0) i = 0;
     if (i > 8) i = 8;
-    return k[i];
+    if (!g) return 1;
+    return (int)(*g)[i];
 }
 
 inline int uail1OrbRowDamageMax(int i) {
-    static const int k[9] = {
-        4, 6, 8, 10, 12, 16, 8, 0, 0,
-    };
+    const auto* g = uaTable(
+        "ua_uail1_orb", "orb_damage_max");
     if (i < 0) i = 0;
     if (i > 8) i = 8;
-    return k[i];
+    if (!g) return 4;
+    return (int)(*g)[i];
 }
 
 inline bool uail1OrbRowDamageCellLost(int i)

@@ -1,0 +1,78 @@
+-- ua_uco
+-- The R1057 UA spells-family de-wire (rules/ua).
+-- UA personal cantrips.
+-- rows[]: the def's row names - the R1042 equipment rows idiom (computed names where the print has no name list).
+-- tables[]: the printed columns; the accessors live in rules/ua and keep their clamps.
+-- DO NOT hand-edit: tools/r1057_splice.py is the only writer.
+
+return {
+  key = "ua_uco",
+  name = "UA personal cantrips",
+  sources = {
+    { part = 0, round = 1057 },
+  },
+  pins = {
+    { name = "ua_ucoRowCount",
+      value = 10,
+      comment = "the table rows" },
+  },
+  rows = {
+    { name = "Bee",
+      set = "ua_uco",
+      band = { 0, 0 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Bluelight",
+      set = "ua_uco",
+      band = { 1, 1 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Bug",
+      set = "ua_uco",
+      band = { 2, 2 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Firefinger",
+      set = "ua_uco",
+      band = { 3, 3 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Gnats",
+      set = "ua_uco",
+      band = { 4, 4 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Mouse",
+      set = "ua_uco",
+      band = { 5, 5 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Smokepuff",
+      set = "ua_uco",
+      band = { 6, 6 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Spider",
+      set = "ua_uco",
+      band = { 7, 7 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Tweak",
+      set = "ua_uco",
+      band = { 8, 8 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Unlock",
+      set = "ua_uco",
+      band = { 9, 9 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+  },
+  tables = {
+    { name = "cast_den",
+      values = {
+        2, 2, 2, 3, 2, 2, 3, 2, 3, 2, 
+      },
+      comment = "the UA personal cantrips cast_den column" },
+  },
+}

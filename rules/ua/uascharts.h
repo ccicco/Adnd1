@@ -45,6 +45,9 @@
 
 #pragma once
 
+// R1057 applied
+#include "rules/ua/uaregistry.h"
+
 namespace rules {
 
 struct UscChartRow {
@@ -194,22 +197,17 @@ inline const UscChartRow& uscChartRow(
 }
 
 // The sacred animals, by the same
-// deity index; null = none.
+// deity index; the R1057 de-wire retires the null cells to empty names.
 inline const char* uscSacredAnimal(
         int i) {
-    static const char* const A[23] = {
-        0, 0, 0, 0, 0,
-        "any bird", 0, "stag", 0, 0,
-        "butterfly", "war dog",
-        "squirrel", "mouse",
-        "raccoon", "white mole",
-        "badger", 0,
-        "ox", "bat", 0,
-        "skeleton", "cave bear"
-    };
+    const auto& rows = uaRows("ua_usc_animal");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 22) i = 22;
-    return A[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 inline int uscChartRowCount()
@@ -219,12 +217,12 @@ inline int uscChartCount()
     { return 5; }
 
 // The named sacred animals (the
-// non-null cells): 13.
+// non-empty cells): 13.
 inline int uscNamedSacredAnimalCount()
     {
     int n = 0;
     for (int i = 0; i < 23; ++i)
-        if (uscSacredAnimal(i) != 0) ++n;
+        if (uscSacredAnimal(i)[0] != '\0') ++n;
     return n;
 }
 
@@ -274,34 +272,14 @@ inline bool uscGnomishClericsAllMale()
 // stands. Erevan's read rides the print's own
 // "can by worshiped" typo in the prose.
 inline const char* uscWorshipSite(int i) {
-    static const char* const W[23] = {
-        "battlefield",   // Clangeddin
-        "underground temple",   // Vergadain
-        "underground temple",   // Dumathoin
-        "underground temple",   // Abbathor
-        "underground temple",   // Berronar
-        "open hilltops",   // Aerdrie
-        "never the same place twice",   // Erevan
-        "deep forest",   // Solonor
-        "by a fountain or spring",   // Hanali
-        "small grove",   // Labelas
-        "open field",   // Sheela
-        "anywhere",   // Arvoreen
-        "the home",   // Cyrrollalee
-        "anywhere",   // Brandobaris
-        "forest clearing",   // Baervan
-        "underground cavern",   // Urdlen
-        "subterranean temple",   // Segojan
-        "underground forge",   // Flandal
-        "battlefield",   // Bahgtru
-        "anywhere",   // Shargaas
-        "anywhere",   // Ilneval
-        "underground crypt",   // Yurtrus
-        "in a temple within a cave",   // Luthic
-    };
+    const auto& rows = uaRows("ua_usc_site");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 22) i = 22;
-    return W[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 }   // namespace rules
 

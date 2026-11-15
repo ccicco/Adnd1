@@ -23,6 +23,9 @@
 
 #pragma once
 
+// R1057 applied
+#include "rules/ua/uaregistry.h"
+
 namespace rules {
 
 // ---- the personal permanency list ----
@@ -148,21 +151,10 @@ inline int uapcSertenSpellCount()
 
 inline const char* uapcSertenName(int i)
 {
-    static const char* const n[24] = {
-        "beguiling", "charm", "suggestion",
-        "forget", "hypnotism",
-        "ray of enfeeblement",
-        "person-affecting cantrips",
-        "command", "domination", "fear",
-        "hold", "scare", "spook", "eyebite",
-        "cloak of fear", "geas", "quest",
-        "chaos", "feeblemind",
-        "Otto's irresistible dance",
-        "dolor", "demand", "torment",
-        "Leomund's lamentable"
-        " belabourment",
-    };
-    return (i >= 0 && i < 24) ? n[i] : "";
+    const auto& rows = uaRows("ua_pc_serten");
+    if (rows.empty())
+        return "";
+    return (i >= 0 && i < 24) ? rows[i].name.c_str() : "";
 }
 
 inline int uapcSertenBonusHigh()

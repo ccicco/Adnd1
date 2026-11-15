@@ -55,6 +55,9 @@
 
 #pragma once
 
+// R1057 applied
+#include "rules/ua/uaregistry.h"
+
 namespace rules {
 
 // The school codes (Illusion
@@ -139,11 +142,12 @@ inline int uclAreaKindCount(int a)
 // at 1/8.
 inline int uclCastTimeDen(int i)
 {
-    static const int D[6] = {
-        10, 3, 10, 10, 10, 8 };
+    const auto* g = uaTable(
+        "ua_ucl", "cast_den");
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    return D[i];
+    if (!g) return 10;
+    return (int)(*g)[i];
 }
 
 // The casting-time

@@ -1303,6 +1303,7 @@ int main() {
     #include "rules/audits/r1054_sage_registry.h"  // R1054
     #include "rules/audits/r1055_subgates_registry.h"  // R1055
     #include "rules/audits/r1056_uaclasses_registry.h"  // R1056
+    #include "rules/audits/r1057_uaspells_registry.h"  // R1057
     #include "rules/audits/r280_special_artifacts_prose.h"  // R835: migrated
     #include "rules/audits/r281_special_artifacts_prose.h"  // R835: migrated
     #include "rules/audits/r282_special_artifacts_prose.h"  // R835: migrated

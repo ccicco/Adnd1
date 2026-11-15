@@ -32,6 +32,9 @@
 //     15 chain NA, medium 17/15/12, heavy
 //     leather 15 scale 14 chain 13 plate 12.
 
+// R1057 applied
+#include "rules/ua/uaregistry.h"
+
 namespace rules {
 
 // ---- Method V (p. 74) ----
@@ -80,12 +83,12 @@ inline int uasm1StartHpClassCount()
     { return 12; }
 
 inline int uasm1StartHpMin(int slot) {
-    static const int k[12] = {
-        6, 6, 5, 5, 6, 7, 9, 3, 3, 4, 4, 5,
-    };
+    const auto* g = uaTable(
+        "ua_uasm1", "start_hp_min");
     if (slot < 0) slot = 0;
     if (slot > 11) slot = 11;
-    return k[slot];
+    if (!g) return 6;
+    return (int)(*g)[slot];
 }
 
 // A multi-class character uses the average of
@@ -122,25 +125,15 @@ inline int uasm1MethodVAbilityCount()
     { return 7; }
 
 inline int uasm1MethodVDice(int cls, int ab) {
-    static const int k[12][7] = {
-        {8, 6, 4, 7, 9, 3, 5},
-        {7, 5, 8, 3, 6, 9, 4},
-        {7, 4, 9, 5, 8, 6, 3},
-        {7, 4, 8, 5, 6, 9, 3},
-        {9, 3, 5, 7, 8, 6, 4},
-        {9, 3, 5, 7, 8, 6, 4},
-        {7, 6, 8, 5, 9, 4, 3},
-        {4, 9, 7, 8, 6, 5, 3},
-        {3, 8, 7, 9, 5, 6, 4},
-        {6, 5, 3, 9, 7, 4, 8},
-        {6, 7, 4, 9, 8, 3, 5},
-        {7, 5, 9, 8, 6, 4, 3},
-    };
+    const auto* g = uaTable(
+        "ua_uasm1_dice", "methodv_dice");
     if (cls < 0) cls = 0;
     if (cls > 11) cls = 11;
     if (ab < 0) ab = 0;
     if (ab > 6) ab = 6;
-    return k[cls][ab];
+    if (!g) return 8;
+    return (int)(*g)[(cls) * 7
+        + (ab)];
 }
 
 // ---- the barding movement table (p. 76) ----// Base movement rates in inches; NA = the

@@ -1,0 +1,83 @@
+-- ua_uac1
+-- The R1057 UA spells-family de-wire (rules/ua).
+-- UA cleric ceremony varieties.
+-- rows[]: the def's row names - the R1042 equipment rows idiom (computed names where the print has no name list).
+-- tables[]: the printed columns; the accessors live in rules/ua and keep their clamps.
+-- DO NOT hand-edit: tools/r1057_splice.py is the only writer.
+
+return {
+  key = "ua_uac1",
+  name = "UA cleric ceremony varieties",
+  sources = {
+    { part = 0, round = 1057 },
+  },
+  pins = {
+    { name = "ua_uac1RowCount",
+      value = 10,
+      comment = "the table rows" },
+  },
+  rows = {
+    { name = "Coming of Age",
+      set = "ua_uac1",
+      band = { 0, 0 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Burial",
+      set = "ua_uac1",
+      band = { 1, 1 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Marriage",
+      set = "ua_uac1",
+      band = { 2, 2 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Dedication",
+      set = "ua_uac1",
+      band = { 3, 3 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Investiture",
+      set = "ua_uac1",
+      band = { 4, 4 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Consecrate Item",
+      set = "ua_uac1",
+      band = { 5, 5 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Ordination",
+      set = "ua_uac1",
+      band = { 6, 6 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Special Vows",
+      set = "ua_uac1",
+      band = { 7, 7 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Consecrate Ground",
+      set = "ua_uac1",
+      band = { 8, 8 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Anathematize",
+      set = "ua_uac1",
+      band = { 9, 9 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+  },
+  tables = {
+    { name = "portent_mod",
+      values = {
+        -3, -2, -1, 1, 2, 3, 
+      },
+      comment = "the UA cleric ceremony varieties portent_mod column; banded reads index arg - 1" },
+    { name = "variety_level",
+      values = {
+        1, 1, 1, 3, 3, 3, 5, 5, 5, 7, 
+      },
+      comment = "the UA cleric ceremony varieties variety_level column" },
+  },
+}

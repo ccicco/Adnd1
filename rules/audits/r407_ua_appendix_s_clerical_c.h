@@ -92,11 +92,11 @@
                 != 13) ++bad;
         // the dwarven no-animal read:
         // all five null
-        if (uscSacredAnimal(0) != 0
-                || uscSacredAnimal(1) != 0
-                || uscSacredAnimal(2) != 0
-                || uscSacredAnimal(3) != 0
-                || uscSacredAnimal(4) != 0)
+        if (uscSacredAnimal(0)[0] != '\0'
+                || uscSacredAnimal(1)[0] != '\0'
+                || uscSacredAnimal(2)[0] != '\0'
+                || uscSacredAnimal(3)[0] != '\0'
+                || uscSacredAnimal(4)[0] != '\0')
             ++bad;
         if (strcmp(uscSacredAnimal(5),
                    "any bird") != 0) ++bad;
@@ -116,12 +116,12 @@
                    "white mole") != 0) ++bad;
         if (strcmp(uscSacredAnimal(16),
                    "badger") != 0) ++bad;
-        if (uscSacredAnimal(17) != 0) ++bad;
+        if (uscSacredAnimal(17)[0] != '\0') ++bad;
         if (strcmp(uscSacredAnimal(18),
                    "ox") != 0) ++bad;
         if (strcmp(uscSacredAnimal(19),
                    "bat") != 0) ++bad;
-        if (uscSacredAnimal(20) != 0) ++bad;
+        if (uscSacredAnimal(20)[0] != '\0') ++bad;
         if (strcmp(uscSacredAnimal(21),
                    "skeleton") != 0) ++bad;
         if (strcmp(uscSacredAnimal(22),

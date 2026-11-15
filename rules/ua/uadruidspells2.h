@@ -57,6 +57,9 @@
 
 #pragma once
 
+// R1057 applied
+#include "rules/ua/uaregistry.h"
+
 namespace rules {
 
 // ---- flame blade (Evocation), p. 43 ----
@@ -305,13 +308,14 @@ inline int uad2ReflectingPoolCastThroughCount()
     { return 3; }
 
 inline const char* uad2ReflectingPoolCastThroughName(int i) {
-    static const char* const k[3] = {
-        "Detect Magic", "Detect Snares and Pits",
-        "Detect Poison",
-    };
+    const auto& rows = uaRows("ua_uad2");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 2) i = 2;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // Infravision and ultravision operate normally through the

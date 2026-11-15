@@ -45,6 +45,9 @@
 
 #pragma once
 
+// R1057 applied
+#include "rules/ua/uaregistry.h"
+
 namespace rules {
 
 // ---- colored lights (Alteration) ----
@@ -144,11 +147,12 @@ inline bool uailcLightsDirectsWithFingers()
 // mask, noise and the two-d-lusion at 1/8):
 inline int uailcCastTimeDen(int i)
 {
-    static const int D[8] = { 2, 2, 2, 8,
-        2, 8, 3, 8 };
+    const auto* g = uaTable(
+        "ua_uailc", "cast_den");
     if (i < 0) i = 0;
     if (i > 7) i = 7;
-    return D[i];
+    if (!g) return 2;
+    return (int)(*g)[i];
 }
 
 // The casting-time denominator census

@@ -62,6 +62,9 @@
 
 #pragma once
 
+// R1057 applied
+#include "rules/ua/uaregistry.h"
+
 namespace rules {
 
 // ---- exaction (Evocation - Alteration), p. 42 ----
@@ -241,11 +244,16 @@ inline int uac7SuccorObjectExampleCount()
     { return 3; }
 
 inline const char* uac7SuccorObjectExampleName(int i)
-    { static const char* const k[3] = {
-        "a string of prayer beads",
-        "a small clay tablet", "an ivory baton" };
-      if (i < 0) i = 0; if (i > 2) i = 2;
-      return k[i]; }
+    {
+    const auto& rows = uaRows("ua_uac7");
+    if (rows.empty())
+        return "";
+    if (i < 0) i = 0;
+    if (i > 2) i = 2;
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
+}
 
 // The object radiates magic, for it contains the power to
 // instantaneously transport its possessor to the sanctuary of

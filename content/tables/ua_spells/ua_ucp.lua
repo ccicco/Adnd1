@@ -1,0 +1,78 @@
+-- ua_ucp
+-- The R1057 UA spells-family de-wire (rules/ua).
+-- UA person-affecting cantrips.
+-- rows[]: the def's row names - the R1042 equipment rows idiom (computed names where the print has no name list).
+-- tables[]: the printed columns; the accessors live in rules/ua and keep their clamps.
+-- DO NOT hand-edit: tools/r1057_splice.py is the only writer.
+
+return {
+  key = "ua_ucp",
+  name = "UA person-affecting cantrips",
+  sources = {
+    { part = 0, round = 1057 },
+  },
+  pins = {
+    { name = "ua_ucpRowCount",
+      value = 10,
+      comment = "the table rows" },
+  },
+  rows = {
+    { name = "Belch",
+      set = "ua_ucp",
+      band = { 0, 0 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Blink",
+      set = "ua_ucp",
+      band = { 1, 1 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Cough",
+      set = "ua_ucp",
+      band = { 2, 2 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Giggle",
+      set = "ua_ucp",
+      band = { 3, 3 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Nod",
+      set = "ua_ucp",
+      band = { 4, 4 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Scratch",
+      set = "ua_ucp",
+      band = { 5, 5 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Sneeze",
+      set = "ua_ucp",
+      band = { 6, 6 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Twitch",
+      set = "ua_ucp",
+      band = { 7, 7 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Wink",
+      set = "ua_ucp",
+      band = { 8, 8 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Yawn",
+      set = "ua_ucp",
+      band = { 9, 9 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+  },
+  tables = {
+    { name = "cast_den",
+      values = {
+        10, 10, 3, 3, 10, 8, 2, 3, 10, 8, 
+      },
+      comment = "the UA person-affecting cantrips cast_den column" },
+  },
+}

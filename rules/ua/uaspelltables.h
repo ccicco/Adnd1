@@ -65,6 +65,9 @@
 
 #pragma once
 
+// R1057 applied
+#include "rules/ua/uaregistry.h"
+
 namespace rules {
 
 // ---- the cleric table (pp. 28-29) ----
@@ -74,71 +77,54 @@ inline int uastClericTableRowCount()
     { return 20; }
 
 inline const char* uastClericName(int lvl, int row) {
-    static const char* const k[3][20] = {
-        { "Bless", "Ceremony", "Combine", "Command",
-          "Create Water", "Cure Light Wounds", "",
-          "Detect Magic", "Endure Cold/Heat",
-          "Invisibility to Undead", "Light", "Magic Stone",
-          "Penetrate Disguise", "", "Precipitation",
-          "Protection From Evil", "Purify Food & Drink",
-          "Remove Fear", "Resist Cold", "Sanctuary" },
-        { "", "", "", "Detect Charm", "Detect Life",
-          "Dust Devil", "Enthrall", "Find Traps",
-          "Hold Person", "Holy Symbol", "Know Alignment",
-          "Messenger", "Resist Fire", "Silence 15 Radius",
-          "Slow Poison", "Snake Charm", "Speak With Animals",
-          "Spiritual Hammer", "", "Wyvern Watch" },
-        { "Animate Dead", "Cloudburst", "Continual Light",
-          "Create Food & Water", "Cure Blindness",
-          "Cure Disease", "Death's Door", "Dispel Magic",
-          "Feign Death", "Flame Walk", "Glyph of Warding",
-          "Locate Object", "Magical Vestment",
-          "Meld Into Stone", "Negative Plane Protection",
-          "Prayer", "Remove Curse", "Remove Paralysis",
-          "Speak With Dead", "Water Walk" },
-    };
+    const auto& rows = uaRows("ua_ast_cleric");
+    if (rows.empty())
+        return "";
     if (lvl < 1) lvl = 1;
     if (lvl > 3) lvl = 3;
     if (row < 0) row = 0;
     if (row > 19) row = 19;
-    return k[lvl - 1][row];
+    if ((int)rows.size() <= (lvl - 1) * 20
+        + (row))
+        return "";
+    return rows[(lvl - 1) * 20
+        + (row)].name.c_str();
 }
 
 // The readable cells per level column (18, 16, 20).
 inline int uastClericReadableCount(int lvl) {
-    static const int k[3] = { 18, 16, 20 };
+    const auto* g = uaTable(
+        "ua_ast_cleric", "readable_count");
     if (lvl < 1) lvl = 1;
     if (lvl > 3) lvl = 3;
-    return k[lvl - 1];
+    if (!g) return 0;
+    return (int)(*g)[lvl - 1];
 }
 
 // The Continued table (4th-7th): only fragments readable (the
 // row numbers 15 and 16 prove a 16-row print).
 inline int uastClericFragCount(int lvl) {
-    // 4th, 5th, 6th, 7th
-    static const int k[4] = { 2, 7, 4, 0 };
+    const auto* g = uaTable(
+        "ua_ast_cleric", "frag_count");
     if (lvl < 4) lvl = 4;
     if (lvl > 7) lvl = 7;
-    return k[lvl - 4];
+    if (!g) return 0;
+    return (int)(*g)[lvl - 4];
 }
 
 inline const char* uastClericFragName(int lvl, int i) {
-    static const char* const k[4][8] = {
-        { "Sticks to Snakes", "Tongues", "", "", "", "",
-          "", "" },
-        { "Commune", "Cure Critical Wounds",
-          "Dispel Evil", "Magic Font", "Plane Shift",
-          "Spike Growth", "True Seeing", "" },
-        { "Conjure Animals", "Find The Path",
-          "Speak With Monsters", "Stone Tell", "", "",
-          "", "" },
-        { "", "", "", "", "", "", "", "" },
-    };
+    const auto& rows = uaRows("ua_ast_frag");
+    if (rows.empty())
+        return "";
     if (lvl < 4) lvl = 4;
     if (lvl > 7) lvl = 7;
     if (i < 0) i = 0;
     if (i > 7) i = 7;
-    return k[lvl - 4][i];
+    if ((int)rows.size() <= (lvl - 4) * 8
+        + (i))
+        return "";
+    return rows[(lvl - 4) * 8
+        + (i)].name.c_str();
 }
 
 // ---- the druid tables (p. 29) ----
@@ -148,13 +134,14 @@ inline int uastDruid1stCount()
     { return 4; }
 
 inline const char* uastDruid1stName(int i) {
-    static const char* const k[4] = {
-        "Locate Animals", "Invisibility to Animals",
-        "Shillelagh", "Speak With Animals",
-    };
+    const auto& rows = uaRows("ua_ast_druid1");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 3) i = 3;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // The 4th-6th table: 6 readable rows of a 12-row print.
@@ -162,41 +149,42 @@ inline int uastDruid4thCount()
     { return 6; }
 
 inline const char* uastDruid4thName(int i) {
-    static const char* const k[6] = {
-        "Cure Serious Wounds", "Dispel Magic",
-        "Hallucinatory Forest", "Protection From Lightning",
-        "Repel Insects", "Speak With Plants",
-    };
+    const auto& rows = uaRows("ua_ast_druid4");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 inline int uastDruid5thCount()
     { return 6; }
 
 inline const char* uastDruid5thName(int i) {
-    static const char* const k[6] = {
-        "Commune With Nature", "Control Winds",
-        "Insect Plague", "Sticks To Snakes",
-        "Transmute Rock To Mud", "Wall Of Fire",
-    };
+    const auto& rows = uaRows("ua_ast_druid5");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 inline int uastDruid6thCount()
     { return 5; }
 
 inline const char* uastDruid6thName(int i) {
-    static const char* const k[5] = {
-        "Cure Critical Wounds", "Fire Seeds", "Turn Wood",
-        "Wall Of Thorns", "Weather Summoning",
-    };
+    const auto& rows = uaRows("ua_ast_druid6");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 4) i = 4;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // ---- the magic-user cantrip table (p. 30) ----
@@ -210,54 +198,41 @@ inline int uastCantripCategoryCount()
     { return 6; }
 
 inline const char* uastCantripCategoryName(int cat) {
-    static const char* const k[6] = {
-        "Useful", "Reversed", "Legerdemain",
-        "Person-Affecting", "Personal", "Haunting",
-    };
+    const auto& rows = uaRows("ua_ast_cantrip_cat");
+    if (rows.empty())
+        return "";
     if (cat < 0) cat = 0;
     if (cat > 5) cat = 5;
-    return k[cat];
+    if ((int)rows.size() <= (cat))
+        return "";
+    return rows[cat].name.c_str();
 }
 
 // The name count per category (20, 12, 6,
 // 10, 10, 8 - the R401 clean-read fix adds
 // Tangle and Tweak).
 inline int uastCantripCount(int cat) {
-    static const int k[6] = { 20, 12, 6, 10, 10, 8 };
+    const auto* g = uaTable(
+        "ua_ast_cantrip_cat", "cantrip_count");
     if (cat < 0) cat = 0;
     if (cat > 5) cat = 5;
-    return k[cat];
+    if (!g) return 0;
+    return (int)(*g)[cat];
 }
 
 inline const char* uastCantripName(int cat, int i) {
-    static const char* const k[6][20] = {
-        { "Chill", "Clean", "Color", "Dampen", "Dry", "Dust",
-          "Exterminate", "Flavor", "Freshen", "Gather",
-          "Polish", "Salt", "Shine", "Spice", "Sprout",
-          "Stitch", "Sweeten", "Tie", "Warm", "Wrap" },
-        { "Curdle", "Dirty", "Dusty", "Hairy", "Knot",
-          "Ravel", "Sour", "Spill", "Tangle", "Tarnish",
-          "Untie", "Wilt", "", "", "", "", "", "", "",
-          "" },
-        { "Change", "Distract", "Hide", "Mute", "Palm",
-          "Present", "", "", "", "", "", "", "", "", "",
-          "", "", "", "", "" },
-        { "Belch", "Blink", "Cough", "Giggle", "Nod",
-          "Scratch", "Sneeze", "Twitch", "Wink", "Yawn",
-          "", "", "", "", "", "", "", "", "", "" },
-        { "Bee", "Bluelight", "Bug", "Firefinger", "Gnats",
-          "Mouse", "Smokepuff", "Spider", "Tweak",
-          "Unlock", "", "", "", "", "", "", "", "", "",
-          "" },
-        { "Creak", "Footfall", "Groan", "Moan", "Rattle",
-          "Tap", "Thump", "Whistle", "", "",
-          "", "", "", "", "", "", "", "", "", "" },
-    };
+    const auto& rows = uaRows("ua_ast_cantrip_names");
+    if (rows.empty())
+        return "";
     if (cat < 0) cat = 0;
     if (cat > 5) cat = 5;
     if (i < 0) i = 0;
     if (i > 19) i = 19;
-    return k[cat][i];
+    if ((int)rows.size() <= (cat) * 20
+        + (i))
+        return "";
+    return rows[(cat) * 20
+        + (i)].name.c_str();
 }
 
 // ---- the cantrip acquisition prose (pp. 28, 31) ----

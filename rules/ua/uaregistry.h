@@ -1,18 +1,19 @@
 // ===========================================================================
 // Adnd1 - rules/ua/uaregistry.h
-// The R1056 UA classes-family registry seam.
+// The R1056+R1057 rules/ua registry seam.
 //
-// content/tables/ua_classes/ via
+// content/tables/ua_classes/ (R1056) and
+// content/tables/ua_spells/ (R1057) via
 // items::MiscItemRegistry: the R1042
 // rows idiom plus named tables per def
 // (the R1051 dzTable idiom) and the rows
 // readers (the R1051 dzRows idiom). Header-
 // only singleton (the R1040 appendixp.h
-// idiom). Every accessor in the thirteen
-// rules/ua headers keeps its signature,
+// idiom). Every accessor in the rules/ua
+// family headers keeps its signature,
 // clamp and branch; only the array read
 // moves behind the registry.
-// DO NOT hand-edit: tools/r1056_splice.py
+// DO NOT hand-edit: tools/r1057_splice.py
 // is the only writer.
 // ===========================================================================
 
@@ -22,7 +23,7 @@
 
 namespace rules {
 
-// ---- the R1056 registry seam ---------------
+// ---- the rules/ua registry seam ----------
 
 inline items::MiscItemRegistry&
 uaReg() {
@@ -34,6 +35,9 @@ uaReg() {
         reg.loadDirectory(
             "content/tables/"
             "ua_classes");
+        reg.loadDirectory(
+            "content/tables/"
+            "ua_spells");
     }
     return reg;
 }

@@ -63,6 +63,9 @@
 
 #pragma once
 
+// R1057 applied
+#include "rules/ua/uaregistry.h"
+
 namespace rules {
 
 // ---- ceremony (Invocation), p. 42-43 ----
@@ -115,25 +118,23 @@ inline int uad1CeremonyVarietyCount()
     { return 9; }
 
 inline const char* uad1CeremonyVarietyName(int i) {
-    static const char* const k[9] = {
-        "Coming of Age", "Rest Eternal", "Marriage",
-        "Dedication", "Investiture", "Initiation",
-        "Special Vows", "Hallowed Ground", "Cast Out",
-    };
+    const auto& rows = uaRows("ua_uad1");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 8) i = 8;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 inline int uad1CeremonyVarietyCasterLevel(int i) {
-    // 1 for the first three; 12 for cast out; 0 marks the
-    // lost middle prefixes (pending the PDF).
-    static const int k[9] = {
-        1, 1, 1, 0, 0, 0, 0, 0, 12,
-    };
+    const auto* g = uaTable(
+        "ua_uad1", "variety_level");
     if (i < 0) i = 0;
     if (i > 8) i = 8;
-    return k[i];
+    if (!g) return 1;
+    return (int)(*g)[i];
 }
 
 // A druid of the indicated or lower level can cast each rite.
@@ -406,13 +407,14 @@ inline int uad1DetectPoisonTypeCount()
     { return 3; }
 
 inline const char* uad1DetectPoisonTypeName(int i) {
-    static const char* const k[3] = {
-        "Contact (Insinuative)", "Ingestive",
-        "Respirative (Gas)",
-    };
+    const auto& rows = uaRows("ua_uad1_poison");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 2) i = 2;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // More than one area can be scanned during the duration, but any

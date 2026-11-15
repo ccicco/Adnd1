@@ -89,6 +89,9 @@
 
 #pragma once
 
+// R1057 applied
+#include "rules/ua/uaregistry.h"
+
 namespace rules {
 
 // ---- ceremony (Invocation), p. 32-33 ----
@@ -109,26 +112,23 @@ inline int uac1CeremonyVarietyCount()
     { return 10; }
 
 inline const char* uac1CeremonyVarietyName(int i) {
-    static const char* const k[10] = {
-        "Coming of Age", "Burial", "Marriage",
-        "Dedication", "Investiture", "Consecrate Item",
-        "Ordination", "Special Vows", "Consecrate Ground",
-        "Anathematize",
-    };
+    const auto& rows = uaRows("ua_uac1");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 9) i = 9;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 inline int uac1CeremonyVarietyLevel(int i) {
-    // 1st: the first three; 3rd: the next three; 5th: the next
-    // three; 7th: anathematize.
-    static const int k[10] = {
-        1, 1, 1, 3, 3, 3, 5, 5, 5, 7,
-    };
+    const auto* g = uaTable(
+        "ua_uac1", "variety_level");
     if (i < 0) i = 0;
     if (i > 9) i = 9;
-    return k[i];
+    if (!g) return 1;
+    return (int)(*g)[i];
 }
 
 // No saving throw for any ceremony except anathematize (it simply
@@ -374,11 +374,12 @@ inline int uac1PortentEffectDieSides()
     { return 6; }
 
 inline int uac1PortentEffectModifier(int roll) {
-    // 1 = -3; 2 = -2; 3 = -1; 4 = +1; 5 = +2; 6 = +3.
-    static const int k[6] = { -3, -2, -1, 1, 2, 3 };
+    const auto* g = uaTable(
+        "ua_uac1", "portent_mod");
     if (roll < 1) roll = 1;
     if (roll > 6) roll = 6;
-    return k[roll - 1];
+    if (!g) return 0;
+    return (int)(*g)[roll - 1];
 }
 
 // Only life-or-death rolls (combat or peril) count toward the

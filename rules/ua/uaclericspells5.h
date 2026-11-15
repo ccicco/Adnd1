@@ -76,6 +76,9 @@
 
 #pragma once
 
+// R1057 applied
+#include "rules/ua/uaregistry.h"
+
 namespace rules {
 
 // ---- air walk (Alteration), p. 40 ----
@@ -209,12 +212,16 @@ inline int uac5AnimateExampleTypeCount()
     { return 6; }
 
 inline const char* uac5AnimateExampleTypeName(int i)
-    { static const char* const k[6] = {
-        "apes (carnivorous and giant)", "bugbears",
-        "ettins", "giants (all varieties)", "ogres",
-        "trolls" };
-      if (i < 0) i = 0; if (i > 5) i = 5;
-      return k[i]; }
+    {
+    const auto& rows = uaRows("ua_uac5_animate");
+    if (rows.empty())
+        return "";
+    if (i < 0) i = 0;
+    if (i > 5) i = 5;
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
+}
 
 inline bool uac5AnimateListNotExclusive()
     { return true; }
@@ -302,77 +309,140 @@ inline int uac5GolemMaterialCount()
     { return 4; }
 
 inline const char* uac5GolemMaterialName(int i)
-    { static const char* const k[4] = {
-        "straw", "rope", "leather", "wood" };
-      if (i < 0) i = 0; if (i > 3) i = 3;
-      return k[i]; }
+    {
+    const auto& rows = uaRows("ua_uac5_golem");
+    if (rows.empty())
+        return "";
+    if (i < 0) i = 0;
+    if (i > 3) i = 3;
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
+}
 
 inline int uac5GolemMinLevel(int i)
-    { static const int k[4] = { 9, 11, 13, 15 };
-      if (i < 0) i = 0; if (i > 3) i = 3;
-      return k[i]; }
+    {
+    const auto* g = uaTable(
+        "ua_uac5_golem", "min_level");
+    if (i < 0) i = 0;
+    if (i > 3) i = 3;
+    if (!g) return 9;
+    return (int)(*g)[i];
+}
 
 inline int uac5GolemBuildHours(int i)
-    { static const int k[4] = { 1, 3, 9, 27 };
-      if (i < 0) i = 0; if (i > 3) i = 3;
-      return k[i]; }
+    {
+    const auto* g = uaTable(
+        "ua_uac5_golem", "build_hours");
+    if (i < 0) i = 0;
+    if (i > 3) i = 3;
+    if (!g) return 1;
+    return (int)(*g)[i];
+}
 
 inline int uac5GolemDurationHoursPerLevel(int i)
-    { static const int k[4] = { 1, 3, 6, 12 };
-      if (i < 0) i = 0; if (i > 3) i = 3;
-      return k[i]; }
+    {
+    const auto* g = uaTable(
+        "ua_uac5_golem", "dur_hours");
+    if (i < 0) i = 0;
+    if (i > 3) i = 3;
+    if (!g) return 1;
+    return (int)(*g)[i];
+}
 
 inline int uac5GolemAC(int i)
-    { static const int k[4] = { 10, 8, 6, 4 };
-      if (i < 0) i = 0; if (i > 3) i = 3;
-      return k[i]; }
+    {
+    const auto* g = uaTable(
+        "ua_uac5_golem", "ac");
+    if (i < 0) i = 0;
+    if (i > 3) i = 3;
+    if (!g) return 10;
+    return (int)(*g)[i];
+}
 
 inline int uac5GolemMV(int i)
-    { static const int k[4] = { 12, 9, 6, 3 };
-      if (i < 0) i = 0; if (i > 3) i = 3;
-      return k[i]; }
+    {
+    const auto* g = uaTable(
+        "ua_uac5_golem", "mv");
+    if (i < 0) i = 0;
+    if (i > 3) i = 3;
+    if (!g) return 12;
+    return (int)(*g)[i];
+}
 
 inline int uac5GolemHDBase(int i)
-    { static const int k[4] = { 2, 3, 4, 5 };
-      if (i < 0) i = 0; if (i > 3) i = 3;
-      return k[i]; }
+    {
+    const auto* g = uaTable(
+        "ua_uac5_golem", "hd_base");
+    if (i < 0) i = 0;
+    if (i > 3) i = 3;
+    if (!g) return 2;
+    return (int)(*g)[i];
+}
 
 inline int uac5GolemHDBonus(int i)
-    { static const int k[4] = { 4, 6, 8, 10 };
-      if (i < 0) i = 0; if (i > 3) i = 3;
-      return k[i]; }
+    {
+    const auto* g = uaTable(
+        "ua_uac5_golem", "hd_bonus");
+    if (i < 0) i = 0;
+    if (i > 3) i = 3;
+    if (!g) return 4;
+    return (int)(*g)[i];
+}
 
 inline int uac5GolemHP(int i)
-    { static const int k[4] = { 20, 30, 40, 50 };
-      if (i < 0) i = 0; if (i > 3) i = 3;
-      return k[i]; }
+    {
+    const auto* g = uaTable(
+        "ua_uac5_golem", "hp");
+    if (i < 0) i = 0;
+    if (i > 3) i = 3;
+    if (!g) return 20;
+    return (int)(*g)[i];
+}
 
 inline int uac5GolemAT(int i)
-    { static const int k[4] = { 2, 1, 2, 1 };
-      if (i < 0) i = 0; if (i > 3) i = 3;
-      return k[i]; }
+    {
+    const auto* g = uaTable(
+        "ua_uac5_golem", "at");
+    if (i < 0) i = 0;
+    if (i > 3) i = 3;
+    if (!g) return 2;
+    return (int)(*g)[i];
+}
 
 inline const char* uac5GolemDamage(int i)
-    { static const char* const k[4] = {
-        "1-2/1-2", "1-6 plus strangulation",
-        "1-6/1-6", "3-12" };
-      if (i < 0) i = 0; if (i > 3) i = 3;
-      return k[i]; }
+    {
+    const auto& rows = uaRows("ua_uac5_golem_damage");
+    if (rows.empty())
+        return "";
+    if (i < 0) i = 0;
+    if (i > 3) i = 3;
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
+}
 
 inline const char* uac5GolemSD(int i)
-    { static const char* const k[4] = {
-        "immune to piercing, half from blunt",
-        "immune to blunt, half from piercing",
-        "+1 or better weapon, half from blunt",
-        "+1 or better weapon, immune to blunt"
-        " and piercing" };
-      if (i < 0) i = 0; if (i > 3) i = 3;
-      return k[i]; }
+    {
+    const auto& rows = uaRows("ua_uac5_golem_sd");
+    if (rows.empty())
+        return "";
+    if (i < 0) i = 0;
+    if (i > 3) i = 3;
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
+}
 
 inline int uac5GolemCarryPounds(int i)
-    { static const int k[4] = { 30, 40, 50, 60 };
-      if (i < 0) i = 0; if (i > 3) i = 3;
-      return k[i]; }
+    {
+    const auto* g = uaTable(
+        "ua_uac5_golem", "carry_pounds");
+    if (i < 0) i = 0;
+    if (i > 3) i = 3;
+    if (!g) return 30;
+    return (int)(*g)[i];
+}
 
 // The straw golem SD line shatters across the air walk table -
 // the decode (immune to piercing weapons, half damage from
@@ -410,10 +480,16 @@ inline int uac5GolemMindlessSpellExamples()
     { return 4; }
 
 inline const char* uac5GolemMindlessSpellName(int i)
-    { static const char* const k[4] = {
-        "charm", "fear", "hold", "sleep" };
-      if (i < 0) i = 0; if (i > 3) i = 3;
-      return k[i]; }
+    {
+    const auto& rows = uaRows("ua_uac5_golem_spells");
+    if (rows.empty())
+        return "";
+    if (i < 0) i = 0;
+    if (i > 3) i = 3;
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
+}
 
 // The dweomer lets a lesser golem save as if a cleric of the
 // same level as its creator.
@@ -530,10 +606,16 @@ inline int uac5RainbowApplicationCount()
     { return 4; }
 
 inline const char* uac5RainbowApplicationName(int i)
-    { static const char* const k[4] = {
-        "bow", "bridge", "elevator", "flagon" };
-      if (i < 0) i = 0; if (i > 3) i = 3;
-      return k[i]; }
+    {
+    const auto& rows = uaRows("ua_uac5_rainbow");
+    if (rows.empty())
+        return "";
+    if (i < 0) i = 0;
+    if (i > 3) i = 3;
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
+}
 
 // The bow: a shimmering, multi-layered bow of rainbow hues,
 // light and easy to pull - anyone of strength 6 or better can
@@ -575,28 +657,28 @@ inline int uac5RainbowBowColorCount()
     { return 7; }
 
 inline const char* uac5RainbowBowColorName(int i)
-    { static const char* const k[7] = {
-        "red", "orange", "yellow", "green",
-        "blue", "indigo", "violet" };
-      if (i < 0) i = 0; if (i > 6) i = 6;
-      return k[i]; }
+    {
+    const auto& rows = uaRows("ua_uac5_rainbow_bow");
+    if (rows.empty())
+        return "";
+    if (i < 0) i = 0;
+    if (i > 6) i = 6;
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
+}
 
 inline const char* uac5RainbowBowColorTarget(int i)
-    { static const char* const k[7] = {
-        "fire dwellers/users",
-        "earth elementals",
-        "vegetable targets (incl. fungus"
-        " creatures, shambling mounds,"
-        " treants)",
-        "aquatic creatures and water"
-        " elementals",
-        "aerial creatures, electricity-using"
-        " creatures, and air elementals",
-        "acid-using or poison-using"
-        " creatures",
-        "metallic or regenerating creatures" };
-      if (i < 0) i = 0; if (i > 6) i = 6;
-      return k[i]; }
+    {
+    const auto& rows = uaRows("ua_uac5_rainbow_bow_targets");
+    if (rows.empty())
+        return "";
+    if (i < 0) i = 0;
+    if (i > 6) i = 6;
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
+}
 
 // When drawn, an arrow of the appropriate color magically
 // appears, nocked and ready; if no color is requested, or one
@@ -680,20 +762,28 @@ inline int uac5RainbowFlagonDraughtCount()
     { return 7; }
 
 inline const char* uac5RainbowFlagonDraughtColor(int i)
-    { static const char* const k[7] = {
-        "red", "orange", "yellow", "green",
-        "blue", "indigo", "violet" };
-      if (i < 0) i = 0; if (i > 6) i = 6;
-      return k[i]; }
+    {
+    const auto& rows = uaRows("ua_uac5_rainbow_flagon");
+    if (rows.empty())
+        return "";
+    if (i < 0) i = 0;
+    if (i > 6) i = 6;
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
+}
 
 inline const char* uac5RainbowFlagonDraughtEffect(int i)
-    { static const char* const k[7] = {
-        "cure light wounds", "resist fire",
-        "cure blindness", "slow poison",
-        "cure disease", "resist cold",
-        "remove paralysis" };
-      if (i < 0) i = 0; if (i > 6) i = 6;
-      return k[i]; }
+    {
+    const auto& rows = uaRows("ua_uac5_rainbow_flagon_effects");
+    if (rows.empty())
+        return "";
+    if (i < 0) i = 0;
+    if (i > 6) i = 6;
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
+}
 
 // Each draught acts as if the spell had been cast by a cleric
 // of 12th level; the effects persist after the duration of

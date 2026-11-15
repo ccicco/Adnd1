@@ -87,6 +87,9 @@
 
 #pragma once
 
+// R1057 applied
+#include "rules/ua/uaregistry.h"
+
 namespace rules {
 
 // ---- the MU 1st-5th table (pp. 30-31) ----
@@ -95,24 +98,14 @@ inline int uas2Mu1stCount()
     { return 35; }
 
 inline const char* uas2Mu1stName(int i) {
-    static const char* const k[35] = {
-        "Affect Normal Fires", "Alarm", "Armor",
-        "Burning Hands", "Charm Person",
-        "Comprehend Languages", "Dancing Lights",
-        "Detect Magic", "Enlarge", "Erase",
-        "Feather Fall", "Find Familiar", "Firewater",
-        "Friends", "Grease", "Hold Portal", "Identify",
-        "Jump", "Light", "Magic Missile", "Melt",
-        "Mending", "Message", "Mount",
-        "Nystul's Magic Aura", "Precipitation",
-        "Protection From Evil", "Read Magic",
-        "Shocking Grasp", "Spider Climb", "Taunt",
-        "Tenser's Floating Disc", "Unseen Servant",
-        "Ventriloquism", "Wizard Mark",
-    };
+    const auto& rows = uaRows("ua_s2_mu1");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 34) i = 34;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // The 2nd-level column (30 names; "Whip" pinned as printed; the
@@ -121,23 +114,14 @@ inline int uas2Mu2ndCount()
     { return 30; }
 
 inline const char* uas2Mu2ndName(int i) {
-    static const char* const k[30] = {
-        "Audible Glamer", "Bind", "Continual Light",
-        "Darkness 15' Radius", "Detect Evil",
-        "Detect Invisibility", "Fool's Gold", "Forget",
-        "Invisibility", "Irritation", "Knock",
-        "Know Alignment", "Leomund's Trap", "Levitate",
-        "Locate Object", "Magic Mouth",
-        "Melf's Acid Arrow", "Mirror Image",
-        "Preserve", "Pyrotechnics",
-        "Ray of Enfeeblement", "Rope Trick", "Scare",
-        "Shatter", "Stinking Cloud", "Strength",
-        "Tasha's Uncontrollable Hideous Laughter",
-        "Whip", "Wizard Lock", "Zephyr",
-    };
+    const auto& rows = uaRows("ua_s2_mu2");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 29) i = 29;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // The 3rd-level column (28 names; Secret Page pinned as printed).
@@ -145,24 +129,14 @@ inline int uas2Mu3rdCount()
     { return 28; }
 
 inline const char* uas2Mu3rdName(int i) {
-    static const char* const k[28] = {
-        "Blink", "Clairaudience", "Clairvoyance",
-        "Dispel Magic", "Explosive Runes", "Feign Death",
-        "Fireball", "Flame Arrow", "Fly",
-        "Gust of Wind", "Haste", "Hold Person",
-        "Infravision", "Invisibility 10'' Radius",
-        "Leomund's Tiny Hut", "Lightning Bolt",
-        "Melf's Minute Meteor", "Monster Summoning",
-        "Phantasmal Force",
-        "Protection From Evil 10' Radius",
-        "Protection From Normal Missiles",
-        "Secret Page", "Sepia Snake Sigil", "Slow",
-        "Suggestion", "Tongues", "Water Breathing",
-        "Wind Wall",
-    };
+    const auto& rows = uaRows("ua_s2_mu3");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 27) i = 27;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // The 4th-level column (28 names).
@@ -170,23 +144,14 @@ inline int uas2Mu4thCount()
     { return 28; }
 
 inline const char* uas2Mu4thName(int i) {
-    static const char* const k[28] = {
-        "Charm Monster", "Confusion", "Dig",
-        "Dimension Door", "Enchanted Weapon",
-        "Evard's Black Tentacles", "Extension I",
-        "Fear", "Fire Charm", "Fire Shield",
-        "Hallucinatory Terrain", "Ice Storm",
-        "Leomund's Secure Shelter", "Magic Mirror",
-        "Massmorph", "Minor Globe of Invulnerability",
-        "Otiluke's Resilient Sphere", "Plant Growth",
-        "Polymorph Other", "Polymorph Self",
-        "Rary's Mnemonic Enhancer", "Remove Curse",
-        "Shout", "Stoneskin", "Ultravision",
-        "Wall of Fire", "Wall of Ice", "Wizard Eye",
-    };
+    const auto& rows = uaRows("ua_s2_mu4");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 27) i = 27;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // The 5th-level column (28 names; Stone Shape pinned as printed).
@@ -194,25 +159,14 @@ inline int uas2Mu5thCount()
     { return 28; }
 
 inline const char* uas2Mu5thName(int i) {
-    static const char* const k[28] = {
-        "Airy Water", "Animal Growth", "Animate Dead",
-        "Bigby's Interposing Hand", "Cloudkill",
-        "Conjure Elemental", "Cone of Cold",
-        "Contact Other Plane", "Dismissal",
-        "Distance Distortion", "Extension II",
-        "Fabricate", "Feeblemind", "Hold Monster",
-        "Leomund's Lamentable Belabourment",
-        "Leomund's Secret Chest", "Magic Jar",
-        "Monster Summoning III",
-        "Mordenkainen's Faithful Hound", "Passwall",
-        "Sending", "Stone Shape", "Telekinesis",
-        "Teleport", "Transmute Rock To Mud",
-        "Wall of Force", "Wall of Iron",
-        "Wall of Stone",
-    };
+    const auto& rows = uaRows("ua_s2_mu5");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 27) i = 27;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // ---- the MU continued table (6th-9th; the R785
@@ -227,20 +181,14 @@ inline int uas2Mu7thCount()
     { return 16; }
 
 inline const char* uas2Mu7thName(int i) {
-    static const char* const k[16] = {
-        "Banishment", "Charm Plants",
-        "Delayed Blast Fireball",
-        "Drawmij's Instant Summons", "Forcecage",
-        "Legend Lore", "Limited Wish",
-        "Monster Summoning V",
-        "Mordenkainen's Magnificent Mansion",
-        "Reverse Gravity", "Sequester",
-        "Teleport Without Error", "Torment",
-        "Truename", "Vanish", "Volley",
-    };
+    const auto& rows = uaRows("ua_s2_mu7");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 15) i = 15;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // The repaired 8th-level roster (10 names: the nine
@@ -253,17 +201,14 @@ inline int uas2Mu8thCount()
     { return 10; }
 
 inline const char* uas2Mu8thName(int i) {
-    static const char* const k[10] = {
-        "Binding", "Clone", "Demand",
-        "Mass Invisibility", "Mind Blank",
-        "Monster Summoning VI",
-        "Otiluke's Telekinetic Sphere",
-        "Power Word Blind", "Serten's Spell Immunity",
-        "Sink",
-    };
+    const auto& rows = uaRows("ua_s2_mu8");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 9) i = 9;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // The repaired 9th-level roster (8 names: the five
@@ -276,15 +221,14 @@ inline int uas2Mu9thCount()
     { return 8; }
 
 inline const char* uas2Mu9thName(int i) {
-    static const char* const k[8] = {
-        "Crystalbrittle", "Energy Drain", "Gate",
-        "Mordenkainen's Disjunction",
-        "Prismatic Sphere", "Shape Change",
-        "Succor", "Wish",
-    };
+    const auto& rows = uaRows("ua_s2_mu9");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 7) i = 7;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // R785: the 6th-level column - the archive.org
@@ -299,20 +243,14 @@ inline int uas2Mu6thCount()
     { return 17; }
 
 inline const char* uas2Mu6thName(int i) {
-    static const char* const k[17] = {
-        "Chain Lightning", "Contingency",
-        "Control Weather", "Death Spell",
-        "Disintegrate", "Ensnarement", "Eyebite",
-        "Geas", "Invisible Stalker", "Lower Water",
-        "Mordenkainen's Lucubration",
-        "Otiluke's Freezing Sphere", "Part Water",
-        "Project Image", "Stone To Flesh",
-        "Tenser's Transformation",
-        "Transmute Water To Dust",
-    };
+    const auto& rows = uaRows("ua_s2_mu6");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 16) i = 16;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // R785: the sixth column reads (the loss flag flips).
@@ -328,13 +266,14 @@ inline int uas2Il1stCount()
     { return 5; }
 
 inline const char* uas2Il1stName(int i) {
-    static const char* const k[5] = {
-        "Color Spray", "Dancing Lights", "Darkness",
-        "Hypnotism", "Phantasmal Force",
-    };
+    const auto& rows = uaRows("ua_s2_il1");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 4) i = 4;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // The readable 2nd-level names (4; the "Hallucin: Terrain" and
@@ -343,13 +282,14 @@ inline int uas2Il2ndCount()
     { return 4; }
 
 inline const char* uas2Il2ndName(int i) {
-    static const char* const k[4] = {
-        "Dispel Illusion", "Hallucinatory Terrain",
-        "Magic Mouth", "Mirror Image",
-    };
+    const auto& rows = uaRows("ua_s2_il2");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 3) i = 3;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // The readable 7th-level name (1; the 3rd-6th columns are lost).
@@ -357,11 +297,13 @@ inline int uas2Il7thCount()
     { return 1; }
 
 inline const char* uas2Il7thName(int i) {
-    static const char* const k[1] = {
-        "Shadow Walk",
-    };
+    const auto& rows = uaRows("ua_s2_il7");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // The illusionist minor-illusion cantrip
@@ -375,14 +317,14 @@ inline int uas2IlCantripCount()
     { return 8; }
 
 inline const char* uas2IlCantripName(int i) {
-    static const char* const k[8] = {
-        "Colored Lights", "Dim", "Haze", "Mask",
-        "Mirage", "Noise", "Rainbow",
-        "Two-D'lusion",
-    };
+    const auto& rows = uaRows("ua_s2_ilcantrip");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 7) i = 7;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 }   // namespace rules

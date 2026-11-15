@@ -55,6 +55,9 @@
 
 #pragma once
 
+// R1057 applied
+#include "rules/ua/uaregistry.h"
+
 namespace rules {
 
 // The school codes (NO new
@@ -145,11 +148,12 @@ inline int uchAreaKindCount(int a)
 // prints.
 inline int uchCastTimeDen(int i)
 {
-    static const int D[8] = {
-        6, 6, 6, 10, 10, 6, 10, 6 };
+    const auto* g = uaTable(
+        "ua_uch", "cast_den");
     if (i < 0) i = 0;
     if (i > 7) i = 7;
-    return D[i];
+    if (!g) return 6;
+    return (int)(*g)[i];
 }
 
 // The casting-time
