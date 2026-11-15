@@ -1296,6 +1296,7 @@ int main() {
     #include "rules/audits/r1047_class_grid_registry.h"  // R1047
     #include "rules/audits/r1048_straggler_registry.h"  // R1048
     #include "rules/audits/r1049_subrace_level_registry.h"  // R1049
+    #include "rules/audits/r1050_dm_movement_registry.h"  // R1050
     #include "rules/audits/r280_special_artifacts_prose.h"  // R835: migrated
     #include "rules/audits/r281_special_artifacts_prose.h"  // R835: migrated
     #include "rules/audits/r282_special_artifacts_prose.h"  // R835: migrated

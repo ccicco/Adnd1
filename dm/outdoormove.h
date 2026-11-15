@@ -27,11 +27,71 @@
 // caller's.
 // ============================================================================
 
+// R1050 applied
 #pragma once
 
 #include "encounters.h"   // dm::OutdoorTerrain
+#include "items/MiscItemRegistry.h"
 
 namespace dm {
+
+// -------------------------------------------------
+// the R1050 dm movement registry seam
+//
+// One registry behind the movement
+// reads: content/tables/dm_movement/
+// (the five grids). The per-tag grid
+// views build on first use - every
+// accessor signature and every enum
+// stays as the print reads it.
+// DO NOT hand-edit:
+// tools/r1050_splice.py is the
+// only writer.
+inline items::MiscItemRegistry&
+dmMoveReg() {
+    static items::MiscItemRegistry reg;
+    static bool loaded = false;
+    if (!loaded) {
+        loaded = true;
+        reg.loadDirectory(
+            "content/tables/dm_movement");
+    }
+    return reg;
+}
+
+inline const int* dmMoveGrid(
+        const char* tag) {
+    struct GridCache {
+        std::map<std::string,
+            std::vector<int>> grids;
+    };
+    static GridCache cache;
+    static bool built = false;
+    if (!built) {
+        built = true;
+        for (const auto& kv :
+                 dmMoveReg().all()) {
+            const items::
+                MiscItemDef* d =
+                dmMoveReg().find(
+                    kv.first);
+            if (!d
+                || d->tables.empty()
+                || d->tables[0].name
+                    != "grid")
+                continue;
+            cache.grids[kv.first]
+                .assign(
+                    d->tables[0]
+                        .values.begin(),
+                    d->tables[0]
+                        .values.end());
+        }
+    }
+    auto it = cache.grids.find(tag);
+    return it == cache.grids.end()
+        ? 0 : it->second.data();
+}
 
 enum TerrainClass {
     TC_NORMAL = 0, TC_RUGGED, TC_VERY_RUGGED, TC_COUNT
@@ -65,12 +125,9 @@ inline FootBurden footBurdenFor(int lbs) {
 
 // MOVEMENT AFOOT IN MILES/DAY (p.58-59)
 inline int footMilesPerDay(FootBurden b, TerrainClass tc) {
-    static const int k[FB_COUNT][TC_COUNT] = {
-        { 30, 20, 10 },   // light
-        { 20, 10,  5 },   // average
-        { 10,  5,  2 },   // heavy
-    };
-    return k[b][tc];
+    const int* g = dmMoveGrid("dm_move_foot");
+    return g ? g[(int)b * 3 + (int)tc]
+               : 0;
 }
 
 // MOVEMENT MOUNTED IN MILES/DAY (p.58-59) - pinned data;
@@ -82,15 +139,9 @@ enum MountKind {
 };
 
 inline int mountedMilesPerDay(MountKind m, TerrainClass tc) {
-    static const int k[MOUNT_COUNT][TC_COUNT] = {
-        { 60, 25,  5 },   // light
-        { 40, 20,  5 },   // medium
-        { 30, 15,  5 },   // heavy
-        { 30, 15,  5 },   // draft
-        { 25, 15,  0 },   // cart*
-        { 25, 10,  0 },   // wagon*
-    };
-    return k[m][tc];
+    const int* g = dmMoveGrid("dm_move_mounted");
+    return g ? g[(int)m * 3 + (int)tc]
+               : 0;
 }
 
 // MOVEMENT AFLOAT (p.58-59), oared/sculled and sailed. 0 =
@@ -108,48 +159,24 @@ enum WaterKind {
 };
 
 inline int oaredMilesPerDay(VesselKind v, WaterKind w) {
-    static const int k[VESSEL_COUNT][WATER_COUNT] = {
-        { 15,  5, 15,  0, 10 },   // raft
-        { 30, 15, 35,  0, 25 },   // boat, small
-        { 20,  5, 20,  0,  0 },   // barge
-        { 40,  5, 40, 30,  0 },   // galley, small
-        { 30,  0, 30, 30,  0 },   // galley, large
-        { 10,  0, 15, 20,  0 },   // merchant, small
-        { 10,  0, 10, 15,  0 },   // merchant, large
-        { 10,  0, 10, 20,  0 },   // warship
-    };
-    return k[v][w];
+    const int* g = dmMoveGrid("dm_move_oared");
+    return g ? g[(int)v * 5 + (int)w]
+               : 0;
 }
 
 // the sailed table prints bands for the larger vessels
 // (galley small 70-80 at lake, etc.); lo/hi are the band's
 // bounds, equal where the book prints one number
 inline int sailedMilesLo(VesselKind v, WaterKind w) {
-    static const int k[VESSEL_COUNT][WATER_COUNT] = {
-        { 30, 10, 30,  0, 15 },   // raft
-        { 80, 20, 60,  0, 40 },   // boat, small
-        { 50, 10, 40,  0,  0 },   // barge
-        { 70,  0, 60, 50,  0 },   // galley, small
-        { 50,  0, 50, 50,  0 },   // galley, large
-        { 50,  0, 50, 50,  0 },   // merchant, small
-        { 25,  0, 35, 35,  0 },   // merchant, large
-        { 40,  0, 40, 50,  0 },   // warship
-    };
-    return k[v][w];
+    const int* g = dmMoveGrid("dm_move_sail_lo");
+    return g ? g[(int)v * 5 + (int)w]
+               : 0;
 }
 
 inline int sailedMilesHi(VesselKind v, WaterKind w) {
-    static const int k[VESSEL_COUNT][WATER_COUNT] = {
-        { 30, 10, 30,  0, 15 },
-        { 80, 20, 60,  0, 40 },
-        { 50, 10, 40,  0,  0 },
-        { 80,  0, 60, 50,  0 },
-        { 60,  0, 50, 50,  0 },
-        { 60,  0, 50, 50,  0 },
-        { 35,  0, 35, 35,  0 },
-        { 50,  0, 40, 50,  0 },
-    };
-    return k[v][w];
+    const int* g = dmMoveGrid("dm_move_sail_hi");
+    return g ? g[(int)v * 5 + (int)w]
+               : 0;
 }
 
 // ----------------------------------------------------------------------------
