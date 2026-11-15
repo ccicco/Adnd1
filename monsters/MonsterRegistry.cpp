@@ -638,22 +638,29 @@ static TreasureSpec parseTreasureText(const std::string& key,
 
 bool MonsterRegistry::loadFile(const std::string& path,
                                const std::string& key) {
+    // R1060: fresh-state entry kept for API parity; the directory
+    // path reuses one VM via loadFileOnState (was per file).
     lua_State* L = luaL_newstate();
     luaL_openlibs(L);   // registry files may use basic math if desired
+    const bool ok = loadFileOnState(L, path, key);
+    lua_close(L);
+    return ok;
+}
 
+bool MonsterRegistry::loadFileOnState(lua_State* L,
+                                      const std::string& path,
+                                      const std::string& key) {
     if (luaL_dofile(L, path.c_str()) != LUA_OK) {
         char buf[512];
         snprintf(buf, sizeof buf, "%s: %s", key.c_str(),
                  lua_tostring(L, -1));
         m_errors.push_back(buf);
-        lua_close(L);
         return false;
     }
 
     // the file must leave a table on the stack
     if (!lua_istable(L, -1)) {
         m_errors.push_back(key + ": file must return a table");
-        lua_close(L);
         return false;
     }
 
@@ -820,7 +827,6 @@ bool MonsterRegistry::loadFile(const std::string& path,
                              levelTagFromHd(def.hitDice));
     def.isLeader = luaGetBool(L, "isLeader", false);
 
-    lua_close(L);
     m_defs[key] = def;
     return true;
 }
@@ -842,6 +848,9 @@ int MonsterRegistry::loadDirectory(const std::string& dirPath) {
         // empty dir. Match that contract: only hard path errors are -1.
         return GetLastError() == ERROR_FILE_NOT_FOUND ? 0 : -1;
     }
+    // R1060: one lua_State for the whole directory (was: one per file).
+    lua_State* L = luaL_newstate();
+    luaL_openlibs(L);   // registry files may use basic math if desired
     int count = 0;
     do {
         std::string fname = fd.cFileName;
@@ -852,9 +861,11 @@ int MonsterRegistry::loadDirectory(const std::string& dirPath) {
             fname.compare(fname.size() - 4, 4, ".lua") != 0)
             continue;
         std::string key = fname.substr(0, fname.size() - 4);
-        if (loadFile(dirPath + "\\" + fname, key)) ++count;
+        if (loadFileOnState(L, dirPath + "\\" + fname, key)) ++count;
+        lua_settop(L, 0);   // R1060: reset the stack between files
     } while (FindNextFileA(h, &fd));
     FindClose(h);
+    lua_close(L);
     return count;
 }
 
@@ -864,6 +875,10 @@ int MonsterRegistry::loadDirectory(const std::string& dirPath) {
 int MonsterRegistry::loadDirectory(const std::string& dirPath) {
     DIR* d = opendir(dirPath.c_str());
     if (!d) return -1;
+    // R1060: one lua_State for the whole directory (was: one per file,
+    // ~1,500 newstate+openlibs+close rounds per battery run).
+    lua_State* L = luaL_newstate();
+    luaL_openlibs(L);   // registry files may use basic math if desired
     int count = 0;
     struct dirent* e;
     while ((e = readdir(d)) != nullptr) {
@@ -872,9 +887,11 @@ int MonsterRegistry::loadDirectory(const std::string& dirPath) {
             fname.compare(fname.size() - 4, 4, ".lua") != 0)
             continue;
         std::string key = fname.substr(0, fname.size() - 4);
-        if (loadFile(dirPath + "/" + fname, key)) ++count;
+        if (loadFileOnState(L, dirPath + "/" + fname, key)) ++count;
+        lua_settop(L, 0);   // R1060: reset the stack between files
     }
     closedir(d);
+    lua_close(L);
     return count;
 }
 #endif

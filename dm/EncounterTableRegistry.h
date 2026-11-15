@@ -24,6 +24,10 @@
 #include <string>
 #include <vector>
 
+// R1060: forward declaration, identical to lua.h's typedef - the
+// header does not need the real lua.h for the shared-state entry.
+typedef struct lua_State lua_State;
+
 namespace dm {
 
 // One Monster Level Table row. kind is one of monster/human/character/
@@ -259,6 +263,10 @@ public:
 
 private:
     bool loadFile(const std::string& path, const std::string& key);
+    // R1060: shared-state entry - loadDirectory reuses one lua_State
+    // across files (one VM + openlibs per directory, was per file).
+    bool loadFileOnState(lua_State* L, const std::string& path,
+                         const std::string& key);
     std::map<std::string, std::vector<EncounterRow>> m_levels;
     std::map<std::string, std::vector<DragonAgeRow>> m_dragons;
     std::map<std::string, std::vector<EncounterWaterRow>> m_waters;

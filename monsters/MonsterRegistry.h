@@ -28,6 +28,10 @@
 #include <string>
 #include <vector>
 
+// R1060: forward declaration, identical to lua.h's typedef - the
+// header does not need the real lua.h for the shared-state entry.
+typedef struct lua_State lua_State;
+
 namespace monsters {
 
 // ----------------------------------------------------------------------------
@@ -214,6 +218,10 @@ public:
 
 private:
     bool loadFile(const std::string& path, const std::string& key);
+    // R1060: shared-state entry - loadDirectory reuses one lua_State
+    // across files (one VM + openlibs per directory, was per file).
+    bool loadFileOnState(lua_State* L, const std::string& path,
+                         const std::string& key);
     std::map<std::string, MonsterDef> m_defs;
     std::vector<std::string> m_errors;
 };

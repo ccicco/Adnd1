@@ -3,8 +3,10 @@
 // The dungeon encounter table registry loader (R1032; R1033 added
 // the water family loader; R1034 the outdoor family and its pick-sets).
 // The shape
-// follows items::MiscItemRegistry.cpp: a fresh lua_State per file,
-// luaL_dofile, the file must leave a table on the stack, typed getters
+// follows items::MiscItemRegistry.cpp (R1060: one lua_State per
+// loadDirectory with lua_settop(L, 0) between files - was a fresh
+// state per file), luaL_dofile, the file must leave a table on the
+// stack, typed getters
 // with no defaults, errors accumulated in errors(), loadDirectory
 // POSIX readdir / Win32 FindFirstFileA with the R74 "no files is not
 // an error" and the 3-char-extension guard. STRICT unknown-key
@@ -239,20 +241,27 @@ bool isLevelKind(const std::string& k) {
 
 bool EncounterTableRegistry::loadFile(const std::string& path,
                                       const std::string& key) {
+    // R1060: fresh-state entry kept for API parity; the directory
+    // path reuses one VM via loadFileOnState (was per file).
     lua_State* L = luaL_newstate();
     luaL_openlibs(L);
+    const bool ok = loadFileOnState(L, path, key);
+    lua_close(L);
+    return ok;
+}
 
+bool EncounterTableRegistry::loadFileOnState(lua_State* L,
+                                              const std::string& path,
+                                              const std::string& key) {
     if (luaL_dofile(L, path.c_str()) != LUA_OK) {
         char buf[512];
         snprintf(buf, sizeof buf, "%s: %s", key.c_str(),
                  lua_tostring(L, -1));
         m_errors.push_back(buf);
-        lua_close(L);
         return false;
     }
     if (!lua_istable(L, -1)) {
         m_errors.push_back(key + ": file must return a table");
-        lua_close(L);
         return false;
     }
 
@@ -1814,12 +1823,10 @@ bool EncounterTableRegistry::loadFile(const std::string& path,
         goto bad;
     }
 
-    lua_close(L);
     return true;
 
 bad:
     m_errors.push_back(key + ": " + err);
-    lua_close(L);
     return false;
 }
 
@@ -1838,6 +1845,9 @@ int EncounterTableRegistry::loadDirectory(const std::string& dirPath) {
         // R74: "no files" is not an error - only hard path errors are -1.
         return GetLastError() == ERROR_FILE_NOT_FOUND ? 0 : -1;
     }
+    // R1060: one lua_State for the whole directory (was: one per file).
+    lua_State* L = luaL_newstate();
+    luaL_openlibs(L);
     int count = 0;
     do {
         std::string fname = fd.cFileName;
@@ -1845,9 +1855,11 @@ int EncounterTableRegistry::loadDirectory(const std::string& dirPath) {
             fname.compare(fname.size() - 4, 4, ".lua") != 0)
             continue;
         std::string key = fname.substr(0, fname.size() - 4);
-        if (loadFile(dirPath + "\\" + fname, key)) ++count;
+        if (loadFileOnState(L, dirPath + "\\" + fname, key)) ++count;
+        lua_settop(L, 0);   // R1060: reset the stack between files
     } while (FindNextFileA(h, &fd));
     FindClose(h);
+    lua_close(L);
     return count;
 }
 
@@ -1857,6 +1869,10 @@ int EncounterTableRegistry::loadDirectory(const std::string& dirPath) {
 int EncounterTableRegistry::loadDirectory(const std::string& dirPath) {
     DIR* d = opendir(dirPath.c_str());
     if (!d) return -1;
+    // R1060: one lua_State for the whole directory (was: one per file,
+    // ~1,500 newstate+openlibs+close rounds per battery run).
+    lua_State* L = luaL_newstate();
+    luaL_openlibs(L);
     int count = 0;
     struct dirent* e;
     while ((e = readdir(d)) != nullptr) {
@@ -1865,9 +1881,11 @@ int EncounterTableRegistry::loadDirectory(const std::string& dirPath) {
             fname.compare(fname.size() - 4, 4, ".lua") != 0)
             continue;
         std::string key = fname.substr(0, fname.size() - 4);
-        if (loadFile(dirPath + "/" + fname, key)) ++count;
+        if (loadFileOnState(L, dirPath + "/" + fname, key)) ++count;
+        lua_settop(L, 0);   // R1060: reset the stack between files
     }
     closedir(d);
+    lua_close(L);
     return count;
 }
 #endif

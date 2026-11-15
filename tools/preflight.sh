@@ -21,6 +21,17 @@
 # RED); (b) hygiene FAILS when untracked file(s) exist but
 # no tracked file is modified - the shape of a splice that
 # never ran (the 7a86ee7 lesson). Steps renumbered to 5.
+# R1060: the step-2 build is parallel - per-TU object compiles
+# in a job pool (capped at min(nproc, 4); one g++ per phone
+# core is an OOM risk, and the regtest.cpp mega-TU dominates
+# the wall clock anyway) plus one link. Same flags per TU, the
+# same R515 warning gate (per-TU stderr merged into the warnfile
+# in file order after the pool drains), the same fresh-binary
+# chain and regtest-exit authority - a failed TU still names its
+# file (BUILD FAIL). Step 2 stays the round's compile oracle;
+# the battery run itself gains the R1060 shared-lua_State
+# registries (items/, dm/, monsters/ - one VM per loadDirectory
+# instead of per file).
 
 set -u
 cd "$(dirname "$0")/.."
@@ -80,21 +91,61 @@ echo "== [2/5] regtest build + battery (fresh binary) =="
 # captured for the warning gate: the build is warning-clean as
 # of R515 (the character.cpp -Wswitch and regtest.cpp
 # -Wstring-compare fixes), so ANY warning now ends RED.
+# R1060: the one-shot 28-TU g++ compile is now per-TU object
+# compiles in a job pool plus one link. The pool is capped at
+# min(nproc, 4) - one g++ per phone core is an OOM risk, and the
+# regtest.cpp mega-TU dominates the wall clock anyway. Per-TU
+# stderr is merged into $warnfile in file order after the pool
+# drains (no concurrent-append races), a failed TU still names
+# its file (BUILD FAIL), and the fresh-binary chain is kept: a
+# failed compile or link never runs regtest.
 batfile=$(mktemp)
 warnfile=$(mktemp)
-if g++ -std=c++17 -I. -I"$PREFIX/include/lua5.4" \
-  rules/engine/dice.cpp rules/engine/character.cpp rules/engine/classes.cpp rules/engine/combat.cpp \
-  rules/engine/saves.cpp rules/engine/turn.cpp rules/engine/races.cpp \
-  dm/dm.cpp dm/dungeon.cpp dm/encounters.cpp \
-  dm/EncounterTableRegistry.cpp dm/treasure.cpp monsters/MonsterRegistry.cpp spells/spells.cpp \
-  abilities/abilities.cpp items/items.cpp items/MiscItemRegistry.cpp ai/actor.cpp \
-  game/state_core.cpp game/state_dungeon.cpp \
-  game/state_combat.cpp game/state_town.cpp \
-  game/state_overland.cpp game/state_sea.cpp \
-  monsters/MonsterXp.cpp \
-  spelleffects/spelleffects.cpp regtest.cpp \
-  -o regtest -L"$PREFIX/lib" -llua5.4 2>"$warnfile" \
-  && ./regtest | tee "$batfile" | grep -v 'audit: bad 0$'; then
+objdir=$(mktemp -d)
+# R1060: the pool size - min(nproc, 4), never below 1.
+jobs=$(nproc 2>/dev/null || echo 1)
+case "$jobs" in ''|*[!0-9]*) jobs=1 ;; esac
+[ "$jobs" -gt 4 ] && jobs=4
+[ "$jobs" -lt 1 ] && jobs=1
+build_tus="rules/engine/dice.cpp rules/engine/character.cpp rules/engine/classes.cpp rules/engine/combat.cpp \
+rules/engine/saves.cpp rules/engine/turn.cpp rules/engine/races.cpp \
+dm/dm.cpp dm/dungeon.cpp dm/encounters.cpp \
+dm/EncounterTableRegistry.cpp dm/treasure.cpp monsters/MonsterRegistry.cpp spells/spells.cpp \
+abilities/abilities.cpp items/items.cpp items/MiscItemRegistry.cpp ai/actor.cpp \
+game/state_core.cpp game/state_dungeon.cpp \
+game/state_combat.cpp game/state_town.cpp \
+game/state_overland.cpp game/state_sea.cpp \
+monsters/MonsterXp.cpp \
+spelleffects/spelleffects.cpp regtest.cpp"
+build_fail=0
+tu_n=0
+tu_running=0
+for f in $build_tus; do
+  tu_n=$((tu_n + 1))
+  # R1060: hold at the pool cap; wait -n reaps one finished job.
+  if [ "$tu_running" -ge "$jobs" ]; then
+    wait -n
+    tu_running=$((tu_running - 1))
+  fi
+  g++ -std=c++17 -I. -I"$PREFIX/include/lua5.4" -c "$f" \
+      -o "$objdir/tu$tu_n.o" 2>"$objdir/tu$tu_n.err" || \
+      echo "$f" > "$objdir/tu$tu_n.failed" &
+  tu_running=$((tu_running + 1))
+done
+wait
+tu_n=0
+for f in $build_tus; do
+  tu_n=$((tu_n + 1))
+  cat "$objdir/tu$tu_n.err" >> "$warnfile"
+  if [ -f "$objdir/tu$tu_n.failed" ]; then
+    echo "BUILD FAIL: $f"
+    build_fail=1
+  fi
+done
+if [ "$build_fail" = 0 ] && \
+   g++ "$objdir"/tu*.o -o regtest -L"$PREFIX/lib" -llua5.4 \
+       2>>"$warnfile"; then
+  ./regtest | tee "$batfile" | grep -v 'audit: bad 0$'
   [ "${PIPESTATUS[0]}" = 0 ] || fail=1
 else
   fail=1
@@ -107,6 +158,7 @@ else
   echo "BUILD: 0 warnings (the R515 warning gate)"
 fi
 rm -f "$warnfile"
+rm -rf "$objdir"
 
 echo "== [3/5] battery audit census (R112c) =="
 # Every audit printf pattern is read FROM regtest.cpp itself,
