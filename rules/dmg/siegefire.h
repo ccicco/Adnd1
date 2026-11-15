@@ -127,6 +127,9 @@
 
 #pragma once
 
+// R1061 applied
+#include "rules/seams/siegefirereg.h"
+
 namespace rules {
 
 // -----------------------------------------------------------------------
@@ -150,8 +153,10 @@ inline int siegeFieldOfFireDegrees(int device) {
     // sow have no missile field
     if (device < 0) device = 0;
     if (device > 5) device = 5;
-    static const int t[6] = { 45, 15, 30, 0, 0, 10 };
-    return t[device];
+    const auto* g = sfTable(
+        "siege_fire", "field_of_fire");
+    if (!g) return 0;
+    return (int)(*g)[device];
 }
 
 inline int siegeRangeMinQuarterInches(int device) {
@@ -159,8 +164,10 @@ inline int siegeRangeMinQuarterInches(int device) {
     // units (ballista 1/4 inch = 1)
     if (device < 0) device = 0;
     if (device > 5) device = 5;
-    static const int t[6] = { 1, 72, 60, 0, 0, 96 };
-    return t[device];
+    const auto* g = sfTable(
+        "siege_fire", "range_min_qi");
+    if (!g) return 0;
+    return (int)(*g)[device];
 }
 
 inline int siegeRangeMaxQuarterInches(int device) {
@@ -168,40 +175,50 @@ inline int siegeRangeMaxQuarterInches(int device) {
     // units (ballista 32 inches = 128)
     if (device < 0) device = 0;
     if (device > 5) device = 5;
-    static const int t[6] = { 128, 144, 120, 1, 1, 192 };
-    return t[device];
+    const auto* g = sfTable(
+        "siege_fire", "range_max_qi");
+    if (!g) return 0;
+    return (int)(*g)[device];
 }
 
 inline int siegeDamageSMMin(int device) {
     // the S-M damage low edge
     if (device < 0) device = 0;
     if (device > 5) device = 5;
-    static const int t[6] = { 2, 2, 2, 9, 9, 3 };
-    return t[device];
+    const auto* g = sfTable(
+        "siege_fire", "damage_sm_min");
+    if (!g) return 0;
+    return (int)(*g)[device];
 }
 
 inline int siegeDamageSMMax(int device) {
     // the S-M damage high edge
     if (device < 0) device = 0;
     if (device > 5) device = 5;
-    static const int t[6] = { 12, 24, 20, 16, 16, 30 };
-    return t[device];
+    const auto* g = sfTable(
+        "siege_fire", "damage_sm_max");
+    if (!g) return 0;
+    return (int)(*g)[device];
 }
 
 inline int siegeDamageLMin(int device) {
     // the L damage low edge
     if (device < 0) device = 0;
     if (device > 5) device = 5;
-    static const int t[6] = { 3, 4, 3, 7, 13, 5 };
-    return t[device];
+    const auto* g = sfTable(
+        "siege_fire", "damage_l_min");
+    if (!g) return 0;
+    return (int)(*g)[device];
 }
 
 inline int siegeDamageLMax(int device) {
     // the L damage high edge
     if (device < 0) device = 0;
     if (device > 5) device = 5;
-    static const int t[6] = { 18, 16, 12, 12, 24, 20 };
-    return t[device];
+    const auto* g = sfTable(
+        "siege_fire", "damage_l_max");
+    if (!g) return 0;
+    return (int)(*g)[device];
 }
 
 inline int siegeRateOfFireMinHundredths(int device) {
@@ -209,8 +226,10 @@ inline int siegeRateOfFireMinHundredths(int device) {
     // (25 = 1/4 per round)
     if (device < 0) device = 0;
     if (device > 5) device = 5;
-    static const int t[6] = { 25, 25, 25, 50, 50, 25 };
-    return t[device];
+    const auto* g = sfTable(
+        "siege_fire", "rate_of_fire_min_h");
+    if (!g) return 0;
+    return (int)(*g)[device];
 }
 
 inline int siegeRateOfFireMaxHundredths(int device) {
@@ -218,24 +237,30 @@ inline int siegeRateOfFireMaxHundredths(int device) {
     // ballista 1/2 with maximum crew)
     if (device < 0) device = 0;
     if (device > 5) device = 5;
-    static const int t[6] = { 50, 25, 25, 50, 50, 25 };
-    return t[device];
+    const auto* g = sfTable(
+        "siege_fire", "rate_of_fire_max_h");
+    if (!g) return 0;
+    return (int)(*g)[device];
 }
 
 inline int siegeCrewMin(int device) {
     // the minimum crew for normal rate
     if (device < 0) device = 0;
     if (device > 5) device = 5;
-    static const int t[6] = { 2, 6, 4, 10, 10, 8 };
-    return t[device];
+    const auto* g = sfTable(
+        "siege_fire", "crew_min");
+    if (!g) return 0;
+    return (int)(*g)[device];
 }
 
 inline int siegeCrewMax(int device) {
     // the maximum crew
     if (device < 0) device = 0;
     if (device > 5) device = 5;
-    static const int t[6] = { 4, 10, 6, 20, 20, 12 };
-    return t[device];
+    const auto* g = sfTable(
+        "siege_fire", "crew_max");
+    if (!g) return 0;
+    return (int)(*g)[device];
 }
 
 inline int siegeBelowMinCrewRatePct() {
@@ -390,31 +415,10 @@ inline int siegeAttackQuarterPoints(int kind,
     if (kind > 21) kind = 21;
     if (material < 0) material = 0;
     if (material > 3) material = 3;
-    static const int t[88] = {
-        4, 0, 2, 1,
-        24, 0, 16, 8,
-        16, 0, 8, 4,
-        0, 40, 0, 0,
-        8, 8, 8, 8,
-        8, 40, 8, 4,
-        0, 0, 0, 0,
-        2, 0, 0, 0,
-        12, 0, 4, 2,
-        8, 0, 4, 2,
-        4, 0, 2, 1,
-        16, 0, 8, 4,
-        24, 0, 16, 8,
-        12, 4, 8, 4,
-        12, 4, 4, 2,
-        72, 24, 32, 16,
-        2, 0, 0, 0,
-        0, 80, 0, 0,
-        4, 0, 1, 0,
-        2, 2, 2, 1,
-        32, 8, 8, 4,
-        32, 0, 20, 12,
-    };
-    return t[kind * 4 + material];
+    const auto* g = sfTable(
+        "siege_attack", "quarter_points");
+    if (!g) return 0;
+    return (int)(*g)[kind * 4 + material];
 }
 
 inline int siegeAttackPerRound(int kind) {
@@ -422,12 +426,10 @@ inline int siegeAttackPerRound(int kind) {
     // of attack by this mode
     if (kind < 0) kind = 0;
     if (kind > 21) kind = 21;
-    static const int t[22] = {
-        1, 0, 0, 0, 0, 1, 0, 0, 1, 1,
-        1, 0, 0, 1, 1, 0, 0, 0, 1, 1,
-        1, 0,
-    };
-    return t[kind];
+    const auto* g = sfTable(
+        "siege_attack", "per_round");
+    if (!g) return 0;
+    return (int)(*g)[kind];
 }
 
 inline int siegeAttackPerCasterLevel(int kind) {
@@ -436,12 +438,10 @@ inline int siegeAttackPerCasterLevel(int kind) {
     // bolt)
     if (kind < 0) kind = 0;
     if (kind > 21) kind = 21;
-    static const int t[22] = {
-        0, 0, 0, 0, 0, 0, 0, 1, 0, 0,
-        0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
-        0, 0,
-    };
-    return t[kind];
+    const auto* g = sfTable(
+        "siege_attack", "per_caster_level");
+    if (!g) return 0;
+    return (int)(*g)[kind];
 }
 
 inline int siegeFireDamageWetReductionPct() {
@@ -456,8 +456,10 @@ inline int siegeAttackQuakeMin(int material) {
     // every material)
     if (material < 0) material = 0;
     if (material > 3) material = 3;
-    static const int t[4] = { 5, 5, 5, 5 };
-    return t[material];
+    const auto* g = sfTable(
+        "siege_attack", "quake_min");
+    if (!g) return 0;
+    return (int)(*g)[material];
 }
 
 inline int siegeAttackQuakeMax(int material) {
@@ -466,8 +468,10 @@ inline int siegeAttackQuakeMax(int material) {
     // rock 5-30
     if (material < 0) material = 0;
     if (material > 3) material = 3;
-    static const int t[4] = { 60, 30, 60, 30 };
-    return t[material];
+    const auto* g = sfTable(
+        "siege_attack", "quake_max");
+    if (!g) return 0;
+    return (int)(*g)[material];
 }
 
 inline int siegeSowScrewEarthOnly() {
@@ -523,13 +527,10 @@ inline int constructionDefensiveMin(int kind) {
     // the defensive point value low edge
     if (kind < 0) kind = 0;
     if (kind > 25) kind = 25;
-    static const int t[26] = {
-        150, 25, 20, 12, 10, 8, 20, 10,
-        1, 3, 10, 8, 120, 2, 10, 6,
-        20, 15, 12, 20, 40, 30, 40, 20,
-        4, 12,
-    };
-    return t[kind];
+    const auto* g = sfTable(
+        "siege_defensive", "defensive_min");
+    if (!g) return 0;
+    return (int)(*g)[kind];
 }
 
 inline int constructionDefensiveMax(int kind) {
@@ -537,13 +538,10 @@ inline int constructionDefensiveMax(int kind) {
     // (equal to the min when single-valued)
     if (kind < 0) kind = 0;
     if (kind > 25) kind = 25;
-    static const int t[26] = {
-        150, 25, 20, 12, 10, 16, 20, 10,
-        1, 3, 15, 12, 120, 2, 10, 12,
-        20, 15, 12, 20, 80, 50, 40, 20,
-        4, 12,
-    };
-    return t[kind];
+    const auto* g = sfTable(
+        "siege_defensive", "defensive_max");
+    if (!g) return 0;
+    return (int)(*g)[kind];
 }
 
 inline int dkBarbicanExcludesGates() {
@@ -588,11 +586,10 @@ inline int siegeDeviceMhp(int device) {
     // print (0 here with that note)
     if (device < 0) device = 0;
     if (device > 11) device = 11;
-    static const int t[12] = {
-        2, 6, 4, 2, 10, 4,
-        3, 12, 0, 16, 12, 8,
-    };
-    return t[device];
+    const auto* g = sfTable(
+        "siege_mhp", "mhp");
+    if (!g) return 0;
+    return (int)(*g)[device];
 }
 
 // -----------------------------------------------------------------------
