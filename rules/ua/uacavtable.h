@@ -38,6 +38,9 @@
 
 #pragma once
 
+// R1056 applied
+#include "rules/ua/uaregistry.h"
+
 namespace rules {
 
 // ---- the 0-level track rows ----
@@ -104,25 +107,21 @@ inline int uacavtDirectFirstBonus()
 // (300,000 xp per level past the 12th). The R328
 // attain ladder reads attain(level) = high(level-1).
 inline int uacavtLevelXpLow(int level) {
-    static const int k[12] = {
-        0, 2501, 5001, 10001, 18501, 37001,
-        85001, 140001, 220001, 300001, 600001,
-        900001,
-    };
+    const auto* g = uaTable(
+        "ua_cavtable", "xp_low");
     if (level < 1) level = 1;
     if (level > 12) level = 12;
-    return k[level - 1];
+    if (!g) return 0;
+    return (int)(*g)[level - 1];
 }
 
 inline int uacavtLevelXpHigh(int level) {
-    static const int k[12] = {
-        2500, 5000, 10000, 18500, 37000,
-        85000, 140000, 220000, 300000, 600000,
-        900000, 0,
-    };
+    const auto* g = uaTable(
+        "ua_cavtable", "xp_high");
     if (level < 1) level = 1;
     if (level > 12) level = 12;
-    return k[level - 1];
+    if (!g) return 2500;
+    return (int)(*g)[level - 1];
 }
 
 // The 12th band is unbounded (300,000 xp per level

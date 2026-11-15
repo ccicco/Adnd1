@@ -32,6 +32,9 @@
 
 #pragma once
 
+// R1056 applied
+#include "rules/ua/uaregistry.h"
+
 namespace rules {
 
 // ---- the nine bands, in social-ladder order ----
@@ -39,152 +42,71 @@ inline int uasocBandCount()
     { return 9; }
 
 inline int uasocBandLow(int i) {
-    static const int k[9] = {
-        1, 5, 11, 21, 36, 56, 88, 97, 100,
-    };
+    const auto* g = uaTable(
+        "ua_socialclass", "band_low");
     if (i < 0) i = 0;
     if (i > 8) i = 8;
-    return k[i];
+    if (!g) return 1;
+    return (int)(*g)[i];
 }
 
 inline int uasocBandHigh(int i) {
-    static const int k[9] = {
-        4, 10, 20, 35, 55, 87, 96, 99, 100,
-    };
+    const auto* g = uaTable(
+        "ua_socialclass", "band_high");
     if (i < 0) i = 0;
     if (i > 8) i = 8;
-    return k[i];
+    if (!g) return 4;
+    return (int)(*g)[i];
 }
 
 inline const char* uasocBandFullName(int i) {
-    static const char* const k[9] = {
-        "Lower Lower Class",
-        "Middle Lower Class",
-        "Upper Lower Class",
-        "Lower Middle Class",
-        "Middle Middle Class",
-        "Upper Middle Class",
-        "Lower Upper Class",
-        "Middle Upper Class",
-        "Upper Upper Class",
-    };
+    const auto& rows = uaRows("ua_socialclass");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 8) i = 8;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 inline const char* uasocBandAbbr(int i) {
-    static const char* const k[9] = {
-        "LLC", "MLC", "ULC", "LMC", "MMC",
-        "UMC", "LUC", "MUC", "UUC",
-    };
+    const auto& rows = uaRows("ua_socialclass_abbr");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 8) i = 8;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // ---- the occupation rosters, per band ----
 inline int uasocRosterCount(int i) {
-    static const int k[9] = {
-        8, 10, 7, 8, 8, 9, 9, 6, 3,
-    };
+    const auto* g = uaTable(
+        "ua_socialclass", "roster_count");
     if (i < 0) i = 0;
     if (i > 8) i = 8;
-    return k[i];
+    if (!g) return 8;
+    return (int)(*g)[i];
 }
 
 inline const char* uasocRosterName(int i, int j) {
-    static const char* const r0[8] = {
-        "Freed slaves", "peasants",
-        "tinkers",
-        "vagabonds", "beggars", "criminals",
-        "low-level thieves",
-        "low-level and mid-level assassins",
-    };
-    static const char* const r1[10] = {
-        "herdsmen", "laborers", "peddlers",
-        "actors", "jugglers", "men-at-arms",
-        "low-level barbarians",
-        "mid-level thieves",
-        "high-level assassins",
-        "low-level bards",
-    };
-    static const char* const r2[7] = {
-        "freemen", "tradesmen", "petty officers",
-        "money-changers", "fences",
-        "low-level fighters", "high-level thieves",
-    };
-    static const char* const r3[8] = {
-        "artisans", "craftsmen", "petty merchants",
-        "junior officers", "bankers",
-        "landless knights", "druids", "rangers",
-    };
-    static const char* const r4[8] = {
-        "landed gentry", "merchants",
-        "petty officials", "senior officers",
-        "landless petty nobles",
-        "mid-level fighters",
-        "low-level magic-users",
-        "low-level illusionists",
-    };
-    static const char* const r5[9] = {
-        "guild masters", "great merchants",
-        "military commanders", "officials",
-        "landless nobles", "lesser clerics",
-        "high-level fighters",
-        "mid-level magic-users",
-        "mid-level illusionists",
-    };
-    static const char* const r6[9] = {
-        "great landed gentry",
-        "generals and marshals",
-        "greater officials", "knights",
-        "mid-level clerics", "cavaliers",
-        "paladins", "high-level magic-users",
-        "high-level illusionists",
-    };
-    static const char* const r7[6] = {
-        "knights", "commanders", "great clerics",
-        "nobles", "high-level paladins",
-        "very high-level magic-users and"
-        " illusionists",
-    };
-    static const char* const r8[3] = {
-        "great nobles", "sovereign nobility",
-        "royalty",
-    };
+    const auto& rows = uaRows("ua_socialclass_roster");
+    const auto* cnt = uaTable("ua_socialclass",
+        "roster_count");
+    const auto* off = uaTable("ua_socialclass",
+        "roster_offset");
+    if (rows.empty() || !cnt || !off)
+        return "";
     if (i < 0) i = 0;
     if (i > 8) i = 8;
     if (j < 0) j = 0;
-    switch (i) {
-        case 0:
-            if (j > 7) j = 7;
-            return r0[j];
-        case 1:
-            if (j > 9) j = 9;
-            return r1[j];
-        case 2:
-            if (j > 6) j = 6;
-            return r2[j];
-        case 3:
-            if (j > 7) j = 7;
-            return r3[j];
-        case 4:
-            if (j > 7) j = 7;
-            return r4[j];
-        case 5:
-            if (j > 8) j = 8;
-            return r5[j];
-        case 6:
-            if (j > 8) j = 8;
-            return r6[j];
-        case 7:
-            if (j > 5) j = 5;
-            return r7[j];
-        default:
-            if (j > 2) j = 2;
-            return r8[j];
-    }
+    int c = (int)(*cnt)[i];
+    if (j >= c)
+        j = c - 1;
+    return rows[(int)(*off)[i]
+        + j].name.c_str();
 }
 
 // The R394 clean read: the LLC label

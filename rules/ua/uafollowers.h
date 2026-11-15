@@ -35,6 +35,9 @@
 // R368 title cells and the R371
 // armor costs (checked in the
 // regtest audit, not here).
+
+// R1056 applied
+#include "rules/ua/uaregistry.h"
 namespace rules {
 
 // ---- the men-at-arms dice ----
@@ -51,12 +54,12 @@ inline int uafolFollowersTopLevel()
 // 12d4 at 8th, 24d4 at 9th and
 // 48d4 at 10th. All sides are 4.
 inline int uafolDiceCount(int level) {
+    const auto* g = uaTable(
+        "ua_followers", "dice_count");
     if (level < 4) return 0;
     if (level > 10) return 0;
-    static const int k[7] = {
-        1, 2, 3, 6, 12, 24, 48
-    };
-    return k[level - 4];
+    if (!g) return 0;
+    return (int)(*g)[level - 4];
 }
 
 inline int uafolDiceSides(int level) {
@@ -94,19 +97,19 @@ inline int uafolEquipRowCount()
     { return 4; }
 
 inline int uafolEquipRowLo(int row) {
+    const auto* g = uaTable(
+        "ua_followers", "equip_lo");
     if (row < 0 || row > 3) return 0;
-    static const int k[4] = {
-        1, 51, 76, 91
-    };
-    return k[row];
+    if (!g) return 0;
+    return (int)(*g)[row];
 }
 
 inline int uafolEquipRowHi(int row) {
+    const auto* g = uaTable(
+        "ua_followers", "equip_hi");
     if (row < 0 || row > 3) return 0;
-    static const int k[4] = {
-        50, 75, 90, 100
-    };
-    return k[row];
+    if (!g) return 0;
+    return (int)(*g)[row];
 }
 
 // Rows 01-50 and 91-00 are cavalry;

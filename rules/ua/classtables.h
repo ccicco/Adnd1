@@ -37,6 +37,9 @@
 
 #pragma once
 
+// R1056 applied
+#include "rules/ua/uaregistry.h"
+
 #include "subraces.h"  // UaClass (the 14)
 
 namespace rules {
@@ -177,12 +180,14 @@ inline int acrobatExtraWeaponCount()
     { return 2; }
 inline const char* acrobatExtraWeaponName(
         int i) {
-    static const char* const k[2] = {
-        "lasso", "staff"
-    };
+    const auto& rows = uaRows("ua_classtables");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 1) i = 1;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 }   // namespace rules

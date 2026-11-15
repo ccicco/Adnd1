@@ -44,6 +44,9 @@
 
 #pragma once
 
+// R1056 applied
+#include "rules/ua/uaregistry.h"
+
 namespace rules {
 
 // ---- the conversion (p. 23) ----
@@ -66,13 +69,14 @@ inline int acrobatFrozenSkillCount()
     { return 4; }
 
 inline const char* acrobatFrozenSkillName(int i) {
-    static const char* const k[4] = {
-        "Find Traps", "Pick Pockets",
-        "Open Locks", "Remove Traps"
-    };
+    const auto& rows = uaRows("ua_acrobat");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 3) i = 3;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 inline bool acrobatReadMagicNeverGained()
@@ -82,13 +86,14 @@ inline int acrobatRetainedSkillCount()
     { return 4; }
 
 inline const char* acrobatRetainedSkillName(int i) {
-    static const char* const k[4] = {
-        "Move Silently", "Hide in Shadows",
-        "Hear Noise", "Read Languages"
-    };
+    const auto& rows = uaRows("ua_acrobat_retained");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 3) i = 3;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 inline bool acrobatClimbWallsStillImproves()
@@ -119,13 +124,12 @@ inline int acrobatSplitLevelHigh()
     { return 12; }
 
 inline int acrobatXpToAttain(int level) {
-    static const int k[7] = {
-        20000, 45000, 75000, 125000,
-        180000, 250000, 500000
-    };
+    const auto* g = uaTable(
+        "ua_acrobat", "split_xp");
     if (level < 6) return 0;
     if (level > 12) return 500000;
-    return k[level - 6];
+    if (!g) return 0;
+    return (int)(*g)[level - 6];
 }
 
 inline int acrobatXpPerLevelPast12()
@@ -227,20 +231,21 @@ inline bool acrobatStandingBackwardHalf()
     { return true; }
 
 inline int acrobatExtensionFailurePercent(int feet) {
-    // feet 2-5; the 2-foot extension
-    // never fails (it lands prone
-    // instead)
-    static const int k[4] = {0, 25, 50, 75};
+    const auto* g = uaTable(
+        "ua_acrobat", "ext_fail");
     if (feet < 2) feet = 2;
     if (feet > 5) feet = 5;
-    return k[feet - 2];
+    if (!g) return 0;
+    return (int)(*g)[feet - 2];
 }
 
 inline int acrobatExtensionRecoverySegments(int feet) {
-    static const int k[4] = {2, 3, 4, 5};
+    const auto* g = uaTable(
+        "ua_acrobat", "ext_recover");
     if (feet < 2) feet = 2;
     if (feet > 5) feet = 5;
-    return k[feet - 2];
+    if (!g) return 2;
+    return (int)(*g)[feet - 2];
 }
 
 inline int acrobatNonAcrobatStandingBroad()
@@ -315,31 +320,13 @@ inline bool acrobatFallingPastSafeAddsDice()
 
 inline int acrobatFallingChanceKnown(
         int level, int feet) {
-    // the extract- and prose-verified
-    // cells; -1 = a documented hole
-    static const int cells[17][3] = {
-        {6, 10, 25},    // the prose
-        {7, 10, 50},
-        {8, 10, 75},
-        {9, 10, 100},   // the prose
-        {9, 20, 25},    // the prose
-        {13, 30, 50},
-        {14, 30, 75},
-        {15, 40, 20},
-        {16, 40, 40},
-        {17, 40, 60},
-        {18, 40, 80},
-        {19, 50, 20},
-        {20, 50, 40},
-        {21, 50, 60},
-        {22, 50, 80},
-        {23, 50, 100},  // the prose
-        {23, 60, 20}    // the prose
-    };
+    const auto* g = uaTable(
+        "ua_acrobat", "fall_known");
+    if (!g) return -1;
     for (int i = 0; i < 17; ++i)
-        if (cells[i][0] == level
-            && cells[i][1] == feet)
-            return cells[i][2];
+        if ((*g)[i * 3] == level
+            && (*g)[i * 3 + 1] == feet)
+            return (*g)[i * 3 + 2];
     return -1;
 }
 
@@ -347,18 +334,15 @@ inline int acrobatFallingChanceKnown(
 // fn 1-5, wind 0 = none, 1 = moderate, 2 = strong. -1 = the
 // footnote handles that wind with no carry penalty instead.
 inline int acrobatFootnoteCarryGp(int fn, int wind) {
-    static const int k[5][3] = {
-        {1000, -1, 0},
-        {2000, 1000, -1},
-        {0, 2000, 1000},
-        {3000, 2000, 1000},
-        {4000, 3000, 2000}
-    };
+    const auto* g = uaTable(
+        "ua_acrobat", "carry_gp");
     if (fn < 1) fn = 1;
     if (fn > 5) fn = 5;
     if (wind < 0) wind = 0;
     if (wind > 2) wind = 2;
-    return k[fn - 1][wind];
+    if (!g) return 1000;
+    return (int)(*g)[(fn - 1) * 3
+        + (wind)];
 }
 
 // ---- the equipment reads (p. 25) ----
@@ -371,38 +355,48 @@ inline bool acrobatTightropeCarriedEvenlyBalanced()
 // ---- Table III: the dexterity
 // adjustments (p. 25) ----
 inline int acrobatDexTightropeBonus(int dex) {
-    static const int k[4] = {5, 10, 15, 20};
+    const auto* g = uaTable(
+        "ua_acrobat", "dex_tightrope");
     if (dex < 16) return 0;
     if (dex > 19) dex = 19;
-    return k[dex - 16];
+    if (!g) return 0;
+    return (int)(*g)[dex - 16];
 }
 
 inline int acrobatDexPoleVaultBonus(int dex) {
-    static const int k[4] = {0, 5, 10, 15};
+    const auto* g = uaTable(
+        "ua_acrobat", "dex_vault");
     if (dex < 16) return 0;
     if (dex > 19) dex = 19;
-    return k[dex - 16];
+    if (!g) return 0;
+    return (int)(*g)[dex - 16];
 }
 
 inline int acrobatDexAttackBonus(int dex) {
-    static const int k[4] = {1, 2, 3, 4};
+    const auto* g = uaTable(
+        "ua_acrobat", "dex_attack");
     if (dex < 16) return 0;
     if (dex > 19) dex = 19;
-    return k[dex - 16];
+    if (!g) return 0;
+    return (int)(*g)[dex - 16];
 }
 
 inline int acrobatDexEvasionBonus(int dex) {
-    static const int k[4] = {2, 3, 5, 8};
+    const auto* g = uaTable(
+        "ua_acrobat", "dex_evasion");
     if (dex < 16) return 0;
     if (dex > 19) dex = 19;
-    return k[dex - 16];
+    if (!g) return 0;
+    return (int)(*g)[dex - 16];
 }
 
 inline int acrobatDexFallingBonus(int dex) {
-    static const int k[4] = {0, 0, 5, 10};
+    const auto* g = uaTable(
+        "ua_acrobat", "dex_falling");
     if (dex < 16) return 0;
     if (dex > 19) dex = 19;
-    return k[dex - 16];
+    if (!g) return 0;
+    return (int)(*g)[dex - 16];
 }
 
 }   // namespace rules

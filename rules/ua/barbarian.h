@@ -17,6 +17,9 @@
 
 #pragma once
 
+// R1056 applied
+#include "rules/ua/uaregistry.h"
+
 #include "../engine/character.h"  // the Ability enum
 
 namespace rules {
@@ -78,12 +81,14 @@ inline int barbarianRequiredWeaponCount()
     { return 3; }
 
 inline const char* barbarianRequiredWeaponName(int i) {
-    static const char* const k[3] = {
-        "Hand Axe", "Knife", "Spear"
-    };
+    const auto& rows = uaRows("ua_barbarian_weapons");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 2) i = 2;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // ---- Barbarians Table I (p. 19) ----
@@ -91,14 +96,12 @@ inline const char* barbarianRequiredWeaponName(int i) {
 // convention), 11 levels, 500000 xp per level past the 11th,
 // +4 hp per level after the 8th (8+4, 8+8, 8+12).
 inline int barbarianXpToAttain(int level) {
-    static const int k[11] = {
-        0, 6000, 12000, 24000, 48000,
-        80000, 150000, 275000, 500000,
-        1000000, 1500000
-    };
+    const auto* g = uaTable(
+        "ua_barbarian", "xp_attain");
     if (level < 1) return 0;
     if (level > 11) return 1500000;
-    return k[level - 1];
+    if (!g) return 0;
+    return (int)(*g)[level - 1];
 }
 
 inline int barbarianXpPerLevelPast11()
@@ -131,10 +134,12 @@ inline bool barbarianShamanException()
 // damage bonus rides this - only the ability to affect the
 // creature.
 inline int barbarianStrikeLevel(int plus) {
+    const auto* g = uaTable(
+        "ua_barbarian", "strike_level");
     if (plus < 1) plus = 1;
     if (plus > 5) plus = 5;
-    static const int k[5] = {4, 6, 8, 10, 12};
-    return k[plus - 1];
+    if (!g) return 4;
+    return (int)(*g)[plus - 1];
 }
 
 inline int barbarianStrikePlus(int level) {
@@ -296,15 +301,14 @@ inline int barbarianTertiaryCount()
     { return 7; }
 
 inline const char* barbarianTertiaryName(int i) {
-    static const char* const k[7] = {
-        "Animal Handling", "Horsemanship",
-        "Long-Distance Signaling", "Running",
-        "Small Craft (Paddled and Rowed)",
-        "Sound Imitation", "Snare Building"
-    };
+    const auto& rows = uaRows("ua_barbarian");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 6) i = 6;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 }   // namespace rules

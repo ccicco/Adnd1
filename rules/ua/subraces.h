@@ -37,6 +37,9 @@
 
 #pragma once
 
+// R1056 applied
+#include "rules/ua/uaregistry.h"
+
 #include "../engine/races.h"
 
 #include <cstdint>
@@ -323,10 +326,11 @@ enum RacePref : int {
 };
 
 inline const char* racePrefLetter(RacePref p) {
-    static const char* L[6] = {
-        "P", "G", "T", "N", "A", "H" };
+    const auto& rows = uaRows("ua_subrace_letters");
+    if (rows.empty())
+        return "?";
     return (p >= PREF_P && p <= PREF_H)
-        ? L[p] : "?";
+        ? rows[p].name.c_str() : "?";
 }
 
 // The matrix rows, in SUB_ order from
@@ -335,33 +339,16 @@ inline const char* racePrefLetter(RacePref p) {
 // order. Row = viewer, column = viewed.
 inline RacePref subracePrefers(
         CharSubRace viewer, CharSubRace viewed) {
-    static const uint8_t M[17][17] = {
-        // DG DH DM ED EG EH EV EWi EWd GD
-        // GS hE HH HS HT hO H
-        { 0, 4, 4, 1, 5, 5, 5, 5, 5, 4, 4, 3, 3, 2, 3, 3, 3 },
-        { 4, 0, 1, 5, 4, 4, 4, 4, 4, 3, 1, 3, 2, 1, 1, 5, 3 },
-        { 4, 1, 0, 5, 4, 4, 4, 4, 4, 2, 2, 3, 2, 1, 2, 5, 3 },
-        { 1, 4, 4, 0, 5, 5, 4, 5, 5, 5, 4, 4, 4, 4, 4, 2, 3 },
-        { 4, 4, 4, 5, 0, 1, 4, 2, 1, 3, 2, 1, 2, 2, 1, 4, 3 },
-        { 4, 4, 4, 5, 1, 0, 4, 3, 1, 2, 2, 1, 2, 2, 1, 4, 3 },
-        { 4, 4, 4, 4, 3, 3, 0, 3, 3, 1, 1, 2, 3, 3, 2, 4, 4 },
-        { 4, 4, 4, 5, 3, 3, 4, 0, 3, 4, 4, 4, 4, 4, 3, 4, 4 },
-        { 4, 4, 4, 5, 1, 1, 4, 3, 0, 3, 3, 1, 2, 2, 1, 4, 3 },
-        { 4, 3, 2, 5, 3, 3, 2, 3, 3, 0, 1, 3, 2, 2, 2, 4, 3 },
-        { 4, 1, 1, 4, 2, 2, 1, 3, 3, 1, 0, 2, 1, 1, 1, 5, 3 },
-        { 3, 3, 3, 0, 0, 0, 0, 4, 0, 3, 2, 0, 3, 3, 2, 4, 2 },
-        { 3, 2, 2, 4, 2, 2, 3, 3, 2, 3, 2, 3, 0, 0, 0, 3, 2 },
-        { 2, 1, 1, 4, 2, 2, 3, 3, 2, 2, 2, 3, 0, 0, 0, 3, 3 },
-        { 3, 2, 2, 3, 1, 1, 2, 2, 1, 3, 2, 1, 0, 0, 0, 3, 3 },
-        { 3, 5, 5, 3, 4, 4, 4, 4, 4, 4, 5, 4, 3, 3, 4, 0, 2 },
-        { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 3, 3, 3, 3, 0 },
-    };
+    const auto* g = uaTable(
+        "ua_subrace_prefs", "pref_matrix");
     if (viewer < SUB_DWARF_GRAY
         || viewer > SUB_HUMAN
         || viewed < SUB_DWARF_GRAY
         || viewed > SUB_HUMAN)
         return PREF_N;
-    return (RacePref)M[viewer - 1][viewed - 1];
+    if (!g) return PREF_N;
+    return (RacePref)(*g)[(viewer - 1) * 17
+        + (viewed - 1)];
 }
 
 // ---------------------------------------------------------------------------

@@ -32,6 +32,9 @@
 
 #pragma once
 
+// R1056 applied
+#include "rules/ua/uaregistry.h"
+
 namespace rules {
 
 // ---- the stations (p. 25), in social-ladder order ----
@@ -39,67 +42,75 @@ inline int cavMoneyStationCount()
     { return 6; }
 
 inline const char* cavMoneyStationName(int i) {
-    static const char* const k[6] = {
-        "Lower Middle Class or less",
-        "Middle Middle Class",
-        "Upper Middle Class",
-        "Lower Upper Class",
-        "Middle Upper Class",
-        "Upper Upper Class"
-    };
+    const auto& rows = uaRows("ua_cavmoney");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // 0 = Horseman (0-level track), 1 = Cavalier (1st-level Armiger).
 inline const char* cavMoneyStationEntry(int i) {
-    static const char* const k[6] = {
-        "Horseman", "Horseman", "Horseman",
-        "Cavalier", "Cavalier", "Cavalier"
-    };
+    const auto& rows = uaRows("ua_cavmoney_entry");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // ---- the gold ranges (p. 25) ----
 inline int cavMoneyGoldLow(int i) {
-    static const int k[6] = {20, 20, 20, 70, 70, 130};
+    const auto* g = uaTable(
+        "ua_cavmoney", "gold_low");
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    return k[i];
+    if (!g) return 20;
+    return (int)(*g)[i];
 }
 
 inline int cavMoneyGoldHigh(int i) {
-    static const int k[6] = {80, 80, 80, 180, 180, 180};
+    const auto* g = uaTable(
+        "ua_cavmoney", "gold_high");
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    return k[i];
+    if (!g) return 80;
+    return (int)(*g)[i];
 }
 
 // ---- the printed formulas (p. 25) ----
 // Count 0 = no formula printed (the three Horseman
 // rows); faces and bonus read 0 with it.
 inline int cavMoneyDiceCount(int i) {
-    static const int k[6] = {0, 0, 0, 1, 1, 1};
+    const auto* g = uaTable(
+        "ua_cavmoney", "dice_count");
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    return k[i];
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int cavMoneyDiceFaces(int i) {
-    static const int k[6] = {0, 0, 0, 12, 6, 6};
+    const auto* g = uaTable(
+        "ua_cavmoney", "dice_faces");
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    return k[i];
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int cavMoneyDiceBonus(int i) {
-    static const int k[6] = {0, 0, 0, 6, 6, 12};
+    const auto* g = uaTable(
+        "ua_cavmoney", "dice_bonus");
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    return k[i];
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 // The printed formulas are plain rolls TIMES 10
@@ -111,64 +122,31 @@ inline bool cavMoneyGoldRollTimesTen()
 
 // ---- the equipment lists (p. 25) ----
 inline int cavMoneyItemCount(int i) {
-    static const int k[6] = {3, 4, 4, 6, 6, 7};
+    const auto* g = uaTable(
+        "ua_cavmoney", "item_count");
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    return k[i];
+    if (!g) return 3;
+    return (int)(*g)[i];
 }
 
 inline const char* cavMoneyItemName(
         int station, int j) {
-    static const char* const s0[3] = {
-        "shield", "sword (any type)",
-        "riding horse"
-    };
-    static const char* const s1[4] = {
-        "shield", "dagger",
-        "sword (broad or long)", "light warhorse"
-    };
-    static const char* const s2[4] = {
-        "chain mail", "sword (broad or long)",
-        "lance", "light warhorse"
-    };
-    static const char* const s3[6] = {
-        "shield", "plate mail", "dagger",
-        "sword (long or broad)", "lance",
-        "medium warhorse"
-    };
-    static const char* const s4[6] = {
-        "shield", "field plate armor", "dagger",
-        "sword (long or broad)", "lance",
-        "heavy warhorse"
-    };
-    static const char* const s5[7] = {
-        "shield", "full plate armor", "dagger",
-        "sword (long or broad)", "mace", "lance",
-        "heavy warhorse with leather barding"
-    };
+    const auto& rows = uaRows("ua_cavmoney_items");
+    const auto* cnt = uaTable("ua_cavmoney",
+        "item_count");
+    const auto* off = uaTable("ua_cavmoney",
+        "item_offset");
+    if (rows.empty() || !cnt || !off)
+        return "";
     if (station < 0) station = 0;
     if (station > 5) station = 5;
     if (j < 0) j = 0;
-    switch (station) {
-        case 0:
-            if (j > 2) j = 2;
-            return s0[j];
-        case 1:
-            if (j > 3) j = 3;
-            return s1[j];
-        case 2:
-            if (j > 3) j = 3;
-            return s2[j];
-        case 3:
-            if (j > 5) j = 5;
-            return s3[j];
-        case 4:
-            if (j > 5) j = 5;
-            return s4[j];
-        default:
-            if (j > 6) j = 6;
-            return s5[j];
-    }
+    int c = (int)(*cnt)[station];
+    if (j >= c)
+        j = c - 1;
+    return rows[(int)(*off)[station]
+        + j].name.c_str();
 }
 
 // ---- the prose pins (p. 25) ----

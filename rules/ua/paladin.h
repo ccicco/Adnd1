@@ -15,6 +15,9 @@
 
 #pragma once
 
+// R1056 applied
+#include "rules/ua/uaregistry.h"
+
 #include "cavalier.h"  // the parent-class pins
 
 namespace rules {
@@ -99,15 +102,14 @@ inline int paladinCavalierAbilityCount()
 
 inline const char* paladinCavalierAbilityName(
         int i) {
-    static const char* const k[5] = {
-        "weapons of choice",
-        "parrying ability", "horsemanship",
-        "saving throw bonuses",
-        "immunity to fear"
-    };
+    const auto& rows = uaRows("ua_paladin");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 4) i = 4;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // The paladin may increase charisma the

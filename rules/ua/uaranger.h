@@ -27,6 +27,9 @@
 
 #pragma once
 
+// R1056 applied
+#include "rules/ua/uaregistry.h"
+
 namespace rules {
 
 // ---- the outdoor tracking base (p. 21) ----
@@ -59,10 +62,12 @@ inline int uaRangerTrackTerrainCategoryCount()
     { return 4; }
 
 inline int uaRangerTrackTerrainModifier(int category) {
-    static const int k[4] = {20, 10, 0, -50};
+    const auto* g = uaTable(
+        "ua_ranger", "terrain_mod");
     if (category < 0) category = 0;
     if (category > 3) category = 3;
-    return k[category];
+    if (!g) return 20;
+    return (int)(*g)[category];
 }
 
 inline bool uaRangerTrackHideDropsCategory()
@@ -139,37 +144,14 @@ inline int uaRangerTrackIdentifyRowCount()
     { return 10; }
 
 inline const char* uaRangerTrackIdentifyAbility(int level) {
-    static const char* const k[10] = {
-        "Common woodland creatures' tracks"
-        " and direction of travel",
-        "Common woodland creatures' number"
-        " and pace",
-        "Common woodland creatures' time of"
-        " passage (outdoors only)",
-        "As 3rd level with respect to"
-        " uncommon woodland creatures",
-        "As 3rd level with respect to rare"
-        " woodland creatures",
-        "As 3rd level with respect to very"
-        " rare woodland creatures",
-        "As 3rd level with respect to all"
-        " sorts of creatures (woodland and"
-        " otherwise) within a 100-mile"
-        " radius",
-        "As 7th level, plus the ability to"
-        " determine the general size and"
-        " weight of humans",
-        "As 8th level, plus the ability to"
-        " determine the size and numbers"
-        " of mounted creatures",
-        "As 9th level with respect to all"
-        " creatures ever observed, prior"
-        " to attaining 10th level or"
-        " subsequently"
-    };
+    const auto& rows = uaRows("ua_ranger_identify");
+    if (rows.empty())
+        return "";
     if (level < 1) level = 1;
     if (level > 10) level = 10;
-    return k[level - 1];
+    if ((int)rows.size() <= (level - 1))
+        return "";
+    return rows[level - 1].name.c_str();
 }
 
 // ---- the giant class (p. 22) ----
@@ -189,19 +171,14 @@ inline int uaRangerGiantRosterPhbCount()
     { return 11; }
 
 inline const char* uaRangerGiantRosterName(int i) {
-    static const char* const k[22] = {
-        "bugbear", "cyclopskin", "dune stalker",
-        "ettin", "flind", "gibberling",
-        "giant", "gnoll", "goblin",
-        "grimlock", "hobgoblin", "kobold",
-        "meazel", "norker", "ogre",
-        "ogre mage", "ogrillon", "orc",
-        "quaggoth", "tasloi", "troll",
-        "xvart"
-    };
+    const auto& rows = uaRows("ua_ranger");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 21) i = 21;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 }   // namespace rules

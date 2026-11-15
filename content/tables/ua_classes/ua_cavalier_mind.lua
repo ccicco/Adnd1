@@ -1,0 +1,73 @@
+-- ua_cavalier_mind
+-- The R1056 UA classes-family de-wire (rules/ua).
+-- UA cavalier mind-affecting power names.
+-- rows[]: the def's row names - the R1042 equipment rows idiom (computed names where the print has no name list).
+-- tables[]: the printed columns; the accessors live in rules/ua and keep their clamps.
+-- DO NOT hand-edit: tools/r1056_splice.py is the only writer.
+
+return {
+  key = "ua_cavalier_mind",
+  name = "UA cavalier mind-affecting power names",
+  sources = {
+    { part = 0, round = 1056 },
+  },
+  pins = {
+    { name = "ua_cavalier_mindRowCount",
+      value = 10,
+      comment = "the table rows" },
+  },
+  rows = {
+    { name = "beguiling",
+      set = "ua_cavalier_mind",
+      band = { 0, 0 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "charm",
+      set = "ua_cavalier_mind",
+      band = { 1, 1 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "domination",
+      set = "ua_cavalier_mind",
+      band = { 2, 2 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "hold",
+      set = "ua_cavalier_mind",
+      band = { 3, 3 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "hypnosis",
+      set = "ua_cavalier_mind",
+      band = { 4, 4 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "magic jar",
+      set = "ua_cavalier_mind",
+      band = { 5, 5 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "possession",
+      set = "ua_cavalier_mind",
+      band = { 6, 6 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "sleep",
+      set = "ua_cavalier_mind",
+      band = { 7, 7 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "suggestion",
+      set = "ua_cavalier_mind",
+      band = { 8, 8 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "psionic mind blast",
+      set = "ua_cavalier_mind",
+      band = { 9, 9 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+  },
+  tables = {
+  },
+}

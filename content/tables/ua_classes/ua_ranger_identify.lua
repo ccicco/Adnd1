@@ -1,0 +1,73 @@
+-- ua_ranger_identify
+-- The R1056 UA classes-family de-wire (rules/ua).
+-- UA ranger tracking identification abilities.
+-- rows[]: the def's row names - the R1042 equipment rows idiom (computed names where the print has no name list).
+-- tables[]: the printed columns; the accessors live in rules/ua and keep their clamps.
+-- DO NOT hand-edit: tools/r1056_splice.py is the only writer.
+
+return {
+  key = "ua_ranger_identify",
+  name = "UA ranger tracking identification abilities",
+  sources = {
+    { part = 0, round = 1056 },
+  },
+  pins = {
+    { name = "ua_ranger_identifyRowCount",
+      value = 10,
+      comment = "the table rows" },
+  },
+  rows = {
+    { name = "Common woodland creatures' tracks and direction of travel",
+      set = "ua_ranger_identify",
+      band = { 0, 0 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Common woodland creatures' number and pace",
+      set = "ua_ranger_identify",
+      band = { 1, 1 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "Common woodland creatures' time of passage (outdoors only)",
+      set = "ua_ranger_identify",
+      band = { 2, 2 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "As 3rd level with respect to uncommon woodland creatures",
+      set = "ua_ranger_identify",
+      band = { 3, 3 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "As 3rd level with respect to rare woodland creatures",
+      set = "ua_ranger_identify",
+      band = { 4, 4 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "As 3rd level with respect to very rare woodland creatures",
+      set = "ua_ranger_identify",
+      band = { 5, 5 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "As 3rd level with respect to all sorts of creatures (woodland and otherwise) within a 100-mile radius",
+      set = "ua_ranger_identify",
+      band = { 6, 6 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "As 7th level, plus the ability to determine the general size and weight of humans",
+      set = "ua_ranger_identify",
+      band = { 7, 7 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "As 8th level, plus the ability to determine the size and numbers of mounted creatures",
+      set = "ua_ranger_identify",
+      band = { 8, 8 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+    { name = "As 9th level with respect to all creatures ever observed, prior to attaining 10th level or subsequently",
+      set = "ua_ranger_identify",
+      band = { 9, 9 },
+      xp = 0, xp_hi = 0, gp = 0, gp_hi = 0,
+      qty = { 0, 0 } },
+  },
+  tables = {
+  },
+}

@@ -12,6 +12,9 @@
 
 #pragma once
 
+// R1056 applied
+#include "rules/ua/uaregistry.h"
+
 #include <cstring>
 
 #include "../engine/character.h"  // the Ability enum
@@ -133,16 +136,14 @@ inline int cavalierPreferredWeaponCount()
 
 inline const char* cavalierPreferredWeaponName(
         int i) {
-    static const char* const k[11] = {
-        "lance", "long sword", "broad sword",
-        "bastard sword", "short sword",
-        "horseman's mace", "horseman's flail",
-        "horseman's military pick", "dagger",
-        "scimitar", "javelin"
-    };
+    const auto& rows = uaRows("ua_cavalier");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 10) i = 10;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 inline const char* cavalierElvenBowName()
@@ -196,10 +197,12 @@ inline int cavalierSaddlePercent(int level) {
 }
 
 inline int cavalierHorsemanshipLevel(int i) {
-    static const int k[6] = {3, 4, 5, 7, 9, 11};
+    const auto* g = uaTable(
+        "ua_cavalier", "horsemanship");
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    return k[i];
+    if (!g) return 3;
+    return (int)(*g)[i];
 }
 
 inline int cavalierSteedHpBonusPerDie()
@@ -254,15 +257,14 @@ inline int cavalierMindPowersCount()
     { return 10; }
 
 inline const char* cavalierMindPowerName(int i) {
-    static const char* const k[10] = {
-        "beguiling", "charm", "domination",
-        "hold", "hypnosis", "magic jar",
-        "possession", "sleep", "suggestion",
-        "psionic mind blast"
-    };
+    const auto& rows = uaRows("ua_cavalier_mind");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 9) i = 9;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 inline int cavalierIllusionSaveBonus()
@@ -309,14 +311,12 @@ inline bool cavalierRevocationRetainsWoc()
 // past the 12th; Cavalier Commander at 13th and above; 3 hp per
 // level after the 10th.
 inline int cavalierXpToAttain(int level) {
-    static const int k[12] = {
-        0, 2500, 5000, 10000, 18500, 37000,
-        85000, 140000, 220000, 300000, 600000,
-        900000
-    };
+    const auto* g = uaTable(
+        "ua_cavalier", "xp_attain");
     if (level < 1) return 0;
     if (level > 12) return 900000;
-    return k[level - 1];
+    if (!g) return 0;
+    return (int)(*g)[level - 1];
 }
 
 inline int cavalierXpPerLevelPast12()

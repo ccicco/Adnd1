@@ -31,6 +31,9 @@
 
 #pragma once
 
+// R1056 applied
+#include "rules/ua/uaregistry.h"
+
 namespace rules {
 
 // ---- the top of the hierarchy (p. 16) ----
@@ -109,13 +112,12 @@ inline int hierophantTopLevel()
     { return 23; }
 
 inline int hierophantXpBandLow(int level) {
-    static const int k[8] = {
-        1, 500001, 1000001, 1500001,
-        2000001, 2500001, 3000001, 3500001
-    };
+    const auto* g = uaTable(
+        "ua_hierophant", "xp_band_low");
     if (level < 16) return 0;
     if (level > 23) return 3500001;
-    return k[level - 16];
+    if (!g) return 0;
+    return (int)(*g)[level - 16];
 }
 
 // The hit-dice column: 15 dice plus
@@ -306,65 +308,44 @@ inline int hierophantConjureRowCount(int t) {
 
 inline int hierophantConjureLow(
         int t, int row) {
-    static const int lo[5][4] = {
-        {1, 86, 95, 99},
-        {1, 86, 95, 99},
-        {1, 86, 95, 99},
-        {1, 86, 95, 99},
-        {1, 86, 96, 0}
-    };
+    const auto* g = uaTable(
+        "ua_hierophant", "conjure_low");
     if (t < 0) t = 0;
     if (t > 4) t = 4;
     if (row < 0) row = 0;
     if (row > 3) row = 3;
-    return lo[t][row];
+    if (!g) return 1;
+    return (int)(*g)[(t) * 4
+        + (row)];
 }
 
 inline int hierophantConjureHigh(
         int t, int row) {
-    static const int hi[5][4] = {
-        {85, 94, 98, 100},
-        {85, 94, 98, 100},
-        {85, 94, 98, 100},
-        {85, 94, 98, 100},
-        {85, 95, 100, 0}
-    };
+    const auto* g = uaTable(
+        "ua_hierophant", "conjure_high");
     if (t < 0) t = 0;
     if (t > 4) t = 4;
     if (row < 0) row = 0;
     if (row > 3) row = 3;
-    return hi[t][row];
+    if (!g) return 85;
+    return (int)(*g)[(t) * 4
+        + (row)];
 }
 
 inline const char* hierophantConjureName(
         int t, int row) {
-    static const char* const k[5][4] = {
-        {"16 HD fire elemental",
-         "2-4 salamanders",
-         "1 efreeti",
-         "21-24 HD fire elemental"},
-        {"earth elemental",
-         "2-4 xorn",
-         "1 dao",
-         "21-24 HD earth elemental"},
-        {"16 HD water elemental",
-         "7-12 tritons on hippocampi",
-         "1 marid",
-         "21-24 HD water elemental"},
-        {"16 HD air elemental",
-         "2-4 invisible stalkers",
-         "1 djinni",
-         "21-24 HD air elemental"},
-        {"16 HD para-elemental",
-         "special",
-         "21-24 HD para-elemental",
-         ""}
-    };
+    const auto& rows = uaRows("ua_hierophant_conjure");
+    if (rows.empty())
+        return "";
     if (t < 0) t = 0;
     if (t > 4) t = 4;
     if (row < 0) row = 0;
     if (row > 3) row = 3;
-    return k[t][row];
+    if ((int)rows.size() <= (t) * 4
+        + (row))
+        return "";
+    return rows[(t) * 4
+        + (row)].name.c_str();
 }
 
 // The para-elemental "special" row: the
@@ -375,15 +356,14 @@ inline int hierophantConjureSpecialCount()
 
 inline const char*
 hierophantConjureSpecialName(int i) {
-    static const char* const k[4] = {
-        "5-8 lava children",
-        "5-8 winter wolves",
-        "21-24 mudmen",
-        "21-24 vapor rats"
-    };
+    const auto& rows = uaRows("ua_hierophant_special");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 3) i = 3;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // The desire override and the conjured

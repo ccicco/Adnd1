@@ -25,6 +25,9 @@
 
 #pragma once
 
+// R1056 applied
+#include "rules/ua/uaregistry.h"
+
 namespace rules {
 
 // ---- the birth table, 13 rows ----
@@ -32,36 +35,32 @@ inline int uabirthRowCount()
     { return 13; }
 
 inline int uabirthRowLow(int i) {
-    static const int k[13] = {
-        1, 6, 11, 21, 36, 51, 66, 81, 86,
-        91, 95, 98, 100,
-    };
+    const auto* g = uaTable(
+        "ua_birth", "row_low");
     if (i < 0) i = 0;
     if (i > 12) i = 12;
-    return k[i];
+    if (!g) return 1;
+    return (int)(*g)[i];
 }
 
 inline int uabirthRowHigh(int i) {
-    static const int k[13] = {
-        5, 10, 20, 35, 50, 65, 80, 85, 90,
-        94, 97, 99, 100,
-    };
+    const auto* g = uaTable(
+        "ua_birth", "row_high");
     if (i < 0) i = 0;
     if (i > 12) i = 12;
-    return k[i];
+    if (!g) return 5;
+    return (int)(*g)[i];
 }
 
 inline const char* uabirthOrderLabel(int i) {
-    static const char* const k[13] = {
-        "Only child", "1st child", "2nd child",
-        "3rd child", "4th child", "5th child",
-        "6th child", "7th child", "8th child",
-        "9th child", "10th child", "11th child",
-        "12th child",
-    };
+    const auto& rows = uaRows("ua_birth");
+    if (rows.empty())
+        return "";
     if (i < 0) i = 0;
     if (i > 12) i = 12;
-    return k[i];
+    if ((int)rows.size() <= (i))
+        return "";
+    return rows[i].name.c_str();
 }
 
 // ---- the parents' marital status table ----
