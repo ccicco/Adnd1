@@ -1307,6 +1307,7 @@ int main() {
     #include "rules/audits/r1058_weapons_registry.h"  // R1058
     #include "rules/audits/r1059_miscmagic_registry.h"  // R1059
 #include "rules/audits/r1061_siegefire_registry.h"  // R1061
+#include "rules/audits/r1062_specart_registry.h"  // R1062
     #include "rules/audits/r280_special_artifacts_prose.h"  // R835: migrated
     #include "rules/audits/r281_special_artifacts_prose.h"  // R835: migrated
     #include "rules/audits/r282_special_artifacts_prose.h"  // R835: migrated

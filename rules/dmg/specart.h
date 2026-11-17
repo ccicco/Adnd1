@@ -44,6 +44,9 @@
 
 #pragma once
 
+// R1062 applied
+#include "rules/seams/specreg.h"
+
 namespace rules {
 
 inline int saRowCount() {
@@ -55,61 +58,50 @@ inline int saRowLo(int i) {
     // the printed band lower edges; i clamps
     if (i < 0) i = 0;
     if (i > 28) i = 28;
-    static const int t[29] = {
-        1, 2, 3, 5, 21, 22, 23, 25, 26, 27,
-        28, 30, 32, 33, 34, 36, 38, 39, 41, 48,
-        64, 65, 67, 69, 75, 92, 93, 99, 100,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart", "row_lo");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int saRowHi(int i) {
     // the printed band upper edges; i clamps
     if (i < 0) i = 0;
     if (i > 28) i = 28;
-    static const int t[29] = {
-        1, 2, 4, 20, 21, 22, 24, 25, 26, 27,
-        29, 31, 32, 33, 35, 37, 38, 40, 47, 63,
-        64, 66, 68, 74, 91, 92, 98, 99, 100,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart", "row_hi");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int saSaleGp(int i) {
     // the printed g.p. sale values; i clamps
     if (i < 0) i = 0;
     if (i > 28) i = 28;
-    static const int t[29] = {
-        55000, 90000, 62500, 50000, 75000, 85000, 35000, 60000,
-        25000, 20000, 47500, 50000, 100000, 40000, 27500, 35000,
-        72500, 185000, 10000, 100000, 112500, 80000, 17500, 25000,
-        150000, 97000, 5000, 0, 10000,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart", "sale_gp");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int saSaleGpHi(int i) {
     // the range upper bound (the Orb only); i clamps
     if (i < 0) i = 0;
     if (i > 28) i = 28;
-    static const int t[29] = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 80000, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart", "sale_gp_hi");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int saXpValue(int i) {
     // the no-x.p. convention - all rows zero; i clamps
     if (i < 0) i = 0;
     if (i > 28) i = 28;
-    static const int t[29] = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart", "xp_value");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int saNoXpRowCount() {

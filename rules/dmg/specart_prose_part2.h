@@ -63,6 +63,9 @@
 
 #pragma once
 
+// R1062 applied
+#include "rules/seams/specreg.h"
+
 namespace rules {
 
 inline int sapAxeBladeSharpness() {
@@ -114,10 +117,10 @@ inline int sapAxePowerCount(int i) {
     // the powers per table I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        2, 1, 1, 1, 1, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "axe_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapHutDiameterFeet() {
@@ -164,10 +167,10 @@ inline int sapHutMoveInches(int i) {
     // move per terrain; i clamps
     if (i < 0) i = 0;
     if (i > 2) i = 2;
-    static const int t[3] = {
-        48, 36, 12,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "hut_move_inches");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapHutCommanderCount() {
@@ -219,10 +222,10 @@ inline int sapHutPowerCount(int i) {
     // the powers per table I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        4, 2, 1, 1, 1, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "hut_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapCodexDamnedPages() {
@@ -264,10 +267,10 @@ inline int sapCodexPowerCount(int i) {
     // the powers per table I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        4, 4, 2, 2, 2, 2,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "codex_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapCrownRegaliaSetCount() {
@@ -354,50 +357,50 @@ inline int sapCrownAlignBandLo(int i) {
     // the alignment band lower edges; i clamps
     if (i < 0) i = 0;
     if (i > 2) i = 2;
-    static const int t[3] = {
-        1, 7, 15,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "crown_align_band_lo");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapCrownAlignBandHi(int i) {
     // the alignment band upper edges; i clamps
     if (i < 0) i = 0;
     if (i > 2) i = 2;
-    static const int t[3] = {
-        6, 14, 20,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "crown_align_band_hi");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapCrownWornPowerCount(int i) {
     // the worn powers per tables I-III; i clamps
     if (i < 0) i = 0;
     if (i > 2) i = 2;
-    static const int t[3] = {
-        2, 1, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "crown_worn_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapCrownSet2ndPowerCount(int i) {
     // the 2nd item powers per tables I-II; i clamps
     if (i < 0) i = 0;
     if (i > 1) i = 1;
-    static const int t[2] = {
-        1, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "crown_set2nd_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapCrownSet3rdPowerCount(int i) {
     // the 3rd item powers per I, II, IV-VI; i clamps
     if (i < 0) i = 0;
     if (i > 4) i = 4;
-    static const int t[5] = {
-        1, 1, 1, 1, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "crown_set3rd_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapCrystalOriginUnknown() {
@@ -439,10 +442,10 @@ inline int sapCrystalPowerCount(int i) {
     // the powers per table I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        4, 2, 1, 1, 1, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "crystal_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapCupTalismanRelicCount() {
@@ -500,10 +503,10 @@ inline int sapCupPowerCount(int i) {
     // the cup powers per tables I-III; i clamps
     if (i < 0) i = 0;
     if (i > 2) i = 2;
-    static const int t[3] = {
-        4, 0, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "cup_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapTalismanPointCount() {
@@ -545,10 +548,10 @@ inline int sapTalismanPowerCount(int i) {
     // the talisman powers per tables I-IV; i clamps
     if (i < 0) i = 0;
     if (i > 3) i = 3;
-    static const int t[4] = {
-        0, 2, 0, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "talisman_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapCupTalismanBothPowerTotal() {
@@ -560,10 +563,10 @@ inline int sapCupTalismanBothPowerCount(int i) {
     // the both powers per tables V-VI; i clamps
     if (i < 0) i = 0;
     if (i > 1) i = 1;
-    static const int t[2] = {
-        1, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "cup_talisman_both_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapCupTalismanPotionBandCount() {
@@ -575,20 +578,20 @@ inline int sapCupTalismanPotionBandLo(int i) {
     // the potion band lower edges; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        1, 6, 11, 16, 18, 20,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "cup_talisman_potion_band_lo");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapCupTalismanPotionBandHi(int i) {
     // the potion band upper edges; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        5, 10, 15, 17, 19, 20,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "cup_talisman_potion_band_hi");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapEyeVecnaPhantomRoams() {
@@ -640,10 +643,10 @@ inline int sapEyePowerCount(int i) {
     // the powers per tables I-V; i clamps
     if (i < 0) i = 0;
     if (i > 4) i = 4;
-    static const int t[5] = {
-        2, 2, 0, 1, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "eye_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapEyePrimaryPowerMalevolent() {
@@ -725,10 +728,10 @@ inline int sapHandPowerCount(int i) {
     // the powers per table I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        10, 5, 2, 2, 2, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "hand_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapHandGodsOnlyAlteration() {
@@ -890,40 +893,40 @@ inline int sapOrganPowerCount(int i) {
     // the powers per tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        7, 7, 3, 7, 7, 3,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "organ_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapHornBlastPowerTable(int i) {
     // the power table per 1, 2 or 3 blasts; i clamps
     if (i < 0) i = 0;
     if (i > 2) i = 2;
-    static const int t[3] = {
-        1, 2, 5,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "horn_blast_power_table");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapHornBlastEffectTable(int i) {
     // the effect table per 1, 2 or 3 blasts; i clamps
     if (i < 0) i = 0;
     if (i > 2) i = 2;
-    static const int t[3] = {
-        3, 6, 4,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "horn_blast_effect_table");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapCoatPowerCount(int i) {
     // the powers per tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        3, 2, 2, 1, 1, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "coat_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapFlaskHeavyUrn() {
@@ -1050,30 +1053,30 @@ inline int sapFlaskPowerCount(int i) {
     // the powers per tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        3, 0, 1, 0, 1, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "flask_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapJacinthPowerCount(int i) {
     // the powers per tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        2, 2, 1, 1, 1, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "jacinth_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapMaskPowerCount(int i) {
     // the powers per tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        2, 1, 0, 0, 0, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "mask_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapQuillMasterThiefBest() {
@@ -1120,10 +1123,10 @@ inline int sapQuillPowerCount(int i) {
     // the powers per tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        2, 0, 1, 1, 0, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "quill_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapMaceSaintCuthbertWeapon() {
@@ -1170,10 +1173,10 @@ inline int sapMacePowerCount(int i) {
     // the powers per tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        3, 2, 0, 0, 0, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "mace_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapMachineGodsForgotten() {
@@ -1240,10 +1243,10 @@ inline int sapMachinePowerCount(int i) {
     // the powers per tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        15, 15, 10, 10, 15, 5,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "machine_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapServantLumSameMake() {
@@ -1390,10 +1393,10 @@ inline int sapServantPowerCount(int i) {
     // the powers per tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        6, 6, 1, 2, 0, 2,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "servant_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapOrbGoodDeitiesOrigin() {
@@ -1455,10 +1458,10 @@ inline int sapOrbHatchlingPowerCount(int i) {
     // the powers per tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        3, 0, 0, 0, 0, 0,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "orb_hatchling_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapOrbWyrmkinIntelligence() {
@@ -1480,10 +1483,10 @@ inline int sapOrbWyrmkinPowerCount(int i) {
     // the powers per tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        2, 1, 0, 0, 0, 0,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "orb_wyrmkin_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapOrbDragonetteIntelligence() {
@@ -1505,10 +1508,10 @@ inline int sapOrbDragonettePowerCount(int i) {
     // the powers per tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        3, 1, 1, 0, 0, 0,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "orb_dragonette_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapOrbDragonIntelligence() {
@@ -1530,10 +1533,10 @@ inline int sapOrbDragonPowerCount(int i) {
     // the powers per tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        4, 1, 1, 0, 0, 0,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "orb_dragon_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapOrbGreatSerpentIntelligence() {
@@ -1555,10 +1558,10 @@ inline int sapOrbGreatSerpentPowerCount(int i) {
     // the powers per tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        3, 2, 1, 0, 0, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "orb_great_serpent_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapOrbFiredrakeOldDragon() {
@@ -1585,10 +1588,10 @@ inline int sapOrbFiredrakePowerCount(int i) {
     // the powers per tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        3, 3, 2, 0, 0, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "orb_firedrake_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapOrbElderWyrmVeryOldDragon() {
@@ -1615,10 +1618,10 @@ inline int sapOrbElderWyrmPowerCount(int i) {
     // the powers per tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        4, 3, 2, 1, 1, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "orb_elder_wyrm_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapOrbEternalAncientDragon() {
@@ -1650,10 +1653,10 @@ inline int sapOrbEternalPowerCount(int i) {
     // the powers per tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        4, 3, 2, 1, 2, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "orb_eternal_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapOrbNotesEvilComponent() {
@@ -1810,10 +1813,10 @@ inline int sapOrbMightPowerCount(int i) {
     // the powers per tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        2, 0, 1, 0, 0, 0,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "orb_might_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapOrbMightRegaliaPowers() {
@@ -1895,10 +1898,10 @@ inline int sapNightingalePowerCount(int i) {
     // the powers per tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        4, 0, 1, 1, 1, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "nightingale_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapRecorderNeedsNoMusician() {
@@ -1940,10 +1943,10 @@ inline int sapRecorderPowerCount(int i) {
     // the powers per tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        5, 2, 1, 1, 1, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "recorder_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapGaxxAlienOrigin() {
@@ -2005,10 +2008,10 @@ inline int sapGaxxPowerCount(int i) {
     // the powers per tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        3, 2, 1, 1, 1, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "gaxx_power_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapRodWindDukesMadeIt() {
@@ -2205,30 +2208,30 @@ inline int sapRodJointTable(int i) {
     // the assembly joint tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        3, 1, 1, 4, 2, 6,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "rod_joint_table");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapRodJointUseCount(int i) {
     // the assembly joint use counts; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        1, 1, 1, 1, 1, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "rod_joint_use_count");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapRodCompleteTableUse(int i) {
     // the complete rod uses per tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        1, 1, 2, 1, 2, 0,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "rod_complete_table_use");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapSceptreCount() {
@@ -2320,10 +2323,10 @@ inline int sapSceptreTableUse(int i) {
     // the uses per tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        1, 1, 0, 0, 0, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "sceptre_table_use");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapKasOfVecnaTheLich() {
@@ -2460,10 +2463,10 @@ inline int sapKasTableUse(int i) {
     // the uses per tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        5, 2, 1, 2, 2, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "kas_table_use");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapToothHistoriesSilent() {
@@ -2647,20 +2650,20 @@ inline int sapToothTableUse(int i) {
     // the teeth per tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        21, 4, 4, 1, 0, 2,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "tooth_table_use");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapToothSetRightUse(int i) {
     // right-column sets per I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        0, 0, 4, 2, 0, 2,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "tooth_set_right_use");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapThroneCarvenMountainHeart() {
@@ -2782,10 +2785,10 @@ inline int sapThroneTableUse(int i) {
     // the uses per tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        3, 3, 2, 2, 2, 2,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "throne_table_use");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapWandDemonPrinceProperty() {
@@ -2889,10 +2892,10 @@ inline int sapWandTableUse(int i) {
     // the uses per tables I-VI; i clamps
     if (i < 0) i = 0;
     if (i > 5) i = 5;
-    static const int t[6] = {
-        4, 2, 2, 1, 0, 1,
-    };
-    return t[i];
+    const auto* g = saTable(
+        "specart_prose", "wand_table_use");
+    if (!g) return 0;
+    return (int)(*g)[i];
 }
 
 inline int sapFinalXSignCount() {
